@@ -1,0 +1,118 @@
+# equip
+- type: entity
+  parent: ClothingTorsoTurtlenecksMonolithCamouflage
+  id: STMonolithTorso
+  suffix: ST, AI
+  name: monolith camouflage turtlenecks
+  components:
+    - type: Unremoveable
+
+- type: entity
+  parent: ClothingLegsJeansMonolithCamouflage
+  id: STMonolithLegs
+  suffix: ST, AI
+  name: monolith camouflage jeans
+  components:
+    - type: Unremoveable
+
+- type: entity
+  parent: ClothingOuterArmorBerill5MMonolith
+  id: STMonolithOuterBerill
+  suffix: ST, AI
+  name: бронекостюм «Берилл-5М» монолита
+  description: Бронекостюм, пренадлежащий группировке фанатиков. Обеспечивает отличную защиту по всем показателям, но делает из вас живую мишень.
+  components:
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 9
+        Slash: 9
+        Piercing: 9
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0
+        Radiation: 0
+        Caustic: 0
+        Shock: 0
+        Psy: 0
+        Compression: 0
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingHeadHelmetBerill5MMonolith
+  id: STMonolithHeadSphera
+  name: шлем «Сфера-08» монолита
+  sufffix: ST, AI
+  description: Шлем тех самых фанатиков, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М». Класс брони - 2.
+  components:
+  - type: Unremoveable
+
+- type: entity
+  parent: ClothingMaskGasMono
+  suffix: ST, AI
+  id: STMonolithMask
+  name: стандартный противогаз Монолита
+  description: Скрывает глаза и злые помыслы. Защищает от радиации.
+  components:
+  - type: Unremoveable
+
+
+# guns
+- type: entity
+  name: FN F2000
+  suffix: ST, AI
+  parent: STBaseWeaponRifle
+  id: STMonolithWeaponF2000
+  description: Экспериментальная австрийская винтовка FN F2000 с компьютеризированным прицелом.
+  components:
+    - type: DisarmMalus
+      malus: 0
+    - type: Unremoveable
+    - type: STWeight
+      self: 4
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    - type: Gun
+      fireRate: 12
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/n_fn2000_shot.ogg
+        params:
+          volume: -2
+      minAngle: 25
+      maxAngle: 40
+      angleIncrease: 3
+      angleDecay: 20
+    - type: ProjectileBatteryAmmoProvider
+      proto: STMonolithBullet556
+      fireCost: 100
+    - type: Battery
+      maxCharge: 3000
+      startingCharge: 3000
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 400
+
+# ballistic ammo provider
+- type: entity
+  id: STMonolithBullet556
+  name: bullet (5,56x45 rifle)
+  parent: BaseBullet
+  components:
+  - type: TimedDespawn
+    lifetime: 30
+  - type: Projectile
+    projectileClass: 52
+    damage:
+      types:
+        Piercing: 26
+  - type: StaminaDamageOnCollide
+    damage: 6

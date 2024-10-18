@@ -4,6 +4,7 @@
     - Passive
     - Stalker
     - Mutated
+    - Monolith
 
 - type: npcFaction
   id: Mutated
@@ -12,8 +13,19 @@
     - Stalker
     - MutatedHunter
     - NanoTrasen
+    - Monolith
 
 - type: npcFaction
   id: Stalker
   hostile:
     - Mutated
+    - Monolith
+
+- type: npcFaction
+  id: Monolith
+  hostile:
+    - Passive
+    - Mutated
+    - Stalker
+    - MutatedHunter
+    - NanoTrasen

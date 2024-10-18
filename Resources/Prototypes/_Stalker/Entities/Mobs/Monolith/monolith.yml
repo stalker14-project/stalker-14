@@ -1,0 +1,79 @@
+- type: entity
+  name: Лазутчик Монолита
+  suffix: ST, AI
+  parent: BaseMobSpeciesOrganic
+  id: STMonolithScout
+  description:
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: monolith
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        90: 0.9
+        95: 0.8
+    - type: Stamina
+      decay: 10
+      cooldown: 1
+      critThreshold: 9000
+    - type: Hunger
+      starvationDamage:
+        types:
+          Cold: 0.0
+          Bloodloss: 0.0
+    - type: Icon
+      sprite: Mobs/Species/Human/parts.rsi
+      state: full
+    - type: Thirst
+    - type: Perishable
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 5
+      baseSprintSpeed: 5
+    - type: Loadout
+      prototypes:
+        - STMonolithScoutGear
+    - type: Advertise
+      pack: STNPCMonolithAds
+      minWait: 10
+      maxWait: 30
+    - type: Speech
+      speechSounds: Alto
+    - type: Vocal
+      sounds:
+        Male: MaleHuman
+        Female: FemaleHuman
+        Unsexed: MaleHuman
+    - type: RandomHumanoidAppearance
+      randomizeName: true
+    - type: NpcFactionMember
+      factions:
+        - Monolith
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: STMonolith
+      blackboard:
+        VisionRadius: !type:Single
+          25.0
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: PassiveDamage
+      allowedStates:
+        - Alive
+        - Critical
+      damageCap: 100
+      damage:
+        groups:
+          Airloss: -8
+          Brute: -4
+    - type: ApproachEmitter
+      range: 0
+      useMinRange: false
+    - type: STWeight
+      self: 70
+      maximum: 120
+

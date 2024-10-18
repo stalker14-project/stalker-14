@@ -1,0 +1,59 @@
+- type: entity
+  name: Триггер лазутчик монолит  (1) (100%)
+  id: STMonolithTrigger1
+  parent: MarkerBase
+  suffix: ST, КД 60 минут
+  components:
+    - type: ApproachTrigger
+      range: 35
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      prototypes:
+        - STMonolithScout
+      minAmount: 1
+      maxAmount: 1
+      offset: 0.0
+      cooldown: 3600
+      chance: 1
+      restricted:
+        - STMonolithScout
+
+- type: entity
+  name: Триггер лазутчик монолит  (1) (25%)
+  id: STMonolithTrigger2
+  parent: MarkerBase
+  suffix: ST, КД 60 минут
+  components:
+    - type: ApproachTrigger
+      range: 35
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      prototypes:
+        - STMonolithScout
+      minAmount: 1
+      maxAmount: 1
+      offset: 0.0
+      cooldown: 3600
+      chance: 0.25
+      restricted:
+        - STMonolithScout
