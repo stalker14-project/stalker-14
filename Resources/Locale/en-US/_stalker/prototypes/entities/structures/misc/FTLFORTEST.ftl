@@ -1,0 +1,15 @@
+ent-BoxCrate = ценный ящик
+    .desc = Ящик, сделанный по новым технологиям, довольно таки тяжёлый. Содержимое неизвестно.
+    .suffix = Stalker, TrainStation
+ent-TriggerBoxDrawer = большая куча ящиков
+    .desc = Большая куча ящиков разных форм и мастей. Интересно, что хранится в них. Стоит ли взять ящик?
+    .suffix = Stalker, TrainStation
+ent-BoxDrawer = Спавнер ящиков.
+    .desc = Просто спавнер ящиков, что ещё?
+    .suffix = Stalker, TrainStation
+ent-DrawerDispenser = Раздатчик ящиков...
+    .desc = Нахера вы это вообще заспавнили?
+    .suffix = Stalker, TrainStation
+ent-NPCAlexBaron = Лёшка Барон [Скупщик]
+    .desc = Данный персонаж занимается очень важным делом - перепродажей ящиков. Стоит ли ему доверять?
+    .suffix = Stalker, TrainStation

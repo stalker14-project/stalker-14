@@ -11,37 +11,37 @@
                 Name="ToWrite"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Написать"/>
+                Text="Wrute"/>
             <Button
                 Name="ToRead"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Прочитать"/>
+                Text="Read"/>
             <Button
                 Name="ToAccount"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Аккаунт"/>
+                Text="Account"/>
         </BoxContainer>
         <BoxContainer Name="MenuWrite" Visible="False" Orientation="Vertical">
             <Button
                 Name="WriteToSelection"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Назад"/>
+                Text="Back"/>
             <BoxContainer Orientation="Vertical"
                           VerticalExpand="True"
                           HorizontalExpand="True"
                           Margin="15 0 0 0">
                 <GridContainer Rows="2" HorizontalExpand="True">
-                    <Label Text="Получатель:"/>
+                    <Label Text="Recipient:"/>
                     <LineEdit Name="InputReciver"
                               MinSize="60 0"
                               VerticalAlignment="Top"
                               Margin="4 0 0 0"
                               Access="Public"
                               HorizontalExpand="True"/>
-                    <Label Text="Название:"/>
+                    <Label Text="Title:"/>
                     <LineEdit Name="InputTitle"
                               MinSize="60 0"
                               VerticalAlignment="Top"
@@ -64,7 +64,7 @@
                 <Button Name="SendMessage"
                         MinWidth="30"
                         HorizontalAlignment="Left"
-                        Text="Отправить"
+                        Text="Send"
                         Margin="0 4 4 4">
                 </Button>
             </BoxContainer>
@@ -74,7 +74,7 @@
                 Name="ReadToSelection"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Назад"/>
+                Text="Back"/>
             <ScrollContainer
                 HScrollEnabled="False"
                 HorizontalExpand="True"
@@ -90,7 +90,7 @@
                 Name="ChatToRead"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Назад"/>
+                Text="Back"/>
             <ScrollContainer
                 HScrollEnabled="False"
                 HorizontalExpand="True"
@@ -106,7 +106,7 @@
                 Name="AccountToSelection"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Назад"/>
+                Text="Back"/>
             <Label Name="AccountName"/>
             <LineEdit Name="InputAccount"
                       MinSize="60 0"
@@ -118,7 +118,7 @@
                 Name="Login"
                 MinWidth="64"
                 HorizontalAlignment="Right"
-                Text="Изменить имя"
+                Text="Change name"
                 Access="Public"/>
         </BoxContainer>
     </BoxContainer>

@@ -1,0 +1,23 @@
+ent-STBoltBag = мешок для болтов
+    .desc = Позволяет вам носить ваши 3 тонны болтов для определения аномалий в зоне. Лучший друг сталкера, который всегда выведет из трудной ситуации.
+    .suffix = Stalker
+ent-STBoltBagFilled = { ent-STBoltBag }
+    .desc = { ent-STBoltBag.desc }
+    .suffix = Stalker, Заполненный
+ent-STBoltBagOliveGray = { ent-STBoltBag }
+    .desc = { ent-STBoltBag.desc }
+ent-STBoltBagOliveGrayFilled = { ent-STBoltBagOliveGray }
+    .desc = { ent-STBoltBagOliveGray.desc }
+    .suffix = Stalker, Заполненный
+#золотые болты, у сидора за 5к продаются
+ent-STBoltBagGolden = мешок для болтов
+    .desc = Позволяет вам носить ваши 3 тонны ЗОЛОТЫХ болтов для определения аномалий в зоне. Лучший друг богатого сталкера, который всегда выведет из трудной ситуации.
+    .suffix = Stalker, Заполненный, Золотой
+ent-STBoltBagFilledGolden = { ent-STBoltBag }
+    .desc = Позволяет вам носить ваши 3 тонны ЗОЛОТЫХ болтов для определения аномалий в зоне. Лучший друг богатого сталкера, который всегда выведет из трудной ситуации.
+    .suffix = Stalker, Заполненный, Золотой
+ent-STBoltBagOliveGrayGolden = { ent-STBoltBag }
+    .desc = { ent-STBoltBagFilledGolden.desc }
+ent-STBoltBagOliveGrayFilledGolden = { ent-STBoltBagOliveGray }
+    .desc = Позволяет вам носить ваши 3 тонны ЗОЛОТЫХ болтов для определения аномалий в зоне. Лучший друг богатого сталкера, который всегда выведет из трудной ситуации.
+    .suffix = Stalker, Заполненный, Золотой
