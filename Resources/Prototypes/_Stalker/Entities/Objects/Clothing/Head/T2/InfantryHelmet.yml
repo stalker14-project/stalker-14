@@ -2,7 +2,7 @@
   abstract: true
   parent: STClothingHeadBase
   id: STClothingHeadHelmetCombatT2Base
-  name: база боевого шлема T2
+  name: T2 Combat Helmet Base
   suffix: ST, T2, Combat
   components:
   - type: STWeight
@@ -30,8 +30,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetInfantry
-  name: пехотный шлем
-  description: Шлем неизвестного производства и марки, тем не менее защищающий вашу бошечку. Огромная партия этих шлемов как-то попала в ЧЗО.
+  name: infantry helmet
+  description: A helmet of unknown make and brand, but it still protects your little head. A huge batch of these helmets somehow ended up in the Chernobyl Exclusion Zone.
   components:
     - type: Sprite
       sprite: Clothing/Head/Helmets/merc_helmet.rsi
@@ -41,8 +41,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetInfantryBand
-  name: бандитский пехотный шлем
-  description: Пехотный шлем с нанесенными на него полосками, как буд-то adidas, почитается бандитскими формированиями.
+  name: Bandit Infantry Helmet
+  description: An infantry helmet with stripes applied to it, like Adidas, is revered by bandit formations.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/renegade_merc_helmet.rsi
@@ -52,8 +52,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadInfantryHelmetRenegate
-  name: пехотный шлем ренегата
-  description: Обычный пехотный шлем, перекрашенный в цвета ренегата, и с небольшими изменениями.
+  name: Renegade Infantry Helmet
+  description: A standard infantry helmet, repainted in renegade colors, with some minor changes.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/renegade_merc_helmet.rsi
@@ -63,8 +63,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadInfantryHelmetDeserter
-  name: пехотный шлем отступников
-  description: Неизвестно, что это за шлем, но он очень хорошо защищает вашу голову.
+  name: Renegade Infantry Helmet
+  description: It is not known what kind of helmet this is, but it protects your head very well.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/pehhelm_deserter.rsi

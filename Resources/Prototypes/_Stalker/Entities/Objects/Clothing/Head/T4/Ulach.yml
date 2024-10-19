@@ -2,7 +2,7 @@
   abstract: true
   parent: STClothingHeadBase
   id: STClothingHeadHelmetTacticalT4Base
-  name: база тактического шлема T4
+  name: Tactical Helmet T4 Base
   suffix: ST, T4, Tactical
   components:
   - type: STWeight
@@ -29,8 +29,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT4Base
   id: ClothingHeadHelmetUlach
-  name: улач
-  description: Это шлем, специально разработанный для защиты от колющих атак.
+  name: Ulach
+  description: This is a helmet specifically designed to protect against stabbing attacks.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/ulach.rsi
@@ -40,8 +40,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT4Base
   id: ClothingHeadHelmetUlachUN
-  name: улач ООН
-  description: Шлем контингента ООН.
+  name: UN village
+  description: UN contingent helmet.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/ulach-un.rsi
@@ -51,8 +51,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT4Base
   id: ClothingHeadHelmetUlachZavet
-  name: улач Завета
-  description: Улач, используемый группировкой «Завет».
+  name: Covenant Hall
+  description: Ulach, used by the Covenant faction.
   suffix: Stalker, Завет
   components:
     - type: Sprite
@@ -64,8 +64,8 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT4Base
   id: ClothingHeadHelmetHardUlachUN
-  name: тактический противоударный улач ООН
-  description: Шлем контингента ООН, имеет большую защиту от ударных атак, а также колющих атак. Является модифицированным шлемом от «Улач ООН» но более продвинутый. Класс брони - 3
+  name: UN tactical anti-shock weapon
+  description: Helmet of the UN contingent, has greater protection against impact attacks, as well as stabbing attacks. It is a modified helmet from the UN Ulach but more advanced. Armor class - 3
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/hard-ulach-un.rsi
@@ -75,9 +75,9 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT4Base
   id: ClothingHeadHelmetUlachEasy
-  name: легкий улач
+  name: easy fix
   suffix: Stalker, Наёмники
-  description: Это шлем, специально разработанный для защиты от колющих атак и мобильности для группировки «Наёмники». Класс Брони - 2.
+  description: This is a helmet specifically designed to provide protection against piercing attacks and mobility for the Mercenaries faction. Armor Class - 2.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/normal_merc_helm.rsi

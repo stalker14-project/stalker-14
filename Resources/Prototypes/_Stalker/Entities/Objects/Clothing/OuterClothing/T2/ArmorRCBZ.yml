@@ -1,9 +1,9 @@
 - type: entity
   parent: STClothingOuterBaseLarge
   id: STClothingOuterArmorRCBZ
-  name: костюм РХБЗ «Искатель»
+  name: NBC suit Seeker
   suffix: ST, T2, Env
-  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  description: Designed for use in radiation, chemical and biological protection (RCBZ) environments. Used in expeditions to hazardous chemical zones to ensure the safety of the wearer. Not intended for combat, but specialized to ensure protection and safety in conditions of threat from radiation, chemical and biological substances.
   components:
   - type: STWeight
     self: 4
@@ -43,9 +43,9 @@
   parent: ClothingMaskGas
   id: ClothingHelmRCBZ
   suffix: ST, T2, Env
-  name: маска РХБЗ
+  name: RCBZ mask
   noSpawn: true
-  description: Эффективное средство индивидуальной защиты от различных видов химических, биологических и радиоактивных угроз. Они обеспечивают надёжную фильтрацию воздуха, задерживая вредные вещества и частицы, что позволяет защитить дыхательные пути и кожу от воздействия опасных веществ.
+  description: An effective means of personal protection against various types of chemical, biological and radioactive threats. They provide reliable air filtration, trapping harmful substances and particles, which helps protect the respiratory tract and skin from exposure to hazardous substances.
   components:
   - type: IngestionBlocker
   - type: IdentityBlocker
@@ -72,8 +72,8 @@
 - type: entity
   parent: STClothingOuterArmorRCBZ
   id: ClothingOuterArmorRCBZProjectPJ5
-  name: костюм «РХБЗ PJ-5»
-  description: Универсальная разработка «Проекта» прототипа костюма РХБЗ версии «PJ-5» которое представляет собой защитное снаряжение, специально разработанное для обеспечения максимальной защиты в условиях химических, биологических и радиационных атмосфер.
+  name: RKhBZ PJ-5 suit
+  description: Universal development of the Project prototype of the NBC suit version PJ-5 which is protective equipment specially designed to provide maximum protection in chemical, biological and radiation atmospheres.
   components:
   - type: Sprite
     sprite: _Stalker/Groups/Project/rcbz_pj5.rsi
@@ -87,8 +87,8 @@
   parent: ClothingHelmRCBZ
   id: ClothingHelmRCBZProjectPJ5
   noSpawn: true
-  name: маска РХБЗ «PJ-5»
-  description: Эффективное средство индивидуальной защиты от химических, биологических и радиационных угроз версии «PJ-5», разработанное «Проектом», является первым прототипом шлема, который обеспечивает надежную фильтрацию воздуха, задерживая вредные вещества и частицы, и защищает дыхательные пути и кожу от воздействия опасных факторов.
+  name: RCBZ mask “PJ-5”
+  description: Effective means of personal protection against chemical, biological and radiation threats version PJ-5, developed by Project, is the first prototype of a helmet that provides reliable air filtration, trapping harmful substances and particles, and protects the respiratory tract and skin from exposure to hazardous factors.
   components:
   - type: Sprite
     sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi

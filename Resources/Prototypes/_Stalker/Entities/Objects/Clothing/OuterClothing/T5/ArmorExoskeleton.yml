@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterArmorStorageToggleableBasic
   id: ClothingOuterArmorExoskelet
-  name: экзоскелет
-  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  name: exoskeleton
+  description: Experimental armor with servos, allowing you to carry a bunch of things on your back, but significantly slows down your movements.
   suffix: ST, T5, UNIVERSAL
   components:
   - type: Sprite
@@ -35,8 +35,8 @@
   id: ClothingHeadHelmetExoskelet
   noSpawn: true
   suffix: ST, T5
-  name: шлем экзоскелета
-  description: В отличие от самого экзача, можно сказать вполне обычный шлем.
+  name: exoskeleton helmet
+  description: Unlike the Exach itself, one could say its a completely ordinary helmet.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/exoskelet_helm_stalker.rsi
@@ -49,8 +49,8 @@
 - type: entity
   parent: ClothingOuterArmorExoskelet
   id: ClothingOuterArmorExoskeletMonolith
-  name: экзоскелет Монолита
-  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения - обычно, однако эта броня олицетворяет превосходство вооружения Монолита.
+  name: Monolith exoskeleton
+  description: Experimental armor with servos, allowing you to carry a bunch of things on your back, but significantly slowing down your movements - usually, but this armor represents the superiority of the Monoliths weapons.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/exoskelet_monolith.rsi
@@ -64,8 +64,8 @@
   parent: ClothingOuterArmorExoskelet
   id: ClothingHeadHelmetExoskeletMonolith
   noSpawn: true
-  name: шлем экзоскелета Монолита
-  description: В отличие от самого экзача, можно сказать вполне обычный шлем.
+  name: Monolith exoskeleton helmet
+  description: Unlike the Exach itself, one could say its a completely ordinary helmet.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/exoskelet_helm_monolith.rsi
@@ -79,8 +79,8 @@
 - type: entity
   parent: ClothingOuterArmorExoskelet
   id: ClothingOuterArmorExoskeletonCovenant
-  name: экзоскелет Завета
-  description: Экспериментальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  name: Covenant exoskeleton
+  description: Experimental armor with servos, allowing you to carry a bunch of things on your back, but significantly slows down your movements.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/zavet_ekzo/zavet_ekzo.rsi
@@ -92,8 +92,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetExoskeletonCovenant
-  name: шлем экзоскелета
-  description: В отличие от самого экзоскелета, можно сказать вполне обычный шлем.
+  name: exoskeleton helmet
+  description: Unlike the exoskeleton itself, it is, one might say, a completely ordinary helmet.
   noSpawn: true
   components:
     - type: Sprite
@@ -107,8 +107,8 @@
 - type: entity
   parent: ClothingOuterArmorExoskelet
   id: ClothingOuterArmorExoSevaProject
-  name: "экзокостюм «Сева OM-360»"
-  description: "Эксперимент «OM-360» был проведён, в связи с усовершенстованными технологиями, «Проект» заполучил массивный экзо-костюм способный практически защищать валдельца от разлиных излучений «Матрицы», благодрая лучшим материалам и высокотехнологичным материалам «Проектом» был создан костюм экзоскелет «Сева» версии OM-360"
+  name: Seva exosuit OM-360
+  description: The OM-360 experiment was conducted, due to advanced technologies, the Project acquired a massive exo-suit capable of practically protecting the Valdelian from various Matrix radiations, thanks to the best materials and high-tech materials The Project created the Seva exoskeleton suit version OM-360
   components:
   - type: STWeight
     self: 22
@@ -124,8 +124,8 @@
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetExoSevaProject
   noSpawn: true
-  name: "шлем экзо-cевы «OM-360»"
-  description: В отличие от самого экзача, можно сказать вполне обычный шлем.
+  name: exo-seva helmet OM-360
+  description: Unlike the Exach itself, one could say its a completely ordinary helmet.
   components:
   - type: ExplosionResistance
     damageCoefficient: 0.90

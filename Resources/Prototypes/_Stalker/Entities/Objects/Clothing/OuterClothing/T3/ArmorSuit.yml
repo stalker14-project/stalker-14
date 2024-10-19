@@ -2,7 +2,7 @@
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorBase
   suffix: ST, T3, PvE
-  name: базовый бронекомбез #base
+  name: base armor suit #base
   abstract: true
   components:
   - type: STWeight
@@ -48,8 +48,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorStalker
-  name: бронекомбез сталкера
-  description: Дешёвый и защищающий от мутантов с аномалиями комбез сталкеров. Обеспечивает 3 класс защиты.
+  name: armored suit without stalker
+  description: Cheap and protective against mutants with anomalies stalker suit. Provides 3 class of protection.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
@@ -59,8 +59,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorRenegate
-  name: бронекомбез ренегатов
-  description: Дешёвый и защищающий от мутантов с аномалиями комбез реников. Обеспечивает 3 класс защиты.
+  name: armored suit without renegades
+  description: Cheap and protective against mutants with anomalies suit of reniks. Provides 3 class of protection.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
@@ -71,8 +71,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorJaba
-  name: бронекомбез жаб
-  description: Надёжный бронекомбез III типа, обеспечивающий хорошую защиту от аномальных воздействий и физических повреждений.
+  name: armored suit without toads
+  description: Reliable type III armor suit, providing good protection against abnormal impacts and physical damage.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/medium_armor_jaba.rsi
@@ -82,8 +82,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorBandits
-  name: бронекомбез бандитов
-  description: Дешёвый и защищающий от мутантов с сталкерами комбез бандюганов. Обеспечивает 3 класс защиты.
+  name: bandit armor suit
+  description: Cheap and protective from mutants with stalkers gangsters suit. Provides 3 class of protection.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
@@ -108,8 +108,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorDeserter
-  name: бронекомбез отступников "Гоплит" # не переименовывайте
-  description: Дешёвый и надёжный бронекомбез отступников хорошо защищающий от мутантов и пуль. 3 класс
+  name: Renegade Hoplite armor suit # do not rename
+  description: Cheap and reliable armored suit of renegades, good protection from mutants and bullets. 3rd class
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_armor.rsi
@@ -120,8 +120,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorMerc
-  name: бронекомбез наёмника
-  description: За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты. Обеспечивает 3 класс защиты.
+  name: mercenary armor suit
+  description: The design is based on the special forces equipment of Western armies. Due to special fabric treatment, the armors resistance to physical displacement of the plates is increased. In terms of protective characteristics, it slightly surpasses army bulletproof vests. Provides protection class 3.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor.rsi
@@ -135,8 +135,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorFreedomDefender
-  name: бронекомбез «Страж свободы»
-  description: Производимый ремесленниками группировки «Свобода» усиленный комбинезон сталкера. 3 класс
+  name: armored suit Guardian of Freedom
+  description: Reinforced stalker suit produced by Freedom faction artisans. Class 3
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
@@ -147,8 +147,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorCN3a
-  name: бронекомбез «ЧН-3а»
-  description: Штатная экипировка штурмовых отрядов «Чистого неба». Бронежилет способен остановить пистолетную пулю, а встроенный противогаз и брезентовый комбинезон с особой пропиткой обеспечивают хорошую защиту от аномальных воздействий. 3 класс
+  name: ChN-3a armored suit
+  description: Standard equipment of the Clear Sky assault squads. The bulletproof vest can stop a pistol bullet, and the built-in gas mask and canvas overalls with a special impregnation provide good protection from abnormal effects. Class 3
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
