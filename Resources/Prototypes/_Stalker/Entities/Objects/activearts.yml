@@ -1,9 +1,9 @@
 ﻿############################Медуза
 - type: entity
-  name: "Медуза"
+  name: Medusa
   parent: BaseArtifact
   id: ArtMedusaActive1
-  description: Артефакт гравитационной природы. Пульсирует и излучает красноватый свет, греющий ваше тело и исцеляющий душу. Стабилен для активного артефакта, можеи прожить даже пол минуты.
+  description: Artifact of gravitational nature. Pulsates and emits a reddish light, warming your body and healing your soul. Stable for an active artifact, can survive even half a minute.
   components:
     - type: Sprite
       state: medusa
@@ -27,10 +27,10 @@
       range: 2
 
 - type: entity
-  name: "Медуза"
+  name: Medusa
   parent: BaseArtifact
   id: ArtMedusaActive2
-  description: Артефакт гравитационной природы. Его распирает от энергии, которая будет на грани коллапса при сжатии. Это явно можно использовать в качестве своеобразной гранаты.
+  description: An artifact of gravitational nature. It is bursting with energy that will be on the verge of collapse when compressed. This can clearly be used as a kind of grenade.
   components:
     - type: Sprite
       state: medusa
@@ -60,10 +60,10 @@
 
 ############################Огненный шар
 - type: entity
-  name: "Огненный Шар"
+  name: Fireball
   parent: BaseArtifact
   id: ZoneArtifactFireballActive1
-  description: Артефакт термической природы, вокруг него сейчас в воздухе появляются частицы, будто зелёные искры.
+  description: An artifact of thermal nature, particles like green sparks are now appearing in the air around it.
   components:
     - type: Sprite
       state: fireball
@@ -81,10 +81,10 @@
       castShadows: true
 
 - type: entity
-  name: "Огненный Шар"
+  name: Fireball
   parent: BaseArtifact
   id: ZoneArtifactFireballActive2
-  description: Артефакт термической природы, обратившийся в смертельную опасную аномалию.
+  description: An artifact of thermal nature that has turned into a deadly dangerous anomaly.
   components:
     - type: InputMover
     - type: MobMover

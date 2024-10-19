@@ -1,8 +1,8 @@
 - type: entity
-  name: "Кровь Камня"
+  name: Blood of Stone
   parent: BaseArtifact
   id: ArtBlood
-  description: Артефакт гравитационной природы. Фонит, но даёт защиту от физ. урона.
+  description: Artifact of gravitational nature. Emits radiation, but provides protection from physical damage.
   noSpawn: true
   components:
   - type: RadiationSource
@@ -25,10 +25,10 @@
         Piercing: 0.95
 
 - type: entity
-  name: контейнер для артефактов
+  name: artifact container
   parent: BoxCardboard
   id: BoxArtcont
-  description: Полностью блокирует все свойства артефакта.
+  description: Completely blocks all properties of the artifact.
   suffix: Stalker
   components:
   - type: ExplosionSafe
@@ -49,10 +49,10 @@
     state: old
 
 - type: entity
-  name: продвинутый контейнер для артефактов
+  name: advanced artifact container
   parent: BoxArtcont
   id: BoxArtcont1
-  description: Вмещает в себя до 3 штук артефактов и полностью блокирует их свойства. Улучшенная кустарно версия, которую достаточно сложно найти.
+  description: Holds up to 3 artifacts and completely blocks their properties. Improved homemade version, which is quite difficult to find.
   components:
   - type: Storage
     maxItemSize: Normal
@@ -69,10 +69,10 @@
 # Артефакты 32x32
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art1
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -81,10 +81,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art2
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -93,10 +93,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art3
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -105,10 +105,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art9
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -117,10 +117,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art10
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -129,10 +129,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art12
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -141,10 +141,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art13
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -153,10 +153,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art14
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -165,10 +165,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art15
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -177,10 +177,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art16
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -189,10 +189,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Плёнка
+  name: Film
   parent: BaseArtifact
   id: Art19
-  description: Артефакт химической природы, эластичный и приятный на ощупь.
+  description: An artifact of chemical nature, elastic and pleasant to the touch.
   noSpawn: true
   components:
   - type: Sprite
@@ -201,10 +201,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art20
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -213,10 +213,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art21
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -225,10 +225,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art22
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -237,10 +237,10 @@
     scale: 0.5, 0.5
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: Art23
-  description: Артефакт
+  description: Artifact
   noSpawn: true
   components:
   - type: Sprite
@@ -251,10 +251,10 @@
 # Артефакты 64x64
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art1
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -262,10 +262,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art2
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -273,10 +273,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art3
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -284,10 +284,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art4
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -295,10 +295,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art5
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -306,10 +306,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art6
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -317,10 +317,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art7
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -328,10 +328,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art8
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -339,10 +339,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art9
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -350,10 +350,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art10
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -361,10 +361,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art11
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -372,10 +372,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art12
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -383,10 +383,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art13
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -394,10 +394,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art14
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -405,10 +405,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art15
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -416,10 +416,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art16
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -427,10 +427,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art17
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -438,10 +438,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art18
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -449,10 +449,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art19
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -460,10 +460,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art20
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi
@@ -471,10 +471,10 @@
     scale: 0.35, 0.35
 
 - type: entity
-  name: Артефакт
+  name: Artifact
   parent: BaseArtifact
   id: 64Art21
-  description: Артефакт
+  description: Artifact
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Other/Arts64.rsi

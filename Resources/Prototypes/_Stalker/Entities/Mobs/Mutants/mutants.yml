@@ -869,8 +869,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantRat
-  name: крыса
-  description: Злая, голодная, большая крыса.
+  name: rat
+  description: Angry, hungry, big rat.
   components:
   - type: Fixtures
     fixtures:
@@ -948,7 +948,7 @@
     color: "#00ff1a"
 
 - type: entity
-  name: Леший
+  name: Goblin
   parent: BaseMobMutant
   id: MobMutantLeshiy
   components:
@@ -1021,7 +1021,7 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantSpiderLapach
-  name: Паук Лапач
+  name: Lapach Spider
   components:
     - type: NoSlip
     - type: Spider
@@ -1122,8 +1122,8 @@
 - type: entity
   id: STMutantGoliath
   parent: BaseMobMutant
-  name: голиаф
-  description: незаконорожденный ребёнок Ньярлатотепа
+  name: goliath
+  description: Nyarlathotep's illegitimate child
   components:
   - type: Sprite
     sprite: Mobs/Aliens/Asteroid/goliath.rsi
@@ -1178,8 +1178,8 @@
 - type: entity
   id: STMutantController
   parent: BaseMobMutant
-  name: контроллёр
-  description: с какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
+  name: controller
+  description: from some point of view, a successful experiment of scientists to add psi abilities to monsters
   components:
   - type: Sprite
     sprite: _Stalker/Mobs/Mutants/controller.rsi
@@ -1259,8 +1259,8 @@
 - type: entity
   id: STMutantByurer
   parent: BaseMobMutant
-  name: бюргер
-  description: с какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
+  name: burgher
+  description: from some point of view, a successful experiment of scientists to add psi abilities to monsters
   components:
   - type: Sprite
     sprite: _Stalker/Mobs/Mutants/byurer.rsi

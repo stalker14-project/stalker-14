@@ -1,7 +1,7 @@
 - type: entity
   id: StalkerSinMobControllerOffAction
-  name: Прекратить атаку
-  description: Делает всех людей поблизости неатакуемыми мутантами. Люди снова будут атакованы мутантами либо через 2 минуты, либо если отменить это.
+  name: Stop attack
+  description: Makes all nearby humans unattackable mutants. Humans will be attacked by mutants again after 2 minutes or if you cancel this.
   suffix: ST
   noSpawn: true
   components:
@@ -16,8 +16,8 @@
 
 - type: entity
   id: StalkerSinMobControllerOnAction
-  name: В бой
-  description: Приказывает всем мутантам по близости продолжить атаковать.
+  name: Into Battle
+  description: Orders all nearby mutants to continue attacking.
   suffix: ST
   noSpawn: true
   components:

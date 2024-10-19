@@ -3,7 +3,7 @@
   abstract: true
   parent: STClothingCapeBase
   id: STClothingCapeT1Base
-  name: база плаща T1
+  name: T1 Cloak Base
   suffix: ST, T1
   components:
   - type: STWeight
@@ -22,9 +22,9 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatDoshdevik
-  name: дождевик
+  name: raincoat
   suffix: ST, T1
-  description: плотный плащ с защищающий вас от дождя и некоторых химикатов.
+  description: a thick raincoat that protects you from rain and some chemicals.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
@@ -43,8 +43,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetDoshdevikCoat
-  name: капюшон дождевика
-  description: Покрывает вашу голову
+  name: raincoat hood
+  description: Covers your head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
@@ -57,9 +57,9 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatKKK
-  name: куклус плащ
+  name: Cuclus cloak
   suffix: ST, T1
-  description: ккк.
+  description: kkk.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/kkk.rsi
@@ -78,9 +78,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetKKKCoat
-  name: капюшон куклус плаща
+  name: hood of the doll cloak
   noSpawn: true
-  description: Покрывает вашу голову ККК.
+  description: Covers your head with KKK.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/kkk_hood.rsi
@@ -91,8 +91,8 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatPahan
-  name: плащ пахана
-  description: плотный плащ перекрашенный в чёрный цвет.
+  name: the boss's cloak
+  description: a thick cloak repainted black.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/coat_pahan.rsi
@@ -109,9 +109,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetPahanCoat
-  name: капюшон плаща пахана
+  name: hood of the godfather's cloak
   noSpawn: true
-  description: Покрывает вашу голову
+  description: Covers your head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
@@ -122,8 +122,8 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatPoisk
-  name: плащ исследователя
-  description: Этот плащ не просто украшение, он символизирует стремление к приключениям и жажду открытий.
+  name: explorer's cloak
+  description: This cloak is not just a decoration, it symbolizes the desire for adventure and thirst for discovery.
   components:
   - type: UserInterface
     interfaces:
@@ -144,7 +144,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHatHoodCoatPoisk
   noSpawn: true
-  name: капюшон
+  name: hood
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Hats/coat_hat_poisk.rsi
@@ -155,8 +155,8 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingNeckCloakCassock
-  name: ряса паломника
-  description: сделана из грубой ткани серой ткани, помогает отречься от мирского
+  name: Pilgrim's Robe
+  description: made of rough gray cloth, helps to renounce the worldly
   suffix: ST, паломники
   components:
     - type: Sprite
@@ -172,8 +172,8 @@
 - type: entity
   parent: STClothingCapeBase
   id: ClothingTorsoTurtlenecksCamouflage
-  name: рваный плащ выживших
-  description: Странный плащ, рваный в хлам. Кустарно перекрашен в какой-то камуфляж.
+  name: Torn Survivor Cloak
+  description: A strange cloak, torn to shreds. Handily repainted in some kind of camouflage.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/camouflage.rsi
@@ -188,8 +188,8 @@
 - type: entity
   parent: STClothingCapeBase
   id: ClothingCapeDeserters
-  name: плащ дезертиров
-  description: Кусок ткани в пиксельном тёмно-сером камуфляже, при желании можно носить как плащ
+  name: deserters cloak
+  description: A piece of cloth in a pixelated dark gray camouflage, can be worn as a cloak if desired
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/desertercape.rsi

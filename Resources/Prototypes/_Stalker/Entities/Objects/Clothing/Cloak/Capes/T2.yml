@@ -3,7 +3,7 @@
   abstract: true
   parent: STClothingCapeBase
   id: STClothingCapeT2Base
-  name: база плаща T2
+  name: T2 Cloak Base
   suffix: ST, T2
   components:
   - type: STWeight
@@ -30,9 +30,9 @@
 - type: entity
   parent: STClothingCapeT2Base
   id: ClothingOuterCoatBolotniy
-  name: плащ "болотный"
+  name: swamp cloak
   suffix: ST, T2
-  description: плотный плащ с нанесённой по верх маскировкой из листьев, травы и палок.
+  description: a thick cloak with camouflage made of leaves, grass and sticks applied on top.
   components:
   - type: STWeight
     self: 20
@@ -49,9 +49,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBolotniyCoat
-  name: капюшон плаща "болотника"
+  name: swamp cloak hood
   noSpawn: true
-  description: Покрывает вашу голову
+  description: Covers your head
   components:
   - type: STWeight
     self: 4
@@ -65,9 +65,9 @@
 - type: entity
   parent: STClothingCapeT2Base
   id: ClothingOuterCoatKolchyga
-  name: кольчужный чёрный плащ
+  name: chainmail black cloak
   suffix: ST, T2
-  description: Плотный плащ, окрашенный в черный цвет, с подкладкой из кольчуги.
+  description: A thick cloak, dyed black, with a chainmail lining.
   components:
   - type: Craftable
   - type: STWeight
@@ -86,9 +86,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBlackCoat
-  name: черный капюшон
+  name: black hood
   noSpawn: true
-  description: Покрывает вашу голову
+  description: Covers your head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
@@ -99,8 +99,8 @@
 - type: entity
   parent: STClothingCapeT2Base
   id: ClothingOuterCoatStalker
-  name: кожанный плащ
-  description: Обычный плащ из чёрной кожи. Заметной защиты носителю не обеспечивает. Разве что не даст замёрзнуть ночью и смягчит укус слепого пса. Довольно неудобен в условиях Зоны, но, тем не менее, часто используется бандитами — возможно, исключительно из-за внешнего вида.
+  name: Leather Cloak
+  description: A regular black leather cloak. Doesn't provide any noticeable protection to the wearer. It will at least keep you from freezing at night and soften the bite of a blind dog. Quite inconvenient in the Zone, but nevertheless, it is often used by bandits - perhaps solely because of its appearance.
   components:
   - type: STWeight
     self: 1.5
@@ -118,8 +118,8 @@
 - type: entity
   parent: STClothingCapeT2Base
   id: STClothingOuterCoatNovember
-  name: камуфляжный плащ Ноябрь
-  description: Добротный плащ с плотной подкладкой и с маскировкой позднего осеннего леса
+  name: camouflage cloak November
+  description: A good cloak with a thick lining and with camouflage of the late autumn forest
   components:
   - type: STWeight
     self: 1.5
@@ -134,9 +134,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: STClothingHeadHelmetNovember
-  name: осенний капюшон
+  name: autumn hood
   noSpawn: true
-  description: Покрывает вашу голову
+  description: Covers your head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/hood_november.rsi

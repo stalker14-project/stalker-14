@@ -1,8 +1,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadWandererCap
-  name: капюшон Бродяги
-  description: Тёмный капюшон от бандитского понтового аналога Зари.
+  name: Tramp's hood
+  description: Dark hood from the bandit show-off analogue of Zarya.
   noSpawn: true
   components:
   - type: Sprite
@@ -13,8 +13,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadCassock
-  name: капюшон рясы
-  description: капюшон из грубой ткани от монашеской рясы
+  name: cassock hood
+  description: a hood made of rough fabric from a monk's robe
   noSpawn: true
   components:
   - type: Sprite
@@ -25,7 +25,7 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetZaryaDolg
-  name: капюшон Зари Долга
+  name: Zarya Duty's hood
   noSpawn: true
   components:
     - type: Sprite
@@ -36,9 +36,9 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetFreedomDefender
-  name: капюшон «Страж свободы»
+  name: Hood "Guardian of Freedom"
   noSpawn: true
-  description: Не очень свободный, покуда сидит на вашей голове.
+  description: Not very free, as long as it sits on your head.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/freedom_defender_helm.rsi
@@ -48,9 +48,9 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetZaryaStalker
-  name: капюшон «Заря»
+  name: Zarya hood
   noSpawn: true
-  description: Вольный как воздух у облаков.
+  description: Free as the air in the clouds.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_stalker.rsi
@@ -60,7 +60,7 @@
 - type: entity # T2
   parent: STClothingHeadBase
   id: ClothingHeadHelmetCN1
-  name: капюшон «СН-1»
+  name: “SN-1” hood
   noSpawn: true
   components:
     - type: Sprite
@@ -88,8 +88,8 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHazmat
-  name: шлем ХАЗМАТа
-  description: Встроенный шлем ХАЗМАТа с усиленной зашитой.
+  name: HAZMAT helmet
+  description: Built-in HAZMAT helmet with reinforced protection.
   noSpawn: true
   components:
     - type: Sprite
@@ -118,8 +118,8 @@
 - type: entity  # T3
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHardsuitUzk5Helm
-  name: шлем "УЗК-5"
-  description: Встроенный шлем УЗК-5 с фонарём.
+  name: UZK-5 helmet
+  description: Built-in helmet UZK-5 with a flashlight.
   noSpawn: true
   components:
     - type: PointLight
@@ -158,8 +158,8 @@
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
   id: ClothingHeadHardsuitSevaHelmCovenant
-  name: шлем севы Завета
-  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  name: Helm of the Seva of the Covenant
+  description: Despite being made mostly of glass, it is quite durable.
   suffix: Stalker, Завет
   noSpawn: true
   components:
@@ -173,9 +173,9 @@
 - type: entity
   parent: ClothingHeadWandererCap
   id: ClothingHeadHelmetSeraRuined
-  name: капюшон
+  name: hood
   suffix: ST, PodpivAss_Lex
-  description: Драный капюшон странного цвета.
+  description: A tattered hood of a strange color.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/sh68_camouflage.rsi

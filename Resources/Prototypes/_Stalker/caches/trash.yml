@@ -2,7 +2,7 @@
   parent: BaseStructureStalkerDynamic
   id: BaseTrashCache
   suffix: Stalker, ТАЙНИК
-  name: мусор
+  name: garbage
   components:
     - type: TimedDespawn
       lifetime: 14400
@@ -166,7 +166,7 @@
 
 - type: entity
   id: RandomCacheSpawnerTrash
-  name: спавнер тайника (мусор, 15% шанс)
+  name: stash spawner (trash, 15% chance)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -189,7 +189,7 @@
   parent: BaseTrashCache
   id: trash2Cache
   noSpawn: false
-  name: мусор
+  name: garbage
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml
@@ -203,7 +203,7 @@
   parent: BaseTrashCache
   id: trash3Cache
   noSpawn: false
-  name: мусор
+  name: garbage
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml
@@ -217,7 +217,7 @@
   parent: BaseTrashCache
   id: trash4Cache
   noSpawn: false
-  name: мусор
+  name: garbage
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml
@@ -231,7 +231,7 @@
   parent: BaseTrashCache
   id: trash5Cache
   noSpawn: false
-  name: мусор
+  name: garbage
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml

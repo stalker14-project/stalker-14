@@ -1,6 +1,6 @@
 - type: entity
   id: RandomCacheSpawnerForest
-  name: спавнер тайника (деревья камни и пни, 5% шанс)
+  name: cache spawner (trees, rocks and stumps, 5% chance)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -29,7 +29,7 @@
   parent: BaseCache
   id: penmCache
   noSpawn: false
-  name: пень
+  name: tree stump
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora.rsi
@@ -39,7 +39,7 @@
   parent: BaseCache
   id: birch01Cache
   noSpawn: true
-  name: берёза
+  name: birch
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -48,7 +48,7 @@
   parent: BaseCache
   id: birch02Cache
   noSpawn: true
-  name: берёза
+  name: birch
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -57,7 +57,7 @@
   parent: BaseCache
   id: birch03Cache
   noSpawn: true
-  name: берёза
+  name: birch
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -66,7 +66,7 @@
   parent: BaseCache
   id: birch04Cache
   noSpawn: true
-  name: берёза
+  name: birch
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -76,7 +76,7 @@
   parent: BaseCache
   id: pine01Cache
   noSpawn: true
-  name: сосна
+  name: pine
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -85,7 +85,7 @@
   parent: BaseCache
   id: pine02Cache
   noSpawn: true
-  name: сосна
+  name: pine
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -95,7 +95,7 @@
   parent: BaseCache
   id: rock01Cache
   noSpawn: true
-  name: камень
+  name: stone
   components:
   - type: Clickable
   - type: Sprite
@@ -118,7 +118,7 @@
   parent: BaseCache
   id: rock02Cache
   noSpawn: true
-  name: камень
+  name: stone
   components:
   - type: Clickable
   - type: Sprite
@@ -141,7 +141,7 @@
   parent: BaseCache
   id: rock03Cache
   noSpawn: true
-  name: камень
+  name: stone
   components:
   - type: Clickable
   - type: Sprite
@@ -165,7 +165,7 @@
 
 - type: entity
   id: RandomCacheSpawnerHead
-  name: спавнер тайника (штыки с головой, 20%)
+  name: stash spawner (bayonets with head, 20%)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -186,7 +186,7 @@
 - type: entity
   parent: BaseCache
   id: head4Cache
-  name: штык с головой
+  name: bayonet with head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -195,7 +195,7 @@
 - type: entity
   parent: BaseCache
   id: head3Cache
-  name: штык с головой
+  name: bayonet with head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -204,7 +204,7 @@
 - type: entity
   parent: BaseCache
   id: head2Cache
-  name: штык с головой
+  name: bayonet with head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -213,7 +213,7 @@
 - type: entity
   parent: BaseCache
   id: head1Cache
-  name: штык с головой
+  name: bayonet with head
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -224,7 +224,7 @@
   id: GreenCrateTearTwoCache
   noSpawn: true
   suffix: Stalker, ТАЙНИК Т2
-  name: заброшенный зелёный ящик
+  name: abandoned green box
   components:
     - type: TimedDespawn
       lifetime: 3600
@@ -517,7 +517,7 @@
 
 - type: entity
   id: RandomCacheSpawnerGreenCrateTear2
-  name: спавнер тайника (тайник, 80% шанс, Т2)
+  name: stash spawner (stash, 80% chance, T2)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -534,7 +534,7 @@
 
 - type: entity
   id: RandomCacheSpawnerBlueCrateTear2
-  name: спавнер тайника (тайник, 80% шанс, Т2)
+  name: stash spawner (stash, 80% chance, T2)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -553,7 +553,7 @@
   parent: GreenCrateTearTwoCache
   id: BlueCrateTearTwoCache
   noSpawn: false
-  name: заброшенный cиний ящик
+  name: abandoned blue box
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Other/Boxes/blue_crate.rsi
@@ -565,7 +565,7 @@
 
 - type: entity
   id: RandomCacheSpawnerGreenCrateTear3
-  name: спавнер тайника (тайник, 25% шанс, оазис)
+  name: stash spawner (stash, 25% chance, oasis)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -582,7 +582,7 @@
   parent: BaseStructureStalkerDynamic
   id: GreenCrateCacheOazis
   suffix: Stalker, ТАЙНИК оазис
-  name: ветхий чёрный ящик
+  name: old black box
   components:
     - type: TimedDespawn
       lifetime: 3600
@@ -754,8 +754,8 @@
   id: BaseBookshelfCache
   noSpawn: true
   suffix: Stalker, ТАЙНИК
-  name: старый шкаф
-  description: Довольно таки старый шкаф. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  name: old wardrobe
+  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
   components:
     - type: TimedDespawn
       lifetime: 7200
@@ -1066,7 +1066,7 @@
 
 - type: entity
   id: RandomCacheSpawnerBookshelf
-  name: спавнер тайника (шкаф, 100% шанс, рандом)
+  name: stash spawner (cabinet, 100% chance, random)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -1087,7 +1087,7 @@
 
 - type: entity
   id: CacheSpawnerBookshelfIron
-  name: спавнер тайника (железный шкаф, 100% шанс)
+  name: stash spawner (iron cabinet, 100% chance)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -1104,7 +1104,7 @@
 
 - type: entity
   id: RandomCacheSpawnerBookshelfOld
-  name: спавнер тайника (старый шкаф, 100% шанс)
+  name: stash spawner (old cabinet, 100% chance)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -1121,7 +1121,7 @@
 
 - type: entity
   id: RandomCacheSpawnerShelfOld
-  name: спавнер тайника (старая полка, 100% шанс)
+  name: stash spawner (old shelf, 100% chance)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -1140,8 +1140,8 @@
   parent: BaseBookshelfCache
   id: bookshelf2Cache
   noSpawn: false
-  name: старый шкаф
-  description: Довольно таки старый шкаф. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  name: old wardrobe
+  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1155,8 +1155,8 @@
   parent: BaseBookshelfCache
   id: bookshelf3Cache
   noSpawn: false
-  name: старый шкаф
-  description: Довольно таки старый шкаф. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  name: old wardrobe
+  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1170,8 +1170,8 @@
   parent: BaseBookshelfCache
   id: bookshelf4Cache
   noSpawn: false
-  name: старый шкаф
-  description: Довольно таки старый шкаф. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  name: old wardrobe
+  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1185,8 +1185,8 @@
   parent: BaseBookshelfCache
   id: bookshelf5Cache
   noSpawn: false
-  name: старый шкаф
-  description: Довольно таки старый шкаф. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  name: old wardrobe
+  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1201,7 +1201,7 @@
   id: BaseYaschikResource
   noSpawn: true
   suffix: Stalker, ресурсы
-  name: заброшенный комод
+  name: abandoned chest of drawers
   components:
     - type: TimedDespawn
       lifetime: 7200
@@ -1450,7 +1450,7 @@
 
 - type: entity
   id: RandomCacheSpawnerKonmod
-  name: спавнер комода (комод, 80% шанс)
+  name: chest of drawers spawner (chest of drawers, 80% chance)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -1470,7 +1470,7 @@
   id: BaseYaschikComponents
   noSpawn: true
   suffix: Stalker, ресурсы
-  name: заброшенный ящик с компонентами
+  name: abandoned crate with components
   components:
     - type: TimedDespawn
       lifetime: 7200
@@ -1568,7 +1568,7 @@
 
 - type: entity
   id: RandomCacheSpawnerYaschikComponents
-  name: спавнер ящика с компонентами (ящик, 60% шанс, ресурсы)
+  name: component box spawner (box, 60% chance, resources)
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -1585,7 +1585,7 @@
 
 - type: entity
   id: RandomCacheSpawnerYaschikResourceTest
-  name: тест фичи
+  name: feature test
   suffix: Stalker
   parent: FlexibleMarker
   components:
@@ -1606,7 +1606,7 @@
 
 - type: entity
   id: RandomCacheSpawnerYaschikResourceBase
-  name: спавнер рандомных ящиков (ящик, 80% шанс, респавн)
+  name: random box spawner (box, 80% chance, respawn)
   suffix: Stalker
   parent: FlexibleMarker
   components:
