@@ -1,2 +1,2 @@
-ent-ClothingOuterCoatIvyAnomalist = куртка «Плющ» аномалистов
-    .desc = Хорошая куртка, предназначенная для защиты во время исследования местности аномалистами. Также пригодится во время рыбалки. Обеспечивает 2 класс брони.
+ent-ClothingOuterCoatIvyAnomalist = The jacket "ivy" of anomalists
+    .desc = A good jacket designed to protect the area with anomalists.It is also useful during fishing.Provides the 2nd class of armor.

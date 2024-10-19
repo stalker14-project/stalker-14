@@ -1,5 +1,5 @@
-ent-ClothingHeadWildHat = дикая шляпа
-    .desc = Шляпа для настоящих любителей приключений.
-ent-ClothingHeadWildHatAnomalist = дикая шляпа аномалистов
-    .desc = Шляпа аномалистов для прыжков через воронку.
-    .suffix = Stalker, Аномалисты
+ent-ClothingHeadWildHat = Wild hat
+    .desc = A hat for real adventure lovers.
+ent-ClothingHeadWildHatAnomalist = Wild hat of anomalists
+    .desc = Hat of anomalists for jumping through a funnel.
+    .suffix = Stalker, anomalists

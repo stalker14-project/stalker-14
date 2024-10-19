@@ -1,5 +1,5 @@
 ﻿# ftl for ban embed
 
-ban-embed-footer = Тяжесть: { $severity }
-ban-embed-perm = Перманентный бан
-ban-embed-temp = Временный бан на { $time } минут
+ban-embed-footer = Severity: {$ severity }
+ban-embed-perm = Permanent ban
+ban-embed-temp = Temporary ban on {$ time } minutes

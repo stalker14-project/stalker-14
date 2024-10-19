@@ -1,2 +1,2 @@
-ent-STGoldShovel = Золотая Лопата
-    .desc = Блестящая технология, которая позволяет не только рыть могилы, но и копать грядки. Подарен владельцу за его работу по балансу ботаники.
+ent-STGoldShovel = Golden shovel
+    .desc = A brilliant technology that allows not only to dig graves, but also to dig beds.He was presented to the owner for his work on the balance of Botanika.

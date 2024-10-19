@@ -1,4 +1,4 @@
-humanoid-profile-editor-height-label = Рост:
-humanoid-profile-editor-physique-label = Телосложение:
+humanoid-profile-editor-height-label = Height:
+humanoid-profile-editor-physique-label = Physique:
 
-humanoid-profile-editor-characteristics-tab = Характеристики
+humanoid-profile-editor-characteristics-tab = Characteristics

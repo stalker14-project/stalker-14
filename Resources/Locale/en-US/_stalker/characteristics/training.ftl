@@ -1,4 +1,4 @@
 # Verb name for training
-st-comp-training-start = Заниматься
-st-already-trained-today = Вы сегодня уже тренировались
-st-find-better-equipment = Для вас этот тренажер уже бесполезен
+st-comp-training-start = Study
+st-already-trained-today = You have already trained today
+st-find-better-equipment = This simulator is already useless for you

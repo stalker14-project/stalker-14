@@ -1,6 +1,6 @@
-ent-ZoneAnomalyKissel = кисель
-    .desc = кисель
-    .suffix = Stalker, Кисель, Аномалия
-ent-ZoneAnomalyGazirovka = газировка
-    .desc = газировка
-    .suffix = Stalker, Газировка, Аномалия
+ent-ZoneAnomalyKissel = Kisel
+    .desc = Kisel
+    .suffix = Stalker, jelly, anomaly
+ent-ZoneAnomalyGazirovka = soda
+    .desc = soda
+    .suffix = Stalker, soda, anomaly

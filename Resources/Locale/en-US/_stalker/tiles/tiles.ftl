@@ -1,4 +1,4 @@
-BirchWoodenFloor = берёзовый деревянный пол Stalker
-ent-STFloorAcidEntity = озеро кислоты
-    .desc = никогда не знаешь, где найдешь, где потеряешь, — размышлял сталкер, огибая очередную лужу кислоты. Люди треплятся, что один сталкер после купания в такой нашёл себе хвост. Навсегда.
-    .suffix = ST, окружение
+BirchWoodenFloor = Birch wooden floor Stalker
+ent-STFloorAcidEntity = Lake of acid
+    .desc = You never know where you will find, where you will lose, ”thought Stalker, going around the next puddle of acids.People are working that one Stalker after bathing in such a tail found a tail.Forever.
+    .suffix = St, environment

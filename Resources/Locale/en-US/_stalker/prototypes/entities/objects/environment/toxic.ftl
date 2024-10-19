@@ -1,13 +1,13 @@
-ent-STAcidBubbles = кислотные пузыри
-  .desc = подозрительно выгядещие пузыри. Не лучшей идеей будет идти прямо в них, но кто мы такие чтобы остановить храброго сталкера?
+ent-STAcidBubbles = acid bubbles
+  .desc = Suspiciously grooming bubbles.Not the best idea will go right in them, but who are we to stop the brave Stalker?
 
-ent-STAcidCrystal = кислотный кристалл
-  .desc = кристалл из которого сочится какая-то зелёная дрянь
+ent-STAcidCrystal = Acid crystal
+  .desc = Crystal from which some green rubbish oozes
 
 
-ent-STPoisonShroom = ядовитые грибы
-  .desc = выглядит аппетитно. Сварить бы с него супчику
+ent-STPoisonShroom = Poisonous mushrooms
+  .desc = It looks appetizing.Would cook soup from him
 
-ent-STToxicBarrelBase = бочка кислоты
-  .desc = подозрительно выглядящяя бочка с зелёной жидкостью
+ent-STToxicBarrelBase = Spear barrel
+  .desc = Suspiciously looking barrel with green liquid
 

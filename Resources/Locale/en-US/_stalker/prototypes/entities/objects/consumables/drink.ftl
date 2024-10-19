@@ -1,2 +1,2 @@
-ent-STEnergyDrink = банка энергетика
-    .desc = Часто используется сталкерами в многодневных походах, когда нет возможности остановиться и отдохнуть. Напиток содержит легкоусваиваемые углеводы, а также препараты, вызывающие выброс адреналина в кровь.
+ent-STEnergyDrink = Bank Energy
+    .desc = It is often used by Stalker in many days, when there is no way to stop and relax.The drink contains easily digestible carbohydrates, as well as drugs that cause adrenaline emission into the blood.

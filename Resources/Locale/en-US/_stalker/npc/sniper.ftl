@@ -1,3 +1,3 @@
-st-npc-sniper-shoot-1 = Это был предупредительный!
-st-npc-sniper-shoot-2 = Двигайся по больше, мне так проще по тебе попасть!
-st-npc-sniper-shoot-3 = Эй, пулю лови-то!
+st-npc-sniper-shoot-1 = It was warning!
+st-npc-sniper-shoot-2 = Move more, it’s so easier for me to get on you!
+st-npc-sniper-shoot-3 = Hey, catch a bullet!

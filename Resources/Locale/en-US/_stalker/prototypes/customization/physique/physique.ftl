@@ -1,7 +1,7 @@
-physique-name-Plump = Полный
-physique-name-Strong = Крепкий
-physique-name-Normal = Обычный
-physique-name-Skinny = Тощий
-physique-name-Frail = Хилый
-physique-name-Muscular = Мускулистый
-physique-name-Femboy = Фембой
+physique-name-Plump = Full
+physique-name-Strong = Strong
+physique-name-Normal = Ordinary
+physique-name-Skinny = Skinny
+physique-name-Frail = Fruit
+physique-name-Muscular = Muscular
+physique-name-Femboy = Fembo

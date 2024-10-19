@@ -20,7 +20,7 @@ repository-item-weight-display = Вес предмета: { $weight }
 repository-item-sum-weight-display = Вес предметов: { $weight }
 
 # Special Items
-repository-battery-item-current-charge-display = Текущий заряд: {$charge}
+repository-battery-item-current-charge-display = Текущий заряд: {$charge }
 
 repository-ammo-item-ammo-amount-display = Количество патронов: { $amount }
 repository-ammo-item-ammo-name-display = Название патрона: { $name }
