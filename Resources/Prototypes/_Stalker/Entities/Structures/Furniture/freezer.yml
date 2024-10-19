@@ -91,9 +91,9 @@
 - type: entity
   id: LockerFreezerStalker
   parent: BaseStalkerFreezer
-  name: холодильник
+  name: refrigerator
   suffix: ST, Mapping (No static)
-  description: Устройство, поддерживающее низкую температуру в теплоизолированной камере. Применяется обычно для хранения пищи или предметов.
+  description: A device that maintains a low temperature in an insulated chamber. Typically used to store food or objects.
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -109,9 +109,9 @@
 - type: entity
   id: FreezerStalker
   parent: BaseStructure
-  name: холодильник
+  name: refrigerator
   suffix: ST, Mapping (static)
-  description: Устройство, поддерживающее низкую температуру в теплоизолированной камере. Применяется обычно для хранения пищи или предметов. Похоже, дверь заржавела. Он не открывается.
+  description: A device that maintains a low temperature in an insulated chamber. Typically used to store food or objects. The door appears to be rusted. It wont open.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/freezer/staticfreezer.rsi

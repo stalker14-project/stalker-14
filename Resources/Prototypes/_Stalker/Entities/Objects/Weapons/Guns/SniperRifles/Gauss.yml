@@ -65,8 +65,8 @@
 - type: entity
   parent: STBaseWeaponGauss
   id: STWeaponRifleGauss
-  name: Гаусс пушка
-  description: Секретные разработки
+  name: Gauss Cannon
+  description: Secret developments
   suffix: ST
   components:
     - type: STWeight
@@ -123,9 +123,9 @@
 
 - type: entity
   id: STCartridgeGauss
-  name: Электро-магнитный заряд
+  name: Electro-magnetic charge
   parent: BaseCartridge
-  description: Вставляется в батарею, служит патроном для гаусс пушки
+  description: Inserted into the battery, serves as a cartridge for the gauss gun
   suffix: ST
   components:
     - type: Tag
@@ -145,7 +145,7 @@
 
 - type: entity
   id: STCartridgeGauss2
-  name: Перегруженный электро-магнитный заряд
+  name: Overloaded Electro-Magnetic Charge
   parent: STCartridgeGauss
   components:
     - type: CartridgeAmmo
@@ -205,9 +205,9 @@
 
 - type: entity
   id: STMagazineGauss
-  name: Батарея гаусс пушки
+  name: Gauss Cannon Battery
   parent: BaseItem
-  description: Потребляет электро-магнитные заряды в качестве боеприпасов
+  description: Consumes electromagnetic charges as ammunition
   suffix: ST
   components:
     - type: Tag
@@ -237,7 +237,7 @@
 
 - type: entity
   id: STMagazineGauss2
-  name: Перегруженная батарея гаусс пушки
+  name: Overloaded Gauss Cannon Battery
   parent: STMagazineGauss
   components:
     - type: BallisticAmmoProvider

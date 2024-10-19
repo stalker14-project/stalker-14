@@ -1,8 +1,8 @@
 - type: job
   id: MayorCity
-  name: Мэр
+  name: Mayor
   icon: grajdansksprite
-  description: Управляет городом "Чернобыль-4". Именно он является центральным мозгом города.
+  description: Manages the city of Chernobyl-4. He is the central brain of the city.
   playTimeTracker: JobMayorCity
   requirements:
     - !type:RoleTimeRequirement
@@ -33,9 +33,9 @@
 
 - type: job
   id: Prokuror
-  name: Прокурор
+  name: Prosecutor
   icon: grajdansksprite
-  description: Добывайте правду для её же предоставления в суде.
+  description: Get the truth to present it in court.
   playTimeTracker: JobProkuror
   requirements:
     - !type:RoleTimeRequirement
@@ -62,9 +62,9 @@
 
 - type: job
   id: Magistrate
-  name: Судья
+  name: Judge
   icon: grajdansksprite
-  description: Вершите правосудие, ореинтируясь на законы города "Чернобыль - 4".
+  description: Administer justice, focusing on the laws of the city of Chernobyl - 4.
   playTimeTracker: JobMagistrate
   requirements:
     - !type:RoleTimeRequirement
@@ -91,9 +91,9 @@
 
 - type: job
   id: Priest
-  name: Священник
+  name: Priest
   icon: grajdansksprite
-  description: Помогайте людям в сложных ситуациях, обращая их к религии.
+  description: Help people in difficult situations by converting them to religion.
   playTimeTracker: JobPriest
   requirements:
     - !type:RoleTimeRequirement
@@ -120,9 +120,9 @@
 
 - type: job
   id: StalkerBartender
-  name: Бармен
+  name: Bartender
   icon: grajdansksprite
-  description: Работайте в баре, удовлетворяя алкогольные нужды посетителей.
+  description: Work in a bar, satisfying the alcoholic needs of visitors.
   playTimeTracker: JobStalkerBartender
   requirements:
     - !type:RoleTimeRequirement

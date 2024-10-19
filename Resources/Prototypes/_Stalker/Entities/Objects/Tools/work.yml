@@ -4,8 +4,8 @@
 - type: entity
   parent: BaseStructure
   id: StalkerWorkbench
-  name: верстак
-  description: Верстак с тисками для работы с материалами и устройствами.
+  name: workbench
+  description: Workbench with a vice for working with materials and devices.
   suffix: ST, крафт
   components:
     - type: Tag
@@ -34,8 +34,8 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerJabWorkbench
-  name: верстак Жаб
-  description: Верстак с набором продвинутых инструментов для разбора и исследования вещей
+  name: Toad workbench
+  description: Workbench with a set of advanced tools for disassembling and examining things
   suffix: Stalker, DONATE, крафт
   components:
     - type: ContainerContainer
@@ -62,8 +62,8 @@
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackWorkbench
-  name: рюкзак-мастерская
-  description: Рюкзак с удобным инструментарием для создания с его помощью разнообразных предметов.
+  name: backpack workshop
+  description: A backpack with convenient tools for creating various objects with its help.
   components:
     - type: Tag
       tags:
@@ -81,8 +81,8 @@
 - type: entity
   parent: BaseStructure
   id: StalkerWorkbenchOFF
-  name: арендованный верстак (Не активен)
-  description: Верстак с тисками для работы с материалами и устройствами. Для работы на нём нужен купон, позволяющий работать 10 минут. Владелец не несёт ответственности за утерю вещей из-за окончания аренды.
+  name: rented workbench (Not active)
+  description: A workbench with a vice for working with materials and devices. To work on it, you need a coupon that allows you to work for 10 minutes. The owner is not responsible for the loss of things due to the end of the lease.
   suffix: Stalker, крафт, аренда
   components:
     - type: InteractionOutline
@@ -117,8 +117,8 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerWorkbenchON
-  name: арендованный верстак (Активен)
-  description: Верстак с тисками для работы с материалами и устройствами. Для работы на нём нужен купон, позволяющий работать 10 минут. Владелец не несёт ответственности за утерю вещей из-за окончания аренды.
+  name: rented workbench (Active)
+  description: A workbench with a vice for working with materials and devices. To work on it, you need a coupon that allows you to work for 10 minutes. The owner is not responsible for the loss of things due to the end of the lease.
   suffix: Stalker, крафт
   noSpawn: true
   components:
@@ -133,8 +133,8 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerWorktable1
-  name: токарный станок
-  description: Приспособление, используемое для обработки деталей, в основном из металла.
+  name: lathe
+  description: A device used for processing parts, mainly metal.
   suffix: ST, крафт
   components:
     - type: InteractionOutline
@@ -149,8 +149,8 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerTableCircularNew
-  name: стол с циркулярной пилой
-  description: Циркулярная пила или циркулярка, как ее чаще всего называют, нужна для распиловки самых разны деревянных заготовок.
+  name: table with circular saw
+  description: A circular saw, or circular saw as it is most often called, is needed for cutting a wide variety of wooden blanks.
   suffix: ST
   components:
     - type: InteractionOutline
@@ -164,8 +164,8 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerTableCircularOld
-  name: стол с циркулярной пилой
-  description: Циркулярная пила или циркулярка, как ее чаще всего называют, нужна для распиловки самых разны деревянных заготовок. Выглядит старой...
+  name: table with circular saw
+  description: A circular saw, or circular saw as it is most often called, is used to cut a wide variety of wooden blanks. It looks old...
   suffix: ST
   components:
     - type: InteractionOutline
@@ -181,8 +181,8 @@
 - type: entity
   parent: BaseItem
   id: Coupon
-  name: Купон
-  description: Купон для аренды верстака. Позволяет пользоваться арендованным верстаком 10 минут. Владелец не несёт ответственности за утерянные из-за окончания аренды вещи.
+  name: Coupon
+  description: Workbench rental coupon. Allows you to use the rented workbench for 10 minutes. The owner is not responsible for items lost due to the end of the rental.
   suffix: Stalker
   components:
     - type: STWeight

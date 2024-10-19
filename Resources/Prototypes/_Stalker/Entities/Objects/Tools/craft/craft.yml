@@ -3,8 +3,8 @@
 - type: entity
   parent: BaseItem
   id: CraftArmorPlateGreen
-  name: защитная пластина
-  description: Броневая пластина, окрашенная в зеленый оттенок, представляет собой прочный и надежный элемент защиты, разработанный для обеспечения защиты от пуль, осколков и других опасностей в условиях боевых действий.
+  name: protective plate
+  description: The armor plate, painted in a green shade, is a durable and reliable element of protection, designed to provide protection from bullets, shrapnel and other dangers in combat conditions.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -24,8 +24,8 @@
 - type: entity
   parent: BaseItem
   id: CraftArmorPlateBlack
-  name: защитная пластина
-  description: Броневая пластина, окрашенная в чёрный оттенок, представляет собой прочный и надежный элемент защиты, разработанный для обеспечения защиты от пуль, осколков и других опасностей в условиях боевых действий.
+  name: protective plate
+  description: The armor plate, painted in black, is a durable and reliable element of protection, designed to provide protection from bullets, shrapnel and other dangers in combat conditions.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -45,8 +45,8 @@
 - type: entity
   parent: BaseItem
   id: CraftWeaponsParts
-  name: компоненты оружия
-  description: Мелкие детали, необходимые для сборки, обслуживания и улучшения огнестрельного оружия.
+  name: weapon components
+  description: Small parts needed to assemble, maintain, and upgrade firearms.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -66,8 +66,8 @@
 - type: entity
   parent: BaseItem
   id: CraftGunpowderBank
-  name: баночка с порохом
-  description:  Предназначенна для хранения пороха, используемого в огнестрельном оружии или пиротехнических устройства. В частом случае создания боеприпасов.
+  name: gunpowder jar
+  description: Designed to store gunpowder used in firearms or pyrotechnic devices. Often used to create ammunition.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -109,8 +109,8 @@
 - type: entity
   parent: MaterialBase
   id: CraftMaterialGunpowder
-  name: чёрный порох
-  description: Взрывчатое соединение.
+  name: black powder
+  description: Explosive compound.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -163,7 +163,7 @@
 
 - type: stack
   id: GunpowderStalker
-  name: чёрный порох
+  name: black powder
   icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
   spawn: CraftMaterialGunpowder
   maxCount: 5
@@ -172,8 +172,8 @@
 - type: entity
   parent: BaseItem
   id: CraftHide
-  name: шкура
-  description: Необработанная шкура животного.
+  name: skin
+  description: Raw Animal Hide.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -193,8 +193,8 @@
 - type: entity
   parent: BaseItem
   id: CraftLeather
-  name: кожа
-  description: Кожа, выдубленная и очищенная.
+  name: leather
+  description: Leather, tanned and cleaned.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -214,8 +214,8 @@
 - type: entity
   parent: BaseItem
   id: CraftLeatherPatch
-  name: кожанные обрезки
-  description: Куски обработанной кожи.
+  name: leather scraps
+  description: Pieces of processed leather.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -233,8 +233,8 @@
 - type: entity
   parent: BaseItem
   id: CraftBattery
-  name: аккумуляторная батарея
-  description: Достаточно ёмкий аккумулятор, в устройства не влезет - однако идеально для создания чего-то своего.
+  name: battery
+  description: Quite a capacious battery, wont fit into devices - but is ideal for creating something of your own.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -251,8 +251,8 @@
 - type: entity
   parent: BaseItem
   id: CraftBolt
-  name: болт и гайка
-  description: Так хотя бы использовать можно, а не только кидать в аномалии.
+  name: bolt and nut
+  description: At least you can use it, and not just throw it at anomalies.
   suffix: Stalker, крафт
   components:
     - type: Trash
@@ -272,8 +272,8 @@
 - type: entity
   parent: BaseItem
   id: CraftCoil
-  name: медная катушка
-  description: Катушка меди, которая может в том числе выступать трансформатором. Ну или источником той самой меди.
+  name: copper coil
+  description: A copper coil, which can also act as a transformer. Or a source of that very copper.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -291,8 +291,8 @@
 - type: entity
   parent: BaseItem
   id: CraftNails
-  name: гвозди
-  description: Кучка гвоздей. Без молотка разве что в землю втыкать.
+  name: nails
+  description: A bunch of nails. Without a hammer, you can only stick them into the ground.
   suffix: Stalker, крафт
   components:
     - type: Trash
@@ -314,8 +314,8 @@
 - type: entity
   parent: BaseItem
   id: CraftProtector1
-  name: дешёвый предохранитель
-  description: Дешёвый и не очень стойкий предохранитель для электроники.
+  name: cheap fuse
+  description: A cheap and not very durable fuse for electronics.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -333,8 +333,8 @@
 - type: entity
   parent: BaseItem
   id: CraftProtector2
-  name: предохранитель
-  description: Качественный предохранитель для электроники.
+  name: fuse
+  description: High-quality fuse for electronics.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -352,8 +352,8 @@
 - type: entity
   parent: BaseItem
   id: CraftSpeaker1
-  name: дешёвый динамик
-  description: Дешёвый и некачественный динамик, не передающий и толики качества того звука, что может подарить вам музыка.
+  name: cheap speaker
+  description: A cheap and low-quality speaker that doesnt convey even a fraction of the quality of the sound that music can give you.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -371,8 +371,8 @@
 - type: entity
   parent: BaseItem
   id: CraftSpeaker2
-  name: динамик
-  description: Качественный динамик, что в полной мере передаёт звук со всеми тонами.
+  name: speaker
+  description: A high-quality speaker that fully conveys sound with all tones.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -390,8 +390,8 @@
 - type: entity
   parent: BaseItem
   id: CraftTape1
-  name: скотч
-  description: Не лучший инструмент для изоляции или склеивания чего-то. Лучше поискать изоленту.
+  name: tape
+  description: Not the best tool for insulating or gluing things together. Better to look for duct tape.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -413,8 +413,8 @@
 - type: entity
   parent: BaseItem
   id: CraftTape2
-  name: изолента
-  description: Качественная синяя (что важно) изолента, лучше и эффективнее скотча.
+  name: electrical tape
+  description: High-quality blue (which is important) electrical tape, better and more effective than scotch tape.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -434,8 +434,8 @@
 - type: entity
   parent: BaseItem
   id: CraftAlcohol
-  name: бутылка технического спирта
-  description: Полная бутылка технического спирта. Пить его нельзя, зато можно использовать для промышленных нужд.
+  name: bottle of industrial alcohol
+  description: A full bottle of industrial alcohol. You cant drink it, but you can use it for industrial purposes.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -455,8 +455,8 @@
 - type: entity
   parent: BaseItem
   id: CraftAntenna
-  name: антенна
-  description: Полноразмерная антенна для поиска сигналов.
+  name: antenna
+  description: Full-size antenna for searching for signals.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -476,8 +476,8 @@
 - type: entity
   parent: BaseItem
   id: CraftCapsules
-  name: капсули
-  description: Оружейные капсули для снаряжения боеприпасов
+  name: capsules
+  description: Weapon capsules for loading ammunition
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -497,8 +497,8 @@
 - type: entity
   parent: BaseItem
   id: CraftChip
-  name: микросхема
-  description: Микросхема для создания сложной электроники.
+  name: chip
+  description: Microcircuit for creating complex electronics.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -515,8 +515,8 @@
 - type: entity
   parent: BaseItem
   id: CraftElectronicBoard
-  name: плата
-  description: Плата для электроники и сложных устройств.
+  name: board
+  description: Board for electronics and complex devices.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -533,8 +533,8 @@
 - type: entity
   parent: BaseItem
   id: CraftHeater1
-  name: дешёвый нагревательный элемент
-  description: Старый нагревательный элемент, вероятно из чего-то советского.
+  name: cheap heating element
+  description: An old heating element, probably from something Soviet.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -554,8 +554,8 @@
 - type: entity
   parent: BaseItem
   id: CraftHeater2
-  name: нагревательный элемент
-  description: Современный высокоэффективный нагревательный элемент.
+  name: heating element
+  description: Modern highly efficient heating element.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -575,8 +575,8 @@
 - type: entity
   parent: BaseItem
   id: CraftMetalParts
-  name: металические части
-  description: Куча полезных в ремесле болтов, саморезов и всякой иной фурнитуры.
+  name: metal parts
+  description: A bunch of useful bolts, screws and other fittings for crafts.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -598,8 +598,8 @@
 - type: entity
   parent: BaseItem
   id: CraftMonitor
-  name: монитор
-  description: Отдельный монитор для установки его в электронику.
+  name: monitor
+  description: A separate monitor for installation in electronics.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -616,8 +616,8 @@
 - type: entity
   parent: BaseItem
   id: CraftNeedle
-  name: нить с иголкой
-  description: Базовые швейные пренадлежности, иголкой можно что-то проколоть.
+  name: thread with a needle
+  description: Basic sewing supplies, a needle can be used to pierce something.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -637,8 +637,8 @@
 - type: entity
   parent: BaseItem
   id: CraftPlasticParts
-  name: пластиковая фурнитура
-  description: Куча пластиковой фурнитуры - карабинов, держателей и прочего.
+  name: plastic fittings
+  description: A bunch of plastic fittings - carabiners, holders and other things.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -658,8 +658,8 @@
 - type: entity
   parent: BaseItem
   id: CraftResistor
-  name: резисторы
-  description: Резисторы для электроники.
+  name: resistors
+  description: Resistors for electronics.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -677,8 +677,8 @@
 - type: entity
   parent: BaseItem
   id: CraftTransformerCoil
-  name: трансформаторная катушка
-  description: Куча аккуратно намотанной меди с частичной изоляцией. Для использования в крупной электронике.
+  name: transformer coil
+  description: A pile of neatly wound copper with partial insulation. For use in large electronics.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -698,8 +698,8 @@
 - type: entity
   parent: BaseItem
   id: CraftPolyarmidFiber
-  name: полиармидная ткань
-  description: Полиамидная ткань, в которой за счёт особой структуры нити (сделанной из нарезанных и скрученных волокон) достигнута четырёхкратная стойкость к истиранию по сравнению с простым нейлоном, также состоящим из полиамида. Заметно превосходит обычную ткань по прочности на разрыв и стойкости к истиранию. Используется для изготовления экипировки различного назначения - сумки, рюкзаки и дополнительные элементы к ним, ремни поясные и багажные, чехлы для ношения оружия и так далее.
+  name: polyarmid fabric
+  description: Polyamide fabric, in which, due to the special structure of the thread (made from chopped and twisted fibers), four times the abrasion resistance is achieved compared to simple nylon, also consisting of polyamide. Significantly surpasses ordinary fabric in tensile strength and abrasion resistance. It is used to make equipment for various purposes - bags, backpacks and additional elements for them, waist and luggage belts, covers for carrying weapons, etc.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -719,7 +719,7 @@
 - type: entity
   parent: PartBase
   id: PartRodMetalStalker
-  name: металические трубы
+  name: metal pipes
   suffix: Stalker, крафт
   components:
     - type: Sprite
@@ -739,7 +739,7 @@
 - type: entity
   parent: BaseItem
   id: CraftBag
-  name: мешок
+  name: bag
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -760,8 +760,8 @@
 - type: entity
   parent: BaseItem
   id: CraftFerments
-  name: набор ферментизации
-  description: Одноразовый набор ферментизации, следует применять крайне осторожно.
+  name: fermentation set
+  description: Disposable fermentation kit, should be used with extreme caution.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -781,8 +781,8 @@
 - type: entity
   parent: BaseItem
   id: CraftLargeCardboard
-  name: большой картон
-  description: Картон из под какой-то большой коробки.
+  name: large cardboard
+  description: Cardboard from some large box.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -802,9 +802,9 @@
 - type: entity
   id: CraftSmallCardboard
   parent: BaseItem
-  name: маленький картон
+  name: small cardboard
   suffix: Stalker, крафт
-  description: Картон из под какой-то коробки либо подрезанный.
+  description: Cardboard from some box or cut.
   components:
   - type: STWeight
     self: 0.1
@@ -823,9 +823,9 @@
 - type: entity
   id: CraftCardboardTube
   parent: BaseItem
-  name: картонная труба
+  name: cardboard tube
   suffix: Stalker, крафт
-  description: Труба из картона, видимо кто-то хочет сделать подзорную трубу либо взрывчатку.
+  description: A cardboard tube, apparently someone wants to make a telescope or explosives.
   components:
   - type: STWeight
     self: 0.1
@@ -845,8 +845,8 @@
 - type: entity
   parent: BaseItem
   id: CraftDisplay
-  name: дисплей
-  description: Более прошаренный монитор для установки его в более серьёзную электронику.
+  name: display
+  description: A more sophisticated monitor for installing it in more serious electronics.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -864,8 +864,8 @@
       categoryName: Крафты
 
 - type: entity
-  name: динамитная шашка без фитиля
-  description: То что может взоваться если её попытаться сломать.
+  name: dynamite stick without fuse
+  description: What can happen if you try to break it.
   parent: BasePlasticExplosive
   id: StickDynamite
   components:
@@ -893,9 +893,9 @@
 - type: entity
   parent: [BaseItem, DrinkBase]
   id: CraftGlue
-  name: тюбик клея
+  name: tube of glue
   suffix: Stalker, крафт
-  description: Клей предназначен для использования школьных проектов и профессиональных ремонтных работ.
+  description: The glue is intended for use in school projects and professional repair work.
   components:
   - type: Openable
     sound:
@@ -931,8 +931,8 @@
 - type: entity
   parent: BaseItem
   id: CraftFitil
-  name: фитиль
-  description: Скрутка из фитиля, используется для поджигания или поддержания огня, особенно в свечах.
+  name: wick
+  description: A twisted wick used to start or maintain a fire, especially in candles.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -950,8 +950,8 @@
 - type: entity
   parent: BaseItem
   id: CraftTreatedLeather
-  name: обработанная кожа
-  description: Полностью готова для изготовления различной одежды.
+  name: treated leather
+  description: Completely ready for making various clothes.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -971,8 +971,8 @@
 - type: entity
   parent: BaseItem
   id: CraftRubber
-  name: резина
-  description: Резина используется в самых разных отраслях, включая медицину, строительство, бытовые товары и многие другие варианты промышленности.
+  name: rubber
+  description: Rubber is used in a wide variety of industries including medicine, construction, household goods and many other industrial applications.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -993,8 +993,8 @@
 - type: entity
   parent: BaseItem
   id: CraftArmorSteelSheet
-  name: бронированная стальная пластина
-  description: Пластина изготовленная из высокопрочной стали или других материалов с аналогичными характеристиками.
+  name: armored steel plate
+  description: A plate made of high-strength steel or other materials with similar characteristics.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -1014,8 +1014,8 @@
 - type: entity
   parent: BaseItem
   id: CraftLid
-  name: крышка гранаты Stielhandgranate
-  description: Часть корпуса гранаты, которая обычно закрывает детонатор и взрывчатое вещество.
+  name: Stielhandgranate grenade cap
+  description: The part of a grenades body that usually covers the detonator and explosive.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -1036,8 +1036,8 @@
 - type: entity
   parent: BaseItem
   id: CraftRope
-  name: моток верёвки гранаты Stielhandgranate
-  description: Часть гранаты которая является активатором детонатора.
+  name: skein of rope grenades Stielhandgranate
+  description: Part of a grenade that is the activator of the detonator.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -1057,8 +1057,8 @@
 - type: entity
   parent: BasePlasticExplosive
   id: CraftCartridge
-  name: заряд гранаты Stielhandgranate
-  description: Часть гранаты которая является основой взрывчатого вещества.
+  name: Stielhandgranate grenade charge
+  description: The part of a grenade that is the basis of the explosive.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -1085,8 +1085,8 @@
 - type: entity
   parent: BaseItem
   id: CraftStick
-  name: рукоятка гранаты Stielhandgranate
-  description: Часть гранаты которая является держателем заряда и основой механизма для инициирования детонатора.
+  name: Stielhandgranate grenade handle
+  description: The part of a grenade that is the charge holder and the basis of the mechanism for initiating the detonator.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -1106,8 +1106,8 @@
 - type: entity
   parent: BaseItem
   id: CraftHideBloodSucker
-  name: шкура мутанта
-  description: Необработанная шкура кровососа, достаточно крепкая.
+  name: mutant skin
+  description: Raw bloodsucker skin, quite strong.
   suffix: Stalker, крафт
   components:
     - type: STWeight

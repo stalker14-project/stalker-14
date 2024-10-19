@@ -3,8 +3,8 @@
 - type: entity
   parent: BaseStructure
   id: BaseFenceBeton
-  name: железобетонный забор
-  description: Забор, выполненный из бетонных блоков или панелей, соединенных между собой специальными креплениями.
+  name: reinforced concrete fence
+  description: A fence made of concrete blocks or panels connected to each other with special fasteners.
   abstract: true
   components:
   - type: Sprite
@@ -34,9 +34,9 @@
 - type: entity
   parent: BaseFenceBeton
   id: FenceBetonBroken
-  name: сломанный железобетонный забор
+  name: broken reinforced concrete fence
   suffix: ST, Mapping
-  description: Забор, выполненный из бетонных блоков или панелей, соединенных между собой специальными креплениями. Интересно, кто же умудрился его сломать?
+  description: A fence made of concrete blocks or panels connected to each other with special fasteners. I wonder who managed to break it?
   components:
   - type: Sprite
     layers:

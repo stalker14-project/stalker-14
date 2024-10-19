@@ -1,9 +1,9 @@
 # деревянный пол
 - type: entity
   id: WoodenFloorBasicFallout
-  name: База деревянного пола
+  name: Wooden Floor Base
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный каркас пола из существующих.
+  description: The most wooden floor frame in existence.
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -43,9 +43,9 @@
 - type: entity
   id: WoodenFloorFoundationFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный каркас
+  name: Wooden frame
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный каркас пола из существующих.
+  description: The most wooden floor frame in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_foundation.rsi
@@ -75,9 +75,9 @@
 - type: entity
   id: WoodenFloorFoundationBrokenFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный каркас (сломанный)
+  name: Wooden frame (broken)
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный каркас пола из существующих.
+  description: The most wooden floor frame in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_foundation_broken.rsi
@@ -161,9 +161,9 @@
 - type: entity
   id: WoodenFloorCommonFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный пол
+  name: Wooden floor
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_common.rsi
@@ -212,9 +212,9 @@
 - type: entity
   id: WoodenFloorCommonBrokenFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный пол (сломанный)
+  name: Wooden floor (broken)
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_common_broken.rsi
@@ -316,9 +316,9 @@
 - type: entity
   id: WoodenFloorFancyFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный пол ёлочкой
+  name: Wooden floor herringbone
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_fancy.rsi
@@ -367,9 +367,9 @@
 - type: entity
   id: WoodenFloorFancyBrokenFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный пол ёлочкой(сломанный)
+  name: Wooden floor herringbone (broken)
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   placement:
     mode: SnapgridCenter
   components:
@@ -481,9 +481,9 @@
 - type: entity
   id: WoodenFloorMosaicFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный узорчатый пол
+  name: Wooden patterned floor
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_mosaic.rsi
@@ -532,9 +532,9 @@
 - type: entity
   id: WoodenFloorMosaicBrokenFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный узорчатый пол (сломанный)
+  name: Wooden patterned floor (broken)
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_mosaic_broken.rsi
@@ -645,9 +645,9 @@
 - type: entity
   id: WoodenFloorWideFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный широкоплиточный пол
+  name: Wooden wide tile floor
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_wide.rsi
@@ -696,9 +696,9 @@
 - type: entity
   id: WoodenFloorWideBrokenFallout
   parent: WoodenFloorBasicFallout
-  name: Деревянный широкоплиточный пол (сломанный)
+  name: Wooden wide tile floor (broken)
   suffix: ST, Mapping, KMIN
-  description: Самый деревянный пол из существующих.
+  description: The most wooden floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/wooden_wide_broken.rsi
@@ -808,9 +808,9 @@
 # плиточный пол
 - type: entity
   id: BrickFloorBasicFallout
-  name: База каменного пола
+  name: Stone Floor Base
   suffix: ST, Mapping, KMIN
-  description: Самый каменный пол из существующих.
+  description: The most stone floor in existence.
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -851,9 +851,9 @@
 - type: entity
   id: BrickSmallFloorFallout
   parent: BrickFloorBasicFallout
-  name: Кирпичный пол
+  name: Brick Floor
   suffix: ST, Mapping, KMIN
-  description: Самый кирпичный пол из существующих.
+  description: The most brick floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_small.rsi
@@ -902,9 +902,9 @@
 - type: entity
   id: BrickSmallFloorBrokenFallout
   parent: BrickFloorBasicFallout
-  name: Кирпичный пол (сломанный)
+  name: Brick floor (broken)
   suffix: ST, Mapping, KMIN
-  description: Самый кирпичный пол из существующих.
+  description: The most brick floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_small_broken.rsi
@@ -998,9 +998,9 @@
 - type: entity
   id: BrickFloorBrokenFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (сломанный)
+  name: Stone floor (broken)
   suffix: ST, Mapping, KMIN
-  description: Самый каменный пол из существующих.
+  description: The most stone floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_broken.rsi
@@ -1028,9 +1028,9 @@
 - type: entity
   id: BrickFullBlackFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (черный, плитка, полный)
+  name: Stone Floor (Black, Tile, Full)
   suffix: ST, Mapping, KMIN
-  description: Самый каменный пол из существующих.
+  description: The most stone floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_full.rsi
@@ -1079,9 +1079,9 @@
 - type: entity
   id: BrickFullGreenFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (зеленый, плитка, полный)
+  name: Stone Floor (Green, Tile, Full)
   suffix: ST, Mapping, KMIN
-  description: Самый каменный пол из существующих.
+  description: The most stone floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_full.rsi
@@ -1130,9 +1130,9 @@
 - type: entity
   id: BrickFullNavyFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (голубой, плитка, полный)
+  name: Stone floor (blue, tiles, full)
   suffix: ST, Mapping, KMIN
-  description: Самый каменный пол из существующих.
+  description: The most stone floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_full.rsi
@@ -1181,9 +1181,9 @@
 - type: entity
   id: BrickFullWhiteFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (белый, плитка, полный)
+  name: Stone Floor (White, Tile, Full)
   suffix: ST, Mapping, KMIN
-  description: Самый каменный пол из существующих.
+  description: The most stone floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_full.rsi
@@ -1232,9 +1232,9 @@
 - type: entity
   id: BrickLargeBlackFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (черный, плитка, большой)
+  name: Stone floor (black, tile, large)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_large.rsi
@@ -1283,9 +1283,9 @@
 - type: entity
   id: BrickLargeCafeFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (кафе, плитка, большой)
+  name: Stone floor (cafe, tiles, large)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_large.rsi
@@ -1334,9 +1334,9 @@
 - type: entity
   id: BrickLargeCheckerFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (шашочный, плитка, большой)
+  name: Stone floor (checkerboard, tiles, large)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_large.rsi
@@ -1385,9 +1385,9 @@
 - type: entity
   id: BrickLargeGreenFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (зеленый, плитка, большой)
+  name: Stone floor (green, tile, large)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_large.rsi
@@ -1436,9 +1436,9 @@
 - type: entity
   id: BrickLargeGreyFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (серый, плитка, большой)
+  name: Stone floor (gray, tile, large)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_large.rsi
@@ -1487,9 +1487,9 @@
 - type: entity
   id: BrickLargeNavyFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (голубой, плитка, большой)
+  name: Stone floor (blue, tile, large)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_large.rsi
@@ -1536,9 +1536,9 @@
 - type: entity
   id: BrickLargeWhiteFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (белый, плитка, большой)
+  name: Stone floor (white, tile, large)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_large.rsi
@@ -1587,9 +1587,9 @@
 - type: entity
   id: BrickLongBlueFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (голубой, плитка, длинный)
+  name: Stone floor (blue, tile, long)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_long.rsi
@@ -1638,9 +1638,9 @@
 - type: entity
   id: BrickLongGreyFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (серый, плитка, длинный)
+  name: Stone floor (gray, tile, long)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_long.rsi
@@ -1689,9 +1689,9 @@
 - type: entity
   id: BrickMediumBlackFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (черный, плитка, средний)
+  name: Stone Floor (Black, Tile, Medium)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_medium.rsi
@@ -1740,9 +1740,9 @@
 - type: entity
   id: BrickMediumBrownFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (коричневый, плитка, средний)
+  name: Stone Floor (brown, tile, medium)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_medium.rsi
@@ -1791,9 +1791,9 @@
 - type: entity
   id: BrickMediumGreyFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (серый, плитка, средний)
+  name: Stone Floor (Gray, Tile, Medium)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_medium.rsi
@@ -1842,9 +1842,9 @@
 - type: entity
   id: BrickMediumNavyFloorFallout
   parent: BrickFloorBasicFallout
-  name: Каменный пол (голубой, плитка, средний)
+  name: Stone Floor (Blue, Tile, Medium)
   suffix: ST, Mapping, KMIN
-  description: Самый плиточный пол из существующих.
+  description: The most tiled floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/brick_medium.rsi
@@ -1893,9 +1893,9 @@
 # стальной пол
 - type: entity
   id: SteelFloorBasicFallout
-  name: База стального пола
+  name: Steel Floor Base
   suffix: ST, Mapping, KMIN
-  description: Самый стальной пол из существующих.
+  description: The most steel floor in existence.
   abstract: true
   placement:
     mode: SnapgridCenter
@@ -1948,9 +1948,9 @@
 - type: entity
   id: SteelGrateFloorFallout
   parent: SteelFloorBasicFallout
-  name: Стальной пол (решетчатый, плитка)
+  name: Steel floor (lattice, tiles)
   suffix: ST, Mapping, KMIN
-  description: Самый стальной пол из существующих.
+  description: The most steel floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/steel.rsi
@@ -1980,9 +1980,9 @@
 - type: entity
   id: SteelIndustrialFloorFallout
   parent: SteelFloorBasicFallout
-  name: Стальной пол (ребристый, полный)
+  name: Steel floor (ribbed, full)
   suffix: ST, Mapping, KMIN
-  description: Самый стальной пол из существующих.
+  description: The most steel floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/steel.rsi
@@ -2012,9 +2012,9 @@
 - type: entity
   id: SteelSolidFloorFallout
   parent: SteelFloorBasicFallout
-  name: Стальной пол (решетчатый, полный)
+  name: Steel floor (lattice, full)
   suffix: ST, Mapping, KMIN
-  description: Самый стальной пол из существующих.
+  description: The most steel floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/steel.rsi
@@ -2036,9 +2036,9 @@
 - type: entity
   id: SteelTileFloorFallout
   parent: SteelFloorBasicFallout
-  name: Стальной пол (плиточный)
+  name: Steel floor (tiled)
   suffix: ST, Mapping, KMIN
-  description: Самый стальной пол из существующих.
+  description: The most steel floor in existence.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/KMIN Tiles/steel.rsi

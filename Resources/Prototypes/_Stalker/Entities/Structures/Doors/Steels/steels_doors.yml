@@ -2,9 +2,9 @@
 
 - type: entity
   id: HermoDverTypeOne
-  name: гермодверь
+  name: pressure door
   parent: STBaseMaterialDoor
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping
   components:
   - type: Sprite
@@ -15,9 +15,9 @@
 
 - type: entity
   id: HermoDverTypeTwo
-  name: гермодверь
+  name: pressure door
   parent: STBaseMaterialDoor
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping
   components:
   - type: Sprite
@@ -28,9 +28,9 @@
 
 - type: entity
   id: LatticeDoor
-  name: решётчатая дверь
+  name: lattice door
   parent: STBaseMaterialDoor
-  description: Это один из видов конструкций для установки в разные виды помещений с целью повышения безопасности.
+  description: This is one of the types of structures for installation in different types of premises in order to increase security.
   suffix: ST, mapping
   components:
   - type: Sprite
@@ -51,9 +51,9 @@
 
 - type: entity
   id: StalkerGate
-  name: Створка ворот
+  name: Gate leaf
   parent: STBaseMaterialDoor
-  description: Жёсткая рама, которую изготавливают из трубы квадратного сечения. Облицовкой служит металлический профнастил, покрытый полимерным покрытием. Неплохо сохранилась для своих лет.
+  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
   suffix: ST, mapping, левая
   components:
   - type: Sprite
@@ -76,9 +76,9 @@
 
 - type: entity
   id: StalkerGater
-  name: Створка ворот
+  name: Gate leaf
   parent: STBaseMaterialDoor
-  description: Жёсткая рама, которую изготавливают из трубы квадратного сечения. Облицовкой служит металлический профнастил, покрытый полимерным покрытием. Неплохо сохранилась для своих лет.
+  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
   suffix: ST, mapping, правая
   components:
   - type: Sprite
@@ -100,9 +100,9 @@
 
 - type: entity
   id: StalkerGateFixed
-  name: Створка ворот
+  name: Gate leaf
   parent: BaseStructure
-  description: Жёсткая рама, которую изготавливают из трубы квадратного сечения. Облицовкой служит металлический профнастил, покрытый полимерным покрытием. Неплохо сохранилась для своих лет.
+  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
   suffix: ST, mapping, левая, незакрываемая
   components:
     - type: InteractionOutline
@@ -125,9 +125,9 @@
 
 - type: entity
   id: StalkerGaterFixed
-  name: Створка ворот
+  name: Gate leaf
   parent: StalkerGateFixed
-  description: Жёсткая рама, которую изготавливают из трубы квадратного сечения. Облицовкой служит металлический профнастил, покрытый полимерным покрытием. Неплохо сохранилась для своих лет.
+  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
   suffix: ST, mapping, правая, незакрываемая
   components:
     - type: Sprite
@@ -138,9 +138,9 @@
 
 - type: entity
   id: MilitaryDoor2
-  name: военные ворота
+  name: military gate
   parent: STBaseMaterialDoor
-  description: Проезд в стене или ограде, запираемый створами.
+  description: A passage in a wall or fence, locked by doors.
   suffix: ST, mapping
   components:
   - type: Occluder

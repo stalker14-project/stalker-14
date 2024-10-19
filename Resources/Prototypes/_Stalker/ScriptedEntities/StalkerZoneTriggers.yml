@@ -2,7 +2,7 @@
 - type: entity
   id: StalkerExplSafezoneTriggerIn
   parent: MarkerBase
-  name: Защита от выброса
+  name: Ejection Defense
   description: Transports you to a linked destination!
   suffix: Stalker
   components:
@@ -30,7 +30,7 @@
           hard: false
 - type: entity
   id: StalkerExplSafezoneTriggerOut
-  name: Отключение защиты от выброса
+  name: Disabling Ejection Protection
   description: Transports you to a linked destination!
   parent: MarkerBase
   suffix: Stalker
@@ -61,7 +61,7 @@
 - type: entity
   id: StalkerPaciTriggerIn
   parent: MarkerBase
-  name: Включение пацифизма
+  name: Enabling Pacifism
   description: Transports you to a linked destination!
   suffix: Stalker
   components:
@@ -91,7 +91,7 @@
       size: 10
 - type: entity
   id: StalkerPaciTriggerOut
-  name: Выключение пацифизма
+  name: Turning off pacifism
   description: Transports you to a linked destination!
   parent: MarkerBase
   suffix: Stalker
@@ -123,7 +123,7 @@
 - type: entity
   id: StalkerSafezoneTriggerIn
   parent: MarkerBase
-  name: Вход в сейфзону
+  name: Safezone Entrance
   description: Transports you to a linked destination!
   suffix: Stalker
   components:
@@ -155,7 +155,7 @@
 
 - type: entity
   id: StalkerSafezoneTriggerOut
-  name: Выход из сейфзоны
+  name: Exit from safe zone
   description: Transports you to a linked destination!
   parent: MarkerBase
   suffix: Stalker

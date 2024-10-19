@@ -1,9 +1,9 @@
 - type: entity
-  name: АК-74
+  name: AK-74
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK74
-  description: АК-74 - бессмертная классика с деревянной фурнитурой.
+  description: AK-74 - an immortal classic with wooden fittings.
   components:
   - type: STWeight
     self: 3.7
@@ -53,9 +53,9 @@
 
 - type: entity
   parent: STWeaponRifleStalkerAK74
-  name: АК-74М
+  name: AK-74M
   id: STSTWeaponRifleStalkerAK74M
-  description: Оснащен складывающимся влево пластиковым прикладом, фурнитурой из ударостойкой пластмассы и универсальной планкой "Ласточкин хвост" для крепления прицелов, таким образом заменив собой сразу несколько версий автомата. Использует калибр 5,45x39
+  description: Equipped with a left-folding plastic buttstock, shock-resistant plastic fittings and a universal Dovetail rail for mounting sights, thus replacing several versions of the machine gun at once. Uses the 5.45x39 caliber
   components:
   - type: Gun
     angleIncrease: 4.5
@@ -70,11 +70,11 @@
 
 
 - type: entity
-  name: Сайга 5,45
+  name: Saiga 5.45
   suffix: ST
   parent: STSTWeaponRifleStalkerAK74M
   id: STWeaponRifleStalkerSaiga545
-  description: АК-74М с фиксированным прикладом и одиночным режимом огня - гражданская версия.
+  description: AK-74M with fixed stock and single fire mode - civilian version.
   components:
     - type: Gun
       fireRate: 3

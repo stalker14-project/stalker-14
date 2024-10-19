@@ -1,8 +1,8 @@
 - type: entity
   id: HermoDverTypeOneArmyClosed
-  name: гермодверь Правительства
+  name: Government Hermetic Door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Офицалы
   components:
   - type: AccessReader
@@ -10,9 +10,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutArmyClosed
-  name: стальная дверь Правительства
+  name: steel door of the Government
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Офицалы
   components:
     - type: AccessReader
@@ -20,9 +20,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutMilitaryClosed
-  name: стальная дверь ОКСОП
+  name: steel door JPSFC
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Военные
   components:
     - type: AccessReader
@@ -30,9 +30,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutMilitaryStalkerClosed
-  name: стальная дверь Военсталов
+  name: steel door Voenstalov
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Военсталы
   components:
     - type: AccessReader
@@ -40,9 +40,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutMilitaryOfficerClosed
-  name: стальная дверь ОКСОП
+  name: steel door JPSFC
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Военные, Офицер
   components:
     - type: AccessReader
@@ -50,9 +50,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutUNClosed
-  name: стальная дверь Миротворцев
+  name: Peacekeepers steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, ООН
   components:
     - type: AccessReader
@@ -60,9 +60,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutBanditClosed
-  name: стальная дверь бандитов
+  name: bandits steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Военные
   components:
   - type: AccessReader
@@ -70,9 +70,9 @@
 
 - type: entity
   id: MetalGrateDoorFalloutMilitaryClosed
-  name: дверь КПЗ военных
+  name: door of the military detention center
   parent: MetalGrateDoorFallout
-  description: Крепкая решётчатая дверь с надёжным замком.
+  description: A strong lattice door with a reliable lock.
   suffix: ST, mapping, Военные
   components:
     - type: AccessReader
@@ -80,9 +80,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutSciClosed
-  name: стальная дверь НИИ ЧАЗ
+  name: steel door NII ChAZ
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Учёные
   components:
     - type: AccessReader
@@ -90,9 +90,9 @@
 
 - type: entity
   id: StalkerGateArmyClosed
-  name: ворота
+  name: gates
   parent: StalkerGate
-  description: Высокие стальные ворота, через которые вряд-ли получится перемехануть.
+  description: High steel gates, through which it is unlikely that you will be able to move.
   suffix: ST, mapping, Офицалы, Левая
   components:
     - type: AccessReader
@@ -100,9 +100,9 @@
 
 - type: entity
   id: StalkerGaterArmyClosed
-  name: ворота
+  name: gates
   parent: StalkerGater
-  description: Высокие стальные ворота, через которые вряд-ли получится перемехануть.
+  description: High steel gates, through which it is unlikely that you will be able to move.
   suffix: ST, mapping, Офицалы, Правая
   components:
     - type: AccessReader
@@ -110,9 +110,9 @@
 
 - type: entity
   id: HermoDverTypeOneBanditsClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Бандиты
   components:
   - type: AccessReader
@@ -120,9 +120,9 @@
 
 - type: entity
   id: HermoDverTypeOneJournalistClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Бандиты
   components:
   - type: AccessReader
@@ -130,9 +130,9 @@
 
 - type: entity
   id: HermoDverTypeOneDolgClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Долг
   components:
   - type: AccessReader
@@ -140,9 +140,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutDolgClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Долг
   components:
     - type: AccessReader
@@ -150,9 +150,9 @@
 
 - type: entity
   id: HermoDverTypeOneLibertyClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Свобода
   components:
   - type: AccessReader
@@ -160,9 +160,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutFreedomClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Свобода
   components:
     - type: AccessReader
@@ -170,9 +170,9 @@
 
 - type: entity
   id: HermoDverTypeOneCNClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, ЧН
   components:
     - type: AccessReader
@@ -180,9 +180,9 @@
 
 - type: entity
   id: HermoDverTypeOneSeraClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Серафимы
   components:
     - type: AccessReader
@@ -190,9 +190,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutReneClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Ренегаты
   components:
     - type: AccessReader
@@ -200,9 +200,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutDeserterClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Отступники
   components:
     - type: AccessReader
@@ -210,9 +210,9 @@
 
 - type: entity
   id: HermoDverTypeOneMercClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Наёмники
   components:
   - type: AccessReader
@@ -220,9 +220,9 @@
 
 - type: entity
   id: HermoDverTypeTwoMercClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Наёмники
   components:
   - type: AccessReader
@@ -230,9 +230,9 @@
 
 - type: entity
   id: MetalDoorFalloutMercClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Наёмники
   components:
   - type: AccessReader
@@ -240,9 +240,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutMercClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Наёмники
   components:
   - type: AccessReader
@@ -250,9 +250,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutMercClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Наёмники
   components:
   - type: AccessReader
@@ -260,9 +260,9 @@
 
 - type: entity
   id: MetalGrateDoorFalloutMercClosed
-  name: укрепленная решетчатая дверь
+  name: reinforced lattice door
   parent: MetalGrateDoorFallout
-  description: Крепкая решётчатая дверь с надёжным замком.
+  description: A strong lattice door with a reliable lock.
   suffix: ST, mapping, Наёмники
   components:
   - type: AccessReader
@@ -270,9 +270,9 @@
 
 - type: entity
   id: MetalBarDoorFalloutMercClosed
-  name: решетчатая дверь
+  name: lattice door
   parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
+  description: A lattice door with a secure lock.
   suffix: ST, mapping, Наёмники
   components:
   - type: AccessReader
@@ -280,9 +280,9 @@
 
 - type: entity
   id: MetalDoorFalloutSBUClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, СБУ
   components:
   - type: AccessReader
@@ -290,9 +290,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutSBUClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, СБУ
   components:
   - type: AccessReader
@@ -300,9 +300,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutSBUClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, СБУ
   components:
   - type: AccessReader
@@ -310,9 +310,9 @@
 
 - type: entity
   id: MetalGrateDoorFalloutSBUClosed
-  name: укрепленная решетчатая дверь
+  name: reinforced lattice door
   parent: MetalGrateDoorFallout
-  description: Крепкая решётчатая дверь с надёжным замком.
+  description: A strong lattice door with a reliable lock.
   suffix: ST, mapping, СБУ
   components:
   - type: AccessReader
@@ -320,9 +320,9 @@
 
 - type: entity
   id: HermoDverTypeOneGrehClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Грех
   components:
   - type: AccessReader
@@ -330,9 +330,9 @@
 
 - type: entity
   id: HermoDverTypeTwoGrehClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Грех
   components:
   - type: AccessReader
@@ -340,9 +340,9 @@
 
 - type: entity
   id: MetalDoorFalloutGrehClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Грех
   components:
   - type: AccessReader
@@ -350,9 +350,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutGrehClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Грех
   components:
   - type: AccessReader
@@ -360,9 +360,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutGrehClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Грех
   components:
   - type: AccessReader
@@ -370,9 +370,9 @@
 
 - type: entity
   id: MetalBarDoorFalloutGrehClosed
-  name: решетчатая дверь
+  name: lattice door
   parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
+  description: A lattice door with a secure lock.
   suffix: ST, mapping, Грех
   components:
   - type: AccessReader
@@ -380,9 +380,9 @@
 
 - type: entity
   id: MetalDoorFalloutJournalistClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Журналисты
   components:
   - type: AccessReader
@@ -391,9 +391,9 @@
 
 - type: entity
   id: HermoDverTypeOneSciClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Учёные
   components:
   - type: AccessReader
@@ -401,9 +401,9 @@
 
 - type: entity
   id: HermoDverTypeTwoSciClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Учёные
   components:
   - type: AccessReader
@@ -411,9 +411,9 @@
 
 - type: entity
   id: MetalDoorFalloutSciClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Учёные
   components:
   - type: AccessReader
@@ -421,9 +421,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutSciClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Учёные
   components:
   - type: AccessReader
@@ -431,9 +431,9 @@
 
 - type: entity
   id: MetalGrateDoorFalloutSciClosed
-  name: укрепленная решетчатая дверь
+  name: reinforced lattice door
   parent: MetalGrateDoorFallout
-  description: Крепкая решётчатая дверь с надёжным замком.
+  description: A strong lattice door with a reliable lock.
   suffix: ST, mapping, Учёные
   components:
   - type: AccessReader
@@ -441,9 +441,9 @@
 
 - type: entity
   id: MetalBarDoorFalloutSciClosed
-  name: решетчатая дверь
+  name: lattice door
   parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
+  description: A lattice door with a secure lock.
   suffix: ST, mapping, Учёные
   components:
   - type: AccessReader
@@ -451,9 +451,9 @@
 
 - type: entity
   id: MetalBarDoorFalloutSciHeadClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Учёные, Лидер
   components:
   - type: AccessReader
@@ -461,9 +461,9 @@
 
 - type: entity
   id: WoodRedDoorSciHeadClosed
-  name: красная деревянная дверь
+  name: red wooden door
   parent: WoodRedDoorFallout
-  description: Деревянная дверь, окрашена в красный цвет. Открывается быстрее обычной двери, с надёжным замком.
+  description: Wooden door, painted red. Opens faster than a regular door, with a reliable lock.
   suffix: ST, mapping, Учёные, Лидер
   components:
   - type: AccessReader
@@ -471,9 +471,9 @@
 
 - type: entity
   id: MetalRedDoorFalloutSciHeadClosed
-  name: красная стальная дверь
+  name: red steel door
   parent: MetalRedDoorFallout
-  description: Стальная дверь с надёжным замком. Окрашена в красный цвет.
+  description: Steel door with a reliable lock. Painted red.
   suffix: ST, mapping, Учёные, Лидер
   components:
   - type: AccessReader
@@ -481,9 +481,9 @@
 
 - type: entity
   id: MetalDoorFalloutSciHeadClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Учёные, Лидер
   components:
   - type: AccessReader
@@ -491,9 +491,9 @@
 
 - type: entity
   id: HermoDverTypeOneCircusClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Циркачи
   components:
   - type: AccessReader
@@ -501,9 +501,9 @@
 
 - type: entity
   id: HermoDverTypeTwoCircusClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Циркачи
   components:
   - type: AccessReader
@@ -511,9 +511,9 @@
 
 - type: entity
   id: MetalDoorFalloutCircusClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Циркачи
   components:
   - type: AccessReader
@@ -521,9 +521,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutCircusClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Циркачи
   components:
   - type: AccessReader
@@ -531,9 +531,9 @@
 
 - type: entity
   id: MetalGrateDoorFalloutCircusClosed
-  name: укрепленная решетчатая дверь
+  name: reinforced lattice door
   parent: MetalGrateDoorFallout
-  description: Крепкая решётчатая дверь с надёжным замком.
+  description: A strong lattice door with a reliable lock.
   suffix: ST, mapping, Циркачи
   components:
   - type: AccessReader
@@ -541,9 +541,9 @@
 
 - type: entity
   id: MetalBarDoorFalloutCircusClosed
-  name: решетчатая дверь
+  name: lattice door
   parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
+  description: A lattice door with a secure lock.
   suffix: ST, mapping, Циркачи
   components:
   - type: AccessReader
@@ -551,9 +551,9 @@
 
 - type: entity
   id: MilitaryDoor1
-  name: военные ворота
+  name: military gate
   parent: BaseMaterialDoor
-  description: Проезд в стене или ограде, запираемый створами.
+  description: A passage in a wall or fence, locked by doors.
   suffix: ST, mapping, Военные
   components:
   - type: Occluder
@@ -576,9 +576,9 @@
 
 - type: entity
   id: MetalDoorFalloutJabaClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Жабы
   components:
   - type: AccessReader
@@ -586,9 +586,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutJabaClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Жабы
   components:
   - type: AccessReader
@@ -596,9 +596,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutNeutralsClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Нейтралы
   components:
   - type: AccessReader
@@ -606,9 +606,9 @@
 
 - type: entity
   id: STMetalBarDoorFalloutNeutralsClosed
-  name: решетчатая дверь
+  name: lattice door
   parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
+  description: A lattice door with a secure lock.
   suffix: ST, mapping, Нейтралы
   components:
   - type: AccessReader
@@ -616,9 +616,9 @@
 
 - type: entity
   id: STHermoDverTypeTwoNeutralsClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Нейтралы
   components:
   - type: AccessReader
@@ -626,9 +626,9 @@
 
 - type: entity
   id: STMetalAltDoorFalloutNeutralsClosed
-  name: стальная дверь нейтралов
+  name: neutral steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Нейтралы
   components:
   - type: AccessReader
@@ -636,9 +636,9 @@
 
 - type: entity
   id: MetalAltDoorFalloutPoliceOfficerClosed
-  name: стальная дверь полиции
+  name: police steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Полиция
   components:
     - type: AccessReader
@@ -646,9 +646,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutPoiskClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Поиск
   components:
   - type: AccessReader
@@ -656,9 +656,9 @@
 
 - type: entity
   id: STMetalBarDoorFalloutPoiskClosed
-  name: решетчатая дверь
+  name: lattice door
   parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
+  description: A lattice door with a secure lock.
   suffix: ST, mapping, Поиск
   components:
   - type: AccessReader
@@ -666,9 +666,9 @@
 
 - type: entity
   id: STHermoDverTypeTwoPoiskClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Поиск
   components:
   - type: AccessReader
@@ -676,9 +676,9 @@
 
 - type: entity
   id: STMetalAltDoorFalloutPoiskClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Поиск
   components:
   - type: AccessReader
@@ -686,9 +686,9 @@
 
 - type: entity
   id: MetalWindowDoorFalloutProjectClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
+  description: A strong steel door with a window and a reliable lock.
   suffix: ST, mapping, Проект
   components:
   - type: AccessReader
@@ -696,9 +696,9 @@
 
 - type: entity
   id: STMetalBarDoorFalloutProjectClosed
-  name: решетчатая дверь
+  name: lattice door
   parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
+  description: A lattice door with a secure lock.
   suffix: ST, mapping, Проект
   components:
   - type: AccessReader
@@ -706,9 +706,9 @@
 
 - type: entity
   id: STHermoDverTypeTwoProjectClosed
-  name: гермодверь
+  name: pressure door
   parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
   suffix: ST, mapping, Проект
   components:
   - type: AccessReader
@@ -716,9 +716,9 @@
 
 - type: entity
   id: STMetalAltDoorFalloutProjectClosed
-  name: стальная дверь
+  name: steel door
   parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
+  description: A strong steel door with a reliable lock.
   suffix: ST, mapping, Проект
   components:
   - type: AccessReader

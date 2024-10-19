@@ -14,7 +14,7 @@
 
 - type: entity
   id: ArtilleryLanding
-  name: прилёт взрыва
+  name: explosion arrival
   #noSpawn: true
   components:
   - type: TimedDespawn
@@ -29,7 +29,7 @@
     prototype: ArtilleryExplosive
 
 - type: entity
-  name: взрыв
+  name: explosion
   id: ArtilleryExplosive
   #noSpawn: true
   components:
@@ -63,7 +63,7 @@
       offset: 11
 
 - type: entity
-  name: вызов обстрела
+  name: shelling challenge
   id: ArtilleryTimedSpawnerIntensive
   suffix: Минута
   parent: MarkerBase
@@ -83,7 +83,7 @@
     lifetime: 60
 
 - type: entity
-  name: вызов обстрела
+  name: shelling challenge
   id: ArtilleryTimedSpawnerLong
   suffix: 3 минуты
   parent: MarkerBase
@@ -104,7 +104,7 @@
 
 - type: entity
   id: HelicopterLanding
-  name: приземление вертолета
+  name: helicopter landing
   parent: MarkerBase
   components:
   - type: Sprite
@@ -121,7 +121,7 @@
 
 - type: entity
   id: HelicopterCrush
-  name: падение вертолета
+  name: helicopter crash
   parent: MarkerBase
   components:
   - type: Sprite
@@ -138,7 +138,7 @@
 
 - type: entity
   id: HelicopterAmbient
-  name: звук вертолета
+  name: helicopter sound
   parent: MarkerBase
   components:
   - type: Sprite

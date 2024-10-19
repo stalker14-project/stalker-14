@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseCraftItem
   id: BypassCard
-  name: карточка доступа Привратника
-  description: Карточка для разблокировки шлюза Предбанника в подземке. Открывает его на 30 секунд.
+  name: Gatekeeper access card
+  description: Card to unlock the Antechamber gateway in the subway. Opens it for 30 seconds.
   suffix: ST, card
   components:
     - type: Sprite
@@ -25,17 +25,17 @@
 - type: entity
   parent: BlastDoor
   id: BypassDeactivated
-  name: гермошлюз Привратника
-  description: Для разблокировки этого шлюза нужна специальная одноразовая карточка.
+  name: Gatekeeper's airlock
+  description: A special one-time card is required to unlock this gateway.
   components:
   - type: Craftable
 
 
 - type: entity
   id: BypassActivated
-  name: гермошлюз Привратника
+  name: Gatekeeper's airlock
   parent: BlastDoorOpen
-  description: для разблокировки этого шлюза нужна специальная одноразовая карточка. Разблокирован.
+  description: A special one-time card is needed to unlock this gateway. Unlocked.
   suffix: Stalker
   noSpawn: true
   components:
@@ -48,8 +48,8 @@
 - type: entity
   parent: BypassCard
   id: STHelicopterToRedForestTicket
-  name: билет на вертолёт до рыжего леса
-  description: билет на вертолёт до рыжего леса. Перепродажа и подделка билетов преследуется по закону.
+  name: helicopter ticket to the red forest
+  description: helicopter ticket to the red forest. Resale and counterfeiting of tickets is prosecuted by law.
   suffix: ST, card
 
 - type: lightCraftingRecipe
@@ -64,8 +64,8 @@
 - type: entity
   parent: BypassDeactivated
   id: STHelicopterBypassDeactivated
-  name: гермошлюз вертолёта
-  description: для разблокировки шлюза вам нужно купить билет
+  name: helicopter airlock
+  description: to unlock the gateway you need to buy a ticket
   components:
   - type: Craftable
 
@@ -73,8 +73,8 @@
 - type: entity
   parent: BypassActivated
   id: STHelicopterBypassActivated
-  name: гермошлюз вертолёта
-  description: для разблокировки шлюза вам нужно купить билет Разблокирован.
+  name: helicopter airlock
+  description: to unlock the gateway you need to buy a ticket Unlocked.
   suffix: Stalker
   noSpawn: true
   components:
@@ -88,8 +88,8 @@
 - type: entity
   parent: BypassCard
   id: DollarBypassCard
-  name: карточка доступа чёрного рынка
-  description: Карточка доступа к обменнику долларов в подземельях Ч-4, открывает дверь на 5 минут.
+  name: black market access card
+  description: Access card to the dollar exchanger in the dungeons of Ch-4, opens the door for 5 minutes.
   suffix: ST, card
 
 - type: lightCraftingRecipe
@@ -105,8 +105,8 @@
 - type: entity
   parent: BypassDeactivated
   id: DollarBypassDeactivated
-  name: гермошлюз обменщика
-  description: Для разблокировки этого шлюза нужна специальная одноразовая карточка.
+  name: exchanger's hermetic airlock
+  description: A special one-time card is required to unlock this gateway.
   components:
   - type: Craftable
 
@@ -114,8 +114,8 @@
 - type: entity
   parent: BypassActivated
   id: DollarBypassActivated
-  name: гермошлюз обменщика
-  description: для разблокировки этого шлюза нужна специальная одноразовая карточка. Разблокирован.
+  name: exchanger's hermetic airlock
+  description: A special one-time card is needed to unlock this gateway. Unlocked.
   suffix: Stalker
   noSpawn: true
   components:

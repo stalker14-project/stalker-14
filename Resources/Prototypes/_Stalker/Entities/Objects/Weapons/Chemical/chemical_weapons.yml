@@ -5,8 +5,8 @@
 - type: entity
   parent: SmokeGrenade
   id: ChlorineBalloonStalker
-  name: баллон с хлором
-  description: Запрещённое химическое оружие после 29 апреля 1997 года, но в ЧЗО нашли в лабораториях баллоны с хлором. Игнорируя запрет, используют в масштабных боях, довольно сильное и опасное оружие, которое может распространиться на большую область. В таком случае лучше запастись кислородным баллоном с противогазом.
+  name: chlorine cylinder
+  description: Chemical weapons banned after April 29, 1997, but chlorine cylinders were found in laboratories in the Chernobyl Exclusion Zone. Ignoring the ban, they use quite powerful and dangerous weapons in large-scale battles, which can spread over a large area. In this case, it is better to stock up on an oxygen cylinder with a gas mask.
   suffix: Stalker, Events
   components:
   - type: Sprite
@@ -34,8 +34,8 @@
 - type: entity
   parent: SmokeGrenade
   id: IpritGrenadeStalker
-  name: газовая граната с ипритом
-  description: Химическое оружие малого поражения, самое дешёвое среди всех видов данного типа оружия. Делает небольшой взрыв, после которого освобождается содержащийся иприт.
+  name: mustard gas grenade
+  description: Chemical weapon of small destruction, the cheapest of all types of this type of weapon. Makes a small explosion, after which the contained mustard gas is released.
   suffix: Stalker
   components:
   - type: Sprite
@@ -72,8 +72,8 @@
 - type: entity
   parent: SmokeGrenade
   id: LewisiteGrenadeStalker
-  name: газовая граната с люизитом
-  description: Химическое оружие малого поражения, среднее что-то среди всех видов данного типа оружия. Делает небольшой взрыв, после которого освобождается содержащийся люизит, более опасный нежили иприт.
+  name: lewisite gas grenade
+  description: Chemical weapon of small damage, something average among all types of this type of weapon. Makes a small explosion, after which the contained lewisite is released, more dangerous than mustard gas.
   suffix: Stalker
   components:
   - type: Sprite
@@ -110,8 +110,8 @@
 - type: entity
   parent: SmokeGrenade
   id: HydrocyanicGrenadeStalker
-  name: газовая шашка Циклон-Б
-  description: Химическое оружие длинного и сильного поражения, самая длительная продолжительность действия газа. Синильная кислота обладает высокой токсичностью и может вызвать повреждения легких, скорее всего вы умрёте от недостатка кислорода и удушья. Использовалось во время первой мировой войны. Данное оружие смогли найти какие-то сталкеры в ЧЗО, судьба дальнейшаяя их неизвестна. Криминальные группировки обладают этим вооружением для пыток либо казни. К сожалению данное оружие не такое уж и популярное для использования, утверждают что слишком малая зона поражения.
+  name: Cyclone-B gas bomb
+  description: Chemical weapon of long and strong destruction, the longest duration of gas action. Hydrocyanic acid is highly toxic and can cause lung damage, most likely you will die from lack of oxygen and suffocation. It was used during the First World War. Some stalkers were able to find this weapon in the Chernobyl Exclusion Zone, their further fate is unknown. Criminal groups have this weapon for torture or execution. Unfortunately, this weapon is not so popular for use, they say that the area of ​​​​damage is too small.
   suffix: Stalker, Events
   components:
   - type: Sprite
@@ -144,8 +144,8 @@
 - type: entity
   parent: SmokeGrenade
   id: PhosphorusGrenadeStalker
-  name: фосфорная граната
-  description: Оружие, созданное для эффективного убийства и оглушения врага, наполненное фосфором.
+  name: phosphorus grenade
+  description: A weapon designed to effectively kill and stun the enemy, filled with phosphorus.
   suffix: Stalker
   components:
   - type: Sprite
@@ -179,10 +179,10 @@
   - type: DeleteOnTrigger
 
 - type: entity
-  name: граната GL-1
+  name: GL-1 grenade
   parent: BaseItem
   id: GL1Grenade
-  description: Химическая осветительная граната. Предназначена для освещения участков местности во время ночного боя.
+  description: Chemical illumination grenade. Designed to illuminate areas of terrain during night combat.
   components:
     - type: Trash
       time: 600
@@ -249,7 +249,7 @@
 
 - type: reagent
   id: ChlorineStalker
-  name: газовый хлор
+  name: chlorine gas
   group: Elements
   desc: Химическое оружие
   physicalDesc: газообразное
@@ -320,7 +320,7 @@
 
 - type: reagent
   id: IpritStalker
-  name: иприт
+  name: mustard gas
   group: Elements
   desc: Химическое оружие
   physicalDesc: газообразное
@@ -379,7 +379,7 @@
 
 - type: reagent
   id: LewisiteStalker
-  name: люизит
+  name: lewisite
   group: Elements
   desc: Химическое оружие
   physicalDesc: газообразное
@@ -442,7 +442,7 @@
 
 - type: reagent
   id: HydrocyanicStalker
-  name: синильная кислота
+  name: hydrocyanic acid
   group: Elements
   desc: Химическое оружие
   physicalDesc: газообразное
@@ -497,7 +497,7 @@
 
 - type: reagent
   id: PhosphorusStalker
-  name: фосфор
+  name: phosphorus
   desc: Химическое оружие
   physicalDesc: газообразное
   flavor: bitter
@@ -531,7 +531,7 @@
 
 - type: reagent
   id: DexalinPlusStalker
-  name: дексалин плюс
+  name: Dexalin Plus
   group: Medicine
   desc: Используется для лечения кислородного голодания и потери крови. Выводит синильную кислоту из кровеносной системы.
   physicalDesc: облачное

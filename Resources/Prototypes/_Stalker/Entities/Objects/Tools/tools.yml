@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseCraftTool
   id: Toolbox
-  name: ящик с инструментами
-  description: Ящик с кучей всевозможных отвёрток, ключей и прочего.
+  name: toolbox
+  description: A box with a bunch of all kinds of screwdrivers, keys and other things.
   suffix: Stalker, Инструменты
   components:
   - type: STWeight
@@ -46,8 +46,8 @@
 - type: entity
   parent: BaseItem
   id: CraftLeatherbox
-  name: набор для обработки шкур
-  description: Набор с средствами и инструментами для обработки и дубления шкур.
+  name: skinning kit
+  description: A set of tools and equipment for processing and tanning skins.
   suffix: Stalker, крафт
   components:
   - type: STWeight
@@ -67,8 +67,8 @@
 - type: entity
   parent: BaseCraftTool
   id: SolderingIron
-  name: паяльник
-  description: Классический паяльник для радиоэлектроники.
+  name: soldering iron
+  description: Classic soldering iron for radio electronics.
   suffix: Stalker, Инструменты
   components:
   - type: STWeight
@@ -83,8 +83,8 @@
 - type: entity
   parent: BaseCraftTool
   id: BoltCutter
-  name: резак проволки
-  description: режет решётки
+  name: wire cutter
+  description: cuts bars
   suffix: Stalker, Инструменты
   components:
   - type: STWeight
@@ -119,8 +119,8 @@
 - type: entity
   parent: BaseCraftTool
   id: RazorWire
-  name: моток колючей проволоки
-  description: Моток колючки для восстановления Периметра силами военных. Надеюсь что ваши вороватые ручонки обрежутся.
+  name: coil of barbed wire
+  description: A coil of barbed wire for the military to restore the Perimeter. I hope your thieving little hands get cut off.
   suffix: Stalker, Инструменты
   components:
   - type: STWeight
@@ -139,8 +139,8 @@
 - type: entity
   parent: BaseCraftTool
   id: CraftSpanishKnife
-  name: испанский армейский нож
-  description: Боль от его использования почти невыносима.
+  name: spanish army knife
+  description: The pain from using it is almost unbearable.
   suffix: Stalker, Инструменты
   components:
     - type: RepositoryItem
@@ -157,10 +157,10 @@
 
 ###############Инструменты
 - type: entity
-  name: кусачки
+  name: wire cutters
   parent: BaseItem
   id: WirecutterStalker
-  description: Для перекусывания проводов и разборки электроники.
+  description: For cutting wires and disassembling electronics.
   suffix: Stalker, крафт
   components:
     - type: Tag
@@ -200,8 +200,8 @@
 - type: entity
   parent: BaseCraftTool
   id: ToolkitTearOne
-  name: инструменты для грубой работы
-  description: Набор инструментов "Юный техник". В наличии все необходимые для слесарной работы инструменты. Для опытного техника такой набор необходим для самых простых апгрейдов брони и оружия. Для обычного сталкера станет удобным инструментом при создании самых простых вещей.
+  name: tools for rough work
+  description: Young Technician Tool Set. It has all the tools necessary for metalwork. For an experienced technician, such a set is necessary for the simplest armor and weapon upgrades. For an ordinary stalker, it will be a convenient tool for creating the simplest things.
   suffix: Stalker, Инструменты
   components:
   - type: STWeight
@@ -242,8 +242,8 @@
 - type: entity
   parent: BaseCraftTool
   id: ToolkitTearTwo
-  name: инструменты для тонкой работы
-  description: Неплохой набор инструментов. Судя по всему, тщательно подобран опытным мастером «под себя, родного». Несмотря на годы, весь инструментарий хорошо сохранился.
+  name: tools for fine work
+  description: A good set of tools. Apparently, carefully selected by an experienced craftsman for himself, dear. Despite the years, all the tools are well preserved.
   suffix: Stalker, Инструменты
   components:
   - type: STWeight
@@ -284,8 +284,8 @@
 - type: entity
   parent: BaseCraftTool
   id: ToolkitTearThree
-  name: инструменты для калибровки
-  description: Профессиональный набор инструментов для тонкой доводки оборудования. Надпись на ящике гласит, что набор произведён в ГДР. Того, что включено в комплект, достаточно для проведения почти любых работ по настройке и калибровке.
+  name: calibration tools
+  description: Professional set of tools for fine-tuning equipment. The inscription on the box says that the set was made in the GDR. What is included in the kit is enough to carry out almost any work on setting up and calibration.
   suffix: Stalker, Инструменты
   components:
   - type: STWeight
@@ -324,10 +324,10 @@
     categoryName: Инструменты
 
 - type: entity
-  name: отвёртка
+  name: screwdriver
   parent: BaseItem
   id: ScrewdriverStalker
-  description: Обычная отвёртка с изолированной рукояткой.
+  description: A regular screwdriver with an insulated handle.
   suffix: Stalker, Инструменты
   components:
     - type: Tool
@@ -372,10 +372,10 @@
       categoryName: Инструменты
 
 - type: entity
-  name: разводной ключ
+  name: adjustable wrench
   parent: BaseItem
   id: WrenchStalker
-  description: 'Стандартный инструмент для сборки и разборки всякого.'
+  description: Standard tool for assembling and disassembling everything.
   suffix: Stalker, Инструменты
   components:
     - type: Tag
@@ -404,10 +404,10 @@
       categoryName: Инструменты
 
 - type: entity
-  name: мультитул
+  name: multitool
   parent: BaseItem
   id: MultitoolStalker
-  description: Мультитул для измерения напряжения и калибровки, незаменим для высокоточной электроники.
+  description: Multi-tool for measuring voltage and calibration, indispensable for high-precision electronics.
   suffix: Stalker, Инструменты
   components:
     - type: Craftable
@@ -433,8 +433,8 @@
 
 - type: entity
   id: ScissorsStalker
-  name: ножницы
-  description: Ножницы, особо применяются в вырезании всякой ткани, картона. Но ими можно ещё и стричь людей.
+  name: scissors
+  description: Scissors, especially used for cutting out all kinds of fabric, cardboard. But they can also be used to cut peoples hair.
   parent: BaseItem
   suffix: Stalker, Инструменты
   components:
@@ -467,10 +467,10 @@
       categoryName: Инструменты
 
 - type: entity
-  name: монтировка
+  name: crowbar
   parent: BaseItem
   id: CrowbarStalker
-  description: Стальной лом, используемый для вскрытия замков, дверей, вырывания гвоздей и прочих вспомогательных работ.
+  description: A steel crowbar used for opening locks, doors, pulling out nails and other auxiliary work.
   suffix: Stalker, Инструменты
   components:
   - type: EmitSoundOnLand
@@ -507,10 +507,10 @@
     categoryName: Инструменты
 
 - type: entity
-  name: компактный сварочный аппарат
+  name: compact welding machine
   parent: BaseItem
   id: WelderStalker
-  description: Компактный сварочный аппарат идеально подходит для использования в небольших мастерских, на строительных площадках и так далее, сделали кстати на топливе.
+  description: Compact welding machine is ideal for use in small workshops, construction sites and so on, by the way, made on fuel.
   suffix: Stalker, Инструменты
   components:
   - type: EmitSoundOnLand
@@ -611,8 +611,8 @@
 - type: entity
   parent: BaseItem
   id: CraftTapeMeasure
-  name: рулетка
-  description: Удобная обычная рулетка. Позволяет измерить что угодно, пока хватит длинны.
+  name: roulette
+  description: A convenient regular tape measure. Allows you to measure anything as long as it is long enough.
   suffix: Stalker, Инструменты
   components:
     - type: Trash
@@ -635,8 +635,8 @@
 - type: entity
   parent: BaseItem
   id: STCraftMortarAndPestle
-  name: ступка и пестик
-  description: сначало человек придумал измельчать камнем. на следующий день он придумал измельчать двумя камнями
+  name: mortar and pestle
+  description: first man thought of grinding with a stone. the next day he thought of grinding with two stones
   suffix: Stalker, Инструменты
   components:
     - type: STWeight
@@ -655,8 +655,8 @@
 - type: entity
   parent: BaseItem
   id: CraftAwl
-  name: шило
-  description: Шило без мыла. Нужно чтобы дырявить вещи.
+  name: awl
+  description: An awl without soap. Needed to make holes in things.
   suffix: Stalker, Инструменты
   components:
     - type: Craftable
@@ -676,8 +676,8 @@
 - type: entity
   parent: BaseItem
   id: CraftCWelding
-  name: холодная сварка
-  description: Тюбик холодной сварки.
+  name: cold welding
+  description: Cold welding tube.
   suffix: Stalker, Инструменты
   components:
     - type: STWeight
@@ -696,7 +696,7 @@
 - type: entity
   parent: BaseItem
   id: CraftSaw
-  name: пила
+  name: saw
   suffix: Stalker, Инструменты
   components:
     - type: STWeight
@@ -716,10 +716,10 @@
       categoryName: Инструменты
 
 - type: entity
-  name: бензопила
+  name: chainsaw
   parent: BaseItem
   id: ChainsawStalker
-  description: Разновидность ручной цепной пилы, снабжённая двигателем внутреннего сгорания, как правило, двухтактным.
+  description: A type of hand-held chain saw equipped with an internal combustion engine, usually a two-stroke one.
   components:
   - type: STWeight
     self: 4.5
@@ -771,10 +771,10 @@
     categoryName: Инструменты
 
 - type: entity
-  name: циркулярная пила
+  name: circular saw
   id: SawStalker
   parent: Saw
-  description: Режущий инструмент в виде плоского металлического диска, на внешней кромке которого расположены зубья.
+  description: A cutting tool in the form of a flat metal disk with teeth on the outer edge.
   components:
   - type: STWeight
     self: 3.5
@@ -827,7 +827,7 @@
 # Утилиты
 
 - type: entity
-  name: Лопата
+  name: Shovel
   parent: Shovel
   id: AAAAStalkerLopata
   description: A large tool for digging and moving dirt

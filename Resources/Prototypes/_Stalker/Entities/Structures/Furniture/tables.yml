@@ -1,8 +1,8 @@
 - type: entity
   id: OldWoodTable
   parent: TableBase
-  name: старый деревянный стол
-  description: Некогда этот стол был гордостью, но сейчас предмет, который занимает много места.
+  name: old wooden table
+  description: This table was once a source of pride, but now its an object that takes up a lot of space.
   suffix: ST, Mapping
   components:
   - type: SpriteFade
@@ -33,7 +33,7 @@
 - type: entity
   id: OldBlackTable
   parent: OldWoodTable
-  name: старый чёрный стол
+  name: old black table
   suffix: ST, Mapping
   components:
   - type: SpriteFade
@@ -58,7 +58,7 @@
 - type: entity
   id: OldStoneTable
   parent: OldWoodTable
-  name: старый стальной стол
+  name: old steel table
   suffix: ST, Mapping
   components:
   - type: SpriteFade
@@ -124,9 +124,9 @@
 - type: entity
   id: BiliardTableStalker
   parent: BaseStructure
-  name: бильярдный стол
+  name: billiard table
   suffix: ST, Mapping
-  description: Состоит из рамы, столешницы, основания игровой поверхности, опор, бортов и луз. Предназначен для игры в бильярд.
+  description: Consists of a frame, tabletop, base of the playing surface, supports, sides and pockets. Designed for playing billiards.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/biliard.rsi
@@ -149,9 +149,9 @@
 - type: entity
   id: TableOneStalker
   parent: BaseStructure
-  name: большой стол
+  name: large table
   suffix: ST, Mapping
-  description: Некогда этот стол был гордостью, но сейчас предмет, который занимает много места.
+  description: This table was once a source of pride, but now its an object that takes up a lot of space.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Tables/table.rsi

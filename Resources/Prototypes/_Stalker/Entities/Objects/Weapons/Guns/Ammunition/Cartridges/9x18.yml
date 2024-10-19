@@ -2,7 +2,7 @@
 
 - type: entity
   id: BaseCartridge918
-  name: cartridge (9х18 auto)
+  name: cartridge (9x18 auto)
   parent: BaseCartridgeCaselessRifle
   abstract: true
   components:
@@ -26,7 +26,7 @@
 
 - type: entity
   id: Cartridge918PGJ
-  name: Патрон (9х18)П гж
+  name: Cartridge (9x18)P gzh
   parent: BaseCartridge918
   components:
   - type: CartridgeAmmo
@@ -34,7 +34,7 @@
 
 - type: entity
   id: Cartridge918PST
-  name: Патрон (9х18)ПСТ
+  name: Cartridge (9x18)PST
   parent: BaseCartridge918
   components:
   - type: CartridgeAmmo
@@ -42,7 +42,7 @@
 
 - type: entity
   id: Cartridge918SP7
-  name: Патрон (9х18)СП7 гж
+  name: Cartridge (9x18)SP7 gzh
   parent: BaseCartridge918
   components:
   - type: CartridgeAmmo
@@ -50,7 +50,7 @@
 
 - type: entity
   id: Cartridge918PBM
-  name: Патрон (9х18)ПБМ
+  name: Cartridge (9x18)PBM
   parent: BaseCartridge918
   components:
   - type: CartridgeAmmo
@@ -59,8 +59,8 @@
 ######################### Бизон #########################
 - type: entity
   id: BizonMag
-  name: шнековый магазин "Бизон" (64)
-  description: Шнековый магазин на Бизон под 9х18. Вместимость пуль 64. Продают пустым.
+  name: auger magazine Bison (64)
+  description: Auger magazine for Bison under 9x18. Bullet capacity 64. Sold empty.
   parent: VityazMag
   tag: Stalker
   components:
