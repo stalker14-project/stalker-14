@@ -36,10 +36,10 @@
 ##### Кабан
 
 - type: entity
-  name: сырое мясо кабана
+  name: raw boar meat
   parent: FoodMeatRawBase
   id: FoodMeatBoar
-  description: Кусок сырого мяса кабана.
+  description: A piece of raw boar meat.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -68,10 +68,10 @@
   - type: Craftable
 
 - type: entity
-  name: стейк из мяса кабана
+  name: boar steak
   parent: FoodMeatBase
   id: FoodMeatBoarCooked
-  description: Приготовленное мясо кабана.
+  description: Cooked Boar Meat.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -119,10 +119,10 @@
 ######################## Пёсик
 
 - type: entity
-  name: сырое мясо пса
+  name: raw dog meat
   parent: FoodMeatRawBase
   id: FoodMeatDog
-  description: Кусок сырого мяса пса.
+  description: A piece of raw dog meat.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -151,10 +151,10 @@
   - type: Craftable
 
 - type: entity
-  name: стейк из мяса пса
+  name: dog meat steak
   parent: FoodMeatBase
   id: FoodMeatDogCooked
-  description: Приготовленное мясо пса.
+  description: Cooked dog meat.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -201,10 +201,10 @@
 
 ######################## Паук
 - type: entity
-  name: сырое паучье мясо
+  name: raw spider meat
   parent: FoodMeatRawBase
   id: STFoodMeatSpider
-  description: Кусок сырого мяса паука. Выглядит тошнотворно.
+  description: A piece of raw spider meat. Looks sickening.
   suffix: Stalker, еда
   components:
   - type: Sprite
@@ -226,10 +226,10 @@
   - type: Craftable
 
 - type: entity
-  name: стейк из мяса паука
+  name: spider steak
   parent: FoodMeatBase
   id: STFoodMeatSpiderCooked
-  description: Приготовленное мясо паука. Выглядит тошнотворно.
+  description: Cooked spider meat. Looks sickening.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -263,8 +263,8 @@
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkLemonadehBottleFull
-  name: бутылка с лимонадом «Дюшес»
-  description: "Один из сортов советского лимонада: безалкогольный сильногазированный тонизирующий напиток светло-жёлтого цвета. Помимо обычной лимонадной основы, оригинальный напиток содержит сироп-настой десертной южной груши сорта «Дюшес»"
+  name: bottle of lemonade Duchess
+  description: One of the varieties of Soviet lemonade, a non-alcoholic, highly carbonated, light-yellow tonic drink. In addition to the usual lemonade base, the original drink contains a syrup-infusion of the dessert southern pear of the Duchess variety
   components:
   - type: STWeight
     self: 1.5
@@ -285,10 +285,10 @@
 # Прочая лабудень
 
 - type: entity
-  name: бургер из мяса слепого пса
+  name: Blind Dog Burger
   parent: FoodBurgerBase
   id: FoodBurgerDog
-  description: Бургер из собачатины с чесноком, перцем и салатом. Дешёвая альтернатива более популярному бургеру из кабана.
+  description: Dog burger with garlic, pepper and lettuce. A cheap alternative to the more popular boar burger.
   suffix: Stalker, еда
   components:
   - type: Sprite
@@ -309,10 +309,10 @@
     - Meat
 
 - type: entity
-  name: бургер из мяса кабана
+  name: boar burger
   parent: FoodBurgerBase
   id: FoodBurgerBoar
-  description: Бургер из кабана с чесноком, перцем и салатом. Более питательный, чем бургер из слепого пса.
+  description: Boar burger with garlic, pepper and lettuce. More nutritious than a blind dog burger.
   suffix: Stalker, еда
   components:
   - type: Sprite
@@ -333,10 +333,10 @@
     - Meat
 
 - type: entity
-  name: бургер из мяса паука
+  name: spider meat burger
   parent: FoodBurgerBase
   id: FoodBurgerSpider
-  description: Бургер из паука с чесноком, перцем и салатом. Эта гадость не только отвратительна, но ещё и мало-питательна
+  description: Spider burger with garlic, pepper and lettuce. This stuff is not only disgusting, but also poorly nutritious
   suffix: Stalker, еда
   components:
   - type: Sprite
@@ -357,10 +357,10 @@
     - Meat
 
 - type: entity
-  name: печёный картофель
+  name: baked potato
   parent: FoodProduceBase
   id: FoodPotatoCooked
-  description: Печёный картофель, который может быть как простым, так и праздничным, изысканным блюдом.
+  description: Baked potatoes, which can be either a simple or a festive, sophisticated dish.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -393,10 +393,10 @@
     - Vegetable
 
 - type: entity
-  name: чищенный картофель
+  name: peeled potatoes
   parent: FoodProduceBase
   id: FoodPotatoCleaned
-  description: Чищенныё картофель, который может быть как простым, так и праздничным, изысканным блюдом.
+  description: Peeled potatoes, which can be either a simple or a festive, sophisticated dish.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -426,10 +426,10 @@
     - Vegetable
 
 - type: entity
-  name: картофельные очистки
+  name: potato peelings
   parent: FoodProduceBase
   id: FoodPotatoCleaning
-  description: Говорят, что из них делают чипсы.
+  description: They say they make chips out of them.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -459,11 +459,11 @@
 # Stalker
 
 - type: entity
-  name: бутерброд
+  name: sandwich
   parent: FoodMeatBase
   id: FoodMeatButerbrod
   suffix: Stalker, Еда
-  description: Ломтик хлеба или булки с намазанной или уложенной сверху начинкой из какого-либо продукта, готового к употреблению
+  description: A slice of bread or a roll with a filling of some product spread or laid on top, ready to eat
   components:
   - type: STWeight
     self: 0.34

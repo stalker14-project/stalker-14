@@ -3,8 +3,8 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineMilitary
-  name: раздатчик военных
-  description: Заменил коптёра в современности.
+  name: military dispenser
+  description: Replaced the copter in modern times.
   suffix: Stalker
   components:
     - type: VendingMachine
@@ -82,8 +82,8 @@
 - type: entity
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockMilitary
-  name: Снабжение военных
-  description: Ящик со всем, что вам нужно для уничтожения нелегалов.
+  name: Military supply
+  description: A box with everything you need to destroy illegals.
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -97,7 +97,7 @@
 #########################################Спавнер снабжения
 
 - type: entity
-  name: спавнер военного снабжения
+  name: military supply spawner
   id: SupplySpawner
   parent: FlexibleMarkerTrigger
   suffix: Stalker | КД 30 минут
@@ -121,8 +121,8 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachinePolice
-  name: раздатчик полиции
-  description: раздатчик полиции.
+  name: police dispenser
+  description: police dispenser.
   suffix: Stalker
   components:
     - type: VendingMachine
@@ -179,8 +179,8 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineUN
-  name: раздатчик ООН
-  description: раздатчик ООН.
+  name: UN Dispenser
+  description: UN Dispenser.
   suffix: Stalker
   components:
     - type: VendingMachine
@@ -244,8 +244,8 @@
 - type: entity
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockUN
-  name: Снабжение ООН
-  description: Ящик со всем, что вам нужно для выражения беспокойства.
+  name: UN Supply
+  description: A box with everything you need to express concern.
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -259,7 +259,7 @@
 #########################################Спавнер снабжения
 
 - type: entity
-  name: спавнер снабжения ООН
+  name: UN Supply Spawner
   id: SupplyUNSpawner
   parent: FlexibleMarkerTrigger
   suffix: Stalker
@@ -283,8 +283,8 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineLaborer
-  name: раздатчик грузчиков
-  description: раздатчик грузчиков. Отнесите ящики Лёшке барону, чтобы немного заработать
+  name: loader distributor
+  description: loader distributor. Take the boxes to Leshka the baron to earn some money
   suffix: Stalker
   components:
     - type: VendingMachine
@@ -307,8 +307,8 @@
 - type: entity
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockLaborer
-  name: Снабжение ящиков грузчиков
-  description: Ящик с ящиками для грузчиков
+  name: Supply of boxes of movers
+  description: Box with boxes for movers
   components:
     - type: VendingMachineRestock
       canRestock:

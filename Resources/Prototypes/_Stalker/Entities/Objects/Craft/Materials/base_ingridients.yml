@@ -29,8 +29,8 @@
 - type: entity
   parent: STBaseIngridient
   id: CraftScrap
-  name: металлолом
-  description: Кусок металлолома, который разве что отправить на вторичную переработку.
+  name: scrap metal
+  description: A piece of scrap metal that can only be sent for recycling.
   suffix: Stalker, крафт
   components:
     - type: STWeight
@@ -50,9 +50,9 @@
 
 - type: entity
   parent: STBaseIngridient
-  name: ткань
+  name: cloth
   id: MaterialCloth1Stalker
-  description: Простая синтетическая ткань без особых ухищерений.
+  description: Simple synthetic fabric without any special tricks.
   suffix: Stalker, крафт
   components:
     - type: Sprite

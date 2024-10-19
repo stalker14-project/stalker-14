@@ -4,9 +4,9 @@
   id: BaseBarrel
   abstract: true
   parent: BaseStructureStalkerDynamic
-  name: бочка
+  name: barrel
   suffix: Stalker
-  description: Большой цилиндрический сосуд для жидкостей с двумя плоскими днищами и несколько выпуклыми стенками, которые стянуты обручами.
+  description: A large cylindrical vessel for liquids with two flat bottoms and slightly convex walls, which are pulled together with hoops.
   placement:
     mode: PlaceFree
   components:
@@ -38,7 +38,7 @@
   id: BarrelExpl
   parent: BaseStructureDynamic
   suffix: Stalker, НЕ МАППИТЬ
-  name: бочка
+  name: barrel
   components:
   - type: InteractionOutline
   - type: Physics
@@ -99,7 +99,7 @@
 
 - type: entity
   id: BarrelWooden1
-  name: деревянная бочка
+  name: wooden barrel
   suffix: Stalker
   parent: BaseBarrel
   components:

@@ -32,8 +32,8 @@
   parent: [STBaseHealingItem, Brutepack]
   id: STBrutepack
   suffix: ST
-  name: набор от ушибов
-  description: помогает от физических повреждений
+  name: Bruise Set
+  description: helps against physical damage
   components:
   - type: Healing
     damageContainers:
@@ -52,7 +52,7 @@
 
 - type: stack
   id: STBrutepack
-  name: набор от ушибов
+  name: Bruise Set
   icon:
     sprite: Objects/Specific/Medical/medical.rsi
     state: brutepack
@@ -63,8 +63,8 @@
   parent: [STBaseHealingItem, Ointment]
   id: STOintment
   suffix: ST
-  name: мазь
-  description: помогает от ожогов и обморожения
+  name: ointment
+  description: helps with burns and frostbite
   components:
   - type: Stack
     stackType: STOintment
@@ -72,7 +72,7 @@
 
 - type: stack
   id: STOintment
-  name: мазь
+  name: ointment
   icon:
     sprite: Objects/Specific/Medical/medical.rsi
     state: ointment
@@ -83,8 +83,8 @@
   parent: [STBaseHealingItem, Gauze]
   id: STGauze
   suffix: ST
-  name: бинт
-  description: останавливает кровотечение
+  name: bandage
+  description: stops bleeding
   components:
   - type: Stack
     stackType: STGauze
@@ -92,7 +92,7 @@
 
 - type: stack
   id: STGauze
-  name: бинт
+  name: bandage
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
@@ -102,9 +102,9 @@
 - type: entity
   parent: BaseMedkit
   id: MedkitAI2
-  name: аптечка АИ-2
+  name: AI-2 first aid kit
   suffix: ST
-  description: Обычная универсальная аптечка военного назначения. При помощи неё можно справиться с такими травмами как порезы, ожоги, пулевые и осколочные ранения, отравления и другими. Включает в себя стандартный набор медикаментов. Проста в использовании.
+  description: A standard universal first aid kit for military purposes. It can be used to treat injuries such as cuts, burns, bullet and shrapnel wounds, poisoning and others. Includes a standard set of medications. Easy to use.
   components:
   - type: Sprite
     state: medkit-1
@@ -124,7 +124,7 @@
 
 - type: stack
   id: MedkitAI2
-  name: Аптечка АИ-2
+  name: AI-2 First Aid Kit
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-1
@@ -135,8 +135,8 @@
   parent: BaseMedkit
   id: MedkitMilitary
   suffix: ST
-  name: армейская аптечка
-  description: Медицинский набор, разработанный специально для армейских подразделений. Более эффективный вариант по сравнению с аптечкой АИ-2.
+  name: army first aid kit
+  description: A medical kit designed specifically for army units. A more effective option compared to the AI-2 first aid kit.
   components:
   - type: STWeight
     self: 0.4
@@ -158,7 +158,7 @@
 
 - type: stack
   id: MedkitMilitary
-  name: Армейская Аптечка
+  name: Army First Aid Kit
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-1
@@ -169,8 +169,8 @@
   parent: BaseMedkit
   id: MedkitScience
   suffix: ST
-  name: научная аптечка
-  description: Медицинский набор, разработанный специально для работы в условиях Зоны. Состав набора подобран как для борьбы с ранениями, так и для вывода радионуклидов из организма. Препятствует развитию лучевой болезни, а также снижает дозу накопленной радиации.
+  name: scientific first aid kit
+  description: A medical kit designed specifically for work in the Zone. The kit's composition is selected both to combat wounds and to remove radionuclides from the body. Prevents the development of radiation sickness and reduces the dose of accumulated radiation.
   components:
   - type: STWeight
     self: 0.6
@@ -194,7 +194,7 @@
 
 - type: stack
   id: MedkitScience
-  name: Научная Аптечка
+  name: Scientific First Aid Kit
   icon:
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-1
@@ -202,8 +202,8 @@
   maxCount: 4
 
 - type: entity
-  name: элитная аптечка
-  description: Элитный медицинский набор, разработанный специально для работы в тяжёлых условиях Зоны. Состав набора подобран как для борьбы с ранениями, так и для вывода радионуклидов из организма и лечения сложных ожогов. Препятствует развитию лучевой болезни, а также снижает дозу накопленной радиации.
+  name: elite first aid kit
+  description: An elite medical kit, designed specifically for work in the harsh conditions of the Zone. The kit's composition is selected both to combat wounds and to remove radionuclides from the body and treat complex burns. Prevents the development of radiation sickness, and also reduces the dose of accumulated radiation.
   parent: BaseHealingItem
   id: MedkitElite
   suffix: ST
@@ -240,7 +240,7 @@
 
 - type: stack
   id: MedkitElite
-  name: Элитная Аптечка
+  name: Elite First Aid Kit
   icon:
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-4
@@ -248,8 +248,8 @@
   maxCount: 4
 
 - type: entity
-  name: аптечка «LAR»
-  description: "Благодаря высокотехнологичным разработкам учёных, достигнут прогресс в создании медицинского комплекта «LAR». Этот набор представляет собой усовершенствованный научный продукт, который покорил мир. На данный момент состав набора составлен лишь из экспериментальных реагентов, которые ещё не прошли тестирование на людях."
+  name: LAR first aid kit
+  description: Thanks to high-tech developments by scientists, progress has been made in creating the LAR medical kit. This kit is an advanced scientific product that has conquered the world. At the moment, the kit consists only of experimental reagents that have not yet been tested on humans.
   parent: BaseHealingItem
   id: MedkitLAR
   suffix: ST, Events
@@ -283,7 +283,7 @@
 
 - type: stack
   id: MedkitLAR
-  name: Аптечка «LAR»
+  name: LAR First Aid Kit
   icon:
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-5

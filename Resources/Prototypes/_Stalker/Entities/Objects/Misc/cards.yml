@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
-  name: карта
-  description: Приятная на ощупь бумажная игральная карта выпуска NanoTrasen.
+  name: map
+  description: Nice to the touch paper playing card from NanoTrasen.
   id: BaseCard
   suffix: ST
   abstract: true
@@ -305,8 +305,8 @@
 - type: entity
   parent: BaseCardBin
   id: CardBinEmpty
-  name: колода карт
-  description: Колода карт для тех кому действительно более не чем занятся.
+  name: deck of cards
+  description: A deck of cards for those who really have nothing better to do.
   suffix: Пустая
   components:
   - type: Bin
@@ -318,8 +318,8 @@
 - type: entity
   parent: BaseCardBin
   id: CardBin
-  name: колода карт
-  description: Колода карт для тех кому действительно более не чем занятся.
+  name: deck of cards
+  description: A deck of cards for those who really have nothing better to do.
   suffix: 36
   components:
   - type: Bin

@@ -2,9 +2,9 @@
 - type: entity
   id: helicopterStructure
   parent: BaseShippingContainer
-  name: Сломанный вертолёт
+  name: Broken helicopter
   suffix: Stalker
-  description: Разбился в результате катастрофы, модель неизвестна.
+  description: Crashed in an accident, model unknown.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/helicopter.rsi
@@ -29,8 +29,8 @@
 - type: entity
   id: STForgottenCar
   parent: OldCarGreen
-  name: брошенная машина
-  description: Уж сколько лет этому памятнику автопрома, а сколько наскальной живописи на нем?
+  name: abandoned car
+  description: How old is this automobile industry monument, and how much rock art is there on it?
   suffix: ST
   components:
   - type: Sprite
@@ -43,9 +43,9 @@
 - type: entity
   id: UAZStructure
   parent: BaseShippingContainer
-  name: УАЗ-452
+  name: UAZ-452
   suffix: Stalker
-  description: Семейство полноприводных внедорожных фургонов и легких грузовиков с кузовом на раме и кабиной над двигателем, выпускаемых Ульяновским автомобильным заводом (УАЗ) с 1965 года.
+  description: A family of all-wheel drive off-road vans and light trucks with a body on a frame and a cab over the engine, produced by the Ulyanovsk Automobile Plant (UAZ) since 1965.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/uaz.rsi
@@ -90,7 +90,7 @@
 - type: entity
   id: UAZStructureRusted
   parent: UAZStructure
-  name: ржавый УАЗ-452
+  name: rusty UAZ-452
   suffix: Stalker
   components:
   - type: Sprite
@@ -101,9 +101,9 @@
 - type: entity
   id: OldCarGreen
   parent: BaseShippingContainer
-  name: старая зелёная машина
+  name: old green car
   suffix: Stalker
-  description: Довольно старая машина, производимая ещё в советское время. Время не щадит никого, поэтому она в таком плохом состоянии. К сожалению, невозможно различить марку машины. По крайней мере, вы таких не знаете.
+  description: Quite an old car, produced back in the Soviet era. Time spares no one, that's why it's in such a bad condition. Unfortunately, it's impossible to tell the make of the car. At least, you don't know any.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
@@ -148,7 +148,7 @@
 - type: entity
   id: OldCarRed
   parent: OldCarGreen
-  name: старая красная машина
+  name: old red car
   suffix: Stalker
   components:
   - type: Sprite
@@ -159,7 +159,7 @@
 - type: entity
   id: CarRedUS
   parent: OldCarGreen
-  name: старая красная импортная машина
+  name: old red imported car
   suffix: Stalker
   components:
   - type: Sprite
@@ -170,7 +170,7 @@
 - type: entity
   id: CarGreenUS
   parent: OldCarGreen
-  name: старая зелёная импортная машина
+  name: old green imported car
   suffix: Stalker
   components:
   - type: Sprite
@@ -181,7 +181,7 @@
 - type: entity
   id: BrokenCarGreen
   parent: OldCarGreen
-  name: старая разбитая машина
+  name: old broken car
   suffix: Stalker
   components:
   - type: Sprite
@@ -192,7 +192,7 @@
 - type: entity
   id: BrokenCarRed
   parent: OldCarGreen
-  name: старая разбитая машина
+  name: old broken car
   suffix: Stalker
   components:
   - type: Sprite
@@ -205,9 +205,9 @@
 - type: entity
   id: ZIL
   parent: BaseShippingContainer
-  name: ЗИЛ-130
+  name: ZIL-130
   suffix: Stalker
-  description: Советский и российский среднетоннажный грузовой автомобиль третьего поколения разработки и производства автомобильного завода имени Лихачёва в Москве.
+  description: Soviet and Russian medium-tonnage truck of the third generation developed and produced by the Likhachev Automobile Plant in Moscow.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/zil.rsi
@@ -268,9 +268,9 @@
 - type: entity
   id: boatStalker1
   parent: BaseShippingContainer
-  name: лодка
+  name: boat
   suffix: Stalker
-  description: Небольшое беспалубное судно.
+  description: A small, undecked vessel.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/boat1.rsi
@@ -292,9 +292,9 @@
 
 - type: entity
   id: boatStalker2
-  name: моторная лодка
+  name: motorboat
   parent: boatStalker1
-  description: Небольшое беспалубное судно, с мотором.
+  description: A small, undecked vessel with a motor.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/boat2.rsi
@@ -319,9 +319,9 @@
 - type: entity
   id: Moskvich
   parent: BaseShippingContainer
-  name: Москвич-412
+  name: Moskvich-412
   suffix: Stalker
-  description: Советский и российский заднеприводной автомобиль II группы малого класса, выпускавшийся с октября 1967 по 1976 год на заводе МЗМА.
+  description: Soviet and Russian rear-wheel drive car of the II group of small class, produced from October 1967 to 1976 at the MZMA plant.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/moskvich.rsi
@@ -367,8 +367,8 @@
 
 - type: entity
   id: kraz
-  name: КрАЗ-260
-  description: Трёхосный крупнотоннажный грузовой автомобиль повышенной проходимости, предназначенный для перевозки грузов. Тент перекрашент под военные нужды.
+  name: KrAZ-260
+  description: Three-axle heavy-duty truck with increased cross-country ability, designed for cargo transportation. The awning is repainted for military purposes.
   parent: ZIL
   components:
   - type: Sprite
@@ -377,8 +377,8 @@
 
 - type: entity
   id: kraz2
-  name: КрАЗ-260
-  description: Трёхосный крупнотоннажный грузовой автомобиль повышенной проходимости, предназначенный для перевозки грузов.
+  name: KrAZ-260
+  description: Three-axle heavy-duty truck with increased cross-country ability, designed for the transportation of goods.
   parent: kraz
   components:
   - type: Sprite
@@ -390,7 +390,7 @@
 - type: entity
   id: icarus
   name: ikarus-280
-  description: Венгерский городской сочленённый высокопольный среднеприводный автобус особо большой вместимости фирмы Ikarus.
+  description: Hungarian city articulated high-floor mid-drive bus of extra large capacity from Ikarus.
   parent: kraz
   components:
   - type: Sprite

@@ -2,8 +2,8 @@
   parent: ClothingBackpackDuffelGreenStalker
   id: ClothingBackpackDuffelGreenStalkerHydroponic
   suffix: Stalker
-  name: ботанический набор
-  description: В наборе содержится всё необходимое для начала пути ботаника.
+  name: botanical set
+  description: This set contains everything you need to start your botanist journey.
   components:
     - type: StorageFill
       contents:
@@ -16,7 +16,7 @@
         - id: HandLabeler
 
 - type: entity
-  name: почва
+  name: soil
   id: SoilStalker
   suffix: Stalker
   parent: hydroponicsSoil
@@ -76,11 +76,11 @@
   - type: PlantHolderVisuals
 
 - type: entity
-  name: навоз
+  name: manure
   parent: FoodBakingBase
   id: ManureStalker
   suffix: Stalker
-  description: Органическое удобрение, используемое для улучшения плодородия почвы и стимулирования роста растений, в особом случае используется сразу для создания хорошей почвы.
+  description: Organic fertilizer used to improve soil fertility and stimulate plant growth, in a special case it is used directly to create good soil.
   components:
   - type: FlavorProfile
     flavors:
@@ -101,10 +101,10 @@
           Quantity: 10
 
 - type: entity
-  name: коса
+  name: scythe
   parent: BaseItem
   id: HydroponicsToolScytheStalker
-  description: Острое и изогнутое лезвие на длинной фиберметаллической рукоятке, этот инструмент позволяет легко пожинать то, что вы сеете.
+  description: With a sharp, curved blade on a long fiber-metal handle, this tool makes it easy to reap what you sow.
   suffix: Stalker
   components:
   - type: Sharp
@@ -148,10 +148,10 @@
     categoryName: Инструменты
 
 - type: entity
-  name: топорик
+  name: hatchet
   parent: BaseItem
   id: HatchetStalker
-  description: Топорик, можно срубать деревья.
+  description: A hatchet, you can cut down trees.
   suffix: Stalker
   components:
   - type: Tag
@@ -175,11 +175,11 @@
     categoryName: Инструменты
 
 - type: entity
-  name: маленькая тяпка
+  name: little hoe
   parent: BaseItem
   suffix: Stalker
   id: HydroponicsToolMiniHoeStalker
-  description: Она используtтся для удаления сорняков.
+  description: It is used to remove weeds.
   components:
   - type: Tag
     tags:
@@ -223,11 +223,11 @@
     damage: 5
 
 - type: entity
-  name: секатор
+  name: pruner
   parent: BaseItem
   suffix: Stalker
   id: HydroponicsToolClippersStalker
-  description: Инструмент, используемый для взятия образцов с растений, или же извлечения семян с растения.
+  description: A tool used to take samples from plants, or to extract seeds from a plant.
   components:
   - type: Tag
     tags:

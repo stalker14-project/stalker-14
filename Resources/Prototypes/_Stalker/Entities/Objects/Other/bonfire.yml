@@ -1,16 +1,16 @@
 - type: entity
   id: STBonfire
   parent: Bonfire
-  name: Костёр
-  description: Что может быть лучше чем сидеть под костёр под песни?
+  name: Bonfire
+  description: What could be better than sitting under a fire listening to songs?
   components:
   - type: Craftable
 
 - type: entity
   id: BonfireOff
   parent: STBonfire
-  name: основа костра
-  description: Основа для костра.
+  name: campfire base
+  description: Base for a fire.
   components:
   - type: Transform
     anchored: true
@@ -34,8 +34,8 @@
 - type: entity
   id: BonfireOn
   parent: BonfireOff
-  name: костёр
-  description: Что может быть лучше позднего вечера под открытым небом с гитарой и друзьями.
+  name: campfire
+  description: What could be better than a late evening in the open air with a guitar and friends.
   components:
   - type: Sprite
     noRot: true
@@ -62,8 +62,8 @@
 
 - type: construction
   id: BonfireCraft
-  name: основа костра
-  description: Основа для костра.
+  name: campfire base
+  description: Base for a fire.
   graph: BonfireOff
   startNode: start
   targetNode: bonfireoff

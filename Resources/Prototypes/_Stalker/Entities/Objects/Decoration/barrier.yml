@@ -1,9 +1,9 @@
 - type: entity
   id: BarrierBlockStalker
   parent: BaseShippingContainer
-  name: шлагбаум
+  name: barrier
   suffix: Stalker, не открывается
-  description: Устройство для быстрого преграждения и освобождения пути.
+  description: A device for quickly blocking and clearing a path.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/barrier.rsi
@@ -25,9 +25,9 @@
 
 - type: entity
   id: BarrierBlockDynamicStalker
-  name: шлагбаум
+  name: barrier
   suffix: Stalker, Открывается
-  description: Устройство для быстрого преграждения и освобождения пути.
+  description: A device for quickly blocking and clearing a path.
   parent: BaseMaterialDoor
   components:
   - type: Sprite
