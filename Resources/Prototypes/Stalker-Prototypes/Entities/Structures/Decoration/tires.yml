@@ -1,0 +1,114 @@
+- type: entity
+  id: Tire
+  name: Шина
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires
+  - type: Climbable
+    delay: 0.5
+
+- type: entity
+  id: Tires2
+  name: Шини
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires2
+  - type: Climbable
+    delay: 1.0
+
+- type: entity
+  id: Tires3
+  name: Шини
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires3
+  - type: Climbable
+    delay: 1.5
+
+- type: entity
+  id: Tires4
+  name: Шини
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires4
+  - type: Climbable
+    delay: 1.0
+
+- type: entity
+  id: Tires5
+  name: Шини
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires5
+  - type: Climbable
+    delay: 1.2
+
+- type: entity
+  id: Tires6
+  name: Шина
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires6
+  - type: Climbable
+    delay: 0.3
+
+- type: entity
+  id: Tires7
+  name: Шина
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires7
+  - type: Climbable
+    delay: 0.8
+
+- type: entity
+  id: Tires8
+  name: Шини
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires8
+  - type: Climbable
+    delay: 0.5
+
+- type: entity
+  id: Tires9
+  name: Шини
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires9
+  - type: Climbable
+    delay: 0.5
+
+- type: entity
+  id: Tires10
+  name: Шини
+  parent: BaseStructure
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/tires.rsi 
+    state: tires10
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask

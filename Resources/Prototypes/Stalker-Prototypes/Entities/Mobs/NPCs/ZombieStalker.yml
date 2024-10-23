@@ -1,0 +1,317 @@
+- type: entity
+  parent: [ SimpleMobBase, MobCombat ]
+  id: BaseMobZombie
+  name: Зомбований
+  abstract: true
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - Zombie
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian
+      Dead:
+        Base: dead
+  - type: MovementAlwaysTouching
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 1.5
+  - type: MobState
+    allowedStates:
+    - Alive
+    - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: Stamina
+    critThreshold: 50
+  - type: Butcherable
+    spawned:
+    - id: FoodStrangeMeat
+      amount: 3
+  - type: Bloodstream
+    bloodMaxVolume: 100
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 6
+  - type: ReplacementAccent
+    accent: zombie
+  - type: ZombieImmune
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Zombie
+  - type: TimedDespawn
+    lifetime: 2000
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian1
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian1
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian1
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian2
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian2
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian2
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian3
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian3
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian3
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian4
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian4
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian4
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian5
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian5
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian5
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian6
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian6
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian6
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian7
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian7
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian7
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian8
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian8
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian8
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian9
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian9
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian9
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobZombie
+  id: BaseMobZombieCivilian10
+  name: Зомбований
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: civilian10
+      sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: civilian10
+      Dead:
+        Base: dead
+
+- type: entity
+  parent: BaseMobHuman
+  id: MonolithAgent
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: ["enum.BorgVisualLayers.Light"]
+      sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+      state: light
+      shader: unshaded
+      visible: false 
+  - type: NpcFactionMember
+    factions:
+      - Zombie
+  - type: Loadout
+    prototypes:
+      - MonolithAgentGear
+  - type: InputMover
+  - type: RandomHumanoidAppearance
+    randomizeName: true
+  - type: MindShield
+  - type: AntagImmune
+  - type: UserInterface
+    interfaces:
+      enum.SiliconLawsUiKey.Key:
+        type: SiliconLawBoundUserInterface
+      enum.VoiceMaskUIKey.Key:
+        type: VoiceMaskBoundUserInterface
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: SiliconLawProvider
+    laws: MonolithLaw
+  - type: SiliconLawBound
+  - type: BorgChassis
+    maxModules: 0
+  - type: ItemToggle
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+
+- type: entity
+  parent: MonolithAgent
+  id: MonolithAgentNPC
+  suffix: AI
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+    blackboard:
+      NavClimb: !type:Bool
+        true
+  - type: NpcFactionMember
+    factions:
+    - Zombie
+    
+- type: startingGear
+  id: MonolithAgentGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSidor
+    back: ClothingBackpackMerc
+    mask: ClothingMaskGas
+    ears: ClothingHeadsetMonolithRadio
+    neck: ClothingNeckPatchMonolith
+    gloves: ClothingHandsGlovesFingerless
+    outerClothing: ClothingOuterLeatherMonoJacket
+    shoes: ClothingShoesBootsCombat
+    pocket1: MagazineLightRifle
+    pocket2: EmergencyMedipenStalker
+  inhand:
+    - WeaponRifleAk
+  storage:
+    back: 
+    - MedkitMilitaryStalker
+    - MagazineLightRifle
+    - MagazineBoxLightRifle

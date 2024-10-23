@@ -1,0 +1,111 @@
+- type: entity
+  id: StalkerAmmoTechFab
+  parent: BaseLatheLube
+  name: Сталкерський техфаб
+  suffix: Stalker
+  description: Вставляєш гроші і вибераєш опцію...
+  components:
+    - type: Sprite
+      sprite: Structures/Machines/techfab.rsi
+      layers:
+        - state: icon
+          map: ["enum.LatheVisualLayers.IsRunning"]
+        - state: ammo
+        - state: unlit
+          shader: unshaded
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
+        - state: inserting
+          map: ["enum.MaterialStorageVisualLayers.Inserting"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Lathe
+      idleState: icon
+      runningState: icon
+      staticRecipes:
+        - StalkerBoxLethalshot
+        - BoxShotgunFlare
+        - StalkerMagazineBoxPistol
+        - StalkerMagazinePistol
+        - StalkerMagazinePistolEmpty
+        - StalkerMagazineBoxLightRifle
+        - StalkerMagazineRifle
+        - StalkerMagazineRifleEmpty
+    - type: MaterialStorage
+      whitelist:
+        tags:
+          - Credit
+
+#- type: latheRecipe
+#  abstract: true
+#  id: BaseAmmoRecipe
+#  category: Ammo
+#  completetime: 5
+
+#- type: latheRecipe
+#  abstract: true
+#  parent: BaseAmmoRecipe
+#  id: BaseEmptyAmmoRecipe
+#  completetime: 1
+
+- type: latheRecipe
+  abstract: true
+  id: StalkerBaseAmmoRecipe
+  category: Ammo
+  completetime: 2
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerBoxLethalshot
+  result: BoxLethalshot
+  materials:
+    StalkerCredit: 1200
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerBoxShotgunFlare
+  result: BoxShotgunFlare
+  materials:
+    StalkerCredit: 300
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerMagazineBoxPistol
+  result: MagazineBoxPistol
+  materials:
+    StalkerCredit: 500
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerMagazinePistol
+  result: MagazinePistol
+  materials:
+    StalkerCredit: 550
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerMagazinePistolEmpty
+  result: MagazinePistolEmpty
+  materials:
+    StalkerCredit: 350
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerMagazineBoxLightRifle
+  result: MagazineBoxLightRifle
+  materials:
+    StalkerCredit: 900
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerMagazineRifle
+  result: MagazineRifle
+  materials:
+    StalkerCredit: 650
+
+- type: latheRecipe
+  parent: StalkerBaseAmmoRecipe
+  id: StalkerMagazineRifleEmpty
+  result: MagazineRifleEmpty
+  materials:
+    StalkerCredit: 550
+

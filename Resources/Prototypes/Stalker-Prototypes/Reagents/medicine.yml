@@ -1,0 +1,63 @@
+- type: reagent
+  id: Psyblockade
+  name: Пси-блокада
+  group: Medicine
+  desc: Наркотик, який блокує лавиноподібні нервові імпульси. Вживання викликає короткочасну втрату всіх емоцій. Використовується виключно в Зоні для протидії впливу аномальних пси-полів. Дія препарату є довготривалою.
+  physicalDesc: reagent-physical-desc-oily
+  slippery: true
+  flavor: medicine
+  color: "#900020"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Psyemission: -1
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        type: Local
+        visualType: Medium
+        messages: [ "generic-reagent-effect-nauseous" ]
+        probability: 0.5
+      - !type:ChemVomit
+        conditions:
+        - !type:ReagentThreshold
+          min: 20
+        probability: 0.02
+      - !type:Drunk
+        conditions:
+        - !type:ReagentThreshold
+          min: 5
+  plantMetabolism:
+  - !type:PlantAdjustToxins
+    amount: -10
+  - !type:PlantAdjustHealth
+    amount: 1
+
+- type: reagent
+  id: Radioclean
+  name: радіоклін
+  group: Medicine
+  desc: Потужний хелатуючий агент, призначений для зв'язування та виведення радіоактивних ізотопів з організму, що сприяє детоксикації після радіаційного опромінення.
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: medicine
+  color: "#00FF66"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:ModifyBleedAmount
+        amount: 1.5
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+        damage:
+          types:
+            Radiation: -4

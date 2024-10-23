@@ -1,0 +1,219 @@
+- type: entity
+  parent: FlaskBase
+  id: OldFlask
+  name: Стара фляга
+  description: Стара фляга, запах алкоголю останеться на вічно.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    state: oldflask
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Moonshine
+          Quantity: 50
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+- type: entity
+  parent: FlaskBase
+  id: GreenFlask
+  name: Зелена фляга
+  description: Хороша для зберігання напоїв
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    state: zonetea
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 15
+        - ReagentId: GreenTea
+          Quantity: 35
+  - type: TrashOnSolutionEmpty
+    solution: drink
+
+- type: entity
+  name: Сире м'ясо мутанта
+  parent: FoodMeatRawBase
+  id: FoodMutantMeat
+  description: ЗАНАДТО НЕБЕЗПЕЧНО ЇСТИ СИРИМ.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/stalkerloot.rsi
+    state: mutantmeat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 20
+        - ReagentId: Fat
+          Quantity: 10
+        - ReagentId: Uranium
+          Quantity: 15
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 290
+  # required for cooking to work
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02 # arbitrary number that sounds right for a slab of meat
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Meaterial: 300
+  - type: Construction
+    graph: MutantMeat
+    node: start
+    defaultTarget: mutant meat
+
+- type: entity
+  name: Приготоване м'ясо мутанта
+  parent: FoodBase
+  id: FoodMutantCookedMeat
+  description: Усе ще небезпечно їсти але уже краще.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/stalkerloot.rsi
+    state: mutantcookedmeat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: Uranium
+          Quantity: 5
+  - type: Construction
+    graph: MutantMeat
+    node: mutant meat
+
+- type: entity
+  name: Сире дивне мутанта
+  parent: FoodMeatRawBase
+  id: FoodStrangeMeat
+  description: ЗАНАДТО НЕБЕЗПЕЧНО ЇСТИ СИРИМ.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/stalkerloot.rsi
+    state: strangemeat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Fat
+          Quantity: 5
+        - ReagentId: Uranium
+          Quantity: 15
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 290
+  # required for cooking to work
+  - type: InternalTemperature
+    thickness: 0.02
+    area: 0.02 # arbitrary number that sounds right for a slab of meat
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      Meaterial: 300
+  - type: Construction
+    graph: StrangeMeat
+    node: start
+    defaultTarget: strange meat
+
+- type: entity
+  name: Приготоване дивне м'ясо
+  parent: FoodBase
+  id: FoodStrangeCookedMeat
+  description: Усе ще небезпечно їсти але уже краще.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/stalkerloot.rsi
+    state: strangecookedmeat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: Uranium
+          Quantity: 10
+  - type: Construction
+    graph: StrangeMeat
+    node: strange meat
+
+- type: entity
+  name: Батон
+  parent: FoodBase
+  id: FoodLoafOfBread
+  description: Батон низької якості, трохи затверділий
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    state: loaf
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+
+- type: entity
+  name: Ковбаса
+  parent: FoodBase
+  id: FoodSausageStalker
+  description: Ковбаса низької якості, має дивний запах і присмак але з хлібом піде.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    state: sausage
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 10
+
+- type: entity
+  name: Салямі
+  parent: FoodBase
+  id: FoodSalamiStalker
+  description: Салямі. Се ля ві...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    state: salami
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Protein
+          Quantity: 20
+
+- type: entity
+  name: Таблетки псиблокади
+  parent: FoodBase
+  id: Psyblockadepills
+  description: У пачці знаходиться наркотик, який блокує лавиноподібні нервові імпульси. Вживання викликає короткочасну втрату всіх емоцій. Використовується виключно в Зоні для протидії впливу аномальних пси-полів. Дія препарату є довготривалою.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    state: pills1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Psyblockade
+          Quantity: 30

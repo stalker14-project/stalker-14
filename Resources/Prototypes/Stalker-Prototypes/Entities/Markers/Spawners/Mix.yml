@@ -1,0 +1,119 @@
+- type: entity
+  id: RandomMattresSpawner50
+  name: Випадковий матрас можливість 50%
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+          state: mattress
+    - type: RandomSpawner
+      prototypes:
+        - ComfyMattress
+        - Mattress1
+        - Mattress2
+        - Mattress3
+        - Mattress4
+        - Mattress5
+        - Mattress6
+        - Mattress7
+        - Mattress8
+        - Mattress9
+        - Mattress10
+        - Mattress11
+        - Mattress12
+        - Mattress13
+        - Mattress14
+      chance: 0.5
+
+- type: entity
+  id: RandomMattresSpawner
+  name: Випадковий матрас
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+          state: mattress
+    - type: RandomSpawner
+      prototypes:
+        - ComfyMattress
+        - Mattress1
+        - Mattress2
+        - Mattress3
+        - Mattress4
+        - Mattress5
+        - Mattress6
+        - Mattress7
+        - Mattress8
+        - Mattress9
+        - Mattress10
+        - Mattress11
+        - Mattress12
+        - Mattress13
+        - Mattress14
+      chance: 1
+
+- type: entity
+  id: RandomTransmissiontowerSpawner
+  name: Випадкова електроопора
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: StalkerTextures/Structures/Decoration/roaddecoration.rsi
+          state: transmissiontower
+    - type: RandomSpawner
+      prototypes:
+        - Transmissiontower
+        - Transmissiontower1
+        - Transmissiontower2
+        - Transmissiontower3
+      chance: 1
+
+- type: entity
+  id: RandomTiresSpawner
+  name: Випадкові шини
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: StalkerTextures/Structures/Decoration/tires.rsi
+          state: tires
+    - type: RandomSpawner
+      prototypes:
+        - Tire 
+        - Tires2
+        - Tires3
+        - Tires4
+        - Tires5
+        - Tires6
+        - Tires7
+        - Tires8
+        - Tires9
+        - Tires10
+      chance: 1
+
+- type: entity
+  parent: BaseAntagSpawner
+  id: SpawnPointMonolithSurvivor
+  name: Виживший Монолітовець
+  components:
+  - type: GhostRole
+    name: Виживший Монолітовець
+    description: Ви - один із групи виживших монолітовців. Ви все ще підкоряєтеся Моноліту. Слідкуйте за законами і наказами поданими вам Монолітом.
+    rules: ghost-role-information-antagonist-rules
+    raffle:
+      settings: default
+  - type: Sprite
+    layers:
+    - sprite: Markers/jobs.rsi
+      state: green
+    - sprite: StalkerTextures/Clothing/OuterClothing/Monolith/MonolithSiva.rsi
+      state: icon
+  - type: GhostRoleMobSpawner
+    prototype: MonolithAgent

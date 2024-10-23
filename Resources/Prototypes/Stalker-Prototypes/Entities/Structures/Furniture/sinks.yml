@@ -1,0 +1,19 @@
+- type: entity
+  name: Поламана раковина
+  id: BrokenSink
+  parent: SinkEmpty
+  suffix: Water
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/sink.rsi
+    layers:
+      - state: sink_stem
+      - map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerManager
+    solutions:
+      drainBuffer:
+        maxVol: 100
+      tank:
+        reagents:
+        - ReagentId: Water
+          Quantity: 200

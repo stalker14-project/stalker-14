@@ -1,0 +1,24 @@
+- type: htnCompound
+  id: ArtifactInjectNearCompound
+  branches:
+    - tasks:
+        # TODO: Kill this shit
+        - !type:HTNPrimitiveTask
+          operator: !type:PickNearbyInjectableOperator
+            targetKey: InjectTarget
+            targetMoveKey: TargetCoordinates
+
+        - !type:HTNPrimitiveTask
+          operator: !type:WaitOperator
+            key: IdleTime
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: IdleTime
+
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:TargetInRangePrecondition
+              targetKey: InjectTarget
+              rangeKey: InteractRange
+          operator: !type:MedibotInjectOperator
+            targetKey: InjectTarget

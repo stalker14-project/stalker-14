@@ -1,0 +1,136 @@
+- type: entity
+  parent: BaseItem
+  id: StartingBundle
+  name: Комплект сталкера початківця
+  description: До комплекту входять 1000 гривень і бінокль.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Storage/boxicons.rsi
+    state: food
+  - type: SpawnItemsOnUse
+    items:
+    - id: StalkerCash5000
+    - id: StalkerBinoculars
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: FoodBundle
+  name: Комплект Їжі та напоїв
+  description: До комплекту входять різні консерви з їжею, відкривачка і дві фляшки з напоями.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Storage/boxicons.rsi
+    state: food
+  - type: SpawnItemsOnUse
+    items:
+    - id: GreenFlask
+    - id: OldFlask
+    - id: CanOpener
+    - id: ClosedCanBeans
+    - id: ClosedCan
+    - id: ClosedCanFish
+    - id: ClosedCanHam
+    - id: ClosedCanSprats
+    - id: ClosedCanSoup
+    - id: ClosedCanStew
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: SmokersBundle
+  name: Комплект курця
+  description: До комплекту входять різні цигарки і дві запальнички.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Storage/boxicons.rsi
+    state: cigarette
+  - type: SpawnItemsOnUse
+    items:
+    - id: FlippoLighter
+    - id: Lighter
+    - id: CigPackGreen
+    - id: CigPackRed
+    - id: CigPackBlue
+    - id: CigPackBlack
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: PistolViperBundle
+  name: Комплект пістолету Viper
+  description: До комплекту входить пістолет, додактовий магазин і коробка патронів.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Storage/boxicons.rsi
+    state: pistol
+  - type: SpawnItemsOnUse
+    items:
+    - id: WeaponPistolViper
+    - id: MagazineBoxPistol
+    - id: MagazinePistol
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: PistolViperBundle
+  id: PistolCobraBundle
+  name: Комплект пістолету Cobra
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: WeaponPistolCobra
+    - id: MagazineBoxCaselessRifle
+    - id: MagazinePistolCaselessRifle
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: PistolViperBundle
+  id: PistolMk58Bundle
+  name: Комплект пістолету Mk58
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: WeaponPistolMk58
+    - id: MagazineBoxPistol
+    - id: MagazinePistol
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: PistolViperBundle
+  id: ShotgunSawnBundle
+  name: Комплект обрізаного дробовика
+  description: До комплекту входить дробовик і коробка летальних патронів.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: WeaponShotgunSawn
+    - id: BoxLethalshot
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: PistolViperBundle
+  id: ShotgunHandmadeBundle
+  name: Комплект саморобного дробовика
+  description: До комплекту входить дробовик і коробка летальних патронів.
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: WeaponShotgunHandmade
+    - id: BoxLethalshot
+    sound:
+      path: /Audio/Effects/unwrap.ogg

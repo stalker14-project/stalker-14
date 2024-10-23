@@ -1,0 +1,264 @@
+# Одинаки
+
+- type: entity
+  id: SpawnPointRookieLoner
+  parent: SpawnPointJobBase
+  name: jobspawnpoint RookieLoner
+  components:
+  - type: SpawnPoint
+    job_id: LoneNewbie
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointExperiencedLoner
+  parent: SpawnPointJobBase
+  name: jobspawnpoint ExperiencedLoner
+  components:
+  - type: SpawnPoint
+    job_id: ExperiencedLoner
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointLeaderLoner
+  parent: SpawnPointJobBase
+  name: jobspawnpoint LeaderLoner
+  components:
+  - type: SpawnPoint
+    job_id: LeaderLoner
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+# Чистонебівці
+
+- type: entity
+  id: SpawnPointRookieClearsky
+  parent: SpawnPointJobBase
+  name: jobspawnpoint RookieClearsky
+  components:
+  - type: SpawnPoint
+    job_id: RookieClearsky
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointExperiencedClearsky
+  parent: SpawnPointJobBase
+  name: jobspawnpoint ExperiencedClearsky
+  components:
+  - type: SpawnPoint
+    job_id: ExperiencedClearsky
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointLeaderClearsky
+  parent: SpawnPointJobBase
+  name: jobspawnpoint LeaderClearsky
+  components:
+  - type: SpawnPoint
+    job_id: LeaderClearsky
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+# Бандити
+- type: entity
+  id: SpawnPointBanditRookie
+  parent: SpawnPointJobBase
+  name: jobspawnpoint BanditRookie
+  components:
+  - type: SpawnPoint
+    job_id: BanditRookie
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+
+- type: entity
+  id: SpawnPointExpieriencedBandit
+  parent: SpawnPointJobBase
+  name: jobspawnpoint ExperienceBandit
+  components:
+  - type: SpawnPoint
+    job_id: ExperienceBandit
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+
+- type: entity
+  id: SpawnPointPaxanBandit
+  parent: SpawnPointJobBase
+  name: jobspawnpoint PaxanBandit
+  components:
+  - type: SpawnPoint
+    job_id: PaxanBandit
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech
+
+# Військові
+- type: entity
+  id: SpawnPointPrivateMVC
+  parent: SpawnPointJobBase
+  name: jobspawnpoint PrivateMVC
+  components:
+  - type: SpawnPoint
+    job_id: PrivateMVC
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cluwne
+
+- type: entity
+  id: SpawnPointSergantMVC
+  parent: SpawnPointJobBase
+  name: jobspawnpoint SergantMVC
+  components:
+  - type: SpawnPoint
+    job_id: SergantMVC
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
+- type: entity
+  id: SpawnPointGeneralMVC
+  parent: SpawnPointJobBase
+  name: jobspawnpoint GeneralMVC
+  components:
+  - type: SpawnPoint
+    job_id: GeneralMVC
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
+- type: entity
+  id: SpawnPointUnderCoverMilitary
+  parent: SpawnPointJobBase
+  name: jobspawnpoint UnderCoverMilitary
+  components:
+  - type: SpawnPoint
+    job_id: UnderCoverMilitary
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
+# Вчені
+
+- type: entity
+  id: SpawnPointScienceAssistant
+  parent: SpawnPointJobBase
+  name: jobspawnpoint ScienceAssistant
+  components:
+  - type: SpawnPoint
+    job_id: ScienceAssistant
+  - type: Sprite
+    layers:
+      - state: green
+      - state: researchassistant
+
+- type: entity
+  id: SpawnPointScienceGroupLeader
+  parent: SpawnPointJobBase
+  name: jobspawnpoint ScienceGroupLeader
+  components:
+  - type: SpawnPoint
+    job_id: ScienceGroupLeader
+  - type: Sprite
+    layers:
+      - state: green
+      - state: rd
+
+# Найманці
+
+- type: entity
+  id: SpawnPointRookieMercenary
+  parent: SpawnPointJobBase
+  name: jobspawnpoint RookieMercenary
+  components:
+  - type: SpawnPoint
+    job_id: RookieMercenary
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+
+- type: entity
+  id: SpawnPointExperiencedMercenary
+  parent: SpawnPointJobBase
+  name: jobspawnpoint ExperiencedMercenary
+  components:
+  - type: SpawnPoint
+    job_id: ExperiencedMercenary
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+
+- type: entity
+  id: SpawnPointLeaderMercenary
+  parent: SpawnPointJobBase
+  name: jobspawnpoint LeaderMercenary
+  components:
+  - type: SpawnPoint
+    job_id: LeaderMercenary
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+
+# Монолітовці
+
+- type: entity
+  id: SpawnPointAdeptMonolit
+  parent: SpawnPointJobBase
+  name: jobspawnpoint AdeptMonolit
+  components:
+  - type: SpawnPoint
+    job_id: AdeptMonolit
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleader
+
+# Торгівець
+- type: entity
+  id: SpawnPointStalkerTraderOld
+  parent: SpawnPointJobBase
+  name: jobspawnpoint StalkerTraderOld spawnpoint
+  components:
+  - type: SpawnPoint
+    job_id: StalkerTraderOld
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom
+
+- type: entity
+  id: SpawnPointStalkerStateOperative
+  parent: SpawnPointJobBase
+  name: jobspawnpoint StateOperative spawnpoint
+  components:
+  - type: SpawnPoint
+    job_id: StalkerStateOperative
+  - type: Sprite
+    layers:
+      - state: green
+      - state: centcom

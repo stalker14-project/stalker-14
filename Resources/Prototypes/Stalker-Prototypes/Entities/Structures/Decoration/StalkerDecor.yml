@@ -1,0 +1,287 @@
+- type: entity
+  id: Monolith
+  parent: BaseStructure
+  name: Моноліт
+  description: Загадковий камінь, що виконує бажання...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/Monolith.rsi
+    scale: 1.2 , 1.2
+    offset: "0,1.5"
+    layers:
+    - state: Monolith
+  - type: PointLight
+    radius: 25.5
+    energy: 2.5
+    color: "#0000FF"
+  - type: RadiationSource
+    intensity: 7.25
+    slope: 0.80
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.75,-1.75,1.75,1"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: AmbientSound
+    sound:
+      collection: MonolithCall
+    range: 20
+    voulme: -1
+    enabled: true
+
+- type: entity
+  id: AntennaMonolith
+  parent: BaseStructure
+  name: Антена зі сміття
+  description: "Загадкова антена, можливо вони зв'язуються по ній з монолітом?"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/Antenna.rsi
+    offset: "0,1.5"
+    layers:
+    - state: antenna
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.90,-0.45,0.90,0.90"
+        density: 1000
+        layer:
+        - WallLayer
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: PointLight
+    radius: 25.5
+    energy: 2.5
+  - type: Physics
+    bodyType: Static
+
+- type: entity
+  id: Transmissiontower
+  parent: BaseStructure
+  name: Електроопора
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roaddecoration.rsi
+    offset: "0,0.5"
+    layers: 
+    - state: transmissiontower
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 60
+        layer:
+        - WallLayer
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Physics
+    bodyType: Static
+
+- type: entity
+  id: Transmissiontower1
+  parent: Transmissiontower
+  name: Електроопора
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roaddecoration.rsi
+    offset: "0,0.5"
+    layers: 
+    - state: transmissiontower1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 60
+        layer:
+        - WallLayer
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Physics
+    bodyType: Static
+
+- type: entity
+  id: Transmissiontower2
+  parent: Transmissiontower
+  name: Електроопора
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roaddecoration.rsi
+    offset: "0,0.5"
+    layers: 
+    - state: transmissiontower2
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 60
+        layer:
+        - WallLayer
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Physics
+    bodyType: Static
+
+- type: entity
+  id: Transmissiontower3
+  parent: Transmissiontower
+  name: Електроопора
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roaddecoration.rsi
+    offset: "0,0.5"
+    layers: 
+    - state: transmissiontower3
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 60
+        layer:
+        - WallLayer
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: Physics
+    bodyType: Static
+
+- type: entity
+  id: RoadSign
+  parent: BaseStructure
+  name: Знак радіації
+  description: Обережно! Не вдартесь мізинцем об знак!
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers: 
+    - state: radiationsign
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 30
+
+- type: entity
+  id: RoadSignStop
+  parent: RoadSign
+  name: Дорожній знак
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers: 
+    - state: sign
+
+- type: entity
+  id: RoadSign1
+  parent: RoadSign
+  name: Дорожній знак
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers: 
+    - state: sign1
+
+- type: entity
+  id: RoadSign2
+  parent: RoadSign
+  name: Дорожній знак
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers: 
+    - state: sign2
+
+- type: entity
+  id: RoadSign3
+  parent: RoadSign
+  name: Дорожній знак
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers: 
+    - state: sign3
+
+- type: entity
+  id: RoadSign4
+  parent: RoadSign
+  name: Дорожній знак
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers: 
+    - state: sign4
+
+- type: entity
+  id: RoadSign5
+  parent: RoadSign
+  name: Дорожній знак
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers: 
+    - state: sign5
+
+- type: entity
+  id: WoodenDrum
+  parent: BaseStructure
+  name: Дерев'яна котушка
+  description: "Загадкова дерев'яна котушка з кабелем, не несе ніякої ціності"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers:
+    - state: woodendrum
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.50,-0.50,0.50,0.50"
+        density: 60
+        layer:
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+
+- type: entity
+  id: SewerHatch
+  parent: BaseStructure
+  name: Каналізаційний люк
+  description: "Загадковий каналізаційний люк, несе велику цінність, якщо здати на металолом. Що під ним?"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Decoration/roadsigns.rsi
+    layers:
+    - state: sewerhatch
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.30, -0.30, 0.30, 0.30"

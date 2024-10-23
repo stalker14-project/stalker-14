@@ -1,0 +1,85 @@
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterSivaFreedom # TO DO, добавити ПНБ, коли появиться.
+  name: Комбінезон Сіва 
+  description: Комбінезон Сіва, те що треба досвідченому сталкеру в зоні.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Freedom/FreedomSiva.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Freedom/FreedomSiva.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.55
+        Piercing: 0.60
+        Heat: 0.40
+        Radiation: 0.60
+        Caustic: 0.70
+  - type: StaticPrice
+    price: 27000
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetSivaFreedom
+  - type: Reflect
+    enabled: true
+    reflectProb: .01
+  - type: Geiger
+    attachedToSuit: true
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetSivaFreedom
+  name: Шолом комбінезону "Сіва"
+  description: Хороше доповнення до вашого комбінезону, якщо його вам видали окремо...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/FreedomSivaHelmet.rsi
+  - type: Item
+    sprite: StalkerTextures/Clothing/Head/FreedomSivaHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/FreedomSivaHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.75
+        Heat: 0.90
+        Radiation: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingOuterLonersExoSuit
+  id: ClothingOuterFreemanExoSuit
+  name: Екзокостюм волівців
+  description: Екзокостюм волі, що має хороші показники захисту для виживання в зоні. Волю всім даром!
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Freedom/FreemanExoSuit.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Freedom/FreemanExoSuit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.3
+        Radiation: 0.3
+        Caustic: 0.3
+  - type: StaticPrice
+    price: 56000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetFreemanExoSuit

@@ -1,0 +1,69 @@
+- type: entity
+  name: Аномалія "Жарка" спавнер
+  id: StalkerAnomalyBurnerSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: StalkerTextures/Structures/Specific/Anomalies/burner.rsi
+        state: anom
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerAnomalyBurner
+
+- type: entity
+  name: Аномалія "Трамплін" спавнер
+  id: StalkerAnomalySpringboardSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: StalkerTextures/Structures/Specific/Anomalies/springboard.rsi
+        state: anom
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerAnomalySpringboard
+
+- type: entity
+  name: Аномалія "Електро" спавнер
+  id: StalkerAnomalyElectroSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: StalkerTextures/Structures/Specific/Anomalies/electro.rsi
+        state: anom
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerAnomalyElectro
+
+- type: entity
+  name: Аномалія "Карусель" спавнер
+  id: StalkerAnomalyWhirligigSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: StalkerTextures/Structures/Specific/Anomalies/whirligig.rsi
+        state: anom
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerAnomalyWhirligig
+
+- type: entity
+  name: Аномалія "Фруктовий пунш" спавнер
+  id: StalkerAnomalyFruitpunchSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: StalkerTextures/Structures/Specific/Anomalies/fruitpunch.rsi
+        state: anom
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerAnomalyFruitpunch

@@ -1,0 +1,828 @@
+- type: entity
+  parent: BaseItem
+  id: BaseArtifactOld
+  abstract: true
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: StalkerArtifact
+    parent: false
+    components:
+    - type: Stealth
+      maxVisibility: 0
+      minVisibility: 0
+    - type: StealthOnMove
+      passiveVisibilityRate: 0
+      movementVisibilityRate: 0
+  - type: Tag
+    tags:
+    - StalkerArtifact
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerBattery
+  name: Артефакт Батарейка
+  description: Відомо, що до складу цього артефакту входять електростатичні елементи, однак у яких саме умовах він формується, науці поки не відомо. Цінується серед мешканців і гостей Зони за здатність чинити на організм людини тонізуючу дію. При занадто тривалому впливі виснажує організм. Радіоактивний.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifactsanimated.rsi
+    layers:
+    - state: battery
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#0000FF"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: SolutionContainerManager
+    solutions:
+      artifact:
+        maxVol: 10
+  - type: ClothingSpeedModifier
+    walkModifier: 1.05
+    sprintModifier: 1.05
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerCrystal
+  name: Артефакт Кристал
+  description: Активно поглинає тепло з простору навколо себе і при цьому залишається прохолодним. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts0.rsi
+    layers:
+    - state: crystal
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#00FF00"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.5
+  - type: StaticPrice
+    price: 7000
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerFireball
+  name: Артефакт Вогняна куля
+  description: Артефакт легко можна тримати в руках, не побоючись опіків. Цінується за здатність підтримувати у невеликому радіусі навколо себе постійну температуру близько +24 градуси за Цельсієм незалежно від умов навколишнього середовища. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifactsanimated.rsi
+    layers:
+    - state: fireball
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#FF4500"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.3
+  - type: IgnitionSource
+    temperature: 24
+    ignited: true
+  - type: StaticPrice
+    price: 12500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerMoonlight
+  name: Артефакт Місячне світло
+  description: Поступово сталкери навчилися підпаштовувати "Місячне світло" у такий спосіб, щоб той резонував у фазі з основним джерелом випромінювання й тим самим цілком або значною мірою нетралізував псі-вплив. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts2.rsi
+    layers:
+    - state: moonlight
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#87CEEB"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Psyemission: 0.3
+  - type: Reflect
+    enabled: true
+    reflectProb: .10
+  - type: StaticPrice
+    price: 9500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerJellyfish
+  name: Артефакт Медуза
+  description: Артефакт, що має здатність актино притягати і поглинати радіоактивні частки, тим самим зменшуючи опромінення організму.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts.rsi
+    layers:
+    - state: jellyfish
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#00FFFF"
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.5
+  - type: StaticPrice
+    price: 4500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerMamasBeads
+  name: Артефакт Мамине намисто
+  description: Достемено відомо, шо випромінювання котре виникає піл ча  пульсацій потовщень "Маминого намиста" примушує кров у відткритих ранах дуже швидко загоюватися. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifactsanimated.rsi
+    layers:
+    - state: mamasbeads
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#FFD700"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: TranexamicAcid
+        quantity: 5
+        minDamage: 0
+        maxDamage: 100
+      Critical:
+        reagent: TranexamicAcid
+        quantity: 5
+  - type: StaticPrice
+    price: 12500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerDroplet
+  name: Артефакт Крапелька
+  description: Артефакт, що зовні виглядає як почорніле краплеподібне утворення із глянцевою вкритою тріщинами поверхнею. Має властивість зменшувати радіоактивний ефект на тіло носія, зменшуючи витривалість.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts0.rsi
+    layers:
+    - state: droplet
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#00FFFF"
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Nocturine
+        quantity: 5
+        minDamage: 0
+        maxDamage: 100
+      Critical:
+        reagent: Nocturine
+        quantity: 5
+  - type: StaticPrice
+    price: 7500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerFirefly
+  name: Артефакт Світляк
+  description: Артефакт прискорює регенерацію тканин та органів живих істот, а також нормалізує метаболічні процеси. Здатний буквально на очах поставити на ноги людину із важкими пораненнями. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts0.rsi
+    layers:
+    - state: firefly
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#FFA500"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Psyemission: 0.55
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Critical:
+        reagent: Omnizine
+        quantity: 30
+  - type: StaticPrice
+    price: 5500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerNightstar
+  name: Артефакт Нічна зірка
+  description: Артефакт, який здантний генерувати навколо себе гравітаційне поле, яке локально знижує вплив сили тяжіння. Широко застосовується сталкерами для зниження ваги вантажу який переноситься в рюкзаку. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts1.rsi
+    layers:
+    - state: nightstar
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#1E90FF"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+    sprintModifier: 1.1
+  - type: AntiGravityClothing
+  - type: StaticPrice
+    price: 6500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerStoneblood
+  name: Артефакт Кров каменю
+  description: Являє собою червонувате утворення зі спресованих і скам'янілих решток рослин, ґрунту та тіл тварин. Має здатність частково нейтралізувати шкідливі для людини хімічні речовини. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts1.rsi
+    layers:
+    - state: stoneblood
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#8B0000"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Poison: 0.4
+        Caustic: 0.5
+  - type: StaticPrice
+    price: 8500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerThorn
+  name: Артефакт Колючка
+  description: Шипастий артефакт ятрить тіло власника, як ти його не прилаштовуй але одночасно він допомагає очистити організм від радіонуклідів. Досить поширений, тому дешевий.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts1.rsi
+    layers:
+    - state: thorn
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#228B22"
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.95
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Radioclean
+        quantity: 5
+        minDamage: 0
+        maxDamage: 100
+      Critical:
+        reagent: Radioclean
+        quantity: 5
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerMica
+  name: Артефакт Слюда
+  description: Виробляється за екстремального збігу фізичних умов. У резульятаті виходить напівпрозорий твердий артефакт, рідкісний та дорогий. Зменушє кровотечу, також зменушючи захист від опіків.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts2.rsi
+    layers:
+    - state: mica
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#F5F5DC"
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Bloodloss: 0.60
+        Heat: 1.15
+  - type: StaticPrice
+    price: 7000
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerFlash
+  name: Артефакт Спалах
+  description: Артефакт, що має дивовижну властивість поглинати електричний струм, перенаправляючи розряди з організму на себе.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifactsanimated.rsi
+    layers:
+    - state: flash
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#FFD700"
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+  - type: Insulated
+  - type: Battery
+    maxCharge: 8600
+    startingCharge: 8600
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerStoneflower
+  name: Артефакт Кам'яна квітка
+  description: Артефакт, що виглядає як квітка, висічена з каменю. Певною мірою знижує вплив псі-випромінювань на організм. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts1.rsi
+    layers:
+    - state: stoneflower
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#A52A2A"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Psyemission: 0.2
+  - type: Reflect
+    enabled: true
+    reflectProb: .15
+  - type: StaticPrice
+    price: 17500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerSlime
+  name: Артефакт Слиз
+  description: Артефакт, що має вигляд густої рідини. Зменшує кровотечу, хоча збільшує вразливість до опіків.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts1.rsi
+    layers:
+    - state: slime
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#008000"
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 1.1
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: TranexamicAcid
+        quantity: 2
+        minDamage: 0
+        maxDamage: 100
+      Critical:
+        reagent: Omnizine
+        quantity: 2
+  - type: StaticPrice
+    price: 3500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerSoul
+  name: Артефакт Душа
+  description: Артефакт, що, поки що невідомим поки чином збільшує загальну швидкість регенерації після травм будь якої природи. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts1.rsi
+    layers:
+    - state: soul
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#ADD8E6"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Omnizine
+        quantity: 15
+        minDamage: 10
+        maxDamage: 100
+      Critical:
+        reagent: Omnizine
+        quantity: 30
+  - type: StaticPrice
+    price: 22500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerShell
+  name: Артефакт Порожнявка
+  description: Артефакт, що збільшує витривалість. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifactsanimated.rsi
+    layers:
+    - state: shell
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#808080"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: ClothingSpeedModifier
+    walkModifier: 1.15
+    sprintModifier: 1.15
+  - type: StaticPrice
+    price: 16500
+
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerBuble
+  name: Артефакт Пузир
+  description: Артефакт, що є одним з найдорожчих серед артефактів, що зменують радіоактивне опромінення носія.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifactsanimated.rsi
+    layers:
+    - state: buble
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#B0E0E6"
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.3
+  - type: StaticPrice
+    price: 17500
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerSlug
+  name: Артефакт Слимак
+  description: Артефакт, що повністю зупиняє кровотечу але носій стає менш захищений до опіків.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts1.rsi
+    layers:
+    - state: slug
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#7CFC00"
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 1.2
+        Bloodloss: 0
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: TranexamicAcid
+        quantity: 5
+        minDamage: 0
+        maxDamage: 100
+      Critical:
+        reagent: TranexamicAcid
+        quantity: 5
+  - type: StaticPrice
+    price: 15500
+
+# Добавити, що повністю зупиняє кровотечу
+
+- type: entity
+  parent: BaseArtifactOld
+  id: StalkerKolobok
+  name: Артефакт Колобок
+  description: Артефакт, що цінується за властивість "підстебнути" організм так, щоб той в лічені хвилини відновився після травм будь-якого ступення тяжкості. Радіоактивний.
+  components:
+  - type: Clothing
+    slots: [belt]
+    quickEquip: true
+  - type: Sprite
+    sprite: StalkerTextures/Objects/artifacts.rsi
+    layers:
+    - state: kolobok
+  - type: PointLight
+    radius: 0.5
+    energy: 0.5
+    color: "#DAA520"
+  - type: RadiationSource
+    intensity: 1
+    slope: 1
+  - type: StalkerArtifact
+  - type: Tag
+    tags:
+    - StalkerArtifact
+  - type: HTN
+    rootTask:
+      task: ArtifactInjectNearCompound
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Omnizine
+        quantity: 15
+        minDamage: 0
+        maxDamage: 100
+      Critical:
+        reagent: Omnizine
+        quantity: 30
+  - type: StaticPrice
+    price: 25000
+
+# Контейнери артефактів
+
+- type: entity
+  parent: [ContentsExplosionResistanceBase]
+  id: StalkerArtifactContainerPieceOfTrash
+  name: Контейнер артефактів "Кусок Сміття"
+  description: Найдешевший варіант для вашої скупої душі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Misc/artifactscontainer.rsi
+    layers:
+    - state: piece-of-trash
+  - type: Item
+    size: Small
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,0,1
+    whitelist:
+      tags:
+        - StalkerArtifact
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: RadiationBlockingContainer
+    resistance: 0.5
+  - type: StaticPrice
+    price: 4500
+
+- type: entity
+  parent: StalkerArtifactContainerPieceOfTrash
+  id: StalkerArtifactContainerPopularChoise
+  name: Контейнер артефактів "Популярний вибір"
+  description: Всі досвідчені сталкери не посоромляться, показати таке.
+  components:
+  - type: Sprite
+    layers:
+    - state: popular-choice
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: RadiationBlockingContainer
+    resistance: 0.75
+  - type: StaticPrice
+    price: 9500
+
+- type: entity
+  parent: StalkerArtifactContainerPieceOfTrash
+  id: StalkerArtifactContainerExpensive
+  name: Контейнер артефактів "Дорогий"
+  description: Підійде тим, хто дуже хочуть принести по-більше артефактів або похизуватись грошима.
+  components:
+  - type: Sprite
+    layers:
+    - state: expensive
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: RadiationBlockingContainer
+    resistance: 2
+  - type: StaticPrice
+    price: 17500
+
+- type: entity
+  id: DetectorEcho
+  parent: BaseItem
+  name: Детектор «Відгук»
+  description: Цей датований детектор аномальної активності видає сигнал тривоги, коли аномальні частинки потрапляють у спеціальну камеру, коли ви наближаєтеся до аномалії. Він також може реєструвати наявність артефактів і вимірювати відстань до найближчого з них. Відстань вказується за частотою звуку, який видає детектор. Щоб перейти в режим пошуку артефактів, відкрийте передню кришку пристрою. Завдяки своїй простій конструкції, "Відгук" може використовуватися для пошуку найпоширеніших артефактів.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Specific/Research/EchoDetector.rsi
+    scale: 0.85 , 0.85
+    layers:
+      - state: icon
+      - state: echo_on
+        shader: unshaded
+        visible: false
+        map: ["enum.ToggleVisuals.Layer"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemToggle
+  - type: ProximityBeeper
+  - type: ProximityDetector
+    range: 12
+    criteria:
+      components:
+      - StalkerArtifact
+      tags:
+      - StalkerArtifact
+      size:
+      - Small
+  - type: Beeper
+    isMuted: true
+    minBeepInterval: 0.10
+    maxBeepInterval: 1.00
+    beepSound:
+      path: "/Audio/StalkerAudio/Detector/detector_contact_1.ogg"
+      params:
+        maxDistance: 1
+        volume: -8

@@ -1,0 +1,55 @@
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackTourist
+  name: Туристичний рюкзак
+  description: Що ви кажете? Вас все ще не чутно.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Back/Backpacks/tourist.rsi
+    state: backpack-icon
+  - type: Clothing
+    equippedPrefix: backpack
+  - type: Item
+    heldPrefix: satchel
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,2,2   # Лівий верхній маленький грід (3x3)
+    - 7,0,9,2   # Правий верхній маленький грід (3x3)
+    - 0,5,2,7   # Лівий нижній маленький грід (3x3)
+    - 7,5,9,7   # Правий нижній маленький грід (3x3)
+    - 3,2,7,5   # Центральний великий грід (5x4)
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: StaticPrice
+    price: 1500
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelTourist
+  name: Туристиний ранець
+  description: Настрій прекрасний, погоду не підскажу, за вікном щось мутно.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Back/Backpacks/tourist.rsi
+    state: satchel-icon
+  - type: Clothing
+    equippedPrefix: satchel
+  - type: Item
+    heldPrefix: satchel
+    size: Ginormous
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,2,2   # Лівий верхній маленький грід (3x3)
+    - 7,0,9,2   # Правий верхній маленький грід (3x3)
+    - 0,5,2,7   # Лівий нижній маленький грід (3x3)
+    - 7,5,9,7   # Правий нижній маленький грід (3x3)
+    - 3,2,7,5   # Центральний великий грід (5x4)
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: StaticPrice
+    price: 1500

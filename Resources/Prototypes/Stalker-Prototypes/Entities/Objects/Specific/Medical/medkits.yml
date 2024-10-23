@@ -1,0 +1,125 @@
+- type: entity
+  name: аптечка першої допомоги
+  description: Універсальна аптечка. Використовується для лікування травм різного типу і ступеня тяжкості - грубих поранень, опіків, отруєнь тощо.
+  parent: BaseStorageItem
+  id: MedkitStalker
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    state: medkit
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,3,1
+  - type: Item
+    size: Large
+    sprite: StalkerTextures/Objects/items.rsi
+    heldPrefix: medkit
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 150
+  - type: Tag
+    tags:
+    - Medkit
+  - type: StorageFill
+    contents: 
+      - id: StalkerBrutepack
+      - id: StalkerOintment
+      - id: StalkerGauze
+      - id: RadAutoInjectorStalker
+      - id: EmergencyMedipenStalker
+
+- type: entity
+  name: Наукова аптечка
+  description: Медичний набір, розроблений спеціально для роботи в Зоні. До складу набору входять засоби для загоєння ран, а також засоби для виведення радіонуклідів з організму. Запобігає розвитку променевої хвороби та знижує дозу накопиченого опромінення.
+  parent: MedkitStalker
+  id: MedkitSciStalker
+  components:
+  - type: Sprite
+    state: medkitsci
+  - type: Item
+    heldPrefix: medkitsci
+  - type: StorageFill
+    contents:
+      - id: EmergencyMedipenStalker
+        amount: 2
+      - id: SciStimpackStalker
+      - id: BruteAutoInjectorStalker
+        amount: 2
+      - id: BurnAutoInjectorStalker
+      - id: RadAutoInjectorStalker
+        amount: 2
+
+- type: entity
+  name: Військова аптечка
+  description: Спеціалізований медичний набір для боротьби з фізичними ушкодженнями та крововтратами. До нього входить компонент для згортання крові, антибіотики, імуностимулятори та знеболювальні.
+  parent: MedkitStalker
+  id: MedkitMilitaryStalker
+  components:
+  - type: Sprite
+    state: medkitmilitary
+  - type: Item
+    heldPrefix: medkitmilitary
+  - type: StorageFill
+    contents:
+      - id: EmergencyMedipenStalker
+        amount: 2
+      - id: BruteAutoInjectorStalker
+        amount: 2
+      - id: BurnAutoInjectorStalker
+      - id: RadAutoInjectorStalker
+      - id: MilitaryStimpackStalker
+      - id: StimpackMiniStalker
+
+# MedKits
+
+#Entities found at entities/objects/specific/medical
+- type: entity
+  id: StalkerMedkitFilled
+  suffix: Stalker, Filled
+  parent: Medkit
+  components:
+  - type: StorageFill
+    contents:
+      - id: StalkerBrutepack
+      - id: StalkerOintment
+      - id: StalkerGauze
+      - id: PillCanisterTricordrazine
+      # see https://github.com/tgstation/blob/master/code/game/objects/items/storage/firstaid.dm for example contents
+
+- type: entity
+  id: StalkerMedkitBurnFilled
+  suffix: Stalker, Filled
+  parent: MedkitBurn
+  components:
+  - type: StorageFill
+    contents:
+      - id: StalkerOintment
+        amount: 2
+      - id: PillCanisterKelotane
+      - id: PillCanisterDermaline
+
+- type: entity
+  id: StalkerMedkitBruteFilled
+  suffix: Stalker, Filled
+  parent: MedkitBrute
+  components:
+  - type: StorageFill
+    contents:
+      - id: StalkerBrutepack
+      - id: StalkerGauze
+      - id: PillCanisterIron
+      - id: PillCanisterCopper
+
+- type: entity
+  id: StalkerMedkitAdvancedFilled
+  suffix: Stalker, Filled
+  parent: MedkitAdvanced
+  components:
+  - type: StorageFill
+    contents:
+      - id: StalkerMedicatedSuture
+      - id: StalkerRegenerativeMesh
+      - id: StalkerBloodpack
+        amount: 2

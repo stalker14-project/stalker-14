@@ -1,0 +1,21 @@
+- type: damageContainer
+  id: BiologicalStalker
+  supportedGroups:
+    - Brute
+    - Burn
+    - Toxin
+    - Airloss
+    - Genetic
+    - Psydamage
+
+- type: damageGroup
+  id: Psydamage
+  name: Психічні травми
+  damageTypes:
+    - Psyemission
+
+- type: damageType
+  id: Psyemission
+  name: Психічне випромінювання
+  armorCoefficientPrice: 5
+  armorFlatPrice: 50

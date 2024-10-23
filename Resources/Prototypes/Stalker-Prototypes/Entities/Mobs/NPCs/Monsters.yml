@@ -1,0 +1,650 @@
+- type: entity
+  name: Плоть
+  id: StalkerMobFlesh
+  parent: [SimpleMobBase , MobCombat]
+  description: Як і більшість інших живих істот у Зоні, домашня свиня також зазнала серйозних біологічних змін з дня катастрофи. Схоже, що особливо постраждали гени, які відповідають за метаболізм. Свині-мутанти, відомі серед сталкерів просто як Плоть
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - StalkerMediumMutants
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: StalkerTextures/Mobs/Monsters/flesh.rsi
+  - type: Physics
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 2.5
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: Stamina
+    critThreshold: 100
+  - type: MovementAlwaysTouching
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMutantMeat
+      amount: 2
+    - id: FoodStrangeMeat
+    - id: FleshEye
+  - type: Bloodstream
+    bloodMaxVolume: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 15
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 2
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: Uranium
+          Quantity: 1
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Speech
+    speechVerb: SmallMob
+  - type: NonSpreaderZombie
+  - type: NPCRetaliation
+  - type: Damageable
+    damageContainer: BiologicalStalker
+    damageModifierSet: MediumStalkerMutants
+  - type: TimedDespawn
+    lifetime: 1800
+
+- type: entity
+  name: Кровосос
+  id: StalkerMobBloodSucker
+  parent: StalkerMobSnork
+  description: Кровососи (кровопивці) - рідкісний вид мутантів, які зазвичай зустрічаються в глибині Зони
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: Мутант Кровосос
+    description: Ви - великий рідкисний вид мутантів, ви любите залишатись в тіні і атакувати з сюрпризом. Малі або середні мунтанти теж можуть стати вашою жертвою.
+    rules: ghost-role-information-antagonist-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - StalkerBigMutants
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/bloodsucker.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: Physics
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.55
+    baseSprintSpeed : 3.45
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      225: Dead
+  - type: Stamina
+    critThreshold: 170
+  - type: MovementAlwaysTouching
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodStrangeMeat
+      amount: 3
+    - id: BloodsuckerTentacles
+  - type: Bloodstream
+    bloodMaxVolume: 500
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 15
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 7
+        Structural: 15
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Speech
+  - type: NonSpreaderZombie
+  - type: NPCRetaliation
+  - type: Stealth
+    enabledOnDeath: false
+    maxVisibility: 1.3
+  - type: StealthOnMove
+    passiveVisibilityRate: -0.50
+    movementVisibilityRate: 0.35
+  - type: Damageable
+    damageContainer: BiologicalStalker
+    damageModifierSet: LargeStalkerMutants
+  - type: TimedDespawn
+    lifetime: 1800
+
+- type: entity
+  name: Сліпий пес
+  id: StalkerMobBlindDog
+  parent: [SimpleMobBase , MobCombat]
+  description: Поодинокі ікла не такі вже й небезпечні, але зграї - справжній біль у дупі. Вони нападають лише тоді, коли голодні...
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: Мутант Сліпий пес
+    description: Ви - середня мутована сліпа собака. Поодинокі собаки не страшні але зграї - справжній біль у дупі. Вашими жертвами можуть стати інші великі або малі мутанти.
+    rules: ghost-role-information-antagonist-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - StalkerMediumMutants
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: StalkerTextures/Mobs/Monsters/blinddog.rsi
+  - type: Physics
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 3.8
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: Stamina
+    critThreshold: 30
+  - type: MovementAlwaysTouching
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodStrangeMeat
+      amount: 2
+    - id: BlindDogTail
+  - type: Bloodstream
+    bloodMaxVolume: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 30
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 3.5
+        Structural: 15
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Speech
+    speechVerb: SmallMob
+  - type: NonSpreaderZombie
+  - type: NPCRetaliation
+  - type: Damageable
+    damageContainer: BiologicalStalker
+    damageModifierSet: MediumStalkerMutants
+  - type: TimedDespawn
+    lifetime: 1800
+
+- type: entity
+  name: Снорк
+  id: StalkerMobSnork
+  parent: [SimpleMobBase , MobCombat]
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - StalkerBigMutants
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: StalkerTextures/Mobs/Monsters/snork.rsi
+  - type: Physics
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 4.5
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      175: Dead
+  - type: Stamina
+    critThreshold: 100
+  - type: MovementAlwaysTouching
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodStrangeMeat
+      amount: 2
+    - id: SnorkLeg
+    - id: SnorkHand
+  - type: Bloodstream
+    bloodMaxVolume: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 15
+    animation: WeaponArcBite
+    damage:
+      types:
+        Slash: 8
+        Structural: 15
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: Uranium
+          Quantity: 1
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: NonSpreaderZombie
+  - type: NPCRetaliation
+  - type: Damageable
+    damageContainer: BiologicalStalker
+    damageModifierSet: LargeStalkerMutants
+  - type: TimedDespawn
+    lifetime: 1800
+
+- type: entity
+  name: Контролер
+  parent: [ SimpleMobBase, MobCombat ]
+  id: StalkerMobControler
+  description: 
+  components:
+    - type: GhostRole
+      allowMovement: true
+      makeSentient: true
+      name: Мутант Контролер
+      description: Ви - результат генетичних дослідів, які проводили вчені, за програмою розвитку телепатичних здібностей у людини. Контролер наділений високими телепатичними здібностями враження мозку жертви. Намагається пересуватись так, щоб постійно тримати ворога в полі зору.
+      rules: ghost-role-information-antagonist-rules
+      raffle:
+        settings: default
+    - type: GhostTakeoverAvailable
+    - type: HTN
+      rootTask:
+        task: SimpleRangedHostileCompound
+    - type: HitscanBatteryAmmoProvider
+      proto: TelekineticStrike
+      fireCost: 62.5
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 50
+          mask:
+          - MobMask
+          layer:
+          - MobLayer
+    - type: Battery
+      maxCharge: 500
+      startingCharge: 500
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 40
+    - type: Gun
+      fireRate: 0.75
+      useKey: false
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+      soundGunshot: /Audio/StalkerAudio/controler/controller_psy_hit_l.ogg
+    - type: NpcFactionMember
+      factions:
+        - Zombie
+    - type: Speech
+      speechVerb: DefaultExclamation
+    - type: CombatMode
+    - type: MobMover
+    - type: InputMover
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 1
+      baseSprintSpeed: 1.5
+    - type: Sprite
+      sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+      layers:
+        - map: [ "enum.DamageStateVisualLayers.Base" ]
+          state: alive
+        - map: ["enum.BorgVisualLayers.Light"]
+          state: light
+          shader: unshaded
+          visible: false 
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Dead:
+          Base: dead
+    - type: Physics
+      bodyType: KinematicController
+    - type: MobState
+    - type: InnateTool
+      tools:
+        - id: WeaponTelekineticPower
+    - type: UserInterface
+      interfaces:
+        enum.StrippingUiKey.Key:
+          type: StrippableBoundUserInterface
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        400: Dead
+    - type: Metabolizer
+      solutionOnBody: false
+      updateInterval: 0.25
+      metabolizerTypes: [ Dragon ]
+      groups:
+        - id: Medicine
+        - id: Poison
+    - type: Butcherable
+      spawned:
+        - id: FoodStrangeMeat
+          amount: 3
+        - id: ControlerBrain
+          amount: 1
+    - type: MeleeWeapon
+      soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+      damage:
+        types:
+          Slash: 10
+    - type: Input
+      context: "human"
+    - type: Bloodstream
+      bloodMaxVolume: 300
+      bloodReagent: Blood
+    - type: ZombieImmune
+    - type: Lock
+      locked: true
+    - type: ContainerContainer
+      containers:
+        cell_slot: !type:ContainerSlot { }
+    - type: ContainerFill
+      containers:
+        borg_module:
+          - ControlerModulePower
+    - type: BorgChassis
+      maxModules: 1
+    - type: ItemToggle
+      activated: true
+      onUse: false # no item-borg toggling sorry
+    - type: Hands
+      showInHands: false
+      disableExplosionRecursion: true
+    - type: PowerCellSlot
+      cellSlotId: cell_slot
+      fitsInCharger: true
+    - type: PowerCellDraw
+      drawRate: 0.6
+    - type: ItemSlots
+      slots:
+        cell_slot:
+          startingItem: PowerCellMicroreactor
+          disableEject: true
+    - type: Damageable
+      damageContainer: BiologicalStalker
+      damageModifierSet: LargeStalkerMutants
+    - type: AmbientSound
+      sound:
+        collection: ControlerStalker
+      range: 20
+      voulme: -1
+      enabled: true
+    - type: TimedDespawn
+      lifetime: 1800
+
+- type: entity
+  name: Кабан
+  id: StalkerMobBoar
+  parent: [SimpleMobBase , MobCombat]
+  description: одна з багатьох тварин Зони, що зазнали дії радіації та аномальної енергії. На відміну від плотей, мутували не так сильно, проте збільшилися у розмірах.
+  components:
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: NpcFactionMember
+    factions:
+    - StalkerMediumMutants
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: StalkerTextures/Mobs/Monsters/boar.rsi
+  - type: Physics
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.2
+    baseSprintSpeed : 2.7
+  - type: MobState
+    allowedStates:
+      - Alive
+      - Dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      220: Dead
+  - type: Stamina
+    critThreshold: 125
+  - type: MovementAlwaysTouching
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMutantMeat
+      amount: 2
+    - id: FoodStrangeMeat
+    - id: BoarHoof
+  - type: Bloodstream
+    bloodMaxVolume: 200
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 30
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 2
+      types:
+        Slash: 5
+  - type: ReplacementAccent
+    accent: genericAggressive
+  - type: Speech
+    speechVerb: SmallMob
+  - type: NonSpreaderZombie
+  - type: NPCRetaliation
+  - type: Damageable
+    damageContainer: BiologicalStalker
+    damageModifierSet: MediumStalkerMutants
+  - type: TimedDespawn
+    lifetime: 1800
+
+- type: entity
+  name: Тушкан
+  id: StalkerMobTushkan
+  parent: [ SimpleMobBase, MobCombat ]
+  description: мутований гризун, можливо раніше був хом'яком або щуром. Поодинці тушкани не становлять загрози, але великих зграй слід остерігатися навіть досвідченим сталкерам.
+  components:
+  - type: GhostRole
+    allowMovement: true
+    name: Мутант Тушкан
+    description: Ви - маленький мутований гризун. Якщо ви будете діяти самі - великої загрози становити не будете, а якщо в зграях, то навіть досвіченим сталкерам ви станете нічним страхом.
+    rules: ghost-role-information-antagonist-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: CombatMode
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 3.5
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      IdleRange: !type:Single
+        3.5
+      FollowCloseRange: !type:Single
+        2.0
+      FollowRange: !type:Single
+        3.0
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+  - type: NpcFactionMember
+    factions:
+    - StalkerSmallMutants
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/tushkan.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: alive
+      shader: unshaded
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 30 #Bulky by mouse standards...
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Dead
+  - type: Stamina
+    critThreshold: 60
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+        Piercing: 3
+  - type: Body
+    prototype: Rat
+    requiredLegs: 1 # TODO: More than 1 leg
+    baseDecayRate: 0.1
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodStrangeMeat
+      amount: 1
+    - id: RatTail
+      amount: 1
+  - type: Vocal
+    sounds:
+      Male: Mouse
+      Female: Mouse
+      Unsexed: Mouse
+    wilhelmProbability: 0.001
+  - type: Tag
+    tags:
+      - CannotSuicide
+      - FootstepSound
+  - type: NoSlip
+  - type: MobPrice
+    price: 500 # rat wealth
+  - type: MobsterAccent
+    isBoss: false
+  - type: Speech
+    speechVerb: SmallMob
+  - type: GuideHelp
+    guides:
+    - MinorAntagonists
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: Damageable
+    damageContainer: BiologicalStalker
+    damageModifierSet: SmallStalkerMutants
+  - type: TimedDespawn
+    lifetime: 1800
+    

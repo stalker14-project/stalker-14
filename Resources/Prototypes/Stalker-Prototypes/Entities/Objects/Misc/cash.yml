@@ -1,0 +1,216 @@
+- type: entity
+  parent: BaseItem
+  id: StalkerCash
+  name: Гривні
+  description: Ти повинен мати касу при собі.
+  suffix: Stalker
+  components:
+  - type: Cash
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-2
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      StalkerCredit: 1
+  - type: StaticPrice
+    price: 0
+  - type: Stack
+    stackType: StalkerCredit
+    count: 1
+    baseLayer: base
+    layerStates:
+    - cash
+    - cash_10
+    - cash_100
+    - cash_500
+    - cash_1000
+    - cash_5000
+    - cash_10000
+    - cash_25000
+    - cash_50000
+    - cash_100000
+    - cash_250000 
+    - cash_1000000
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash
+    layers:
+    - state: cash
+      map: ["base"]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: Tag
+    tags:
+      - Credit
+
+- type: Tag
+  id: Credit
+
+- type: material
+  id: StalkerCredit
+  name: гривень
+  unit: купюр
+  stackEntity: StalkerCash
+  icon: { sprite: /Textures/StalkerTextures/Objects/Economy/cash.rsi, state: cash }
+  price: 1
+
+- type: stack
+  id: StalkerCredit
+  name: гривень
+  icon: { sprite: /Textures/StalkerTextures/Objects/Economy/cash.rsi, state: cash }
+  spawn: StalkerCash
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash10
+  suffix: Stalker, 10
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_10
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash100
+  suffix: Stalker, 100
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_100
+  - type: Stack
+    count: 100
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash500
+  suffix: Stalker, 500
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_500
+  - type: Stack
+    count: 500
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash1000
+  suffix: Stalker, 1000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_1000
+  - type: Stack
+    count: 1000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash2500
+  suffix: Stalker, 2500
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_1000
+  - type: Stack
+    count: 2500
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash5000
+  suffix: Stalker, 5000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_5000
+  - type: Stack
+    count: 5000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash10000
+  suffix: Stalker, 10000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_10000
+  - type: Stack
+    count: 10000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash20000
+  suffix: Stalker, 20000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_10000
+  - type: Stack
+    count: 20000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash25000
+  suffix: Stalker, 25000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_25000
+  - type: Stack
+    count: 25000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash50000
+  suffix: Stalker, 50000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_5000
+  - type: Stack
+    count: 50000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash100000
+  suffix: Stalker, 100000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_100000
+  - type: Stack
+    count: 100000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash250000
+  suffix: Stalker, 250000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_250000
+  - type: Stack
+    count: 250000
+
+- type: entity
+  parent: StalkerCash
+  id: StalkerCash1000000
+  suffix: Stalker, 1000000
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Objects/Economy/cash.rsi
+    state: cash_1000000
+  - type: Stack
+    count: 1000000

@@ -1,0 +1,112 @@
+- type: Tag
+  id: StalkerClearSky
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterLeatherJacketClearSky
+  name: Куртка новачка 
+  description: Проста куртка новачка чистого неба, нічого нового.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/ClearSky/leatherjacketclearsky.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/ClearSky/leatherjacketclearsky.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.9
+        Heat: 0.8
+        Radiation: 0.95
+        Caustic: 0.9
+  - type: StaticPrice
+    price: 10500
+  - type: ExplosionResistance
+    damageCoefficient: 1
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadClearskyHood
+  - type: Tag
+    tags:
+    - StalkerClearSky
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterCS1
+  name: Бронежилет ЧН-1 
+  description: Стандартне спорядження, яке використовується штурмовими загонами Чистого Неба.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/ClearSky/CS-1.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/ClearSky/CS-1.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.50
+        Slash: 0.45
+        Piercing: 0.55
+        Heat: 0.65
+        Radiation: 0.65
+        Caustic: 0.65
+  - type: StaticPrice
+    price: 25000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: Tag
+    tags:
+    - StalkerClearSky
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterCS3a
+  name: Бронежилет ЧН-3а 
+  description: Цей костюм був розроблений для проведення пошукових операцій в районах з низькою аномальною активністю. Високоякісні матеріали забезпечують більшу довговічність.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/ClearSky/CS-3a.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/ClearSky/CS-3a.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.50
+        Slash: 0.50
+        Piercing: 0.60
+        Heat: 0.80
+        Radiation: 0.75
+        Caustic: 0.80
+  - type: StaticPrice
+    price: 18000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: GroupExamine
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadCS3aHood
+  - type: Tag
+    tags:
+    - StalkerClearSky
+
+- type: entity
+  parent: ClothingHeadLeatherJacketLonerHood
+  id: ClothingHeadCS3aHood
+  categories: [ HideSpawnMenu ]
+  name: Капюшон бронежилету ЧН-3а 
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/CS-3ahood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/CS-3ahood.rsi
+  - type: Tag
+    tags:
+    - StalkerClearSky
+  - type: StaticPrice
+    price: 500

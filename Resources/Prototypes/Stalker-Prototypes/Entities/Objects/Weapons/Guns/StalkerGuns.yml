@@ -1,0 +1,98 @@
+- type: hitscan
+  id: TelekineticStrike
+  damage:
+    types:
+      Blunt: 5
+      Psyemission: 12
+  muzzleFlash:
+    sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+    state: empty
+  travelFlash:
+    sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+    state: empty
+  impactFlash:
+    sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+    state: empty
+
+- type: entity
+  name: Телекінетичний удар
+  parent: BaseWeaponBatterySmall
+  id: WeaponTelekineticPower
+  description: телекінетична сила контролера
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Battery/controlerbrain.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    fireRate: 1
+    soundGunshot: /Audio/StalkerAudio/controler/controller_psy_hit_l.ogg
+  - type: HitscanBatteryAmmoProvider
+    proto: TelekineticStrike
+    fireCost: 100
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 40
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 750
+
+- type: entity
+  id: ControlerModulePower
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: Телекінетичні сили контролера
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Battery/controlerbrain.rsi
+    layers:
+    - state: base
+  - type: ItemBorgModule
+    items:
+    - WeaponForcePower
+
+- type: entity
+  name: телекінетична сила
+  parent:
+    - BaseItem
+    - PowerCellSlotMediumItem
+  id: WeaponForcePower
+  description: Manipulates gravity around objects to fling them at high velocities.
+  components:
+    - type: Item
+      storedRotation: -90
+    - type: ForceGun
+      frequency: 7
+      dampingRatio: 4
+      massLimit: 100
+      lineColor: "#FFFFFF"
+      soundLaunch:
+        path: /Audio/Weapons/soup.ogg
+        params:
+          volume: 2
+    - type: ItemToggle
+      onUse: false
+    - type: PowerCellDraw
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Launchers/force_gun.rsi
+      layers:
+        - state: base
+        - state: base-unshaded
+          map: [ "unshaded" ]
+          shader: unshaded
+          visible: false
+        - type: Appearance
+        - type: GenericVisualizer
+          visuals:
+            enum.TetherVisualsStatus.Key:
+              unshaded:
+                True: { visible: true }
+                False: { visible: false }
+    - type: BatterySelfRecharger
+      autoRecharge: true
+      autoRechargeRate: 10

@@ -1,0 +1,159 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  name: "Loot"
+  parent: BaseItem
+  id: BaseStalkerLoot
+  abstract: true
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/stalkerloot.rsi
+  - type: StaticPrice
+    price: 1000
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Хвіст сліпого пса
+  description: Стійкість шкіри собак-мутантів до дії електрики та хімічних речовин вже давно є предметом наукової уваги. Оскільки жирова тканина в цій частині тіла мутанта майже відсутня, вона особливо добре підходить для лабораторних досліджень.
+  parent: BaseStalkerLoot
+  id: BlindDogTail
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    state: blinddogtail
+  - type: StaticPrice
+    price: 450
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Щупальця кровососа
+  description: Щупальця містять спеціальну залозу, що виробляє фермент, здатний розчиняти шкіру і водночас перешкоджати згортанню крові.
+  parent: BaseStalkerLoot
+  id: BloodsuckerTentacles
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    state: bloodsucker
+  - type: StaticPrice
+    price: 4000
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Копито кабана
+  description: З копит кабана можна виробляти низку лікарських препаратів, зокрема антирадіаційну сироватку.
+  parent: BaseStalkerLoot
+  id: BoarHoof
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    state: boarhoof
+  - type: StaticPrice
+    price: 950
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Мозок контролера
+  description: Дорогоціна частина мутанта.
+  parent: BaseStalkerLoot
+  id: ControlerBrain
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    state: controlerbrain
+  - type: StaticPrice
+    price: 7500
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Око плоті
+  description: Мутоване, розпухле око Плоті набуло низки дивних властивостей, найкорисніша з яких - здатність регенерувати кришталик.
+  parent: BaseStalkerLoot
+  id: FleshEye
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: flesheye
+  - type: StaticPrice
+    price: 650
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Псевдособачий хвіст
+  description: Стійкість шкіри собак-мутантів до дії електричного струму та хімічних речовин давно є предметом наукової уваги. Оскільки хвіст тварини майже повністю позбавлений жирової тканини, він особливо добре підходить для лабораторних досліджень.
+  parent: BaseStalkerLoot
+  id: PsedodogTail
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: psedodogtail
+  - type: StaticPrice
+    price: 1500
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Хвіст мутованого щура
+  parent: BaseStalkerLoot
+  id: RatTail
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: rattail
+  - type: StaticPrice
+    price: 150
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Рука снорка
+  description: Їхня хороша стійкість до фізичних пошкоджень зацікавила вчених.
+  parent: BaseStalkerLoot
+  id: SnorkHand
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: snorkhand
+  - type: StaticPrice
+    price: 550
+  - type: Tag
+    tags:
+    - StalkerLoot
+
+- type: entity
+  name: Нога снорка
+  description: Ноги снорка містять величезну кількість дуже еластичних сухожиль. Це пояснює здатність тварини здійснювати неймовірно довгі стрибки.
+  parent: BaseStalkerLoot
+  id: SnorkLeg
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: snorkleg
+  - type: StaticPrice
+    price: 550
+  - type: Tag
+    tags:
+    - StalkerLoot

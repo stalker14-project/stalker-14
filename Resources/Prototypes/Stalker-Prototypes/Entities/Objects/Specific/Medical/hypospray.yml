@@ -1,0 +1,252 @@
+- type: entity
+  name: Автоін’єктор адреналіну
+  parent: ChemicalMedipen
+  id: EmergencyMedipenStalker
+  description: Швидкий і безпечний спосіб стабілізації пацієнтів у критичному стані для персоналу без поглиблених медичних знань. Будьте обережні, оскільки легко викликати передозування адреналіном і транексамовою кислотою.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: epipen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: epipenopen
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 16
+        reagents:
+        - ReagentId: Epinephrine
+          Quantity: 12
+        - ReagentId: TranexamicAcid
+          Quantity: 4
+  - type: Tag
+    tags: []
+  - type: StackPrice
+    price: 400
+
+- type: entity
+  name: Автоін’єктор антиотрути
+  parent: ChemicalMedipen
+  id: AntiPoisonMedipenStalker
+  description: Швидка доза антиотрути. Містить ультраваскулін та адреналін.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: toxin
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: toxinopen
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 16
+        reagents:
+        - ReagentId: Ultravasculine
+          Quantity: 10
+        - ReagentId: Epinephrine
+          Quantity: 6
+  - type: Tag
+    tags: []
+  - type: StackPrice
+    price: 350
+
+- type: entity
+  name: Автоінжектор проти грубих тілесних ушкоджень
+  parent: ChemicalMedipen
+  id: BruteAutoInjectorStalker
+  description: Швидка доза бікаридину та транексамової кислоти, призначена для бойового застосування
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: brute
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: bruteopen
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: Bicaridine
+          Quantity: 15
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Tag
+    tags: []
+  - type: StackPrice
+    price: 300
+
+- type: entity
+  name: Протиопіковий автоінжектор
+  parent: ChemicalMedipen
+  id: BurnAutoInjectorStalker
+  description: Швидка доза дермаліну та лепоразину, призначена для бойового застосування
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: burn
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: burnopen
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: Dermaline
+          Quantity: 10
+        - ReagentId: Leporazine
+          Quantity: 10
+  - type: Tag
+    tags: []
+  - type: StackPrice
+    price: 350
+
+- type: entity
+  name: Антирадарний автоінжектор
+  parent: ChemicalMedipen
+  id: RadAutoInjectorStalker
+  description: Швидка доза антирадіації. Містить аритразин та бікаридин.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: radanti
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: radantiopen
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: Arithrazine
+          Quantity: 15
+        - ReagentId: Bicaridine
+          Quantity: 5
+  - type: Tag
+    tags: []
+  - type: StackPrice
+    price: 400
+
+- type: entity
+  name: Військовий інжектор гіперзину
+  parent: ChemicalMedipen
+  id: MilitaryStimpackStalker
+  description: Містить достатню кількість гіперзину, щоб ви відчули його дію протягом 30 секунд. Використовуйте його, коли ви впевнені, що готові атакувати.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: stimarmy
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 30
+        reagents:
+        - ReagentId: Stimulants
+          Quantity: 30
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: stimarmyopen
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: StaticPrice
+    price: 950
+  - type: Tag
+    tags: []
+
+- type: entity
+  name: Мікроінжектор гіперзину
+  parent: ChemicalMedipen
+  id: StimpackMiniStalker
+  description: Мікроінжектор гіперзину, який дає вам приблизно п'ятнадцять секунд дії хімічної речовини.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: stimimprov
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 15
+        reagents:
+        - ReagentId: Stimulants
+          Quantity: 15
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: stimimprovopen
+  - type: StaticPrice
+    price: 500
+  - type: Tag
+    tags: []
+
+- type: entity
+  name: Науковий інжектор
+  parent: ChemicalMedipen
+  id: SciStimpackStalker
+  description: Одноразовий ін'єктор, що містить хімічні речовини, які регенерують більшість видів пошкоджень.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/items.rsi
+    layers:
+    - state: stimsci
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: stimsciopen
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 30
+        reagents:
+        - ReagentId: Omnizine
+          Quantity: 25
+        - ReagentId: TranexamicAcid
+          Quantity: 5
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: StaticPrice
+    price: 1750
+  - type: Tag
+    tags: []

@@ -1,0 +1,40 @@
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterLeatherJacket]
+  id: ClothingOuterLeatherJacketDuty
+  name: Куртка новачка
+  description: Куртка новачка обов'язквівців, нічого не може піти не так, чи не так...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Duty/LeatherJacketDuty.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Duty/LeatherJacketDuty.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadDutyHood
+  - type: StaticPrice
+    price: 12500
+
+- type: entity
+  parent: ClothingOuterLonersExoSuit
+  id: ClothingOuterDutyExoSuit
+  name: Екзокостюм обов'язку
+  description: Екзокостюм обов'язку, що має хороші показники захисту для виживання в зоні. Виконуй свій обов'язок!
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Duty/DutyExoSuit.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Duty/DutyExoSuit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.5
+        Radiation: 0.2
+        Caustic: 0.2
+  - type: StaticPrice
+    price: 58000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetDutyExoSuit

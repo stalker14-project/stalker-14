@@ -1,0 +1,109 @@
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetLonersExoSuit
+  categories: [ HideSpawnMenu ]
+  name: шолом екзокостюму одинаків
+  description: Звичайний шолом екзокостюму одинаків, я надіюсь вам його видали не відірваним від екзокостюму...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/LonersExoHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/LonersExoHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetFreemanExoSuit
+  categories: [ HideSpawnMenu ]
+  name: шолом екзокостюму волі
+  description: Звичайний шолом екзокостюму волі, я надіюсь вам його видали не відірваним від екзокостюму...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/FreedomExoHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/FreedomExoHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingHeadHelmetFreemanExoSuit
+  id: ClothingHeadHelmetDutyExoSuit
+  categories: [ HideSpawnMenu ]
+  name: "шолом екзокостюму обов'язку"
+  description: "Звичайний шолом екзокостюму обов'язку, виконаєш обов'язок, приклеємо його на місце!"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/DutyExoHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/DutyExoHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.8
+        Piercing: 0.7
+        Heat: 0.8
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingHeadHelmetFreemanExoSuit
+  id: ClothingHeadHelmetMonolithExoSuit
+  categories: [ HideSpawnMenu ]
+  name: "шолом екзокостюму моноліту"
+  description: "Звичайний шолом екзокостюму моноліту. Брате! Сила в єдинстві!"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/MonolithExoHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/MonolithExoHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.4
+        Piercing: 0.5
+        Heat: 0.7
+        Radiation: 0
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingHeadHelmetFreemanExoSuit
+  id: ClothingHeadHelmetMerceneryExoSuit
+  categories: [ HideSpawnMenu ]
+  name: "шолом екзокостюму найманців"
+  description: "Звичайний шолом екзокостюму найманців, добре що ти не побачив лице, того, хто носить цей шолом..."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/MerceneryExoHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/ExosuitHelmet/MerceneryExoHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.4
+        Piercing: 0.4
+        Heat: 0.8
+  - type: StaticPrice
+    price: 5000

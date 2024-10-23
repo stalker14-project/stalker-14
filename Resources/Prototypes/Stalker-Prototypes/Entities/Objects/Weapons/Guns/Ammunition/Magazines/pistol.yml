@@ -1,0 +1,127 @@
+- type: Tag
+  id: Magazine918
+
+- type: entity
+  id: BaseMagazine918
+  name: Пістолетний магазин (9x18mm)
+  parent: [ BaseItem, BaseRestrictedContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine918
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge918
+    capacity: 10
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/9-18-9-19.rsi
+    layers:
+    - state: base-9-18
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine918
+  name: Пістолетний магазин (9x18mm)
+  parent: BaseMagazine918
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge918
+  - type: Sprite
+    layers:
+    - state: base-9-18
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine918Empty
+  name: Пістолетний магазин (9x18mm)
+  suffix: empty
+  parent: Magazine918
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base-9-18
+      map: ["enum.GunVisualLayers.Base"]
+
+# 9-19
+
+- type: Tag
+  id: Magazine919
+
+- type: entity
+  id: BaseMagazine919
+  name: Пістолетний магазин (9x19mm)
+  parent: [ BaseItem, BaseRestrictedContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - Magazine919
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge919
+    capacity: 10
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/9-18-9-19.rsi
+    layers:
+    - state: base-9-19
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: Magazine919
+  name: Пістолетний магазин (9x19mm)
+  parent: BaseMagazine919
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge919
+  - type: Sprite
+    layers:
+    - state: base-9-19
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: Magazine919Empty
+  name: Пістолетний магазин (9x19mm)
+  suffix: empty
+  parent: Magazine919
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base-9-19
+      map: ["enum.GunVisualLayers.Base"]

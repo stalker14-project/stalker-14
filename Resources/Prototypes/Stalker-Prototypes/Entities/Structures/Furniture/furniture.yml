@@ -1,0 +1,296 @@
+- type: entity
+  id: DresserBroken
+  parent: BaseStructure
+  name: Комод
+  description: Він бачив щось жахливе...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: dresser
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank1:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Storage
+    grid:
+    - 0,0,3,2
+    maxItemSize: Normal
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Tag
+    tags:
+    - Wooden
+  - type: Anchorable
+  - type: Rotatable
+
+- type: entity
+  parent: BaseHeaterMachine
+  id: StalkerGasStove
+  name: Газова плита
+  description: Електроний гриль? Ні, справжні мужики готують стейки на старій газовій плиті!
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    snapCardinals: true
+    layers:
+    - state: gasstove
+    - map: ["enum.EntityHeaterVisuals.Setting"]
+      shader: unshaded
+      visible: false
+  - type: ApcPowerReceiver
+    powerLoad: 0 # off by default
+    needsPower: false
+  - type: EntityHeater
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.4,0.25,0.4"
+        density: 60
+        layer:
+        - WallLayer
+        - MidImpassable
+        - LowImpassable
+        - BulletImpassable
+  - type: ItemPlacer
+    maxEntities: 4 # big grill, many steaks
+    whitelist:
+      components:
+      - Temperature
+  - type: PlaceableSurface
+  - type: Machine
+    board: ElectricGrillMachineCircuitboard
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }
+          Low: { visible: true, state: low }
+          Medium: { visible: true, state: medium }
+          High: { visible: true, state: high }
+
+- type: entity
+  name: Старе ліжко
+  id: OldBed
+  parent: Bed
+  description: Видно, що в це ліжко лягали багато, а матрас був замінений.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: bed
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.1
+        Blunt: -0.1
+        Psyemission: -0.1
+
+- type: entity
+  name: Поламане ліжко
+  id: BrokenOldBed
+  parent: Bed
+  description: Це ліжко дасть вам відчути жахіття
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: bed1
+  - type: HealOnBuckle
+    damage:
+      types:
+        Blunt: 0.01
+        Psyemission: 0.01
+
+- type: entity
+  parent: OldBed
+  id: OldMedicalBed
+  name: Медичне ліжко
+  description: Не нашкодить!
+  components:
+  - type: Sprite
+    state: bed-MED
+  - type: HealOnBuckle
+    damage:
+      types:
+        Poison: -0.2
+        Cold: -0.4
+        Blunt: -0.2
+  - type: Construction
+    graph: bed
+    node: medicalbed
+  - type: GuideHelp
+    guides:
+    - Medical Doctor
+
+
+- type: entity
+  parent: Bed
+  id: ComfyMattress
+  name: Матрас з подушкою
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress
+  - type: Damageable
+    damageModifierSet: Inflatable
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress1
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress1
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress2
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress2
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress3
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress3
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress4
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress4
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress5
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress5
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress6
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress6
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress7
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress7
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress8
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress8
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress9
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress9
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress10
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress10
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress11
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress11
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress12
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress12
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress13
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress13
+
+- type: entity
+  parent: ComfyMattress
+  id: Mattress14
+  name: Брудний матрас
+  description: Я думаю, краще спати на цьому ніж на підлозі.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Furniture/furniture.rsi
+    state: mattress14

@@ -1,0 +1,268 @@
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterWaistcoat
+  name: Жилетка
+  suffix: НЕ МАПИТИ
+  description: Жилетка виконана з...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/waistcoat.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/waistcoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0
+        Slash: 0
+        Piercing: 0
+        Heat: 0
+        Radiation: 0
+        Caustic: 0
+  - type: StaticPrice
+    price: 100000
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckBlackStalker
+  name: Плащ чорного сталкера 
+  description: Лише легенди повині носити такий плащ
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Neck/Cloaks/blackstalker.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Neck/Cloaks/blackstalker.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.75
+        Heat: 0.75
+        Radiation: 0.85
+        Caustic: 0.95
+  - type: StaticPrice
+    price: 45000
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 1.2
+    sprintModifier: 1.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadBlackStalkerHood
+    requiredSlot:
+    - neck
+  - type: Reflect
+    enabled: true
+    reflectProb: .15
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterLeatherJacket]
+  id: ClothingOuterRookieJacketAnomaly
+  name: Аномальна куртка 
+  suffix: Аномальна
+  description: На вигляд проста куртка але насправді вона аномального походження. Через довге лежання в радіаційній зоні збільшився захист.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/leatherjacketloner.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/leatherjacketloner.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.7
+        Heat: 0.6
+        Radiation: 0.7
+        Caustic: 0.7
+  - type: StaticPrice
+    price: 23000
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadTancoatHood
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterLeatherJacket]
+  id: ClothingOuterLeatherJacketLoner
+  name: Куртка новачка
+  description: Куртка новачка одинаків, нічого не може піти не так, чи не так...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/leatherjacketloner.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/leatherjacketloner.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadLeatherJacketLonerHood
+  - type: StaticPrice
+    price: 12500
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterHunterCoat
+  name: Мисливське пальто 
+  description: Мисливське пальто, використовується або новачками сталкерами або ветеранами, що скривають свій досвід або лице.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/huntercoat.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/huntercoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.9
+        Radiation: 0.8
+        Caustic: 0.9
+  - type: StaticPrice
+    price: 11000
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterSivaLoners # TO DO, добавити ПНБ, коли появиться.
+  name: Комбінезон Сіва 
+  description: Комбінезон Сіва, те що треба досвідченому сталкеру в зоні.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/LonersSiva.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/LonersSiva.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.55
+        Piercing: 0.60
+        Heat: 0.40
+        Radiation: 0.60
+        Caustic: 0.70
+  - type: StaticPrice
+    price: 50000
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetSivaLoners
+  - type: Reflect
+    enabled: true
+    reflectProb: .01
+  - type: Geiger
+    attachedToSuit: true
+
+- type: entity
+  parent: ClothingOuterArmorHeavy
+  id: ClothingOuterLonersExoSuit
+  name: Екзокостюм одинаків
+  description: Екзокостюм одинаків, що має хороші показники захисту для виживання в зоні.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/LonersExoSuit.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/LonersExoSuit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.1
+        Slash: 0.1
+        Piercing: 0.3
+        Heat: 0.4
+        Radiation: 0.3
+        Caustic: 0.5
+  - type: StaticPrice
+    price: 61000
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.7
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetLonersExoSuit
+  - type: Reflect
+    enabled: true
+    reflectProb: .10
+    spread: 75
+  - type: Geiger
+    attachedToSuit: true
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterHunterCoat]
+  id: ClothingOuterLeatherJacket
+  name: Шкіряне пальто 
+  description: Просто шкіряне пальто
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/tancoat.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/tancoat.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.85
+        Heat: 0.8
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: StaticPrice
+    price: 10500
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadTancoatHood
+
+- type: entity
+  parent: ClothingOuterSivaLoners
+  id: ClothingOuterZoryaLoners
+  name: Комбінезон Зоря 
+  description: широко популярний серед сталкерів захисний комбінезон.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/LonersZorya.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/LonersZorya.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.5
+        Radiation: 0.65
+        Caustic: 0.80
+  - type: StaticPrice
+    price: 19000
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadZoryaLoners
+  - type: Reflect
+    enabled: true
+    reflectProb: .01
+  - type: Geiger
+    attachedToSuit: true
+

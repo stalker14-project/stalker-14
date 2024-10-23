@@ -1,0 +1,57 @@
+- type: deviceFrequency
+  id: StalkerDevices
+  name: device-frequency-prototype-name-stalket-devices
+  frequency: 1469
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: StalkerCommsComputerCircuitboard
+  name: communications computer board
+  description: A computer printed circuit board for a communications console.
+  components:
+    - type: Sprite
+      state: cpu_command
+    - type: ComputerBoard
+      prototype: StalkerComputerComms
+
+- type: entity
+  parent: BaseComputer
+  id: StalkerComputerComms
+  name: Компютер оголошеннь
+  suffix: Сталкерські Оголошення
+  description: Компютер, щоб робити важливі оголошення
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+  - type: AccessReader
+    access: [[ "Command" ]]
+  - type: CommunicationsConsole
+    title: Сталкерські
+    color: "#993300"
+    canShuttle: false
+    global: true
+  - type: DeviceNetwork
+    transmitFrequencyId: StalkerDevices
+  - type: ActivatableUI
+    key: enum.CommunicationsConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CommunicationsConsoleUiKey.Key:
+        type: CommunicationsConsoleBoundUserInterface
+  - type: Computer
+    board: StalkerCommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#3c5eb5"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StrongMetallic

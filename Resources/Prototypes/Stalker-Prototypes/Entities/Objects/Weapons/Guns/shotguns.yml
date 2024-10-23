@@ -1,0 +1,32 @@
+- type: entity
+  name: SPAS-12
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseRestrictedContraband]
+  id: WeaponShotgunSPAS12
+  description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. .50 shotgun shells.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Shotguns/SPAS.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Objects/Weapons/Guns/Shotguns/SPAS.rsi
+  - type: Item
+    sprite: StalkerTextures/Objects/Weapons/Guns/Shotguns/SPAS.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 2
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgun
+    capacity: 8
+    proto: ShellShotgun
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: StaticPrice
+    price: 13500

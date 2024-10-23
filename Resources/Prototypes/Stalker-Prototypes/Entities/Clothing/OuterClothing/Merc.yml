@@ -1,0 +1,79 @@
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterMercVest # TO DO, добавити ПНБ, коли появиться.
+  name: Тактичний жилет європейського зразка 
+  description: Тактичний жилет європейського зразка, використовується найманцями разом з газовою маскою або балаклавою.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Mercenary/MercVest.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Mercenary/MercVest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.65
+        Piercing: 0.55
+        Heat: 0.65
+        Radiation: 0.65
+        Caustic: 0.65
+  - type: StaticPrice
+    price: 25500
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterMercVest
+  id: ClothingOuterMercEcoVest # TO DO, добавити ПНБ, коли появиться.
+  name: Тактичний еко-жилет європейського зразка 
+  description: Тактичний еко-жилет європейського зразка, хтось хотів зекономити на матеріалах.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Mercenary/MercEcoVest.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Mercenary/MercEcoVest.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.75
+        Piercing: 0.60
+        Heat: 0.70
+        Radiation: 0.70
+        Caustic: 0.70
+  - type: StaticPrice
+    price: 21000
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: GroupExamine
+
+- type: entity
+  parent: ClothingOuterLonersExoSuit
+  id: ClothingOuterMercenaryExoSuit
+  name: Екзокостюм найманців
+  description: Екзокостюм найманців, що має хороші показники захисту для виживання в зоні. Якщо ти когось побачив в такому, напевно ти вже мертвий...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Mercenary/MercenaryExoSuit.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Mercenary/MercenaryExoSuit.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.3
+        Piercing: 0.1
+        Heat: 0.4
+        Radiation: 0.7
+        Caustic: 0.2
+  - type: StaticPrice
+    price: 56000
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetMerceneryExoSuit
+  - type: ClothingSpeedModifier
+    walkModifier: 0.70
+    sprintModifier: 0.60
+

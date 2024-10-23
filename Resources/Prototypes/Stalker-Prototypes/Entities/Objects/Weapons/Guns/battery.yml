@@ -1,0 +1,66 @@
+- type: entity
+  name: Виріб №62
+  parent: [BaseWeaponRifle, BaseRestrictedContraband]
+  id: StalkerGaussRifle
+  description: Виріб №62, деякі називають це "гаусс пушка"
+  suffix: Stalker
+  components:
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    sprite: StalkerTextures/Objects/Weapons/Guns/Battery/product62.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Battery/product62.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    projectileSpeed: 40
+    fireRate: 0.3
+    soundGunshot:
+      path: /Audio/StalkerAudio/gauss/gauss-shoot.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/StalkerAudio/gauss/draw.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Акумулятор
+        startingItem: CarPowerCage
+        insertSound: /Audio/StalkerAudio/gauss/magin.ogg
+        ejectSound: /Audio/StalkerAudio/gauss/magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - CarPowerCage
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Патронник
+        startingItem: CarPowerCageProjectile
+        priority: 1
+        whitelist:
+          tags:
+            - CarPowerCageProjectile
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: Scope
+    useInHand: true
+    requireWielding: true
+    zoomLevels:
+    - zoom: 2
+      offset: -15
+      allowMovement: true
+      doAfter: 0

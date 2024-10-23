@@ -1,0 +1,653 @@
+# Ефекти
+- type: loadoutEffectGroup
+  id: EkologTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobScienceAssistant
+      time: 7200
+      
+- type: loadoutEffectGroup
+  id: BerillTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSergantMVC
+      time: 14400
+
+- type: loadoutEffectGroup
+  id: BlackStalkerTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Stalker
+      time: 187200
+
+- type: loadoutEffectGroup
+  id: CorsarMPATimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSergantMVC
+      time: 9000
+
+- type: loadoutEffectGroup
+  id: Vest6b2Timer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPrivateMVC
+      time: 7200
+
+- type: loadoutEffectGroup
+  id: VestD2Timer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobPrivateMVC
+      time: 14400 
+
+- type: loadoutEffectGroup
+  id: CS1Timer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobExperiencedClearsky
+      time: 14400
+
+- type: loadoutEffectGroup
+  id: CS3aTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobExperiencedClearsky
+      time: 7200
+
+- type: loadoutEffectGroup
+  id: MercVestTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobRookieMercenary
+      time: 14400 
+
+- type: loadoutEffectGroup
+  id: XM40Timer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobRookieMercenary
+      time: 3600
+
+- type: loadoutEffectGroup
+  id: EkologMTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobScienceAssistant
+      time: 14400
+
+- type: loadoutEffectGroup
+  id: OlympicBlackTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBanditRookie
+      time: 3600
+
+- type: loadoutEffectGroup
+  id: SivaMonolithTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAdeptMonolit
+      time: 21600 # 6 годин
+
+- type: loadoutEffectGroup
+  id: RenegadeJacketTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBanditRookie
+      time: 3600 # година
+
+- type: loadoutEffectGroup
+  id: ZoryaLonerTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLoneNewbie
+      time: 10800 # 3 години
+
+- type: loadoutEffectGroup
+  id: SivaLonersTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLoneNewbie
+      time: 21600 # 6 годин
+
+- type: loadoutEffectGroup
+  id: LonersExosuitTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLeaderLoner
+      time: 36000 # 10 годин
+
+- type: loadoutEffectGroup
+  id: FreemanExoSuitTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLeaderFreedom
+      time: 36000 # 10 годин
+
+- type: loadoutEffectGroup
+  id: DutyExoSuitTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobGeneralDuty
+      time: 36000 # 2.5 годин
+
+- type: loadoutEffectGroup
+  id: MonolithExoSuitTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLeaderMonolit
+      time: 36000 # 2.5 годин
+
+- type: loadoutEffectGroup
+  id: MercenaryExoSuitTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobLeaderMercenary
+      time: 36000 # 2.5 годин
+
+- type: loadoutEffectGroup
+  id: SkatTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobGeneralMVC
+      time: 10800
+
+# Сумки
+
+- type: loadout
+  id: ClothingBackpackMerc
+  equipment:
+    back: ClothingBackpackMerc
+
+- type: loadout
+  id: ClothingBackpackHolding
+  equipment:
+    back: ClothingBackpackHolding
+
+- type: loadout
+  id: ClothingBackpackSatchelHolding
+  equipment:
+    back: ClothingBackpackSatchelHolding
+
+- type: loadout
+  id: ClothingBackpackDuffelHolding
+  equipment:
+    back: ClothingBackpackDuffelHolding
+    
+# Головні убори
+
+- type: loadout
+  id: ClothingHeadSkatHelmet
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SkatTimer
+  equipment:
+    head: ClothingHeadSkatHelmet
+
+- type: loadout
+  id: ClothingHeadBeretUA
+  equipment:
+    head: ClothingHeadBeretUA
+
+- type: loadout
+  id: ClothingHeadHatBeretSecurity
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+
+- type: loadout
+  id: ClothingHeadHatBeretHoS
+  equipment:
+    head: ClothingHeadHatBeretHoS
+
+- type: loadout
+  id: ClothingHeadHatBeretWarden
+  equipment:
+    head: ClothingHeadHatBeretWarden
+
+- type: loadout
+  id: ClothingHeadHatBeretMerc
+  equipment:
+    head: ClothingHeadHatBeretMerc
+
+- type: loadout
+  id: ClothingHeadHelmetMerc
+  equipment:
+    head: ClothingHeadHelmetMerc
+
+- type: loadout
+  id: ClothingHeadHatFedoraGrey
+  equipment:
+    head: ClothingHeadHatFedoraGrey
+
+- type: loadout
+  id: ClothingHeadHatFedoraBrown
+  equipment:
+    head: ClothingHeadHatFedoraBrown
+
+- type: loadout
+  id: ClothingHeadBandBlack
+  equipment:
+    head: ClothingHeadBandBlack
+
+- type: loadout
+  id: ClothingHeadBandBlue
+  equipment:
+    head: ClothingHeadBandBlue
+
+- type: loadout
+  id: ClothingHeadBandBotany
+  equipment:
+    head: ClothingHeadBandBotany
+
+- type: loadout
+  id: ClothingHeadBandGreen
+  equipment:
+    head: ClothingHeadBandGreen
+
+- type: loadout
+  id: ClothingHeadBandGrey
+  equipment:
+    head: ClothingHeadBandGrey
+
+- type: loadout
+  id: ClothingHeadBandRed
+  equipment:
+    head: ClothingHeadBandRed
+
+- type: loadout
+  id: ClothingHeadBandSkull
+  equipment:
+    head: ClothingHeadBandSkull
+
+- type: loadout
+  id: ClothingHeadBandMerc
+  equipment:
+    head: ClothingHeadBandMerc
+
+- type: loadout
+  id: ClothingHeadBandBrown
+  equipment:
+    head: ClothingHeadBandBrown
+
+# Одяг
+
+- type: loadout
+  id: ClothingUniformJumpsuitSidor
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSidor
+
+- type: loadout
+  id: ClothingUniformJumpsuitSidorFat
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSidorFat
+
+- type: loadout
+  id: ClothingUniformJumpsuitSweater
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSweater
+
+- type: loadout
+  id: ClothingUniformJumpsuitSweater1
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSweater1
+
+- type: loadout
+  id: ClothingUniformJumpsuitAncient
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitAncient
+
+
+# Рукавички
+- type: loadout
+  id: ClothingHandsGlovesFingerless
+  equipment:
+    gloves: ClothingHandsGlovesFingerless
+
+- type: loadout
+  id: ClothingHandsGlovesColorBlack
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+
+- type: loadout
+  id: ClothingHandsMercGlovesCombat
+  equipment:
+    gloves: ClothingHandsMercGlovesCombat
+
+- type: loadout
+  id: ClothingHandsGlovesMercFingerless
+  equipment:
+    gloves: ClothingHandsGlovesMercFingerless
+
+# Костюми
+- type: loadout
+  id: ClothingOuterLonersExoSuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: LonersExosuitTimer
+  equipment:
+    outerClothing: ClothingOuterLonersExoSuit
+
+- type: loadout
+  id: ClothingOuterFreemanExoSuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FreemanExoSuitTimer
+  equipment:
+    outerClothing: ClothingOuterFreemanExoSuit
+
+- type: loadout
+  id: ClothingOuterDutyExoSuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: DutyExoSuitTimer
+  equipment:
+    outerClothing: ClothingOuterDutyExoSuit
+
+- type: loadout
+  id: ClothingOuterMonolithExoSuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MonolithExoSuitTimer
+  equipment:
+    outerClothing: ClothingOuterMonolithExoSuit
+
+- type: loadout
+  id: ClothingOuterMercenaryExoSuit
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MercenaryExoSuitTimer
+  equipment:
+    outerClothing: ClothingOuterMercenaryExoSuit
+
+- type: loadout
+  id: ClothingOuterSivaLoners
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SivaLonersTimer
+  equipment:
+    outerClothing: ClothingOuterSivaLoners
+
+- type: loadout
+  id: ClothingOuterZoryaLoners
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ZoryaLonerTimer
+  equipment:
+    outerClothing: ClothingOuterZoryaLoners
+
+- type: loadout
+  id: ClothingOuterRookieJacket
+  equipment:
+    outerClothing: ClothingOuterRookieJacket
+
+- type: loadout
+  id: ClothingOuterHunterCoat
+  equipment:
+    outerClothing: ClothingOuterHunterCoat
+
+- type: loadout
+  id: ClothingOuterBanditJacket
+  equipment:
+    outerClothing: ClothingOuterBanditJacket
+
+- type: loadout
+  id: ClothingOuterbanditcoat
+  equipment:
+    outerClothing: ClothingOuterbanditcoat
+
+- type: loadout
+  id: ClothingOuterbanditcoatgrey
+  equipment:
+    outerClothing: ClothingOuterbanditcoatgrey
+
+- type: loadout
+  id: ClothingOuterRenegadeJacket
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: RenegadeJacketTimer
+  equipment:
+    outerClothing: ClothingOuterRenegadeJacket
+
+- type: loadout
+  id: ClothingOuterLeatherJacketLoner
+  equipment:
+    outerClothing: ClothingOuterLeatherJacketLoner
+
+- type: loadout
+  id: ClothingOuterLeatherJacket
+  equipment:
+    outerClothing: ClothingOuterLeatherJacket
+
+- type: loadout
+  id: ClothingOuterLeatherMonoJacket
+  equipment:
+    outerClothing: ClothingOuterLeatherMonoJacket
+
+- type: loadout
+  id: ClothingOuterSivaMonolith
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SivaMonolithTimer
+  equipment:
+    outerClothing: ClothingOuterSivaMonolith
+
+- type: loadout
+  id: ClothingOuterOlympicBlack
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OlympicBlackTimer
+  equipment:
+    outerClothing: ClothingOuterOlympicBlack
+
+- type: loadout
+  id: ClothingOuterBanditka
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: OlympicBlackTimer
+  equipment:
+    outerClothing: ClothingOuterBanditka
+
+- type: loadout
+  id: ClothingOuterEkolog
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EkologTimer
+  equipment:
+    outerClothing: ClothingOuterEkolog
+
+- type: loadout
+  id: ClothingOuterEkologM
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EkologMTimer
+  equipment:
+    outerClothing: ClothingOuterEkologM
+
+- type: loadout
+  id: ClothingOuterSKAT9
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SkatTimer
+  equipment:
+    outerClothing: ClothingOuterSKAT9
+
+- type: loadout
+  id: ClothingOuterWaistcoat
+  equipment:
+    outerClothing: ClothingOuterWaistcoat
+
+- type: loadout
+  id: ClothingOuterMercVest
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MercVestTimer
+  equipment:
+    outerClothing: ClothingOuterMercVest
+
+- type: loadout
+  id: ClothingOuterMercEcoVest
+  equipment:
+    outerClothing: ClothingOuterMercEcoVest
+
+- type: loadout
+  id: ClothingOuterLeatherJacketClearSky
+  equipment:
+    outerClothing: ClothingOuterLeatherJacketClearSky
+
+- type: loadout
+  id: ClothingOuterCS1
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CS1Timer
+  equipment:
+    outerClothing: ClothingOuterCS1
+
+- type: loadout
+  id: ClothingOuterCS3a
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CS3aTimer
+  equipment:
+    outerClothing: ClothingOuterCS3a
+
+- type: loadout
+  id: ClothingOuterJacketMilitary
+  equipment:
+    outerClothing: ClothingOuterJacketMilitary
+
+- type: loadout
+  id: ClothingOuterVest6b2
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Vest6b2Timer
+  equipment:
+    outerClothing: ClothingOuterVest6b2
+
+- type: loadout
+  id: ClothingOuterVestD2
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: VestD2Timer
+  equipment:
+    outerClothing: ClothingOuterVestD2
+
+- type: loadout
+  id: ClothingOuterCorsarMPA
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CorsarMPATimer
+  equipment:
+    outerClothing: ClothingOuterCorsarMPA
+
+- type: loadout
+  id: ClothingOuterBerill
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: BerillTimer
+  equipment:
+    outerClothing: ClothingOuterBerill
+
+- type: loadout
+  id: ClothingOuterGhillie
+  equipment:
+    outerClothing: ClothingOuterGhillie
+
+# Neck
+
+- type: loadout
+  id: ClothingNeckBlackStalker
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: BlackStalkerTimer
+  equipment:
+    neck: ClothingNeckBlackStalker
+
+- type: loadout
+  id: ClothingNeckPatchBandits
+  equipment:
+    neck: ClothingNeckPatchBandits
+
+- type: loadout
+  id: ClothingNeckPatchLoners
+  equipment:
+    neck: ClothingNeckPatchLoners
+
+- type: loadout
+  id: ClothingNeckPatchFreedom
+  equipment:
+    neck: ClothingNeckPatchFreedom
+
+- type: loadout
+  id: ClothingNeckPatchScience
+  equipment:
+    neck: ClothingNeckPatchScience
+
+- type: loadout
+  id: ClothingNeckPatchDuty
+  equipment:
+    neck: ClothingNeckPatchDuty
+
+- type: loadout
+  id: ClothingNeckPatchMerc
+  equipment:
+    neck: ClothingNeckPatchMerc
+
+# Mask
+
+- type: loadout
+  id: ClothingMaskBalaklava
+  equipment:
+    mask: ClothingMaskBalaklava
+
+- type: loadout
+  id: ClothingMaskGasXM40
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: XM40Timer
+  equipment:
+    mask: ClothingMaskGasXM40

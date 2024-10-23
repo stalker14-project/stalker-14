@@ -1,0 +1,176 @@
+- type: entity
+  abstract: true
+  parent: EncryptionKey
+  id: StalkerEncryptionKey
+  name: encryption key
+  description: A small cypher chip for headsets.
+  components:
+  - type: EncryptionKey
+  - type: Item
+    sprite: Objects/Devices/encryption_keys.rsi
+  - type: Sprite
+    sprite: Objects/Devices/encryption_keys.rsi
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyStalkerFM
+  name: ключ шифрування Сталкер FM
+  description: Ключ шифрування для радіоканалу Сталкер FM.
+  components:
+  - type: EncryptionKey
+    channels:
+    - StalkerFM
+    defaultChannel: StalkerFM
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: com_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyMilitaryRadio
+  name: ключ шифрування ВСРХ
+  description: Ключ шифрування для Військової Спеціалізованої Радіо Хвилі.
+  components:
+  - type: EncryptionKey
+    channels:
+    - MilitaryRadio
+    defaultChannel: MilitaryRadio
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: sec_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyBanditRadio
+  name: ключ шифрування Бандитьське радіо
+  description: Ключ шифрування для радіоканалу Бандитьське радіо.
+  components:
+  - type: EncryptionKey
+    channels:
+    - BanditRadio
+    - StalkerFM
+    defaultChannel: BanditRadio
+  - type: Sprite
+    layers:
+    - state: crypt_rusted
+    - state: pirate_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyFreedomRadio
+  name: ключ шифрування Радіо волі
+  description: Ключ шифрування для радіоканалу Радіо волі.
+  components:
+  - type: EncryptionKey
+    channels:
+    - FreedomRadio
+    - StalkerFM
+    defaultChannel: FreedomRadio
+  - type: Sprite
+    layers:
+    - state: crypt_gold
+    - state: ce_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyDutyRadio
+  name: ключ шифрування Радіо обов'язку
+  description: Ключ шифрування для радіоканалу Радіо обов'язку.
+  components:
+  - type: EncryptionKey
+    channels:
+    - DutyRadio
+    - StalkerFM
+    defaultChannel: DutyRadio
+  - type: Sprite
+    layers:
+    - state: crypt_red
+    - state: hos_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyMercRadio
+  name: ключ шифрування Радіо Найманців
+  description: Ключ шифрування для радіоканалу Радіо Найманців.
+  components:
+  - type: EncryptionKey
+    channels:
+    - StalkerFM
+    - MercRadio
+    defaultChannel: StalkerFM
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: qm_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyClearSkyRadio
+  name: ключ шифрування Радіо ЧН
+  description: Ключ шифрування для радіоканалу Чистого Неба.
+  components:
+  - type: EncryptionKey
+    channels:
+    - StalkerFM
+    - ClearSkyRadio
+    defaultChannel: ClearSkyRadio
+  - type: Sprite
+    layers:
+    - state: crypt_blue
+    - state: qm_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyMonolithRadio
+  name: ключ шифрування Радіо Монолітовців
+  description: Ключ шифрування для радіоканалу Монолітовців.
+  components:
+  - type: EncryptionKey
+    channels:
+    - StalkerFM
+    - MonolithRadio
+    defaultChannel: StalkerFM
+  - type: Sprite
+    layers:
+    - state: crypt_gold
+    - state: hos_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyScienceRadio
+  name: ключ шифрування
+  suffix: Вчених
+  description: Ключ шифрування для радіоканалів, що допоможуть комунікувати вченим.
+  components:
+  - type: EncryptionKey
+    channels:
+    - StalkerFM
+    - Science
+    - MilitaryRadio
+    defaultChannel: StalkerFM
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: sci_label
+
+- type: entity
+  parent: StalkerEncryptionKey
+  id: EncryptionKeyAllChannels
+  name: ключ шифрування усіх каналів
+  description: Ключ шифрування, що має доступ до всіх каналів.
+  components:
+  - type: EncryptionKey
+    channels:
+    - StalkerFM
+    - MilitaryRadio
+    - BanditRadio
+    - FreedomRadio
+    - DutyRadio
+    - MercRadio
+    defaultChannel: StalkerFM
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: nano_label

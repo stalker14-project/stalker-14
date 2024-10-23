@@ -1,0 +1,39 @@
+- type: entity
+  parent: ClothingMaskBaseButcherable
+  id: ClothingMaskBalaklava
+  name: Балаклава
+  description: "Чому не чорна?"
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
+    - FacialHair
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Mask/balaklava.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Mask/balaklava.rsi
+  - type: StaticPrice
+    price: 100
+
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasXM40
+  name: Газова маска XM40
+  description: Маска типу XM40, чудово підходить до закриття лиця.
+  components:
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
+    - FacialHair
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Mask/XM40.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Mask/XM40.rsi
+  - type: StaticPrice
+    price: 500

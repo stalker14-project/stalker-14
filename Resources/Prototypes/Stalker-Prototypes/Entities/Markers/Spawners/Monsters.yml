@@ -1,0 +1,285 @@
+- type: entity
+  name: Плоть спавнер
+  id: StalkerMobFleshSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/flesh.rsi
+    layers:
+      - state: alive
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerMobFlesh
+
+- type: entity
+  name: Тушкан спавнер
+  id: StalkerMobTushkanSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/tushkan.rsi
+    layers:
+      - state: alive
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerMobTushkan
+
+- type: entity
+  name: Кабан спавнер
+  id: StalkerMobBoarSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/boar.rsi
+    layers:
+      - state: alive
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerMobBoar
+
+- type: entity
+  name: Контролер спавнер
+  id: StalkerMobControlerSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+    layers:
+      - state: alive
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerMobControler
+
+- type: entity
+  name: Кровосос спавнер
+  id: StalkerMobBloodSuckerSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/bloodsucker.rsi
+    layers:
+      - state: alive
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerMobBloodSucker
+
+- type: entity
+  name: Сліпий пес спавнер
+  id: StalkerMobBlindDogSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/blinddog.rsi
+    layers:
+      - state: alive
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerMobBlindDog
+
+- type: entity
+  name: Снорк спавнер
+  id: StalkerMobSnorkSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Mobs/Monsters/snork.rsi
+    layers:
+      - state: alive
+  - type: ConditionalSpawner
+    prototypes:
+      - StalkerMobSnork
+
+- type: entity
+  id: RandomZombieCivilianSpawner
+  name: Випадковий цивільний зомбі
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+          state: civilian
+    - type: RandomSpawner
+      prototypes:
+        - BaseMobZombieCivilian10
+        - BaseMobZombieCivilian1
+        - BaseMobZombieCivilian2
+        - BaseMobZombieCivilian3
+        - BaseMobZombieCivilian4
+        - BaseMobZombieCivilian5
+        - BaseMobZombieCivilian6
+        - BaseMobZombieCivilian7
+        - BaseMobZombieCivilian8
+        - BaseMobZombieCivilian9
+      chance: 1
+
+# Часові спавнери 
+- type: entity
+  name: Часовий спавнер плоті
+  id: StalkerMobFLeshTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/flesh.rsi
+          state: alive
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - StalkerMobFlesh
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+
+- type: entity
+  name: Часовий спавнер сліпого пса
+  id: StalkerMobBlindDogTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/blinddog.rsi
+          state: alive
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - StalkerMobBlindDog
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+
+
+- type: entity
+  name: Часовий спавнер кровососа
+  id: StalkerMobBloodSuckerTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/bloodsucker.rsi
+          state: alive
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - StalkerMobBloodSucker
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+
+- type: entity
+  name: Часовий спавнер снорка
+  id: StalkerMobSnorkTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/snork.rsi
+          state: alive
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - StalkerMobSnork
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+
+- type: entity
+  name: Часовий спавнер випадкового цивільного зомбі
+  id: RandomZombieCivilianTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/zombies.rsi
+          state: civilian
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - BaseMobZombieCivilian10
+        - BaseMobZombieCivilian1
+        - BaseMobZombieCivilian2
+        - BaseMobZombieCivilian3
+        - BaseMobZombieCivilian4
+        - BaseMobZombieCivilian5
+        - BaseMobZombieCivilian6
+        - BaseMobZombieCivilian7
+        - BaseMobZombieCivilian8
+        - BaseMobZombieCivilian9
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+
+- type: entity
+  name: Часовий спавнер контролера
+  id: StalkerMobControlerTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+          state: alive
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - StalkerMobControler
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+
+- type: entity
+  name: Часовий спавнер тушкана
+  id: StalkerMobTushkanTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/tushkan.rsi
+          state: alive
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - StalkerMobTushkan
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1
+
+- type: entity
+  name: Часовий спавнер кабана
+  id: StalkerMobBoarTimedSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: StalkerTextures/Mobs/Monsters/boar.rsi
+          state: alive
+        - state: timed
+    - type: Timer
+    - type: TimedSpawner
+      prototypes:
+        - StalkerMobBoar
+      chance: 0.85
+      intervalSeconds: 1800
+      minimumEntitiesSpawned: 1
+      maximumEntitiesSpawned: 1

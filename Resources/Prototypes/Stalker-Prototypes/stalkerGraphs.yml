@@ -1,0 +1,138 @@
+- type: constructionGraph
+  id: ClosedCanBeansOpening
+  start: start
+  graph:
+
+  - node: start
+    entity: ClosedCanBeans
+    edges:
+    - to: opened
+      steps:
+      - tool: CanOpener
+        doAfter: 2
+  - node: opened
+    entity: OpenCanBeans
+
+- type: constructionGraph
+  id: ClosedCanOpening
+  start: start
+  graph:
+
+  - node: start
+    entity: ClosedCan
+    edges:
+    - to: opened
+      steps:
+      - tool: CanOpener
+        doAfter: 2
+  - node: opened
+    entity: OpenCan
+
+- type: constructionGraph
+  id: ClosedCanFishOpening
+  start: start
+  graph:
+
+  - node: start
+    entity: ClosedCanFish
+    edges:
+    - to: opened
+      steps:
+      - tool: CanOpener
+        doAfter: 2
+  - node: opened
+    entity: OpenCanFish
+
+- type: constructionGraph
+  id: ClosedCanHamOpening
+  start: start
+  graph:
+
+  - node: start
+    entity: ClosedCanHam
+    edges:
+    - to: opened
+      steps:
+      - tool: CanOpener
+        doAfter: 2
+  - node: opened
+    entity: OpenCanHam
+
+- type: constructionGraph
+  id: ClosedCanSoupOpening
+  start: start
+  graph:
+
+  - node: start
+    entity: ClosedCanSoup
+    edges:
+    - to: opened
+      steps:
+      - tool: CanOpener
+        doAfter: 2
+  - node: opened
+    entity: OpenCanSoup
+
+- type: constructionGraph
+  id: ClosedCanSpratsOpening
+  start: start
+  graph:
+
+  - node: start
+    entity: ClosedCanSprats
+    edges:
+    - to: opened
+      steps:
+      - tool: CanOpener
+        doAfter: 2
+  - node: opened
+    entity: OpenCanSprats
+
+- type: constructionGraph
+  id: ClosedCanStewOpening
+  start: start
+  graph:
+
+  - node: start
+    entity: ClosedCanStew
+    edges:
+    - to: opened
+      steps:
+      - tool: CanOpener
+        doAfter: 2
+  - node: opened
+    entity: OpenCanStew
+
+- type: constructionGraph
+  id: MutantMeat
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: mutant meat
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: mutant meat
+    entity: FoodMutantCookedMeat
+
+- type: constructionGraph
+  id: StrangeMeat
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: strange meat
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: strange meat
+    entity: FoodStrangeCookedMeat

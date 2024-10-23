@@ -1,0 +1,21 @@
+- type: entity
+  id: StalkerEnergyProjectile
+  name: Енергетична куля
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 30
+        Heat: 70
+        Shock: 20
+  - type: Sprite
+    noRot: false
+    sprite: StalkerTextures/Objects/Weapons/Guns/Projectiles/projectiles.rsi
+    layers:
+    - state: bluespace
+      shader: unshaded
+  - type: Reflective
+    reflective:
+    - Energy

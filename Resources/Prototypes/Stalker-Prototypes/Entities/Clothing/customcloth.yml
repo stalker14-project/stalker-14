@@ -1,0 +1,84 @@
+- type: entity
+  parent: ClothingOuterArmorHeavy
+  id: ClothingOuterCommisarrEtail
+  name: Комісарський плащ
+  description: Чорний плащ з золотими вишивками.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Etail.rsi
+    state: icon-outer
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Etail.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.5
+        Caustic: 0.9
+  - type: StaticPrice
+    price: 30000
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: GroupExamine
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetLonersExoSuit
+  - type: Reflect
+    enabled: true
+    reflectProb: .20
+
+- type: entity
+  parent: ClothingHeadHatBeretFrench
+  id: ClothingHeadCommisarrCap
+  name: Фурашка Комісара
+  description: "Фурашка чорно-червоного кольору, спереду зображений крилатий череп"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Etail.rsi
+    state: icon-cap
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Etail.rsi
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCommisarrCloak
+  name: Комісарська Накидка
+  description: Чорна накидка з золотою вишивкою.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Etail.rsi
+    state: icon-cloak
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Etail.rsi
+  - type: Reflect
+    enabled: true
+    reflectProb: .15
+  - type: StaticPrice
+    price: 25000
+
+- type: entity
+  parent: ClothingUniformJumpsuitAncient
+  id: ClothingUniformCommisarrTunic
+  name: Комісарський кітель
+  description: Чорний кітель з золотою вишивкою та ґудзиками.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Etail.rsi
+    state: icon-inner
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Etail.rsi
+  - type: StaticPrice
+    price: 20000
+
+- type: startingGear
+  id: CommisarrEtailGear
+  equipment: 
+    jumpsuit: ClothingUniformCommisarrTunic
+    neck: ClothingNeckCommisarrCloak
+    gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterCommisarrEtail
+    shoes: ClothingShoesBootsCombat
+    head: ClothingHeadCommisarrCap

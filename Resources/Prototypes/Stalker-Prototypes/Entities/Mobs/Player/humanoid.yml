@@ -1,0 +1,127 @@
+- type: entity
+  parent: BaseAntagSpawner
+  id: SpawnPointSpecialForces
+  name: Військовий спецпризначенець
+  components:
+  - type: GhostRole
+    name: Військовий спецпризначенець
+    description: Спецпризначенці — елітні підрозділи. Зазвичай висаджуються у Зоні для проведення рятувальних та спеціальних операцій. Беруть участь у зачистках великих сталкерських таборів і захопленні важливих об'єктів.
+    raffle:
+      settings: default
+  - type: Sprite
+    layers:
+    - sprite: Markers/jobs.rsi
+      state: green
+    - sprite: StalkerTextures/Clothing/OuterClothing/Monolith/MonolithSiva.rsi
+      state: icon
+  - type: GhostRoleMobSpawner
+    prototype: SpeialForces
+
+- type: entity
+  parent: BaseAntagSpawner
+  id: SpawnPointSpecialForcesLeader
+  name: Лідер спецпризначенців
+  components:
+  - type: GhostRole
+    name: Лідер спецпризначенців
+    description: Спецпризначенці — елітні підрозділи. Зазвичай висаджуються у Зоні для проведення рятувальних та спеціальних операцій. Беруть участь у зачистках великих сталкерських таборів і захопленні важливих об'єктів.
+    raffle:
+      settings: default
+  - type: Sprite
+    layers:
+    - sprite: Markers/jobs.rsi
+      state: green
+    - sprite: StalkerTextures/Clothing/OuterClothing/Monolith/MonolithSiva.rsi
+      state: icon
+  - type: GhostRoleMobSpawner
+    prototype: SpeialForcesLeader
+
+- type: entity
+  id: SpeialForces
+  parent: BaseMobHuman
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Військовий спецпризначенець
+      description: Спецпризначенці — елітні підрозділи. Зазвичай висаджуються у Зоні для проведення рятувальних та спеціальних операцій. Беруть участь у зачистках великих сталкерських таборів і захопленні важливих об'єктів.
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: short
+#      job:
+    - type: Loadout
+      prototypes: [ SpecialForcesGear ]
+#      roleLoadout: [  ]
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstMilitaryLeader
+      - NamesLastMilitary
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+
+- type: entity
+  id: SpeialForcesLeader
+  parent: BaseMobHuman
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Лідер спецпризначенців
+      description: Спецпризначенці — елітні підрозділи. Зазвичай висаджуються у Зоні для проведення рятувальних та спеціальних операцій. Беруть участь у зачистках великих сталкерських таборів і захопленні важливих об'єктів.
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: short
+#      job:
+    - type: Loadout
+      prototypes: [ SpecialForcesLeaderGear ]
+#      roleLoadout: [  ]
+    - type: RandomMetadata
+      nameSegments:
+      - NamesFirstMilitaryLeader
+      - NamesLastMilitary
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+
+- type: startingGear
+  id: SpecialForcesGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDASergantMVC
+    belt: WeaponPistolFort12
+    gloves: ClothingHandsMercGlovesCombat
+    mask: ClothingMaskBalaklava
+    jumpsuit: ClothingUniformJumpsuitSidor
+    ears: ClothingHeadsetMilitaryRadio
+    neck: ClothingNeckPatchMilitary
+    outerClothing: ClothingOuterBerill
+    pocket1: MagazineLightRifle
+    pocket2: EmergencyMedipenStalker
+  inhand:
+    - WeaponRifleAk
+  storage:
+    back: 
+    - MedkitMilitaryStalker
+    - MagazineLightRifle
+    - MagazineBoxLightRifle
+
+- type: startingGear
+  id: SpecialForcesLeaderGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDASergantMVC
+    belt: WeaponPistolFort12
+    gloves: ClothingHandsMercGlovesCombat
+    mask: ClothingMaskBalaklava
+    jumpsuit: ClothingUniformJumpsuitSidor
+    ears: ClothingHeadsetMilitaryRadio
+    neck: ClothingNeckPatchMilitary
+    outerClothing: ClothingOuterSKAT9
+    pocket1: MagazineLightRifle
+    pocket2: EmergencyMedipenStalker
+  inhand:
+    - WeaponRifleAk
+  storage:
+    back: 
+    - MedkitSciStalker
+    - Medkit
+    - MagazineLightRifle
+    - MagazineLightRifle
+    - MagazineBoxLightRifle

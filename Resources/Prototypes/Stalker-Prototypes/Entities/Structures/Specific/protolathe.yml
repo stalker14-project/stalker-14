@@ -1,0 +1,177 @@
+- type: entity
+  id: StalkerProtolathe
+  parent: BaseLatheLube
+  name: Протолат
+  description: Конвертує матеріали в правильні речі!
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/protolathe.rsi
+    snapCardinals: true
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ProtolatheMachineCircuitboard
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+  - type: Lathe
+    idleState: icon
+    runningState: building
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
+    staticRecipes:
+    - LargeBeaker
+    - Dropper
+    - ClothingEyesGlassesChemical
+    dynamicRecipes:
+      - PowerDrill
+      - MiningDrill
+      - MiningDrillDiamond
+      - AnomalyScanner
+      - AnomalyLocator
+      - AnomalyLocatorWide
+      - Scalpel
+      - Retractor
+      - Cautery
+      - Drill
+      - WeaponParticleDecelerator
+      - HoloprojectorField
+      - Saw
+      - Hemostat
+      - CryostasisBeaker
+      - SyringeCryostasis
+      - Syringe
+      - Implanter
+      - PillCanister
+      - ChemistryEmptyBottle01
+      - AdvMopItem
+      - WeaponSprayNozzle
+      - ClothingBackpackWaterTank
+      - MegaSprayBottle
+      - TimerTrigger
+      - ChemicalPayload
+      - FlashPayload
+      - Signaller
+      - SignallerAdvanced
+      - SignalTrigger
+      - VoiceTrigger
+      - Igniter
+      - HandHeldMassScanner
+      - PowerCellMicroreactor
+      - PowerCellHigh
+      - WeaponPistolCHIMP
+      - ClothingMaskWeldingGas
+      - MineralScannerEmpty
+      - AdvancedMineralScannerEmpty
+      - WeaponGauntletGorilla
+      - SynthesizerInstrument
+      - ClothingShoesBootsMagSci
+      - ClothingShoesBootsMoon
+      - ClothingShoesBootsSpeed
+      - NodeScanner
+      - HolofanProjector
+      - BluespaceBeaker
+      - SyringeBluespace
+      - WeaponForceGun
+      - WeaponLaserSvalinn
+      - WeaponProtoKineticAccelerator
+      - WeaponTetherGun
+      - ClothingBackpackHolding
+      - ClothingBackpackSatchelHolding
+      - ClothingBackpackDuffelHolding
+      - WelderExperimental
+      - JawsOfLife
+      - FauxTileAstroGrass
+      - FauxTileMowedAstroGrass
+      - FauxTileJungleAstroGrass
+      - FauxTileAstroIce
+      - FauxTileAstroSnow
+      - OreBagOfHolding
+      - DeviceQuantumSpinInverter
+      - RadAutoInjectorStalker
+      - EmergencyMedipenStalker
+      - BurnAutoInjectorStalker
+      - BruteAutoInjectorStalker
+      - MedkitMilitaryStalker
+      - StimpackMiniStalker
+      - SciStimpackStalker
+      - MedkitSciStalker
+      - BackgammonBoard
+      - CardBoxBlack
+      - ChessBoard
+      - CheckerBoard
+      - DiceBag
+      - ParchisBoard
+      - ClothingBackpackSatchelTourist
+      - ClothingBackpackTourist
+      - ClothingOuterDutyExoSuit
+      - ClothingOuterEkolog
+      - ClothingOuterEkologM
+      - ClothingOuterFreemanExoSuit
+      - ClothingOuterLonersExoSuit
+      - ClothingOuterMercenaryExoSuit
+      - ClothingOuterSivaFreedom
+      - ClothingOuterSivaLoners
+      - ClothingOuterSinStalker
+      - ClothingOuterZoryaLoners
+      - MedkitStalker
+      - StalkerOintment
+      - StalkerBrutepack
+      - Binoculars
+      - StalkerArtifactContainerExpensive
+      - StalkerArtifactContainerPieceOfTrash
+      - StalkerArtifactContainerPopularChoise
+      - StalkerBinoculars
+  - type: EmagLatheRecipes
+    emagDynamicRecipes:
+      - BoxBeanbag
+      - BoxShotgunIncendiary
+      - BoxShotgunUranium
+      - BoxShellTranquilizer
+      - ExplosivePayload
+      - GrenadeBlast
+      - GrenadeEMP
+      - GrenadeFlash
+      - HoloprojectorSecurity
+      - MagazineBoxLightRifleIncendiary
+      - MagazineBoxLightRifleUranium
+      - MagazineBoxMagnumIncendiary
+      - MagazineBoxMagnumUranium
+      - MagazineBoxPistolIncendiary
+      - MagazineBoxPistolUranium
+      - MagazineBoxRifleIncendiary
+      - MagazineBoxRifleUranium
+      - MagazineGrenadeEmpty
+      - MagazineLightRifleIncendiary
+      - MagazineLightRifleUranium
+      - MagazinePistolIncendiary
+      - MagazinePistolUranium
+      - MagazineRifleIncendiary
+      - MagazineRifleUranium
+      - MagazineShotgunBeanbag
+      - MagazineShotgunIncendiary
+      - MagazineShotgunIncendiary
+      - PortableRecharger
+      - PowerCageHigh
+      - PowerCageMedium
+      - PowerCageSmall
+      - SpeedLoaderMagnumIncendiary
+      - SpeedLoaderMagnumUranium
+      - TelescopicShield
+      - Truncheon
+      - WeaponAdvancedLaser
+      - WeaponLaserCannon
+      - WeaponLaserCarbine
+      - WeaponXrayCannon

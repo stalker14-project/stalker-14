@@ -1,0 +1,847 @@
+ # МВС
+- type: job
+  id: PrivateMVC
+  name: рядовий МВС
+  description: звичайний солдат
+  playTimeTracker: JobPrivateMVC
+  requirements:
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+  weight: 1
+  startingGear: PrivateSoliderGear
+  icon: JobIconPrivateMVC
+  canBeAntag: true
+  access:
+  - Brig
+  - Security
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+#якщо не сприймає пошкодження добавити:  damageModifierSet: Stalkers
+
+- type: startingGear
+  id: PrivateSoliderGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAPrivateMVC
+    ears: ClothingHeadsetMilitaryRadio
+    neck: ClothingNeckPatchMilitary
+
+- type: job
+  id: SergantMVC
+  name: Сержант МВС
+  description: старший по званню офіцер, який командує рядовими і підпорядковується Генералу!
+  playTimeTracker: JobSergantMVC
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobPrivateMVC
+      time: 14400 #4hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 22
+  weight: 5
+  startingGear: SergantMVCGear
+  icon:  JobIconSergantMVC
+  canBeAntag: false
+  access:
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: SergantMVCGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDASergantMVC
+    ears: ClothingHeadsetMilitaryRadio
+    neck: ClothingNeckPatchMilitary
+
+- type: job
+  id: GeneralMVC
+  name: Генерал МВС
+  description: ви, генерал МВС, вам підрорядковуються усі підрозділи, на території ЧАЗВ.
+  playTimeTracker: JobGeneralMVC
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSergantMVC
+      time: 14400 #1hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 30
+  weight: 10
+  startingGear: GeneralSoliderGear
+  icon: JobIconGeneralMVC
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: GeneralSoliderGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAGeneralMVC
+    ears: ClothingHeadsetMilitaryRadio
+    neck: ClothingNeckPatchMilitary
+
+- type: job
+  id: UnderCoverMilitary
+  name: офіцер СБУ під прикриттям
+  description: Ви повинні проводити дослідження діяльності фракцій в ЧАЗВ і доповідати військовим.
+  playTimeTracker: JobUnderCoverMilitary
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSergantMVC
+      time: 11000
+    - !type:RoleTimeRequirement
+      role: JobLoneNewbie
+      time: 14400
+    - !type:RoleTimeRequirement
+      role: JobBanditRookie
+      time: 14400
+    - !type:RoleTimeRequirement
+      role: JobRookieMercenary
+      time: 9000
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 25
+  weight: 30
+  startingGear: UnderCoverMilitaryGear
+  icon: JobIconUnderCoverMVC
+  canBeAntag: false
+  access:
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: UnderCoverMilitaryGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    ears: ClothingHeadsetChameleonMVC
+    id: StalkerPDAAgent
+
+ # Бандити
+- type: job
+  id: BanditRookie
+  name: Бандит Новачок
+  description: Бандит новачок, який тільки прибув в зону і не має репутації
+  playTimeTracker: JobBanditRookie
+  requirements:
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+  weight: 1
+  startingGear: RookieBanditGear
+  icon: JobIconBanditsNewbie
+  access:
+  - Cargo
+  - Salvage
+  - Maintenance
+  - Brig
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: RookieBanditGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDABandit
+    ears: ClothingHeadsetBanditRadio
+    neck: ClothingNeckPatchBandits
+
+- type: job
+  id: ExperienceBandit
+  name: Досвідчений Бандит
+  description: Досвідчений бандит. Уже має репутацію
+  playTimeTracker: JobExperienceBandit
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobBanditRookie
+      time: 14400 #1 hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+  weight: 5
+  startingGear: ExperienceBanditGear
+  icon: JobIconBanditsExperienced
+  canBeAntag: false
+  access:
+  - Cargo
+  - Salvage
+  - Maintenance
+  - Command
+  - Brig
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: ExperienceBanditGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDABandit
+    ears: ClothingHeadsetBanditRadio
+    neck: ClothingNeckPatchBandits
+
+- type: job
+  id: PaxanBandit
+  name: Пахан бандитів
+  description: Ви, пахан всіх братків. Братки мають давати частину награбованого вам, взамін, гарантується їхня безпека
+  playTimeTracker: JobPaxanBandit
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobExperienceBandit
+      time: 14400 #1hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 35
+  weight: 10
+  startingGear: paxanbanditgear
+  icon: JobIconBanditsLeader
+  canBeAntag: false
+  access:
+  - Cargo
+  - Salvage
+  - Quartermaster
+  - Maintenance
+  - Command
+  - Brig
+  - Cryogenics
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: paxanbanditgear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDABandit
+    ears: ClothingHeadsetBanditRadio
+    neck: ClothingNeckPatchBandits
+
+ # Одинаки
+- type: job
+  id: LoneNewbie
+  name: Одинак Новачок
+  description: одинак новачок, який майже нічого не знає, але женеться за наживою.
+  playTimeTracker: JobLoneNewbie
+  requirements:
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+  weight: 1
+  startingGear: LoneNewbieGear
+  icon: JobIconLoneNewbie
+  canBeAntag: true
+  access:
+  - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: LoneNewbieGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDALoner
+    ears: ClothingHeadsetStalkerFM
+    neck: ClothingNeckPatchLoners
+
+- type: job
+  id: ExperiencedLoner
+  name: Досвідчений одинак
+  description: Досвідчений одинак, багато чого повидав, через це має обширні знання про зону!
+  playTimeTracker: JobExperiencedLoner
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobLoneNewbie
+      time: 14400 #1 hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+  weight: 5
+  startingGear: ExperiencedLonerGear
+  icon: JobIconLoneExperienced
+  access:
+  - Cargo
+  - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: ExperiencedLonerGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDALoner
+    ears: ClothingHeadsetStalkerFM
+    neck: ClothingNeckPatchLoners
+
+- type: job
+  id: LeaderLoner
+  name: Староста села новачків
+  description: ви, головна надія усіх новачків, ви маєте їх навчати, давати їм завдання і допомагати копійкою в скрутну хвилину.
+  playTimeTracker: JobLeaderLoner
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobExperiencedLoner
+      time: 14400 #2hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 35
+  weight: 10
+  startingGear: LeaderLonerGear
+  icon: JobIconLoneLeader
+  canBeAntag: false
+  access:
+  - Cargo
+  - Salvage
+  - Quartermaster
+  - Maintenance
+  - Command
+  - Brig
+  - Cryogenics
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: LeaderLonerGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDALoner
+    ears: ClothingHeadsetStalkerFM
+    neck: ClothingNeckPatchLoners
+
+# Вчені
+
+- type: job
+  id: ScienceAssistant
+  name: Науковий Асистент
+  description: Ви - науковий асистент, вам ще мало що відомо про цю загадкову "Зону"... Вивчіть більше.
+  playTimeTracker: JobScienceAssistant
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobScientist
+      time: 14400
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 20
+  weight: 20
+  startingGear: ScienceAssistantGear
+  icon: JobIconResearchAssistant
+  canBeAntag: false
+  access:
+  - Research
+  - Brig
+  - Maintenance
+  - Cryogenics
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: ScienceAssistantGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAScientist
+    ears: ClothingHeadsetScienceRadio
+    neck: ClothingNeckPatchScience
+
+- type: job
+  id: ScienceGroupLeader
+  name: Лідер наукової групи
+  description: Ви - лідер наукової групи, ваша місія не дати померти вашим людям, допоки вони вивчають цю страшну річ, названу "Зоною".
+  playTimeTracker: JobScienceGroupLeader
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 14400
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 35
+  weight: 25
+  startingGear: ScienceGroupLeaderGear
+  icon: JobIconResearchDirector
+  canBeAntag: false
+  access:
+  - Research
+  - Brig
+  - Maintenance
+  - Cryogenics
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: ScienceGroupLeaderGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAScientist
+    ears: ClothingHeadsetScienceRadio
+    neck: ClothingNeckPatchScience
+
+# найманці
+
+- type: job
+  id: RookieMercenary
+  name: Новачок найманець
+  description: Думайте як нінзя! Станьте нінзя! Бійтеся денного світла, неначе ви вампір!
+  playTimeTracker: JobRookieMercenary
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 43200
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 20
+  weight: 1
+  startingGear: RookieMercenaryGear
+  icon: JobIconMercenaryNewbie
+  canBeAntag: true
+  access:
+  - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: RookieMercenaryGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAMerc
+    ears: ClothingHeadsetMercRadio
+    neck: ClothingNeckPatchMerc
+
+- type: job
+  id: ExperiencedMercenary
+  name: Досвідчений найманець
+  description: Ви рахували, скількох вбили?
+  playTimeTracker: JobExperiencedMercenary
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobRookieMercenary
+      time: 14400
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 20
+  weight: 5
+  startingGear: ExperiencedMercenaryGear
+  icon: JobIconMercenaryExperienced
+  canBeAntag: true
+  access:
+  - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: ExperiencedMercenaryGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAMerc
+    ears: ClothingHeadsetMercRadio
+    neck: ClothingNeckPatchMerc
+  inhand:
+    - WeaponSniperMosin
+  storage:
+    back:
+    - SpeedLoaderLightRifle
+    - MagazineBoxLightRifle
+
+- type: job
+  id: LeaderMercenary
+  name: Лідер найманців
+  description: Хоч хтось бачив ваше справжнє лице?
+  playTimeTracker: JobLeaderMercenary
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobExperiencedMercenary
+      time: 14400
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 20
+  weight: 10
+  startingGear: LeaderMercenaryGear
+  icon: JobIconMercenaryLeader
+  canBeAntag: true
+  access:
+  - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: LeaderMercenaryGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAMerc
+    ears: ClothingHeadsetMercRadio
+    neck: ClothingNeckPatchMerc
+  inhand:
+    - WeaponSniperMosin
+  storage:
+    back:
+    - MedkitMilitaryStalker
+    - SpeedLoaderLightRifle
+    - MagazineBoxLightRifle
+
+# Чистне небо
+
+- type: job
+  id: RookieClearsky
+  name: Новачок Чистого Неба
+  description: Ви пам'ятаєте, як сюди потрапили?
+  playTimeTracker: JobRookieClearsky
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobAdeptMonolit
+      time: 3600
+    - !type:RoleTimeRequirement
+      role: JobScienceAssistant
+      time: 14400
+    - !type:RoleTimeRequirement
+      role: JobLoneNewbie
+      time: 14400
+    - !type:DepartmentTimeRequirement
+      department: Stalker
+      time: 28800 #8hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 20
+  weight: 6
+  startingGear: ClearSkyGear
+  icon: JobIconRookieClearsky
+  canBeAntag: true
+  access:
+  - Maintenance
+  - Research
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: job
+  id: ExperiencedClearsky
+  name: Досвідчений Чистого Неба
+  description: Колись задумувались про зраду?
+  playTimeTracker: JobExperiencedClearsky
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobRookieClearsky
+      time: 36000
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 22
+  weight: 7
+  startingGear: ClearSkyGear
+  icon: JobIconExperiencedClearsky
+  canBeAntag: true
+  access:
+  - Maintenance
+  - Research
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: job
+  id: LeaderClearsky
+  name: Лідер Чистого Неба
+  description: Ваша історія загадкова.
+  playTimeTracker: JobLeaderClearsky
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobExperiencedClearsky
+      time: 36000
+    - !type:RoleTimeRequirement
+      role: JobScienceGroupLeader
+      time: 14400
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 22
+  weight: 8
+  startingGear: ClearSkyGear
+  icon: JobIconLeaderClearsky
+  canBeAntag: true
+  access:
+  - Maintenance
+  - Research
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: ClearSkyGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAClearSky
+    ears: ClothingHeadsetClearSkyRadio
+    neck: ClothingNeckPatchClearSky
+
+# Торгівці
+- type: job
+  id: StalkerTraderOldOld
+  name: Торгівець
+  description: Вам конкретно повезло. Купуйте речі у сталкерів за копійки, продавайте за сотні, замовте собі охорону задля безпеки. Якщо у вас мало що лишилось, замовте контрабанди у військових.
+  playTimeTracker: JobStalkerTraderOld
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Stalker
+      time: 28800 #8hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 35
+  weight: 30
+  startingGear: StalkerTraderOldgear
+  icon: JobIconAdmin
+  canBeAntag: false
+  requireAdminNotify: true
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: StalkerTraderOldgear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: CaptainPDA
+    ears: ClothingHeadsetAllChannels
+  storage:
+    back:
+    - Flash
+
+- type: job
+  id: StalkerStateOperative
+  name: Державний оперативник
+  description: Ви - державний агент, що діє на території Зони з метою підтримки військових і наукових операцій. Основні завдання цієї ролі включають постачання боєприпасів, продовольства, медикаментів та іншого необхідного спорядження для військових підрозділів та наукових груп.
+  playTimeTracker: JobStalkerStateOperative
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobStalkerTraderOld
+      time: 14400 #4hrs
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 35
+  weight: 50
+  startingGear: StateOperativegear
+  icon: JobIconNanotrasen
+  canBeAntag: false
+  requireAdminNotify: true
+  accessGroups:
+  - AllAccess
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+
+- type: startingGear
+  id: StateOperativegear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: CaptainPDA
+    ears: ClothingHeadsetAllChannels
+  storage:
+    back:
+    - Flash
+
+# Моноліт
+- type: job
+  id: AdeptMonolit
+  name: Адепт Моноліту
+  description: Ви не хочете знати нічого крім Моноліту.
+  playTimeTracker: JobAdeptMonolit
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobPrivateMVC
+      time: 14400
+    - !type:RoleTimeRequirement
+      role: JobRookieMercenary
+      time: 14400
+    - !type:SpeciesRequirement
+        inverted: false
+        species:
+        - Human
+    - !type:AgeRequirement
+      requiredAge: 20
+  weight: 10
+  startingGear: MonolithGear
+  icon: JobIconMonolitNewbie
+  canBeAntag: true
+  access:
+  - Maintenance
+  special:
+  - !type:AddImplantSpecial
+    implants: [ DeathAcidifierImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: Damageable
+      damageContainer: BiologicalStalker
+    - type: Sprite
+      layers:
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+        color: "#ffffff"
+        sprite: Objects/Misc/handcuffs.rsi
+        state: body-overlay-2
+        visible: false
+      - map: ["enum.BorgVisualLayers.Light"]
+        sprite: StalkerTextures/Mobs/Monsters/controler.rsi
+        state: light
+        shader: unshaded
+        visible: false
+    - type: MindShield
+    - type: UserInterface
+      interfaces:
+        enum.SiliconLawsUiKey.Key:
+          type: SiliconLawBoundUserInterface
+        enum.VoiceMaskUIKey.Key:
+          type: VoiceMaskBoundUserInterface
+        enum.HumanoidMarkingModifierKey.Key:
+          type: HumanoidMarkingModifierBoundUserInterface
+        enum.StrippingUiKey.Key:
+          type: StrippableBoundUserInterface
+    - type: SiliconLawProvider
+      laws: MonolithLaw
+    - type: SiliconLawBound
+    - type: BorgChassis
+      maxModules: 0
+    - type: ItemToggle
+    - type: NpcFactionMember
+      factions:
+        - Zombie
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+
+- type: startingGear
+  id: MonolithGear
+  equipment:
+    shoes: ClothingShoesBootsCombatFilled
+    id: StalkerPDAMonolith
+    ears: ClothingHeadsetMonolithRadio
+    pocket1: SpeedLoaderLightRifle
+    pocket2: EmergencyMedipenStalker
+  inhand:
+    - WeaponSniperMosin
+  storage:
+    back:
+    - MedkitMilitaryStalker
+    - SpeedLoaderLightRifle
+    - MagazineBoxLightRifle

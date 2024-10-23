@@ -1,0 +1,228 @@
+- type: entity
+  name: Cигнальна ракетниця
+  parent: BaseWeaponLauncher
+  id: WeaponStalkerFlareGun
+  description: Освітить темний ліс у раз!
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/flaregun.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Small
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/flaregun.rsi
+  - type: Gun
+    fireRate: 8
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/flaregun.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgunFlare
+    capacity: 1
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Shotguns/flaregun.rsi
+    quickEquip: false
+    slots:
+    - Belt
+    - suitStorage
+
+- type: entity
+  name: Пістолет Beretta 92
+  parent: [BaseWeaponPistol, BaseRestrictedContraband]
+  id: WeaponPistolBeretta92
+  description: Надійний і точний пістолет, який широко використовується військовими та поліцією по всьому світу. Використовує набої 9х19 мм Parabellum.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Магазин
+        startingItem: Magazine919
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine919
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Патронник
+        startingItem: Cartridge919
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge919
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/bereta.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/bereta.rsi
+  - type: Gun
+    fireRate: 7
+    availableModes:
+      - SemiAuto
+  - type: StaticPrice
+    price: 4000
+#    soundGunshot:
+#      path: /Audio/Weapons/Guns/Gunshots/beretta92.ogg
+#  - type: ChamberMagazineAmmoProvider
+#    soundRack:
+#      path: /Audio/Weapons/Guns/Cock/beretta92_cock.ogg
+
+- type: entity
+  name: Пістолет Форт-12
+  parent: [BaseWeaponPistol, BaseRestrictedContraband]
+  id: WeaponPistolFort12
+  description: Український самозарядний пістолет, що використовується переважно місцевими правоохоронними органами. Використовує набої 9х18 мм ПМ.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Магазин
+        startingItem: Magazine918
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine918
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Патронник
+        startingItem: Cartridge918
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge918
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/fort12.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/fort12.rsi
+  - type: Gun
+    fireRate: 6
+    availableModes:
+      - SemiAuto
+  - type: StaticPrice
+    price: 2500
+#    soundGunshot:
+#      path: /Audio/Weapons/Guns/Gunshots/fort12.ogg
+#  - type: ChamberMagazineAmmoProvider
+#    soundRack:
+#      path: /Audio/Weapons/Guns/Cock/fort12_cock.ogg
+
+- type: entity
+  name: Пістолет Марта
+  parent: [BaseWeaponPistol, BaseRestrictedContraband]
+  id: WeaponPistolMarta
+  description: Компактний український пістолет, ідеально підходить для самозахисту. Використовує набої 9х18 мм ПМ або .380 ACP.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Магазин
+        startingItem: Magazine918
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine918
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Патронник
+        startingItem: Cartridge918
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge918
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/marta.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/marta.rsi
+  - type: Gun
+    fireRate: 5
+    availableModes:
+      - SemiAuto
+  - type: StaticPrice
+    price: 2000
+#    soundGunshot:
+#      path: /Audio/Weapons/Guns/Gunshots/marta.ogg
+#  - type: ChamberMagazineAmmoProvider
+#    soundRack:
+#      path: /Audio/Weapons/Guns/Cock/marta_cock.ogg
+
+- type: entity
+  name: Пістолет P8
+  parent: [BaseWeaponPistol, BaseRestrictedContraband]
+  id: WeaponPistolP8
+  description: Німецький службовий пістолет, відомий своєю надійністю та точністю. Використовує набої 9х19 мм Parabellum.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Магазин
+        startingItem: Magazine919
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - Magazine919
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Патронник
+        startingItem: Cartridge919
+        priority: 1
+        whitelist:
+          tags:
+            - Cartridge919
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/p8.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: StalkerTextures/Objects/Weapons/Guns/Pistols/p8.rsi
+  - type: Gun
+    fireRate: 6
+    availableModes:
+      - SemiAuto
+  - type: StaticPrice
+    price: 3500
+#    soundGunshot:
+#      path: /Audio/Weapons/Guns/Gunshots/p8.ogg
+#  - type: ChamberMagazineAmmoProvider
+#    soundRack:
+#      path: /Audio/Weapons/Guns/Cock/p8_cock.ogg
+
+# набої 9х19 мм Parabellum.
+# 9х18 мм ПМ
+# 9х18 мм ПМ або .380 ACP
+# 9х19 мм Parabellum

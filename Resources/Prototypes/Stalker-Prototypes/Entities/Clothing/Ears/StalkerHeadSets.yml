@@ -1,0 +1,174 @@
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetStalkerFM
+  name: гарнітура Сталкер FM
+  description: Гарнітура для радіоканалу Сталкер FM.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyStalkerFM
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/base.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/base.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetMilitaryRadio
+  name: гарнітура ВСРХ
+  description: Гарнітура для радіоканалу ВСРХ.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMilitaryRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/security.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/security.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetBanditRadio
+  name: гарнітура Бандитьське радіо
+  description: Гарнітура для радіоканалу Бандитьське радіо.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyBanditRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/cargo.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/cargo.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetFreedomRadio
+  name: гарнітура Радіо волі
+  description: Гарнітура для радіоканалу Радіо волі.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyFreedomRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/service.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/service.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetDutyRadio
+  name: гарнітура Радіо обов'язку
+  description: Гарнітура для радіоканалу Радіо обов'язку.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyDutyRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/brigmedic.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetMercRadio
+  name: гарнітура Радіо найманців
+  description: Гарнітура для радіоканалу найманців.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMercRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/servicesecurity.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/servicesecurity.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetScienceRadio
+  name: гарнітура Вчених
+  description: Гарнітура для радіоканалів, що допоможуть вченим при спробі комунікації.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyScienceRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/science.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/science.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetClearSkyRadio
+  name: гарнітура Чистого Неба
+  description: Гарнітура для радіоканаліу Чистого Неба.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyClearSkyRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/medical.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/medical.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetMonolithRadio
+  name: гарнітура Монолітовців
+  description: Гарнітура для радіоканалу Монолітовців.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyMonolithRadio
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/freelance.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/freelance.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetAllChannels
+  name: Гарнітура торгівців
+  description: Гарнітура, що має доступ до всіх каналів.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyAllChannels
+      - EncryptionKeyFreelance
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/centcom.rsi
+
+- type: entity
+  parent: ClothingHeadsetGrey
+  id: ClothingHeadsetChameleonMVC
+  name: Гарнітура сталкера
+  suffix: Stalker, Chameleon
+  components:
+    - type: ContainerFill
+      containers:
+        key_slots:
+        - EncryptionKeyMilitaryRadio
+    - type: Tag
+      tags: [] # ignore "WhitelistChameleon" tag
+    - type: Sprite
+      sprite: Clothing/Ears/Headsets/base.rsi
+    - type: Clothing
+      sprite: Clothing/Ears/Headsets/base.rsi
+    - type: ChameleonClothing
+      slot: [ears]
+      default: ClothingHeadsetGrey
+    - type: UserInterface
+      interfaces:
+        enum.ChameleonUiKey.Key:
+          type: ChameleonBoundUserInterface

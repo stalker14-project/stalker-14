@@ -1,0 +1,383 @@
+- type: tool
+  id: CanOpener
+  name: відкриття банок
+  toolName: Відкривачка
+  spawn: CanOpener
+  icon: { sprite: StalkerTextures/Objects/Consumable/food.rsi, state: canopener }
+
+- type: entity
+  name: "Відкривачка"
+  id: CanOpener
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: canopener
+  - type: Tool
+    qualities:
+      - CanOpener
+  - type: Sharp
+  - type: Tag
+    tags:
+    - CanOpener
+
+- type: entity
+  name: "Закрита банка бобів"
+  id: ClosedCanBeans
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: beans0
+  - type: Construction
+    graph: ClosedCanBeansOpening
+    node: start
+    defaultTarget: opened
+
+- type: entity
+  name: "Відкрита банка бобів"
+  id: OpenCanBeans
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: beans1
+  - type: Food
+    trash: 
+    - EmptyCanBeans
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Protein
+          Quantity: 15
+  - type: Construction
+    graph: ClosedCanBeansOpening
+    node: opened
+
+- type: entity
+  name: "Пуста банка бобів"
+  id: EmptyCanBeans
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: beans2
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: "Закрита консервна банка"
+  id: ClosedCan
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: can
+  - type: Construction
+    graph: ClosedCanOpening
+    node: start
+    defaultTarget: opened
+
+- type: entity
+  name: "Відкрита консервна банка"
+  id: OpenCan
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: canopen
+  - type: Food
+    trash: 
+    - EmptyCan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Protein
+          Quantity: 20
+  - type: Construction
+    graph: ClosedCanOpening
+    node: opened
+
+- type: entity
+  name: "Пуста консервна банка"
+  id: EmptyCan
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: canempty
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: "Закрита консервна банка"
+  id: ClosedCanFish
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: fish0
+  - type: Construction
+    graph: ClosedCanFishOpening
+    node: start
+    defaultTarget: opened
+
+- type: entity
+  name: "Відкрита консервна банка"
+  id: OpenCanFish
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: fish1
+  - type: Food
+    trash: 
+    - EmptyCanFish
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: Construction
+    graph: ClosedCanFishOpening
+    node: opened
+
+- type: entity
+  name: "Пуста консервна банка"
+  id: EmptyCanFish
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: fish2
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: "Закрита консервна банка"
+  id: ClosedCanHam
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: Ham0
+  - type: Construction
+    graph: ClosedCanHamOpening
+    node: start
+    defaultTarget: opened
+
+- type: entity
+  name: "Відкрита консервна банка"
+  id: OpenCanHam
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: Ham1
+  - type: Food
+    trash: 
+    - EmptyCanHam
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+  - type: Construction
+    graph: ClosedCanHamOpening
+    node: opened
+
+- type: entity
+  name: "Пуста консервна банка"
+  id: EmptyCanHam
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: Ham2
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: "Закрита консервна банка супу"
+  description: Чому не томатний суп? 
+  id: ClosedCanSoup
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: soup0
+  - type: Construction
+    graph: ClosedCanSoupOpening
+    node: start
+    defaultTarget: opened
+
+- type: entity
+  name: "Відкрита консервна банка супу"
+  description: Чому не томатний суп? 
+  id: OpenCanSoup
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: soup1
+  - type: Food
+    trash: 
+    - EmptyCanSoup
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Iron
+          Quantity: 10
+        - ReagentId: Blood
+          Quantity: 5
+  - type: Construction
+    graph: ClosedCanSoupOpening
+    node: opened
+
+- type: entity
+  name: "Пуста консервна банка супу"
+  description: Чому не більше томатного супу?
+  id: EmptyCanSoup
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: soup2
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: "Закрита консервна банка шпротів"
+  description: Чому не кілька?
+  id: ClosedCanSprats
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: sprats0
+  - type: Construction
+    graph: ClosedCanSpratsOpening
+    node: start
+    defaultTarget: opened
+
+- type: entity
+  name: "Відкрита консервна банка шпротів"
+  description: От би кільки у томаті...
+  id: OpenCanSprats
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: sprats1
+  - type: Food
+    trash: 
+    - EmptyCanSprats
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 17
+  - type: Construction
+    graph: ClosedCanSpratsOpening
+    node: opened
+
+- type: entity
+  name: "Пуста консервна банка шпротів"
+  description: Краще ніж нічого...
+  id: EmptyCanSprats
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: sprats2
+  - type: Tag
+    tags:
+    - Trash
+
+- type: entity
+  name: "Закрита банка тушонки"
+  id: ClosedCanStew
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: stew1
+  - type: Construction
+    graph: ClosedCanStewOpening
+    node: start
+    defaultTarget: opened
+
+- type: entity
+  name: "Відкрита банка тушонки"
+  id: OpenCanStew
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: stew2
+  - type: Food
+    trash: 
+    - EmptyCan
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+  - type: Construction
+    graph: ClosedCanStewOpening
+    node: opened
+
+- type: entity
+  name: "Пуста банка тушонки"
+  id: EmptyCanStew
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Consumable/food.rsi
+    scale: 0.85 , 0.85
+    state: stew3
+  - type: Tag
+    tags:
+    - Trash

@@ -1,0 +1,38 @@
+- type: construction
+  name: багаття
+  id: StalkerBonfire
+  graph: StalkerBonfire
+  startNode: start
+  targetNode: bonfire
+  category: Сталкер
+  description: Збудуйте багаття, наступний крок - принесіть друзів та гітару і можливо почуття гумору.
+  icon:
+    sprite: StalkerTextures/Structures/Decoration/bonfire.rsi
+    state: burning
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: constructionGraph
+  id: StalkerBonfire
+  start: start
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: bonfire
+          steps:
+            - material: WoodPlank
+              amount: 10
+              doAfter: 3
+            - tag: Torch
+              name: смолоскип
+              icon:
+                sprite: Objects/Misc/torch.rsi
+                state: torch_unlit
+              doAfter: 3
+    - node: bonfire
+      entity: StalkerBonfireTimmed

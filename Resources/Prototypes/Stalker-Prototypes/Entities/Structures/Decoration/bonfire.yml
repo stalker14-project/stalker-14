@@ -1,0 +1,130 @@
+- type: entity
+  id: StalkerBonfire
+  parent: KitchenElectricGrill
+  name: Багаття
+  description: Що може бути краще ніж пізній вечір під відкритим небом з гітарою та друзями?
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: StalkerTextures/Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+#      - state: burning
+  - type: PointLight
+    radius: 5
+    energy: 3
+    color: "#FFC90C"
+    enabled: false
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 70
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: AlwaysHot
+  - type: Appearance
+  - type: ApcPowerReceiver
+    powerLoad: 0 
+    needsPower: false
+  - type: ItemPlacer
+    maxEntities: 4
+    whitelist:
+      components:
+      - Temperature
+  - type: PlaceableSurface
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }          
+          Low: { visible: true, state: burning }
+          Medium: { visible: true, state: burning }
+          High: { visible: true, state: burning }
+
+- type: entity
+  id: BurningBarrel
+  parent: StalkerBonfire
+  name: Палаюча бочка
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: StalkerTextures/Structures/Decoration/barrels.rsi
+    layers:
+      - state: barrel1
+      - state: barrel1burning
+  - type: PointLight
+    color: "#FFC90C"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }          
+          Low: { visible: true, state: barrel1burning }
+          Medium: { visible: true, state: barrel1burning }
+          High: { visible: true, state: barrel1burning }
+
+- type: entity
+  id: StalkerBonfireTimmed
+  parent: KitchenElectricGrill
+  suffix: 10,9 хв
+  name: Багаття
+  description: Що може бути краще ніж пізній вечір під відкритим небом з гітарою та друзями?
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: StalkerTextures/Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+#      - state: burning
+  - type: PointLight
+    radius: 5
+    energy: 3
+    color: "#FFC90C"
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 70
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: AlwaysHot
+  - type: Appearance
+  - type: ApcPowerReceiver
+    powerLoad: 0 
+    needsPower: false
+  - type: ItemPlacer
+    maxEntities: 4
+    whitelist:
+      components:
+      - Temperature
+  - type: PlaceableSurface
+  - type: GenericVisualizer
+    visuals:
+      enum.EntityHeaterVisuals.Setting:
+        enum.EntityHeaterVisuals.Setting:
+          Off: { visible: false }          
+          Low: { visible: false }
+          Medium: { visible: true, state: burning }
+          High: { visible: true, state: burning }
+  - type: TimedDespawn
+    lifetime: 650
+  - type: Construction
+    graph: StalkerBonfire
+    node: bonfire

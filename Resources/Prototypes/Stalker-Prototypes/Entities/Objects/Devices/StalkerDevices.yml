@@ -1,0 +1,160 @@
+- type: entity
+  parent: BasePDA
+  id: StalkerPDALoner
+  suffix: Loner
+  name: Сталкерський ПДА
+  description: Допоможе при втручанні в зону...
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Devices/stalkerpda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: StalkerTextures/Objects/Devices/stalkerpda.rsi
+    state: pda
+  - type: Pda
+    id: LonerIDCard
+    state: pda
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDABandit
+  suffix: Bandit
+  name: Сталкерський ПДА
+  description: Допоможе при втручанні в зону...
+  components:
+  - type: Pda
+    id: BanditIDCard
+    state: pda
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDAAgent
+  suffix: Undercover
+  name: Сталкерський ПДА
+  description: Допоможе при втручанні в зону...
+  components:
+  - type: Pda
+    id: AgentIDCard
+    state: pda
+
+- type: entity
+  name: Військове радіо
+  description: "Ох, чорт! Генерале! Зв'язок з нашою групою пропав!"
+  parent: BaseItem
+  id: RadioHandheldMilitary
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: MilitaryRadio
+  - type: RadioSpeaker
+    channels:
+    - MilitaryRadio
+  - type: Speech
+    speechVerb: Robotic
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Devices/stalkerwalkietalkie.rsi
+    layers:
+    - state: walkietalkie
+    - state: walkietalkie-on
+    state: walkietalkie
+  - type: Item
+    sprite: StalkerTextures/Objects/Devices/stalkerwalkietalkie.rsi
+    heldPrefix: walkietalkie
+    size: Tiny
+  - type: Tag
+    tags:
+    - Radio
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDAPrivateMVC
+  name: Сталкерський ПДА
+  suffix: PrivateMVC
+  description: Допоможе при захисті зони...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Objects/Devices/stalkerpda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    state: pda
+  - type: Pda
+    id: PrivateMVCIDCard
+    state: pda
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDASergantMVC
+  suffix: SergantMVC
+  name: Сталкерський ПДА
+  description: Допоможе при захисті зони...
+  components:
+  - type: Pda
+    id: SergantMVCIDCard
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDAGeneralMVC
+  suffix: GeneralMVC
+  name: Сталкерський ПДА
+  description: Допоможе при захисті зони...
+  components:
+  - type: Pda
+    id: GeneralMVCIDCard
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDAScientist
+  suffix: Scientific
+  name: Сталкерський ПДА
+  description: Допоможе при захисті зони...
+  components:
+  - type: Pda
+    id: ScientistIDCard
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDAMerc
+  suffix: Mercs
+  name: Сталкерський ПДА
+  description: З дорогими електроніками!
+  components:
+  - type: Pda
+    id: MercIDCard
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDAClearSky
+  suffix: ClearSky
+  name: Сталкерський ПДА
+  description: З дорогими електроніками!
+  components:
+  - type: Pda
+    id: ClearSkyIDCard
+
+- type: entity
+  parent: StalkerPDALoner
+  id: StalkerPDAMonolith
+  suffix: Monolith
+  name: Сталкерський ПДА
+  description: Ціль - захистити моноліт!
+  components:
+  - type: Pda
+    id: MonolithIDCard

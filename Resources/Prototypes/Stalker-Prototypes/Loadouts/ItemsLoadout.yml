@@ -1,0 +1,241 @@
+
+# Ефекти
+- type: loadoutEffectGroup
+  id: CobraTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Stalker
+      time: 7200 
+
+- type: loadoutEffectGroup
+  id: MedkitSciTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Stalker
+      time: 14400 
+
+- type: loadoutEffectGroup
+  id: ShotgunSawnTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBanditRookie
+      time: 28800
+
+- type: loadoutEffectGroup
+  id: ViperTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Stalker
+      time: 7200 
+
+- type: loadoutEffectGroup
+  id: ShotgunHandmadeTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Stalker
+      time: 7200 
+
+# Пістолети
+- type: loadout
+  id: PistolMk58Bundle
+  storage:
+    back:
+    - PistolMk58Bundle
+    
+- type: loadout
+  id: ShotgunHandmadeBundle
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ShotgunHandmadeTimer
+  storage:
+    back:
+    - ShotgunHandmadeBundle
+
+- type: loadout
+  id: ShotgunSawnBundle
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ShotgunSawnTimer
+  storage:
+    back:
+    - ShotgunSawnBundle
+
+- type: loadout
+  id: PistolViperBundle
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: ViperTimer
+  storage:
+    back:
+    - PistolViperBundle
+
+- type: loadout
+  id: PistolCobraBundle
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CobraTimer
+  storage:
+    back:
+    - PistolCobraBundle
+
+# Їжа та напої
+
+- type: loadout
+  id: OldFlask
+  storage:
+    back:
+    - OldFlask
+
+- type: loadout
+  id: GreenFlask
+  storage:
+    back:
+    - GreenFlask
+
+- type: loadout
+  id: ClosedCanStew
+  storage:
+    back:
+    - ClosedCanStew
+
+- type: loadout
+  id: ClosedCanSoup
+  storage:
+    back:
+    - ClosedCanSoup
+
+- type: loadout
+  id: CanOpener
+  storage:
+    back: 
+    - CanOpener
+
+- type: loadout
+  id: ClosedCanSprats
+  storage:
+    back:
+    - ClosedCanSprats
+
+- type: loadout
+  id: ClosedCanHam
+  storage:
+    back:
+    - ClosedCanHam
+
+- type: loadout
+  id: ClosedCanFish
+  storage:
+    back:
+    - ClosedCanFish
+
+- type: loadout
+  id: ClosedCan
+  storage:
+    back:
+    - ClosedCan
+
+- type: loadout
+  id: ClosedCanBeans
+  storage:
+    back:
+    - ClosedCanBeans
+
+# Предмети
+- type: loadout
+  id: StartingBundle
+  storage:
+    back:
+    - StartingBundle
+
+- type: loadout
+  id: FoodBundle
+  storage:
+    back:
+    - FoodBundle
+
+- type: loadout
+  id: SmokersBundle
+  storage:
+    back:
+    - SmokersBundle
+
+- type: loadout
+  id: StalkerCash500
+  storage:
+    back:
+    - StalkerCash500
+
+- type: loadout
+  id: StalkerBinoculars
+  storage:
+    back:
+    - StalkerBinoculars
+ 
+- type: loadout
+  id: Binoculars
+  storage:
+    back:
+    - Binoculars
+
+- type: loadout
+  id: MedkitStalker
+  storage:
+    back:
+    - MedkitStalker
+
+- type: loadout
+  id: MedkitMilitaryStalker
+  storage:
+    back:
+    - MedkitMilitaryStalker
+
+- type: loadout
+  id: MedkitSciStalker
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MedkitSciTimer
+  storage:
+    back:
+    - MedkitSciStalker
+
+# Ключі шифрування
+
+- type: loadout
+  id: EncryptionKeyBanditRadio
+  storage:
+    back:
+    - EncryptionKeyBanditRadio
+    
+- type: loadout
+  id: EncryptionKeyFreedomRadio
+  storage:
+    back:
+    - EncryptionKeyFreedomRadio
+    
+- type: loadout
+  id: EncryptionKeyDutyRadio
+  storage:
+    back:
+    - EncryptionKeyDutyRadio
+    
+- type: loadout
+  id: EncryptionKeyMercRadio
+  storage:
+    back:
+    - EncryptionKeyMercRadio
+    
+- type: loadout
+  id: EncryptionKeyScienceRadio
+  storage:
+    back:
+    - EncryptionKeyScienceRadio

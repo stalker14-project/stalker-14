@@ -1,0 +1,108 @@
+- type: entity
+  parent: IDCardStandard
+  id: LonerIDCard
+  name: Айді карта сталкера одинака
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+    - state: idunknown
+  - type: PresetIdCard
+    job: LoneNewbie
+
+- type: entity
+  parent: IDCardStandard
+  id: ClearSkyIDCard
+  name: Айді карта чистонебівця
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idunknown
+  - type: PresetIdCard
+    job: RookieClearsky
+
+- type: entity
+  parent: IDCardStandard
+  id: ScientistIDCard
+  name: Айді карта вченого
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idresearchdirector
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: ScienceAssistant
+
+- type: entity
+  parent: IDCardStandard
+  id: BanditIDCard
+  name: Айді карта сталкера бандита
+  components:
+  - type: Sprite
+    layers:
+    - state: pirate
+  - type: PresetIdCard
+    job: BanditRookie
+
+- type: entity
+  parent: IDCardStandard
+  id: PrivateMVCIDCard
+  name: Айді карта війскьового рядового
+  components:
+  - type: Sprite
+    layers:
+    - state: admin
+    - state: idintern-cadet
+  - type: PresetIdCard
+    job: PrivateMVC
+
+- type: entity
+  parent: IDCardStandard
+  id: SergantMVCIDCard
+  name: Айді карта війскьового сержанта
+  components:
+  - type: Sprite
+    layers:
+    - state: admin
+    - state: idsecurityofficer
+  - type: PresetIdCard
+    job: SergantMVC
+
+- type: entity
+  parent: IDCardStandard
+  id: GeneralMVCIDCard
+  name: Айді карта війскьового генерала
+  components:
+  - type: Sprite
+    layers:
+    - state: admin
+    - state: idheadofsecurity
+  - type: PresetIdCard
+    job: GeneralMVC
+
+- type: entity
+  parent: IDCardStandard
+  id: MercIDCard
+  name: Айді карта найманця
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idmime
+  - type: PresetIdCard
+    job: RookieMercenary
+
+- type: entity
+  parent: IDCardStandard
+  id: MonolithIDCard
+  name: Айді карта монолітовця
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idmime
+  - type: PresetIdCard
+    job: AdeptMonolit

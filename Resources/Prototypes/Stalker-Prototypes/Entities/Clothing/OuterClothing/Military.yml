@@ -1,0 +1,217 @@
+- type: Tag
+  id: StalkerMilitary
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterLeatherJacket]
+  id: ClothingOuterJacketMilitary
+  name: Військова куртка
+  description: Варто знайти собі бронежилет.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/militaryjacket.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/militaryjacket.rsi
+
+- type: entity
+  parent: ClothingOuterArmorHeavy
+  id: ClothingOuterVest6b2
+  name: Бронежилет 6b2
+  description: "Класичний радянський бронежилет, який забезпечує базовий захист від уламків та пістолетних куль. Ідеально підходить для збройних конфліктів середньої інтенсивності, але не витримує сучасних загроз."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/6b2.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/6b2.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.8
+        Heat: 0.85
+        Radiation: 0.9
+        Caustic: 0.9
+  - type: StaticPrice
+    price: 11000
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.97
+    sprintModifier: 0.97
+  - type: Tag
+    id: StalkerMilitary
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterVestD2
+  name: Бронежилет D2
+  description: "Сучасний бронежилет, розроблений для максимального захисту від різних видів ушкоджень, включаючи кулі та вибухи. Висока ефективність коштує зниження мобільності, але забезпечує впевненість у бою."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/d2.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/d2.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.65
+        Heat: 0.7
+        Radiation: 0.7
+        Caustic: 0.7
+  - type: StaticPrice
+    price: 28500
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: Tag
+    id: StalkerMilitary
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterCorsarMPA
+  name: Бронежилет Корсар-МПА 
+  description: "Сучасний український бронежилет з високим рівнем захисту від куль автоматів і вибухів. Модульний дизайн і зручність використання роблять його ідеальним вибором для важких бойових умов, хоча це і трохи знижує мобільність."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/Corsar-MPA.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/Corsar-MPA.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.5
+        Heat: 0.7
+        Radiation: 0.75
+        Caustic: 0.75
+  - type: StaticPrice
+    price: 29000
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterArmorHeavy]
+  id: ClothingOuterBerill
+  name: Бронекостюм Берил-5М 
+  description: Офіційний костюм, який використовується українськими військовими, модифікований для зони.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/berill.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/berill.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.8
+        Radiation: 0.65
+        Caustic: 0.8
+  - type: StaticPrice
+    price: 22500
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.95
+    sprintModifier: 0.95
+  - type: Tag
+    tags:
+    - StalkerMilitary
+
+- type: entity
+  parent: [ClothingOuterStorageBase, ClothingOuterBerill]
+  id: ClothingOuterSKAT9
+  name: Військовий бронежилет "Скат-9"
+  description: Військовий бронежилет "Скат-9" - це ще один бронежилет, створений в одній лінійці з військовим бронежилетом "Скат-9М", що забезпечує більшу мобільність за рахунок захисту.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/skat9.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/skat9.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.55
+        Heat: 0.7
+        Radiation: 0.6
+        Caustic: 0.8
+  - type: StaticPrice
+    price: 35000
+  - type: ExplosionResistance
+    damageCoefficient: 0.55
+  - type: GroupExamine
+  - type: Geiger
+    attachedToSuit: true
+  - type: Tag
+    tags:
+    - StalkerMilitary
+
+- type: entity
+  id: ActionToggleGhillie
+  name: Маскування
+  description: Ляжте на траву, торкніться трави, думайте як трава... Станьте одним з травою!
+  components:
+  - type: InstantAction
+    # have to plan (un)cloaking ahead of time
+    useDelay: 3
+    priority: -9
+    event: !type:ToggleActionEvent
+
+- type: entity
+  parent: [ClothingOuterBaseLarge, AllowSuitStorageClothing, BaseToggleClothing, BaseMajorContraband]
+  id: ClothingOuterGhillie
+  name: Маскувальний костюм Ghillie
+  description: Ідеальний костюм для засідок, зачасту використовується військовими.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/ghillie.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Military/ghillie.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.95
+        Radiation: 0.95
+  - type: StaticPrice
+    price: 25000
+  - type: GroupExamine
+  - type: Tag
+    tags:
+    - StalkerMilitary
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      maxVisibility: 1.3
+      minVisibility: 0.05
+    - type: StealthOnMove
+      passiveVisibilityRate: -0.60
+      movementVisibilityRate: 0.50
+  - type: PowerCellDraw
+    drawRate: 25
+  - type: ToggleClothing
+    action: ActionToggleGhillie
+    disableOnUnequip: true
+  - type: UseDelay
+    delay: 5 # disable time
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 10

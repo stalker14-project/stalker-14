@@ -1,0 +1,306 @@
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetSivaLoners
+  name: Шолом комбінезону "Сіва"
+  description: Хороше доповнення до вашого комбінезону, якщо його вам видали окремо...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/SivaHelmet.rsi
+  - type: Item
+    sprite: StalkerTextures/Clothing/Head/SivaHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/SivaHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.75
+        Heat: 0.90
+        Radiation: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: StaticPrice
+    price: 2500
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadBlackStalkerHood
+  name: Капюшон плаща чорного сталкера
+  description: "Лише легенди повині носити такий капюшон"
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/blackstalker.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/blackstalker.rsi
+  - type: Reflect
+    enabled: true
+    reflectProb: .15
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadLeatherJacketMonoHood
+  name: Капюшон куртки моноліту
+  categories: [ HideSpawnMenu ]
+  description: "Лише монолітовці носять це"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/leathmonohood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/leathmonohood.rsi
+  - type: Reflect
+    enabled: true
+    reflectProb: .01
+  - type: StaticPrice
+    price: 11000
+
+- type: entity
+  parent: ClothingHeadLeatherJacketLonerHood
+  id: ClothingHeadClearskyHood
+  categories: [ HideSpawnMenu ]
+  name: Капюшон куртки
+  description: "Капюшон від звичайної куртки новачка."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/clearskyhood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/clearskyhood.rsi
+
+- type: entity
+  parent: ClothingHeadLeatherJacketLonerHood
+  id: ClothingHeadDutyHood
+  categories: [ HideSpawnMenu ]
+  name: Капюшон куртки
+  description: "Капюшон від звичайної куртки новачка."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/DutyHood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/DutyHood.rsi
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadLeatherJacketLonerHood
+  categories: [ HideSpawnMenu ]
+  name: Капюшон куртки
+  description: "Капюшон від звичайної куртки новачка."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/leatherjacketlonerhood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/leatherjacketlonerhood.rsi
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadSinHoodStalker
+  name: Шолом комбінезону 'Алігатор'
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/SinHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/SinHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.75
+        Heat: 0.90
+        Radiation: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+
+- type: entity
+  parent: ClothingHeadHelmetSivaLoners
+  id: ClothingHeadHelmetSivaMono
+  name: Шолом монолітського комбінезону "Сіва"
+  categories: [ HideSpawnMenu ]
+  description: Хороше доповнення до вашого комбінезону, якщо його вам видали окремо...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/SivaMonoHelmet.rsi
+  - type: Item
+    sprite: StalkerTextures/Clothing/Head/SivaMonoHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/SivaMonoHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.70
+        Heat: 0.70
+        Radiation: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadTancoatHood
+  name: Капюшон шкіряного пальта
+  categories: [ HideSpawnMenu ]
+  description: "Капюшон шкіряного пальта і навіщо ти це читаєш..."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/tancoathood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/tancoathood.rsi
+  - type: StaticPrice
+    price: 50
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadZoryaLoners
+  name: Капюшон зорі
+  categories: [ HideSpawnMenu ]
+  description: "Капюшон що може допомогти від вітру..."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/LonerZoryaHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/LonerZoryaHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 1
+        Heat: 0.95
+        Radiation: 1
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadBanditkaHood
+  name: Капюшон бандитки
+  categories: [ HideSpawnMenu ]
+  description: "ех, бандитко, бандитко..."
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/BanditkaHood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/BanditkaHood.rsi
+  - type: StaticPrice
+    price: 10500
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadEkologHelmet
+  name: Шолом комбінезону СПП-99
+  description: Хороше доповнення до вашого комбінезону, якщо його вам видали окремо...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/EkologHelmet.rsi
+  - type: Item
+    sprite: StalkerTextures/Clothing/Head/EkologHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/EkologHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.75
+        Heat: 0.90
+        Radiation: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadEkologMHelmet
+  name: Шолом комбінезону СПП-99М
+  description: Хороше доповнення до вашого комбінезону, якщо його вам видали окремо...
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/EkologMHelmet.rsi
+  - type: Item
+    sprite: StalkerTextures/Clothing/Head/EkologMHelmet.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/EkologMHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.85
+        Piercing: 0.75
+        Heat: 0.70
+        Radiation: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadBanditcoatHood
+  name: Капюшон бандитського плаща
+  categories: [ HideSpawnMenu ]
+  description: "Мля, це гоп-стоп, викладай все що є!"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/BanditHood.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/BanditHood.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Heat: 0.95
+        Radiation: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+  - type: StaticPrice
+    price: 2000
+
+- type: entity
+  parent: ClothingHeadHatBeretFrench
+  id: ClothingHeadBeretUA
+  name: Берет
+  description: "Чому не чорний?"
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/BeretUA.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/BeretUA.rsi
+  - type: StaticPrice
+  price: 150
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadSkatHelmet
+  name: Шолом бронекостюму Скат-9
+  description: Шолом, що має хороші характеристики.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/Head/SkatHelmet.rsi
+    scale: 0.7 , 0.7
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/Head/SkatHelmet.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.90
+        Radiation: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: StaticPrice
+    price: 6000

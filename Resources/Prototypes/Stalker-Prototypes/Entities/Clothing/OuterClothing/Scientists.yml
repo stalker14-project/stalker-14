@@ -1,0 +1,106 @@
+- type: entity
+  parent: ClothingOuterSivaLoners
+  id: ClothingOuterEkolog
+  name: ССП-99 «Еколог» 
+  description: Звичайний костюм вчених, дуже добрий проти радіації.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/Ekolog.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/Ekolog.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.85
+        Heat: 0.75
+        Radiation: 0.3
+        Caustic: 0.5
+  - type: StaticPrice
+    price: 12000
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.85
+    sprintModifier: 0.85
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadEkologHelmet
+  - type: Reflect
+    enabled: true
+    reflectProb: .01
+  - type: Geiger
+    attachedToSuit: true 
+
+# ССП-99М — футуристичний науковий костюм, вдосконалений варіант комбінезона
+
+- type: entity
+  parent: ClothingOuterSivaLoners
+  id: ClothingOuterEkologM
+  name: ССП-99М «Еколог» 
+  description: Футуристичний науковий костюм, вдосконалений варіант комбінезона
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/EkologM.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/EkologM.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.8
+        Heat: 0.7
+        Radiation: 0.26
+        Caustic: 0.5
+  - type: StaticPrice
+    price: 18000
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 0.87
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadEkologMHelmet
+  - type: Reflect
+    enabled: true
+    reflectProb: .01
+  - type: Geiger
+    attachedToSuit: true 
+
+
+- type: entity
+  parent: ClothingOuterCS1
+  id: ClothingOuterSinStalker
+  name: '"Алігатор"'
+  suffix: НЕ МАПИТИ
+  description: цей костюм був створений для бойових дій в лісовій місцевості ще в далекому минулому під назвою "Ящур", але через його непрактичність в теперішній час, був створений "Алігатор". Ця модель відрізняється більш темними зеленими кольорами, а також унікальним типом захисту "Луска". Захист "Луска" дуже важкий для виготовлення, тому цей костюм є лише в найбагатших сталкерів. У цього костюму є вбудований шолом оснащений "Лускою" більших розмірів, що робить його трішки важчим, але завдяки йому ви можете не перейматися про захист вашої голови. "Луска" - це купа маленьких пластин зроблених зі шматочків кулестійких артефактів які щільно прилягають один до одного, цей тип захисту дає "Алігатору" дуже велику кулестійкість, невелику можливість на рикошет кулі, а також дуже маленьку вагу в порівнянні з іншими костюмами у яких приближені характеристики до "Алігатора". На грудях і спині два шари "Луски", перший шар захищає від куль, а інший від ударів різних мутантів по типу плоті. Також цей костюм є водонепроникним. Найбільший недолік цього костюму - це його  маленький захист від радіації, а також аномалій типу "Електро", "Жарка". Цей костюм ідеально підходить для елітних найманців які беруть замовлення на знищення групи сильноспоряджених людей. Але серед звичайних "полювальників за артефактами" цей костюм непопулярний.
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/Sin.rsi
+  - type: Clothing
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/Sin.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadSinHoodStalker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.70
+        Piercing: 0.40
+        Heat: 0.85
+        Radiation: 0.90
+        Caustic: 0.5
+  - type: StaticPrice
+    price: 85000
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+  - type: GroupExamine
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65
+  - type: Reflect
+    enabled: true
+    reflectProb: .10

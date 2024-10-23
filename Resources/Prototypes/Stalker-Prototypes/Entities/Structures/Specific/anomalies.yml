@@ -1,0 +1,196 @@
+- type: entity
+  id: StalkerAnomalyBurner
+  name: Аномалія "Жарка"
+  description: "У неактивному стані аномалія проявляється у вигляді ледь помітної хмари гарячого повітря. При потраплянні предмета або живої істоти вона миттєво нагрівається до смертельних температур, що наближаються до 1500К. Вночі його можна виявити за допомогою потужних детекторів або киданням металевих предметів у зону спрацьовування. Утворює три типи артефактів: Краплі, Вогняна куля та Кристал"
+  parent: BaseAnomaly
+  suffix: Pyroclastic
+  components:
+  - type: AmbientSound
+    volume: 5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Specific/Anomalies/burner.rsi
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: PointLight
+    radius: 6.0
+    energy: 7.5
+    color: "#E25822"
+    castShadows: false
+  - type: PyroclasticAnomaly
+  - type: TempAffectingAnomaly
+    tempChangePerSecond: 25
+    hotspotExposeTemperature: 1000
+  - type: GasProducerAnomaly
+    releasedGas: 3
+    releaseOnMaxSeverity: true
+    spawnRadius: 4
+    tileCount: 5
+    tempChange: 420
+  - type: ProjectileAnomaly
+    projectilePrototype: ProjectileAnomalyFireball
+    projectileSpeed: 0.3
+    minProjectiles: 3
+    maxProjectiles: 6
+  - type: IgnitionSource
+    temperature: 800
+    ignited: true
+  - type: IgniteOnCollide
+    fixtureId: fix1
+    fireStacks: 1
+  - type: Anomaly
+    pulseSound:
+      collection: BurnerAnomaly
+      params:
+        volume: 5
+
+- type: entity
+  id: StalkerAnomalySpringboard
+  name: Аномалія "Трамплін"
+  description: "Одна з перших коли-небудь зафіксованих аномалій - нестабільне гравітаційне поле, що завдає ударної шкоди будь-кому в його радіусі. Залишається активною в середньому тиждень. Кількість завданих ушкоджень змінюється протягом життя, починаючи від незначних синців, серйозних ран і закінчуючи миттєвою смертю. Легко помітити при денному світлі. Супроводжується коливанням повітря над аномалією, танцюючим листям і характерними багряними плямами на землі. Виявляється всіма типами детекторів, Трамплін також можна виявити, кидаючи в нього предмети. Утворює три типи артефактів: Медуза, Кам'яна квітка та Нічна зірка."
+  parent: BaseAnomaly
+  suffix: Gravity
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Specific/Anomalies/springboard.rsi
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: PointLight
+    radius: 5.0
+    energy: 20
+    color: "#1e070e"
+    castShadows: false
+  - type: GravityAnomaly
+  - type: GravityWell
+  - type: RadiationSource
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: SingularityDistortion
+    intensity: 1000
+    falloffPower: 2.7
+
+- type: entity
+  id: StalkerAnomalyElectro
+  name: Аномалія "Електро"
+  description: "Аномальне утворення діаметром близько 10 метрів, що накопичує велику кількість статичної електрики. При спрацьовуванні аномалія спалахує десятками мініатюрних блискавок, викликаючи ураження електричним струмом, майже завжди смертельним для всіх живих істот. Вдень її можна розпізнати за синюватим туманом, що висить над нею. Вночі Електро можна виявити за допомогою будь-якого типу детектора або кидаючи в аномалію металеві предмети. Утворює три типи артефактів: Блискітка, Спалах і Місячне сяйво."
+  parent: BaseAnomaly
+  suffix: Electricity
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Specific/Anomalies/electro.rsi
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: PointLight
+    radius: 2.0
+    energy: 5.0
+    color: "#ffffaa"
+    castShadows: false
+  - type: ElectricityAnomaly
+  - type: Electrified
+
+- type: entity
+  id: StalkerAnomalyWhirligig
+  name: Аномалія "Карусель"
+  description: "Аномалія підхоплює своїх жертв у повітря і закручує з шаленою швидкістю. Точна природа Whirligig залишається невідомою. Аномалію можна розпізнати за легким вихором пилу над нею та фрагментами тіл, розкиданими поблизу. Жертви, що опинилися на його зовнішньому краю - досить далеко від зони максимального впливу в центрі - можуть уникнути Вихору, отримавши відносно легкі травми. Утворює три типи артефактів: Кам'яна кров, М'ясний шматок і Душа."
+  parent: BaseAnomaly
+  suffix: Gravity
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Specific/Anomalies/whirligig.rsi
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: PointLight
+    radius: 5.0
+    energy: 20
+    color: "#1e070e"
+    castShadows: false
+  - type: GravityAnomaly
+  - type: GravityWell
+  - type: RadiationSource
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: SingularityDistortion
+    intensity: 1000
+    falloffPower: 2.7
+
+- type: entity
+  id: StalkerAnomalyFruitpunch
+  name: Аномалія "Фруктовий пунш"
+  description: "Аномалія невідомої природи. При контакті завдає ушкоджень, схожих на дію сильної кислоти. Утворює три типи артефактів: Слиз, Слимак і Слюда."
+  parent: BaseAnomaly
+  suffix: Acid
+  components:
+  - type: Sprite
+    sprite: StalkerTextures/Structures/Specific/Anomalies/fruitpunch.rsi
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: PointLight
+    radius: 4.0
+    energy: 3.5
+    color: "#bbbbbb"
+  - type: BadFood
+  - type: Anomaly
+    pulseSound:
+      collection: RadiationPulse
+      params:
+        volume: 5
+    minPulseLength: 60
+    maxPulseLength: 120
+    anomalyContactDamage:
+      types:
+        Poison: 2.5
+  - type: SolutionContainerManager
+    solutions:
+      anomaly:
+        maxVol: 1500
+  - type: PuddleCreateAnomaly
+    solution: anomaly
+  - type: InjectionAnomaly
+    solution: anomaly
+    superCriticalInjectRadius: 10
+  - type: ReagentProducerAnomaly
+    solution: anomaly
+    needRecolor: false
+    dangerousChemicals:
+    - PolytrinicAcid
+    - FerrochromicAcid
+    - FluorosulfuricAcid
+    - SulfuricAcid
+    funChemicals:
+    - NorepinephricAcid
+  - type: Drink
+    solution: anomaly
+  - type: DrainableSolution
+    solution: anomaly
+  - type: DrawableSolution
+    solution: anomaly
+  - type: ExaminableSolution
+    solution: anomaly
+  - type: RefillableSolution
+    solution: anomaly
+  - type: InjectableSolution
+    solution: beaker

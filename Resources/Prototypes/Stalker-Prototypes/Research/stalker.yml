@@ -1,0 +1,211 @@
+- type: techDiscipline
+  id: Stalker
+  name: Аномальна Наука
+  color: "#5C4033"
+  icon:
+    sprite: StalkerTextures/Interface/Misc/research_disciplines.rsi
+    state: stalker
+  tierPrerequisites:
+    1: 0
+    2: 0.6
+    3: 0.5
+    4: 1
+
+# Tier 1
+
+- type: technology
+  id: ArtifactContainerPieceOfTrash
+  name: Початок контейнерів артефактів
+  icon:
+    sprite: StalkerTextures/Objects/Misc/artifactscontainer.rsi
+    state: piece-of-trash
+  discipline: Stalker
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - StalkerArtifactContainerPieceOfTrash
+
+- type: technology
+  id: FunnyStuff
+  name: Веселі дрібнички
+  icon: 
+    sprite: StalkerTextures/Objects/Misc/cards.rsi
+    state: black_box
+  discipline: Stalker
+  tier: 1
+  cost: 3000
+  recipeUnlocks:
+  - CardBoxBlack
+  - ChessBoard
+  - BackgammonBoard
+  - ParchisBoard
+  - CheckerBoard
+  - DiceBag
+
+- type: technology
+  id: ClothingOuterEkolog
+  name: Створення ССП-99 «Еколог»
+  icon:
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/Ekolog.rsi
+    state: icon
+  discipline: Stalker
+  tier: 1
+  cost: 20000
+  recipeUnlocks:
+  - ClothingOuterEkolog
+  - ClothingOuterZoryaLoners
+
+- type: technology
+  id: Binoculars
+  name: Біноклі
+  icon:
+    sprite: StalkerTextures/Objects/Devices/binoculars.rsi
+    state: binoculars
+  discipline: Stalker
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - StalkerBinoculars
+  - Binoculars
+
+- type: technology
+  id: BackpackTourist
+  name: Розширені сумки
+  icon:
+    sprite: StalkerTextures/Clothing/Back/Backpacks/tourist.rsi
+    state: backpack-icon
+  discipline: Stalker
+  tier: 1
+  cost: 6000
+  recipeUnlocks:
+  - ClothingBackpackTourist
+  - ClothingBackpackSatchelTourist
+
+- type: technology
+  id: MedkitStalker
+  name: Базові Медикаменти
+  icon:
+    sprite: StalkerTextures/Objects/items.rsi
+    state: medkit
+  discipline: Stalker
+  tier: 1
+  cost: 12000
+  recipeUnlocks:
+  - StalkerOintment
+  - StalkerBrutepack
+  - MedkitStalker
+
+# Tier 2
+
+- type: technology
+  id: DetectorEcho
+  name: Детектори артефактів
+  icon:
+    sprite: StalkerTextures/Objects/Specific/Research/EchoDetector.rsi
+    state: icon
+  discipline: Stalker
+  tier: 2
+  cost: 12500
+  recipeUnlocks:
+  - DetectorEcho
+
+- type: technology
+  id: ClothingOuterEkologM
+  name: Покращенні наукові костюми
+  icon:
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/EkologM.rsi
+    state: icon
+  discipline: Stalker
+  tier: 2
+  cost: 30000
+  recipeUnlocks:
+  - ClothingOuterEkologM
+  - ClothingOuterSivaLoners
+  - ClothingOuterSivaFreedom
+  technologyPrerequisites:
+  - ClothingOuterEkolog
+
+
+- type: technology
+  id: StalkerArtifactContainerPopularChoise
+  name: Покращені контейнери артефактів
+  icon:
+    sprite: StalkerTextures/Objects/Misc/artifactscontainer.rsi
+    state: popular-choice
+  discipline: Stalker
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+  - StalkerArtifactContainerPopularChoise
+  - StalkerArtifactContainerExpensive
+  technologyPrerequisites:
+  - StalkerArtifactContainerPieceOfTrash
+
+- type: technology
+  id: MedkitMilitaryStalker
+  name: Покращені медикаменти
+  icon:
+    sprite: StalkerTextures/Objects/items.rsi
+    state: medkitmilitary
+  discipline: Stalker
+  tier: 2
+  cost: 18000
+  recipeUnlocks:
+  - EmergencyMedipenStalker
+  - BurnAutoInjectorStalker
+  - BruteAutoInjectorStalker
+  - MedkitMilitaryStalker
+  technologyPrerequisites:
+  - MedkitStalker
+
+# Tier 3
+
+- type: technology
+  id: Exosuits
+  name: Екзокостюми
+  icon:
+    sprite: StalkerTextures/Clothing/OuterClothing/Loners/LonersExoSuit.rsi
+    state: icon
+  discipline: Stalker
+  tier: 3
+  cost: 50000
+  recipeUnlocks:
+  - ClothingOuterLonersExoSuit
+  - ClothingOuterFreemanExoSuit
+  - ClothingOuterDutyExoSuit
+  - ClothingOuterMercenaryExoSuit
+  technologyPrerequisites:
+  - ClothingOuterEkologM
+
+- type: technology
+  id: MedkitSciStalker
+  name: Найкращі медикаменти
+  icon:
+    sprite: StalkerTextures/Objects/items.rsi
+    state: medkitsci
+  discipline: Stalker
+  tier: 3
+  cost: 27500
+  recipeUnlocks:
+  - StimpackMiniStalker
+  - SciStimpackStalker
+  - RadAutoInjectorStalker
+  - MedkitSciStalker
+  technologyPrerequisites:
+  - MedkitMilitaryStalker
+
+# Tier 4
+
+- type: technology
+  id: ClothingOuterSinStalker
+  name: Броня Алігатор
+  icon:
+    sprite: StalkerTextures/Clothing/OuterClothing/Scientists/Sin.rsi
+    state: icon
+  discipline: Stalker
+  tier: 4
+  cost: 65000
+  recipeUnlocks:
+  - ClothingOuterSinStalker
+  technologyPrerequisites:
+  - Exosuits

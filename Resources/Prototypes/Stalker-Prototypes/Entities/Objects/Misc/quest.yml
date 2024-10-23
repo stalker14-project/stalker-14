@@ -1,0 +1,39 @@
+- type: entity
+  parent: [BaseItem, BaseGrandTheftContraband]
+  id: StalkerBookSecretDocuments
+  name: "Таємні документи військових"
+  description: На обкладинці пише "Надзвичайні заходи безпеки". АБСОЛЮТНО СЕКРЕТНО
+  components:
+    - type: Sprite
+      sprite: StalkerTextures/Objects/Misc/quest.rsi
+      scale: 0.7 , 0.7
+      layers:
+        - state: folder-military
+    - type: Tag
+      tags:
+        - Book
+        - HighRiskItem
+    - type: StealTarget
+      stealGroup: BookSecretDocuments
+    - type: ResearchDisk
+      points: 150000
+
+- type: entity
+  parent: [BaseItem, BaseGrandTheftContraband]
+  id: StalkerFleshDrive
+  name: "Дивна флешка"
+  description: надпис на флешці "АБСОЛЮТНО СЕКРЕТНО".
+  components:
+    - type: Item
+      size: Tiny
+    - type: Sprite
+      sprite: StalkerTextures/Objects/Misc/quest.rsi
+      scale: 0.5 , 0.5
+      layers:
+        - state: fleshdrive
+    - type: Tag
+      tags:
+        - Book
+        - HighRiskItem
+    - type: ResearchDisk
+      unlockAllTech: true

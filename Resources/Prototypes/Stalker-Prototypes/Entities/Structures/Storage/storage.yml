@@ -1,0 +1,39 @@
+- type: entity
+  parent: CrateGeneric
+  id: CrateBlueOld
+  name: Синій старий ящик
+  description: Хороший варіант для ховання хабару.
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Structures/Storage/crates.rsi
+    state: icon
+  - type: Sprite
+    noRot: false
+    sprite: StalkerTextures/Structures/Storage/crates.rsi
+    layers:
+    - state: base
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: closed
+      map: ["enum.StorageVisualLayers.Door"]
+
+- type: entity
+  parent: ClosetBase
+  id: LockerBlue
+  name: Синій старий ящик
+  description: Хороший варіант для ховання хабару.
+  components:
+  - type: Icon
+    sprite: StalkerTextures/Structures/Storage/closet.rsi
+    state: locker
+  - type: Sprite
+    noRot: true
+    sprite: StalkerTextures/Structures/Storage/closet.rsi
+    layers:
+    - state: locker
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: locker_door
+      map: ["enum.StorageVisualLayers.Door"]
+  - type: EntityStorageVisuals
+    stateBaseClosed: locker
+    stateDoorOpen: locker_open
+    stateDoorClosed: locker_door
