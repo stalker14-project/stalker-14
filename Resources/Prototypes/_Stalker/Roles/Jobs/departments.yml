@@ -1,111 +1,119 @@
+- type: department
+  id: Stalker
+  color: "#9FED58"
+  name: department-Stalker
+  description: department-Stalker-description
+  weight: 10
+  roles:
+  - Stalker
+  editorHidden: true
+
 #- type: department
-#  id: Stalker
+#  id: StalkerDisabled
+#  description: "department-StalkerAdvanced-description"
 #  color: "#9FED58"
-#  name: department-Stalker
-#  description: department-Stalker-description
-#  weight: 10
+#  editorHidden: true
 #  roles:
-#  - Stalker
+#    - MilitaryStalker
+#    - PoliceOfficer
+#    - MayorCity
+#    - Prokuror
+#    - Magistrate
+#    - Priest
+#    - Bartender
+#    - Doctor
+#    - HeadDoctor
+#    - Police
+#    - StalkerJournalist
+#    - StalkerUN
+#    - StalkerSBU
+#    - StalkerZavet
 
-# - type: department
-#   id: StalkerDisabled
-#   description: "department-StalkerAdvanced-description"
-#   color: "#9FED58"
-#   roles:
-#   # - MilitaryStalker
-#   #- PoliceOfficer
-#   # - MayorCity
-#   # - Prokuror
-#   # - Magistrate
-#   # - Priest
-#   # - Bartender
-#   # - Doctor
-#   # - HeadDoctor
-#   # - Police
-#   # - StalkerJournalist
-#   # - StalkerUN
-#   # - StalkerSBU
-#   # - StalkerZavet
+- type: department
+  id: StalkerAdvanced
+  name: department-StalkerAdvanced
+  description: department-StalkerAdvanced-description
+  color: "#9FED58"
+  weight: 9
+  editorHidden: true
+  roles:
+  - StalkerDolg
+  - StalkerHeadDolg
+  - StalkerFreedom
+  - StalkerHeadFreedom
+  - StalkerMechanic
+  - StalkerTrader
+  - StalkerClown
+  - StalkerClearSky
+  - StalkerNeutral
+  - StalkerProjectOrchestrator
+  - StalkerProjectPawn
+  - StalkerPoisk
 
-#- type: department
-#  id: StalkerAdvanced
-#  name: department-StalkerAdvanced
-#  description: department-StalkerAdvanced-description
-#  color: "#9FED58"
- # weight: 9
-#  roles:
-#  - StalkerDolg
-#  - StalkerHeadDolg
-#  - StalkerFreedom
-#  - StalkerHeadFreedom
-#  - StalkerMechanic
-#  - StalkerTrader
-#  - StalkerClown
-#  - StalkerClearSky
-#  - StalkerNeutral
-#  - StalkerProjectOrchestrator
-#  - StalkerProjectPawn
-#  - StalkerPoisk
+- type: department
+  id: StalkerBrigands
+  name: department-StalkerBrigands
+  description: department-StalkerBrigands-description
+  color: "#111111"
+  weight: 8
+  editorHidden: true
+  roles:
+  - StalkerBandit
+  - StalkerHeadBandit
+  - StalkerMercenary
+  - StalkerHeadMercenary
+  - StalkerJaba
+  - StalkerDeserter
+  - StalkerRene
 
-#- type: department
-#  id: StalkerBrigands
-#  name: department-StalkerBrigands
-#  description: department-StalkerBrigands-description
-#  color: "#111111"
-#  weight: 8
-#  roles:
-#  - StalkerBandit
-#  - StalkerHeadBandit
-#  - StalkerMercenary
-#  - StalkerHeadMercenary
-#  - StalkerJaba
-#  - StalkerDeserter
-#  - StalkerRene
+- type: department
+  id: StalkerOfficials
+  name: department-StalkerOfficials
+  description: department-StalkerOfficials-description
+  color: "#0000FF"
+  weight: 7
+  editorHidden: true
+  roles:
+  - Military
+  - MilitaryOfficer
+  - MilitaryHead
+  - StalkerScientist
+  - StalkerHeadScientist
 
-#- type: department
-#  id: StalkerOfficials
-#  name: department-StalkerOfficials
-#  description: department-StalkerOfficials-description
-#  color: "#0000FF"
-#  weight: 7
-#  roles:
-#  - Military
-#  - MilitaryOfficer
-#  - MilitaryHead
-#  - StalkerScientist
-#  - StalkerHeadScientist
+- type: department
+  id: StalkerReligius
+  name: department-StalkerReligius
+  description: department-StalkerReligius-description
+  color: "#C0C0C0"
+  weight: 6
+  editorHidden: true
+  roles:
+  - StalkerPostulant
+  - StalkerBishop
+  - StalkerGreh
+  - Seraphim
+  - SeraphimHead
 
-#- type: department
-#  id: StalkerReligius
-#  name: department-StalkerReligius
-#  description: department-StalkerReligius-description
-#  color: "#C0C0C0"
-#  weight: 6
-#  roles:
-#  - StalkerPostulant
-#  - StalkerBishop
-#  - StalkerGreh
-#  - Seraphim
-#  - SeraphimHead
+- type: department
+  id: Evolver
+  name: department-Evolver
+  description: department-Evolver-description
+  color: "#1070C0"
+  weight: -10
+  editorHidden: true
+  roles:
+  - EvolverPackFang
+  - EvolverPackAlpha
+  - EvolverSymbioteMedium
+  - EvolverSymbioteArchon
+  - Evolver
 
-#- type: department
-#  id: Evolver
-#  name: department-Evolver
-#  description: department-Evolver-description
-#  color: "#1070C0"
-#  weight: -10
-#  roles:
-#  - EvolverPackFang
-#  - EvolverPackAlpha
-#  - EvolverSymbioteMedium
-#  - EvolverSymbioteArchon
-#  - Evolver
-
-# - type: department
-#   id: StalkerAnomalists
-#   name: "department-StalkerAnomalists"
-#   description: "department-StalkerAnomalists-description"
-#   color: "#9FED58"
-#   roles:
-#   - StalkerAnomalist
-#   - StalkerAnomalistGuardian
+- type: department
+  id: StalkerAnomalists
+  name: "department-StalkerAnomalists"
+  description: "department-StalkerAnomalists-description"
+  color: "#9FED58"
+  editorHidden: true
+  roles:
+  - StalkerAnomalist
+  - StalkerAnomalistGuardian

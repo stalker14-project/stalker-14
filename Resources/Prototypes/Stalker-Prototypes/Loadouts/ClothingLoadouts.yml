@@ -7,7 +7,7 @@
       !type:RoleTimeRequirement
       role: JobScienceAssistant
       time: 7200
-      
+
 - type: loadoutEffectGroup
   id: BerillTimer
   effects:
@@ -51,7 +51,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobPrivateMVC
-      time: 14400 
+      time: 14400
 
 - type: loadoutEffectGroup
   id: CS1Timer
@@ -78,7 +78,7 @@
     requirement:
       !type:RoleTimeRequirement
       role: JobRookieMercenary
-      time: 14400 
+      time: 14400
 
 - type: loadoutEffectGroup
   id: XM40Timer
@@ -218,7 +218,7 @@
   id: ClothingBackpackDuffelHolding
   equipment:
     back: ClothingBackpackDuffelHolding
-    
+
 # Головні убори
 
 - type: loadout
@@ -314,33 +314,151 @@
   equipment:
     head: ClothingHeadBandBrown
 
-# Одяг
+# Штани
+- type: loadout
+  id: ClothingLegsJeansNeutral
+  equipment:
+    legs: ClothingLegsJeansNeutral
+  # підходить для: нейтралів
 
 - type: loadout
-  id: ClothingUniformJumpsuitSidor
+  id: ClothingLegsJeansSandCargo
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSidor
+    legs: ClothingLegsJeansSandCargo
+  # підходить для: свободи, нейтралів
 
 - type: loadout
-  id: ClothingUniformJumpsuitSidorFat
+  id: ClothingLegsJeansBrownCargo
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSidorFat
+    legs: ClothingLegsJeansBrownCargo
+  # підходить для: боргу, військових
 
 - type: loadout
-  id: ClothingUniformJumpsuitSweater
+  id: ClothingLegsJeansBlackCargo
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSweater
+    legs: ClothingLegsJeansBlackCargo
+  # підходить для: найманців
 
 - type: loadout
-  id: ClothingUniformJumpsuitSweater1
+  id: ClothingLegsJeansGreyCargo
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSweater1
+    legs: ClothingLegsJeansGreyCargo
+  # підходить для: науковців, військових
 
 - type: loadout
-  id: ClothingUniformJumpsuitAncient
+  id: ClothingLegsJeansGreenCargo
   equipment:
-    jumpsuit: ClothingUniformJumpsuitAncient
+    legs: ClothingLegsJeansGreenCargo
+  # підходить для: свободи
 
+- type: loadout
+  id: ClothingLegsJeansBlue
+  equipment:
+    legs: ClothingLegsJeansBlue
+  # підходить для: чистого неба
+
+- type: loadout
+  id: ClothingLegsJeansClearSky
+  equipment:
+    legs: ClothingLegsJeansClearSky
+  # підходить для: чистого неба
+
+- type: loadout
+  id: ClothingLegsJeansUa
+  equipment:
+    legs: ClothingLegsJeansUa
+  # підходить для: сталкерів
+
+- type: loadout
+  id: ClothingLegsJeansUa2
+  equipment:
+    legs: ClothingLegsJeansUa2
+  # підходить для: сталкерів
+
+- type: loadout
+  id: STClothingLegsPantsGray
+  equipment:
+    legs: STClothingLegsPantsGray
+  # підходить для: нейтралів, науковців
+
+# Торс
+- type: loadout
+  id: ClothingTorsoSweaterStalkerGreen
+  equipment:
+    torso: ClothingTorsoSweaterStalkerGreen
+  # підходить для: сталкерів, нейтралів
+
+- type: loadout
+  id: ClothingTorsoNeutral
+  equipment:
+    torso: ClothingTorsoNeutral
+  # підходить для: нейтралів
+
+- type: loadout
+  id: ClothingTorsoShirtWhiteScientific
+  equipment:
+    torso: ClothingTorsoShirtWhiteScientific
+  # підходить для: науковців
+
+- type: loadout
+  id: ClothingTorsoTShirtSailorSuit
+  equipment:
+    torso: ClothingTorsoTShirtSailorSuit
+  # підходить для: свободи
+
+- type: loadout
+  id: ClothingTorsoTShirtColorBlack
+  equipment:
+    torso: ClothingTorsoTShirtColorBlack
+  # підходить для: найманців
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksMercenary
+  equipment:
+    torso: ClothingTorsoTurtlenecksMercenary
+  # підходить для: найманців
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksFreedomCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksFreedomCamouflage
+  # підходить для: свободи
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksDolgCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksDolgCamouflage
+  # підходить для: боргу
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksRedDolgCamouflage
+  equipment:
+    torso: ClothingTorsoTurtlenecksRedDolgCamouflage
+  # підходить для: боргу
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksUa
+  equipment:
+    torso: ClothingTorsoTurtlenecksUa
+  # підходить для: сталкерів
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksUa2
+  equipment:
+    torso: ClothingTorsoTurtlenecksUa2
+  # підходить для: сталкерів
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksClearSky
+  equipment:
+    torso: ClothingTorsoTurtlenecksClearSky
+  # підходить для: чистого неба
+
+- type: loadout
+  id: ClothingTorsoTurtlenecksMilitary
+  equipment:
+    torso: ClothingTorsoTurtlenecksMilitary
+  # підходить для: військових
 
 # Рукавички
 - type: loadout

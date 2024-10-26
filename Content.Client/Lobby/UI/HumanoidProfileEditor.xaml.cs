@@ -155,9 +155,6 @@ namespace Content.Client.Lobby.UI
 
             SaveButton.OnPressed += args =>
             {
-                if (Profile != null && !Profile.Changeable)
-                    return;
-                SetChangeable(false); // stalker-changes
                 Save?.Invoke();
             };
 

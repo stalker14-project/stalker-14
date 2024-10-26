@@ -55,12 +55,12 @@ public sealed class TrashDeletingSystem : EntitySystem
         base.Update(frameTime);
 
         if (_timing.CurTime + TimeSpan.FromSeconds(30) == _nextTimeUpdate)
-            _chat.DispatchServerAnnouncement("Очистка мусора произойдет через 30 секунд, предметы на полу могут пропасть!");
+            _chat.DispatchServerAnnouncement("Очищення сміття відбудеться через 30 секунд, предмети на підлозі можуть зникнути!");
 
         if (_timing.CurTime <= _nextTimeUpdate)
             return;
 
-        _chat.DispatchServerAnnouncement("Произошла очистка мусора, некоторые предметы на полу пропали!");
+        _chat.DispatchServerAnnouncement("Відбулося очищення сміття, деякі предмети на підлозі зникли!");
 
         var trashEnts = EntityQueryEnumerator<TrashComponent>();
         while (trashEnts.MoveNext(out var uid, out var comp))
