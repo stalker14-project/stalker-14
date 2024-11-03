@@ -7,6 +7,7 @@ using Content.Client.Clickable;
 using Content.Client.DebugMon;
 using Content.Client.Eui;
 using Content.Client.Fullscreen;
+using Content.Client.GameTicking.Managers;
 using Content.Client.GhostKick;
 using Content.Client.Guidebook;
 using Content.Client.Launcher;
@@ -63,6 +64,7 @@ namespace Content.Client.IoC
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<DiscordAuthManager>(); // Stalker-Changes-Auth
             collection.Register<JoinQueueManager>(); // Stalker-Changes - Corvax Queue Adaptation
+            collection.Register<TitleWindowManager>();
         }
     }
 }

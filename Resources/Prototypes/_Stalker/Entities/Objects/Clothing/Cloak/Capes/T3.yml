@@ -281,3 +281,50 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_greh.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_greh.rsi
+
+##Donated for Skins
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatSeraphim
+  name: кевларовый плащ Серафима
+  description: Плащ, модифицированный под нужды группировки Серафимов, окрашенный в "родные" цвета.
+  suffix: ST, T3, Seraphims
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/seraphim_cape.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/seraphim_cape.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetLoyalistCoatSeraphim
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatSeraphimEmblem
+  name: кевларовый плащ Серафима с эмблемой
+  description: Плащ, модифицированный под нужды группировки Серафимов, окрашенный в "родные" цвета. На спине красуется отличительный знак.
+  suffix: ST, Seraphims
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/seraphim_cape_emblem.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/seraphim_cape_emblem.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetLoyalistCoatSeraphim
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetLoyalistCoatSeraphim
+  name: кевларовый капюшон Серафима
+  description: От кевлара в нем не только название.
+  suffix: ST, Seraphims
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi

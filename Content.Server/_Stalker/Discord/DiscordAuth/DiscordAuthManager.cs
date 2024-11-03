@@ -27,6 +27,8 @@ public sealed class DiscordAuthManager : IPostInjectInit
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
 
+    public const string AuthErrorLink = "https://stalkers14.xyz/auth_unavailable.html";
+
     private readonly Dictionary<NetUserId, DiscordUserData> _cachedDiscordUsers = new();
     public event EventHandler<ICommonSession>? PlayerVerified;
 
@@ -86,7 +88,7 @@ public sealed class DiscordAuthManager : IPostInjectInit
             return;
         }
 
-        var link = await GenerateLink(args.Session.UserId);
+        var link = await GenerateLink(args.Session.UserId) ?? AuthErrorLink;
         var message = new MsgDiscordAuthRequired() {Link = link};
         args.Session.Channel.SendMessage(message);
     }
@@ -96,21 +98,54 @@ public sealed class DiscordAuthManager : IPostInjectInit
         _sawmill.Debug($"Player {userId} check Discord verification");
 
         var requestUrl = $"{_apiUrl}/check?userid={userId}&api_token={_apiKey}";
-        var response = await _httpClient.GetAsync(requestUrl, cancel);
-        if (!response.IsSuccessStatusCode)
-            return null;
 
-        var discordData = await response.Content.ReadFromJsonAsync<DiscordUserData>(cancel);
-        return discordData;
+        // try catch block to catch HttpRequestExceptions due to remote service unavailability
+        try
+        {
+            var response = await _httpClient.GetAsync(requestUrl, cancel);
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var discordData = await response.Content.ReadFromJsonAsync<DiscordUserData>(cancel);
+            return discordData;
+        }
+        catch (HttpRequestException)
+        {
+            _sawmill.Error("Remote auth service is unreachable. Check if its online!");
+            return null;
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
+            return null;
+        }
     }
 
-    public async Task<string> GenerateLink(NetUserId userId, CancellationToken cancel = default)
+    public async Task<string?> GenerateLink(NetUserId userId, CancellationToken cancel = default)
     {
         _sawmill.Debug($"Generating link for {userId}");
         var requestUrl = $"{_apiUrl}/link?userid={userId}&api_token={_apiKey}";
-        var response = await _httpClient.GetAsync(requestUrl, cancel);
-        var link = await response.Content.ReadFromJsonAsync<DiscordLinkResponse>(cancel);
-        return link!.Link;
+
+        // try catch block to catch HttpRequestExceptions due to remote service unavailability
+        try
+        {
+            var response = await _httpClient.GetAsync(requestUrl, cancel);
+            if (!response.IsSuccessStatusCode)
+                return null;
+
+            var link = await response.Content.ReadFromJsonAsync<DiscordLinkResponse>(cancel);
+            return link!.Link;
+        }
+        catch (HttpRequestException)
+        {
+            _sawmill.Error("Remote auth service is unreachable. Check if its online!");
+            return null;
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
+            return null;
+        }
     }
 }
 

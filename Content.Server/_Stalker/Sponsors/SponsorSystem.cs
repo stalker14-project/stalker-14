@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Content.Server._Stalker.StalkerRepository;
 using Content.Server.Administration;
@@ -30,6 +31,9 @@ public sealed class SponsorSystem : EntitySystem
         _consoleHost.RegisterCommand("st_give_contrib_loadout", GiveContribLoadout, GetContribCompletion);
         _consoleHost.RegisterCommand("st_is_given", IsGiven);
         _consoleHost.RegisterCommand("st_make_wipe", MakeWipe);
+
+        // debug
+        _consoleHost.RegisterCommand("st_list_sponsors", ListSponsors);
     }
 
     #region GiveLoadout
@@ -314,7 +318,7 @@ public sealed class SponsorSystem : EntitySystem
             return;
         }
 
-        if (!_sponsors.TryGetSponsorData(session.UserId, out var data))
+        if (!_sponsors.TryGetInfo(session.UserId, out var data))
         {
             shell.WriteError($"{ckey} is not a sponsor.");
             return;
@@ -332,6 +336,27 @@ public sealed class SponsorSystem : EntitySystem
     {
         Task.Run(() => _sponsors.MakeWipe());
         shell.WriteLine("Wipe request sent!");
+    }
+
+    #endregion
+
+    #region Debug
+
+    [AdminCommand(AdminFlags.Debug)]
+    public void ListSponsors(IConsoleShell shell, string argStr, string[] argv)
+    {
+        var sponsors = _sponsors.GetSponsors();
+
+        var builder = new StringBuilder();
+
+        foreach (var (userId, sponsorData) in sponsors)
+        {
+            var playerData = _playerManager.GetPlayerData(userId);
+            builder.Append(
+                $"Name: {playerData.UserName} | UserId: {userId} | Data: {Enum.GetName(sponsorData.Level)}:{(int)sponsorData.Level}, Contrib: {sponsorData.Contributor}\n");
+        }
+
+        shell.WriteLine(builder.ToString());
     }
 
     #endregion

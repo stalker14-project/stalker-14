@@ -1,0 +1,70 @@
+# .45 ACP
+- type: entity
+  id: BaseCartridge45ACP
+  name: cartridge (.45 ACP auto)
+  parent: BaseCartridgeCaselessRifle
+  suffix: Stalker
+  abstract: true
+  components:
+    - type: Trash
+      time: 1
+    - type: STWeight
+      self: 0.01
+    - type: Tag
+      tags:
+        - Cartridge
+        - Cartridge45ACP
+    - type: CartridgeAmmo
+      proto: BulletMagnum
+    - type: Sprite
+      sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+      layers:
+        - state: base
+          map: ["enum.AmmoVisualLayers.Base"]
+    - type: Appearance
+    - type: SpentAmmoVisuals
+    - type: StaticPrice
+      price: 10
+
+- type: entity
+  id: Cartridge45ACPLFMJ
+  name: Патрон (.45 ACP) Lasermatch FMJ
+  parent: BaseCartridge45ACP
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet45ACPLFMJ
+
+- type: entity
+  id: Cartridge45ACPMFMJ
+  name: Патрон (.45 ACP) Match FMJ
+  parent: BaseCartridge45ACP
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet45ACPMFMJ
+
+- type: entity
+  id: Cartridge45ACPHydroshock
+  name: Патрон (.45 ACP) Hydro-shock
+  parent: BaseCartridge45ACP
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet45ACPHydroshock
+
+- type: entity
+  id: Cartridge45ACPRIP
+  name: Патрон (.45 ACP )RIP
+  parent: BaseCartridge45ACP
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet45ACPRIP
+
+- type: entity
+  id: Cartridge45ACPAP
+  name: Патрон (.45 ACP) AP
+  parent: BaseCartridge45ACP
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet45ACPAP
+
+- type: Tag
+  id: Cartridge45ACP

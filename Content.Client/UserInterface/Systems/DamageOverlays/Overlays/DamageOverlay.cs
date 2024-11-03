@@ -77,6 +77,15 @@ public sealed class DamageOverlay : Overlay
         var time = (float) _timing.RealTime.TotalSeconds;
         var lastFrameTime = (float) _timing.FrameTime.TotalSeconds;
 
+        //stalker-changes-start
+        if (State == MobState.Dead)
+        {
+            handle.UseShader(null);
+            handle.DrawRect(viewport, Color.Black);
+            return;
+        }
+        // stalker-changes-end
+
         // If they just died then lerp out the white overlay.
         if (State != MobState.Dead)
         {

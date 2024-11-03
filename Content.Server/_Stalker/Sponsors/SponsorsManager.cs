@@ -1,8 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Content.Server._Stalker.Discord.DiscordAuth;
@@ -17,7 +15,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Sponsors;
 
-public sealed class SponsorsManager : EntitySystem
+public sealed class SponsorsManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
@@ -58,6 +56,11 @@ public sealed class SponsorsManager : EntitySystem
     public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out SponsorData? sponsorInfo)
     {
         return _cachedSponsors.TryGetValue(userId, out sponsorInfo);
+    }
+
+    public Dictionary<NetUserId, SponsorData> GetSponsors()
+    {
+        return _cachedSponsors;
     }
 
     private async void OnPlayerVerified(object? sender, ICommonSession e)
@@ -139,11 +142,6 @@ public sealed class SponsorsManager : EntitySystem
         {
             data.Value.IsGiven = false;
         }
-    }
-
-    public bool TryGetSponsorData(NetUserId userId, [NotNullWhen(true)] out SponsorData? sponsorData)
-    {
-        return _cachedSponsors.TryGetValue(userId, out sponsorData);
     }
 
     public bool HavePriorityJoin(NetUserId userId)

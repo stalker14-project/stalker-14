@@ -226,7 +226,7 @@ public sealed class ShopSystem : SharedShopSystem
     #region Containers logic
     private string GetItemProtoId(EntityUid uid)
     {
-        if (!TryComp<MetaDataComponent>(uid, out var mets))
+        if (!TryComp(uid, out MetaDataComponent? mets))
             return string.Empty;
         var entityPrototypeId = mets.EntityPrototype?.ID;
         return entityPrototypeId ?? string.Empty;
@@ -438,6 +438,7 @@ public sealed class ShopSystem : SharedShopSystem
                 Priority = 0,
                 ProductAction = null,
                 ProductEntity = meta.EntityPrototype?.ID,
+                Count = 1 // Initialize count to 1 for the first item
             };
 
             result.Add(listing);

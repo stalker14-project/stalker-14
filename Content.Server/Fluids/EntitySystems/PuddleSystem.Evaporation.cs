@@ -1,4 +1,5 @@
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent; // stalker-changes
 using Content.Shared.FixedPoint;
 using Content.Shared.Fluids.Components;
 
@@ -8,6 +9,19 @@ public sealed partial class PuddleSystem
 {
     private static readonly TimeSpan EvaporationCooldown = TimeSpan.FromSeconds(1);
 
+    // stalker-changes-start
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string Water = "Water";
+
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string STWater = "STWater";
+
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string Vodka = "Vodka";
+
+    public static string[] EvaporationReagents = new[] { Water, Blood, Vodka, STWater};
+
+    //stalker-changes-end
     private void OnEvaporationMapInit(Entity<EvaporationComponent> entity, ref MapInitEvent args)
     {
         entity.Comp.NextTick = _timing.CurTime + EvaporationCooldown;

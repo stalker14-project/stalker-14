@@ -114,7 +114,7 @@ public sealed partial class ShopMenu : DefaultWindow
         var listingName = Loc.GetString(listing.Name ?? "");
         var listingDesc = Loc.GetString(listing.Description ?? "");
         var listingPrice = listing.OriginalCost;
-        var listingCount = 1; // listing.Count; ST-TODO: I'm not sure that this is correct logic, but I don't want to add the field.
+        var listingCount = listing.Count; // listing.Count; ST-TODO: I'm not sure that this is correct logic, but I don't want to add the field.
         if (listingPrice is null)
             return;
         var canBuy = !sell ? CanBuyListing(_balance, listingPrice.Values.First()) : sell;
