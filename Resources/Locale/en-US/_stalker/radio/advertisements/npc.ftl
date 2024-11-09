@@ -1,82 +1,82 @@
-# СИДОРОВИЧ
+# сидорович
 
-advertisement-sidor-1 = Ты бы ещё консервных банок насобирал!
-advertisement-sidor-2 = Что притащил?
-advertisement-sidor-3 = Ну, проветришься - заходи!
-advertisement-sidor-4 = Ну, удачной охоты, сталкер.
+advertisement-sidor-1 = Ще б консервних банок зібрав!
+advertisement-sidor-2 = Що ти притягнув?
+advertisement-sidor-3 = Ну, як провітришся заходь!
+advertisement-sidor-4 = Ну, успішнохо полювання, сталкер.
 advertisement-sidor-5 = Ну чё стоишь? Подходи, я не кусаюсь.
-advertisement-sidor-6 = Есть что-то стоящее?
-advertisement-sidor-7 = Ну здарова!
-advertisement-sidor-8 = Вернулся?
+advertisement-sidor-6 = Є щось вартісне?
+advertisement-sidor-7 = Ну привіт!
+advertisement-sidor-8 = Вернувся?
 
-# ТОРГОВЦЫ
+# Купці
 
-advertisement-trader-1 = Ну, показывай чем зона наградила.
-advertisement-trader-2 = Если надо чего, ты говори, не стесняйся.
-advertisement-trader-3 = Мы клиентам завсегда рады, ик!
-advertisement-trader-4 = Ой вэй, да кто тут у нас такой красивый нарисовался?
-advertisement-trader-5 = Тебе, *ик*, тебе че нужно?
-advertisement-trader-6 = Заходи не бойся, выходи не плачь...
-advertisement-trader-7 = Ну привет!
-advertisement-trader-8 = Вот молодец, живой пришел!
+advertisement-trader-1 = Ну, показуйте, чим зона нагородила.
+advertisement-trader-2 = Якщо вам потрібно, ви кажіть, не соромтеся.
+advertisement-trader-3 = Ми завжди раді клієнтам!
+advertisement-trader-4 = О вей, хто тут такий красивий намалювався?
+advertisement-trader-5 = Тобі ... нічого не потрібно?
+advertisement-trader-6 = Не бійтеся, не виходите ...
+advertisement-trader-7 = Ну, привіт!
+advertisement-trader-8 = Молодець, прийшов живий!
 
-# Флюфер Щберц (Немецкий Акцент)
+# Flyufer Shbberz (німецький акцент)
 
-advertisement-pharmacist-1 = Эй, подходи, ефли тофговаться умеешь!
-advertisement-pharmacist-2 = И фазошлизь, как в мофе кофабли.
-advertisement-pharmacist-3 = Фсё напфасно, зфя потфаченное фремя.
-advertisement-pharmacist-4 = Hallo!
-advertisement-pharmacist-5 = Шнелль, шнелль..
-advertisement-pharmacist-6 = Йа-йа! Дас ист фантастиш!
-advertisement-pharmacist-7 = Флушай, пофезло тебе сегодня, дафагой, только сейфас куплю задoфаго, пфодам задёшефо!
-advertisement-pharmacist-8 = Ну, показыфай чем зона нагфадила.
+advertisement-pharmacist-1 = Гей, приходь, якщо знаєш як торгуватися!
+advertisement-pharmacist-2 = І розійшлись, як в морі кораблі.
+advertisement-pharmacist-3 = Все марно, марно витрачали час.
+advertisement-pharmacist-4 = Халло!
+advertisement-pharmacist-5 = Шнеля, шнеля..
+advertisement-pharmacist-6 = Я-я! Дас іст фантастіш!
+advertisement-pharmacist-7 = Гутен таґ!
+advertisement-pharmacist-8 = Ну, показуй чим зона нагородила!
 
-# ОХРАННИК
+# Охоронця
 
-advertisement-security-1 = Иди... Иди... Иди...
+advertisement-security-1 = Іди... Іди... Іди...
 advertisement-security-2 = Тссс!
-advertisement-security-3 = Что бы пожрать...
-advertisement-security-4 = Ты что пьяный?
-advertisement-security-5 = Иди своей дорогой, сталкер!
-advertisement-security-6 = Проходи, не задерживайся!
-advertisement-security-7 = Жив ёще? Ну вот и отлично!
-advertisement-security-8 = Зачем пришёл?
+advertisement-security-3 = Їсти...
+advertisement-security-4 = "Ти шо, росіянин?! ... Я сказав, ти що, п'яний?"
+advertisement-security-5 = Ідіть своїм шляхом, Сталкер!
+advertisement-security-6 = Приходь, не затримуйся!
+advertisement-security-7 = Живий? Ну, це чудово!
+advertisement-security-8 = Чого ти прийшов?
 
-# Кот питомец
+# Кіт був домашнім улюбленцем
 
-advertisement-cat-pet-1 = Мяу...
+advertisement-cat-pet-1 = Няв...
 advertisement-cat-pet-2 = Мур..
 advertisement-cat-pet-3 = Хсссс
-advertisement-cat-pet-4 = Мяв, Мяв
+advertisement-cat-pet-4 = Няв, няв
 advertisement-cat-pet-5 = Мур, мур, мур
 advertisement-cat-pet-6 = ШШШШШ...
-advertisement-cat-pet-7 = Мяу, мяу
+advertisement-cat-pet-7 = Няв, Няв
 advertisement-cat-pet-8 = Пшшш..
 
-# Пётр и Никитич алкаши
+# Петро і Микитович алкаші
 
-advertisement-alkash-1 = В каждой выброшенной бутылке *ик* я вижу возможность для нового начала.
-advertisement-alkash-2 = Мудрость заключае-ть-тися в том, чтобы видеть ценность там, где другие видят мусор. Во чо выдал!
-advertisement-alkash-3 = Т-ты м-ме-мен-меня у-ува *ик* ешь?
-advertisement-alkash-4 = Б.О.М.Ж это *ик* Бутылочная Организация Мудр-р-ого Жизнеустройства
-advertisement-alkash-5 = Выпьем за твое здо-р-ровье?!
+advertisement-alkash-1 = У кожній відкинутому пляшці *хик* я бачу можливість для нового початку.
+advertisement-alkash-2 = Мудрість по-ля-га-є в тому, щоб бачити цінність там, де інші бачать сміття. Во що видав!
+advertisement-alkash-3 = Ти мене уваж- *хик* -аєш?
+advertisement-alkash-4 = '"Б.О.М.Ж." це *хик* Бутельна Організація Майстрів Ж-ж-життя.'
+advertisement-alkash-5 = "Вип'єм задля вашого здоров’я?!"
 advertisement-alkash-6 = Переработ-т-тка – это не просто бизнес, биля, это философия жизни. *ик*
-advertisement-alkash-7 = ну ты это, заходи, а то как *ик* не родной
-advertisement-alkash-8 = Мы с братишкой начинали с пят-т-ти окурков и ящик-к-ка водки. А теперь я конт-р-ролирую 83% рынка перерабо-о-отки Зоны.
+advertisement-alkash-7 = Ну, ти, заходить, а то як не *хик* рідний.
+advertisement-alkash-8 = Ми з братком розпочали з п'ятих недопалок та коробки горілки. А от зараз я контролюю 83% процесу переробки в Зоні.
 
-advertisement-ceremoniemeester-1 = Великий Торнадо, прими мои искренние поздравления с днём твоего рождения! Да озарит тебя вечная радость, а каждый твой день будет наполнен благосклонностью и новыми открытиями!
-advertisement-ceremoniemeester-2 = О могущественный Торнадо, в этот торжественный день мы славим твою силу и мощь! Пусть твоя защита оградит нас от всех аномалий, а твоя щедрость одарит нас редчайшими артефактами!
-advertisement-ceremoniemeester-3 = Славный Торнадо, в день твоего рождения мы преклоняемся перед твоим величием! Пусть твоя милость и благословение оберегают нас от всех опасностей Зоны, наполняя наши дни ценными находками!
-advertisement-ceremoniemeester-4 = В этот великий день рождения, о Торнадо, мы воспеваем твою силу и щедрость! Пусть Зона будет всегда с тобой, как символ твоего вечного могущества!
-advertisement-ceremoniemeester-5 = Милостевейший Торнадо, в этот день мы воздаем тебе высшие почести и поздравляем с днём рождения! Пусть каждый твой шаг будет озарен светом благосклонности, а твоя щедрость принесёт нам неисчислимые дары!
+advertisement-ceremoniemeester-1 = Чудовий торнадо, прийміть мої щирі вітання з днем ​​народження! Так, вічна радість вас висвітлить, і ваш кожен день буде наповнений прихильністю та новими відкритями!
+advertisement-ceremoniemeester-2 = O Потужний торнадо, в цей урочистий день ми прославляємо ваші сили та сили! Нехай ваша оборона захищає нас від усіх аномалій, і ваша щедрість дасть нам рідкісні артефакти!
+advertisement-ceremoniemeester-3 = Славний Торнадо, на ваш день народження, ми кланяємось вашій величі! Нехай ваша милосердя та благословення захищають нас від усієї небезпеки зони, наповнюючи наші дні цінними знахідками!
+advertisement-ceremoniemeester-4 = У цей чудовий день народження, Торнадо, ми співаємо ваші сили та щедрість! Нехай зона завжди буде з вами як символом вашої вічної сили!
+advertisement-ceremoniemeester-5 = Торнадо, в цей день ми віддаємо вам найвищі відзнаки та привітаємо вас у день народження!Нехай кожен ваш крок буде освітлений світлом прихильності, і ваша щедрість принесе нам незліченні подарунки!
 
-# Бармен
+# бармен
 
-advertisement-barmen-1 = Ну, здарова.
-advertisement-barmen-2 = Ну что, дружище? Как оно?
-advertisement-barmen-3 = Жив ещё? Ну и отлично!
-advertisement-barmen-4 = Как оно?
-advertisement-barmen-5 = Как делишки?
-advertisement-barmen-6 = Выпить пришел или притащил чего?
-advertisement-barmen-7 = Здарова, сталкер.
-advertisement-barmen-8 = Показывай, чего притащил.
+advertisement-barmen-1 = Ну, здорово.
+advertisement-barmen-2 = Ну, приятель? Як воно?
+advertisement-barmen-3 = Ще живий? Ну, чудово!
+advertisement-barmen-4 = Як воно?
+advertisement-barmen-5 = Як ся маш?
+advertisement-barmen-6 = Ви прийшли пити чи потягнути що?
+advertisement-barmen-7 = Здоровий, сталкер.
+advertisement-barmen-8 = Показуй, що притягнув.

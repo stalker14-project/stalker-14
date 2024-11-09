@@ -1,6 +1,6 @@
-ent-ZoneAnomalyLamp = lamp
-    .desc = lamp
-    .suffix = Stalker, lamp, anomaly
-ent-ZoneAnomalyRift = fault
-    .desc = fault
-    .suffix = Stalker, break, anomaly
+ent-ZoneAnomalyLamp = лампа
+    .desc = лампа
+    .suffix = Сталкер, лампа, аномалія
+ent-ZoneAnomalyRift = Розлом
+    .desc = Розлом
+    .suffix = Сталкер, Розлом, аномалія

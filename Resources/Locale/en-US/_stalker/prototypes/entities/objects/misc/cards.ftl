@@ -1,1 +1,1 @@
-ent-ST-TurnCard = Turn the card over
+ent-ST-TurnCard = Переверніть карту

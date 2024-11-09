@@ -1,6 +1,6 @@
-ent-BaseTechCard = Technological map
-  .desc = Basic technological map.
-  .suffix = Stalker, craft, technological map
-ent-TechCardCalibrationDosimeter = Dosimeter calibration card
-  .desc = Serves to configure new sensors for a universal dosimeter.Allows them to determine the nature of radiation, without complex calculations on the main microcontroller.
+ent-BaseTechCard = Технологічна карта
+  .desc = Основна технологічна карта.
+  .suffix = Сталкер, крафт, Технологічна карта
+ent-TechCardCalibrationDosimeter = Карта калібрування дозиметра
+  .desc = Служить для налаштування нових датчиків для універсального дозиметра. Забезпечує їх для визначення природи випромінювання, без складних обчислень на основному мікроконтролері.
   .suffix = { ent-BaseTechCard.suffix }

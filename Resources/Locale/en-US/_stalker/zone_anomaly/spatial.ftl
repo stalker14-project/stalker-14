@@ -1,9 +1,9 @@
-ent-ZoneAnomalyBarabashka = барабашка
+ent-ZoneAnomalyBarabashka = Барабан
     .desc = барабашка
-    .suffix = Stalker, Барабашка, Аномалия
-ent-ZoneAnomalyPolymorph = полиморф
-    .desc = полиморф
-    .suffix = Stalker, Полиморф, Аномалия
-ent-ZoneAnomalyBubble = пузырь
-    .desc = пузырь
-    .suffix = Stalker, Пузырь, Аномалия
+    .suffix = Сталкер, Барабашка, Аномалія
+ent-ZoneAnomalyPolymorph = поліморф
+    .desc = поліморф
+    .suffix = Сталкер, Поліморф, Аномалия
+ent-ZoneAnomalyBubble = пузирь
+    .desc = пузирь
+    .suffix = Сталкер, Пузирь, Аномалия

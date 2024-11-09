@@ -1,15 +1,15 @@
 ﻿shop-ui-default-title = Магазин
-shop-refresh-button = Обновить
+shop-refresh-button = Обновити
 
-shop-listing-buy = Купить
-shop-listing-sell = Продать
+shop-listing-buy = Купити
+shop-listing-sell = Продати
 
-shop-slider-button = Подтвердить
+shop-slider-button = Підтвердити
 
-shop-your-items-category = Ваши предметы
+shop-your-items-category = Ваші предмети
 
-shop-currency-name = Рубли
+shop-currency-name = Гривні
 
-shop-selling-price = Стоимость продажи: { $amount }
+shop-selling-price = Вартість продажу: { $amount }
 
-st-shop-requires-permit = Для этого магазина требуется лицензия { $permit }
+st-shop-requires-permit = Для цього магазину потрібна ліцензія { $permit }

@@ -1,4 +1,4 @@
-#####################################################Вояки
+# Вояки
 
 - type: shopPreset
   id: MilitaryShopPreset
@@ -7,20 +7,18 @@
     FoodTinPeachesTrash: 0
     FoodTinBeansTrash: 0
   categories:
-    - name: Оружие
+    - name: Зброя
       priority: 1
       items:
         WeaponMachineGunRPD: 9
         STWeaponRifleM14: 15
         STWeaponRifleStalkerAK103: 11
         STWeaponRifleSVDS: 13
-    - name: Броня и снаряжение
+    - name: Броня та спорядження
       priority: 2
       items:
-        # ClothingOuterArmor6B13: 15 Убрано всё т4 по просьбе вииса
         ClothingHeadHelmetBulatMilitary: 5
-        # STClothingOuterArmorBerill5M: 15 Убрано всё т4 по просьбе вииса
-    - name: Бумажная работа
+    - name: Бюрократична робота
       priority: 3
       items:
         hunterLicense: 2
@@ -32,14 +30,13 @@
     ClothingNeckDogtagBrigand: 2
     ClothingNeckDogtagStalker: 1
   categories:
-    - name: Оружие
+    - name: Зброя
       priority: 1
       items:
         ArmySaigaCrate: 5
         LgbtKnife: 1
         STWeaponRevolverDanWesson715: 1
         STWeaponRifleSKS: 3
-        # STWeaponGunAKS74U: 1
         WeaponRifleStalkerGroza545: 14
         STSTWeaponRifleStalkerAK74M: 4
         STWeaponRifleStalkerAK74: 3
@@ -51,9 +48,7 @@
         ClothingHeadHelmetSH68: 1
         ClothingHeadHelmetBerill5MMilitary: 1
         ClothingMaskGP7: 2
-        # STClothingOuterArmorRatnik: 20 T5 жирно для старта
-        # ClothingOuterArmorBulatMilitary: 20 T5 жирно для старта
-    - name: Патроны
+    - name: Патрони
       priority: 3
       items:
         45ACPLFMJBox: 1
@@ -64,10 +59,7 @@
         754HPBox: 1
         739PCBox: 4
         545BPBox: 3
-        # 545BPBox: 1 T4 Ammo
-        # 751M993Box: 2 T5 Ammo
-        # 754BTBox: 2 T5 Ammo
-    - name: Рюкзаки и снаряжение
+    - name: Рюкзаки та спорядження
       priority: 4
       items:
         ClothingBeltMedicalStalker: 1
@@ -78,7 +70,7 @@
         ClothingBackpackDuffelMilitaryOlive: 2
         ClothingBeltBandolierStalker: 1
         MedkitCMSStalker: 1
-    - name: Магазины
+    - name: Магазини
       priority: 5
       items:
         751Mag20: 1
@@ -87,21 +79,21 @@
         754Mag20: 2
         Magazine762x39RPD: 2
         739Mag45: 2
-    - name: Обвесы
+    - name: Обважування
       priority: 6
       items:
-        STModuleScopeRiflesT1Ru: 2
+        STModuleScopeRiflesT1: 2
         STModuleSniperSightT1: 2
-        STModuleScopeRiflesT2Ru: 3
+        STModuleScopeRiflesT2: 3
         STModuleSniperSightT2: 3
-        STModuleSilencerRiflesT2Ru: 3
-    - name: Гранаты
+        STModuleSilencerRiflesT2: 3
+    - name: Гранати
       priority: 7
       items:
         DG05SmokeGrenade: 1
         RGD5Grenade: 1
         HydrocyanicGrenadeStalker: 3
-    - name: Другое
+    - name: Інше
       priority: 8
       items:
         CraftBag: 1
@@ -109,20 +101,20 @@
         Binocularus1: 1
         Defibrillator: 1
         DoubleEmergencyOxygenTankStalkerFilled: 1
-    - name: Бумажная работа
+    - name: Бюрократична робота
       priority: 9
       items:
         hunterLicense: 4
         militaryLicense: 5
 
 - type: shopPreset
-  id: MilitaryRoublesShopPreset
+  id: MilitaryHryvniasShopPreset
   itemsForSale:
     FoodTinMRETrash: 0
     FoodTinPeachesTrash: 0
     FoodTinBeansTrash: 0
   categories:
-    - name: Коптёр
+    - name: Коптер
       priority: 1
       items:
         STSkinsKitMilitary: 500
@@ -132,13 +124,13 @@
         STClothingLegsJeanskz: 10
         STClothingLegsJeansLit: 10
         STClothingLegsJeansPol: 10
-        STClothingLegsJeansRus: 10
+        STClothingLegsJeans: 10
         STClothingTosroTurtlenecksCZ: 10
         STClothingTosroTurtlenecksFr: 10
         STClothingTosroTurtlenecksKz: 10
         STClothingTosroTurtlenecksLit: 10
         STClothingTosroTurtlenecksPol: 10
-        STClothingTosroTurtlenecksRu: 10
+        STClothingTosroTurtlenecks: 10
         ClothingJaketGeneral: 50
         ClothingHeadHatGeneral: 50
         ClothingUniformJumpsuitMilitary2: 50

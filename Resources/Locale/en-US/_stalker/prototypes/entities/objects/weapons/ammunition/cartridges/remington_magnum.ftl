@@ -1,6 +1,6 @@
-ent-BaseCartridgeRemingtonMagnum = cartridge (.44 Remington Magnum)
+ent-BaseCartridgeRemingtonMagnum = Картридж (.44 Remington Magnum)
     .desc = { ent-BaseCartridge.desc }
-ent-CartridgeRemingtonMagnum = cartridge (.44 Remington Magnum)
+ent-CartridgeRemingtonMagnum = Картридж (.44 Remington Magnum)
     .desc = { ent-BaseCartridgeRemingtonMagnum.desc }
-ent-CartridgeRemingtonMagnumAP = cartridge (.44 armor -piercing Remington Magnum)
+ent-CartridgeRemingtonMagnumAP = Картридж (.44 Броне-пробиваючих Remington Magnum)
     .desc = { ent-BaseCartridgeRemingtonMagnum.desc }

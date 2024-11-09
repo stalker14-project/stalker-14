@@ -1,6 +1,6 @@
 ent-BaseMagazineBoxRemingtonMagnum = { ent-BaseItem }
     .desc = { ent-BaseItem.desc }
-ent-MagazineBoxRemingtonMagnum = Bullets of bullets 44mm Remington Magnum
-    .desc = Foreign cartridges that work perfectly on body armor created in the CIS.There are 30 pieces in the box.Provides breaking through the 3rd class of armor.
-ent-MagazineBoxRemingtonMagnumAP = Box of armor -piercing bullets 44mm Remington Magnum
-    .desc = Foreign cartridges that work perfectly on body armor created in the CIS.There are 30 pieces in the box.Provides breaking the 4th class of armor.
+ent-MagazineBoxRemingtonMagnum = Коробка куль 44мм Remington Magnum
+    .desc = Іноземні патрони, які прекрасно працюють на бронежилетах, створених у снг. У коробці 30 штук. Забезпечує пробиття 3-го класу броні.
+ent-MagazineBoxRemingtonMagnumAP = Коробка броне-пробиваючих куль 44 мм Remington Magnum
+    .desc = Іноземні патрони, які прекрасно працюють на бронежилетах, створених у снг. У коробці 30 штук. Забезпечує порушення 4 -го класу броні.
