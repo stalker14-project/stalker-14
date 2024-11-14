@@ -257,3 +257,36 @@
     size: Large
     shape:
       - 0,0,3,2
+
+- type: entity
+  parent: ClothingBackpackDuffel
+  id: STClothingBackBase
+  suffix: ST
+  abstract: true
+  components:
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 1
+    - type: STWeight
+      self: 1.5
+    - type: Storage
+      grid:
+        - 0,0,4,4
+      quickInsert: true
+      areaInsert: true
+    - type: RepositoryItem
+      categoryName: Рюкзаки
+    - type: Dumpable
+    - type: Tag
+      tags:
+      - Folder
+    - type: Craftable
+
+- type: entity
+  id: STClothingBackTacticBase
+  abstract: true
+  parent: STClothingBackBase
+  components:
+  - type: Storage
+    grid:
+    - 0,0,6,5

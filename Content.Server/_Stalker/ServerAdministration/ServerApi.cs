@@ -33,7 +33,7 @@ public sealed class ServerApi : IPostInjectInit
     private ISawmill _sawmill = default!;
     private string _token = default!;
 
-    public void PostInject()
+    void IPostInjectInit.PostInject()
     {
         _sawmill = Logger.GetSawmill("serverApi");
 
@@ -42,15 +42,18 @@ public sealed class ServerApi : IPostInjectInit
         _statusHost.AddHandler(ActionGetAdmins);
         _statusHost.AddHandler(ActionSendInGameAnnouncement);
         _statusHost.AddHandler(ActionCommand);
-
-        _config.OnValueChanged(CCCCVars.ServerAPIToken, UpdateToken, true);
-
-        UpdateToken(_config.GetCVar(CCCCVars.ServerAPIToken));
     }
+
+    public void Initialize()
+    {
+        _config.OnValueChanged(CCCCVars.ServerAPIToken, UpdateToken, true);
+    }
+
     public void Shutdown()
     {
         _config.UnsubValueChanged(CCCCVars.ServerAPIToken, UpdateToken);
     }
+
     private void UpdateToken(string token)
     {
         _token = token;

@@ -76,9 +76,11 @@ namespace Content.Server.IoC
             IoCManager.Register<PlayerRateLimitManager>();
             IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             IoCManager.Register<MappingManager>();
-            IoCManager.Register<DiscordAuthManager>(); // Stalker-Changes-Auth
-            IoCManager.Register<JoinQueueManager>(); // Stalker-Changes - Corvax Queue Adaptation
-            IoCManager.Register<SponsorsManager>(); // Stalker-Changes-Sponsors
+            IoCManager.Register<DiscordAuthManager>(); // stalker-changes-auth
+            IoCManager.Register<JoinQueueManager>(); // stalker-changes - Corvax Queue Adaptation
+            IoCManager.Register<SponsorsManager>(); // stalker-changes-sponsors
+            IoCManager.Register<BanWebhook>(); // stalker-changes-bans
+            IoCManager.Register<_Stalker.ServerAdministration.ServerApi>(); // Stalker-Changes - Stalker Server API
         }
     }
 }
