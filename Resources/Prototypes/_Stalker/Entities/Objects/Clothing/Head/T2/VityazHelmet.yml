@@ -55,3 +55,23 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1T.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1T.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetVityaz1C
+  id: STClothingHeadHelmetSeraphimAltin
+  name: шлем "Алтын"
+  suffix: ST, T2, Tactical, Serafim
+  description: Противоударный шлем "Алтын", модифицированный Серафимами
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Sera_/seraphim_altin.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Sera_/seraphim_altin.rsi
+# Bonus
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Radiation: 1.5
+      coefficients:
+        Radiation: 0.8

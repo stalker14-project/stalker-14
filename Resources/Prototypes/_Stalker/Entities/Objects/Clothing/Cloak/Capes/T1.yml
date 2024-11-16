@@ -195,3 +195,31 @@
     sprite: _Stalker/Objects/Clothing/cloak/desertercape.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/desertercape.rsi
+
+# Скин на дождевик
+- type: entity
+  parent: ClothingOuterCoatDoshdevik
+  id: STClothingCapeT1Serafim
+  name: плащ Серафимов
+  suffix: ST, T1, Serafim
+  description: Выполнен в тёмно-зелёной цветовой гамме
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetSerafim
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetSerafim
+  name: капюшон плаща Серафимов
+  noSpawn: true
+  description: Покрывает вашу голову
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_serafim.rsi
