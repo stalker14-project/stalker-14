@@ -721,6 +721,14 @@
   - type: Sprite
     noRot: true
     sprite: _Stalker/Objects/Decoration/Flora/flora_rockssolid.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 6500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
 
 - type: entity
   parent: STBaseRock
