@@ -10,19 +10,19 @@ namespace Content.Shared.Chat;
 
 public abstract class SharedChatSystem : EntitySystem
 {
-    public const char RadioCommonPrefix = ';';
-    public const char RadioChannelPrefix = ':';
-    public const char RadioChannelAltPrefix = '.';
-    public const char LocalPrefix = '>';
-    public const char ConsolePrefix = '/';
-    public const char DeadPrefix = '\\';
-    public const char LOOCPrefix = '(';
-    public const char OOCPrefix = '[';
-    public const char EmotesPrefix = '@';
-    public const char EmotesAltPrefix = '*';
-    public const char AdminPrefix = ']';
-    public const char WhisperPrefix = ',';
-    public const char DefaultChannelKey = 'h';
+    public const string RadioCommonPrefix = ";"; // Stalker-Changes-Chat-Start
+    public const string RadioChannelPrefix = ":";
+    public const string RadioChannelAltPrefix = ".";
+    public const string LocalPrefix = ">";
+    public const string ConsolePrefix = "/";
+    public const string DeadPrefix = "\\";
+    public const string LOOCPrefix = "(";
+    public const string OOCPrefix = "[";
+    public const string EmotesPrefix = "%"; // Corvax-Localization
+    public const string EmotesAltPrefix = "*";
+    public const string AdminPrefix = "]";
+    public const string WhisperPrefix = ",";
+    public const string DefaultChannelKey = "р"; // Corvax-Localization // Stalker-Changes-Chat-End
 
     [ValidatePrototypeId<RadioChannelPrototype>]
     public const string CommonChannel = "Common";
@@ -38,7 +38,7 @@ public abstract class SharedChatSystem : EntitySystem
     /// <summary>
     /// Cache of the keycodes for faster lookup.
     /// </summary>
-    private FrozenDictionary<char, RadioChannelPrototype> _keyCodes = default!;
+    private FrozenDictionary<string, RadioChannelPrototype> _keyCodes = default!;
 
     public override void Initialize()
     {
@@ -106,7 +106,7 @@ public abstract class SharedChatSystem : EntitySystem
         if (!(input.StartsWith(RadioChannelPrefix) || input.StartsWith(RadioChannelAltPrefix)))
             return;
 
-        if (!_keyCodes.TryGetValue(char.ToLower(input[1]), out _))
+        if (!_keyCodes.TryGetValue(input[1].ToString().ToLower(), out _)) // stalker-changes-chat
             return;
 
         prefix = input[..2];
@@ -154,9 +154,10 @@ public abstract class SharedChatSystem : EntitySystem
             return true;
         }
 
-        var channelKey = input[1];
-        channelKey = char.ToLower(channelKey);
-        output = SanitizeMessageCapital(input[2..].TrimStart());
+        var channelKey = input.Split(" ")[0].Split(":")[1]; // Stalker-Changes-Chat-Start
+        var messageList = input.Split(" ")[1..];
+        var message = string.Join(" ", messageList);
+        output = SanitizeMessageCapital(message[0..].TrimStart()); // Stalker-Changes-Chat-End
 
         if (channelKey == DefaultChannelKey)
         {

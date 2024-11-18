@@ -73,7 +73,7 @@ public sealed class ChatUIController : UIController
 
     private ISawmill _sawmill = default!;
 
-    public static readonly Dictionary<char, ChatSelectChannel> PrefixToChannel = new()
+    public static readonly Dictionary<string, ChatSelectChannel> PrefixToChannel = new()
     {
         {SharedChatSystem.LocalPrefix, ChatSelectChannel.Local},
         {SharedChatSystem.WhisperPrefix, ChatSelectChannel.Whisper},
@@ -87,7 +87,7 @@ public sealed class ChatUIController : UIController
         {SharedChatSystem.DeadPrefix, ChatSelectChannel.Dead}
     };
 
-    public static readonly Dictionary<ChatSelectChannel, char> ChannelPrefixes = new()
+    public static readonly Dictionary<ChatSelectChannel, string> ChannelPrefixes = new()
     {
         {ChatSelectChannel.Local, SharedChatSystem.LocalPrefix},
         {ChatSelectChannel.Whisper, SharedChatSystem.WhisperPrefix},
@@ -691,7 +691,6 @@ public sealed class ChatUIController : UIController
     public void UpdateSelectedChannel(ChatBox box)
     {
         var (prefixChannel, _, radioChannel) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
-
         if (prefixChannel == ChatSelectChannel.None)
             box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null);
         else
@@ -710,9 +709,14 @@ public sealed class ChatUIController : UIController
         ChatSelectChannel chatChannel;
         if (TryGetRadioChannel(text, out var radioChannel))
             chatChannel = ChatSelectChannel.Radio;
+        else if (!(text.Split(" ")[0].Length < 2)) // Stalker-Changes-Chat-Start
+        {
+            chatChannel = PrefixToChannel.GetValueOrDefault(text.Split(" ")[0]);
+        }
         else
-            chatChannel = PrefixToChannel.GetValueOrDefault(text[0]);
-
+        {
+            chatChannel = PrefixToChannel.GetValueOrDefault(text[0..].TrimStart()); // Stalker-Changes-Chat-End
+        }
         if ((CanSendChannels & chatChannel) == 0)
             return (ChatSelectChannel.None, text, null);
 

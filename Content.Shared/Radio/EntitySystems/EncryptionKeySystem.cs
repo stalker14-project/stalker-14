@@ -84,8 +84,13 @@ public sealed partial class EncryptionKeySystem : EntitySystem
                 component.Channels.UnionWith(key.Channels);
                 component.DefaultChannel ??= key.DefaultChannel;
             }
+            if (TryComp<ConfigurableEncryptionKeyComponent>(ent, out var confKey)) // stalker-changes-start
+            {
+                if (confKey.Channel != null)
+                    component.Channels.Add(confKey.Channel);
+                component.DefaultChannel ??= confKey.Channel;
+            } // stalker-changes-end
         }
-
         RaiseLocalEvent(uid, new EncryptionChannelsChangedEvent(component));
     }
 

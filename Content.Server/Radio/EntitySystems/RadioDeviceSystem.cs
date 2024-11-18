@@ -36,6 +36,7 @@ public sealed class RadioDeviceSystem : EntitySystem
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid)> _recentlySent = new();
+    private Dictionary<int, RadioChannelPrototype> _keyFreq = new(); // stalker-changes
 
     public override void Initialize()
     {
@@ -59,7 +60,9 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<RadioStalkerComponent, BeforeActivatableUIOpenEvent>(OnBeforeRadioUiOpen); // Stalker-Changes
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioMicMessage>(OnToggleRadioMic); // Stalker-Changes
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioSpeakerMessage>(OnToggleRadioSpeaker); // Stalker-Changes
-        //SubscribeLocalEvent<RadioStalkerComponent, SelectRadioChannelMessage>(OnSelectRadioChannel); // Stalker-Changes ST-TODO. I have no idea what this method is supposed to do. Removed it for now
+        SubscribeLocalEvent<RadioStalkerComponent, SelectRadioChannelMessage>(OnSelectRadioChannel); // Stalker-Changes
+
+        InitializeChannelPrototypes(); // stalker-changes
     }
 
     public override void Update(float frameTime)
@@ -124,7 +127,7 @@ public sealed class RadioDeviceSystem : EntitySystem
     {
         if (args.Powered)
             return;
-        SetMicrophoneEnabled(uid, null, false,  true, component);
+        SetMicrophoneEnabled(uid, null, false, true, component);
     }
 
     public void SetMicrophoneEnabled(EntityUid uid, EntityUid? user, bool enabled, bool quiet = false, RadioMicrophoneComponent? component = null)
@@ -289,29 +292,33 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (TryComp<RadioMicrophoneComponent>(ent, out var mic))
             mic.BroadcastChannel = channel;
         if (TryComp<RadioSpeakerComponent>(ent, out var speaker))
-            speaker.Channels = new(){ channel };
+            speaker.Channels = new() { channel };
         Dirty(ent);
     }
 
- // Stalker-Changes
+    // Stalker-Changes
+
+    private void InitializeChannelPrototypes()
+    {
+        var prototypes = _protoMan.EnumeratePrototypes<RadioChannelPrototype>();
+        foreach (var proto in prototypes)
+        {
+            _keyFreq.TryAdd(proto.Frequency, proto);
+        }
+    }
+
     private void OnBeforeRadioUiOpen(EntityUid uid, RadioStalkerComponent component, BeforeActivatableUIOpenEvent args)
     {
         UpdateRadioUi(uid);
     }
     private void OnToggleRadioMic(EntityUid uid, RadioStalkerComponent component, ToggleRadioMicMessage args)
     {
-        if (component.RequiresPower)
-            return;
-
         SetMicrophoneEnabled(uid, args.Actor, args.Enabled, true);
         SetSpeakerEnabled(uid, args.Actor, false, true);
         UpdateRadioUi(uid);
     }
     private void OnToggleRadioSpeaker(EntityUid uid, RadioStalkerComponent component, ToggleRadioSpeakerMessage args)
     {
-        if (component.RequiresPower && !this.IsPowered(uid, EntityManager))
-            return;
-
         SetSpeakerEnabled(uid, args.Actor, args.Enabled, true);
         SetMicrophoneEnabled(uid, args.Actor, false, true);
         UpdateRadioUi(uid);
@@ -328,5 +335,21 @@ public sealed class RadioDeviceSystem : EntitySystem
         var state = new RadioStalkerBoundUIState(micEnabled, speakerEnabled);
         _ui.SetUiState(uid, RadioStalkerUiKey.Key, state);
     }
- // Stalker-Changes-Ends
+
+    private void OnSelectRadioChannel(EntityUid uid, RadioStalkerComponent component, SelectRadioChannelMessage args)
+    {
+        if (!TryComp<RadioMicrophoneComponent>(uid, out var mic))
+            return;
+        if (!TryComp<RadioSpeakerComponent>(uid, out var speaker))
+            return;
+        foreach (var channel in _keyFreq)
+        {
+            if (channel.Key.ToString() != args.Channel)
+                continue;
+            mic.BroadcastChannel = channel.Value.ID;
+            speaker.Channels = new() { channel.Value.ID };
+            return;
+        }
+    }
+
 }
