@@ -3469,3 +3469,15 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/soviet.ogg
+
+- type: entity
+  id: RadioStandStalkerSerafimDistant
+  parent: RadioBaseStalker
+  suffix: Stalker, Serafim 10 тайлов
+  components:
+  - type: AmbientSound
+    volume: -8
+    range: 10
+    enabled: true
+    sound:
+      path: /Audio/_Stalker/serafim_embient.ogg

@@ -1,4 +1,4 @@
 identity-user = { CAPITALIZE(SUBJECT($user)) } { $species }
-identity-height = Height: {$ height }
-identity-physique = Physique: {$ physique }
-identity-physique-normal = Ordinary
+identity-height = Висота: { $height }
+identity-physique = Статура: { $physique }
+identity-physique-normal = Звичайний

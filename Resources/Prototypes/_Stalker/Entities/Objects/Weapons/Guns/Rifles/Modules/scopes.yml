@@ -2,8 +2,8 @@
   abstract: true
   parent: STBaseWeaponModule
   id: STBaseModuleScopeRifles
-  name: makeshift rifle scope
-  suffix: ST, scope, T1, RU
+  name: саморобний оптичний приціл
+  suffix: ST, приціл, T1
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/Modules/scope.rsi
@@ -18,17 +18,17 @@
         useInHand: false
 
 #
-# Самопальные T1
+# Зразок T1
 #
 - type: entity
   parent: STBaseModuleScopeRifles
-  id: STModuleScopeRiflesT1Ru
-  name: makeshift rifle scope RU
-  suffix: ST, scope, T1, RU
+  id: STModuleScopeRiflesT1
+  name: саморобний оптичний приціл
+  suffix: ST, приціл, T1
   components:
     - type: Tag
       tags:
-        - STWeaponModuleRifleScopeRu
+        - STWeaponModuleRifleScope
     - type: STWeaponModule
       effect:
         minAngleModifier: 0.9
@@ -36,15 +36,15 @@
         zoom: 1.2
         offset: 5
     - type: Sprite
-      state: scope_T1_ru
+      state: scope_T1
     - type: Icon
-      state: scope_T1_ru
+      state: scope_T1
 
 - type: entity
   parent: STBaseModuleScopeRifles
   id: STModuleScopeRiflesT1Nato
-  name: makeshift rifle scope NATO
-  suffix: ST, scope, T1, NATO
+  name: саморобний оптичний приціл НАТО
+  suffix: ST, приціл, T1, NATO
   components:
     - type: Tag
       tags:
@@ -60,18 +60,18 @@
     - type: Icon
       state: scope_T1_nato
 #
-# Легальные T2
+# Легальні T2
 #
 
 - type: entity
   parent: STBaseModuleScopeRifles
-  id: STModuleScopeRiflesT2Ru
-  name: rifle scope RU
-  suffix: ST, scope, T2, RU
+  id: STModuleScopeRiflesT2
+  name: оптичний приціл
+  suffix: ST, приціл, T2
   components:
     - type: Tag
       tags:
-        - STWeaponModuleRifleScopeRu
+        - STWeaponModuleRifleScope
     - type: STWeaponModule
       effect:
         minAngleModifier: 0.7
@@ -79,15 +79,15 @@
         zoom: 1.2
         offset: 6
     - type: Sprite
-      state: scope_T2_ru
+      state: scope_T2
     - type: Icon
-      state: scope_T2_ru
+      state: scope_T2
 
 - type: entity
   parent: STBaseModuleScopeRifles
   id: STModuleScopeRiflesT2Nato
-  name: rifle scope NATO
-  suffix: ST, scope, T2, NATO
+  name: Приціл НАТО
+  suffix: ST, приціл, T2, НАТО
   components:
     - type: Tag
       tags:

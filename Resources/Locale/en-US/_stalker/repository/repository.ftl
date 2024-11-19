@@ -1,36 +1,36 @@
-﻿repository-insert-item = Сложить
-repository-eject-item = Вытащить
-repository-more-info = Подробнее
-repository-ui-default-title = Хранилище
-repository-ui-search-label = Поиск:
-repository-ui-search-clear-button = Очистить
+﻿repository-insert-item = Покласти
+repository-eject-item = Витягти
+repository-more-info = Детальніше
+repository-ui-default-title = Схрон
+repository-ui-search-label = Пошук:
+repository-ui-search-clear-button = Очистити
 
 # Categories
-repository-misc-category = Прочее
-repository-user-category = Ваши предметы
+repository-misc-category = Інше
+repository-user-category = Ваші предмети
 repository-all-category = Все
 
 # Items
-repository-item-name-display = Название: { $name }
-repository-item-desc-display = Описание: { $description }
-repository-item-category-display = Категория: { $category }
-repository-item-not-chosen = Предмет не выбран
-repository-weight-inside = Вес предметов в схроне: { $weight }/{ $maxWeight }
-repository-item-weight-display = Вес предмета: { $weight }
-repository-item-sum-weight-display = Вес предметов: { $weight }
+repository-item-name-display = Назва: { $name }
+repository-item-desc-display = Опис: { $description }
+repository-item-category-display = Категорія: { $category }
+repository-item-not-chosen = Предмет не вибраний
+repository-weight-inside = Вага предметів у схроні: { $weight }/{ $maxWeight }
+repository-item-weight-display = Вага предмета: { $weight }
+repository-item-sum-weight-display = Вага предметів: { $weight }
 
 # Special Items
-repository-battery-item-current-charge-display = Текущий заряд: {$charge }
+repository-battery-item-current-charge-display = Поточний заряд: {$charge }
 
-repository-ammo-item-ammo-amount-display = Количество патронов: { $amount }
-repository-ammo-item-ammo-name-display = Название патрона: { $name }
+repository-ammo-item-ammo-amount-display = Кількість патронів: { $amount }
+repository-ammo-item-ammo-name-display = Назва патрона: { $name }
 
-repository-cartridge-item-exhausted-display = Состояние: { $exhausted }
+repository-cartridge-item-exhausted-display = Стан: { $exhausted }
 
-repository-stack-item-stack-amount-display = Количество в стаке: { $stackCount }
+repository-stack-item-stack-amount-display = Кількість у стаку: { $stackCount }
 
-repository-solution-item-volume-display = Объем: { $volume }
+repository-solution-item-volume-display = "Об'єм: { $volume }"
 
 # Slider
-repository-slider-button = Подтвердить
-repository-slider-title = Количество
+repository-slider-button = Підтвердити
+repository-slider-title = Кількість

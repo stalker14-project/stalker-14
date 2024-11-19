@@ -1,4 +1,4 @@
-aaa-project-desc = [Color = Lightblue] The algorithm is active, it is impossible to turn off the algorithm, obey the algorithm. [/Color]
+aaa-project-desc = [Color = Lightblue] Алгоритм активний, вимкнути алгоритм неможливо, підкорися алгоритму. [/Color]
 
-aaa-projectchip-name = [color = red] chip A.A.A. [/color]
-aaa-projectchip-desc = [color = red] the algorithm is not active, the re -inclusion of the algorithm is impossible, do not obey the algorithm. [/color]
+aaa-projectchip-name = [color = red] чіп A.A.A. [/color]
+aaa-projectchip-desc = [color = red] алгоритм не активний, повторне включення алгоритму неможливе, не підкоряйтеся алгоритму. [/color]

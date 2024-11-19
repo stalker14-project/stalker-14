@@ -103,7 +103,7 @@
         enum.ShopUiKey.Key:
           type: ShopBoundUserInterface
     - type: Shop
-      moneyId: Roubles
+      moneyId: Hryvnias
       shopPresetId: Work
 
 - type: shopPreset
@@ -173,6 +173,20 @@
     - type: Sprite
       sprite: _Stalker/Objects/Devices/circular_table.rsi
       state: cto
+    - type: Transform
+      noRot: true
+
+- type: entity
+  parent: BaseStructure
+  id: STBrockenWorkbench
+  name: сломанный токарный стол
+  description: Сломанный токарный стол, покрытый пылью и масляными пятнами, застыл в тишине, как молчаливый свидетель остановленного производства.
+  suffix: ST, Mapping
+  components:
+    - type: InteractionOutline
+    - type: Sprite
+      sprite: _Stalker/Objects/Devices/worktables.rsi
+      state: worktable_broken
     - type: Transform
       noRot: true
 

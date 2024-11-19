@@ -1,4 +1,4 @@
-ent-BulletRemingtonMagnum = пуля (.44 ремингтон магнум)
+ent-BulletRemingtonMagnum = Куля (.44 Remington Magnum)
     .desc = { ent-BaseBullet.desc }
-ent-BulletRemingtonMagnumAP = пуля (.44 бронебойный ремингтон магнум)
+ent-BulletRemingtonMagnumAP = Куля (.44 Броне-бійний Remington Magnum)
     .desc = { ent-BaseBullet.desc }

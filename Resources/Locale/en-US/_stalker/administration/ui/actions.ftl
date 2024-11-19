@@ -1,1 +1,1 @@
-admin-player-actions-clear-stash = Clean the caches
+admin-player-actions-clear-stash = Очистіть кеш

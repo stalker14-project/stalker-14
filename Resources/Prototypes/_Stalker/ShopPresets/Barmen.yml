@@ -1,56 +1,57 @@
 - type: shopPreset
-  id: STNPCBarmenPreset
+  id: STNPCBarmenPreset # 0.5x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 240
-    ZoneArtifactEye: 410
-    ZoneArtifactFlame: 900
+    ZoneArtifactFireball: 150
+    ZoneArtifactEye: 250
+    ZoneArtifactFlame: 500
     # Thermal group - 2
-    ZoneArtifactCristall: 1200
-    ZoneArtifactLithosphere: 1900
+    ZoneArtifactCristall: 625
+    ZoneArtifactLithosphere: 1000
     # Electrical group - 1
-    ZoneArtifactSparkler: 240
-    ZoneArtifactBattery: 520
-    ZoneArtifactFlash: 1000
-    ArtMoon: 1100
-    ZoneArtifactTesla: 2000
-    ZoneArtifactIce: 2200
+    ZoneArtifactSparkler: 150
+    ZoneArtifactBattery: 300
+    ZoneArtifactFlash: 600
+    ArtMoon: 750
+    ZoneArtifactTesla: 1125
+    ZoneArtifactIce: 1250
     # Gravity group - 1
-    ArtMedusa: 240
-    ZoneArtifactFlower: 410
-    ZoneArtifactNightStar: 1200
+    ArtMedusa: 125
+    ZoneArtifactFlower: 250
+    ZoneArtifactNightStar: 625
     # Gravity group - 2
-    ZoneArtifactVyvert: 240
-    ZoneArtifactAmoeba: 410
-    ZoneArtifactGravi: 1200
-    ZoneArtifactGoldfish: 1600
-    ZoneArtifactSpring: 2200
-    ZoneArtifactFocus: 410
-    ZoneArtifactStuntman: 1450
-    ZoneArtifactDistorter: 2400
-    ZoneArtifactSoul: 2200
+    ZoneArtifactVyvert: 150
+    ZoneArtifactAmoeba: 250
+    ZoneArtifactGravi: 750
+    ZoneArtifactGoldfish: 1000
+    ZoneArtifactSpring: 1250
+    ZoneArtifactFocus: 500
+    ZoneArtifactStuntman: 1000
+    ZoneArtifactDistorter: 1500
+    ZoneArtifactSoul: 1250
     # Acidic group - 1
-    ZoneArtifactBlood: 350
-    ZoneArtifactMeat: 600
-    ZoneArtifactKolobok: 900
+    ZoneArtifactBlood: 200
+    ZoneArtifactMeat: 375
+    ZoneArtifactKolobok: 500
     # Acidic group - 2
-    ZoneArtifactPellicle: 500
-    ZoneArtifactBaloon: 1400
+    ZoneArtifactPellicle: 250
+    ZoneArtifactBaloon: 875
+    #############################Части Мутантов
+    FoodMeatSpiderLeg: 25
+    MutantPartBlindDogTail: 45
+    MutantPartZombieHand: 210
+    MutantPartFleshEye: 120
+    MutantPartBoarHoof: 120
+    MutantPartPseudodogTail: 150
+    MutantPartSnorkFoot: 180
+    MutantPartLeshiyRoot: 250
+    MutantPartBloodsuckerTentacles: 300
+    MutantPartPseudogiantHeart: 1250
+    MutantPartOraculeEye: 1500
 
     # Smuggling
-    TradeBox: 2000
-#############################
-    FoodMeatSpiderLeg: 15
-    MutantPartBlindDogTail: 25
-    MutantPartZombieHand: 150
-    MutantPartFleshEye: 25
-    MutantPartBoarHoof: 60
-    MutantPartPseudodogTail: 95
-    MutantPartSnorkFoot: 110
-    MutantPartLeshiyRoot: 190
-    MutantPartBloodsuckerTentacles: 290
-    MutantPartPseudogiantHeart: 400
-    MutantPartOraculeEye: 450
+    TradeBox: 2200
+
   categories:
     - name: Оружие
       priority: 1
@@ -64,16 +65,24 @@
     - name: Магазины
       priority: 2
       items:
-        545Mag30: 300
+        Magazine762x39RPD: 1000
+        Vz61Mag: 100
+        BaseMP5Mag: 245
+        MP40Mag: 200
+        VityazMag: 350
+        BasePPSHMag: 220
+        545Mag30: 350
         556Mag30: 350
         739Mag30: 400
         751Mag30: 400
-        GlockMag24: 300
+        GlockMag24: 350
         GlockMag33: 400
         PP91Mag: 300
+        P90Mag: 439
     - name: Боеприпасы
       priority: 3
       items:
+        7mmBuckshotBox: 100
         6mmBuckshotBox: 250
         8mmBuckshotBox: 1100
         919RIPBox: 250
@@ -98,14 +107,24 @@
         ClothingOuterArmorSevaStalker: 2504
         # mask
         ClothingMaskGP7: 165
+        ClothingMaskGasZarya: 125
+        ClothingMaskXoma: 95
         # helmet
         ClothingHeadHelmetBerill5MMilitary: 1141
         # cape
         ClothingOuterCoatLoyalist: 1754
         ClothingOuterCoatLoyalistLight: 1050
+        # back
+        ClothingBackpackDuffelMedicalStalker: 350 # 7,7 med only
+        ClothingBackpackTacticBeigeStalker: 425  # 6,5
+        ClothingBackpackTacticOliveStalker: 425
+        ClothingBackpackMercStalker: 850 # 6,6
+        # belt
+        ClothingBeltBandolierStalker: 45
     - name: Утилиты
       priority: 5
       items:
+        STCombatKnife: 25
         TrashBag: 30
         BoxZiptie: 50
         BoxSafebox: 50
@@ -167,8 +186,8 @@
         PillDexalinPlusStalker: 30
         radioprotectpill: 250
         psyblock: 550
-        MedkitAI2: 350
-        STOintment: 50
+        MedkitAI2: 100
+        STOintment: 30
         STGauze: 30
         STBrutepack: 50
         Tourniquet: 80

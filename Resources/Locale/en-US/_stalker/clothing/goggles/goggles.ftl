@@ -1,3 +1,3 @@
-ent-ClothingEyesGogglesAnomalist = Goggli anomalist
-    .desc = The brass stylish goggli that protect him from flashes and add charm.
-    .suffix = Stalker, goggli, anomalists
+ent-ClothingEyesGogglesAnomalist = Окуляри Аномаліста
+    .desc = Латунні стильні окуляри, які захищає його від спалахів і додає чарівності.
+    .suffix = Сталкер, goggli, аномаліст

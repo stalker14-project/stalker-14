@@ -1,0 +1,144 @@
+- type: Tag
+  id: Hryvnias
+- type: entity
+  parent: BaseItem
+  id: Hryvnias
+  name: Гривні
+  description: Національна валюта України!
+  suffix: Сталкер
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Credit: 1
+  - type: Stack
+    stackType: Hryvnias
+    count: 1
+    baseLayer: base
+    layerStates:
+    - cash
+    - cash_10
+    - cash_50
+    - cash_100
+    - cash_1000
+    - cash_2000
+    - cash_5000
+  - type: Sprite
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash
+    layers:
+    - state: cash
+      map: ["base"]
+  - type: Item
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    size: Small
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: Tag
+    tags:
+    - Hryvnias
+  - type: RepositoryItem
+    categoryName: Гроші
+
+- type: currency
+  id: Hryvnias
+  displayName: Гривні
+  cash:
+    1: Hryvnias
+  canWithdraw: true
+
+- type: stack
+  id: Hryvnias
+  name: Гривні
+  icon: { sprite: /Textures/_Stalker/Objects/Economy/hryvnias.rsi, state: cash }
+  spawn: Hryvnias
+  itemSize: 1
+  splitAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 10000, 50000, 100000]
+
+- type: entity
+  parent: Hryvnias
+  id: Hryvnias10
+  suffix: Сталкер, 10
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash_10
+  - type: Stack
+    count: 10
+
+
+- type: entity
+  parent: Hryvnias
+  id: Hryvnias50
+  suffix: Сталкер, 50
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash_50
+  - type: Stack
+    count: 50
+
+- type: entity
+  parent: Hryvnias
+  id: Hryvnias100
+  suffix: Сталкер, 100
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash_100
+  - type: Stack
+    count: 100
+
+- type: entity
+  parent: Hryvnias
+  id: Hryvnias500
+  suffix: Сталкер, 500
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash_100
+  - type: Stack
+    count: 500
+
+- type: entity
+  parent: Hryvnias
+  id: Hryvnias1000
+  suffix: Сталкер, 1000
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash_1000
+  - type: Stack
+    count: 1000
+
+- type: entity
+  parent: Hryvnias
+  id: Hryvnias2000
+  suffix: Сталкер, 2000
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash_2000
+  - type: Stack
+    count: 2000
+
+
+- type: entity
+  parent: Hryvnias
+  id: Hryvnias5000
+  suffix: Сталкер, 5000
+  components:
+  - type: Icon
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
+    state: cash_5000
+  - type: Stack
+    count: 5000

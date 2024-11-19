@@ -1,2 +1,2 @@
-ent-ClothingHandsGlovesMitts = Black mittens
-    .desc = Ordinary black gloves without fingers for hard work.
+ent-ClothingHandsGlovesMitts = Чорні рукавиці
+    .desc = Звичайні чорні рукавички без пальців для важкої праці.

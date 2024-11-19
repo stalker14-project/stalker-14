@@ -42,9 +42,11 @@
     noRot: false
   - type: Pullable
   - type: DamageExaminable
-  - type: Currency
+  - type: Currency # stalker-changes-start
     price:
-      Roubles: 1
+      Hryvnias: 1
+  - type: STWeight
+    self: 0.01 # stalker-changes-end
 
 - type: entity
   name: "storage item"
@@ -123,10 +125,10 @@
           name: power-cell-slot-component-slot-name-default
           startingItem: PowerCellHigh
 
-- type: entity
+- type: entity # stalker-changes-start
   parent: BaseItem
   abstract: true
   id: STTrashBaseItem
   components:
   - type: Trash
-    time: 300
+    time: 300 # stalker-changes-end

@@ -62,3 +62,22 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBasePSZ7
+  id: STClothingOuterArmorSeraphimStrash
+  name: комбинезон "Страж"
+  description: комбинезон "Страж", используемый группировкой "Серафимы" для выполнения тактических задач с повышенной защитой от пулевых попаданий.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/OuterClothing/_Sera/strash_seraphim.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/OuterClothing/_Sera/strash_seraphim.rsi
+#bonus
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Radiation: 3
+      coefficients:
+        Radiation: 0.8

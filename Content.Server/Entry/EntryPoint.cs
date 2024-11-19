@@ -115,6 +115,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<DiscordAuthManager>().Initialize(); // Stalker-Changes-Auth
                 IoCManager.Resolve<JoinQueueManager>().Initialize(); // Stalker-Changes - Corvax Queue Adaptation
                 IoCManager.Resolve<SponsorsManager>().Initialize(); // Stalker-Changes-Sponsors
+                IoCManager.Resolve<_Stalker.ServerAdministration.ServerApi>().Initialize(); // Stalker-Changes - Stalker Server API
                 // Stalker-Changes-End
 
                 _voteManager.Initialize();
@@ -185,6 +186,7 @@ namespace Content.Server.Entry
             _playTimeTracking?.Shutdown();
             _dbManager?.Shutdown();
             IoCManager.Resolve<ServerApi>().Shutdown();
+            IoCManager.Resolve<_Stalker.ServerAdministration.ServerApi>().Shutdown(); // Stalker-Changes - Stalker Server API
         }
 
         private static void LoadConfigPresets(IConfigurationManager cfg, IResourceManager res, ISawmill sawmill)

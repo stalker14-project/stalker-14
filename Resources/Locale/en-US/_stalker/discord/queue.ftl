@@ -1,5 +1,5 @@
-﻿queue-title = Queue
-queue-quit = Disconnect
-queue-position = Position
-queue-total = All
-queue-priority-join = Priority entrance
+﻿queue-title = Черга
+queue-quit = Відключитися
+queue-position = Позиція
+queue-total = Всі
+queue-priority-join = Пріоритетний вхід

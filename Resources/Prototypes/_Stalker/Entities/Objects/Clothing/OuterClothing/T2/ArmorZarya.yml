@@ -84,19 +84,27 @@
     baseWalkSpeed: 1.05
     baseSprintSpeed: 1.05
 
+## Seraphims
+
 - type: entity
-  parent: STClothingOuterArmorZaryaBase
-  id: ClothingOuterArmorZaryaSera
-  name: комбинезон «Заря» Серафимов
-  description: Значительно улучшенный и переоснащённый костюм Серафимов.
+  parent: ClothingOuterArmorZaryaHunter
+  id: STClothingOuterArmorRassvetSera
+  name: комбинезон «Рассвет» Серафимов
+  suffix: ST, T2, PVE, Serafim
+  description: комбинезон "Рассвет", используемый группировкой "Серафимы" для выполнения тактических задач с повышенной защитой от агрессивной фауны.
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/_Sera/zarya.rsi
+      sprite: _Stalker/Clothing/OuterClothing/_Sera/rassvet.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/_Sera/zarya.rsi
+      sprite: _Stalker/Clothing/OuterClothing/_Sera/rassvet.rsi
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadCapoSera
       slot: head
+#bonus
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: -0.4
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -106,9 +114,9 @@
   noSpawn: true
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/hats/_Sera/zarya_helm.rsi
+      sprite: _Stalker/Clothing/Head/Sera_/rassvet_helm.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/hats/_Sera/zarya_helm.rsi
+      sprite: _Stalker/Clothing/Head/Sera_/rassvet_helm.rsi
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -124,7 +132,6 @@
     armorLevels:
       nonPvPPhysical: 1
       piercing: -1
-
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -293,29 +300,6 @@
     sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
-
-- type: entity
-  parent: STClothingOuterArmorZaryaBase
-  id: STClothingOuterArmorSeraphim
-  name: комбинезон "Заря" Серафима
-  description: комбинезон "Заря", модифицированная под мотивы группировки "Серафим".
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_seraphim.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_seraphim.rsi
-
-- type: entity
-  parent: STClothingHeadHatBase
-  id: ClothingHeadSeraphimCap
-  name: капюшон "Зари" Серафима
-  description: Зёленый капюшон от аналога "Зари", представленного Серафимом.
-  noSpawn: true
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/zarya_seraphim_cap.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/zarya_seraphim_cap.rsi
 
 #СКИНЫ
 

@@ -2,8 +2,8 @@
   abstract: true
   parent: STBaseWeaponModule
   id: STBaseModuleSilencerRifles
-  name: makeshift rifle silencer
-  suffix: ST, silencer, T1, RU
+  name: саморобний глушник для гвинтівки
+  suffix: ST, глушник, T1
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/Modules/silencer.rsi
@@ -13,30 +13,30 @@
       scale: 0.5, 0.5
 
 #
-# Самопальные T1
+# Самопальні T1
 #
 - type: entity
   parent: STBaseModuleSilencerRifles
-  id: STModuleSilencerRiflesT1Ru
-  name: makeshift rifle silencer RU
-  suffix: ST, silencer, T1, RU
+  id: STModuleSilencerRiflesT1
+  name: саморобний глушник для гвинтівки
+  suffix: ST, глушник, T1
   components:
     - type: Tag
       tags:
-        - STWeaponModuleRifleSilencerRu
+        - STWeaponModuleRifleSilencer
     - type: STWeaponModule
       effect:
         soundGunshotVolumeAddition: -5
     - type: Sprite
-      state: silencer_T1_ru
+      state: silencer_T1
     - type: Icon
-      state: silencer_T1_ru
+      state: silencer_T1
 
 - type: entity
   parent: STBaseModuleSilencerRifles
   id: STModuleSilencerRiflesT1Nato
-  name: makeshift rifle silencer NATO
-  suffix: ST, silencer, T1, NATO
+  name: саморобний глушник гвинтівки НАТО
+  suffix: ST, глушник, T1, НАТО
   components:
     - type: Tag
       tags:
@@ -55,26 +55,26 @@
 
 - type: entity
   parent: STBaseModuleSilencerRifles
-  id: STModuleSilencerRiflesT2Ru
-  name: rifle silencer RU
-  suffix: ST, silencer, T2, RU
+  id: STModuleSilencerRiflesT2
+  name: глушник гвинтівки
+  suffix: ST, глушник, T2
   components:
     - type: Tag
       tags:
-        - STWeaponModuleRifleSilencerRu
+        - STWeaponModuleRifleSilencer
     - type: STWeaponModule
       effect:
         soundGunshotVolumeAddition: -10
     - type: Sprite
-      state: silencer_T2_ru
+      state: silencer_T2
     - type: Icon
-      state: silencer_T2_ru
+      state: silencer_T2
 
 - type: entity
   parent: STBaseModuleSilencerRifles
   id: STModuleSilencerRiflesT2Nato
-  name: rifle silencer NATO
-  suffix: ST, silencer, T2, NATO
+  name: глушник гвинтівки НАТО
+  suffix: ST, глушник, T2, НАТО
   components:
     - type: Tag
       tags:

@@ -89,22 +89,22 @@
 ####################################Серафимы
 - type: entity
   parent: MapTeleportBase
-  id: Cordon-Sera
-  name: Cordon-Sera (spawn)
+  id: Base-Sera
+  name: Base-Sera (spawn)
   components:
     - type: NewMapTeleport
       allowAll: false
-      portalName: Cordon-Sera
+      portalName: Base-Sera
     - type: AccessReader
       access: [["Seraphims"]]
 - type: entity
   parent: MapTeleportBaseUncollide
-  id: Cordon-SeraUncollide
-  name: Cordon-SeraUncollide (spawn)
+  id: Base-SeraUncollide
+  name: Base-SeraUncollide (spawn)
   components:
     - type: NewMapTeleport
       allowAll: false
-      portalName: Cordon-Sera
+      portalName: Base-Sera
 ####################################Ренегаты
 - type: entity
   parent: MapTeleportBase

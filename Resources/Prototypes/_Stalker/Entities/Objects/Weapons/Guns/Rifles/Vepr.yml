@@ -47,7 +47,7 @@
           priority: 2
           whitelist:
             tags:
-              - STWeaponModuleRifleScopeRu
+              - STWeaponModuleRifleScope
         gun_chamber:
           name: Chamber
           startingItem:
@@ -55,3 +55,17 @@
           whitelist:
             tags:
               - Cartridge754
+
+- type: entity
+  name: Тактический ВПО-129 Серафимов
+  suffix: ST, Скин
+  parent: STWeaponRifleStalkerVepr
+  id: STWeaponRifleStalkerVeprSerafim
+  description: Тактический ВПО в раскраске Серафимов.
+  components:
+  - type: Clothing
+    sprite: _Stalker\Objects\Weapons\Guns\Rifles\_Skins\vepr_seraphim.rsi
+  - type: Item
+    sprite: _Stalker\Objects\Weapons\Guns\Rifles\_Skins\vepr_seraphim.rsi
+  - type: Sprite
+    sprite: _Stalker\Objects\Weapons\Guns\Rifles\_Skins\vepr_seraphim.rsi

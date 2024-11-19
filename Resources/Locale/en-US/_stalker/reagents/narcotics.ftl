@@ -1,2 +1,2 @@
 ent-STTaurine = Таурин
-    .desc = это таурин
+    .desc = це таурин

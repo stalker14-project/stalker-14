@@ -1,2 +1,2 @@
-ent-BaseHummer = боевой молоток
+ent-BaseHummer = Бойовий молоток
     .desc = Бонк!

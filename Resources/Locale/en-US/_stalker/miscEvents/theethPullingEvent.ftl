@@ -1,2 +1,2 @@
-teeth-pulling-try = Your teeth are trying to tear out {$ user }!
-user-teeth-pulling-try = You are trying to tear out your teeth {$ target }!
+teeth-pulling-try = Ваші зуби намагаються вирвати { $user }!
+user-teeth-pulling-try = Ви намагаєтесь вирвати зуби { $target }!

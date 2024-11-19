@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingBackpackDuffel
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelGreenStalker
   name: green duffel bag
   description: An extremely inconvenient and small duffel bag for pennies.
@@ -13,15 +13,9 @@
         - 0,0,4,4
       quickInsert: true
       areaInsert: true
-    - type: RepositoryItem
-      categoryName: Рюкзаки
-    - type: Dumpable
-    - type: Tag
-      tags:
-      - Folder
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelBlackStalker
   name: black duffel bag
   description: An extremely inconvenient and small duffel bag for pennies.
@@ -35,17 +29,11 @@
         - 0,0,4,4
       quickInsert: true
       areaInsert: true
-    - type: RepositoryItem
-      categoryName: Рюкзаки
-    - type: Dumpable
-    - type: Tag
-      tags:
-      - Folder
 
 # Армейские
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelMilitaryBlue
   name: Blue Army Backpack
   description: Excellent backpack with pouches for tactical needs.
@@ -64,7 +52,7 @@
     - 8,0,8,1
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelMilitaryOlive
   name: Dark Green Army Backpack
   description: Excellent backpack with additional compartments.
@@ -78,7 +66,7 @@
     - 0,0,6,6
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelBlackMilitaryTacticStalker
   name: black army backpack
   description: Designed for use in the field, they are multifunctional and suitable for a wide variety of situations.
@@ -92,7 +80,7 @@
     - 0,0,6,6
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelHikingVSRF
   name: hiking backpack
   description: A roomy backpack, usually taken on hikes, but just right in the zone!
@@ -116,7 +104,7 @@
       sprite: _Stalker/Objects/Clothing/backpacks/Hiking/common.rsi
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelBlackTacticStalker
   name: black army tactical backpack
   description: Designed for use in the field, it is multifunctional and suitable for a variety of situations.
@@ -129,7 +117,7 @@
     - 0,0,7,6
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelOliveTacticStalker
   name: olive army tactical backpack
   description: Designed for use in the field, they are multifunctional and suitable for a wide variety of situations.
@@ -143,7 +131,7 @@
 
 # Обычные
 - type: entity
-  parent: ClothingBackpackMerc
+  parent: STClothingBackBase
   id: ClothingBackpackMercStalker
   name: hiking backpack
   description: A roomy backpack, usually taken on hikes, but just right in the zone!
@@ -154,15 +142,11 @@
     - 0,0,6,6
     quickInsert: true
     areaInsert: true
-  - type: RepositoryItem
-    categoryName: Рюкзаки
-  - type: Dumpable
-  - type: Tag
-    tags:
-    - Folder
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/merc.rsi
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelCommonStalker
   name: army backpack
   description: A roomy backpack, usually taken on hikes, but just right in the zone!
@@ -175,7 +159,7 @@
     - 0,0,6,6
 
 - type: entity
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   id: ClothingBackpackDuffelRareStalker
   name: capacious backpack
   description: A roomy backpack, usually taken on hikes, but just right in the zone!
@@ -191,19 +175,7 @@
 # Тактические Прочие
 
 - type: entity
-  id: ClothingBackpackTacticBase
-  noSpawn: true
-  # abstract: true
-  parent: ClothingBackpackDuffelGreenStalker
-  suffix: ST
-  components:
-  - type: Craftable
-  - type: Storage
-    grid:
-    - 0,0,6,5
-
-- type: entity
-  parent: ClothingBackpackTacticBase
+  parent: STClothingBackTacticBase
   id: ClothingBackpackTacticBeigeStalker
   name: beige tactical backpack
   description: It is never colorful and bright, because one of the tasks of tactical backpacks is to camouflage themselves against the environment, be it mountains, forests or deserts.
@@ -212,7 +184,7 @@
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/beige.rsi
 
 - type: entity
-  parent: ClothingBackpackTacticBase
+  parent: STClothingBackTacticBase
   id: ClothingBackpackTacticBlackStalker
   name: black tactical backpack
   description: It is never colorful and bright, because one of the tasks of tactical backpacks is to camouflage themselves against the environment, be it mountains, forests or deserts.
@@ -221,7 +193,7 @@
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black.rsi
 
 - type: entity
-  parent: ClothingBackpackTacticBase
+  parent: STClothingBackTacticBase
   id: ClothingBackpackTacticBlackRadStalker
   name: black and red tactical backpack
   description: It is never colorful and bright, because one of the tasks of tactical backpacks is to camouflage themselves against the environment, be it mountains, forests or deserts.
@@ -230,7 +202,7 @@
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black-red.rsi
 
 - type: entity
-  parent: ClothingBackpackTacticBase
+  parent: STClothingBackTacticBase
   id: ClothingBackpackTacticGreenStalker
   name: green tactical backpack
   description: It is never colorful and bright, because one of the tasks of tactical backpacks is to camouflage themselves against the environment, be it mountains, forests or deserts.
@@ -239,7 +211,7 @@
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/green.rsi
 
 - type: entity
-  parent: ClothingBackpackTacticBase
+  parent: STClothingBackTacticBase
   id: ClothingBackpackTacticOliveStalker
   name: olive tactical backpack
   description: It is never colorful and bright, because one of the tasks of tactical backpacks is to camouflage themselves against the environment, be it mountains, forests or deserts.
@@ -248,7 +220,7 @@
     sprite: _Stalker/Objects/Clothing/backpacks/Tactical/olive.rsi
 
 - type: entity
-  parent: ClothingBackpackTacticBase
+  parent: STClothingBackTacticBase
   id: STClothingBackpackDuffelHikingNeutral
   name: hiking backpack
   description: A roomy backpack, usually taken on hikes, but just right in the zone!

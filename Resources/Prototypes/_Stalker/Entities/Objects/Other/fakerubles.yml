@@ -1,17 +1,17 @@
 - type: Tag
-  id: RoublesFake
+  id: HryvniasFake
 - type: entity
   parent: BaseItem
-  id: RoublesFake
-  name: rubles
-  description: National currency of the Russian Federation. Interesting fact - 1 ruble equals 100 kopecks.
-  suffix: Stalker, FAKE
+  id: HryvniasFake
+  name: Гривні
+  description: Національна валюта України.
+  suffix: Сталкер, FAKE
   components:
   - type: PhysicalComposition
     materialComposition:
       Credit: 1
   - type: Stack
-    stackType: RoublesFake
+    stackType: HryvniasFake
     count: 1
     baseLayer: base
     layerStates:
@@ -19,7 +19,7 @@
     - cash_20
     - cash_100
   - type: Sprite
-    sprite: _Stalker/Objects/Economy/rubles.rsi
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
     state: cash
     layers:
     - state: cash
@@ -38,37 +38,38 @@
   - type: Appearance
   - type: Tag
     tags:
-    - RoublesFake
+    - HryvniasFake
 - type: currency
-  id: RoublesFake
-  displayName: рубли
+  id: HryvniasFake
+  displayName: гривні
   cash:
-    1: RoublesFake
+    1: HryvniasFake
   canWithdraw: true
+
 - type: stack
-  id: RoublesFake
-  name: rubles
-  icon: { sprite: "/Textures/_Stalker/Objects/Economy/rubles.rsi", state: cash }
-  spawn: RoublesFake
+  id: HryvniasFake
+  name: Гривні
+  icon: { sprite: "/Textures/_Stalker/Objects/Economy/hryvnias.rsi", state: cash }
+  spawn: HryvniasFake
 
 - type: entity
-  parent: RoublesFake
-  id: RoublesFake20
-  suffix: Stalker, 100, Fake
+  parent: HryvniasFake
+  id: HryvniasFake20
+  suffix: Сталкер, 100, Fake
   components:
   - type: Icon
-    sprite: _Stalker/Objects/Economy/rubles.rsi
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
     state: cash_100
   - type: Stack
     count: 100
 
 - type: entity
-  parent: RoublesFake
-  id: RoublesFake1000
-  suffix: Stalker, 1000, Fake
+  parent: HryvniasFake
+  id: HryvniasFake1000
+  suffix: Сталкер, 1000, Fake
   components:
   - type: Icon
-    sprite: _Stalker/Objects/Economy/rubles.rsi
+    sprite: _Stalker/Objects/Economy/hryvnias.rsi
     state: cash_1000
   - type: Stack
     count: 1000

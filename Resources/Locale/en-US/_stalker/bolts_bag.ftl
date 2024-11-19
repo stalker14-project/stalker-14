@@ -1,23 +1,23 @@
-ent-STBoltBag = Bolt bag
-    .desc = Allows you to wear your 3 tons of bolts to determine anomalies in the area.The best friend Stalker, who will always derive from a difficult situation.
-    .suffix = Stalker
+ent-STBoltBag = Мішок з болтами
+    .desc = Дозволяє носити свої 3 тонни болтів для визначення аномалій на місцевості. Найкращий друг Сталкер, який завжди знайде вихід зі складної ситуації.
+    .suffix = Сталкер
 ent-STBoltBagFilled = { ent-STBoltBag }
     .desc = { ent-STBoltBag.desc }
-    .suffix = Stalker, filled
+    .suffix = Сталкер, наповнений
 ent-STBoltBagOliveGray = { ent-STBoltBag }
     .desc = { ent-STBoltBag.desc }
 ent-STBoltBagOliveGrayFilled = { ent-STBoltBagOliveGray }
     .desc = { ent-STBoltBagOliveGray.desc }
-    .suffix = Stalker, filled
-#золотые болты, у сидора за 5к продаются
-ent-STBoltBagGolden = Bolt bag
-    .desc = Allows you to wear your 3 tons of gold bolts to determine anomalies in the zone.The best friend of the rich Stalker, who will always derive from a difficult situation.
-    .suffix = Stalker, filled, gold
+    .suffix = Сталкер, наповнений
+#золоті болти, у сидора за 5к продаються
+ent-STBoltBagGolden = Мішок з болтами
+    .desc = Дозволяє носити свої 3 тонни золотих болтів для визначення аномалій в зоні.кращий друг багатого сталкера, який завжди знайде вихід зі складної ситуації.
+    .suffix = Сталкер, наповнений, золото
 ent-STBoltBagFilledGolden = { ent-STBoltBag }
-    .desc = Allows you to wear your 3 tons of gold bolts to determine anomalies in the zone.The best friend of the rich Stalker, who will always derive from a difficult situation.
-    .suffix = Stalker, filled, gold
+    .desc = Дозволяє носити свої 3 тонни золотих болтів для визначення аномалій в зоні.кращий друг багатого сталкера, який завжди знайде вихід зі складної ситуації.
+    .suffix = Сталкер, наповнений, золото
 ent-STBoltBagOliveGrayGolden = { ent-STBoltBag }
     .desc = { ent-STBoltBagFilledGolden.desc }
 ent-STBoltBagOliveGrayFilledGolden = { ent-STBoltBagOliveGray }
-    .desc = Allows you to wear your 3 tons of gold bolts to determine anomalies in the zone.The best friend of the rich Stalker, who will always derive from a difficult situation.
-    .suffix = Stalker, filled, gold
+    .desc = Дозволяє носити свої 3 тонни золотих болтів для визначення аномалій в зоні.кращий друг багатого сталкера, який завжди знайде вихід зі складної ситуації.
+    .suffix = Сталкер, наповнений, золото
