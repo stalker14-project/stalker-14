@@ -10,9 +10,9 @@ faq-stalker =
 
 
 
-                                                 Руководство
-                       по выживанию в условиях современной
-                            Чернобыльской аномальной Зоны
+                                           Guide
+                       to Survival in the Modern
+                       Chernobyl Anomalous Zone
 
 
 

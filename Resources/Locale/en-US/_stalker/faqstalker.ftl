@@ -10,9 +10,9 @@ faq-stalker =
 
 
 
-                                                 Посібник
-                                    з виживання в умовах сучасної
-                                    Чорнобильської аномальної Зони
+                                                    Guide
+                                to Survival in the Modern
+                                Chernobyl Anomalous Zone
 
 
 
@@ -22,95 +22,79 @@ faq-stalker =
 
 
         ---------------------------------------------------------------------------
-                                                       Глава 1
-                                                ВСТУП
 
-        Шановні читачі,
+         Dear Readers,
 
-          Сталкерство - це не професія, це спосіб життя. Це світ, де кожен крок може бути вирішальним, а кожне рішення - питанням життя і смерті. У похмурих просторах Зони можна знайти все: друзів і ворогів, гроші й злидні, таємниці й небезпеки.
+           Stalking is not just a profession; it's a way of life. It’s a world where every step could be decisive, and every decision a matter of life and death. Within the grim expanses of the Zone, you can find everything: friends and foes, wealth and poverty, mysteries and dangers.
 
-          Ця книга - це не просто довідник або керівництво, це звід правил і настанов, які допоможуть вам вижити в цьому небезпечному світі. Тут ви знайдете не тільки поради з виживання, а й розповіді про те, що на вас чекає в найвіддаленіших куточках Зони, про те, які таємниці вона зберігає, і які випробування доведеться пройти.
+           This book is not just a manual or a guide; it’s a collection of rules and advice that will help you survive in this perilous world. Here, you will find not only survival tips but also stories of what awaits you in the farthest corners of the Zone, the secrets it holds, and the trials you’ll have to endure.
 
-        Сила в знанні, сила в зброї, сила в тобі, Сталкер!
+         Strength lies in knowledge, strength lies in weapons, strength lies within you, Stalker!
 
-        З повагою, Микола Хурменко та офіс IC News
-        ---------------------------------------------------------------------------
-                                                   Глава 2
-                                               Схрон і Чистилище
-          Чистилище - тут завжди починається ваш шлях. У вас два шляхи: піти в село або в передбанник. Щоб потрапити в село, потрібно зайти в правий перехід (з нашивкою сталкера) Проходьте в нього і ви в селі.
-          Знизу буде перехід у передбанник, ліворуч буде перехід у "магазин", там буде схрон, праворуч є перехід до "лікарні", з лікарні потрібно вийти і йти вгору, поки не дійдете до пішохідного переходу (той, що з двома смужками), далі ви маєте загорнути праворуч і йти вгору: там зліва буде магазин, а праворуч - перехід до схрону.
-          Залишився останній перехід, той, що посередині і називається "вокзал". Там уже потрібно вийти з вокзалу і бігти праворуч дорогою. Потім потрібно знайти лікарню і йти від неї вгору до першого пішохідного переходу. Потім уже повернути праворуч і йти вгору.
+          Sincerely, Nikolai Khurmenko and
+          the IC News Office
 
-          Отже, ви прибули в місто Чорнобиль-4. І тут виникає питання: "Що ж тепер мені робити?"
-          Для початку, я пропоную Вам ознайомитися з Вашим місцем проживання - Схроном.
-          У схроні є все, що потрібно для життя. Ванна кімната, спальня і найважливіше - синій автомат.
-          Він - єдиний, хто збереже ваші речі в цілості й схоронності. Але з невеликим застереженням. Просто так у нього речі не пхають. На автоматі є кнопка "Е", яку треба натиснути, а потім уже складати речі.
-
-          У ванній є раковина, але вона порожня (спасибі меру). І найважливіший винахід людства - унітаз. Ну, а в спальні, ви зможете гарненько відпочити.
-        ---------------------------------------------------------------------------
-                                                  Глава 3
-                                             Чорнобиль-4
-
-          Чорнобиль-4 - це місто, що примикає до ЧАЗ. Тут живе мирне населення, військові та, зокрема, сталкери.
-          Місто не велике і Ви можете обійти його буквально за 3-4 хвилини. Раджу приділити годинку або дві на ознайомлення з містом. І дам вам дуже корисну пораду. Не світите своєю нашивкою в місті, а то у правоохоронних органів... буде до вас кілька запитань.
-          І якщо у вас ще залишаться питання де, що знаходиться, то пропоную Вам у КПК встановити месенджер Discord. Там, у чаті для не особливо важливих повідомлень (оффтоп), введіть і надішліть це посилання:
-        https://discord.com/channels/1148992175347089468/1158795432831504537/1234967195650363533
-        Перейшовши по ній, ви знайдете карту міста.
 
         ---------------------------------------------------------------------------
-                                                  Глава 4
-                                               Заробіток
+                                             Chapter 2
+                                    Stash and Purgatory
 
-          Після прибуття в місто, у Вас, найімовірніше, залишиться близько 2 тисяч гривень. Тут є кілька шляхів як заробити.
-          Для початку, ви можете працювати вантажником, тягаючи ящики від вокзалу до ринку. Або, наприклад, збирати пляшки і продавати їх бомжу Петрусі. Але здається мені, ви приїхали в Зону не для того, щоб ящики тягати!
+          Purgatory is where your journey always begins. You have two options: head to the village or the Pre-Zone. To reach the village, enter the right passage (marked with the Stalker patch). Walk through, and you'll find yourself in the village.
+          Below, there's a passage to the Pre-Zone. To the left is a passage to the "shop," which contains the stash. On the right, there's a passage to the "hospital." Exit the hospital and head up until you reach the crosswalk (the one with two stripes). Then, turn right and continue upward. You'll find the shop on your left and the stash passage on your right.
+          The last passage, located in the middle, is called the "station." Once there, exit the station and follow the road to the right. Afterward, find the hospital and head upward to the first crosswalk. From there, turn right and continue upward.
 
-          А тепер перейдемо до того, як заробити ходячи в Зону. Про те, куди ходити і з чим ходити, буде написано в наступному розділі.
-          У Зоні є безліч способів заробити, але кожен з них пов'язаний з певними ризиками і викликами. Розберемо кілька з них:
 
-        1. Сталкерські вилазки: Одним з основних способів заробітку в Зоні є походи в найнебезпечніші її куточки з метою збору артефактів або виконання завдань замовників. За успішне виконання місій можна отримати щедрі винагороди.
+          Now you've arrived in the city of Chernobyl-4. And the question arises: "What should I do next?"
+          First, I suggest familiarizing yourself with your residence—the Stash.
+          The stash has everything you need for living: a bathroom, a bedroom, and most importantly—a blue vending machine.
+          It’s the only thing that will keep your belongings safe and sound. But there’s a small catch: you can’t just shove things into it. The machine has a button marked "E." Press it, and then you can store your items.
 
-        2. Торгівля: Сталкери можуть торгувати знайденими артефактами, а також зброєю, амуніцією та іншими цінними предметами. Найкраще продавати трофеї мутантів і артефакти вченим із НДІ. Тільки не забувайте, що військові можуть вас обшукувати. Будьте обережні!
-
-        3. Контрабанда: Деякі сталкери займаються контрабандою, перевозячи заборонені або рідкісні предмети в Зоні. Це ризикований, але прибутковий бізнес.
-        Ви можете купити контрабанду у Скупника і продати її Сидоровичу в Селі Новачків.
-
-        4. Найманство: Багато фракцій та організацій у Зоні наймають сталкерів для виконання різних завдань - від охорони до усунення конкурентів. Це може бути надійним джерелом доходу, але також вимагає виконання доручень, часто пов'язаних із небезпекою.
-        Існують угруповання, які займаються таким видом діяльності (див. дод. ).
-
-        5. Ремонт і поліпшення обладнання: Майстри-ремонтники можуть заробляти, відновлюючи і покращуючи зброю, броню та інше спорядження для інших сталкерів.
-        ---------------------------------------------------------------------------
-                                                  глава5
-                                                    Зона
-
-         Зона - це місце, яке вабить до себе авантюристів з усього світу вже кілька десятиліть! Коли люди сюди їдуть, вони нечасто замислюються про небезпеки, які тут зустрінуть. Багато людей полягло на її пустках від аномалій і місцевої фауни. А всі чому? Тому, що ходили в Зону не замислюючись про спорядження. Ми ж хочемо це виправити.
-          Ось кілька порад, щоб не померти в Зоні:
-
-        1. За можливості треба ходити групою. З одним, двома сліпими псами Ви може й розберетеся, але якщо їх там буде 3 чи 4? Поки ви не набралися досвіду, ви маєте ходити групою, щоб вас могли підстрахувати.
-
-        2. У вас завжди мають бути болти! Аномалія може бути де завгодно. Вони видають звук, але він дає 100% гарантію виявлення аномалії.
-
-        3. Дозиметр радіації має бути в кишені. Бувають місця, де радіація перевищує 4 Зіверта! Без дозиметра, ви можете і не помітити, як потрапили в радіаційну пляму.
-
-        4. На мутантів найкраще підійде дробовик і повний патронташ картечі. Але є мутанти страшніші, і щоб вбити їх, треба буде мати автомат з хорошими патронами. Вони мешкають на півночі Зони, тож на кордоні або болотах вам вони не загрожують.
-
-        5. У вас має бути ніж! Чим ви будете відбиватися від кущів або зрізати трофеї мутантів? Тільки ножем!
-
-        6. Медикаменти. Медикаменти мають бути завжди.
-        Бинт, 2 набори від ударів, таблетка дексаліну. Трохи дорожче коштуватиме аптечка прешої допомоги та армійські аптечки.
-
-        7. Вы не должны идти в Зону как попало. Для начала хорошо бы иметь костюм Заря и СШ 68. Если идете за артефактами, то ССП Эколог или Сева, обязательно с противогазом. И не забывайте про детектор, а то как вы эти артефакты ловить собрались?
-        Ну, а если вы идете на перестрелку, то тут без бронежилета не обойтись и шлема не обойтись. И патроны в таком случае лучше брать т2-т3.
+         The bathroom includes a sink, although it’s empty (thanks, Mayor). And, of course, humanity’s greatest invention—the toilet. Meanwhile, in the bedroom, you can get some much-needed rest.
 
         ---------------------------------------------------------------------------
-                                              Додаток
-        Фракції:
-          Одиночки
-            Аномалісти
-              Ренегати
-                Чисте Небо
-                  Бандити
-                    Свобода
-                      Обов'язок
-                        Найманці
-                          Уряд
-                             Гріх
+                                        Chapter 3
+                                     Chernobyl-4
+
+         Chernobyl-4 is a city adjacent to the Chernobyl Anomalous Zone. It is home to civilians, military personnel, and stalkers.
+         The city is small, and you can explore it in about 3-4 minutes. I recommend spending an hour or two familiarizing yourself with the city. Here's a valuable tip: don’t flaunt your faction patch in the city—law enforcement will definitely have a few questions for you.
+
+        ---------------------------------------------------------------------------
+                                        Chapter 4
+                                        Earnings
+
+         After arriving in the city, you’ll likely have around 2,000 rubles left. There are several ways to earn money.
+         First, you can work as a loader, carrying crates from the station to the market. Or you could collect bottles and sell them to the bum Petrukha. But I’m guessing you didn’t come to the Zone just to carry crates!
+
+            Now, let’s discuss how to earn money by venturing into the Zone. The next chapter will cover where to go and what to bring.
+            There are many ways to earn in the Zone, but each comes with its risks and challenges. Let’s explore a few of them:
+
+        1. Stalker Expeditions: One of the main ways to earn in the Zone is by venturing into its most dangerous corners to collect artifacts or complete client missions. Successful missions can yield generous rewards.
+
+        2. Trading: Stalkers can trade found artifacts, as well as weapons, ammunition, and other valuable items. The best buyers are scientists from the Research Institute, especially for mutant trophies and artifacts. But beware—the military may search you. Stay cautious!
+
+        3. Smuggling: Some stalkers engage in smuggling, transporting forbidden or rare items within the Zone. It’s risky but profitable. You can buy contraband from the Trader and sell it to Sidorovich in the Rookie Village.
+
+        4.Mercenary Work: Various factions and organizations hire stalkers for tasks such as guarding or eliminating rivals. This can be a reliable source of income but often involves dangerous assignments. (See appendix for more on these factions.)
+
+        5.Equipment Repair and Upgrades: Repair masters can earn money by restoring and upgrading weapons, armor, and other gear for fellow stalkers.
+        ---------------------------------------------------------------------------
+                                          Chapter 5
+                                          The Zone
+
+         The Zone has attracted adventurers from around the world for decades! However, many people arrive without fully considering the dangers they’ll face. Countless lives have been lost to anomalies and local wildlife. Why? Because they ventured into the Zone without proper equipment. We aim to fix that.
+
+          Here are some tips to avoid dying in the Zone:
+
+        1. Travel in Groups: You might handle one or two blind dogs alone, but what if there are three or four? Until you gain experience, always travel in groups for backup.
+
+        2. Carry Bolts: Anomalies can be anywhere. Bolts make a sound when thrown, helping you detect anomalies with near certainty.
+
+        3. Radiation Dosimeter: Keep a dosimeter in your pocket. Some areas have radiation levels exceeding 4 Sieverts! Without a dosimeter, you might not even realize you’re in a radiation zone.
+
+        4. Shotguns for Mutants: A shotgun with buckshot works best against mutants. However, for deadlier creatures, you’ll need an automatic rifle with high-grade ammo. These monsters lurk in the northern Zone, so you’re safe from them near the Cordon or swamps.
+
+        5. Carry a Knife: How else will you cut through bushes or collect mutant trophies?
+
+        6. Medical Supplies: Always have medical supplies. A bandage, two bruise kits, and a Dexalin tablet are essentials. Pricier options include AI-2 kits and military medkits.
+
+        7. Proper Gear: Don’t enter the Zone unprepared. Start with a Zarya suit and a SSH-68 helmet. If you’re hunting artifacts, wear an SSP Ecologist or SEVA suit, along with a gas mask. Don’t forget your artifact detector! For firefights, you’ll need a bulletproof vest and a helmet. Bring Tier 2 or Tier 3 ammo for those situations.
