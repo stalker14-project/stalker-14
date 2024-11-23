@@ -1,3 +1,3 @@
-diona-gib-action-use = {$name} splits apart in an instant!
+diona-gib-action-use = {$name} миттєво розпадається на частини!
 
-diona-reform-attempt = {$name} attempts to reform!
+diona-reform-attempt = {$name} намагається реформуватися!

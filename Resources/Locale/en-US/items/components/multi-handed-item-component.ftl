@@ -1,4 +1,4 @@
-multi-handed-item-pick-up-fail = {$number -> 
-    [one] You need one more free hand to pick up { THE($item) }.
-    *[other] You need { $number } more free hands to pick up { THE($item) }.
+multi-handed-item-pick-up-fail = {$number ->
+    [one] Вам потрібна ще одна вільна рука, щоб взяти { THE($item) }.
+    *[other] Вам потрібно { $number} більше вільних рук, щоб взяти { THE($item) }.
 }

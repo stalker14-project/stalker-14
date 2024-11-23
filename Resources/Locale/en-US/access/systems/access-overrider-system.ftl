@@ -1,9 +1,9 @@
-access-overrider-window-privileged-id = Privileged ID:
-access-overrider-window-eject-button = Eject
-access-overrider-window-insert-button = Insert
-access-overrider-window-target-label = Connected device:
-access-overrider-window-no-target = No connected device
-access-overrider-window-missing-privileges = Access to this device cannot be modified. The inserted ID is missing the following privileges:
-access-overrider-cannot-modify-access = You do not have sufficient privileges to modify this device!
-access-overrider-out-of-range = The connected device is too far away
+access-overrider-window-privileged-id = Привілейоване Айді:
+access-overrider-window-eject-button = Вийняти
+access-overrider-window-insert-button = Вставити
+access-overrider-window-target-label = Підключений пристрій:
+access-overrider-window-no-target = Немає підключеного пристрою
+access-overrider-window-missing-privileges = Доступ до цього пристрою не можна змінити. Вставленому Айді не вистачає таких привілеїв:
+access-overrider-cannot-modify-access = Ви не маєте достатніх привілеїв для модифікації цього пристрою!
+access-overrider-out-of-range = Підключений пристрій знаходиться занадто далеко
 

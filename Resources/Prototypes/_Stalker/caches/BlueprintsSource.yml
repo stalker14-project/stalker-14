@@ -1,10 +1,10 @@
-﻿#Источники чертежей
+﻿#ДЖЕРЕЛОи чертежей
 - type: entity
   parent: BaseStructureStalkerDynamic
   id: CraftBlueprintsSourceT4T5
-  suffix: Stalker, ИСТОЧНИК, Т4+
-  name: case with papers
-  description: There might be something very important here
+  suffix: Сталкер, ДЖЕРЕЛО, Т4+
+  name: кейс с паперами
+  description: Можливо тут щось дуже важливе
   components:
     - type: TimedDespawn
       lifetime: 14400
@@ -116,10 +116,10 @@
 
 
 - type: entity
-  name: Blueprint Case Trigger (10%)
+  name: Трігер кейсу з кресленнями (10%)
   id: STCraftBlueprintsSourceT4T5Trigger
   parent: MarkerBase
-  suffix: ST | КД 4 часа
+  suffix: ST | КД 4 години
   components:
     - type: ApproachTrigger
       range: 10

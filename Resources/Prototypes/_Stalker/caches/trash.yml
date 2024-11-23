@@ -1,8 +1,8 @@
 ﻿- type: entity
   parent: BaseStructureStalkerDynamic
   id: BaseTrashCache
-  suffix: Stalker, ТАЙНИК
-  name: garbage
+  suffix: Сталкер, ТАЙНИК
+  name: сміття
   components:
     - type: TimedDespawn
       lifetime: 14400
@@ -166,8 +166,8 @@
 
 - type: entity
   id: RandomCacheSpawnerTrash
-  name: stash spawner (trash, 15% chance)
-  suffix: Stalker
+  name: спавнер тайнику (сміття, 15% шанс)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -189,7 +189,7 @@
   parent: BaseTrashCache
   id: trash2Cache
   noSpawn: false
-  name: garbage
+  name: сміття
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml
@@ -203,7 +203,7 @@
   parent: BaseTrashCache
   id: trash3Cache
   noSpawn: false
-  name: garbage
+  name: сміття
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml
@@ -217,7 +217,7 @@
   parent: BaseTrashCache
   id: trash4Cache
   noSpawn: false
-  name: garbage
+  name: сміття
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml
@@ -231,7 +231,7 @@
   parent: BaseTrashCache
   id: trash5Cache
   noSpawn: false
-  name: garbage
+  name: сміття
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/trash.yml

@@ -1,10 +1,10 @@
 ### EscapeMenu.xaml
 
-ui-escape-title = Game Menu
-ui-escape-options = Options
-ui-escape-rules = Rules
-ui-escape-guidebook = Guidebook
-ui-escape-wiki = Wiki
-ui-escape-disconnect = Disconnect
-ui-escape-quit = Quit
+ui-escape-title = Ігрове Меню
+ui-escape-options = Налаштування
+ui-escape-rules = Правила
+ui-escape-guidebook = Гайдбук
+ui-escape-wiki = Вікі
+ui-escape-disconnect = Від'єднатися
+ui-escape-quit = Вийти
 

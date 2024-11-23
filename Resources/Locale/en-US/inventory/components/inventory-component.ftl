@@ -1,10 +1,13 @@
-inventory-component-can-equip-cannot = You can't equip this!
-inventory-component-can-equip-does-not-fit = This doesn't fit!
+inventory-component-can-equip-cannot = Ви не можете це обладнати!
+inventory-component-can-equip-does-not-fit = Це не підходить!
 
-inventory-component-can-unequip-cannot = You can't unequip this!
+inventory-component-can-unequip-cannot = Ви не можете це зняти!
 
 inventory-component-dropped-from-unequip =
-    You dropped {$items ->
-    [1] an item!
-    *[other] some items!
+    Ви впустили {$items ->
+    [1] предмет!
+    [2] предмети!
+    [3] предмети!
+    [4] предмети!
+    *[other] предметів!
 }

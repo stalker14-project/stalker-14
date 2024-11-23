@@ -1,7 +1,7 @@
 - type: entity
   id: RandomCacheSpawnerForest
-  name: cache spawner (trees, rocks and stumps, 5% chance)
-  suffix: Stalker
+  name: спавнер тайника (дерева каміння і пеньки, 5% шанс)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
   - type: Sprite
@@ -29,7 +29,7 @@
   parent: BaseCache
   id: penmCache
   noSpawn: false
-  name: tree stump
+  name: пень
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora.rsi
@@ -39,7 +39,7 @@
   parent: BaseCache
   id: birch01Cache
   noSpawn: true
-  name: birch
+  name: береза
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -48,7 +48,7 @@
   parent: BaseCache
   id: birch02Cache
   noSpawn: true
-  name: birch
+  name: береза
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -57,7 +57,7 @@
   parent: BaseCache
   id: birch03Cache
   noSpawn: true
-  name: birch
+  name: береза
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -66,7 +66,7 @@
   parent: BaseCache
   id: birch04Cache
   noSpawn: true
-  name: birch
+  name: береза
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -76,7 +76,7 @@
   parent: BaseCache
   id: pine01Cache
   noSpawn: true
-  name: pine
+  name: сосна
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -85,7 +85,7 @@
   parent: BaseCache
   id: pine02Cache
   noSpawn: true
-  name: pine
+  name: сосна
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -95,7 +95,7 @@
   parent: BaseCache
   id: rock01Cache
   noSpawn: true
-  name: stone
+  name: камінь
   components:
   - type: Clickable
   - type: Sprite
@@ -118,7 +118,7 @@
   parent: BaseCache
   id: rock02Cache
   noSpawn: true
-  name: stone
+  name: камінь
   components:
   - type: Clickable
   - type: Sprite
@@ -141,7 +141,7 @@
   parent: BaseCache
   id: rock03Cache
   noSpawn: true
-  name: stone
+  name: камінь
   components:
   - type: Clickable
   - type: Sprite
@@ -165,8 +165,8 @@
 
 - type: entity
   id: RandomCacheSpawnerHead
-  name: stash spawner (bayonets with head, 20%)
-  suffix: Stalker
+  name: спавнер тайника (багнети з головою, 20%)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
   - type: Sprite
@@ -186,7 +186,7 @@
 - type: entity
   parent: BaseCache
   id: head4Cache
-  name: bayonet with head
+  name: багнет з головою
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -195,7 +195,7 @@
 - type: entity
   parent: BaseCache
   id: head3Cache
-  name: bayonet with head
+  name: багнет з головою
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -204,7 +204,7 @@
 - type: entity
   parent: BaseCache
   id: head2Cache
-  name: bayonet with head
+  name: багнет з головою
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -213,7 +213,7 @@
 - type: entity
   parent: BaseCache
   id: head1Cache
-  name: bayonet with head
+  name: багнет з головою
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/heads.rsi
@@ -223,8 +223,8 @@
   parent: BaseStructureStalkerDynamic
   id: GreenCrateTearTwoCache
   noSpawn: true
-  suffix: Stalker, ТАЙНИК Т2
-  name: abandoned green box
+  suffix: Сталкер, ТАЙНИК Т2
+  name: покинутий зелений ящик
   components:
     - type: TimedDespawn
       lifetime: 3600
@@ -517,8 +517,8 @@
 
 - type: entity
   id: RandomCacheSpawnerGreenCrateTear2
-  name: stash spawner (stash, 80% chance, T2)
-  suffix: Stalker
+  name: спавнер тайника (тайник, 80% шанс, Т2)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -534,8 +534,8 @@
 
 - type: entity
   id: RandomCacheSpawnerBlueCrateTear2
-  name: stash spawner (stash, 80% chance, T2)
-  suffix: Stalker
+  name: спавнер тайника (тайник, 80% шанс, Т2)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -553,7 +553,7 @@
   parent: GreenCrateTearTwoCache
   id: BlueCrateTearTwoCache
   noSpawn: false
-  name: abandoned blue box
+  name: покинутий синій ящик
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Other/Boxes/blue_crate.rsi
@@ -565,8 +565,8 @@
 
 - type: entity
   id: RandomCacheSpawnerGreenCrateTear3
-  name: stash spawner (stash, 25% chance, oasis)
-  suffix: Stalker
+  name: спавнер тайника (тайник, 25% шанс, оазис)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -581,8 +581,8 @@
 - type: entity
   parent: BaseStructureStalkerDynamic
   id: GreenCrateCacheOazis
-  suffix: Stalker, ТАЙНИК оазис
-  name: old black box
+  suffix: Сталкер, ТАЙНИК оазис
+  name: старий чорний ящик
   components:
     - type: TimedDespawn
       lifetime: 3600
@@ -691,7 +691,7 @@
           prob: 0.3
         - id: Hryvnias50
           prob: 0.3
-        - id: Hryvnias50
+        - id: Hryvnias100
           prob: 0.3
         - id: Hryvnias100
           prob: 0.1
@@ -753,9 +753,9 @@
   parent: BaseStructureStalkerDynamic
   id: BaseBookshelfCache
   noSpawn: true
-  suffix: Stalker, ТАЙНИК
-  name: old wardrobe
-  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
+  suffix: Сталкер, ТАЙНИК
+  name: старий шкаф
+  description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
     - type: TimedDespawn
       lifetime: 7200
@@ -1066,8 +1066,8 @@
 
 - type: entity
   id: RandomCacheSpawnerBookshelf
-  name: stash spawner (cabinet, 100% chance, random)
-  suffix: Stalker
+  name: спавнер тайника (шкаф, 100% шанс, рандом)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1087,8 +1087,8 @@
 
 - type: entity
   id: CacheSpawnerBookshelfIron
-  name: stash spawner (iron cabinet, 100% chance)
-  suffix: Stalker
+  name: спавнер тайника (залізний шкаф, 100% шанс)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1104,8 +1104,8 @@
 
 - type: entity
   id: RandomCacheSpawnerBookshelfOld
-  name: stash spawner (old cabinet, 100% chance)
-  suffix: Stalker
+  name: спавнер тайника (старий шкаф, 100% шанс)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1121,8 +1121,8 @@
 
 - type: entity
   id: RandomCacheSpawnerShelfOld
-  name: stash spawner (old shelf, 100% chance)
-  suffix: Stalker
+  name: спавнер тайника (стара полиця, 100% шанс)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1140,8 +1140,8 @@
   parent: BaseBookshelfCache
   id: bookshelf2Cache
   noSpawn: false
-  name: old wardrobe
-  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
+  name: старий шкаф
+  description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1155,8 +1155,8 @@
   parent: BaseBookshelfCache
   id: bookshelf3Cache
   noSpawn: false
-  name: old wardrobe
-  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
+  name: старий шкаф
+  description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1170,8 +1170,8 @@
   parent: BaseBookshelfCache
   id: bookshelf4Cache
   noSpawn: false
-  name: old wardrobe
-  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
+  name: старий шкаф
+  description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1185,8 +1185,8 @@
   parent: BaseBookshelfCache
   id: bookshelf5Cache
   noSpawn: false
-  name: old wardrobe
-  description: Quite an old cabinet. Perhaps it is worth searching it. Maybe you can find something useful in it.
+  name: старий шкаф
+  description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/bookshelf.rsi
@@ -1200,8 +1200,8 @@
   parent: BaseStructureStalkerDynamic
   id: BaseYaschikResource
   noSpawn: true
-  suffix: Stalker, ресурсы
-  name: abandoned chest of drawers
+  suffix: Сталкер, ресурси
+  name: закинутий комод
   components:
     - type: TimedDespawn
       lifetime: 7200
@@ -1450,8 +1450,8 @@
 
 - type: entity
   id: RandomCacheSpawnerKonmod
-  name: chest of drawers spawner (chest of drawers, 80% chance)
-  suffix: Stalker
+  name: спавнер комода (комод, 80% шанс)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1469,8 +1469,8 @@
   parent: BaseStructureStalkerDynamic
   id: BaseYaschikComponents
   noSpawn: true
-  suffix: Stalker, ресурсы
-  name: abandoned crate with components
+  suffix: Сталкер, ресурси
+  name: закинутий ящик із компонентами
   components:
     - type: TimedDespawn
       lifetime: 7200
@@ -1568,8 +1568,8 @@
 
 - type: entity
   id: RandomCacheSpawnerYaschikComponents
-  name: component box spawner (box, 60% chance, resources)
-  suffix: Stalker
+  name: спавнер ящика з компонентами (ящик, 60% шанс, ресурси)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1585,8 +1585,8 @@
 
 - type: entity
   id: RandomCacheSpawnerYaschikResourceTest
-  name: feature test
-  suffix: Stalker
+  name: тест фічі
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1606,8 +1606,8 @@
 
 - type: entity
   id: RandomCacheSpawnerYaschikResourceBase
-  name: random box spawner (box, 80% chance, respawn)
-  suffix: Stalker
+  name: спавнер рандомних ящиків (ящик, 80% шанс, респавн)
+  suffix: Сталкер
   parent: FlexibleMarker
   components:
     - type: Sprite

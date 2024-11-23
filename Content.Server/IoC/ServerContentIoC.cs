@@ -1,4 +1,5 @@
 using Content.Server._Stalker.Discord.DiscordAuth;
+using Content.Server._Stalker.Discord;
 using Content.Server._Stalker.JoinQueue;
 using Content.Server._Stalker.Sponsors;
 using Content.Server.Administration;

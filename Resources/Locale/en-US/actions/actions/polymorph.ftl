@@ -1,1 +1,1 @@
-gera-transformation-popup = This action will transform you. Use it again to confirm.
+gera-transformation-popup = Ця дія перетворить вас. Використайте її ще раз для підтвердження.

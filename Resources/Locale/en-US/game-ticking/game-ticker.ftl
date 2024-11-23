@@ -1,49 +1,46 @@
-game-ticker-restart-round = Restarting round...
-game-ticker-start-round = The round is starting now...
-game-ticker-start-round-cannot-start-game-mode-fallback = Failed to start {$failedGameMode} mode! Defaulting to {$fallbackMode}...
-game-ticker-start-round-cannot-start-game-mode-restart = Failed to start {$failedGameMode} mode! Restarting round...
-game-ticker-start-round-invalid-map = Selected map {$map} is inelligible for gamemode {$mode}. Gamemode may not function as intended...
-game-ticker-unknown-role = Unknown
-game-ticker-delay-start = Round start has been delayed for {$seconds} seconds.
-game-ticker-pause-start = Round start has been paused.
-game-ticker-pause-start-resumed = Round start countdown is now resumed.
-game-ticker-player-join-game-message = Welcome to Space Station 14! If this is your first time playing, be sure to read the game rules, and don't be afraid to ask for help in LOOC (local OOC) or OOC (usually available only between rounds).
-game-ticker-get-info-text = Hi and welcome to [color=white]Space Station 14![/color]
-                            The current round is: [color=white]#{$roundId}[/color]
-                            The current player count is: [color=white]{$playerCount}[/color]
-                            The current map is: [color=white]{$mapName}[/color]
-                            The current game mode is: [color=white]{$gmTitle}[/color]
+game-ticker-restart-round = Перезапуск раунду...
+game-ticker-start-round = Раунд починається...
+game-ticker-start-round-cannot-start-game-mode-fallback = Не вдалося запустити {$failedGameMode} режим! За замовчуванням починається {$fallbackMode}...
+game-ticker-start-round-cannot-start-game-mode-restart = Не вдалося запустити {$failedGameMode} режим! Перезапуск раунду...
+game-ticker-start-round-invalid-map = Вибрана карта {$map} є нерозбірливою для ігрового режиму {$mode}. Ігровий режим може не працювати належним чином...
+game-ticker-unknown-role = Невідомий
+game-ticker-delay-start = Початок раунду затримано на {$seconds} секунд.
+game-ticker-pause-start = Початок раунду призупинено.
+game-ticker-pause-start-resumed = Відлік старту раунду відновлено.
+game-ticker-player-join-game-message = Ласкаво просимо до модифікації Космічної станції 14, Сталкер 14! Якщо ви граєте вперше, обов'язково прочитайте правила гри і не бійтеся звертатися за допомогою до LOOC (місцевий OOC) або OOC (зазвичай доступний лише між раундами).
+game-ticker-get-info-text = Привіт і ласкаво просимо до [color=white]S.T.A.L.K.E.R. 14![/color]
+                            Поточний раунд: [color=white]#{$roundId}[/color]
+                            Поточна кількість гравців: [color=white]{$playerCount}[/color]
+                            Поточна мапа: [color=white]{$mapName}[/color]
+                            Поточний ігровий режим: [color=white]{$gmTitle}[/color]
                             >[color=yellow]{$desc}[/color]
-game-ticker-get-info-preround-text = Hi and welcome to [color=white]Space Station 14![/color]
-                            The current round is: [color=white]#{$roundId}[/color]
-                            The current player count is: [color=white]{$playerCount}[/color] ([color=white]{$readyCount}[/color] {$readyCount ->
-                                [one] is
-                                *[other] are
-                            } ready)
-                            The current map is: [color=white]{$mapName}[/color]
-                            The current game mode is: [color=white]{$gmTitle}[/color]
+game-ticker-get-info-preround-text = Привіт і ласкаво просимо до [color=white]S.T.A.L.K.E.R. 14![/color]
+                            Поточний раунд: [color=white]#{$roundId}[/color]
+                            Поточна кількість гравців: [color=white]{$playerCount}[/color]
+                            Поточна мапа: [color=white]{$mapName}[/color]
+                            Поточний ігровий режим: [color=white]{$gmTitle}[/color]
                             >[color=yellow]{$desc}[/color]
-game-ticker-no-map-selected = [color=yellow]Map not yet selected![/color]
-game-ticker-player-no-jobs-available-when-joining = When attempting to join to the game, no jobs were available.
+game-ticker-no-map-selected = [color=yellow]Мапу ще не вибрано![/color]
+game-ticker-player-no-jobs-available-when-joining = При спробі приєднатися до гри не було доступно жодної вакансії.
 
 # Displayed in chat to admins when a player joins
-player-join-message = Player {$name} joined.
-player-first-join-message = Player {$name} joined for the first time.
+player-join-message = Гравець {$name} приєднався.
+player-first-join-message = Гравець {$name} приєдналися вперше.
 
 # Displayed in chat to admins when a player leaves
-player-leave-message = Player {$name} left.
+player-leave-message = Гравець {$name} вийшов.
 
-latejoin-arrival-announcement = {$character} ({$job}) { CONJUGATE-HAVE($entity) } arrived at the station!
-latejoin-arrival-announcement-special = {$job} {$character} on deck!
-latejoin-arrival-sender = Station
-latejoin-arrivals-direction = A shuttle transferring you to your station will arrive shortly.
-latejoin-arrivals-direction-time = A shuttle transferring you to your station will arrive in {$time}.
-latejoin-arrivals-dumped-from-shuttle = A mysterious force prevents you from leaving with the arrivals shuttle.
-latejoin-arrivals-teleport-to-spawn = A mysterious force teleports you off the arrivals shuttle. Have a safe shift!
+latejoin-arrival-announcement = {$character} ({$job}) { CONJUGATE-HAVE($entity) } прибув!
+latejoin-arrival-announcement-special = {$job} {$character} на палубі!
+latejoin-arrival-sender = Станція
+latejoin-arrivals-direction = Незабаром прибуде шатл, який доставить вас на станцію.
+latejoin-arrivals-direction-time = Шатл, який доставить вас на станцію, прибуде о {$time}.
+latejoin-arrivals-dumped-from-shuttle = Таємнича сила заважає вам вилетіти з шатлом прибуття.
+latejoin-arrivals-teleport-to-spawn = Таємнича сила телепортує вас з шатла прибуття. Вдалої зміни!
 
-preset-not-enough-ready-players = Can't start {$presetName}. Requires {$minimumPlayers} players but we have {$readyPlayersCount}.
-preset-no-one-ready = Can't start {$presetName}. No players are ready.
+preset-not-enough-ready-players = Не вдається запустити {$presetName}. Потрібно {$minimumPlayers} гравців, але у нас є {$readyPlayersCount}.
+preset-no-one-ready = Не вдається запустити {$presetName}. Гравці не готові.
 
-game-run-level-PreRoundLobby = Pre-round lobby
-game-run-level-InRound = In round
-game-run-level-PostRound = Post round
+game-run-level-PreRoundLobby = Пре-раунд лобі
+game-run-level-InRound = В раунді
+game-run-level-PostRound = Після раунду
