@@ -808,15 +808,16 @@
           False: { visible: false }
   - type: ItemToggle
   - type: ProximityBeeper
-  - type: ProximityDetector
-    range: 12
-    criteria:
-      components:
-      - StalkerArtifact
-      tags:
-      - StalkerArtifact
-      size:
-      - Small
+#  - type: ProximityDetector
+#    range: 12
+#    criteria:
+#      components:
+#      - StalkerArtifact
+#      requireAll: false
+#      tags:
+#      - StalkerArtifact
+#      size:
+#      - Small
   - type: Beeper
     isMuted: true
     minBeepInterval: 0.10
