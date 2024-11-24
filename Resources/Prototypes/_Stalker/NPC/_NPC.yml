@@ -75,10 +75,10 @@
 
 - type: entity
   parent: NPCDoll
-  id: NPCSidorovich
+  id: NPCSidorovich # Одинаки
   noSpawn: false
-  name: Sidorovich [→ ←]
-  description: An old tightwad who won't sacrifice even a ruble to save someone. Vindictive.
+  name: Сидорович [→ ←]
+  description: Старий скнара, який не пожертвує навіть копійкою, щоб когось врятувати. Мстивий.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Sidor.rsi
@@ -117,7 +117,7 @@
   parent: NPCDoll
   id: NPCBarmen
   noSpawn: false
-  name: Bartender [→ ←]
+  name: Bartender [→ ←] # Бар Сторенген
   description: Bartender at the bar. A little less greedy than Sidor, but just as miserly. By the way, are they brothers?
   components:
   - type: Sprite
@@ -319,8 +319,8 @@
   parent: NPCDoll
   id: NPCResearchInstitutes
   noSpawn: false
-  name: Prof. Round [→ ←]
-  description: They say that the professor has a diploma from Moscow State University. Should we believe the rumors?
+  name: Професор Раунд [→ ←]
+  description: Кажуть, що професор має диплом державного університету. Чи варто вірити чуткам?
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Scientist.rsi
@@ -620,8 +620,8 @@
   parent: NPCDoll
   id: NPCPetrAlkash
   noSpawn: false
-  name: Petrukha [→ ←]
-  description: A heavy drinker and smoker. Sells vodka and cigarettes. Buys cigarette butts and empty vodka bottles at a pretty good price. Founder and CEO B.O.M.Zh.
+  name: Петруха [→ ←] # Звалище
+  description: Багато п'є і курить. Продає горілку та цигарки. Купує недопалки та порожні пляшки з-під горілки за досить вигідною ціною. Засновник і генеральний директор Б.О.М.Ж.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/PetrAlkash.rsi
@@ -660,8 +660,8 @@
   parent: NPCPetrAlkash
   id: NPCNikitaAlkash
   noSpawn: false
-  name: Nikitich [→ ←]
-  description: Petrukha's twin brother, but without his entrepreneurial streak. Vice-president of B.O.M.Zh, which his brother founded
+  name: Нікітіч [→ ←] #
+  description: Брат-близнюк Петрухи, але без його підприємницької жилки. Віце-президент компанії "Б.О.М.Ж.", яку заснував його брат
   components:
   - type: Shop
     moneyId: Hryvnias
@@ -751,8 +751,8 @@
   parent: NPCDoll
   id: NPCPovarGena
   noSpawn: false
-  name: Gena [→ ←]
-  description: Cooks food, sells and buys ingredients. Quite an important person in the conditions of the zone.
+  name: Гена [→ ←] # База бандитів
+  description: Готує їжу, продає та купує інгредієнти. Досить важлива людина в умовах зони.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/PovarGena.rsi
@@ -1054,8 +1054,8 @@
   parent: NPCDoll
   id: NPCResearchInstitutesRechnov
   noSpawn: false
-  name: Prof. Rechnov [→ ←]
-  description: Believes in the magic of friendship, ready to exchange your swag for the latest developments from the research institute. Sometimes used. Often used.
+  name: Професор Речнов [→ ←]
+  description: Вірить у магію дружби, готовий обміняти своє барахло на новітні розробки науково-дослідного інституту. Іноді використаний... Часто використаний.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Scientist.rsi
