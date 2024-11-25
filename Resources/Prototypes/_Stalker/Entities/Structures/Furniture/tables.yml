@@ -1,8 +1,8 @@
 - type: entity
   id: OldWoodTable
   parent: TableBase
-  name: old wooden table
-  description: This table was once a source of pride, but now its an object that takes up a lot of space.
+  name: старий дерев'яний стіл
+  description: Колись цей стіл був предметом гордості, але тепер він займає багато місця.
   suffix: ST, Mapping
   components:
   - type: SpriteFade
@@ -33,7 +33,7 @@
 - type: entity
   id: OldBlackTable
   parent: OldWoodTable
-  name: old black table
+  name: старий чорний стіл
   suffix: ST, Mapping
   components:
   - type: SpriteFade
@@ -58,7 +58,7 @@
 - type: entity
   id: OldStoneTable
   parent: OldWoodTable
-  name: old steel table
+  name: старий сталевий стіл
   suffix: ST, Mapping
   components:
   - type: SpriteFade
@@ -119,14 +119,14 @@
     sprite: _Stalker/Structures/Furniture/Tables/old_table7.rsi
     state: full
 
-# БИЛЬЯРДНЫЙ СТОЛ
+# БІЛЬЯРДНИЙ СТІЛ
 
 - type: entity
   id: BiliardTableStalker
   parent: BaseStructure
-  name: billiard table
+  name: більярдний стіл
   suffix: ST, Mapping
-  description: Consists of a frame, tabletop, base of the playing surface, supports, sides and pockets. Designed for playing billiards.
+  description: Складається з каркаса, стільниці, основи ігрової поверхні, опор, бортиків і кишень. Призначений для гри в більярд.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/biliard.rsi
@@ -144,14 +144,14 @@
         layer:
         - TableLayer
 
-# ДРУГИЕ СТОЛЫ
+# ІНШІ СТОЛИ
 
 - type: entity
   id: TableOneStalker
   parent: BaseStructure
-  name: large table
+  name: великий стіл
   suffix: ST, Mapping
-  description: This table was once a source of pride, but now its an object that takes up a lot of space.
+  description: Колись цей стіл був предметом гордості, але тепер він займає багато місця.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Tables/table.rsi

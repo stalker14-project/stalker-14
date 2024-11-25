@@ -2,8 +2,8 @@
   abstract: true
   parent: BaseStructure
   id: BaseWall
-  name: basewall
-  description: Keeps the air in and the greytide out.
+  name: Стіна
+  description: Утримує повітря всередині і не пропускає сірість назовні.
   placement:
     mode: SnapgridCenter
     snap:
@@ -54,7 +54,7 @@
 - type: entity
   parent: BaseWall
   id: WallBrick
-  name: brick wall
+  name: цегляна стіна
   components:
   - type: Tag
     tags:
@@ -88,7 +88,7 @@
 - type: entity
   parent: BaseWall
   id: WallClock
-  name: clock wall
+  name: годиникова стіна
   components:
   - type: Tag
     tags:
@@ -120,7 +120,7 @@
 - type: entity
   parent: BaseWall
   id: WallClown
-  name: bananium wall
+  name: стіна з бананіуму
   components:
   - type: Tag
     tags:
@@ -156,8 +156,8 @@
 - type: entity
   parent: BaseWall
   id: WallMeat
-  name: meat wall
-  description: Sticky.
+  name: м'ясна стіна
+  description: Липка.
   components:
   - type: Tag
     tags:
@@ -190,7 +190,7 @@
 - type: entity
   parent: BaseWall
   id: WallCult
-  name: cult wall
+  name: культова стіна
   components:
   - type: Tag
     tags:
@@ -250,7 +250,7 @@
 - type: entity
   parent: BaseWall
   id: WallDiamond
-  name: diamond wall
+  name: діамантова стіна
   components:
   - type: Tag
     tags:
@@ -283,7 +283,7 @@
 - type: entity
   parent: BaseWall
   id: WallGold
-  name: gold wall
+  name: золота стіна
   components:
   - type: Tag
     tags:
@@ -328,7 +328,7 @@
 - type: entity
   parent: BaseWall
   id: WallIce
-  name: ice wall
+  name: крижана стіна
   components:
   - type: Tag
     tags:
@@ -357,7 +357,7 @@
 - type: entity
   parent: BaseWall
   id: WallPlasma
-  name: plasma wall
+  name: плазмова стіна
   components:
   - type: Tag
     tags:
@@ -404,7 +404,7 @@
 - type: entity
   parent: BaseWall
   id: WallPlastic
-  name: plastic wall
+  name: пластикова стіна
   components:
   - type: Tag
     tags:
@@ -449,7 +449,7 @@
 - type: entity
   parent: BaseWall
   id: WallPlastitaniumIndestructible
-  name: plastitanium wall
+  name: пластитаніумува стіна
   suffix: indestructible
   components:
     - type: Tag
@@ -466,7 +466,7 @@
 - type: entity
   parent: WallPlastitaniumIndestructible
   id: WallPlastitanium
-  name: plastitanium wall
+  name: пластитаніумува стіна
   suffix: ""
   components:
     - type: Tag
@@ -489,7 +489,7 @@
 - type: entity
   parent: WallShuttleDiagonal
   id: WallPlastitaniumDiagonal
-  name: plastitanium wall
+  name: пластитаніумува стіна
   suffix: diagonal
   placement:
     mode: SnapgridCenter
@@ -532,9 +532,9 @@
 
 - type: entity
   id: WallPlastitaniumDiagonalIndestructible
-  name: plastitanium wall
+  name: пластитаніумува стіна
   suffix: diagonal, indestructible
-  description: Keeps the air in and the greytide out.
+  description: Утримує повітря всередині і не пропускає сірість назовні.
   placement:
     mode: SnapgridCenter
     snap:
@@ -581,7 +581,7 @@
 - type: entity
   parent: BaseWall
   id: WallReinforced
-  name: reinforced wall
+  name: посилена стіна
   components:
   - type: Sprite
     sprite: Structures/Walls/solid.rsi
@@ -640,7 +640,7 @@
 - type: entity
   parent: WallReinforced
   id: WallReinforcedRust
-  name: reinforced wall
+  name: посилена стіна
   suffix: rusted
   components:
   - type: Sprite
@@ -658,7 +658,7 @@
 - type: entity
   parent: WallShuttleDiagonal
   id: WallReinforcedDiagonal
-  name: reinforced wall
+  name: посилена стіна
   suffix: diagonal
   placement:
     mode: SnapgridCenter
@@ -681,7 +681,7 @@
 - type: entity
   parent: BaseWall
   id: WallRiveted
-  name: riveted wall
+  name: клепана стінка
   components:
   - type: Tag
     tags:
@@ -715,7 +715,7 @@
 - type: entity
   parent: BaseWall
   id: WallSandstone
-  name: sandstone wall
+  name: стіна з пісковику
   components:
   - type: Tag
     tags:
@@ -748,7 +748,7 @@
 - type: entity
   parent: BaseWall
   id: WallSilver
-  name: silver wall
+  name: срібна стіна
   components:
   - type: Tag
     tags:
@@ -793,9 +793,9 @@
 #shuttle walls
 - type: entity
   id: WallShuttleDiagonal
-  name: shuttle wall
+  name: стіна шатлу
   suffix: Diagonal
-  description: Keeps the air in and the greytide out.
+  description: Утримує повітря всередині і не пропускає сірість назовні.
   placement:
     mode: SnapgridCenter
     snap:
@@ -873,7 +873,7 @@
 - type: entity
   parent: BaseWall
   id: WallShuttle
-  name: shuttle wall
+  name: стіна шатлу
   suffix: Reinforced, Exterior
   components:
   - type: Damageable
@@ -934,7 +934,7 @@
 - type: entity
   parent: BaseWall
   id: WallShuttleInterior
-  name: shuttle wall
+  name: стіна шатлу
   suffix: Interior
   components:
   - type: RCDDeconstructable
@@ -979,7 +979,7 @@
 - type: entity
   parent: BaseWall
   id: WallSolid
-  name: solid wall
+  name: суцільна стіна
   components:
   - type: Tag
     tags:
@@ -1025,7 +1025,7 @@
 - type: entity
   parent: WallShuttleDiagonal
   id: WallSolidDiagonal
-  name: solid wall
+  name: суцільна стіна
   suffix: diagonal
   placement:
     mode: SnapgridCenter
@@ -1047,7 +1047,7 @@
 - type: entity
   parent: WallSolid
   id: WallSolidRust
-  name: solid wall
+  name: суцільна стіна
   suffix: rusted
   components:
   - type: Sprite
@@ -1065,7 +1065,7 @@
 - type: entity
   parent: BaseWall
   id: WallUranium
-  name: uranium wall
+  name: уранова стіна
   components:
   - type: Sprite
     sprite: Structures/Walls/uranium.rsi
@@ -1105,7 +1105,7 @@
 - type: entity
   parent: BaseWall
   id: WallWood
-  name: wood wall
+  name: дерев'яна стіна
   components:
   - type: Sprite
     sprite: Structures/Walls/wood.rsi
@@ -1143,8 +1143,8 @@
 - type: entity
   parent: BaseWall
   id: WallWeb
-  name: web wall
-  description: Keeps the spiders in and the greytide out.
+  name: веб-стіна
+  description: Тримає павуків всередині, а сірість - зовні.
   components:
   - type: Clickable
   - type: MeleeSound
@@ -1190,7 +1190,7 @@
 - type: entity
   parent: BaseWall
   id: WallNecropolis
-  name: stone wall
+  name: кам'яна стіна
   components:
   - type: Tag
     tags:
@@ -1214,7 +1214,7 @@
 - type: entity
   parent: BaseWall
   id: WallMining
-  name: mining wall
+  name: шахтна стіна
   components:
   - type: Tag
     tags:
@@ -1243,7 +1243,7 @@
 - type: entity
   parent: WallShuttleDiagonal
   id: WallMiningDiagonal
-  name: mining wall
+  name: шахтна стіна
   suffix: diagonal
   placement:
     mode: SnapgridCenter
@@ -1268,8 +1268,8 @@
 - type: entity
   parent: BaseWall
   id: WallVaultAlien
-  name: alien vault wall
-  description: A mysterious ornate looking wall. There may be ancient dangers inside.
+  name: стіна інопланетного склепу
+  description: Таємнича витіювата стіна. Всередині може бути давня небезпека.
   components:
   - type: Sprite
     sprite: Structures/Walls/vault.rsi
@@ -1289,7 +1289,7 @@
 - type: entity
   parent: WallVaultAlien
   id: WallVaultRock
-  name: rock vault wall
+  name: стіна скельного склепіння
   components:
   - type: Sprite
     sprite: Structures/Walls/vault.rsi
@@ -1301,7 +1301,7 @@
 - type: entity
   parent: WallVaultAlien
   id: WallVaultSandstone
-  name: sandstone vault wall
+  name: стіна склепіння з пісковику
   components:
   - type: Sprite
     sprite: Structures/Walls/vault.rsi
@@ -1314,7 +1314,7 @@
 
 - type: entity
   id: WallInvisible
-  name: invisible wall
+  name: невидима стіна
   components:
   - type: TimedDespawn
     lifetime: 15
@@ -1337,7 +1337,7 @@
 
 - type: entity
   id: WallForce
-  name: force wall
+  name: силова стіна
   components:
     - type: TimedDespawn
       lifetime: 12
@@ -1367,8 +1367,8 @@
 - type: entity
   parent: BaseWall
   id: WallCobblebrick
-  name: cobblestone brick wall
-  description: Stone by stone, perfectly fitted together to form a wall.
+  name: цегляна стіна з бруківки
+  description: Камінь за каменем, ідеально підігнані один до одного, щоб сформувати стіну.
   components:
   - type: Tag
     tags:
@@ -1396,7 +1396,7 @@
 - type: entity
   parent: WallCobblebrick
   id: WallBasaltCobblebrick
-  name: basalt brick wall
+  name: стіна з базальтової цегли
   components:
   - type: Sprite
     sprite: Structures/Walls/cobblebrick_basalt.rsi
@@ -1409,8 +1409,8 @@
 - type: entity
   parent: WallCobblebrick
   id: WallSnowCobblebrick
-  name: snow brick wall
-  description: A cold, not-so-impenetrable wall.
+  name: стіна зі снігової цегли
+  description: Холодна, не така вже й непроникна стіна.
   components:
   - type: Sprite
     sprite: Structures/Walls/cobblebrick_snow.rsi
@@ -1423,7 +1423,7 @@
 - type: entity
   parent: WallCobblebrick
   id: WallAsteroidCobblebrick
-  name: asteroid stone brick wall
+  name: стіна з цегли з каменю астероїда
   components:
   - type: Sprite
     sprite: Structures/Walls/cobblebrick_asteroid.rsi
@@ -1436,7 +1436,7 @@
 - type: entity
   parent: WallCobblebrick
   id: WallSandCobblebrick
-  name: sandstone brick wall
+  name: цегляна стіна з пісковику
   components:
   - type: Sprite
     sprite: Structures/Walls/cobblebrick_sand.rsi
@@ -1449,7 +1449,7 @@
 - type: entity
   parent: WallCobblebrick
   id: WallChromiteCobblebrick
-  name: chromite brick wall
+  name: стіна з хромітової цегли
   components:
   - type: Sprite
     sprite: Structures/Walls/cobblebrick_chromite.rsi
@@ -1462,7 +1462,7 @@
 - type: entity
   parent: WallCobblebrick
   id: WallAndesiteCobblebrick
-  name: andesite brick wall
+  name: стіна з андезитової цегли
   components:
   - type: Sprite
     sprite: Structures/Walls/cobblebrick_andesite.rsi
