@@ -20,17 +20,27 @@
   - Service
   - External
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
-#якщо не сприймає пошкодження добавити:  damageModifierSet: Stalkers
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - Military
+      - type: Bands
+        band: Stalker
+        bandIcon: army
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
 
 - type: startingGear
   id: PrivateSoliderGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAPrivateMVC
+    id: MilitaryPDA
     ears: ClothingHeadsetMilitaryRadio
     neck: ClothingNeckPatchMilitary
 
@@ -59,16 +69,21 @@
   - Service
   - External
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          groups:
+            - MilitaryOfficer
+        - type: Bands
+          band: Stalker
+          bandIcon: army
+        - type: BlockTackingHolyItems
 
 - type: startingGear
   id: SergantMVCGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDASergantMVC
+    id: MilitaryPDA
     ears: ClothingHeadsetMilitaryRadio
     neck: ClothingNeckPatchMilitary
 
@@ -101,23 +116,33 @@
   - Service
   - External
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          groups:
+            - MilitaryHead
+        - type: Bands
+          band: Stalker
+          bandIcon: army
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: GeneralSoliderGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAGeneralMVC
+    id: MilitaryPDA
     ears: ClothingHeadsetMilitaryRadio
     neck: ClothingNeckPatchMilitary
 
 - type: job
   id: UnderCoverMilitary
   name: офіцер СБУ під прикриттям
-  description: Ви повинні проводити дослідження діяльності фракцій в ЧАЗВ і доповідати військовим.
+  description: Ви повинні проводити дослідження діяльності фракцій в ЧАЗВ і доповідати державному оперативнику.
   playTimeTracker: JobUnderCoverMilitary
   requirements:
     - !type:RoleTimeRequirement
@@ -151,10 +176,22 @@
   - Service
   - External
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - MilitaryStalker
+      - type: Bands
+        altBand: stalker
+        canChange: true
+        band: Stalker
+        bandIcon: sbu
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: startingGear
   id: UnderCoverMilitaryGear
@@ -162,6 +199,7 @@
     shoes: ClothingShoesBootsCombatFilled
     ears: ClothingHeadsetChameleonMVC
     id: StalkerPDAAgent
+    pocket1: STJobMilitaryIDCard
 
  # Бандити
 - type: job
@@ -183,16 +221,27 @@
   - Maintenance
   - Brig
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - Bandit
+            - BanditHead
+        - type: Bands
+          band: Stalker
+          bandIcon: band
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: RookieBanditGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDABandit
+    id: BandPDA
     ears: ClothingHeadsetBanditRadio
     neck: ClothingNeckPatchBandits
 
@@ -220,16 +269,27 @@
   - Command
   - Brig
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - Bandit
+            - BanditHead
+        - type: Bands
+          band: Stalker
+          bandIcon: band
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: ExperienceBanditGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDABandit
+    id: BandPDA
     ears: ClothingHeadsetBanditRadio
     neck: ClothingNeckPatchBandits
 
@@ -261,16 +321,27 @@
   - Brig
   - Cryogenics
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+          - Bandit
+          - BanditHead
+        - type: Bands
+          band: Stalker
+          bandIcon: band
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: paxanbanditgear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDABandit
+    id: BandPDA
     ears: ClothingHeadsetBanditRadio
     neck: ClothingNeckPatchBandits
 
@@ -292,18 +363,29 @@
   access:
   - Maintenance
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Stalker
+      - type: Bands
+        band: Stalker
+        bandIcon: stalker
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: startingGear
   id: LoneNewbieGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDALoner
+    id: StalkerPDA
     ears: ClothingHeadsetStalkerFM
     neck: ClothingNeckPatchLoners
+    pocket2: PassportUkraine
 
 - type: job
   id: ExperiencedLoner
@@ -325,18 +407,29 @@
   - Cargo
   - Maintenance
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Stalker
+      - type: Bands
+        band: Stalker
+        bandIcon: stalker
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: startingGear
   id: ExperiencedLonerGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDALoner
+    id: StalkerPDA
     ears: ClothingHeadsetStalkerFM
     neck: ClothingNeckPatchLoners
+    pocket2: PassportUkraine
 
 - type: job
   id: LeaderLoner
@@ -375,9 +468,10 @@
   id: LeaderLonerGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDALoner
+    id: StalkerPDA
     ears: ClothingHeadsetStalkerFM
     neck: ClothingNeckPatchLoners
+    pocket2: PassportUkraine
 
 # Вчені
 
@@ -406,16 +500,26 @@
   - Maintenance
   - Cryogenics
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - Sci
+      - type: Bands
+        band: Stalker
+        bandIcon: sci
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: startingGear
   id: ScienceAssistantGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAScientist
+    id: ScientistPDA
     ears: ClothingHeadsetScienceRadio
     neck: ClothingNeckPatchScience
 
@@ -444,16 +548,26 @@
   - Maintenance
   - Cryogenics
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          groups:
+            - SciHead
+        - type: Bands
+          band: Stalker
+          bandIcon: sci
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: ScienceGroupLeaderGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAScientist
+    id: ScientistPDA
     ears: ClothingHeadsetScienceRadio
     neck: ClothingNeckPatchScience
 
@@ -478,21 +592,33 @@
   startingGear: RookieMercenaryGear
   icon: JobIconMercenaryNewbie
   canBeAntag: true
-  access:
-  - Maintenance
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - Merc
+            - Stalker
+        - type: Bands
+          altBand: stalker
+          canChange: true
+          band: Stalker
+          bandIcon: merc
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: RookieMercenaryGear
   equipment:
-    shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAMerc
+    shoes: ClothingShoesSwat
+    id: BandPDA
     ears: ClothingHeadsetMercRadio
     neck: ClothingNeckPatchMerc
+    belt: ClothingBeltStorageWaistbag
 
 - type: job
   id: ExperiencedMercenary
@@ -513,19 +639,31 @@
   startingGear: ExperiencedMercenaryGear
   icon: JobIconMercenaryExperienced
   canBeAntag: true
-  access:
-  - Maintenance
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - HeadMerc
+            - Merc
+            - Stalker
+        - type: Bands
+          altBand: stalker
+          canChange: true
+          band: Stalker
+          bandIcon: merc
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: ExperiencedMercenaryGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAMerc
+    id: BandPDA
     ears: ClothingHeadsetMercRadio
     neck: ClothingNeckPatchMerc
   inhand:
@@ -554,21 +692,35 @@
   startingGear: LeaderMercenaryGear
   icon: JobIconMercenaryLeader
   canBeAntag: true
-  access:
-  - Maintenance
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - HeadMerc
+            - Merc
+            - Stalker
+        - type: Bands
+          altBand: stalker
+          canChange: true
+          band: Stalker
+          bandIcon: merc
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
 
 - type: startingGear
   id: LeaderMercenaryGear
   equipment:
-    shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAMerc
+    shoes: ClothingShoesSwat
+    id: BandPDA
     ears: ClothingHeadsetMercRadio
     neck: ClothingNeckPatchMerc
+    belt: ClothingBeltStorageWaistbag
+    eyes: ClothingEyesGlassesSunglasses
   inhand:
     - WeaponSniperMosin
   storage:
@@ -607,14 +759,23 @@
   startingGear: ClearSkyGear
   icon: JobIconRookieClearsky
   canBeAntag: true
-  access:
-  - Maintenance
-  - Research
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - CN
+      - type: Bands
+        band: Stalker
+        altBand: stalker
+        canChange: true
+        bandIcon: cn
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: job
   id: ExperiencedClearsky
@@ -635,14 +796,23 @@
   startingGear: ClearSkyGear
   icon: JobIconExperiencedClearsky
   canBeAntag: true
-  access:
-  - Maintenance
-  - Research
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - CN
+      - type: Bands
+        band: Stalker
+        altBand: stalker
+        canChange: true
+        bandIcon: cn
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: job
   id: LeaderClearsky
@@ -666,20 +836,30 @@
   startingGear: ClearSkyGear
   icon: JobIconLeaderClearsky
   canBeAntag: true
-  access:
-  - Maintenance
-  - Research
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - CN
+      - type: Bands
+        band: Stalker
+        altBand: stalker
+        canChange: true
+        bandIcon: cn
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: startingGear
   id: ClearSkyGear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: StalkerPDAClearSky
+    belt: ClothingBeltStorageWaistbag
+    id: ClearSkyPDA
     ears: ClothingHeadsetClearSkyRadio
     neck: ClothingNeckPatchClearSky
 
@@ -707,17 +887,28 @@
   accessGroups:
   - AllAccess
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Stalker
+      - type: Bands
+        band: Stalker
+        bandIcon: trader
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: startingGear
   id: StalkerTraderOldgear
   equipment:
     shoes: ClothingShoesBootsCombatFilled
-    id: CaptainPDA
+    id: StalkerPDA
     ears: ClothingHeadsetAllChannels
+    eyes: ClothingEyesGogglesAnomalist
   storage:
     back:
     - Flash
@@ -745,10 +936,20 @@
   accessGroups:
   - AllAccess
   special:
-  - !type:AddComponentSpecial
-    components:
-    - type: Damageable
-      damageContainer: BiologicalStalker
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Stalker
+      - type: Bands
+        band: Stalker
+        bandIcon: trader
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
 
 - type: startingGear
   id: StateOperativegear
@@ -826,6 +1027,15 @@
         - Zombie
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
+    - type: Bands
+      band: Stalker
+      bandIcon: monolith
+    - type: BlockTackingHolyItems
+    - type: TeethPull
+      teethProto: ToothStalker
+      pullingItemTag: PliersStalker
+      teethCount: 3
+      initialTeeth: 3
 
 - type: startingGear
   id: MonolithGear

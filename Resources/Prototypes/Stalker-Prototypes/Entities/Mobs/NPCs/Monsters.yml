@@ -43,7 +43,7 @@
     - id: FoodMutantMeat
       amount: 2
     - id: FoodStrangeMeat
-    - id: FleshEye
+    - id: MutantPartFleshEye
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: CombatMode
@@ -209,9 +209,12 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodStrangeMeat
-      amount: 2
-    - id: BlindDogTail
+    - id: MutantPartBlindDogTail
+      amount: 1
+      prob: 0.7
+    - id: FoodMeatDog
+      maxAmount: 2
+      prob: 0.7
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: CombatMode
@@ -279,8 +282,7 @@
     spawned:
     - id: FoodStrangeMeat
       amount: 2
-    - id: SnorkLeg
-    - id: SnorkHand
+    - id: MutantPartSnorkFoot
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: CombatMode
@@ -315,7 +317,7 @@
   name: Контролер
   parent: [ SimpleMobBase, MobCombat ]
   id: StalkerMobControler
-  description: 
+  description:
   components:
     - type: GhostRole
       allowMovement: true
@@ -375,7 +377,7 @@
         - map: ["enum.BorgVisualLayers.Light"]
           state: light
           shader: unshaded
-          visible: false 
+          visible: false
     - type: DamageStateVisuals
       states:
         Alive:
@@ -505,7 +507,11 @@
     - id: FoodMutantMeat
       amount: 2
     - id: FoodStrangeMeat
-    - id: BoarHoof
+    - id: MutantPartBoarHoof
+    - id: FoodMeatBoar
+    - id: CraftHide
+      maxAmount: 1
+      prob: 0.25
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: CombatMode
@@ -647,4 +653,3 @@
     damageModifierSet: SmallStalkerMutants
   - type: TimedDespawn
     lifetime: 1800
-    
