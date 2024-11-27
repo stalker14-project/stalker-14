@@ -481,8 +481,8 @@
   description: Ви - науковий асистент, вам ще мало що відомо про цю загадкову "Зону"... Вивчіть більше.
   playTimeTracker: JobScienceAssistant
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobScientist
+    - !type:DepartmentTimeRequirement
+      department: Stalker
       time: 14400
     - !type:SpeciesRequirement
         inverted: false
@@ -580,7 +580,7 @@
   playTimeTracker: JobRookieMercenary
   requirements:
     - !type:DepartmentTimeRequirement
-      department: Security
+      department: Stalker
       time: 43200
     - !type:SpeciesRequirement
         inverted: false

@@ -1,3 +1,3 @@
-emote-menu-category-general = General
-emote-menu-category-vocal = Vocal
-emote-menu-category-hands = Hands
+emote-menu-category-general = Генеральне
+emote-menu-category-vocal = Вокальне
+emote-menu-category-hands = Руки
