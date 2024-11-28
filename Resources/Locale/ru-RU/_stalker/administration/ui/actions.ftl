@@ -1,1 +1,0 @@
-admin-player-actions-clear-stash = Очистить схрон

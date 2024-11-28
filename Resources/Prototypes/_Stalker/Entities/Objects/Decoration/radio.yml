@@ -180,24 +180,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CasseteNineRadio
-  suffix: Stalker, кассета (Москва-Владивосток)
-  name: cassette No. 9 Moscow-Vladivostok
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/rus_radio2.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
-
-- type: entity
-  parent: BaseItem
   id: CasseteTenRadio
   suffix: Stalker, кассета (Magic Moments)
   name: cassette No. 10 Magic Moments
@@ -641,24 +623,6 @@
     self: 0.15
   - type: Cassete
     sound: /Audio/_Stalker/Music/Radio/Donate/21.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
-
-- type: entity
-  parent: BaseItem
-  id: CasseteTwentyOneDonateRadio
-  suffix: Stalker, кассета (Party Like A Russian)
-  name: Party Like A Russian cassette
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Cinnamon Bun
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Robby.ogg
   - type: Tag
     tags:
       - Cassete
@@ -2721,24 +2685,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CasseteGSN2ContributorRadio
-  suffix: Stalker, кассета, (ГСН - Российский Спецназ)
-  name: GSN cassette - Russian Special Forces
-  description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/GSN2.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
   id: CasseteGeranContributorRadio
   suffix: Stalker, кассета, (Цветёт герань)
   name: cassette Geranium Blooms
@@ -3333,40 +3279,6 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/ua_radio.ogg
-
-- type: entity
-  id: RadioStandStalkerRUS1
-  parent: RadioBaseStalker
-  suffix: Stalker, российская тема 1
-  components:
-  - type: AmbientSound
-    volume: -5
-    enabled: true
-    sound:
-      path: /Audio/_Stalker/rus_radio.ogg
-
-- type: entity
-  id: RadioStandStalkerRUS2
-  parent: RadioBaseStalker
-  suffix: Stalker, российская тема 2
-  components:
-  - type: AmbientSound
-    volume: -5
-    enabled: true
-    sound:
-      path: /Audio/_Stalker/rus_radio2.ogg
-
-- type: entity
-  id: RadioStandStalkerRUS2Distand
-  parent: RadioBaseStalker
-  suffix: Stalker, российская тема 2 20 тайлов
-  components:
-  - type: AmbientSound
-    volume: -5
-    range: 20
-    enabled: true
-    sound:
-      path: /Audio/_Stalker/rus_radio2.ogg
 
 - type: entity
   id: RadioStandStalkerIzvozchik

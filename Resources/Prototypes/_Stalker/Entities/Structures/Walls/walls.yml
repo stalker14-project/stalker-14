@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseWall
   id: WallWoodFallout
-  name: Wooden wall
+  name: Дерев'яна стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -21,7 +21,7 @@
 - type: entity
   parent: BaseWall
   id: WallSidingFallout
-  name: PVC wall
+  name: Стіна з ПВХ
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -41,7 +41,7 @@
 - type: entity
   parent: BaseWall
   id: WallBrickFallout
-  name: Brick wall
+  name: Цегляна стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -61,7 +61,7 @@
 - type: entity
   parent: BaseWall
   id: WallBunkerFallout
-  name: Bunker Wall
+  name: Стіна бункера
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -81,7 +81,7 @@
 - type: entity
   parent: BaseWall
   id: WallDungeonFallout
-  name: Fortified Wall
+  name: Фортифікаційна стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -101,7 +101,7 @@
 - type: entity
   parent: BaseWall
   id: WallMetalFallout
-  name: Steel Wall
+  name: Сталева стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -121,7 +121,7 @@
 - type: entity
   parent: BaseWall
   id: WallRustMetalFallout
-  name: Rusty Wall
+  name: Іржава стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -141,7 +141,7 @@
 - type: entity
   parent: BaseWall
   id: WallScrapFallout
-  name: Corrugated sheet wall
+  name: Стіна з профнастилу
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -161,7 +161,7 @@
 - type: entity
   parent: BaseWall
   id: WallSewerFallout
-  name: Sewer Wall
+  name: Каналізаційна стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -181,7 +181,7 @@
 - type: entity
   parent: BaseWall
   id: WallReinfMetalFallout
-  name: Armored Wall
+  name: Броньована стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -201,7 +201,7 @@
 - type: entity
   parent: BaseWall
   id: WallRustReinfMetalFallout
-  name: Rusty Armored Wall
+  name: Іржава броньована стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -221,7 +221,7 @@
 - type: entity
   parent: BaseWall
   id: WallVaultFallout
-  name: Shelter Wall
+  name: Стіна укриття
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -241,9 +241,9 @@
 - type: entity
   parent: BaseWall
   id: WallConcreteFallout
-  name: Concrete wall
+  name: Бетонна стіна
   suffix: ST, Mapping, wall, KMIN
-  description: A wall, for the creation of which a formwork with iron reinforcement inside is arranged, into which liquid concrete is poured.
+  description: Стіна, для створення якої влаштовується опалубка із залізною арматурою всередині, в яку заливається рідкий бетон.
   components:
   - type: Tag
     tags:
@@ -262,7 +262,7 @@
 - type: entity
   parent: BaseWall
   id: WallRockFallout
-  name: Stone wall
+  name: Кам'яна стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -282,7 +282,7 @@
 - type: entity
   parent: BaseWall
   id: WallPrisonFallout
-  name: Prison Wall
+  name: Тюремна стіна
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -302,8 +302,8 @@
 - type: entity
   parent: BaseWall
   id: WallConcreteFalloutDestructible
-  name: Old concrete wall
-  description: It's about to collapse if you knock on it.
+  name: Стара бетонна стіна
+  description: Вона ось-ось завалиться, якщо по ній постукати.
   suffix: ST, Mapping, wall, KMIN, разрушимое
   components:
   - type: Tag
@@ -330,7 +330,7 @@
 
 - type: entity
   id: STWallRockBasalt
-  name: basalt
+  name: базальт
   parent: BaseWall
   components:
     - type: Icon
@@ -352,8 +352,8 @@
 - type: entity
   id: WallRockBasaltDestructible
   suffix: ST, Mapping, wall, Destructible
-  name: Brittle Basalt
-  description: It's about to collapse if you knock on it.
+  name: Крихкий базальт
+  description: Стіна ось-ось завалиться, якщо по ній постукати.
   parent: WallRock
   components:
     - type: Sprite
@@ -384,7 +384,7 @@
   parent: BaseWall
   id: STWallNecropolis
   suffix: ST, Mapping, wall
-  name: purgatory wall
+  name: стіна чистилища
   components:
   - type: Tag
     tags:
