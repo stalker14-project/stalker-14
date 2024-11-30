@@ -35,8 +35,8 @@
 
 - type: job
   id: Military
-  name: Рядовой ОКСОП
-  icon: army_rydik
+  name: Военный
+  icon: army
   description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobMilitary
   whitelisted: true
@@ -58,7 +58,7 @@
           - Military
       - type: Bands
         band: Stalker
-        bandIcon: army_rydik
+        bandIcon: army
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -66,66 +66,11 @@
         teethCount: 3
         initialTeeth: 3
 
-- type: job
-  id: MilitarySerjant
-  name: Сержант ОКСОП
-  icon: army_serjant
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
-  playTimeTracker: JobSerjantMilitary
-  whitelisted: true
-  requirements:
-    # - !type:RoleTimeRequirement
-    #   role: JobOfficerMilitary
-    #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
-  startingGear: MilitaryGear
-  supervisors: Вы подчиняетесь старшим по званию.
-  special:
-    - !type:AddComponentSpecial
-      components:
-        - type: Access
-          groups:
-            - MilitaryOfficer
-        - type: Bands
-          band: Stalker
-          bandIcon: army_serjant
-        - type: BlockTackingHolyItems
-
-- type: job
-  id: MilitaryStarshina
-  name: Старшина ОКСОП
-  icon: army_starshina
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
-  playTimeTracker: JobStarshinaMilitary
-  whitelisted: true
-  requirements:
-    # - !type:RoleTimeRequirement
-    #   role: JobOfficerMilitary
-    #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
-  startingGear: MilitaryGear
-  supervisors: Вы подчиняетесь старшим по званию.
-  special:
-    - !type:AddComponentSpecial
-      components:
-        - type: Access
-          groups:
-            - MilitaryOfficer
-        - type: Bands
-          band: Stalker
-          bandIcon: army_starshina
-        - type: BlockTackingHolyItems
 
 - type: job
   id: MilitaryHead
-  name: Капитан ОКСОП
-  icon: army_kapitan
+  name: Глава Военных
+  icon: army
   description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobHeadMilitary
   whitelisted: true
@@ -147,7 +92,7 @@
             - MilitaryHead
         - type: Bands
           band: Stalker
-          bandIcon: army_kapitan
+          bandIcon: army
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -157,8 +102,8 @@
 
 - type: job
   id: MilitaryOfficer
-  name: Лейтенант ОКСОП
-  icon: army_leutunant
+  name: Офицер Военных
+  icon: army
   description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobOfficerMilitary
   whitelisted: true
@@ -180,7 +125,7 @@
             - MilitaryOfficer
         - type: Bands
           band: Stalker
-          bandIcon: army_leutunant
+          bandIcon: army
         - type: BlockTackingHolyItems
 
 - type: startingGear
@@ -192,7 +137,6 @@
     torso: ClothingTorsoTurtlenecksMilitary
     shoes: ClothingShoesPortyanki
     head: STClothingHeadTinfoil
-    cloak: ClothingNeckCloakOksop
 
 - type: startingGear
   id: MilitaryGearHead
@@ -204,7 +148,6 @@
     shoes: ClothingShoesPortyanki
     head: STClothingHeadTinfoil
     pocket1: STJobMilitaryIDCard
-    cloak: ClothingNeckCloakOksop
 
 - type: startingGear
   id: MilitarySpecGear
