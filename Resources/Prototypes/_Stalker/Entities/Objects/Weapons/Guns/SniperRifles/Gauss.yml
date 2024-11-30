@@ -157,7 +157,7 @@
   name: bullet gauss
   parent: BaseBulletTrigger
   suffix: ST
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Projectile
       projectileClass: 5
@@ -176,7 +176,7 @@
   name: bullet gauss 2
   id: STBulletGauss2
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 5

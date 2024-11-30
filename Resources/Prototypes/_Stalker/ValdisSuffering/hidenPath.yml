@@ -37,7 +37,7 @@
   parent: BlastDoorOpen
   description: для разблокировки этого шлюза нужна специальная одноразовая карточка. Разблокирован.
   suffix: Stalker
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 30
@@ -76,7 +76,7 @@
   name: гермошлюз вертолёта
   description: для разблокировки шлюза вам нужно купить билет Разблокирован.
   suffix: Stalker
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
@@ -117,7 +117,7 @@
   name: гермошлюз обменщика
   description: для разблокировки этого шлюза нужна специальная одноразовая карточка. Разблокирован.
   suffix: Stalker
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 300

@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: STSeraBombImplant
+  name: самоуничтожение
+  description: Подрыв вашего кпк с гарантированным раздвоением вашего Я во имя Сына Звезды на целых две части!
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SubdermalImplant
+      permanent: true
+      implantAction: STActivateSeraSuicideEvent
+    - type: OnUseTimerTrigger
+      delay: 3
+      initialBeepDelay: 0
+      beepSound:
+        path: /Audio/Machines/Nuke/general_beep.ogg
+        params:
+          volume: -2
+    - type: ExplodeOnTrigger
+    - type: TriggerImplantAction
+    - type: Explosive
+      explosionType: Default
+      totalIntensity: 100
+      intensitySlope: 30
+      maxIntensity: 60
+      canCreateVacuum: false
+    - type: Tag
+      tags:
+        - SubdermalImplant
+        - HideContextMenu

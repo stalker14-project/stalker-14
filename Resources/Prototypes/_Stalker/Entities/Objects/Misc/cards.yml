@@ -23,6 +23,34 @@
 
 - type: entity
   parent: BaseCard
+  id: Clubs2
+  components:
+  - type: Card
+    reserveState: clubs-2
+
+- type: entity
+  parent: BaseCard
+  id: Clubs3
+  components:
+  - type: Card
+    reserveState: clubs-3
+
+- type: entity
+  parent: BaseCard
+  id: Clubs4
+  components:
+  - type: Card
+    reserveState: clubs-4
+
+- type: entity
+  parent: BaseCard
+  id: Clubs5
+  components:
+  - type: Card
+    reserveState: clubs-5
+
+- type: entity
+  parent: BaseCard
   id: Clubs6
   components:
   - type: Card
@@ -86,10 +114,39 @@
 
 - type: entity
   parent: BaseCard
+  id: Diamonds2
+  components:
+  - type: Card
+    reserveState: diamonds-2
+
+- type: entity
+  parent: BaseCard
+  id: Diamonds3
+  components:
+  - type: Card
+    reserveState: diamonds-3
+
+- type: entity
+  parent: BaseCard
+  id: Diamonds4
+  components:
+  - type: Card
+    reserveState: diamonds-4
+
+- type: entity
+  parent: BaseCard
+  id: Diamonds5
+  components:
+  - type: Card
+    reserveState: diamonds-5
+
+- type: entity
+  parent: BaseCard
   id: Diamonds6
   components:
   - type: Card
     reserveState: diamonds-6
+
 
 - type: entity
   parent: BaseCard
@@ -146,6 +203,34 @@
   components:
   - type: Card
     reserveState: diamonds-q
+
+- type: entity
+  parent: BaseCard
+  id: Hearts2
+  components:
+  - type: Card
+    reserveState: hearts-2
+
+- type: entity
+  parent: BaseCard
+  id: Hearts3
+  components:
+  - type: Card
+    reserveState: hearts-3
+
+- type: entity
+  parent: BaseCard
+  id: Hearts4
+  components:
+  - type: Card
+    reserveState: hearts-4
+
+- type: entity
+  parent: BaseCard
+  id: Hearts5
+  components:
+  - type: Card
+    reserveState: hearts-5
 
 - type: entity
   parent: BaseCard
@@ -219,6 +304,35 @@
 
 - type: entity
   parent: BaseCard
+  id: Spades2
+  components:
+  - type: Card
+    reserveState: spades-2
+
+- type: entity
+  parent: BaseCard
+  id: Spades3
+  components:
+  - type: Card
+    reserveState: spades-3
+
+- type: entity
+  parent: BaseCard
+  id: Spades4
+  components:
+  - type: Card
+    reserveState: spades-4
+
+
+- type: entity
+  parent: BaseCard
+  id: Spades5
+  components:
+  - type: Card
+    reserveState: spades-5
+
+- type: entity
+  parent: BaseCard
   id: Spades7
   components:
   - type: Card
@@ -276,7 +390,7 @@
 - type: entity
   parent: BaseItem
   id: BaseCardBin
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/cards/cardbin.rsi
@@ -311,6 +425,85 @@
   components:
   - type: Bin
     maxItems: 37
+    whitelist:
+      tags:
+      - Card
+
+- type: entity
+  parent: BaseCardBin
+  id: PokerCardBinEmpty
+  name: колода карт
+  description: Покерная колода карт для тех кому действительно более не чем занятся.
+  suffix: Пустая
+  components:
+  - type: Bin
+    maxItems: 53
+    whitelist:
+      tags:
+      - Card
+
+- type: entity
+  parent: BaseCardBin
+  id: PokerCardBin
+  name: колода карт
+  description: Покерная колода карт для тех кому действительно более не чем занятся.
+  suffix: 52
+  components:
+  - type: Bin
+    maxItems: 53
+    initialContents:
+    - Clubs2
+    - Clubs3
+    - Clubs4
+    - Clubs5
+    - Clubs6
+    - Clubs7
+    - Clubs8
+    - Clubs9
+    - Clubs10
+    - ClubsA
+    - ClubsJ
+    - ClubsK
+    - ClubsQ
+    - Diamonds2
+    - Diamonds3
+    - Diamonds4
+    - Diamonds5
+    - Diamonds6
+    - Diamonds7
+    - Diamonds8
+    - Diamonds9
+    - Diamonds10
+    - DiamondsA
+    - DiamondsJ
+    - DiamondsK
+    - DiamondsQ
+    - Hearts2
+    - Hearts3
+    - Hearts4
+    - Hearts5
+    - Hearts6
+    - Hearts7
+    - Hearts8
+    - Hearts9
+    - Hearts10
+    - HeartsA
+    - HeartsJ
+    - HeartsK
+    - HeartsQ
+    - Spades2
+    - Spades3
+    - Spades4
+    - Spades5
+    - Spades6
+    - Spades7
+    - Spades8
+    - Spades9
+    - Spades10
+    - SpadesA
+    - SpadesJ
+    - SpadesK
+    - SpadesQ
     whitelist:
       tags:
       - Card

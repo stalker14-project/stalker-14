@@ -2,7 +2,7 @@
 - type: entity
   id: STActionGoliathTentacle
   name: Тентакль
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Use your tentacles to grab and stun a target player!
   components:
   - type: EntityWorldTargetAction
@@ -22,7 +22,7 @@
 - type: entity
   id: ActionPsyonicsSmokeMutant
   name: smoke
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WorldTargetAction
       useDelay: 10
@@ -37,7 +37,7 @@
 - type: entity
   id: ActionPsyonicsShieldMutant
   name: shield
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       useDelay: 2
@@ -52,7 +52,7 @@
 - type: entity
   id: ActionPsyonicsDizzyMutant
   name: dizzy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       raiseOnUser: true

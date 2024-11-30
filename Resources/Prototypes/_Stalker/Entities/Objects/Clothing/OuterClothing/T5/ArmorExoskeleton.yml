@@ -33,7 +33,7 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetExoskelet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: ST, T5
   name: шлем экзоскелета
   description: В отличие от самого экзача, можно сказать вполне обычный шлем.
@@ -63,7 +63,7 @@
 - type: entity
   parent: ClothingOuterArmorExoskelet
   id: ClothingHeadHelmetExoskeletMonolith
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем экзоскелета Монолита
   description: В отличие от самого экзача, можно сказать вполне обычный шлем.
   components:
@@ -94,7 +94,7 @@
   id: ClothingHeadHelmetExoskeletonCovenant
   name: шлем экзоскелета
   description: В отличие от самого экзоскелета, можно сказать вполне обычный шлем.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/zavet_ekzo/helmet.rsi
@@ -123,7 +123,7 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHelmetExoSevaProject
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: "шлем экзо-cевы «OM-360»"
   description: В отличие от самого экзача, можно сказать вполне обычный шлем.
   components:

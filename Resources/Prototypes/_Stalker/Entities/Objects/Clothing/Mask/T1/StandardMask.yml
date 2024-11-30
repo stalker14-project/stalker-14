@@ -69,8 +69,22 @@
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasSera
+  name: стандартный противогаз Серафимов
+  description: Защищает от вопросов про религию, и от радиации.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_sera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_sera.rsi
+  - type: Armor
+    armorLevels:
+       radiation: 1
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasDolg1
-  name: стандартный противогаз Долга 1
+  name: стандартный противогаз Долга
   description: Вряд ли он уничтожит Зону, но он очень старается  Защищает от радиации.
   components:
   - type: Sprite

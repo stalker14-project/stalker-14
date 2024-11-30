@@ -47,3 +47,37 @@
     damage:
       types:
         Slash: 22
+
+- type: entity
+  name: нож сектантов
+  parent: STCombatKnife
+  id: STSeraKnife
+  description: Пахнет травами и маслами.
+  suffix: ST, Скин
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Melee/sera_knife.rsi
+    state: icon
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Melee/sera_knife.rsi
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    attackRate: 1.1
+    damage:
+      types:
+        Slash: 25
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 2
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionInjectOnEmbed
+    transferAmount: 2
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 2

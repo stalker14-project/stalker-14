@@ -203,7 +203,7 @@ namespace Content.Shared.ActionBlocker
             }
 
             var ev = new AttackAttemptEvent(uid, target, weapon, disarm);
-            RaiseLocalEvent(uid, ev);
+            RaiseLocalEvent(uid, ev, true); // stalker-changes
 
             if (ev.Cancelled)
                 return false;

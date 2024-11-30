@@ -1,0 +1,86 @@
+- type: entity
+  id: STAltarPilgrim
+  parent: AltarConvertFestival
+  suffix: ST, Mapping
+  name: алтарь паломников
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/pilgrim_altar.rsi
+    layers:
+    - state: altar
+    - state: lightning
+      shader: unshaded
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/pilgrim_altar.rsi
+    state: altar
+  - type: PointLight
+    radius: 4.5
+    energy: 1
+    color: "#ffffff"
+  - type: PsyonicsAbsorbable
+    isPersistent: true
+    verbAction: psy-pray-action
+    verbPopup: psy-pray-action-popup
+    psyRecovery: 5
+
+- type: entity
+  id: STSeraAltar
+  parent: AltarBase
+  name: алтарь серафимов
+  suffix: ST, Mapping
+  components:
+  - type: PsyonicsAbsorbable
+    isPersistent: true
+    verbAction: psy-pray-action
+    verbPopup: psy-pray-action-popup
+    psyRecovery: 5
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1,-1,1,1"
+        density: 55
+        mask:
+        - FullTileMask
+        layer:
+        - TableLayer
+        - MidImpassable
+        - LowImpassable
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/sera_altar.rsi
+    drawdepth: Overdoors
+    layers:
+    - state: full
+    - state: blood
+      shader: unshaded
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/sera_altar.rsi
+    state: full
+  - type: PointLight
+    radius: 3
+    energy: 2
+    color: "#89AC76"
+  - type: AmbientSound
+    range: 3
+    volume: -3
+    sound:
+      path: /Audio/Ambience/anomaly_scary.ogg
+
+
+- type: entity
+  id: STSeraAltar2
+  parent: STSeraAltar
+  name: алтарь серафимов
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/sera_altar2.rsi
+    drawdepth: Overdoors
+    layers:
+    - state: full
+    - state: blood
+      shader: unshaded
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/sera_altar2.rsi
+    state: full

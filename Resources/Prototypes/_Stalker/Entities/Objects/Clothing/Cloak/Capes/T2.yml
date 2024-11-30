@@ -17,7 +17,7 @@
         Piercing: 0.95
         Heat: 0.95
       flatReductions:
-        Blunt: 2
+        Blunt: 1
         Slash: 2
   - type: ExplosionResistance
     damageCoefficient: 0.85
@@ -50,7 +50,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBolotniyCoat
   name: капюшон плаща "болотника"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Покрывает вашу голову
   components:
   - type: STWeight
@@ -87,13 +87,40 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBlackCoat
   name: черный капюшон
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Покрывает вашу голову
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
+
+- type: entity
+  parent: ClothingOuterCoatKolchyga
+  id: STClothingOuterCoatTihiy
+  name: камуфляжный плащ «Тихий»
+  suffix: ST
+  description: Добротный плащ с плотной подкладкой и маскировкой.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetTihiy
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetTihiy
+  name: камуфляжный капюшон
+  noSpawn: true
+  description: Покрывает вашу голову.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi
 
 # кожанный плащ
 - type: entity
@@ -115,7 +142,7 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHatHoodCoatStalker
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -128,6 +155,7 @@
 - type: entity
   parent: STClothingCapeT2Base
   id: STClothingOuterCoatNovember
+  suffix: ST, Skin
   name: камуфляжный плащ Ноябрь
   description: Добротный плащ с плотной подкладкой и с маскировкой позднего осеннего леса
   components:
@@ -145,10 +173,55 @@
   parent: STClothingHeadHatBase
   id: STClothingHeadHelmetNovember
   name: осенний капюшон
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Покрывает вашу голову
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/hood_november.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/hood_november.rsi
+
+- type: entity
+  parent: STClothingCapeT2Base
+  id: STClothingOuterCoatHimera
+  name: камуфляжный плащ «Химера»
+  suffix: ST, Skin
+  description: Добротный плащ с плотной подкладкой и маскировкой.
+  components:
+  - type: STWeight
+    self: 1.5
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_himera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_himera.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetHimera
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetHimera
+  name: камуфляжный капюшон
+  noSpawn: true
+  description: Покрывает вашу голову.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_himera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_himera.rsi
+
+- type: entity
+  parent: STClothingCapeT2Base
+  id: STClothingCapeT2SerafimPrestige
+  name: престижный плащ серафимов
+  suffix: ST, T2, Скин
+  description: Выполнен в тёмно-зелёной цветовой гамме с металлическими вставками
+  components:
+  - type: STWeight
+    self: 1.5
+  - type: Sprite
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim_prestige.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim_prestige.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetSerafim

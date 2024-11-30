@@ -4,7 +4,7 @@
   id: Bullet918PGJ
   name: bullet (9х18 auto)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
@@ -20,7 +20,7 @@
   id: Bullet918PST
   name: bullet (9х18 auto)
   parent: Bullet918PGJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 2
@@ -32,7 +32,7 @@
   id: Bullet918SP7
   name: bullet (9х18 auto)
   parent: Bullet918PGJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 0
@@ -46,7 +46,7 @@
   id: Bullet918PBM
   name: bullet (9х18 auto)
   parent: Bullet918PGJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 3
@@ -74,7 +74,7 @@
 #   id: Bullet918Radiation
 #   name: bullet (9х18 auto) radiation
 #   parent: BaseBullet
-#   noSpawn: true
+#   categories: [ HideSpawnMenu ]
 #   components:
 #   - type: Projectile
 #     projectileClass: 2

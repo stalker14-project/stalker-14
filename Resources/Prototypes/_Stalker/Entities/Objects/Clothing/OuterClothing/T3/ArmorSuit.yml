@@ -142,12 +142,15 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetFreedomDefender
+    slot: head
 
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetFreedomDefender
   name: капюшон «Страж свободы»
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Не очень свободный, покуда сидит на вашей голове.
   components:
     - type: Sprite
@@ -182,3 +185,31 @@
       - 8,-2,8,0
       - 10,2,11,3
       - -2,2,-2,3
+
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorMonolith
+  name: бронекомбез «Чернобыль»
+  description: Производимый ремесленниками группировки «Монолит» усиленный комбинезон. 3 класс
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/monolith_armor.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/monolith_armor.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHatMonolith
+    slot: head
+# bonus
+  - type: STWeight
+    self: -3.5
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetHatMonolith
+  name: капюшон «Чернобыль»
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/armor_hat_monolith.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/armor_hat_monolith.rsi

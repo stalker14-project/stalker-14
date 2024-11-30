@@ -20,11 +20,17 @@
           prob: 0.02
         - id: WirecutterStalker
           prob: 0.05
-        - id: MaterialCloth1Stalker
-          prob: 0.2
-        - id: CraftNails
-          prob: 0.2
-        - id: BoltCutter
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftMultilayerPCBT3
+          prob: 0.07
+        - id: STCraftQuartzCrystalT3
+          prob: 0.05
+        - id: STCraftSapphireCrystalT4
+          prob: 0.02
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftSturdyHideT3
           prob: 0.05
         - id: CraftLeatherbox
           prob: 0.01
@@ -32,20 +38,38 @@
           prob: 0.01
         - id: CraftScrap
           prob: 0.2
-        - id: SolderingIron
+        - id: STCraftGlueKitT3
           prob: 0.05
         - id: Toolbox
           prob: 0.01
         - id: CraftTransformerCoil
           prob: 0.01
-        - id: PartRodMetalStalker
+        - id: STCraftBasicThreadKitT1
           prob: 0.2
+        - id: STCraftTapeKitT2
+          prob: 0.1
         - id: IngotGold1
           prob: 0.005
+        - id: STCraftIndustrialThreadStaplesKtiT4
+          prob: 0.01
         - id: IngotSilver1
           prob: 0.01
         - id: BikeHornInstrument
           prob: 0.01
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.05
+        - id: STCraftPlasticFittingT4
+          prob: 0.02
+        - id: STCraftSheetIronT2
+          prob: 0.2
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftSheetAluminumT4
+          prob: 0.05
+        
+        
         # Meds random
         - id: MedkitAI2
           prob: 0.07
@@ -130,34 +154,59 @@
     - type: StorageFill
       contents:
         # Craft random
-        - id: WirecutterStalker
-          prob: 0.1
         - id: STCraftPolymerFabricT4
+          prob: 0.02
+        - id: WirecutterStalker
           prob: 0.05
-        - id: MaterialCloth1Stalker
-          prob: 0.2
-        - id: CraftLeatherPatch
-          prob: 0.2
-        - id: CraftAwl
+        - id: STCraftStandardPCBT2
           prob: 0.1
-        - id: BoltCutter
+        - id: STCraftMultilayerPCBT3
+          prob: 0.07
+        - id: STCraftQuartzCrystalT3
+          prob: 0.05
+        - id: STCraftSapphireCrystalT4
+          prob: 0.02
+        - id: STCraftHideT2
           prob: 0.1
+        - id: STCraftSturdyHideT3
+          prob: 0.05
+        - id: CraftLeatherbox
+          prob: 0.01
         - id: CraftNeedle
-          prob: 0.05
-        - id: CraftPlasticParts
-          prob: 0.15
+          prob: 0.01
         - id: CraftScrap
           prob: 0.2
-        - id: SolderingIron
-          prob: 0.1
+        - id: STCraftGlueKitT3
+          prob: 0.05
         - id: Toolbox
-          prob: 0.05
+          prob: 0.01
+        - id: CraftTransformerCoil
+          prob: 0.01
+        - id: STCraftBasicThreadKitT1
+          prob: 0.2
+        - id: STCraftTapeKitT2
+          prob: 0.1
         - id: IngotGold1
-          prob: 0.05
+          prob: 0.005
+        - id: STCraftIndustrialThreadStaplesKtiT4
+          prob: 0.01
         - id: IngotSilver1
-          prob: 0.05
+          prob: 0.01
         - id: BikeHornInstrument
           prob: 0.01
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.05
+        - id: STCraftPlasticFittingT4
+          prob: 0.02
+        - id: STCraftSheetIronT2
+          prob: 0.2
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftSheetAluminumT4
+          prob: 0.05
+        
         # Meds random
         - id: MedkitAI2
           prob: 0.2
@@ -230,7 +279,7 @@
   parent: BaseWeaponBattery
   id: WeaponZombiePM
   description: Ржавое и гнилое оружие, непригодное к использованию.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/Pm.rsi
@@ -273,7 +322,7 @@
   name: Убитый в хлам Glock-17
   parent: WeaponZombiePM
   id: WeaponZombieGlock
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
     - type: STWeight
@@ -314,7 +363,7 @@
   name: Убитый в хлам ГШ-18
   parent: WeaponZombiePM
   id: WeaponPistolZombieGSH18
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
     - type: STWeight
@@ -358,7 +407,7 @@
   parent: WeaponZombiePM
   id: WeaponZombieMP5
   description: Ржавое и гнилое оружие, непригодное к использованию.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5.rsi
@@ -403,7 +452,7 @@
 
 - type: entity
   name: Убитый в хлам ПП-19-01 "Витязь"
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: WeaponZombiePM
   id: WeaponZombieVityaz
   description: Ржавое и гнилое оружие, непригодное к использованию.
@@ -460,7 +509,7 @@
   parent: WeaponZombiePM
   id: WeaponSubMachineGunStalkerMp5SDZombie
   description: Ржавое и гнилое оружие, непригодное к использованию.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: STWeight
       self: 3.5
@@ -512,7 +561,7 @@
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombiePPsh
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
     - type: STWeight
@@ -567,7 +616,7 @@
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieAKS74Y
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
   - type: Sprite
@@ -613,7 +662,7 @@
   name: Убитый в хлам AR-15s
   suffix: Stalker
   parent: WeaponZombiePM
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: WeaponZombieM16Carabine
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
@@ -661,7 +710,7 @@
   name: Убитый в хлам M4
   parent: WeaponZombiePM
   id: WeaponZombieM4
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
     - type: STWeight
@@ -711,7 +760,7 @@
   name: Убитый в хлам Galil
   suffix: Stalker
   parent: WeaponZombiePM
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: WeaponZombieGalil
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
@@ -771,7 +820,7 @@
   name: Убитый в хлам Sig-550
   suffix: Stalker
   parent: WeaponZombiePM
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: WeaponZombieSig550
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
@@ -825,7 +874,7 @@
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieMP40
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
     - type: Sprite
@@ -874,7 +923,7 @@
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieFAL
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Убитый в хлам FN FAL
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
@@ -929,7 +978,7 @@
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieSCARH
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: Убитый в хлам FN SCAR-H
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
@@ -984,7 +1033,7 @@
   name: Убитый в хлам ПП-19 "Бизон"
   suffix: Stalker
   id: WeaponZombieBzion
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   paren: WeaponZombiePM
   description: Ржавое и гнилое оружие, непригодное к использованию.
   components:
@@ -1034,7 +1083,7 @@
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmor6B2Z
   name: изношенный бронежилет 6Б2
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Стандартный бронежилет II типа, обеспечивающий хоть какую-то защиту от большинства видов повреждений
   components:
   - type: Unremoveable
@@ -1060,7 +1109,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseBandZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный легкий бронежилет бандита
   description: Стандартный бронежилет III типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
@@ -1076,7 +1125,7 @@
   name: изношенный комбинезон «Заря»
   description: Производимый «народными умельцами» комбинезон сталкера представляет собой эффективное сочетание лёгкого армейского бронежилета и комбинезона из прорезиненной ткани. Усилен за счёт встроенных кевларовых пластин. Неплохо защищает от слабого стрелкового оружия. В целом крайне недостаточен для глубоких рейдов и серьёзных операций в узлах Зоны.
   suffix: Stalker
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1110,7 +1159,7 @@
   parent: STClothingHeadBase
   id: ClothingHeadHelmetInfantryZ
   name: изношенный пехотный шлем
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Шлем неизвестного производства и марки, тем не менее защищающий вашу бошечку. Огромная партия этих шлемов как-то попала в ЧЗО. Класс брони - 3.
   components:
     - type: Unremoveable
@@ -1134,7 +1183,7 @@
   parent: ClothingHeadHelmetInfantry
   id: ClothingHeadHelmetInfantryBandZ
   name: изношенный бандитский пехотный шлем
-  noSpawn: true
+  categories: [ HideSpawnMenu ] 
   description: Пехотный шлем с нанесенными на него полосками, как буд-то adidas, почитается бандитскими формированиями, класс брони - 3.
   components:
     - type: Unremoveable
@@ -1149,7 +1198,7 @@
   parent: STClothingHeadBase
   id: ClothingHeadHelmetSH68Z
   name: изношенный СШ-68
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 2.
   components:
   - type: Unremoveable
@@ -1171,7 +1220,7 @@
   parent: ClothingHeadHelmetSH68
   id: ClothingHeadHelmetSH68BandZ
   name: изношенный СШ-68 адидас
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Это классический дедовский шлем, перекрашенный в бандитскую раскраску. Класс Брони - 2.
   components:
   - type: Unremoveable
@@ -1186,7 +1235,7 @@
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorZaryaDolgZ
   name: изношенная заря долга
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Представляет собой сочетание двухслойной прорезиненной ткани с плексигласовой прокладкой и встроенного бронежилета. По сути, тот же самый комбинезон "Заря" только модифицирован умельцами группировки "Долг" для более безопасных вылазок в условиях Зоны.
   suffix: Stalker
   components:
@@ -1221,7 +1270,7 @@
   parent: STClothingHeadBase
   id: ClothingHeadHelmetBerill5MDolgZ
   name: изношенная каланча
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Долг. Обеспечивает защиту 3 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
   components:
   - type: Unremoveable
@@ -1245,7 +1294,7 @@
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorMercZ
   name: изношенный комбинезон наёмника
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты. Обеспечивает 2 класс защиты.
   suffix: Stalker, Наёмники
   components:
@@ -1299,7 +1348,7 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadMercLightZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный легкий шлем наёмника
   description: Это легкий шлем, разработанный для защиты от колющих атак. Класс Брони - 2
   components:
@@ -1323,7 +1372,7 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorLightPlateVestBaseANAgreenZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный ANA Tactical
   description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
   components:
@@ -1366,7 +1415,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAgrayZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный ANA Tactical
   description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
   components:
@@ -1381,7 +1430,7 @@
   parent: ClothingOuterStorageToggleableBase
   id: STClothingCapeCoatReinforcedZ
   name: изношенный плащ с лёгким бронежилетом
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Плащ с броником 3 класса под ним, довольно надёжная защита при сохранении понтов.
   suffix: Stalker
   components:
@@ -1445,7 +1494,7 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorCN1Z
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный бронежилет «СН-1»
   description: Данный бронежилет разрабатывался для проведения поисковых операций в областях с низкой аномальной активностью. Использование довольно качественных материалов повысило устойчивость к износу.
   suffix: Stalker
@@ -1480,7 +1529,7 @@
 - type: entity
   parent: ClothingMaskBase
   id: ClothingMaskRenegateZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенная укреплённая сварочная маска
   description: Сварочная маска, с добавленными к ней листами стали для защиты от пуль и ударов. Дело рук шизофреника.
   components:
@@ -1505,7 +1554,7 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetSH6RenegateZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный СШ-68 скорпиона
   description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 2.
   components:
@@ -1528,7 +1577,7 @@
   parent: ClothingHeadHelmetInfantry
   id: ClothingHeadHelmetRenegateZ
   name: изношенный пехотный шлем ренегата
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Обычный пехотный шлем, перекрашенный в цвета ренегата, и с небольшими изменениями.
   components:
   - type: Unremoveable
@@ -1549,7 +1598,7 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorRenegateZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный бронекомбез ренегатов
   description: Дешёвый и защищающий от мутантов с аномалиями комбез реников. Обеспечивает 2 класс защиты.
   suffix: Stalker
@@ -1598,7 +1647,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseRenegateZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный легкий бронежилет ренегата
   description: Стандартный бронежилет III типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
@@ -1612,7 +1661,7 @@
   parent: ClothingOuterBase
   id: ClothingOuterCoatPahanZ
   name: изношенный полностью чёрный плащ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: плотный плащ перекрашенный в чёрный цвет.
   components:
   - type: Unremoveable
@@ -1658,7 +1707,7 @@
   parent: ClothingOuterBase
   id: ClothingOuterCoatKolchygaZ
   name: изношенный чёрный плащ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: плотный плащ перекрашенный в чёрный цвет.
   components:
   - type: Unremoveable
@@ -1705,7 +1754,7 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetUlachEasyZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный легкий улач
   suffix: Stalker, Наёмники
   description: Это шлем, специально разработанный для защиты от колющих атак и мобильности для группировки «Наёмники». Класс Брони - 3.
@@ -1731,7 +1780,7 @@
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMercZ
   name: изношенный легкий бронежилет наёмников
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Стандартный бронежилет III типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Unremoveable
@@ -1743,7 +1792,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMilitaryZ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: изношенный легкий бронежилет военных
   description: Стандартный бронежилет III типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
@@ -1757,7 +1806,7 @@
   id: Bullet918Zombie
   name: bullet (9х18 auto)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
@@ -1773,7 +1822,7 @@
   id: Bullet919Zombie
   name: bullet (9х19 auto)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
@@ -1789,7 +1838,7 @@
   id: Bullet556Zombie
   name: bullet (5,56x45 rifle)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 4
@@ -1805,7 +1854,7 @@
   id: Bullet545Zombie
   name: bullet (5,45x39)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 4
@@ -1821,7 +1870,7 @@
   id: Bullet751Zombie
   name: bullet (7.62х51 rifle)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 8
@@ -1837,7 +1886,7 @@
   id: Bullet725Zombie
   name: bullet (7.62х25 rifle)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2

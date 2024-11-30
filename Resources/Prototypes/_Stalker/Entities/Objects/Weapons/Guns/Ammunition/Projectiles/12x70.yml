@@ -28,7 +28,7 @@
   id: Bullet7mmBuckshot
   name: bullet (7mm buckshot)
   parent: STPellet7mm
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: STPellet7mm
@@ -52,7 +52,7 @@
   id: Bullet6mmBuckshot
   name: bullet (6.5mm buckshot)
   parent: STPellet65mm
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: STPellet65mm
@@ -76,7 +76,7 @@
   id: Bullet8mmBuckshot
   name: bullet (8.5mm buckshot)
   parent: STPellet85mm
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: ProjectileSpread
     proto: STPellet85mm
@@ -89,7 +89,7 @@
   id: BulletShotgunBullet
   name: bullet (Bullet)
   parent: STBasePellet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 2
@@ -104,7 +104,7 @@
   id: BulletShotgunRIP
   name: bullet (Bullet)
   parent: STBasePellet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 0
@@ -120,7 +120,7 @@
   id: BulletShotgunDart
   name: bullet (Dart)
   parent: STBasePellet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 3
@@ -133,7 +133,7 @@
 - type: entity
   id: PelletShotgunBeanbagStalker
   name: beanbag (.50)
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
     - type: Sprite
@@ -151,7 +151,7 @@
   id: BulletShotgunFlechette
   name: bullet (Flechette)
   parent: STBasePellet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 3

@@ -15,7 +15,7 @@
 - type: entity
   id: ArtilleryLanding
   name: прилёт взрыва
-  #noSpawn: true
+  #categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 3
@@ -31,7 +31,7 @@
 - type: entity
   name: взрыв
   id: ArtilleryExplosive
-  #noSpawn: true
+  #categories: [ HideSpawnMenu ]
   components:
   - type: ExplodeOnTrigger
   - type: Explosive
@@ -42,11 +42,121 @@
     canCreateVacuum: false
   - type: DeleteOnTrigger
   - type: ActiveTimerTrigger
+  
+- type: entity
+  name: взрыв (миномёт)
+  id: HowitzerExplosive
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Artillery
+    maxIntensity: 5
+    intensitySlope: 2
+    totalIntensity: 40
+    canCreateVacuum: false
+  - type: DeleteOnTrigger
+  - type: ActiveTimerTrigger
+
+- type: entity
+  id: HowitzerLanding
+  name: прилёт взрыва
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 3
+  - type: Transform
+    noRot: true
+    anchored: true
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_Stalker/Effects/artillery.ogg
+  - type: SpawnOnDespawn
+    prototype: HowitzerExplosive
+
+- type: entity
+  name: HowitzerSpawner
+  id: HowitzerTargetBase
+  categories: [ HideSpawnMenu ]
+  parent: MarkerBase
+  components:
+    - type: Marker
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Sprite
+      drawdepth: Overdoors
+      sprite: Markers/cross.rsi
+      state: red
+    - type: RandomSpawner
+      prototypes:
+        - HowitzerLanding
+      chance: 0.8
+      offset: 13
+
+- type: entity
+  name: вызов интенсивного миномётного обстрела 
+  id: HowitzerTimedSpawnerIntensive
+  suffix: Минута
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: blue
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+      - HowitzerTargetBase
+    chance: 0.75
+    intervalSeconds: 1
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 30
+  - type: TimedDespawn
+    lifetime: 60
+
+- type: entity
+  name: вызов миномётного обстрела 
+  id: HowitzerTimedSpawnerfast
+  suffix: Минута
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: blue
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+      - HowitzerTargetBase
+    chance: 0.40
+    intervalSeconds: 1
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 30
+  - type: TimedDespawn
+    lifetime: 60
+
+- type: entity
+  name: вызов миномётного обстрела 
+  id: HowitzerTimedSpawnerLong
+  suffix: 3 минуты
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: blue
+  - type: Timer
+  - type: TimedSpawner
+    prototypes:
+      - HowitzerTargetBase
+    chance: 0.40
+    intervalSeconds: 1
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 30
+  - type: TimedDespawn
+    lifetime: 180
 
 - type: entity
   name: ArtillerySpawner
   id: ArtilleryTargetBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: MarkerBase
   components:
     - type: Marker
@@ -63,7 +173,7 @@
       offset: 11
 
 - type: entity
-  name: вызов обстрела
+  name: вызов обстрела РСЗО
   id: ArtilleryTimedSpawnerIntensive
   suffix: Минута
   parent: MarkerBase
@@ -83,7 +193,7 @@
     lifetime: 60
 
 - type: entity
-  name: вызов обстрела
+  name: вызов обстрела 152мм
   id: ArtilleryTimedSpawnerLong
   suffix: 3 минуты
   parent: MarkerBase
@@ -95,12 +205,25 @@
   - type: TimedSpawner
     prototypes:
       - ArtilleryTargetBase
-    chance: 0.75
-    intervalSeconds: 3
-    minimumEntitiesSpawned: 1
+    chance: 0.5
+    intervalSeconds: 5
+    minimumEntitiesSpawned: 3
     maximumEntitiesSpawned: 30
   - type: TimedDespawn
-    lifetime: 180
+    lifetime: 180 
+  
+- type: entity
+  parent: ArtilleryTimedSpawnerLong
+  name: вызов обстрела 152мм
+  id: ArtilleryTimedSpawnerFast
+  suffix: Минута
+  components:
+  - type: TimedDespawn
+    lifetime: 60 
+
+
+
+
 
 - type: entity
   id: HelicopterLanding

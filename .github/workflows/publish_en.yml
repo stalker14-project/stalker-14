@@ -1,0 +1,20 @@
+name: Publish UA
+
+concurrency:
+  group: publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+    - name: Send POST-request
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.BUILD_HOST }}
+        username: ${{ secrets.BUILD_USER }}
+        password: ${{ secrets.BUILD_PASS }}
+        port: ${{ secrets.BUILD_PORT }}
+        script: fsa use upd_en

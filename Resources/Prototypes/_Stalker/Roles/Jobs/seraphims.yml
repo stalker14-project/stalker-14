@@ -13,7 +13,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: StalkerGear
+  startingGear: SeraphimGear
   supervisors: Вы служите во имя Его.
   special:
     - !type:AddComponentSpecial
@@ -33,10 +33,22 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+- type: startingGear
+  id: SeraphimGear
+  equipment:
+    id: STSeraphimPDA
+    neck: ClothingStalkerNeckTokenSeraphim
+    belt: ClothingBeltStorageWaistbag
+    shoes: STClothingShoesBootsSeraFilled
+    legs: STClothingLegsSerafimPants
+    torso: STClothingTorsoSerafimLittleChaos
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera
+
 
 - type: job
   id: SeraphimHead
-  name: Лидер Серафмиов
+  name: Офицер Серафимов
   icon: seraphim
   description: Таинственная группировка, появившаяся с первых дней жизни Зоны.
   playTimeTracker: JobHeadSeraphims
@@ -49,7 +61,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: StalkerGear
+  startingGear: SeraphimHeadGear
   supervisors: Вы служите во имя Его.
   special:
     - !type:AddComponentSpecial
@@ -70,3 +82,17 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: AutoImplant
+          implants:
+          - STSeraBombImplant
+- type: startingGear
+  id: SeraphimHeadGear
+  equipment:
+    id: STSeraphimPDA
+    neck: ClothingStalkerNeckTokenSeraphim
+    belt: ClothingBeltStorageWaistbag
+    shoes: STClothingShoesBootsSeraFilled
+    legs: STClothingLegsSerafimPants
+    torso: STClothingTorsoSerafimFullReady
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera

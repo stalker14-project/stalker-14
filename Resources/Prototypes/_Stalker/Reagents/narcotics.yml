@@ -10,12 +10,12 @@
   meltingPoint: 170.0
   metabolisms:
     Narcotic:
-      metabolismRate: 0.05
+      metabolismRate: 0.025
       effects:
       - !type:MovespeedModifier
         conditions:
-        walkSpeedModifier: 1.1
-        sprintSpeedModifier: 1.1
+        walkSpeedModifier: 1.04
+        sprintSpeedModifier: 1.04
       - !type:GenericStatusEffect
         conditions:
         key: Stun

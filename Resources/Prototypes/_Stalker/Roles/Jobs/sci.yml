@@ -32,6 +32,41 @@
         initialTeeth: 3
 
 - type: job
+  id: StalkerISSG
+  name: Оперативник ISSG
+  icon: ecologists
+  description: Выполнения приказов института - ваше всё.
+  playTimeTracker: JobStalkerISSG
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobStalkerSci
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: SciGear
+  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - Sci
+      - type: Bands
+        altBand: stalker
+        canChange: true
+        band: Stalker
+        bandIcon: ecologists
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
+- type: job
   id: StalkerHeadScientist
   name: Ведущий Учёный
   icon: sci

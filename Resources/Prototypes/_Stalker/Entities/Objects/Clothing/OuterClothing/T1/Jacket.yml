@@ -47,7 +47,7 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: STClothingHeadHatHoodBase
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -82,7 +82,7 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketBandit
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -109,7 +109,7 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketStalker
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -142,7 +142,7 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketFreedom
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -174,7 +174,7 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketMerc
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -211,7 +211,7 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketCN
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -245,7 +245,7 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketDolg
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
@@ -305,13 +305,38 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketDeserter
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketMonolith
+  name: куртка монолита
+  description: Куртка в светло-сером пиксельном камуфляже, используемая монолитом, имеет наплечники, но они защитят вас лишь от скучного внешнего вида.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodJacketMonolith
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodJacketMonolith
+  noSpawn: true
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi
 
 # Скинчики
 

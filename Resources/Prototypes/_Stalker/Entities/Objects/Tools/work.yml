@@ -120,7 +120,7 @@
   name: арендованный верстак (Активен)
   description: Верстак с тисками для работы с материалами и устройствами. Для работы на нём нужен купон, позволяющий работать 10 минут. Владелец не несёт ответственности за утерю вещей из-за окончания аренды.
   suffix: Stalker, крафт
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 600
@@ -185,7 +185,7 @@
   components:
     - type: InteractionOutline
     - type: Sprite
-      sprite: _Stalker/Objects/Devices/workbench.rsi
+      sprite: _Stalker/Objects/Devices/worktables.rsi
       state: worktable_broken
     - type: Transform
       noRot: true

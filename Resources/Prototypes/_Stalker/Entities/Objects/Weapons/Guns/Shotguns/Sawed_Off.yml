@@ -1,4 +1,5 @@
 
+
 - type: entity
   name: Обрез
   parent: STBaseWeaponShotgun
@@ -11,8 +12,10 @@
     sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
   - type: Item
     size: Small
-    sprite: Objects/Weapons/Guns/Shotguns/inhands_64x.rsi
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
     heldPrefix: sawn
+  - type: STWeight
+    self: 2.0
   - type: Gun
     projectileSpeed: 13
     minAngle: 30
@@ -20,12 +23,8 @@
     fireRate: 7
     angleIncrease: 15
     angleDecay: 75
-    soundGunshot: # Corvax-Guns
-      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_sawed.ogg
   - type: BallisticAmmoProvider
     capacity: 2
-  - type: PullDoAfter
-    pullTime: 1
 
 - type: entity
   parent: STWeaponShotgunSawn

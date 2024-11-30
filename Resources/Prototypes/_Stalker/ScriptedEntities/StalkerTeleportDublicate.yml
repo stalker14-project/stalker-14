@@ -179,6 +179,7 @@
   - type: DuplicateTeleport
     prefix: Seraphims
     mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
+    maxWeight: 150
   - type: AccessReader
     access: [["Seraphims"]]
 
@@ -337,6 +338,48 @@
     access: [["Neutral"]]
 
 - type: entity
+  id: StalkerDublicateDeserter
+  parent: StalkerDublicateKordon
+  name: Подвал в логово
+  description: С помощью этого подвала вы можете попасть в своё логово.
+  suffix: Teleport, Portal, Duplicate, Deserter
+  components:
+  - type: DuplicateTeleport
+    prefix: Deserter
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
+    maxWeight: 150
+  - type: AccessReader
+    access: [["Deserter"]]
+
+- type: entity
+  id: StalkerDublicateJaba
+  parent: StalkerDublicateKordon
+  name: Подвал в логово
+  description: С помощью этого подвала вы можете попасть в своё логово.
+  suffix: Teleport, Portal, Duplicate, Jaba
+  components:
+  - type: DuplicateTeleport
+    prefix: Jaba
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
+    maxWeight: 150
+  - type: AccessReader
+    access: [["Jaba"]]
+
+- type: entity
+  id: StalkerDublicateMechanic
+  parent: StalkerDublicateKordon
+  name: Подвал в логово
+  description: С помощью этого подвала вы можете попасть в своё логово.
+  suffix: Teleport, Portal, Duplicate, Mechanic
+  components:
+  - type: DuplicateTeleport
+    prefix: Mechanic
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
+    maxWeight: 150
+  - type: AccessReader
+    access: [["Mechanic"]]
+
+- type: entity
   id: StalkerDublicateBar
   parent: StalkerDublicateKordon
   name: Подвал в логово
@@ -370,3 +413,6 @@
     - Project
     - Neutral
     - Bar
+    - Jaba
+    - Mechanic
+    - Deserter

@@ -1385,7 +1385,7 @@ namespace Content.Shared.CCVar
         ///     Allows enabling/disabling player-started votes for ultimate authority
         /// </summary>
         public static readonly CVarDef<bool> VoteEnabled =
-            CVarDef.Create("vote.enabled", true, CVar.SERVERONLY);
+            CVarDef.Create("vote.enabled", false, CVar.SERVERONLY); // stalker-changes
 
         /// <summary>
         ///     See vote.enabled, but specific to restart votes

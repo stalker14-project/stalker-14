@@ -1,7 +1,7 @@
 #НОВАЯ 64x64!!!!!!
 #Береза
 - type: entity
-  parent: BaseTree
+  parent: STBaseTree
   id: BirchTreeNew01
   suffix: ST, Mapping
   name: берёза
@@ -714,13 +714,37 @@
 # moved to _Stalker
 - type: entity
   id: STBaseRock
-  parent: BaseRock
   suffix: ST, Mapping
   abstract: true
   components:
   - type: Sprite
     noRot: true
     sprite: _Stalker/Objects/Decoration/Flora/flora_rockssolid.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 6500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        density: 1000
+        layer:
+        - HalfWallLayer
+        - Opaque
+  - type: Climbable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
 
 - type: entity
   parent: STBaseRock
@@ -751,7 +775,7 @@
   description: Yep, it's a tree.
   parent: BaseTree
   suffix: ST, Mapping
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   # abstract: true
   components:
   - type: Sprite

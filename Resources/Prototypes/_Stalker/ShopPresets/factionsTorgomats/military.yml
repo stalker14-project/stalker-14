@@ -10,6 +10,7 @@
     - name: Оружие
       priority: 1
       items:
+        STWeaponSubMachineGunVityaz: 9
         WeaponMachineGunRPD: 9
         STWeaponRifleM14: 15
         STWeaponRifleStalkerAK103: 11
@@ -17,14 +18,21 @@
     - name: Броня и снаряжение
       priority: 2
       items:
+        ClothingHeadAssaultHelmetMilitary: 5
         # ClothingOuterArmor6B13: 15 Убрано всё т4 по просьбе вииса
-        ClothingHeadHelmetBulatMilitary: 5
+        ClothingHeadHelmetBulatMilitary: 4
         # STClothingOuterArmorBerill5M: 15 Убрано всё т4 по просьбе вииса
     - name: Бумажная работа
       priority: 3
       items:
         hunterLicense: 2
         militaryLicense: 3
+    - name: Гранаты
+      priority: 4
+      items:
+        FragGrenade: 2
+        PhosphorusGrenadeStalker: 6
+        MK3A2Grenade: 5
 
 - type: shopPreset
   id: MilitaryPremiumShopPreset
@@ -56,6 +64,7 @@
     - name: Патроны
       priority: 3
       items:
+        ArmyCrateVityazAmmunition: 3
         45ACPLFMJBox: 1
         45ACPHydroshockBox: 3
         754PCBox: 3
@@ -98,9 +107,9 @@
     - name: Гранаты
       priority: 7
       items:
-        DG05SmokeGrenade: 1
-        RGD5Grenade: 1
-        HydrocyanicGrenadeStalker: 3
+        DG05SmokeGrenade: 2
+        RGD5Grenade: 2
+        GL1Grenade: 1
     - name: Другое
       priority: 8
       items:
@@ -125,6 +134,7 @@
     - name: Коптёр
       priority: 1
       items:
+        SupplyTalons: 1111
         STSkinsKitMilitary: 500
         ClothingEyesGlassesCheapSunglasses: 30
         STClothingLegsJeansCz: 10
@@ -142,7 +152,6 @@
         ClothingJaketGeneral: 50
         ClothingHeadHatGeneral: 50
         ClothingUniformJumpsuitMilitary2: 50
-        # SupplyTalons: 1000
         ClothingHeadHatBeaniehat: 50
         ClothingMaskNeckFacemask: 50
         STCombatKnife: 10

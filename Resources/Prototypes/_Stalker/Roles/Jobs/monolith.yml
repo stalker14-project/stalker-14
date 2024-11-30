@@ -1,0 +1,47 @@
+- type: job
+  id: StalkerMonolith
+  name: Скитальцы
+  icon: monolith
+  description: Символ тихого, но пугающего присутствия.
+  playTimeTracker: JobMonolith
+  whitelisted: true
+  requirements:
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAdvanced
+    #   time: 1
+    #   inverted: true
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAnomalists
+    #   time: 1
+    #   inverted: true
+  startingGear: MonolithGear
+  supervisors: вы утратили Его Голос, найдите его
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Monolith
+      - type: Bands
+        band: Stalker
+        bandIcon: monolith
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
+- type: startingGear
+  id: MonolithGear
+  equipment:
+    id: MonolithPDA
+    belt: ClothingBeltStorageWaistbag
+    torso: ClothingTorsoTurtlenecksMonolithCamouflage
+    legs: ClothingLegsJeansMonolithCamouflage
+    shoes: ClothingShoesBootsCombat
+    gloves: ClothingHandsGlovesFingerless

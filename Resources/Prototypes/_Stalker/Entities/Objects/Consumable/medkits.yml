@@ -33,7 +33,7 @@
   id: STBrutepack
   suffix: ST
   name: набор от ушибов
-  description: помогает от физических повреждений
+  description: Помогает от механических повреждений
   components:
   - type: Healing
     damageContainers:
@@ -60,6 +60,32 @@
   maxCount: 10
 
 - type: entity
+  parent: STBrutepack
+  id: STBrutepackSera
+  suffix: ST, Скин
+  name: баночка с мазью
+  description: Плохо пахнущая мазь, сделаная из молотого корня Живокуста и давленного глаза Плоти, прекрасно лечит ушибы.
+  components:
+  - type: Stack
+    stackType: STBrutepackSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+
+- type: stack
+  id: STBrutepackSera
+  name: баночка с мазью
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+  spawn: STBrutepackSera
+  maxCount: 10
+
+- type: entity
   parent: [STBaseHealingItem, Ointment]
   id: STOintment
   suffix: ST
@@ -80,6 +106,32 @@
   maxCount: 10
 
 - type: entity
+  parent: STOintment
+  id: STOintmentSera
+  suffix: ST, Скин
+  name: горькая мазь
+  description: Отвратительная вязкая жижа с ужасным запахом, сделаная из выжимки печени Кабана, тем не менее она на удивление хорошо заживляет химические и радиационные ожоги. Применяется серафимами в том числе как средство борьбы с раком кожи.
+  components:
+  - type: Stack
+    stackType: STOintmentSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+
+- type: stack
+  id: STOintmentSera
+  name: горькая мазь
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  spawn: STOintmentSera
+  maxCount: 10
+
+- type: entity
   parent: [STBaseHealingItem, Gauze]
   id: STGauze
   suffix: ST
@@ -97,6 +149,32 @@
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
   spawn: STGauze
+  maxCount: 10
+
+- type: entity
+  parent: STGauze
+  id: STGauzeSera
+  suffix: ST, Скин
+  name: кусок тряпки
+  description: Будь то прокипяченая ткань или же найденый в развалинах старый бинт, в любом случае живущие в зоне Серафимы используют это целях бинтования ран.
+  components:
+  - type: Stack
+    stackType: STGauzeSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
+    state: icon
+
+- type: stack
+  id: STGauzeSera
+  name: кусок тряпки
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  spawn: STGauzeSera
   maxCount: 10
 
 - type: entity
@@ -129,6 +207,32 @@
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-1
   spawn: MedkitAI2
+  maxCount: 4
+
+- type: entity
+  parent: MedkitAI2
+  id: MedkitAI2Sera
+  suffix: ST, Скин
+  name: набор кустарных медикаментов
+  description: Замотаный в ткань набор разных банок, склянок и порошков, а также старых хирургических инструментов. Используется серафимами для основательного лечения как глубоких укусов мутантов, так и пулевых и осколочных ранений. В сравнении с современной медициной крайне не практичный способ оказания раненому медпомощи, и тем не менее им пользуются его создатели не имея иной альтернативы.
+  components:
+  - type: Stack
+    stackType: MedkitAI2Sera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+
+- type: stack
+  id: MedkitAI2Sera
+  name: набор лечебных трав
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+  spawn: MedkitAI2Sera
   maxCount: 4
 
 - type: entity

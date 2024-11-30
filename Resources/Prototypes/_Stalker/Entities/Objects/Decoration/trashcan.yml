@@ -1,6 +1,6 @@
 - type: entity
   id: TrashCanS1
-  parent: BaseStructure
+  parent: BaseStructureStalkerDynamic
   name: мусорный контейнер
   suffix: ST, Mapping
   description: Специализированная ёмкость, служащая для сбора бытовых или строительных отходов.
@@ -56,6 +56,17 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/trashcan.rsi
     state: tc2
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+      - 0,0,32,32
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
 
 - type: entity
   id: TrashCanS3
@@ -69,6 +80,17 @@
   id: TrashCanS4
   parent: TrashCanS1
   components:
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+      - 0,0,32,32
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/trashcan.rsi
     state: tc4

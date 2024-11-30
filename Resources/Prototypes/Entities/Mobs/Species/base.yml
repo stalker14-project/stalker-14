@@ -88,8 +88,8 @@
     species: Human
   - type: SlowOnDamage
     speedModifierThresholds:
-      60: 0.7
-      80: 0.5
+      50: 0.7 # stalker-changes
+      60: 0.5 # stalker-changes
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:
@@ -172,7 +172,7 @@
       types:
         Blunt: 5
   - type: SleepEmitSound
-  - type: SSDIndicator
+#  - type: SSDIndicator # stalker-changes
   - type: StandingState
   - type: Dna
   - type: MindContainer
@@ -288,6 +288,7 @@
   - type: FireVisuals
     alternateState: Standing
     # stalker-changes-start
+  - type: Stagger
   - type: Inventory
     templateId: stalkerhuman
   - type: PsyonicsShieldVisuals

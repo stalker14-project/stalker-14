@@ -2,7 +2,7 @@
   parent: BaseItem
   id: DonatestandartCrate
   name: начальный набор
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Самый дешёвый донатный набор, выдаётся с подпиской "Хлеб"
   suffix: Stalker, СПОНСОР
   components:
@@ -57,7 +57,7 @@
   parent: BaseItem
   id: DonateStalkerCrate
   name: сталкерский набор
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Средний донатный набор сталкера выдаётся с подпиской "Бекер".
   suffix: Stalker, СПОНСОР
   components:
@@ -96,7 +96,7 @@
   parent: BaseItem
   id: DonateIskatelCrate
   name: набор искателя
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Уникальный донатный набор искателя выдаётся с подпиской "Агент О-Сознания".
   suffix: Stalker, СПОНСОР
   components:
@@ -134,7 +134,7 @@
   parent: BaseItem
   id: DonateContributorCrate
   name: набор контрибьютера
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Набор для контрибьютера выдаётся лишь Contributor'ам.
   suffix: Stalker, СПОНСОР
   components:

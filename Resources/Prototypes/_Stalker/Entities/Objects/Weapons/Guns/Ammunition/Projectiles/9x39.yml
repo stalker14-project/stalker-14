@@ -3,7 +3,7 @@
   id: Bullet939SP5
   name: bullet (9х39 rifle)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 3
@@ -19,7 +19,7 @@
   id: Bullet939SP6
   name: bullet (9х39 rifle)
   parent: Bullet939SP5
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 3
@@ -31,7 +31,7 @@
   id: Bullet939BP
   name: bullet (9х39 rifle)
   parent: Bullet939SP5
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 4

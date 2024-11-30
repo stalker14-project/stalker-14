@@ -4,7 +4,7 @@
   id: Bullet739FMJ
   name: bullet (7.62х39 rifle)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 6
@@ -20,7 +20,7 @@
   id: Bullet739HP
   name: bullet (7.62х39 rifle)
   parent: Bullet739FMJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 0
@@ -34,7 +34,7 @@
   id: Bullet739PC
   name: bullet (7.62х39 rifle)
   parent: Bullet739FMJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 4
@@ -46,7 +46,7 @@
   id: Bullet739BP
   name: bullet (7.62х39 rifle)
   parent: Bullet739FMJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 5

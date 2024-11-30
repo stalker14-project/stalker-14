@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Stalker.PullDoAfter;
 using Content.Shared.Armor;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
@@ -158,24 +159,26 @@ public abstract partial class InventorySystem
             return false;
         }
 
+
+
         if (checkDoafter &&
             clothing != null &&
             clothing.EquipDelay > TimeSpan.Zero &&
             (clothing.Slots & slotDefinition.SlotFlags) != 0 &&
             _containerSystem.CanInsert(itemUid, slotContainer))
-        {
+        { // stalker-changes-start 
             var args = new DoAfterArgs(
                 EntityManager,
                 actor,
-                clothing.EquipDelay,
+                TryComp<PullDoAfterComponent>(itemUid, out var pullDoAfterComponent) ? TimeSpan.FromSeconds(pullDoAfterComponent.PullTime) : clothing.EquipDelay,
                 new ClothingEquipDoAfterEvent(slot),
                 itemUid,
                 target,
                 itemUid)
             {
-                BreakOnMove = true,
+                BreakOnMove = false,
                 NeedHand = true,
-            };
+            }; // stalker-changes-end
 
             _doAfter.TryStartDoAfter(args);
             return false;
@@ -452,27 +455,27 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        //we need to do this to make sure we are 100% removing this entity, since we are now dropping dependant slots
-        if (!force && !_containerSystem.CanRemove(removedItem.Value, slotContainer))
+        // we need to do this to make sure we are 100% removing this entity, since we are now dropping dependant slots
+        if (!force && !_containerSystem.CanRemove(removedItem.Value, slotContainer)) // stalker-changes-start
             return false;
 
         if (checkDoafter &&
             Resolve(removedItem.Value, ref clothing, false) &&
             (clothing.Slots & slotDefinition.SlotFlags) != 0 &&
             clothing.UnequipDelay > TimeSpan.Zero)
-        {
+        { // stalker-changes-start
             var args = new DoAfterArgs(
                 EntityManager,
                 actor,
-                clothing.UnequipDelay,
+                TryComp<PullDoAfterComponent>(removedItem, out var pullDoAfterComponent) ? TimeSpan.FromSeconds(pullDoAfterComponent.PullTime) : clothing.UnequipDelay,
                 new ClothingUnequipDoAfterEvent(slot),
                 removedItem.Value,
                 target,
                 removedItem.Value)
             {
-                BreakOnMove = true,
+                BreakOnMove = false,
                 NeedHand = true,
-            };
+            }; // stalker-changes-end
 
             _doAfter.TryStartDoAfter(args);
             return false;

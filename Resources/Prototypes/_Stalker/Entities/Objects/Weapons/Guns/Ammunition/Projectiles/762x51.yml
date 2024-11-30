@@ -4,7 +4,7 @@
   id: Bullet751M80
   name: bullet (7.62х51 rifle)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 8
@@ -20,7 +20,7 @@
   id: Bullet751Noiser
   name: bullet (7.62х51 rifle)
   parent: Bullet751M80
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 0
@@ -34,7 +34,7 @@
   id: Bullet751M61
   name: bullet (7.62х51 rifle)
   parent: Bullet751M80
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 4
@@ -46,7 +46,7 @@
   id: Bullet751M993
   name: bullet (7.62х51 rifle)
   parent: Bullet751M80
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 5

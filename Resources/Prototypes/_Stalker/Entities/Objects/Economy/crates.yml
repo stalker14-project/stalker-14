@@ -1186,8 +1186,8 @@
         - id: DrinkFlaskOld
         - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
-        - id: Gauze
-        - id: Gauze
+        - id: STGauze
+        - id: STGauze
         - id: ClothingShoesBootsCombatFilled
         - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
         - id: ClothingMaskGP7
@@ -1215,13 +1215,45 @@
         - id: 545PCBox
         - id: 545PCBox
         - id: BaseRadio
-        - id: Brutepack
-        - id: Brutepack
-        - id: Brutepack
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: STBrutepack
         - id: MedkitMilitary
         - id: MedkitMilitary
       sound:
         path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: UNstandartCrate
+  id: ArmyCrateVityazAmmunition
+  name: набор ОКСОП снабжения под Витязь
+  description: Набор поставки экипировки ОКСОП
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: VityazMag
+        - id: VityazMag
+        - id: VityazMag
+        - id: VityazMag
+        - id: VityazMag
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
 
 - type: entity
   parent: UNstandartCrate
@@ -1247,8 +1279,8 @@
         - id: DrinkFlaskOld
         - id: DrinkWaterBottleFull
         - id: DrinkWaterBottleFull
-        - id: Gauze
-        - id: Gauze
+        - id: STGauze
+        - id: STGauze
         - id: ClothingShoesBootsCombatFilled
         - id: STClothingOuterArmorLightPlateVestBasePSZ7
         - id: ClothingMaskGP21
@@ -1276,9 +1308,9 @@
         - id: 739FMJBox
         - id: 739FMJBox
         - id: BaseRadio
-        - id: Brutepack
-        - id: Brutepack
-        - id: Brutepack
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: STBrutepack
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
@@ -1288,13 +1320,11 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
-        # temp
 - type: entity
-  parent: BaseItem
-  id: STTempTestNabor
-  name: набор тестера
-  description: Поставленный Сидором совместно с ООН.
-  suffix: Stalker, т2
+  parent: UNstandartCrate
+  id: ArmyCrateIssgBase
+  name: набор ISSG
+  description: Набор поставки экипировки  ISSG
   components:
     - type: Item
       size: Large
@@ -1308,50 +1338,42 @@
       state: kb2
     - type: SpawnItemsOnUse
       items:
-        - id: STWeaponRifleStalkerL85
-        - id: STWeaponShotgunProtecta
-        - id: 556M856Box
-        - id: 556M856Box
-        - id: 556M856Box
-        - id: 556M856Box
-        - id: 556M856Box
-        - id: 556M856Box
-        - id: 556Mag30
-        - id: 556Mag30
-        - id: 556Mag30
-        - id: 556Mag30
-        - id: 556Mag30
-        - id: 556Mag30
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: 6mmBuckshotBox
-        - id: ClothingHeadAssaultHelmetUN
-        - id: STClothingOuterArmorLightPlateVestBaseUN
-        - id: ClothingBackpackDuffelCommonStalker
-        - id: STBoltBagFilled
-        - id: DrinkLemonadehBottleFull
         - id: FoodTinMRE
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
+        - id: FoodTinMRE
+        - id: DrinkFlaskOld
+        - id: DrinkFlaskOld
+        - id: DrinkWaterBottleFull
+        - id: DrinkWaterBottleFull
         - id: STGauze
         - id: STGauze
-        - id: Bloodpack
-        - id: Bloodpack
-        - id: STBrutepack
-        - id: STBrutepack
-        - id: STHeadLight
+        - id: ClothingShoesBootsCombatFilled
+        - id: ClothingOuterArmorIssgSpark
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: STWeaponSMGMp5
+        - id: WeaponPistolStalkerPM
+        - id: 918PSTBox
+        - id: BasePMMag
+        - id: BasePMMag
+        - id: BasePMMag
+        - id: FlashlightSeclite
         - id: PowerCellHigh
-        - id: ZoneAnomalyDetectorAD2
-        - id: ZoneArtifactDetectorSpruce
+        - id: PowerCellHigh
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: BaseRadio
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: MedkitMilitary
+        - id: MedkitMilitary
       sound:
         path: /Audio/Effects/unwrap.ogg

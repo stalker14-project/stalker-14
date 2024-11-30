@@ -117,22 +117,49 @@ public sealed class RespawnNowCommand : IConsoleCommand
         if (entityManager.TryGetComponent(PlayerEntity, out MobStateComponent? CMobState) && RespawnComplete == false)
         {
             UserCMobState = CMobState;
-            if (CMobState.CurrentState == MobState.Critical) // arena-changes
+            if (CMobState.CurrentState == MobState.Critical || CMobState.CurrentState == MobState.Alive)
             {
                 shell.WriteLine("We can only be reborn when you are completely dead. Your current status is \"" +
                                 CMobState.CurrentState + "\"");
                 RespawnError = false;
             }
 
-            if (CMobState.CurrentState == MobState.Dead || CMobState.CurrentState == MobState.Critical) // arena-changes
+            if (CMobState.CurrentState == MobState.Dead)
             {
                 shell.WriteLine("Respawning...");
 
-                ticker.Respawn(targetPlayer); // arena-changes
+                ticker.Respawn(targetPlayer);
+                var newEnt = targetPlayer.AttachedEntity;
+                if (newEnt != null)
+                    _entMan.EventBus.RaiseLocalEvent(newEnt.Value, new RespawnedByCommandEvent(_entMan.GetNetEntity(PlayerEntity)));
 
                 RespawnComplete = true;
                 RespawnError = false;
                 shell.WriteLine("Respawning... OK");
+
+                var NewPlayerEntity = (EntityUid) shell.Player.AttachedEntity!;
+
+
+                if (entityManager.TryGetComponent(PlayerEntity, out DamageableComponent? DComponent))
+                {
+
+                    shell.WriteLine("DamageableComponent OK");
+                    //var Damage = new DamageSpecifier(prototype, FixedPoint2.New(99));
+
+                   // IoCManager.Resolve<DamageableSystem>().TryChangeDamage(NewPlayerEntity, Damage, true);
+                   //Damage(sysMan.GetEntitySystem<DamageableSystem>(),NewPlayerEntity);
+
+
+                   if (!_protoMan.TryIndex<DamageTypePrototype>("Blunt", out var prototype))
+                   {
+                       return;
+                   }
+                   var Damage = new DamageSpecifier(prototype, FixedPoint2.New(80));
+                   _damageableSystem.TryChangeDamage(NewPlayerEntity, Damage, true);
+
+                   shell.WriteLine("TryChangeDamage OK");
+                }
+
             }
         }
 
@@ -158,6 +185,19 @@ public sealed class RespawnNowCommand : IConsoleCommand
             shell.WriteLine("You respawned");
         }
     }
+
+    public void Damage(DamageableSystem DS, EntityUid NewPlayerEntity)
+    {
+        if (!_protoMan.TryIndex<DamageTypePrototype>("Blunt", out var prototype))
+        {
+            return;
+        }
+        var Damage = new DamageSpecifier(prototype, FixedPoint2.New(80));
+
+        DS.TryChangeDamage(NewPlayerEntity, Damage, true);
+
+    }
+
 }
 /// <summary>
 /// Raised when player types <see cref="RespawnNowCommand"/> in console on previous player entity.

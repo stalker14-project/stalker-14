@@ -2,55 +2,56 @@
   id: STNPCBarmenPreset # 0.5x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 150
-    ZoneArtifactEye: 250
-    ZoneArtifactFlame: 500
+    ZoneArtifactFireball: 225
+    ZoneArtifactEye: 375
+    ZoneArtifactFlame: 750
     # Thermal group - 2
-    ZoneArtifactCristall: 625
-    ZoneArtifactLithosphere: 1000
+    ZoneArtifactCristall: 937
+    ZoneArtifactLithosphere: 1500
     # Electrical group - 1
-    ZoneArtifactSparkler: 150
-    ZoneArtifactBattery: 300
-    ZoneArtifactFlash: 600
-    ArtMoon: 750
-    ZoneArtifactTesla: 1125
-    ZoneArtifactIce: 1250
+    ZoneArtifactSparkler: 225
+    ZoneArtifactBattery: 450
+    ZoneArtifactFlash: 900
+    ArtMoon: 1125
+    ZoneArtifactTesla: 1687
+    ZoneArtifactIce: 1875
     # Gravity group - 1
-    ArtMedusa: 125
-    ZoneArtifactFlower: 250
-    ZoneArtifactNightStar: 625
+    ArtMedusa: 187
+    ZoneArtifactFlower: 375
+    ZoneArtifactNightStar: 937
     # Gravity group - 2
-    ZoneArtifactVyvert: 150
-    ZoneArtifactAmoeba: 250
-    ZoneArtifactGravi: 750
-    ZoneArtifactGoldfish: 1000
-    ZoneArtifactSpring: 1250
-    ZoneArtifactFocus: 500
-    ZoneArtifactStuntman: 1000
-    ZoneArtifactDistorter: 1500
-    ZoneArtifactSoul: 1250
+    ZoneArtifactVyvert: 225
+    ZoneArtifactAmoeba: 375
+    ZoneArtifactGravi: 1125
+    ZoneArtifactGoldfish: 1500
+    ZoneArtifactSpring: 1875
+    ZoneArtifactFocus: 750
+    ZoneArtifactStuntman: 1500
+    ZoneArtifactDistorter: 2250
+    ZoneArtifactSoul: 1875
     # Acidic group - 1
-    ZoneArtifactBlood: 200
-    ZoneArtifactMeat: 375
-    ZoneArtifactKolobok: 500
+    ZoneArtifactBlood: 300
+    ZoneArtifactMeat: 562
+    ZoneArtifactKolobok: 750
     # Acidic group - 2
-    ZoneArtifactPellicle: 250
-    ZoneArtifactBaloon: 875
+    ZoneArtifactPellicle: 375
+    ZoneArtifactBaloon: 1312
     #############################Части Мутантов
-    FoodMeatSpiderLeg: 25
-    MutantPartBlindDogTail: 45
-    MutantPartZombieHand: 210
-    MutantPartFleshEye: 120
-    MutantPartBoarHoof: 120
-    MutantPartPseudodogTail: 150
-    MutantPartSnorkFoot: 180
-    MutantPartLeshiyRoot: 250
-    MutantPartBloodsuckerTentacles: 300
-    MutantPartPseudogiantHeart: 1250
-    MutantPartOraculeEye: 1500
+    FoodMeatSpiderLeg: 37
+    MutantPartBlindDogTail: 67
+    MutantPartZombieHand: 315
+    MutantPartFleshEye: 180
+    MutantPartBoarHoof: 180
+    MutantPartPseudodogTail: 225
+    MutantPartSnorkFoot: 270
+    MutantPartLeshiyRoot: 375
+    MutantPartBloodsuckerTentacles: 450
+    MutantPartPseudogiantHeart: 1875
+    MutantPartOraculeEye: 2250
 
     # Smuggling
-    TradeBox: 2200
+    TradeBox: 3300  
+
 
   categories:
     - name: Оружие
@@ -65,6 +66,12 @@
     - name: Магазины
       priority: 2
       items:
+        Magazine762x39RPD: 1000
+        Vz61Mag: 100
+        BaseMP5Mag: 245
+        MP40Mag: 200
+        VityazMag: 350
+        BasePPSHMag: 220
         545Mag30: 350
         556Mag30: 350
         739Mag30: 400
@@ -72,6 +79,7 @@
         GlockMag24: 350
         GlockMag33: 400
         PP91Mag: 300
+        P90Mag: 439
     - name: Боеприпасы
       priority: 3
       items:
@@ -227,3 +235,10 @@
         # Instruments
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
+    - name: Гранаты
+      priority: 11
+      items:
+        FragGrenade: 1110
+        IpritGrenadeStalker: 800
+        GL1Grenade: 350
+        SmokeGrenade: 750

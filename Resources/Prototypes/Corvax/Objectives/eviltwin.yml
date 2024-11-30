@@ -1,5 +1,5 @@
 ﻿- type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: EscapeShuttleTwinObjective
   name: Escape to centcom alive and unrestrained.
@@ -13,7 +13,7 @@
     - type: EscapeShuttleCondition
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: [BaseTraitorObjective, BaseKillObjective]
   id: KillTwinObjective
   name: Kill original persona.

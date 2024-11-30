@@ -179,16 +179,6 @@
       access: [["CN"]]
 
 - type: entity
-  id: HermoDverTypeOneSeraClosed
-  name: гермодверь
-  parent: HermoDverTypeOne
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
-  suffix: ST, mapping, Серафимы
-  components:
-    - type: AccessReader
-      access: [["Seraphims"]]
-
-- type: entity
   id: MetalAltDoorFalloutReneClosed
   name: стальная дверь
   parent: MetalAltDoorFallout
@@ -575,26 +565,6 @@
         - AirlockLayer
 
 - type: entity
-  id: MetalDoorFalloutJabaClosed
-  name: стальная дверь
-  parent: MetalDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
-  suffix: ST, mapping, Жабы
-  components:
-  - type: AccessReader
-    access: [["Jaba"]]
-
-- type: entity
-  id: MetalWindowDoorFalloutJabaClosed
-  name: стальная дверь
-  parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
-  suffix: ST, mapping, Жабы
-  components:
-  - type: AccessReader
-    access: [["Jaba"]]
-
-- type: entity
   id: MetalWindowDoorFalloutNeutralsClosed
   name: стальная дверь
   parent: MetalWindowDoorFallout
@@ -723,3 +693,213 @@
   components:
   - type: AccessReader
     access: [["Project"]]
+
+# Механикам
+
+- type: entity
+  id: WoodDoorFalloutMechanic
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, Mechanic
+  components:
+  - type: AccessReader
+    access: [["Mechanic"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutMechanicClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Mechanic
+  components:
+  - type: AccessReader
+    access: [["Mechanic"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutMechanicClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Mechanic
+  components:
+  - type: AccessReader
+    access: [["Mechanic"]]
+
+- type: entity
+  parent: HermoDverTypeOne
+  id: HermoDverTypeOneMechanicClosed
+  suffix: ST, Mapping, Mechanic
+  components:
+  - type: AccessReader
+    access: [["Mechanic"]]
+
+- type: entity
+  parent: MetalAltDoorFallout
+  id: MetalAltDoorFalloutMechanicClosed
+  suffix: ST, Mapping, Mechanic
+  components:
+    - type: AccessReader
+      access: [["Mechanic"]]
+
+- type: entity
+  parent: StalkerGate
+  id: StalkerGateLeftMechanicClosed
+  suffix: ST, Mapping, Mechanic, Left
+  components:
+    - type: AccessReader
+      access: [["Mechanic"]]
+
+- type: entity
+  parent: StalkerGater
+  id: StalkerGateRightMechanicClosed
+  suffix: ST, Mapping, Mechanic, Right
+  components:
+    - type: AccessReader
+      access: [["Mechanic"]]
+
+# Жабам
+- type: entity
+  id: WoodDoorFalloutJaba
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, Jaba
+  components:
+  - type: AccessReader
+    access: [["Jaba"]]
+
+- type: entity
+  id: MetalDoorFalloutJabaClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Jaba
+  components:
+  - type: AccessReader
+    access: [["Jaba"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutJabaClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Jaba
+  components:
+  - type: AccessReader
+    access: [["Jaba"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutJabaClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Jaba
+  components:
+  - type: AccessReader
+    access: [["Jaba"]]
+
+- type: entity
+  parent: HermoDverTypeOne
+  id: HermoDverTypeOneJabaClosed
+  suffix: ST, Mapping, Jaba
+  components:
+  - type: AccessReader
+    access: [["Jaba"]]
+
+- type: entity
+  parent: MetalAltDoorFallout
+  id: MetalAltDoorFalloutJabaClosed
+  suffix: ST, Mapping, Jaba
+  components:
+    - type: AccessReader
+      access: [["Jaba"]]
+
+- type: entity
+  parent: StalkerGate
+  id: StalkerGateLeftJabaClosed
+  suffix: ST, Mapping, Jaba, Left
+  components:
+    - type: AccessReader
+      access: [["Jaba"]]
+
+- type: entity
+  parent: StalkerGater
+  id: StalkerGateRightJabaClosed
+  suffix: ST, Mapping, Jaba, Right
+  components:
+    - type: AccessReader
+      access: [["Jaba"]]
+
+# Серафимам
+- type: entity
+  id: WoodDoorFalloutSeraphims
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, Seraphims
+  components:
+  - type: AccessReader
+    access: [["Seraphims"]]
+
+- type: entity
+  id: HermoDverTypeOneSeraClosed
+  name: гермодверь
+  parent: HermoDverTypeOne
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Seraphims
+  components:
+    - type: AccessReader
+      access: [["Seraphims"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutSeraphimsClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Seraphims
+  components:
+  - type: AccessReader
+    access: [["Seraphims"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutSeraphimsClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Seraphims
+  components:
+  - type: AccessReader
+    access: [["Seraphims"]]
+
+- type: entity
+  parent: HermoDverTypeOne
+  id: HermoDverTypeOneSeraphimsClosed
+  suffix: ST, Mapping, Seraphims
+  components:
+  - type: AccessReader
+    access: [["Seraphims"]]
+
+- type: entity
+  parent: MetalAltDoorFallout
+  id: MetalAltDoorFalloutSeraphimsClosed
+  suffix: ST, Mapping, Seraphims
+  components:
+    - type: AccessReader
+      access: [["Seraphims"]]
+
+- type: entity
+  parent: StalkerGate
+  id: StalkerGateLeftSeraphimsClosed
+  suffix: ST, Mapping, Seraphims, Left
+  components:
+    - type: AccessReader
+      access: [["Seraphims"]]
+
+- type: entity
+  parent: StalkerGater
+  id: StalkerGateRightSeraphimsClosed
+  suffix: ST, Mapping, Seraphims, Right
+  components:
+    - type: AccessReader
+      access: [["Seraphims"]]

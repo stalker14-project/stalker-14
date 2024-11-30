@@ -38,6 +38,29 @@
       allowAll: false
       portalName: Bar-BarStalker
 
+####################################Монолит
+
+- type: entity
+  parent: MapTeleportBase
+  id: Cordon-BarierBase
+  name: Cordon-BarierBase
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Cordon-BarierBase
+    - type: AccessReader
+      access: [["Monolith"]]
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Cordon-BarierBaseUncollide
+  name: Cordon-BarierBaseUncollide
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Cordon-BarierBase
+    - type: AccessReader
+      access: [["Monolith"]]
+
 ####################################Бандиты
 
 - type: entity
@@ -105,30 +128,54 @@
       portalName: Purgatory-NII
     - type: AccessReader
       access: [["SciBase"]]
-####################################Серафимы
+
 - type: entity
   parent: MapTeleportBase
-  id: Cordon-Sera
-  name: Cordon-Sera (spawn)
+  id: Purgatory-Les
+  name: Purgatory-Les (spawn)
+  components:
+    - type: NewMapTeleport
+      portalName: Purgatory-Les
+      allowAll: false
+      cooldownEnabled: true
+      cooldownTime: 0
+      godmodeCooldown: 5
+    - type: AccessReader
+      access: [["SciBase"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Purgatory-LesUncolibe
+  name: Purgatory-LesUncolibe (spawn)
   components:
     - type: NewMapTeleport
       allowAll: false
-      portalName: Cordon-Sera
+      portalName: Purgatory-Les
+    - type: AccessReader
+      access: [["SciBase"]]
+####################################Серафимы
+- type: entity
+  parent: MapTeleportBase
+  id: Base-Sera
+  name: Base-Sera (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Base-Sera
     - type: AccessReader
       access: [["Seraphims"]]
 - type: entity
   parent: MapTeleportBaseUncollide
-  id: Cordon-SeraUncollide
-  name: Cordon-SeraUncollide (spawn)
+  id: Base-SeraUncollide
+  name: Base-SeraUncollide (spawn)
   components:
     - type: NewMapTeleport
       allowAll: false
-      portalName: Cordon-Sera
+      portalName: Base-Sera
 ####################################Ренегаты
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Rene1
-  noSpawn: false
   name: Cordon-Rene1 (spawn)
   components:
     - type: NewMapTeleport
@@ -139,7 +186,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ReneUncollide1
-  noSpawn: false
   name: Cordon-ReneUncollide1 (spawn)
   components:
     - type: NewMapTeleport
@@ -150,7 +196,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Rene2
-  noSpawn: false
   name: Cordon-Rene2 (spawn)
   components:
     - type: NewMapTeleport
@@ -161,7 +206,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ReneUncollide2
-  noSpawn: false
   name: Cordon-ReneUncollide2 (spawn)
   components:
     - type: NewMapTeleport
@@ -172,7 +216,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Rene3
-  noSpawn: false
   name: Cordon-Rene3 (spawn)
   components:
     - type: NewMapTeleport
@@ -183,7 +226,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ReneUncollide3
-  noSpawn: false
   name: Cordon-ReneUncollide3 (spawn)
   components:
     - type: NewMapTeleport
@@ -194,7 +236,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Rene-Svalka
-  noSpawn: false
   name: Rene-Svalka (spawn)
   components:
     - type: NewMapTeleport
@@ -205,7 +246,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Rene-SvalkaUncollide
-  noSpawn: false
   name: Rene-SvalkaUncollide (spawn)
   components:
     - type: NewMapTeleport
@@ -219,7 +259,7 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Oazis
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: Cordon-Oazis
   components:
     - type: NewMapTeleport
@@ -230,7 +270,7 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-OazisUncollide
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: Cordon-OazisUncollide
   components:
     - type: NewMapTeleport
@@ -241,7 +281,7 @@
 - type: entity
   parent: MapTeleportBase
   id: Garbage-Oazis
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: Garbage-Oazis
   components:
     - type: NewMapTeleport
@@ -249,7 +289,7 @@
 - type: entity
   parent: MapTeleportBase
   id: RedForest-Oazis
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: RedForest-Oazis
   components:
     - type: NewMapTeleport
@@ -260,7 +300,7 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Top
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: Cordon-Top
   components:
     - type: NewMapTeleport
@@ -271,7 +311,7 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-TopUncollide
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: Cordon-TopUncollide
   components:
     - type: NewMapTeleport
@@ -285,7 +325,7 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-TemnajaLoshina
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: Cordon-TemnajaLoshina
   components:
     - type: NewMapTeleport
@@ -296,7 +336,7 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-TemnajaLoshinaUncollide
-  # noSpawn: true
+  # categories: [ HideSpawnMenu ]
   name: Cordon-TemnajaLoshinaUncollide
   components:
     - type: NewMapTeleport
@@ -332,7 +372,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Circusbase
-  noSpawn: false
   name: Cordon-Circusbase
   components:
     - type: NewMapTeleport
@@ -346,7 +385,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Merc
-  noSpawn: false
   name: Cordon-Merc
   components:
     - type: NewMapTeleport
@@ -357,7 +395,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-MercBandUncollide
-  noSpawn: false
   name: Cordon-MercBandUncollide
   components:
     - type: NewMapTeleport
@@ -366,12 +403,36 @@
     - type: AccessReader
       access: [["Merc"]]
 
+####################################Механики
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Mechanic
+  noSpawn: false
+  name: Lobby-Mechanic
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Mechanic
+    - type: AccessReader
+      access: [["Mechanic"]]
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-MechanicBandUncollide
+  noSpawn: false
+  name: Lobby-MechanicBandUncollide
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Mechanic
+    - type: AccessReader
+      access: [["Mechanic"]]
+
 ###################################Поиск
 
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Poisk
-  noSpawn: false
   name: Cordon-Poisk
   components:
     - type: NewMapTeleport
@@ -382,7 +443,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-PoiskUncollide
-  noSpawn: false
   name: Cordon-PoiskUncollide
   components:
     - type: NewMapTeleport
@@ -396,7 +456,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Project
-  noSpawn: false
   name: Cordon-Project
   components:
     - type: NewMapTeleport
@@ -407,7 +466,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ProjectUncollide
-  noSpawn: false
   name: Cordon-ProjectUncollide
   components:
     - type: NewMapTeleport
@@ -421,7 +479,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Neutral
-  noSpawn: false
   name: Cordon-Neutral
   components:
     - type: NewMapTeleport
@@ -433,7 +490,6 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-NeutralUncollide
-  noSpawn: false
   name: Cordon-NeutralUncollide
   components:
     - type: NewMapTeleport
@@ -441,3 +497,29 @@
       portalName: Cordon-Neutral
     - type: AccessReader
       access: [["Neutral"]]
+
+####################################Жабы
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Jaba
+  noSpawn: false
+  name: Lobby-Jaba
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Jaba
+    - type: AccessReader
+      access: [["Jaba"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-JabaUncollide
+  noSpawn: false
+  name: Lobby-JabaUncollide
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Jaba
+    - type: AccessReader
+      access: [["Jaba"]]

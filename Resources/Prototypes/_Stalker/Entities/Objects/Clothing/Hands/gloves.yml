@@ -9,8 +9,6 @@
     sprite: _Stalker/Clothing/Hands/Gloves/mitts.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/Hands/Gloves/mitts.rsi
-  - type: Fiber
-    fiberColor: fibers-black
 
 - type: entity
   parent: ClothingHandsBase
@@ -23,7 +21,18 @@
     sprite: _Stalker/Objects/Clothing/gloves/hands_jaba.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/gloves/hands_jaba.rsi
-  - type: Insulated
+
+- type: entity
+  parent: ClothingHandsBase
+  id: STClothingHandsGlovesSera
+  name: обмотки серафимов
+  suffix: ST, Скин
+  description: Обмотки из лоскутов ткани, заменяющие серафимам перчатки. Если приглядеться то можно увидеть что на лоскутах аккуратно написаны молитвы серафимов к их Богу.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/gloves/gloves_sera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/gloves/gloves_sera.rsi
 
 - type: entity
   parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
@@ -35,5 +44,3 @@
     sprite: Clothing/Hands/Gloves/combat.rsi
   - type: Clothing
     sprite: Clothing/Hands/Gloves/combat.rsi
-  - type: Fiber
-    fiberMaterial: fibers-insulative

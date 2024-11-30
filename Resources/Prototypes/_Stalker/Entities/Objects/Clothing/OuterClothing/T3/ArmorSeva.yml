@@ -5,7 +5,7 @@
   name: костюм "Сева" #base
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
   suffix: ST, T3, Env
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   abstract: true
   components:
   - type: Sprite
@@ -48,7 +48,7 @@
   id: STClothingHeadHardsuitSevaHelmBase
   name: шлем севы #base
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_helm.rsi
@@ -109,15 +109,29 @@
 
 - type: entity
   parent: STClothingOuterArmorSevaBase
-  id: ClothingOuterArmorSevaSciGreen
-  name: костюм "Сева" Учёных
-  description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
+  id: ClothingOuterArmorSevaSciWhite
+  name: белый костюм "Сева" Учёных 
+  description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны со старым дизайном"
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_green.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_sci.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_green.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_sci.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHardsuitSevaHelmSci
+      slot: head
 
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmSci
+  name: шлем севы 
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
 # Military
 
 - type: entity
@@ -157,13 +171,59 @@
   id: ClothingHeadHardsuitSevaHelmMilitary
   name: шлем севы
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_helm_military.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/seva_helm_military.rsi
 
+
+# monolith
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaMonolith
+  name: костюм "Сева" монолита
+  description: Научный костюм, вариант «СЕВЫ», производимый монолитовцами.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmMonolith
+    slot: head
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+      - 0,2,0,3
+      - 1,-0,1,-0
+      - 2,2,2,3
+      - 3,-0,3,-0
+      - 4,2,4,3
+      - 5,-0,5,-0
+      - 6,2,6,3
+      - 7,-0,7,-0
+      - 8,2,8,3
+      - 9,-0,9,-0
+      - 10,2,10,3
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmMonolith
+  name: шлем севы
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_monolith.rsi
 
 # Clear sky
 
@@ -203,7 +263,7 @@
   id: ClothingHeadHardsuitSevaHelmMerc
   name: шлем севы наёмников
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_helm_merc.rsi
@@ -230,7 +290,7 @@
   id: ClothingHeadHardsuitSevaHelmPoisk
   name: шлем севы поиска
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Seva/poisk.rsi
@@ -275,7 +335,7 @@
   name: шлем севы Завета
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
   suffix: Stalker, Завет
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Seva/covenant.rsi
@@ -293,9 +353,9 @@
     - type: STWeight
       self: 12
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/_Sera/seva.rsi
+      sprite: _Stalker/Clothing/OuterClothing/_Sera/seva.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/_Sera/seva.rsi
+      sprite: _Stalker/Clothing/OuterClothing/_Sera/seva.rsi
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHardsuitSevaHelmSera
       slot: head
@@ -305,12 +365,12 @@
   id: ClothingHeadHardsuitSevaHelmSera
   name: шлем севы серафимов
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/hats/_Sera/seva_helm.rsi
+      sprite: _Stalker/Clothing/Head/Sera_/seva_helm.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/hats/_Sera/seva_helm.rsi
+      sprite: _Stalker/Clothing/Head/Sera_/seva_helm.rsi
     - type: IdentityBlocker
     - type: IngestionBlocker
     - type: PointLight
@@ -337,7 +397,7 @@
   id: ClothingHeadHardsuitSevaHelmProjectGROM9
   name: шлем севы «GROM-9»
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Groups/Project/seva_helm.rsi

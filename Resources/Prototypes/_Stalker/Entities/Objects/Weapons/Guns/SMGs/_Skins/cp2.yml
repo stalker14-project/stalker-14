@@ -1,0 +1,79 @@
+# Кастомка серафимов, возможно в будущем станет общедоступной
+- type: entity
+  name: СР-2 «Вереск»
+  suffix: ST, Скин
+  parent: STBaseWeaponSubMachineGun
+  id: STWeaponSMGStalkerCP2Veresk
+  description: Компактный пистолет-пулемет, разработанный под мощный бронебойный патрон 9x21мм по заказу ФСБ и ФСО РФ. Этот пистолет-пулемёт является кустарной модификацией, позволяющей вести огонь калибром 9х19 Парабеллум.
+  components:
+    - type: STWeight
+      self: 2.2
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2.rsi
+      size: Large
+      shape:
+        - 0,0,5,1
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2.rsi
+    - type: Gun
+      projectileSpeed: 20
+      minAngle: 45
+      maxAngle: 70
+      angleIncrease: 3
+      angleDecay: 15
+      fireRate: 10
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/919.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: VityazMag
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - MagazineVityaz
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge919PSOGJ
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge919
+
+- type: entity
+  name: СР-2 «Вереск» серафимов
+  parent: STWeaponSMGStalkerCP2Veresk
+  id: STWeaponSMGStalkerCP2VereskSera
+  components:
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2sera.rsi
+      size: Large
+      shape:
+        - 0,0,5,1
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2sera.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2sera.rsi
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: VityazMag
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - MagazineVityaz
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge919PSOGJ
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge919
