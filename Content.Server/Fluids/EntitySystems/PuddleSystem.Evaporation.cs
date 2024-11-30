@@ -19,7 +19,10 @@ public sealed partial class PuddleSystem
     [ValidatePrototypeId<ReagentPrototype>]
     private const string Vodka = "Vodka";
 
-    public static string[] EvaporationReagents = new[] { Water, Blood, Vodka, STWater};
+    [ValidatePrototypeId<ReagentPrototype>] // arena-changes
+    private const string STTaurine = "STTaurine"; // arena-changes
+
+    public static string[] EvaporationReagents = new[] { Water, Blood, Vodka, STWater, STTaurine };
 
     //stalker-changes-end
     private void OnEvaporationMapInit(Entity<EvaporationComponent> entity, ref MapInitEvent args)

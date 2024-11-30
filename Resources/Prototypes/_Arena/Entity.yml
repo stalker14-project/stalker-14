@@ -1,0 +1,129 @@
+- type: entity
+  parent: ClothingBackpackTacticBlackStalker
+  id: ClothingBackpackDuffelArena
+  name: рюкзак аренолога
+  suffix: Arena
+  components:
+  - type: Storage
+    grid:
+    - 0,0,12,6
+  - type: STWeight
+    self: -40
+  - type: StorageFill
+    contents:
+      - id: GL1Grenade
+      - id: MedkitMilitary
+      - id: MedkitMilitary
+      - id: MedkitMilitary
+      - id: STGauze
+      - id: 545Mag30
+      - id: 545Mag30
+      - id: 545Mag30
+      - id: 545Mag30
+      - id: 556Mag30
+      - id: 556Mag30
+      - id: 556Mag30
+      - id: 556Mag30
+      - id: 739Mag30
+      - id: 739Mag30
+      - id: 739Mag30
+      - id: 739Mag30
+      - id: 751Mag20
+      - id: 751Mag20
+      - id: 751Mag20
+      - id: 751Mag20
+      - id: 754Mag10
+      - id: 754Mag10
+      - id: VityazMag
+      - id: VityazMag
+      - id: VityazMag
+      - id: VityazMag
+      - id: 556box249
+      - id: 556box249
+      - id: Magazine762x39RPD
+      - id: Magazine762x39RPD
+      - id: Bloodpack
+      - id: Arena545PCBox
+      - id: Arena556M855Box
+      - id: Arena739FMJBox
+      - id: Arena751M80Box
+      - id: Arena754FMJBox
+      - id: Arena919PBMBox
+      - id: STModuleScopeRiflesT1Ru
+      - id: STModuleScopeRiflesT1Nato
+      - id: STModuleSniperSightT1
+      - id: STModuleSMGGripT1
+
+
+# ammo
+- type: entity
+  parent: 545PCBox
+  id: Arena545PCBox
+  name: Коробка патронов (5,45x39) ПС
+  description: Для автоматов Калашникова разных моделей, в коробке 1000 штук. Усиленная пуля. Пробивает 3 класс брони.
+  suffix: Arena
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 1000
+  - type: DisarmMalus
+    malus: 0
+
+- type: entity
+  parent: 556M855Box
+  id: Arena556M855Box
+  name: Коробка патронов (5,56) M855
+  description: Для штурмовых винтовок, в коробке 1000 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Arena
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 1000
+    - type: DisarmMalus
+      malus: 0
+
+- type: entity
+  parent: 739FMJBox
+  id: Arena739FMJBox
+  name: Коробка патронов (7,62x39) FMJ
+  description: Для некоторых моделей автомата Калашникова, в коробке 1000 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 1000
+  - type: DisarmMalus
+    malus: 0
+
+- type: entity
+  parent: 751M80Box
+  id: Arena751M80Box
+  name: Коробка патронов (7,62x51) М80
+  description: Для винтовок НАТО, в коробке 1000 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 1000
+    - type: DisarmMalus
+      malus: 0
+
+- type: entity
+  parent: 754FMJBox
+  id: Arena754FMJBox
+  name: коробка патронов (7,62x54) FMJ
+  description: Для винтовки Мосина, в коробке 500 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 500
+  - type: DisarmMalus
+    malus: 0
+
+- type: entity
+  parent: 919PBMBox
+  id: Arena919PBMBox
+  name: Коробка патронов (9х19) ПБМ гж
+  description: Для МП-5 Гадюка, в коробке 1000 штук. Обеспечивает пробитие только 3 класса брони.
+  suffix: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 1000
+  - type: DisarmMalus
+    malus: 0
