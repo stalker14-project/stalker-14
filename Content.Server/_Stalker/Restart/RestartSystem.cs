@@ -1,4 +1,5 @@
 using Content.Server.Chat.Managers;
+using Content.Server.GameTicking.Events;
 using Content.Server.Spawners.Components;
 using Robust.Server;
 using Robust.Shared.Console;
@@ -24,10 +25,18 @@ public partial class RestartSystem : EntitySystem
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStartArena); // arena-changes
         base.Initialize();
         _sawmill = _logManager.GetSawmill("Restart");
         InitializeCommands();
     }
+
+    //arena-changes-start
+    private void OnRoundStartArena(RoundStartingEvent ev)
+    {
+        StartRestart(TimeSpan.FromHours(1));
+    }
+    // arena-changes-end
 
     public override void Update(float frameTime)
     {

@@ -1,0 +1,25 @@
+- type: job
+  id: Arenolog
+  name: Аренолог
+  icon: voen
+  description: Самый базовый пресет
+  playTimeTracker: JobArenolog
+  startingGear: ArenologGear
+  supervisors: Подчиняетесь законам божьим
+
+- type: playTimeTracker
+  id: JobArenolog
+
+- type: startingGear
+  id: ArenologGear
+  equipment:
+    id: MilitaryPDA
+
+- type: department
+  id: ArenaDepartment
+  name: Жители Арены
+  description: desc
+  color: "#111111"
+  weight: 1
+  roles:
+  - Arenolog
