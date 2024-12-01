@@ -26,8 +26,8 @@
 - type: entity
   parent: BaseSpeedLoader45ACP
   id: SpeedLoader45ACP
-  noSpawn: true # На будущее и на тесты
-  name: Speedloader (.45 ACP)
+  categories: [ HideSpawnMenu ] # На будущее и на тесты
+  name: Спідлоадер (.45 ACP)
   suffix: Stalker
   components:
     - type: BallisticAmmoProvider
@@ -48,7 +48,7 @@
 - type: entity
   parent: SpeedLoader45ACP
   id: SpeedLoader45ACPEmpty
-  suffix: Stalker, Пустой
+  suffix: Stalker, Пустий
   components:
     - type: BallisticAmmoProvider
       proto: null

@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterStorageToggleableBase
   id: STClothingOuterJacketBase
-  name: Basic Jacket
-  description: Basic description of the jacket.
+  name: Базова куртка
+  description: Базовий опис куртки.
   suffix: ST, T1, Universal
   abstract: true
   components:
@@ -47,8 +47,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: STClothingHeadHatHoodBase
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
@@ -60,8 +60,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketBandit
-  name: bandit jacket
-  description: The black leather jacket is a traditional attribute of bandits. Unlike the jackets worn by newbies, this one has thin metal plates sewn into it that can slightly protect against pistol rounds. It is clear that it will not withstand anomalies and machine gun fire, but in a skirmish with some newbie it can be of great help.
+  name: бандитська куртка
+  description: Чорна шкіряна куртка - традиційний атрибут бандитів. На відміну від курток, які носять новачки, ця куртка має вшиті тонкі металеві пластини, які можуть трохи захистити від пістолетних куль. Зрозуміло, що аномалій і кулеметного вогню вона не витримає, але в сутичці з якимось новачком може стати в нагоді.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_bandit.rsi
@@ -82,8 +82,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketBandit
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_bandit.rsi
@@ -95,8 +95,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketStalker
-  name: stalker jacket
-  description: The usual clothes of a novice stalker. Does not protect the wearer from a bullet or anomalies, but is comfortable to wear.
+  name: куртка сталкера
+  description: Звичайний одяг сталкера-початківця. Не захищає від кулі чи аномалій, але зручний у носінні.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_stalker.rsi
@@ -109,8 +109,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketStalker
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
@@ -122,8 +122,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketFreedom
-  name: liberty jacket
-  description: Freedom group camouflage jacket, used mostly by newcomers to the group to wear in safe places.
+  name: піджак ліберті
+  description: Камуфляжна куртка групи "Свобода", яку носять переважно новачки групи, щоб пересуватися в безпечних місцях.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_svoboda.rsi
@@ -142,8 +142,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketFreedom
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_svoboda.rsi
@@ -155,8 +155,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketMerc
-  name: mercenary jacket
-  description: Its design is based on the suit used by special forces of Western armies. Due to special fabric treatment, it has increased resistance to physical movement.
+  name: куртка найманця
+  description: Його дизайн базується на костюмі, який використовують спецпризначенці західних армій. Завдяки спеціальній обробці тканини він має підвищену стійкість до фізичних рухів.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_mercenary.rsi
@@ -174,8 +174,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketMerc
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_mercenary.rsi
@@ -187,8 +187,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketCN
-  name: clear sky jacket
-  description: A poorly protective jacket made for the Clear Sky group. This leather jacket was made by Clear Sky craftsmen before it was replaced, being outdated and poorly protected from the Zones phenomena. Almost no different from a regular leather jacket, but it protects quite well from bites, fire and cold.
+  name: куртка чисте небо
+  description: Куртка з поганим захистом, виготовлена для групи "Чисте небо". Ця шкіряна куртка була пошита майстрами "Чистого неба" до того, як її замінили, оскільки була застарілою і погано захищала від явищ Зони. Майже нічим не відрізняється від звичайної шкіряної куртки, але досить добре захищає від укусів, вогню та холоду.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_cn.rsi
@@ -211,8 +211,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketCN
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_cn.rsi
@@ -224,8 +224,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketDolg
-  name: Jacket of Duty
-  description: A set of armor consisting of pants, boots, and a jacket with armored inserts and elbow pads. Low protection against bullet hits and abnormal effects. It may save the owner from a PM bullet, but still - excellent armor for those who have just entered the service of defenders of the Earth from the infection of the Zone.
+  name: Куртка обов'язку
+  description: Комплект бронезахисту, що складається зі штанів, черевиків та куртки з броньованими вставками та налокітниками. Низький захист від влучень куль та аномальних впливів. Може врятувати власника від кулі ПМ, але все одно - чудовий обладунок для тих, хто тільки-но вступив на службу до захисників Землі від зарази Зони.
   components:
   - type: STWeight
     self: 1
@@ -245,8 +245,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketDolg
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_dolg.rsi
@@ -258,8 +258,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketNeytral
-  name: Neutral Jacket
-  description: Normal neutral clothing. Doesnt protect the wearer from bullets or anomalies, but is comfortable to wear.
+  name: Нейтральна куртка
+  description: Звичайний нейтральний одяг. Не захищає від куль чи аномалій, але зручний у носінні.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_neytralov.rsi
@@ -269,12 +269,12 @@
     clothingPrototype: ClothingHeadHatHoodCoatStalker
     slot: head
 
-# Аномалисты
+# Аномалісти
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterCoatIvyAnomalist
-  name: anomalist ivy jacket
-  description: anomalist jacket
+  name: куртка аномаліста з плюща
+  description: куртка аномаліста
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
@@ -291,8 +291,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketDeserter
-  name: Renegade Jacket
-  description: The Dark Gray Pixel Camo Jacket used by the Renegades has shoulder pads, but they only protect you from looking boring.
+  name: Куртка ренегата
+  description: Темно-сіра піксельна камуфляжна куртка, яку використовують "Ренегати", має наплічники, але вони лише захищають від нудного вигляду.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_deserters.rsi
@@ -305,21 +305,46 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketDeserter
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
 
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketMonolith
+  name: куртка моноліту
+  description: Куртка у світло-сірому піксельному камуфляжі, яку використовує моноліт, має наплічники, але вони захистять вас лише від нудного зовнішнього вигляду.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodJacketMonolith
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodJacketMonolith
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi
+
 # Скинчики
 
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingJaketRealHuman
-  name: white jacket
-  description: White jacket with a scorpion design on the back. It will make you feel like a real person.
+  name: біла куртка
+  description: Біла куртка з малюнком скорпіона на спині. У ньому ти відчуватимеш себе справжньою людиною.
   suffix: ST, T1
   components:
   - type: Sprite
@@ -330,8 +355,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingJaketGeneral
-  name: generals uniform
-  description: One, two, count off!
+  name: генеральський мундир
+  description: Один, два, рахуйсь!
   suffix: ST, T1
   components:
   - type: Sprite
@@ -342,8 +367,8 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingJaketGray
-  name: peacoat
-  description: double-breasted coat with warm lining and turn-down collar
+  name: бушлат
+  description: двобортне пальто з теплою підкладкою та відкладним коміром
   suffix: ST, T1, Deliko
   components:
   - type: Sprite

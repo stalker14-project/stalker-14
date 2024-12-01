@@ -1,7 +1,7 @@
 - type: entity
   id: ActionPsyonicsSpringboard
   name: springboard
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WorldTargetAction
       useDelay: 15
@@ -16,7 +16,7 @@
 - type: entity
   id: ActionPsyonicsRift
   name: rift
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WorldTargetAction
       useDelay: 10
@@ -31,7 +31,7 @@
 - type: entity
   id: ActionPsyonicsSmoke
   name: smoke
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WorldTargetAction
       useDelay: 10
@@ -46,7 +46,7 @@
 - type: entity
   id: ActionPsyonicsGrab
   name: grab
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       useDelay: 10
@@ -61,7 +61,7 @@
 - type: entity
   id: ActionPsyonicsFireball
   name: fireball
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: WorldTargetAction
       useDelay: 2
@@ -76,7 +76,7 @@
 - type: entity
   id: ActionPsyonicsShield
   name: shield
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       useDelay: 2
@@ -90,7 +90,7 @@
 - type: entity
   id: ActionPsyonicsMeditation
   name: meditation
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       useDelay: 2
@@ -104,7 +104,7 @@
 - type: entity
   id: ActionPsyonicsLight
   name: light
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       useDelay: 2
@@ -118,7 +118,7 @@
 - type: entity
   id: ActionPsyonicsDizzy
   name: dizzy
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       useDelay: 10

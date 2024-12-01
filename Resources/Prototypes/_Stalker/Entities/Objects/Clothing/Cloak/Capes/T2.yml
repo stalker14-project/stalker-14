@@ -30,9 +30,9 @@
 - type: entity
   parent: STClothingCapeT2Base
   id: ClothingOuterCoatBolotniy
-  name: swamp cloak
+  name: болотний плащ
   suffix: ST, T2
-  description: a thick cloak with camouflage made of leaves, grass and sticks applied on top.
+  description: товстий плащ з камуфляжем з листя, трави та палиць, накладених зверху.
   components:
   - type: STWeight
     self: 20
@@ -49,9 +49,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBolotniyCoat
-  name: swamp cloak hood
-  noSpawn: true
-  description: Covers your head
+  name: капюшон плаща «болотника»
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову
   components:
   - type: STWeight
     self: 4
@@ -65,9 +65,9 @@
 - type: entity
   parent: STClothingCapeT2Base
   id: ClothingOuterCoatKolchyga
-  name: chainmail black cloak
+  name: кольчужний чорний плащ
   suffix: ST, T2
-  description: A thick cloak, dyed black, with a chainmail lining.
+  description: Товстий плащ, пофарбований у чорний колір, з кольчужною підкладкою.
   components:
   - type: Craftable
   - type: STWeight
@@ -86,21 +86,48 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetBlackCoat
-  name: black hood
-  noSpawn: true
-  description: Covers your head
+  name: чорний капюшон
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
 
-# кожанный плащ
+- type: entity
+  parent: ClothingOuterCoatKolchyga
+  id: STClothingOuterCoatTihiy
+  name: камуфляжний плащ "Тихий"
+  suffix: ST
+  description: Добротний плащ зі щільною підкладкою і маскуванням.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_tihiy.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetTihiy
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetTihiy
+  name: камуфляжний капюшон
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_tihiy.rsi
+
+# шкіряний плащ
 - type: entity
   parent: STClothingCapeT2Base
   id: ClothingOuterCoatStalker
-  name: Leather Cloak
-  description: A regular black leather cloak. Doesnt provide any noticeable protection to the wearer. It will at least keep you from freezing at night and soften the bite of a blind dog. Quite inconvenient in the Zone, but nevertheless, it is often used by bandits - perhaps solely because of its appearance.
+  name: камуфляжний капюшон
+  description: Звичайний чорний шкіряний плащ. Не забезпечує помітного захисту для власника. Принаймні не дасть замерзнути вночі та пом'якшить укус сліпого собаки. Досить незручний в Зоні, але, тим не менш, часто використовується бандитами - можливо, виключно через свій зовнішній вигляд.
   components:
   - type: STWeight
     self: 1.5
@@ -112,14 +139,25 @@
     clothingPrototype: ClothingHeadHatHoodCoatStalker
   - type: Craftable
 
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHatHoodCoatStalker
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_stalker.rsi
 
-# Скинчики
+# Skins
 # QEWAEWA2
 - type: entity
   parent: STClothingCapeT2Base
   id: STClothingOuterCoatNovember
-  name: camouflage cloak November
-  description: A good cloak with a thick lining and with camouflage of the late autumn forest
+  suffix: ST, Skin
+  name: камуфляжний плащ Листопад
+  description: Добротний плащ зі щільною підкладкою і з маскуванням пізнього осіннього лісу
   components:
   - type: STWeight
     self: 1.5
@@ -134,22 +172,50 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: STClothingHeadHelmetNovember
-  name: autumn hood
-  noSpawn: true
-  description: Covers your head
+  name: осінній капюшон
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/hood_november.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/hood_november.rsi
 
-# Скин на кожаный плащ
+- type: entity
+  parent: STClothingCapeT2Base
+  id: STClothingOuterCoatHimera
+  name: камуфляжний плащ "Химера"
+  suffix: ST, Skin
+  description: Добротний плащ зі щільною підкладкою і маскуванням.
+  components:
+  - type: STWeight
+    self: 1.5
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_himera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_himera.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHelmetHimera
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetHimera
+  name: камуфляжний капюшон
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_himera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_himera.rsi
+
 - type: entity
   parent: STClothingCapeT2Base
   id: STClothingCapeT2SerafimPrestige
-  name: престижный плащ Серафимов
-  suffix: ST, T2, Serafim
-  description: Выполнен в тёмно-зелёной цветовой гамме с металлическими вставками
+  name: престижний плащ серафимів
+  suffix: ST, T2, Скин
+  description: Виконаний у темно-зеленій колірній гамі з металевими вставками
   components:
   - type: STWeight
     self: 1.5

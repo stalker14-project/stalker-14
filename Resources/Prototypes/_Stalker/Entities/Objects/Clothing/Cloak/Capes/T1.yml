@@ -3,7 +3,7 @@
   abstract: true
   parent: STClothingCapeBase
   id: STClothingCapeT1Base
-  name: T1 Cloak Base
+  name: T1 База маскування
   suffix: ST, T1
   components:
   - type: STWeight
@@ -18,13 +18,13 @@
         Piercing: 0.95
         Heat: 0.95
 
-# Дождевик
+# Дощовик
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatDoshdevik
-  name: raincoat
+  name: дощовик
   suffix: ST, T1
-  description: a thick raincoat that protects you from rain and some chemicals.
+  description: товстий дощовик, який захистить вас від дощу та деяких хімікатів.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
@@ -43,8 +43,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetDoshdevikCoat
-  name: raincoat hood
-  description: Covers your head
+  name: капюшон дощовика
+  description: Накриває голову
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
@@ -57,7 +57,7 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatKKK
-  name: Cuclus cloak
+  name: Плащ з куколю
   suffix: ST, T1
   description: kkk.
   components:
@@ -78,9 +78,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetKKKCoat
-  name: hood of the doll cloak
-  noSpawn: true
-  description: Covers your head with KKK.
+  name: накидка з капюшоном
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову ККК.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/kkk_hood.rsi
@@ -91,8 +91,8 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatPahan
-  name: the bosss cloak
-  description: a thick cloak repainted black.
+  name: плащ боса
+  description: товстий плащ, перефарбований у чорний колір.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/coat_pahan.rsi
@@ -109,9 +109,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetPahanCoat
-  name: hood of the godfathers cloak
-  noSpawn: true
-  description: Covers your head
+  name: плащ з капюшоном пахана
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
@@ -122,8 +122,8 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingOuterCoatPoisk
-  name: explorers cloak
-  description: This cloak is not just a decoration, it symbolizes the desire for adventure and thirst for discovery.
+  name: плащ дослідника
+  description: Цей плащ - не просто прикраса, він символізує прагнення до пригод і жагу до відкриттів.
   components:
   - type: UserInterface
     interfaces:
@@ -143,8 +143,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHatHoodCoatPoisk
-  noSpawn: true
-  name: hood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Hats/coat_hat_poisk.rsi
@@ -155,8 +155,8 @@
 - type: entity
   parent: STClothingCapeT1Base
   id: ClothingNeckCloakCassock
-  name: Pilgrims Robe
-  description: made of rough gray cloth, helps to renounce the worldly
+  name: Паломницька мантія
+  description: з грубого сірого полотна, допомагає відректися від мирського
   suffix: ST, паломники
   components:
     - type: Sprite
@@ -168,12 +168,24 @@
       requiredSlot: CLOAK
       clothingPrototype: ClothingHeadCassock
 
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadCassock
+  name: капюшон ряси
+  description: капюшон із грубої тканини від чернечої ряси
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Hats/cassock_hood.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Hats/cassock_hood.rsi
+
 # СКИНЫ
 - type: entity
   parent: STClothingCapeBase
   id: ClothingTorsoTurtlenecksCamouflage
-  name: Torn Survivor Cloak
-  description: A strange cloak, torn to shreds. Handily repainted in some kind of camouflage.
+  name: Порваний плащ вцілілого
+  description: Дивний плащ, розірваний на шматки. Нашвидкуруч перефарбований у якийсь камуфляж.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/camouflage.rsi
@@ -188,21 +200,20 @@
 - type: entity
   parent: STClothingCapeBase
   id: ClothingCapeDeserters
-  name: deserters cloak
-  description: A piece of cloth in a pixelated dark gray camouflage, can be worn as a cloak if desired
+  name: плащ дезертира
+  description: Шматок тканини з піксельним темно-сірим камуфляжем, за бажанням можна носити як плащ
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/desertercape.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/desertercape.rsi
 
-# Скин на дождевик
 - type: entity
   parent: ClothingOuterCoatDoshdevik
   id: STClothingCapeT1Serafim
-  name: плащ Серафимов
-  suffix: ST, T1, Serafim
-  description: Выполнен в тёмно-зелёной цветовой гамме
+  name: плащ серафимів
+  suffix: ST, T1, Скин
+  description: Виконано в темно-зеленій колірній гамі
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/cloak/Sera_/cape_serafim.rsi
@@ -215,11 +226,22 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: STClothingHeadHelmetSerafim
-  name: капюшон плаща Серафимов
-  noSpawn: true
-  description: Покрывает вашу голову
+  name: капюшон плаща серафимів
+  categories: [ HideSpawnMenu ]
+  description: Покриває вашу голову
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Sera_/coat_hat_serafim.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/Head/Sera_/coat_hat_serafim.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCapeRenegat
+  name: плащ ренегата
+  description: Шматок тканини в піксельному какашному камуфляжі, за бажання можна носити як плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi

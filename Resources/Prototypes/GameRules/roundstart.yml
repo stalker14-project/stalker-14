@@ -341,12 +341,12 @@
   - type: RoundstartStationVariationRule
     rules:
     - id: BasicPoweredLightVariationPass
-    - id: BasicTrashVariationPass
+    # - id: BasicTrashVariationPass # stalker-changes
     - id: SolidWallRustingVariationPass
     - id: ReinforcedWallRustingVariationPass
-    - id: BasicPuddleMessVariationPass
-      prob: 0.99
-      orGroup: puddleMess
-    - id: BloodbathPuddleMessVariationPass
-      prob: 0.01
-      orGroup: puddleMess
+    # - id: BasicPuddleMessVariationPass # stalker-changes-start
+    #   prob: 0.99
+    #   orGroup: puddleMess
+    # - id: BloodbathPuddleMessVariationPass
+    #   prob: 0.01
+    #   orGroup: puddleMess # stalker-changes-end

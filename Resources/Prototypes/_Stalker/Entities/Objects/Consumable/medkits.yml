@@ -32,8 +32,8 @@
   parent: [STBaseHealingItem, Brutepack]
   id: STBrutepack
   suffix: ST
-  name: Bruise Set
-  description: helps against physical damage
+  name: набір від ударів
+  description: Допомагає від механічних пошкоджень
   components:
   - type: Healing
     damageContainers:
@@ -60,11 +60,37 @@
   maxCount: 10
 
 - type: entity
+  parent: STBrutepack
+  id: STBrutepackSera
+  suffix: ST, Скін
+  name: баночка з маззю
+  description: Погано пахне мазь, зроблена з меленого кореня Живокуста і роздавленого ока Плоті, прекрасно лікує удари.
+  components:
+  - type: Stack
+    stackType: STBrutepackSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+
+- type: stack
+  id: STBrutepackSera
+  name: баночка с мазью
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
+  spawn: STBrutepackSera
+  maxCount: 10
+
+- type: entity
   parent: [STBaseHealingItem, Ointment]
   id: STOintment
   suffix: ST
-  name: ointment
-  description: helps with burns and frostbite
+  name: мазь
+  description: допомагає при опіках та обмороженнях
   components:
   - type: Stack
     stackType: STOintment
@@ -72,7 +98,7 @@
 
 - type: stack
   id: STOintment
-  name: ointment
+  name: мазь
   icon:
     sprite: Objects/Specific/Medical/medical.rsi
     state: ointment
@@ -80,11 +106,37 @@
   maxCount: 10
 
 - type: entity
+  parent: STOintment
+  id: STOintmentSera
+  suffix: ST, Скін
+  name: гірка мазь
+  description: Огидна в'язка рідина з жахливим запахом, зроблена з вичавки печінки Кабана, проте вона напрочуд добре загоює хімічні та радіаційні опіки. Застосовується серафимами в тому числі як засіб боротьби з раком шкіри.
+  components:
+  - type: Stack
+    stackType: STOintmentSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+
+- type: stack
+  id: STOintmentSera
+  name: гірка мазь
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  spawn: STOintmentSera
+  maxCount: 10
+
+- type: entity
   parent: [STBaseHealingItem, Gauze]
   id: STGauze
   suffix: ST
-  name: bandage
-  description: stops bleeding
+  name: бинт
+  description: зупиняє кровотечу
   components:
   - type: Stack
     stackType: STGauze
@@ -92,7 +144,7 @@
 
 - type: stack
   id: STGauze
-  name: bandage
+  name: бинт
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
@@ -100,11 +152,37 @@
   maxCount: 10
 
 - type: entity
+  parent: STGauze
+  id: STGauzeSera
+  suffix: ST, Скин
+  name: шматок ганчірки
+  description: Чи то прокип'ячена тканина, чи то знайдений у руїнах старий бинт, у будь-якому разі ті, хто живуть у зоні, Серафими використовують це з метою бинтування ран.
+  components:
+  - type: Stack
+    stackType: STGauzeSera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
+    state: icon
+
+- type: stack
+  id: STGauzeSera
+  name: шматок ганчірки
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
+  spawn: STGauzeSera
+  maxCount: 10
+
+- type: entity
   parent: BaseMedkit
   id: MedkitAI2
-  name: AI-2 first aid kit
+  name: Аптечка АІ-2 з першої медичної допомоги
   suffix: ST
-  description: A standard universal first aid kit for military purposes. It can be used to treat injuries such as cuts, burns, bullet and shrapnel wounds, poisoning and others. Includes a standard set of medications. Easy to use.
+  description: Стандартна універсальна аптечка військового призначення. Може використовуватися для лікування таких травм, як порізи, опіки, кульові та осколкові поранення, отруєння та інші. Містить стандартний набір медикаментів. Проста у використанні.
   components:
   - type: Sprite
     state: medkit-1
@@ -124,7 +202,7 @@
 
 - type: stack
   id: MedkitAI2
-  name: AI-2 First Aid Kit
+  name: Аптечка АІ-2 з першої медичної допомоги
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-1
@@ -132,11 +210,37 @@
   maxCount: 4
 
 - type: entity
+  parent: MedkitAI2
+  id: MedkitAI2Sera
+  suffix: ST, Скін
+  name: набір кустарних медикаментів
+  description: Замотаний у тканину набір різних банок, склянок і порошків, а також старих хірургічних інструментів. Використовується серафимами для ґрунтовного лікування як глибоких укусів мутантів, так і кульових та осколкових поранень. Порівняно із сучасною медициною вкрай не практичний спосіб надання пораненому медичної допомоги, і тим не менш ним користуються його творці, не маючи іншої альтернативи.
+  components:
+  - type: Stack
+    stackType: MedkitAI2Sera
+    count: 10
+  - type: Item
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+
+- type: stack
+  id: MedkitAI2Sera
+  name: набір лікувальних трав
+  icon:
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
+  spawn: MedkitAI2Sera
+  maxCount: 4
+
+- type: entity
   parent: BaseMedkit
   id: MedkitMilitary
   suffix: ST
-  name: army first aid kit
-  description: A medical kit designed specifically for army units. A more effective option compared to the AI-2 first aid kit.
+  name: армійська аптечка
+  description: Медична аптечка, розроблена спеціально для армійських підрозділів. Більш ефективний варіант у порівнянні з аптечкою АІ-2.
   components:
   - type: STWeight
     self: 0.4
@@ -158,7 +262,7 @@
 
 - type: stack
   id: MedkitMilitary
-  name: Army First Aid Kit
+  name: Армійська аптечка
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: medkit-1
@@ -169,8 +273,8 @@
   parent: BaseMedkit
   id: MedkitScience
   suffix: ST
-  name: scientific first aid kit
-  description: A medical kit designed specifically for work in the Zone. The kits composition is selected both to combat wounds and to remove radionuclides from the body. Prevents the development of radiation sickness and reduces the dose of accumulated radiation.
+  name: наукова аптечка
+  description: Медична аптечка, розроблена спеціально для роботи в Зоні. Склад аптечки підібраний як для лікування ран, так і для виведення радіонуклідів з організму. Запобігає розвитку променевої хвороби та зменшує дозу накопиченого опромінення.
   components:
   - type: STWeight
     self: 0.6
@@ -194,7 +298,7 @@
 
 - type: stack
   id: MedkitScience
-  name: Scientific First Aid Kit
+  name: Наукова аптечка першої допомоги
   icon:
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-1
@@ -202,8 +306,8 @@
   maxCount: 4
 
 - type: entity
-  name: elite first aid kit
-  description: An elite medical kit, designed specifically for work in the harsh conditions of the Zone. The kits composition is selected both to combat wounds and to remove radionuclides from the body and treat complex burns. Prevents the development of radiation sickness, and also reduces the dose of accumulated radiation.
+  name: елітна аптечка
+  description: Елітна медична аптечка, розроблена спеціально для роботи в суворих умовах Зони відчуження. Склад аптечки підібраний як для боротьби з пораненнями, так і для виведення радіонуклідів з організму та лікування складних опіків. Запобігає розвитку променевої хвороби, а також знижує дозу накопиченого опромінення.
   parent: BaseHealingItem
   id: MedkitElite
   suffix: ST
@@ -240,7 +344,7 @@
 
 - type: stack
   id: MedkitElite
-  name: Elite First Aid Kit
+  name: Елітна аптечка
   icon:
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-4
@@ -248,11 +352,11 @@
   maxCount: 4
 
 - type: entity
-  name: LAR first aid kit
-  description: Thanks to high-tech developments by scientists, progress has been made in creating the LAR medical kit. This kit is an advanced scientific product that has conquered the world. At the moment, the kit consists only of experimental reagents that have not yet been tested on humans.
+  name: Аптечка LAR
+  description: Завдяки високотехнологічним розробкам вчених вдалося досягти прогресу у створенні медичної аптечки LAR. Цей набір є передовим науковим продуктом, який підкорив світ. На даний момент набір складається лише з експериментальних реагентів, які ще не були протестовані на людях.
   parent: BaseHealingItem
   id: MedkitLAR
-  suffix: ST, Events
+  suffix: ST, Івенти
   components:
   - type: STWeight
     self: 3
@@ -283,7 +387,7 @@
 
 - type: stack
   id: MedkitLAR
-  name: LAR First Aid Kit
+  name: Аптечка першої допомоги LAR
   icon:
     sprite: "_Stalker/Objects/medicine.rsi"
     state: medkit-5

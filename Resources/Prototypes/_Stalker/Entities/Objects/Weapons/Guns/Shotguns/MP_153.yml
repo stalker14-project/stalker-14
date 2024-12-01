@@ -56,3 +56,33 @@
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
+
+- type: entity
+  name: Benelli M4 Super 90
+  suffix: ST, Скин
+  parent: STWeaponShotgunMP153
+  id: STWeaponShotgunStalkerBenelli
+  description: Гладскоствольное полуавтоматическое ружье, разработанное в Италии фирмой 'Benelli Armi S.p.A.' Излюбленное оружие Охотников зоны, но не такое распостраненное как его конкуренты. Высокая скорострельность и удобство использования делает его одним из лучших дробовиков в своём сегменте цен.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+  - type: STWeight
+    self: 3
+
+- type: entity
+  name: Benelli M4 Super 90 серафимов
+  suffix: ST, Скин
+  parent: STWeaponShotgunStalkerBenelli
+  description: Benelli M4s90 — это не просто оружие, это надежный друг охотника Серафимов, который сопровождает его в самые ответственные моменты. Он также покрыт особой раскраской Серафимов и имеет ритуальные знаки и различные обереги, некоторые из них обозначают кто стал первой жертвой этого оружия
+  id: STWeaponShotgunStalkerBenelliSera
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi

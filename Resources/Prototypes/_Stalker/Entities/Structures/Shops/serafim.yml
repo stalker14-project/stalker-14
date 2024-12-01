@@ -1,8 +1,8 @@
 - type: entity
   parent: StalkerShop
   id: StalkerShopSera
-  name: Рублёвый Торгомат, Серафимы
-  description: Как торговец туда поместился?
+  name: Гривневий Торгомат, Серафіми
+  description: Як торговець туди помістився?
   suffix: ST, Mapping, Серафимы
   components:
     - type: Sprite
@@ -15,21 +15,3 @@
     - type: Shop
       moneyId: Hryvnias
       shopPresetId: SerafimShopPresetSimple
-
-- type: entity
-  parent: StalkerShop
-  id: StalkerShopSeraFangsLight
-  name: Облегчённый Торгомат, Серафимы, Клыки
-  description: Как торговец туда поместился?
-  suffix: ST, Mapping, Серафимы
-  components:
-    - type: Sprite
-      drawdepth: Objects
-      sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_emerald.rsi
-      layers:
-        - state: torgomat_emerald
-          map: [ "enum.ConstructionVisuals.Layer" ]
-        - state: normal-unshaded
-    - type: Shop
-      moneyId: Fangs
-      shopPresetId: SerafimShopPresetLight

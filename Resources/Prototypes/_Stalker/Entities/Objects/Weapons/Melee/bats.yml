@@ -89,3 +89,31 @@
           Piercing: 15
           Blunt: 10
           Structural: 15
+
+# skins
+- type: entity
+  parent: StalkerBallBat
+  id: STBatMolitoslov
+  name: молитослов
+  description: Cборник молитв или молитвенных песнопений, текстов, с помощью которых люди обращаются к Богу.
+  suffix: ST
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Melee/molitoslov.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Melee/molitoslov.rsi
+      quickEquip: false
+      slots:
+        - suitStorage
+        - back
+        - belt
+    - type: Paper
+      contentSize: 2800
+    - type: ActivatableUI
+      key: enum.PaperUiKey.Key
+      requiresComplex: false
+    - type: UserInterface
+      interfaces:
+        enum.PaperUiKey.Key:
+          type: PaperBoundUserInterface

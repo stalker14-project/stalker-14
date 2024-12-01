@@ -28,7 +28,6 @@
 - type: entity
   parent: BaseCache
   id: penmCache
-  noSpawn: false
   name: пень
   components:
   - type: Sprite
@@ -38,8 +37,8 @@
 - type: entity
   parent: BaseCache
   id: birch01Cache
-  noSpawn: true
   name: береза
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Flora/flora_trees.rsi
@@ -47,7 +46,7 @@
 - type: entity
   parent: BaseCache
   id: birch02Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: береза
   components:
   - type: Sprite
@@ -56,7 +55,7 @@
 - type: entity
   parent: BaseCache
   id: birch03Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: береза
   components:
   - type: Sprite
@@ -65,7 +64,7 @@
 - type: entity
   parent: BaseCache
   id: birch04Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: береза
   components:
   - type: Sprite
@@ -75,7 +74,7 @@
 - type: entity
   parent: BaseCache
   id: pine01Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: сосна
   components:
   - type: Sprite
@@ -84,7 +83,7 @@
 - type: entity
   parent: BaseCache
   id: pine02Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: сосна
   components:
   - type: Sprite
@@ -94,7 +93,7 @@
 - type: entity
   parent: BaseCache
   id: rock01Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: камінь
   components:
   - type: Clickable
@@ -117,7 +116,7 @@
 - type: entity
   parent: BaseCache
   id: rock02Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: камінь
   components:
   - type: Clickable
@@ -140,7 +139,7 @@
 - type: entity
   parent: BaseCache
   id: rock03Cache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: камінь
   components:
   - type: Clickable
@@ -222,7 +221,7 @@
 - type: entity
   parent: BaseStructureStalkerDynamic
   id: GreenCrateTearTwoCache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Сталкер, ТАЙНИК Т2
   name: покинутий зелений ящик
   components:
@@ -552,7 +551,6 @@
 - type: entity
   parent: GreenCrateTearTwoCache
   id: BlueCrateTearTwoCache
-  noSpawn: false
   name: покинутий синій ящик
   components:
     - type: Sprite
@@ -752,7 +750,7 @@
 - type: entity
   parent: BaseStructureStalkerDynamic
   id: BaseBookshelfCache
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Сталкер, ТАЙНИК
   name: старий шкаф
   description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
@@ -1139,7 +1137,6 @@
 - type: entity
   parent: BaseBookshelfCache
   id: bookshelf2Cache
-  noSpawn: false
   name: старий шкаф
   description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
@@ -1154,7 +1151,6 @@
 - type: entity
   parent: BaseBookshelfCache
   id: bookshelf3Cache
-  noSpawn: false
   name: старий шкаф
   description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
@@ -1169,7 +1165,6 @@
 - type: entity
   parent: BaseBookshelfCache
   id: bookshelf4Cache
-  noSpawn: false
   name: старий шкаф
   description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
@@ -1184,7 +1179,6 @@
 - type: entity
   parent: BaseBookshelfCache
   id: bookshelf5Cache
-  noSpawn: false
   name: старий шкаф
   description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
   components:
@@ -1199,7 +1193,7 @@
 - type: entity
   parent: BaseStructureStalkerDynamic
   id: BaseYaschikResource
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Сталкер, ресурси
   name: закинутий комод
   components:
@@ -1466,7 +1460,7 @@
 - type: entity
   parent: BaseStructureStalkerDynamic
   id: BaseYaschikComponents
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   suffix: Сталкер, ресурси
   name: закинутий ящик із компонентами
   components:
@@ -1620,3 +1614,424 @@
         - BlueCrateTearTwoCache
       chance: 0.80
       offset: 0.0
+
+- type: entity
+  id: RandomCacheSpawnerMonolithCrate
+  name: спавнер ящика монолита (100% шанс)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+    - type: Sprite
+      layers:
+      - state: red
+      - sprite: _Stalker/Objects/Decoration/yashik.rsi
+        state: yaschik
+    - type: RandomSpawner
+      prototypes:
+        - STMonolithCrate
+      chance: 1
+      offset: 0.0
+
+# monolith
+- type: entity
+  parent: BaseStructureStalkerDynamic
+  id: STMonolithCrate
+  suffix: Stalker, монолит
+  name: чёрный ящик монолита
+  components:
+    - type: Storage
+      maxItemSize: Ginormous
+      grid:
+        - 0,0,24,24
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
+      state: icon
+    - type: Transform
+      noRot: true
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+    - type: Clickable
+    - type: StorageFill
+      contents:
+        # outer
+        - id: ClothingOuterJacketMonolith
+          prob: 0.4
+        - id: ClothingOuterJacketMonolith
+          prob: 0.4
+        - id: ClothingOuterJacketMonolith
+          prob: 0.4
+        - id: STClothingOuterArmorLightPlateVestBaseMonolith
+          prob: 0.1
+        - id: STClothingOuterArmorLightPlateVestBaseMonolith
+          prob: 0.1
+        - id: ClothingOuterArmorMonolith
+          prob: 0.1
+        - id: ClothingOuterArmorSevaMonolith
+          prob: 0.05
+        # backpack
+        - id: ClothingBackpackTacticBlackStalker
+          prob: 0.5
+        - id: ClothingBackpackTacticBlackStalker
+          prob: 0.125
+        # mask
+        - id: ClothingMaskGasMono
+          prob: 0.25
+        - id: ClothingMaskGasMono
+          prob: 0.125
+        - id: ClothingMaskGasMono
+          prob: 0.125
+        - id: ClothingMaskGasMono
+          prob: 0.125
+        # hat
+        - id: ClothingHeadHelmetBerill5MMonolith
+          prob: 0.125
+        # weapon
+        - id: STWeaponShotgunMP153
+          prob: 0.25
+        - id: STWeaponShotgunProtecta
+          prob: 0.05
+        - id: WeaponPistolStalkerGlock
+          prob: 0.25
+        - id: WeaponPistolStalkerGlock
+          prob: 0.25
+        - id: WeaponPistolStalkerGlock
+          prob: 0.25
+        - id: STWeaponSMGMp5
+          prob: 0.1
+        - id: STWeaponSMGMp5
+          prob: 0.1
+        - id: STWeaponRifleSig550
+          prob: 0.05
+        - id: STWeaponRifleSig550
+          prob: 0.05
+        # modules STModuleSMGGripT1
+        - id: STModuleScopeRiflesT2Nato
+          prob: 0.075
+        - id: STModuleScopeRiflesT2Nato
+          prob: 0.075
+        - id: STModuleScopeRiflesT2Nato
+          prob: 0.075
+        - id: STModuleScopeRiflesT1Nato
+          prob: 0.15
+        - id: STModuleScopeRiflesT1Nato
+          prob: 0.15
+        - id: STModuleScopeRiflesT1Nato
+          prob: 0.15
+        - id: STModuleSMGGripT2
+          prob: 0.075
+        - id: STModuleSMGGripT2
+          prob: 0.075
+        - id: STModuleSMGGripT1
+          prob: 0.15
+        - id: STModuleSMGGripT1
+          prob: 0.15
+        # mags
+        - id: GlockMag24
+          prob: 0.15
+        - id: GlockMag24
+          prob: 0.15
+        - id: GlockMag24
+          prob: 0.15
+        - id: GlockMag24
+          prob: 0.15
+        - id: GlockMag24
+          prob: 0.15
+        - id: GlockMag24
+          prob: 0.15
+        - id: GlockMag24
+          prob: 0.15
+        - id: GlockMag24
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: 556Mag30
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+        - id: BaseMP5Mag
+          prob: 0.15
+      # ammo
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 7mmBuckshotBox
+          prob: 0.15
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 919PSTBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 556FMJBox
+          prob: 0.15
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 919PBMBox
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        - id: 556M855Box
+          prob: 0.075
+        # meds
+        - id: STBrutepack
+          prob: 0.3
+        - id: STBrutepack
+          prob: 0.3
+        - id: STBrutepack
+          prob: 0.3
+        - id: STBrutepack
+          prob: 0.3
+        - id: STBrutepack
+          prob: 0.3
+        - id: STGauze
+          prob: 0.3
+        - id: STGauze
+          prob: 0.3
+        - id: STGauze
+          prob: 0.3
+        - id: STGauze
+          prob: 0.3
+        - id: STGauze
+          prob: 0.3
+        - id: STOintment
+          prob: 0.3
+        - id: STOintment
+          prob: 0.3
+        - id: PillDexalin
+          prob: 0.3
+        - id: PillDexalin
+          prob: 0.3
+        - id: Defibrillator
+          prob: 0.25
+        - id: psyblock
+          prob: 0.3
+        - id: psyblock
+          prob: 0.3
+        - id: AntiRadMedipen
+          prob: 0.3
+        - id: AntiRadMedipen
+          prob: 0.3
+        - id: MedkitAI2
+          prob: 0.3
+        - id: MedkitAI2
+          prob: 0.3
+        - id: MedkitAI2
+          prob: 0.3
+        - id: MedkitAI2
+          prob: 0.3
+        - id: MedkitAI2
+          prob: 0.3
+        - id: MedkitMilitary
+          prob: 0.15
+        - id: MedkitMilitary
+          prob: 0.15
+        - id: MedkitMilitary
+          prob: 0.15
+      # rare
+        - id: ClothingOuterCoatKevlarMonolith
+          prob: 0.03
+        - id: STClothingOuterCoatTihiy
+          prob: 0.03
+        - id: STWeaponRifleStalkerG36
+          prob: 0.015
+        - id: 556M856Box
+          prob: 0.025
+        - id: 556M856Box
+          prob: 0.025
+        - id: 556M856Box
+          prob: 0.025
+      # misc
+        - id: STBolt
+          prob: 1
+        - id: STBolt
+          prob: 1
+        - id: STBolt
+          prob: 1
+        - id: STBolt
+          prob: 1
+        - id: BoxZiptie
+          prob: 0.25
+        - id: STEnergyDrink
+          prob: 0.15
+        - id: STEnergyDrink
+          prob: 0.15
+        - id: STEnergyDrink
+          prob: 0.15
+        - id: STEnergyDrink
+          prob: 0.15

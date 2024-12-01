@@ -257,7 +257,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalkaStock
-  noSpawn: false
   name: Svalka-UndergrundSvalkaStock
   components:
     - type: NewMapTeleport
@@ -266,7 +265,6 @@
 - type: entity
   parent: MapTeleportBase
   id: UndergrundSvalkaStock-Svalka
-  noSpawn: false
   name: UndergrundSvalkaStock-Svalka
   components:
     - type: NewMapTeleport
@@ -276,7 +274,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Cordon-TL1
-  noSpawn: false
   name: Cordon-TL1
   components:
     - type: NewMapTeleport
@@ -288,7 +285,6 @@
 - type: entity
   parent: MapTeleportBase
   id: TL-Cordon1
-  noSpawn: false
   name: TL-Cordon1
   components:
     - type: NewMapTeleport
@@ -302,7 +298,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Svalka-Agro1
-  noSpawn: false
   name: Svalka-Agro1
   components:
     - type: NewMapTeleport
@@ -387,7 +382,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Svalka-Oazis
-  noSpawn: false
   name: Svalka-Oazis
   components:
     - type: NewMapTeleport
@@ -401,7 +395,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Svalka-Top
-  noSpawn: false
   name: Svalka-Top
   components:
     - type: NewMapTeleport
@@ -415,7 +408,6 @@
 - type: entity
   parent: MapTeleportBase
   id: Agroprom-Top
-  noSpawn: false
   name: Agroprom-Top
   components:
     - type: NewMapTeleport
@@ -685,6 +677,32 @@
       cooldownTime: 0
       godmodeCooldown: 0
 
+###################################################### Жабы Порталы этажей
+
+- type: entity
+  parent: MapTeleportBase
+  id: JabaInstituteFirstFloor
+  suffix: Жаба первый этаж
+  name: Jaba first floor
+  components:
+    - type: NewMapTeleport
+      portalName: JabaFirstFloorPortal
+      cooldownEnabled: false
+      cooldownTime: 0
+      godmodeCooldown: 0
+
+- type: entity
+  parent: MapTeleportBase
+  id: JabaFirstFloorToSecondFloor
+  suffix: Жаба первый этаж - Жаба второй этаж
+  name: Jaba first floor - Jaba second floor
+  components:
+    - type: NewMapTeleport
+      portalName: JabaFirstFloorToSecondFloorPortal
+      cooldownEnabled: false
+      cooldownTime: 0
+      godmodeCooldown: 0
+
 ######################################################Предбанник-Кордон
 - type: entity
   parent: MapTeleportBase
@@ -737,13 +755,12 @@
     - type: AccessReader
       access: [["Military"]]
 
-################################################### Топи, Свалка - Рыжий лес
+################################################### Топи, Звалище - Рудий ліс
 
 - type: entity
   parent: MapTeleportBase
   id: RedForest-Topi
-  noSpawn: false
-  name: Red Forest - Swamps
+  name: Рудий ліс - Топи
   components:
     - type: NewMapTeleport
       portalName: RedForest-Topi
@@ -756,8 +773,7 @@
 - type: entity
   parent: MapTeleportBase
   id: RedForest-Svalka
-  noSpawn: false
-  name: Red Forest - Dump
+  name: Рудий ліс - Звалище
   components:
     - type: NewMapTeleport
       portalName: RedForest-Svalka
@@ -769,8 +785,7 @@
 - type: entity
   parent: MapTeleportBaseUncollide
   id: RedForest-Vertushka
-  noSpawn: false
-  name: Red Forest - Spinner
+  name: Рудий ліс - Вертушка
   components:
     - type: AccessReader
       access: [["SciBase"], ["SciHead"]]
@@ -781,13 +796,12 @@
       cooldownTime: 5
       godmodeCooldown: 5
 
-################################################### Рыжий лес, Свалка, Оазис - Бар
+################################################### Рудий ліс, звалище, оазис - бар
 
 - type: entity
   parent: MapTeleportBase
   id: Svalka-Bar
-  noSpawn: false
-  name: Dump - Bar
+  name: Свалка - Бар
   components:
     - type: NewMapTeleport
       portalName: Svalka-Bar
@@ -799,8 +813,7 @@
 - type: entity
   parent: MapTeleportBase
   id: RedForest-Bar
-  noSpawn: false
-  name: Red Forest - Bar
+  name: Рудий Ліс - Бар
   components:
     - type: NewMapTeleport
       portalName: RedForest-Bar
@@ -812,8 +825,7 @@
 - type: entity
   parent: MapTeleportBase
   id: Oasis-Bar
-  noSpawn: false
-  name: Oasis - Bar
+  name: Оазис - Бар
   components:
     - type: NewMapTeleport
       portalName: Oasis-Bar
@@ -825,8 +837,7 @@
 - type: entity
   parent: MapTeleportBase
   id: PodvalBar-Bar
-  noSpawn: false
-  name: Bar Basement - Bar
+  name: Підвал бару - Бар
   components:
     - type: NewMapTeleport
       portalName: PodvalBar-Bar
@@ -840,8 +851,7 @@
 - type: entity
   parent: MapTeleportBase
   id: Oasis-Barier
-  noSpawn: false
-  name: Oasis - Barrier
+  name: Оазис - Барьер
   components:
     - type: NewMapTeleport
       portalName: Oasis-Barier
@@ -853,8 +863,7 @@
 - type: entity
   parent: MapTeleportBase
   id: Bar-Barier
-  noSpawn: false
-  name: Bar - Barrier
+  name: Бар - Барьер
   components:
     - type: NewMapTeleport
       portalName: Bar-Barier
@@ -863,13 +872,12 @@
       cooldownTime: 5
       godmodeCooldown: 5
 
-################################################### Тёмная лощина - Подземка Проекта
+################################################### Темна лощина - Підземка Проекту
 
 - type: entity
   parent: MapTeleportBase
   id: DarkHollow-PodzemkaProject
-  noSpawn: false
-  name: Dark Hollow - Project Underground
+  name: Темна лощина - Підземка Проекту
   components:
     - type: NewMapTeleport
       portalName: DarkHollow-PodzemkaProject

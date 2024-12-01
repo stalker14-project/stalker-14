@@ -1,71 +1,72 @@
+
 - type: entity
   id: Bullet45ACPLFMJ
   name: bullet (.45 ACP Lasermatch FMJ magnum)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
-    - type: TimedDespawn
-      lifetime: 2
-    - type: Projectile
-      projectileClass: 1
-      damage:
-        types:
-          Piercing: 29
-    - type: StaminaDamageOnCollide
-      damage: 1
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Piercing: 29
+  - type: StaminaDamageOnCollide
+    damage: 1
 
 - type: entity
   id: Bullet45ACPMFMJ
   name: bullet (.45 ACP Match FMJ magnum)
   parent: Bullet45ACPLFMJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
-    - type: Projectile
-      projectileClass: 2
-      damage:
-        types:
-          Piercing: 33
-    - type: StaminaDamageOnCollide
-      damage: 5
+  - type: Projectile
+    projectileClass: 2
+    damage:
+      types:
+        Piercing: 33
+  - type: StaminaDamageOnCollide
+    damage: 5
 
 - type: entity
   id: Bullet45ACPHydroshock
   name: bullet (.45 ACP Hydra-Shok magnum)
   parent: Bullet45ACPLFMJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
-    - type: Projectile
-      projectileClass: 1
-      damage:
-        types:
-          Piercing: 50
-    - type: StaminaDamageOnCollide
-      damage: 15
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Piercing: 50
+  - type: StaminaDamageOnCollide
+    damage: 15
 
 - type: entity
   id: Bullet45ACPRIP
   name: bullet (.45 ACP RIP magnum)
   parent: Bullet45ACPLFMJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
-    - type: Projectile
-      projectileClass: 0
-      damage:
-        types:
-          Piercing: 80
-    - type: StaminaDamageOnCollide
-      damage: 30
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Piercing: 80
+  - type: StaminaDamageOnCollide
+    damage: 30
 
 - type: entity
   id: Bullet45ACPAP
   name: bullet (.45 ACP AP magnum)
   parent: Bullet45ACPLFMJ
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
-    - type: Projectile
-      projectileClass: 3
-      damage:
-        types:
-          Piercing: 42
-    - type: StaminaDamageOnCollide
-      damage: 5
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 42
+  - type: StaminaDamageOnCollide
+    damage: 5

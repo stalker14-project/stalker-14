@@ -31,20 +31,47 @@
           layer:
             - MobLayer
 
+
 - type: entity
   parent: STBaseBolt
   id: STBolt
-  name: bolt
-  description: A fastener in the form of a rod with an external thread on one end. Now 100% carbon steel.
+  name: болт
+  description: Кріплення у вигляді стрижня із зовнішнім різьбленням на одному кінці. Тепер на 100% з вуглецевої сталі.
   components:
     - type: Sprite
       state: icon
+    - type: Stack
+      stackType: STBolt
+      count: 1
+      maxCount: 3
+
+- type: stack
+  id: STBolt
+  name: болт
+  icon: { sprite: _Stalker/Objects/Misc/bolts.rsi, state: icon }
+  spawn: STBolt
+  maxCount: 3
+  itemSize: 1
 
 - type: entity
   parent: STBaseBolt
   id: STBoltGolden
-  name: bolt golden
-  description: Now these bolts are gold plated, you can humiliate poverty with your anomaly detection skills.
+  name: золотий болт
+  description: Тепер ці болти позолочені, і ви можете принизити бідність своїми навичками виявлення аномалій.
   components:
     - type: Sprite
       state: icon_golden
+    - type: Stack
+      stackType: STBoltGolden
+      count: 1
+      maxCount: 3
+
+- type: stack
+  id: STBoltGolden
+  name: золотий болт
+  icon: { sprite: _Stalker/Objects/Misc/bolts.rsi, state: icon_golden }
+  spawn: STBoltGolden
+  maxCount: 3
+  itemSize: 1
+
+

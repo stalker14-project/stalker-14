@@ -2,7 +2,7 @@
   abstract: true
   parent: ClothingMaskGas
   id: STClothingMaskGasStandardT1Base
-  name: T1 standard gas mask base from radiation
+  name: Стандартна основа протигаза Т1 від радіації
   suffix: ST, T1, Rad
   components:
   - type: Tag
@@ -23,8 +23,8 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasZarya
-  name: stalker standard gas mask
-  description: Cheap and effective. Protects against radiation.
+  name: стандартний протигаз сталкера
+  description: Дешево і ефективно. Захищає від радіації.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_stalker.rsi
@@ -34,8 +34,8 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasExs
-  name: standard exoskeleton gas mask
-  description: No armor at all, even though its from Exo.
+  name: стандартний протигаз екзоскелета
+  description: Зовсім без броні, хоча це з екзо.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_exoskelet.rsi
@@ -45,8 +45,8 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasMono
-  name: Monoliths standard gas mask
-  description: Hides eyes and evil thoughts. Protects from radiation.
+  name: стандартний протигаз Моноліту
+  description: Приховує очі та злі думки. Захищає від радіації.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_monolith.rsi
@@ -56,8 +56,8 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasChN
-  name: Clear Sky standard gas mask
-  description: Perhaps there is an outstanding scientist behind him, but most likely he is just a living club. Protects from radiation.
+  name: Стандартний протигаз Чистого Неба
+  description: Можливо, за ним стоїть видатний вчений, але, швидше за все, це просто живий клуб. Захищає від радіації.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_cn.rsi
@@ -69,9 +69,23 @@
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasSera
+  name: стандартний протигаз Серафімов
+  description: Захищає від запитань про релігію, і від радіації.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_sera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_sera.rsi
+  - type: Armor
+    armorLevels:
+       radiation: 1
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasDolg1
-  name: standard gas mask Duty 1
-  description: It is unlikely that he will destroy the Zone, but he is trying very hard. Protects from radiation.
+  name: стандартний протигаз Обов'язку
+  description: Навряд чи він знищить Зону, але він дуже старається. Захищає від радіації.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_dolg1.rsi
@@ -81,8 +95,8 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasFreedom
-  name: Freedom`s standard gas mask
-  description: Alas, not in the fektarn. Protects from radiation.
+  name: Стандартний протигаз Свободи
+  description: На жаль, не у фектарні. Захищає від радіації.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_freedom.rsi
@@ -92,8 +106,8 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasRenegats
-  name: standard renegade gas mask
-  description: Cheap and effective. Protects against radiation, but still good at protecting against its own chemicals.
+  name: стандартний протигаз ренегата
+  description: Дешево і ефективно. Захищає від радіації, але все ще добре захищає від власних хімічних речовин.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_renegat.rsi
@@ -107,8 +121,8 @@
 - type: entity
   parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasAnomalists
-  name: stndard anomalists gas mask
-  description: Perhaps there is an outstanding fisherman behind him. Protects against radiation.
+  name: стандартний протигаз аномалістів
+  description: Можливо, за ним стоїть видатний рибалка. Захищає від радіації.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/mask/gasmask_cn.rsi

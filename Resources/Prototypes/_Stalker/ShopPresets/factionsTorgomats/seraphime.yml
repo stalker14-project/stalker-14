@@ -1,0 +1,307 @@
+- type: shopPreset
+  id: SerafimShopPresetSimple
+  itemsForSale:
+    FoodTinMRETrash: 5
+  categories:
+    - name: Зброя
+      priority: 1
+      items:
+        STWeaponShotgunToz34: 900
+        STCombatKnife: 60
+        STWeaponShotgunMP155T: 100
+    - name: Броня и снаряжение
+      priority: 2
+      items:
+        ClothingMaskGasSera: 180
+        ClothingBackpackDuffelGreenStalker: 300 # 4,4
+        ClothingBackpackDuffelBlackStalker: 300 # 4,4
+        ClothingBackpackDuffelMedicalStalker: 500
+        ClothingOuterJacketStalker: 250
+        ClothingBeltBandolierStalker: 170
+        ClothingBeltTarzanBlack: 1000
+        ClothingBeltTarzanGreen: 1000
+        ClothingBeltTarzanOrange: 1000
+        STClothingCapeT1Serafim: 356
+        STSkinsKitSeraphim: 1000
+    - name: Утилиты
+      priority: 3
+      items:
+        ExtendedEmergencyOxygenTankFilledStalker: 30
+        DoubleEmergencyOxygenTankStalkerFilled: 200
+        STSkinsKitSeraphim: 1000
+        STSeraKnife: 10
+        HatchetStalker: 300
+        TrashBag: 100
+        Matchbox: 60
+        BaseRadio: 100
+        STTorchSera: 150
+        HandheldGPSBasic: 100
+        ClothingGoPro: 356
+        Paper: 10
+        Pen: 50
+        ClothingBackpackDuffelGreenStalkerHydroponic: 1000
+    - name: Аномалии
+      priority: 4
+      items:
+        # Bolt bags
+        STBoltBagFilled: 65
+        STBoltBagOliveGrayFilled: 65
+    - name: Патроны
+      priority: 5
+      items:
+        7mmBuckshotBox: 170
+    - name: Провизия
+      priority: 6
+      items:
+        STEnergyDrink: 1450
+        DrinkVodkaBottleFull: 550
+        FoodBreadPlain: 350
+        DrinkFlaskOld: 300
+        DrinkWaterBottleFull: 450
+        FoodTinMRE: 1200
+        DrinkLemonadehBottleFull: 500
+        FoodMeatSalami: 900
+    - name: Медицина
+      priority: 7
+      items:
+        PillDexalin: 400
+        PillDexalinPlusStalker: 700
+        radioprotectpill: 129
+        psyblock: 1300
+        MedkitAI2Sera: 4000
+        STOintmentSera: 150
+        STGauzeSera: 100
+        STBrutepackSera: 300
+        Tourniquet: 128
+        Bloodpack: 800
+        MedkitMilitary: 7000
+        antiradpill: 300
+
+- type: shopPreset
+  id: SerafimShopPresetLight
+  itemsForSale:
+    FoodMeatSpiderLeg: 24
+    MutantPartBlindDogTail: 45
+    MutantPartZombieHand: 210
+    MutantPartFleshEye: 120
+    MutantPartBoarHoof: 120
+    MutantPartPseudodogTail: 150
+    MutantPartSnorkFoot: 180
+    MutantPartLeshiyRoot: 249
+    MutantPartBloodsuckerTentacles: 300
+    MutantPartPseudogiantHeart: 1249
+    MutantPartOraculeEye: 1500
+  categories:
+    - name: Зброя
+      priority: 1
+      items:
+        STWeaponShotgunMP155T: 25
+        STWeaponShotgunToz34: 300
+        STWeaponSMGStalkerCP2Veresk: 655
+        STWeaponSMGStalkerCP2VereskSera: 655
+        STSeraKnife: 10
+        STWeaponShotgunStalkerBenelli: 345
+        STWeaponShotgunStalkerBenelliSera: 345
+        STBatMolitoslov: 175
+
+    - name: Броня и снаряжение
+      priority: 2
+      items:
+        ClothingMaskGasSera: 45
+        STClothingCapeT2SerafimPrestige: 350
+        STClothingOuterCoatHimera: 350
+        STSkinsKitSeraphim: 250
+        ClothingBackpackTacticSera: 95
+        ClothingBackpackDuffelBlackStalker: 20
+        STClothingOuterArmorRassvetSera: 600
+        ClothingBeltBandolierStalker: 10
+        ClothingBeltTarzanBlack: 30
+        ClothingBeltTarzanGreen: 30
+        ClothingBeltTarzanOrange: 30
+        MedkitGrizzlyStalker: 400
+    - name: Утилиты
+      priority: 3
+      items:
+        ExtendedEmergencyOxygenTankFilledStalker: 30
+        DoubleEmergencyOxygenTankStalkerFilled: 200
+        PowerCellHyper: 10
+        Defibrillator: 70
+        GeigerCounter: 25
+        STTorchSera: 25
+    - name: Аномалии
+      priority: 4
+      items:
+        ZoneArtifactDetectorPulse: 150
+        ZoneArtifactDetectorHunter: 300
+        BoxArtcont: 300
+        # Bolt bags
+        STBoltBagFilled: 65
+        STBoltBagOliveGrayFilled: 65
+    - name: Магазины
+      priority: 5
+      items:
+        545Mag20: 100
+        545Mag30: 150
+        Base751Mag10: 100
+        VityazMag: 180
+    - name: Боеприпасы
+      priority: 6
+      items:
+        7mmBuckshotBox: 16
+        545FMJBox: 83
+        919PSTBox: 83
+    - name: Провизия
+      priority: 7
+      items:
+        STEnergyDrink: 40
+        DrinkVodkaBottleFull: 70
+        FoodBreadPlain: 5
+        DrinkFlaskOld: 5
+        DrinkWaterBottleFull: 5
+        FoodTinMRE: 60
+        DrinkLemonadehBottleFull: 70
+        FoodMeatSalami: 50
+    - name: Медицина
+      priority: 8
+      items:
+        PillDexalin: 5
+        PillDexalinPlusStalker: 15
+        radioprotectpill: 30
+        psyblock: 120
+        MedkitAI2Sera: 50
+        STOintmentSera: 5
+        STGauzeSera: 8
+        STBrutepackSera: 17
+        Tourniquet: 3
+        Bloodpack: 100
+        MedkitMilitary: 450
+        antiradpill: 30
+    - name: Кастомизация
+      priority: 9
+      items:
+        ClothingBandageStalkerBlue: 20
+    - name: Обвесы
+      priority: 10
+      items:
+        STModuleScopeRiflesT1Ru: 400
+
+- type: shopPreset
+  id: SerafimShopPresetHeavy
+  itemsForSale:
+    FoodMeatSpiderLeg: 9
+    MutantPartBlindDogTail: 18
+    MutantPartZombieHand: 84
+    MutantPartFleshEye: 48
+    MutantPartBoarHoof: 48
+    MutantPartPseudodogTail: 60
+    MutantPartSnorkFoot: 72
+    MutantPartLeshiyRoot: 99
+    MutantPartBloodsuckerTentacles: 120
+    MutantPartPseudogiantHeart: 499
+    MutantPartOraculeEye: 600
+  categories:
+    - name: Зброя
+      priority: 1
+      items:
+        STWeaponSMGStalkerCP2Veresk: 850
+        STWeaponSMGStalkerCP2VereskSera: 850
+        STWeaponRifleStalkerAK12: 1450
+        STWeaponRifleStalkerAK12Sera: 1450
+        STWeaponRifleStalkerAK104: 1900
+        STWeaponRifleStalkerVeprSerafim: 2500
+        STWeaponShotgunSaiga12Sera: 1200
+        STWeaponShotgunToz34: 100
+        STSeraKnife: 30
+        STBatMolitoslov: 195
+        STWeaponShotgunStalkerBenelli: 385
+        STWeaponShotgunStalkerBenelliSera: 385
+        STWeaponRifleSVUSera: 2950
+        STWeaponRifleSVU: 2950
+    - name: Броня и снаряжение
+      priority: 2
+      items:
+        ClothingBackpackTacticSera: 120
+        ClothingMaskGasSera: 90
+        STClothingOuterArmorRassvetSera: 700
+        STClothingOuterArmorSeraphimStrash: 1400
+        STClothingCapeT1Serafim: 150
+        STClothingCapeT2SerafimPrestige: 480
+        STClothingOuterCoatHimera: 480
+        ClothingOuterCoatSeraphim: 1150
+        ClothingOuterArmorSevasera: 850
+        STSkinsKitSeraphim: 200
+        STClothingHeadHelmetSeraphimAltin: 900
+    - name: Утилиты
+      priority: 3
+      items:
+        ExtendedEmergencyOxygenTankFilledStalker: 300
+        DoubleEmergencyOxygenTankStalkerFilled: 200
+        STTorchSera: 50
+    - name: Аномалии
+      priority: 4
+      items:
+        BoxArtcont: 125
+        # Anomaly detectors
+        ZoneAnomalyDetectorAD1: 350
+        ZoneAnomalyDetectorAD2: 500
+        # Artifact detectors
+        ZoneArtifactDetectorPulse: 100
+        ZoneArtifactDetectorHunter: 650
+        # Bolt bags
+        STBoltBagFilled: 25
+        STBoltBagOliveGrayFilled: 25
+    - name: Провизия
+      priority: 5
+      items:
+        STEnergyDrink: 50
+        DrinkVodkaBottleFull: 100
+        FoodBreadPlain: 20
+        DrinkFlaskOld: 20
+        DrinkWaterBottleFull: 20
+        FoodTinMRE: 80
+        DrinkLemonadehBottleFull: 80
+        FoodMeatSalami: 60
+    - name: Медицина
+      priority: 6
+      items:
+        PillDexalin: 15
+        PillDexalinPlusStalker: 30
+        radioprotectpill: 45
+        psyblock: 90
+        MedkitAI2Sera: 220
+        STOintmentSera: 10
+        STGauzeSera: 10
+        STBrutepackSera: 20
+        Tourniquet: 15
+        Bloodpack: 110
+        MedkitMilitary: 500
+        antiradpill: 50
+        MedkitGrizzlyStalker: 200
+    - name: Обвесы
+      priority: 7
+      items:
+        STModuleScopeRiflesT2Ru: 1100
+    - name: Магазины
+      priority: 8
+      items:
+        Base1270Mag: 80
+        Base751Mag10: 100
+        545Mag30: 150
+        739Mag30: 180
+        Base754Mag5: 150
+        754Mag10: 380
+        VityazMag: 180
+    - name: Боеприпасы
+      priority: 9
+      items:
+        7mmBuckshotBox: 33
+        6mmBuckshotBox: 83
+        8mmBuckshotBox: 366
+        545HPBox: 133
+        545PCBox: 216
+        739FMJBox: 250
+        754FMJBox: 300
+        545FMJBox: 133
+        919RIPBox: 83
+        919PSTBox: 83
+        919PBMBox: 150

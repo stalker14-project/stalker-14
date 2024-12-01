@@ -1,12 +1,12 @@
 - type: entity
   parent: BaseItem
   id: BaseAmmoBoxStalker
-  name: Stalker Basic Box
-  noSpawn: true
+  name: Базова коробка сталкера
+  categories: [ HideSpawnMenu ]
   suffix: Stalker
   components:
   - type: RepositoryItem
-    categoryName: Патроны
+    categoryName: Патрони
   - type: STWeight
     self: 0.5
   - type: BallisticAmmoProvider
@@ -36,14 +36,14 @@
 - type: entity
   parent: BaseItem
   id: BaseAmmoCinkBoxStalker
-  name: Stalkers Basic Box
-  noSpawn: true
+  name: Базовий ящик сталкера
+  categories: [ HideSpawnMenu ]
   suffix: Stalker
   components:
   - type: Trash
     time: 900
   - type: RepositoryItem
-    categoryName: Патроны
+    categoryName: Патрони
   - type: STWeight
     self: 20
   - type: BallisticAmmoProvider

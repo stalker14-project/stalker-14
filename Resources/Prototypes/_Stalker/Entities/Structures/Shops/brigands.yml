@@ -2,9 +2,9 @@
 - type: entity
   parent: StalkerShop
   id: StalkerShopBandits
-  name: Torgomat, brigades
+  name: Торгомат, бандити
   description: Тепер навіть він купує це!
-  suffix: ST, Mapping, бандиты
+  suffix: ST, Mapping, бандити
   components:
   - type: Sprite
     drawdepth: Objects
@@ -20,9 +20,9 @@
 - type: entity
   parent: StalkerShop
   id: StalkerDollarShopBandits
-  name: Torgomat, brigades
-  description: Now he even buys it!
-  suffix: ST, Mapping, бандиты Т4
+  name: Торгомат, бандити
+  description: Тепер навіть він купує це!
+  suffix: ST, Mapping, бандити Т4
   components:
   - type: Sprite
     drawdepth: Objects
@@ -34,23 +34,3 @@
   - type: Shop
     moneyId: Dollar
     shopPresetId: DollarBandsShopPreset
-
-# Жабы
-
-- type: entity
-  parent: StalkerShop
-  id: StalkerShopJaba
-  name: Torgomat, Toad
-  description: How did the merchant fit in there?
-  suffix: ST, Mapping, Жабы
-  components:
-    - type: Sprite
-      drawdepth: Objects
-      sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_black.rsi
-      layers:
-        - state: torgomat_black
-          map: [ "enum.ConstructionVisuals.Layer" ]
-        - state: normal-unshaded
-    - type: Shop
-      moneyId: Hryvnias
-      shopPresetId: ShopPresetJaba

@@ -3,9 +3,9 @@
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorSevaBase
   name: Sevs costume #base
-  description: A closed-loop suit developed by the Kyiv Research Institute, designed specifically for work in the Zone.
+  description: Костюм закритого типу, розроблений Київським науково-дослідним інститутом, створений спеціально для роботи в Зоні.
   suffix: ST, T3, Env
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   abstract: true
   components:
   - type: Sprite
@@ -46,9 +46,9 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: STClothingHeadHardsuitSevaHelmBase
-  name: Seva helmet #base
-  description: Despite being made mostly of glass, it is quite durable.
-  noSpawn: true
+  name: шолом севи #base
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_helm.rsi
@@ -86,8 +86,8 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaStalker
-  name: Sevs costume
-  description: A closed-loop suit developed by the Kyiv Research Institute, designed specifically for work in the Zone.
+  name: Сева костюм
+  description: Костюм закритого типу, розроблений Київським науково-дослідним інститутом, створений спеціально для роботи в Зоні.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_stalker.rsi
@@ -99,7 +99,7 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaSciRed
-  name: Seva Uchenykh costume
+  name: костюм вчених Сева
   description: A closed-loop suit developed by the Kyiv Research Institute, designed specifically for work in the Zone.
   components:
     - type: Sprite
@@ -109,22 +109,129 @@
 
 - type: entity
   parent: STClothingOuterArmorSevaBase
-  id: ClothingOuterArmorSevaSciGreen
-  name: Seva Uchenykh costume
-  description: A closed-loop suit developed by the Kyiv Research Institute, designed specifically for work in the Zone.
+  id: ClothingOuterArmorSevaSciWhite
+  name: білий костюм "Сева" Вчених
+  description: "Розроблений Київським НДІ костюм замкнутого циклу, призначений спеціально для роботи в умовах Зони зі старим дизайном"
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_green.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_sci.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_green.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_sci.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHardsuitSevaHelmSci
+      slot: head
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmSci
+  name: шолом севи
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
+# Military
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaMilitary
+  name: костюм "Сева-ЗБМ"
+  description: Науковий костюм, варіант "СЕВИ", вироблений на замовлення військових.
+  components:
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+      - 0,2,0,3
+      - 1,-0,1,-0
+      - 2,2,2,3
+      - 3,-0,3,-0
+      - 4,2,4,3
+      - 5,-0,5,-0
+      - 6,2,6,3
+      - 7,-0,7,-0
+      - 8,2,8,3
+      - 9,-0,9,-0
+      - 10,2,10,3
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_military.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_military.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmMilitary
+    slot: head
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmMilitary
+  name: шолом севи
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_military.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_military.rsi
+
+
+# monolith
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaMonolith
+  name: костюм "Сева" моноліту
+  description: Науковий костюм, варіант "СЕВИ", вироблений монолітовцями.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmMonolith
+    slot: head
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+      - 0,2,0,3
+      - 1,-0,1,-0
+      - 2,2,2,3
+      - 3,-0,3,-0
+      - 4,2,4,3
+      - 5,-0,5,-0
+      - 6,2,6,3
+      - 7,-0,7,-0
+      - 8,2,8,3
+      - 9,-0,9,-0
+      - 10,2,10,3
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmMonolith
+  name: шолом севи
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_monolith.rsi
 
 # Clear sky
 
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaCN
-  name: Seva Clear Sky costume
-  description: A closed-loop suit developed by the Kyiv Research Institute, designed specifically for work in the Zone. Has a built-in bulletproof vest. Has a built-in bulletproof vest and enhanced protection in all respects.
+  name: Костюм Сева Чистого неба
+  description: Костюм закритого типу, розроблений Київським науково-дослідним інститутом, створений спеціально для роботи в Зоні. Має вбудований бронежилет. Має вбудований бронежилет та посилений захист в усіх відношеннях.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
@@ -136,8 +243,8 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaMerc
-  name: Seva Mercenaries costume
-  description: Scientific suit of mercenaries operating in the Chernobyl Exclusion Zone, a variant of SEVA, produced by order of mercenaries.
+  name: Костюм Сєва Найманців
+  description: Науковий костюм найманців, що діють у Чорнобильській зоні відчуження, варіант SEVA, виготовлений на замовлення найманців.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_merc.rsi
@@ -154,9 +261,9 @@
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
   id: ClothingHeadHardsuitSevaHelmMerc
-  name: mercenary helmet seva
-  description: Despite being made mostly of glass, it is quite durable.
-  noSpawn: true
+  name: шолом севи найманців
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_helm_merc.rsi
@@ -168,8 +275,8 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaPoisk
-  name: Seva group costume search
-  description: A modified closed-loop suit, designed to take into account the specifics of working in the Zone for members of the Search group.
+  name: Сева костюм групи Пошуку
+  description: Модифікований костюм закритого типу, розроблений з урахуванням специфіки роботи в Зоні для членів Пошукової групи.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/seva_poisk.rsi
@@ -181,9 +288,9 @@
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHeadHardsuitSevaHelmPoisk
-  name: Search Seva Helmet
-  description: Despite being made mostly of glass, it is quite durable.
-  noSpawn: true
+  name: шолом севи пошуку
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Seva/poisk.rsi
@@ -199,8 +306,8 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: STClothingOuterArmorSevaNeutral
-  name: Seva Neutralov costume
-  description: The closed-loop suit developed by the Kyiv Research Institute was repainted by members of the Neutrals group. It is designed specifically for work in the Zone.
+  name: костюм Сева нейтралів
+  description: Костюм закритого типу, розроблений Київським науково-дослідним інститутом, перефарбували учасники групи "Нейтрали". Він розроблений спеціально для роботи в Зоні.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_neutral.rsi
@@ -212,8 +319,8 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaCovenant
-  name: Seva Covenant costume
-  description: A closed-loop suit developed by the Kyiv Research Institute, designed specifically for work in the Zone. Has a built-in bulletproof vest. Has a built-in bulletproof vest and enhanced protection in all respects.
+  name: Костюм Сева Заповіт
+  description: Костюм закритого типу, розроблений Київським науково-дослідним інститутом, створений спеціально для роботи в Зоні. Має вбудований бронежилет. Має вбудований бронежилет та посилений захист в усіх відношеннях.
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/OuterClothing/Seva/covenant.rsi
@@ -222,13 +329,26 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHardsuitSevaHelmCovenant
 
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmCovenant
+  name: шолом Севи Заповіту
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  suffix: Stalker, Завет
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Seva/covenant.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Seva/covenant.rsi
+
 # Seraphim
 
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevasera
-  name: Seva Serafimov costume
-  description: A closed-loop suit developed by the Kyiv Research Institute, designed specifically for work in the Zone. Has a built-in bulletproof vest. Has a built-in bulletproof vest and enhanced protection in all respects.
+  name: костюм Сева Серафимів
+  description: Костюм закритого типу, розроблений Київським науково-дослідним інститутом, створений спеціально для роботи в Зоні. Має вбудований бронежилет. Має вбудований бронежилет та посилений захист в усіх відношеннях.
   components:
     - type: STWeight
       self: 12
@@ -243,9 +363,9 @@
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
   id: ClothingHeadHardsuitSevaHelmSera
-  name: seva seraph helmet
-  description: Despite being made mostly of glass, it is quite durable.
-  noSpawn: true
+  name: шолом Севи Серафимів
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/Head/Sera_/seva_helm.rsi
@@ -261,8 +381,8 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaProjectGROM9
-  name: Sev GROM-9 suit
-  description: The modified Seva suit version GROM-9 was developed by the Project as a reliable armor suit, providing excellent protection from psi-radiation and electrical discharges.
+  name: костюм Сева ГРІМ-9
+  description: Модифікований костюм "Сєва" версії ГРОМ-9 був розроблений проектом як надійний бронекостюм, що забезпечує відмінний захист від пси-випромінювання та електричних розрядів.
   components:
   - type: Sprite
     sprite: _Stalker/Groups/Project/seva_stalker.rsi
@@ -275,9 +395,9 @@
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
   id: ClothingHeadHardsuitSevaHelmProjectGROM9
-  name: Seva helmet GROM-9
-  description: Despite being made mostly of glass, it is quite durable.
-  noSpawn: true
+  name: шолом севи ГРІМ-9
+  description: Незважаючи на переважно скляну складову, досить міцний.
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Groups/Project/seva_helm.rsi

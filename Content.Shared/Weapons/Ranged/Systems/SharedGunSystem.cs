@@ -245,7 +245,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             User = user,
             Used = (gunUid, gun)
         };
-        RaiseLocalEvent(gunUid, ref prevention);
+        RaiseLocalEvent(gunUid, ref prevention, true); // stalker-changes
         if (prevention.Cancelled)
             return;
 

@@ -1,4 +1,4 @@
-﻿#debug purposed, this one could be easily deleted
+#debug purposed, this one could be easily deleted
 
 - type: entity
   id: GroupedTeleportBase
@@ -300,6 +300,16 @@
       cooldownTime: 5
       godmodeCooldown: 5
       time: 60
+
+- type: entity
+  parent: GroupedTeleportBase
+  id: BaseMonolith-RandomLocationmonolith
+  name: BaseMonolith-RandomLocationmonolith
+  components:
+    - type: GroupTeleport
+      group: "MonolithBaseGroup"
+      targetGroup: "BaseProjectGroup"
+      allowAll: true
 
 - type: entity
   parent: GroupedTeleportBase

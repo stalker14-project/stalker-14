@@ -2,7 +2,7 @@
   id: ActionToggleBands
   name: зняти / одягнути нашивку
   description: Перемикає видимість нашивки вашого угруповання.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     checkCanInteract: false
@@ -13,7 +13,7 @@
   id: ActionChangeBand
   name: змінити нашивку
   description: Міняє нашивку
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       checkCanInteract: false

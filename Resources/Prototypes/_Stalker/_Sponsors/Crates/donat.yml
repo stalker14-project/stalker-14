@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseItem
   id: DonatestandartCrate
-  name: starter set
-  noSpawn: true
-  description: The cheapest donation set, issued with a subscription Bread
+  name: початковий набір
+  categories: [ HideSpawnMenu ]
+  description: Найдешевший донатний набір, видається з підпискою "Хліб"
   suffix: Stalker, СПОНСОР
   components:
     - type: Item
@@ -56,9 +56,9 @@
 - type: entity
   parent: BaseItem
   id: DonateStalkerCrate
-  name: stalker set
-  noSpawn: true
-  description: The average donation set of the stalker is issued with the Becker subscription.
+  name: сталкерський набір
+  categories: [ HideSpawnMenu ]
+  description: Середній донатний набір сталкера видається з підпискою "Бекер".
   suffix: Stalker, СПОНСОР
   components:
     - type: Item
@@ -95,9 +95,9 @@
 - type: entity
   parent: BaseItem
   id: DonateIskatelCrate
-  name: Seeker's set
-  noSpawn: true
-  description: A unique donation set of the seeker is issued with the subscription Agent O-Consciousness.
+  name: набір шукача
+  categories: [ HideSpawnMenu ]
+  description: Унікальний донатний набір шукача видається з підпискою "Агент У-Свідомлення".
   suffix: Stalker, СПОНСОР
   components:
     - type: Item
@@ -133,9 +133,9 @@
 - type: entity
   parent: BaseItem
   id: DonateContributorCrate
-  name: contributor set
-  noSpawn: true
-  description: Contributor's kit is given only to Contributors.
+  name: набір контриб'ютера
+  categories: [ HideSpawnMenu ]
+  description: Набір для контриб'ютера видається лише Contributor'ам.
   suffix: Stalker, СПОНСОР
   components:
     - type: Item

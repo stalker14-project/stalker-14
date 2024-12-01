@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingBackpackDuffel
   id: ClothingBackpackDuffelGreenZombie
-  name: green duffel bag
-  description: An extremely inconvenient and small duffel bag for pennies.
+  name: зелена спортивна сумка
+  description: Вкрай незручна і маленька спортивна сумка за копійки.
   components:
     - type: STWeight
       self: 1.7
@@ -20,11 +20,17 @@
           prob: 0.02
         - id: WirecutterStalker
           prob: 0.05
-        - id: MaterialCloth1Stalker
-          prob: 0.2
-        - id: CraftNails
-          prob: 0.2
-        - id: BoltCutter
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftMultilayerPCBT3
+          prob: 0.07
+        - id: STCraftQuartzCrystalT3
+          prob: 0.05
+        - id: STCraftSapphireCrystalT4
+          prob: 0.02
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftSturdyHideT3
           prob: 0.05
         - id: CraftLeatherbox
           prob: 0.01
@@ -32,20 +38,38 @@
           prob: 0.01
         - id: CraftScrap
           prob: 0.2
-        - id: SolderingIron
+        - id: STCraftGlueKitT3
           prob: 0.05
         - id: Toolbox
           prob: 0.01
         - id: CraftTransformerCoil
           prob: 0.01
-        - id: PartRodMetalStalker
+        - id: STCraftBasicThreadKitT1
           prob: 0.2
+        - id: STCraftTapeKitT2
+          prob: 0.1
         - id: IngotGold1
           prob: 0.005
+        - id: STCraftIndustrialThreadStaplesKtiT4
+          prob: 0.01
         - id: IngotSilver1
           prob: 0.01
         - id: BikeHornInstrument
           prob: 0.01
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.05
+        - id: STCraftPlasticFittingT4
+          prob: 0.02
+        - id: STCraftSheetIronT2
+          prob: 0.2
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftSheetAluminumT4
+          prob: 0.05
+
+
         # Meds random
         - id: MedkitAI2
           prob: 0.07
@@ -115,8 +139,8 @@
 - type: entity
   parent: ClothingBackpackTacticGreenStalker
   id: ClothingBackpackTacticGreenStalkerZombie
-  name: green tactical backpack
-  description: It is never colorful and bright, because one of the tasks of tactical backpacks is to camouflage themselves against the environment, be it mountains, forests or deserts.
+  name: зелений тактичний рюкзак
+  description: Він ніколи не буває барвистим та яскравим, адже одне із завдань тактичних рюкзаків - маскуватися під навколишнє середовище, будь то гори, ліси чи пустеля.
   components:
     - type: STWeight
       self: 3
@@ -130,34 +154,59 @@
     - type: StorageFill
       contents:
         # Craft random
-        - id: WirecutterStalker
-          prob: 0.1
         - id: STCraftPolymerFabricT4
+          prob: 0.02
+        - id: WirecutterStalker
           prob: 0.05
-        - id: MaterialCloth1Stalker
-          prob: 0.2
-        - id: CraftLeatherPatch
-          prob: 0.2
-        - id: CraftAwl
+        - id: STCraftStandardPCBT2
           prob: 0.1
-        - id: BoltCutter
+        - id: STCraftMultilayerPCBT3
+          prob: 0.07
+        - id: STCraftQuartzCrystalT3
+          prob: 0.05
+        - id: STCraftSapphireCrystalT4
+          prob: 0.02
+        - id: STCraftHideT2
           prob: 0.1
+        - id: STCraftSturdyHideT3
+          prob: 0.05
+        - id: CraftLeatherbox
+          prob: 0.01
         - id: CraftNeedle
-          prob: 0.05
-        - id: CraftPlasticParts
-          prob: 0.15
+          prob: 0.01
         - id: CraftScrap
           prob: 0.2
-        - id: SolderingIron
-          prob: 0.1
+        - id: STCraftGlueKitT3
+          prob: 0.05
         - id: Toolbox
-          prob: 0.05
+          prob: 0.01
+        - id: CraftTransformerCoil
+          prob: 0.01
+        - id: STCraftBasicThreadKitT1
+          prob: 0.2
+        - id: STCraftTapeKitT2
+          prob: 0.1
         - id: IngotGold1
-          prob: 0.05
+          prob: 0.005
+        - id: STCraftIndustrialThreadStaplesKtiT4
+          prob: 0.01
         - id: IngotSilver1
-          prob: 0.05
+          prob: 0.01
         - id: BikeHornInstrument
           prob: 0.01
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.05
+        - id: STCraftPlasticFittingT4
+          prob: 0.02
+        - id: STCraftSheetIronT2
+          prob: 0.2
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftSheetAluminumT4
+          prob: 0.05
+
         # Meds random
         - id: MedkitAI2
           prob: 0.2
@@ -224,13 +273,13 @@
         - id: FoodSnackEnergy
           prob: 0.1
 
-##### Оружие
+##### Зброя
 - type: entity
-  name: PMmm Killed to Scratch
+  name: ПМ Вбито до подряпин
   parent: BaseWeaponBattery
   id: WeaponZombiePM
-  description: Rusty and rotten weapons, unusable.
-  noSpawn: true
+  description: Іржава і гнила зброя, непридатна до використання.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/Pm.rsi
@@ -270,11 +319,11 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: Killed in the trash Glock-17
+  name: Вбитий до сміття Глок-17
   parent: WeaponZombiePM
   id: WeaponZombieGlock
-  noSpawn: true
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
     - type: STWeight
       self: 1
@@ -311,11 +360,11 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: GSh-18, completely destroyed
+  name: ГШ-18, повністю знищена
   parent: WeaponZombiePM
   id: WeaponPistolZombieGSH18
-  noSpawn: true
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
     - type: STWeight
       self: 0.47
@@ -354,11 +403,11 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: MP-5, completely destroyed
+  name: MP-5, повністю знищений
   parent: WeaponZombiePM
   id: WeaponZombieMP5
-  description: Rusty and rotten weapons, unusable.
-  noSpawn: true
+  description: Іржава і гнила зброя, непридатна до використання.
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5.rsi
@@ -402,11 +451,11 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: PP-19-01 Vityaz, completely smashed
-  noSpawn: true
+  name: Убитий в мотлох ПП-19-01 "Витязь"
+  categories: [ HideSpawnMenu ]
   parent: WeaponZombiePM
   id: WeaponZombieVityaz
-  description: Rusty and rotten weapons, unusable.
+  description: Іржава та гнила зброя, непридатна для використання.
   components:
     - type: STWeight
       self: 2.9
@@ -456,11 +505,11 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: Killed MP-5
+  name: Вбитий МП-5
   parent: WeaponZombiePM
   id: WeaponSubMachineGunStalkerMp5SDZombie
-  description: Rusty and rotten weapons, unusable.
-  noSpawn: true
+  description: Іржава і гнила зброя, непридатна до використання.
+  categories: [ HideSpawnMenu ]
   components:
     - type: STWeight
       self: 3.5
@@ -508,12 +557,12 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: A PPSh-41 that was completely destroyed
+  name: ППШ-41, який був повністю знищений
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombiePPsh
-  noSpawn: true
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
     - type: STWeight
       self: 3.2
@@ -563,12 +612,12 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: AKS-74U, completely destroyed
+  name: АКС-74У, повністю знищений
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieAKS74Y
-  noSpawn: true
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
@@ -610,12 +659,12 @@
     autoRechargeRate: 500
 
 - type: entity
-  name: Killed in the trash AR-15s
+  name: Вбитий в сміття AR-15
   suffix: Stalker
   parent: WeaponZombiePM
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: WeaponZombieM16Carabine
-  description: Rusty and rotten weapons, unusable.
+  description: Іржава та гнила зброя, непридатна для використання.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
@@ -658,11 +707,11 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: Killed in the trash M4
+  name: Вбитий на смітнику М4
   parent: WeaponZombiePM
   id: WeaponZombieM4
-  noSpawn: true
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
     - type: STWeight
       self: 2.8
@@ -708,12 +757,12 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: Killed Galil
+  name: Вбитий Галліл
   suffix: Stalker
   parent: WeaponZombiePM
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: WeaponZombieGalil
-  description: Rusty and rotten weapons, unusable.
+  description: Іржава та гнила зброя, непридатна для використання.
   components:
   - type: STWeight
     self: 4.5
@@ -768,12 +817,12 @@
     autoRechargeRate: 500
 
 - type: entity
-  name: Killed into trash Sig-550
+  name: Вбитий в смітя Sig-550
   suffix: Stalker
   parent: WeaponZombiePM
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: WeaponZombieSig550
-  description: Rusty and rotten weapons, unusable.
+  description: Іржава та гнила зброя, непридатна для використання.
   components:
   - type: STWeight
     self: 4.1
@@ -821,12 +870,12 @@
     autoRechargeRate: 500
 
 - type: entity
-  name: Killed into trash MP-40
+  name: Вбитий в сміття MP-40
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieMP40
-  noSpawn: true
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp40.rsi
@@ -874,9 +923,9 @@
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieFAL
-  noSpawn: true
-  name: Killed into trash FN FAL
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  name: Убитий в мотлох FN FAL
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
     - type: STWeight
       self: 4.5
@@ -929,9 +978,9 @@
   suffix: Stalker
   parent: WeaponZombiePM
   id: WeaponZombieSCARH
-  noSpawn: true
-  name: Killed into trash FN SCAR-H
-  description: Rusty and rotten weapons, unusable.
+  categories: [ HideSpawnMenu ]
+  name: Убитий в мотлох FN SCAR-H
+  description: Іржава і гнила зброя, непридатна до використання.
   components:
     - type: STWeight
       self: 3.5
@@ -981,12 +1030,12 @@
       autoRechargeRate: 500
 
 - type: entity
-  name: PP-19 Bison, completely destroyed
+  name: PP-19 Bison, повністю знищений
   suffix: Stalker
   id: WeaponZombieBzion
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   paren: WeaponZombiePM
-  description: Rusty and rotten weapons, unusable.
+  description: Іржава та гнила зброя, непридатна для використання.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/bizon.rsi
@@ -1033,9 +1082,9 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterArmor6B2Z
-  name: worn out bulletproof vest 6B2
-  noSpawn: true
-  description: Standard type II body armor, providing at least some protection from most types of damage
+  name: зношений бронежилет 6Б2
+  categories: [ HideSpawnMenu ]
+  description: Стандартний бронежилет II типу, що забезпечує хоч якийсь захист від більшості видів ушкоджень
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1060,9 +1109,9 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseBandZ
-  noSpawn: true
-  name: worn out bandit light body armor
-  description: Standard type III body armor, providing decent protection against most types of damage
+  categories: [ HideSpawnMenu ]
+  name: зношений легкий бронежилет бандита
+  description: Стандартний бронежилет III типу, що забезпечує гідний захист від більшості видів ушкоджень
   components:
   - type: Unremoveable
   - type: Sprite
@@ -1073,10 +1122,10 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorZaryaStalkerZ
-  name: worn-out jumpsuit Zarya
-  description: The stalker suit produced by folk craftsmen is an effective combination of a light army bulletproof vest and a rubberized fabric suit. Reinforced with built-in Kevlar plates. Provides good protection against weak small arms. Overall, it is extremely insufficient for deep raids and serious operations in the Zone nodes.
+  name: зношений комбінезон "Зоря"
+  description: Костюм сталкера, виготовлений народними умільцями, є ефективним поєднанням легкого армійського бронежилета та костюма з прогумованої тканини. Посилений вбудованими кевларовими пластинами. Забезпечує хороший захист від слабкої стрілецької зброї. В цілому, вкрай недостатній для глибоких рейдів та серйозних операцій у вузлах Зони.
   suffix: Stalker
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1109,9 +1158,9 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetInfantryZ
-  name: worn infantry helmet
-  noSpawn: true
-  description: A helmet of unknown make and brand, but it still protects your little head. A huge batch of these helmets somehow ended up in the Chernobyl Exclusion Zone. Armor class - 3.
+  name: зношений піхотний шолом
+  categories: [ HideSpawnMenu ]
+  description: Шолом невідомого виробництва і марки, проте захищає вашу бошечку. Величезна партія цих шоломів якось потрапила в ЧЗО. Клас броні - 3.
   components:
     - type: Unremoveable
     - type: STWeight
@@ -1133,9 +1182,9 @@
 - type: entity
   parent: ClothingHeadHelmetInfantry
   id: ClothingHeadHelmetInfantryBandZ
-  name: worn bandit infantry helmet
-  noSpawn: true
-  description: Infantry helmet with stripes applied to it, like adidas, is revered by bandit formations, armor class - 3.
+  name: зношений бандитський піхотний шолом
+  categories: [ HideSpawnMenu ]
+  description: Піхотний шолом із нанесеними на нього смужками, наче adidas, шанується бандитськими формуваннями, клас броні - 3.
   components:
     - type: Unremoveable
     - type: STWeight
@@ -1148,9 +1197,9 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetSH68Z
-  name: worn out SSH-68
-  noSpawn: true
-  description: This is a helmet specifically designed to protect against piercing attacks. Armor Class - 2.
+  name: зношений СШ-68
+  categories: [ HideSpawnMenu ]
+  description: Це шолом, спеціально розроблений для захисту від колючих атак. Клас Броні - 2.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1170,9 +1219,9 @@
 - type: entity
   parent: ClothingHeadHelmetSH68
   id: ClothingHeadHelmetSH68BandZ
-  name: worn out SS-68 adidas
-  noSpawn: true
-  description: This is a classic grandfathers helmet, repainted in a bandit paint job. Armor Class - 2.
+  name: зношений СШ-68 адідас
+  categories: [ HideSpawnMenu ]
+  description: Це класичний дідівський шолом, перефарбований у бандитське розфарбування. Клас Броні - 2.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1185,9 +1234,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorZaryaDolgZ
-  name: worn out dawn of debt
-  noSpawn: true
-  description: It is a combination of two-layer rubberized fabric with a plexiglass lining and a built-in bulletproof vest. In fact, the same Zarya jumpsuit is only modified by the craftsmen of the Duty group for safer forays into the Zone.
+  name: зношена зоря обов'язку
+  categories: [ HideSpawnMenu ]
+  description: Являє собою поєднання двошарової прогумованої тканини з плексигласовою прокладкою і вбудованого бронежилета. По суті, той самий комбінезон "Зоря", тільки модифікований умільцями угруповання "Обов'язок" для безпечніших вилазок в умовах Зони.
   suffix: Stalker
   components:
   - type: Unremoveable
@@ -1220,9 +1269,9 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetBerill5MDolgZ
-  name: Worn-out tower
-  noSpawn: true
-  description: This model is a modification of the army helmet Sphere-08, for the Duty group. Provides protection of class 3, allowing to withstand blunt impacts, fragments and to some extent bullets of class 1 and 2 penetration. Reliable helmet, at a decent price.
+  name: зношена каланча
+  categories: [ HideSpawnMenu ]
+  description: Ця модель є модифікацією армійського шолома Сфера-08, для угруповання Борг. Забезпечує захист 3 класу, даючи змогу витримувати тупі удари, осколки і певною мірою кулі 1 і 2 класу пробиття. Надійний шолом, за гідною ціною.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1244,9 +1293,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorMercZ
-  name: worn out mercenary overalls
-  noSpawn: true
-  description: The design is based on the special forces equipment of Western armies. Due to the special treatment of the fabric, the armors resistance to physical displacement of the plates is increased. In terms of protective characteristics, it slightly surpasses army bulletproof vests. Provides class 2 protection.
+  name: зношений комбінезон найманця
+  categories: [ HideSpawnMenu ]
+  description: За основу взято зразки екіпіровки спецназу західних армій. Завдяки спеціальній обробці тканини посилено стійкість броні в разі фізичного зміщення пластин. За захисними характеристиками трохи перевершує армійські бронежилети. Забезпечує 2 клас захисту.
   suffix: Stalker, Наёмники
   components:
   - type: Unremoveable
@@ -1299,9 +1348,9 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadMercLightZ
-  noSpawn: true
-  name: worn light mercenary helmet
-  description: This is a lightweight helmet designed to protect against piercing attacks. Armor Class - 2
+  categories: [ HideSpawnMenu ]
+  name: зношений легкий шолом найманця
+  description: Це легкий шолом, розроблений для захисту від колючих атак. Клас Броні - 2
   components:
   - type: Unremoveable
   - type: Sprite
@@ -1323,9 +1372,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorLightPlateVestBaseANAgreenZ
-  noSpawn: true
-  name: Worn ANA Tactical
-  description: Reliable armor vest of class 3 armor, accommodating any size magazines.
+  categories: [ HideSpawnMenu ]
+  name: зношений ANA Tactical
+  description: Надійний бронерозвантаження 3 класу броні, що вміщує будь-якого розміру магазини.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1366,9 +1415,9 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAgrayZ
-  noSpawn: true
-  name: Worn ANA Tactical
-  description: Reliable armor vest of class 3 armor, accommodating any size magazines.
+  categories: [ HideSpawnMenu ]
+  name: зношений ANA Tactical
+  description: Надійне бронерозвантаження 3 класу броні, що вміщує будь-якого розміру магазини.
   components:
   - type: Unremoveable
   - type: Sprite
@@ -1380,9 +1429,9 @@
 - type: entity
   parent: ClothingOuterStorageToggleableBase
   id: STClothingCapeCoatReinforcedZ
-  name: worn cloak with light body armor
-  noSpawn: true
-  description: A cloak with class 3 armor underneath, quite reliable protection while maintaining the show-off.
+  name: зношений плащ із легким бронежилетом
+  categories: [ HideSpawnMenu ]
+  description: Плащ із броніком 3 класу під ним, доволі надійний захист при збереженні понтів.
   suffix: Stalker
   components:
   - type: Unremoveable
@@ -1445,9 +1494,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorCN1Z
-  noSpawn: true
-  name: worn out bulletproof vest SN-1
-  description: This body armor was developed for search operations in areas with low anomalous activity. The use of fairly high-quality materials increased wear resistance.
+  categories: [ HideSpawnMenu ]
+  name: зношений бронежилет "СН-1"
+  description: Цей бронежилет розробляли для проведення пошукових операцій в областях із низькою аномальною активністю. Використання досить якісних матеріалів підвищило стійкість до зношування.
   suffix: Stalker
   components:
   - type: Unremoveable
@@ -1480,9 +1529,9 @@
 - type: entity
   parent: ClothingMaskBase
   id: ClothingMaskRenegateZ
-  noSpawn: true
-  name: worn reinforced welding mask
-  description: Welding mask with steel sheets added to it to protect against bullets and blows. The work of a schizophrenic.
+  categories: [ HideSpawnMenu ]
+  name: зношена укріплена зварювальна маска, що зношується
+  description: Зварювальна маска, з доданими до неї листами сталі для захисту від куль і ударів. Справа рук божевільного.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1505,9 +1554,9 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetSH6RenegateZ
-  noSpawn: true
-  name: worn out SSh-68 scorpion
-  description: This is a helmet specifically designed to protect against piercing attacks. Armor Class - 2.
+  categories: [ HideSpawnMenu ]
+  name: зношений СШ-68 скорпіона
+  description: Це шолом, спеціально розроблений для захисту від колючих атак. Клас Броні - 2.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1527,9 +1576,9 @@
 - type: entity
   parent: ClothingHeadHelmetInfantry
   id: ClothingHeadHelmetRenegateZ
-  name: worn renegade infantry helmet
-  noSpawn: true
-  description: A standard infantry helmet, repainted in renegade colors, with some minor changes.
+  name: зношений піхотний шолом ренегата
+  categories: [ HideSpawnMenu ]
+  description: Звичайний піхотний шолом, перефарбований у кольори ренегата, і з невеликими змінами.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1549,9 +1598,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorRenegateZ
-  noSpawn: true
-  name: worn out renegade armor suit
-  description: Cheap and protective against mutants with anomalies suit of reniks. Provides 2 class of protection.
+  categories: [ HideSpawnMenu ]
+  name: зношений бронекомбез ренегатів
+  description: Дешевий комбез різників, що захищає від мутантів з аномаліями. Забезпечує 2 клас захисту.
   suffix: Stalker
   components:
   - type: Unremoveable
@@ -1598,9 +1647,9 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseRenegateZ
-  noSpawn: true
-  name: worn renegade light body armor
-  description: Standard type III body armor, providing decent protection against most types of damage
+  categories: [ HideSpawnMenu ]
+  name: зношений легкий бронежилет ренегата
+  description: Стандартний бронежилет III типу, що забезпечує гідний захист від більшості видів ушкоджень
   components:
   - type: Unremoveable
   - type: Sprite
@@ -1611,9 +1660,9 @@
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterCoatPahanZ
-  name: worn out all black cloak
-  noSpawn: true
-  description: a thick cloak repainted black.
+  name: зношений повністю чорний плащ
+  categories: [ HideSpawnMenu ]
+  description: щільний плащ перефарбований у чорний колір.
   components:
   - type: Unremoveable
   - type: Sprite
@@ -1657,9 +1706,9 @@
 - type: entity
   parent: ClothingOuterBase
   id: ClothingOuterCoatKolchygaZ
-  name: worn black cloak
-  noSpawn: true
-  description: a thick cloak repainted black.
+  name: зношений чорний плащ
+  categories: [ HideSpawnMenu ]
+  description: щільний плащ перефарбований у чорний колір.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1705,10 +1754,10 @@
 - type: entity
   parent: STClothingHeadBase
   id: ClothingHeadHelmetUlachEasyZ
-  noSpawn: true
-  name: worn out light ulach
-  suffix: Stalker, Наёмники
-  description: This is a helmet specifically designed to provide protection against piercing attacks and mobility for the Mercenaries faction. Armor Class 3.
+  categories: [ HideSpawnMenu ]
+  name: зношений легкий улач
+  suffix: Stalker, Найманці
+  description: Це шолом, спеціально розроблений для забезпечення захисту від проникаючих атак і мобільності для фракції Найманців. Клас броні 3.
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1730,9 +1779,9 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMercZ
-  name: worn out light mercenary body armor
-  noSpawn: true
-  description: Standard type III body armor, providing decent protection against most types of damage
+  name: зношений легкий бронежилет найманців
+  categories: [ HideSpawnMenu ]
+  description: Стандартний бронежилет III типу, що забезпечує гідний захист від більшості видів ушкоджень
   components:
   - type: Unremoveable
   - type: Sprite
@@ -1743,9 +1792,9 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMilitaryZ
-  noSpawn: true
-  name: worn out light military body armor
-  description: Standard type III body armor, providing decent protection against most types of damage
+  categories: [ HideSpawnMenu ]
+  name: зношений легкий бронежилет військових
+  description: Стандартний бронежилет III типу, що забезпечує гідний захист від більшості видів ушкоджень
   components:
   - type: Unremoveable
   - type: Sprite
@@ -1755,9 +1804,9 @@
 
 - type: entity
   id: Bullet918Zombie
-  name: bullet (9x18 auto)
+  name: куля (9х18 авто)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
@@ -1771,9 +1820,9 @@
 
 - type: entity
   id: Bullet919Zombie
-  name: bullet (9x19 auto)
+  name: куля (9х19 авто)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2
@@ -1787,9 +1836,9 @@
 
 - type: entity
   id: Bullet556Zombie
-  name: bullet (5,56x45 rifle)
+  name: куля (гвинтівка 5.56x45)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 4
@@ -1803,9 +1852,9 @@
 
 - type: entity
   id: Bullet545Zombie
-  name: bullet (5,45x39)
+  name: куля (5,45х39)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 4
@@ -1819,9 +1868,9 @@
 
 - type: entity
   id: Bullet751Zombie
-  name: bullet (7.62x51 rifle)
+  name: куля (гвинтівка 7.62x51)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 8
@@ -1835,9 +1884,9 @@
 
 - type: entity
   id: Bullet725Zombie
-  name: bullet (7.62x25 rifle)
+  name: куля (гвинтівка 7.62x25)
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
     lifetime: 2

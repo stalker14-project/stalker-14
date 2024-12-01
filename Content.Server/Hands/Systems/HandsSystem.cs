@@ -214,7 +214,7 @@ namespace Content.Server.Hands.Systems
             // Let other systems change the thrown entity (useful for virtual items)
             // or the throw strength.
             var ev = new BeforeThrowEvent(throwEnt, direction, throwSpeed, player);
-            RaiseLocalEvent(player, ref ev);
+            RaiseLocalEvent(player, ref ev, true); // stalker-changes
 
             if (ev.Cancelled)
                 return true;

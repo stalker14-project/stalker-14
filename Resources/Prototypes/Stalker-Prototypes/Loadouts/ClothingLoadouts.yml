@@ -483,6 +483,11 @@
 
 # Костюми
 - type: loadout
+  id: ClothingOuterJacketBandit
+  equipment:
+    outerClothing: ClothingOuterJacketBandit
+
+- type: loadout
   id: ClothingOuterLonersExoSuit
   effects:
   - !type:GroupLoadoutEffect
@@ -658,12 +663,12 @@
     outerClothing: ClothingOuterLeatherJacketClearSky
 
 - type: loadout
-  id: ClothingOuterCS1
+  id: ClothingOuterArmorCN1
   effects:
   - !type:GroupLoadoutEffect
     proto: CS1Timer
   equipment:
-    outerClothing: ClothingOuterCS1
+    outerClothing: ClothingOuterArmorCN1
 
 - type: loadout
   id: ClothingOuterCS3a
@@ -758,6 +763,11 @@
 # Mask
 
 - type: loadout
+  id: ClothingMaskGasZarya
+  equipment:
+    mask: ClothingMaskGasZarya
+
+- type: loadout
   id: ClothingMaskBalaklava
   equipment:
     mask: ClothingMaskBalaklava
@@ -769,3 +779,8 @@
     proto: XM40Timer
   equipment:
     mask: ClothingMaskGasXM40
+
+- type: loadout
+  id: ClothingMaskGasChN
+  equipment:
+    mask: ClothingMaskGasChN

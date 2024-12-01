@@ -48,7 +48,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetZaryaStalker
   name: капюшон «Зоря»
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Вільний як повітря біля хмар.
   components:
     - type: Sprite
@@ -100,18 +100,16 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadCapoSera
       slot: head
-#bonus
-    - type: PersonalDamage
-      damage:
-        types:
-          Radiation: -0.4
+    - type: Armor
+      armorLevels:
+        radiation: 1
 
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadCapoSera
   name: капюшон
   description: Захисту не забезпечує.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Clothing/Head/Sera_/rassvet_helm.rsi
@@ -163,7 +161,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetZaryaDolg
   name: капюшон Зорі Обов'язку
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_dolg.rsi
@@ -260,7 +258,7 @@
   id: ClothingHeadCapoProject
   name: капюшон
   description: Захисту не забезпечує.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_project.rsi
@@ -294,14 +292,14 @@
   id: ClothingHeadWandererCap
   name: капюшон Бродяги
   description: Темний капюшон від бандитського понтового аналога Зорі.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
 
-#СКИНЫ
+#СКІНИ
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase

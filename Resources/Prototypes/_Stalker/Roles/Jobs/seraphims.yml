@@ -1,8 +1,8 @@
 - type: job
   id: Seraphim
-  name: Seraphim
+  name: Серафим
   icon: seraphim
-  description: A mysterious group that appeared in the first days of the Zone's life.
+  description: Таємнича група, що з'явилася в перші дні життя Зони.
   playTimeTracker: JobSeraphims
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: SeraphimGear
-  supervisors: Вы служите во имя Его.
+  supervisors: Ви служите в ім'я Його.
   special:
     - !type:AddComponentSpecial
       components:
@@ -33,22 +33,24 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
-
 - type: startingGear
   id: SeraphimGear
   equipment:
     id: STSeraphimPDA
     neck: ClothingStalkerNeckTokenSeraphim
     belt: ClothingBeltStorageWaistbag
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: STClothingShoesBootsSeraFilled
     legs: STClothingLegsSerafimPants
     torso: STClothingTorsoSerafimLittleChaos
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera
+
 
 - type: job
   id: SeraphimHead
-  name: Seraphmi Leader
+  name: Офіцер Серафімов
   icon: seraphim
-  description: A mysterious group that appeared in the first days of the Zone's life.
+  description: Таємнича група, що з'явилася в перші дні життя Зони.
   playTimeTracker: JobHeadSeraphims
   whitelisted: true
   requirements:
@@ -60,7 +62,7 @@
       - Human
       - Dwarf
   startingGear: SeraphimHeadGear
-  supervisors: Вы служите во имя Его.
+  supervisors: Ви служите в ім'я Його.
   special:
     - !type:AddComponentSpecial
       components:
@@ -80,13 +82,17 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
-
+        - type: AutoImplant
+          implants:
+          - STSeraBombImplant
 - type: startingGear
   id: SeraphimHeadGear
   equipment:
     id: STSeraphimPDA
     neck: ClothingStalkerNeckTokenSeraphim
     belt: ClothingBeltStorageWaistbag
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: STClothingShoesBootsSeraFilled
     legs: STClothingLegsSerafimPants
     torso: STClothingTorsoSerafimFullReady
+    mask: STClothingMaskKufei
+    gloves: STClothingHandsGlovesSera

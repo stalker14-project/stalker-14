@@ -1,9 +1,9 @@
 - type: entity
-  name: VPO-129 7.62x54
+  name: ВПО-129 7.62x54
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerVepr
-  description: The VPO-129 Vepr-1V carbine is a civilian hunting weapon with a rifled barrel created based on the legendary light machine gun of the Soviet Army.
+  description: Карабін ВПО-129 Вепрь-1В - цивільна мисливська зброя з нарізним стволом, створена на основі легендарного легкого кулемета радянської армії.
   components:
     - type: STWeight
       self: 3.2
@@ -16,7 +16,7 @@
     - type: Gun
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/svd.ogg
-      projectileSpeed: 100
+      projectileSpeed: 45
       minAngle: 50
       maxAngle: 120
       angleDecay: 80
@@ -57,15 +57,15 @@
               - Cartridge754
 
 - type: entity
-  name: Тактический ВПО-129 Серафимов
-  suffix: ST, Скин
+  name: Тактичний ВПО-129 Серафимів
+  suffix: ST, Скін
   parent: STWeaponRifleStalkerVepr
   id: STWeaponRifleStalkerVeprSerafim
-  description: Тактический ВПО в раскраске Серафимов.
+  description: Тактичний ВПО в розфарбуванні Серафимів.
   components:
-  - type: Clothing
-    sprite: _Stalker\Objects\Weapons\Guns\Rifles\_Skins\vepr_seraphim.rsi
-  - type: Item
-    sprite: _Stalker\Objects\Weapons\Guns\Rifles\_Skins\vepr_seraphim.rsi
-  - type: Sprite
-    sprite: _Stalker\Objects\Weapons\Guns\Rifles\_Skins\vepr_seraphim.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi

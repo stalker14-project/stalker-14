@@ -1,9 +1,9 @@
 
 - type: entity
   id: STActionGoliathTentacle
-  name: Tentacle
-  noSpawn: true
-  description: Use your tentacles to grab and stun a target player!
+  name: Тентакль
+  categories: [ HideSpawnMenu ]
+  description: Використовуйте щупальця, щоб схопити та оглушити гравця!
   components:
   - type: EntityWorldTargetAction
     raiseOnUser: true
@@ -21,8 +21,8 @@
 
 - type: entity
   id: ActionPsyonicsSmokeMutant
-  name: smoke
-  noSpawn: true
+  name: дим
+  categories: [ HideSpawnMenu ]
   components:
     - type: WorldTargetAction
       useDelay: 10
@@ -36,8 +36,8 @@
 
 - type: entity
   id: ActionPsyonicsShieldMutant
-  name: shield
-  noSpawn: true
+  name: щит
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       useDelay: 2
@@ -51,8 +51,8 @@
 
 - type: entity
   id: ActionPsyonicsDizzyMutant
-  name: dizzy
-  noSpawn: true
+  name: запаморочення
+  categories: [ HideSpawnMenu ]
   components:
     - type: EntityTargetAction
       raiseOnUser: true

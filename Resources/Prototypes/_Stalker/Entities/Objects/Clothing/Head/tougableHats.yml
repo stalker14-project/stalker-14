@@ -3,7 +3,7 @@
 #  id: ClothingHeadWandererCap
 #  name: Tramps hood
 #  description: Dark hood from the bandit show-off analogue of Zarya.
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #  - type: Sprite
 #    sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
@@ -15,7 +15,7 @@
   id: ClothingHeadCassock
   name: cassock hood
   description: a hood made of rough fabric from a monks robe
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Hats/cassock_hood.rsi
@@ -26,7 +26,7 @@
 #  parent: STClothingHeadBase
 #  id: ClothingHeadHelmetZaryaDolg
 #  name: Zarya Dutys hood
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  components:
 #    - type: Sprite
 #      sprite: _Stalker/Objects/Clothing/hats/zarya_helm_dolg.rsi
@@ -37,7 +37,7 @@
   parent: STClothingHeadBase
   id: ClothingHeadHelmetFreedomDefender
   name: Hood Guardian of Freedom
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Not very free, as long as it sits on your head.
   components:
     - type: Sprite
@@ -49,7 +49,7 @@
 #  parent: STClothingHeadBase
 #  id: ClothingHeadHelmetZaryaStalker
 #  name: Zarya hood
-#  noSpawn: true
+#  categories: [ HideSpawnMenu ]
 #  description: Free as the air in the clouds.
 #  components:
 #    - type: Sprite
@@ -61,7 +61,7 @@
   parent: STClothingHeadBase
   id: ClothingHeadHelmetCN1
   name: “SN-1” hood
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
@@ -90,7 +90,7 @@
   id: ClothingHeadHazmat
   name: HAZMAT helmet
   description: Built-in HAZMAT helmet with reinforced protection.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi
@@ -120,7 +120,7 @@
   id: ClothingHeadHardsuitUzk5Helm
   name: UZK-5 helmet
   description: Built-in helmet UZK-5 with a flashlight.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: PointLight
       enabled: false
@@ -161,7 +161,7 @@
   name: Helm of the Seva of the Covenant
   description: Despite being made mostly of glass, it is quite durable.
   suffix: Stalker, Завет
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Seva/covenant.rsi

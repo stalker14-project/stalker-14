@@ -3,7 +3,7 @@
   name: Припинити атаку
   description: Робить усіх людей поблизу неатакуваними мутантами. Люди знову будуть атаковані мутантами або через 2 хвилини, або якщо скасувати це.
   suffix: ST
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       useDelay: 1
@@ -19,7 +19,7 @@
   name: В бій
   description: Наказує всім мутантам поблизу продовжити атакувати.
   suffix: ST
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction
       useDelay: 1

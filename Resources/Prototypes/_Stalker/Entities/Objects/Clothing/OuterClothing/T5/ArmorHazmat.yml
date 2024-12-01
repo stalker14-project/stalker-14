@@ -2,9 +2,9 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorHazmatRf
-  name: Armored HAZMAT
+  name: Броньований HAZMAT
   suffix: ST, T5, Env
-  description: Home-made improved HAZMAT with the use of anomalous materials, providing good protection on all fronts. Should be used with the built-in helmet.
+  description: Саморобний покращений HAZMAT з використанням аномальних матеріалів, що забезпечує хороший захист на всіх фронтах. Слід використовувати з вбудованим шоломом.
   components:
     - type: STWeight
       self: 12
@@ -33,3 +33,33 @@
           Compression: 0.25
     - type: ExplosionResistance
       damageCoefficient: 0.95
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHazmat
+  name: шолом HAZMAT
+  description: Вбудований шолом ХАЗМАТа з посиленим захистом.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi
+    - type: BreathMask
+    - type: IngestionBlocker
+    - type: IdentityBlocker
+    - type: Tag
+      tags:
+        - BlockMask
+        - HidesNose
+    - type: Armor
+      armorClass: 2
+      modifiers:
+        flatReductions:
+          Heat: 5
+          Radiation: 10
+        coefficients:
+          Heat: 0.3
+          Shock: 0.3
+          Radiation: 0.45
+          Psy: 0.5

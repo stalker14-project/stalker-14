@@ -3,7 +3,7 @@
   id: STBulletAcid
   name: acid spit
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Projectile
       damage:
@@ -20,7 +20,7 @@
   id: STBulletPsy
   name: psy shot
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Projectile
       damage:
@@ -37,7 +37,7 @@
   id: STBulletBox
   name: box bullet
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: Projectile
       projectileClass: 4
@@ -55,7 +55,7 @@
   id: STBulletMeteor
   name: meteor
   parent: MeteorLarge
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:

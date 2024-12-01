@@ -17,9 +17,9 @@
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: 2
-        Slash: 3
-        Piercing: 5
+        Blunt: 3
+        Slash: 5
+        Piercing: 4
       coefficients:
         Blunt: 0.85
         Slash: 0.85
@@ -45,10 +45,10 @@
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: 2
-        Slash: 2
-        Piercing: 2
-        Heat: 2
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
+        Heat: 4
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -114,10 +114,10 @@
         Piercing: 0.9
         Heat: 0.9
       flatReductions:
-        Blunt: 4
-        Slash: 4
-        Piercing: 4
-        Heat: 4
+        Blunt: 2
+        Slash: 2
+        Piercing: 2
+        Heat: 2
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -157,7 +157,7 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi
-
+    
 # настойщий Плащ Греха
 - type: entity
   parent: STClothingCapeBase
@@ -282,13 +282,73 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_greh.rsi
 
-##Donated for Skins
+##Skins
+
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatKevlarMonolith
+  name: кевларовый плащ монолита
+  description: Плащ, сделанный в условиях зоны, на удивление качественная работа, сделан из качественной кожи и прошит кевларом,кое-где вставлены бронепластины, окрашен в необычный камуфляж.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/kevlaroviy_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/kevlaroviy_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetKevlarMonolith
+    requiredSlot:
+    - cloak
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+
+- type: entity
+  parent: ClothingHeadHelmetLoyalistCoat
+  id: ClothingHeadHelmetKevlarMonolith
+  name: кевларовый капюшон
+  description: от кевлара в нём только название
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_head_kevlar_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_head_kevlar_monolith.rsi
+
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatRenegat
+  name: кевларовый плащ Ренегата
+  description: Плащ, модифицированный под нужды группировки Ренегаты, окрашенный в "родные" цвета.
+  suffix: ST, T3, Renegat
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_renegat.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_renegat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetLoyalistCoatRenegat
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetLoyalistCoatRenegat
+  name: кевларовый капюшон Ренегата
+  description: От кевлара в нем не только название.
+  suffix: ST, Renegat
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_renegat.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_renegat.rsi
+
 - type: entity
   parent: ClothingOuterCoatLoyalist
   id: ClothingOuterCoatSeraphim
-  name: кевларовый плащ Серафима
+  name: кевларовый плащ серафимов
   description: Плащ, модифицированный под нужды группировки Серафимов, окрашенный в "родные" цвета.
-  suffix: ST, T3, Seraphims
+  suffix: ST, T3, Скин
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
@@ -303,9 +363,9 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetLoyalistCoatSeraphim
-  name: кевларовый капюшон Серафима
+  name: кевларовый капюшон серафимов
   description: От кевлара в нем не только название.
-  suffix: ST, Seraphims
+  suffix: ST, Скин
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi

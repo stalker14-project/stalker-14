@@ -48,8 +48,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorStalker
-  name: armored suit without stalker
-  description: Cheap and protective against mutants with anomalies stalker suit. Provides 3 class of protection.
+  name: бронекостюм сталкера
+  description: Дешевий і захисний від мутантів з аномаліями костюм сталкера. Забезпечує 3 клас захисту.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
@@ -59,8 +59,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorRenegate
-  name: armored suit without renegades
-  description: Cheap and protective against mutants with anomalies suit of reniks. Provides 3 class of protection.
+  name: бронекостюм ренегатів
+  description: Дешевий і захисний від мутантів з аномаліями костюм реників. Забезпечує 3 клас захисту.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
@@ -71,8 +71,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorJaba
-  name: armored suit without toads
-  description: Reliable type III armor suit, providing good protection against abnormal impacts and physical damage.
+  name: бронежилет жаб
+  description: Надійний бронекостюм типу III, що забезпечує хороший захист від нестандартних ударів та фізичних ушкоджень.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/medium_armor_jaba.rsi
@@ -82,8 +82,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorBandits
-  name: bandit armor suit
-  description: Cheap and protective from mutants with stalkers gangsters suit. Provides 3 class of protection.
+  name: бандитський бронекостюм
+  description: Дешевий і захисний від мутантів та сталкерів гангстерський костюм. Забезпечує 3 клас захисту.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
@@ -108,8 +108,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorDeserter
-  name: Renegade Hoplite armor suit # do not rename
-  description: Cheap and reliable armored suit of renegades, good protection from mutants and bullets. 3rd class
+  name: Бронежилет ренегатів Hoplite # do not rename
+  description: Дешевий і надійний бронекостюм ренегатів, добре захищає від мутантів і куль. 3-й клас
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_armor.rsi
@@ -120,8 +120,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorMerc
-  name: mercenary armor suit
-  description: The design is based on the special forces equipment of Western armies. Due to special fabric treatment, the armors resistance to physical displacement of the plates is increased. In terms of protective characteristics, it slightly surpasses army bulletproof vests. Provides protection class 3.
+  name: бронекостюм найманця
+  description: Конструкція базується на екіпіровці спецпризначенців західних армій. Завдяки спеціальній обробці тканини, бронежилет має підвищену стійкість до фізичного зміщення пластин. За захисними характеристиками він дещо перевершує армійські бронежилети. Забезпечує 3 клас захисту.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor.rsi
@@ -135,20 +135,35 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorFreedomDefender
-  name: armored suit Guardian of Freedom
-  description: Reinforced stalker suit produced by Freedom faction artisans. Class 3
+  name: бронекостюм Вартовий Свободи
+  description: Посилений костюм сталкера, виготовлений майстрами фракції "Свобода". Клас 3
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetFreedomDefender
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetFreedomDefender
+  name: капюшон "Страж свободи"
+  categories: [ HideSpawnMenu ]
+  description: Не дуже вільний, поки сидить на вашій голові.
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/freedom_defender_helm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/freedom_defender_helm.rsi
 
 
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorCN3a
-  name: ChN-3a armored suit
-  description: Standard equipment of the Clear Sky assault squads. The bulletproof vest can stop a pistol bullet, and the built-in gas mask and canvas overalls with a special impregnation provide good protection from abnormal effects. Class 3
+  name: Бронежилет ЧН-3а
+  description: Стандартне спорядження штурмових загонів "Чистого неба". Бронежилет здатен зупинити пістолетну кулю, а вбудований протигаз та брезентовий комбінезон зі спеціальним просоченням добре захищають від аномальних впливів. Клас 3
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
@@ -170,3 +185,31 @@
       - 8,-2,8,0
       - 10,2,11,3
       - -2,2,-2,3
+
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorMonolith
+  name: бронекомбез "Чорнобиль"
+  description: Вироблений ремісниками угруповання "Моноліт" посилений комбінезон. 3 клас
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/monolith_armor.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/monolith_armor.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHatMonolith
+    slot: head
+# bonus
+  - type: STWeight
+    self: -3.5
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetHatMonolith
+  name: капюшон "Чорнобиль"
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/armor_hat_monolith.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/armor_hat_monolith.rsi

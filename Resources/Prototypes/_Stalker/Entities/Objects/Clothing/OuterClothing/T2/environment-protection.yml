@@ -1,9 +1,9 @@
 - type: entity
   parent: ClothingOuterBaseLarge
   id: STFireProtectionSuit
-  name: fireman costume
+  name: костюм пожежника
   suffix: ST, T2, Env
-  description: Designed for high temperatures
+  description: Призначений для високих температур
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/firesuit.rsi
@@ -34,10 +34,10 @@
 - type: entity
   parent: ClothingHeadLightBase
   id: STFireProtectionHelmet
-  name: firemans helmet
+  name: каска пожежника
   suffix: ST
-  description: Thermal insulating helmet
-  noSpawn: true
+  description: Термоізолюючий шолом
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/fireprotecthelmet.rsi
