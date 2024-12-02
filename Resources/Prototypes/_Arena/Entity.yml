@@ -6,7 +6,7 @@
   components:
   - type: Storage
     grid:
-    - 0,0,12,6
+    - 0,0,6,6
   - type: STWeight
     self: -40
   - type: StorageFill
@@ -16,41 +16,90 @@
       - id: MedkitMilitary
       - id: MedkitMilitary
       - id: STGauze
-      - id: 545Mag30
-      - id: 545Mag30
-      - id: 545Mag30
-      - id: 545Mag30
-      - id: 556Mag30
-      - id: 556Mag30
-      - id: 556Mag30
-      - id: 556Mag30
-      - id: 739Mag30
-      - id: 739Mag30
-      - id: 739Mag30
-      - id: 739Mag30
-      - id: 751Mag20
-      - id: 751Mag20
-      - id: 751Mag20
-      - id: 751Mag20
-      - id: 754Mag10
-      - id: 754Mag10
-      - id: VityazMag
-      - id: VityazMag
-      - id: VityazMag
-      - id: VityazMag
       - id: 556box249
       - id: 556box249
       - id: Bloodpack
-      - id: Arena545PCBox
-      - id: Arena556M855Box
-      - id: Arena739FMJBox
-      - id: Arena751M80Box
-      - id: Arena754FMJBox
-      - id: Arena919PBMBox
       - id: STModuleScopeRiflesT2Ru
       - id: STModuleScopeRiflesT2Nato
       - id: STModuleSniperSightT2
       - id: STModuleSMGGripT2
+
+# loaded mags
+- type: entity
+  id: Arena545Mag30
+  name: магазин 5,45х39 (30)
+  description: Магазин 5.45х39 для АК. Вместимость пуль 30. Продают пустым.
+  parent: 545Mag30
+  tag: Arena
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge545PC
+    capacity: 30
+
+- type: entity
+  id: Arena556Mag30
+  name: магазин 5,56 (30)
+  description: Магазин 5,56 для штурмовых винтовок. Вместимость пуль 30. Продают пустым.
+  parent: 556Mag30
+  tag: Arena
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: Cartridge556M855
+
+- type: entity
+  id: Arena739Mag30
+  name: магазин 7,62x39 (30)
+  description: Магазин 7.62х39 для АК. Вместимость пуль 30. Продают пустым.
+  parent: 739Mag30
+  tag: Arena
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: Cartridge739FMJ
+
+- type: entity
+  id: Arena751Mag20
+  name: магазин 7,62x51 (20)
+  description: Магазин 7,62x51 для винтовок НАТО. Вместимость пуль 20. Продают пустым.
+  parent: 751Mag20
+  tag: Arena
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 20
+      proto: Cartridge751M80
+
+- type: entity
+  id: Arena754Mag10
+  name: магазин 7,62x54 (10)
+  description: Магазин 7,62x54 для Автоматов. Вместимость пуль 10. Продают пустым.
+  parent: 754Mag10
+  tag: Arena
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 10
+      proto: Cartridge754FMJ
+
+- type: entity
+  id: ArenaVityazMag
+  name: магазин ПП-19-01 9x19 (30)
+  description: Магазин 9x19 мм для Витязь. Вместимость пуль 30. Продают пустым.
+  parent: VityazMag
+  tag: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: Cartridge919PBM
+
+- type: entity
+  id: Arena556box249
+  name: короб M249 (5,56)
+  description: Короб 5,56 для пулемёта M249. Вместимость пуль 100. Продают пустым.
+  parent: 556box249
+  components:
+    - type: BallisticAmmoProvider
+      proto: Cartridge556M855
+      capacity: 100
 
 
 # ammo
