@@ -83,6 +83,30 @@
     count: 8
     spread: 12
 
+# flechette 
+
+- type: entity
+  id: STPelletFlechetta
+  name: pellet flechetta
+  parent: STBasePellet
+  components:
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 8
+
+- type: entity
+  id: BulletShotgunFlechette
+  name: bullet (Flechette)
+  parent: STPelletFlechetta
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: STPelletFlechetta
+    count: 8
+    spread: 12
+
 # bullets
 
 - type: entity
@@ -145,16 +169,3 @@
           Blunt: 10
     - type: StaminaDamageOnCollide
       damage: 80 # 3 hits to stun
-
-
-- type: entity
-  id: BulletShotgunFlechette
-  name: bullet (Flechette)
-  parent: STBasePellet
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Projectile
-    projectileClass: 3
-    damage:
-      types:
-        Piercing: 8
