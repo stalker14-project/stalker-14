@@ -22,12 +22,13 @@
       - id: Arena751M80Box
       - id: Arena739FMJBox
       - id: Arena556M855Box
+      - id: ArenaShotgunFlechette
+      - id: Arena725PSTBox
       - id: Bloodpack
       - id: STModuleScopeRiflesT2Ru
       - id: STModuleScopeRiflesT2Nato
       - id: STModuleSniperSightT2
       - id: STModuleSMGGripT2
-      - id: ArenaShotgunFlechette
 
 # loaded rpc
 - type: entity
@@ -131,6 +132,23 @@
       - id: ArenaVityazMag
       - id: ArenaVityazMag
       - id: ArenaVityazMag
+
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArena725
+  name: комплект (7.62x25) ПСТ ГЖ
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArenaBasePPSHMag
+      - id: ArenaBasePPSHMag
+      - id: ArenaBasePPSHMag
+      - id: ArenaBasePPSHMag
+      - id: ArenaBasePPSHMag
+      - id: ArenaBasePPSHMag
+      - id: ArenaBasePPSHMag
 
 - type: entity
   parent: ClothingBeltWebbingOfficerStalker
@@ -250,6 +268,17 @@
     capacity: 10
     proto: CartridgeShotgunFlechette
 
+- type: entity
+  id: ArenaBasePPSHMag
+  name: магазин ППШ (35)
+  description: Магазин для ППШ-41. Вместимость пуль 35. Продают пустым.
+  parent: BasePPSHMag
+  tag: Arena
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 35
+    proto: Cartridge725PSTGJ
+
 # ammo
 - type: entity
   parent: 545PCBox
@@ -326,4 +355,15 @@
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeShotgunFlechette
-    capacity: 2000
+    capacity: 200
+
+- type: entity
+  parent: 725PSTBox
+  id: Arena725PSTBox
+  name: коробка патронов (7,62x25) Пст гж
+  description: Для ТТ и ППШ, в коробке 1000 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Arena
+  components:
+    - type: BallisticAmmoProvider
+      proto: Cartridge725PSTGJ
+      capacity: 1000
