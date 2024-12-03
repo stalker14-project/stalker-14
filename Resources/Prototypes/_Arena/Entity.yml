@@ -27,6 +27,7 @@
       - id: STModuleScopeRiflesT2Nato
       - id: STModuleSniperSightT2
       - id: STModuleSMGGripT2
+      - id: ArenaShotgunFlechette
 
 # loaded rpc
 - type: entity
@@ -133,6 +134,22 @@
 
 - type: entity
   parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArenaSaiga
+  name: комплект (12x70) Флешетта Сайга 12К
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArenaSaiga1270Mag10
+      - id: ArenaSaiga1270Mag10
+      - id: ArenaSaiga1270Mag10
+      - id: ArenaSaiga1270Mag10
+      - id: ArenaSaiga1270Mag10
+      - id: ArenaSaiga1270Mag10
+  
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
   id: ClothingBeltWebbingArena556Box
   name: комплект (5.56) M855 Короб
   description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
@@ -222,6 +239,16 @@
       proto: Cartridge556M855
       capacity: 100
 
+- type: entity
+  id: ArenaSaiga1270Mag10
+  name: магазин Сайги 12х70 (10)
+  description: Магазин Сайги 12х70 для дробовиков АК. Вместимость дробей 10. Продают пустым.
+  parent: Saiga1270Mag10
+  tag: Arena
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 10
+    proto: CartridgeShotgunFlechette
 
 # ammo
 - type: entity
@@ -289,3 +316,14 @@
   - type: BallisticAmmoProvider
     capacity: 1000
   - type: DisarmMalus
+
+- type: entity
+  parent: ShotgunFlechette
+  id: ArenaShotgunFlechette
+  name: Коробка флешетта (12x70)
+  description: Для дробовиков, в коробке 200 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Arena
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeShotgunFlechette
+    capacity: 2000
