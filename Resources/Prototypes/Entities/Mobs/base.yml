@@ -62,9 +62,8 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 400
+        !type:DamageTrigger
+        damage: 101
       behaviors:
       - !type:GibBehavior { }
     - trigger:
@@ -88,7 +87,8 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead # arena-changes
+      100: Critical
+      200: Dead
   - type: MobStateActions
     actions:
       Critical:
