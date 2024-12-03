@@ -1,7 +1,7 @@
 - type: loadoutGroup
   id: ArenaGunsLoadoutGroup
   name: Вооружение
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - STWeaponRifleStalkerAK74L
@@ -13,6 +13,25 @@
   - STWeaponSubMachineGunVityazL
   - STWeaponRifleSVDSL
   - STWeaponRifleSKSL
+  - STWeaponRifleStalkerSaiga545L
+  - STWeaponRifleStalkerAKML
+  - STWeaponGunAKS74UL
+  - STWeaponGunAKS74UWhiteL
+  - STSTWeaponRifleStalkerAK74ML
+
+- type: loadoutGroup
+  id: ArenaAmmoLoadoutGroup
+  name: Боекомплект
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingBeltWebbingArena545L
+  - ClothingBeltWebbingArena556MagsL
+  - ClothingBeltWebbingArena739MagsL
+  - ClothingBeltWebbingArena751L
+  - ClothingBeltWebbingArena754L
+  - ClothingBeltWebbingArenaVityazL
+  - ClothingBeltWebbingArena556BoxL
 
 - type: loadoutGroup
   id: ArenaHeadLoadoutGroup
@@ -32,7 +51,7 @@
 - type: loadoutGroup
   id: ArenaLegsLoadoutGroup
   name: Низ
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - ClothingLegsJeansBlueL

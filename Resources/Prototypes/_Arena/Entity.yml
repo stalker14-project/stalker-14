@@ -16,13 +16,133 @@
       - id: MedkitMilitary
       - id: MedkitMilitary
       - id: STGauze
-      - id: 556box249
-      - id: 556box249
+      - id: Arena545PCBox
+      - id: Arena919PBMBox
+      - id: Arena754FMJBox
+      - id: Arena751M80Box
+      - id: Arena739FMJBox
+      - id: Arena556M855Box
       - id: Bloodpack
       - id: STModuleScopeRiflesT2Ru
       - id: STModuleScopeRiflesT2Nato
       - id: STModuleSniperSightT2
       - id: STModuleSMGGripT2
+
+# loaded rpc
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArena545
+  name: комплект (5.45х39) ПС
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: Arena545Mag30
+      - id: Arena545Mag30
+      - id: Arena545Mag30
+      - id: Arena545Mag30
+      - id: Arena545Mag30
+      - id: Arena545Mag30
+      - id: Arena545Mag30
+
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArena556Mags
+  name: комплект (5.56) M855 магазины
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: Arena556Mag30
+      - id: Arena556Mag30
+      - id: Arena556Mag30
+      - id: Arena556Mag30
+      - id: Arena556Mag30
+      - id: Arena556Mag30
+      - id: Arena556Mag30
+
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArena739Mags
+  name: комплект (7.62х39) FMJ магазины
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: Arena739Mag30
+      - id: Arena739Mag30
+      - id: Arena739Mag30
+      - id: Arena739Mag30
+      - id: Arena739Mag30
+      - id: Arena739Mag30
+      - id: Arena739Mag30
+
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArena751
+  name: комплект (7.62х51) M80
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: Arena751Mag20
+      - id: Arena751Mag20
+      - id: Arena751Mag20
+      - id: Arena751Mag20
+      - id: Arena751Mag20
+      - id: Arena751Mag20
+      - id: Arena751Mag20
+
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArena754
+  name: комплект (7.62х54) FMJ
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: Arena754Mag10
+      - id: Arena754Mag10
+      - id: Arena754Mag10
+      - id: Arena754Mag10
+      - id: Arena754Mag10
+      - id: Arena754Mag10
+      - id: Arena754Mag10
+
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArenaVityaz
+  name: комплект (9x19) ПБМ Витязь
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: ArenaVityazMag
+      - id: ArenaVityazMag
+      - id: ArenaVityazMag
+      - id: ArenaVityazMag
+      - id: ArenaVityazMag
+      - id: ArenaVityazMag
+      - id: ArenaVityazMag
+
+- type: entity
+  parent: ClothingBeltWebbingOfficerStalker
+  id: ClothingBeltWebbingArena556Box
+  name: комплект (5.56) M855 Короб
+  description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: Arena
+  components:
+  - type: StorageFill
+    contents:
+      - id: Arena556box249
+      - id: Arena556box249
+      - id: Arena556box249
 
 # loaded mags
 - type: entity
@@ -30,7 +150,7 @@
   name: магазин 5,45х39 (30)
   description: Магазин 5.45х39 для АК. Вместимость пуль 30. Продают пустым.
   parent: 545Mag30
-  tag: Arena
+  suffix: Arena
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545PC
@@ -41,7 +161,7 @@
   name: магазин 5,56 (30)
   description: Магазин 5,56 для штурмовых винтовок. Вместимость пуль 30. Продают пустым.
   parent: 556Mag30
-  tag: Arena
+  suffix: Arena
   components:
   - type: BallisticAmmoProvider
     capacity: 30
@@ -52,7 +172,7 @@
   name: магазин 7,62x39 (30)
   description: Магазин 7.62х39 для АК. Вместимость пуль 30. Продают пустым.
   parent: 739Mag30
-  tag: Arena
+  suffix: Arena
   components:
   - type: BallisticAmmoProvider
     capacity: 30
@@ -63,7 +183,7 @@
   name: магазин 7,62x51 (20)
   description: Магазин 7,62x51 для винтовок НАТО. Вместимость пуль 20. Продают пустым.
   parent: 751Mag20
-  tag: Arena
+  suffix: Arena
   components:
     - type: BallisticAmmoProvider
       capacity: 20
@@ -74,7 +194,7 @@
   name: магазин 7,62x54 (10)
   description: Магазин 7,62x54 для Автоматов. Вместимость пуль 10. Продают пустым.
   parent: 754Mag10
-  tag: Arena
+  suffix: Arena
   components:
     - type: BallisticAmmoProvider
       capacity: 10
@@ -85,7 +205,7 @@
   name: магазин ПП-19-01 9x19 (30)
   description: Магазин 9x19 мм для Витязь. Вместимость пуль 30. Продают пустым.
   parent: VityazMag
-  tag: Stalker
+  suffix: Arena
   components:
   - type: BallisticAmmoProvider
     capacity: 30
@@ -96,6 +216,7 @@
   name: короб M249 (5,56)
   description: Короб 5,56 для пулемёта M249. Вместимость пуль 100. Продают пустым.
   parent: 556box249
+  suffix: Arena
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556M855
