@@ -66,10 +66,12 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTrigger # arena-changes
-        damage: 100 # arena-changes
+        !type:DamageTrigger # arena-changes-start
+        damage: 100
       behaviors:
-      - !type:GibBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Stalker/ArenaKillSound.ogg # arena-changes-end
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
