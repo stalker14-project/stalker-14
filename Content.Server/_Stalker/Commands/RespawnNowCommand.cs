@@ -55,11 +55,6 @@ public sealed class RespawnNowCommand : IConsoleCommand
 
         if (player.AttachedEntity == null)
             return;
-        if (entityManager.TryGetComponent(player.AttachedEntity, out GhostComponent? _))
-        {
-            shell.WriteLine("You cannot respawnnow from ghost");
-            return;
-        }
 
         if (!playerMgr.TryGetSessionById(player.UserId, out var targetPlayer))
         {
