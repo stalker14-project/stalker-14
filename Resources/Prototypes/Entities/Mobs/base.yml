@@ -62,8 +62,8 @@
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTrigger
-        damage: 101
+        !type:DamageTrigger # arena-changes
+        damage: 100 # arena-changes
       behaviors:
       - !type:GibBehavior { }
     - trigger:
