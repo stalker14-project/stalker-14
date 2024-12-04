@@ -19,7 +19,7 @@ public abstract class GetAssembliesLogger : EntitySystem
     {
         if (args.SenderSession is not { } ConnectedClient)
             return;
-        _adminLogger.Add(LogType.AdminMessage, LogImpact.Extreme,$"{args.SenderSession.Name} test text");
+        _adminLogger.Add(LogType.AdminMessage, LogImpact.Extreme,$"{args.SenderSession.Name} found {msg.Message}");
     }
 }
 
