@@ -89,21 +89,6 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
-# bonus
-  - type: Storage
-    maxItemsize: Large
-    grid:
-      - 0,2,0,3
-      - 0,-2,0,0
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 8,-2,8,0
-      - 10,2,10,3
-      - -2,2,-2,3
 
 - type: entity
   parent: STClothingOuterArmorBase
@@ -185,6 +170,10 @@
       - 8,-2,8,0
       - 10,2,11,3
       - -2,2,-2,3
+  - type: Armor
+    armorLevels:
+      piercing: -1
+      radiation: 1
 
 - type: entity
   parent: STClothingOuterArmorBase

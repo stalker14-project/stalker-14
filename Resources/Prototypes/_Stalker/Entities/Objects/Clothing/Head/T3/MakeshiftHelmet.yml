@@ -31,3 +31,18 @@
     reflects:
       - NonEnergy
 
+## Skin 
+- type: entity
+  parent: STClothingHeadHelmetMakeshiftTacticalT3
+  id: STClothingHeadHelmetMakeshiftTacticalT3CN3a
+  name: Шлем «ЧН-3а»
+  description: Штатная экипировка штурмовых отрядов «Чистого неба». Шлем способен остановить пистолетную пулю, а встроенный противогаз обеспечивают хорошую защиту от аномальных воздействий. 3 класс
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
+  - type: Armor
+    armorLevels:
+      piercing: -2
+      environment: 1

@@ -32,6 +32,10 @@ public partial class STArmorLevels
     [DataField("psy")]
     public int PsyAdjust = 0;
 
+    [DataField("compression")]
+    public int CompressionAdjust = 0;
+
+
     public DamageModifierSet ApplyLevels(DamageModifierSet baseModifiers)
     {
         var newModifiers = new DamageModifierSet();
@@ -44,6 +48,7 @@ public partial class STArmorLevels
         newModifiers = ApplyLevelToGroup(newModifiers, CausticAdjust, new[] { "Caustic" });
         newModifiers = ApplyLevelToGroup(newModifiers, ShockAdjust, new[] { "Shock" });
         newModifiers = ApplyLevelToGroup(newModifiers, PsyAdjust, new[] { "Psy" });
+        newModifiers = ApplyLevelToGroup(newModifiers, CompressionAdjust, new[] { "Compression" });
         return newModifiers;
     }
 

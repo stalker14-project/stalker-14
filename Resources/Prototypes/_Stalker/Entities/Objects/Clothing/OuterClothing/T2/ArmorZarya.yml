@@ -180,8 +180,10 @@
     sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
   - type: Armor
     armorLevels:
-      nonPvPPhysical: -1
-      piercing: 1
+      nonPvPPhysical: 1
+      piercing: -2
+      slash: -2
+      environment: 2
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -275,17 +277,6 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
-# bonus
-  - type: Storage
-    maxItemsize: Large
-    grid:
-      - 0,0,0,0
-      - 2,0,2,0
-      - 4,0,4,0
-      - 0,2,0,3
-      - 2,2,2,3
-      - 4,2,4,3
-      - 6,2,7,3
 
 - type: entity
   parent: STClothingHeadHatBase

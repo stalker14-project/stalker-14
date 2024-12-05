@@ -237,6 +237,11 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: -1
+      piercing: -1
+      environment: 3
 
 # Merc
 
@@ -284,6 +289,10 @@
     sprite: _Stalker/Clothing/OuterClothing/seva_poisk.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitSevaHelmPoisk
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: -1
+      compression: 3
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
