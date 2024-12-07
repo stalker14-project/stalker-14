@@ -66,8 +66,16 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_tourist.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_tourist.rsi
-  - type: STWeight
-    self: -7
+# bonus
+  - type: STWeight # -1 балл (Типо особенность покупки в пб)
+    self: -4
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: 1 # -1 балл
+      piercing: -2 # -1 балл
+      radiation: 2 # -1 баллов
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 баллов
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -79,7 +87,7 @@
     sprite: _Stalker/Clothing/OuterClothing/zarya_jab.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/OuterClothing/zarya_jab.rsi
-  # Bonus
+# Bonus
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.05
     baseSprintSpeed: 1.05
@@ -100,6 +108,7 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadCapoSera
       slot: head
+# Bonus
     - type: Armor
       armorLevels:
         radiation: 1
@@ -126,10 +135,11 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
+# Bonus
   - type: Armor
     armorLevels:
-      nonPvPPhysical: 1
-      piercing: -1
+      nonPvPPhysical: 1 # -1 балл
+      piercing: -2 # +1 балл
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -141,13 +151,19 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
+# bonus
+  - type: STWeight
+    self: +4 # +1 баллов
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 баллов
   - type: Armor
     armorClass: 2
     armorLevels:
-      piercing: +2
-      environment: -1
-# bonus
-  - type: Storage
+      radiation: -2 # +1 балл
+      nonPvPPhysical: 4 # -4 балл
+      environment: -1 # +1 балл
+      piercing: -2 # +1 балл
+  - type: Storage # -1 балл
     maxItemsize: Large
     grid:
       - 1,0,1,0
@@ -178,12 +194,12 @@
     sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
+# bonus
   - type: Armor
     armorLevels:
-      nonPvPPhysical: 1
-      piercing: -2
-      slash: -2
-      environment: 2
+      piercing: -2 # +1 балл
+      slash: -2 # +1 балл
+      environment: 2 # -1 балл
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -195,10 +211,11 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
+# bonus
   - type: Armor
     armorLevels:
-      nonPvPPhysical: 2
-      piercing: -1
+      nonPvPPhysical: 2 # -2 балл
+      piercing: -4 # +2 балл
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -210,10 +227,11 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
+# bonus
   - type: Armor
     armorLevels:
-      nonPvPPhysical: 2
-      piercing: -2
+      nonPvPPhysical: 3 # -3 балл (Но типо за счет того, что надо потратиться на крафт, пускай)
+      piercing: -2 # +1 балл
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -226,9 +244,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
   - type: Armor
+# bonus
     armorClass: 1
     armorLevels:
-      environment: 4
+      environment: 3 # -4 балл (Но типо за счет того, что надо потратиться на крафт, пускай)
+      radiation: 3 # -1,5 балл
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase

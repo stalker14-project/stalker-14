@@ -62,3 +62,15 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
+# bonus
+  - type: Armor
+    armorLevels: 
+      nonPvPPhysical: -1 # +1 балл
+      heat: -2 # +0,5 баллов
+      caustic: -2 # +0,5 баллов
+      piercing: 5 # -2,5 баллов
+      compression: -4 # +0,5 баллов
+  - type: ExplosionResistance
+    damageCoefficient: 0.75 # +1 балл за 10%
+  - type: STWeight
+    self: -4 # -1 балла

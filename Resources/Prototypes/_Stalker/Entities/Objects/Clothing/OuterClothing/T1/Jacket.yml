@@ -124,12 +124,19 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJacketFreedom
     slot: head
-  # Bonus
+# Bonus
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +0,5 балл
   - type: Armor
     armorLevels:
-      environment: 1
-      piercing: -1
-
+      radiation: 2 # -1 баллов
+      environment: 3 # -3 балл
+      piercing: -2 # +1 балл
+      nonPvPPhysical: -2 # +2 балла
+  - type: Storage # +0,5 балл
+    maxItemSize: Normal
+    grid:
+      - 0,0,1,1
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -157,11 +164,12 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJacketMerc
     slot: head
-  # Bonus
+# Bonus
   - type: Armor
     armorLevels:
-      environment: -1
-      piercing: 1
+      heat: -2 # +0,5 баллов за снижение 5%
+      radiation: -2 # +0,5 баллов за снижение 5%
+      piercing: 2 # -1 балл
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -189,7 +197,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJacketCN
     slot: head
-  - type: Storage
+# Bonus
+  - type: Storage # -1 балл
     maxItemsize: Large
     whitelist:
       components:
@@ -199,6 +208,12 @@
     - 1,2,2,2
     - 0,0,0,0
     - 3,0,3,0
+  - type: Armor
+    armorLevels:
+      heat: -2 # +0,5 баллов за снижение 5%
+      radiation: 5 # -2,5 баллов
+      piercing: -2 # +1 балл
+      nonPvPPhysical: -2 # 2 балла
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -228,11 +243,12 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJacketDolg
     slot: head
-  # bonus
+# bonus
   - type: Armor
     armorLevels:
-      nonPvPPhysical: 1
-      radiation: -1
+      nonPvPPhysical: 1 # -1 балл
+      heat: -2 # +0,5 баллов за снижение 5%
+      radiation: -2 # +0,5 баллов за снижение 5%
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -272,13 +288,19 @@
       sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
     - type: Clothing
       sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
-    - type: PersonalDamage
+# bonus
+    - type: PersonalDamage # Условно -2 балла (Эксклюзивный какой-то бонус)
       interval: 1
       damage:
         types:
           Blunt: -0.1
           Slash: -0.1
           Piercing: -0.1
+    - type: Armor
+      armorLevels:
+        nonPvPPhysical: -1 # +1 балл
+        heat: -2 # +0,5 баллов за снижение 5%
+        radiation: -2 # +0,5 баллов за снижение 5%
 
 - type: entity
   parent: STClothingOuterJacketBase
@@ -293,6 +315,18 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJacketDeserter
     slot: head
+# bonus
+  - type: Armor
+    armorClass: 1
+    armorLevels:
+      heat: -2 # +0,5 баллов за снижение 5%
+      radiation: -2 # +0,5 баллов за снижение 5%
+  - type: Storage # -1 баллов за бонус
+    maxItemSize: Normal
+    grid:
+      - 2,0,2,0
+      - 0,2,1,3
+      - 3,2,4,3
 
 - type: entity
   parent: STClothingHeadHatHoodBase

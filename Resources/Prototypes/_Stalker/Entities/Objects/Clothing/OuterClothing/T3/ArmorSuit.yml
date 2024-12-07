@@ -130,6 +130,15 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetFreedomDefender
     slot: head
+# bonus
+  - type: ExplosionResistance
+    damageCoefficient: 0.9 # +1 балл
+  - type: Armor
+    armorLevels:
+      radiation: 3 # -1,5 баллов
+      compression: 5 # -2,5 баллов
+      piercing: -2 # +1 балл
+      nonPvPPhysical: -2 # +2 балла
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -143,6 +152,26 @@
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/freedom_defender_helm.rsi
 
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorDolgUzk
+  name: Универсальная Защита долга
+  description: Производимый ремесленниками группировки «Долга» усиленный комбинезон сталкера. 3 класс
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/uzk_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/uzk_dolg.rsi
+# bonus
+  - type: ExplosionResistance
+    damageCoefficient: 0.9 # +1 балл
+  - type: Armor
+    armorClass: 2
+    armorLevels:
+      nonPvPPhysical: 2 # -2 балл
+      environment: -2 # +2 балл
+      compression: -4 # +1 баллов
+      radiation: 4 # -2 Балл
 
 - type: entity
   parent: STClothingOuterArmorBase
@@ -155,25 +184,18 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
 # bonus
-  - type: Storage
+  - type: Storage # -1 балл
     maxItemsize: Large
     grid:
-      - -3,2,-2,3
-      - 0,2,0,3
-      - 0,-2,0,0
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 8,-2,8,0
-      - 10,2,11,3
-      - -2,2,-2,3
+      - 0,1,1,2
+      - 1,3,9,3
+      - 5,4,5,4
+      - 3,0,4,1
+      - 6,0,7,1
   - type: Armor
     armorLevels:
-      piercing: -1
-      radiation: 1
+      piercing: -4 # +2 балла
+      radiation: 2 # -1 Балл
 
 - type: entity
   parent: STClothingOuterArmorBase
@@ -189,8 +211,12 @@
     clothingPrototype: ClothingHeadHelmetHatMonolith
     slot: head
 # bonus
-  - type: STWeight
-    self: -3.5
+  - type: STWeight # -1 балл
+    self: -4
+  - type: Armor
+    armorLevels:
+      piercing: -4 # +2 балла
+      radiation: 2 # -1 Балл
 
 - type: entity
   parent: STClothingHeadHatBase

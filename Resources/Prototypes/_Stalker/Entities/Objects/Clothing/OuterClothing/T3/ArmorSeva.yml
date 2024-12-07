@@ -99,18 +99,25 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaSciRed
-  name: костюм "Сева" Учёных
+  name: костюм "Сева" Учёных МК-1
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+# bonus
+    - type: ExplosionResistance
+      damageCoefficient: 1 # +1 балл
+    - type: Armor
+      armorLevels:
+        nonPvPPhysical: 3 # -3 балл
+        environment: -2 # +2 балл
 
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaSciWhite
-  name: белый костюм "Сева" Учёных 
+  name: белый костюм "Сева" Учёных МК-2
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны со старым дизайном"
   components:
     - type: Sprite
@@ -120,6 +127,12 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHardsuitSevaHelmSci
       slot: head
+# bonus
+    - type: Armor
+      armorLevels:
+        nonPvPPhysical: -1 # +1 балл
+        environment: 3 # -3 балл
+        piercing: -3 # +1,5 балл
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
@@ -132,6 +145,8 @@
     sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
+
+
 # Military
 
 - type: entity
@@ -140,20 +155,6 @@
   name: костюм "Сева-ЗБМ"
   description: Научный костюм, вариант «СЕВЫ», производимый по заказу военных.
   components:
-  - type: Storage
-    maxItemSize: Normal
-    grid:
-      - 0,2,0,3
-      - 1,-0,1,-0
-      - 2,2,2,3
-      - 3,-0,3,-0
-      - 4,2,4,3
-      - 5,-0,5,-0
-      - 6,2,6,3
-      - 7,-0,7,-0
-      - 8,2,8,3
-      - 9,-0,9,-0
-      - 10,2,10,3
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_military.rsi
   - type: Clothing
@@ -165,6 +166,15 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
+# bonus
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 балл
+  - type: Armor
+    armorLevels:
+      compression: -2 # +0,5 балла
+      nonPvPPhysical: 1 # -1 балл
+      environment: -2 # +2 балла
+      piercing: 5 # -2,5 балла
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
@@ -198,7 +208,8 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  - type: Storage
+# bonus
+  - type: Storage # -1 балл
     maxItemSize: Normal
     grid:
       - 0,2,0,3
@@ -212,6 +223,11 @@
       - 8,2,8,3
       - 9,-0,9,-0
       - 10,2,10,3
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: -1 # +1 балл
+      piercing: 2 # -1 балл
+      environment: -1 # +1 балл
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
@@ -237,11 +253,14 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/seva_cn.rsi
+# bonus
   - type: Armor
+    armorClass: 1 # +1 балл
     armorLevels:
-      nonPvPPhysical: -1
-      piercing: -1
-      environment: 3
+      heat: -2 # +1 балла
+      nonPvPPhysical: -1 # +1 балл
+      piercing: -2 # +1 балл
+      environment: 4 # -4 балл
 
 # Merc
 
@@ -289,10 +308,13 @@
     sprite: _Stalker/Clothing/OuterClothing/seva_poisk.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitSevaHelmPoisk
+# bonus
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 балл
   - type: Armor
     armorLevels:
-      nonPvPPhysical: -1
-      compression: 3
+      nonPvPPhysical: -1 # +1 балл
+      compression: 4 # -2 балл
 
 - type: entity
   parent: ClothingHeadHardsuitWithLightBase
@@ -309,6 +331,53 @@
   - type: IngestionBlocker
   - type: PointLight
     color: white
+
+# Свобода
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: STClothingOuterArmorSevaFreedom
+  name: костюм "Сева" Свободы
+  description: "Разработанный Киевским НИИ костюм замкнутого цикла, был перекрашен членами группировки Нейтралов. Предназначен специально для работы в условиях Зоны."
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_green.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_green.rsi
+# bonus
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 балл
+  - type: Armor
+    armorLevels:
+      psy: 5 # -2,5 баллов
+      shock: 4 # -2 баллов
+      radiation: -1 # +0,5 баллов
+      piercing: -2 # +1 балл
+      nonPvPPhysical: -1 # +1 балла
+      heat: -2 # +1 балла
+
+# Долг
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: STClothingOuterArmorSevaDolg
+  name: костюм "Сева" Долга
+  description: "Разработанный Киевским НИИ костюм замкнутого цикла, был перекрашен членами группировки Нейтралов. Предназначен специально для работы в условиях Зоны."
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+# bonus
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 балл
+  - type: Armor
+    armorLevels:
+      compression: -4 # 1,5 баллов
+      radiation: -1 # +0,5 баллов
+      piercing: 2 # -1 балл
+      nonPvPPhysical: 3 # -3 балла
+      heat: -2 # +1 балла
 
 # Neutral
 

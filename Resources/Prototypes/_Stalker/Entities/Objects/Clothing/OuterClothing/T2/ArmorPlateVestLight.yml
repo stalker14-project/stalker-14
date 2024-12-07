@@ -54,23 +54,42 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_svoboda.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_svoboda.rsi
- # bonus
-  - type: Storage
+# bonus
+  - type: Storage # -1 балл
     maxItemsize: Large
     grid:
-      - -1,0,-1,0
-      - 1,0,1,0
-      - 3,0,3,0
-      - 5,0,5,0
-      - 7,0,7,0
-      - 9,0,9,0
-      - 11,0,11,0
-      - 0,2,0,3
-      - 2,2,2,3
-      - 4,2,4,3
-      - 6,2,6,3
-      - 8,2,8,3
+      - 0,0,0,3
+      - 2,0,2,3
+      - 4,1,4,3
+      - 6,1,6,3
+      - 8,1,8,3
       - 10,2,10,3
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 балл
+  - type: Armor
+    armorLevels:
+      radiation: 3 # -1,5 баллов
+      heat: 5 # -2,5 балл
+      piercing: -2 # +1 балл
+      nonPvPPhysical: -2 # +2 балла
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBaseDolg
+  name: легкий бронежилет долга
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+# bonus
+  - type: ExplosionResistance
+    damageCoefficient: 1 # +1 балл
+  - type: Armor
+    armorLevels:
+      piercing: -4 # +2 балл
+      nonPvPPhysical: 3 # -3 балла
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
@@ -93,11 +112,11 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_military.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_military.rsi
-  # Bonus
+# Bonus
   - type: Armor
     armorLevels:
-      nonPvPPhysical: -2
-      piercing: 2
+      nonPvPPhysical: -2 # +2 балла
+      piercing: 4 # -2 балла
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
@@ -143,18 +162,18 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_merc.rsi
 # bonus
-  - type: Storage
+  - type: Storage # -1 балл
     maxItemsize: Large
     grid:
-      - 1,0,1,0
-      - 3,0,3,0
-      - 5,0,5,0
-      - 7,0,7,0
-      - 9,0,9,0
-      - 1,2,2,3
-      - 4,2,4,3
-      - 6,2,6,3
-      - 8,2,9,3
+      - 0,0,0,3
+      - 2,0,2,3
+      - 4,1,4,3
+      - 6,1,6,3
+      - 8,1,8,3
+      - 10,2,10,3
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: -1 # +1 балл
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
@@ -177,6 +196,12 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/cn_armor.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/cn_armor.rsi
+# Bonus
+  - type: Armor
+    armorLevels:
+      piercing: -2 # +1 балл
+      nonPvPPhysical: -1 # +1 балл
+      radiation: 4 # -2 баллов
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
@@ -188,9 +213,12 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_rene.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_rene.rsi
-  # Bonus
-  - type: STWeight
-    self: -7
+# Bonus
+  - type: STWeight # -1 балл
+    self: -4
+  - type: Armor
+    armorLevels:
+      piercing: -2 # +1 балл
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase

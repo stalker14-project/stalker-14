@@ -90,7 +90,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/lepestok_neutral.rsi
 # bonus
-  - type: Storage
+  - type: Storage # -1 балл
     maxItemsize: Large
     grid:
       - -1,2,0,3
@@ -104,3 +104,6 @@
       - 8,2,8,3
       - 9,-0,9,-0
       - 10,2,11,3
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: -1 # +1 балл
