@@ -688,20 +688,32 @@ public sealed class StalkerRepositorySystem : EntitySystem
         // so we have contManComp, get all elements inside main entity
         var elements = GetRecursiveContainerElements(playerItem.Value);
 
+        bool allowInsertRecursively = true;
+        var items = new List<EntityUid>();
+
         foreach (var container in containerMan.Containers)
         {
             if (container.Key == "toggleable-clothing") // We don't need to add something from this container
                 continue;
             foreach (var item in container.Value.ContainedEntities)
             {
+                allowInsertRecursively = CheckForWhitelist(entity, GenerateItemInfo(item));
                 elements.Remove(item);
                 // another large blacklist
                 if (HasComp<SolutionComponent>(item) || // Do not insert solutions
                     HasComp<InstantActionComponent>(item) || // Do not insert actions
-                    (HasComp<CartridgeComponent>(item) && !_tags.HasTag(item, "Dogtag")) ||
-                    (HasComp<BallisticAmmoProviderComponent>(playerItem) && _tags.HasTag(item, "Cartridge"))) // Do not insert program cartridges
+                    HasComp<CartridgeComponent>(item) && !_tags.HasTag(item, "Dogtag") ||
+                    HasComp<BallisticAmmoProviderComponent>(playerItem) && _tags.HasTag(item, "Cartridge"))  // Do not insert program cartridges
                     continue;
 
+                items.Add(item);
+            }
+        }
+
+        if (allowInsertRecursively)
+        {
+            foreach (var item in items.Where(n => n != null))
+            {
                 // checking for inner entities contMan, if it is, call recursively, else just insert
                 if (TryComp<ContainerManagerComponent>(item, out _))
                 {
@@ -716,6 +728,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 }
             }
         }
+
         // inserting main entity, adding to deleting hashset
         allowInsert = CheckForWhitelist(entity, toInsertItem);
         if (!allowInsert)

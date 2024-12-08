@@ -70,3 +70,21 @@
     sprite: _Stalker/Objects/Clothing/hats/pehhelm_deserter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/pehhelm_deserter.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetCombatT2Base
+  id: ClothingHeadHelmetInfantryPilgrim
+  name: шлем инквизитора
+  suffix: ST, T2, Pilgrim
+  description: Пехотный шлем с переделаный под нужды экстерминации еретиков.
+  components:
+    - type: Craftable
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/inqusitorHelm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/inqusitorHelm.rsi
+    - type: Reflect
+      reflectProb: 0.10
+      spread: 360
+      reflects:
+        - NonEnergy

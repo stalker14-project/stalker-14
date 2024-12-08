@@ -7,10 +7,18 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet1255PS12A
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
   - type: Tag
     tags:
     - Cartridge
     - Cartridge1255
+
 
 - type: entity
   id: Cartridge1255TP
@@ -19,10 +27,7 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet1255TP
-  - type: Tag
-    tags:
-    - Cartridge
-    - Cartridge1255
+
 
 - type: entity
   id: Cartridge1255BP
@@ -31,7 +36,5 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet1255BP
-  - type: Tag
-    tags:
-    - Cartridge
-    - Cartridge1255
+
+

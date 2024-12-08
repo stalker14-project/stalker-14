@@ -18,6 +18,9 @@
   special:
     - !type:AddComponentSpecial
       components:
+        - type: Psyonics
+          psy: 50
+        - type: PsyonicsActionLight
         - type: Access
           tags:
           - Pilgrim
@@ -51,6 +54,11 @@
   special:
     - !type:AddComponentSpecial
       components:
+        - type: Psyonics
+          psy: 99
+        - type: PsyonicsActionLight
+          range: 10
+          cost: 10
         - type: Access
           tags:
           - Pilgrim
@@ -63,6 +71,11 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: Psyonics
+        - type: ActionPsyonicsSpringboard
+          cost: 0
+        - type: ActionPsyonicsLight
+          cost: 0
 
 - type: startingGear
   id: PilgrimPostulantGear

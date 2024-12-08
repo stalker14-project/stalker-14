@@ -213,3 +213,30 @@
       sprite: _Stalker/Objects/Clothing/hats/armor_hat_monolith.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/armor_hat_monolith.rsi
+
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorPilgrim
+  name: бронекомбез инквизиции
+  suffix: ST, T3, Pilgrim
+  description: Дешёвый и защищающий от мутантов и еретиков комбез инквизиции. Обеспечивает 3 класс защиты.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/inquisitor_armor.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/inquisitor_armor.rsi
+  - type: Armor
+    armorClass: 3
+#bonus
+    modifiers:
+      flatReductions:
+        Blunt: 8
+        Slash: 8
+        Piercing: 16
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.65
+        Heat: 0.9
+        Caustic: 0.5
+        Compression: 0.5

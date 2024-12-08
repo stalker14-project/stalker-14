@@ -12,6 +12,8 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/cn1.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/cn1.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCN1
   - type: Armor
     armorClass: 2
     modifiers:
@@ -70,3 +72,31 @@
       spread: 360
       reflects:
         - NonEnergy
+
+# Скин
+- type: entity
+  parent: ClothingOuterArmorCN1
+  id: ClothingOuterArmorCN1Green
+  name: бронежилет с комбезинозом «ЗН-1».
+  suffix: ST, T2, Universal
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/zn1.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/zn1.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCN1Green
+
+- type: entity
+  parent: ClothingHeadHelmetCN1
+  id: ClothingHeadHelmetCN1Green
+  suffix: ST, T2, Universal
+  name: капюшон «ЗН-1»
+  categories: [ HideSpawnMenu ] 
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/zn1_helm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/zn1_helm.rsi

@@ -1,0 +1,76 @@
+
+- type: entity
+  parent: ClothingOuterArmorStorageToggleableBasic
+  id: ClothingOuterArmorExoskeletSci
+  name: Экзоскелет Карне
+  description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
+  suffix: ST, T5, Sci
+  components:
+  - type: PullDoAfter
+    pullTime: 60
+  - type: STWeight
+    self: -50
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/EkzoSci.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/EkzoSci.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.6
+    sprintModifier: 0.6
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadEkzoSci
+  - type: Armor
+    armorClass: 5
+    modifiers:
+      flatReductions:
+        Blunt: 15
+        Slash: 15
+        Piercing: 5
+        Radiation: 10
+        Heat: 10
+        Caustic: 10
+        Shock: 1000
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.4
+        Heat: 0.70
+        Caustic: 0.70
+        Radiation: 0.99
+        Shock: 0.99
+        Compression: 0.25
+  - type: ExplosionResistance
+    damageCoefficient: 0.99
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadEkzoSci
+  name: шлем Экзоскелета Карне
+  description: Встроенный шлем Экзоскелета Карне с усиленной зашитой.
+  categories: [ HideSpawnMenu ] 
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/EkzoSciHelm.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/EkzoSciHelm.rsi
+    - type: BreathMask
+    - type: IngestionBlocker
+    - type: IdentityBlocker
+    - type: Tag
+      tags:
+        - HidesNose
+    - type: Armor
+      armorClass: 4
+      modifiers:
+        flatReductions:
+          Heat: 5
+          Radiation: 10
+        coefficients:
+          Heat: 0.3
+          Shock: 0.99
+          Radiation: 0.45
+          Psy: 0.75 

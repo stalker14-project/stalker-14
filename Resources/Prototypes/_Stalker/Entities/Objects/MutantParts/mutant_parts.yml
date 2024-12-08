@@ -41,6 +41,31 @@
 
 - type: entity
   parent: BaseMutantPart
+  id: MutantPartSeasonedBoarHoof
+  name: Seasoned boar hoof
+  components:
+    - type: Item
+      size: Small
+    - type: STWeight
+      self: 2
+    - type: Sprite 
+      sprite: _Stalker/Objects/MutantParts/Seasonedboar_hoof.rsi
+       
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartOldBoarHoof
+  name: old boar hoof
+  components:
+    - type: Item
+      size: Small
+    - type: STWeight
+      self: 2
+    - type: Sprite
+      sprite: _Stalker/Objects/MutantParts/Oldboar_hoof.rsi
+
+- type: entity
+  parent: BaseMutantPart
   id: MutantPartFleshEye
   name: flesh eye
   components:

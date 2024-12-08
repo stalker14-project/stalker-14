@@ -903,3 +903,15 @@
   components:
     - type: AccessReader
       access: [["Seraphims"]]
+
+#Паломникам
+- type: entity
+  id: WoodDoorFalloutPilgrim
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, Pilgrim
+  components:
+  - type: AccessReader
+    access: [["Pilgrim"]]
+

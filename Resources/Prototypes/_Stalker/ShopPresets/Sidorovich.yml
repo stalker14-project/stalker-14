@@ -41,7 +41,9 @@
     MutantPartBlindDogTail: 94
     MutantPartZombieHand: 441
     MutantPartFleshEye: 252
-    MutantPartBoarHoof: 252
+    MutantPartBoarHoof: 200
+    MutantPartSeasonedBoarHoof: 380
+    MutantPartOldBoarHoof: 580
     MutantPartPseudodogTail: 315
     MutantPartSnorkFoot: 378
     MutantPartLeshiyRoot: 525
@@ -55,25 +57,26 @@
     - name: Зброя
       priority: 1
       items:
-        STWeaponRifleStalkerSaiga545: 2000
-        STWeaponRifleStalkerFAL: 2500
+        STWeaponRifleStalkerSaiga545: 1300
+        STWeaponRifleStalkerFAL: 1700
         WeaponPistolStalkerAPS: 750
-        STWeaponShotgunStalkerSPAS: 4000
+        STWeaponShotgunStalkerSPAS: 2200
         STWeaponRifleStalkerL85: 2500
         STWeaponShotgunToz34: 350
         STWeaponRifleStalkerAK74: 2800
         STWeaponRifleSig550: 2500
-        STWeaponRifleSCARH: 6500
+        STWeaponRifleSCARH: 4500
 
     - name: Магазини
       priority: 2
       items:
-        545Mag20: 200
-        545Mag30: 400
-        Base751Mag10: 400
-        751Mag20: 550
-        BaseAPSMag: 400
-        GlockMag24: 400
+        556Mag20: 175
+        545Mag20: 150
+        545Mag30: 250
+        Base751Mag10: 300
+        751Mag20: 450
+        BaseAPSMag: 300
+        GlockMag24: 300
 
     - name: Патрони
       priority: 3
@@ -148,9 +151,11 @@
         ZoneAnomalyDetectorAD2: 1050
         # Artifact detectors
         ZoneArtifactDetectorPulse: 200
-        ZoneArtifactDetectorHunter: 900
+        ZoneArtifactDetectorHunter: 600
+        ZoneArtifactDetectorResponse: 1400
+
     - name: Провізія
-      priority: 7
+      priority: 8
       items:
         STEnergyDrink: 200
         DrinkVodkaBottleFull: 55
@@ -180,6 +185,7 @@
     - name: Кастомізація
       priority: 9
       items:
+        ClothingBandageStalkerBelarus: 50
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
