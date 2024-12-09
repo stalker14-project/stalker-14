@@ -1,0 +1,9 @@
+- type: stWarZone
+  id: STWarZoneKordon
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 60
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:CaptureTimeRequirenment
+    captureTime: 100
