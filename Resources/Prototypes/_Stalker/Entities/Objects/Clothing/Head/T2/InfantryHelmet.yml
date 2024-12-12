@@ -11,10 +11,6 @@
   - type: Armor
     armorClass: 2
     modifiers:
-      flatReductions:
-        Slash: 4
-        Blunt: 4
-        Piercing: 8
       coefficients:
         Piercing: 0.80
         Slash: 0.9
@@ -83,8 +79,3 @@
       sprite: _Stalker/Objects/Clothing/hats/inqusitorHelm.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/inqusitorHelm.rsi
-    - type: Reflect
-      reflectProb: 0.10
-      spread: 360
-      reflects:
-        - NonEnergy

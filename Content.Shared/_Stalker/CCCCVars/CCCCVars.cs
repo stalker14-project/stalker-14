@@ -78,4 +78,11 @@ public sealed class CCCCVars
 
     public static readonly CVarDef<string> SponsorsGuildId =
         CVarDef.Create("sponsors.guild_id", "1148992175347089468", CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /*
+    * Stalker PDA Messenger
+    */
+
+    public static readonly CVarDef<string> DiscordPdaMessageWebhook =
+        CVarDef.Create("discord.round_pda_message_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }

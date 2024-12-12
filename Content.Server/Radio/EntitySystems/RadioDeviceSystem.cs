@@ -35,7 +35,7 @@ public sealed class RadioDeviceSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!; // Stalker-Changes
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
-    private HashSet<(string, EntityUid)> _recentlySent = new();
+    private HashSet<(string, EntityUid, RadioChannelPrototype)> _recentlySent = new();
 
     public override void Initialize()
     {
@@ -124,7 +124,7 @@ public sealed class RadioDeviceSystem : EntitySystem
     {
         if (args.Powered)
             return;
-        SetMicrophoneEnabled(uid, null, false,  true, component);
+        SetMicrophoneEnabled(uid, null, false, true, component);
     }
 
     public void SetMicrophoneEnabled(EntityUid uid, EntityUid? user, bool enabled, bool quiet = false, RadioMicrophoneComponent? component = null)
@@ -201,8 +201,9 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (HasComp<RadioSpeakerComponent>(args.Source))
             return; // no feedback loops please.
 
-        if (_recentlySent.Add((args.Message, args.Source)))
-            _radio.SendRadioMessage(args.Source, args.Message, _protoMan.Index<RadioChannelPrototype>(component.BroadcastChannel), uid);
+        var channel = _protoMan.Index<RadioChannelPrototype>(component.BroadcastChannel)!;
+        if (_recentlySent.Add((args.Message, args.Source, channel)))
+            _radio.SendRadioMessage(args.Source, args.Message, channel, uid);
     }
 
     private void OnAttemptListen(EntityUid uid, RadioMicrophoneComponent component, ListenAttemptEvent args)
@@ -289,7 +290,7 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (TryComp<RadioMicrophoneComponent>(ent, out var mic))
             mic.BroadcastChannel = channel;
         if (TryComp<RadioSpeakerComponent>(ent, out var speaker))
-            speaker.Channels = new(){ channel };
+            speaker.Channels = new() { channel };
         Dirty(ent);
     }
 

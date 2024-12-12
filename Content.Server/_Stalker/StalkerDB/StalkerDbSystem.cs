@@ -2,9 +2,8 @@ using System.Collections.Concurrent;
 using System.Threading.Tasks;
 using Content.Server._Stalker.Teleports.DuplicateTeleport;
 using Content.Server.Database;
-using Content.Server.GameTicking;
+using Content.Shared.GameTicking;
 using Content.Shared._Stalker.Teleport;
-using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.StalkerDB;

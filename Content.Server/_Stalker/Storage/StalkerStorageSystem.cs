@@ -219,8 +219,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
             var entProto = GetPrototypeName(ent);
             ammoProvider.Proto ??= entProto;
         }
-        returnList.Add(new AmmoContainerStalker(GetPrototypeName(inputItem), ammoProvider.Proto, ammoProvider.Count));
-
+        returnList.Add(new AmmoContainerStalker(GetPrototypeName(inputItem), ammoProvider.Proto, ammoProvider.EntProtos, ammoProvider.Count));
         return returnList;
     }
 
@@ -344,6 +343,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                 {
                     ammoProvider.Proto = options.AmmoPrototypeName;
                     ammoProvider.UnspawnedCount = options.AmmoCount;
+                    ammoProvider.EntProtos = options.EntProtoIds;
                     Dirty(inputItemUid, ammoProvider);
                 }
                 break;

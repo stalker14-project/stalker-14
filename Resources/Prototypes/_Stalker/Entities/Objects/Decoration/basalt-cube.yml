@@ -1,0 +1,58 @@
+- type: entity
+  id: STBasaltСube
+  suffix: ST, Basalt, Mapping
+  name: Базальтовый куб
+  description:  Загадочный геологический объект с необычной симметрией, состоящий из вулканических образований.
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/basalt-cube.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 6500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 1000
+        layer:
+        - HalfWallLayer
+        - Opaque
+  - type: Climbable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+
+
+
+- type: entity
+  parent: STBasaltСube
+  id: STBasaltСubeGaint
+  components:
+  - type: Sprite
+    state: basalt-cube-giant
+    
+    
+- type: entity
+  parent: STBaseItem
+  name: Небольшой базальтовый куб
+  description: Приятный на ощупь небольшой куб из базальта.
+  id: STBasaltСubeSmall
+  components:
+  - type: STWeight
+    self: 2
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/basalt-cube.rsi
+    state: basalt-cube-small

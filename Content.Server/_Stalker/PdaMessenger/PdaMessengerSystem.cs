@@ -5,7 +5,7 @@ using Content.Server.PDA;
 using Content.Server.PDA.Ringer;
 using Content.Shared._Stalker.PdaMessenger;
 using Content.Shared.CartridgeLoader;
-using Content.Shared.CCVar;
+using Content.Shared._Stalker.CCCCVars;
 using Content.Shared.Database;
 using Content.Shared.PDA;
 using Robust.Shared.Configuration;
@@ -32,7 +32,7 @@ public sealed class PdaMessengerSystem : EntitySystem
         SubscribeLocalEvent<PdaMessengerComponent, CartridgeMessageEvent>(OnUiMessage);
         SubscribeLocalEvent<PdaMessengerComponent, CartridgeUiReadyEvent>(OnUiReady);
 
-        _configurationManager.OnValueChanged(CCVars.DiscordPdaMessageWebhook, value =>
+        _configurationManager.OnValueChanged(CCCCVars.DiscordPdaMessageWebhook, value =>
         {
             if (!string.IsNullOrWhiteSpace(value))
             {

@@ -64,6 +64,16 @@ admin-note-editor-expiry-placeholder = Введіть дату закінчен�
 admin-note-editor-submit = Надіслати
 admin-note-editor-submit-confirm = Ти впевнений?
 
+# Time
+admin-note-button-minutes = Minutes
+admin-note-button-hours = Hours
+admin-note-button-days = Days
+admin-note-button-weeks = Weeks
+admin-note-button-months = Months
+admin-note-button-years = Years
+admin-note-button-centuries = Centuries
+
+
 # Verb
 admin-notes-verb-text = Відкрити записи адміністратора
 

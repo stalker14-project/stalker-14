@@ -1,7 +1,68 @@
 - type: entity
-  parent: FloorWaterEntity
-  name: water
-  description: Muddy water of the Zone.
+  id: STFloorWaterEntity
+  name: Вода
+  abstract: true
+  description: Справжній напій для втамування спраги.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: FloorOccluder
+  - type: Transform
+    anchored: true
+  - type: SyncSprite
+  - type: Clickable
+  - type: Sprite
+    sprite: Tiles/Planet/water.rsi
+    drawdepth: BelowFloor
+    layers:
+      - state: shoreline_water
+  - type: SolutionContainerManager
+    solutions:
+      pool:
+        maxVol: 200 #.inf seems to break the whole yaml file, but would definitely be preferable.
+        reagents:
+        - ReagentId: STWater
+          Quantity: 200
+  - type: DrainableSolution
+    solution: pool
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.8
+    sprintSpeedModifier: 0.8
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+          - SlipLayer
+        mask:
+          - ItemMask
+        density: 1000
+        hard: false
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWater
+      params:
+        volume: 8
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.1
+    blacklist:
+      tags:
+        - Catwalk
+  - type: TileEntityEffect
+    effects:
+    - !type:ExtinguishReaction
+
+- type: entity
+  parent: STFloorWaterEntity
+  name: вода
+  description: Каламутна вода Зони.
   id: FloorWaterEntityStalker1
   suffix: Stalker
   placement:
@@ -63,8 +124,8 @@
     castShadows: false
 - type: entity
   parent: FloorWaterEntityStalker1
-  name: chemical waste
-  description: Bright chemical waste of the Zone.
+  name: хімічні відходи
+  description: Яскраві хімічні відходи Зони.
   id: FloorWaterEntityStalker5
   placement:
     mode: SnapgridCenter

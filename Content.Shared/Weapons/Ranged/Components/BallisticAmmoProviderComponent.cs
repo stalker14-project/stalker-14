@@ -33,6 +33,11 @@ public sealed partial class BallisticAmmoProviderComponent : Component
 
     public Container Container = default!;
 
+    // stalker-changes-start
+    [DataField, AutoNetworkedField]
+    public List<EntProtoId> EntProtos = new();
+    // stalker-changes-end
+
     // TODO: Make this use stacks when the typeserializer is done.
     // Realistically just point to the container.
     [DataField, AutoNetworkedField]

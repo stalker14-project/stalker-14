@@ -1,85 +1,113 @@
 - type: shopPreset
   id: NpcAlekseiFilipp
+  itemsForSale: # скупка - бар
+    # Thermal group - 1
+    ZoneArtifactFireball: 225
+    ZoneArtifactEye: 375
+    ZoneArtifactFlame: 750
+    # Thermal group - 2
+    ZoneArtifactCristall: 937
+    ZoneArtifactLithosphere: 1500
+    # Electrical group - 1
+    ZoneArtifactSparkler: 225
+    ZoneArtifactBattery: 450
+    ZoneArtifactFlash: 900
+    ArtMoon: 1125
+    ZoneArtifactTesla: 1687
+    ZoneArtifactIce: 1875
+    # Gravity group - 1
+    ArtMedusa: 187
+    ZoneArtifactFlower: 375
+    ZoneArtifactNightStar: 937
+    # Gravity group - 2
+    ZoneArtifactVyvert: 225
+    ZoneArtifactAmoeba: 375
+    ZoneArtifactGravi: 1125
+    ZoneArtifactGoldfish: 1500
+    ZoneArtifactSpring: 1875
+    ZoneArtifactFocus: 750
+    ZoneArtifactStuntman: 1500
+    ZoneArtifactDistorter: 2250
+    ZoneArtifactSoul: 1875
+    # Acidic group - 1
+    ZoneArtifactBlood: 300
+    ZoneArtifactMeat: 562
+    ZoneArtifactKolobok: 750
+    # Acidic group - 2
+    ZoneArtifactPellicle: 375
+    ZoneArtifactBaloon: 1312
+    # части Мутантов
+    FoodMeatSpiderLeg: 37
+    MutantPartBlindDogTail: 67
+    MutantPartZombieHand: 315
+    MutantPartFleshEye: 180
+    MutantPartBoarHoof: 180
+    MutantPartPseudodogTail: 225
+    MutantPartSnorkFoot: 270
+    MutantPartLeshiyRoot: 375
+    MutantPartBloodsuckerTentacles: 450
+    MutantPartPseudogiantHeart: 1875
+    MutantPartOraculeEye: 2250
   categories:
-    - name: Зброя
+    - name: Зброя # ціни пб * 2
       priority: 1
       items:
-        STWeaponRifleStalkerSaiga545: 1400
-        STWeaponRifleStalkerFAL: 1900
-        WeaponPistolStalkerAPS: 750
-        STWeaponShotgunStalkerSPAS: 3500
-        STWeaponRifleStalkerL85: 2500
         STWeaponShotgunToz34: 500
-        STWeaponRifleStalkerGalatz: 4000
-        STWeaponGunAKS74U: 2000
-        STWeaponSMGMp5: 1850
-        STWeaponRevolverChiappaRhino60DS: 1000
-        STWeaponSniperMosin: 1700
-    - name: Магазини
+        STWeaponShotgunMossberg: 1500
+        STWeaponShotgunMP153: 2250
+        STWeaponSniperMosin: 2750
+    - name: Магазини # цены бара * 1.5
       priority: 2
       items:
-        556Mag20: 313
-        Base1270Mag: 250
-        545Mag20: 188
-        545Mag30: 313
-        BaseMP5Mag: 300
-        Base545Mag10: 375
-        SpeedLoader45ACPEmpty: 400
-        Base751Mag10: 190
-        751Mag20: 563
-        BaseAPSMag: 375
-        GlockMag24: 375
-    - name: Боєприпаси
+        Magazine762x39RPD: 1500
+        Vz61Mag: 150
+        BaseMP5Mag: 367
+        MP40Mag: 300
+        VityazMag: 525
+        BasePPSHMag: 330
+        545Mag30: 525
+        556Mag30: 525
+        739Mag30: 600
+        751Mag30: 600
+        GlockMag24: 525
+        GlockMag33: 600
+        PP91Mag: 450
+        P90Mag: 658
+    - name: Боєприпаси # цены бара * 1.5
       priority: 3
       items:
-        754FMJBox: 700
-        6mmBuckshotBox: 500
-        7mmBuckshotBox: 85
-        919RIPBox: 500
-        919PSTBox: 400
-        918SP7Box: 400
-        545FMJBox: 600
-        545PCBox: 800
-        556FMJBox: 650
-        556M855Box: 990
-        751UNBox: 700
-        751M80Box: 1100
-        45ACPAPBox: 700
-        919PBMBox: 675
-    - name: Плащі
+        7mmBuckshotBox: 150
+        6mmBuckshotBox: 375
+        919RIPBox: 375
+        919PSTBox: 375
+        545HPBox: 600
+        556FMJBox: 600
+        751UNBox: 900
+    - name: Броня та спорядження # цена сидора * 2
       priority: 4
       items:
-        ClothingOuterArmorCN1Green: 3500
-        ClothingOuterCoatStalker: 349
+        ClothingOuterJacketStalker: 78
+        STClothingOuterArmorLightPlateVestBaseStalker: 3818
+        STClothingOuterArmorRCBZ: 2700
+        ClothingOuterArmorZaryaStalker: 3894
+        ClothingOuterCoatStalker: 698
+        ClothingMaskGasM40: 266
+        ClothingMaskGP5: 244
     - name: Рюкзаки
       priority: 5
       items:
         ClothingBackpackDuffelGreenStalker: 30
         ClothingBackpackDuffelBlackStalker: 30
         ClothingBackpackDuffelMedicalStalker: 150
-        ClothingBackpackTacticBeigeStalker: 250
-        ClothingBackpackTacticOliveStalker: 250
-        ClothingBackpackMercStalker: 600
-        ClothingBackpackDuffelBlackMilitaryTacticStalker: 1200
     - name: Ремені
       priority: 6
       items:
         ClothingBeltBandolierStalker: 20
-        ClothingBeltTarzanBlack: 200
-        ClothingBeltTarzanGreen: 200
-        ClothingBeltTarzanOrange: 200
     - name: Аномалії
       priority: 7
       items:
         STBoltBagFilled: 100
         STBoltBagOliveGrayFilled: 100
-        BoxArtcont: 900
-        ZoneAnomalyDetectorAD1: 900
-        ZoneAnomalyDetectorAD2: 2100
-        ZoneArtifactDetectorPulse: 250
-        ZoneArtifactDetectorHunter: 600
-        ZoneArtifactDetectorResponse: 1100
-        ZoneArtifactDetectorSpruce: 2600
     - name: Провізія
       priority: 8
       items:
@@ -91,20 +119,16 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         FoodMeatSalami: 350
-    - name: Медицина
+    - name: Медицина # цены бара * 1.5
       priority: 9
       items:
-        PillDexalin: 10
-        PillDexalinPlusStalker: 30
-        radioprotectpill: 250
-        psyblock: 550
-        MedkitAI2: 400
-        STOintment: 15
-        STGauze: 20
-        STBrutepack: 50
-        Tourniquet: 80
-        Bloodpack: 300
-        MedkitMilitary: 650
-        antiradpill: 150
-        MedkitCMSStalker: 750
-        MedkitGrizzlyStalker: 1050
+        PillDexalin: 15
+        PillDexalinPlusStalker: 45
+        radioprotectpill: 375
+        MedkitAI2: 150
+        STOintment: 45
+        STGauze: 45
+        STBrutepack: 75
+        Tourniquet: 120
+        Bloodpack: 450
+
