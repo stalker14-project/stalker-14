@@ -1,15 +1,15 @@
 # Base
 - type: entity
   parent: STClothingOuterArmorStorageBasic
-  id: STClothingOuterArmorRatnikBase
+  id: STClothingOuterArmorwarriorBase
   abstract: true
-  name: комплект «Ратник» # base
+  name: комплект «Воїн» # base
   suffix: ST, T5, PvP
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_military.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/warrior_military.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_military.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/warrior_military.rsi
   - type: Armor
     armorClass: 5
     modifiers:
@@ -27,25 +27,25 @@
 
 # Stalker
 - type: entity
-  parent: STClothingOuterArmorRatnikBase
-  id: STClothingOuterArmorRatnik
-  name: комплект «Ратник»
-  description: Комплект многофункциональной одежды, снаряжения и обуви "Ратник-СН" был разработан для потребностей военнослужащих специальных подразделений Вооруженных сил России. При создании этой боевой экипировки в максимальной мере были использованы новейшие инновационные материалы и технологии.
+  parent: STClothingOuterArmorwarriorBase
+  id: STClothingOuterArmorwarrior
+  name: комплект «Воїн»
+  description: Комплект багатофункціонального одягу, спорядження і взуття "Воїн-СН". При створенні цієї бойової екіпіровки в максимальній мірі були використані новітні інноваційні матеріали і технології.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_military.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/warrior_military.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_military.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/warrior_military.rsi
 
 # Neutral
 
 - type: entity
-  parent: STClothingOuterArmorRatnikBase
-  id: STClothingOuterArmorRatnikNeutral
-  name: бронежилет «Ратник» нейтралов
-  description: Модернизированный бронежилет от комплекта "Ратник"
+  parent: STClothingOuterArmorwarriorBase
+  id: STClothingOuterArmorwarriorNeutral
+  name: бронежилет «Воїн» нейтралів
+  description: Модернізований бронежилет від комплекту "Воїн"
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_neutral.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/warrior_neutral.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/ratnik_neutral.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/warrior_neutral.rsi

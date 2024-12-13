@@ -32,7 +32,7 @@ public sealed class SolutionRegenerationSystem : EntitySystem
             // timer ignores if its full, it's just a fixed cycle
             regen.NextRegenTime = _timing.CurTime + regen.Duration;
 
-            // 7784,4 MB allocated in SOH вы ебнутые или как? С вами все норм?
+            // 7784,4 MB allocated in SOH
             if (_solutionContainer.ResolveSolution((uid, manager), regen.SolutionName, ref regen.SolutionRef, out var solution))
             {
                 var amount = FixedPoint2.Min(solution.AvailableVolume, regen.Generated.Volume);

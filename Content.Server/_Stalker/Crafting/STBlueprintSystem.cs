@@ -9,8 +9,8 @@ using System.Diagnostics;
 
 namespace Content.Server.Crafting;
 /// <summary>
-/// Система рецептов. Её фишка в том, что предметы-рецепты созданные с её помощью всегда будут иметь корретные
-/// ингридиенты, потому что она будет брать данные напрямую из прототипа-рецепта (craftRecipe).
+/// Система рецептів. Її фішка в тому, що предмети-рецепти, створені з її допомогою, завжди матимуть коретні
+/// інгредієнти, тому що вона братиме дані безпосередньо з прототипу-рецепту(craftRecipe).
 /// </summary>
 public sealed class STBlueprintSystem : EntitySystem
 {
@@ -36,7 +36,7 @@ public sealed class STBlueprintSystem : EntitySystem
 
         if (_workbenchNamesById.Count == 0)
         {
-            _sawmill.Error($"There is no valid workbenches. Check that {WORKBENCH_TAG} exist");
+            _sawmill.Error($"Немає діючих верстаків. Перевірте наявність {WORKBENCH_TAG}");
         }
         AddDescriptions();
         SubscribeLocalEvent<STBlueprintComponent, ExaminedEvent>(OnBlueprintExamine);
@@ -44,7 +44,7 @@ public sealed class STBlueprintSystem : EntitySystem
     }
 
     /// <summary>
-    /// При Shift-Right click показывает подробный рецепт крафта в описании
+    /// При Shift-Right click показує детальний рецепт крафта в описі
     /// </summary>
     public void OnBlueprintExamine(EntityUid uid, STBlueprintComponent component, ExaminedEvent args)
     {
@@ -58,9 +58,9 @@ public sealed class STBlueprintSystem : EntitySystem
         args.PushMarkup(description);
     }
     /// <summary>
-    /// Для того чтобы поменять имя у компонента автоматически, чтобы рецепты не устаревали. К сожалению,
-    /// если рецепт расположен в интерфейсе торговца он будет показывать имя из yml. Но хотя бы если на полу
-    /// и т.д., мы получим актуальное имя
+    /// Для того щоб поміняти ім'я у компонента автоматично, щоб рецепти не застарівали. На жаль,
+    /// якщо рецепт розташований в інтерфейсі торговця, він показуватиме ім'я з yml. Але хоча б якщо на підлозі
+    /// і т.д., ми отримаємо актуальне ім'я
     /// </summary>
     public void OnComponentStartup(EntityUid uid, STBlueprintComponent component, ComponentStartup args)
     {
@@ -94,7 +94,7 @@ public sealed class STBlueprintSystem : EntitySystem
             {
                 if (!_proto.TryIndex(id, out var prototype))
                 {
-                    _sawmill.Error($"There is a recipe {blueprint.ID} with an ingridient {id}. But the ingridient prototype is missing");
+                    _sawmill.Error($"Існує рецепт {blueprint.ID} з інгредієнтом {id}. Але прототип інгредієнта відсутній");
                     stringBuilder.AppendLine(Loc.GetString("st-blueprint-not-found"));
                     continue;
                 }
@@ -107,7 +107,7 @@ public sealed class STBlueprintSystem : EntitySystem
             {
                 if (!_proto.TryIndex(id, out var prototype))
                 {
-                    _sawmill.Error($"There is a recipe {blueprint.ID} with a result {id}. But the result's prototype is missing");
+                    _sawmill.Error($"Існує рецепт {blueprint.ID} з результатом {id}. Але прототип результату відсутній");
                     stringBuilder.AppendLine(Loc.GetString("st-blueprint-not-found"));
                     continue;
                 }

@@ -2,17 +2,17 @@
   parent: BaseItem
   id: StartingBundle
   name: Комплект сталкера початківця
-  description: До комплекту входили 1000 гривень і бінокль.
+  description: До комплекту колись входили 5000 гривень і бінокль.
   components:
   - type: Item
     size: Normal
   - type: Sprite
     sprite: StalkerTextures/Objects/Storage/boxicons.rsi
-    state: food
+    state: tools
   - type: SpawnItemsOnUse
     items:
     - id: Hryvnias1000
-    - id: CardBin
+    - id: STBoltBagFilled
 #    - id: StalkerBinoculars
     sound:
       path: /Audio/Effects/unwrap.ogg

@@ -37,7 +37,7 @@ public sealed class BanWebhook
 
         if (!match.Success)
         {
-            _sawmill.Warning("Webhook URL does not appear to be valid. Using anyways...");
+            _sawmill.Warning("URL-адреса веб-хука видається недійсною. Використовую все одно...");
         }
     }
 
@@ -87,10 +87,10 @@ public sealed class BanWebhook
                         IconUrl = string.IsNullOrWhiteSpace(_footerIconUrl) ? null : _footerIconUrl
                     },
                     Description =
-                        $"**Нарушитель**: {user.Split(" ")[0]}\n" +
-                        $"**Администратор:** {admin}\n" +
+                        $"**Порушник**: {user.Split(" ")[0]}\n" +
+                        $"**Адміністратор:** {admin}\n" +
                         $"\n" +
-                        $"**Выдан:** {timeNow}\n" +
+                        $"**Видано:** {timeNow}\n" +
                         expires +
                         $"\n" +
                         $"**Причина:** {reason}"

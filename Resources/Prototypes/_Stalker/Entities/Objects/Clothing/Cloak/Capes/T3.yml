@@ -1,9 +1,9 @@
-# Укреплённый плащ
+# Укріплений плащ
 - type: entity
   parent: STClothingCapeBase
   id: STClothingCapeCoatReinforced
-  name: reinforced cloak
-  description: A cloak with chainmail sewn in and reinforced with aramid fabric, which in total gives protection of about class 3. It is heavy in itself and will not fit body armor.
+  name: посилений плащ
+  description: Плащ з вшитою кольчугою та посилений арамідною тканиною, що в сумі дає захист близько 3 класу. Сам по собі він важкий і під бронежилет не підійде.
   suffix: ST, T3
   components:
   - type: Sprite
@@ -23,12 +23,12 @@
         Heat: 0.85
 
 
-# Охотничий Плащ
+# Мисливський Плащ
 - type: entity
   parent: STClothingCapeBase
   id: ClothingOuterCoatLoyalistLight
-  name: hunting cloak
-  description: a cloak that is made specifically for hunting in extreme conditions, for example in the Chernobyl Exclusion Zone, painted in green camouflage.
+  name: мисливський плащ
+  description: плащ, виготовлений спеціально для полювання в екстремальних умовах, наприклад, у Чорнобильській зоні відчуження, пофарбований у зелений камуфляж.
   suffix: ST, T3
   components:
   - type: STWeight
@@ -68,8 +68,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetLoyalistCoatlight
-  name: hunting hood
-  description: will protect your head... from the rain... probably?
+  name: мисливський капюшон
+  description: захистить твою голову... від дощу... можливо?
   suffix: ST
   components:
   - type: Sprite
@@ -83,8 +83,8 @@
 - type: entity
   parent: STClothingCapeBase
   id: ClothingOuterCoatLoyalist
-  name: Kevlar Cloak
-  description: A cloak made in the conditions of the zone, surprisingly high-quality work, made of high-quality leather and stitched with Kevlar, armor plates inserted in some places, painted in an unusual camouflage.
+  name: Кевларовий плащ
+  description: Плащ, виготовлений в умовах зони, напрочуд якісної роботи, з якісної шкіри та прошитий кевларом, місцями вставлені бронепластини, пофарбований у незвичний камуфляж.
   suffix: ST, T3
   components:
   - type: STWeight
@@ -133,20 +133,20 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetLoyalistCoat
   name: Kevlar hood
-  description: only the name is Kevlar
+  description: тільки ім'я - Кевлар
   suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi
-    
-# настойщий Плащ Греха
+
+# плащ гріха
 - type: entity
   parent: STClothingCapeBase
   id: ClothingOuterCoatGrehLight
-  name: Flagellants Cloak
-  description: Lightweight Cloak of the Faithful. Cloak of the Protector of the Mother of the Zone
+  name: Накидка для джгутиків
+  description: Полегшений плащ вірних. Плащ Покровителя Матері Зони
   suffix: ST, T3
   components:
   - type: Sprite
@@ -195,13 +195,13 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.2
     sprintModifier: 1.2
-# настойщий Верный Греха
+# справжній Вірний Гріха
 
 - type: entity
   parent: STClothingCapeBase
   id: ClothingOuterCoatGreh
-  name: cloak of the faithful
-  description: Cloak of the defender of the mother of the zone
+  name: плащ вірних
+  description: Плащ захисника матері зони
   suffix: ST, T3
   components:
   - type: Sprite
@@ -270,8 +270,8 @@
 - type: entity
   parent: ClothingOuterCoatLoyalist
   id: ClothingOuterCoatKevlarMonolith
-  name: кевларовый плащ монолита
-  description: Плащ, сделанный в условиях зоны, на удивление качественная работа, сделан из качественной кожи и прошит кевларом,кое-где вставлены бронепластины, окрашен в необычный камуфляж.
+  name: кевларовий плащ моноліту
+  description: Плащ, зроблений в умовах зони, напрочуд якісна робота, зроблений з якісної шкіри та прошитий кевларом, подекуди вставлені бронепластини, пофарбований у незвичайний камуфляж.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/kevlaroviy_monolith.rsi
@@ -289,8 +289,8 @@
 - type: entity
   parent: ClothingHeadHelmetLoyalistCoat
   id: ClothingHeadHelmetKevlarMonolith
-  name: кевларовый капюшон
-  description: от кевлара в нём только название
+  name: кевларовий капюшон
+  description: від кевлара в ньому тільки назва
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/coat_head_kevlar_monolith.rsi
@@ -300,8 +300,8 @@
 - type: entity
   parent: ClothingOuterCoatLoyalist
   id: ClothingOuterCoatRenegat
-  name: кевларовый плащ Ренегата
-  description: Плащ, модифицированный под нужды группировки Ренегаты, окрашенный в "родные" цвета.
+  name: кевларовий плащ Ренегата
+  description: Плащ, модифікований під потреби угруповання Ренегати, пофарбований у "рідні" кольори.
   suffix: ST, T3, Renegat
   components:
   - type: Sprite
@@ -317,8 +317,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetLoyalistCoatRenegat
-  name: кевларовый капюшон Ренегата
-  description: От кевлара в нем не только название.
+  name: кевларовий капюшон Ренегата
+  description: Від кевлара в ньому не тільки назва.
   suffix: ST, Renegat
   components:
   - type: Sprite
@@ -329,8 +329,8 @@
 - type: entity
   parent: ClothingOuterCoatLoyalist
   id: ClothingOuterCoatSeraphim
-  name: кевларовый плащ серафимов
-  description: Плащ, модифицированный под нужды группировки Серафимов, окрашенный в "родные" цвета.
+  name: кевларовий плащ серафимів
+  description: Плащ, модифікований під потреби угруповання Серафимів, пофарбований у "рідні" кольори.
   suffix: ST, T3, Скин
   components:
   - type: Sprite
@@ -346,8 +346,8 @@
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetLoyalistCoatSeraphim
-  name: кевларовый капюшон серафимов
-  description: От кевлара в нем не только название.
+  name: кевларовий капюшон серафимов
+  description: Від кевлара в ньому не тільки назва.
   suffix: ST, Скин
   components:
   - type: Sprite

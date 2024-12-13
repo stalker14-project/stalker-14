@@ -43,7 +43,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 
     private delegate List<object> DelegateItemStalkerConverter(EntityUid inputEntityUid);
 
-    //Коллекция конвентеров для предметов
+    //Коллекція конвентерів для предметів
     private readonly Dictionary<string, DelegateItemStalkerConverter> _convertersItemStalker = new(0);
     private readonly HashSet<Type> _blackListDelChildrenOnSpawnComponent = new(0);
     private readonly HashSet<string> _blackListContainerNames = new(0);
@@ -75,25 +75,25 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         InstallLists();
         SubscribeLocalEvent<StalkerStorageComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<StalkerStorageComponent, VendingMachineEjectMessage>(OnInventoryEjectMessage);
-        //Обычный предмет
+        //Звичайний предмет
         _convertersItemStalker.Add("M", ConverterSimpleItemStalker);
 
-        //Предмет с патронами(например магазин)
+        //Предмет боєприпасів (наприклад, магазин)
         _convertersItemStalker.Add("MB", ConverterAmmoItemStalker);
 
-        //Предмет который имеет стак
+        //Предмет який має стак
         _convertersItemStalker.Add("MS", ConverterStackItemStalker);
 
         _convertersItemStalker.Add("MP", ConverterPaperItemStalker);
         _convertersItemStalker.Add("ML", ConverterBatteryItemStalker);
         _convertersItemStalker.Add("ME", ConverterSolutionItemStalker); // Solutions
         _convertersItemStalker.Add("MC", ConverterCartridgeItemStalker);
-        //Доделать еще конвентеры для предметов с жидкостями и т.д.
+        //Доробити ще конвентери для предметів із рідинами тощо.
     }
 
     #region HelperMethods
 
-    // Получить имя прототипа(например у лома имя прототипа будет "Crowbar") по его EntityUid
+    // Отримати ім'я прототипу (наприклад, у лома ім'я прототипу буде "Crowbar") за його EntityUid
     public string GetPrototypeName(EntityUid inputItemUid)
     {
         if (!TryComp(inputItemUid, out MetaDataComponent? metaData))
@@ -101,7 +101,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         return metaData.EntityPrototype?.ID == null ? "" : metaData.EntityPrototype.ID;
     }
 
-    // Получить название ентити(имя в мире, например "Лом") по его EntityUid
+    // Отримати назву ентіті (ім'я у світі, наприклад "Лом") за його EntityUid
     public string GetNameEntity(EntityUid inputItemUid)
     {
         return !TryComp(inputItemUid, out MetaDataComponent? metaData) ? "" : metaData.EntityName;
@@ -440,7 +440,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 
     #region ContainerOperations
 
-    //Получить содержимое всех контейнеров(в сумках, частях тела,частях оружия и т.д.)
+    //Отримати вміст усіх контейнерів (у сумках, частинах тіла, частинах зброї тощо)
 
     private List<EntityUid> GetAllContainersUidItems(EntityUid inputItem)
     {
@@ -449,7 +449,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         return allContainerUids;
     }
 
-    //Получить контейнеры из ContainerManagerComponent
+    //Отримати контейнери з ContainerManagerComponent
     private List<EntityUid> GetContainerUids(EntityUid inputItemUid)
     {
         var containerUids = new List<EntityUid>(0);
@@ -464,17 +464,17 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 
             foreach (var entity in container.Value.ContainedEntities)
             {
-                //Добавляем предмет который внутри
+                //Додаємо предмет який усередині
                 containerUids.Add(entity);
 
-                //Добавляем еще предметы если они существуют внутри добавляемого обьекта
+                //Додаємо ще предмети якщо вони існують усередині об'єкта, що додається
                 containerUids.AddRange(GetAllContainersUidItems(entity));
             }
         }
         return containerUids;
     }
 
-    //Получить контейнеры из ContainerManagerComponent без черного списка
+    //Отримати контейнери з ContainerManagerComponent без чорного списку
     public List<EntityUid> GetSomeContainerUidsWithoutBlackList(EntityUid inputItemUid)
     {
         var containerUids = new List<EntityUid>(0);
@@ -486,10 +486,10 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         {
             foreach (var entity in container.Value.ContainedEntities)
             {
-                //Добавляем предмет который внутри
+                //Додаємо предмет який усередині
                 containerUids.Add(entity);
 
-                //Добавляем еще предметы если они существуют внутри добавляемого обьекта
+                //Додаємо ще предмети якщо вони існують усередині об'єкта, що додається
                 containerUids.AddRange(GetSomeContainerUidsWithoutBlackList(entity));
             }
         }
@@ -528,7 +528,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
             metaData.EntityPrototype?.ID == null)
             return;
 
-        //Вставляем предметы(их EntityUid) которые находятся внутри контейнеров в этом предмете
+        //Вставляємо предмети (їх EntityUid), які знаходяться всередині контейнерів у цьому предметі
         var itemsToAdd = GetAllContainersUidItems(args.Used);
         itemsToAdd.Add(args.Used);
 
@@ -558,7 +558,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         */
     }
 
-    //Добавить в VendingMachineComponent предмет по ключу и имени его прототипа
+    //Додати в VendingMachineComponent предмет за ключем та ім'ям його прототипу
     private void AddToVendingMachineProtoByName(string keyIdentifier, string protoName, StalkerRepositoryComponent _stalkerRepositoryComponent, object stalkerItem)
     {
         RepositoryItemInfo NewRepositoryItemInfo = _stalkerRepositorySystem.GenerateItemInfoByPrototype(protoName);
@@ -591,7 +591,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 
     #endregion
 
-    //Сохранить инвентарь
+    //Зберегти інвентар
     public void SaveStorage(StalkerRepositoryComponent _stalkerRepositoryComponent)
     {
         Console.WriteLine("SaveStorage");
@@ -675,7 +675,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         return playerInventory;
     }
 
-    //Получить количество незаспавненых снарядов/патронов из ентити (например из магазина АК47), возвращает количество и название снарядов/патронов
+    //Отримати кількість незаспавнених снарядів/патронів з ентіті (наприклад, з магазину АК47), повертає кількість і назву снарядів/патронів
     public (int Count, string Name) GetAmmoUnSpawnedCount(EntityUid inputItemUid)
     {
         var returnProtoName = string.Empty;

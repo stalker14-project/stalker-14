@@ -6,7 +6,7 @@
 [RegisterComponent]
 public sealed partial class StalkerPortalComponent : Component
 {
-    //Имя телепорта сталкеров, например "Бандиты", "Долг" и т.д.
+    //Ім'я телепорту сталкерів, наприклад "Бандити", "Долг" тощо.
     [DataField("PortalName")]
     public string PortalName = string.Empty;
 

@@ -51,7 +51,7 @@ namespace Content.Server.MemoryVaccine
                     NeedHand = true,
                     DistanceThreshold = 2f,
                 };
-                _popupSystem.PopupEntity("Ввод ампулы", target.Value, PopupType.LargeCaution);
+                _popupSystem.PopupEntity("Введення ампули", target.Value, PopupType.LargeCaution);
                 _doAfterSystem.TryStartDoAfter(doAfterArgs);
             }
 

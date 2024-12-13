@@ -7,7 +7,7 @@ using Content.Shared._Stalker.Crafting.Components;
 
 namespace Content.Server.Crafting;
 /// <summary>
-/// Система рецептов. Она добавляет в описание к инструментам (например наборам скинов) список рецептов которые можно сделать
+/// Система рецептів. Вона додає в опис до інструментів (наприклад наборів скінів) список рецептів, які можна зробити
 /// с помощью лёгких рецептов и этого набора
 /// </summary>
 public sealed class STSkinsKitSystem : EntitySystem
@@ -27,7 +27,7 @@ public sealed class STSkinsKitSystem : EntitySystem
     }
 
     /// <summary>
-    /// При Shift-Right click показывает подробный рецепт крафта в описании
+    /// При Shift-Right click показує детальний рецепт крафта в описі
     /// </summary>
     public void OnSkinKitExamine(EntityUid uid, STSkinsKitComponent component, ExaminedEvent args)
     {

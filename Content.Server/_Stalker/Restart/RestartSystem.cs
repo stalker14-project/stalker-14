@@ -55,7 +55,7 @@ public partial class RestartSystem : EntitySystem
         _chat.DispatchServerAnnouncement($"Перезапуск сервера через: {Math.Round(delta.TotalMinutes, 1)} минут");
         if (delta < _teleportDelay)
         {
-            _chat.DispatchServerAnnouncement($"Вы можете использовать команду home для быстрого возврата в Чистилище");
+            _chat.DispatchServerAnnouncement($"Ви можете використовувати команду home для швидкого повернення в Чистилище");
         }
 
         data.Comp.IntervalLast = _timing.CurTime + data.Comp.IntervalDelay;
@@ -64,7 +64,7 @@ public partial class RestartSystem : EntitySystem
     public void StartRestart(TimeSpan delay)
     {
         var data = GetData();
-        _chat.DispatchServerAnnouncement($"Запущен авто-рестарт сервера через: {Math.Round(delay.TotalMinutes, 1)} минут");
+        _chat.DispatchServerAnnouncement($"Запущено авто-рестарт сервера через: {Math.Round(delay.TotalMinutes, 1)} хвилин");
 
         data.Comp.Time = _timing.CurTime + delay;
         data.Comp.IntervalLast = _timing.CurTime + data.Comp.IntervalDelay;
@@ -81,26 +81,26 @@ public partial class RestartSystem : EntitySystem
         var session = shell.Player;
         if (spawn == null)
         {
-            shell.WriteError("Нет спавнера Stalker Job Spawn на картах");
+            shell.WriteError("Немає спавнера Stalker Job Spawn на картах");
             return;
         }
         if (session?.AttachedEntity == null)
         {
-            shell.WriteError("Сущность не игрок");
+            shell.WriteError("Сутність не гравець");
             return;
         }
         if (data.Comp.Time == default)
         {
-            shell.WriteError("Рестарт не запланирован");
+            shell.WriteError("Перезапуск не планується");
             return;
         }
 
         var portalAvailableTime = data.Comp.Time - _teleportDelay;
         if (portalAvailableTime >= _timing.CurTime)
         {
-            var message = $"Телепортация возможно только за {_teleportDelay} до рестарта";
+            var message = $"Телепортація можлива тільки за {_teleportDelay} до рестарту";
             shell.WriteError(message);
-            _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} пытался телепортироваться в чистилище");
+            _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} намагався телепортуватися в чистилище");
             return;
         }
 
@@ -109,8 +109,8 @@ public partial class RestartSystem : EntitySystem
 
         transformSystem.SetCoordinates(session.AttachedEntity.Value, targetCoords);
         transformSystem.AttachToGridOrMap(session.AttachedEntity.Value);
-        _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} телепортировался в Чистилище");
-        shell.WriteLine("Успешная телепортация");
+        _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} телепортувався в Чистилище");
+        shell.WriteLine("Успішна телепортація");
     }
 
     private Entity<RestartComponent> GetData()

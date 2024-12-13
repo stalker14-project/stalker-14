@@ -11,6 +11,7 @@
     - StalkerLegsStalker
     - StalkerGloves
     - StalkerOuterLoner
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobExperiencedLoner
@@ -24,6 +25,7 @@
     - StalkerLegsStalker
     - StalkerGloves
     - StalkerOuterLonerAdvLead
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobLeaderLoner
@@ -37,6 +39,7 @@
     - StalkerLegsStalker
     - StalkerGloves
     - StalkerOuterLonerAdvLead
+    - StalkerCloaks
 
 # Обов'язок (Duty)
 - type: roleLoadout
@@ -50,6 +53,7 @@
     - StalkerTorsoDuty
     - StalkerLegsDuty
     - StalkerGlovesMilitary
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobSergantDuty
@@ -63,6 +67,7 @@
     - StalkerLegsDuty
     - StalkerGlovesMilitary
     - StalkerOuterDutyAdvLead
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobGeneralDuty
@@ -76,6 +81,7 @@
     - StalkerLegsDuty
     - StalkerGlovesMilitary
     - StalkerOuterDutyAdvLead
+    - StalkerCloaks
 
 # Воля (Freedom)
 - type: roleLoadout
@@ -89,6 +95,7 @@
     - StalkerTorsoFreedom
     - StalkerLegsFreedom
     - StalkerGloves
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobExperiencedFreedom
@@ -102,6 +109,7 @@
     - StalkerLegsFreedom
     - StalkerGloves
     - StalkerOuterFreedomAdvLead
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobLeaderFreedom
@@ -115,6 +123,7 @@
     - StalkerLegsFreedom
     - StalkerGlovesMilitary
     - StalkerOuterFreedomAdvLead
+    - StalkerBanditsCloaks
 
 # Бандити (Bandit)
 - type: roleLoadout
@@ -129,6 +138,7 @@
     - StalkerLegsStalker
     - StalkerGloves
     - StalkerOuterBandits
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobExperienceBandit
@@ -142,6 +152,7 @@
     - StalkerLegsStalker
     - StalkerGloves
     - StalkerOuterBandits
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobPaxanBandit
@@ -155,12 +166,13 @@
     - StalkerLegsStalker
     - StalkerGloves
     - StalkerOuterBandits
+    - StalkerBanditsCloaks
 
 # Моноліт (Monolith)
 - type: roleLoadout
   id: JobAdeptMonolit
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - StalkerItems
@@ -169,11 +181,12 @@
     - StalkerLegsFreedom
     - StalkerGlovesMilitary
     - StalkerOuterMonolith
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobSoliderMonolit
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - StalkerItems
@@ -182,11 +195,12 @@
     - StalkerLegsFreedom
     - StalkerGlovesMilitary
     - StalkerOuterMonolithAdvLead
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobLeaderMonolit
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - StalkerItems
@@ -195,12 +209,13 @@
     - StalkerLegsFreedom
     - StalkerGlovesMilitary
     - StalkerOuterMonolithAdvLead
+    - StalkerCloaks
 
 # Найманці (Mercenary)
 - type: roleLoadout
   id: JobRookieMercenary
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -209,11 +224,12 @@
     - StalkerLegsMercenary
     - StalkerGlovesMilitary
     - StalkerOuterMercenary
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobExperiencedMercenary
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -222,11 +238,12 @@
     - StalkerLegsMercenary
     - StalkerGlovesMilitary
     - StalkerOuterMercenaryAdvLead
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobLeaderMercenary
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -235,12 +252,13 @@
     - StalkerLegsMercenary
     - StalkerGlovesMilitary
     - StalkerOuterMercenaryAdvLead
+    - StalkerCloaks
 
-# Воєнні (Military)
+# Воєнні військові (Military)
 - type: roleLoadout
   id: JobPrivateMVC
   groups:
-    - StalkerMask
+    - StalkerMilitaryMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -249,11 +267,12 @@
     - StalkerLegsMilitary
     - StalkerGlovesMilitary
     - StalkerOuterMilitary
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobSergantMVC
   groups:
-    - StalkerMask
+    - StalkerMilitaryMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -262,11 +281,12 @@
     - StalkerLegsMilitary
     - StalkerGlovesMilitary
     - StalkerOuterMilitary
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobGeneralMVC
   groups:
-    - StalkerMask
+    - StalkerMilitaryMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -275,6 +295,7 @@
     - StalkerLegsMilitary
     - StalkerGlovesMilitary
     - StalkerOuterMilitary
+    - StalkerBanditsCloaks
 
 - type: roleLoadout
   id: JobUnderCoverMilitary
@@ -283,19 +304,20 @@
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
     - StalkerHead
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerTorsoUnderCoverMilitary
     - StalkerLegsUnderCoverMilitary
     - StalkerGlovesMilitary
     - StalkerOuterUndercover
     - EncryptionKeysMilitary
     - NeckPatchMilitary
+    - StalkerBanditsCloaks
 
 # Чисте небо (Clear Sky)
 - type: roleLoadout
   id: JobRookieClearsky
   groups:
-    - StalkerMaskClearSky
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - StalkerItems
@@ -304,11 +326,12 @@
     - StalkerLegsClearSky
     - StalkerGloves
     - StalkerOuterClearSky
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobExperiencedClearsky
   groups:
-    - StalkerMaskClearSky
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - StalkerItems
@@ -317,11 +340,12 @@
     - StalkerLegsClearSky
     - StalkerGloves
     - StalkerOuterClearSky
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobLeaderClearsky
   groups:
-    - StalkerMaskClearSky
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - StalkerItems
@@ -330,12 +354,14 @@
     - StalkerLegsClearSky
     - StalkerGloves
     - StalkerOuterClearSky
+    - StalkerCloaks
+
 # Вчені
 
 - type: roleLoadout
   id: JobScienceAssistant
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacks
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -344,11 +370,12 @@
     - StalkerLegsScientific
     - StalkerGlovesScientist
     - StalkerOuterScientist
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobScienceGroupLeader
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacksTraders
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -357,13 +384,14 @@
     - StalkerLegsScientific
     - StalkerGlovesScientist
     - StalkerOuterScientist
+    - StalkerCloaks
 
 # Торгівці
 
 - type: roleLoadout
   id: JobStalkerTraderOld
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacksTraders
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -372,11 +400,12 @@
     - StalkerLegsTrader
     - StalkerGlovesMilitary
     - StalkerOuterTrader
+    - StalkerCloaks
 
 - type: roleLoadout
   id: JobStalkerStateOperative
   groups:
-    - StalkerMask
+    - StalkeruniqueMask
     - StalkerBackpacksTraders
     - StalkerSecondaryWeapon
     - MilitaryStalkerItems
@@ -384,3 +413,4 @@
     - StalkerTorsoTrader
     - StalkerLegsTrader
     - StalkerGlovesMilitary
+    - StalkerCloaks

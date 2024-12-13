@@ -100,7 +100,7 @@ public sealed class BoomboxSystem : EntitySystem
         component.CurrentPlaying = entComp;
 
         component.SoundTime = _audio.GetAudioLength(_audio.GetSound(casseteComponent.Music));
-        // And add this time to component.SoundEnd timeSpan (Чтобы в будущем фиксировать конец музыки для этого компонента)
+        // And add this time to component.SoundEnd timeSpan (Щоб у майбутньому фіксувати кінець музики для цього компонента)
         component.SoundEnd = component.SoundTime + _timing.CurTime;
     }
     private void AddRepeatToogleVerb(Entity<BoomboxComponent> ent, ref GetVerbsEvent<ActivationVerb> args)
