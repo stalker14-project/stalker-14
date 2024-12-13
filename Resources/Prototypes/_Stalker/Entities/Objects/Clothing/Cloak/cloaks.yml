@@ -22,6 +22,16 @@
 
 - type: entity
   parent: STClothingCapeBase
+  id: ClothingNeckCloakMilitary
+  suffix: Stalker, Военные
+  name: плащ Военных
+  description: стандартный плащ, используемый при параде государственной структурой ОКСОП.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/cape_military.rsi
+
+- type: entity
+  parent: STClothingCapeBase
   id: ClothingCloakStalker
   name: плащ сталкера
   description: Оторванные куски ткани из мусора, придают вам опыт и загадочность.
