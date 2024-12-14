@@ -1,4 +1,4 @@
-armor-damage-type-psy = Пси
-armor-damage-type-compression = Компрессионный
+armor-damage-type-psy = Псі
+armor-damage-type-compression = Компресійний
 # Stalker-Changes
-armor-class-value = Класс брони: [color=lightblue]{ $value }[/color].
+armor-class-value = Класс броні: [color=lightblue]{ $value }[/color].
