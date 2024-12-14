@@ -1,0 +1,13 @@
+- type: entity
+  name: РПО Шмель
+  suffix: ST
+  parent: STWeaponLauncherRocket
+  id: STWeaponLauncherRocketShmel
+  description: Чудесный инструмент военных преступлений
+  components:
+  - type: Wieldable
+  - type: GunRequiresWield
+  - type: BallisticAmmoProvider
+    whitelist: Null
+    proto: CartridgeRocketRPO
+    capacity: 1

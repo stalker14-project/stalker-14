@@ -1,0 +1,70 @@
+- type: entity
+  id: STBasaltColumn
+  suffix: ST, Basalt, Mapping
+  name: Базальтовая колонна
+  description: Базальт – это широко распространённая вулканическая порода, которая образуется в результате быстрого охлаждения базальтовой лавы.
+  abstract: true
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/basalt-columns.rsi
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 6500
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 1000
+        layer:
+        - HalfWallLayer
+        - Opaque
+  - type: Climbable
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+
+
+
+- type: entity
+  parent: STBasaltColumn
+  id: STBasaltMiddleColumn
+  components:
+  - type: Sprite
+    state: basalt-column-medium
+
+
+- type: entity
+  parent: STBasaltColumn
+  id: STBasaltMediumColumnBroken
+  name: Разрушенная базальтовая колонна
+  description: Эта колонна представляет собой остатки вулканической породы. Многочисленные трещины на ее поверхности, а также обломки рассыпанные вокруг, свидетельствуют о мощи природы и времени.
+  components:
+  - type: Sprite
+    state: basalt-column-medium-broken
+
+- type: entity
+  parent: STBasaltColumn
+  suffix: ST, Basalt,Small, Mapping
+  id: STBasaltSmallColumn01
+  components:
+  - type: Sprite
+    state: basalt-column-small-0
+
+- type: entity
+  parent: STBasaltColumn
+  suffix: ST, Basalt,Small, Mapping
+  id: STBasaltSmallColumn02
+  components:
+  - type: Sprite
+    state: basalt-column-small-1

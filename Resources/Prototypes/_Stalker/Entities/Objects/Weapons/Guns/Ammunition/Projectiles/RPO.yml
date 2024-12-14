@@ -1,0 +1,16 @@
+- type: entity
+  parent: BulletRocket
+  id: BulletRocketRPO
+  name: Выстрел РПО Шмель
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 75
+    intensitySlope: 3
+    totalIntensity: 600
+    canCreateVacuum: false
+  - type: PointLight
+    radius: 7
+    color: orange
+    energy: 0.51

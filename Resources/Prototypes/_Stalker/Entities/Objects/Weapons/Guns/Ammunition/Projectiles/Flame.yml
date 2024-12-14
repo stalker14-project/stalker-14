@@ -1,0 +1,22 @@
+- type: entity
+  id: Flame
+  parent: BaseBulletIncendiary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: fireball
+      shader: unshaded
+  - type: IgniteOnCollide
+    fireStacks: 3
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Heat: 18
+  - type: StaminaDamageOnCollide
+    damage: 10

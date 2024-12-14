@@ -1,4 +1,28 @@
-﻿##########################ПОДЗЕМКА КОРДОНА-КОРДОН
+##########################ПОДЗЕМКА КОРДОНА-КОРДОН
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Kordondown3
+  name: Kordon-Kordondown3
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Kordondown3
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Kordondown1
+  name: Kordon-Kordondown1
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Kordondown1
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Kordondown2
+  name: Kordon-Kordondown2
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Kordondown2
+
 - type: entity
   parent: MapTeleportBase
   id: Cordon-BasementSidor
@@ -65,6 +89,76 @@
       cooldownEnabled: true
       cooldownTime: 30
       godmodeCooldown: 5
+
+########################## ПБ - Подземка кордона
+- type: entity
+  parent: MapTeleportBase
+  id: Podzem-PB
+  name: Podzem-PB
+  components:
+    - type: NewMapTeleport
+      portalName: Podzem-PB
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: KPodzem-PB1
+  name: KPodzem-PB1
+  components:
+    - type: NewMapTeleport
+      portalName: KPodzem-PB1
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: KPodzem-PB2
+  name: KPodzem-PB2
+  components:
+    - type: NewMapTeleport
+      portalName: KPodzem-PB2
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+######################### ПБ - Лощина
+- type: entity
+  parent: MapTeleportBase
+  id: LohinaPB
+  name: LohinaPB
+  components:
+    - type: NewMapTeleport
+      portalName: LohinaPB
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: LohinaPB1
+  name: LohinaPB1
+  components:
+    - type: NewMapTeleport
+      portalName: LohinaPB1
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+##########################СВАЛКА- лощина
+- type: entity
+  parent: MapTeleportBase
+  id: Svalka-Lohina
+  name: Svalka-Lohina
+  components:
+    - type: NewMapTeleport
+      portalName: Svalka-Lohina
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
 ##########################СВАЛКА-КОРДОН
 - type: entity
   parent: MapTeleportBase
@@ -73,6 +167,39 @@
   components:
     - type: NewMapTeleport
       portalName: Cordon-Svalka
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Svalka-Kordon2
+  name: Svalka-Kordon2
+  components:
+    - type: NewMapTeleport
+      portalName: Svalka-Kordon2
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Svalka2
+  name: Kordon-Svalka2
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Svalka2
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Svalka1
+  name: Kordon-Svalka1
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Svalka1
       cooldownEnabled: true
       cooldownTime: 30
       godmodeCooldown: 5
@@ -363,6 +490,16 @@
       cooldownTime: 30
       godmodeCooldown: 5
 
+- type: entity
+  parent: MapTeleportBase
+  id: BolotaVxod
+  name: BolotaVxod
+  components:
+    - type: NewMapTeleport
+      portalName: BolotaVxod
+      coldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
 ######################################################Агропром-Болота
 
 - type: entity
@@ -682,46 +819,79 @@
 - type: entity
   parent: MapTeleportBase
   id: JabaInstituteFirstFloor
-  suffix: Жаба первый этаж
+  suffix: JabaInstituteFirstFloor
   name: Jaba first floor
   components:
     - type: NewMapTeleport
-      portalName: JabaFirstFloorPortal
+      portalName: JabaInstituteFirstFloor
       cooldownEnabled: false
       cooldownTime: 0
       godmodeCooldown: 0
 
+######################################################Предбанник-Болота
 - type: entity
   parent: MapTeleportBase
-  id: JabaFirstFloorToSecondFloor
-  suffix: Жаба первый этаж - Жаба второй этаж
-  name: Jaba first floor - Jaba second floor
+  id: BolotoPB
+  name: BolotoPB
   components:
     - type: NewMapTeleport
-      portalName: JabaFirstFloorToSecondFloorPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
-
-######################################################Предбанник-Кордон
-- type: entity
-  parent: MapTeleportBase
-  id: Cordon1-Predbannik
-  name: Cordon1-Predbannik
-  components:
-    - type: NewMapTeleport
-      portalName: Cordon1-Predbannik
+      portalName: BolotoPB
       cooldownEnabled: true
       cooldownTime: 60
       godmodeCooldown: 5
 
 - type: entity
   parent: MapTeleportBase
-  id: Predbannik-Cordon1
-  name: Predbannik-Cordon1
+  id: BolotoPB1
+  name: BolotoPB1
   components:
     - type: NewMapTeleport
-      portalName: Cordon1-Predbannik
+      portalName: BolotoPB1
+      coldownEnabled: true
+      cooldownTime: 60
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: BolotoPB2
+  name: BolotoPB2
+  components:
+    - type: NewMapTeleport
+      portalName: BolotoPB2
+      coldownEnabled: true
+      cooldownTime: 60
+      godmodeCooldown: 5
+
+######################################################Предбанник-Кордон
+- type: entity
+  parent: MapTeleportBase
+  id: CordonPB
+  name: CordonPB
+  components:
+    - type: NewMapTeleport
+      portalName: CordonPB
+      cooldownEnabled: true
+      cooldownTime: 60
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: CordonPB1
+  name: CordonPB1
+  components:
+    - type: NewMapTeleport
+      portalName: CordonPB1
+      coldownEnabled: true
+      cooldownTime: 60
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: CordonPB2
+  name: CordonPB2
+  components:
+    - type: NewMapTeleport
+      portalName: CordonPB2
       coldownEnabled: true
       cooldownTime: 60
       godmodeCooldown: 5
@@ -841,6 +1011,42 @@
   components:
     - type: NewMapTeleport
       portalName: PodvalBar-Bar
+      allowAll: false
+      cooldownEnabled: true
+      cooldownTime: 5
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: RedForBar5
+  name: RedForBar5
+  components:
+    - type: NewMapTeleport
+      portalName: RedForBar5
+      allowAll: false
+      cooldownEnabled: true
+      cooldownTime: 5
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: RedForBar7
+  name: RedForBar7
+  components:
+    - type: NewMapTeleport
+      portalName: RedForBar7
+      allowAll: false
+      cooldownEnabled: true
+      cooldownTime: 5
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id:  RedForBar6
+  name:  RedForBar6
+  components:
+    - type: NewMapTeleport
+      portalName:  RedForBar6
       allowAll: false
       cooldownEnabled: true
       cooldownTime: 5

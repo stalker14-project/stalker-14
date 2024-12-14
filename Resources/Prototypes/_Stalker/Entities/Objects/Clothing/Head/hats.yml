@@ -3,7 +3,7 @@
   id: ClothingHeadWildHat
   name: дикий капелюх
   description: Шапка для справжніх любителів пригод.
-  suffix: Stalker
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Hats/wild_hat.rsi
@@ -18,7 +18,7 @@
   id: ClothingHeadWildHatAnomalist
   name: аномальний дикий капелюх
   description: Капелюх аномаліста для стрибків крізь гравітацію.
-  suffix: Stalker, Аномалісти
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Hats/wild_hat_anomalist.rsi
@@ -31,9 +31,9 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadPilgrimDoctor
-  name: маска для дзьоба
+  name: маска з дзьобом
   description: незвичайний на вигляд паломницький капелюх
-  suffix: Stalker, Паломники
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Head/Hats/pilgrim_hat.rsi
@@ -42,3 +42,23 @@
   - type: Tag
     tags:
     - ClothMade
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPsyHelm
+  name: psy helmet
+  description: A customized prototype developed by scientists to protect against psi radiation.
+  suffix: ST, event
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/psyhelm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/psyhelm.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Psy: 5

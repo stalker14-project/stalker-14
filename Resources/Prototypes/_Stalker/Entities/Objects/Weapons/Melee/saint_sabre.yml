@@ -1,0 +1,30 @@
+- type: entity
+  name: святой меч инквизиции
+  parent: BaseKnife
+  id: SaintSabre
+  suffix: ST
+  description: Средний вариант для нарезания неверных.
+  components:
+  - type: STWeight
+    self: -5
+  - type: Clothing
+    slots: [belt]
+    sprite: _Stalker/Objects/Weapons/Melee/saint_sabre.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Melee/saint_sabre.rsi
+    state: icon
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Melee/saint_sabre.rsi
+  - type: MeleeWeapon
+    attackRate: 1.8
+    range: 1.6
+    damage:
+      types:
+        Slash: 45
+        Heat: 10
+  - type: Reflect
+    reflectProb: 0.1
+    spread: 45
+  - type: Tag
+    tags:
+      - CaptainSabre

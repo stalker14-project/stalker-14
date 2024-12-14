@@ -1,0 +1,67 @@
+- type: entity
+  parent: BaseWeaponPowerCell
+  id: STWeaponFlamethrower
+  name: Огнемёт
+  description: Убей мутанта, сожги еретика!
+  components:
+    - type: STWeight
+      self: 2.7
+      quickEquip: false
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,7,3
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot      
+      muzzleState: muzzle
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/flamethrower.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance
+    - type: PullDoAfter
+      pullTime: 2.5
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Weapon
+    - type: Wieldable
+    - type: GunRequiresWield
+    - type: GunWieldBonus
+      minAngle: -85
+      maxAngle: -85
+    - type: Gun
+      projectileSpeed: 6
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+      fireRate: 11
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/l85.ogg
+        params:
+          volume: -2
+      minAngle: 105
+      maxAngle: 160
+      angleIncrease: 4
+      angleDecay: 20
+    - type: ProjectileBatteryAmmoProvider
+      proto: Flame
+      fireCost: 1
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: 
+          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+          priority: 1
+          whitelist:
+            tags:
+              - FlamethrowerTank

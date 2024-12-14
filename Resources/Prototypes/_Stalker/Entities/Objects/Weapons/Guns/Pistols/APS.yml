@@ -8,7 +8,7 @@
     - type: STWeight
       self: 1.1
     - type: Sprite
-      scale: 0.8, 0.8
+      scale: 0.6, 0.6
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/aps.rsi
       layers:
         - state: base
@@ -65,3 +65,17 @@
     - type: GunWieldBonus
       minAngle: -10
       maxAngle: -10
+
+- type: entity
+  parent: WeaponPistolStalkerAPS
+  id: WeaponPistolStalkerAPSHugo
+  name: АПС «Хуго»
+  description: Массивный и надежный пистолет с прочной металлической рамой — верный спутник бывалого сталкера. Это оружие последнего шанса, готовое прийти на помощь, когда мирное решение конфликта становится невозможным.
+  suffix: ST, Скин
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Pistols/_Skins/apshugo.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Pistols/_Skins/apshugo.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Pistols/_Skins/apshugo.rsi
