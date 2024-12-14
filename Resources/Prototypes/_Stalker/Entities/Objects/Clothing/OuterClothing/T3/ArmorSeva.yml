@@ -267,38 +267,6 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/seva_helm_merc.rsi
 
-# Deserter
-
-- type: entity
-  parent: STClothingOuterArmorSevaBase
-  id: ClothingOuterArmorSevaDeserter
-  name: костюм "Сева" Отступников
-  description: Научный костюм Отступников действующих в ЧЗО, вариант «СЕВЫ», производимый по заказу Отступников.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/seva_deserter.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/seva_deserter.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHardsuitSevaHelmDeserter
-    slot: head
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-
-- type: entity
-  parent: STClothingHeadHardsuitSevaHelmBase
-  id: ClothingHeadHardsuitSevaHelmDeserter
-  name: шлем севы Отступников
-  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/seva_helm_deserter.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/seva_helm_deserter.rsi
-
 # Poisk
 
 - type: entity
