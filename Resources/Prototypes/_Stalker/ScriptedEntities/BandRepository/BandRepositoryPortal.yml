@@ -97,6 +97,23 @@
 
 # Repository for Serafim - End
 
+# Repository for Zavet - Start
+
+- type: entity
+  parent: BandRepositoryBase
+  id: PortalBandZavetRepository
+  suffix: 1000
+  name: Band-Zavet-Repository
+  description: Одному всевышнему известно, что там таится...
+  components:
+    - type: AccessReader
+      access: [["Zavet"]]
+    - type: StalkerBandTeleport
+      portalName: _PortalBandZavetRepository
+      repositoryWeight: 1000
+
+# Repository for Zavet - End
+
 # Repository for DebtBand - Start
 
 - type: entity
@@ -714,5 +731,6 @@
 
     - "_PortalBandJabaRepository"
     - "_PortalBandSerafimRepository"
+    - "_PortalBandZavetRepository"
 
     - "_PortalBandMonolithRepository"

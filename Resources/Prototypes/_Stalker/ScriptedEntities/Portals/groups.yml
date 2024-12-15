@@ -172,6 +172,25 @@
     - type: NewMapTeleport
       allowAll: false
       portalName: Base-Sera
+####################################Завет
+- type: entity
+  parent: MapTeleportBase
+  id: Base-Zavet
+  name: Base-Zavet (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Base-Zavet
+    - type: AccessReader
+      access: [["Zavet"]]
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Base-ZavetUncollide
+  name: Base-ZavetUncollide (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Base-Zavet
 ####################################Ренегаты
 - type: entity
   parent: MapTeleportBase

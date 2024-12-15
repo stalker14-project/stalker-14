@@ -184,6 +184,20 @@
     access: [["Seraphims"]]
 
 - type: entity
+  id: StalkerDublicateZavet
+  parent: StalkerDublicateKordon
+  name: Подвал в логово
+  description: С помощью этого подвала вы можете попасть в своё логово.
+  suffix: Teleport, Portal, Duplicate, Завет
+  components:
+  - type: DuplicateTeleport
+    prefix: Zavet
+    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
+    maxWeight: 150
+  - type: AccessReader
+    access: [["Zavet"]]
+
+- type: entity
   id: StalkerDublicateDolg
   parent: StalkerDublicateKordon
   name: Подвал в логово
@@ -416,3 +430,4 @@
     - Jaba
     - Mechanic
     - Deserter
+    - Zavet

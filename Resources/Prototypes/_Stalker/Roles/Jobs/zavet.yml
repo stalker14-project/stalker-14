@@ -1,0 +1,88 @@
+- type: job
+  id: StalkerZavet
+  name: Лаборант "Завета"
+  icon: zavet
+  description: Одновременно умён и настолько же безбашенен.
+  playTimeTracker: JobZavet
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobDolg
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: ZavetGear
+  supervisors: Вы гений, милиардер, плейбой, филантроп.
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - Zavet
+            - Stalker
+        - type: Bands
+          band: Stalker
+          bandIcon: zavet
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
+
+- type: job
+  id: StalkerHeadZavet
+  name: Профессор "Завета"
+  icon: zavet
+  description: Одновременно умён и настолько же безбашенен.
+  playTimeTracker: JobHeadZavet
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobHeadDolg
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: ZavetLeadGear
+  supervisors: Вы гений, милиардер, плейбой, филантроп и плюс к этому командуете лаборантами.
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - Zavet
+            - ZavetHead
+            - Stalker
+        - type: Bands
+          band: Stalker
+          bandIcon: zavet
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
+
+- type: startingGear
+  id: ZavetGear
+  equipment:
+    id: ZavetPDA
+    belt: ClothingBeltStorageWaistbag
+    legs: ClothingLegsJeansBlackCargo
+    shoes: ClothingShoesBootsCombatFilled
+    torso: STClothingTorsoZavet
+    cloak: ClothingNeckCloakZavet
+
+- type: startingGear
+  id: ZavetLeadGear
+  equipment:
+    id: ZavetPDA
+    belt: ClothingBeltStorageWaistbag
+    legs: STClothingLegsZavetPants
+    shoes: ClothingShoesBootsCombatFilled
+    torso: STClothingTorsoZavetLead
+    cloak: ClothingNeckCloakZavet
