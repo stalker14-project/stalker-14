@@ -4,7 +4,7 @@ advertisement-sidor-1 = Ще б консервних банок зібрав!
 advertisement-sidor-2 = Що ти притягнув?
 advertisement-sidor-3 = Ну, як провітришся заходь!
 advertisement-sidor-4 = Ну, успішнохо полювання, сталкер.
-advertisement-sidor-5 = Ну чё стоишь? Подходи, я не кусаюсь.
+advertisement-sidor-5 = Ну чого стоїш? Підходь, я не кусаюся.
 advertisement-sidor-6 = Є щось вартісне?
 advertisement-sidor-7 = Ну привіт!
 advertisement-sidor-8 = Вернувся?
@@ -16,7 +16,7 @@ advertisement-trader-2 = Якщо вам потрібно, ви кажіть, н
 advertisement-trader-3 = Ми завжди раді клієнтам!
 advertisement-trader-4 = О вей, хто тут такий красивий намалювався?
 advertisement-trader-5 = Тобі ... нічого не потрібно?
-advertisement-trader-6 = Не бійтеся, не виходите ...
+advertisement-trader-6 = Не бійтеся, не виходьте ...
 advertisement-trader-7 = Ну, привіт!
 advertisement-trader-8 = Молодець, прийшов живий!
 
@@ -60,7 +60,7 @@ advertisement-alkash-2 = Мудрість по-ля-га-є в тому, щоб 
 advertisement-alkash-3 = Ти мене уваж- *хик* -аєш?
 advertisement-alkash-4 = '"Б.О.М.Ж." це *хик* Бутельна Організація Майстрів Ж-ж-життя.'
 advertisement-alkash-5 = "Вип'єм задля вашого здоров’я?!"
-advertisement-alkash-6 = Переработ-т-тка – это не просто бизнес, биля, это философия жизни. *ик*
+advertisement-alkash-6 = Перероб-т-тка - це не просто бізнес, бля, це філософія життя. *ик*
 advertisement-alkash-7 = Ну, ти, заходить, а то як не *хик* рідний.
 advertisement-alkash-8 = Ми з братком розпочали з п'ятих недопалок та коробки горілки. А от зараз я контролюю 83% процесу переробки в Зоні.
 
