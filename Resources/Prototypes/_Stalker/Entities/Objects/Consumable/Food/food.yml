@@ -1,3 +1,8 @@
+
+
+#ИСПОЛЬЗОВАНИЕ TAG БЕЗ flavor может вызывать вылет сервера. Внимательней при прототипировании еды.
+
+
 ############### Мясо
 
 - type: reagent
@@ -460,7 +465,7 @@
 
 - type: entity
   name: бутерброд
-  parent: FoodMeatBase
+  parent: FoodBreadSliceBase
   id: FoodMeatButerbrod
   suffix: Stalker, Еда
   description: Ломтик хлеба или булки с намазанной или уложенной сверху начинкой из какого-либо продукта, готового к употреблению
@@ -468,14 +473,15 @@
   - type: STWeight
     self: 0.34
   - type: Craftable
-  - type: Tag
-    tags:
-    - Raw
-    - Cutlet
-    - Meat
-    - meaty
-    - bread
   - type: SolutionContainerManager
+  - type: Sprite
+    layers:
+    - state: sausage-slice
+    size: Small
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - bread
     solutions:
       food:
         reagents:
@@ -485,3 +491,9 @@
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Bread
+    - Slice
+
