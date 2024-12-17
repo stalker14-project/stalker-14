@@ -50,6 +50,7 @@
   name: Сержант МВС
   description: старший по званню офіцер, який командує рядовими і підпорядковується Генералу!
   playTimeTracker: JobSergantMVC
+  whitelisted: true
   requirements:
     - !type:SpeciesRequirement
         inverted: false
@@ -75,6 +76,7 @@
         - type: Access
           groups:
             - MilitaryOfficer
+            - MilitaryHead
         - type: Bands
           band: Stalker
           bandIcon: army
@@ -147,19 +149,8 @@
   name: офіцер СБУ під прикриттям
   description: Ви повинні проводити дослідження діяльності фракцій в ЧАЗВ і доповідати державному оперативнику.
   playTimeTracker: JobUnderCoverMilitary
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobSergantMVC
-      time: 11000
-    - !type:RoleTimeRequirement
-      role: JobLoneNewbie
-      time: 14400
-    - !type:RoleTimeRequirement
-      role: JobBanditRookie
-      time: 14400
-    - !type:RoleTimeRequirement
-      role: JobRookieMercenary
-      time: 9000
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -253,10 +244,8 @@
   name: Досвідчений Бандит
   description: Досвідчений бандит. Уже має репутацію
   playTimeTracker: JobExperienceBandit
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobBanditRookie
-      time: 14400 #1 hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -301,10 +290,8 @@
   name: Пахан бандитів
   description: Ви, пахан всіх братків. Братки мають давати частину награбованого вам, взамін, гарантується їхня безпека
   playTimeTracker: JobPaxanBandit
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobExperienceBandit
-      time: 14400 #1hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -395,10 +382,8 @@
   name: Досвідчений одинак
   description: Досвідчений одинак, багато чого повидав, через це має обширні знання про зону!
   playTimeTracker: JobExperiencedLoner
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobLoneNewbie
-      time: 14400 #1 hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -439,10 +424,8 @@
   name: Староста села новачків
   description: ви, головна надія усіх новачків, ви маєте їх навчати, давати їм завдання і допомагати копійкою в скрутну хвилину.
   playTimeTracker: JobLeaderLoner
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobExperiencedLoner
-      time: 14400 #2hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -484,9 +467,6 @@
   description: Ви - науковий асистент, вам ще мало що відомо про цю загадкову "Зону"... Вивчіть більше.
   playTimeTracker: JobScienceAssistant
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Stalker
-      time: 14400
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -531,10 +511,8 @@
   name: Лідер наукової групи
   description: Ви - лідер наукової групи, ваша місія не дати померти вашим людям, допоки вони вивчають цю страшну річ, названу "Зоною".
   playTimeTracker: JobScienceGroupLeader
+  whitelisted: true
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 14400
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -582,9 +560,6 @@
   description: Думайте як нінзя! Станьте нінзя! Бійтеся денного світла, неначе ви вампір!
   playTimeTracker: JobRookieMercenary
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Stalker
-      time: 43200
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -628,10 +603,8 @@
   name: Досвідчений найманець
   description: Ви рахували, скількох вбили?
   playTimeTracker: JobExperiencedMercenary
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobRookieMercenary
-      time: 14400
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -681,10 +654,8 @@
   name: Лідер найманців
   description: Хоч хтось бачив ваше справжнє лице?
   playTimeTracker: JobLeaderMercenary
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobExperiencedMercenary
-      time: 14400
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -739,19 +710,8 @@
   name: Новачок Чистого Неба
   description: Ви пам'ятаєте, як сюди потрапили?
   playTimeTracker: JobRookieClearsky
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobAdeptMonolit
-      time: 3600
-    - !type:RoleTimeRequirement
-      role: JobScienceAssistant
-      time: 14400
-    - !type:RoleTimeRequirement
-      role: JobLoneNewbie
-      time: 14400
-    - !type:DepartmentTimeRequirement
-      department: Stalker
-      time: 28800 #8hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -785,10 +745,8 @@
   name: Досвідчений Чистого Неба
   description: Колись задумувались про зраду?
   playTimeTracker: JobExperiencedClearsky
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobRookieClearsky
-      time: 36000
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -822,13 +780,8 @@
   name: Лідер Чистого Неба
   description: Ваша історія загадкова.
   playTimeTracker: JobLeaderClearsky
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobExperiencedClearsky
-      time: 36000
-    - !type:RoleTimeRequirement
-      role: JobScienceGroupLeader
-      time: 14400
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -872,10 +825,8 @@
   name: Торгівець
   description: Вам конкретно повезло. Купуйте речі у сталкерів за копійки, продавайте за сотні, замовте собі охорону задля безпеки. Якщо у вас мало що лишилось, замовте контрабанди у військових.
   playTimeTracker: JobStalkerTraderOld
+  whitelisted: true
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Stalker
-      time: 28800 #8hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -921,10 +872,8 @@
   name: Державний оперативник
   description: Ви - державний агент, що діє на території Зони з метою підтримки військових і наукових операцій. Основні завдання цієї ролі включають постачання боєприпасів, продовольства, медикаментів та іншого необхідного спорядження для військових підрозділів та наукових груп.
   playTimeTracker: JobStalkerStateOperative
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobStalkerTraderOld
-      time: 14400 #4hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -970,13 +919,8 @@
   name: Адепт Моноліту
   description: Ви не хочете знати нічого крім Моноліту.
   playTimeTracker: JobAdeptMonolit
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobPrivateMVC
-      time: 14400
-    - !type:RoleTimeRequirement
-      role: JobRookieMercenary
-      time: 14400
     - !type:SpeciesRequirement
         inverted: false
         species:
