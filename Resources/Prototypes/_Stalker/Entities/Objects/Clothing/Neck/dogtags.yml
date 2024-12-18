@@ -3,8 +3,8 @@
   id: ClothingNeckDogtagBase
   suffix: ST
   abstract: true
-  name: token
-  description: standard token
+  name: токен
+  description: стандартний токен
   components:
   - type: StealTarget
     stealGroup: HeadCloak
@@ -17,7 +17,7 @@
 - type: entity
   parent: ClothingNeckDogtagBase
   id: ClothingNeckDogtagBrigand
-  suffix: ST, Brigands
+  suffix: ST, Бандити
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Neck/Dogtags/tag_brigand.rsi
@@ -28,7 +28,7 @@
 - type: entity
   parent: ClothingNeckDogtagBase
   id: ClothingNeckDogtagOfficial
-  suffix: ST, Officials
+  suffix: ST, Офіціали, Чиновники
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Neck/Dogtags/tag_official.rsi
@@ -36,7 +36,7 @@
 - type: entity
   parent: ClothingNeckDogtagBase
   id: ClothingNeckDogtagStalker
-  suffix: ST, Stalkers
+  suffix: ST, Сталкери
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Neck/Dogtags/tag_stalker.rsi
@@ -47,8 +47,8 @@
 - type: entity
   parent: ClothingNeckDogtagBase
   id: ClothingNeckDogtagPilgrim
-  name: cross
-  suffix: ST, Pilgrims
+  name: хрест
+  suffix: ST, Паломники
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Neck/Dogtags/tag_pilgrim.rsi

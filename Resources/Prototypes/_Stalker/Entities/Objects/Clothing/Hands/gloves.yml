@@ -1,9 +1,9 @@
 - type: entity
   parent: ClothingHandsGlovesSyntheticBase
   id: ClothingHandsGlovesMitts
-  name: black mitts
-  description: Plain black gloves without fingertips for the hard working.
-  suffix: Stalker
+  name: чорні рукавиці
+  description: Прості чорні рукавички без пальців для працьовитих людей.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Hands/Gloves/mitts.rsi
@@ -13,9 +13,9 @@
 - type: entity
   parent: ClothingHandsBase
   id: ClothingHandsGlovesJabs
-  name: Toad Gloves
-  suffix: Stalker
-  description: Unique combat gloves of the Toad faction.
+  name: Жаб'ячі рукавички
+  suffix: ST
+  description: Унікальні бойові рукавиці фракції Жаби.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/gloves/hands_jaba.rsi
@@ -25,9 +25,9 @@
 - type: entity
   parent: ClothingHandsBase
   id: STClothingHandsGlovesSera
-  name: обмотки серафимов
+  name: обмотки серафимів
   suffix: ST, Скин
-  description: Обмотки из лоскутов ткани, заменяющие серафимам перчатки. Если приглядеться то можно увидеть что на лоскутах аккуратно написаны молитвы серафимов к их Богу.
+  description: Обмотки з клаптів тканини, що замінюють серафимам рукавички. Якщо придивитися, то можна побачити, що на клаптях акуратно написані молитви серафимів до їхнього Бога.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/gloves/gloves_sera.rsi
@@ -37,8 +37,8 @@
 - type: entity
   parent: [ ClothingHandsGlovesColorBlack, BaseSecurityEngineeringContraband ]
   id: STClothingHandsGlovesCombat
-  name: combat gloves
-  description: These tactical gloves are fireproof
+  name: бойові рукавички
+  description: Ці тактичні рукавички вогнетривкі!
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/combat.rsi
