@@ -7,9 +7,9 @@ public sealed class STSizeStunSystem : EntitySystem
         return ent.Comp.Size <= STSizes.Humanoid;
     }
 
-    public bool IsXenoSized(Entity<STSizeComponent> ent)
+    public bool IsMutantSized(Entity<STSizeComponent> ent)
     {
-        return ent.Comp.Size >= STSizes.VerySmallXeno;
+        return ent.Comp.Size >= STSizes.VerySmallMutant;
     }
 
     public bool TryGetSize(EntityUid ent, out STSizes size)
