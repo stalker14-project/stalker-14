@@ -16,9 +16,9 @@ public enum STSizes : byte
 {
     Small,
     Humanoid,
-    VerySmallXeno,
-    SmallXeno,
-    Xeno,
+    VerySmallMutant,
+    SmallMutant,
+    Mutant,
     Big,
     Immobile
 }
