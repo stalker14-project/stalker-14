@@ -3,7 +3,7 @@
   abstract: True
   id: STBasePellet
   categories: [ HideSpawnMenu ]
-  parent: BaseBullet
+  parent: STBaseBullet
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
@@ -83,7 +83,7 @@
     count: 8
     spread: 12
 
-# flechette 
+# flechette
 
 - type: entity
   id: STPelletFlechetta
@@ -158,7 +158,7 @@
   id: PelletShotgunBeanbagStalker
   name: beanbag (.50)
   categories: [ HideSpawnMenu ]
-  parent: BaseBullet
+  parent: STBaseBullet
   components:
     - type: Sprite
       sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi

@@ -1,0 +1,18 @@
+- type: entity
+  id: STBaseBullet
+  parent: BaseBullet
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+  - type: STProjectileFalloff
+
+- type: entity
+  id: STBaseBulletTrigger
+  parent: BaseBulletTrigger
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+  - type: STProjectileFalloff
+
