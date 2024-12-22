@@ -1,9 +1,9 @@
 - type: entity
   parent: ClothingBackpackDuffelGreenStalker
   id: ClothingBackpackDuffelGreenStalkerHydroponic
-  suffix: Stalker
-  name: botanical set
-  description: This set contains everything you need to start your botanist journey.
+  suffix: ST
+  name: ботанічний набір
+  description: У цьому наборі є все необхідне, щоб розпочати свій шлях ботаніка.
   components:
     - type: StorageFill
       contents:
@@ -16,9 +16,9 @@
         - id: HandLabeler
 
 - type: entity
-  name: soil
+  name: ґрунт
   id: SoilStalker
-  suffix: Stalker
+  suffix: ST
   parent: hydroponicsSoil
   placement:
     mode: SnapgridCenter
@@ -76,11 +76,11 @@
   - type: PlantHolderVisuals
 
 - type: entity
-  name: manure
+  name: гній
   parent: FoodBakingBase
   id: ManureStalker
-  suffix: Stalker
-  description: Organic fertilizer used to improve soil fertility and stimulate plant growth, in a special case it is used directly to create good soil.
+  suffix: ST
+  description: Органічне добриво, що використовується для поліпшення родючості ґрунту і стимулювання росту рослин, в особливому випадку використовується безпосередньо для створення хорошого ґрунту.
   components:
   - type: FlavorProfile
     flavors:
@@ -101,11 +101,11 @@
           Quantity: 10
 
 - type: entity
-  name: scythe
+  name: коса
   parent: BaseItem
   id: HydroponicsToolScytheStalker
-  description: With a sharp, curved blade on a long fiber-metal handle, this tool makes it easy to reap what you sow.
-  suffix: Stalker
+  description: Завдяки гострому вигнутому лезу на довгій ручці з фіброволокна цей інструмент дозволяє легко пожинати те, що ви посіяли.
+  suffix: ST
   components:
   - type: Sharp
   - type: Sprite
@@ -145,14 +145,14 @@
   - type: StaminaDamageOnEmbed
     damage: 40
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
-  name: hatchet
+  name: топірець
   parent: BaseItem
   id: HatchetStalker
-  description: A hatchet, you can cut down trees.
-  suffix: Stalker
+  description: Сокира, можна рубати дерева.
+  suffix: ST
   components:
   - type: Tag
     tags:
@@ -172,14 +172,14 @@
     sprite: Objects/Tools/Hydroponics/hatchet.rsi
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
-  name: little hoe
+  name: маленька мотика
   parent: BaseItem
-  suffix: Stalker
+  suffix: ST
   id: HydroponicsToolMiniHoeStalker
-  description: It is used to remove weeds.
+  description: Використовується для видалення бур'янів.
   components:
   - type: Tag
     tags:
@@ -199,7 +199,7 @@
   - type: Item
     sprite: Objects/Tools/Hydroponics/hoe.rsi
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
   - type: Fixtures
     fixtures:
       fix1:
@@ -223,11 +223,11 @@
     damage: 5
 
 - type: entity
-  name: pruner
+  name: секатор
   parent: BaseItem
-  suffix: Stalker
+  suffix: ST
   id: HydroponicsToolClippersStalker
-  description: A tool used to take samples from plants, or to extract seeds from a plant.
+  description: Інструмент, який використовується для відбору зразків з рослин або для вилучення насіння з рослини.
   components:
   - type: Tag
     tags:

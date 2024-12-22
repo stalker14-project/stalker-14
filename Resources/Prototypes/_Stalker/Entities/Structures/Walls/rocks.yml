@@ -1,10 +1,10 @@
-# ГОРЫ (ВОСТОК -> ЗАПАД)
+# ГОРИ (СХІД -> ЗАХІД)
 
 - type: entity
   parent: BaseStructure
   id: REWStalkerBase
-  name: mountain
-  description: Relief with elevation of terrain with a pronounced slope and foot.
+  name: гора
+  description: Рельєф з підвищенням місцевості з яскраво вираженим схилом і підніжжям.
   abstract: true
   components:
   - type: Sprite
@@ -28,7 +28,7 @@
 - type: entity
   parent: REWStalkerBase
   id: REWStalker1
-  suffix: Stalker, 1 (ВОС->ЗАП)
+  suffix: ST, 1 (СХД->ЗХД)
   components:
   - type: Sprite
     layers:
@@ -51,7 +51,7 @@
 - type: entity
   parent: REWStalkerBase
   id: REWStalker2
-  suffix: ST, Mapping, 2 (ВОС->ЗАП)
+  suffix: ST, Маппінг, 2 (СХД->ЗХД)
   components:
   - type: Sprite
     layers:
@@ -60,7 +60,7 @@
 - type: entity
   parent: REWStalkerBase
   id: REWStalker3
-  suffix: ST, Mapping, 3 (ВОС->ЗАП)
+  suffix: ST, Маппінг, 3 (СХД->ЗХД)
   components:
   - type: Sprite
     layers:
@@ -83,7 +83,7 @@
 - type: entity
   parent: REWStalkerBase
   id: REWStalker4
-  suffix: ST, Mapping, 4 (ВОС->ЗАП)
+  suffix: ST, Маппінг, 4 (СХД->ЗХД)
   components:
   - type: Sprite
     layers:
@@ -106,7 +106,7 @@
 - type: entity
   parent: REWStalkerBase
   id: REWStalker5
-  suffix: ST, Mapping, 5 (ВОС->ЗАП)
+  suffix: ST, Маппінг, 5 (СХД->ЗХД)
   components:
   - type: Sprite
     layers:
@@ -126,13 +126,13 @@
         - MidImpassable
         - LowImpassable
 
-# ГОРЫ (ЮГ -> СЕВЕР)
+# ГОРИ (ПІВДЕНЬ -> ПІВНІЧ)
 
 - type: entity
   parent: BaseStructure
   id: SNStalkerBase
-  name: mountain
-  description: Relief with elevation of terrain with a pronounced slope and foot.
+  name: гора
+  description: Рельєф з підвищенням місцевості з яскраво вираженим схилом і підніжжям.
   abstract: true
   components:
   - type: Sprite
@@ -156,7 +156,7 @@
 - type: entity
   parent: SNStalkerBase
   id: SNStalker1
-  suffix: ST, Mapping, 1 (ЮГ->СЕВ)
+  suffix: ST, Маппінг, 1 (ПВД->ПВН)
   components:
   - type: Sprite
     layers:
@@ -179,7 +179,7 @@
 - type: entity
   parent: SNStalkerBase
   id: SNStalker2
-  suffix: ST, Mapping, 2 (ЮГ->СЕВ)
+  suffix: ST, Маппінг, 2 (ПВД->ПВН)
   components:
   - type: Sprite
     layers:
@@ -202,7 +202,7 @@
 - type: entity
   parent: SNStalkerBase
   id: SNStalker3
-  suffix: ST, Mapping, 3 (ЮГ->СЕВ)
+  suffix: ST, Маппінг, 3 (ПВД->ПВН)
   components:
   - type: Sprite
     layers:
@@ -225,7 +225,7 @@
 - type: entity
   parent: SNStalkerBase
   id: SNStalker4
-  suffix: ST, Mapping, 4 (ЮГ->СЕВ)
+  suffix: ST, Маппінг, 4 (ПВД->ПВН)
   components:
   - type: Sprite
     layers:
@@ -248,7 +248,7 @@
 - type: entity
   parent: SNStalkerBase
   id: SNStalker5
-  suffix: ST, Mapping, 5 (ЮГ->СЕВ)
+  suffix: ST, Маппінг, 5 (ПВД->ПВН)
   components:
   - type: Sprite
     layers:
@@ -268,13 +268,13 @@
         - MidImpassable
         - LowImpassable
 
-# УГЛЫ
+# КУТИ
 
 - type: entity
   parent: BaseStructure
   id: UTStalkerBase
-  name: mountain
-  description: Relief with elevation of terrain with a pronounced slope and foot.
+  name: гора
+  description: Рельєф з підвищенням місцевості з яскраво вираженим схилом і підніжжям.
   abstract: true
   components:
   - type: Sprite
@@ -298,7 +298,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker1
-  suffix: ST, Mapping, 1 (угол, НИЖ->ЛЕВ)
+  suffix: ST, Маппінг, 1 (кут, НИЗ->ЛІВО)
   components:
   - type: Sprite
     layers:
@@ -321,7 +321,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker2
-  suffix: ST, Mapping, 2 (угол, НИЖ->ЛЕВ)
+  suffix: ST, Маппінг, 2 (кут, НИЗ->ЛІВО)
   components:
   - type: Sprite
     layers:
@@ -344,7 +344,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker3
-  suffix: ST, Mapping, 1 (угол, НИЖ->ПРАВ)
+  suffix: ST, Маппінг, 1 (кут, НИЗ->ПРАВ)
   components:
   - type: Sprite
     layers:
@@ -367,7 +367,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker4
-  suffix: ST, Mapping, 2 (угол, НИЖ->ПРАВ)
+  suffix: ST, Маппінг, 2 (кут, НИЗ->ПРАВ)
   components:
   - type: Sprite
     layers:
@@ -390,7 +390,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker5
-  suffix: ST, Mapping, 1 (угол, ВЕРХ->ЛЕВ)
+  suffix: ST, Маппінг, 1 (кут, ВЕРХ->ЛІВ)
   components:
   - type: Sprite
     layers:
@@ -413,7 +413,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker6
-  suffix: ST, Mapping, 2 (угол, ВЕРХ->ЛЕВ)
+  suffix: ST, Маппінг, 2 (кут, ВЕРХ->ЛІВ)
   components:
   - type: Sprite
     layers:
@@ -436,7 +436,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker7
-  suffix: ST, Mapping, 1 (угол, ВЕРХ->ПРАВ)
+  suffix: ST, Маппінг, 1 (кут, ВЕРХ->ПРАВ)
   components:
   - type: Sprite
     layers:
@@ -459,7 +459,7 @@
 - type: entity
   parent: UTStalkerBase
   id: UTStalker8
-  suffix: ST, Mapping, 2 (угол, ВЕРХ->ПРАВ)
+  suffix: ST, Маппінг, 2 (кут, ВЕРХ->ПРАВ)
   components:
   - type: Sprite
     layers:

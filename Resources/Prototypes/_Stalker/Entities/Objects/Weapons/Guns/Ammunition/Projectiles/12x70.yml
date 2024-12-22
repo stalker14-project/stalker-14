@@ -16,7 +16,7 @@
 # 7mm
 - type: entity
   id: STPellet7mm
-  name: pellet 7mm
+  name: гранула 7 мм
   parent: STBasePellet
   components:
   - type: Projectile
@@ -26,7 +26,7 @@
 
 - type: entity
   id: Bullet7mmBuckshot
-  name: bullet (7mm buckshot)
+  name: куля (7 мм картеч)
   parent: STPellet7mm
   categories: [ HideSpawnMenu ]
   components:
@@ -39,7 +39,7 @@
 
 - type: entity
   id: STPellet65mm
-  name: pellet 6.5mm
+  name: куля 6,5 мм
   parent: STBasePellet
   components:
   - type: Projectile
@@ -50,7 +50,7 @@
 
 - type: entity
   id: Bullet6mmBuckshot
-  name: bullet (6.5mm buckshot)
+  name: куля (6,5 мм картеч)
   parent: STPellet65mm
   categories: [ HideSpawnMenu ]
   components:
@@ -63,7 +63,7 @@
 
 - type: entity
   id: STPellet85mm
-  name: pellet 8.5mm
+  name: куля 8,5 мм
   parent: STBasePellet
   components:
   - type: Projectile
@@ -74,7 +74,7 @@
 
 - type: entity
   id: Bullet8mmBuckshot
-  name: bullet (8.5mm buckshot)
+  name: куля (8,5 мм картеч)
   parent: STPellet85mm
   categories: [ HideSpawnMenu ]
   components:
@@ -83,11 +83,11 @@
     count: 8
     spread: 12
 
-# flechette 
+# flechette
 
 - type: entity
   id: STPelletFlechetta
-  name: pellet flechetta
+  name: гранула флешетта
   parent: STBasePellet
   components:
   - type: Projectile
@@ -98,7 +98,7 @@
 
 - type: entity
   id: BulletShotgunFlechette
-  name: bullet (Flechette)
+  name: куля (Flechette)
   parent: STPelletFlechetta
   categories: [ HideSpawnMenu ]
   components:
@@ -111,7 +111,7 @@
 
 - type: entity
   id: BulletShotgunBullet
-  name: bullet (Bullet)
+  name: куля (Bullet)
   parent: STBasePellet
   categories: [ HideSpawnMenu ]
   components:
@@ -126,7 +126,7 @@
 
 - type: entity
   id: BulletShotgunRIP
-  name: bullet (Bullet)
+  name: куля (Bullet)
   parent: STBasePellet
   categories: [ HideSpawnMenu ]
   components:
@@ -142,7 +142,7 @@
 
 - type: entity
   id: BulletShotgunDart
-  name: bullet (Dart)
+  name: куля (дротик)
   parent: STBasePellet
   categories: [ HideSpawnMenu ]
   components:

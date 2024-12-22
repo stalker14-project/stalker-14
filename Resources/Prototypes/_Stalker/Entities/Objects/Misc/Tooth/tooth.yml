@@ -1,9 +1,9 @@
 - type: entity
-  name: pliers
+  name: плоскогубці
   parent: BaseItem
   id: PliersStalker
-  suffix: Stalker
-  description: A tool that is used in bending wire, but someone uses it differently.
+  suffix: ST
+  description: Інструмент, який використовується для згинання дроту, але хтось використовує його по-іншому.
   components:
   - type: STWeight
     self: 0.5
@@ -21,7 +21,7 @@
     damage:
       types:
         Piercing: 2
-    attackRate: 2 
+    attackRate: 2
     soundHit:
       path: "/Audio/Items/wirecutter.ogg"
   - type: RandomSprite
@@ -41,8 +41,8 @@
 - type: entity
   parent: BaseItem
   id: ToothStalker
-  name: Tooth
-  description: A normal whole tooth.
+  name: Зуб
+  description: Нормальний цілий зуб.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/tooth.rsi

@@ -1,12 +1,12 @@
-# ЖЕЛЕЗНЫЕ БОЧКИ
+# ЗАЛІЗНІ БОЧКИ
 
 - type: entity
   id: BaseBarrel
   abstract: true
   parent: BaseStructureStalkerDynamic
-  name: barrel
-  suffix: Stalker
-  description: A large cylindrical vessel for liquids with two flat bottoms and slightly convex walls, which are pulled together with hoops.
+  name: бочка
+  suffix: ST
+  description: Велика циліндрична посудина для рідин з двома пласкими днищами і злегка опуклими стінками, які стягуються обручами.
   placement:
     mode: PlaceFree
   components:
@@ -37,7 +37,7 @@
 - type: entity
   id: BarrelExpl
   parent: BaseStructureDynamic
-  suffix: Stalker, НЕ МАППИТЬ
+  suffix: ST, НЕ МАППИТИ
   name: barrel
   components:
   - type: InteractionOutline
@@ -95,12 +95,12 @@
     intensitySlope: 3
     totalIntensity: 300
 
-# ДЕРЕВЯННЫЕ БОЧКИ
+# ДЕРЕВ'ЯНІ БОЧКИ
 
 - type: entity
   id: BarrelWooden1
-  name: wooden barrel
-  suffix: Stalker
+  name: дерев'яна бочка
+  suffix: ST
   parent: BaseBarrel
   components:
   - type: Sprite

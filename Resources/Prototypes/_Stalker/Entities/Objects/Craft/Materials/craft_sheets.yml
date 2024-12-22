@@ -2,7 +2,7 @@
   abstract: true
   parent: STBaseIngridient
   id: STSheetMetalBase
-  description: A sheet of metal, used often on the station in various applications.
+  description: Лист металу, який часто використовується на станції в різних сферах.
   components:
   - type: Currency
     price:
@@ -37,9 +37,9 @@
 - type: entity
   parent: STSheetMetalBase
   id: STCraftSheetCopperT1
-  name: Copper Plates T1
-  description: Widely used for the manufacture of various equipment. T1
-  suffix: Stalker, крафт, T1
+  name: Мідні пластини T1
+  description: Широко використовується для виготовлення різноманітного обладнання. T1
+  suffix: ST, крафт, T1
   components:
   - type: STWeight
     self: 0.7
@@ -55,14 +55,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: STSheetMetalBase
   id: STCraftSheetIronT2
-  name: Iron Plates T2
-  description: Widely used for the manufacture of various equipment. T2
-  suffix: Stalker, крафт, T2
+  name: Залізні пластини T2
+  description: Широко використовується для виготовлення різноманітного обладнання. T2
+  suffix: ST, крафт, T2
   components:
   - type: STWeight
     self: 1
@@ -78,14 +78,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: STSheetMetalBase
   id: STCraftSheetBrassT3
-  name: T3 Brass Plates
-  description: Unique material combining resistance to corrosion, electrical conductor, antimicrobial properties T3
-  suffix: Stalker, крафт, T3
+  name: Латунні пластини T3
+  description: Унікальний матеріал, що поєднує в собі стійкість до корозії, електропровідність, антимікробні властивості T3
+  suffix: ST, крафт, T3
   components:
   - type: STWeight
     self: 1
@@ -101,14 +101,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: STSheetMetalBase
   id: STCraftSheetAluminumT4
-  name: T4 aluminum plates
-  description: Widely used for making various equipment. T4
-  suffix: Stalker, крафт, T4
+  name: Алюмінієві пластини T4
+  description: Широко використовується для виготовлення різноманітного обладнання. T4
+  suffix: ST, крафт, T4
   components:
   - type: STWeight
     self: 0.5
@@ -124,14 +124,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: STSheetMetalBase
   id: STCraftSheetSteelT5
-  name: T5 steel plates
-  description: Stable and durable sheets created from an alloy of iron with the addition of carbon and other elements. T5
-  suffix: Stalker, крафт, T5
+  name: Сталеві пластини T5
+  description: Стабільні та міцні листи, створені зі сплаву заліза з додаванням вуглецю та інших елементів. T5
+  suffix: ST, крафт, T5
   components:
   - type: STWeight
     self: 1.5
@@ -147,4 +147,4 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти

@@ -1,9 +1,9 @@
 - type: entity
   id: STEnergyDrink
   parent: DrinkCanBaseFull
-  name: energy drink
+  name: енергетичний напій
   suffix: ST
-  description: Often used by stalkers on multi-day hikes when there is no opportunity to stop and rest. The drink contains easily digestible carbohydrates, as well as drugs that cause the release of adrenaline into the blood.
+  description: Часто використовується сталкерами в багатоденних походах, коли немає можливості зупинитися і відпочити. Напій містить легкозасвоювані вуглеводи, а також препарати, що викликають викид адреналіну в кров.
   components:
   - type: STWeight
     self: 0.8
@@ -23,8 +23,7 @@
 - type: entity
   parent: DrinkBeerCan
   id: STDrinkBeerCanBaltic
-  name: Baltika beer
-  description: Taste of childhood
+  name: 'Пиво "Балтика"'
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Drinks/baltic.yml
@@ -34,8 +33,8 @@
 - type: entity
   parent: STEnergyDrink
   id: STEnergyDrinkMonster
-  name: Energy Monster
-  description: Free the Beast
+  name: Енергетичний монстр
+  description: Звільніть Звіра
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Drinks/monster.yml
@@ -45,8 +44,8 @@
 - type: entity
   parent: STEnergyDrink
   id: STEnergyDrinkRevo
-  name: Energy drink Revo
-  description: Energy for your party!
+  name: Енергетичний напій Revo
+  description: Енергія для вашої вечірки!
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Drinks/revo.yml

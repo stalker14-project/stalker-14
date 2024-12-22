@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 725PBox
-  name: ammo box (7.62x25) P GL
-  description: For TT and PPSh, 30 pieces in a box. Provides penetration of only 1 class of armor.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x25) P GL
+  description: Для ТТ і ППШ, 30 штук в коробці. Забезпечують пробиття лише 1 класу броні.
+  suffix: ST
   components:
   - type: MagazineVisuals
     magState: 76225ammo
@@ -23,9 +23,9 @@
 - type: entity
   parent: 725PBox
   id: 725PTBox
-  name: box of cartridges (7.62x25) PT GZ
-  description: For TT and PPSh, 30 pieces in a box. Provides penetration of class 2 armor.
-  suffix: Stalker
+  name: коробка патронів (7.62x25) PT GZ
+  description: Для ТТ і ППШ, 30 штук в коробці. Забезпечують пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge725PTGJ
@@ -40,9 +40,9 @@
 - type: entity
   parent: 725PBox
   id: 725LRNPCBox
-  name: ammo box (7.62x25) LRNPC
-  description: For TT and PPSh, 30 pieces in a box. Useless against armor.
-  suffix: Stalker
+  name: Ящик для набоїв (7.62x25) LRNPC
+  description: Для ТТ і ППШ, 30 штук в коробці. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge725LRNPC
@@ -57,9 +57,9 @@
 - type: entity
   parent: 725PBox
   id: 725PSTBox
-  name: ammo box (7.62x25) PST GZ
-  description: For TT and PPSh, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x25) PST GZ
+  description: Для ТТ і ППШ, 30 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge725PSTGJ
@@ -74,9 +74,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 725PBoxCink
-  name: ammo box (7.62x25) P GL
-  description: For TT and PPSh, 300 pieces in a box. Provides penetration of only 1 class of armor.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x25) P GL
+  description: Для ТТ і ППШ, 300 штук в коробці. Забезпечують пробиття лише 1 класу броні.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     capacity: 300
@@ -94,9 +94,9 @@
 - type: entity
   parent: 725PBoxCink
   id: 725PTBoxCink
-  name: ammo box (7.62x25) PT GZ
-  description: For TT and PPSh, 300 pieces in a box. Provides penetration of armor class 2.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x25) PT GZ
+  description: Для ТТ і ППШ, 300 штук в коробці. Забезпечують пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge725PTGJ
@@ -110,9 +110,9 @@
 - type: entity
   parent: 725PBoxCink
   id: 725LRNPCBoxCink
-  name: Ammo Box (7.62x25) LRNPC
-  description: For TT and PPSh, 300 pieces in a box. Useless against armor.
-  suffix: Stalker
+  name: Коробка для набоїв (7.62x25) LRNPC
+  description: Для ТТ і ППШ, 300 штук в коробці. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge725LRNPC
@@ -126,9 +126,9 @@
 - type: entity
   parent: 725PBoxCink
   id: 725PSTBoxCink
-  name: ammo box (7.62x25) PST GZ
-  description: For TT and PPSh, 300 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x25) PST GZ
+  description: Для ТТ і ППШ, 300 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge725PSTGJ

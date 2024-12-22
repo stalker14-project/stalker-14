@@ -1,15 +1,10 @@
 - type: entity
   parent: STBaseItem
   id: STBaseWeaponModule
-  name: shit module
-  description: A cleverly fucked-up contraption to create a wunderwaffle.
+  name: модуль лайна
+  description: Хитромудрий пристрій для створення вундервафлі.
   abstract: true
   components:
-    # I love you prototypers, to keep you out of the code,
-    # all the parameters you can change are described here. 
-    #
-    # If something doesn't work,
-    # this information is probably out of date, ask for an update
     - type: STWeaponModule
     #  effect:
     #    fireRateModifier: 1
@@ -21,4 +16,3 @@
     #    soundGunshotVolumeAddition: 0
     - type: Sprite
       state: icon
-      

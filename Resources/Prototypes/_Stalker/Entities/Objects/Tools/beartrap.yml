@@ -1,9 +1,9 @@
 - type: entity
-  name: trap
+  name: пастка
   parent: BaseItem
   id: Beartrap
-  suffix: Stalker
-  description: A useful thing to catch impudent animals. Very useful.
+  suffix: ST
+  description: Корисна річ для відлову нахабних тварин. Дуже корисна.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Tools/beartrap.rsi
@@ -58,12 +58,12 @@
     - type: Anchorable
 
 - type: entity
-  name: trap
-  suffix: Stalker
+  name: пастка
+  suffix: ST
   parent: Beartrap
   categories: [ HideSpawnMenu ]
   id: BeartrapArmed
-  description: A useful thing to catch impudent animals. Very useful.
+  description: Корисна річ для відлову нахабних тварин. Дуже корисна.
   components:
     - type: Mousetrap
       isActive: false

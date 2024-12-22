@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseStorageItem
   id: BaseStorageMedkitItem
-  suffix: Stalker
+  suffix: ST
   abstract: true
   components:
     - type: Sprite
@@ -45,9 +45,9 @@
 - type: entity
   parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltMedicalStalker
-  name: medical belt
-  description: A portable medical belt used in combat situations to carry medicine.
-  suffix: Stalker
+  name: медичний пояс
+  description: Портативний медичний пояс, який використовується в бойових умовах для перенесення медикаментів.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/belt/medical_belt.rsi
@@ -97,9 +97,9 @@
 - type: entity
   parent: ClothingBackpackDuffelGreenStalker
   id: ClothingBackpackDuffelMedicalStalker
-  name: medical bag
-  description: A portable bag used to carry various medications.
-  suffix: Stalker
+  name: медична сумка
+  description: Портативна сумка, яку використовують для перенесення різних ліків.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Medical/medical.rsi
@@ -133,8 +133,8 @@
 - type: entity
   parent: BaseStorageMedkitItem
   id: MedkitCMSStalker
-  name: CMS first aid kit
-  description: The compact CMS first aid kit, used to carry various medications, can accommodate a defibrillator.
+  name: Аптечка CMS
+  description: Компактна аптечка CMS, яка використовується для перевезення різних медикаментів, може вмістити дефібрилятор.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Medical/medkit_cms.rsi
@@ -148,8 +148,8 @@
 - type: entity
   parent: BaseStorageMedkitItem
   id: MedkitGrizzlyStalker
-  name: Grizzly first aid kit
-  description: The Grizzlys compact first aid kit, used to carry various medications, can accommodate a defibrillator. A more advanced version.
+  name: Аптечка Grizzly
+  description: У компактній аптечці Grizzlys, яка використовується для перенесення різних медикаментів, можна розмістити дефібрилятор. Більш просунута версія.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Medical/medkit-grizzly.rsi

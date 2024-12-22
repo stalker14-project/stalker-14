@@ -1,7 +1,7 @@
 - type: entity
   id: Base556Mag10
-  name: magazine 5.56 (10)
-  description: Magazine 5.56 for assault rifles. Bullet capacity 10. Sold empty.
+  name: магазин 5.56 (10)
+  description: Магазин 5.56 для штурмових гвинтівок. Ємність 10 набоїв. Продається порожнім.
   parent: Base545Mag10
   tag: Stalker
   components:
@@ -33,10 +33,11 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+
 - type: entity
   id: 556Mag20
-  name: magazine 5.56 (20)
-  description: Magazine 5.56 for assault rifles. Bullet capacity 20. Sold empty.
+  name: магазин 5.56 (20)
+  description: Магазин 5.56 для штурмових гвинтівок. Ємність 20 набоїв. Продається порожнім.
   parent: Base556Mag10
   tag: Stalker
   components:
@@ -59,8 +60,8 @@
 
 - type: entity
   id: 556Mag30
-  name: magazine 5.56 (30)
-  description: Magazine 5.56 for assault rifles. Bullet capacity 30. Sold empty.
+  name: магазин 5.56 (30)
+  description: Магазин 5.56 для штурмових гвинтівок. Ємність патронів 30. Продається порожнім.
   parent: Base556Mag10
   tag: Stalker
   components:
@@ -80,10 +81,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
 - type: entity
   id: 556Mag45
-  name: magazine 5.56 (45)
-  description: Magazine 5.56 for assault rifles. Bullet capacity 45. Sold empty.
+  name: магазин 5.56 (45)
+  description: Магазин 5.56 для штурмових гвинтівок. Ємність патронів 45. Продається порожнім.
   parent: Base556Mag10
   tag: Stalker
   components:
@@ -103,10 +105,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
 - type: entity
   id: 556Mag60
-  name: magazine 5.56 (60)
-  description: Magazine 5.56 for assault rifles. Bullet capacity 60. Sold empty.
+  name: магазин 5.56 (60)
+  description: Магазин 5.56 для штурмових гвинтівок. Ємність 60 набоїв. Продається порожнім.
   parent: Base556Mag10
   tag: Stalker
   components:
@@ -126,10 +129,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
 - type: entity
   id: 556box249
-  name: box M249 (5.56)
-  description: 5.56 box for M249 machine gun. Capacity of bullets 100. Sold empty.
+  name: коробка M249 (5.56)
+  description: Коробка 5.56 для кулемета M249. Місткість набоїв 100. Продається порожнім.
   parent: MagazineLightRifleBox
   components:
     - type: STWeight

@@ -1,10 +1,10 @@
-# Вертолет
+# Вертоліт
 - type: entity
   id: helicopterStructure
   parent: BaseShippingContainer
-  name: Broken helicopter
-  suffix: Stalker
-  description: Crashed in an accident, model unknown.
+  name: Розбитий гелікоптер
+  suffix: ST
+  description: Розбився в аварії, модель невідома.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/helicopter.rsi
@@ -24,13 +24,13 @@
         layer:
         - WallLayer
 
-# брошенная машина
+# покинута машина
 
 - type: entity
   id: STForgottenCar
   parent: OldCarGreen
-  name: abandoned car
-  description: How old is this automobile industry monument, and how much rock art is there on it?
+  name: покинутий автомобіль
+  description: Скільки років цій пам'ятці автомобілебудування і скільки на ній наскальних малюнків?
   suffix: ST
   components:
   - type: Sprite
@@ -38,14 +38,14 @@
     state: base
 
 
-# УАЗ (БУХАНКА)
+# UAZ (BUKHANKA)
 
 - type: entity
   id: UAZStructure
   parent: BaseShippingContainer
-  name: UAZ-452
-  suffix: Stalker
-  description: A family of all-wheel drive off-road vans and light trucks with a body on a frame and a cab over the engine, produced by the Ulyanovsk Automobile Plant (UAZ) since 1965.
+  name: УАЗ-452
+  suffix: ST
+  description: Сімейство повнопривідних позашляхових фургонів і легких вантажівок з кузовом на рамі і кабіною над двигуном, що випускаються Ульяновським автомобільним заводом (УАЗ) з 1965 року.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/uaz.rsi
@@ -90,8 +90,8 @@
 - type: entity
   id: UAZStructureRusted
   parent: UAZStructure
-  name: rusty UAZ-452
-  suffix: Stalker
+  name: іржавий УАЗ-452
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/uaz.rsi
@@ -101,9 +101,9 @@
 - type: entity
   id: OldCarGreen
   parent: BaseShippingContainer
-  name: old green car
-  suffix: Stalker
-  description: Quite an old car, produced back in the Soviet era. Time spares no one, thats why its in such a bad condition. Unfortunately, its impossible to tell the make of the car. At least, you dont know any.
+  name: стара зелена машина
+  suffix: ST
+  description: Досить старий автомобіль, вироблений ще за радянських часів. Час не щадить нікого, тому вона в такому поганому стані. На жаль, марку автомобіля визначити неможливо. Принаймні, ви її не знаєте.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
@@ -148,8 +148,8 @@
 - type: entity
   id: OldCarRed
   parent: OldCarGreen
-  name: old red car
-  suffix: Stalker
+  name: стара червона машина.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
@@ -159,8 +159,8 @@
 - type: entity
   id: CarRedUS
   parent: OldCarGreen
-  name: old red imported car
-  suffix: Stalker
+  name: старий червоний імпортний автомобіль
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
@@ -170,8 +170,8 @@
 - type: entity
   id: CarGreenUS
   parent: OldCarGreen
-  name: old green imported car
-  suffix: Stalker
+  name: старий зелений імпортний автомобіль
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
@@ -181,8 +181,8 @@
 - type: entity
   id: BrokenCarGreen
   parent: OldCarGreen
-  name: old broken car
-  suffix: Stalker
+  name: старий розбитий автомобіль
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
@@ -192,22 +192,22 @@
 - type: entity
   id: BrokenCarRed
   parent: OldCarGreen
-  name: old broken car
-  suffix: Stalker
+  name: старий розбитий автомобіль
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
     scale: 0.8, 0.8
     state: linkoln_broken
 
-# ЗИЛы
+# ЗІЛи
 
 - type: entity
   id: ZIL
   parent: BaseShippingContainer
-  name: ZIL-130
-  suffix: Stalker
-  description: Soviet and Russian medium-tonnage truck of the third generation developed and produced by the Likhachev Automobile Plant in Moscow.
+  name: ЗІЛ-130
+  suffix: ST
+  description: Радянська середньотоннажна вантажівка третього покоління, розроблена та вироблена московським автомобільним заводом ім. лихачова.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/zil.rsi
@@ -263,14 +263,14 @@
     scale: 1.1, 1.1
     state: z2
 
-# ЛОДКИ
+# ЧОВНИ
 
 - type: entity
   id: boatStalker1
   parent: BaseShippingContainer
-  name: boat
-  suffix: Stalker
-  description: A small, undecked vessel.
+  name: човен
+  suffix: ST
+  description: Невеличке судно без палуби.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/boat1.rsi
@@ -292,9 +292,9 @@
 
 - type: entity
   id: boatStalker2
-  name: motorboat
+  name: моторний човен
   parent: boatStalker1
-  description: A small, undecked vessel with a motor.
+  description: Невелике, безпалубне судно з мотором.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/boat2.rsi
@@ -319,9 +319,9 @@
 - type: entity
   id: Moskvich
   parent: BaseShippingContainer
-  name: Moskvich-412
-  suffix: Stalker
-  description: Soviet and Russian rear-wheel drive car of the II group of small class, produced from October 1967 to 1976 at the MZMA plant.
+  name: Москвич-412
+  suffix: ST
+  description: Радянський задньопривідний автомобіль II групи малого класу, що випускався з жовтня 1967 по 1976 рік на заводі МЗМА.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/moskvich.rsi
@@ -367,8 +367,8 @@
 
 - type: entity
   id: kraz
-  name: KrAZ-260
-  description: Three-axle heavy-duty truck with increased cross-country ability, designed for cargo transportation. The awning is repainted for military purposes.
+  name: КрАЗ-260
+  description: Тривісний великовантажний автомобіль підвищеної прохідності, призначений для перевезення вантажів. Тент перефарбований під військові потреби.
   parent: ZIL
   components:
   - type: Sprite
@@ -377,8 +377,8 @@
 
 - type: entity
   id: kraz2
-  name: KrAZ-260
-  description: Three-axle heavy-duty truck with increased cross-country ability, designed for the transportation of goods.
+  name: КрАЗ-260
+  description: Тривісний великовантажний автомобіль підвищеної прохідності, призначений для перевезення вантажів.
   parent: kraz
   components:
   - type: Sprite
@@ -390,7 +390,7 @@
 - type: entity
   id: icarus
   name: ikarus-280
-  description: Hungarian city articulated high-floor mid-drive bus of extra large capacity from Ikarus.
+  description: Угорський міський зчленований високопідлоговий середньопривідний автобус надвеликої місткості від Ikarus.
   parent: kraz
   components:
   - type: Sprite

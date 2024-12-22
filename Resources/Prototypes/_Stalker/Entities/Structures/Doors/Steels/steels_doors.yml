@@ -1,11 +1,11 @@
-# ГЕРМОДВЕРИ
+# ГЕРМОДВЕРІ
 
 - type: entity
   id: HermoDverTypeOne
-  name: pressure door
+  name: гермодвері
   parent: STBaseMaterialDoor
-  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
-  suffix: ST, mapping
+  description: Захисно-герметичні та герметичні пристрої, які використовуються для захисту споруд цивільної оборони від шкідливих впливів різного роду.
+  suffix: ST, маппінг
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Doors/Steels/hermodver_type_one.rsi
@@ -15,10 +15,10 @@
 
 - type: entity
   id: HermoDverTypeTwo
-  name: pressure door
+  name: гермодвері
   parent: STBaseMaterialDoor
-  description: Protective-hermetic and hermetic devices that are used to protect civil defense structures from harmful effects of various kinds.
-  suffix: ST, mapping
+  description: Захисно-герметичні та герметичні пристрої, які використовуються для захисту споруд цивільної оборони від шкідливих впливів різного роду.
+  suffix: ST, маппінг
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Doors/Steels/hermodver_type_two.rsi
@@ -28,10 +28,10 @@
 
 - type: entity
   id: LatticeDoor
-  name: lattice door
+  name: ґратчасті двері
   parent: STBaseMaterialDoor
-  description: This is one of the types of structures for installation in different types of premises in order to increase security.
-  suffix: ST, mapping
+  description: Це один з видів конструкцій для встановлення в різних типах приміщень з метою підвищення безпеки.
+  suffix: ST, маппінг
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Doors/Steels/lattice_door.rsi
@@ -47,14 +47,14 @@
         layer:
         - TableLayer
 
-# СТВОРКИ
+# Стулка
 
 - type: entity
   id: StalkerGate
-  name: Gate leaf
+  name: Стулка воріт
   parent: STBaseMaterialDoor
-  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
-  suffix: ST, mapping, левая
+  description: Жорсткий каркас з квадратної труби. Обшивка - металевий профнастил, покритий полімерним покриттям. Для свого віку перебуває в хорошому стані.
+  suffix: ST, маппінг, ліва
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Doors/Gate/Gate.rsi
@@ -76,10 +76,10 @@
 
 - type: entity
   id: StalkerGater
-  name: Gate leaf
+  name: Стулка воріт
   parent: STBaseMaterialDoor
-  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
-  suffix: ST, mapping, правая
+  description: Жорсткий каркас з квадратної труби. Обшивка - металевий профнастил, покритий полімерним покриттям. Для свого віку перебуває в хорошому стані.
+  suffix: ST, маппінг, правая
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Doors/Gate/Gater.rsi
@@ -100,10 +100,10 @@
 
 - type: entity
   id: StalkerGateFixed
-  name: Gate leaf
+  name: Стулка воріт
   parent: BaseStructure
-  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
-  suffix: ST, mapping, левая, незакрываемая
+  description: Жорсткий каркас з квадратної труби. Обшивка - металевий профнастил, покритий полімерним покриттям. Для свого віку перебуває в хорошому стані.
+  suffix: ST, маппінг, ліва, незакривається
   components:
     - type: InteractionOutline
     - type: Sprite
@@ -125,23 +125,23 @@
 
 - type: entity
   id: StalkerGaterFixed
-  name: Gate leaf
+  name: Стулка воріт
   parent: StalkerGateFixed
-  description: A rigid frame made from a square tube. The cladding is metal corrugated sheeting covered with a polymer coating. It is in good condition for its age.
-  suffix: ST, mapping, правая, незакрываемая
+  description: Жорсткий каркас з квадратної труби. Обшивка - металевий профнастил, покритий полімерним покриттям. Для свого віку перебуває в хорошому стані.
+  suffix: ST, маппінг, правая, незакривається
   components:
     - type: Sprite
       layers:
         - state: closed
           map: ["enum.DoorVisualLayers.Base"]
-# ПРОЧЕЕ
+# ІНШЕ
 
 - type: entity
   id: MilitaryDoor2
-  name: military gate
+  name: військові ворота
   parent: STBaseMaterialDoor
-  description: A passage in a wall or fence, locked by doors.
-  suffix: ST, mapping
+  description: Прохід у стіні або паркані, закритий дверима.
+  suffix: ST, маппінг
   components:
   - type: Occluder
     boundingBox: "-1.5,-0.5,1.5,0.5"

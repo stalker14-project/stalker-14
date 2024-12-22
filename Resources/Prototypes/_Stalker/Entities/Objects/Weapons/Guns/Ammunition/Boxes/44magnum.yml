@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
   id: BaseMagazineBoxRemingtonMagnum
-  suffix: Stalker
+  suffix: ST
   abstract: true
   components:
   - type: RepositoryItem
@@ -30,8 +30,8 @@
 - type: entity
   parent: BaseMagazineBoxRemingtonMagnum
   id: MagazineBoxRemingtonMagnum
-  name: ammunition box (.44 remington magnum)
-  suffix: Stalker
+  name: ящик для набоїв (.44 remington magnum)
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRemingtonMagnum
@@ -45,8 +45,8 @@
 - type: entity
   parent: BaseMagazineBoxRemingtonMagnum
   id: MagazineBoxRemingtonMagnumAP
-  name: ammunition box (.44 remington magnum armor-piercing)
-  suffix: Stalker
+  name: ящик для набоїв (.44 Remington Magnum бронебійний)
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeRemingtonMagnumAP

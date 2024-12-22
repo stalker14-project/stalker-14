@@ -29,8 +29,8 @@
 - type: entity
   id: STAcidBubbles
   parent: STBaseToxic
-  name: acid bubbles
-  description: probably you shouldnt touch it, but who we are to give advises to a brave stalker?
+  name: кислотні бульбашки
+  description: Напевно, не варто його чіпати, але хто ми такі, щоб давати поради відважному сталкеру?
   suffix: ST, acid, toxic
   components:
     - type: Sprite
@@ -52,8 +52,8 @@
     - STBaseEntity
     - BaseStructure
   suffix: ST, acid
-  name: acid crystal
-  description: toxically looking crystal
+  name: кристал кислоти
+  description: токсичний на вигляд кристал
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Environment/acid_crystals.rsi
@@ -106,9 +106,9 @@
 - type: entity
   parent: STBaseToxic
   id: STPoisonShroom
-  name: poison shrooms
-  description: looks delicios. Try to make soup from it.
-  suffix: acid, poison
+  name: отруйні гриби
+  description: виглядає дуже смачно. Спробуйте зварити з нього суп.
+  suffix: кислота, отрута
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Environment/poison_shrooms.rsi
@@ -126,9 +126,9 @@
     - BaseStructureStalkerDynamic
   id: STToxicBarrelBase
   abstract: true
-  name: toxic barrel
-  suffix: acid, explosion
-  description: after all this years there is still some green liquid out there
+  name: токсична бочка
+  suffix: кислота, вибух
+  description: після всіх цих років там все ще є трохи зеленої рідини
   placement:
     mode: PlaceFree
   components:
@@ -187,10 +187,10 @@
     state: barrel2
 
 - type: entity
-  name: Acid T3 Steel and Glass Trigger (20%)
+  name: Триггер для сталі та скла кислотної дії T3 (20%)
   id: STCraftGlassMetallT3Trigger
   parent: MarkerBase
-  suffix: ST | КД 1 часа
+  suffix: ST | КД 1 год
   components:
     - type: ApproachTrigger
       range: 10

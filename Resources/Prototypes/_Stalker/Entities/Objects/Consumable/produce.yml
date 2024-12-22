@@ -1,11 +1,11 @@
 # Барбарис
 
 - type: entity
-  name: barberry
+  name: барбарис
   parent: FoodProduceBase
   id: StalkerFoodBarbaris
-  description: a bunch of barberry berries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: пучок ягід барбарису, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -36,10 +36,10 @@
   oreEntity: StalkerFoodBarbaris
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureBarbaris
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -79,11 +79,11 @@
 ########## Годжи
 
 - type: entity
-  name: goji
+  name: годжі
   parent: FoodProduceBase
   id: StalkerFoodGoji
-  description: a bunch of goji berries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: пучок ягід годжі, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -114,10 +114,10 @@
   oreEntity: StalkerFoodGoji
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureGoji
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -154,14 +154,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-######## Ирга
+######## Ірга
 
 - type: entity
-  name: serviceberry
+  name: Ірга
   parent: FoodProduceBase
   id: StalkerFoodIrga
-  description: a bunch of chokeberries, you can squeeze them out.
-  suffix: Stalker, Ягоды
+  description: гроно чорноплідної горобини, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -192,10 +192,10 @@
   oreEntity: StalkerFoodIrga
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureIrga
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -232,14 +232,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-######## Клюква
+######## Журавлина
 
 - type: entity
-  name: cranberry
+  name: журавлина
   parent: FoodProduceBase
-  id: StalkerFoodKlukva
-  description: a bunch of cranberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodZhurvalina
+  description: гроно журавлини, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -255,11 +255,11 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodKlukva
+    state: StalkerFoodZhurvalina
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: StalkerOilKlukva
+      - ReagentId: StalkerOilZhurvalina
         Quantity: 10
   - type: Tag
     tags:
@@ -267,13 +267,13 @@
 
 - type: ore
   id: StalkerOreBerries4
-  oreEntity: StalkerFoodKlukva
+  oreEntity: StalkerFoodZhurvalina
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureKlukva
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureZhurvalina
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -310,14 +310,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-####### Крыжовник
+####### Аґрус
 
 - type: entity
   name: gooseberry
   parent: FoodProduceBase
-  id: StalkerFoodKrijovnik
-  description: a bunch of gooseberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodGooseberry
+  description: гроно аґрусу, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -333,11 +333,11 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodKrijovnik
+    state: StalkerFoodGooseberry
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: StalkerOilKrijovnik
+      - ReagentId: StalkerOilGooseberry
         Quantity: 10
   - type: Tag
     tags:
@@ -345,13 +345,13 @@
 
 - type: ore
   id: StalkerOreBerries5
-  oreEntity: StalkerFoodKrijovnik
+  oreEntity: StalkerFoodGooseberry
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureKrijovnik
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureGooseberry
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -391,11 +391,11 @@
 ####### Малина
 
 - type: entity
-  name: raspberries
+  name: малина
   parent: FoodProduceBase
   id: StalkerFoodMalina
-  description: a bunch of raspberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: гроно малини, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -426,10 +426,10 @@
   oreEntity: StalkerFoodMalina
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureMalina
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -469,11 +469,11 @@
 ###### Морошка
 
 - type: entity
-  name: cloudberries
+  name: морошка
   parent: FoodProduceBase
   id: StalkerFoodMoroshka
-  description: a bunch of cloudberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: гроно морошки, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -504,10 +504,10 @@
   oreEntity: StalkerFoodMoroshka
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureMoroshka
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -544,14 +544,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-###### Облепиха
+###### обліпиха
 
 - type: entity
-  name: sea buckthorn
+  name: обліпиха
   parent: FoodProduceBase
-  id: StalkerFoodOblepixa
-  description: a bunch of sea buckthorn berries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodOblipyxa
+  description: пучок ягід обліпихи, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -567,11 +567,11 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodOblepixa
+    state: StalkerFoodOblipyxa
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: StalkerOilOblepixa
+      - ReagentId: StalkerOilOblipyxa
         Quantity: 10
   - type: Tag
     tags:
@@ -579,13 +579,13 @@
 
 - type: ore
   id: StalkerOreBerries8
-  oreEntity: StalkerFoodOblepixa
+  oreEntity: StalkerFoodOblipyxa
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureOblepixa
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureOblipyxa
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -622,14 +622,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-###### Брусника
+###### Брусниця
 
 - type: entity
-  name: lingonberries
+  name: брусниця
   parent: FoodProduceBase
-  id: StalkerFoodBrusnika
-  description: a bunch of lingonberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodBrusnycia
+  description: гроно брусниці, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -645,11 +645,11 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodBrusnika
+    state: StalkerFoodBrusnycia
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: StalkerJuiceBrusnika
+      - ReagentId: StalkerJuiceBrusnycia
         Quantity: 10
   - type: Tag
     tags:
@@ -657,13 +657,13 @@
 
 - type: ore
   id: StalkerOreBerries9
-  oreEntity: StalkerFoodBrusnika
+  oreEntity: StalkerFoodBrusnycia
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureBrusnika
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureBrusnycia
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -700,14 +700,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-###### Голубика
+###### Лохина
 
 - type: entity
-  name: blueberries
+  name: чорниця
   parent: FoodProduceBase
-  id: StalkerFoodGolubika
-  description: a bunch of blueberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodChornytsia
+  description: гроно чорниці, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -723,11 +723,11 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodGolubika
+    state: StalkerFoodChornytsia
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: StalkerJuiceGolubika
+      - ReagentId: StalkerJuiceChornytsia
         Quantity: 10
   - type: Tag
     tags:
@@ -735,13 +735,13 @@
 
 - type: ore
   id: StalkerOreBerries10
-  oreEntity: StalkerFoodGolubika
+  oreEntity: StalkerFoodChornytsia
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureGolubika
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureChornytsia
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -781,11 +781,11 @@
 ######## Виноград
 
 - type: entity
-  name: grapes
+  name: виноград
   parent: FoodProduceBase
   id: StalkerFoodVinograd
-  description: a bunch of grapes, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: гроно винограду, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -816,10 +816,10 @@
   oreEntity: StalkerFoodVinograd
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureVinograd
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -859,11 +859,11 @@
 ####### Вишня
 
 - type: entity
-  name: cherry
+  name: вишня
   parent: FoodProduceBase
   id: StalkerFoodVishna
-  description: a bunch of cherries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: гроно вишень, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -894,10 +894,10 @@
   oreEntity: StalkerFoodVishna
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureVishna
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -934,14 +934,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-######## Ежевика
+######## Ожина
 
 - type: entity
-  name: blackberry
+  name: ожина
   parent: FoodProduceBase
-  id: StalkerFoodEjevika
-  description: a bunch of blackberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodOzhina
+  description: гроно ожини, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -957,11 +957,11 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodEjevika
+    state: StalkerFoodOzhina
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: StalkerJuiceEjevika
+      - ReagentId: StalkerJuiceOzhina
         Quantity: 10
   - type: Tag
     tags:
@@ -969,13 +969,13 @@
 
 - type: ore
   id: StalkerOreBerries13
-  oreEntity: StalkerFoodEjevika
+  oreEntity: StalkerFoodOzhina
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureEjevika
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureOzhina
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -1012,14 +1012,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-##### клубника
+##### полуниця
 
 - type: entity
-  name: strawberries
+  name: полуниця
   parent: FoodProduceBase
-  id: StalkerFoodKlubnika
-  description: a bunch of strawberries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodStrawberry
+  description: гроно полуниці, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1035,11 +1035,11 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodKlubnika
+    state: StalkerFoodStrawberry
   - type: Extractable
     juiceSolution:
       reagents:
-      - ReagentId: StalkerJuiceKlubnika
+      - ReagentId: StalkerJuiceStrawberry
         Quantity: 10
   - type: Tag
     tags:
@@ -1047,13 +1047,13 @@
 
 - type: ore
   id: StalkerOreBerries14
-  oreEntity: StalkerFoodKlubnika
+  oreEntity: StalkerFoodStrawberry
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureKlubnika
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureStrawberry
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -1093,11 +1093,11 @@
 ##### Смородина
 
 - type: entity
-  name: currants
+  name: смородина
   parent: FoodProduceBase
   id: StalkerFoodSmorodina
-  description: a bunch of currant berries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: гроно ягід смородини, можна віджати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1128,10 +1128,10 @@
   oreEntity: StalkerFoodSmorodina
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureSmorodina
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -1171,11 +1171,11 @@
 ##### Черешня
 
 - type: entity
-  name: cherry
+  name: Черешня
   parent: FoodProduceBase
   id: StalkerFoodChereshna
-  description: a bunch of cherries, you can squeeze them.
-  suffix: Stalker, Ягоды
+  description: гроно черешень, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1206,10 +1206,10 @@
   oreEntity: StalkerFoodChereshna
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
   id: StalkerBarriesStructureChereshna
-  suffix: Stalker, Ягоды, Кустарник
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -1246,14 +1246,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-###### волчеягодник
+###### вовчеягідник
 
 - type: entity
-  name: Wolfberry
+  name: Вовчі ягоди
   parent: FoodProduceBase
-  id: StalkerFoodVolk
-  description: a bunch of wolfberry berries, can be squeezed.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodVovk
+  description: пучок вовчих ягід, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1267,7 +1267,7 @@
           Quantity: 10
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodVolk
+    state: StalkerFoodVovk
   - type: Extractable
     juiceSolution:
       reagents:
@@ -1279,13 +1279,13 @@
 
 - type: ore
   id: StalkerOreBerries17
-  oreEntity: StalkerFoodVolk
+  oreEntity: StalkerFoodVovk
 
 - type: entity
-  name: bush with berries
+  name: кущ з ягодами
   parent: BaseStructure
-  id: StalkerBarriesStructureVolk
-  suffix: Stalker, Ягоды, Кустарник
+  id: StalkerBarriesStructureVovk
+  suffix: ST, Ягоди, Кущ
   description: Shrub.
   components:
     - type: Sprite
@@ -1322,14 +1322,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-####### воронец
+####### воронець
 
 - type: entity
-  name: Voronets
+  name: Воронець
   parent: FoodProduceBase
   id: StalkerFoodVoronec
-  description: Raven, you can squeeze it out.
-  suffix: Stalker, Ягоды
+  description: пучок чернецю, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1358,11 +1358,11 @@
   oreEntity: StalkerFoodVoronec
 
 - type: entity
-  name: grass
+  name: трава
   parent: BaseStructure
   id: StalkerBarriesStructureVoronec
-  suffix: Stalker, Ягоды, Кустарник
-  description: Grass, can be collected.
+  suffix: ST, Ягоди, Кущ
+  description: Траву можна збирати.
   components:
     - type: Sprite
       sprite: _Stalker/Decals/flor.rsi
@@ -1398,14 +1398,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-###### ландыш
+###### конвалія
 
 - type: entity
-  name: lily of the valley
+  name: конвалія
   parent: FoodProduceBase
-  id: StalkerFoodLandish
-  description: Lily of the valley, you can squeeze it out.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodKonvalija
+  description: Конвалію можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1419,7 +1419,7 @@
           Quantity: 10
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodLandish
+    state: StalkerFoodKonvalija
   - type: Extractable
     juiceSolution:
       reagents:
@@ -1431,14 +1431,14 @@
 
 - type: ore
   id: StalkerOreBerries19
-  oreEntity: StalkerFoodLandish
+  oreEntity: StalkerFoodKonvalija
 
 - type: entity
-  name: grass
+  name: трава
   parent: BaseStructure
-  id: StalkerBarriesStructureLandish
-  suffix: Stalker, Ягоды, Кустарник
-  description: Grass, can be collected.
+  id: StalkerBarriesStructureKonvalija
+  suffix: ST, Ягоди, Кущ
+  description: Траву можна збирати.
   components:
     - type: Sprite
       sprite: _Stalker/Decals/flor.rsi
@@ -1474,14 +1474,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-####### очанка лекарственная
+####### очанка лікарська
 
 - type: entity
-  name: eyebright
+  name: очанка
   parent: FoodProduceBase
   id: StalkerFoodOchanka
-  description: eyebright, can be squeezed.
-  suffix: Stalker, Ягоды
+  description: очанка, можна стиснути.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1512,11 +1512,11 @@
   oreEntity: StalkerFoodOchanka
 
 - type: entity
-  name: grass
+  name: трава
   parent: BaseStructure
   id: StalkerBarriesStructureOchanka
-  suffix: Stalker, Ягоды, Кустарник
-  description: Grass, can be collected.
+  suffix: ST, Ягоди, Кущ
+  description: Траву можна збирати.
   components:
     - type: Sprite
       sprite: _Stalker/Decals/flor.rsi
@@ -1552,14 +1552,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-##### лапчатка белая
+##### Перстач
 
 - type: entity
-  name: White Potentilla
+  name: Перстач біла
   parent: FoodProduceBase
-  id: StalkerFoodlapchatka
-  description: Raven, you can squeeze it out.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodperstach
+  description: Вороне, ти можеш це вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1575,7 +1575,7 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodlapchatka
+    state: StalkerFoodperstach
   - type: Extractable
     juiceSolution:
       reagents:
@@ -1587,14 +1587,14 @@
 
 - type: ore
   id: StalkerOreBerries21
-  oreEntity: StalkerFoodlapchatka
+  oreEntity: StalkerFoodperstach
 
 - type: entity
-  name: grass
+  name: трава
   parent: BaseStructure
-  id: StalkerBarriesStructureLapchatka
-  suffix: Stalker, Ягоды, Кустарник
-  description: Grass, can be collected.
+  id: StalkerBarriesStructurePerstach
+  suffix: ST, Ягоди, Кущ
+  description: Траву можна збирати.
   components:
     - type: Sprite
       sprite: _Stalker/Decals/flor.rsi
@@ -1630,14 +1630,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-##### аир обыкновенный
+##### аїр звичайний
 
 - type: entity
-  name: calamus
+  name: аїр
   parent: FoodProduceBase
   id: StalkerFoodAir
-  description: calamus, can be squeezed out.
-  suffix: Stalker, Ягоды
+  description: аїр, можна вичавити.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1668,11 +1668,11 @@
   oreEntity: StalkerFoodAir
 
 - type: entity
-  name: grass
+  name: трава
   parent: BaseStructure
   id: StalkerBarriesStructureAir
-  suffix: Stalker, Ягоды, Кустарник
-  description: Grass, can be collected.
+  suffix: ST, Ягоди, Кущ
+  description: Траву можна збирати.
   components:
     - type: Sprite
       sprite: _Stalker/Decals/flor.rsi
@@ -1708,14 +1708,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-######## липа сердцевидная
+######## липа серцеподібна
 
 - type: entity
-  name: small-leaved linden
+  name: липа дрібнолиста
   parent: FoodProduceBase
   id: StalkerFoodLipa
-  description: small-leaved linden, can be squeezed.
-  suffix: Stalker, Ягоды
+  description: липа дрібнолиста, можна вичавлювати.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1746,11 +1746,11 @@
   oreEntity: StalkerFoodLipa
 
 - type: entity
-  name: grass
+  name: трава
   parent: BaseStructure
   id: StalkerBarriesStructureLipa
-  suffix: Stalker, Ягоды, Кустарник
-  description: Grass, can be collected.
+  suffix: ST, Ягоди, Кущ
+  description: Траву можна збирати.
   components:
     - type: Sprite
       sprite: _Stalker/Decals/flor.rsi
@@ -1786,14 +1786,14 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-##### ятрышник пятнистый
+##### прошибень
 
 - type: entity
-  name: Orchis maculatus
+  name: прошибень
   parent: FoodProduceBase
-  id: StalkerFoodYatrishnik
-  description: Orchis maculatus, can be squeezed.
-  suffix: Stalker, Ягоды
+  id: StalkerFoodProshyben
+  description: Зозульки плямисті, can be squeezed.Зозульки плямисті, можна стиснути.
+  suffix: ST, Ягоди
   components:
   - type: FlavorProfile
     flavors:
@@ -1809,7 +1809,7 @@
           Quantity: 4
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodYatrishnik
+    state: StalkerFoodProshyben
   - type: Extractable
     juiceSolution:
       reagents:
@@ -1821,14 +1821,14 @@
 
 - type: ore
   id: StalkerOreBerries24
-  oreEntity: StalkerFoodYatrishnik
+  oreEntity: StalkerFoodProshyben
 
 - type: entity
-  name: grass
+  name: трава
   parent: BaseStructure
-  id: StalkerBarriesStructureYatrishnik
-  suffix: Stalker, Ягоды, Кустарник
-  description: Grass, can be collected.
+  id: StalkerBarriesStructureProshyben
+  suffix: ST, Ягоди, Кущ
+  description: Траву можна збирати.
   components:
     - type: Sprite
       sprite: _Stalker/Decals/flor.rsi
@@ -1864,13 +1864,13 @@
             - !type:DoActsBehavior
               acts: [ "Destruction" ]
 
-############### Реагенты
-#########Масла
+############### Реагенти
+######### Олія
 
 - type: reagent
   id: StalkerOilBarbaris
-  name: Barberry oil
-  desc: Получено после имельчения ягод барбариса
+  name: Барбарисова олія
+  desc: Отримано після іммільчування ягід барбарису
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1882,8 +1882,8 @@
 
 - type: reagent
   id: StalkerOilGoji
-  name: Goji Oil
-  desc: Получено после имельчения ягод Годжи
+  name: Олія годжі
+  desc: Отримано після використання ягід Годжі
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1898,8 +1898,8 @@
 
 - type: reagent
   id: StalkerOilIrga
-  name: Serviceberry oil
-  desc: Получено после имельчения ягод Иргы
+  name: Олія ягід горобини
+  desc: Отримано після вичавлювання ягід Ірги
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1912,9 +1912,9 @@
             Toxin: -2.5
 
 - type: reagent
-  id: StalkerOilKlukva
-  name: Cranberry oil
-  desc: Получено после имельчения ягод Клюквы
+  id: StalkerOilZhurvalina
+  name: Журавлинна олія
+  desc: Отримано після вичавлювання ягід Журавлини
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1927,9 +1927,9 @@
             Heat: -2.5
 
 - type: reagent
-  id: StalkerOilKrijovnik
-  name: Gooseberry Oil
-  desc: Получено после имельчения ягод крыжовника
+  id: StalkerOilGooseberry
+  name: Олія аґрусу
+  desc: Отримано після вичавлювання ягід аґрусу
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1943,8 +1943,8 @@
 
 - type: reagent
   id: StalkerOilMalina
-  name: Raspberry oil
-  desc: Получено после имельчения ягод малины
+  name: Олія малини
+  desc: Отримано після вичавлювання ягід малини
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1958,8 +1958,8 @@
 
 - type: reagent
   id: StalkerOilMoroshka
-  name: Cloudberry Oil
-  desc: Получено после имельчения ягод морошки
+  name: Олія морошки
+  desc: Отримано після вичавлювання ягід морошки
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1970,9 +1970,9 @@
         amount: -10
 
 - type: reagent
-  id: StalkerOilOblepixa
-  name: Sea buckthorn oil
-  desc: Получено после имельчения ягод облепихи
+  id: StalkerOilOblipyxa
+  name: Обліпихова олія
+  desc: Отримано після вичавлювання ягід обліпихи
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -1985,12 +1985,12 @@
             Heat: -2.5
 
 
-#####Травы
+#####Трави
 
 - type: reagent
   id: StalkerOilGrass1
-  name: Eyebright
-  desc: Получено после имельчения очанки лекарственной
+  name: Очанка
+  desc: Отримано після вирощування очанки лікарської
   physicalDesc: flavor-complex-grass
   flavor: grass
   color: "#660099"
@@ -2002,8 +2002,8 @@
 
 - type: reagent
   id: StalkerOilGrass2
-  name: White Cinquefoil
-  desc: Получено после имельчения лапчатки белой
+  name: Перстач біла
+  desc: Отримано після вирощування перстачу білого
   physicalDesc: flavor-complex-grass
   flavor: grass
   color: "#660099"
@@ -2017,8 +2017,8 @@
 
 - type: reagent
   id: StalkerOilGrass3
-  name: Calamus
-  desc: Получено после имельчения лира обыкновенного
+  name: Аїр
+  desc: Отримано після подрібнення лепехи звичайної
   physicalDesc: flavor-complex-grass
   flavor: grass
   color: "#660099"
@@ -2032,8 +2032,8 @@
 
 - type: reagent
   id: StalkerOilGrass4
-  name: Small-leaved linden
-  desc: Получено после имельчения липа сердцевидной
+  name: Липа дрібнолиста
+  desc: Отримано після подрібнення липа серцеподібної
   physicalDesc: flavor-complex-grass
   flavor: grass
   color: "#660099"
@@ -2047,8 +2047,8 @@
 
 - type: reagent
   id: StalkerOilGrass5
-  name: Orchis maculatus
-  desc: Получено после имельчения ятрышника пятнистного
+  name: Орхідея макулатус
+  desc: Отримано після подрібнення зозулинця плямистого
   physicalDesc: flavor-complex-grass
   flavor: grass
   color: "#660099"
@@ -2063,85 +2063,85 @@
 
 
 - type: reagent
-  id: StalkerJuiceBrusnika
-  name: Lingonberry juice
+  id: StalkerJuiceBrusnycia
+  name: Брусничний сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод брусники
+  desc: Отримано після вичавлювання ягід брусниці
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
 
 - type: reagent
-  id: StalkerJuiceGolubika
-  name: Blueberry Juice
+  id: StalkerJuiceChornytsia
+  name: Чорничний сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод голубики
+  desc: Отримано після вичавлювання ягід лохини
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
 - type: reagent
   id: StalkerJuiceVinograd
-  name: Grape juice
+  name: Виноградний сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод винограда
+  desc: Отримано після вичавлювання ягід винограду
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
 - type: reagent
   id: StalkerJuiceVishna
-  name: Cherry juice
+  name: Вишневий сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод вишни
+  desc: Отримано після вичавлювання ягід вишні
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
 - type: reagent
-  id: StalkerJuiceEjevika
-  name: Blackberry Juice
+  id: StalkerJuiceOzhina
+  name: Ожиновий сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод ежевики
+  desc: Отримано після вичавлювання ягід ожини
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
 - type: reagent
-  id: StalkerJuiceKlubnika
-  name: Strawberry Juice
+  id: StalkerJuiceStrawberry
+  name: Полуничний сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод клубники
+  desc: Отримано після вичавлювання ягід полуниці
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
 - type: reagent
   id: StalkerJuiceSmorodini
-  name: Currant juice
+  name: Смородиновий сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод смородины
+  desc: Отримано після вичавлювання ягід смородини
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
 - type: reagent
   id: StalkerJuiceChereshna
-  name: Cherry juice
+  name: Вишневий сік
   parent: BaseJuice
-  desc: Получено после имельчения ягод черешни
+  desc: Отримано після імільчування ягід черешні
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
 
-#####Яды
+#####Отрути
 
 - type: reagent
   id: StalkerToxin1
-  name: Wolfberry Juice
+  name: Сік вовчих ягід
   parent: Toxin
-  desc: Получено после имельчения волчеягодника
+  desc: Отримано після вилучення вовчеягідника
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -2156,9 +2156,9 @@
 
 - type: reagent
   id: StalkerToxin2
-  name: Crow Juice
+  name: Воронячий сік
   parent: Toxin
-  desc: Получено после имельчения воронца
+  desc: Отримано після подрібнення воронця
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -2173,8 +2173,8 @@
 
 - type: reagent
   id: StalkerToxin3
-  name: Lily of the valley juice
-  desc: Получено после имельчения ландыша
+  name: Сік конвалії
+  desc: Отримано після вилучення конвалії
   physicalDesc: reagent-physical-desc-sweet
   flavor: berry
   color: "#660099"
@@ -2188,13 +2188,13 @@
             Poison: 0.3
 
 
-######### Спавнеры
+######### Спавнери
 
 - type: entity
-  name: Periodic Plant Spawner
+  name: Періодичний спавн рослин
   id: StalkerTimedSpawner30
   parent: MarkerBase
-  suffix: Stalker, раз в 30 минут
+  suffix: ST, раз на 30 хвилин
   components:
     - type: Sprite
       layers:
@@ -2212,10 +2212,10 @@
       maximumEntitiesSpawned: 1
 
 - type: entity
-  name: Trash Spawner
+  name: Спавнер Сміття
   id: RandomSpawnerBarriesStalker
   parent: MarkerBase
-  suffix: Stalker
+  suffix: ST
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -2225,27 +2225,27 @@
           state: pistachio-trash
     - type: RandomSpawner
       prototypes:
-      - StalkerBarriesStructureYatrishnik
+      - StalkerBarriesStructureProshyben
       - StalkerBarriesStructureLipa
       - StalkerBarriesStructureAir
-      - StalkerBarriesStructureLapchatka
+      - StalkerBarriesStructurePerstach
       - StalkerBarriesStructureOchanka
-      - StalkerBarriesStructureLandish
+      - StalkerBarriesStructureKonvalija
       - StalkerBarriesStructureVoronec
-      - StalkerBarriesStructureVolk
+      - StalkerBarriesStructureVovk
       - StalkerBarriesStructureChereshna
       - StalkerBarriesStructureSmorodina
-      - StalkerBarriesStructureKlubnika
-      - StalkerBarriesStructureEjevika
+      - StalkerBarriesStructureStrawberry
+      - StalkerBarriesStructureOzhina
       - StalkerBarriesStructureVishna
       - StalkerBarriesStructureVinograd
-      - StalkerBarriesStructureGolubika
-      - StalkerBarriesStructureBrusnika
-      - StalkerBarriesStructureOblepixa
+      - StalkerBarriesStructureChornytsia
+      - StalkerBarriesStructureBrusnycia
+      - StalkerBarriesStructureOblipyxa
       - StalkerBarriesStructureMoroshka
       - StalkerBarriesStructureMalina
-      - StalkerBarriesStructureKrijovnik
-      - StalkerBarriesStructureKlukva
+      - StalkerBarriesStructureGooseberry
+      - StalkerBarriesStructureZhurvalina
       - StalkerBarriesStructureIrga
       - StalkerBarriesStructureGoji
       - StalkerBarriesStructureBarbaris
@@ -2254,10 +2254,10 @@
 
 
 # - type: entity
-#   name: Периодический спавнер растений
+#   name: Періодичний спавнер рослин
 #   id: StalkerTimedSpawnertest
 #   parent: MarkerBase
-#   suffix: Stalker, раз в секунда
+#   suffix: ST, раз на секунду
 #   components:
 #     - type: Sprite
 #       layers:

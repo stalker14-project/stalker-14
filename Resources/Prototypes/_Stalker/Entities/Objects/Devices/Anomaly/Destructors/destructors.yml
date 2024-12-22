@@ -1,9 +1,9 @@
 - type: entity
   parent: [ BaseItem, BaseFoldable ]
   id: BaseMachineAnomalyDestructor
-  name: P.A.D.
-  description: An Anomalous Particle Emitter, capable of shooting out unstable particles which can interface with anomalies.
-  suffix: Stalker
+  name: В.А.Ч. випромінювач
+  description: Випромінювач аномальних частинок, здатний вистрілювати нестабільні частинки, які можуть взаємодіяти з аномаліями.
+  suffix: ST
   components:
     - type: Tag
       tags:
@@ -44,10 +44,10 @@
       radius: 1.5
       softness: 5
 
-- type: entity   
+- type: entity
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructorFolded
-  suffix: Stalker, Folded
+  suffix: ST, Folded
   components:
     - type: Foldable
       folded: true

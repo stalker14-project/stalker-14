@@ -1,8 +1,8 @@
 - type: entity
   id: StalkerRail
-  name: rails #comment to make the bitch work
-  description: Old railway tracks, the sleepers of which have already rotted and the metal has rusted.
-  suffix: ST, Mapping
+  name: рейки #коментуйте, щоб змусити суку працювати
+  description: Старі залізничні колії, шпали яких вже згнили, а метал проржавів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -23,14 +23,14 @@
       params:
         volume: 8
 
-# ВАГОНЫ С ЦИСТЕРНАМИ
+# ВАГОНИ З ЦИСТЕРНАМИ
 
 - type: entity
   id: StalkerCargoTank
   parent: BaseStructure
-  name: Tank car
-  description: A type of rolling stock for transporting liquids, including oil and its refined products, chemically active and aggressive liquid substances.
-  suffix: ST, Mapping
+  name: Цистерна
+  description: Тип рухомого складу для перевезення рідин, у тому числі нафти і продуктів її переробки, хімічно активних і агресивних рідких речовин.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -58,9 +58,9 @@
 - type: entity
   id: StalkerCargoTank1
   parent: BaseStructure
-  name: Tank car
-  description: A type of rolling stock for transporting liquids, including oil and its refined products, chemically active and aggressive liquid substances.
-  suffix: ST, Mapping
+  name: Цистерна
+  description: Тип рухомого складу для перевезення рідин, у тому числі нафти і продуктів її переробки, хімічно активних і агресивних рідких речовин.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -85,14 +85,14 @@
         - WallLayer
   - type: Appearance
 
-# ТЕПЛОВОЗЫ
+# ТЕПЛОВОЗИ
 
 - type: entity
   id: StalkerPassHead
   parent: BaseStructure
-  name: Diesel locomotive M62
-  description: Soviet mainline six-axle diesel locomotive, originally designed for use in the CMEA countries. Produced by the Lugansk Diesel Locomotive Plant since 1965.
-  suffix: ST, Mapping
+  name: Тепловоз М62
+  description: Радянський магістральний шестивісний тепловоз, спочатку розроблений для використання в країнах РЕВ. Виробляється Луганським тепловозобудівним заводом з 1965 року.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -120,9 +120,9 @@
 - type: entity
   id: StalkerCargoHead
   parent: BaseStructure
-  name: Diesel locomotive TEM6-001
-  description: Soviet six-axle shunting diesel locomotive, manufactured by the Bryansk plant. It was created as a universal locomotive, which after replacing the bogies or wheel pairs could operate on railways with a track width of 1000, 1067, 1435 and 1520 mm, and in both moderate and tropical climates.
-  suffix: ST, Mapping
+  name: Тепловоз ТЕМ6-001
+  description: Радянський шестивісний маневровий тепловоз виробництва Брянського заводу. Він створювався як універсальний локомотив, який після заміни візків або колісних пар міг працювати на залізницях з шириною колії 1000, 1067, 1435 і 1520 мм, а також в умовах помірного і тропічного клімату.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -150,9 +150,9 @@
 - type: entity
   id: StalkerCargoHead1
   parent: BaseStructure
-  name: Diesel locomotive M62
-  description: Soviet mainline six-axle diesel locomotive, originally designed for use in the CMEA countries. Produced by the Lugansk Diesel Locomotive Plant since 1965.
-  suffix: ST, Mapping
+  name: Тепловоз М62
+  description: Радянський магістральний шестивісний тепловоз, спочатку розроблений для використання в країнах РЕВ. Виробляється Луганським тепловозобудівним заводом з 1965 року.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -180,9 +180,9 @@
 - type: entity
   id: StalkerCargoHead2
   parent: BaseStructure
-  name: Diesel locomotive TEM6-001
-  description: Soviet six-axle shunting diesel locomotive, manufactured by the Bryansk plant. It was created as a universal locomotive, which after replacing the bogies or wheel pairs could operate on railways with a track width of 1000, 1067, 1435 and 1520 mm, and in both moderate and tropical climates.
-  suffix: ST, Mapping
+  name: Тепловоз ТЕМ6-001
+  description: Радянський шестивісний маневровий тепловоз виробництва Брянського заводу. Він створювався як універсальний локомотив, який після заміни візків або колісних пар міг працювати на залізницях з шириною колії 1000, 1067, 1435 і 1520 мм, а також в умовах помірного і тропічного клімату.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -207,14 +207,14 @@
         - WallLayer
   - type: Appearance
 
-# ПАССАЖИРСКИЕ ВАГОНЫ
+# ПАСАЖИРСЬКІ ВАГОНИ
 
 - type: entity
   id: StalkerPassTrain
   parent: BaseStructure
-  name: passenger carriage
-  description: A unit of rolling stock designed to transport passengers.
-  suffix: ST, Mapping
+  name: пасажирський вагон
+  description: Одиниця рухомого складу, призначена для перевезення пасажирів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -242,9 +242,9 @@
 - type: entity
   id: StalkerPassTrain1
   parent: BaseStructure
-  name: passenger carriage
-  description: A unit of rolling stock designed to transport passengers.
-  suffix: ST, Mapping
+  name: пасажирський вагон
+  description: Одиниця рухомого складу, призначена для перевезення пасажирів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -272,9 +272,9 @@
 - type: entity
   id: StalkerPassTrain2
   parent: BaseStructure
-  name: passenger carriage
-  description: A unit of rolling stock designed to transport passengers.
-  suffix: ST, Mapping
+  name: пасажирський вагон
+  description: Одиниця рухомого складу, призначена для перевезення пасажирів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -299,14 +299,14 @@
         - WallLayer
   - type: Appearance
 
-# ГРУЗОВЫЕ ВАГОНЫ
+# ВАНТАЖНІ ВАГОНИ
 
 - type: entity
   id: StalkerCargo
   parent: BaseStructure
-  name: freight car
-  description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  name: вантажний вагон
+  description: Це залізничний транспортний засіб без двигуна, який використовувався для перевезення вантажів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -334,9 +334,9 @@
 - type: entity
   id: StalkerCargo1
   parent: BaseStructure
-  name: freight car
+  name: вантажний вагон
   description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -364,9 +364,9 @@
 - type: entity
   id: StalkerCargo2
   parent: BaseStructure
-  name: freight car
-  description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  name: вантажний вагон
+  description: Це залізничний транспортний засіб без двигуна, який використовувався для перевезення вантажів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -394,9 +394,9 @@
 - type: entity
   id: StalkerCargo3
   parent: BaseStructure
-  name: freight car
-  description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  name: вантажний вагон
+  description: Це залізничний транспортний засіб без двигуна, який використовувався для перевезення вантажів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -424,9 +424,9 @@
 - type: entity
   id: StalkerCargo4
   parent: BaseStructure
-  name: freight car
-  description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  name: вантажний вагон
+  description: Це залізничний транспортний засіб без двигуна, який використовувався для перевезення вантажів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -454,9 +454,9 @@
 - type: entity
   id: StalkerCargo5
   parent: BaseStructure
-  name: freight car
-  description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  name: вантажний вагон
+  description: Це залізничний транспортний засіб без двигуна, який використовувався для перевезення вантажів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -484,9 +484,9 @@
 - type: entity
   id: StalkerCargo6
   parent: BaseStructure
-  name: freight car
-  description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  name: вантажний вагон
+  description: Це залізничний транспортний засіб без двигуна, який використовувався для перевезення вантажів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:
@@ -514,9 +514,9 @@
 - type: entity
   id: StalkerCargo7
   parent: BaseStructure
-  name: freight car
-  description: It is a railway vehicle without an engine, which was used for transporting goods.
-  suffix: ST, Mapping
+  name: вантажний вагон
+  description: Це залізничний транспортний засіб без двигуна, який використовувався для перевезення вантажів.
+  suffix: ST, Маппінг
   placement:
     mode: AlignTileAny
   components:

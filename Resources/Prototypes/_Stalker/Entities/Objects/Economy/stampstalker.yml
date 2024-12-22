@@ -1,5 +1,5 @@
 - type: entity
-  name: military seal
+  name: військова печатка
   parent: RubberStampBase
   id: RubberStampArmy
   suffix: DO NOT MAP
@@ -13,7 +13,7 @@
     state: stamp-centcom
 
 - type: entity
-  name: scientist seal
+  name: наукова печатка
   parent: RubberStampBase
   id: RubberStampScience
   suffix: DO NOT MAP
@@ -27,7 +27,7 @@
     state: stamp-psychologist
 
 - type: entity
-  name: UN seal
+  name: Печатка ООН
   parent: RubberStampBase
   id: RubberStampUN
   suffix: DO NOT MAP
@@ -41,14 +41,14 @@
     state: stamp-cap
 
 - type: entity
-  name: Seal of the Field Commander
+  name: Печатка польового командира
   parent: RubberStampBase
   id: RubberStampHeadMerc
-  description: Seal of the Field Commander Ares Group
+  description: Печатка польового командира групи "Арес"
   suffix: DO NOT MAP
   components:
   - type: Stamp
-    stampedName: "Полевой Командир"
+    stampedName: "Польовий Командир"
     stampedColor: "#1e547d"
     stampState: "paper_stamp-cap"
   - type: Sprite
@@ -59,11 +59,11 @@
   name: mercenary seal
   parent: RubberStampBase
   id: RubberStampMerc
-  description: Mercenary Seal, used for Ares Group contracts
+  description: Печатка найманця, що використовується для контрактів групи "Арес"
   suffix: DO NOT MAP
   components:
   - type: Stamp
-    stampedName: "Наёмник"
+    stampedName: "Найманець"
     stampedColor: "#1b6196"
     stampState: "paper_stamp-cap"
   - type: Sprite
@@ -71,14 +71,14 @@
     state: stamp-cap
 
 - type: entity
-  name: customer seal
+  name: печатка замовника
   parent: RubberStampBase
   id: RubberStampCustomer
-  description: Customer Seal, used for Ares Group contracts
+  description: Печатка замовника, що використовується для контрактів групи "Арес"
   suffix: DO NOT MAP
   components:
   - type: Stamp
-    stampedName: "Заказчик"
+    stampedName: "Клієнт"
     stampedColor: "#23731a"
     stampState: "paper_stamp-centcom"
   - type: Sprite
@@ -86,10 +86,10 @@
     state: stamp-centcom
 
 - type: entity
-  name: Agent Seal
+  name: Печатка агента
   parent: RubberStampBase
   id: RubberStampAgentMerc
-  description: Agent Seal Ares Group
+  description: Печатка агента, що використовується для контрактів групи "Арес"
   suffix: DO NOT MAP
   components:
   - type: Stamp

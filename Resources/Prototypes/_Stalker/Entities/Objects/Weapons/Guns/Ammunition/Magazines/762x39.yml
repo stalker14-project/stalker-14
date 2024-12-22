@@ -1,7 +1,7 @@
 - type: entity
   id: Base739Mag10
-  name: magazine 7.62x39 (10)
-  description: Magazine 7.62x39 for AK. Bullet capacity 10. Sold empty.
+  name: магазин 7.62x39 (10)
+  description: Магазин 7.62x39 для АК. Ємність 10 набоїв. Продається порожнім.
   parent: Base545Mag10
   tag: Stalker
   components:
@@ -40,8 +40,8 @@
 
 - type: entity
   id: 739Mag30
-  name: magazine 7.62x39 (30)
-  description: Magazine 7.62x39 for AK. Bullet capacity 30. Sold empty.
+  name: магазин 7.62x39 (30)
+  description: Магазин 7.62x39 для АК. Ємність 30 набоїв. Продається порожнім.
   parent: Base739Mag10
   tag: Stalker
   components:
@@ -61,10 +61,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
 - type: entity
   id: 739Mag45
-  name: magazine 7.62x39 (45)
-  description: Magazine 7.62x39 for AK. Bullet capacity 45. Sold empty.
+  name: магазин 7.62x39 (45)
+  description: Магазин 7.62x39 для АК. Ємність патронів 45. Продається порожнім.
   parent: Base739Mag10
   tag: Stalker
   components:
@@ -84,10 +85,11 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
 - type: entity
   id: 739Mag75
-  name: drum 7.62x39 (75)
-  description: Drum 7.62x39 for AK. Bullet capacity 75. Sold empty.
+  name: барабан 7.62x39 (75)
+  description: Барабан 7.62x39 для АК. Ємність кулі 75. Продається порожнім.
   parent: Base739Mag10
   tag: Stalker
   components:
@@ -111,7 +113,7 @@
 - type: entity
   parent: BaseItem
   id: BaseMagazine762x39RPD
-  suffix: Stalker
+  suffix: ST
   abstract: true
   components:
     - type: Tag
@@ -142,7 +144,7 @@
 - type: entity
   parent: BaseMagazine762x39RPD
   id: Magazine762x39RPD
-  name: magazine 7.62x39 RPD (100)
+  name: магазин 7.62x39 RPD (100)
   components:
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/rpd_100.rsi

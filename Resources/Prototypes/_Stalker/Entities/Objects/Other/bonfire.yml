@@ -1,16 +1,16 @@
 - type: entity
   id: STBonfire
   parent: Bonfire
-  name: Bonfire
-  description: What could be better than sitting under a fire listening to songs?
+  name: Багаття
+  description: Що може бути краще, ніж сидіти біля багаття і слухати пісні?
   components:
   - type: Craftable
 
 - type: entity
   id: BonfireOff
   parent: STBonfire
-  name: campfire base
-  description: Base for a fire.
+  name: база для вогнища
+  description: Підстава для багаття.
   components:
   - type: Transform
     anchored: true
@@ -34,8 +34,8 @@
 - type: entity
   id: BonfireOn
   parent: BonfireOff
-  name: campfire
-  description: What could be better than a late evening in the open air with a guitar and friends.
+  name: вогнище
+  description: Що може бути краще, ніж пізній вечір на свіжому повітрі з гітарою та друзями.
   components:
   - type: Sprite
     noRot: true
@@ -62,8 +62,8 @@
 
 - type: construction
   id: BonfireCraft
-  name: campfire base
-  description: Base for a fire.
+  name: база для вогнища
+  description: Підстава для багаття.
   graph: BonfireOff
   startNode: start
   targetNode: bonfireoff

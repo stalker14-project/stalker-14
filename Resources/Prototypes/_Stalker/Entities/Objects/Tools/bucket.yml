@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: STBucket
-  name: bucket
-  description: Its a boring old bucket.
+  name: відро
+  description: Це нудне старе відро.
   components:
   - type: Drink
     solution: bucket
@@ -65,9 +65,9 @@
 
 - type: entity
   parent: STBucket
-  name: Dung Bucket
+  name: Відро для гною
   id: STNavozBucket
-  description: A regular galvanized bucket.
+  description: Звичайне оцинковане відро.
   components:
     - type: SolutionContainerManager
       solutions:

@@ -898,13 +898,13 @@
           prob: 0.0191
         - id: ClothingOuterArmorBandits
           prob: 0.0039
-        - id: ClothingOuterArmorZaryaStalker
+        - id: ClothingOuterArmorZoryaStalker
           prob: 0.0039
         - id: ClothingHeadHelmetInfantry
           prob: 0.0013
         - id: STClothingOuterArmorLightPlateVestBaseStalker
           prob: 0.0013
-        - id: ClothingMaskGasZarya
+        - id: ClothingMaskGasZorya
           prob: 0.005
         - id: ClothingMaskGasM40
           prob: 0.003
@@ -1618,7 +1618,7 @@
 - type: entity
   id: RandomCacheSpawnerMonolithCrate
   name: спавнер ящика моноліту (100% шанс)
-  suffix: Stalker
+  suffix: ST
   parent: FlexibleMarker
   components:
     - type: Sprite
@@ -1636,7 +1636,7 @@
 - type: entity
   parent: BaseStructureStalkerDynamic
   id: STMonolithCrate
-  suffix: Stalker, монолит
+  suffix: ST, монолит
   name: чорний ящик моноліту
   components:
     - type: Storage

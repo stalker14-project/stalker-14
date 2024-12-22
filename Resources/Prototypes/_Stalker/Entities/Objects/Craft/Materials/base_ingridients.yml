@@ -29,9 +29,9 @@
 - type: entity
   parent: STBaseIngridient
   id: CraftScrap
-  name: scrap metal
-  description: A piece of scrap metal that can only be sent for recycling.
-  suffix: Stalker, крафт
+  name: металобрухт
+  description: Шматок металобрухту, який можна відправити тільки на переробку.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 1
@@ -46,14 +46,14 @@
       scale: 0.2, 0.2
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: STBaseIngridient
-  name: cloth
+  name: тканина
   id: MaterialCloth1Stalker
-  description: Simple synthetic fabric without any special tricks.
-  suffix: Stalker, крафт
+  description: Проста синтетична тканина без особливих хитрощів.
+  suffix: ST, крафт
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Craft/32.rsi
@@ -65,4 +65,4 @@
       count: 1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти

@@ -1,4 +1,4 @@
-############### Мясо
+############### М'ясо
 
 - type: reagent
   id: MToxin
@@ -36,11 +36,11 @@
 ##### Кабан
 
 - type: entity
-  name: raw boar meat
+  name: сире м'ясо кабана
   parent: FoodMeatRawBase
   id: FoodMeatBoar
-  description: A piece of raw boar meat.
-  suffix: Stalker, еда
+  description: Шматок сирого кабанячого м'яса.
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 1.0
@@ -68,11 +68,11 @@
   - type: Craftable
 
 - type: entity
-  name: boar steak
+  name: кабанячий стейк
   parent: FoodMeatBase
   id: FoodMeatBoarCooked
-  description: Cooked Boar Meat.
-  suffix: Stalker, еда
+  description: Приготоване м'ясо кабана.
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 0.8
@@ -116,14 +116,14 @@
   - node: steak boar
     entity: FoodMeatBoarCooked
 
-######################## Пёсик
+######################## Собака
 
 - type: entity
-  name: raw dog meat
+  name: "сире собаче м'ясо"
   parent: FoodMeatRawBase
   id: FoodMeatDog
-  description: A piece of raw dog meat.
-  suffix: Stalker, еда
+  description: "Шматок сирого собачого м'яса. Виглядає не дуже смачно."
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 0.8
@@ -151,11 +151,11 @@
   - type: Craftable
 
 - type: entity
-  name: dog meat steak
+  name: "стейк з собачого м'яса"
   parent: FoodMeatBase
   id: FoodMeatDogCooked
-  description: Cooked dog meat.
-  suffix: Stalker, еда
+  description: "Смажене собаче м'ясо. Виглядає не дуже смачно."
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 0.6
@@ -199,13 +199,13 @@
   - node: steak dog
     entity: FoodMeatDogCooked
 
-######################## Паук
+######################## Павук
 - type: entity
-  name: raw spider meat
+  name: сире м'ясо павука
   parent: FoodMeatRawBase
   id: STFoodMeatSpider
-  description: A piece of raw spider meat. Looks sickening.
-  suffix: Stalker, еда
+  description: "Шматок сирого павукового м'яса. Виглядає огидно."
+  suffix: ST, їжа
   components:
   - type: Sprite
     sprite: Objects/Consumable/Food/meat.rsi
@@ -226,11 +226,11 @@
   - type: Craftable
 
 - type: entity
-  name: spider steak
+  name: павуковий стейк
   parent: FoodMeatBase
   id: STFoodMeatSpiderCooked
-  description: Cooked spider meat. Looks sickening.
-  suffix: Stalker, еда
+  description: Смажене м'ясо павука. Виглядає огидно.
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 0.6
@@ -257,14 +257,14 @@
           Quantity: 2
 
 ###################################
-#             НАПИТКИ             #
+#             НАПОЇ               #
 ###################################
 
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkLemonadehBottleFull
-  name: bottle of lemonade Duchess
-  description: One of the varieties of Soviet lemonade, a non-alcoholic, highly carbonated, light-yellow tonic drink. In addition to the usual lemonade base, the original drink contains a syrup-infusion of the dessert southern pear of the Duchess variety
+  name: 'пляшка лимонаду "Моршиньска Лимонада"'
+  description: Один з різновидів лимонаду, безалкогольний, середньо газований, світло-жовтий тонізуючий напій.
   components:
   - type: STWeight
     self: 1.5
@@ -282,14 +282,14 @@
     sprite: _Stalker/Objects/Counsumable/Drinks/lemonade.rsi
   - type: Sealable
 
-# Прочая лабудень
+# Інша лабудень
 
 - type: entity
-  name: Blind Dog Burger
+  name: Бургер зі сліпого пса
   parent: FoodBurgerBase
   id: FoodBurgerDog
-  description: Dog burger with garlic, pepper and lettuce. A cheap alternative to the more popular boar burger.
-  suffix: Stalker, еда
+  description: Собачий бургер з часником, перцем і листям салату. Дешева альтернатива більш популярному бургеру з кабана.
+  suffix: ST, їжа
   components:
   - type: Sprite
     state: chicken
@@ -309,11 +309,11 @@
     - Meat
 
 - type: entity
-  name: boar burger
+  name: кабанячий бургер
   parent: FoodBurgerBase
   id: FoodBurgerBoar
-  description: Boar burger with garlic, pepper and lettuce. More nutritious than a blind dog burger.
-  suffix: Stalker, еда
+  description: Кабанячий бургер з часником, перцем і листям салату. Більш поживний, ніж бургер зі сліпої собаки.
+  suffix: ST, їжа
   components:
   - type: Sprite
     state: chicken
@@ -333,11 +333,11 @@
     - Meat
 
 - type: entity
-  name: spider meat burger
+  name: бургер з павуковим м'ясом
   parent: FoodBurgerBase
   id: FoodBurgerSpider
-  description: Spider burger with garlic, pepper and lettuce. This stuff is not only disgusting, but also poorly nutritious
-  suffix: Stalker, еда
+  description: Павуковий бургер з часником, перцем і листям салату. Це не тільки огидна, але й малопоживна їжа
+  suffix: ST, їжа
   components:
   - type: Sprite
     state: soylent
@@ -357,11 +357,11 @@
     - Meat
 
 - type: entity
-  name: baked potato
+  name: печена картопля
   parent: FoodProduceBase
   id: FoodPotatoCooked
-  description: Baked potatoes, which can be either a simple or a festive, sophisticated dish.
-  suffix: Stalker, еда
+  description: Запечена картопля, яка може бути як простою, так і святковою, вишуканою стравою.
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 0.36
@@ -393,11 +393,11 @@
     - Vegetable
 
 - type: entity
-  name: peeled potatoes
+  name: очищена картопля
   parent: FoodProduceBase
   id: FoodPotatoCleaned
-  description: Peeled potatoes, which can be either a simple or a festive, sophisticated dish.
-  suffix: Stalker, еда
+  description: Очищена картопля, яка може бути як простою, так і святковою, вишуканою стравою.
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 0.39
@@ -426,11 +426,11 @@
     - Vegetable
 
 - type: entity
-  name: potato peelings
+  name: картопляні очистки
   parent: FoodProduceBase
   id: FoodPotatoCleaning
-  description: They say they make chips out of them.
-  suffix: Stalker, еда
+  description: Кажуть, що з них роблять чіпси.
+  suffix: ST, їжа
   components:
   - type: STWeight
     self: 0.01
@@ -459,11 +459,11 @@
 # Stalker
 
 - type: entity
-  name: sandwich
+  name: бутерброд
   parent: FoodMeatBase
   id: FoodMeatButerbrod
-  suffix: Stalker, Еда
-  description: A slice of bread or a roll with a filling of some product spread or laid on top, ready to eat
+  suffix: ST, їжа
+  description: Шматок хліба або булочка з начинкою з якогось продукту, намазаний або покладений зверху, готовий до вживання
   components:
   - type: STWeight
     self: 0.34

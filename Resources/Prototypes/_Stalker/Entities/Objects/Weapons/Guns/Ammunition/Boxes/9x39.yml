@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 939SP5Box
-  name: Box of cartridges (9x39) SP-5
-  description: For machine guns and special sniper rifles, 30 pieces in a box. Provides penetration of class 2 armor.
-  suffix: Stalker
+  name: Коробка патронів (9х39) SP-5
+  description: Для кулеметів та спеціальних снайперських гвинтівок, по 30 штук у коробці. Забезпечує пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: MagazineVisuals
       magState: 939ammo
@@ -23,9 +23,9 @@
 - type: entity
   parent: 939SP5Box
   id: 939SP6Box
-  name: Box of cartridges (9x39) SP-6
-  description: For machine guns and special sniper rifles, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: Коробка патронів (9х39) SP-6
+  description: Для кулеметів та спеціальних снайперських гвинтівок, 30 штук у коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge939SP6
@@ -40,9 +40,9 @@
 - type: entity
   parent: 939SP5Box
   id: 939BPBox
-  name: Box of cartridges (9x39) BP
-  description: For machine guns and special sniper rifles, 30 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: Коробка патронів (9х39) BP
+  description: Для кулеметів та спеціальних снайперських гвинтівок, 30 штук у коробці. Забезпечують пробиття броні 4 класу.
+  suffix: ST
   components:
     - type: MagazineVisuals
       magState: 939ammo1
@@ -59,9 +59,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 939SP5BoxCink
-  name: ammo box (9x39) SP-5
-  description: For machine guns and special sniper rifles, 300 pieces in a box. Provides penetration of class 2 armor.
-  suffix: Stalker
+  name: коробка для набоїв (9х39) SP-5
+  description: Для кулеметів та спеціальних снайперських гвинтівок, 300 штук в коробці. Забезпечує пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 300
@@ -79,9 +79,9 @@
 - type: entity
   parent: 939SP5BoxCink
   id: 939SP6BoxCink
-  name: ammo box (9x39) SP-6
-  description: For machine guns and special sniper rifles, 300 pieces in a box. Provides penetration of class 3 armor.
-  suffix: Stalker
+  name: коробка для набоїв (9х39) SP-6
+  description: Для кулеметів та спеціальних снайперських гвинтівок, 300 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge939SP6
@@ -95,9 +95,9 @@
 - type: entity
   parent: 939SP5BoxCink
   id: 939BPBoxCink
-  name: ammo box (9x39) BP
-  description: For machine guns and special sniper rifles, 300 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: коробка для набоїв (9х39) BP
+  description: Для кулеметів та спеціальних снайперських гвинтівок, 300 штук в коробці. Забезпечують пробиття броні 4 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge939BP

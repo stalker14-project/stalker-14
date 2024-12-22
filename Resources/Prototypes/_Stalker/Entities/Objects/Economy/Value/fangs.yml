@@ -3,9 +3,9 @@
 - type: entity
   parent: BaseItem
   id: Fangs
-  name: Клыки
-  description: Вырванные клыки из передних челюстей разных мутантов... Да только фанатик бы стал таким заниматься!
-  suffix: ST, НЕ СПАВНИТЬ
+  name: Ікла
+  description: Вирвані ікла з передніх щелеп різних мутантів... Та тільки фанатик би став таким займатися!
+  suffix: ST, НЕ СПАВНИТИ
   components:
   - type: PhysicalComposition
     materialComposition:
@@ -41,14 +41,14 @@
 
 - type: currency
   id: Fangs
-  displayName: клыки
+  displayName: ікла
   cash:
     1: Fangs
   canWithdraw: true
 
 - type: stack
   id: Fangs
-  name: клык
+  name: ікло
   maxCount: 5000
   icon: { sprite: /Textures/_Stalker/Objects/Economy/fangs.rsi, state: cash }
   spawn: Fangs
@@ -57,7 +57,7 @@
 - type: entity
   parent: Fangs
   id: Fangs100
-  suffix: Stalker, НЕ СПАВНИТЬ, 100
+  suffix: ST, НЕ СПАВНИТИ, 100
   components:
   - type: Icon
     sprite: _Stalker/Objects/Economy/fangs.rsi
@@ -68,7 +68,7 @@
 - type: entity
   parent: Fangs
   id: Fangs1000
-  suffix: Stalker, НЕ СПАВНИТЬ, 1000
+  suffix: ST, НЕ СПАВНИТИ, 1000
   components:
   - type: Icon
     sprite: _Stalker/Objects/Economy/fangs.rsi

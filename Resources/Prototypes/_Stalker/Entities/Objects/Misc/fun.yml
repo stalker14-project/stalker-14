@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseDice
   id: d20GoldDice
-  name: d20
-  suffix: Stalker
-  description: A gold die with 20 sides. The preferred die for throwing at the Game Master.
+  name: Д20
+  suffix: ST
+  description: Золота плашка з 20 гранями. Найкращий кубик для кидання на Майстра гри.
   components:
   - type: Dice
     sides: 20
@@ -16,9 +16,9 @@
 - type: entity
   parent: BaseDice
   id: GoldPercentileDie
-  suffix: Stalker
-  name: golden percentage dice
-  description: A gold die with 10 sides. Better for rolling a d100 than this gold golf ball.
+  suffix: ST
+  name: золотий відсотковий кубик
+  description: Золота плашка з 10 гранями. Краще для кидання d100, ніж цей золотий м'яч для гольфу.
   components:
   - type: Dice
     sides: 10
@@ -33,9 +33,9 @@
 - type: entity
   parent: DiceBag
   id: GoldDiceBag
-  name: golden bag with golden bones
-  suffix: Stalker
-  description: Contains all the luck collected throughout the area.
+  name: золотий мішечок із золотими кубиками
+  suffix: ST
+  description: Містить всю удачу, зібрану по всій місцевості.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/gold_dice.rsi
@@ -51,8 +51,8 @@
 - type: entity
   parent: BaseDice
   id: LoadedD6Dice
-  name: d6
-  description: A die with six sides. Basic and serviceable.
+  name: Д6
+  description: Плашка з шістьма гранями. Простий і придатний до використання.
   suffix: ST, Loaded
   components:
   - type: Dice

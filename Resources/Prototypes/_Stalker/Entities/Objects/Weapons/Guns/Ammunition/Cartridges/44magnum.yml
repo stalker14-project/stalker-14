@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseCartridge
   id: BaseCartridgeRemingtonMagnum
-  name: cartridge (.44 remington magnum)
-  suffix: Stalker
+  name: патрон (.44 ремінгтон магнум)
+  suffix: ST
   abstract: true
   components:
   - type: Tag
@@ -22,8 +22,8 @@
 - type: entity
   parent: BaseCartridgeRemingtonMagnum
   id: CartridgeRemingtonMagnum
-  name: cartridge (.44 remington magnum)
-  suffix: Stalker
+  name: патрон (.44 ремінгтон магнум)
+  suffix: ST
   components:
   - type: CartridgeAmmo
     proto: BulletRemingtonMagnum
@@ -31,8 +31,8 @@
 - type: entity
   parent: BaseCartridgeRemingtonMagnum
   id: CartridgeRemingtonMagnumAP
-  name: cartridge (.44 remington magnum armor-piercing)
-  suffix: Stalker
+  name: патрон (.44 бронебійний ремінгтон магнум)
+  suffix: ST
   components:
   - type: CartridgeAmmo
     proto: BulletRemingtonMagnumAP

@@ -558,7 +558,7 @@
 
 - type: entity
   name: ППШ-41, який був повністю знищений
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   id: WeaponZombiePPsh
   categories: [ HideSpawnMenu ]
@@ -613,7 +613,7 @@
 
 - type: entity
   name: АКС-74У, повністю знищений
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   id: WeaponZombieAKS74Y
   categories: [ HideSpawnMenu ]
@@ -660,7 +660,7 @@
 
 - type: entity
   name: Вбитий в сміття AR-15
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   categories: [ HideSpawnMenu ]
   id: WeaponZombieM16Carabine
@@ -758,7 +758,7 @@
 
 - type: entity
   name: Вбитий Галліл
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   categories: [ HideSpawnMenu ]
   id: WeaponZombieGalil
@@ -818,7 +818,7 @@
 
 - type: entity
   name: Вбитий в смітя Sig-550
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   categories: [ HideSpawnMenu ]
   id: WeaponZombieSig550
@@ -871,7 +871,7 @@
 
 - type: entity
   name: Вбитий в сміття MP-40
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   id: WeaponZombieMP40
   categories: [ HideSpawnMenu ]
@@ -920,7 +920,7 @@
       autoRechargeRate: 500
 
 - type: entity
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   id: WeaponZombieFAL
   categories: [ HideSpawnMenu ]
@@ -975,7 +975,7 @@
       autoRechargeRate: 500
 
 - type: entity
-  suffix: Stalker
+  suffix: ST
   parent: WeaponZombiePM
   id: WeaponZombieSCARH
   categories: [ HideSpawnMenu ]
@@ -1031,7 +1031,7 @@
 
 - type: entity
   name: PP-19 Bison, повністю знищений
-  suffix: Stalker
+  suffix: ST
   id: WeaponZombieBzion
   categories: [ HideSpawnMenu ]
   paren: WeaponZombiePM
@@ -1121,19 +1121,19 @@
 
 - type: entity
   parent: STClothingOuterArmorStorageBasic
-  id: ClothingOuterArmorZaryaStalkerZ
+  id: ClothingOuterArmorZoryaStalkerZ
   name: зношений комбінезон "Зоря"
   description: Костюм сталкера, виготовлений народними умільцями, є ефективним поєднанням легкого армійського бронежилета та костюма з прогумованої тканини. Посилений вбудованими кевларовими пластинами. Забезпечує хороший захист від слабкої стрілецької зброї. В цілому, вкрай недостатній для глибоких рейдів та серйозних операцій у вузлах Зони.
-  suffix: Stalker
+  suffix: ST
   categories: [ HideSpawnMenu ]
   components:
   - type: Unremoveable
   - type: STWeight
     self: 5
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/zorya_stalker.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_stalker.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/zorya_stalker.rsi
   - type: Armor
     armorClass: 2
     modifiers:
@@ -1233,19 +1233,19 @@
 
 - type: entity
   parent: STClothingOuterArmorStorageBasic
-  id: ClothingOuterArmorZaryaDolgZ
+  id: ClothingOuterArmorZoryaDolgZ
   name: зношена зоря обов'язку
   categories: [ HideSpawnMenu ]
   description: Являє собою поєднання двошарової прогумованої тканини з плексигласовою прокладкою і вбудованого бронежилета. По суті, той самий комбінезон "Зоря", тільки модифікований умільцями угруповання "Обов'язок" для безпечніших вилазок в умовах Зони.
-  suffix: Stalker
+  suffix: ST
   components:
   - type: Unremoveable
   - type: STWeight
     self: 8
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/zorya_dolg.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/zorya_dolg.rsi
   - type: Armor
     armorClass: 2
     modifiers:
@@ -1296,7 +1296,7 @@
   name: зношений комбінезон найманця
   categories: [ HideSpawnMenu ]
   description: За основу взято зразки екіпіровки спецназу західних армій. Завдяки спеціальній обробці тканини посилено стійкість броні в разі фізичного зміщення пластин. За захисними характеристиками трохи перевершує армійські бронежилети. Забезпечує 2 клас захисту.
-  suffix: Stalker, Наёмники
+  suffix: ST, Найманці
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1432,7 +1432,7 @@
   name: зношений плащ із легким бронежилетом
   categories: [ HideSpawnMenu ]
   description: Плащ із броніком 3 класу під ним, доволі надійний захист при збереженні понтів.
-  suffix: Stalker
+  suffix: ST
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1497,7 +1497,7 @@
   categories: [ HideSpawnMenu ]
   name: зношений бронежилет "СН-1"
   description: Цей бронежилет розробляли для проведення пошукових операцій в областях із низькою аномальною активністю. Використання досить якісних матеріалів підвищило стійкість до зношування.
-  suffix: Stalker
+  suffix: ST
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1601,7 +1601,7 @@
   categories: [ HideSpawnMenu ]
   name: зношений бронекомбез ренегатів
   description: Дешевий комбез різників, що захищає від мутантів з аномаліями. Забезпечує 2 клас захисту.
-  suffix: Stalker
+  suffix: ST
   components:
   - type: Unremoveable
   - type: STWeight
@@ -1756,7 +1756,7 @@
   id: ClothingHeadHelmetUlachEasyZ
   categories: [ HideSpawnMenu ]
   name: зношений легкий улач
-  suffix: Stalker, Найманці
+  suffix: ST, Найманці
   description: Це шолом, спеціально розроблений для забезпечення захисту від проникаючих атак і мобільності для фракції Найманців. Клас броні 3.
   components:
   - type: Unremoveable

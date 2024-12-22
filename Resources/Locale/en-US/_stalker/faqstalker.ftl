@@ -97,4 +97,4 @@ faq-stalker =
 
         6. Medical Supplies: Always have medical supplies. A bandage, two bruise kits, and a Dexalin tablet are essentials. Pricier options include AI-2 kits and military medkits.
 
-        7. Proper Gear: Don’t enter the Zone unprepared. Start with a Zarya suit and a SSH-68 helmet. If you’re hunting artifacts, wear an SSP Ecologist or SEVA suit, along with a gas mask. Don’t forget your artifact detector! For firefights, you’ll need a bulletproof vest and a helmet. Bring Tier 2 or Tier 3 ammo for those situations.
+        7. Proper Gear: Don’t enter the Zone unprepared. Start with a Zorya suit and a SSH-68 helmet. If you’re hunting artifacts, wear an SSP Ecologist or SEVA suit, along with a gas mask. Don’t forget your artifact detector! For firefights, you’ll need a bulletproof vest and a helmet. Bring Tier 2 or Tier 3 ammo for those situations.

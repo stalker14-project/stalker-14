@@ -1,9 +1,9 @@
 - type: entity
   id: ContainerBoxStalker
   parent: BaseShippingContainer
-  name: cabin trailer
-  description: A universal non-capital structure that is mobile. It is installed on site in a few hours and can be used for a variety of purposes. It can be a small warehouse, office, summer cottage, security post, or housing.
-  suffix: Stalker
+  name: причіп з кабіною
+  description: Універсальна некапітальна конструкція, яка є мобільною. Вона встановлюється на місці за кілька годин і може використовуватися для різних цілей. Це може бути невеликий склад, офіс, дача, пост охорони або житло.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Containers.rsi
@@ -13,9 +13,9 @@
   id: ContainereStalkerParent
   parent: BaseShippingContainer
   abstract: true
-  name: dad container
-  description: A sea container of this size is usually used to transport large and bulky cargo, goods up to 9 meters long. One of the main advantages of such containers is the increased height, thus, the use of such containers, with the same freight price, allows you to transport more cargo.
-  suffix: Stalker
+  name: Контейнер
+  description: Морський контейнер такого розміру зазвичай використовується для перевезення великих і громіздких вантажів, товарів довжиною до 9 метрів. Однією з головних переваг таких контейнерів є збільшена висота, таким чином, використання таких контейнерів, при тій же ціні фрахту, дозволяє перевозити більшу кількість вантажу.
+  suffix: ST
   components:
   - type: Physics
     bodyType: Static
@@ -32,9 +32,9 @@
 - type: entity
   id: ContainerBlueStalker
   parent: ContainereStalkerParent
-  name: blue container
-  description: A sea container of this size is usually used to transport large and bulky cargo, goods up to 9 meters long. One of the main advantages of such containers is the increased height, thus, the use of such containers, with the same freight price, allows you to transport more cargo.
-  suffix: Stalker
+  name: синій контейнер
+  description: Морський контейнер такого розміру зазвичай використовується для перевезення великих і громіздких вантажів, товарів довжиною до 9 метрів. Однією з головних переваг таких контейнерів є збільшена висота, таким чином, використання таких контейнерів, при тій же ціні фрахту, дозволяє перевозити більшу кількість вантажу.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/containerss.rsi
@@ -43,9 +43,9 @@
 - type: entity
   id: ContainerBlueRustedStalker
   parent: ContainereStalkerParent
-  name: blue rusty container
-  description: A sea container of this size is usually used to transport large and bulky cargo, goods up to 9 meters long. One of the main advantages of such containers is the increased height, thus, the use of such containers, with the same freight price, allows you to transport more cargo. The container is completely covered in rust.
-  suffix: Stalker
+  name: синій іржавий контейнер
+  description: Морський контейнер такого розміру зазвичай використовується для перевезення великих і громіздких вантажів, товарів довжиною до 9 метрів. Однією з головних переваг таких контейнерів є збільшена висота, таким чином, використання таких контейнерів, при тій же ціні фрахту, дозволяє перевозити більшу кількість вантажу. The container is completely covered in rust.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/containerss.rsi
@@ -54,9 +54,9 @@
 - type: entity
   id: ContainerRedStalker
   parent: ContainereStalkerParent
-  name: red container
-  description: A sea container of this size is usually used to transport large and bulky cargo, goods up to 9 meters long. One of the main advantages of such containers is the increased height, thus, the use of such containers, with the same freight price, allows you to transport more cargo.
-  suffix: Stalker
+  name: червоний контейнер
+  description: Морський контейнер такого розміру зазвичай використовується для перевезення великих і громіздких вантажів, товарів довжиною до 9 метрів. Однією з головних переваг таких контейнерів є збільшена висота, таким чином, використання таких контейнерів, при тій же ціні фрахту, дозволяє перевозити більшу кількість вантажу.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/containerss.rsi
@@ -65,9 +65,9 @@
 - type: entity
   id: ContainerRedRustedStalker
   parent: ContainereStalkerParent
-  name: red rusty container
-  description: A sea container of this size is usually used to transport large and bulky cargo, goods up to 9 meters long. One of the main advantages of such containers is the increased height, thus, the use of such containers, with the same freight price, allows you to transport more cargo. The container is completely covered in rust.
-  suffix: Stalker
+  name: червоний іржавий контейнер
+  description: Морський контейнер такого розміру зазвичай використовується для перевезення великих і громіздких вантажів, товарів довжиною до 9 метрів. Однією з головних переваг таких контейнерів є збільшена висота, таким чином, використання таких контейнерів, при тій же ціні фрахту, дозволяє перевозити більшу кількість вантажу. The container is completely covered in rust.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/containerss.rsi
@@ -76,9 +76,9 @@
 - type: entity
   id: ContainerYellowStalker
   parent: ContainereStalkerParent
-  name: yellow container
-  description: A sea container of this size is usually used to transport large and bulky cargo, goods up to 9 meters long. One of the main advantages of such containers is the increased height, thus, the use of such containers, with the same freight price, allows you to transport more cargo.
-  suffix: Stalker
+  name: жовтий контейнер
+  description: Морський контейнер такого розміру зазвичай використовується для перевезення великих і громіздких вантажів, товарів довжиною до 9 метрів. Однією з головних переваг таких контейнерів є збільшена висота, таким чином, використання таких контейнерів, при тій же ціні фрахту, дозволяє перевозити більшу кількість вантажу.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/containerss.rsi
@@ -87,9 +87,9 @@
 - type: entity
   id: ContainerYellowRustedStalker
   parent: ContainereStalkerParent
-  name: yellow rusty container
-  description: A sea container of this size is usually used to transport large and bulky cargo, goods up to 9 meters long. One of the main advantages of such containers is the increased height, thus, the use of such containers, with the same freight price, allows you to transport more cargo. The container is completely covered in rust.
-  suffix: Stalker
+  name: жовтий іржавий контейнер
+  description: Морський контейнер такого розміру зазвичай використовується для перевезення великих і громіздких вантажів, товарів довжиною до 9 метрів. Однією з головних переваг таких контейнерів є збільшена висота, таким чином, використання таких контейнерів, при тій же ціні фрахту, дозволяє перевозити більшу кількість вантажу. The container is completely covered in rust.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/containerss.rsi

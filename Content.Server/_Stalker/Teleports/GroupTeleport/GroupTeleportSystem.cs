@@ -76,7 +76,7 @@ public sealed partial class GroupTeleportSystem : SharedTeleportSystem
 
         if (link.LinkedEntities.Count <= 0)
         {
-            _popup.PopupEntity("Кажется проход здесь появится позже...", entity, subject, PopupType.Medium);
+            _popup.PopupEntity("Здається прохід тут з'явиться пізніше...", entity, subject, PopupType.Medium);
             return;
         }
 
@@ -122,14 +122,14 @@ public sealed partial class GroupTeleportSystem : SharedTeleportSystem
         var targetGroupEnt = portals.First();
         if (!TryComp<GroupTeleportComponent>(targetGroupEnt, out var groupComp))
         {
-            _sawmill.Warning($"Tried to relink portal without GroupTeleportComponent {ToPrettyString(targetGroupEnt)}");
+            _sawmill.Warning($"Спроба перелінкувати портал без GroupTeleportComponent {ToPrettyString(targetGroupEnt)}");
             return false;
         }
 
         var targetGroup = groupComp.TargetGroup;
         if (!_cachedPortals.TryGetValue(targetGroup, out var targetPortals))
         {
-            _sawmill.Warning($"Tried to relink portals to {targetGroup} which is not cached!");
+            _sawmill.Warning($"Спробував перелінкувати портали на {targetGroup}, який не кешується!");
             return false;
         }
 
@@ -173,7 +173,7 @@ public sealed partial class GroupTeleportSystem : SharedTeleportSystem
             comp.ReLink = _timing.CurTime + TimeSpan.FromSeconds(comp.ReLinkTime);
 
             if (!ReLinkGroup(portals))
-                _sawmill.Warning($"Unable to relink portals {kvp.Key}");
+                _sawmill.Warning($"Не вдається перев'язати портали {kvp.Key}");
         }
     }
 

@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 918PGJBox
-  name: Box of cartridges (9x18) P gzh
-  description: For PMm, 30 pieces in a box. Provides penetration of only 1 class of armor.
-  suffix: Stalker
+  name: Коробка патронів (9х18) P gzh
+  description: Для PMm по 30 штук у коробці. Забезпечує пробиття лише 1 класу броні.
+  suffix: ST
   components:
   - type: MagazineVisuals
     magState: 919ammo2
@@ -23,9 +23,9 @@
 - type: entity
   parent: 918PGJBox
   id: 918PSTBox
-  name: Box of cartridges (9x18) PST GZ
-  description: For PMm, 30 pieces in a box. Provides penetration of class 2 armor.
-  suffix: Stalker
+  name: Коробка патронів (9х18) PST GZ
+  description: Для PMm по 30 штук у коробці. Забезпечує пробиття броні 2 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge918PST
@@ -40,9 +40,9 @@
 - type: entity
   parent: 918PGJBox
   id: 918SP7Box
-  name: Box of cartridges (9x18) SP7 gzh
-  description: Expansive ammunition for PP and pistols of the former Warsaw Pact countries. They wont penetrate anything, but they will cause huge damage to targets with weak or no armor.
-  suffix: Stalker
+  name: Коробка патронів (9х18) SP7 gzh
+  description: Експансивні боєприпаси для ПП та пістолетів країн колишнього Варшавського договору. Вони нікуди не пробивають, але завдають величезної шкоди цілям зі слабкою бронею або без неї.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge918SP7
@@ -57,9 +57,9 @@
 - type: entity
   parent: 918PGJBox
   id: 918PBMBox
-  name: Box of cartridges (9x18) PBM GZ
-  description: For PMm, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: Коробка патронів (9х18) PBM GZ
+  description: Для PMm по 30 штук у коробці. Забезпечує пробиття броні 3 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge918PBM
@@ -75,9 +75,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 918PGJBoxCink
-  name: ammo box (9x18) P gzh
-  description: For PMm, 300 pieces in a box. Provides penetration of only 1 class of armor.
-  suffix: Stalker
+  name: патронний ящик (9x18) P gzh
+  description: Для PMm, 300 штук в коробці. Забезпечує пробиття лише 1 класу броні.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge918PGJ
@@ -95,9 +95,9 @@
 - type: entity
   parent: 918PGJBoxCink
   id: 918PSTBoxCink
-  name: ammo box (9x18) PST GZ
-  description: For PMm, 300 pieces in a box. Provides penetration of armor class 2.
-  suffix: Stalker
+  name: коробка для набоїв (9x18) PST GZ
+  description: Для PMm по 300 штук в коробці. Забезпечує пробиття броні 2 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge918PST
@@ -111,9 +111,9 @@
 - type: entity
   parent: 918PGJBoxCink
   id: 918SP7BoxCink
-  name: ammo box (9x18) SP7 gzh
-  description: Expansive ammunition for PP and pistols of the former Warsaw Pact countries. They wont penetrate anything, but they will cause huge damage to targets with weak or no armor.
-  suffix: Stalker
+  name: коробка для набоїв (9x18) SP7 gzh
+  description: Експансивні боєприпаси для ПП та пістолетів країн колишнього Варшавського договору. Вони нікуди не пробивають, але завдають величезної шкоди цілям зі слабкою бронею або без неї.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge918SP7
@@ -127,9 +127,9 @@
 - type: entity
   parent: 918PGJBoxCink
   id: 918PBMBoxCink
-  name: ammo box (9x18) PBM GZ
-  description: For PMm, 300 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: коробка для набоїв (9x18) PBM GZ
+  description: Для PMm - 300 штук в коробці. Забезпечує пробиття броні 3 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge918PBM

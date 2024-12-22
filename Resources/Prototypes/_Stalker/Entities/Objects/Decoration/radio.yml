@@ -1,11 +1,11 @@
-# ПЕРЕНОСНОЙ ПЛЕЕР
+# ПЕРЕНОСНИЙ ПЛЕЄР
 
 - type: entity
   parent: BaseItem
   id: RadioStalkerPlayer
-  name: cassette player
-  suffix: Stalker, переносной
-  description: A cassette player introduced in 1983 and made in an ultra-compact case, which is smaller in size than even the audio cassette itself. This was made possible by a sliding design, which allowed the cassette to be installed inside.
+  name: касетний плеєр
+  suffix: ST, переносний
+  description: Касетний програвач, представлений у 1983 році і виготовлений в ультракомпактному корпусі, який за розміром менший навіть за саму аудіокасету. Це стало можливим завдяки розсувній конструкції, яка дозволяла встановлювати касету всередину.
   components:
   - type: STWeight
     self: 0.5
@@ -24,7 +24,7 @@
 - type: entity
   id: RadioStandStalkerIgorIvanovichTheme
   parent: RadioBaseStalker
-  suffix: Stalker, IgorIvanovichTheme
+  suffix: ST, IgorIvanovichTheme
   components:
   - type: AmbientSound
     volume: 1
@@ -32,14 +32,14 @@
     sound:
       path: /Audio/_Stalker/Music/Radio/wolf_hunt.ogg
 
-# КАССЕТЫ
+# КАСЕТИ
 
 - type: entity
   parent: BaseItem
   id: CasseteOneRadio
-  suffix: Stalker, кассета (Я солдат)
-  name: tape #1 I am a soldier
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  suffix: ST, кассета (Я солдат)
+  name: касета #1 I am a soldier
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -55,9 +55,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwoRadio
-  suffix: Stalker, кассета (Есть только миг)
+  suffix: ST, кассета (Есть только миг)
   name: tape #2 There is only a moment
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -73,9 +73,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThreeRadio
-  suffix: Stalker, кассета (Свобода эмбенд)
+  suffix: ST, кассета (Свобода эмбенд)
   name: cassette No. 3 Freedom, embend
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -91,9 +91,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFourRadio
-  suffix: Stalker, кассета (Чёрный сталкер)
+  suffix: ST, кассета (Чёрный сталкер)
   name: tape #4 Black Stalker
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -109,9 +109,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiveRadio
-  suffix: Stalker, кассета (Город которого нет)
+  suffix: ST, кассета (Город которого нет)
   name: tape #5 The City That Doesnt Exist
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -127,9 +127,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteSixRadio
-  suffix: Stalker, кассета (Судная ночь)
+  suffix: ST, кассета (Судная ночь)
   name: tape #6 (strange)
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. This tape looks very strange...
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Ця стрічка виглядає дуже дивно...
   components:
   - type: STWeight
     self: 0.20
@@ -145,9 +145,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteSevenRadio
-  suffix: Stalker, кассета (Бар чистое небо)
+  suffix: ST, кассета (Бар чистое небо)
   name: tape #7 clear sky bar
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -163,9 +163,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteEightRadio
-  suffix: Stalker, кассета (Советский марш)
+  suffix: ST, кассета (Советский марш)
   name: tape #8 Soviet march
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -181,9 +181,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTenRadio
-  suffix: Stalker, кассета (Magic Moments)
+  suffix: ST, кассета (Magic Moments)
   name: cassette No. 10 Magic Moments
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -199,9 +199,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteElevenRadio
-  suffix: Stalker, кассета (In the army now)
+  suffix: ST, кассета (In the army now)
   name: cassette No. 11 In the army now
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -217,9 +217,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwelveRadio
-  suffix: Stalker, кассета (Фаина)
+  suffix: ST, кассета (Фаина)
   name: cassette No. 12 Faina
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -235,9 +235,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirteeneRadio
-  suffix: Stalker, кассета (Пошли вы все)
+  suffix: ST, кассета (Пошли вы все)
   name: tape #13 Fuck you all
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -253,9 +253,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFourteenRadio
-  suffix: Stalker, кассета (Белая ночь)
+  suffix: ST, кассета (Белая ночь)
   name: tape #14 White Night
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -271,9 +271,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFifteenRadio
-  suffix: Stalker, кассета (Holding Out For A Hero)
+  suffix: ST, кассета (Holding Out For A Hero)
   name: cassette #15 Holding Out For A Hero
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape.
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -291,7 +291,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteOneDonateRadio
-  suffix: Stalker, кассета (Оповещение о выбросе)
+  suffix: ST, кассета (Оповещение о выбросе)
   name: Cassette Ejection Alert
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for KekSeLot
   components:
@@ -309,7 +309,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwoDonateRadio
-  suffix: Stalker, кассета (Bosanska Artiljeria)
+  suffix: ST, кассета (Bosanska Artiljeria)
   name: Bosanska Artiljeria cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for nexmev
   components:
@@ -327,9 +327,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThreeDonateRadio
-  suffix: Stalker, кассета (Кукушка)
+  suffix: ST, кассета (Кукушка)
   name: Cuckoo cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for SHIRDAN
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для SHIRDAN
   components:
   - type: STWeight
     self: 0.15
@@ -345,9 +345,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFourDonateRadio
-  suffix: Stalker, кассета (Смуглянка Молдованка)
+  suffix: ST, кассета (Смуглянка Молдованка)
   name: tape Smuglyanka Moldovanka
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for SHIRDAN
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для SHIRDAN
   components:
   - type: STWeight
     self: 0.15
@@ -363,7 +363,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiveDonateRadio
-  suffix: Stalker, кассета (The Man Who Sold The World)
+  suffix: ST, кассета (The Man Who Sold The World)
   name: The Man Who Sold The World cassette
   description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is an illegible inscription on the front of the tape. Custom made for Titehunter
   components:
@@ -381,7 +381,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteSixDonateRadio
-  suffix: Stalker, кассета (Солнце, купи мне гитару)
+  suffix: ST, кассета (Солнце, купи мне гитару)
   name: Cassette Sun, buy me a guitar
   description: An old, tattered cassette tape. Presumably, it contains a song. There is an illegible inscription on the front of the tape. Custom made for Seripes
   components:
@@ -399,9 +399,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteSevenDonateRadio
-  suffix: Stalker, кассета (3 сентября)
+  suffix: ST, кассета (3 сентября)
   name: September 3 cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for AktuBHblu_roMeC
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для AktuBHblu_roMeC
   components:
   - type: STWeight
     self: 0.15
@@ -417,9 +417,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteEightDonateRadio
-  suffix: Stalker, кассета (Don't stop the fight)
+  suffix: ST, кассета (Don't stop the fight)
   name: cassette Dont stop the fight
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for AktuBHblu_roMeC
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для AktuBHblu_roMeC
   components:
   - type: STWeight
     self: 0.15
@@ -435,9 +435,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteNineDonateRadio
-  suffix: Stalker, кассета (Невеста палача)
+  suffix: ST, кассета (Невеста палача)
   name: The Executioners Bride cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for AktuBHblu_roMeC
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для AktuBHblu_roMeC
   components:
   - type: STWeight
     self: 0.15
@@ -453,9 +453,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTenDonateRadio
-  suffix: Stalker, кассета (600 мб)
+  suffix: ST, кассета (600 мб)
   name: 600 MB cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -471,9 +471,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteElevenDonateRadio
-  suffix: Stalker, кассета (Автор)
+  suffix: ST, кассета (Автор)
   name: cassette Author
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -489,9 +489,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwelveDonateRadio
-  suffix: Stalker, кассета (Чапаевская мель)
+  suffix: ST, кассета (Чапаевская мель)
   name: cassette Chapaevskaya Mel
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -507,9 +507,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirteenDonateRadio
-  suffix: Stalker, кассета (День)
+  suffix: ST, кассета (День)
   name: Cassette Day
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -525,9 +525,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFourteenDonateRadio
-  suffix: Stalker, кассета (Комета)
+  suffix: ST, кассета (Комета)
   name: Comet cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -543,9 +543,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiveteenDonateRadio
-  suffix: Stalker, кассета (Ледоруб)
+  suffix: ST, кассета (Ледоруб)
   name: Ice pick cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -561,9 +561,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteSixteenDonateRadio
-  suffix: Stalker, кассета (Патроны)
+  suffix: ST, кассета (Патроны)
   name: Cassette Ammo
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -579,9 +579,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteSeventeenDonateRadio
-  suffix: Stalker, кассета (Время)
+  suffix: ST, кассета (Время)
   name: Cassette Time
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for christraitor
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -597,9 +597,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteEighteenDonateRadio
-  suffix: Stalker, кассета (Вставай Донбасс)
+  suffix: ST, кассета (Вставай Донбасс)
   name: tape Vstavai Donbass
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Denison
+  description: Стара, пошарпана касета. Імовірно, на ній записана якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. На замовлення для Денісона
   components:
   - type: STWeight
     self: 0.15
@@ -615,9 +615,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteNineteenDonateRadio
-  suffix: Stalker, кассета (Heathens)
+  suffix: ST, кассета (Heathens)
   name: Heathens cassette
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Cinnamon Bun
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис.
   components:
   - type: STWeight
     self: 0.15
@@ -633,9 +633,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentyTwoDonateRadio
-  suffix: Stalker, кассета (It's raining men, Tombstone remix)
+  suffix: ST, кассета (It's raining men, Tombstone remix)
   name: Its raining men cassette
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Cinnamon Bun
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Cinnamon Bun
   components:
   - type: STWeight
     self: 0.15
@@ -651,9 +651,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentyThreeDonateRadio
-  suffix: Stalker, кассета (Wind Rose Diggy Diggy Hole)
+  suffix: ST, кассета (Wind Rose Diggy Diggy Hole)
   name: Wind Rose Diggy Diggy Hole cassette
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Cinnamon Bun
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Cinnamon Bun
   components:
   - type: STWeight
     self: 0.15
@@ -669,9 +669,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentyFourDonateRadio
-  suffix: Stalker, кассета (Welcome to Va 11 HALL-A)
+  suffix: ST, кассета (Welcome to Va 11 HALL-A)
   name: Welcome to Va 11 HALL-A cassette
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Cinnamon Bun
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Cinnamon Bun
   components:
   - type: STWeight
     self: 0.15
@@ -687,9 +687,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentyFiveDonateRadio
-  suffix: Stalker, кассета (Liquid Nights & Disco Lights)
+  suffix: ST, кассета (Liquid Nights & Disco Lights)
   name: Liquid Nights & Disco Lights cassette
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Cinnamon Bun
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Cinnamon Bun
   components:
   - type: STWeight
     self: 0.15
@@ -705,7 +705,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentyDonateRadio
-  suffix: Stalker, кассета (Nightcall Kavinsky)
+  suffix: ST, кассета (Nightcall Kavinsky)
   name: Nightcall Kavinsky cassette
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for dikay_sove
   components:
@@ -723,7 +723,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentySixDonateRadio
-  suffix: Stalker, кассета (N.R.M. - Bamžy)
+  suffix: ST, кассета (N.R.M. - Bamžy)
   name: N.R.M. cassette - Bamzy
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for dikay_sove
   components:
@@ -741,7 +741,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentySevenDonateRadio
-  suffix: Stalker, кассета (Воины света)
+  suffix: ST, кассета (Воины света)
   name: Warriors of Light tape
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for dikay_sove
   components:
@@ -759,7 +759,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentyEightDonateRadio
-  suffix: Stalker, кассета (Nie ma nieba)
+  suffix: ST, кассета (Nie ma nieba)
   name: Nie ma nieba cassette
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for dikay_sove
   components:
@@ -777,7 +777,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTwentyNineDonateRadio
-  suffix: Stalker, кассета (The serpent)
+  suffix: ST, кассета (The serpent)
   name: The serpent cassette
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for dikay_sove
   components:
@@ -795,7 +795,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyOneDonateRadio
-  suffix: Stalker, кассета (Gimme! Gimme!)
+  suffix: ST, кассета (Gimme! Gimme!)
   name: Gimme cassette! Gimme!
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for dikay_sove
   components:
@@ -813,7 +813,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyDonateRadio
-  suffix: Stalker, кассета (2nd Warning)
+  suffix: ST, кассета (2nd Warning)
   name: 2nd Warning cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Carpenters2394
   components:
@@ -831,9 +831,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyTwoDonateRadio
-  suffix: Stalker, кассета (Трын трава)
+  suffix: ST, кассета (Трын трава)
   name: Trin grass cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for IWordoloNi
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for IWordoloNi
   components:
   - type: STWeight
     self: 0.15
@@ -849,9 +849,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyThreeDonateRadio
-  suffix: Stalker, кассета (Бей)
+  suffix: ST, кассета (Бей)
   name: Cassette Bey
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for IWordoloNi
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for IWordoloNi
   components:
   - type: STWeight
     self: 0.15
@@ -867,9 +867,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyFourDonateRadio
-  suffix: Stalker, кассета (Финский нож)
+  suffix: ST, кассета (Финский нож)
   name: Cassette Finnish knife
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for IWordoloNi
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for IWordoloNi
   components:
   - type: STWeight
     self: 0.15
@@ -885,7 +885,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyFiveDonateRadio
-  suffix: Stalker, кассета (The Mercenary Song)
+  suffix: ST, кассета (The Mercenary Song)
   name: The Mercenary Song cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Punk220
   components:
@@ -903,9 +903,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtySixDonateRadio
-  suffix: Stalker, кассета (Вечеринки для неудачников PAFL)
+  suffix: ST, кассета (Вечеринки для неудачников PAFL)
   name: Cassette Parties for Losers. PAFL
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for FOKMA
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for FOKMA
   components:
   - type: STWeight
     self: 0.15
@@ -921,7 +921,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtySevenDonateRadio
-  suffix: Stalker, кассета (ABSOLUTE TERRITORY)
+  suffix: ST, кассета (ABSOLUTE TERRITORY)
   name: ABSOLUTE TERRITORY cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for reneretard
   components:
@@ -939,7 +939,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyEightDonateRadio
-  suffix: Stalker, кассета (Вот и помер Вова Вист)
+  suffix: ST, кассета (Вот и помер Вова Вист)
   name: cassette Heres Vova Vist Dead
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for reneretard
   components:
@@ -957,7 +957,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteThirtyNineDonateRadio
-  suffix: Stalker, кассета (Gangsta's Paradise)
+  suffix: ST, кассета (Gangsta's Paradise)
   name: Gangstas Paradise cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for reneretard
   components:
@@ -975,7 +975,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyDonateRadio
-  suffix: Stalker, кассета (Octavia, Cekkist of Storms)
+  suffix: ST, кассета (Octavia, Cekkist of Storms)
   name: Octavia cassette, Cekkist of Storms
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Booba
   components:
@@ -993,7 +993,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyOneDonateRadio
-  suffix: Stalker, кассета (We Are The Helldivers)
+  suffix: ST, кассета (We Are The Helldivers)
   name: We Are The Helldivers cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Booba
   components:
@@ -1011,7 +1011,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyTwoDonateRadio
-  suffix: Stalker, кассета (Говновоз)
+  suffix: ST, кассета (Говновоз)
   name: Shit Truck cassette
   description: An old tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for ironlex
   components:
@@ -1029,9 +1029,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyThreeDonateRadio
-  suffix: Stalker, кассета (Ramstain)
+  suffix: ST, кассета (Ramstain)
   name: Ramstain cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for AktuBHblu_roMeC
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для AktuBHblu_roMeC
   components:
   - type: STWeight
     self: 0.15
@@ -1047,9 +1047,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyFourDonateRadio
-  suffix: Stalker, кассета (Accept)
+  suffix: ST, кассета (Accept)
   name: Accept cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for AktuBHblu_roMeC
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для AktuBHblu_roMeC
   components:
   - type: STWeight
     self: 0.15
@@ -1065,9 +1065,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyFiveDonateRadio
-  suffix: Stalker, кассета (Laura Branigan)
+  suffix: ST, кассета (Laura Branigan)
   name: Laura Branigan cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for AktuBHblu_roMeC
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Зроблено на замовлення для AktuBHblu_roMeC
   components:
   - type: STWeight
     self: 0.15
@@ -1083,7 +1083,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortySixDonateRadio
-  suffix: Stalker, кассета (Horse Soldier)
+  suffix: ST, кассета (Horse Soldier)
   name: Horse Soldier cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Punk220
   components:
@@ -1101,9 +1101,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortySevenDonateRadio
-  suffix: Stalker, кассета (FiftyFifty - Cupid)
+  suffix: ST, кассета (FiftyFifty - Cupid)
   name: FiftyFifty - Cupid cassette
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Custom made for xsainteer
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Custom made for xsainteer
   components:
   - type: STWeight
     self: 0.15
@@ -1119,7 +1119,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyEightDonateRadio
-  suffix: Stalker, кассета (Комбат - Любэ)
+  suffix: ST, кассета (Комбат - Любэ)
   name: Combat - Lube tape
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Cristicolor
   components:
@@ -1137,9 +1137,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFortyNineDonateRadio
-  suffix: Stalker, кассета (кофе с сигой)
+  suffix: ST, кассета (кофе с сигой)
   name: Coffee with cigar cassette
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Neko-Gecko
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Neko-Gecko
   components:
   - type: STWeight
     self: 0.15
@@ -1155,9 +1155,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftyDonateRadio
-  suffix: Stalker, кассета (каникулы на марсе)
+  suffix: ST, кассета (каникулы на марсе)
   name: cassette Vacation on Mars
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Neko-Gecko
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Neko-Gecko
   components:
   - type: STWeight
     self: 0.15
@@ -1173,9 +1173,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftyOneDonateRadio
-  suffix: Stalker, кассета (беспокойник - снова)
+  suffix: ST, кассета (беспокойник - снова)
   name: tape Bespokoinik - Again
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Neko-Gecko
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Neko-Gecko
   components:
   - type: STWeight
     self: 0.15
@@ -1191,9 +1191,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftyTwoDonateRadio
-  suffix: Stalker, кассета (Глазоеды - Вылечи меня)
+  suffix: ST, кассета (Глазоеды - Вылечи меня)
   name: tape Glazoedy - Cure me
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Neko-Gecko
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Neko-Gecko
   components:
   - type: STWeight
     self: 0.15
@@ -1209,9 +1209,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftyThreeDonateRadio
-  suffix: Stalker, кассета (Eagles - Hotel California)
+  suffix: ST, кассета (Eagles - Hotel California)
   name: Eagles cassette - Hotel California
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Neko-Gecko
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Neko-Gecko
   components:
   - type: STWeight
     self: 0.15
@@ -1227,9 +1227,9 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftyFourDonateRadio
-  suffix: Stalker, кассета (gqtis - Poor)
+  suffix: ST, кассета (gqtis - Poor)
   name: gqtis cassette - Poor
-  description: An old, tattered cassette tape. Presumably, it contains a song of some kind. There is some illegible writing on the front of the tape. Custom made for Neko-Gecko
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети є якийсь нерозбірливий напис. Custom made for Neko-Gecko
   components:
   - type: STWeight
     self: 0.15
@@ -1245,7 +1245,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftyFiveDonateRadio
-  suffix: Stalker, кассета (Noize MC — 26.04)
+  suffix: ST, кассета (Noize MC — 26.04)
   name: Noize MC cassette - 26.04
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Retardo Cringos
   components:
@@ -1263,7 +1263,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftySixDonateRadio
-  suffix: Stalker, кассета (Meg Myers - Desire)
+  suffix: ST, кассета (Meg Myers - Desire)
   name: Meg Myers - Desire cassette
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Retardo Cringos
   components:
@@ -1281,7 +1281,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFiftySevenDonateRadio
-  suffix: Stalker, кассета (Noize MC — Грабли)
+  suffix: ST, кассета (Noize MC — Грабли)
   name: Noize MC cassette – Rake
   description: An old, tattered cassette tape. Presumably, it contains a song. There is some illegible writing on the front of the tape. Custom made for Retardo Cringos
   components:
@@ -1303,7 +1303,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDOneRadio
-  suffix: Stalker, кассета (Айдамир мугу - черные глаза)
+  suffix: ST, кассета (Айдамир мугу - черные глаза)
   name: Aidamir Mugu tape - black eyes
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1321,7 +1321,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDTwoRadio
-  suffix: Stalker, кассета (Блядская натура)
+  suffix: ST, кассета (Блядская натура)
   name: Cassette Blyadskaya natur
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1339,7 +1339,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDThreeRadio
-  suffix: Stalker, кассета (Розенбаум - фраер, толстый фраер)
+  suffix: ST, кассета (Розенбаум - фраер, толстый фраер)
   name: Rosenbaum tape - sucker, fat sucker
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1357,7 +1357,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDFourRadio
-  suffix: Stalker, кассета (Михаил круг - кольщик)
+  suffix: ST, кассета (Михаил круг - кольщик)
   name: cassette Mikhail circle - ringer
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1375,7 +1375,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDFiveRadio
-  suffix: Stalker, кассета (Михаил круг - золотые купола)
+  suffix: ST, кассета (Михаил круг - золотые купола)
   name: tape Mikhail Krug - Golden Domes
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1393,7 +1393,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDSixRadio
-  suffix: Stalker, кассета (Михаил круг - фраер)
+  suffix: ST, кассета (Михаил круг - фраер)
   name: cassette Mikhail Krug - fraer
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1411,7 +1411,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDSevenRadio
-  suffix: Stalker, кассета (Михаил круг - Владимирский централ)
+  suffix: ST, кассета (Михаил круг - Владимирский централ)
   name: tape Mikhail Krug - Vladimir Central
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1429,7 +1429,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDEightRadio
-  suffix: Stalker, кассета (Михаил круг - жиган лимон)
+  suffix: ST, кассета (Михаил круг - жиган лимон)
   name: cassette Mikhail Krug - Zhigan Lemon
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1447,7 +1447,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDNineRadio
-  suffix: Stalker, кассета (Милана Хаметова - ЛП)
+  suffix: ST, кассета (Милана Хаметова - ЛП)
   name: Milan Khametovs cassette - LP
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1465,7 +1465,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGDTenRadio
-  suffix: Stalker, кассета (Розенбаум - гоп стоп)
+  suffix: ST, кассета (Розенбаум - гоп стоп)
   name: Rosenbaum cassette - gop stop
   description: An old tattered cassette tape. Presumably, some song is recorded on it. There is an illegible inscription on the front of the tape. Made to order for Dimochka
   components:
@@ -1485,9 +1485,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumOneRadio
-  suffix: Stalker, кассета (Твоими глазами — cold carti)
+  suffix: ST, кассета (Твоими глазами — cold carti)
   name: tape Through Your Eyes — cold carti
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1503,9 +1503,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumTwoRadio
-  suffix: Stalker, кассета (Saluki — Вылечим)
+  suffix: ST, кассета (Saluki — Вылечим)
   name: Saluki cassette - Lets Cure
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1521,9 +1521,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumThreeRadio
-  suffix: Stalker, кассета (Galafo — зачем сугробы этому городу)
+  suffix: ST, кассета (Galafo — зачем сугробы этому городу)
   name: Galafo tape - why does this city need snowdrifts
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1539,9 +1539,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumFourRadio
-  suffix: Stalker, кассета (Бульвар депо Neonbones)
+  suffix: ST, кассета (Бульвар депо Neonbones)
   name: cassette Boulevard depot Neonbones
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1557,9 +1557,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumFiveRadio
-  suffix: Stalker, кассета (Скриптонит — Одно и то же)
+  suffix: ST, кассета (Скриптонит — Одно и то же)
   name: Scriptonite tape - Same thing
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1575,9 +1575,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumSixRadio
-  suffix: Stalker, кассета (Скриптонит — снова люди пойдут)
+  suffix: ST, кассета (Скриптонит — снова люди пойдут)
   name: Scriptonite tape - people will go again
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1593,9 +1593,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumSevenRadio
-  suffix: Stalker, кассета (Свидание — Кавказ)
+  suffix: ST, кассета (Свидание — Кавказ)
   name: tape Date - Caucasus
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1611,9 +1611,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumEightRadio
-  suffix: Stalker, кассета (Мчт — Последний снег)
+  suffix: ST, кассета (Мчт — Последний снег)
   name: Mcht tape - The Last Snow
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1629,9 +1629,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumNineRadio
-  suffix: Stalker, кассета (Макулатура — пляж)
+  suffix: ST, кассета (Макулатура — пляж)
   name: waste paper cassette - beach
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1647,9 +1647,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumTenRadio
-  suffix: Stalker, кассета (Партизанеоколо — задор да изводы)
+  suffix: ST, кассета (Партизанеоколо — задор да изводы)
   name: Partizaneokolo cassette - enthusiasm and hassle
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1665,9 +1665,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumElevenRadio
-  suffix: Stalker, кассета (Целовать другого — Дорн)
+  suffix: ST, кассета (Целовать другого — Дорн)
   name: tape Kissing Another - Dorn
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1683,9 +1683,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumTwelveRadio
-  suffix: Stalker, кассета (Незаурядность - galafo)
+  suffix: ST, кассета (Незаурядность - galafo)
   name: Cassette Extraordinary - galafo
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1701,9 +1701,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumThirteenRadio
-  suffix: Stalker, кассета (Лето подари мне ночи — омонра)
+  suffix: ST, кассета (Лето подари мне ночи — омонра)
   name: cassette Summer give me nights - omonra
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1719,9 +1719,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumFourteenRadio
-  suffix: Stalker, кассета (Ноктюрн — хаски)
+  suffix: ST, кассета (Ноктюрн — хаски)
   name: Cassette Nocturne - Husky
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1737,9 +1737,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumFifteenRadio
-  suffix: Stalker, кассета (all my fellas Frizk)
+  suffix: ST, кассета (all my fellas Frizk)
   name: cassette all my fellas Frizk
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1755,9 +1755,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumSixteenRadio
-  suffix: Stalker, кассета (Скриптонит кое-что лучше меня)
+  suffix: ST, кассета (Скриптонит кое-что лучше меня)
   name: Cassette Scriptonite something better than me
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1773,9 +1773,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumSeventeenRadio
-  suffix: Stalker, кассета (Бумбокс - летний дождь)
+  suffix: ST, кассета (Бумбокс - летний дождь)
   name: Boombox cassette - summer rain
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1791,9 +1791,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumEighteenRadio
-  suffix: Stalker, кассета (chris de burgh — moonlight and vodka)
+  suffix: ST, кассета (chris de burgh — moonlight and vodka)
   name: cassette chris de burgh – moonlight and vodka
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1809,9 +1809,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumNineteenRadio
-  suffix: Stalker, кассета (партизанеоколо - славянское гетто)
+  suffix: ST, кассета (партизанеоколо - славянское гетто)
   name: cassette partisanneokolo - slavic ghetto
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1827,9 +1827,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumTwentyRadio
-  suffix: Stalker, кассета (galafo - что может быть лучше)
+  suffix: ST, кассета (galafo - что может быть лучше)
   name: galafo cassette - what could be better
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1845,9 +1845,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumTwentyOneRadio
-  suffix: Stalker, кассета (градусы заметает)
+  suffix: ST, кассета (градусы заметает)
   name: cassette degrees sweeps away
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1863,9 +1863,9 @@
 - type: entity
   parent: BaseItem
   id: CassetePremiumTwentyTwoRadio
-  suffix: Stalker, кассета (central cee obsessed with you)
+  suffix: ST, кассета (central cee obsessed with you)
   name: cassette central cee obsessed with you
-  description: An old, tattered cassette tape. Presumably, it contains some song. There is an illegible inscription on the front of the tape. Made to order for Miron
+  description: Стара, пошарпана касета. Імовірно, на ній є якась пісня. На лицьовій стороні касети нерозбірливий напис. Made to order for Miron
   components:
   - type: STWeight
     self: 0.15
@@ -1884,7 +1884,7 @@
   id: CasetsConBag
   name: bottomless sack of new cassettes
   description: The entire batch of new cassettes from SS14 - Corvax S.T.A.L.K.E.R.
-  suffix: Stalker, Contributors
+  suffix: ST, Contributors
   components:
     - type: Storage
       maxItemsize: Large
@@ -1917,7 +1917,7 @@
 - type: entity
   parent: CasetsConBag
   id: CasetsConBagFilled
-  suffix: Stalker, Contributors, Полный
+  suffix: ST, Contributors, Полный
   components:
     - type: StorageFill
       contents:
@@ -1983,7 +1983,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteArstotzkaOneContributorRadio
-  suffix: Stalker, кассета, (Glory to Arstotzka)
+  suffix: ST, кассета, (Glory to Arstotzka)
   name: Glory to Arstotzka cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2001,7 +2001,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteArstotzkaTwoContributorRadio
-  suffix: Stalker, кассета, (Arstotzka Bad Ending)
+  suffix: ST, кассета, (Arstotzka Bad Ending)
   name: Arstotzka Bad Ending cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2019,7 +2019,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteArstotzkaThreeContributorRadio
-  suffix: Stalker, кассета, (Arstotzka Good Ending)
+  suffix: ST, кассета, (Arstotzka Good Ending)
   name: Arstotzka Good Ending cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2037,7 +2037,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteChinaContributorRadio
-  suffix: Stalker, кассета, (Red Sun In The Sky)
+  suffix: ST, кассета, (Red Sun In The Sky)
   name: Red Sun In The Sky cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2055,7 +2055,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteUSSRContributorRadio
-  suffix: Stalker, кассета, (Советский марш 2)
+  suffix: ST, кассета, (Советский марш 2)
   name: tape Soviet March 2
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2073,7 +2073,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteAction1ContributorRadio
-  suffix: Stalker, кассета, (Экшн 1)
+  suffix: ST, кассета, (Экшн 1)
   name: tape Unknown action
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2091,7 +2091,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGeneralReleaseContributorRadio
-  suffix: Stalker, кассета, (General Release)
+  suffix: ST, кассета, (General Release)
   name: General Release cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2109,7 +2109,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGrooveDealersContributorRadio
-  suffix: Stalker, кассета, (Groove Dealers Salam 1996)
+  suffix: ST, кассета, (Groove Dealers Salam 1996)
   name: Salam 1996 cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2127,7 +2127,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteInTheHouseInAHeartbeatContributorRadio
-  suffix: Stalker, кассета, (In The House In A Heartbeat)
+  suffix: ST, кассета, (In The House In A Heartbeat)
   name: cassette In The House In A Heartbeat
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2145,7 +2145,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGambit
-  suffix: Stalker, кассета, (Gambit "Баю Бай")
+  suffix: ST, кассета, (Gambit "Баю Бай")
   name: Gambit cassette Bayu Bai
   description: Sometimes, music can make you cry.
   components:
@@ -2163,7 +2163,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteAtomicHeartKomarovoContributorRadio
-  suffix: Stalker, кассета, (Atomic Heart)
+  suffix: ST, кассета, (Atomic Heart)
   name: Atomic Heart Komarovo cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2181,7 +2181,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteLinkinParkIntheEndContributorRadio
-  suffix: Stalker, кассета, (Linkin Park In the End)
+  suffix: ST, кассета, (Linkin Park In the End)
   name: In the End cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2199,7 +2199,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTheWindofFjordsContributorRadio
-  suffix: Stalker, кассета, (The Windof Fjords)
+  suffix: ST, кассета, (The Windof Fjords)
   name: The Windof Fjords cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2217,7 +2217,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteNapoleonContributorRadio
-  suffix: Stalker, кассета, (Amour plastique Napoleon)
+  suffix: ST, кассета, (Amour plastique Napoleon)
   name: Amour plastique Napoleon cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2235,7 +2235,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFDJContributorRadio
-  suffix: Stalker, кассета, (FDJ)
+  suffix: ST, кассета, (FDJ)
   name: FDJ cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2253,7 +2253,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteCounterStrikeContributorRadio
-  suffix: Stalker, кассета, (Counter-Strike)
+  suffix: ST, кассета, (Counter-Strike)
   name: Counter-Strike cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2271,7 +2271,7 @@
 - type: entity
   parent: BaseItem
   id: CassetePrussiaGloryContributorRadio
-  suffix: Stalker, кассета, (Preußens Gloria)
+  suffix: ST, кассета, (Preußens Gloria)
   name: Preußens Gloria cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2289,7 +2289,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGimnUSSRContributorRadio
-  suffix: Stalker, кассета, (Гимн СССР)
+  suffix: ST, кассета, (Гимн СССР)
   name: USSR Anthem cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2307,7 +2307,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteJusttheTwoofUsAICoverContributorRadio
-  suffix: Stalker, кассета, (Hitler AI Cover)
+  suffix: ST, кассета, (Hitler AI Cover)
   name: Just the Two of Us cassette?
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2325,7 +2325,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteBattotaiContributorRadio
-  suffix: Stalker, кассета, (Battotai)
+  suffix: ST, кассета, (Battotai)
   name: Battotai cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2343,7 +2343,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteAfterDarkContributorRadio
-  suffix: Stalker, кассета, (After Dark)
+  suffix: ST, кассета, (After Dark)
   name: After Dark cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2361,7 +2361,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteLittleDarkAgeContributorRadio
-  suffix: Stalker, кассета, (Little Dark Age)
+  suffix: ST, кассета, (Little Dark Age)
   name: Little Dark Age cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2379,7 +2379,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteYaochenustalContributorRadio
-  suffix: Stalker, кассета, (Я очень устал)
+  suffix: ST, кассета, (Я очень устал)
   name: cassette Im very tired
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2397,7 +2397,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFluxxwaveContributorRadio
-  suffix: Stalker, кассета, (Fluxxwave)
+  suffix: ST, кассета, (Fluxxwave)
   name: Fluxxwave cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2415,7 +2415,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteOtmenyajContributorRadio
-  suffix: Stalker, кассета, (Отменяй)
+  suffix: ST, кассета, (Отменяй)
   name: cassette Cancel
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2433,7 +2433,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteOstrovContributorRadio
-  suffix: Stalker, кассета, (Мы - Остров)
+  suffix: ST, кассета, (Мы - Остров)
   name: We Are the Island tape
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2451,7 +2451,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteS1keContributorRadio
-  suffix: Stalker, кассета, (S1KE)
+  suffix: ST, кассета, (S1KE)
   name: S1KE cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2469,7 +2469,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteSHADOWContributorRadio
-  suffix: Stalker, кассета, (SHADOW)
+  suffix: ST, кассета, (SHADOW)
   name: SHADOW cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2487,7 +2487,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTokyoRainContributorRadio
-  suffix: Stalker, кассета, (Tokyo Rain)
+  suffix: ST, кассета, (Tokyo Rain)
   name: Tokyo Rain cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2505,7 +2505,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFunkedUpContributorRadio
-  suffix: Stalker, кассета, (Funked Up)
+  suffix: ST, кассета, (Funked Up)
   name: Funked Up cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2523,7 +2523,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteLoseMyMindInHysteriaContributorRadio
-  suffix: Stalker, кассета, (Lose My Mind In Hysteria)
+  suffix: ST, кассета, (Lose My Mind In Hysteria)
   name: кассета "Lose My Mind In Hysteria"
   description: Абсолютно нова касета. Імовірно, на неї записано якусь пісню. На передній частині касети є зашифрований запис C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2541,7 +2541,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteOurBenefactorsContributorRadio
-  suffix: Stalker, кассета, (Our Benefactors)
+  suffix: ST, кассета, (Our Benefactors)
   name: Our Benefactors cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2559,7 +2559,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteHLCombineContributorRadio
-  suffix: Stalker, кассета, (Combine Harvester)
+  suffix: ST, кассета, (Combine Harvester)
   name: Combine Harvester cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2577,7 +2577,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteTriageAtDawnContributorRadio
-  suffix: Stalker, кассета, (Triage at Dawn)
+  suffix: ST, кассета, (Triage at Dawn)
   name: Triage at Dawn cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2595,7 +2595,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteCPViolationContributorRadio
-  suffix: Stalker, кассета, (CP Violation)
+  suffix: ST, кассета, (CP Violation)
   name: CP Violation cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2613,7 +2613,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteYAuyduContributorRadio
-  suffix: Stalker, кассета, (Я уйду)
+  suffix: ST, кассета, (Я уйду)
   name: cassette Ill leave
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2631,7 +2631,7 @@
 - type: entity
   parent: BaseItem
   id: CassetePogasliSvechiContributorRadio
-  suffix: Stalker, кассета, (Погасли свечи)
+  suffix: ST, кассета, (Погасли свечи)
   name: cassette The candles went out
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2649,7 +2649,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteMamaPriyezzhayIMenyaZaberiContributorRadio
-  suffix: Stalker, кассета, (Мама приезжай и меня забери)
+  suffix: ST, кассета, (Мама приезжай и меня забери)
   name: tape Mom come and take me away
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2667,7 +2667,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGSN1ContributorRadio
-  suffix: Stalker, кассета, (ГСН - А я повыше закатаю рукава)
+  suffix: ST, кассета, (ГСН - А я повыше закатаю рукава)
   name: GSN cassette - And Ill roll up my sleeves higher
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2685,7 +2685,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteGeranContributorRadio
-  suffix: Stalker, кассета, (Цветёт герань)
+  suffix: ST, кассета, (Цветёт герань)
   name: cassette Geranium Blooms
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2703,7 +2703,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteIsolationContributorRadio
-  suffix: Stalker, кассета, (Isolation)
+  suffix: ST, кассета, (Isolation)
   name: Isolation cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2721,7 +2721,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteXDContributorRadio
-  suffix: Stalker, кассета, (XD Meme)
+  suffix: ST, кассета, (XD Meme)
   name: cassette XD
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2739,7 +2739,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteHaydiCihadaContributorRadio
-  suffix: Stalker, кассета, (Haydi Cihada)
+  suffix: ST, кассета, (Haydi Cihada)
   name: Haydi Cihada cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2757,7 +2757,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteitaggiahContributorRadio
-  suffix: Stalker, кассета, (itaggiah)
+  suffix: ST, кассета, (itaggiah)
   name: cassette itaggiah
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2775,7 +2775,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteHorrorContributorRadio
-  suffix: Stalker, кассета, (Horror)
+  suffix: ST, кассета, (Horror)
   name: cassette ???
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2793,7 +2793,7 @@
 - type: entity
   parent: BaseItem
   id: Cassete9mmContributorRadio
-  suffix: Stalker, кассета, (9mm)
+  suffix: ST, кассета, (9mm)
   name: 9mm cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2811,7 +2811,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteHelpUserlfContributorRadio
-  suffix: Stalker, кассета, (help_userlf)
+  suffix: ST, кассета, (help_userlf)
   name: cassette help_userlf
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2829,7 +2829,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteEcstacyContributorRadio
-  suffix: Stalker, кассета, (ecstacy)
+  suffix: ST, кассета, (ecstacy)
   name: ecstacy cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2847,7 +2847,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteAlliWantIsYouContributorRadio
-  suffix: Stalker, кассета, (all i want is you)
+  suffix: ST, кассета, (all i want is you)
   name: cassette all i want is you
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2865,7 +2865,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteStayWithMeContributorRadio
-  suffix: Stalker, кассета, (Stay With Me)
+  suffix: ST, кассета, (Stay With Me)
   name: Stay With Me cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2883,7 +2883,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteInHeatXBloodPopContributorRadio
-  suffix: Stalker, кассета, (In Heat X BloodPop!)
+  suffix: ST, кассета, (In Heat X BloodPop!)
   name: cassette In Heat X BloodPop!
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2901,7 +2901,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteUntrustUsContributorRadio
-  suffix: Stalker, кассета, (Untrust Us)
+  suffix: ST, кассета, (Untrust Us)
   name: Untrust Us cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2919,7 +2919,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteFUNKESTRANHOContributorRadio
-  suffix: Stalker, кассета, (FUNK ESTRANHO)
+  suffix: ST, кассета, (FUNK ESTRANHO)
   name: FUNK ESTRANHO cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2937,7 +2937,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteCUTEDEPRESSEDContributorRadio
-  suffix: Stalker, кассета, (CUTE DEPRESSED)
+  suffix: ST, кассета, (CUTE DEPRESSED)
   name: CUTE DEPRESSED cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2955,7 +2955,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteCUTEDEPRESSEDLOWEDContributorRadio
-  suffix: Stalker, кассета, (CUTE DEPRESSED SLOWED)
+  suffix: ST, кассета, (CUTE DEPRESSED SLOWED)
   name: CUTE DEPRESSED SLOWED cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2973,7 +2973,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteParentIssuesContributorRadio
-  suffix: Stalker, кассета, (Parent issues)
+  suffix: ST, кассета, (Parent issues)
   name: Parent issues cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -2991,7 +2991,7 @@
 - type: entity
   parent: BaseItem
   id: CasseteSPEEDISLIFEContributorRadio
-  suffix: Stalker, кассета, (SPEED IS LIFE)
+  suffix: ST, кассета, (SPEED IS LIFE)
   name: SPEED IS LIFE cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -3009,7 +3009,7 @@
 - type: entity
   parent: BaseItem
   id: CassetevietnamContributorRadio
-  suffix: Stalker, кассета, (Fortunate Son)
+  suffix: ST, кассета, (Fortunate Son)
   name: Fortunate Son cassette
   description: A brand new cassette tape. Presumably, it contains some song. On the front of the tape is an encrypted recording C.o.n.t.r.i.b.u.t.o.r.
   components:
@@ -3029,7 +3029,7 @@
   id: RadioBaseStalker
   parent: BaseStructure
   name: radio
-  suffix: Stalker, без музыки
+  suffix: ST, без музыки
   description: The first wireless communication. The carrier of the signal is radio waves propagating in space.
   abstract: true
   components:
@@ -3082,7 +3082,7 @@
 - type: entity
   id: RadioStalkerMig
   parent: RadioBaseStalker
-  suffix: Stalker, есть только миг
+  suffix: ST, есть только миг
   components:
   - type: AmbientSound
     enabled: true
@@ -3092,7 +3092,7 @@
 - type: entity
   id: RadioStandStalkerBandits
   parent: RadioBaseStalker
-  suffix: Stalker, бандиты
+  suffix: ST, бандиты
   components:
   - type: AmbientSound
     volume: -8
@@ -3103,7 +3103,7 @@
 - type: entity
   id: RadioStandStalkerBanditsDistant
   parent: RadioBaseStalker
-  suffix: Stalker, бандиты 20 тайлов
+  suffix: ST, бандиты 20 тайлов
   components:
   - type: AmbientSound
     volume: -8
@@ -3115,7 +3115,7 @@
 - type: entity
   id: RadioStandStalkerBarCHN
   parent: RadioBaseStalker
-  suffix: Stalker, бар чистое небо
+  suffix: ST, бар чистое небо
   components:
   - type: AmbientSound
     volume: -6
@@ -3127,7 +3127,7 @@
 - type: entity
   id: RadioStandStalkerFreedom
   parent: RadioBaseStalker
-  suffix: Stalker, свобода
+  suffix: ST, свобода
   components:
   - type: AmbientSound
     volume: -6
@@ -3138,7 +3138,7 @@
 - type: entity
   id: RadioStandStalkerBS
   parent: RadioBaseStalker
-  suffix: Stalker, чёрный сталкер
+  suffix: ST, чёрный сталкер
   components:
   - type: AmbientSound
     volume: -6
@@ -3149,7 +3149,7 @@
 - type: entity
   id: RadioStandStalkerFon1
   parent: RadioBaseStalker
-  suffix: Stalker, фоновая 1
+  suffix: ST, фоновая 1
   components:
   - type: AmbientSound
     volume: -6
@@ -3160,7 +3160,7 @@
 - type: entity
   id: RadioStandStalkerFon2
   parent: RadioBaseStalker
-  suffix: Stalker, фоновая 2
+  suffix: ST, фоновая 2
   components:
   - type: AmbientSound
     volume: -8
@@ -3171,7 +3171,7 @@
 - type: entity
   id: RadioStandStalkerBar100
   parent: RadioBaseStalker
-  suffix: Stalker, бар 100 рентген
+  suffix: ST, бар 100 рентген
   components:
   - type: AmbientSound
     volume: -6
@@ -3182,7 +3182,7 @@
 - type: entity
   id: RadioStandStalkerSTALKER
   parent: RadioBaseStalker
-  suffix: Stalker, S.T.A.L.K.E.R.
+  suffix: ST, S.T.A.L.K.E.R.
   components:
   - type: AmbientSound
     volume: -7
@@ -3193,7 +3193,7 @@
 - type: entity
   id: RadioStandStalkerGorod
   parent: RadioBaseStalker
-  suffix: Stalker, Города которого нет
+  suffix: ST, Города которого нет
   components:
   - type: AmbientSound
     volume: 1
@@ -3204,7 +3204,7 @@
 - type: entity
   id: RadioStandStalkerArmy1
   parent: RadioBaseStalker
-  suffix: Stalker, военные
+  suffix: ST, військові
   components:
   - type: AmbientSound
     volume: 4
@@ -3215,7 +3215,7 @@
 - type: entity
   id: RadioStandStalkerArmy2
   parent: RadioBaseStalker
-  suffix: Stalker, военные
+  suffix: ST, військові
   components:
   - type: AmbientSound
     volume: 7
@@ -3226,7 +3226,7 @@
 - type: entity
   id: RadioStandStalkerArmy3
   parent: RadioBaseStalker
-  suffix: Stalker, военные
+  suffix: ST, військові
   components:
   - type: AmbientSound
     volume: 2
@@ -3237,7 +3237,7 @@
 - type: entity
   id: RadioStandStalkerUN1
   parent: RadioBaseStalker
-  suffix: Stalker, оон
+  suffix: ST, оон
   components:
   - type: AmbientSound
     volume: 9
@@ -3248,7 +3248,7 @@
 - type: entity
   id: RadioStandStalkerUN2
   parent: RadioBaseStalker
-  suffix: Stalker, оон
+  suffix: ST, оон
   components:
   - type: AmbientSound
     volume: -4
@@ -3259,7 +3259,7 @@
 - type: entity
   id: RadioStandStalkerUA
   parent: RadioBaseStalker
-  suffix: Stalker, украинская тема
+  suffix: ST, украинская тема
   components:
   - type: AmbientSound
     volume: -5
@@ -3270,7 +3270,7 @@
 - type: entity
   id: RadioStandStalkerUADistand
   parent: RadioBaseStalker
-  suffix: Stalker, украинская тема 20 тайлов
+  suffix: ST, украинская тема 20 тайлов
   components:
   - type: AmbientSound
     volume: -5
@@ -3282,7 +3282,7 @@
 - type: entity
   id: RadioStandStalkerIzvozchik
   parent: RadioBaseStalker
-  suffix: Stalker, Извозчик
+  suffix: ST, Извозчик
   components:
   - type: AmbientSound
     volume: -4
@@ -3293,7 +3293,7 @@
 - type: entity
   id: RadioStandStalkerRenegats
   parent: RadioBaseStalker
-  suffix: Stalker, ренегаты
+  suffix: ST, ренегати
   components:
   - type: AmbientSound
     volume: 4
@@ -3304,7 +3304,7 @@
 - type: entity
   id: RadioStalkerUN3
   parent: RadioBaseStalker
-  suffix: Stalker, оон
+  suffix: ST, оон
   components:
   - type: AmbientSound
     volume: -8
@@ -3315,7 +3315,7 @@
 - type: entity
   id: RadioStalkerUN3Distand
   parent: RadioBaseStalker
-  suffix: Stalker, оон 20 тайлов
+  suffix: ST, оон 20 тайлов
   components:
   - type: AmbientSound
     volume: -8
@@ -3327,7 +3327,7 @@
 - type: entity
   id: RadioStandStalkerClearSkyTheme
   parent: RadioBaseStalker
-  suffix: Stalker, CSTheme
+  suffix: ST, CSTheme
   components:
   - type: AmbientSound
     volume: 1
@@ -3338,7 +3338,7 @@
 - type: entity
   id: RadioStandStalkerClearSkyTheme2
   parent: RadioBaseStalker
-  suffix: Stalker, CSTheme2
+  suffix: ST, CSTheme2
   components:
   - type: AmbientSound
     volume: 1
@@ -3349,7 +3349,7 @@
 - type: entity
   id: RadioStandStalkerCombatTheme
   parent: RadioBaseStalker
-  suffix: Stalker, CTheme
+  suffix: ST, CTheme
   components:
   - type: AmbientSound
     volume: 1
@@ -3360,7 +3360,7 @@
 - type: entity
   id: RadioStandStalkerCombatTheme2
   parent: RadioBaseStalker
-  suffix: Stalker, CTheme2
+  suffix: ST, CTheme2
   components:
   - type: AmbientSound
     volume: 1
@@ -3373,7 +3373,7 @@
   id: RadioStalkerSovietDonate
   categories: [ HideSpawnMenu ]
   parent: RadioBaseStalker
-  suffix: Stalker, Soviet Donate
+  suffix: ST, Soviet Donate
   components:
   - type: AmbientSound
     volume: -5
@@ -3384,7 +3384,7 @@
 - type: entity
   id: RadioStandStalkerSerafimDistant
   parent: RadioBaseStalker
-  suffix: Stalker, Serafim 10 тайлов
+  suffix: ST, Serafim 10 тайлов
   components:
   - type: AmbientSound
     volume: -8

@@ -1,8 +1,8 @@
 - type: entity
   id: FireflyGreen3
-  name: Fireflies
-  description: Where darkness has all-consuming power, glowing points of brilliance attract the attention of wanderers.
-  suffix: Stalker, Большой
+  name: Світлячки
+  description: Там, де темрява має всепоглинаючу владу, світлі точки привертають увагу мандрівників.
+  suffix: ST, Великий
   placement:
     mode: SnapgridCenter
     snap:
@@ -39,9 +39,9 @@
 
 - type: entity
   id: FireflyGreen2
-  name: Fireflies
-  description: Where darkness has all-consuming power, glowing points of brilliance attract the attention of wanderers.
-  suffix: Stalker, Средний
+  name: Світлячки.
+  description: Там, де темрява має всепоглинаючу владу, світлі точки привертають увагу мандрівників.
+  suffix: ST, середній
   placement:
     mode: SnapgridCenter
     snap:
@@ -78,9 +78,9 @@
 
 - type: entity
   id: FireflyGreen1
-  name: Fireflies
-  description: Where darkness has all-consuming power, glowing points of brilliance attract the attention of wanderers.
-  suffix: Stalker, Маленький
+  name: Світлячки
+  description: Там, де темрява має всепоглинаючу владу, світлі точки привертають увагу мандрівників.
+  suffix: ST, Маленький
   placement:
     mode: SnapgridCenter
     snap:
@@ -114,9 +114,9 @@
 
 - type: entity
   id: FireflyYellow3
-  name: Fireflies
-  description: Where darkness has all-consuming power, glowing points of brilliance attract the attention of wanderers.
-  suffix: Stalker, Большой
+  name: Світлячки
+  description: Там, де темрява має всепоглинаючу владу, сяючі точки привертають увагу мандрівників.
+  suffix: ST, Большой
   placement:
     mode: SnapgridCenter
     snap:
@@ -150,9 +150,9 @@
 
 - type: entity
   id: FireflyYellow2
-  name: Fireflies
-  description: Where darkness has all-consuming power, glowing points of brilliance attract the attention of wanderers.
-  suffix: Stalker, Средний
+  name: Світлячки
+  description: Там, де темрява має всепоглинаючу владу, сяючі точки привертають увагу мандрівників.
+  suffix: ST, Середній
   placement:
     mode: SnapgridCenter
     snap:
@@ -186,9 +186,9 @@
 
 - type: entity
   id: FireflyYellow1
-  name: Fireflies
-  description: Where darkness has all-consuming power, glowing points of brilliance attract the attention of wanderers.
-  suffix: Stalker, Маленький
+  name: Світлячки
+  description: Там, де темрява має всепоглинаючу владу, сяючі точки привертають увагу мандрівників.
+  suffix: ST, Маленький
   placement:
     mode: SnapgridCenter
     snap:
@@ -225,7 +225,7 @@
   name: Firefly Trigger (3-7) (100%)
   id: FireFlyYellowTrigger
   parent: MarkerBase
-  suffix: Stalker, КД 30 минут
+  suffix: ST, КД 30 хв
   components:
     - type: ApproachTrigger
       range: 20
@@ -261,7 +261,7 @@
   name: Firefly Trigger (3-7) (100%)
   id: FireFlyGreenTrigger
   parent: MarkerBase
-  suffix: Stalker, КД 30 минут
+  suffix: ST, КД 30 хв
   components:
     - type: ApproachTrigger
       range: 20

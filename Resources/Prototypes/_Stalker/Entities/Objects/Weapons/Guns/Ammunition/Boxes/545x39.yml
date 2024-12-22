@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 545FMJBox
-  name: Box of cartridges (5.45x39) FMJ
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Penetrates armor class 2.
-  suffix: Stalker
+  name: Коробка патронів (5.45x39) FMJ
+  description: Для автоматів Калашникова різних моделей, 30 штук в коробці. Пробиває броню 2 класу.
+  suffix: ST
   components:
   - type: MagazineVisuals
     magState: 545ammo
@@ -23,9 +23,9 @@
 - type: entity
   parent: 545FMJBox
   id: 545PCBox
-  name: Box of cartridges (5.45x39) PS
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Reinforced bullet. Penetrates armor class 3.
-  suffix: Stalker
+  name: Коробка патронів (5.45x39) PS
+  description: Для автоматів Калашникова різних моделей, 30 штук в коробці. Посилена куля. Пробиває броню 3 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545PC
@@ -40,9 +40,9 @@
 - type: entity
   parent: 545FMJBox
   id: 545HPBox
-  name: Box of Ammo (5.45x39) HP
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Wont penetrate anything, but deals terrible damage, including behind-the-armor damage.
-  suffix: Stalker
+  name: Коробка набоїв (5.45x39) HP
+  description: Для автоматів Калашникова різних моделей, по 30 штук в коробці. Нічого не пробивають, але завдають жахливої шкоди, в тому числі за бронею.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545HP
@@ -57,9 +57,9 @@
 - type: entity
   parent: 545FMJBox
   id: 545BPBox
-  name: Box of cartridges (5.45x39) BP
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Penetrates armor class 4.
-  suffix: Stalker
+  name: Коробка патронів (5.45x39) BP
+  description: Для автоматів Калашникова різних моделей, 30 штук в коробці. Пробиває броню 4 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545BP
@@ -74,9 +74,9 @@
 - type: entity
   parent: 545FMJBox
   id: 545BSBox
-  name: Box of cartridges (5.45x39) BS
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Penetrates armor class 5.
-  suffix: Stalker
+  name: Коробка патронів (5.45x39) BS
+  description: Для автоматів Калашникова різних моделей, 30 штук в коробці. Пробивають броню 5 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545BS
@@ -91,9 +91,9 @@
 - type: entity
   parent: 545FMJBox
   id: 545NCBox
-  name: Box of cartridges (5.45x39) Needlers
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Penetrates armor class 6.
-  suffix: Stalker
+  name: Коробка патронів (5.45x39) Needlers
+  description: Для автоматів Калашникова різних моделей, 30 штук в коробці. Пробивають броню 6 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545NE
@@ -108,9 +108,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 545FMJBoxCink
-  name: ammo box (5.45x39) FMJ
-  description: For Kalashnikov assault rifles of different models, 300 pieces in a box. Penetrates armor class 2.
-  suffix: Stalker
+  name: коробка для набоїв (5.45x39) FMJ
+  description: Для автоматів Калашникова різних моделей, 300 штук в коробці. Пробиває броню 2 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     capacity: 300
@@ -128,9 +128,9 @@
 - type: entity
   parent: 545FMJBoxCink
   id: 545PCBoxCink
-  name: ammo box (5.45x39) PS
-  description: For Kalashnikov assault rifles of different models, 300 pieces in a box. Reinforced bullet. Penetrates armor class 3.
-  suffix: Stalker
+  name: коробка для набоїв (5.45x39) PS
+  description: Для автоматів Калашникова різних моделей, 300 штук в коробці. Посилена куля. Пробиває броню 3 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545PC
@@ -144,9 +144,9 @@
 - type: entity
   parent: 545FMJBoxCink
   id: 545HPBoxCink
-  name: ammo box (5.45x39) HP
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Wont penetrate anything, but deals terrible damage, including behind-the-armor damage.
-  suffix: Stalker
+  name: коробка для набоїв (5.45x39) HP
+  description: Для автоматів Калашникова різних моделей, по 30 штук в коробці. Нічого не пробивають, але завдають жахливої шкоди, в тому числі за бронею.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545HP
@@ -160,9 +160,9 @@
 - type: entity
   parent: 545FMJBoxCink
   id: 545BPBoxCink
-  name: ammo box (5.45x39) BP
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Penetrates armor class 4.
-  suffix: Stalker
+  name: коробка для набоїв (5.45x39) BP
+  description: Для автоматів Калашникова різних моделей, по 30 штук в коробці. Пробиває броню 4 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545BP
@@ -176,9 +176,9 @@
 - type: entity
   parent: 545FMJBoxCink
   id: 545BSBoxCink
-  name: ammo box (5.45x39) BS
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Penetrates armor class 5.
-  suffix: Stalker
+  name: коробка для набоїв (5.45x39) BS
+  description: Для автоматів Калашникова різних моделей, по 30 штук в коробці. Пробиває броню 5 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545BS
@@ -192,9 +192,9 @@
 - type: entity
   parent: 545FMJBoxCink
   id: 545NCBoxCink
-  name: ammo box (5.45x39) Needlers
-  description: For Kalashnikov assault rifles of different models, 30 pieces in a box. Penetrates armor class 6.
-  suffix: Stalker
+  name: Коробка для набоїв (5.45x39) Needlers
+  description: Для автоматів Калашникова різних моделей, по 30 штук в коробці. Пробивають броню 6 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge545NC

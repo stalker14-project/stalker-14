@@ -1,9 +1,9 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   id: BaseElectroShieldStalker
-  name: Electrical panel
-  description: A device that is used to distribute electricity in residential and public buildings, as well as in industrial facilities.
-  suffix: ST, Mapping
+  name: Електрична панель
+  description: Пристрій, який використовується для розподілу електроенергії в житлових і громадських будівлях, а також на промислових об'єктах.
+  suffix: ST, Маппінг
   parent: BaseAPC
   placement:
     mode: SnapgridCenter
@@ -109,7 +109,7 @@
 - type: entity
   parent: BaseElectroShieldStalker
   id: ElectroShieldBasic
-  suffix: ST, Mapping, 50кВ
+  suffix: ST, Маппінг, 50кВ
   components:
   - type: Battery
     maxCharge: 50000
@@ -118,7 +118,7 @@
 - type: entity
   parent: BaseElectroShieldStalker
   id: ElectroShieldHigh
-  suffix: ST, Mapping, 100кВ
+  suffix: ST, Маппінг, 100кВ
   components:
   - type: Battery
     maxCharge: 100000
@@ -127,7 +127,7 @@
 - type: entity
   parent: BaseElectroShieldStalker
   id: ElectroShieldSuper
-  suffix: ST, Mapping, 150кВ
+  suffix: ST, Маппінг, 150кВ
   components:
   - type: Battery
     maxCharge: 150000
@@ -136,7 +136,7 @@
 - type: entity
   parent: BaseElectroShieldStalker
   id: ElectroShieldHyper
-  suffix: ST, Mapping, 200кВ
+  suffix: ST, Маппінг, 200кВ
   components:
   - type: Battery
     maxCharge: 200000

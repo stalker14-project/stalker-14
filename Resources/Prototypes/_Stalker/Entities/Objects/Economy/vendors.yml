@@ -1,11 +1,11 @@
-### Военные
+### Військові
 
 - type: entity
   parent: VendingMachine
   id: VendingMachineMilitary
-  name: military dispenser
-  description: Replaced the copter in modern times.
-  suffix: Stalker
+  name: військовий диспенсер
+  description: У наш час замінив коптер.
+  suffix: ST
   components:
     - type: VendingMachine
       ejectDelay: 0.1
@@ -51,7 +51,7 @@
     545FMJBox: 50
     545PCBox: 5
     545HPBox: 7
-    # 545BPBox: 3 Убрано всё т4 по просьбе вииса
+    # 545BPBox: Прибрано все т4
     739FMJBox: 5
     754FMJBox: 3
     919PBMBox: 10
@@ -79,7 +79,7 @@
     PowerCellHyper: 100
     BoxFlare: 50
     HandheldGPSBasic: 50
-    # Наборы
+    # Набори
     #ArmyAKSUCrate: 15
     ArmyCrateNewOfficer: 5
     ArmyCrateNewStandart: 15
@@ -87,8 +87,8 @@
 - type: entity
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockMilitary
-  name: Military supply
-  description: A box with everything you need to destroy illegals.
+  name: Військове постачання
+  description: Коробка з усім необхідним для знищення нелегалів.
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -99,13 +99,13 @@
         - state: green_bit
           shader: unshaded
 
-#########################################Спавнер снабжения
+#########################################Спавнер постачання
 
 - type: entity
-  name: military supply spawner
+  name: військовий постачальник
   id: SupplySpawner
   parent: FlexibleMarkerTrigger
-  suffix: Stalker | КД 30 минут
+  suffix: ST | КД 30 минут
   components:
     - type: Sprite
       layers:
@@ -121,14 +121,14 @@
           minimumEntitiesSpawned: 1
           maximumEntitiesSpawned: 1
 
-### Полиция
+### Поліція.
 
 - type: entity
   parent: VendingMachine
   id: VendingMachinePolice
-  name: police dispenser
-  description: police dispenser.
-  suffix: Stalker
+  name: поліцейський автомат
+  description: поліцейський автомат.
+  suffix: ST
   components:
     - type: VendingMachine
       ejectDelay: 0.1
@@ -184,9 +184,9 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineUN
-  name: UN Dispenser
-  description: UN Dispenser.
-  suffix: Stalker
+  name: Диспенсер ООН
+  description: Диспенсер ООН.
+  suffix: ST
   components:
     - type: VendingMachine
       ejectDelay: 0.1
@@ -249,8 +249,8 @@
 - type: entity
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockUN
-  name: UN Supply
-  description: A box with everything you need to express concern.
+  name: Постачання ООН
+  description: Коробка з усім необхідним, щоб висловити занепокоєння.
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -261,13 +261,13 @@
         - state: green_bit
           shader: unshaded
 
-#########################################Спавнер снабжения
+#########################################Спавнер постачання
 
 - type: entity
-  name: UN Supply Spawner
+  name: Спавнер постачання ООН
   id: SupplyUNSpawner
   parent: FlexibleMarkerTrigger
-  suffix: Stalker
+  suffix: ST
   components:
     - type: Sprite
       layers:
@@ -288,9 +288,9 @@
 - type: entity
   parent: VendingMachine
   id: VendingMachineLaborer
-  name: loader distributor
-  description: loader distributor. Take the boxes to Leshka the baron to earn some money
-  suffix: Stalker
+  name: навантажувач-розподільник
+  description: розподільник навантажувачів. Відвези коробки барону Льошці, щоб заробити грошей
+  suffix: ST
   components:
     - type: VendingMachine
       ejectDelay: 0.1
@@ -312,8 +312,8 @@
 - type: entity
   parent: BaseVendingMachineRestock
   id: VendingMachineRestockLaborer
-  name: Supply of boxes of movers
-  description: Box with boxes for movers
+  name: Постачання коробок вантажників
+  description: Коробка з коробками для вантажників
   components:
     - type: VendingMachineRestock
       canRestock:

@@ -130,7 +130,7 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
     {
         if (activator.Comp.NexActivationTime > _timing.CurTime)
         {
-            _popup.PopupEntity("Локатор ещё не готов!", user, user, PopupType.Medium);
+            _popup.PopupEntity("Локатор ще не готовий!", user, user, PopupType.Medium);
             return;
         }
 
@@ -147,7 +147,7 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
                 break;
         }
 
-        _popup.PopupEntity("Прибор электризует окружение", user, user, PopupType.Medium);
+        _popup.PopupEntity("Прилад електризує оточення", user, user, PopupType.Medium);
         activator.Comp.NexActivationTime = _timing.CurTime + activator.Comp.ActivationDelay;
     }
 
@@ -161,7 +161,7 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
             {
                 ActivateAnomalies(activator, user);
             },
-            Message = "Активировать аномалии",
+            Message = "Активувати аномалії",
         };
         args.Verbs.Add(verb);
     }

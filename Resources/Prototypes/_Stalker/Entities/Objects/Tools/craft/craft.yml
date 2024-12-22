@@ -3,9 +3,9 @@
 - type: entity
   parent: BaseItem
   id: CraftArmorPlateGreen
-  name: protective plate
-  description: The armor plate, painted in a green shade, is a durable and reliable element of protection, designed to provide protection from bullets, shrapnel and other dangers in combat conditions.
-  suffix: Stalker, крафт
+  name: захисна пластина
+  description: Бронеплита, пофарбована в зелений відтінок, є міцним і надійним елементом захисту, призначеним для забезпечення захисту від куль, осколків та інших небезпек в бойових умовах.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.5
@@ -19,14 +19,14 @@
       scale: 0.8, 0.8
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftArmorPlateBlack
-  name: protective plate
-  description: The armor plate, painted in black, is a durable and reliable element of protection, designed to provide protection from bullets, shrapnel and other dangers in combat conditions.
-  suffix: Stalker, крафт
+  name: захисна пластина
+  description: Бронеплита, пофарбована в чорний колір, є міцним і надійним елементом захисту, призначеним для забезпечення захисту від куль, осколків та інших небезпек в бойових умовах.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.5
@@ -40,14 +40,14 @@
       scale: 0.8, 0.8
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftWeaponsParts
-  name: weapon components
-  description: Small parts needed to assemble, maintain, and upgrade firearms.
-  suffix: Stalker, крафт
+  name: компоненти зброї
+  description: Дрібні деталі, необхідні для складання, обслуговування та модернізації вогнепальної зброї.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 1
@@ -61,14 +61,14 @@
       scale: 0.8, 0.8
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftGunpowderBank
-  name: gunpowder jar
-  description: Designed to store gunpowder used in firearms or pyrotechnic devices. Often used to create ammunition.
-  suffix: Stalker, крафт
+  name: порохівниця
+  description: Призначена для зберігання пороху, що використовується у вогнепальній зброї або піротехнічних пристроях. Часто використовується для створення боєприпасів.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 1
@@ -91,8 +91,8 @@
     slots:
       item:
         name: порох
-        insertVerbText: засыпать порох
-        ejectVerbText: высыпать порох
+        insertVerbText: засипати порох
+        ejectVerbText: висипати порох
         whitelist:
           tags:
           - CraftMaterialGunpowder
@@ -104,14 +104,14 @@
           - CraftMaterialGunpowder
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: MaterialBase
   id: CraftMaterialGunpowder
-  name: black powder
-  description: Explosive compound.
-  suffix: Stalker, крафт
+  name: чорний порошок
+  description: Вибухова суміш
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 0.1
@@ -143,7 +143,7 @@
       types:
         Heat: 1000
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
   - type: Craftable
   - type: Destructible
     thresholds:
@@ -163,7 +163,7 @@
 
 - type: stack
   id: GunpowderStalker
-  name: black powder
+  name: чорний порошок
   icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
   spawn: CraftMaterialGunpowder
   maxCount: 5
@@ -172,9 +172,9 @@
 - type: entity
   parent: BaseItem
   id: CraftHide
-  name: skin
-  description: Raw Animal Hide.
-  suffix: Stalker, крафт
+  name: шкура
+  description: Сира шкура тварини.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 3.5
@@ -188,14 +188,14 @@
       scale: 0.4, 0.4
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftLeather
-  name: leather
-  description: Leather, tanned and cleaned.
-  suffix: Stalker, крафт
+  name: шкіра
+  description: Шкіра, вичищена та вичищена.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 3
@@ -209,14 +209,14 @@
       scale: 0.4, 0.4
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftLeatherPatch
-  name: leather scraps
-  description: Pieces of processed leather.
-  suffix: Stalker, крафт
+  name: обрізки шкіри
+  description: Шматки обробленої шкіри.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.8
@@ -228,14 +228,14 @@
       scale: 0.3, 0.3
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftBattery
-  name: battery
-  description: Quite a capacious battery, wont fit into devices - but is ideal for creating something of your own.
-  suffix: Stalker, крафт
+  name: батарея
+  description: Досить ємний акумулятор, не підходить для пристроїв, але ідеально підходить для створення чогось власного.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.5
@@ -246,14 +246,14 @@
       state: battery
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftBolt
-  name: bolt and nut
-  description: At least you can use it, and not just throw it at anomalies.
-  suffix: Stalker, крафт
+  name: болт і гайка
+  description: Принаймні, його можна використовувати, а не просто кидати в аномалії.
+  suffix: ST, крафт
   components:
     - type: Trash
       time: 300
@@ -267,14 +267,14 @@
       scale: 0.5, 0.5
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftCoil
-  name: copper coil
-  description: A copper coil, which can also act as a transformer. Or a source of that very copper.
-  suffix: Stalker, крафт
+  name: мідна котушка
+  description: Мідна котушка, яка також може виконувати роль трансформатора. Або джерелом тієї самої міді.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.2
@@ -286,14 +286,14 @@
       scale: 0.5, 0.5
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftNails
-  name: nails
-  description: A bunch of nails. Without a hammer, you can only stick them into the ground.
-  suffix: Stalker, крафт
+  name: цвяхи
+  description: Купа цвяхів. Без молотка їх можна лише встромити в землю.
+  suffix: ST, крафт
   components:
     - type: Trash
       time: 300
@@ -309,14 +309,14 @@
       state: nails
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftProtector1
-  name: cheap fuse
-  description: A cheap and not very durable fuse for electronics.
-  suffix: Stalker, крафт
+  name: дешевий запобіжник
+  description: Дешевий і не дуже довговічний запобіжник для електроніки.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.3
@@ -328,14 +328,14 @@
       scale: 0.5, 0.5
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftProtector2
-  name: fuse
-  description: High-quality fuse for electronics.
-  suffix: Stalker, крафт
+  name: запобіжник
+  description: Високоякісний запобіжник для електроніки.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.3
@@ -347,14 +347,14 @@
       scale: 0.5, 0.5
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftSpeaker1
-  name: cheap speaker
-  description: A cheap and low-quality speaker that doesnt convey even a fraction of the quality of the sound that music can give you.
-  suffix: Stalker, крафт
+  name: дешевий динамік
+  description: Дешевий і неякісний динамік, який не передає навіть частку якості звуку, який може дати вам музика.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.3
@@ -366,14 +366,14 @@
       state: speaker1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftSpeaker2
-  name: speaker
-  description: A high-quality speaker that fully conveys sound with all tones.
-  suffix: Stalker, крафт
+  name: спікер
+  description: Високоякісний динамік, який повністю передає звук з усіма відтінками.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.3
@@ -385,14 +385,14 @@
       state: speaker2
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftTape1
-  name: tape
-  description: Not the best tool for insulating or gluing things together. Better to look for duct tape.
-  suffix: Stalker, крафт
+  name: скотч
+  description: Не найкращий інструмент для ізоляції або склеювання речей. Краще пошукати скотч.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.1
@@ -408,14 +408,14 @@
       state: tape1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftTape2
-  name: electrical tape
-  description: High-quality blue (which is important) electrical tape, better and more effective than scotch tape.
-  suffix: Stalker, крафт
+  name: ізоляційна стрічка
+  description: Якісна синя (що важливо) ізоляційна стрічка, краща та ефективніша за скотч.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.1
@@ -429,14 +429,14 @@
       state: tape2
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftAlcohol
-  name: bottle of industrial alcohol
-  description: A full bottle of industrial alcohol. You cant drink it, but you can use it for industrial purposes.
-  suffix: Stalker, крафт
+  name: пляшка технічного спирту
+  description: Повна пляшка технічного спирту. Пити його не можна, але можна використовувати в промислових цілях.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 1.5
@@ -450,14 +450,14 @@
       state: alcohol
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftAntenna
-  name: antenna
-  description: Full-size antenna for searching for signals.
-  suffix: Stalker, крафт
+  name: антена
+  description: Повнорозмірна антена для пошуку сигналів.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 1.5
@@ -471,14 +471,14 @@
       state: antenna
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftCapsules
-  name: capsules
-  description: Weapon capsules for loading ammunition
-  suffix: Stalker, крафт
+  name: капсули
+  description: Капсули для заряджання боєприпасів
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.5
@@ -492,14 +492,14 @@
       state: capsules
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftChip
-  name: chip
-  description: Microcircuit for creating complex electronics.
-  suffix: Stalker, крафт
+  name: чіп
+  description: Мікросхема для створення складної електроніки.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.1
@@ -510,14 +510,14 @@
       state: chip
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftElectronicBoard
-  name: board
-  description: Board for electronics and complex devices.
-  suffix: Stalker, крафт
+  name: плата
+  description: Плата для електроніки та складних пристроїв.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.1
@@ -528,14 +528,14 @@
       state: electronic_board
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftHeater1
-  name: cheap heating element
-  description: An old heating element, probably from something Soviet.
-  suffix: Stalker, крафт
+  name: дешевий нагрівальний елемент
+  description: Старий нагрівальний елемент, ймовірно, від чогось радянського.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.7
@@ -549,14 +549,14 @@
       state: heater1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftHeater2
-  name: heating element
-  description: Modern highly efficient heating element.
-  suffix: Stalker, крафт
+  name: нагрівальний елемент
+  description: Сучасний високоефективний нагрівальний елемент.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.6
@@ -570,14 +570,14 @@
       state: heater2
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftMetalParts
-  name: metal parts
-  description: A bunch of useful bolts, screws and other fittings for crafts.
-  suffix: Stalker, крафт
+  name: металеві деталі
+  description: Купа корисних болтів, шурупів та іншої фурнітури для рукоділля.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 1.5
@@ -593,14 +593,14 @@
       state: metal-parts
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftMonitor
-  name: monitor
-  description: A separate monitor for installation in electronics.
-  suffix: Stalker, крафт
+  name: монітор
+  description: Окремий монітор для вбудовування в електроніку.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 1.5
@@ -611,14 +611,14 @@
       state: lcd_display
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftNeedle
-  name: thread with a needle
-  description: Basic sewing supplies, a needle can be used to pierce something.
-  suffix: Stalker, крафт
+  name: нитка з голкою
+  description: Основні швейні приналежності, голка, якою можна щось проколоти.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.2
@@ -632,14 +632,14 @@
       state: needle
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftPlasticParts
-  name: plastic fittings
-  description: A bunch of plastic fittings - carabiners, holders and other things.
-  suffix: Stalker, крафт
+  name: пластикова фурнітура
+  description: Купа пластикової фурнітури - карабіни, тримачі та інше.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.2
@@ -653,14 +653,14 @@
       state: plastic-parts
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftResistor
-  name: resistors
-  description: Resistors for electronics.
-  suffix: Stalker, крафт
+  name: резистори
+  description: Резистори для електроніки.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.2
@@ -672,14 +672,14 @@
       scale: 0.5, 0.5
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftTransformerCoil
-  name: transformer coil
-  description: A pile of neatly wound copper with partial insulation. For use in large electronics.
-  suffix: Stalker, крафт
+  name: котушка трансформатора
+  description: Купа акуратно намотаної міді з частковою ізоляцією. Для використання у великій електроніці.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.5
@@ -693,14 +693,14 @@
       state: transformer-coil
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftPolyarmidFiber
-  name: polyarmid fabric
-  description: Polyamide fabric, in which, due to the special structure of the thread (made from chopped and twisted fibers), four times the abrasion resistance is achieved compared to simple nylon, also consisting of polyamide. Significantly surpasses ordinary fabric in tensile strength and abrasion resistance. It is used to make equipment for various purposes - bags, backpacks and additional elements for them, waist and luggage belts, covers for carrying weapons, etc.
-  suffix: Stalker, крафт
+  name: поліармідна тканина
+  description: Поліамідна тканина, в якій завдяки особливій структурі нитки (з подрібнених і скручених волокон) досягається в чотири рази більша стійкість до стирання в порівнянні з простим нейлоном, що також складається з поліаміду. Значно перевершує звичайну тканину по міцності на розрив і стійкості до стирання. Використовується для виготовлення спорядження різного призначення - сумок, рюкзаків та додаткових елементів до них, поясних та багажних ременів, чохлів для носіння зброї тощо.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.5
@@ -714,13 +714,13 @@
       state: isofiber
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: PartBase
   id: PartRodMetalStalker
   name: metal pipes
-  suffix: Stalker, крафт
+  suffix: ST, крафт
   components:
     - type: Sprite
       state: rods
@@ -734,13 +734,13 @@
       self: 1.2
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftBag
-  name: bag
-  suffix: Stalker, крафт
+  name: мішечок
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.5
@@ -755,14 +755,14 @@
       state: bag1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftFerments
-  name: fermentation set
-  description: Disposable fermentation kit, should be used with extreme caution.
-  suffix: Stalker, крафт
+  name: набір для ферментації
+  description: Одноразовий набір для ферментації слід використовувати з особливою обережністю.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 1.5
@@ -776,14 +776,14 @@
       layers:
         - state: beakernoreact
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftLargeCardboard
-  name: large cardboard
-  description: Cardboard from some large box.
-  suffix: Stalker, крафт
+  name: великий картон
+  description: Картон від якоїсь великої коробки.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 0.5
@@ -797,14 +797,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   id: CraftSmallCardboard
   parent: BaseItem
-  name: small cardboard
-  suffix: Stalker, крафт
-  description: Cardboard from some box or cut.
+  name: невеликий картон
+  suffix: ST, крафт
+  description: Картон від якоїсь коробки або вирізаний.
   components:
   - type: STWeight
     self: 0.1
@@ -818,14 +818,14 @@
   - type: SpaceGarbage
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   id: CraftCardboardTube
   parent: BaseItem
-  name: cardboard tube
-  suffix: Stalker, крафт
-  description: A cardboard tube, apparently someone wants to make a telescope or explosives.
+  name: картонна трубка
+  suffix: ST, крафт
+  description: Картонна трубка, мабуть, хтось хоче зробити телескоп або вибухівку.
   components:
   - type: STWeight
     self: 0.1
@@ -840,14 +840,14 @@
   - type: SpaceGarbage
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftDisplay
-  name: display
-  description: A more sophisticated monitor for installing it in more serious electronics.
-  suffix: Stalker, крафт
+  name: дисплей
+  description: Більш складний монітор для встановлення в більш серйозну електроніку.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 2
@@ -861,11 +861,11 @@
       scale: 0.8, 0.8
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
-  name: dynamite stick without fuse
-  description: What can happen if you try to break it.
+  name: динамітна шашка без запалу
+  description: Що може статися, якщо спробувати його зламати.
   parent: BasePlasticExplosive
   id: StickDynamite
   components:
@@ -888,14 +888,14 @@
   - type: ExplodeOnTrigger
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: [BaseItem, DrinkBase]
   id: CraftGlue
-  name: tube of glue
-  suffix: Stalker, крафт
-  description: The glue is intended for use in school projects and professional repair work.
+  name: тюбик клею
+  suffix: ST, крафт
+  description: Клей призначений для використання в шкільних проектах і професійних ремонтних роботах.
   components:
   - type: Openable
     sound:
@@ -926,14 +926,14 @@
     solution: drink
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftFitil
-  name: wick
-  description: A twisted wick used to start or maintain a fire, especially in candles.
-  suffix: Stalker, крафт
+  name: гніт
+  description: Скручений гніт, який використовується для розпалювання або підтримання вогню, особливо у свічках.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 0.2
@@ -945,14 +945,14 @@
       scale: 0.7, 0.7
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftTreatedLeather
-  name: treated leather
-  description: Completely ready for making various clothes.
-  suffix: Stalker, крафт
+  name: оброблена шкіра
+  description: Повністю готовий до пошиття різноманітного одягу.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 1
@@ -966,14 +966,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftRubber
-  name: rubber
-  description: Rubber is used in a wide variety of industries including medicine, construction, household goods and many other industrial applications.
-  suffix: Stalker, крафт
+  name: гума
+  description: Каучук використовується в широкому спектрі галузей промисловості, включаючи медицину, будівництво, побутову техніку та багато інших промислових застосувань.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 1
@@ -988,14 +988,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftArmorSteelSheet
-  name: armored steel plate
-  description: A plate made of high-strength steel or other materials with similar characteristics.
-  suffix: Stalker, крафт
+  name: броньований сталевий лист
+  description: Плита, виготовлена з високоміцної сталі або інших матеріалів з подібними характеристиками.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 8
@@ -1009,14 +1009,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftLid
-  name: Stielhandgranate grenade cap
-  description: The part of a grenades body that usually covers the detonator and explosive.
-  suffix: Stalker, крафт
+  name: Чохол до Штильханд гранати
+  description: Частина корпусу гранати, яка зазвичай закриває детонатор і вибухівку.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 0.1
@@ -1031,14 +1031,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftRope
-  name: skein of rope grenades Stielhandgranate
-  description: Part of a grenade that is the activator of the detonator.
-  suffix: Stalker, крафт
+  name: моток мотузкових Штильханд гранат
+  description: Частина гранати, яка є активатором детонатора.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 0.2
@@ -1052,14 +1052,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BasePlasticExplosive
   id: CraftCartridge
-  name: Stielhandgranate grenade charge
-  description: The part of a grenade that is the basis of the explosive.
-  suffix: Stalker, крафт
+  name: Заряд до гранати Штильханд
+  description: Частина гранати, яка є основою вибухової речовини.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 0.5
@@ -1080,14 +1080,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftStick
-  name: Stielhandgranate grenade handle
-  description: The part of a grenade that is the charge holder and the basis of the mechanism for initiating the detonator.
-  suffix: Stalker, крафт
+  name: Рукоятка Штильханд гранати
+  description: Частина гранати, яка є утримувачем заряду та основою механізму ініціювання детонатора.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 0.3
@@ -1101,14 +1101,14 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseItem
   id: CraftHideBloodSucker
-  name: mutant skin
-  description: Raw bloodsucker skin, quite strong.
-  suffix: Stalker, крафт
+  name: шкіра мутанта
+  description: Сира шкіра кровососа, досить міцна.
+  suffix: ST, крафт
   components:
     - type: STWeight
       self: 5
@@ -1122,4 +1122,4 @@
       scale: 0.8, 0.8
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: Крафти

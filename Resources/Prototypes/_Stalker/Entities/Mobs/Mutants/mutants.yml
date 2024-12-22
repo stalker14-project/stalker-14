@@ -1,8 +1,8 @@
 ﻿- type: entity
-  name: rodent
+  name: гризун
   id: MobMutantRodent
   parent: BaseMobMutant
-  description: A small rodent that is ready to gnaw right through your flesh.
+  description: Дрібний гризун, який готовий прогризти вашу плоть наскрізь.
   components:
   - type: CombatMode
   - type: MovementSpeedModifier
@@ -78,8 +78,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBlindDog
-  name: blind dog
-  description: The most common mutant in the zone. They are not as dangerous alone as in a dense flock.
+  name: сліпий пес
+  description: Найпоширеніший мутант у зоні. Поодинці вони не такі небезпечні, як у щільній зграї.
   components:
     - type: Butcherable
       spawned:
@@ -146,8 +146,8 @@
 - type: entity
   parent: MobMutantBlindDog
   id: MobMutantBlindDogPackHead
-  name: alpha blind dog
-  description: the leader of blind dogs pack
+  name: альфа-сліпий пес
+  description: лідер зграї сліпих собак
   components:
     - type: Butcherable
       spawned:
@@ -181,8 +181,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantFleshNeutral
-  name: flesh
-  description: Flesh - pigs mutated beyond recognition, one of the most harmless mutants in the Zone.
+  name: Плоть
+  description: Плоть - мутовані до невпізнання свині, одні з найбільш нешкідливих мутантів Зони.
   components:
     - type: Butcherable
       spawned:
@@ -259,8 +259,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantFleshAgressive
-  name: flesh
-  description: Flesh - pigs mutated beyond recognition, one of the most harmless mutants in the Zone.
+  name: Плоть
+  description: Плоть - мутовані до невпізнання свині, одні з найбільш нешкідливих мутантів Зони.
   components:
     - type: Butcherable
       spawned:
@@ -335,8 +335,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBoar
-  name: boar
-  description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
+  name: кабан
+  description: Великий і агресивний звір-мутант, що видозмінився з дикого кабана. Звір вагою триста кілограмів - це вам не іграшка!
   components:
     - type: Butcherable
       spawned:
@@ -422,8 +422,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantSnork
-  name: snork
-  description: A mutated or crazy person wearing a gas mask is extremely dangerous.
+  name: снорк
+  description: Мутована або божевільна людина в протигазі надзвичайно небезпечна.
   components:
     - type: Butcherable
       spawned:
@@ -516,8 +516,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBush
-  name: bush
-  description: Wait, is he moving?
+  name: кущ
+  description: Зачекай, він рухається?
   components:
     - type: Butcherable
       spawned:
@@ -603,8 +603,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantBloodsucker
-  name: bloodsucker
-  description: A humanoid mutant with abilities beyond the biological capabilities of earthly species.
+  name: кровосос
+  description: Гуманоїдний мутант зі здібностями, що виходять за межі біологічних можливостей земних видів.
   components:
     - type: Butcherable
       spawned:
@@ -773,8 +773,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantPseudogiant
-  name: pseudogiant
-  description: A massive, terrifying mutant that towers over other creatures in the Zone.
+  name: псевдогігант
+  description: Масивний, страхітливий мутант, який підноситься над іншими істотами в Зоні.
   components:
     - type: Butcherable
       spawned:
@@ -871,8 +871,8 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantRat
-  name: rat
-  description: Angry, hungry, big rat.
+  name: щур
+  description: Злий, голодний, великий щур.
   components:
   - type: Fixtures
     fixtures:
@@ -950,7 +950,7 @@
     color: "#00ff1a"
 
 - type: entity
-  name: Goblin
+  name: лісовик
   parent: BaseMobMutant
   id: MobMutantLeshiy
   components:
@@ -1023,7 +1023,7 @@
 - type: entity
   parent: BaseMobMutant
   id: MobMutantSpiderLapach
-  name: Lapach Spider
+  name: Лапач-павук
   components:
     - type: NoSlip
     - type: Spider
@@ -1124,8 +1124,8 @@
 - type: entity
   id: STMutantGoliath
   parent: BaseMobMutant
-  name: goliath
-  description: Nyarlathoteps illegitimate child
+  name: Голіаф
+  description: Позашлюбна дитина Ньярлатхотепа
   components:
   - type: Sprite
     sprite: Mobs/Aliens/Asteroid/goliath.rsi
@@ -1180,8 +1180,8 @@
 - type: entity
   id: STMutantController
   parent: BaseMobMutant
-  name: controller
-  description: from some point of view, a successful experiment of scientists to add psi abilities to monsters
+  name: контролер
+  description: з певної точки зору, вдалий експеримент вчених з додавання пси-здібностей монстрам
   components:
   - type: Sprite
     sprite: _Stalker/Mobs/Mutants/controller.rsi
@@ -1261,8 +1261,8 @@
 - type: entity
   id: STMutantByurer
   parent: BaseMobMutant
-  name: burgher
-  description: from some point of view, a successful experiment of scientists to add psi abilities to monsters
+  name: Бюрер
+  description: з певної точки зору, вдалий експеримент вчених з додавання пси-здібностей монстрам
   components:
   - type: Sprite
     sprite: _Stalker/Mobs/Mutants/byurer.rsi

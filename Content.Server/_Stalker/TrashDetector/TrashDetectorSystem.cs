@@ -58,7 +58,7 @@ namespace Content.Server.TrashDetector
                 }
                 else
                 {
-                    _popupSystem.PopupEntity("Эту кучу уже недавно проверяли", user, PopupType.LargeCaution);
+                    _popupSystem.PopupEntity("Цю купу вже нещодавно перевіряли", user, PopupType.LargeCaution);
                 }
             }
 
@@ -74,7 +74,7 @@ namespace Content.Server.TrashDetector
             if (_random.Prob(comp.Probability))
             {
                 trash.TimeBeforeNextSearch = 900f;
-                _popupSystem.PopupEntity("Прибор пищит", uid, PopupType.LargeCaution);
+                _popupSystem.PopupEntity("Пристрій подає звуковий сигнал", uid, PopupType.LargeCaution);
                 var xform = Transform(uid);
                 var coords = xform.Coordinates;
                 Spawn(comp.Loot, coords);
@@ -82,7 +82,7 @@ namespace Content.Server.TrashDetector
             else
             {
                 trash.TimeBeforeNextSearch = 900f;
-                _popupSystem.PopupEntity("Прибор не издает звука", uid, PopupType.LargeCaution);
+                _popupSystem.PopupEntity("Прилад не видає звуку", uid, PopupType.LargeCaution);
             }
 
             args.Handled = true;

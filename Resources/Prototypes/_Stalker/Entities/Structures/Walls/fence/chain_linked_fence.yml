@@ -1,10 +1,10 @@
 
-# КОЛЮЧАЯ ПРОВОЛОКА
+# КОЛЮЧИЙ ДРІТ
 - type: entity
   parent: BaseStructure
   id: STBaseFenceMetal
-  name: chain link fence
-  description: A metal piece of fencing cordoning off something likely very important.
+  name: огорожа з ланцюгової сітки
+  description: Металевий шматок огорожі, що огороджує щось, ймовірно, дуже важливе.
   abstract: true
   components:
   - type: MeleeSound
@@ -58,9 +58,9 @@
 - type: entity
   parent: FenceMetalBroken
   id: StalkerFenceMetalBroken
-  name: Barbed wire bitten
-  description: Material used to fence and protect an area from unauthorized entry.
-  suffix: ST, Mapping
+  name: Колючий дріт перекушений
+  description: Матеріал, що використовується для огорожі та захисту території від несанкціонованого проникнення.
+  suffix: ST, Маппінг
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Walls/fencerazor.rsi
@@ -76,9 +76,9 @@
 - type: entity
   parent: FenceMetalStraight
   id: StalkerFenceMetalStraight
-  name: Barbed wire
-  description: Material used to fence and protect an area from unauthorized entry.
-  suffix: ST, Mapping, traight
+  name: Колючий дріт
+  description: Матеріал, що використовується для огорожі та захисту території від несанкціонованого проникнення.
+  suffix: ST, Маппінг, прямий
   components:
   - type: Icon
     sprite: _Stalker/Structures/Walls/fencerazor.rsi
@@ -93,9 +93,9 @@
 - type: entity
   parent: FenceMetalStraightConst
   id: StalkerFenceMetalStraightConst
-  name: Barbed wire
-  description: Material used to fence and protect an area from unauthorized entry.
-  suffix: ST, Mapping, traight, разбираемый
+  name: Колючий дріт
+  description: Матеріал, що використовується для огорожі та захисту території від несанкціонованого проникнення.
+  suffix: ST, Маппінг, прямий, розбирається
   components:
   - type: Icon
     sprite: _Stalker/Structures/Walls/fencerazor.rsi
@@ -110,9 +110,9 @@
 - type: entity
   parent: STBaseFenceMetal
   id: StalkerFenceRazorMetalCorner
-  name: Barbed wire
-  description: Material used to fence and protect an area from unauthorized entry.
-  suffix: ST, Mapping, corner
+  name: Колючий дріт
+  description: Матеріал, що використовується для огорожі та захисту території від несанкціонованого проникнення.
+  suffix: ST, Маппінг, кут
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Walls/fencerazor.rsi
@@ -124,9 +124,9 @@
 - type: entity
   parent: FenceMetalEnd
   id: StalkerFenceMetalEnd
-  name: Barbed wire
-  description: Material used to fence and protect an area from unauthorized entry.
-  suffix: ST, Mapping, end
+  name: Колючий дріт
+  description: Матеріал, що використовується для огорожі та захисту території від несанкціонованого проникнення.
+  suffix: ST, Маппінг, кінець
   components:
   - type: Icon
     sprite: _Stalker/Structures/Walls/fencerazor.rsi

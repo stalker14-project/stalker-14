@@ -2,8 +2,8 @@
 - type: entity
   parent: BaseStructure
   id: BaseFenceWooden
-  name: wooden fence
-  description: Old wooden fence - boards and nails
+  name: дерев'яний паркан
+  description: Старий дерев'яний паркан - дошки та цвяхи
   abstract: true
   components:
   - type: Sprite
@@ -22,9 +22,9 @@
 - type: entity
   parent: BaseFenceWooden
   id: FenceWoodenBroken
-  name: broken wooden fence
-  suffix: ST, Mapping
-  description: An old wooden fence - boards and nails. I wonder who managed to break it?
+  name: зламаний дерев'яний паркан
+  suffix: ST, Маппінг
+  description: Старий дерев'яний паркан - дошки та цвяхи. Цікаво, кому вдалося його зламати?
   components:
   - type: Sprite
     layers:
@@ -70,7 +70,7 @@
 - type: entity
   parent: BaseFenceWooden
   id: FenceWoodenStraight
-  suffix: ST, Mapping, straight
+  suffix: ST, Маппінг, прямий
   components:
   - type: Icon
     sprite: _Stalker/Structures/Walls/zabor_wooden.rsi
@@ -93,14 +93,14 @@
 - type: entity
   parent: BaseFenceWooden
   id: FenceWoodenCorner
-  suffix: ST, Mapping, corner
+  suffix: ST, Маппінг, кут
   components:
   - type: Sprite
     layers:
     - state: corner
   - type: Fixtures
     fixtures:
-      # needs two shapes to properly handle a triangle corner without weirdness
+      # потрібно дві фігури, щоб правильно обробити кут трикутника без дивацтв
       fix1:
         shape:
           !type:PhysShapeAabb
@@ -124,7 +124,7 @@
 - type: entity
   parent: BaseFenceWooden
   id: FenceWoodenEnd
-  suffix: ST, Mapping, end
+  suffix: ST, Маппінг, кінець
   components:
   - type: Icon
     sprite: _Stalker/Structures/Walls/zabor_wooden.rsi
@@ -148,8 +148,8 @@
 - type: entity
   parent: BaseFenceMetal
   id: FenceMetalStraightConst
-  name: chain-link mesh
-  suffix: ST, Mapping, разбираемый
+  name: сітка рабиця
+  suffix: ST, Маппінг, розбирається
   components:
   - type: Icon
     sprite: Structures/Walls/fence.rsi

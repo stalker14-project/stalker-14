@@ -1,7 +1,7 @@
 - type: entity
   id: Base754Mag5
-  name: magazine 7.62x54 (5)
-  description: Magazine 7,62x54 for Machine Guns. Bullet capacity 5. Sold empty.
+  name: магазин 7.62x54 (5)
+  description: Магазин 7,62x54 для кулеметів. Ємність патронів 5. Продається порожнім.
   parent: Base545Mag10
   tag: Stalker
   components:
@@ -37,10 +37,11 @@
       steps: 2
       zeroVisible: false
     - type: Appearance
+
 - type: entity
   id: 754Mag10
-  name: magazine 7.62x54 (10)
-  description: Magazine 7,62x54 for Machine Guns. Bullet capacity 10. Sold empty.
+  name: магазин 7.62x54 (10)
+  description: Магазин 7,62x54 для кулеметів. Ємність 10 набоїв. Продається порожнім.
   parent: Base754Mag5
   tag: Stalker
   components:
@@ -60,10 +61,11 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-1
           map: ["enum.GunVisualLayers.Mag"]
+
 - type: entity
   id: 754Mag20
-  name: magazine 7.62x54 (20)
-  description: Magazine 7,62x54 for Machine Guns. Bullet capacity 20. Sold empty.
+  name: магазин 7.62x54 (20)
+  description: Магазин 7,62x54 для кулеметів. Ємність 20 набоїв. Продається порожнім.
   parent: Base754Mag5
   tag: Stalker
   components:

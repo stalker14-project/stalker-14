@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 45ACPLFMJBox
-  name: Box of Ammo (.45 ACP) Lasermatch FMJ
-  description: For some pistols and revolvers, 30 pieces in a box. Provides penetration of only 1 class of armor.
-  suffix: Stalker
+  name: Коробка набоїв (.45 ACP) Lasermatch FMJ
+  description: Для деяких пістолетів і револьверів, 30 штук в коробці. Забезпечують пробиття лише 1 класу броні.
+  suffix: ST
   components:
     - type: MagazineVisuals
       magState: 45ammo
@@ -23,9 +23,9 @@
 - type: entity
   parent: 45ACPLFMJBox
   id: 45ACPMFMJBox
-  name: Ammo Box (.45 ACP) Match FMJ
-  description: For some pistols and revolvers, 30 pieces in a box. Provides penetration of armor class 2.
-  suffix: Stalker
+  name: Коробка для набоїв (.45 ACP) Match FMJ
+  description: Для деяких пістолетів і револьверів, 30 штук в коробці. Забезпечують пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: MagazineVisuals
       magState: 45ammo1
@@ -46,9 +46,9 @@
 - type: entity
   parent: 45ACPLFMJBox
   id: 45ACPHydroshockBox
-  name: Hydro-shock Ammo Box (.45 ACP)
-  description: For some pistols and revolvers, 30 pieces in a box. Provides penetration of class 1 armor.
-  suffix: Stalker
+  name: Гідроударна коробка для набоїв (.45 ACP)
+  description: Для деяких пістолетів і револьверів, 30 штук в коробці. Забезпечують пробиття броні 1 класу.
+  suffix: ST
   components:
     - type: MagazineVisuals
       magState: 45ammo2
@@ -68,9 +68,9 @@
 - type: entity
   parent: 45ACPLFMJBox
   id: 45ACPRIPBox
-  name: Ammo Box (.45 ACP) RIP
-  description: For some pistols and revolvers, there are 30 in a box. Useless against armor.
-  suffix: Stalker
+  name: Коробка для набоїв (.45 ACP) RIP
+  description: Для деяких пістолетів та револьверів - 30 набоїв у коробці. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 30
@@ -88,9 +88,9 @@
 - type: entity
   parent: 45ACPLFMJBox
   id: 45ACPAPBox
-  name: Ammo Box (.45 ACP) AP
-  description: For some pistols and revolvers, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: Коробка для набоїв (.45 ACP) AP
+  description: Для деяких пістолетів і револьверів, 30 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 30
@@ -108,9 +108,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 45ACPLFMJBoxCink
-  name: ammo box (.45 ACP) Lasermatch FMJ
-  description: For some pistols and revolvers, 30 pieces in a box. Provides penetration of only 1 class of armor.
-  suffix: Stalker
+  name: коробка для набоїв (.45 ACP) Lasermatch FMJ
+  description: Для деяких пістолетів і револьверів, 30 штук в коробці. Забезпечують пробиття лише 1 класу броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 300
@@ -128,9 +128,9 @@
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPMFMJBoxCink
-  name: Ammo Box (.45 ACP) Match FMJ
-  description: For some pistols and revolvers, 300 pieces in a box. Provides penetration of armor class 2.
-  suffix: Stalker
+  name: Коробка для набоїв (.45 ACP) Match FMJ
+  description: Для деяких пістолетів і револьверів, 300 штук в коробці. Забезпечує пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 300
@@ -148,9 +148,9 @@
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPHydroshockBoxCink
-  name: Ammo Box (.45 ACP) Hydro-shock
-  description: For some pistols and revolvers, 300 pieces in a box. Provides penetration of class 1 armor.
-  suffix: Stalker
+  name: Коробка для набоїв (.45 ACP) гідроударна
+  description: Для деяких пістолетів і револьверів, 300 штук в коробці. Забезпечує пробиття броні 1 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 300
@@ -168,9 +168,9 @@
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPRIPBoxCink
-  name: Ammo Box (.45 ACP) RIP
-  description: For some pistols and revolvers, there are 300 pieces in a box. Useless against armor.
-  suffix: Stalker
+  name: Коробка для набоїв (.45 ACP) RIP
+  description: Для деяких пістолетів та револьверів в коробці міститься 300 набоїв. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 300
@@ -188,9 +188,9 @@
 - type: entity
   parent: 45ACPLFMJBoxCink
   id: 45ACPAPBoxCink
-  name: Ammo Box (.45 ACP) AP
-  description: For some pistols and revolvers, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: Коробка для набоїв (.45 ACP) AP
+  description: Для деяких пістолетів і револьверів, 30 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 30

@@ -4,7 +4,7 @@
   parent: MarkerBase
   name: Ejection Defense
   description: Transports you to a linked destination!
-  suffix: Stalker
+  suffix: ST
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: true
@@ -33,7 +33,7 @@
   name: Disabling Ejection Protection
   description: Transports you to a linked destination!
   parent: MarkerBase
-  suffix: Stalker
+  suffix: ST
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: false
@@ -63,7 +63,7 @@
   parent: MarkerBase
   name: Enabling Pacifism
   description: Transports you to a linked destination!
-  suffix: Stalker
+  suffix: ST
   components:
     - type: Sprite
       layers:
@@ -94,7 +94,7 @@
   name: Turning off pacifism
   description: Transports you to a linked destination!
   parent: MarkerBase
-  suffix: Stalker
+  suffix: ST
   components:
     - type: Transform
       anchored: True
@@ -125,7 +125,7 @@
   parent: MarkerBase
   name: Safezone Entrance
   description: Transports you to a linked destination!
-  suffix: Stalker
+  suffix: ST
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: true
@@ -158,7 +158,7 @@
   name: Exit from safe zone
   description: Transports you to a linked destination!
   parent: MarkerBase
-  suffix: Stalker
+  suffix: ST
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: false

@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 751M80Box
-  name: Box of cartridges (7.62x51) M80
-  description: For NATO rifles, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: Коробка патронів (7.62x51) M80
+  description: Для гвинтівок НАТО, 30 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: MagazineVisuals
       magState: 76239ammo
@@ -23,9 +23,9 @@
 - type: entity
   parent: 751M80Box
   id: 751UNBox
-  name: Ammo Box (7.62x51) Ultra Noiser
-  description: For NATO rifles, 30 in a box. Useless against armor.
-  suffix: Stalker
+  name: Коробка для набоїв (7.62x51) Ultra Noiser
+  description: Для гвинтівок НАТО, 30 в коробці. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge751Noiser
@@ -40,9 +40,9 @@
 - type: entity
   parent: 751M80Box
   id: 751M61Box
-  name: Ammo Box (7.62x51) M61
-  description: For NATO rifles, 30 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: Патронташ (7.62x51) M61
+  description: Для гвинтівок НАТО, 30 штук в коробці. Забезпечують пробиття броні 4 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge751M61
@@ -56,9 +56,9 @@
 - type: entity
   parent: 751M80Box
   id: 751M993Box
-  name: Ammo Box (7.62x51) M993
-  description: For NATO rifles, 30 pieces in a box. Provides penetration of armor class 5.
-  suffix: Stalker
+  name: Патронташ (7.62x51) M993
+  description: Для гвинтівок НАТО, 30 штук в коробці. Забезпечують пробиття броні 5 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge751M993
@@ -73,9 +73,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 751M80BoxCink
-  name: ammo box (7.62x51) M80
-  description: For NATO rifles, 300 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x51) M80
+  description: Для гвинтівок НАТО, 300 штук в коробці. Забезпечує пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 300
@@ -93,9 +93,9 @@
 - type: entity
   parent: 751M80BoxCink
   id: 751UNBoxCink
-  name: Ammo Box (7.62x51) Ultra Noiser
-  description: For NATO rifles, 300 pieces in a box. Useless against armor.
-  suffix: Stalker
+  name: Коробка для набоїв (7.62x51) Ultra Noiser
+  description: Для гвинтівок НАТО, 300 штук в коробці. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge751Noiser
@@ -109,9 +109,9 @@
 - type: entity
   parent: 751M80BoxCink
   id: 751M61BoxCink
-  name: ammo box (7.62x51) M61
-  description: For NATO rifles, 300 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x51) M61
+  description: Для гвинтівок НАТО, 300 штук в коробці. Забезпечує пробиття броні 4 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge751M61
@@ -125,9 +125,9 @@
 - type: entity
   parent: 751M80BoxCink
   id: 751M993BoxCink
-  name: ammo box (7.62x51) M993
-  description: For NATO rifles, 300 pieces in a box. Provides penetration of armor class 5.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x51) M993
+  description: Для гвинтівок НАТО, 300 штук в коробці. Забезпечує пробиття броні 5 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge751M993

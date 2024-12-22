@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseCraftTool
   id: Toolbox
-  name: toolbox
-  description: A box with a bunch of all kinds of screwdrivers, keys and other things.
-  suffix: Stalker, Инструменты
+  name: інструментарій
+  description: Коробка з купою всіляких викруток, ключів та інших речей.
+  suffix: ST, Інструменти
   components:
   - type: STWeight
     self: 5.2
@@ -41,14 +41,14 @@
       storagebase: !type:Container
         ents: []
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
   parent: BaseItem
   id: CraftLeatherbox
-  name: skinning kit
-  description: A set of tools and equipment for processing and tanning skins.
-  suffix: Stalker, крафт
+  name: набір для зняття шкіри
+  description: Набір інструментів та обладнання для обробки та дублення шкір.
+  suffix: ST, крафт
   components:
   - type: STWeight
     self: 2.5
@@ -62,14 +62,14 @@
     state: leatherbox
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: Крафти
 
 - type: entity
   parent: BaseCraftTool
   id: SolderingIron
-  name: soldering iron
-  description: Classic soldering iron for radio electronics.
-  suffix: Stalker, Инструменты
+  name: паяльник
+  description: Класичний паяльник для радіоелектроніки.
+  suffix: ST, Інструменти
   components:
   - type: STWeight
     self: 0.2
@@ -78,14 +78,14 @@
   - type: Sprite
     sprite: _Stalker/Objects/Tools/soldering_iron.rsi
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
   parent: BaseCraftTool
   id: BoltCutter
-  name: wire cutter
-  description: cuts bars
-  suffix: Stalker, Инструменты
+  name: кусачки
+  description: ріже прутки
+  suffix: ST, Інструменти
   components:
   - type: STWeight
     self: 3
@@ -114,14 +114,14 @@
       path: /Audio/Items/ratchet.ogg
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
   parent: BaseCraftTool
   id: RazorWire
-  name: coil of barbed wire
-  description: A coil of barbed wire for the military to restore the Perimeter. I hope your thieving little hands get cut off.
-  suffix: Stalker, Инструменты
+  name: моток колючого дроту
+  description: Моток колючого дроту для військових для відновлення Периметру. Сподіваюся, твої злодійкуваті рученята тобі відрубають.
+  suffix: ST, Інструменти
   components:
   - type: STWeight
     self: 5
@@ -139,12 +139,12 @@
 - type: entity
   parent: BaseCraftTool
   id: CraftSpanishKnife
-  name: spanish army knife
-  description: The pain from using it is almost unbearable.
-  suffix: Stalker, Инструменты
+  name: іспанський армійський ніж
+  description: Біль від його використання майже нестерпний.
+  suffix: ST, Інструменти
   components:
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
     - type: Sprite
       sprite: Objects/Tools/debug.rsi
       state: icon
@@ -155,13 +155,13 @@
       shape:
         - 0,0,0,0
 
-###############Инструменты
+###############Інструменти
 - type: entity
-  name: wire cutters
+  name: кусачки
   parent: BaseItem
   id: WirecutterStalker
-  description: For cutting wires and disassembling electronics.
-  suffix: Stalker, крафт
+  description: Для різання дротів і розбирання електроніки.
+  suffix: ST, крафт
   components:
     - type: Tag
       tags:
@@ -194,15 +194,15 @@
     - type: STWeight
       self: 0.5
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
     - type: Craftable
 
 - type: entity
   parent: BaseCraftTool
   id: ToolkitTearOne
-  name: tools for rough work
-  description: Young Technician Tool Set. It has all the tools necessary for metalwork. For an experienced technician, such a set is necessary for the simplest armor and weapon upgrades. For an ordinary stalker, it will be a convenient tool for creating the simplest things.
-  suffix: Stalker, Инструменты
+  name: інструменти для грубих робіт
+  description: Набір інструментів "Юний технік". У ньому є всі інструменти, необхідні для слюсарних робіт. Для досвідченого техніка такий набір необхідний для найпростіших модернізацій броні та зброї. Для звичайного сталкера він буде зручним інструментом для створення найпростіших речей.
+  suffix: ST, Інструменти
   components:
   - type: STWeight
     self: 5
@@ -237,14 +237,14 @@
         ents: []
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
   parent: BaseCraftTool
   id: ToolkitTearTwo
-  name: tools for fine work
-  description: A good set of tools. Apparently, carefully selected by an experienced craftsman for himself, dear. Despite the years, all the tools are well preserved.
-  suffix: Stalker, Инструменты
+  name: інструменти для тонкої роботи
+  description: Хороший набір інструментів. Мабуть, ретельно підібраний досвідченим майстром для себе, рідного. Незважаючи на роки, всі інструменти добре збереглися.
+  suffix: ST, Інструменти
   components:
   - type: STWeight
     self: 8
@@ -279,14 +279,14 @@
         ents: []
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
   parent: BaseCraftTool
   id: ToolkitTearThree
-  name: calibration tools
-  description: Professional set of tools for fine-tuning equipment. The inscription on the box says that the set was made in the GDR. What is included in the kit is enough to carry out almost any work on setting up and calibration.
-  suffix: Stalker, Инструменты
+  name: інструменти для калібрування
+  description: Професійний набір інструментів для тонкого налаштування обладнання. Напис на коробці свідчить, що набір виготовлений у НДР. Того, що входить до набору, достатньо для виконання практично будь-яких робіт з налаштування та калібрування.
+  suffix: ST, Інструменти
   components:
   - type: STWeight
     self: 3
@@ -321,14 +321,14 @@
         ents: []
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
-  name: screwdriver
+  name: викрутка
   parent: BaseItem
   id: ScrewdriverStalker
-  description: A regular screwdriver with an insulated handle.
-  suffix: Stalker, Инструменты
+  description: Звичайна викрутка з ізольованою ручкою.
+  suffix: ST, Інструменти
   components:
     - type: Tool
       qualities:
@@ -369,14 +369,14 @@
       self: 0.5
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 - type: entity
-  name: adjustable wrench
+  name: розвідний ключ
   parent: BaseItem
   id: WrenchStalker
-  description: Standard tool for assembling and disassembling everything.
-  suffix: Stalker, Инструменты
+  description: Стандартний інструмент для збирання та розбирання всього.
+  suffix: ST, Інструменти
   components:
     - type: Tag
       tags:
@@ -401,14 +401,14 @@
     - type: STWeight
       self: 0.5
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 - type: entity
   name: multitool
   parent: BaseItem
   id: MultitoolStalker
   description: Multi-tool for measuring voltage and calibration, indispensable for high-precision electronics.
-  suffix: Stalker, Инструменты
+  suffix: ST, Інструменти
   components:
     - type: Craftable
     - type: EmitSoundOnLand
@@ -428,15 +428,15 @@
     - type: STWeight
       self: 0.5
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 
 - type: entity
   id: ScissorsStalker
-  name: scissors
-  description: Scissors, especially used for cutting out all kinds of fabric, cardboard. But they can also be used to cut peoples hair.
+  name: ножиці
+  description: Ножиці, особливо використовуються для вирізання всіх видів тканини, картону. Але їх також можна використовувати для стрижки волосся.
   parent: BaseItem
-  suffix: Stalker, Инструменты
+  suffix: ST, Інструменти
   components:
     - type: Sprite
       sprite: Objects/Tools/scissors.rsi
@@ -464,14 +464,14 @@
           Slash: 2
           Piercing: 5
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 - type: entity
-  name: crowbar
+  name: лом
   parent: BaseItem
   id: CrowbarStalker
-  description: A steel crowbar used for opening locks, doors, pulling out nails and other auxiliary work.
-  suffix: Stalker, Инструменты
+  description: Сталевий лом, який використовується для відкривання замків, дверей, витягування цвяхів та інших допоміжних робіт.
+  suffix: ST, Інструменти
   components:
   - type: EmitSoundOnLand
     sound:
@@ -504,14 +504,14 @@
   - type: Prying
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
-  name: compact welding machine
+  name: компактний зварювальний апарат
   parent: BaseItem
   id: WelderStalker
-  description: Compact welding machine is ideal for use in small workshops, construction sites and so on, by the way, made on fuel.
-  suffix: Stalker, Инструменты
+  description: Компактний зварювальний апарат ідеально підходить для використання в невеликих майстернях, на будівельних майданчиках і т.д., до речі, працює на паливі.
+  suffix: ST, Інструменти
   components:
   - type: EmitSoundOnLand
     sound:
@@ -606,14 +606,14 @@
     temperature: 700
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
   parent: BaseItem
   id: CraftTapeMeasure
-  name: roulette
-  description: A convenient regular tape measure. Allows you to measure anything as long as it is long enough.
-  suffix: Stalker, Инструменты
+  name: колесо рулетки
+  description: Зручна звичайна рулетка. Дозволяє виміряти все, що завгодно, якщо вона достатньо довга.
+  suffix: ST, Інструменти
   components:
     - type: Trash
       time: 1200
@@ -629,15 +629,15 @@
       state: tape-measure
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 
 - type: entity
   parent: BaseItem
   id: STCraftMortarAndPestle
-  name: mortar and pestle
-  description: first man thought of grinding with a stone. the next day he thought of grinding with two stones
-  suffix: Stalker, Инструменты
+  name: ступка і товкачик
+  description: перша людина додумалася шліфувати каменем. наступного дня вона додумалася шліфувати двома каменями
+  suffix: ST, Інструменти
   components:
     - type: STWeight
       self: 1
@@ -650,14 +650,14 @@
       state: mortar_and_pestle
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 - type: entity
   parent: BaseItem
   id: CraftAwl
-  name: awl
-  description: An awl without soap. Needed to make holes in things.
-  suffix: Stalker, Инструменты
+  name: шило
+  description: Шило без мила. Потрібно для того, щоб робити дірки в речах.
+  suffix: ST, Інструменти
   components:
     - type: Craftable
     - type: STWeight
@@ -671,14 +671,14 @@
       scale: 0.3, 0.3
       state: awl
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 - type: entity
   parent: BaseItem
   id: CraftCWelding
-  name: cold welding
-  description: Cold welding tube.
-  suffix: Stalker, Инструменты
+  name: холодне зварювання
+  description: Труба для холодного зварювання.
+  suffix: ST, Інструменти
   components:
     - type: STWeight
       self: 0.1
@@ -686,18 +686,18 @@
       size: Tiny
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Craft/64.rsi
-      suffix: Stalker, крафт
+      suffix: ST, крафт
       scale: 0.25, 0.25
       state: c-welding
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 - type: entity
   parent: BaseItem
   id: CraftSaw
-  name: saw
-  suffix: Stalker, Инструменты
+  name: пила
+  suffix: ST, Інструменти
   components:
     - type: STWeight
       self: 0.1
@@ -713,13 +713,13 @@
         - 0,0,1,0
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Инструменты
+      categoryName: Інструменти
 
 - type: entity
-  name: chainsaw
+  name: бензопила
   parent: BaseItem
   id: ChainsawStalker
-  description: A type of hand-held chain saw equipped with an internal combustion engine, usually a two-stroke one.
+  description: Тип ручної ланцюгової пили, оснащеної двигуном внутрішнього згоряння, зазвичай двотактним.
   components:
   - type: STWeight
     self: 4.5
@@ -768,13 +768,13 @@
     delay: 1
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
 - type: entity
-  name: circular saw
+  name: циркулярна пила
   id: SawStalker
   parent: Saw
-  description: A cutting tool in the form of a flat metal disk with teeth on the outer edge.
+  description: Ріжучий інструмент у вигляді плоского металевого диска з зубцями на зовнішньому краю.
   components:
   - type: STWeight
     self: 3.5
@@ -822,15 +822,15 @@
     delay: 1
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Инструменты
+    categoryName: Інструменти
 
-# Утилиты
+# Утиліти
 
 - type: entity
-  name: Shovel
+  name: Лопата
   parent: Shovel
   id: AAAAStalkerLopata
-  description: A large tool for digging and moving dirt
+  description: Великий інструмент для копання та переміщення ґрунту
   components:
     - type: StalkerShovel
       canPlow: False
@@ -840,10 +840,10 @@
 
 - type: entity
   parent: Shovel
-  name: Golden Shovel
+  name: Золота лопата
   id: STGoldShovel
-  suffix: ST, ADMIN, ckey-Lord_Pinky_Shadow
-  description: A brilliant piece of technology which can not only make graves, but also plow. Gifted to the owner for his botany balance job
+  suffix: ST, ADMIN
+  description: Блискучий витвір техніки, який може не лише копати могили, а й орати. Подарований власнику за роботу з ботанічного балансу
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Tools/gold_shovel.rsi

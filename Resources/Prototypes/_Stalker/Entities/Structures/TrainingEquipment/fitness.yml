@@ -2,7 +2,7 @@
   abstract: true
   parent: BaseStructure
   id: STFitnessBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   components:
   - type: CharacteristicTraining
     increase: 2
@@ -13,9 +13,9 @@
 - type: entity
   parent: STFitnessBase
   id: STBenchPressNovice
-  name: Light Weight Barbell (Beginner)
-  description: A necessary element of any rocking chair
-  suffix: ST, Mapping
+  name: Легка штанга (початківець)
+  description: Необхідний елемент будь-якого крісла-гойдалки
+  suffix: ST, Маппінг
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/bench_press.rsi
@@ -28,9 +28,9 @@
 - type: entity
   parent: STFitnessBase
   id: STBenchPressExpirienced
-  suffix: ST, Mapping
-  name: Medium Weight Barbell (Experienced)
-  description: looks solid
+  suffix: ST, Маппінг
+  name: Штанга середньої ваги (досвідчений)
+  description: виглядає солідно
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/bench_press.rsi
@@ -43,9 +43,9 @@
 - type: entity
   parent: STFitnessBase
   id: STBenchPressExpert
-  suffix: ST, Mapping
-  name: Champions Barbell (Expert)
-  description: are you sure youre human?
+  suffix: ST, Маппінг
+  name: Чемпіонська штанга (експерт)
+  description: Ти впевнений, що ти людина?
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/bench_press.rsi
@@ -55,14 +55,14 @@
     minValue: 50
     maxValue: 75
 
-# Боксёрские груши
+# Боксерські груші
 
 - type: entity
   parent: STFitnessBase
   id: STPunchingBagNovice
-  suffix: ST, Mapping
-  name: Pear with a rag (newbie)
-  description: the first step to victory
+  suffix: ST, Маппінг
+  name: Груша з ганчіркою (початківець)
+  description: перший крок до перемоги
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/punching_bag.rsi
@@ -75,9 +75,9 @@
 - type: entity
   parent: STFitnessBase
   id: STPunchingBagExpirienced
-  suffix: ST, Mapping
-  name: Rubber Crumb Pear (Experienced)
-  description: the second step to victory
+  suffix: ST, Маппінг
+  name: Груша з гумовою крихтою (досвідчений)
+  description: другий крок до перемоги
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/punching_bag.rsi
@@ -87,13 +87,13 @@
     minValue: 25
     maxValue: 50
 
-# Беговые дорожки
+# Бігові доріжки
 
 - type: entity
   parent: STFitnessBase
   id: STTreadmillNovice
-  suffix: ST, Mapping
-  name: Regular Treadmill (Beginner)
+  suffix: ST, Маппінг
+  name: Звичайна бігова доріжка (початківець)
   description: dont fall
   components:
   - type: Sprite

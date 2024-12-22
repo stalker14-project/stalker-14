@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 556FMJBox
-  name: box of cartridges (5.56) FMJ
-  description: For assault rifles, 30 pieces in a box. Provides penetration of armor class 2.
-  suffix: Stalker
+  name: коробка патронів (5.56) FMJ
+  description: Для штурмових гвинтівок, 30 штук в коробці. Забезпечують пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: MagazineVisuals
       magState: 556ammo
@@ -23,9 +23,9 @@
 - type: entity
   parent: 556FMJBox
   id: 556M855Box
-  name: Box of cartridges (5.56) M885
-  description: For assault rifles, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: Коробка патронів (5.56) M885
+  description: Для штурмових гвинтівок, 30 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556M855
@@ -40,9 +40,9 @@
 - type: entity
   parent: 556FMJBox
   id: 556WarmagBox
-  name: Box of cartridges (5.56) Warmag
-  description: For assault rifles, 30 in a box. Useless against armor.
-  suffix: Stalker
+  name: Коробка патронів (5.56) Warmag
+  description: Для штурмових гвинтівок, 30 в коробці. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556Warmag
@@ -57,9 +57,9 @@
 - type: entity
   parent: 556FMJBox
   id: 556M856Box
-  name: Box of Ammo (5.56) M856
-  description: For assault rifles, 30 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: Коробка набоїв (5.56) M856
+  description: Для штурмових гвинтівок, 30 штук в коробці. Забезпечують пробиття броні 4 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556M856
@@ -74,9 +74,9 @@
 - type: entity
   parent: 556FMJBox
   id: 545M995Box
-  name: Box of cartridges (5.56) M995
-  description: For assault rifles, 30 pieces in a box. Provides penetration of armor class 5.
-  suffix: Stalker
+  name: Коробка патронів (5.56) M995
+  description: Для штурмових гвинтівок, 30 штук в коробці. Забезпечують пробиття броні 5 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556M995
@@ -91,9 +91,9 @@
 - type: entity
   parent: 556FMJBox
   id: 556SSAAPBox
-  name: Box of Ammo (5.56) SSA AP
-  description: For assault rifles, 30 pieces in a box. Provides penetration of armor class 6.
-  suffix: Stalker
+  name: Коробка набоїв (5.56) SSA AP
+  description: Для штурмових гвинтівок, 30 штук в коробці. Забезпечують пробиття броні 6 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556SSAAP
@@ -108,9 +108,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 556FMJBoxCink
-  name: ammo box (5.56) FMJ
-  description: For assault rifles, 300 pieces in a box. Provides penetration of class 2 armor.
-  suffix: Stalker
+  name: коробка для набоїв (5.56) FMJ
+  description: Для штурмових гвинтівок, 300 штук в коробці. Забезпечують пробиття броні 2 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       capacity: 300
@@ -128,9 +128,9 @@
 - type: entity
   parent: 556FMJBoxCink
   id: 556M855BoxCink
-  name: ammo box (5.56) M885
-  description: For assault rifles, 300 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: коробка для набоїв (5.56) M885
+  description: Для штурмових гвинтівок, 300 штук в коробці. Забезпечують пробиття броні 3 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556M855
@@ -144,9 +144,9 @@
 - type: entity
   parent: 556FMJBoxCink
   id: 556WarmagBoxCink
-  name: ammo box (5.56) Warmag
-  description: For assault rifles, 300 in a box. Useless against armor.
-  suffix: Stalker
+  name: Ящик для набоїв (5.56) Warmag
+  description: Для штурмових гвинтівок, 300 набоїв у коробці. Марні проти броні.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556Warmag
@@ -160,9 +160,9 @@
 - type: entity
   parent: 556FMJBoxCink
   id: 556M856BoxCink
-  name: ammo box (5.56) M856
-  description: For assault rifles, 300 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: ящик для набоїв (5.56) M856
+  description: Для штурмових гвинтівок, 300 штук в коробці. Забезпечують пробиття броні 4 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556M856
@@ -176,9 +176,9 @@
 - type: entity
   parent: 556FMJBoxCink
   id: 545M995BoxCink
-  name: ammo box (5.56) M995
-  description: For assault rifles, 30 pieces in a box. Provides penetration of armor class 5.
-  suffix: Stalker
+  name: коробка для набоїв (5.56) M995
+  description: Для штурмових гвинтівок, 30 штук в коробці. Забезпечують пробиття броні 5 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556M995
@@ -192,9 +192,9 @@
 - type: entity
   parent: 556FMJBoxCink
   id: 556SSAAPBoxCink
-  name: ammo box (5.56) SSA AP
-  description: For assault rifles, 300 pieces in a box. Provides penetration of armor class 6.
-  suffix: Stalker
+  name: Коробка для набоїв (5.56) SSA AP
+  description: Для штурмових гвинтівок, 300 штук в коробці. Забезпечують пробиття броні 6 класу.
+  suffix: ST
   components:
     - type: BallisticAmmoProvider
       proto: Cartridge556SSAAP

@@ -3,7 +3,7 @@
   description: Універсальна аптечка. Використовується для лікування травм різного типу і ступеня тяжкості - грубих поранень, опіків, отруєнь тощо.
   parent: BaseStorageItem
   id: MedkitStalker
-  suffix: Stalker
+  suffix: ST
   components:
   - type: Sprite
     sprite: StalkerTextures/Objects/items.rsi
@@ -23,7 +23,7 @@
     tags:
     - Medkit
   - type: StorageFill
-    contents: 
+    contents:
       - id: Brutepack
       - id: Ointment
       - id: Gauze
@@ -77,7 +77,7 @@
 #Entities found at entities/objects/specific/medical
 - type: entity
   id: StalkerMedkitFilled
-  suffix: Stalker, Filled
+  suffix: ST, Заповнений
   parent: Medkit
   components:
   - type: StorageFill
@@ -90,7 +90,7 @@
 
 - type: entity
   id: StalkerMedkitBurnFilled
-  suffix: Stalker, Filled
+  suffix: ST, Заповнений
   parent: MedkitBurn
   components:
   - type: StorageFill
@@ -102,7 +102,7 @@
 
 - type: entity
   id: StalkerMedkitBruteFilled
-  suffix: Stalker, Filled
+  suffix: ST, Заповнений
   parent: MedkitBrute
   components:
   - type: StorageFill
@@ -114,7 +114,7 @@
 
 - type: entity
   id: StalkerMedkitAdvancedFilled
-  suffix: Stalker, Filled
+  suffix: ST, Заповнений
   parent: MedkitAdvanced
   components:
   - type: StorageFill

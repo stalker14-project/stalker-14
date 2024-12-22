@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseCraftItem
   id: BaseDosimeter
-  name: Geiger counter
-  description: A handheld device used for detecting and measuring radiation pulses.
-  suffix: Stalker, Dosimeter
+  name: Лічильник Гейгера
+  description: Портативний пристрій, що використовується для виявлення та вимірювання радіаційних імпульсів.
+  suffix: ST, Дозиметр
   abstract: true
   components:
     - type: Sprite
@@ -36,62 +36,62 @@
 - type: entity
   parent: BaseDosimeter
   id: DosimeterModified
-  name: modified dosimeter
-  description: A Geiger counter modified by craftsmen, which now shows the sum of negative radiation of all types, except radiation. Indispensable in anomalous fields and with psi-radiation.
+  name: модифікований дозиметр
+  description: Модифікований умільцями лічильник Гейгера, який тепер показує суму негативного випромінювання всіх типів, окрім радіації. Незамінний в аномальних полях та при пси-випромінюванні.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Tools/geiger_modified.rsi
     - type: Item
       sprite: _Stalker/Objects/Tools/geiger_modified.rsi
     - type: Geiger
-      prefix: У.Е.В.
+      prefix: НЕВИЗ
       damageTypes:
         - id: Asphyxiation
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Bloodloss
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Blunt
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Piercing
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Slash
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Heat
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Shock
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Cold
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Caustic
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Poison
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Cellular
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Psy
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Compression
-          name: У.Е.В.
+          name: НЕВИЗ
         - id: Structural
-          name: У.Е.В.
+          name: НЕВИЗ
 
 - type: entity
   parent: BaseDosimeter
   id: DosimeterUniversal
-  name: precise modified dosimeter
-  description: The most advanced detector showing the sum of negative radiation of all types, equipped with various sensors that conduct a group test on the nature of radiation.
+  name: точний модифікований дозиметр
+  description: Найсучасніший детектор, що показує суму негативного випромінювання всіх типів, оснащений різними датчиками, які проводять груповий тест на характер випромінювання.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Tools/geiger_universal.rsi
     - type: Item
       sprite: _Stalker/Objects/Tools/geiger_universal.rsi
     - type: Geiger
-      prefix: У.Е.В.
+      prefix: НЕВИЗ
       damageTypes:
         - id: Asphyxiation
-          name: П.В.
+          name: Кис
         - id: Bloodloss
-          name: П.В.
+          name: Кров
         - id: Blunt
           name: мех
         - id: Piercing
@@ -99,13 +99,13 @@
         - id: Slash
           name: мех
         - id: Heat
-          name: физ
+          name: фіз
         - id: Shock
-          name: физ
+          name: фіз
         - id: Cold
-          name: физ
+          name: фіз
         - id: Caustic
-          name: физ
+          name: фіз
         - id: Radiation
           name: рад
         - id: Poison
@@ -115,6 +115,6 @@
         - id: Psy
           name: пси
         - id: Compression
-          name: сжат
+          name: стис
         - id: Structural
-          name: стркут
+          name: структ

@@ -1,10 +1,10 @@
-# БАЗОВАЯ СТРУКТУРА ХОЛОДИЛЬНИКА
+# БАЗОВА СТРУКТУРА ХОЛОДИЛЬНИКА
 
 - type: entity
   id: BaseStalkerFreezer
   parent: BaseStructureDynamic
-  name: closet
-  description: A standard-issue Nanotrasen storage unit.
+  name: шафа
+  description: Стандартний контейнер для зберігання.
   abstract: true
   components:
   - type: ResistLocker
@@ -86,14 +86,14 @@
     stateDoorOpen: generic_open
     stateDoorClosed: generic_door
 
-# НЕ СТАТИЧНЫЙ ХОЛОДИЛЬНИК (РАБОТАЮЩИЙ)
+# НЕ СТАТИЧНИЙ ХОЛОДИЛЬНИК (ЩО ПРАЦЮЄ)
 
 - type: entity
   id: LockerFreezerStalker
   parent: BaseStalkerFreezer
-  name: refrigerator
-  suffix: ST, Mapping (No static)
-  description: A device that maintains a low temperature in an insulated chamber. Typically used to store food or objects.
+  name: холодильник
+  suffix: ST, Маппінг (No static)
+  description: Пристрій, що підтримує низьку температуру в ізольованій камері. Зазвичай використовується для зберігання продуктів або предметів.
   components:
   - type: Appearance
   - type: EntityStorageVisuals
@@ -104,14 +104,14 @@
     damageCoefficient: 0.50
   - type: AntiRottingContainer
 
-# СТАТИЧНЫЙ ХОЛОДИЛЬНИК (НЕ РАБОТАЮЩИЙ)
+# СТАТИЧНИЙ ХОЛОДИЛЬНИК (ЯКИЙ НЕ ПРАЦЮЄ)
 
 - type: entity
   id: FreezerStalker
   parent: BaseStructure
-  name: refrigerator
-  suffix: ST, Mapping (static)
-  description: A device that maintains a low temperature in an insulated chamber. Typically used to store food or objects. The door appears to be rusted. It wont open.
+  name: холодильник
+  suffix: ST, Маппінг (static)
+  description: Пристрій, що підтримує низьку температуру в ізольованій камері. Зазвичай використовується для зберігання продуктів або предметів. Двері виглядають іржавими. Не відчиняються.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/freezer/staticfreezer.rsi

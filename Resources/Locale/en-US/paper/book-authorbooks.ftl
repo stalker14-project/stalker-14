@@ -180,7 +180,7 @@ book-text-earth = As I sit here in my tiny cabin on the space station, I can't h
 book-text-aurora = Dear Diary,
 
       Today is a momentous day for the crew of the Starship Aurora. After months of floating through the vast expanse of space, they are finally landing back on Earth.
-      The crew has accomplished their mission, collecting data on a newly discovered planet in a neighboring solar system. It has been an incredible journey, filled with challenges, triumphs, and moments of awe-inspiring wonder.
+      The crew has accomplished their mission, collecting data on a newly discovered planet in a neighboring solar system. It has been an incredible journey, Заповнений with challenges, triumphs, and moments of awe-inspiring wonder.
       As the ship descends through the atmosphere, the heat of reentry causes the hull to glow a fiery red, and the ship buffets against the atmosphere. It's a rough ride, but the crew is in good hands.
       Finally, they touch down on solid ground, and the crew erupts into cheers and hugs. It's a hero's welcome, and it feels like they've been away for a lifetime.
       As they make their way to the debriefing room, they can't stop talking about their incredible journey. They've witnessed sights that most people can only dream of, explored a planet that no one has ever seen before, and come out the other side stronger and more united than ever before.

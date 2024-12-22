@@ -4,8 +4,8 @@
 - type: entity
   parent: BaseStructure
   id: StalkerWorkbench
-  name: workbench
-  description: Workbench with a vice for working with materials and devices.
+  name: верстак
+  description: Верстак з лещатами для роботи з матеріалами та пристроями.
   suffix: ST, крафт
   components:
     - type: Tag
@@ -34,9 +34,9 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerJabWorkbench
-  name: Toad workbench
-  description: Workbench with a set of advanced tools for disassembling and examining things
-  suffix: Stalker, DONATE, крафт
+  name: Жаб'ячий верстак
+  description: Робочий стіл з набором просунутих інструментів для розбирання та дослідження речей
+  suffix: ST, ДОНАТ, крафт
   components:
     - type: ContainerContainer
       containers:
@@ -62,8 +62,8 @@
 - type: entity
   parent: ClothingBackpack
   id: ClothingBackpackWorkbench
-  name: backpack workshop
-  description: A backpack with convenient tools for creating various objects with its help.
+  name: майстер-клас з виготовлення рюкзаків
+  description: Рюкзак зі зручними інструментами для створення різних об'єктів з його допомогою.
   components:
     - type: Tag
       tags:
@@ -81,9 +81,9 @@
 - type: entity
   parent: BaseStructure
   id: StalkerWorkbenchOFF
-  name: rented workbench (Not active)
-  description: A workbench with a vice for working with materials and devices. To work on it, you need a coupon that allows you to work for 10 minutes. The owner is not responsible for the loss of things due to the end of the lease.
-  suffix: Stalker, крафт, аренда
+  name: орендований верстак (Не активний)
+  description: Верстак з лещатами для роботи з матеріалами та пристроями. Для роботи на ньому потрібен талон, який дозволяє працювати 10 хвилин. Власник не несе відповідальності за втрату речей через закінчення оренди.
+  suffix: ST, крафт, аренда
   components:
     - type: InteractionOutline
     - type: Clickable
@@ -117,9 +117,9 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerWorkbenchON
-  name: rented workbench (Active)
-  description: A workbench with a vice for working with materials and devices. To work on it, you need a coupon that allows you to work for 10 minutes. The owner is not responsible for the loss of things due to the end of the lease.
-  suffix: Stalker, крафт
+  name: орендований верстак (Активний)
+  description: Верстак з лещатами для роботи з матеріалами та пристроями. Для роботи на ньому потрібен талон, який дозволяє працювати 10 хвилин. Власник не несе відповідальності за втрату речей через закінчення оренди.
+  suffix: ST, крафт
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
@@ -128,13 +128,13 @@
     prototype: StalkerWorkbenchOFF
 
 
-###############Токарные Станки
+###############Токарні Верстати
 
 - type: entity
   parent: StalkerWorkbench
   id: StalkerWorktable1
-  name: lathe
-  description: A device used for processing parts, mainly metal.
+  name: токарний верстат
+  description: Пристрій для обробки деталей, переважно металевих.
   suffix: ST, крафт
   components:
     - type: InteractionOutline
@@ -149,8 +149,8 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerTableCircularNew
-  name: table with circular saw
-  description: A circular saw, or circular saw as it is most often called, is needed for cutting a wide variety of wooden blanks.
+  name: стіл з циркулярною пилкою
+  description: Циркулярна пила, або циркулярка, як її найчастіше називають, потрібна для розпилювання найрізноманітніших дерев'яних заготовок.
   suffix: ST
   components:
     - type: InteractionOutline
@@ -164,8 +164,8 @@
 - type: entity
   parent: StalkerWorkbench
   id: StalkerTableCircularOld
-  name: table with circular saw
-  description: A circular saw, or circular saw as it is most often called, is used to cut a wide variety of wooden blanks. It looks old...
+  name: стіл з циркулярною пилкою
+  description: Циркулярна пила, або циркулярка, як її найчастіше називають, використовується для розпилювання найрізноманітніших дерев'яних заготовок. На вигляд старий...
   suffix: ST
   components:
     - type: InteractionOutline
@@ -179,9 +179,9 @@
 - type: entity
   parent: BaseStructure
   id: STBrockenWorkbench
-  name: сломанный токарный стол
-  description: Сломанный токарный стол, покрытый пылью и масляными пятнами, застыл в тишине, как молчаливый свидетель остановленного производства.
-  suffix: ST, Mapping
+  name: зламаний токарний стіл
+  description: Зламаний токарний стіл, вкритий пилом і масляними плямами, застиг у тиші, як мовчазний свідок зупиненого виробництва.
+  suffix: ST, Маппінг
   components:
     - type: InteractionOutline
     - type: Sprite
@@ -190,14 +190,14 @@
     - type: Transform
       noRot: true
 
-# Валюта активации
+# Валюта активації
 
 - type: entity
   parent: BaseItem
   id: Coupon
-  name: Coupon
-  description: Workbench rental coupon. Allows you to use the rented workbench for 10 minutes. The owner is not responsible for items lost due to the end of the rental.
-  suffix: Stalker
+  name: Купон на оренду
+  description: Купон на оренду верстака. Дозволяє користуватися орендованим верстаком протягом 10 хвилин. Власник не несе відповідальності за втрачені речі після закінчення оренди.
+  suffix: ST
   components:
     - type: STWeight
       self: 0.05

@@ -6,7 +6,7 @@
 - type: entity
   id: ZoneAnomalyGravi
   parent: ZoneAnomalyBaseGravity
-  suffix: Stalker, Gravi, Anomaly
+  suffix: ST, Граві, Аномалія
   components:
     - type: ZoneAnomalyTriggerStartCollide
     - type: ZoneAnomalyEffectDamage
@@ -61,7 +61,7 @@
 - type: entity
   id: ZoneAnomalyGrabber
   parent: ZoneAnomalyBaseGravity
-  suffix: Stalker, Grabber, Anomaly
+  suffix: ST, Граббер, Аномалія
   components:
     - type: ZoneAnomalyTriggerStartCollide
     - type: ZoneAnomalyEffectDamage
@@ -132,7 +132,7 @@
 - type: entity
   id: ZoneAnomalySpringboard
   parent: ZoneAnomalyBaseGravity
-  suffix: Stalker, Springboard, Anomaly
+  suffix: ST, Трамплін, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
@@ -184,7 +184,7 @@
 - type: entity
   parent: ZoneAnomalyBaseGravity
   id: ZoneAnomalyPulse
-  suffix: Stalker, Pulse, Anomaly
+  suffix: ST, Пульс, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
@@ -223,7 +223,7 @@
 - type: entity
   id: ZoneAnomalyInversion
   parent: ZoneAnomalyBaseGravity
-  suffix: Stalker, Inversion, Anomaly
+  suffix: ST, Інверсія, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
       blacklist:
@@ -274,7 +274,7 @@
 - type: entity
   id: ZoneAnomalyNoGravity
   parent: ZoneAnomalyBaseGravity
-  suffix: Stalker, Elevator, Anomaly
+  suffix: ST, Ліфт, Аномалія
   components:
     - type: ZoneAnomalyEffectNoGravity
     - type: ZoneAnomaly
@@ -305,7 +305,7 @@
 - type: entity
   id: ZoneAnomalyBurden
   parent: ZoneAnomalyBaseGravity
-  suffix: Stalker, Burden, Anomaly
+  suffix: ST, Тягар, Аномалія
   components:
     - type: ZoneAnomalyEffectAddComponent
       components:

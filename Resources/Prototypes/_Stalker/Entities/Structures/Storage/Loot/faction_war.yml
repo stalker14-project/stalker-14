@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseStructure
   id: BaseFactionWarLootBox
-  suffix: ST, Mapping, Война группировок
+  suffix: ST, Маппінг, Війна угруповань
   name: swag box
   abstract: true
   components:
@@ -32,7 +32,7 @@
 - type: entity
   parent: BaseFactionWarLootBox
   id: SmallFactionWarLootBox
-  suffix: ST, Mapping, Война группировок, Малый
+  suffix: ST, Маппінг, Війна угруповань, Малий
   components:
     - type: StorageFill
       contents:
@@ -98,7 +98,7 @@
           prob: 0.1
           orGroup: tools
           amount: 2
-        # Craft items
+        # Ремісничі вироби
         - id: CraftPolyarmidFiber
           orGroup: craftItems
           amount: 5
@@ -220,7 +220,7 @@
 - type: entity
   parent: BaseFactionWarLootBox
   id: MediumFactionWarLootBox
-  suffix: ST, Mapping, Война группировок, Средний
+  suffix: ST, Маппінг, Війна угруповань, Середній
   components:
     - type: StorageFill
       contents:
@@ -256,7 +256,7 @@
 - type: entity
   parent: BaseFactionWarLootBox
   id: AmmoFactionWarLootBox
-  suffix: ST, Mapping, Война группировок, Патроны
+  suffix: ST, Маппінг, Війна угруповань, Патрони
   components:
     - type: StorageFill
       contents:
@@ -300,7 +300,7 @@
 - type: entity
   parent: BaseFactionWarLootBox
   id: HighFactionWarLootBox
-  suffix: ST, Mapping, Война группировок, Высокий
+  suffix: ST, Маппінг, Війна угруповань, Високий
   components:
     - type: StorageFill
       contents:

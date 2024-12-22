@@ -1,9 +1,9 @@
 - type: entity
   id: STGrille
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: BaseStructure
-  name: metal grate
-  description: cheap and cheerful
+  name: металева решітка
+  description: дешево і весело
   components:
     - type: MeleeSound
       soundGroups:
@@ -72,10 +72,10 @@
 
 - type: entity
   id: STClockworkGrille
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: STGrille
-  name: clockwork grille
-  description: A flimsy framework of iron rods assembled in traditional Ratvarian fashion.
+  name: годинникова решітка
+  description: Хиткий каркас із залізних прутів, зібраний у традиційній ратварській манері.
   components:
     - type: Sprite
       drawdepth: Walls
@@ -93,10 +93,10 @@
 
 - type: entity
   id: STGrilleBroken
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: BaseStructure
-  name: grille
-  description: A flimsy framework of iron rods. It has seen better days.
+  name: решітка
+  description: Хиткий каркас із залізних прутів. Він бачив кращі часи.
   components:
     - type: Sprite
       drawdepth: Walls
@@ -113,17 +113,17 @@
       graph: Grille
       node: grilleBroken
       deconstructionTarget: start
-    - type: Fixtures # overwrite BaseStructure parent.
+    - type: Fixtures # перезаписати батька BaseStructure.
     - type: Physics
       bodyType: Static
       canCollide: false
 
 - type: entity
   id: STClockworkGrilleBroken
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: STGrilleBroken
-  name: clockwork grille
-  description: A flimsy framework of iron rods assembled in traditional Ratvarian fashion. It has seen better days.
+  name: годинникова решітка
+  description: Хиткий каркас із залізних прутів, зібраний у традиційній ратварській манері. Він бачив кращі часи.
   components:
     - type: Sprite
       drawdepth: Walls
@@ -138,9 +138,9 @@
 
 - type: entity
   id: STGrilleDiagonal
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: STGrille
-  name: diagonal grille
+  name: діагональна решітка
   components:
     - type: Sprite
       drawdepth: Walls
@@ -174,9 +174,9 @@
 
 - type: entity
   id: STClockworkGrilleDiagonal
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: STClockworkGrille
-  name: diagonal clockwork grille
+  name: діагональна годинникова решітка
   components:
     - type: Sprite
       drawdepth: Walls

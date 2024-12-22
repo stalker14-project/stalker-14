@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
   id: ZoneArtifactBaseDetector
-  suffix: Stalker, Detector
+  suffix: ST, Детектор
   abstract: true
   components:
   - type: Item
@@ -27,9 +27,9 @@
 - type: entity
   parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorPulse
-  name: detector pulse
-  description: A simplified hunter model that can only influence anomalies, which allows you to obtain some artifacts. A burnt copy of the hunter made from stolen drawings.
-  suffix: Stalker, Detector
+  name: детектор імпульсів
+  description: Спрощена модель мисливця, яка може впливати лише на аномалії, що дозволяє отримати деякі артефакти. Спалена копія мисливця, зроблена за вкраденими кресленнями.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/pulse.rsi
@@ -53,9 +53,9 @@
 - type: entity
   parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorHunter
-  name: detector hunter
-  description: The simplest detector, which does not even know how to determine distance, but only the presence of artifacts. Despite this, he is still able to find the most common and widespread artifacts.
-  suffix: Stalker, Detector
+  name: детектор мисливець
+  description: Найпростіший детектор, який навіть не вміє визначати відстань, а лише наявність артефактів. Незважаючи на це, він все ще здатен знаходити найпоширеніші та найпоширеніші артефакти.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/hunter.rsi
@@ -68,9 +68,9 @@
 - type: entity
   parent: ZoneArtifactDetectorHunter
   id: ZoneArtifactDetectorModifiedHunter
-  name: detector modified hunter
-  description: This is an improved version of the Hunter, capable of operating at higher frequencies, but due to this its range is slightly reduced.
-  suffix: Stalker, Detector
+  name: детектор модифікований мисливець
+  description: Це вдосконалена версія "Мисливця", здатна працювати на більш високих частотах, але через це її радіус дії дещо зменшився.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/hunter_mod.rsi
@@ -83,9 +83,9 @@
 - type: entity
   parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorResponse
-  name: detector response
-  description: The detector was assembled on the basis of data received from the Hunter. Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
-  suffix: Stalker, Detector
+  name: детектор реакція
+  description: Детектор був зібраний на основі даних, отриманих від "Мисливця". Вміє відображати відстані на екрані, що набагато ефективніше, ніж це було раніше. Свою назву отримав тому, що його пристрій був винайдений під час риболовлі.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/response.rsi
@@ -111,9 +111,9 @@
 - type: entity
   parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorSpruce
-  name: detector spruce
-  description: It is a strong directional antenna combined with a “Response” detector filling. This allows him to accurately determine the distance in order to display it on the screen.
-  suffix: Stalker, Detector
+  name: детектор ялина
+  description: Це потужна спрямована антена в поєднанні з детекторною начинкою "реакції". Це дозволяє йому точно визначати відстань, щоб відобразити її на екрані.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/spruce.rsi
@@ -128,9 +128,9 @@
 - type: entity
   parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorBarracuda
-  name: detector barracuda
-  description: The detector was assembled on the basis of data received from the Hunter. Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
-  suffix: Stalker, Detector
+  name: детектор барракуда
+  description: Детектор був зібраний на основі даних, отриманих від "Мисливця". Вміє відображати відстані на екрані, що набагато ефективніше, ніж це було раніше. Свою назву отримав тому, що його пристрій був винайдений під час риболовлі.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/barracuda.rsi
@@ -148,9 +148,9 @@
 - type: entity
   parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorBear
-  name: detector bear
-  description: The detector was assembled on the basis of data received from the Hunter. Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
-  suffix: Stalker, Detector
+  name: детектор ведмідь
+  description: Детектор був зібраний на основі даних, отриманих від "Мисливця". Вміє відображати відстані на екрані, що набагато ефективніше, ніж це було раніше. Свою назву отримав тому, що його пристрій був винайдений під час риболовлі.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/bear.rsi
@@ -183,9 +183,9 @@
 - type: entity
   parent: ZoneArtifactDetectorBear
   id: ZoneArtifactDetectorWolfhound
-  name: detector wolfhound
-  description: A version of the detector based on the special properties of the gravitation artifact. But due to its small scale, this artifact greatly reduces all indicators of the detector, except for its power to influence anomalies. Because of this, he can receive most artifacts from the zone.
-  suffix: Stalker, Detector
+  name: детектор вовкодав
+  description: Версія детектора, заснована на особливих властивостях гравітаційного артефакту. Але через свої малі масштаби цей артефакт сильно знижує всі показники детектора, окрім його здатності впливати на аномалії. Через це він може приймати більшість артефактів із зони.
+  suffix: ST, Детектор
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/wolfhound.rsi
@@ -196,13 +196,13 @@
   - type: ZoneArtifactDetectorAngleIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
 
-# Пиздец
+# Пиздець....
 - type: entity
   parent: ZoneArtifactBaseDetector
   id: ZoneArtifactDetectorDaDa
-  name: detector da da
-  description: Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da? Da da?
-  suffix: Stalker, Detector, Admeme
+  name: да да детектор
+  description: Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да? Да-да?
+  suffix: ST, Детектор, Admeme
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/da_da.rsi

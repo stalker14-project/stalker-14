@@ -30,7 +30,7 @@ public sealed class DamagePopupSystem : EntitySystem
                 DamagePopupType.Total => damageTotal.ToString(),
                 DamagePopupType.Combined => damageDelta + " | " + damageTotal,
                 DamagePopupType.Hit => "!",
-                _ => "Invalid type",
+                _ => "Неправильний тип",
             };
             _popupSystem.PopupEntity(msg, uid);
         }
@@ -48,7 +48,7 @@ public sealed class DamagePopupSystem : EntitySystem
             {
                 component.Type = (DamagePopupType) (int) component.Type + 1;
             }
-            _popupSystem.PopupEntity("Target set to type: " + component.Type.ToString(), uid);
+            _popupSystem.PopupEntity("Ціль встановлена на друк: " + component.Type.ToString(), uid);
         }
     }
 }

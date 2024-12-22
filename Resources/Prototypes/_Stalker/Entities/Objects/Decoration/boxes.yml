@@ -2,7 +2,7 @@
   id: WoodenBoxWithLoot
   parent: BaseStructureStalkerDynamic
   name: старий дерев'яний ящик
-  suffix: Stalker
+  suffix: ST
   placement:
     mode: PlaceFree
   categories: [ HideSpawnMenu ]
@@ -60,7 +60,7 @@
   name: дерев'яний ящик
   placement:
     mode: PlaceFree
-  suffix: Stalker
+  suffix: ST
   description: Універсальний предмет домашнього вжитку з широким спектром використання. Дизайн і розміри ящиків можуть варіюватися в залежності від призначення - від подарункових декоративних варіантів до виробів для розміщення овочів, фруктів і різного домашнього начиння. Відповідно, кожен тип має свої особливості, позитивні та негативні сторони.
   components:
   - type: Sprite
@@ -74,7 +74,7 @@
   id: WoodenBox1
   parent: BaseStructureStalkerDynamic
   name: ящик
-  suffix: Stalker
+  suffix: ST
   description: Універсальний предмет домашнього вжитку з широким спектром використання. Дизайн і розміри ящиків можуть варіюватися в залежності від призначення - від подарункових декоративних варіантів до виробів для розміщення овочів, фруктів і різного домашнього начиння. Відповідно, кожен тип має свої особливості, позитивні та негативні сторони.
   components:
   - type: Sprite
@@ -160,7 +160,7 @@
 - type: entity
   id: WoodenYaschik1
   name: стара дерев'яна тумбочка
-  suffix: Stalker
+  suffix: ST
   description: Стара дерев'яна тумбочка. Хм. Не відкривається. Навряд чи там є щось цінне. Не варто витрачати на неї нерви та енергію.
   parent: WoodenBox2
   components:
@@ -172,7 +172,7 @@
   id: WoodenYaschik2
   parent: WoodenBox2
   name: порожній ящик
-  suffix: Stalker
+  suffix: ST
   description: Стара дерев'яна коробка. Просто порожній ящик. На жаль, у ній немає нічого цікавого.
   components:
   - type: Sprite
@@ -182,7 +182,7 @@
 - type: entity
   id: WoodenYaschik3
   name: коробка з пакетами
-  suffix: Stalker
+  suffix: ST
   description: Старий дерев'яний ящик, наповнений купою старих мішків. У мішках немає нічого цінного, лише сміття, яке не варте уваги.
   parent: WoodenBox2
   components:
@@ -193,7 +193,7 @@
 - type: entity
   id: WoodenYaschik4
   name: коробка з картоном
-  suffix: Stalker
+  suffix: ST
   description: Старий дерев'яний ящик, наповнений купою старих картонних коробок. Навряд чи там є щось цінне, хоча на одній з них є напис "Одержувач Сергій". Далі текст розмитий. Ймовірно, через старість і погодні умови...
   parent: WoodenBox2
   components:
@@ -204,7 +204,7 @@
 - type: entity
   id: WoodenYaschik5
   name: коробка з колбами
-  suffix: Stalker
+  suffix: ST
   description: Старий дерев'яний ящик, наповнений купою колб різного розміру. Навряд чи варто туди лізти, раптом там щось отруйне...
   parent: WoodenBox2
   components:
@@ -246,7 +246,7 @@
   id: GreenBox
   parent: WoodenBox2
   name: армійська ящик
-  suffix: Stalker
+  suffix: ST
   description: Армійський ящик, виготовлений за простою, але перевіреною конструкцією. Підходить як упаковка для зброї, боєприпасів, спорядження та приладів.
   components:
   - type: Sprite
@@ -260,7 +260,7 @@
   id: WoodenGreenBox1Center
   parent: BaseStructure
   name: зелена армійська коробка
-  suffix: Stalker, (Центр, структура)
+  suffix: ST, (Центр, структура)
   description: Закритий армійський ящик. Зазвичай їх використовують для транспортування або зберігання боєприпасів. Ви навряд чи знаєте, що в ньому знаходиться, оскільки його не відкривали протягом тривалого часу.
   components:
   - type: Sprite
@@ -284,7 +284,7 @@
   id: WoodenGreenBox1
   parent: WoodenBox2
   name: зелена армійська коробка
-  suffix: Stalker, (Вільний, ящик)
+  suffix: ST, (Вільний, ящик)
   description: Закритий армійський ящик. Зазвичай їх використовують для транспортування або зберігання боєприпасів. Ви навряд чи знаєте, що в ньому знаходиться, оскільки його не відкривали протягом тривалого часу.
   components:
   - type: Sprite
@@ -306,7 +306,7 @@
 - type: entity
   id: WoodenGreenBox2
   name: зелена скринька
-  suffix: Stalker
+  suffix: ST
   description: null
   parent: WoodenBox2
   components:
@@ -328,7 +328,7 @@
 - type: entity
   id: WoodenGreenBox3
   name: піддон із зеленими коробками
-  suffix: Stalker
+  suffix: ST
   description: Закриті старі коробки, які ще не втратили свого зеленого кольору. Їх навряд чи вдасться відкрити. Може, воно й на краще. Ще одна таємниця Зони не буде розкрита.
   parent: BaseStructure
   components:
@@ -352,7 +352,7 @@
 - type: entity
   id: WoodenGreenBox4
   name: старий зелений ящик
-  suffix: Stalker
+  suffix: ST
   description: Закрита стара коробка, яка ще не втратила свого зеленого кольору. Дивно, але її не можна відкрити. Може, це й на краще. Ще одна таємниця Зони не буде розкрита.
   parent: WoodenBox2
   components:
@@ -375,7 +375,7 @@
 - type: entity
   id: WoodenGreenBox5
   name: іржавий ящик
-  suffix: Stalker
+  suffix: ST
   description: Закрита стара іржава коробка, яка колись була зеленою. Дивно, але її не можна відкрити. Може, це й на краще. Ще одна таємниця Зони не буде розкрита.
   parent: WoodenBox2
   components:
@@ -757,7 +757,7 @@
   id: SteelBoxWithLoot1
   name: старий сталевий ящик
   description: Сталева коробка, тільки стара. Якщо постаратися, її можна розбити, доклавши трохи зусиль. Цікаво, чи є щось всередині?
-  suffix: Stalker
+  suffix: ST
   parent: WoodenBoxWithLoot
   components:
   - type: Sprite

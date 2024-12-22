@@ -1,9 +1,9 @@
 - type: entity
   parent: EmergencyOxygenTank
   id: ExtendedEmergencyOxygenTankStalker
-  name: small oxygen tank
-  suffix: Stalker, Пустой
-  description: Small oxygen air container, in a special case used only for the environment in the Chernobyl Exclusion Zone. It is very compact and cheap. But it will not be able to protect you from the unsuitable atmosphere for long.
+  name: невеликий кисневий балон
+  suffix: ST, Пустий
+  description: Невеликий кисневий балон у спеціальному корпусі, який використовується тільки для навколишнього середовища в Чорнобильській зоні відчуження. Він дуже компактний і дешевий. Але він не зможе захистити вас від непридатної атмосфери надовго.
   components:
   - type: Trash
     time: 300
@@ -26,7 +26,7 @@
 - type: entity
   id: ExtendedEmergencyOxygenTankFilledStalker
   parent: ExtendedEmergencyOxygenTankStalker
-  suffix: Stalker, Заполненный
+  suffix: ST, Заповнений
   components:
   - type: GasTank
     outputPressure: 21.3
@@ -40,9 +40,9 @@
 - type: entity
   parent: ExtendedEmergencyOxygenTank
   id: DoubleEmergencyOxygenTankStalker
-  name: Double Oxygen Tank
-  suffix: Stalker, Пустой
-  description: High-quality air container with two cylinders. It holds a large amount of oxygen in its small size. Can be used to protect against the unsuitable atmosphere of the Chernobyl Exclusion Zone, as well as in other situations.
+  name: Подвійний кисневий балон
+  suffix: ST, Пустий
+  description: Високоякісний повітряний контейнер з двома балонами. Вміщує велику кількість кисню при своїх невеликих розмірах. Може використовуватися для захисту від непридатної атмосфери Чорнобильської зони відчуження, а також в інших ситуаціях.
   components:
   - type: Trash
     time: 600
@@ -70,7 +70,7 @@
 - type: entity
   id: DoubleEmergencyOxygenTankStalkerFilled
   parent: DoubleEmergencyOxygenTankStalker
-  suffix: Stalker, Заполненный
+  suffix: ST, Заповнений
   components:
   - type: GasTank
     outputPressure: 21.3

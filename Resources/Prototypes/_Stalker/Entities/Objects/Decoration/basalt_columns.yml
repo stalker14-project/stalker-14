@@ -1,8 +1,8 @@
 - type: entity
   id: STBasaltColumn
-  suffix: ST, Basalt, Mapping
-  name: Базальтовая колонна
-  description: Базальт – это широко распространённая вулканическая порода, которая образуется в результате быстрого охлаждения базальтовой лавы.
+  suffix: ST, Базальт, Маппінг
+  name: Базальтова колона
+  description: Базальт - це широко поширена вулканічна порода, яка утворюється внаслідок швидкого охолодження базальтової лави.
   abstract: true
   components:
   - type: Sprite
@@ -47,15 +47,15 @@
 - type: entity
   parent: STBasaltColumn
   id: STBasaltMediumColumnBroken
-  name: Разрушенная базальтовая колонна
-  description: Эта колонна представляет собой остатки вулканической породы. Многочисленные трещины на ее поверхности, а также обломки рассыпанные вокруг, свидетельствуют о мощи природы и времени.
+  name: Зруйнована базальтова колона
+  description: Ця колона являє собою залишки вулканічної породи. Численні тріщини на її поверхні, а також уламки, розсипані навколо, свідчать про міць природи та часу.
   components:
   - type: Sprite
     state: basalt-column-medium-broken
 
 - type: entity
   parent: STBasaltColumn
-  suffix: ST, Basalt,Small, Mapping
+  suffix: ST, Базальт, Малий, Маппінг
   id: STBasaltSmallColumn01
   components:
   - type: Sprite
@@ -63,7 +63,7 @@
 
 - type: entity
   parent: STBasaltColumn
-  suffix: ST, Basalt,Small, Mapping
+  suffix: ST, Базальт, Малий, Маппінг
   id: STBasaltSmallColumn02
   components:
   - type: Sprite

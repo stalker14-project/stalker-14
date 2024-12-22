@@ -1,9 +1,9 @@
 - type: entity
-  name: old wooden chair
+  name: старий дерев'яний стілець
   id: OldWoodChairStalker
   parent: STSeatBase
-  suffix: ST, Mapping
-  description: This chair was once a source of pride, but now its an object that takes up a lot of space.
+  suffix: ST, Маппінг
+  description: Колись цей стілець був предметом гордості, а тепер - об'єктом, що займає багато місця.
   components:
     - type: Transform
       anchored: true
@@ -18,7 +18,7 @@
 - type: entity
   id: OldWoodChairStalker2
   parent: OldWoodChairStalker
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Chairs/old_chairs.rsi
@@ -27,17 +27,17 @@
 - type: entity
   id: OldWoodChairStalker3
   parent: OldWoodChairStalker
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Chairs/old_chairs.rsi
     state: s3
 
 - type: entity
-  name: wooden chair
+  name: дерев'яний стілець
   id: ChairWoodStalker
   parent: ChairBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   placement:
     mode: SnapgridCenter
   components:
@@ -54,9 +54,9 @@
     - Wooden
 
 - type: entity
-  name: chair
+  name: крісло
   id: STSeatBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   abstract: true
   description: Ти сидиш на цьому. Чи то з волі, чи то з примусу.
   placement:
@@ -87,19 +87,19 @@
     damageModifierSet: Metallic
 
 - type: entity
-  name: chair
+  name: крісло
   id: STUnanchoredChairBase
   parent: STSeatBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   abstract: true
   components:
   - type: Anchorable
   - type: Rotatable
 
 - type: entity
-  name: chair
+  name: крісло
   id: STChairBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   abstract: true
   parent: STUnanchoredChairBase
   placement:
@@ -111,30 +111,30 @@
     anchored: true
 
 - type: entity
-  name: chair
+  name: крісло
   id: STOfficeChairBase
   parent: STUnanchoredChairBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   abstract: true
   components:
   - type: Rotatable
     rotateWhileAnchored: true
 
 - type: entity
-  name: comfy chair
+  name: зручне крісло
   id: STComfyChair
   parent: STChairBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   description: It looks comfy.
   components:
   - type: Sprite
     state: comfy
 
 - type: entity
-  name: wooden chair
+  name: дерев'яний стілець
   id: STChairWood
   parent: STUnanchoredChairBase
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   components:
   - type: Sprite
     state: wooden
@@ -147,11 +147,11 @@
 
 
 - type: entity
-  name: wooden bench
+  name: дерев'яна лавка
   id: STWoodenBench
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: STChairBase
-  description: Did you get a splinter? Well, at least it’s eco friendly.
+  description: Ви отримали скалку? Ну, принаймні, це екологічно чисто.
   components:
   - type: Sprite
     state: wooden-bench
@@ -160,18 +160,18 @@
     node: chairWoodBench
 
 - type: entity
-  name: white office chair
+  name: білий офісний стілець
   id: STChairOfficeLight
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: STOfficeChairBase
   components:
   - type: Sprite
     state: office-white
 
 - type: entity
-  name: dark office chair
+  name: темне офісне крісло
   id: STChairOfficeDark
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   parent: STChairOfficeLight
   components:
   - type: Sprite

@@ -1,9 +1,9 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 739FMJBox
-  name: Box of cartridges (7,62x39) FMJ
-  description: For some models of Kalashnikov assault rifle, 30 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: Коробка патронів (7,62x39) FMJ
+  description: Для деяких моделей автомата Калашникова, по 30 штук в коробці. Забезпечують пробиття броні 3-го класу.
+  suffix: ST
   components:
   - type: MagazineVisuals
     magState: 76239ammo
@@ -23,9 +23,9 @@
 - type: entity
   parent: 739FMJBox
   id: 739PCBox
-  name: Box of cartridges (7.62x39) PS
-  description: For some models of Kalashnikov assault rifle, 30 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: Коробка патронів (7.62x39) PS
+  description: Для деяких моделей автомата Калашникова, по 30 штук в коробці. Забезпечують пробиття броні 4 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge739PC
@@ -40,9 +40,9 @@
 - type: entity
   parent: 739FMJBox
   id: 739HPBox
-  name: Box of Ammo (7.62x39) HP
-  description: For some models of Kalashnikov assault rifle, 30 pieces in a box. Useless against armor.
-  suffix: Stalker
+  name: Коробка набоїв (7.62x39) HP
+  description: Для деяких моделей автомата Калашникова, по 30 штук в коробці. Марні проти броні.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge739HP
@@ -57,9 +57,9 @@
 - type: entity
   parent: 739FMJBox
   id: 739BPBox
-  name: Box of cartridges (7.62x39) BP
-  description: For some models of Kalashnikov assault rifle, 30 pieces in a box. Provides penetration of armor class 5.
-  suffix: Stalker
+  name: Коробка патронів (7.62x39) BP
+  description: Для деяких моделей автомата Калашникова, 30 штук в коробці. Забезпечують пробиття броні 5 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge739BP
@@ -74,9 +74,9 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 739FMJBoxCink
-  name: ammo box (7.62x39) FMJ
-  description: For some models of Kalashnikov assault rifle, 300 pieces in a box. Provides penetration of armor class 3.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x39) FMJ
+  description: Для деяких моделей автомата Калашникова, 300 штук в коробці. Забезпечує пробиття броні 3 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     capacity: 300
@@ -94,9 +94,9 @@
 - type: entity
   parent: 739FMJBoxCink
   id: 739PCBoxCink
-  name: ammo box (7.62x39) PS
-  description: For some models of Kalashnikov assault rifle, 300 pieces in a box. Provides penetration of armor class 4.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x39) PS
+  description: Для деяких моделей автомата Калашникова, по 300 штук в коробці. Забезпечує пробиття броні 4 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge739PC
@@ -110,9 +110,9 @@
 - type: entity
   parent: 739FMJBoxCink
   id: 739HPBoxCink
-  name: Ammo Box (7.62x39) HP
-  description: For some models of Kalashnikov assault rifle, 300 pieces in a box. Useless against armor.
-  suffix: Stalker
+  name: Патронташ (7.62x39) HP
+  description: Для деяких моделей автомата Калашникова, 300 штук в коробці. Марні проти броні.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge739HP
@@ -126,9 +126,9 @@
 - type: entity
   parent: 739FMJBoxCink
   id: 739BPBoxCink
-  name: ammo box (7.62x39) BP
-  description: For some models of Kalashnikov assault rifle, 300 pieces in a box. Provides penetration of armor class 5.
-  suffix: Stalker
+  name: коробка для набоїв (7.62x39) BP
+  description: Для деяких моделей автомата Калашникова, 300 штук в коробці. Забезпечує пробиття броні 5 класу.
+  suffix: ST
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge739BP

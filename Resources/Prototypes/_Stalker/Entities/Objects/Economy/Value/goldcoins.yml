@@ -3,9 +3,9 @@
 - type: entity
   parent: BaseItem
   id: Goldcoins
-  name: gold coin
-  description: They say its made of real gold. Wait, its just a GTO badge...
-  suffix: Stalker
+  name: золота монета
+  description: Кажуть, він зроблений зі справжнього золота. Зачекай, це ж просто значок GTO...
+  suffix: ST
   components:
   - type: PhysicalComposition
     materialComposition:
@@ -38,12 +38,14 @@
   - type: Tag
     tags:
     - Goldcoins
+
 - type: currency
   id: Goldcoins
   displayName: золотая монета
   cash:
     1: Goldcoins
   canWithdraw: true
+
 - type: stack
   id: Goldcoins
   name: gold coin
@@ -53,7 +55,7 @@
 - type: entity
   parent: Goldcoins
   id: Goldcoins5
-  suffix: Stalker, 5
+  suffix: ST, 5
   components:
   - type: Icon
     sprite: _Stalker/Objects/Economy/coins.rsi

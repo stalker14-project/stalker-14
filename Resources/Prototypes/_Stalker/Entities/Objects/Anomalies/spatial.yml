@@ -1,12 +1,12 @@
 - type: entity
   parent: ZoneAnomalyBase
-  id: ZoneAnomalyBaseSpatial 
+  id: ZoneAnomalyBaseSpatial
   abstract: true
 
 - type: entity
   parent: ZoneAnomalyBaseSpatial
   id: ZoneAnomalyBarabashka
-  suffix: Stalker, Barabashka, Anomaly
+  suffix: ST, Барабашка, Аномалія
   components:
     - type: ZoneAnomalyTriggerStartCollide
     - type: ZoneAnomalyEffectDestroy
@@ -35,7 +35,7 @@
 - type: entity
   parent: ZoneAnomalyBaseSpatial
   id: ZoneAnomalyPolymorph
-  suffix: Stalker, Polymorph, Anomaly
+  suffix: ST, Поліморф, Аномалія
   components:
     - type: ZoneAnomalyTriggerStartCollide
     - type: ZoneAnomalyEffectDestroy
@@ -60,7 +60,7 @@
 #- type: entity
   #parent: ZoneAnomalyBaseSpatial
   #id: ZoneAnomalyBubble
-  #suffix: Stalker, Bubble, Anomaly
+  #suffix: ST, Бульбашка, Аномалія
   #components:
     #- type: ZoneAnomalyTriggerStartCollide
     #- type: ZoneAnomalyEffectMapTeleporter

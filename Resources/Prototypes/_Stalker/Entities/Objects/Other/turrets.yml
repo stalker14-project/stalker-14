@@ -3,9 +3,9 @@
 - type: entity
   parent: BaseStructure
   id: BaseWeaponRPKTurret
-  name: Stationary RP-74
-  suffix: Stalker, турель [НЕ МАППИТЬ]
-  description: It is a RP-74 machine gun mounted on a bipod (or a mount). Apparently, it differs from the regular RP-74 only in its greater firepower and an enlarged machine gun belt. It is impossible to move with this machine gun.
+  name: Стаціонарний РП-74
+  suffix: ST, турель [НЕ МАППИТИ]
+  description: Це кулемет РП-74, встановлений на сошці (або на кронштейні). Від звичайного РП-74 він відрізняється лише більшою вогневою потужністю та збільшеною кулеметною стрічкою. Пересуватися з цим кулеметом неможливо.
   abstract: true
   components:
     - type: Clickable
@@ -95,7 +95,7 @@
 - type: entity
   parent: BaseWeaponRPKTurret
   id: WeaponRPKTurretSyndicate
-  suffix: Stalker, синдикат [НЕ МАППИТЬ]
+  suffix: ST, синдикат [НЕ МАППИТИ]
   components:
     - type: NpcFactionMember
       factions:
@@ -104,7 +104,7 @@
 - type: entity
   parent: BaseWeaponRPKTurret
   id: WeaponRPKTurretNanoTrasen
-  suffix: Stalker, NanoTrasen [НЕ МАППИТЬ]
+  suffix: ST, NanoTrasen [НЕ МАППИТИ]
   components:
   - type: NpcFactionMember
     factions:
@@ -112,9 +112,9 @@
 
 - type: entity
   parent: BaseWeaponRPKTurret
-  name: stationary disposable RP-74
+  name: стаціонарний одноразовий RP-74
   id: WeaponTurretNanoTrasenDisposableStalker
-  suffix: NanoTrasen, одноразовая [НЕ МАППИТЬ]
+  suffix: NanoTrasen, одноразка [НЕ МАППИТИ]
   components:
     - type: NpcFactionMember
       factions:

@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: STBoltBag
-  name: bolt bag
-  description: Allows you to carry your 3 tons of bolts to detect anomalies in the area. A stalkers best friend who will always get you out of a difficult situation.
+  name: мішок для болтів
+  description: Дозволяє носити з собою 3 тонни болтів для виявлення аномалій на місцевості. Найкращий друг сталкера, який завжди витягне вас зі скрутного становища.
   suffix: ST
   components:
     - type: Storage
@@ -36,7 +36,7 @@
 - type: entity
   parent: STBoltBag
   id: STBoltBagFilled
-  suffix: ST, Filled
+  suffix: ST, Заповнений
   components:
     - type: StorageFill
       contents:
@@ -46,9 +46,9 @@
 - type: entity
   parent: STBoltBag
   id: STBoltBagFilledGolden
-  name: golden bolt bag
-  description: Allows you to carry your 3 tons of golden bolts to detect anomalies in the area. A stalkers best friend who will always get you out of a difficult situation.
-  suffix: ST, Filled, Golden
+  name: сумка з золотими болтами
+  description: Дозволяє носити з собою 3 тонни золотих болтів для виявлення аномалій на місцевості. Найкращий друг сталкера, який завжди витягне вас зі скрутного становища.
+  suffix: ST, Заповнений, Золотий
   components:
     - type: StorageFill
       contents:
@@ -66,9 +66,9 @@
 - type: entity
   parent: STBoltBagOliveGray
   id: STBoltBagOliveGrayFilled
-  name: golden bolt bag
+  name: сумка з золотими болтами
   description: Allows you to carry your 3 tons of golden bolts to detect anomalies in the area. A stalkers best friend who will always get you out of a difficult situation.
-  suffix: ST, Filled
+  suffix: ST, Заповнений
   components:
     - type: StorageFill
       contents:
@@ -78,7 +78,7 @@
 - type: entity
   parent: STBoltBagOliveGray
   id: STBoltBagOliveGrayFilledGolden
-  suffix: ST, Filled, Golden
+  suffix: ST, Заповнений, Золотий
   components:
     - type: StorageFill
       contents:

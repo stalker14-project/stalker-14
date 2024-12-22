@@ -1,9 +1,9 @@
 - type: entity
   parent: Bed
   id: STMBedBase
-  name: bed
+  name: ліжко
   abstract: true
-  description: An old but still comfortable bed.
+  description: Старе, але все ще зручне ліжко.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/beds.rsi
@@ -60,11 +60,11 @@
     state: bed6
 
 - type: entity
-  name: bed
+  name: ліжко
   id: STOldBed
   suffix: ST, Mapping
   parent: Bed
-  description: This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+  description: На ньому можна лежати, спати або пристібатися. Відпочинок тут забезпечує надзвичайно повільне загоєння.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/furniture.rsi
@@ -82,9 +82,9 @@
 - type: entity
   parent: STOldBed
   id: STOldMedicalBed
-  suffix: ST, Mapping
-  name: medical bed
-  description: A hospital bed for patients to recover in. Resting here provides fairly slow healing.
+  suffix: ST, Маппінг
+  name: медичне ліжко
+  description: Лікарняне ліжко для одужання пацієнтів. Відпочинок тут забезпечує досить повільне одужання.
   components:
   - type: Sprite
     state: bed-MED
@@ -99,9 +99,9 @@
 - type: entity
   parent: STOldBed
   id: STOldMattress
-  suffix: ST, Mapping
-  name: mattress
-  description: Better sleep in that then on the floor i guess.
+  suffix: ST, Маппінг
+  name: матрац
+  description: Гадаю, краще спати в ньому, ніж на підлозі.
   components:
   - type: Sprite
     state: mattress

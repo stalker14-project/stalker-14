@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseAmmoBoxStalker
   id: 7mmBuckshotBox
-  name: Box of 7mm buckshot
-  description: For shotguns, 10 in a box. Useless against armor.
+  name: Коробка 7мм картечі
+  description: Для дробових рушниць, 10 штук в коробці. Марні проти броні.
   components:
   - type: MagazineVisuals
     magState: 1270red
@@ -22,8 +22,8 @@
 - type: entity
   parent: 7mmBuckshotBox
   id: 6mmBuckshotBox
-  name: Box of buckshot 6.5mm Express
-  description: For shotguns, 10 pieces in a box. Provides penetration of only 1 armor class.
+  name: Коробка картечі 6,5мм Експрес
+  description: Для рушниць, 10 штук в коробці. Забезпечує пробиття лише 1 класу броні.
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6mmBuckshot
@@ -38,8 +38,8 @@
 - type: entity
   parent: 7mmBuckshotBox
   id: 8mmBuckshotBox
-  name: 8.5mm Magnum Buckshot Box
-  description: For shotguns, 10 pieces in a box. Provides penetration of armor class 2.
+  name: 8,5 мм Магнум Патронташ
+  description: Для дробових рушниць, по 10 штук в коробці. Забезпечує пробиття броні 2 класу.
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge8mmBuckshot
@@ -55,8 +55,8 @@
 - type: entity
   parent: 7mmBuckshotBox
   id: ShotgunFlechette
-  name: Flechette Box (12x70)
-  description: For shotguns, 10 pieces in a box. Provides penetration of armor class 3.
+  name: Коробка для флешетів (12x70)
+  description: Для рушниць, 10 штук в коробці. Забезпечує пробиття броні 3 класу.
   components:
   - type: MagazineVisuals
     magState: 1270gray
@@ -74,7 +74,7 @@
 - type: entity
   parent: 7mmBuckshotBox
   id: ShotgunBulletUnlethalBox
-  name: Box of non-lethal bullets (12x70)
+  name: Коробка нелетальних набоїв (12х70)
   components:
     - type: MagazineVisuals
       magState: 1270green
@@ -90,8 +90,8 @@
 - type: entity
   parent: 7mmBuckshotBox
   id: ShotgunBulletBox
-  name: Box of Bullets (12x70)
-  description: For shotguns, 10 pieces in a box. Provides penetration of armor class 2.
+  name: Коробка патронів (12х70)
+  description: Для рушниць, 10 штук в коробці. Забезпечують пробиття броні 2 класу.
   components:
   - type: MagazineVisuals
     magState: 1270green
@@ -107,8 +107,8 @@
 - type: entity
   parent: ShotgunBulletBox
   id: ShotgunBulletBoxRIP
-  name: Box of bullets (12x70) RIP
-  description: For shotguns, 10 in a box. Useless against armor.
+  name: Коробка патронів (12х70) RIP
+  description: Для дробовиків, 10 у коробці. Марні проти броні.
   components:
   - type: MagazineVisuals
     magState: 1270green
@@ -125,8 +125,8 @@
 - type: entity
   parent: 7mmBuckshotBox
   id: ShotgunDarttBox
-  name: Box of darts (12x70)
-  description: For shotguns, 10 pieces in a box. Provides penetration of armor class 3.
+  name: Коробка для дротиків (12x70)
+  description: Для рушниць, 10 штук в коробці. Забезпечують пробиття броні 3 класу.
   components:
   - type: MagazineVisuals
     magState: 1270yellow
@@ -142,8 +142,8 @@
 - type: entity
   parent: BaseAmmoCinkBoxStalker
   id: 7mmBuckshotBoxCink
-  name: box of 7mm buckshot
-  description: For shotguns, 100 in a box. Useless against armor.
+  name: коробка 7мм картечі
+  description: Для дробових рушниць, 100 штук в коробці. Марні проти броні.
   components:
   - type: BallisticAmmoProvider
     capacity: 100
@@ -161,8 +161,8 @@
 - type: entity
   parent: 7mmBuckshotBoxCink
   id: 6mmBuckshotBoxCink
-  name: 6.5mm Express Buckshot Box
-  description: For shotguns, 100 pieces in a box. Provides penetration of only 1 armor class.
+  name: 6,5 мм Express Buckshot Box
+  description: Для дробових рушниць, 100 штук в коробці. Забезпечує пробиття лише 1 класу броні.
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge6mmBuckshot
@@ -176,8 +176,8 @@
 - type: entity
   parent: 7mmBuckshotBoxCink
   id: 8mmBuckshotBoxCink
-  name: 8.5mm Magnum Buckshot Crate
-  description: For shotguns, 100 pieces in a box. Provides penetration of armor class 2.
+  name: Ящик для картечі 8,5 мм Magnum
+  description: Для дробових рушниць, 100 штук в ящику. Забезпечує пробиття броні 2 класу.
   components:
   - type: BallisticAmmoProvider
     proto: Cartridge8mmBuckshot
@@ -191,8 +191,8 @@
 - type: entity
   parent: 7mmBuckshotBoxCink
   id: ShotgunFlechetteCink
-  name: flechette box (12x70)
-  description: For shotguns, 100 pieces in a box. Provides penetration of armor class 3.
+  name: коробка для флешетів (12x70)
+  description: Для рушниць, 100 штук в коробці. Забезпечує пробиття броні 3 класу.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeShotgunFlechette
@@ -206,7 +206,7 @@
 - type: entity
   parent: 7mmBuckshotBoxCink
   id: ShotgunBulletUnlethalBoxCink
-  name: box of non-lethal bullets (12x70)
+  name: коробка нелетальних набоїв (12х70)
   components:
     - type: BallisticAmmoProvider
       proto: ShellShotgunBeanbagStalker
@@ -220,8 +220,8 @@
 - type: entity
   parent: 7mmBuckshotBoxCink
   id: ShotgunBulletBoxCink
-  name: Bullet Box (12x70)
-  description: For shotguns, 100 pieces in a box. Provides penetration of armor class 2.
+  name: Коробка для куль (12x70)
+  description: Для рушниць, 100 штук в коробці. Забезпечує пробиття броні 2 класу.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeShotgunBullet
@@ -235,8 +235,8 @@
 - type: entity
   parent: ShotgunBulletBoxCink
   id: ShotgunBulletBoxRIPCink
-  name: box of bullets (12x70) RIP
-  description: For shotguns, 100 in a box. Useless against armor.
+  name: коробка патронів (12х70) RIP
+  description: Для дробовиків, 100 в коробці. Марні проти броні.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeShotgunBulletRIP
@@ -250,8 +250,8 @@
 - type: entity
   parent: 7mmBuckshotBoxCink
   id: ShotgunDarttBoxCink
-  name: box of darts (12x70)
-  description: For shotguns, 100 pieces in a box. Provides penetration of armor class 3.
+  name: коробка дротиків (12x70)
+  description: Для рушниць, 100 штук в коробці. Забезпечують пробиття броні 3 класу.
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeShotgunDart

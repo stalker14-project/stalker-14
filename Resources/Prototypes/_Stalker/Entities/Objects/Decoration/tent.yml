@@ -1,21 +1,22 @@
 - type: entity
   id: tent
   parent: BaseRock
-  name: tent
-  suffix: Stalker
-  description: A tent that will shelter you from the rain - but not from mutants.
+  name: намет
+  suffix: ST
+  description: Намет, який захистить вас від дощу - але не від мутантів.
   components:
   - type: Sprite
     scale: 1.5, 1.5
     sprite: _Stalker/Objects/Decoration/tent.rsi
     state: base
   - type: InteractionOutline
+
 - type: entity
   id: tent2
   parent: BaseRock
-  name: tent
-  suffix: Stalker, некрутибельна
-  description: A tent that will shelter you from the rain - but not from mutants.
+  name: намет
+  suffix: ST, не крутиться
+  description: Намет, який захистить вас від дощу - але не від мутантів.
   components:
   - type: Sprite
     noRot: false

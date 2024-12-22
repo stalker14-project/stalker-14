@@ -6,7 +6,7 @@
 - type: entity
   parent: ZoneAnomalyBase
   id: ZoneAnomalyElectra
-  suffix: Stalker, Electra, Anomaly
+  suffix: ST, Електра, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
@@ -57,8 +57,8 @@
 - type: entity
   parent: ZoneAnomalyBase
   id: ZoneAnomalyEMP
-  name: EMP anomaly
-  suffix: Stalker, EMP, Anomaly
+  name: ЕМП аномалія
+  suffix: ST, ЕМП, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
@@ -124,7 +124,7 @@
 - type: entity
   parent: ZoneAnomalyBaseElectrical
   id: ZoneAnomalyGarland
-  suffix: Stalker, Garland, Anomaly
+  suffix: ST, Гірлянда, Аномалія
   components:
     - type: Tag
       tags:
@@ -192,7 +192,7 @@
 - type: entity
   parent: ZoneAnomalyBaseElectrical
   id: ZoneAnomalySource
-  suffix: Stalker, Source, Anomaly
+  suffix: ST, Джерело, Аномалія
   components:
     - type: ZoneAnomalyTriggerStartCollide
       whitelist:

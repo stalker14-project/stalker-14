@@ -5,9 +5,9 @@
 - type: entity
   parent: SmokeGrenade
   id: ChlorineBalloonStalker
-  name: chlorine cylinder
-  description: Chemical weapons banned after April 29, 1997, but chlorine cylinders were found in laboratories in the Chernobyl Exclusion Zone. Ignoring the ban, they use quite powerful and dangerous weapons in large-scale battles, which can spread over a large area. In this case, it is better to stock up on an oxygen cylinder with a gas mask.
-  suffix: Stalker, Events
+  name: балон з хлором
+  description: Хімічна зброя заборонена після 29 квітня 1997 року, але балони з хлором були знайдені в лабораторіях у Чорнобильській зоні відчуження. Ігноруючи заборону, вони використовують досить потужну і небезпечну зброю у масштабних боях, які можуть поширюватися на велику територію. На цей випадок краще запастися кисневим балоном з протигазом.
+  suffix: ST, Events
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Chemical/chlorine_balloon_stalker.rsi
@@ -34,9 +34,9 @@
 - type: entity
   parent: SmokeGrenade
   id: IpritGrenadeStalker
-  name: mustard gas grenade
-  description: Chemical weapon of small destruction, the cheapest of all types of this type of weapon. Makes a small explosion, after which the contained mustard gas is released.
-  suffix: Stalker
+  name: граната з іпритом
+  description: Хімічна зброя малого ураження, найдешевша з усіх видів цього типу зброї. Здійснює невеликий вибух, після якого вивільняється іприт, що міститься в боєприпасі.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Chemical/ipritgrenade.rsi
@@ -72,9 +72,9 @@
 - type: entity
   parent: SmokeGrenade
   id: LewisiteGrenadeStalker
-  name: lewisite gas grenade
-  description: Chemical weapon of small damage, something average among all types of this type of weapon. Makes a small explosion, after which the contained lewisite is released, more dangerous than mustard gas.
-  suffix: Stalker
+  name: газова граната з люїзитом
+  description: Хімічна зброя невеликого ураження, щось середнє серед усіх видів цього типу зброї. Здійснює невеликий вибух, після якого вивільняється люїзит, що міститься в ньому, більш небезпечний, ніж іприт.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Chemical/lewisitegrenade.rsi
@@ -110,9 +110,9 @@
 - type: entity
   parent: SmokeGrenade
   id: HydrocyanicGrenadeStalker
-  name: Cyclone-B gas bomb
-  description: Chemical weapon of long and strong destruction, the longest duration of gas action. Hydrocyanic acid is highly toxic and can cause lung damage, most likely you will die from lack of oxygen and suffocation. It was used during the First World War. Some stalkers were able to find this weapon in the Chernobyl Exclusion Zone, their further fate is unknown. Criminal groups have this weapon for torture or execution. Unfortunately, this weapon is not so popular for use, they say that the area of ​​​​damage is too small.
-  suffix: Stalker, Events
+  name: Газова бомба "Циклон-Б"
+  description: Хімічна зброя довготривалої та сильної дії, найдовша тривалість дії газу. Синильна кислота дуже токсична і може викликати ураження легенів, швидше за все, ви помрете від нестачі кисню і задухи. Її використовували під час Першої світової війни. Деякі сталкери змогли знайти цю зброю в Чорнобильській зоні відчуження, їх подальша доля невідома. Злочинні угруповання використовують цю зброю для тортур або страти. На жаль, ця зброя не дуже популярна для використання, кажуть, що площа ураження занадто мала.
+  suffix: ST, Events
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Chemical/hydrocyanicgrenade.rsi
@@ -144,9 +144,9 @@
 - type: entity
   parent: SmokeGrenade
   id: PhosphorusGrenadeStalker
-  name: phosphorus grenade
-  description: A weapon designed to effectively kill and stun the enemy, filled with phosphorus.
-  suffix: Stalker
+  name: фосфорна граната
+  description: Зброя, призначена для ефективного вбивства та оглушення ворога, заповнена фосфором.
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Chemical/phosphorusgreande.rsi
@@ -179,10 +179,10 @@
   - type: DeleteOnTrigger
 
 - type: entity
-  name: GL-1 grenade
+  name: Граната GL-1
   parent: BaseItem
   id: GL1Grenade
-  description: Chemical illumination grenade. Designed to illuminate areas of terrain during night combat.
+  description: Хімічна освітлювальна граната. Призначена для освітлення ділянок місцевості під час нічного бою.
   components:
     - type: Trash
       time: 600
@@ -249,10 +249,10 @@
 
 - type: reagent
   id: ChlorineStalker
-  name: chlorine gas
+  name: газ хлор
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: Хімічна зброя
+  physicalDesc: газоподібне
   flavor: bitter
   color: "#d2ff85"
   meltingPoint: -101.5
@@ -279,22 +279,22 @@
         type: Local
         probability: 0.08
         messages:
-        - Ваши глаза сильно жгут.
-        - Ваш глаз истекает кровью.
-        - Ваши глаза начинают слезиться.
-        - Вы чувствуете сонливость и страдания глаз.
-        - У вас кружится голова.
-        - Ваши лёгкие якобы перестают дышать.
-        - Вы чувствуете невероятно острую боль в животе!
+        - Ваші очі сильно печуть.
+        - Ваше око стікає кров'ю.
+        - Ваші очі починають сльозитися.
+        - Ви відчуваєте сонливість і страждання очей.
+        - У вас паморочиться голова.
+        - Ваші легені нібито перестають дихати.
+        - Ви відчуваєте неймовірно гострий біль у животі!
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
         probability: 0.03
         messages:
-        - Ваши глаза словно отсоединяются!
-        - Ваши глаза перестают работать!
-        - Вы чувствуете, как ваше зрение ухудшается.
-        - Ваши веки быстро дёргаются.
+        - Ваші очі немов від'єднуються!
+        - Ваші очі перестають працювати!
+        - Ви відчуваєте, як ваш зір погіршується.
+        - Ваші повіки швидко смикаються.
         conditions:
         - !type:ReagentThreshold
           min: 5
@@ -320,10 +320,10 @@
 
 - type: reagent
   id: IpritStalker
-  name: mustard gas
+  name: іприт
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: Хімічна зброя
+  physicalDesc: газоподібне
   flavor: bitter
   color: "#ffeb78"
   meltingPoint: -101.5
@@ -343,20 +343,20 @@
         type: Local
         probability: 0.08
         messages:
-        - Ваша кожа шипит.
-        - Вы чувствуете сильные ожоги
-        - Ваша кожа сдирается.
-        - Вы чувствуете отравление
-        - Вы чешитесь ещё больнее
-        - На вашей коже образуются опухли
-        - Ваша кожа расплавляется
+        - Ваша шкіра шипить.
+        - Ви відчуваєте сильні опіки
+        - Ваша шкіра здирається.
+        - Ви відчуваєте отруєння
+        - Ви свербитеся ще болючіше
+        - На вашій шкірі утворюються набряки
+        - Ваша шкіра розплавляється
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
         probability: 0.02
         messages:
-        - Ваша кожа слезла!
-        - Вы чувствуете повышенную температуру.
+        - Ваша шкіра злізла!
+        - Ви відчуваєте підвищену температуру.
         conditions:
         - !type:ReagentThreshold
           min: 5
@@ -379,10 +379,10 @@
 
 - type: reagent
   id: LewisiteStalker
-  name: lewisite
+  name: люїзит
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: Хімічна зброя
+  physicalDesc: газоподібне
   flavor: bitter
   color: "#b87502"
   meltingPoint: -101.5
@@ -402,21 +402,21 @@
         type: Local
         probability: 0.08
         messages:
-        - Ваша кожа шипит.
-        - Вы чувствуете сильные ожоги
-        - Ваша кожа сдирается.
-        - Вы чувствуете отравление
-        - Вы чешитесь ещё больнее
-        - На вашей коже образуются опухли
-        - Ваша кожа расплавляется
-        - Вы чувствуете раздражительный запах
+        - Ваша шкіра шипить.
+        - Ви відчуваєте сильні опіки
+        - Ваша шкіра здирається.
+        - Ви відчуваєте отруєння
+        - Ви свербитеся ще болючіше
+        - На вашій шкірі утворюються опухлі
+        - Ваша шкіра розплавляється
+        - Ви відчуваєте дратівливий запах
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
         probability: 0.02
         messages:
-        - Ваша кожа слезла!
-        - Вы чувствуете повышенную температуру.
+        - Ваша шкіра злізла!
+        - Ви відчуваєте підвищену температуру.
         conditions:
         - !type:ReagentThreshold
           min: 5
@@ -442,10 +442,10 @@
 
 - type: reagent
   id: HydrocyanicStalker
-  name: hydrocyanic acid
+  name: синильна кислота
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: Хімічна зброя
+  physicalDesc: газоподібне
   flavor: bitter
   color: "#fffcf2"
   meltingPoint: -101.5
@@ -467,20 +467,20 @@
         type: Local
         probability: 0.08
         messages:
-        - Вы не чувствуете легкие
-        - Вы не дишите
-        - Вы перестали дышать
-        - Ваши легкие набухают
-        - Вы чувствуете сильную боль в легких
-        - Вы пытаетесь откашлить газ
+        - Ви не відчуваєте легені
+        - Ви не дихаєте
+        - Ви перестали дихати
+        - Ваші легені набухають
+        - Ви відчуваєте сильний біль у легенях
+        - Ви намагаєтеся відкашляти газ
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
         probability: 0.02
         messages:
-        - Ваши легкие отказали!
-        - Вы сильнее задыхаетесь!
-        - Малой уровень кислорода!
+        - Ваші легені відмовили!
+        - Ви сильніше задихаєтеся!
+        - Малий рівень кисню!
         conditions:
         - !type:ReagentThreshold
           min: 2
@@ -497,9 +497,9 @@
 
 - type: reagent
   id: PhosphorusStalker
-  name: phosphorus
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  name: фосфор
+  desc: Хімічна зброя
+  physicalDesc: газоподібне
   flavor: bitter
   color: "#ffe7bf"
   metabolisms:
@@ -531,10 +531,10 @@
 
 - type: reagent
   id: DexalinPlusStalker
-  name: Dexalin Plus
+  name: Дексалін Плюс
   group: Medicine
-  desc: Используется для лечения кислородного голодания и потери крови. Выводит синильную кислоту из кровеносной системы.
-  physicalDesc: облачное
+  desc: Використовується для лікування кисневого голодування і втрати крові. Виводить синильну кислоту з кровоносної системи.
+  physicalDesc: хмарне
   flavor: medicine
   color: "#4da0bd"
   metabolisms:

@@ -1,9 +1,9 @@
 - type: entity
   id: psyUnit
   parent: BaseStructure
-  name: compact psi-installation
-  suffix: ST, Mapping
-  description: An object of unknown origin and purpose. The only known fact is that some samples, when turned on, are capable of causing harm to the human nervous system.
+  name: компактна пси-установка
+  suffix: ST, Маппінг
+  description: Об'єкт невідомого походження та призначення. Відомо лише, що деякі зразки при включенні здатні завдати шкоди нервовій системі людини.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Machines/compactpsyunit.rsi
@@ -21,7 +21,7 @@
         - MachineMask
         layer:
         - WallLayer
-  - type: RadiationSource   # 5 В центре, 50 тайлов
+  - type: RadiationSource   # 5 У центрі, 50 тайлів
     intensity: 5
     slope: 0.02
     damageType: Psy
@@ -43,8 +43,8 @@
 - type: entity
   id: psyUnitBreakable
   parent: psyUnit
-  name: Compact Psi-installation
-  suffix: ST, Mapping, Breakable
+  name: компактна пси-установка
+  suffix: ST, Маппінг, руйнується
   components:
   - type: Damageable
     damageModifierSet: Metallic

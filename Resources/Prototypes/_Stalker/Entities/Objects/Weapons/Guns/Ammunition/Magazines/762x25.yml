@@ -1,7 +1,7 @@
 - type: entity
   id: TTMag
-  name: magazine TT 7.62x25 (8)
-  description: Magazine 7,62x25 for TT. Bullet capacity 8. Sold empty.
+  name: магазин ТТ 7.62х25 (8)
+  description: Магазин 7,62х25 для ТТ. Ємність патронів 8. Продається порожнім.
   parent: BasePPSHMag
   tag: Stalker
   components:
@@ -34,8 +34,8 @@
 
 - type: entity
   id: BasePPSHMag
-  name: magazine PPSh (35)
-  description: Magazine for PPSh-41. Bullet capacity 35. Sold empty.
+  name: магазин ППШ (35)
+  description: Магазин до ППШ-41. Ємність патронів 35. Продається порожнім.
   parent: BaseItem
   tag: Stalker
   components:
@@ -71,10 +71,11 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+
 - type: entity
   id: PPSHDrum
-  name: PPSh drum (71)
-  description: Drum for PPSh-41. Bullet capacity 71. Sold empty.
+  name: Барабан ППШ (71)
+  description: Барабан для ППШ-41. Ємність кулі 71. Продається порожнім.
   parent: BasePPSHMag
   tag: Stalker
   components:

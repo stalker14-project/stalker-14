@@ -6,7 +6,7 @@
 - type: entity
   parent: ZoneAnomalyBaseThermal
   id: ZoneAnomalyJarka
-  suffix: Stalker, Jarka, Anomaly
+  suffix: ST, Жарка, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
@@ -67,7 +67,7 @@
 - type: entity
   parent: ZoneAnomalyJarka
   id: ZoneAnomalyJarkaStrong
-  suffix: Stalker, Jarka strong, Anomaly
+  suffix: ST, Сильна Жарка, Аномалія
   components:
     - type: ZoneAnomaly
       detectedLevel: 1
@@ -100,7 +100,7 @@
 - type: entity
   parent: ZoneAnomalyBaseThermal
   id: ZoneAnomalyJarkaLong
-  suffix: Stalker, Jarka, Anomaly
+  suffix: ST, Довга Жарка, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
@@ -161,7 +161,7 @@
 - type: entity
   parent: ZoneAnomalyJarka
   id: ZoneAnomalySteam
-  suffix: Stalker, Steam, Anomaly
+  suffix: ST, Пар, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectDamage
@@ -202,7 +202,7 @@
 - type: entity
   id: ZoneAnomalySol
   parent: ZoneAnomalyBaseThermal
-  suffix: Stalker, Sol, Anomaly
+  suffix: ST, Сонце, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectExplosion
@@ -260,7 +260,7 @@
 - type: entity
   parent: ZoneAnomalyBaseThermal
   id: ZoneAnomalyWitchesCircle
-  suffix: Stalker, Witches circle, Anomaly
+  suffix: ST, Відьомське коло, Аномалія
   components:
     - type: ZoneAnomalyTriggerStartCollide
     - type: ZoneAnomalyEffectDamage
@@ -292,7 +292,7 @@
 - type: entity
   parent: ZoneAnomalyBaseThermal
   id: ZoneAnomalyFreezer
-  suffix: Stalker, Freezer, Anomaly
+  suffix: ST, Морозильник, Аномалія
   components:
     - type: ZoneAnomalyUpdateTriggerCollide
     - type: ZoneAnomalyEffectHeat
@@ -326,7 +326,7 @@
 - type: entity
   parent: ZoneAnomalyBaseThermal
   id: ZoneAnomalyJarkaNoArts
-  suffix: Stalker, Jarka, Anomaly, NO ARTS
+  suffix: ST, Жарка, Аномалія, Без артефактів
   categories: [ HideSpawnMenu ]
   components:
     - type: ZoneAnomalyUpdateTriggerCollide

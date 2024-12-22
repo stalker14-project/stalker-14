@@ -1,10 +1,10 @@
 - type: entity
   id: STPottedPlantBase
   parent: PottedPlantBase
-  name: potted plant
-  description: A little bit of nature contained in a pot.
+  name: рослина в горщику
+  description: Трохи природи в горщику.
   abstract: true
-  suffix: ST, Mapping
+  suffix: ST, Маппінг
   components:
   - type: Sprite
     drawdepth: Overdoors
@@ -89,8 +89,8 @@
 - type: entity
   id: STPottedPlantBioluminscent
   parent: STPottedPlantBase
-  name: bioluminescent potted plant
-  description: It produces light!
+  name: біолюмінесцентна рослина в горщику
+  description: Вона виробляє світло!
   components:
   - type: Sprite
     state: plant-09
@@ -101,7 +101,7 @@
 - type: entity
   id: STPottedPlant10
   parent: STPottedPlantBase
-  description: A pretty piece of nature contained in a pot.
+  description: Гарний шматочок природи в горщику.
   components:
   - type: Sprite
     state: plant-10
@@ -207,8 +207,8 @@
 - type: entity
   id: STPottedPlantRD
   parent: STPottedPlantBase
-  name: RDs potted plant
-  description: A gift from the botanical staff, presented after the RDs reassignment. Theres a tag on it that says \Yall come back now, yhear?\\nIt doesnt look very healthy...
+  name: Рослина в горщику ДНВ
+  description: Подарунок від співробітників ботанічного саду, вручений після перепризначення ДНВ. На ньому є бирка з написом \"Ти повернешся зараз, чуєш?\\nВиглядає не дуже здоровим...
   components:
   - type: Sprite
     state: plant-25
@@ -218,7 +218,7 @@
 - type: entity
   id: STPottedPlant26
   parent: STPottedPlantBase
-  description: Is it just me, or is it blinking?
+  description: Мені здається, чи воно блимає?
   components:
   - type: Sprite
     state: plant-26
@@ -227,7 +227,7 @@
   id: STPottedPlant27
   parent: STPottedPlantBase
   name: plastic potted plant
-  description: A fake, cheap looking, plastic tree. Perfect for people who kill every plant they touch.
+  description: Фальшиве, дешеве на вигляд, пластикове дерево. Ідеально підходить для людей, які вбивають кожну рослину, до якої торкаються.
   components:
   - type: Sprite
     state: plant-27

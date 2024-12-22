@@ -1,10 +1,10 @@
-﻿# ЖЕЛЕЗОБЕТОННЫЙ ЗАБОР
+﻿# ЗАЛІЗОБЕТОННИЙ ПАРКАН
 
 - type: entity
   parent: BaseStructure
   id: BaseFenceBeton
-  name: reinforced concrete fence
-  description: A fence made of concrete blocks or panels connected to each other with special fasteners.
+  name: залізобетонний паркан
+  description: Огорожа з бетонних блоків або панелей, з'єднаних між собою спеціальними кріпленнями.
   abstract: true
   components:
   - type: Sprite
@@ -34,9 +34,9 @@
 - type: entity
   parent: BaseFenceBeton
   id: FenceBetonBroken
-  name: broken reinforced concrete fence
-  suffix: ST, Mapping
-  description: A fence made of concrete blocks or panels connected to each other with special fasteners. I wonder who managed to break it?
+  name: зламаний залізобетонний паркан
+  suffix: ST, Маппінг
+  description: Огорожа з бетонних блоків або панелей, з'єднаних між собою спеціальними кріпленнями. Цікаво, кому вдалося його зламати?
   components:
   - type: Sprite
     layers:
@@ -87,7 +87,7 @@
 - type: entity
   parent: BaseFenceBeton
   id: FenceBetonStraight
-  suffix: ST, Mapping, straight
+  suffix: ST, Маппінг, прямий
   components:
   - type: Occluder
     boundingBox: "-0.10,-0.5,0.10,0.5"
@@ -117,7 +117,7 @@
 - type: entity
   parent: BaseFenceBeton
   id: FenceBetonCorner
-  suffix: ST, Mapping, corner
+  suffix: ST, Маппінг, кут
   components:
   - type: Occluder
     boundingBox: "-0.1,-0.1,0.1,0.5"
@@ -155,7 +155,7 @@
 - type: entity
   parent: BaseFenceBeton
   id: FenceBetonEnd
-  suffix: ST, Mapping, end
+  suffix: ST, Маппінг, кінець
   components:
   - type: Icon
     sprite: _Stalker/Structures/Walls/zabor.rsi

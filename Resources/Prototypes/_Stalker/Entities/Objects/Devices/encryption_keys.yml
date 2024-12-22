@@ -18,9 +18,9 @@
 - type: entity
   parent: BaseConfigurableEncryptionKey
   id: ConfigurableEncryptionKey
-  suffix: Stalker
-  name: configurable encryption key
-  description: Configurable encryption key to input your own frequency!
+  suffix: ST
+  name: налаштовуваний ключ шифрування
+  description: Настроюваний ключ шифрування для введення власної частоти!
   components:
   - type: Sprite
     layers:
@@ -30,9 +30,9 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyMercStalker
-  suffix: Stalker
-  name: Mercenary Encryption Key
-  description: Mercenaries encryption key with closed communication channel
+  suffix: ST
+  name: Меркантильний ключ шифрування
+  description: Ключ шифрування найманців із закритим каналом зв'язку
   components:
   - type: EncryptionKey
     channels:

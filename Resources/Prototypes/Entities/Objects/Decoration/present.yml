@@ -20,7 +20,7 @@
 - type: entity
   id: PresentRandomUnsafe
   parent: [PresentBase, BaseItem]
-  suffix: Filled, any item
+  suffix: Заповнений, any item
   components:
   - type: RandomGift
     wrapper: PresentTrash
@@ -35,7 +35,7 @@
 - type: entity
   id: PresentRandomInsane
   parent: PresentRandomUnsafe
-  suffix: Filled, any entity
+  suffix: Заповнений, any entity
   components:
     - type: RandomGift
       insaneMode: true

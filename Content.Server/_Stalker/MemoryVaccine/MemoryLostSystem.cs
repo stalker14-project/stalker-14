@@ -16,7 +16,7 @@ public sealed class MemoryLostSystem : EntitySystem
             {
                 if (resist.PopupCount > 0)
                 {
-                    _popupSystem.PopupEntity("Память за последние 10 минут теряется", uid, PopupType.LargeCaution);
+                    _popupSystem.PopupEntity("Пам'ять за останні 10 хвилин втрачається", uid, PopupType.LargeCaution);
                     resist.PopupCount -= 1;
                     resist.CoolDownTime = 2f;
                 }

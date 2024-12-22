@@ -1,7 +1,7 @@
 - type: entity
-  name: documents
-  description: Information recorded on a tangible medium in the form of text may represent a valuable item.
-  suffix: Stalker, документы
+  name: документи
+  description: Інформація, записана на матеріальному носії у вигляді тексту, може становити цінність.
+  suffix: ST, документи
   id: DocsStalker1
   parent: BaseItem
   components:
@@ -11,9 +11,9 @@
     state: d1
 
 - type: entity
-  name: documents
-  description: Information recorded on a material medium in the form of text may be a valuable item. The folder has the inscription SECRET.
-  suffix: Stalker, документы
+  name: документи
+  description: Інформація, зафіксована на матеріальному носії у вигляді тексту, може бути цінним об'єктом. Папка має напис "СЕКРЕТНО".
+  suffix: ST, документи
   id: DocsStalker2
   parent: DocsStalker1
   components:
@@ -24,11 +24,11 @@
     state: d2
 
 - type: entity
-  name: combat weapons permit
+  name: ліцензія на бойову зброю
   parent: BookBase
-  suffix: Stalker, документы
+  suffix: ST, документи
   id: militaryLicense
-  description: A sacred document accepted in all corners of the zone. Smells like bureaucracy
+  description: Священний документ, прийнятий у всіх куточках зони. Пахне бюрократією
   components:
     - type: STWeight
       self: 0.2
@@ -55,11 +55,11 @@
     - type: PaperVisuals
 
 - type: entity
-  name: hunting license
+  name: мисливська ліцензія
   id: hunterLicense
   parent: BookBase
-  suffix: Stalker, документы
-  description: Legal hunting permit. The paint job exactly matches the color of the boars blood in the area.
+  suffix: ST, документи
+  description: Легальний дозвіл на полювання. Фарбування точно відповідає кольору крові кабанів у цій місцевості.
   components:
     - type: STWeight
       self: 0.2
@@ -87,11 +87,11 @@
     - type: PaperVisuals
 
 - type: entity
-  name: pass to the ChEZ
+  name: перепустка до ЧЕЗ
   id: propuskChZO
   parent: BookBase
-  suffix: Stalker, документы
-  description: Laminated paper with a bunch of signatures. Slightly more important than a beer coaster.
+  suffix: ST, документи
+  description: Ламінований папір з купою підписів. Трохи важливіше, ніж підставка під пиво.
   components:
     - type: Clickable
     - type: InteractionOutline
@@ -116,11 +116,11 @@
     - type: PaperVisuals
 
 - type: entity
-  name: military base pass
+  name: перепустка на військову базу
   id: propuskVoenka
   parent: BookBase
-  suffix: Stalker, документы
-  description: A laminated piece of paper proving that you are so important that you are allowed to visit a military base.
+  suffix: ST, документи
+  description: Ламінований аркуш паперу, який доводить, що ви настільки важливі, що вам дозволено відвідати військову базу.
   components:
     - type: Clickable
     - type: InteractionOutline
@@ -147,9 +147,9 @@
 - type: entity
   parent: BookBase
   id: BookStalkerFAQ
-  name: Zone Guide
-  description: All about the zone...
-  suffix: Stalker, книга
+  name: Путівник по Зоні
+  description: Все про зону...
+  suffix: ST, книга
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/books.rsi
@@ -175,9 +175,9 @@
 - type: entity
   parent: BookBase
   id: BookStalkerSeraphimFAQ
-  name: Diary
-  description: Diary with a strange symbol. Signed - under-who-is-there Lex.
-  suffix: Stalker, книга, PodpivAss_Lex
+  name: Щоденник
+  description: Щоденник з дивним символом. Підписаний "під-ким-там-там Лексом".
+  suffix: ST, книга
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/books.rsi
@@ -195,8 +195,8 @@
 - type: entity
   parent: BookBase
   id: STPilgrimBible
-  name: Covenant
-  suffix: Stalker, книга, Паломники
+  name: Заповіт
+  suffix: ST, книга, Паломники
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/books.rsi
