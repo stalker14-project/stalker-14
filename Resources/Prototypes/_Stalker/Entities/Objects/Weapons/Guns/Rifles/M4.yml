@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleM4
-  description: Colt M4 based on AR-15 - one of the most famous assault rifles, chambered for 5.56.
+  description: Кольт М4 на базі AR-15 - одна з найвідоміших штурмових гвинтівок під набій 5.56.
   components:
     - type: STWeight
       self: 2.8
@@ -27,7 +27,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Base556Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -42,19 +42,19 @@
             tags:
               - STModuleAutoSear
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleRifleSilencerNato
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleRifleScopeNato
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:
@@ -66,7 +66,7 @@
   suffix: ST
   parent: STWeaponRifleM4
   id: STWeaponRifleHK416
-  description: HK-416 German assault rifle adapted for the American AR-15 modular system, created by Heckler & Koch.
+  description: Німецька штурмова гвинтівка HK-416 адаптована під американську модульну систему AR-15, створену компанією Heckler & Koch.
   components:
   - type: STWeight
     self: 3.8

@@ -1,4 +1,4 @@
-ent-BaseSpeedLoaderRemingtonMagnum = Спідлоейдер (.44 Remington Magnum)
+ent-BaseSpeedLoaderRemingtonMagnum = Спідлоейдер (.44 Ремінгтон магнум)
     .desc = { ent-BaseItem.desc }
     .suffix = Сталкер
 ent-SpeedLoaderRemingtonMagnum = { ent-BaseSpeedLoaderRemingtonMagnum }

@@ -2,10 +2,10 @@
 - type: entity
   id: STAnomalyGeneratorBlockerBase
   abstract: true
-  name: Anomaly Defense
+  name: Захист від аномалій
   suffix: ST
   parent: FlexibleMarker
-  description: Makes the anomaly generator not generate anything in the specified radius
+  description: Змушує генератор аномалій не генерувати нічого у вказаному радіусі
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Anomalies/anomaly_generator_blocker.rsi
@@ -14,7 +14,7 @@
 - type: entity
   parent: STAnomalyGeneratorBlockerBase
   id: STAnomalyGeneratorBlocker5
-  name: Anomaly Defense (5 tiles)
+  name: Захист від аномалій (5 tiles)
   components:
   - type: STAnomalyGeneratorSpawnBlocker
     size: 5
@@ -22,7 +22,7 @@
 - type: entity
   parent: STAnomalyGeneratorBlockerBase
   id: STAnomalyGeneratorBlocker10
-  name: Anomaly Defense (10 tiles)
+  name: Захист від аномалій (10 tiles)
   components:
   - type: STAnomalyGeneratorSpawnBlocker
     size: 10
@@ -30,7 +30,7 @@
 - type: entity
   parent: STAnomalyGeneratorBlockerBase
   id: STAnomalyGeneratorBlocker20
-  name: Anomaly Defense (20 tiles)
+  name: Захист від аномалій (20 tiles)
   components:
   - type: STAnomalyGeneratorSpawnBlocker
     size: 20
@@ -38,7 +38,7 @@
 - type: entity
   parent: STAnomalyGeneratorBlockerBase
   id: STAnomalyGeneratorBlocker50
-  name: Anomaly Defense (50 tiles)
+  name: Захист від аномалій (50 tiles)
   components:
   - type: STAnomalyGeneratorSpawnBlocker
     size: 50
@@ -46,7 +46,7 @@
 - type: entity
   parent: STAnomalyGeneratorBlockerBase
   id: STAnomalyGeneratorBlocker100
-  name: Anomaly Defense (100 tiles)
+  name: Захист від аномалій (100 tiles)
   components:
   - type: STAnomalyGeneratorSpawnBlocker
     size: 100

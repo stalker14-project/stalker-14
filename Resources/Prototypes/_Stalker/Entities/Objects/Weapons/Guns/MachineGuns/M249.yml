@@ -2,7 +2,7 @@
   name: M249
   id: WeaponLMGM249
   parent: STBaseWeaponMachineGun
-  description: The classic American army, the 249th in 5.56, is fed from STANAG boxes or magazines.
+  description: Класична американська вогнепальна зброя, 249-й калібру 5.56, заряджається з коробок або магазинів STANAG.
   suffix: ST
   components:
     - type: STWeight
@@ -36,7 +36,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem:
           insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -46,7 +46,7 @@
               - Magazine556
               - Box556
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:

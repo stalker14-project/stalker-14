@@ -1,19 +1,19 @@
 - type: job
-  id: StalkerZavet
-  name: Covenant
-  icon: zavet
-  description: This is a small army of extremely dangerous fanatics.
-  playTimeTracker: JobZavet
+  id: StalkerZapovit
+  name: Заповіт
+  icon: zapovit
+  description: Це невелика армія надзвичайно небезпечних фанатиків.
+  playTimeTracker: JobZapovit
   whitelisted: true
   requirements:
     # - !type:RoleTimeRequirement
-    #   role: JobZavet
+    #   role: JobZapovit
     #   time: 1
     - !type:SpeciesRequirement
       species:
       - Human
       - Dwarf
-  startingGear: StalkerZavetGear
+  startingGear: StalkerZapovitGear
   supervisors: Вы работаете на Высшие Силы.
   special:
     - !type:AddComponentSpecial
@@ -25,7 +25,7 @@
           - Covenant
       - type: Bands
         band: Stalker
-        bandIcon: zavet
+        bandIcon: zapovit
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -34,7 +34,7 @@
         initialTeeth: 3
 
 - type: startingGear
-  id: StalkerZavetGear
+  id: StalkerZapovitGear
   equipment:
     id: StalkerPDA
     belt: ClothingBeltStorageWaistbag
@@ -43,7 +43,7 @@
     shoes: ClothingShoesBootsWork
 
 - type: startingGear
-  id: StalkerZavetLeaderGear
+  id: StalkerZapovitLeaderGear
   equipment:
     id: StalkerPDA
     belt: ClothingBeltStorageWaistbag

@@ -1,10 +1,10 @@
-# Кастомка серафимов
+# Кастомка серафимів
 - type: entity
   name: АК-12
   suffix: ST, Скін
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK12
-  description: Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы.
+  description: Ця модель є вершиною розвитку системи АК і вирізняється з-поміж попередніх поколінь продуманою ергономікою, адаптацією до вседобового застосування і підвищеною точністю та купчастістю стрільби.
   components:
   - type: STWeight
     self: 4.5
@@ -26,7 +26,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base545Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -35,26 +35,26 @@
           tags:
             - Magazine545
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 3
         whitelist:
           tags:
             - STWeaponModuleRifleSilencerRu
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleRifleScopeRu
       gun_chamber:
-        name: Chamber
+        name: Патронник
         priority: 1
         whitelist:
           tags:
             - Cartridge545
 
 - type: entity
-  name: АК-12 серафимов
+  name: АК-12 серафимів
   parent: STWeaponRifleStalkerAK12
   id: STWeaponRifleStalkerAK12Sera
   components:

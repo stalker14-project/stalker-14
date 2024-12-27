@@ -2,7 +2,7 @@
   abstract: true
   parent: STBaseWeaponModule
   id: STBaseModuleSilencerSMG
-  name: silencer
+  name: глушник
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/Modules/smg_silencers.rsi
@@ -14,8 +14,8 @@
 - type: entity
   parent: STBaseModuleSilencerSMG
   id: STModuleSilencerSMGT1
-  name: саморобний глушник SMG
-  suffix: ST, silencer, T1
+  name: саморобний глушник Пістолета-кулемета
+  suffix: ST, глушник, T1
   components:
     - type: Tag
       tags:
@@ -32,7 +32,7 @@
   parent: STBaseModuleSilencerSMG
   id: STModuleSilencerSMGT2
   name: легальний глушник SMG
-  suffix: ST, silencer, T2
+  suffix: ST, глушник, T2
   components:
     - type: Tag
       tags:

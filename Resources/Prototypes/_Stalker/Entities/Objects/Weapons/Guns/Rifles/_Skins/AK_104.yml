@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK104
-  description: Данная модель входит в так называемую «сотую» серию автоматов Калашникова и отличается полной заменой деревянных частей на полимерные и наличием боковой планки для установки прицелов.
+  description: Ця модель входить до так званої "сотої" серії автоматів Калашникова і відрізняється повною заміною дерев'яних частин на полімерні та наявністю бічної планки для встановлення прицілів.
   components:
   - type: STWeight
     self: 5
@@ -23,7 +23,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base739Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -32,19 +32,19 @@
           tags:
             - Magazine739
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 3
         whitelist:
           tags:
             - STWeaponModuleRifleSilencer
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleRifleScopeRu
       gun_chamber:
-        name: Chamber
+        name: Патронник
         priority: 1
         whitelist:
           tags:

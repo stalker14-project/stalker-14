@@ -1,9 +1,9 @@
 - type: entity
-  name: L85
+  name: Л85
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerL85
-  description: British primary assault rifle chambered for 5.56, with extremely low spread.
+  description: Британська основна штурмова гвинтівка під набій 5.56 з надзвичайно низьким розкидом.
   components:
     - type: STWeight
       self: 4.2
@@ -26,7 +26,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Base556Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -35,19 +35,19 @@
             tags:
               - Magazine556
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleRifleSilencerNato
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleRifleScopeNato
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:
@@ -55,14 +55,14 @@
               - Cartridge556
 
 
-# Скинчики
+# Скінчики
 
 - type: entity
-  name: L85 Strawberry
+  name: Л85 Полуничка
   suffix: ST, Скін
   parent: STWeaponRifleStalkerL85
   id: STWeaponGunAKS74UWhiteStrawberry
-  description: British L85 in raspberry paint.
+  description: Британський L85 у малиновому кольорі.
   components:
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/l85_straberry.rsi

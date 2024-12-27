@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleSCARH
-  description: Belgian rifle chambered for 7.62x51 with a dual-mode selector.
+  description: Бельгійська гвинтівка під набій 7.62x51 з подвійним перемикачем режимів.
   components:
     - type: STWeight
       self: 3.5
@@ -30,7 +30,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Base751Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -39,19 +39,19 @@
             tags:
               - Magazine751
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleRifleSilencerNato
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleRifleScopeNato
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:
@@ -59,13 +59,13 @@
               - Cartridge751
 
 
-# Скинчики пошли
+# Скінчики пошли
 - type: entity
-  name: SCAR shortened
+  name: SCAR укорочена
   suffix: ST, Скін
   parent: STWeaponRifleSCARH
   id: STWeaponRifleSCARHShort
-  description: Shortened modification of the Belgian SCAR rifle
+  description: Укорочена модифікація бельгійської гвинтівки SCAR
   components:
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_short.rsi

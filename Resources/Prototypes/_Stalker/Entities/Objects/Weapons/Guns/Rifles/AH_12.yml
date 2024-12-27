@@ -34,7 +34,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: AS12Mag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -43,20 +43,20 @@
             tags:
               - MagazineAS12
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleRifleSilencer
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 2
           startingItem: STModuleScopeRiflesT1
           whitelist:
             tags:
               - STWeaponModuleRifleScope
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge1255BP
           priority: 1
           whitelist:

@@ -29,7 +29,7 @@
     prototype: ArtilleryExplosive
 
 - type: entity
-  name: explosion
+  name: вибух
   id: ArtilleryExplosive
   #categories: [ HideSpawnMenu ]
   components:
@@ -221,13 +221,9 @@
   - type: TimedDespawn
     lifetime: 60
 
-
-
-
-
 - type: entity
   id: HelicopterLanding
-  name: посадка вертольота
+  name: посадка гелікоптера
   parent: MarkerBase
   components:
   - type: Sprite
@@ -244,7 +240,7 @@
 
 - type: entity
   id: HelicopterCrush
-  name: падіння вертольота
+  name: падіння гелікоптера
   parent: MarkerBase
   components:
   - type: Sprite
@@ -261,7 +257,7 @@
 
 - type: entity
   id: HelicopterAmbient
-  name: звук вертольота
+  name: звук гелікоптера
   parent: MarkerBase
   components:
   - type: Sprite

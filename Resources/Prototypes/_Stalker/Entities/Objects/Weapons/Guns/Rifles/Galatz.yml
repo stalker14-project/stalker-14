@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerGalatz
-  description: Galatz - Israeli powerful marksman rifle under 7.62. It is also a licensed Fort-301.
+  description: Galatz - ізраїльська потужна снайперська гвинтівка під набій 7.62. Також є ліцензійною версією Форт-301.
   components:
   - type: STWeight
     self: 3.5
@@ -31,7 +31,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base751Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -40,19 +40,19 @@
           tags:
             - Magazine751
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 3
         whitelist:
           tags:
             - STWeaponModuleRifleSilencerNato
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleRifleScopeNato
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem:
         priority: 1
         whitelist:

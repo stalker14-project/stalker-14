@@ -111,4 +111,74 @@ public sealed class JobWhitelistManager : IPostInjectInit
         _userDb.AddOnFinishLoad(FinishLoad);
         _userDb.AddOnPlayerDisconnect(ClientDisconnected);
     }
+
+    // JustDecor's changes start
+    public async void AddWhitelistGroup(NetUserId player, string groupId)
+    {
+        // Перевірити, чи група існує
+        if (!_prototypes.TryIndex<WhitelistGroupPrototype>(groupId, out var groupPrototype))
+        {
+            Log.Error("Whitelist group {GroupId} does not exist.", groupId);
+            return;
+        }
+
+        if (!_whitelists.TryGetValue(player, out var whitelists))
+        {
+            whitelists = new HashSet<string>();
+            _whitelists[player] = whitelists;
+        }
+
+        foreach (var jobId in groupPrototype.Jobs)
+        {
+            if (!_prototypes.TryIndex<JobPrototype>(jobId, out var jobPrototype))
+            {
+                Log.Error("Job {JobId} in group {GroupId} does not exist.", jobId, groupId);
+                continue;
+            }
+
+            if (whitelists.Contains(jobId))
+            {
+                Log.Warning("Player {Player} is already whitelisted for job {JobId}.", player, jobId);
+                continue;
+            }
+
+            whitelists.Add(jobId);
+            await _db.AddJobWhitelist(player, new ProtoId<JobPrototype>(jobId));
+        }
+
+        if (_player.TryGetSessionById(player, out var session))
+            SendJobWhitelist(session);
+    }
+
+    public async void RemoveWhitelistGroup(NetUserId player, string groupId)
+    {
+        // Перевірити, чи група існує
+        if (!_prototypes.TryIndex<WhitelistGroupPrototype>(groupId, out var groupPrototype))
+        {
+            Log.Error("Whitelist group {GroupId} does not exist.", groupId);
+            return;
+        }
+
+        if (!_whitelists.TryGetValue(player, out var whitelists))
+        {
+            Log.Warning("Player {Player} has no whitelists to remove for group {GroupId}.", player, groupId);
+            return;
+        }
+
+        foreach (var jobId in groupPrototype.Jobs)
+        {
+            if (!whitelists.Contains(jobId))
+            {
+                Log.Warning("Player {Player} is not whitelisted for job {JobId} in group {GroupId}.", player, jobId, groupId);
+                continue;
+            }
+
+            whitelists.Remove(jobId);
+            await _db.RemoveJobWhitelist(player, new ProtoId<JobPrototype>(jobId));
+        }
+
+        if (_player.TryGetSessionById(player, out var session))
+            SendJobWhitelist(session);
+    }
+    // JustDecor's changes end
 }

@@ -1,8 +1,8 @@
 - type: job
   id: StalkerPostulant
-  name: Pilgrim
+  name: Паломник
   icon: pilgrim
-  description: Novice in the monastic order
+  description: Послушник у чернечому чині
   playTimeTracker: JobPostulant
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: PilgrimPostulantGear
-  supervisors: Вы подчиняетесь все кто выше вас в иерархии
+  supervisors: Ви підкоряєтесь усім, хто вищий за вас в ієрархії
   special:
     - !type:AddComponentSpecial
       components:
@@ -36,9 +36,9 @@
 
 - type: job
   id: StalkerBishop
-  name: Bishop
+  name: Єпископ
   icon: pilgrim
-  description: head of the monastic order
+  description: голова чернечого ордену
   playTimeTracker: JobBishop
   whitelisted: true
   requirements:
@@ -50,7 +50,7 @@
       - Human
       - Dwarf
   startingGear: PilgrimMonkGear
-  supervisors: Вы подчиняетесь только господу нашему Богу
+  supervisors: Ви підкоряєтеся тільки господу нашому Богу
   special:
     - !type:AddComponentSpecial
       components:

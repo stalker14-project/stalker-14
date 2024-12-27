@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: WeaponRifleStalkerGroza545
-  description: It is a variant of the OTs-12 assault rifle (which in turn was created on the basis of the AKS74U), made according to the bullpup scheme. This modification is for the 5.45 caliber - the most common in the Zone.
+  description: Це варіант автомата ОЦ-12 (який в свою чергу був створений на базі АКС74У), виконаний за схемою буллпап. Ця модифікація під калібр 5.45 - найпоширеніший у Зоні.
   components:
     - type: STWeight
       self: 2.7
@@ -31,7 +31,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Base545Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -40,19 +40,19 @@
             tags:
               - Magazine545
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleRifleSilencer
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleRifleScope
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge545FMJ
           priority: 1
           whitelist:

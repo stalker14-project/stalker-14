@@ -1,8 +1,8 @@
 - type: entity
   parent: STBaseWeaponSniper
   id: STWeaponRifleSVDS
-  name: SIDS
-  description: Dragunov Sniper Rifle Folding, improved version of the SVD for the same 7.62x54 with a medium-range sight.
+  name: СВДС
+  description: Снайперська гвинтівка Драгунова Складана, покращена версія СВД під той самий набій 7.62х54 з прицілом середньої дальності.
   suffix: ST, Sniper
   components:
     - type: STWeight
@@ -37,7 +37,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: 754Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -46,19 +46,19 @@
             tags:
               - Magazine754
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleSniperSight
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleSniperSilencer
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:
@@ -79,14 +79,14 @@
       offset: 8
 
 #
-# Скины
+# Скіни
 #
 - type: entity
-  name: Covenant SVDS
+  name: СВДС Заповіту
   parent: STWeaponRifleSVDS
   id: STWeaponRifleCovenantSVDS
-  description: Dragunov Folding Sniper Rifle Zaveta, an improved version of the SVD for the same 7.62x54 with a medium-range sight.
-  suffix: ST, Sniper, Завет, Скін
+  description: Снайперська гвинтівка Драгунова "Заповіту" - покращена версія СВД під той самий набій 7.62х54 з прицілом середньої дальності.
+  suffix: ST, Sniper, Заповіт, Скін
   components:
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/covenant_svd.rsi
@@ -98,8 +98,8 @@
 - type: entity
   parent: STWeaponRifleSVDS
   id: STWeaponRifleSVDSGrass
-  name: SVDS camouflage
-  description: Sniper Rifle Dragunov Folding, improved version of SVD for the same 7.62x54 with a medium-range sight. With camouflage mesh and a small filing.
+  name: Камуфляж СВДС
+  description: Снайперська гвинтівка Драгунова Складана, покращена версія СВД під той самий набій 7.62х54 з прицілом середньої дальності. З маскувальною сіткою та невеликою подачею.
   suffix: ST, Скін
   components:
   - type: Clothing
@@ -111,28 +111,28 @@
 
 - type: entity
   parent: STWeaponRifleSVDS
-  id: STWeaponRifleSVU
-  name: СВУ
-  description: Снайперская Винтовка Укороченная, улучшенная версия СВД под тот же 7,62х54 с прицелом средней дальности.
+  id: STWeaponRifleSGU
+  name: СГУ
+  description: Снайперська Гвинтівка Укорочена, поліпшена версія СВД під той самий 7,62х54 з прицілом середньої дальності.
   suffix: ST, Скін
   components:
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/svu.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/sgu.rsi
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/svu.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/sgu.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/svu.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/sgu.rsi
 
 - type: entity
   parent: STWeaponRifleSVDS
-  id: STWeaponRifleSVUSera
-  name: СВУ серафимов
-  description: Снайперская Винтовка Укороченная, улучшенная версия СВД под тот же 7,62х54 с прицелом средней дальности.
+  id: STWeaponRifleSGUSera
+  name: СГУ серафимів
+  description: Снайперська Гвинтівка Укорочена, поліпшена версія СВД під той самий 7,62х54 з прицілом середньої дальності.
   suffix: ST, Скін
   components:
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/svusera.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/sgusera.rsi
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/svusera.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/sgusera.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/svusera.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/svd/sgusera.rsi

@@ -1,9 +1,9 @@
 - type: entity
-  name: Thompson Submachine Gun
+  name: Пістолет-кулемет Томпсона
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: WeaponSubMachineGunStalkerTommyGun
-  description: The Thompson submachine gun (also known as the Tommy gun) is one of the most recognizable types of retro weapons. Its characteristic shape with a rotary magazine and two grips is associated primarily with American gangsters during the Prohibition era.
+  description: Пістолет-кулемет Томпсона (також відомий як пістолет Томмі) - один з найбільш впізнаваних видів ретро-зброї. Його характерна форма з обертовим магазином і двома рукоятками асоціюється насамперед з американськими гангстерами часів сухого закону.
   components:
     - type: STWeight
       self: 4.9
@@ -29,7 +29,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: BaseTommyGunMag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -38,7 +38,7 @@
             tags:
               - MagazineTommyGun
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -50,7 +50,7 @@
             tags:
               - STWeaponModuleSMGGrip
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:

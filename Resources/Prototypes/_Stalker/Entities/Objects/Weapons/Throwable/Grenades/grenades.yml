@@ -1,6 +1,6 @@
 - type: entity
-  name: F1 grenade
-  description: It is also called Lemonka, not the ultimate, but an extremely powerful weapon, whose main damaging factor is fragments.
+  name: Граната F1
+  description: Його ще називають "Лимонка" - не досконала, але надзвичайно потужна зброя, основним уражаючим фактором якої є осколки.
   parent: GrenadeBase
   id: FragGrenade
   suffix: ST, Граната
@@ -25,8 +25,8 @@
         - type: ExplodeOnTrigger
 
 - type: entity
-  name: RGD-5 grenade
-  description: Soviet offensive hand grenade, belongs to the anti-personnel fragmentation hand grenades of remote action of the offensive type.
+  name: Граната РГД-5
+  description: Радянська наступальна ручна граната, відноситься до протипіхотних осколкових ручних гранат дистанційної дії наступального типу.
   parent: GrenadeBase
   id: RGD5Grenade
   suffix: ST, Граната
@@ -64,8 +64,8 @@
 - type: entity
   parent: GrenadeBase
   id: KhattabkaGrenade
-  name: Khattabka grenade
-  description: Not the ultimate, but an extremely powerful weapon.
+  name: Хаттабка граната
+  description: Не ідеальна, але надзвичайно потужна зброя.
   suffix: ST, Граната
   components:
     - type: Explosive
@@ -85,13 +85,13 @@
       layers:
         - state: icon
           map: ["enum.TriggerVisualLayers.Base"]
-# To be repaired
+# Підлягає ремонту
 - type: entity
-  name: signal bomb
-  description: Calls in mortar fire with smoke ammunition.
+  name: сигнальна бомба
+  description: Викликає мінометний обстріл димовими боєприпасами.
   parent: GrenadeBase
   id: SignalSmoke
-  suffix: ST, Граната
+  suffix: ST, Граната, не димовими
   components:
     - type: Sprite
       sprite: Objects/Weapons/Grenades/smoke.rsi
@@ -108,8 +108,8 @@
 - type: entity
   parent: SmokeGrenade
   id: TearGasGrenadeStalker
-  name: K-51 grenade
-  description: Soviet tear gas grenade. It was not intended to disperse demonstrations, but for the battlefield. Inhaling the smoke is highly undesirable.
+  name: Граната К-51
+  description: Радянська граната зі сльозогінним газом. Вона призначалася не для розгону демонстрацій, а для поля бою. Вдихати дим вкрай небажано.
   suffix: ST
   components:
   - type: Sprite
@@ -133,8 +133,8 @@
 - type: entity
   parent: GrenadeBase
   id: MK3A2Grenade
-  name: MK3A2 grenade
-  description: US hand-held high-explosive grenade. Designed to damage unarmored or lightly armored vehicles, small structures, and incapacitate enemy soldiers.
+  name: Граната MK3A2
+  description: Американська ручна осколкова граната. Призначена для ураження неброньованої або легкоброньованої техніки, невеликих споруд та виведення з ладу солдатів противника.
   suffix: ST, Граната
   components:
     - type: Explosive
@@ -162,11 +162,11 @@
             Unprimed: { state: icon }
 
 - type: entity
-  name: M84 grenade
-  description: American flashbang grenade. A special non-lethal weapon that has a flashbang and fragmentation effect on a person.
+  name: Граната М84
+  description: Американська світлошумова граната. Спеціальна зброя несмертельної дії, що має осколково-фугасну дію на людину.
   parent: GrenadeBase
   id: GrenadeFlashBangStalker
-  suffix: ST, Граната
+  suffix: ST, Граната, Спалах
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Grenades/flashbang.rsi
@@ -184,8 +184,8 @@
 - type: entity
   parent: GrenadeBase
   id: DG05SmokeGrenade
-  name: DG-05 grenade
-  description: Hand smoke grenade DG-05. Designed to install smoke cover.
+  name: Граната DG-05
+  description: Ручна димова граната DG-05. Призначена для встановлення димової завіси.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Grenades/dggrenade.rsi
@@ -202,8 +202,8 @@
 - type: entity
   parent: GrenadeBase
   id: StielhandgranateM24Bundle
-  name: Stielhandgranate M24 Bundle
-  description: A modified version of the German Stielhandgranate M24 hand grenade used during World War II. The main difference between the grenade bundle and the standard version is that several additional grenade heads without handles are attached to the main Stielhandgranate M24 grenade, which increases the destructive power of the device.
+  name: Ручна граната М24 В'язка
+  description: Модифікована версія німецької ручної гранати Stielhandgranate M24, що використовувалася під час Другої світової війни. Основна відмінність гранатомета від стандартної версії полягає в тому, що до основної гранати Stielhandgranate M24 прикріплено кілька додаткових головок без ручок, що збільшує руйнівну силу пристрою.
   suffix: ST, Граната
   components:
     - type: STWeight
@@ -237,8 +237,8 @@
 - type: entity
   parent: GrenadeBase
   id: StielhandgranateM24
-  name: Stielhandgranate M24
-  description: A German fragmentation grenade, widely used during World War II. It is also known by the unofficial name of a potato masher due to its characteristic shape with a long handle and a cylindrical body.
+  name: Ручна граната М24
+  description: Німецька осколкова граната, що широко використовувалася під час Другої світової війни. Вона також відома під неофіційною назвою "картоплем'ялка" через свою характерну форму з довгою ручкою та циліндричним корпусом.
   suffix: ST, Граната
   components:
     - type: STWeight

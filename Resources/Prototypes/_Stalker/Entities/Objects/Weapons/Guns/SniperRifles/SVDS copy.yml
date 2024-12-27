@@ -1,19 +1,19 @@
 - type: entity
-  parent: ClothingOuterArmorReinger # Тут указали тот предмет который хотим чтобы в людей был
-  id: ClothingOuterArmorReingerMyEvent # тут поменяли название
-  suffix: MyEvent # Просто для быстрого поиска
+  parent: ClothingOuterArmorReinger # Тут вказали той предмет, який хочемо, щоб у людей був
+  id: ClothingOuterArmorReingerMyEvent # тут поміняли назву
+  suffix: MyEvent # Просто для швидкого пошуку
 
 - type: entity
-  parent: STWeaponRifleSVDS # Тут указали тот предмет который хотим чтобы в людей был
-  id: STWeaponRifleSVDSMyEvent # тут поменяли название
-  suffix: MyEvent # Просто для быстрого поиска
+  parent: STWeaponRifleSVDS # Тут вказали той предмет, який хочемо, щоб у людей був
+  id: STWeaponRifleSVDSMyEvent # тут поміняли назву
+  suffix: MyEvent # Просто для швидкого пошуку
   components:
-  # чтобы убрать магазин из пушки, скопируйте ItemSlots и заккоментируйте startingItem
+  # щоб прибрати магазин з гармати, скопіюйте ItemSlots і закоментуйте startingItem
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
-          #startingItem: 754Mag10 вот тут
+          name: Магазин
+          #startingItem: 754Mag10 ось тут
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 4
@@ -21,19 +21,19 @@
             tags:
               - Magazine754
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleSniperSight
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleSniperSilencer
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:

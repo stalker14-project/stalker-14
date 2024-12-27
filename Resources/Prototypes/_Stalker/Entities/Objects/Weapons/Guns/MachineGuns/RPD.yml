@@ -2,8 +2,8 @@
   parent: STBaseWeaponMachineGun
   id: WeaponMachineGunRPD
   name: RPD
-  description: The Degtyarev light machine gun is a Soviet light machine gun developed in 1944 for the 7.62x39 cartridge.
-  suffix: ST, Machine gun
+  description: Легкий кулемет Дегтярьова - радянський легкий кулемет, розроблений у 1944 році під набій 7,62х39.
+  suffix: ST, Кулемет
   components:
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
@@ -21,7 +21,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: null
           insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -30,7 +30,7 @@
             tags:
               - Magazine762x39RPD
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: null
           priority: 1
           whitelist:

@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: STWeaponSMGStalkerP90
-  description: Quite a fresh PP of Dutch manufacture, converted to NATO 9x19.
+  description: Зовсім свіжий ПП голландського виробництва, перероблений під натовський патрон 9х19.
   components:
     - type: STWeight
       self: 2.9
@@ -28,7 +28,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: P90Mag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -37,7 +37,7 @@
             tags:
               - P90Magazin
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -49,7 +49,7 @@
             tags:
               - STWeaponModuleSMGGrip
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:

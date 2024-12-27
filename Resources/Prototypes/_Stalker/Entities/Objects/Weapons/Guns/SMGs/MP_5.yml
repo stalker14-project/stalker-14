@@ -1,9 +1,9 @@
 - type: entity
-  name: MP-5
+  name: МП-5
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: STWeaponSMGMp5
-  description: A weapon, one of the best in the class of submachine guns. During the last decades of the 20th century, it was adopted by special forces of the army and police in many countries around the world.
+  description: Зброя, одна з найкращих у класі пістолетів-кулеметів. Протягом останніх десятиліть 20-го століття був прийнятий на озброєння спецпідрозділів армії та поліції в багатьох країнах світу.
   components:
     - type: STWeight
       self: 3.1
@@ -25,7 +25,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: BaseMP5Mag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -34,7 +34,7 @@
             tags:
               - MagazineMP5
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -46,7 +46,7 @@
             tags:
               - STWeaponModuleSMGGrip
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:
@@ -54,14 +54,14 @@
               - Cartridge919
 
 #
-# Скины
+# Скіни
 #
 - type: entity
-  name: MP-5 Celebra
+  name: МП-5 Celebra
   suffix: ST, Пошук, Скін
   parent: STWeaponSMGMp5
   id: STWeaponSMGMp5PoiskSelebra
-  description: A weapon, one of the best in the class of submachine guns. During the last decades of the 20th century, it was adopted by special forces of the army and police in many countries around the world.
+  description: Зброя, одна з найкращих у класі пістолетів-кулеметів. Протягом останніх десятиліть 20-го століття був прийнятий на озброєння спецпідрозділів армії та поліції в багатьох країнах світу.
   components:
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5Selebra.rsi

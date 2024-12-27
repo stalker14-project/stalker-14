@@ -35,12 +35,12 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
 
-    //Путь к карте сталкер арены
+    //Шлях до карти сталкер арени
     public const string ArenaMapPath = "/Maps/_StalkerMaps/PersonalStalkerArena/StalkerMap.yml";
     public Dictionary<NetUserId, EntityUid> ArenaMap { get; } = new();
     public Dictionary<NetUserId, EntityUid?> ArenaGrid { get; } = new();
 
-    //Список сталкер арен игроков(данные о карте и гриде на котором находиться сталкер арена)
+    //Список сталкер арен гравців (дані про карту і грід на якому знаходиться сталкер арена)
     public List<StalkerArenaData> StalkerArenaDataList = new(0);
 
     public override void Initialize()
@@ -63,7 +63,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         });
     }
 
-    // При столкновении с порталом вне сталкер арены, происходит телепортация в сталкер арену
+    // У разі зіткнення з порталом поза сталкер-ареною, відбувається телепортація в сталкер-арену
     private void OnCollideStalkerPortal(EntityUid uid, StalkerPortalComponent component, ref StartCollideEvent args)
     {
         HandleStalkerPortals(uid, component, args.OtherEntity, args.OurEntity);
@@ -74,7 +74,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         if (!TryComp(otherEntity, out ActorComponent? actor))
             return;
 
-        // Check for access
+        // Перевірте наявність доступу
         if (!component.AllowAll)
         {
             if (!_accessReaderSystem.IsAllowed(otherEntity, ourEntity))
@@ -94,7 +94,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         });
     }
 
-    // При столкновении с телепортом в сталкер арене происходит телепортация в тот телепорт из которого был выполнен вход в сталкер арену
+    // У разі зіткнення з телепортом у сталкер-арені відбувається телепортація в той телепорт, з якого був виконаний вхід у сталкер-арену.
     private void OnCollideStalkerPortalPersonal(EntityUid uid, StalkerPortalPersonalComponent component, ref StartCollideEvent args)
     {
         HandleStalkerPortalPersonal(uid, component, args.OtherEntity, args.OurEntity);
@@ -118,7 +118,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
     }
 
 
-    // Создание сталкер арены и её первичная настройка если она ещё не была создана, в конце возвращает координаты сталкер индивидуальной арены для игрока
+    // Створення сталкер арени та її первинне налаштування, якщо вона ще не була створена, наприкінці повертає координати сталкер індивідуальної арени для гравця
     public (EntityUid Map, EntityUid? Grid) StalkerAssertArenaLoaded(ICommonSession admin, string teleportName, EntityUid? returnTeleportEntityUid)
     {
         if (InStalkerTeleportDataList(admin.Name) == true)
@@ -183,7 +183,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
 
 
-    //Назначаем в персональный телепорт(который в сталкер арене) ентити айди телепорта в который необходимо вернуться при входе уже в персональный телепорт
+    //Призначаємо в персональний телепорт (який у сталкер-арені) ентіті айді телепорту, до якого необхідно повернутися під час входу вже в персональний телепорт.
     public void SetReturnPortal(EntityUid? teleport, string teleportName, EntityUid? returnTeleportEntityUid)
     {
         if (!TryComp(teleport, out TransformComponent? transformComponent))
@@ -206,7 +206,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         }
     }
 
-    //Проверка по логину игрока есть ли в списке сталкер арена
+    //Перевірка за логіном гравця чи є в списку сталкер арена
     public bool InStalkerTeleportDataList(string inputLogin)
     {
         foreach (var data in StalkerArenaDataList)
@@ -219,7 +219,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         return false;
     }
 
-    //Возвращаем данные сталкер арены
+    //Повертаємо дані сталкер арени
     public StalkerArenaData GetFromStalkerTeleportDataList(string inputLogin)
     {
         foreach (var data in StalkerArenaDataList)
@@ -232,14 +232,14 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         return null!;
     }
 
-    //Данные о сталкер арене
+    //Дані про сталкер арену
     public sealed class StalkerArenaData
     {
-        //Логин игрока
+        //Логін гравця
         public string Login;
-        //Айди карты на котрой сталкер арена
+        //Айді карти на котрій сталкер арена
         public EntityUid MapId;
-        //Айди грида на котрой сталкер арена
+        //Іді-сітка, на якій розташована сталкерська арена
         public EntityUid? GridId;
 
         public StalkerArenaData(string login, EntityUid mapId, EntityUid? gridId)

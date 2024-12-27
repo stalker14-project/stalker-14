@@ -1,9 +1,9 @@
 - type: entity
-  name: vz. 61 Scorpio
+  name: vz. 61 Скорпіон
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: STWeaponSMGViper
-  description: Iconic Czech compact 9x18 SMG, which can be used as a secondary weapon, as it can be easily controlled with one hand.
+  description: Культова чеська компактна гвинтівка 9х18 SMG, яку можна використовувати як вторинну зброю, оскільки вона легко управляється однією рукою.
   components:
     - type: STWeight
       self: 2.4
@@ -25,7 +25,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Vz61Mag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -34,7 +34,7 @@
             tags:
               - MagazineVz61
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -46,7 +46,7 @@
             tags:
               - STWeaponModuleSMGGrip
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge918PGJ
           priority: 1
           whitelist:

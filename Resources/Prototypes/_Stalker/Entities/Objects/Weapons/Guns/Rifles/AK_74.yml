@@ -1,9 +1,9 @@
 - type: entity
-  name: AK-74
+  name: АК-74
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK74
-  description: AK-74 - an immortal classic with wooden fittings.
+  description: АК-74 - безсмертна класика з дерев'яною фурнітурою.
   components:
   - type: STWeight
     self: 3.7
@@ -18,7 +18,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base545Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -27,19 +27,19 @@
           tags:
             - Magazine545
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 3
         whitelist:
           tags:
             - STWeaponModuleRifleSilencer
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleRifleScope
       gun_chamber:
-        name: Chamber
+        name: Патронник
         priority: 1
         whitelist:
           tags:
@@ -53,9 +53,9 @@
 
 - type: entity
   parent: STWeaponRifleStalkerAK74
-  name: AK-74M
+  name: АК-74М
   id: STSTWeaponRifleStalkerAK74M
-  description: Equipped with a left-folding plastic buttstock, shock-resistant plastic fittings and a universal Dovetail rail for mounting sights, thus replacing several versions of the machine gun at once. Uses the 5.45x39 caliber
+  description: Оснащений пластиковим прикладом, що складається вліво, ударостійкою пластиковою фурнітурою та універсальною планкою типу "ластівчин хвіст" для встановлення прицільних пристосувань, що дозволяє замінити одразу кілька варіантів кулемета. Використовує набій 5.45x39
   components:
   - type: Gun
     angleIncrease: 4.5
@@ -70,11 +70,11 @@
 
 
 - type: entity
-  name: Saiga 5.45
+  name: Сайга 5.45
   suffix: ST
   parent: STSTWeaponRifleStalkerAK74M
   id: STWeaponRifleStalkerSaiga545
-  description: AK-74M with fixed stock and single fire mode - civilian version.
+  description: АК-74М з фіксованим прикладом та одиночним режимом стрільби - цивільна версія.
   components:
     - type: Gun
       fireRate: 3
@@ -83,4 +83,4 @@
         - SemiAuto
 
 
-## Скинчики
+## Скінчики

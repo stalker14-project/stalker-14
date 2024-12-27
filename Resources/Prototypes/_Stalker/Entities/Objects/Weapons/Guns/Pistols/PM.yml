@@ -1,9 +1,9 @@
 - type: entity
   parent: STBaseWeaponPistol
   id: WeaponPistolStalkerPM
-  name: Pmm
+  name: ПМ
   suffix: ST
-  description: This is a Soviet-made pistol common in the Zone. It is unlikely that you will find a more affordable and unpretentious weapon for a novice stalker.
+  description: Це пістолет радянського виробництва, поширений у Зоні. Навряд чи ви знайдете більш доступну і невибагливу зброю для сталкера-початківця.
   components:
   - type: STWeight
     self: 0.7
@@ -34,7 +34,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: BasePMMag
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -49,7 +49,7 @@
           tags:
             - STModuleAutoSear
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem: Cartridge918PGJ
         priority: 1
         whitelist:
@@ -68,13 +68,13 @@
     minAngle: -5
     maxAngle: -25
 
-# REDO-MODULES
+# РЕДО-МОДУЛІ
 - type: entity
   parent: WeaponPistolStalkerPM
   id: WeaponPistolStalkerPMModifed
-  name: PMM 9x19
+  name: ПМ 9x19
   suffix: ST
-  description: The PMm pistol is now chambered in 9x19 on the Glock-19 magazine, making it more comfortable and increasing the rate of fire. Recoil and bullet speed have suffered slightly.
+  description: Пістолет ПМ тепер має патрон 9х19 від магазину Глок-19, що робить його більш зручним та підвищує скорострільність. Віддача та швидкість кулі дещо зменшилися.
   components:
     - type: STWeight
       self: 1.3
@@ -95,7 +95,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem:
           insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -104,7 +104,7 @@
             tags:
               - MagazineGlock
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:

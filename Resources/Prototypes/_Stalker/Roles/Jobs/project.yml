@@ -1,8 +1,8 @@
 - type: job
   id: StalkerProjectPawn
-  name: Project Investigator
+  name: Дослідник проекту
   icon: project-1
-  description: They will do what the Algorithm tells them to do.
+  description: Вони будуть робити те, що скаже їм Алгоритм.
   playTimeTracker: JobProjectPawn
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: ProjectPawnGear
-  supervisors: Вы подчиняетесь всему Алгоритму «Проекта», а также Оркестратору «Проекта»
+  supervisors: Ви підкоряєтеся всьому Алгоритму "Проекта", а також Оркестратору "Проекта"
   special:
     - !type:AddComponentSpecial
       components:
@@ -50,9 +50,9 @@
 
 - type: job
   id: StalkerProjectOrchestrator
-  name: Project Orchestrator
+  name: Оркестратор проекту
   icon: project-3
-  description: Secret X
+  description: Таємниця X
   playTimeTracker: JobProjectOrchestrator
   whitelisted: true
   requirements:
@@ -64,7 +64,7 @@
       - Human
       - Dwarf
   startingGear: ProjectOrchestratorGear
-  supervisors: Вы управляете всем Алгоритмом «Проекта», ваша обьязанность - направлять свой «Проект» в нужное место.
+  supervisors: Ви керуєте всім Алгоритмом "Проекту", ваш обов'язок - спрямовувати свій "Проект" у потрібне місце.
   special:
     - !type:AddComponentSpecial
       components:

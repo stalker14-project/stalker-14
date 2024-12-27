@@ -1,15 +1,15 @@
 - type: job
   id: Doctor
-  name: Doctor
+  name: Лікарь
   icon: medbeysprite
-  description: They save people by sacrificing their own strength.
+  description: Вони рятують людей, жертвуючи власними силами.
   playTimeTracker: JobDoctor
   requirements:
     - !type:RoleTimeRequirement
       role: JobDoctor
       time: 1
   startingGear: DoctorStalkerGear
-  supervisors: Вы подчиняетесь Главному Врачу.
+  supervisors: Ви підпорядковуєтеся Головному Лікарю.
   special:
     - !type:AddComponentSpecial
       components:
@@ -29,16 +29,16 @@
 
 - type: job
   id: HeadDoctor
-  name: Chief Physician
+  name: Головний лікар
   icon: medbeysprite
-  description: Manages the medical staff while providing assistance to those in need.
+  description: Керує медичним персоналом під час надання допомоги тим, хто її потребує.
   playTimeTracker: JobHeadDoctor
   requirements:
     - !type:RoleTimeRequirement
       role: JobHeadDoctor
       time: 1
   startingGear: DoctorStalkerGear
-  supervisors: Вы подчиняетесь мэру города "Чернобыль - 4"
+  supervisors: Ви підпорядковуєтеся меру міста "Чорнобиль - 4"
   special:
     - !type:AddComponentSpecial
       components:

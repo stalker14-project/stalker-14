@@ -1,5 +1,5 @@
 - type: entity
-  name: MP-40
+  name: МП-40
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: STWeaponSMGMP40
@@ -29,7 +29,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: MP40Mag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -38,7 +38,7 @@
             tags:
               - MagazineMP40
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -50,7 +50,7 @@
             tags:
               - STWeaponModuleSMGGrip
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:

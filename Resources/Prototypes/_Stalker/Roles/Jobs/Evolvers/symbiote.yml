@@ -1,8 +1,8 @@
 - type: job
   id: EvolverSymbioteMedium
-  name: Medium Symbiote
+  name: Середній симбіонт
   icon: symbiote
-  description: telepathy and psi-energy controller
+  description: контролер телепатії та пси-енергії
   playTimeTracker: JobEvolverSymbioteMedium
   requirements:
     - !type:RoleTimeRequirement
@@ -17,7 +17,7 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverSymbioteMediumGear
-  supervisors: Изучасть и развивать Пси способности, сохранить Зону
+  supervisors: Вивчати і розвивати Псі здібності, зберегти Зону
   special:
     - !type:AddComponentSpecial
       components:
@@ -36,9 +36,9 @@
 
 - type: job
   id: EvolverSymbioteArchon
-  name: Archon Symbiote
+  name: Архонт-симбіонт
   icon: symbiote
-  description: the supreme symbiote, possessing absolute power over psi-energy and space
+  description: верховний симбіонт, що володіє абсолютною владою над пси-енергією і простором
   playTimeTracker: JobEvolverSymbioteArchon
   requirements:
     - !type:RoleTimeRequirement
@@ -53,7 +53,7 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverSymbioteArchonGear
-  supervisors: Защищать Зону, контролируя пси-пространство и управляя симбиотами.
+  supervisors: Захищати Зону, контролюючи пси-простір і керуючи симбіотами.
   special:
     - !type:AddComponentSpecial
       components:

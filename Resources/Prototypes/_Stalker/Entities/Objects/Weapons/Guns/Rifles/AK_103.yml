@@ -1,9 +1,9 @@
 - type: entity
-  name: AK-103
+  name: АК-103
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK103
-  description: The most successful AK of our time in 7.62x39. In shooting, it surpassed and destroyed the AK-12.
+  description: Найуспішніший АК нашого часу під набій 7.62х39. У стрільбі він перевершив і знищив АК-12.
   components:
   - type: STWeight
     self: 3.6
@@ -25,7 +25,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base739Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -34,19 +34,19 @@
           tags:
             - Magazine739
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 3
         whitelist:
           tags:
             - STWeaponModuleRifleSilencer
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleRifleScope
       gun_chamber:
-        name: Chamber
+        name: Патронник
         priority: 1
         whitelist:
           tags:
@@ -55,8 +55,8 @@
 - type: entity
   parent: STWeaponRifleStalkerAK103
   id: STWeaponRifleAK103kamo
-  name: AK-103 special
-  description: A greatly improved AK-103. Someones personal weapon, handled with care.
+  name: АК-103 спеціальний
+  description: Значно покращений АК-103. Чиясь особиста зброя, з якою треба поводитися обережно.
   suffix: ST, Скін
   components:
   - type: Clothing

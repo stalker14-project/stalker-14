@@ -96,10 +96,8 @@
   name: Генерал МВС
   description: ви, генерал МВС, вам підрорядковуються усі підрозділи, на території ЧАЗВ.
   playTimeTracker: JobGeneralMVC
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobSergantMVC
-      time: 14400 #1hrs
     - !type:SpeciesRequirement
         inverted: false
         species:
@@ -195,7 +193,8 @@
     id: StalkerPDAAgent
     pocket1: STJobMilitaryIDCard
     pocket2: PassportSBU
- # Бандити
+
+# Бандити
 - type: job
   id: BanditRookie
   name: Бандит Новачок
@@ -710,7 +709,6 @@
   name: Новачок Чистого Неба
   description: Ви пам'ятаєте, як сюди потрапили?
   playTimeTracker: JobRookieClearsky
-  whitelisted: true
   requirements:
     - !type:SpeciesRequirement
         inverted: false

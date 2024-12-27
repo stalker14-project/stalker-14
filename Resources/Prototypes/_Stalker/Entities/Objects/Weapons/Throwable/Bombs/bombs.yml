@@ -1,6 +1,6 @@
 - type: entity
-  name: Bomb Base
-  description: Explosives go BOOM!
+  name: Бомбардувальна база
+  description: Вибухівка вибухає!
   abstract: true
   parent: BaseItem
   id: BaseBomb
@@ -76,14 +76,14 @@
     - type: Craftable
 
 - type: entity
-  name: dynamite stick with fuse
-  description: A stick of dynamite with a fuse is a compact weapon that can have a devastating effect.
+  name: динамітна шашка із запалом
+  description: Динамічна шашка із запалом - це компактна зброя, яка може мати руйнівний ефект.
   parent: BaseBomb
   id: DynamiteOne
 
 - type: entity
-  name: dynamite with two sticks
-  description: Dynamite with two sticks tied with duct tape is an improved version of the classic dynamite, which increases its destructive power and effectiveness in combat conditions.
+  name: динаміт з двома паличками
+  description: Динаміт з двома паличками, перев'язаними скотчем, є вдосконаленою версією класичного динаміту, що збільшує його руйнівну силу та ефективність у бойових умовах.
   parent: BaseBomb
   id: DynamiteTwo
   components:
@@ -146,8 +146,8 @@
     - type: Craftable
 
 - type: entity
-  name: dynamite with three sticks
-  description: An even more destructive and powerful version of an explosive weapon that can be used to carry out sabotage operations.
+  name: динаміт з трьома паличками
+  description: Ще більш руйнівна і потужна версія вибухової зброї, яку можна використовувати для проведення диверсійних операцій.
   parent: BaseBomb
   id: DynamiteThree
   components:
@@ -210,8 +210,8 @@
     - type: Craftable
 
 - type: entity
-  name: dynamite with four checkers
-  description: This is the most destructive and powerful version of explosive weapons, designed for a wide range of military and sabotage operations.
+  name: динаміт з чотирма шашками
+  description: Це найбільш руйнівний і потужний варіант вибухової зброї, призначений для широкого спектру військових і диверсійних операцій.
   parent: BaseBomb
   id: DynamiteFour
   components:
@@ -274,8 +274,8 @@
     - type: Craftable
 
 - type: entity
-  name: homemade explosives with a timer
-  description: Homemade explosives on a timer, a complex design because you had to convert the anomaly detector into a timer. Be careful, it is not set up correctly.
+  name: саморобна вибухівка з таймером
+  description: Саморобна вибухівка на таймері, складна конструкція, оскільки довелося перетворити детектор аномалій на таймер. Будьте обережні, він налаштований неправильно.
   parent: BasePlasticExplosive
   id: StalkerTimerBombDynamite
   suffix: ST, Бомба
@@ -310,11 +310,11 @@
   - type: ExplodeOnTrigger
 
 - type: entity
-  name: FL-2 explosives
-  description: The latest version of high-quality explosives on a timer and on a control sensor, hits the enemy with a powerful blast wave.
+  name: Вибухівка FL-2
+  description: Новітня версія високоякісної вибухівки на таймері та на датчику управління, вражає ворога потужною вибуховою хвилею.
   parent: BasePlasticExplosive
   id: StalkerDistBomb
-  suffix: ST, Бомба, Ивент
+  suffix: ST, Бомба, Івент
   components:
   - type: Item
     size: Normal

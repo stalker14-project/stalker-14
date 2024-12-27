@@ -1,8 +1,8 @@
 - type: entity
-  name: Machine Trigger (20%)
+  name: Тригер Машини (20%)
   id: STCarsTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -49,7 +49,7 @@
         - Moskvich
 
 - type: entity
-  name: Truck Trigger (20%)
+  name: Тригер Вантажівки (20%)
   id: STTrucksTrigger
   parent: STCarsTrigger
   components:

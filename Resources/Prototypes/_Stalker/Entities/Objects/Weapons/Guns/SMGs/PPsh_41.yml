@@ -1,9 +1,9 @@
 - type: entity
-  name: PPSh-41
+  name: ППШ-41
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: STWeaponPPsh
-  description: Iconic submachine gun from the Second World War, chambered for 7.62x25.
+  description: Культовий пістолет-кулемет часів Другої світової війни під набій 7.62x25.
   components:
     - type: STWeight
       self: 3.2
@@ -28,7 +28,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: BasePPSHMag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -37,7 +37,7 @@
             tags:
               - MagazinePPSh
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -49,7 +49,7 @@
             tags:
               - STWeaponModuleSMGGrip
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:

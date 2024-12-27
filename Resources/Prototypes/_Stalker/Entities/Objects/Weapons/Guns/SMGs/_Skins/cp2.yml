@@ -1,10 +1,10 @@
-# Кастомка серафимов, возможно в будущем станет общедоступной
+# Кастомка серафимів, можливо в майбутньому стане загальнодоступною
 - type: entity
-  name: СР-2 «Вереск»
+  name: СР-2 "Верес"
   suffix: ST, Скін
   parent: STBaseWeaponSubMachineGun
   id: STWeaponSMGStalkerCP2Veresk
-  description: Компактный пистолет-пулемет, разработанный под мощный бронебойный патрон 9x21мм по заказу ФСБ и ФСО РФ. Этот пистолет-пулемёт является кустарной модификацией, позволяющей вести огонь калибром 9х19 Парабеллум.
+  description: Компактний пістолет-кулемет, розроблений під потужний бронебійний патрон 9x21мм на замовлення ФСБ і ФСО РФ. Цей пістолет-кулемет є кустарною модифікацією, що дозволяє вести вогонь калібром 9х19 Парабелум.
   components:
     - type: STWeight
       self: 2.2
@@ -29,7 +29,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: VityazMag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -38,7 +38,7 @@
             tags:
               - MagazineVityaz
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:
@@ -46,7 +46,7 @@
               - Cartridge919
 
 - type: entity
-  name: СР-2 «Вереск» серафимов
+  name: СР-2 "Верес" серафимів
   parent: STWeaponSMGStalkerCP2Veresk
   id: STWeaponSMGStalkerCP2VereskSera
   components:
@@ -62,7 +62,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: VityazMag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -71,7 +71,7 @@
             tags:
               - MagazineVityaz
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:

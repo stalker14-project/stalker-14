@@ -194,7 +194,7 @@
   parent: NPCDoll
   id: NPCTourist
   name: Турист [→   ←]
-  description: Ддобра людина, за низькими цінами, буквально задарма продає спорядження. Також він готовий пожертвувати останню аптечку, щоб врятувати брата - сталкера.
+  description: Добра людина, за низькими цінами, буквально задарма продає спорядження. Також він готовий пожертвувати останню аптечку, щоб врятувати брата - сталкера.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Tourist.rsi
@@ -351,7 +351,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCIgorIvanovich
-  name: Igor Ivanovich [→ ←]
+  name: Ігор Іванович[→ ←]
   description: Ігор Іванович...
   components:
   - type: Sprite
@@ -924,7 +924,7 @@
     - Binary
     - Common
 
-# ПИТОМЦЫ
+# ВИХОВАНЦІ
 
 - type: entity
   parent: NPCDoll
@@ -988,7 +988,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCCustomRadioPlayer
-  name: Даниил Крутило [→   ←]
+  name: Даніїл Крутило [→   ←]
   description: Про нього практично нічого невідомо. Зроблено на замовлення для Дімочки
   suffix: НІП, ДОНАТ
   components:
@@ -1029,7 +1029,7 @@
   parent: NPCDoll
   id: NPCResearchInstitutesRechnov
   name: Проф. Речнов [→   ←]
-  description: Вірить у магію дружби, готовий обміняти ваш хабар на останні розробки від НДІ. Іноді вживані. Часто вживані.
+  description: Вірить у магію дружби, готовий обміняти ваш хабар на останні розробки від НДІ. Іноді вживаний. Часто вживаний.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Scientist.rsi
@@ -1076,12 +1076,12 @@
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
 
-# Скупщики дракоценностей
+# Скупники коштовностей
 
 - type: entity
   parent: NPCDoll
   id: NPCAlinaMorozova
-  name: Алина Морозова [→   ←]
+  name: Аліна Морозова [→   ←]
   description: Розкіш це не про гроші, це про вимоги до найкращого. Це відсутність компромісів для найвишуканіших споживачів.
   suffix: ST, скупка кращі ціни
   components:
@@ -1126,7 +1126,7 @@
   parent: NPCDoll
   id: NPCJuryIzvorotin
   name: Юрій Ізворотін[→   ←]
-  description: Скуповуємо коштовності. Слизький типтич. Інший би за братви з таким бізнесом не вижив.
+  description: Скуповуємо коштовності. Слизький типчик. Інший би за братви з таким бізнесом не вижив.
   suffix: ST, скупка середні ціни
   components:
   - type: Sprite
@@ -1237,7 +1237,7 @@
   id: NPCSabbatSerafim
   noSpawn: false
   name: Саббат [→   ←]
-  suffix: ST, Serafim, bar
+  suffix: ST, Serafim, бар
   description: Саббат, паладин, ветеран битв з Фальшивим Ідолом, який убив безліч рабів Ідола, зараз він допомагає в постачанні спорядження і відправляє провізію та медикаменти до північних ковени.
   components:
   - type: Sprite
@@ -1278,9 +1278,9 @@
 - type: entity
   parent: NPCDoll
   id: NPCAlekseiFilippov
-  name: Алексей Филиппов[→   ←]
+  name: Олексій Філіппов[→   ←]
   suffix: ST, Gruppirovki
-  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  description: Продає хороше спорядження для полювання і припаси дуже важливі для виживання в зоні.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Merc.rsi
@@ -1318,9 +1318,9 @@
 - type: entity
   parent: NPCDoll
   id: NPCFil
-  name: Фил[→   ←]
-  suffix: ST, bar
-  description: Продавец патронов множества калибров малого и среднего пробития.
+  name: Філ[→   ←]
+  suffix: ST, бар
+  description: Продавець патронів безлічі калібрів малого і середнього пробиття.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Merc.rsi
@@ -1358,9 +1358,9 @@
 - type: entity
   parent: NPCDoll
   id: NPCRasputin
-  name: Распутин[→   ←]
-  suffix: ST, bar
-  description: Продавец патронов множества калибров высокого броневого пробития.
+  name: Распутін[→   ←] # поміняти нахуй
+  suffix: ST, бар
+  description: Продавець патронів безлічі калібрів високого броньового пробиття.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/BarahloSimp.rsi

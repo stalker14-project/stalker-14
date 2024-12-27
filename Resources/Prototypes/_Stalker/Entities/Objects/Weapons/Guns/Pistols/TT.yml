@@ -1,9 +1,9 @@
 - type: entity
   parent: STBaseWeaponPistol
   id: WeaponPistolStalkerTT
-  name: Tula Tokarev
+  name: Тула Токарєв
   suffix: ST
-  description: The legendary 7.62x25 caliber pistol, developed in the USSR and which has seen many wars.
+  description: Легендарний пістолет калібру 7.62х25, розроблений в СРСР, який пройшов багато війн.
   components:
   - type: STWeight
     self: 0.7
@@ -32,7 +32,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: TTMag
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -47,7 +47,7 @@
           tags:
             - STModuleAutoSear
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem: Cartridge725PGL
         priority: 1
         whitelist:

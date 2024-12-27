@@ -2,7 +2,7 @@
   name: TEC-9
   parent: STBaseWeaponPistol
   id: WeaponStalkerPistolTec9
-  description: a semi-automatic pistol developed in Sweden in the 1980s and released on the market in 1984.
+  description: напівавтоматичний пістолет, розроблений у Швеції у 1980-х роках і випущений на ринок у 1984 році.
   suffix: ST
   components:
   - type: STWeight
@@ -27,7 +27,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: BaseTEC9Mag
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -42,7 +42,7 @@
           tags:
             - STModuleAutoSear
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem: Cartridge919PSOGJ
         priority: 1
         whitelist:

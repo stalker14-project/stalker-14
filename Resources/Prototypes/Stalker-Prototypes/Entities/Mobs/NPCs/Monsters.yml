@@ -40,10 +40,7 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodMutantMeat
-      amount: 2
-    - id: FoodStrangeMeat
-    - id: MutantPartFleshEye
+        - id: MutantPartFleshEye
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: CombatMode
@@ -125,9 +122,10 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodStrangeMeat
-      amount: 3
-    - id: BloodsuckerTentacles
+        - id: MutantPartBloodsuckerTentacles
+        - id: CraftHideBloodSucker
+          maxAmount: 1
+          prob: 0.30
   - type: Bloodstream
     bloodMaxVolume: 500
   - type: CombatMode
@@ -209,12 +207,12 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: MutantPartBlindDogTail
-      amount: 1
-      prob: 0.7
-    - id: FoodMeatDog
-      maxAmount: 2
-      prob: 0.7
+        - id: MutantPartBlindDogTail
+          amount: 1
+          prob: 0.7
+        - id: FoodMeatDog
+          maxAmount: 2
+          prob: 0.7
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: CombatMode
@@ -280,9 +278,7 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodStrangeMeat
-      amount: 2
-    - id: MutantPartSnorkFoot
+        - id: MutantPartSnorkFoot
   - type: Bloodstream
     bloodMaxVolume: 200
   - type: CombatMode
@@ -407,10 +403,18 @@
         - id: Poison
     - type: Butcherable
       spawned:
-        - id: FoodStrangeMeat
-          amount: 3
-        - id: ControlerBrain
-          amount: 1
+      - id: Hryvnias500
+        amount: 2
+        prob: 0.2
+      - id: Hryvnias1000
+        amount: 1
+        prob: 0.1
+      - id: Hryvnias100
+        amount: 3
+        prob: 0.8
+      - id: Hryvnias50
+        prob: 0.4
+        amount: 2
     - type: MeleeWeapon
       soundHit:
         path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -621,9 +625,7 @@
         Base: dead
   - type: Butcherable
     spawned:
-    - id: FoodStrangeMeat
-      amount: 1
-    - id: RatTail
+    - id: FoodMeatRat
       amount: 1
   - type: Vocal
     sounds:

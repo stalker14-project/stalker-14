@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseItem
   id: StalkerBaseBallBat
-  name: baseball bat
-  description: A robust baseball bat.
+  name: бейсбольна біта
+  description: Міцна бейсбольна бита.
   suffix: ST, Melee
   abstract: true
   components:
@@ -43,8 +43,8 @@
 - type: entity
   parent: StalkerBaseBallBat
   id: StalkerBallBat
-  name: baseball bat
-  description: A robust baseball bat.
+  name: бейсбольна біта
+  description: Міцна бейсбольна бита.
   suffix: ST
   components:
     - type: Sprite
@@ -67,8 +67,8 @@
 - type: entity
   parent: StalkerBaseBallBat
   id: SpikyBallBat
-  name: spiky ball bat
-  description: Bonk!
+  name: шипаста бейсбольна біта
+  description: Бонк!
   suffix: ST
   components:
     - type: Sprite
@@ -90,12 +90,12 @@
           Blunt: 10
           Structural: 15
 
-# skins
+# скіни
 - type: entity
   parent: StalkerBallBat
   id: STBatMolitoslov
   name: молитослов
-  description: Cборник молитв или молитвенных песнопений, текстов, с помощью которых люди обращаются к Богу.
+  description: Збірка молитов або молитовних піснеспівів, текстів, за допомогою яких люди звертаються до Бога.
   suffix: ST
   components:
     - type: Sprite

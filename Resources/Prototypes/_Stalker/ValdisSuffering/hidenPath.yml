@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseCraftItem
   id: BypassCard
-  name: Gatekeeper access card
-  description: Card to unlock the Antechamber gateway in the subway. Opens it for 30 seconds.
+  name: Картка доступу охоронця
+  description: Картка для розблокування шлюзу передньої камери в метро. Відкриває її на 30 секунд.
   suffix: ST, card
   components:
     - type: Sprite
@@ -25,17 +25,17 @@
 - type: entity
   parent: BlastDoor
   id: BypassDeactivated
-  name: Gatekeeper's airlock
-  description: A special one-time card is required to unlock this gateway.
+  name: Шлюз Вартового
+  description: Для розблокування цього шлюзу потрібна спеціальна одноразова картка.
   components:
   - type: Craftable
 
 
 - type: entity
   id: BypassActivated
-  name: Gatekeeper's airlock
+  name: Шлюз Вартового
   parent: BlastDoorOpen
-  description: A special one-time card is needed to unlock this gateway. Unlocked.
+  description: Для розблокування цього шлюзу потрібна спеціальна одноразова картка. Розблокований.
   suffix: ST
   categories: [ HideSpawnMenu ]
   components:
@@ -44,12 +44,12 @@
   - type: SpawnOnDespawn
     prototype: BypassDeactivated
 
-# Билет на вертолёт до Рыжего леса
+# Квиток на вертоліт до Рудого лісу
 - type: entity
   parent: BypassCard
   id: STHelicopterToRedForestTicket
-  name: helicopter ticket to the red forest
-  description: helicopter ticket to the red forest. Resale and counterfeiting of tickets is prosecuted by law.
+  name: квиток на вертоліт до рудого лісу
+  description: квиток на вертоліт до рудого лісу. Перепродаж та підробка квитків переслідується законом.
   suffix: ST, card
 
 - type: lightCraftingRecipe
@@ -64,8 +64,8 @@
 - type: entity
   parent: BypassDeactivated
   id: STHelicopterBypassDeactivated
-  name: helicopter airlock
-  description: to unlock the gateway you need to buy a ticket
+  name: вертолітний шлюз
+  description: для розблокування шлюзу потрібно купити квиток
   components:
   - type: Craftable
 
@@ -73,8 +73,8 @@
 - type: entity
   parent: BypassActivated
   id: STHelicopterBypassActivated
-  name: helicopter airlock
-  description: to unlock the gateway you need to buy a ticket Unlocked.
+  name: вертолітний шлюз
+  description: Щоб розблокувати шлюз, потрібно купити квиток. Розблоковано.
   suffix: ST
   categories: [ HideSpawnMenu ]
   components:
@@ -84,12 +84,12 @@
     prototype: STHelicopterBypassDeactivated
 
 
-# Обменник баксов
+# Обмінник баксів
 - type: entity
   parent: BypassCard
   id: DollarBypassCard
-  name: black market access card
-  description: Access card to the dollar exchanger in the dungeons of Ch-4, opens the door for 5 minutes.
+  name: картка доступу до чорного ринку
+  description: Картка доступу до доларового обмінника в підземеллях Ч-4, відкриває двері на 5 хвилин.
   suffix: ST, card
 
 - type: lightCraftingRecipe
@@ -101,12 +101,11 @@
     secondIngredient: DollarBypassCard
     time: 2
 
-
 - type: entity
   parent: BypassDeactivated
   id: DollarBypassDeactivated
-  name: exchanger's hermetic airlock
-  description: A special one-time card is required to unlock this gateway.
+  name: герметичний шлюз теплообмінника
+  description: Для розблокування цього шлюзу потрібна спеціальна одноразова картка.
   components:
   - type: Craftable
 
@@ -114,8 +113,8 @@
 - type: entity
   parent: BypassActivated
   id: DollarBypassActivated
-  name: exchanger's hermetic airlock
-  description: A special one-time card is needed to unlock this gateway. Unlocked.
+  name: герметичний шлюз теплообмінника
+  description: Для розблокування цього шлюзу потрібна спеціальна одноразова картка. Розблоковано.
   suffix: ST
   categories: [ HideSpawnMenu ]
   components:

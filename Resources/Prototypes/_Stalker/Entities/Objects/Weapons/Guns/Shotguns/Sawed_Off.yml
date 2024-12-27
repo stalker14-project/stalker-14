@@ -1,10 +1,10 @@
 
 
 - type: entity
-  name: Sawed-off Shotgun
+  name: Обріз
   parent: STBaseWeaponShotgun
   id: STWeaponShotgunSawn
-  description: A sawed-off shotgun with horizontal barrels. Much more compact and lighter than a double-barreled shotgun, but only effective in close combat. One of the most common weapons among beginners.
+  description: Обрізна рушниця з горизонтальним розташуванням стволів. Набагато компактніша і легша за двостволку, але ефективна лише в ближньому бою. Одна з найпоширеніших видів зброї серед новачків.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
@@ -29,9 +29,9 @@
 - type: entity
   parent: STWeaponShotgunSawn
   id: WeaponShotgunAnomalySawedOff
-  name: anomalous cut-off
+  name: Аномальний обріз
   suffix: ST, Дробовик, Аномальне
-  description: A sawed-off shotgun with horizontal barrels. Much more compact and lighter than a double-barreled shotgun, but only effective in close combat. One of the most common weapons among beginners.
+  description: Обрізна рушниця з горизонтальним розташуванням стволів. Набагато компактніша і легша за двостволку, але ефективна лише в ближньому бою. Одна з найпоширеніших видів зброї серед новачків.
   components:
     - type: STWeight
       self: 1

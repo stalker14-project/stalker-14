@@ -1,8 +1,8 @@
 - type: job
   id: Police
-  name: policeman
+  name: поліцейський
   icon: police
-  description: They are responsible for ensuring security and monitoring compliance with laws in the changing room.
+  description: Вони відповідають за забезпечення безпеки та контроль за дотриманням законів у роздягальні.
   playTimeTracker: JobPolice
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: PoliceGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: Ви підкоряєтеся старшим за званням.
   special:
     - !type:AddComponentSpecial
       components:

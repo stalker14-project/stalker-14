@@ -1,9 +1,9 @@
 - type: entity
-  name: AS-VAL
+  name: АС «Вал»
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerVAL
-  description: Automatic special for rare and lethal caliber 9x39.
+  description: Автоматичний спеціальний для рідкісного та смертоносного калібру 9х39.
   components:
     - type: STWeight
       self: 3
@@ -25,7 +25,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Base939Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -34,19 +34,19 @@
             tags:
               - Magazine939
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleRifleSilencer
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleRifleScope
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:
@@ -54,13 +54,13 @@
               - Cartridge939
 
 #
-# Скины
+# Скіни
 #
 - type: entity
-  name: AS-VAL Celebra
+  name: АС «Вал» Селебра
   parent: STWeaponRifleStalkerVAL
   id: STSkinVALPoiskSelebra
-  description: Automatic special for rare and lethal caliber 9x39.
+  description: Автоматичний спеціальний для рідкісного та смертоносного калібру 9х39.
   suffix: ST, Пошук, Скін
   components:
     - type: Clothing

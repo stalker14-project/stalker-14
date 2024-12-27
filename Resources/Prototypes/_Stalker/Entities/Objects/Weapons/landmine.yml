@@ -1,8 +1,8 @@
 - type: entity
-  name: PFM-1 Lepestok mine
+  name: міна "Лепесток" ПФМ-1
   parent: BaseLandMine
   suffix: ST
-  description: One leg here, one there.
+  description: Одна нога тут, інша там.
   id: LandMineExplosiveStalker
   components:
   - type: ExplodeOnTrigger
@@ -20,8 +20,8 @@
 - type: entity
   parent: BaseItem
   id: LandMineExplosiveStalkerCompact
-  name: unarmed mine PFM-1 Lepestok
-  description: One leg here, one there. To install, place on the ground and lightly dig in with a sapper shovel.
+  name: неозброєна міна ПФМ-1 "Лепесток"
+  description: Одна нога тут, інша там. Щоб встановити, покладіть на землю і злегка вкопайте саперною лопатою.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/lepestok.rsi
@@ -32,7 +32,7 @@
 
 - type: entity
   id: RandomLandMineExplosiveStalker
-  name: spawner mine PFM-1 Lepestok (box, 5% chance, resources)
+  name: спавнер міни PFM-1 «Лепесток» (коробка, шанс 5%, ресурси)
   suffix: ST
   parent: FlexibleMarker
   components:

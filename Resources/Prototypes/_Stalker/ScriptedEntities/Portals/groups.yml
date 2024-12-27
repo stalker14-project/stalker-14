@@ -1,4 +1,4 @@
-﻿####################################Одиночки
+﻿####################################Одинаки
 
 - type: entity
   parent: MapTeleportBase
@@ -10,6 +10,7 @@
       portalName: Cordon-DerebasStalker
     - type: AccessReader
       access: [["Stalker"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-DerebasStalkerUncollide
@@ -19,7 +20,7 @@
       allowAll: false
       portalName: Cordon-DerebasStalker
 
-####################################Общий
+####################################Загальний
 
 - type: entity
   parent: MapTeleportBase
@@ -29,6 +30,7 @@
     - type: NewMapTeleport
       allowAll: true
       portalName: Bar-BarStalker
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Bar-BarStalkerUncollide
@@ -38,7 +40,7 @@
       allowAll: false
       portalName: Bar-BarStalker
 
-####################################Монолит
+####################################Моноліт
 
 - type: entity
   parent: MapTeleportBase
@@ -50,6 +52,7 @@
       portalName: Cordon-BarierBase
     - type: AccessReader
       access: [["Monolith"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-BarierBaseUncollide
@@ -61,7 +64,7 @@
     - type: AccessReader
       access: [["Monolith"]]
 
-####################################Бандиты
+####################################Бандити
 
 - type: entity
   parent: MapTeleportBase
@@ -73,6 +76,7 @@
       portalName: Cordon-SvalkaBand
     - type: AccessReader
       access: [["Bandit"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-SvalkaBandUncollide
@@ -83,7 +87,8 @@
       portalName: Cordon-SvalkaBand
     - type: AccessReader
       access: [["Bandit"]]
-####################################Военные
+
+####################################Військові
 - type: entity
   parent: MapTeleportBase
   id: Cordon-MilBase
@@ -153,7 +158,8 @@
       portalName: Purgatory-Les
     - type: AccessReader
       access: [["SciBase"]]
-####################################Серафимы
+
+####################################Серафими
 - type: entity
   parent: MapTeleportBase
   id: Base-Sera
@@ -164,6 +170,7 @@
       portalName: Base-Sera
     - type: AccessReader
       access: [["Seraphims"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Base-SeraUncollide
@@ -172,7 +179,8 @@
     - type: NewMapTeleport
       allowAll: false
       portalName: Base-Sera
-####################################Ренегаты
+
+####################################Ренегати
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Rene1
@@ -183,6 +191,7 @@
       portalName: Cordon-Rene1
     - type: AccessReader
       access: [["Renegat"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ReneUncollide1
@@ -193,6 +202,7 @@
       portalName: Cordon-Rene1
     - type: AccessReader
       access: [["Renegat"]]
+
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Rene2
@@ -203,6 +213,7 @@
       portalName: Cordon-Rene2
     - type: AccessReader
       access: [["Renegat"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ReneUncollide2
@@ -213,6 +224,7 @@
       portalName: Cordon-Rene2
     - type: AccessReader
       access: [["Renegat"]]
+
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Rene3
@@ -223,6 +235,7 @@
       portalName: Cordon-Rene3
     - type: AccessReader
       access: [["Renegat"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ReneUncollide3
@@ -233,6 +246,7 @@
       portalName: Cordon-Rene3
     - type: AccessReader
       access: [["Renegat"]]
+
 - type: entity
   parent: MapTeleportBase
   id: Rene-Svalka
@@ -243,6 +257,7 @@
       portalName: Rene-Svalka
     - type: AccessReader
       access: [["Renegat"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Rene-SvalkaUncollide
@@ -254,7 +269,7 @@
     - type: AccessReader
       access: [["Renegat"]]
 
-########################################## Грех
+########################################## Гріх
 
 - type: entity
   parent: MapTeleportBase
@@ -267,6 +282,7 @@
       portalName: Cordon-Oazis
     - type: AccessReader
       access: [["Greh"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-OazisUncollide
@@ -278,6 +294,7 @@
       portalName: Cordon-Oazis
     - type: AccessReader
       access: [["Greh"]]
+
 - type: entity
   parent: MapTeleportBase
   id: Garbage-Oazis
@@ -286,6 +303,7 @@
   components:
     - type: NewMapTeleport
       portalName: Garbage-Oazis
+
 - type: entity
   parent: MapTeleportBase
   id: RedForest-Oazis
@@ -295,7 +313,7 @@
     - type: NewMapTeleport
       portalName: RedForest-Oazis
 
-###################################### Чистое небо
+###################################### Чисте Небо
 
 - type: entity
   parent: MapTeleportBase
@@ -308,6 +326,7 @@
       portalName: Cordon-Top
     - type: AccessReader
       access: [["CN"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-TopUncollide
@@ -333,6 +352,7 @@
       portalName: Cordon-TemnajaLoshina
     - type: AccessReader
       access: [["ProjectPawn"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-TemnajaLoshinaUncollide
@@ -345,7 +365,7 @@
     - type: AccessReader
       access: [["ProjectPawn"]]
 
-####################################Отступники
+####################################Відступники
 
 - type: entity
   parent: MapTeleportBase
@@ -357,6 +377,7 @@
       portalName: Cordon-Otstupniki
     - type: AccessReader
       access: [["Deserter"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-OtstupnikiUncollide
@@ -368,7 +389,7 @@
     - type: AccessReader
       access: [["Deserter"]]
 
-## Циркачи
+## Циркачі
 - type: entity
   parent: MapTeleportBase
   id: Cordon-Circusbase
@@ -380,7 +401,7 @@
     - type: AccessReader
       access: [["Circus"]]
 
-####################################Наёмники
+####################################Найманці
 
 - type: entity
   parent: MapTeleportBase
@@ -392,6 +413,7 @@
       portalName: Cordon-Merc
     - type: AccessReader
       access: [["Merc"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-MercBandUncollide
@@ -403,7 +425,7 @@
     - type: AccessReader
       access: [["Merc"]]
 
-####################################Механики
+####################################Механіки
 
 - type: entity
   parent: MapTeleportBase
@@ -416,6 +438,7 @@
       portalName: Lobby-Mechanic
     - type: AccessReader
       access: [["Mechanic"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Lobby-MechanicBandUncollide
@@ -428,7 +451,7 @@
     - type: AccessReader
       access: [["Mechanic"]]
 
-###################################Поиск
+###################################Пошук
 
 - type: entity
   parent: MapTeleportBase
@@ -440,6 +463,7 @@
       portalName: Cordon-Poisk
     - type: AccessReader
       access: [["Poisk"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-PoiskUncollide
@@ -463,6 +487,7 @@
       portalName: Cordon-Project
     - type: AccessReader
       access: [["Project"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-ProjectUncollide
@@ -474,7 +499,7 @@
     - type: AccessReader
       access: [["Project"]]
 
-###################################Нейтралы
+###################################Нейтрали
 
 - type: entity
   parent: MapTeleportBase
@@ -498,7 +523,7 @@
     - type: AccessReader
       access: [["Neutral"]]
 
-####################################Жабы
+####################################Жаби
 
 - type: entity
   parent: MapTeleportBase

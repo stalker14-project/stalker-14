@@ -1,8 +1,8 @@
-# TODO: Add base rife settings
+# TODO: Додавання базових налаштувань гвинтівки
 - type: entity
   parent: STBaseWeaponGun
   id: STBaseWeaponRifle
-  name: A rifle
+  name: Гвинтівка
   abstract: true
   components:
     - type: RepositoryItem
@@ -43,7 +43,7 @@
       magState: mag
       steps: 1
       zeroVisible: true
-    # You need to declare visuals, to change icons depending on equipped modules
+    # Потрібно декларувати візуальні ефекти, змінювати іконки в залежності від встановлених модулів
     - type: STMuzzleVisuals
       muzzleState: muzzle
     - type: STScopeVisuals

@@ -1,8 +1,8 @@
 - type: job
   id: EvolverPackFang
-  name: Fang of the Pack
+  name: Ікло зграї
   icon: pack
-  description: A ferocious warrior of the pack, representing its wild power and primal instincts.
+  description: Лютий воїн зграї, що уособлює її дику силу та первісні інстинкти.
   playTimeTracker: JobEvolverPackFang
   requirements:
     - !type:RoleTimeRequirement
@@ -17,7 +17,7 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverPackFangGear
-  supervisors: Защищать стаю и расширять её территорию, действуя в первых рядах атак.
+  supervisors: Захищати зграю і розширювати її територію, діючи в перших рядах атак.
   special:
     - !type:AddComponentSpecial
       components:
@@ -47,9 +47,9 @@
 
 - type: job
   id: EvolverPackAlpha
-  name: Alpha Pack
+  name: Альфа зграї
   icon: pack
-  description: the leader of the pack, who controls its actions and protects its laws and order.
+  description: ватажок зграї, який контролює її дії та захищає її закони і порядок.
   playTimeTracker: JobEvolverPackAlpha
   requirements:
     - !type:RoleTimeRequirement
@@ -64,7 +64,7 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverPackAlphaGear
-  supervisors: Поддерживать и укреплять власть в стае, координируя её нападения и защиту.
+  supervisors: Підтримувати і зміцнювати владу в зграї, координуючи її напади і захист.
   special:
     - !type:AddComponentSpecial
       components:

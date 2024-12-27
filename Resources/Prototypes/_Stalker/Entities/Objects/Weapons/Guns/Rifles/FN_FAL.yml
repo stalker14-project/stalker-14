@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerFAL
-  description: Belgian iconic rifle chambered for 7.62x51. Single player only.
+  description: Культова бельгійська гвинтівка під набій 7.62x51. Тільки для одиночної стрільби.
   components:
     - type: STWeight
       self: 4.5
@@ -32,7 +32,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Base751Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -41,19 +41,19 @@
             tags:
               - Magazine751
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleRifleSilencerNato
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleRifleScopeNato
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:

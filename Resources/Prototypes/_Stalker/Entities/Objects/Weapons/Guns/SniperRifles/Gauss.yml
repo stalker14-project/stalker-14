@@ -46,13 +46,13 @@
   - type: ItemSlots
     slots:
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleSniperSight
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 1
         whitelist:
           tags:
@@ -65,8 +65,8 @@
 - type: entity
   parent: STBaseWeaponGauss
   id: STWeaponRifleGauss
-  name: Gauss Cannon
-  description: Secret developments
+  name: Гармата Гаусса
+  description: Секретні розробки
   suffix: ST
   components:
     - type: STWeight
@@ -97,7 +97,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: STMagazineGauss
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -106,7 +106,7 @@
             tags:
               - STMagazineGauss
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: STCartridgeGauss
           priority: 1
           whitelist:
@@ -123,9 +123,9 @@
 
 - type: entity
   id: STCartridgeGauss
-  name: Electro-magnetic charge
+  name: Електромагнітний заряд
   parent: BaseCartridge
-  description: Inserted into the battery, serves as a cartridge for the gauss gun
+  description: Вставляється в батарею, слугує патроном для гауссової гармати
   suffix: ST
   components:
     - type: Tag
@@ -145,7 +145,7 @@
 
 - type: entity
   id: STCartridgeGauss2
-  name: Overloaded Electro-Magnetic Charge
+  name: Перевантажений електромагнітний заряд
   parent: STCartridgeGauss
   components:
     - type: CartridgeAmmo
@@ -154,7 +154,7 @@
 
 - type: entity
   id: STBulletGauss
-  name: bullet gauss
+  name: куля гаусс
   parent: BaseBulletTrigger
   suffix: ST
   categories: [ HideSpawnMenu ]
@@ -173,7 +173,7 @@
           shader: unshaded
 
 - type: entity
-  name: bullet gauss 2
+  name: куля гаусс 2
   id: STBulletGauss2
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
@@ -205,9 +205,9 @@
 
 - type: entity
   id: STMagazineGauss
-  name: Gauss Cannon Battery
+  name: Гарматна батарея Гаусса
   parent: BaseItem
-  description: Consumes electromagnetic charges as ammunition
+  description: Використовує електромагнітні заряди як боєприпаси
   suffix: ST
   components:
     - type: Tag
@@ -237,7 +237,7 @@
 
 - type: entity
   id: STMagazineGauss2
-  name: Overloaded Gauss Cannon Battery
+  name: Перевантажена батарея гармати Гаусса
   parent: STMagazineGauss
   components:
     - type: BallisticAmmoProvider

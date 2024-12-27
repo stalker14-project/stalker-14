@@ -1,10 +1,10 @@
 
 - type: entity
-  name: Saiga-12
+  name: Сайга-12
   suffix: ST
   parent: STBaseWeaponShotgunAuto
   id: STWeaponShotgunSaiga12
-  description: Magazine semi-automatic shotgun based on AK - Saiga-12, a classic civilian weapon.
+  description: Магазинна самозарядна рушниця на базі АК - Сайга-12, класична цивільна зброя.
   components:
   - type: STWeight
     self: 3.6
@@ -41,7 +41,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base1270Mag
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -50,7 +50,7 @@
           tags:
             - MagazineSaiga
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem:
         priority: 3
         whitelist:
@@ -63,7 +63,7 @@
           tags:
             - STModuleAutoSear
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 1
         whitelist:
           tags:
@@ -80,14 +80,14 @@
   - type: Appearance
 
 #
-# Скины
+# Скіни
 #
 - type: entity
-  name: Saiga-12 Serafimov
+  name: Сайга-12 Серафимів
   suffix: ST, Скін
   parent: STWeaponShotgunSaiga12
   id: STWeaponShotgunSaiga12Sera
-  description: Magazine semi-automatic shotgun based on AK - Saiga-12, a classic civilian weapon. In Seraphim camo, lightweight materials.
+  description: Магазинна самозарядна рушниця на базі АК - Сайга-12, класична цивільна зброя. У камуфляжі "Серафим", з полегшених матеріалів.
   components:
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga-sera.rsi

@@ -1,16 +1,16 @@
 - type: entity
   id: FlexibleMarker
-  name: ya dont need it
+  name: вам це не потрібно
   suffix: ST
   parent: MarkerBase
   categories: [ HideSpawnMenu ]
   placement:
     mode: PlaceFree
 
-# Рандомные аномалии
+# Рандомні аномалії
 - type: entity
   id: RandomAnomaly1
-  name: random anomaly (1% chance of occurrence)
+  name: випадкова аномалія (ймовірність появи - 1%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -31,7 +31,7 @@
 
 - type: entity
   id: RandomAnomaly10
-  name: random anomaly (10% chance of occurrence)
+  name: випадкова аномалія (ймовірність появи - 10%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -54,7 +54,7 @@
 
 - type: entity
   id: RandomAnomaly25
-  name: random anomaly (25% chance of occurrence)
+  name: випадкова аномалія (ймовірність появи - 25%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -76,10 +76,10 @@
     chance: 0.25
     offset: 0.0
 
-# Рандомные редкие аномалии
+# Рандомні рідкісні аномалії
 - type: entity
   id: RandomRareAnomaly1
-  name: random rare anomaly (1% chance of occurrence)
+  name: випадкові рідкісні аномалії (ймовірність появи - 1%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -100,7 +100,7 @@
 
 - type: entity
   id: RandomRareAnomaly10
-  name: random rare anomaly (10% chance of occurrence)
+  name: випадкові рідкісні аномалії (ймовірність появи - 10%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -121,7 +121,7 @@
 
 - type: entity
   id: RandomRareAnomaly25
-  name: random rare anomaly (25% chance of occurrence)
+  name: випадкові рідкісні аномалії (ймовірність появи - 25%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -143,7 +143,7 @@
 # Воронка
 - type: entity
   id: SpawnerVoronka1
-  name: spawner funnel (1 + 1% chance of appearance)
+  name: Спавнер Аномалії Воронка (ймовірність появи - 1 + 1%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -162,7 +162,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerVoronka10
-  name: spawner funnel (10 + 5% chance of appearance)
+  name: Спавнер Аномалії Воронка (ймовірність появи - 10 + 5%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -181,7 +181,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerVoronka25
-  name: spawner funnel (25 + 10% chance of appearance)
+  name: Спавнер Аномалії Воронка (ймовірність появи - 25 + 10%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -200,7 +200,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerVoronka50
-  name: spawner funnel (50 + 10% chance of appearance)
+  name: Спавнер Аномалії Воронка (ймовірність появи - 50 + 10%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -217,10 +217,10 @@
       - ZoneAnomalyGravi
     chance: 0.5
     offset: 0.0
-# Электра
+# Електра
 - type: entity
   id: SpawnerElectra1
-  name: Electra spawner (1% chance of appearing)
+  name: Спавнер Аномалії Електра (ймовірність появи - 1%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -236,7 +236,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerElectra10
-  name: Electra spawner (10% chance of appearing)
+  name: Спавнер Аномалії Електра (ймовірність появи - 10%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -252,7 +252,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerElectra25
-  name: Electra spawner (25% chance of appearing)
+  name: Спавнер Аномалії Електра (ймовірність появи - 25%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -268,7 +268,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerElectra50
-  name: Electra spawner (50% chance of appearing)
+  name: Спавнер Аномалії Електра (ймовірність появи - 50%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -285,7 +285,7 @@
 # Жарка
 - type: entity
   id: SpawnerJarka1
-  name: spawner fry (1 + 1% chance of appearance)
+  name: Спавнер Аномалії Жарка (ймовірність появи - 1 + 1%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -301,7 +301,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerJarka10
-  name: spawner fry (10 + 5% chance of appearance)
+  name: Спавнер Аномалії Жарка (ймовірність появи - 10 + 5%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -317,7 +317,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerJarka25
-  name: spawner fry (25% + 10% chance of appearance)
+  name: Спавнер Аномалії Жарка (ймовірність появи - 25% + 10%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -333,7 +333,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerJarka50
-  name: spawner fry (50% + 15% chance of appearance)
+  name: Спавнер Аномалії Жарка (ймовірність появи - 50% + 15%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -347,10 +347,10 @@
       - ZoneAnomalyJarka
     chance: 0.5
     offset: 0.0
-# Трамплин и Эпицентр
+# Трамплін і Епіцентр
 - type: entity
   id: SpawnerEpicentre25
-  name: Epicenter spawner (25% chance of appearing)
+  name: Спавнер Аномалії Епіцентр (ймовірність появи - 25%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -366,7 +366,7 @@
     offset: 0.0
 - type: entity
   id: SpawnerTramplin25
-  name: trampoline spawner (25% chance of appearing)
+  name: trampoline spawner (ймовірність появи - 25%)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -380,11 +380,11 @@
       - ZoneAnomalySpringboard
     chance: 0.25
     offset: 0.0
-# Жарка без артефактов
+# Жарка без артефактів
 - type: entity
   id: SpawnerJarka1NoArts
-  name: spawner anomaly hot (1% chance of appearance)
-  suffix: ST, без артефактов
+  name: Спавнер Аномалії Жарка (ймовірність появи - 1%)
+  suffix: ST, без артефактів
   parent: FlexibleMarker
   components:
   - type: Sprite
@@ -399,8 +399,8 @@
     offset: 0.0
 - type: entity
   id: SpawnerJarka10NoArts
-  name: spawner anomaly hot (10% chance of appearance)
-  suffix: ST, без артефактов
+  name: Спавнер Аномалії Жарка (ймовірність появи - 10%)
+  suffix: ST, без артефактів
   parent: FlexibleMarker
   components:
   - type: Sprite
@@ -415,8 +415,8 @@
     offset: 0.0
 - type: entity
   id: SpawnerJarka25NoArts
-  name: spawner anomaly hot (25% chance of appearing)
-  suffix: ST, без артефактов
+  name: Спавнер Аномалії Жарка (ймовірність появи - 25%)
+  suffix: ST, без артефактів
   parent: FlexibleMarker
   components:
   - type: Sprite
@@ -431,8 +431,8 @@
     offset: 0.0
 - type: entity
   id: SpawnerJarka50NoArts
-  name: spawner anomaly hot (50% chance of appearing)
-  suffix: ST, без артефактов
+  name: Спавнер Аномалії Жарка (ймовірність появи - 50%)
+  suffix: ST, без артефактів
   parent: FlexibleMarker
   components:
   - type: Sprite
@@ -447,8 +447,8 @@
     offset: 0.0
 - type: entity
   id: SpawnerJarka100NoArts
-  name: spawner anomaly hot (100% chance of appearing)
-  suffix: ST, без артефактов
+  name: Спавнер Аномалії Жарка (ймовірність появи - 100%)
+  suffix: ST, без артефактів
   parent: FlexibleMarker
   components:
   - type: Sprite

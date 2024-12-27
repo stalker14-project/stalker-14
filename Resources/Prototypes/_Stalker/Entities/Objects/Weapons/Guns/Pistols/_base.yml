@@ -2,7 +2,7 @@
   name: STBasePistol
   parent: STBaseWeaponGun
   id: STBaseWeaponPistol
-  description: A rooty tooty point and shooty.
+  description: Корінчастий зубастий і пагонистий.
   abstract: true
   components:
   - type: RepositoryItem
@@ -41,7 +41,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: MagazinePistol
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -50,7 +50,7 @@
           tags:
             - MagazinePistol
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem: CartridgePistol
         priority: 1
         whitelist:

@@ -3,7 +3,7 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAKM
-  description: An icon of weapons manufacturing, the improved and refined AK, known as the AKM. The most popular weapon in the world, uses the 7.62x39 caliber.
+  description: Ікона збройового виробництва, покращений та вдосконалений АК, відомий як АКМ. Найпопулярніша зброя у світі, що використовує набій 7.62x39.
   components:
   - type: STWeight
     self: 3.1
@@ -25,7 +25,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base739Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -34,19 +34,19 @@
           tags:
             - Magazine739
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 3
         whitelist:
           tags:
             - STWeaponModuleRifleSilencer
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleRifleScope
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem:
         priority: 1
         whitelist:

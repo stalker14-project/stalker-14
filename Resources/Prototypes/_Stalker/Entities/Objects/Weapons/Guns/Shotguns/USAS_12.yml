@@ -1,10 +1,10 @@
-# Эта штука просто пиздец. Если в игре есть дробь пробивающая броню, то эта штука будет выносить всё живое и неживое
-# Надо как-то это балансить. Отдачей там или ещё чем я хз.
+# Ця штука просто пиздець. Якщо в грі є дріб, що пробиває броню, то ця штука буде виносити все живе і неживе
+# Треба якось це балансувати. Віддачею там або ще чимось я хз.
 - type: entity
   parent: STBaseWeaponShotgunAuto
   id: STWeaponShotgunUSAS
-  name: usas-12
-  description: USAS-12 - automatic rifle.
+  name: USAS-12
+  description: USAS-12 - автоматична гвинтівка.
   suffix: ST, Shotgun
   components:
     - type: Craftable
@@ -47,7 +47,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Magazine10USAS12x70
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -62,7 +62,7 @@
             tags:
               - STModuleAutoSear
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:
@@ -78,13 +78,13 @@
       zeroVisible: true
     - type: Appearance
 
-# Скинчики  начались
+# Скінчики
 - type: entity
   parent: STWeaponShotgunUSAS
   id: STCovenantSTWeaponShotgunUSAS
-  name: covenant USAS-12
-  description: covenant USAS-12 - automatic shotgun.
-  suffix: ST, Скін, Covenant
+  name: USAS-12 Заповіту
+  description: USAS-12 Заповіту - автоматична рушниця.
+  suffix: ST, Скін, Заповіт
   components:
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/covenant_usas.rsi

@@ -1,9 +1,9 @@
 
 - type: entity
-  name: combat knife
+  name: бойовий ніж
   parent: [BaseKnife, BaseRestrictedContraband]
   id: STCombatKnife
-  description: A deadly knife intended for melee confrontations.
+  description: Смертоносний ніж, призначений для ближнього бою.
   components:
   - type: Tag
     tags:
@@ -30,10 +30,10 @@
     malus: 0.225
 
 - type: entity
-  name: Finnish LGBT knife
+  name: Фінський ЛГБТ-ніж
   parent: STCombatKnife
   id: LgbtKnife
-  description: legendary finka from famous Kizlyar masters
+  description: легендарна фінка від відомих кизлярських майстрів
   suffix: ST
   components:
   - type: Sprite
@@ -49,10 +49,10 @@
         Slash: 22
 
 - type: entity
-  name: нож сектантов
+  name: ніж сектантів
   parent: STCombatKnife
   id: STSeraKnife
-  description: Пахнет травами и маслами.
+  description: Пахне травами й оліями.
   suffix: ST, Скін
   components:
   - type: Sprite

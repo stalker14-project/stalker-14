@@ -1,9 +1,9 @@
 - type: entity
-  name: GSh-18
+  name: ГШ-18
   parent: STBaseWeaponPistol
   id: WeaponPistolGSH18
   suffix: ST
-  description: The GSh-18 pistol was developed in the late 1990s at the Tula Instrument Design Bureau (KBP). It was named after the first letters of the names of the designers under whose leadership it was designed - Vasily Gryazev and Arkady Shipunov, and the number 18, meaning the magazine capacity.
+  description: Пістолет ГШ-18 був розроблений наприкінці 1990-х років у Тульському конструкторському бюро приладобудування. Свою назву він отримав за першими літерами прізвищ конструкторів, під керівництвом яких був розроблений - Василя Грязєва та Аркадія Шипунова, а також за цифрою 18, що означає місткість магазину.
   components:
     - type: STWeight
       self: 0.47
@@ -29,7 +29,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: BaseGSH-18Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -44,7 +44,7 @@
             tags:
               - STModuleAutoSear
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:

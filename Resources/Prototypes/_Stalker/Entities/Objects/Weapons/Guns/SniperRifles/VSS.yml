@@ -1,11 +1,11 @@
 
-# Винторезы
+# Гвинторізи
 - type: entity
-  name: VSS-Vintorez
+  name: ВСС «Вінторєз»
   suffix: ST
   parent: STBaseWeaponSniper
   id: STWeaponRifleVSS
-  description: Special Sniper Rifle for the rare and lethal caliber 9x39. Equipped with medium-range optics.
+  description: Спеціальна снайперська гвинтівка під рідкісний та смертоносний калібр 9х39. Оснащена оптикою середньої дальності.
   components:
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
@@ -41,7 +41,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: Base939Mag10
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
@@ -50,19 +50,19 @@
             tags:
               - Magazine939
         gun_module_scope:
-          name: Scope
+          name: Приціл
           priority: 3
           whitelist:
             tags:
               - STWeaponModuleSniperSight
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 2
           whitelist:
             tags:
               - STWeaponModuleSniperSilencer
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem:
           priority: 1
           whitelist:

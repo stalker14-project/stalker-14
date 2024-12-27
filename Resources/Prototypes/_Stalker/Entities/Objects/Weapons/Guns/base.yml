@@ -4,8 +4,8 @@
   name: A gun
   abstract: true
   components:
-    # Allows guns to get effects from modules,
-    # without this, YOU CAN add modules but NO EFFECT
+    # Дозволяє гарматам отримувати ефекти від модулів,
+    # без цього ви можете додавати модулі, але ефекту не буде.
     - type: STWeaponModuleContainer
     - type: STWeight
       self: 2.7
@@ -26,20 +26,20 @@
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
-    # - type: ChamberMagazineAmmoProvider
+    # - тип: CameraMagazineAmmoProvider
     - type: ItemSlots
-      # If you change the caliber,
-      # you need to completely rewrite every property described here
+      # Якщо ти зміниш калібр,
+      # вам потрібно повністю переписати кожну властивість, описану тут
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           priority: 3
-        # Here you have to customize your wunderwaffle modules,
-        # you can put them on the gun initially through startingItem,
-        # but remember if you change the containers,
-        # you have to re-specify them all again
+        # Тут ви маєте налаштувати ваші модулі вундервафель,
+        # ти можеш покласти їх на гармату спочатку через startingItem,
+        # але пам'ятайте, якщо ви змінюєте контейнери,
+        # вам доведеться перевказати їх усі заново.
         gun_chamber:
-          name: Chamber
+          name: Патронник
           priority: 1
     - type: ContainerContainer
       containers:

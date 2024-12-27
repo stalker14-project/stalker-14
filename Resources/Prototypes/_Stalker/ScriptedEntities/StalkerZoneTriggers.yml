@@ -2,9 +2,9 @@
 - type: entity
   id: StalkerExplSafezoneTriggerIn
   parent: MarkerBase
-  name: Ejection Defense
-  description: Transports you to a linked destination!
-  suffix: ST
+  name: Захист від викиду
+  description: Перевезе вас до пов'язаного пункту призначення!
+  suffix: ST, захист від викиду, зона
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: true
@@ -28,12 +28,13 @@
           layer:
             - WallLayer
           hard: false
+
 - type: entity
   id: StalkerExplSafezoneTriggerOut
-  name: Disabling Ejection Protection
-  description: Transports you to a linked destination!
+  name: Вимкнення захисту від викидання
+  description: Перевезе вас до пов'язаного пункту призначення!
   parent: MarkerBase
-  suffix: ST
+  suffix: ST, захист від викиду, зона
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: false
@@ -61,9 +62,9 @@
 - type: entity
   id: StalkerPaciTriggerIn
   parent: MarkerBase
-  name: Enabling Pacifism
-  description: Transports you to a linked destination!
-  suffix: ST
+  name: Активізація пацифізму
+  description: Перевезе вас до пов'язаного пункту призначення!
+  suffix: ST, пацифізм, зона
   components:
     - type: Sprite
       layers:
@@ -89,12 +90,13 @@
       Pacified: true
     - type: STAnomalyGeneratorSpawnBlocker
       size: 10
+
 - type: entity
   id: StalkerPaciTriggerOut
-  name: Turning off pacifism
-  description: Transports you to a linked destination!
+  name: Вимкнення пацифізму
+  description: Перевезе вас до пов'язаного пункту призначення!
   parent: MarkerBase
-  suffix: ST
+  suffix: ST, пацифізм, зона
   components:
     - type: Transform
       anchored: True
@@ -123,9 +125,9 @@
 - type: entity
   id: StalkerSafezoneTriggerIn
   parent: MarkerBase
-  name: Safezone Entrance
-  description: Transports you to a linked destination!
-  suffix: ST
+  name: Вхід у безпечну зону
+  description: Перевезе вас до пов'язаного пункту призначення!
+  suffix: ST, безпечна зона, зона
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: true
@@ -155,10 +157,10 @@
 
 - type: entity
   id: StalkerSafezoneTriggerOut
-  name: Exit from safe zone
-  description: Transports you to a linked destination!
+  name: Вихід з безпечної зони
+  description: Перевезе вас до пов'язаного пункту призначення!
   parent: MarkerBase
-  suffix: ST
+  suffix: ST, безпечна зона, зона
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: false

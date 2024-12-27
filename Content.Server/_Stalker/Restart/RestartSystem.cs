@@ -52,7 +52,7 @@ public partial class RestartSystem : EntitySystem
             return;
 
         var delta = data.Comp.Time - _timing.CurTime;
-        _chat.DispatchServerAnnouncement($"Перезапуск сервера через: {Math.Round(delta.TotalMinutes, 1)} минут");
+        _chat.DispatchServerAnnouncement($"Перезапуск сервера через: {Math.Round(delta.TotalMinutes, 1)} хвилин");
         if (delta < _teleportDelay)
         {
             _chat.DispatchServerAnnouncement($"Ви можете використовувати команду home для швидкого повернення в Чистилище");

@@ -1,9 +1,9 @@
 - type: entity
-  name: Galil
+  name: Галіл
   suffix: ST
   parent: STBaseWeaponRifle
   id: WeaponRifleStalkerGalil
-  description: Israeli automatic rifle chambered for 5.56 caliber.
+  description: Ізраїльська автоматична гвинтівка калібру 5.56.
   components:
   - type: STWeight
     self: 4.5
@@ -35,7 +35,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         startingItem: Base556Mag10
         insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
@@ -44,19 +44,19 @@
           tags:
             - Magazine556
       gun_module_muzzle:
-        name: Muzzle
+        name: Глушник
         priority: 3
         whitelist:
           tags:
             - STWeaponModuleRifleSilencerNato
       gun_module_scope:
-        name: Scope
+        name: Приціл
         priority: 2
         whitelist:
           tags:
             - STWeaponModuleRifleScopeNato
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem:
         priority: 1
         whitelist:

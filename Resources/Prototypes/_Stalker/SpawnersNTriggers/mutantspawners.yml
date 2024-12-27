@@ -41,7 +41,7 @@
   id: FlexibleMarkerTrigger50
   parent: FlexibleMarkerTrigger
   abstract: true
-  suffix: ST, КД 40 МИНУТ
+  suffix: ST, КД 40 хвилин
   components:
   - type: ApproachTrigger
     range: 40
@@ -51,13 +51,13 @@
 
 
 
-############## Пёськи
+############## Пси
 
 - type: entity
-  name: Blind Dogs Trigger (1-4) (20%)
+  name: Тригер Сліпих Псів (1-4) (20%)
   id: BlinddogTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -86,10 +86,10 @@
 
 
 - type: entity
-  name: Blind Dogs Trigger (1-4) (100%)
+  name: Тригер Сліпих Псів (1-4) (100%)
   id: BlinddogTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -117,10 +117,10 @@
         - MobMutantBlindDog
 
 - type: entity
-  name: Blind Dogs Trigger (1-2) (10%)
+  name: Тригер Сліпих Псів (1-2) (10%)
   id: BlinddogTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -148,10 +148,10 @@
         - MobMutantBlindDog
 
 - type: entity
-  name: Blind Dogs Trigger (1-2) (100%)
+  name: Тригер Сліпих Псів (1-2) (100%)
   id: BlinddogTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -178,14 +178,14 @@
       restricted:
         - MobMutantBlindDog
 
-############## Кабанчики
+############## Кабаньчики
 
 
 - type: entity
-  name: Boar Trigger (1-4) (20%)
+  name: Тригер Кабанів (1-4) (20%)
   id: BoarTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -213,10 +213,10 @@
         - MobMutantBoar
 
 - type: entity
-  name: Boar Trigger (1-4) (100%)
+  name: Тригер Кабанів (1-4) (100%)
   id: BoarTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -244,10 +244,10 @@
         - MobMutantBoar
 
 - type: entity
-  name: Boar Trigger (1-2) (10%)
+  name: Тригер Кабанів (1-2) (10%)
   id: BoarTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -275,10 +275,10 @@
         - MobMutantBoar
 
 - type: entity
-  name: Boar Trigger (1-2) (100%)
+  name: Тригер Кабанів (1-2) (100%)
   id: BoarTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -305,13 +305,13 @@
       restricted:
         - MobMutantBoar
 
-####################################Кустики ебац
+####################################Довбані кущі
 
 - type: entity
-  name: Bush Trigger (1-2) (20%)
+  name: Тригер Кущів (1-2) (20%)
   id: BushTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -339,10 +339,10 @@
         - MobMutantBush
 
 - type: entity
-  name: Bush Trigger (1-2) (100%)
+  name: Тригер Кущів (1-2) (100%)
   id: BushTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -370,10 +370,10 @@
         - MobMutantBush
 
 - type: entity
-  name: Bush Trigger (1-2) (20%)
+  name: Тригер Кущів (1-2) (20%)
   id: BushTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -401,10 +401,10 @@
         - MobMutantBush
 
 - type: entity
-  name: Bush Trigger (1-2) (100%)
+  name: Тригер Кущів (1-2) (100%)
   id: BushTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -431,13 +431,13 @@
       restricted:
         - MobMutantBush
 
-###################################Сморки
+################################### Курильщики
 
 - type: entity
-  name: Snork Trigger (1-2) (20%)
+  name: Тригер Снорків (1-2) (20%)
   id: SnorkTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -465,10 +465,10 @@
         - MobMutantSnork
 
 - type: entity
-  name: Snork Trigger (1-2) (100%)
+  name: Тригер Снорків (1-2) (100%)
   id: SnorkTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -496,10 +496,10 @@
         - MobMutantSnork
 
 - type: entity
-  name: Snork Trigger (1-2) (20%)
+  name: Тригер Снорків (1-2) (20%)
   id: SnorkTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -527,10 +527,10 @@
         - MobMutantSnork
 
 - type: entity
-  name: Snork Trigger (1-2) (100%)
+  name: Тригер Снорків (1-2) (100%)
   id: SnorkTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -558,13 +558,13 @@
         - MobMutantSnork
 
 
-###################################Отсосатели
+################################### цицькарі(в минулому)
 
 - type: entity
-  name: Bloodsucker Trigger (1-2) (20%)
+  name: Тригер Кровососа (1-2) (20%)
   id: BloodsuckerTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -592,10 +592,10 @@
         - MobMutantBloodsucker
 
 - type: entity
-  name: Bloodsucker Trigger (1-2) (100%)
+  name: Тригер Кровососа (1-2) (100%)
   id: BloodsuckerTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -623,10 +623,10 @@
         - MobMutantBloodsucker
 
 - type: entity
-  name: Bloodsucker Trigger (1-2) (20%)
+  name: Тригер Кровососа (1-2) (20%)
   id: BloodsuckerTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -655,10 +655,10 @@
 
 
 - type: entity
-  name: Bloodsucker Trigger (1-2) (100%)
+  name: Тригер Кровососа (1-2) (100%)
   id: BloodsuckerTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -685,13 +685,13 @@
       restricted:
         - MobMutantBloodsucker
 
-###################################Псевдопсы и псипсы
+###################################Псевдопси та пси-пси
 
 - type: entity
-  name: Pseudodog Trigger (1-4) (20%)
+  name: Тригер Псевдопса (1-4) (20%)
   id: PseudodogTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -720,10 +720,10 @@
 
 
 - type: entity
-  name: Pseudodog Trigger (1-4) (100%)
+  name: Тригер Псевдопса (1-4) (100%)
   id: PseudodogTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -751,10 +751,10 @@
         - MobMutantPseudodog
 
 - type: entity
-  name: Pseudodog Trigger (1-2) (20%)
+  name: Тригер Псевдопса (1-2) (20%)
   id: PseudodogTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -783,10 +783,10 @@
 
 
 - type: entity
-  name: Pseudodog Trigger (1-2) (100%)
+  name: Тригер Псевдопса (1-2) (100%)
   id: PseudodogTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -813,13 +813,13 @@
       restricted:
         - MobMutantPseudodog
 
-#Пси-псы
+#Пси-пси
 
 - type: entity
-  name: Psi Dog Trigger (1-3) (20%)
+  name: Тригер Пси пса (1-3) (20%)
   id: PsidogTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -847,10 +847,10 @@
         - MutantPsidog
 
 - type: entity
-  name: Psi Dog Trigger (1-3) (100%)
+  name: Тригер Пси пса (1-3) (100%)
   id: PsidogTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -878,10 +878,10 @@
         - MutantPsidog
 
 - type: entity
-  name: Psi Dog Trigger (1-2) (20%)
+  name: Тригер Пси пса (1-2) (20%)
   id: PsidogTrigger10
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -909,10 +909,10 @@
         - MutantPsidog
 
 - type: entity
-  name: Psi-Dog Trigger (1-2) (100%)
+  name: Тригер Пси пса (1-2) (100%)
   id: PsidogTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -939,13 +939,13 @@
       restricted:
         - MutantPsidog
 
-######### Зомбированный
+######### Зомбований
 
 - type: entity
-  name: Zombie Trigger (1-2) (20%)
+  name: Тригер Зомбованого (1-2) (20%)
   id: ZombieTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -973,10 +973,10 @@
         - MobStalkerZombie
 
 - type: entity
-  name: Zombie Trigger (1-2) (100%)
+  name: Тригер Зомбованого (1-2) (100%)
   id: ZombieTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1004,10 +1004,10 @@
         - MobStalkerZombie
 
 - type: entity
-  name: Zombie Trigger (1-2) (20%)
+  name: Тригер Зомбованого (1-2) (20%)
   id: ZombieTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1035,10 +1035,10 @@
         - MobStalkerZombie
 
 - type: entity
-  name: Zombie Trigger (1-2) (100%)
+  name: Тригер Зомбованого (1-2) (100%)
   id: ZombieTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1065,13 +1065,13 @@
       restricted:
         - MobStalkerZombie
 
-###################################Спавнер на ровном месте
+###################################Спавнер на рівному місці
 
 - type: entity
-  name: Zombie Trigger (1-2) (100%)
+  name: Тригер Зомбованого (1-2) (100%)
   id: ZombieTrigger1PT
   parent: MarkerBase
-  suffix: ST | КД 30 минут | точный
+  suffix: ST | КД 30 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1099,10 +1099,10 @@
         - MobStalkerZombie
 
 - type: entity
-  name: Zombie Trigger (1-2) (20%)
+  name: Тригер Зомбованого (1-2) (20%)
   id: ZombieTrigger2PT
   parent: MarkerBase
-  suffix: ST | КД 30 минут | точный
+  suffix: ST | КД 30 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1130,10 +1130,10 @@
         - MobStalkerZombie
 
 - type: entity
-  name: Zombie Trigger (1-2) (100%)
+  name: Тригер Зомбованого (1-2) (100%)
   id: ZombieTrigger3PT
   parent: MarkerBase
-  suffix: ST | КД 10 минут | точный
+  suffix: ST | КД 10 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1161,10 +1161,10 @@
         - MobStalkerZombie
 
 - type: entity
-  name: Zombie Trigger (1-2) (20%)
+  name: Тригер Зомбованого (1-2) (20%)
   id: ZombieTrigger4PT
   parent: MarkerBase
-  suffix: ST | КД 10 минут | точный
+  suffix: ST | КД 10 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1192,10 +1192,10 @@
         - MobStalkerZombie
 
 - type: entity
-  name: Snork Trigger (1-2) (20%)
+  name: Тригер Снорків (1-2) (20%)
   id: SnorkTrigger1PT
   parent: MarkerBase
-  suffix: ST | КД 30 минут | точный
+  suffix: ST | КД 30 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1223,10 +1223,10 @@
         - MobMutantSnork
 
 - type: entity
-  name: Snork Trigger (1-2) (100%)
+  name: Тригер Снорків (1-2) (100%)
   id: SnorkTrigger2PT
   parent: MarkerBase
-  suffix: ST | КД 30 минут | точный
+  suffix: ST | КД 30 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1254,10 +1254,10 @@
         - MobMutantSnork
 
 - type: entity
-  name: Snork Trigger (1-2) (20%)
+  name: Тригер Снорків (1-2) (20%)
   id: SnorkTrigger3PT
   parent: MarkerBase
-  suffix: ST | КД 10 минут | точный
+  suffix: ST | КД 10 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1285,10 +1285,10 @@
         - MobMutantSnork
 
 - type: entity
-  name: Snork Trigger (1-2) (100%)
+  name: Тригер Снорків (1-2) (100%)
   id: SnorkTrigger4PT
   parent: MarkerBase
-  suffix: ST | КД 10 минут | точный
+  suffix: ST | КД 10 хвилин | точний
   components:
     - type: ApproachTrigger
       range: 20
@@ -1318,10 +1318,10 @@
 ############## Плотька
 
 - type: entity
-  name: Neutral Flesh Trigger (1-4) (20%)
+  name: Тригер Нейтральної Плоті (1-4) (20%)
   id: FleshNeutralTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1349,10 +1349,10 @@
         - MobMutantFleshNeutral
 
 - type: entity
-  name: Neutral Flesh Trigger (1-4) (100%)
+  name: Тригер Нейтральної Плоті (1-4) (100%)
   id: FleshNeutralTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1380,10 +1380,10 @@
         - MobMutantFleshNeutral
 
 - type: entity
-  name: Neutral Flesh Trigger (1-2) (10%)
+  name: Тригер Нейтральної Плоті (1-2) (10%)
   id: FleshNeutralTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1411,10 +1411,10 @@
         - MobMutantFleshNeutral
 
 - type: entity
-  name: Neutral Flesh Trigger (1-2) (100%)
+  name: Тригер Нейтральної Плоті (1-2) (100%)
   id: FleshNeutralTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1442,10 +1442,10 @@
         - MobMutantFleshNeutral
 
 - type: entity
-  name: Aggressive Flesh Trigger (1-4) (20%)
+  name: Тригер Агресивної Плоті (1-4) (20%)
   id: FleshAgressiveTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1473,10 +1473,10 @@
         - MobMutantFleshAgressive
 
 - type: entity
-  name: Aggressive Flesh Trigger (1-4) (100%)
+  name: Тригер Агресивної Плоті (1-4) (100%)
   id: FleshAgressiveTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1504,10 +1504,10 @@
         - MobMutantFleshAgressive
 
 - type: entity
-  name: Aggressive Flesh Trigger (1-2) (10%)
+  name: Тригер Агресивної Плоті (1-2) (10%)
   id: FleshAgressiveTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1535,10 +1535,10 @@
         - MobMutantFleshAgressive
 
 - type: entity
-  name: Aggressive Flesh Trigger (1-2) (100%)
+  name: Тригер Агресивної Плоті (1-2) (100%)
   id: FleshAgressiveTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1568,10 +1568,10 @@
 ############## Тушканчики
 
 - type: entity
-  name: Jerboa Trigger (3-10) (20%)
+  name: Тригер Тушканчиків (3-10) (20%)
   id: RodentTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1600,10 +1600,10 @@
 
 
 - type: entity
-  name: Jerboa Trigger (3-10) (100%)
+  name: Тригер Тушканчиків (3-10) (100%)
   id: RodentTrigger1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1631,10 +1631,10 @@
         - MobMutantRodent
 
 - type: entity
-  name: Jerboa Trigger (1-5) (10%)
+  name: Тригер Тушканчиків (1-5) (10%)
   id: RodentTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1662,10 +1662,10 @@
         - MobMutantRodent
 
 - type: entity
-  name: Jerboa Trigger (1-5) (100%)
+  name: Тригер Тушканчиків (1-5) (100%)
   id: RodentTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1692,13 +1692,13 @@
       restricted:
         - MobMutantRodent
 
-###################################Крысы
+###################################Щури
 
 - type: entity
-  name: Rat Trigger (1-6) (35%)
+  name: Тригер Щурів (1-6) (35%)
   id: RatTrigger
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
   - type: ApproachTrigger
     range: 11
@@ -1726,10 +1726,10 @@
     - MobMutantRat
 
 - type: entity
-  name: Rat Trigger (1-6) (10%)
+  name: Тригер Щурів (1-6) (10%)
   id: RatTrigger10
   parent: RatTrigger
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
   - type: SpawnOnApproach
     prototypes:
@@ -1744,10 +1744,10 @@
     - MobMutantRat
 
 - type: entity
-  name: Rat Trigger (1-3) (10%)
+  name: Тригер Щурів (1-3) (10%)
   id: RatTrigger10a3
   parent: RatTrigger
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
   - type: SpawnOnApproach
     prototypes:
@@ -1762,10 +1762,10 @@
     - MobMutantRat
 
 - type: entity
-  name: Rat Trigger (1-6) (100%)
+  name: Тригер Щурів (1-6) (100%)
   id: RatTrigger1
   parent: RatTrigger
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
   - type: SpawnOnApproach
     prototypes:
@@ -1780,10 +1780,10 @@
     - MobMutantRat
 
 - type: entity
-  name: Rat Trigger (1-10) (10%)
+  name: Тригер Щурів (1-10) (10%)
   id: RatTrigger10a10
   parent: RatTrigger
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
   - type: SpawnOnApproach
     prototypes:
@@ -1798,10 +1798,10 @@
     - MobMutantRat
 
 - type: entity
-  name: Rat Trigger (1-10) (100%)
+  name: Тригер Щурів (1-10) (100%)
   id: RatTrigger1a10
   parent: RatTrigger
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
   - type: SpawnOnApproach
     prototypes:
@@ -1816,10 +1816,10 @@
     - MobMutantRat
 
 - type: entity
-  name: Rat Trigger (1-15) (100%)
+  name: Тригер Щурів (1-15) (100%)
   id: RatTrigger1a15
   parent: RatTrigger
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
   - type: SpawnOnApproach
     prototypes:
@@ -1836,10 +1836,10 @@
 ############## Псевдогигант
 
 - type: entity
-  name: Pseudo-Giant Trigger (1) (10%)
+  name: Тригер Псевдогіганта (1) (10%)
   id: PseudogiantTrigger10a1
   parent: MarkerBase
-  suffix: ST | КД 30 минут
+  suffix: ST | КД 30 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1867,7 +1867,7 @@
         - MobMutantPseudogiant
 
 - type: entity
-  name: Pseudo-Giant Trigger (1) (25%)
+  name: Тригер Псевдогіганта (1) (25%)
   id: PseudogiantTrigger25a1
   parent: PseudogiantTrigger10a1
   components:
@@ -1875,7 +1875,7 @@
       chance: 0.25
 
 - type: entity
-  name: Pseudo-Giant Trigger (1) (100%)
+  name: Тригер Псевдогіганта (1) (100%)
   id: PseudogiantTrigger100a1
   parent: PseudogiantTrigger10a1
   components:
@@ -1883,7 +1883,7 @@
       chance: 1
 
 - type: entity
-  name: Pseudo-Giant Trigger (1-2) (20%)
+  name: Тригер Псевдогіганта (1-2) (20%)
   id: PseudogiantTrigger20a2
   parent: PseudogiantTrigger10a1
   components:
@@ -1891,15 +1891,15 @@
       maxAmount: 2
       chance: 0.2
 
-############## Конец псевдогиганта
+############## Кінець псевдогіганта
 
-############ Леший
+############ Лісовик
 
 - type: entity
-  name: Goblin Trigger (1-2) (10%)
+  name: Тригер Лісовика (1-2) (10%)
   id: LeshiyTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1928,10 +1928,10 @@
 
 
 - type: entity
-  name: Goblin Trigger (1-2) (25%)
+  name: Тригер Лісовика (1-2) (25%)
   id: LeshiyTrigger25
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1959,10 +1959,10 @@
         - MobMutantLeshiy
 
 - type: entity
-  name: Goblin Trigger (1-2) (50%)
+  name: Тригер Лісовика (1-2) (50%)
   id: LeshiyTrigger50
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -1990,10 +1990,10 @@
         - MobMutantLeshiy
 
 - type: entity
-  name: Goblin Trigger (1-2) (100%)
+  name: Тригер Лісовика (1-2) (100%)
   id: LeshiyTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2020,15 +2020,15 @@
       restricted:
         - MobMutantLeshiy
 
-#### Конец Лешего
+#### Кінець Лісовика
 
-############ Голиаф
+############ Голіаф
 
 - type: entity
-  name: Goliath Trigger (1-2) (10%)
+  name: Тригер Голіафа (1-2) (10%)
   id: GoliathTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2057,10 +2057,10 @@
 
 
 - type: entity
-  name: Goliath Trigger (1-2) (25%)
+  name: Тригер Голіафа (1-2) (25%)
   id: GoliathTrigger25
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2088,10 +2088,10 @@
         - STMutantGoliath
 
 - type: entity
-  name: Goliath Trigger (1-2) (50%)
+  name: Тригер Голіафа (1-2) (50%)
   id: GoliathTrigger50
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2119,10 +2119,10 @@
         - STMutantGoliath
 
 - type: entity
-  name: Goliath Trigger (1-2) (100%)
+  name: Тригер Голіафа (1-2) (100%)
   id: GoliathTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2149,14 +2149,14 @@
       restricted:
         - STMutantGoliath
 
-#### Конец Голиаф
-############ Бюргер
+#### Кінець Голіаф
+############ Бюргер, мммм, бюргер...
 
 - type: entity
-  name: Burer Trigger (1-2) (10%)
+  name: Тригер Бюрера (1-2) (10%)
   id: ByurerTrigger10
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2185,10 +2185,10 @@
 
 
 - type: entity
-  name: Burer Trigger (1-2) (25%)
+  name: Тригер Бюрера (1-2) (25%)
   id: ByurerTrigger25
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2216,10 +2216,10 @@
         - STMutantByurer
 
 - type: entity
-  name: Burer Trigger (1-2) (50%)
+  name: Тригер Бюрера (1-2) (50%)
   id: ByurerTrigger50
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2247,10 +2247,10 @@
         - STMutantByurer
 
 - type: entity
-  name: Burer Trigger (1-2) (100%)
+  name: Тригер Бюрера (1-2) (100%)
   id: ByurerTrigger100
   parent: MarkerBase
-  suffix: ST | КД 10 минут
+  suffix: ST | КД 10 хвилин
   components:
     - type: ApproachTrigger
       range: 20
@@ -2277,4 +2277,4 @@
       restricted:
         - STMutantByurer
 
-#### Конец Бюрера
+#### Кінець Бюрера

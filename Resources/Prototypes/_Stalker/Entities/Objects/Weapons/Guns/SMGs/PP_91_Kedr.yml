@@ -1,9 +1,9 @@
 - type: entity
-  name: PP-91 Kedr
+  name: ПП-91 Кедр
   suffix: ST
   parent: STBaseWeaponSubMachineGun
   id: STWeaponSMGPP91
-  description: PP-91 Kedr has an extremely simple and technological design, this PP is in service with almost all law enforcement agencies and units of Ukraine. This version has a silencer, which increases accuracy but reduces the initial speed of the bullet.
+  description: ПП-91 "Кедр" має надзвичайно просту та технологічну конструкцію, цей ПП є на озброєнні майже всіх силових відомств та підрозділів України. Ця версія має глушник, який підвищує точність стрільби, але зменшує початкову швидкість кулі.
   components:
     - type: STWeight
       self: 1.8
@@ -27,7 +27,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: PP91Mag
           insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
@@ -36,7 +36,7 @@
             tags:
               - MagazinePP91
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -48,7 +48,7 @@
             tags:
               - STWeaponModuleSMGGrip
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:
@@ -56,11 +56,11 @@
               - BaseCartridge919
 
 - type: entity
-  name: PP-91 Kedr Anomalous
+  name: ПП-91 Кедр Аномальний
   suffix: ST, Аномалія
   parent: STWeaponSMGPP91
   id: STWeaponSMGPP91Anomaly
-  description: PP-91 Kedr with obvious anomalous improvements.
+  description: ПП-91 Кедр з очевидними аномальними покращеннями.
   components:
   - type: STWeight
     self: -5
@@ -83,7 +83,7 @@
   - type: ItemSlots
     slots:
       gun_magazine:
-        name: Magazine
+        name: Магазин
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
@@ -91,7 +91,7 @@
           tags:
           - MagazinePP91
         gun_module_muzzle:
-          name: Muzzle
+          name: Глушник
           priority: 3
           whitelist:
             tags:
@@ -103,7 +103,7 @@
             tags:
               - STWeaponModuleSMGGrip
       gun_chamber:
-        name: Chamber
+        name: Патронник
         startingItem: Cartridge919PSOGJ
         priority: 1
         whitelist:

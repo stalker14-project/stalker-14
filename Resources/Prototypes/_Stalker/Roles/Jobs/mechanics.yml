@@ -1,8 +1,8 @@
 - type: job
   id: StalkerMechanic
-  name: Mechanic
+  name: Механік
   icon: mechanic
-  description: Handy guys who can make a bunch of interesting things with their golden hands
+  description: Умільці, які своїми золотими руками можуть зробити купу цікавих речей
   playTimeTracker: JobMechanic
   whitelisted: true
   requirements:
@@ -14,13 +14,13 @@
       - Human
       - Dwarf
   startingGear: MechanicGear
-  supervisors: Вы работаете сами на себя.
+  supervisors: Ви працюєте самі на себе.
   special:
     - !type:AddComponentSpecial
       components:
       - type: Access
         tags:
-          - Stalker 
+          - Stalker
           - Mechanic
       - type: Bands
         band: Stalker

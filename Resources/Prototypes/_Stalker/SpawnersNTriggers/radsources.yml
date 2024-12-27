@@ -1,6 +1,6 @@
 - type: entity
   id: Rad1
-  name: radiation (1 rad in the center, 9 tiles)
+  name: випромінювання (1 рад в центрі, 9 плиток)
   suffix: ST
   parent: FlexibleMarker
   components:
@@ -15,7 +15,7 @@
 
 - type: entity
   id: Rad2
-  name: radiation (1 rad in the center, 16 tiles)
+  name: радіація (1 рад в центрі, 16 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -31,7 +31,7 @@
 
 - type: entity
   id: Rad7
-  name: radiation (2 rad in the center, 8 tiles)
+  name: радіація (2 рад в центрі, 8 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -46,7 +46,7 @@
 
 - type: entity
   id: Rad8
-  name: radiation (2 rad in the center, 20 tiles)
+  name: радіація (2 рад в центрі, 20 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -61,7 +61,7 @@
 
 - type: entity
   id: Rad3
-  name: radiation (5 rad in the center, 6 tiles)
+  name: радіація (5 рад в центрі, 6 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -76,7 +76,7 @@
 
 - type: entity
   id: Rad5
-  name: radiation (5 rad in the center, 10 tiles)
+  name: радіація (5 рад в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -91,7 +91,7 @@
 
 - type: entity
   id: Rad6
-  name: radiation (5 rad in the center, 25 tiles)
+  name: радіація (5 рад в центрі, 25 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -105,11 +105,11 @@
     slope: 0.2
 
 #####################################################
-#Огненные источники
+#Вогняні джерела
 #####################################################
 - type: entity
   id: AnomalyHeatSource1
-  name: heat (1 unit in the center, 20 tiles)
+  name: тепло (1 одиниця в центрі, 20 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -125,7 +125,7 @@
 
 - type: entity
   id: FireSource8
-  name: heat (2 units in the center, 20 tiles)
+  name: тепло (2 одиниці в центрі, 20 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -141,7 +141,7 @@
 
 - type: entity
   id: AnomalyHeatSource3
-  name: heat (1 unit in the center, 10 tiles)
+  name: тепло (1 одиниця в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -157,7 +157,7 @@
 
 - type: entity
   id: AnomalyHeatSource4
-  name: heat (2 units in the center, 10 tiles)
+  name: тепло (2 одиниці в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -172,11 +172,11 @@
     damageType: Heat
 
 #####################################################
-#ПСИ источники
+#ПСІ джерела
 #####################################################
 - type: entity
   id: AnomalyHeatPsy
-  name: psi source (1 unit in the center, 20 tiles)
+  name: псі випромінювання (1 одиниця в центрі, 20 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -192,7 +192,7 @@
 
 - type: entity
   id: AnomalyHeatPsy2
-  name: psi source (2 units in the center, 20 tiles)
+  name: псі випромінювання (2 одиниці в центрі, 20 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -208,7 +208,7 @@
 
 - type: entity
   id: AnomalyHeatPsy3
-  name: psi source (1 unit in the center, 10 tiles)
+  name: псі випромінювання (1 одиниця в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -224,7 +224,7 @@
 
 - type: entity
   id: AnomalyHeatPsy4
-  name: psi source (2 units in the center, 10 tiles)
+  name: псі випромінювання (2 одиниці в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -239,12 +239,12 @@
     damageType: Psy
 
 #####################################################
-#Токсичный источник
+#Токсичне джерело
 #####################################################
 
 - type: entity
   id: AnomalyChemSource1
-  name: toxin source (1 unit in the center, 20 tiles)
+  name: токсичне джерело (1 одиниця в центрі, 20 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -260,7 +260,7 @@
 
 - type: entity
   id: AnomalyChemSource2
-  name: toxin source (2 units in the center, 20 tiles)
+  name: токсичне джерело (2 одиниці в центрі, 20 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -276,7 +276,7 @@
 
 - type: entity
   id: AnomalyChemSource3
-  name: toxin source (1 unit in the center, 10 tiles)
+  name: токсичне джерело (1 одиниця в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -292,7 +292,7 @@
 
 - type: entity
   id: AnomalyChemSource4
-  name: toxin source (2 units in the center, 10 tiles)
+  name: токсичне джерело (2 одиниці в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -308,7 +308,7 @@
 
 - type: entity
   id: AnomalyChemSource5
-  name: toxin source (5 units in the center, 6 tiles)
+  name: токсичне джерело (5 одиниць в центрі, 6 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -324,7 +324,7 @@
 
 - type: entity
   id: AnomalyChemSource6
-  name: toxin source (5 units in the center, 10 tiles)
+  name: токсичне джерело (5 одиниць в центрі, 10 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -340,7 +340,7 @@
 
 - type: entity
   id: AnomalyChemSource7
-  name: toxin source (5 units in the center, 25 tiles)
+  name: токсичне джерело (5 одиниць в центрі, 25 плиток)
   suffix: ST
   parent: Rad1
   components:
@@ -356,7 +356,7 @@
 
 - type: entity
   id: AnomalyChemSource8
-  name: toxin source (5 units in the center, 35 tiles)
+  name: токсичне джерело (5 одиниць в центрі, 35 плиток)
   suffix: ST
   parent: Rad1
   components:

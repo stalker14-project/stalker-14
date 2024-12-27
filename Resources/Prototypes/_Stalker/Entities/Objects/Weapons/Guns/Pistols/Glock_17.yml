@@ -1,9 +1,9 @@
 - type: entity
-  name: Glock-17
+  name: Глок-17
   parent: STBaseWeaponPistol
   suffix: ST
   id: WeaponPistolStalkerGlock
-  description: One of the most popular pistols in the USA chambered for 9x19.
+  description: Один з найпопулярніших пістолетів у США під набій 9х19.
   components:
     - type: STWeight
       self: 1
@@ -27,7 +27,7 @@
     - type: ItemSlots
       slots:
         gun_magazine:
-          name: Magazine
+          name: Магазин
           startingItem: BaseGlockMag10
           insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
@@ -42,7 +42,7 @@
             tags:
               - STModuleAutoSear
         gun_chamber:
-          name: Chamber
+          name: Патронник
           startingItem: Cartridge919PSOGJ
           priority: 1
           whitelist:
