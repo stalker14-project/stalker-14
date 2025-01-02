@@ -380,7 +380,7 @@
     - type: NewMapTeleport
       portalName: Svalka-UndergrundSvalka10
 
-##########################Звалище-СКЛАД ПОДЗЕМЕЛЬЯ СВАЛКИ
+##########################Звалище-СКЛАД ПІДЗЕМЕЛЬЯ ЗВАЛКИ
 - type: entity
   parent: MapTeleportBase
   id: Svalka-UndergrundSvalkaStock
@@ -553,7 +553,7 @@
       cooldownTime: 30
       godmodeCooldown: 5
 
-######################################## Чистилище - Предбанник - Кордон - НИИ
+######################################## Чистилище - Передпокій - Кордон - НДІ
 
 - type: entity
   parent: MapTeleportBase
@@ -607,7 +607,7 @@
   parent: MapTeleportBase
   id: PurgatoryMedical1
   name: Purgatory-Medbay
-  suffix: Чистилище - Больница
+  suffix: Чистилище - Лікарня
   components:
     - type: NewMapTeleport
       portalName: PurgatoryMedicalPortal1
@@ -619,7 +619,7 @@
   parent: MapTeleportBase
   id: PurgatoryMedical2
   name: Purgatory-Medbay
-  suffix: Чистилище - Больница
+  suffix: Чистилище - Лікарня
   components:
     - type: NewMapTeleport
       portalName: PurgatoryMedicalPortal2
@@ -631,7 +631,7 @@
   parent: MapTeleportBaseUncollide
   id: PurgatoryMedicalUncollibe1
   name: Purgatory-Medbay
-  suffix: Чистилище - Больница
+  suffix: Чистилище - Лікарня
   components:
     - type: NewMapTeleport
       portalName: PurgatoryMedicalPortal1
@@ -643,7 +643,7 @@
   parent: MapTeleportBaseUncollide
   id: PurgatoryMedicalUncollibe2
   name: Purgatory-Medbay
-  suffix: Чистилище - Больница
+  suffix: Чистилище - Лікарня
   components:
     - type: NewMapTeleport
       portalName: PurgatoryMedicalPortal2
@@ -788,12 +788,12 @@
       cooldownTime: 0
       godmodeCooldown: 0
 
-###################################################### НИИ Порталы этажей
+###################################################### НДІ Портали поверхів
 
 - type: entity
   parent: MapTeleportBase
   id: ResearchInstituteToResearchInstituteFirstFloor
-  suffix: ННИ - НИИ первый этаж
+  suffix: НДІ - НДІ перший поверх
   name: ResearchInstitute - ResearchInstitute first floor
   components:
     - type: NewMapTeleport
@@ -805,7 +805,7 @@
 - type: entity
   parent: MapTeleportBase
   id: ResearchInstituteFirstFloorToSecondFloor
-  suffix: НИИ первый этаж - НИИ второй этаж
+  suffix: НДІ перший поверх - НДІ другий поверх
   name: ResearchInstitute first - floor ResearchInstitute second floor
   components:
     - type: NewMapTeleport
@@ -814,13 +814,13 @@
       cooldownTime: 0
       godmodeCooldown: 0
 
-###################################################### Жаби Порталы этажей
+###################################################### Жабі Портали поверхів
 
 - type: entity
   parent: MapTeleportBase
   id: JabaInstituteFirstFloor
   suffix: JabaInstituteFirstFloor
-  name: Jaba first floor
+  name: Жаба перший поверх
   components:
     - type: NewMapTeleport
       portalName: JabaInstituteFirstFloor

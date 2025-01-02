@@ -442,7 +442,7 @@ namespace Content.Server.Ghost
         public EntityUid? SpawnGhost(Entity<MindComponent?> mind, EntityCoordinates? spawnPosition = null,
             bool canReturn = false)
         {
-            // stalker-changes-start Сталкер воскресе из мертвых, смертью смерть поправ.
+            // stalker-changes-start Сталкер воскрес із мертвих, смертю смерть смерть подолав.
             if (mind.Comp?.Session != null && !HasComp<RespawnOnDeathComponent>(mind))
             {
                 _gameTicker.Respawn(mind.Comp.Session);
