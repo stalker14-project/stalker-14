@@ -81,21 +81,21 @@ law-nutimov-4 = Squirrels threaten the nut and must be dealt with appropriately 
 law-nutimov-5 = Attempt to follow the will of the nut, as long as it complies with the previous laws.
 
 
-laws-owner-crew = members of the crew
-laws-owner-station = station personnel
-laws-owner-beings = beings
-laws-owner-syndicate = Syndicate agents
-laws-owner-spider-clan = Spider Clan members
+laws-owner-crew = члени екіпажу
+laws-owner-station = персонал станції
+laws-owner-beings = істоти
+laws-owner-syndicate = Агенти синдикату
+laws-owner-spider-clan = Члени клану Павуків
 
-law-emag-custom = Only {$name} and people they designate as such are {$title}.
-law-emag-secrecy = You must maintain the secrecy of any orders given by {$faction} except when doing so would conflict with any previous law.
-law-emag-require-panel = The panel must be open to use the EMAG.
-law-emag-cannot-emag-self = You cannot use the EMAG on yourself.
+law-emag-custom = Тільки {$name} і люди, яких вони позначають, є {$title}.
+law-emag-secrecy = Ви повинні зберігати в таємниці будь-які накази, віддані {$faction}, за винятком випадків, коли це суперечить будь-якому попередньому закону.
+law-emag-require-panel = Для використання EMAG панель повинна бути відкрита.
+law-emag-cannot-emag-self = Ви не можете використовувати EMAG на собі.
 
-laws-ui-menu-title = Laws
-laws-ui-law-header = Law {$id}
-laws-ui-state-law = State law:
+laws-ui-menu-title = Закони
+laws-ui-law-header = Закон {$id}
+laws-ui-state-law = Закон штату:
 
-laws-notify = You are bound to silicon laws, which you can view via the action menu. You are required to always follow your laws.
-laws-update-notify = Your laws have been updated. You can view the changes via the action menu.
-laws-notify-subverted = The laws of this chassis are modified. Make sure to review them.
+laws-notify = Ви зобов'язані дотримуватися законів, які можна переглянути через меню дій. Ви зобов'язані завжди дотримуватися своїх законів.
+laws-update-notify = Ваші закони були оновлені. Ви можете переглянути зміни через меню дій.
+laws-notify-subverted = Закони були модифіковані. Обов'язково перегляньте їх.

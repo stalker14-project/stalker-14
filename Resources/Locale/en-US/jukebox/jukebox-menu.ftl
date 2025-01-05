@@ -1,5 +1,5 @@
-jukebox-menu-title = Jukebox
-jukebox-menu-selectedsong = Selected Song:
-jukebox-menu-buttonplay = Play
-jukebox-menu-buttonpause = Pause
-jukebox-menu-buttonstop = Stop
+jukebox-menu-title = Музичний автомат
+jukebox-menu-selectedsong = Вибрана пісня:
+jukebox-menu-buttonplay = Грати
+jukebox-menu-buttonpause = Пауза
+jukebox-menu-buttonstop = Зупинити

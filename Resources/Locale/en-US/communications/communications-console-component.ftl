@@ -1,27 +1,27 @@
 # User interface
-comms-console-menu-title = Communications Console
-comms-console-menu-announcement-placeholder = Announcement text...
-comms-console-menu-announcement-button = Announce
-comms-console-menu-announcement-button-tooltip = Send your message as a station-wide radio announcement.
-comms-console-menu-broadcast-button = Broadcast
-comms-console-menu-broadcast-button-tooltip = Broadcast your message to wall-mounted screens around the station. Note: They fit only ten characters!
+comms-console-menu-title = Консоль зв'язку
+comms-console-menu-announcement-placeholder = Текст оголошення...
+comms-console-menu-announcement-button = Оголосити
+comms-console-menu-announcement-button-tooltip = Надішліть своє повідомлення як радіооб'яву на всю станцію.
+comms-console-menu-broadcast-button = Транслювати
+comms-console-menu-broadcast-button-tooltip = Транслюйте своє повідомлення на настінні екрани по всій станції. Зверніть увагу: вони вміщують лише десять символів!
 comms-console-menu-alert-level-button-tooltip = Change the station alert level. Applies immediately on selecting.
-comms-console-menu-call-shuttle = Call emergency shuttle
-comms-console-menu-recall-shuttle = Recall emergency shuttle
-comms-console-menu-emergency-shuttle-button-tooltip = Calls or recalls the emergency shuttle. You can only recall when there's enough time left.
-comms-console-menu-time-remaining = Time remaining: {$time}
+comms-console-menu-call-shuttle = Викликати аварійний шатл
+comms-console-menu-recall-shuttle = Відкликати аварійний шатл
+comms-console-menu-emergency-shuttle-button-tooltip = Викликає або відкликає екстрену допомогу. Ви можете відкликати тільки тоді, коли залишиться достатньо часу.
+comms-console-menu-time-remaining = Час, що залишився: {$time}
 
 # Popup
-comms-console-permission-denied = Permission denied
-comms-console-shuttle-unavailable = Shuttle is currently unavailable
-comms-console-message-too-long = Message is too long
+comms-console-permission-denied = У дозволі відмовлено
+comms-console-shuttle-unavailable = Шаттл наразі недоступний
+comms-console-message-too-long = Повідомлення занадто довге
 
 # Placeholder values
-comms-console-announcement-sent-by = Sent by
-comms-console-announcement-unknown-sender = Unknown
+comms-console-announcement-sent-by = Надіслано:
+comms-console-announcement-unknown-sender = Невідомий
 
 # Comms console variant titles
 comms-console-announcement-title-station = Communications Console
-comms-console-announcement-title-centcom = Central Command
-comms-console-announcement-title-nukie = Syndicate Nuclear Operative
-comms-console-announcement-title-station-ai = Station AI
+comms-console-announcement-title-centcom = Центральне Командування
+comms-console-announcement-title-nukie = Ядерний оперативник Синдикату
+comms-console-announcement-title-station-ai = ШІ станції

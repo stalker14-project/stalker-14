@@ -2,25 +2,25 @@
 ### UI
 
 # Current game score
-blockgame-menu-label-points = Points: {$points}
+blockgame-menu-label-points = Бали: {$points}
 
 # Current game level
-blockgame-menu-label-level = Level: {$level}
+blockgame-menu-label-level = Левел: {$level}
 
 # Game over information of your round
-blockgame-menu-gameover-info = Global: {$global}
-    Local: {$local}
-    Points: {$points}
+blockgame-menu-gameover-info = Глобально: {$global}
+    Локально: {$local}
+    Бали: {$points}
 
-blockgame-menu-title = Nanotrasen Block Game
-blockgame-menu-button-new-game = New Game
-blockgame-menu-button-scoreboard = Scoreboard
-blockgame-menu-button-pause = Pause
-blockgame-menu-button-unpause = Unpause
-blockgame-menu-msg-game-over = Game over!
-blockgame-menu-label-highscores = Highscores
-blockgame-menu-button-back = Back
-blockgame-menu-label-next = Next
-blockgame-menu-label-hold = Hold
-blockgame-menu-text-station = Station
-blockgame-menu-text-nanotrasen = Nanotrasen
+blockgame-menu-title = Гра з блоків з Нанотрайзен
+blockgame-menu-button-new-game = Нова гра
+blockgame-menu-button-scoreboard = Табло Лідерів
+blockgame-menu-button-pause = Пауза
+blockgame-menu-button-unpause = Зняти з паузи
+blockgame-menu-msg-game-over = Гру закінчено!
+blockgame-menu-label-highscores = Найвищі бали
+blockgame-menu-button-back = Назад
+blockgame-menu-label-next = Наступне
+blockgame-menu-label-hold = Затримати
+blockgame-menu-text-station = Станція
+blockgame-menu-text-nanotrasen = Нанотрайзен

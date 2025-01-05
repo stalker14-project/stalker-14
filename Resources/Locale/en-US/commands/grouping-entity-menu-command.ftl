@@ -1,4 +1,4 @@
-cmd-entitymenug-desc = Sets the entity menu grouping type.
-cmd-entitymenug-help = Usage: {$command} <0:{$groupingTypesCount}>
-cmd-entitymenug-error = {$arg} is not a valid integer.
-cmd-entitymenug-notify = Context Menu Grouping set to type: {$cvar}
+cmd-entitymenug-desc = Задає тип групування меню сутності.
+cmd-entitymenug-help = Використання: {$command} <0:{$groupingTypesCount}>
+cmd-entitymenug-error = {$arg} не є дійсним цілим числом.
+cmd-entitymenug-notify = Групування контекстного меню встановлено на тип: {$cvar}
