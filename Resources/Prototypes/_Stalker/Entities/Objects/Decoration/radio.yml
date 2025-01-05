@@ -1878,6 +1878,42 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c5
 
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyThreeRadio
+  suffix: Stalker, кассета (Силуети)
+  name: кассета "Силуети"
+  description: Стара пошарпана касета. Імовірно, на неї записано якусь пісню. На передній частині касети є нерозбірливий напис.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyFiveRadio
+  suffix: Stalker, кассета (Low Roar - "I'll Keep Coming")
+  name: кассета "Low Roar - I'll Keep Coming"
+  description: Стара пошарпана касета. Імовірно, на неї записана якась пісня. На передній частині касети є нерозбірливий напис.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
 # Contributor
 - type: entity
   parent: BaseItem

@@ -2,52 +2,64 @@
   id: NpcBuyer
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 450
-    ZoneArtifactEye: 750
-    ZoneArtifactFlame: 1500
+    ZoneArtifactFireball: 675
+    ZoneArtifactEye: 1125
+    ZoneArtifactFlame: 2250
     # Thermal group - 2
-    ZoneArtifactCristall: 1875
-    ZoneArtifactLithosphere: 3000
+    ZoneArtifactCristall: 2812
+    ZoneArtifactLithosphere: 4500
     # Electrical group - 1
-    ZoneArtifactSparkler: 450
-    ZoneArtifactBattery: 900
-    ZoneArtifactFlash: 1800
-    ArtMoon: 2250
-    ZoneArtifactTesla: 3375
-    ZoneArtifactIce: 3750
+    ZoneArtifactSparkler: 675
+    ZoneArtifactBattery: 1350
+    ZoneArtifactFlash: 2700
+    ArtMoon: 3375
+    ZoneArtifactTesla: 5062
+    ZoneArtifactIce: 5625
     # Gravity group - 1
-    ArtMedusa: 375
-    ZoneArtifactFlower: 750
-    ZoneArtifactNightStar: 1875
+    ArtMedusa: 562
+    ZoneArtifactFlower: 1125
+    ZoneArtifactNightStar: 2812
     # Gravity group - 2
-    ZoneArtifactVyvert: 450
-    ZoneArtifactAmoeba: 750
-    ZoneArtifactGravi: 2250
-    ZoneArtifactGoldfish: 3000
-    ZoneArtifactSpring: 3750
-    ZoneArtifactFocus: 1500
-    ZoneArtifactStuntman: 3000
-    ZoneArtifactDistorter: 4500
-    ZoneArtifactSoul: 3750
+    ZoneArtifactVyvert: 675
+    ZoneArtifactAmoeba: 1125
+    ZoneArtifactGravi: 3375
+    ZoneArtifactGoldfish: 4500
+    ZoneArtifactSpring: 5625
+    ZoneArtifactFocus: 2250
+    ZoneArtifactStuntman: 4500
+    ZoneArtifactDistorter: 6750
+    ZoneArtifactSoul: 5625
     # Acidic group - 1
-    ZoneArtifactBlood: 600
-    ZoneArtifactMeat: 1125
-    ZoneArtifactKolobok: 1500
+    ZoneArtifactBlood: 900
+    ZoneArtifactMeat: 1687
+    ZoneArtifactKolobok: 2250
     # Acidic group - 2
-    ZoneArtifactPellicle: 750
-    ZoneArtifactBaloon: 2625
-    # Частини Мутантів
-    FoodMeatSpiderLeg: 75
-    MutantPartBlindDogTail: 135
-    MutantPartZombieHand: 630
-    MutantPartFleshEye: 360
-    MutantPartBoarHoof: 360
+    ZoneArtifactPellicle: 1125
+    ZoneArtifactBaloon: 3937
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 135 # T1
+    MutantPartSeasonedBoarHoof: 324 # T2
+    MutantPartOldBoarHoof: 607 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 90
+    MutantPartFleshEye: 200
+    FoodMeatSpiderLeg: 50
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 900
     MutantPartPseudodogTail: 450
-    MutantPartSnorkFoot: 540
-    MutantPartLeshiyRoot: 750
+    MutantPartSnorkFoot: 450
+
+    #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 900
-    MutantPartPseudogiantHeart: 3750
-    MutantPartOraculeEye: 4500
+    MutantPartOraculeEye: 2400
+    MutantPartPseudogiantHeart: 6000
+    MutantPartZombieHand: 450
+
     ### Наркотики
     STCannabisBox: 4500
   categories:
@@ -55,14 +67,14 @@
       priority: 0
       items:
         TradeBox: 1000
-        CannabisSeeds: 200
+        CannabisSeedsStalker: 200
     - name: Детектори
       priority: 1
       items:
         ZoneArtifactDetectorPulse: 150
         ZoneArtifactDetectorHunter: 550
         ZoneArtifactDetectorResponse: 1500
-        #ZoneArtifactDetectorSpruce: 1900
+        ZoneArtifactDetectorSpruce: 2900
         #ZoneArtifactDetectorBarracuda: 5300
         #ZoneArtifactDetectorBear: 7700
         #ZoneArtifactDetectorWolfhound: 12800

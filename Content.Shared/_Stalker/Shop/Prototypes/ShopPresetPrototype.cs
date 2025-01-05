@@ -32,9 +32,6 @@ public sealed class ShopPresetPrototype : IPrototype
 [DataDefinition, Serializable, NetSerializable]
 public sealed partial class CategoryInfo
 {
-    // TODO: Add sponsor category check
-    // TODO: Add sponsors...
-
     /// <summary>
     /// Name of category, this will be displayed in shop window
     /// </summary>
@@ -57,5 +54,13 @@ public sealed partial class CategoryInfo
     /// </summary>
     [DataField]
     public int Priority;
+
+    public CategoryInfo(CategoryInfo other)
+    {
+        Name = other.Name;
+        Items = new Dictionary<string, int>(other.Items);
+        Priority = other.Priority;
+        ListingItems = new List<ListingData>(); // empty because I want it to be empty, ya know?
+    }
 }
 

@@ -1,0 +1,158 @@
+###############   СТАДІЯ 1 НАСІННЯ І ЛИСТЯ
+
+- type: seed
+  id: STcannabisGrow
+  name: канабіс сатіва
+  suffix: ST, Stalker, ботаніка
+  displayName: канабіс сатіва
+  plantRsi: Objects/Specific/Hydroponics/cannabis.rsi
+  packetPrototype: CannabisSeeds
+  productPrototypes:
+    - STLeavesCannabis
+  harvestRepeat: Repeat
+  lifespan: 75
+  maturation: 8
+  production: 12
+  yield: 2
+  potency: 20
+  growthStages: 3
+  waterConsumption: 0.40
+  idealLight: 9
+  idealHeat: 298
+  chemicals:
+    THC:
+      Min: 1
+      Max: 10
+      PotencyDivisor: 10
+
+- type: entity
+  id: CannabisSeedsStalker
+  parent: SeedBase
+  name: насіння маріхуани
+  suffix: ST, Stalker, craft, ботаніка
+  description: Только не попадитесь с ней ментам.
+#  suffixx: ST, Stalker, ботаніка
+  components:
+    - type: Seed
+      seedId: STcannabisGrow
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cannabis.rsi
+
+- type: entity
+  name: шишки маріхуани
+  parent: ProduceBase
+  id: STLeavesCannabis
+  suffix: ST, Stalker, craft
+  description: На перший погляд звичайні шишки маріхуани. Ймовірно через аномальний вплив місцевого ґрунту на насіння, плоди набули незвичайного кольору.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
+  - type: Produce
+    seedId: STcannabisGrow
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 15
+  - type: Craftable
+
+###############   СТАДІЯ 2 СУШІННЯ ТА ПЕРЕМЕЛЮВАННЯ
+
+- type: entity
+  name: сушені шишки маріхуани
+  parent: BaseItem
+  id: STLeavesCannabisDried
+  suffix: ST, Stalker, craft
+  description: ППрактично готові до вживання висушені плоди марихуани, проте шишки занадто великі, щоб їх було зручно курити.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 12
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/cannabis.rsi
+    state: dried
+  - type: Craftable
+
+- type: entity
+  name: подрібнені шишки маріхуани
+  parent: BaseItem
+  id: STGroundCannabis
+  suffix: ST, Stalker, craft
+  description: Повністю готовий ручничок для щільного забивання косячка.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
+    state: powderpile_rainbow
+    color: white
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: THC
+          Quantity: 20
+  - type: Craftable
+
+
+
+
+###############   СТАДІЯ 3 КРУТИМО І КУРИМО
+
+- type: entity
+  id: STPaperRolling
+  name: папір для самокруток
+  description: Папір для самокруток - це тонкий і легкий матеріал, що ідеально підходить для самостійного скручування тютюну, забезпечує рівне горіння і чистий смак.
+  suffix: ST,Stalker,craft
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
+    state: cigpaper
+  - type: Item
+    sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
+    size: Tiny
+  - type: Tag
+    tags:
+    - RollingPaper
+    - Trash
+  - type: SpaceGarbage
+  - type: Craftable
+
+- type: entity
+  id: STJoint
+  suffix: ST, Stalker, craft
+  parent: STBaseCigar
+  name: штакет
+  description: Щільно забитий штакет місцевої сативи. Тримаючи його в зубах, вас переповнює п'янке відчуття свободи. Залишається тільки пустити димок і добре провести час.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    state: unlit-icon
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi
+    slots: [ mask ]
+  - type: Construction
+    graph: smokeableJointRainbow
+    node: jointRainbow
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+        reagents:
+        - ReagentId: THC
+          Quantity: 20
+        - ReagentId: SpaceDrugs
+          Quantity: 4
+        - ReagentId: Lipolicide
+          Quantity: 4
+        - ReagentId: MindbreakerToxin
+          Quantity: 2.66
+        - ReagentId: Happiness
+          Quantity: 2.66
+        - ReagentId: Psicodine
+          Quantity: 0.8
+

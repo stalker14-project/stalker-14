@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseStructureStalkerDynamic
+  id: STBaseTrashCache
+  abstract: true
+  name: сміття
+  description: Купа сміття, можливо, варто пошукати в ній щось ще придатне до використання.
+  components:
+    - type: TimedDespawn
+      lifetime: 7220
+    - type: Transform
+      noRot: true
+    - type: Storage
+      maxItemSize: Huge
+      grid:
+        - 0,0,6,6
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+    - type: Clickable

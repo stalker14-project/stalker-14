@@ -97,23 +97,6 @@
 
 # Repository for Serafim - End
 
-# Repository for Mechanic - Start
-
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandMechanicRepository
-  suffix: 500
-  name: Band-Mechanic-Repository
-  description: Підвал Механіків... Пахне машинним маслом...
-  components:
-    - type: AccessReader
-      access: [["Mechanic"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandMechanicRepository
-      repositoryWeight: 500
-
-# Repository for Mechanic - End
-
 # Repository for DebtBand - Start
 
 - type: entity
@@ -145,7 +128,7 @@
 - type: entity
   parent: MapTeleportBase
   id: PortalBandDolgRepositoryPortal
-  suffix: Станція - Склад
+  suffix: Вокзал - Склад Обов'язку
   name: TrainStation-Cordon
   components:
     - type: AccessReader
@@ -731,6 +714,5 @@
 
     - "_PortalBandJabaRepository"
     - "_PortalBandSerafimRepository"
-    - "_PortalBandMechanicRepository"
 
     - "_PortalBandMonolithRepository"

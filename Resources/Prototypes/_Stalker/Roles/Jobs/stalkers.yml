@@ -1,15 +1,27 @@
 - type: job
   id: Stalker
-  name: Сталкер
+  name: Одинак
   icon: stalker
   description: Це кочова напівзгуртована група, яка просто живе за рахунок Зони, щоб заробити трохи монет на своє повсякденне життя.
   playTimeTracker: JobStalker
   whitelisted: false
   requirements:
-    # - !type:DepartmentTimeRequirement
-    #   department: StalkerAdvanced
-    #   time: 1
-    #   inverted: true
+    - !type:DepartmentTimeRequirement
+      department: StalkerAdvanced
+      time: 1
+      inverted: true
+    - !type:DepartmentTimeRequirement
+      department: StalkerBrigands
+      time: 1
+      inverted: true
+    - !type:DepartmentTimeRequirement
+      department: StalkerOfficials
+      time: 1
+      inverted: true
+    - !type:DepartmentTimeRequirement
+      department: StalkerReligius
+      time: 1
+      inverted: true
     - !type:SpeciesRequirement
       species:
       - Human
@@ -43,8 +55,7 @@
     id: StalkerPDA
     belt: ClothingBeltStorageWaistbag
     torso: ClothingTorsoSweaterStalkerGreen
-    legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsWork
-    outerClothing: ClothingOuterCoatBomber
+    legs: ClothingLegsJeansStalker
+    shoes: ClothingShoesBootsCombat
     pocket1: BookStalkerFAQ
     pocket2: PassportUkraine

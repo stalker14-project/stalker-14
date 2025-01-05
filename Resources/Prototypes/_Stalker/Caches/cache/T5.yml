@@ -1,0 +1,49 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageFillT5
+  abstract: true
+  suffix: ST, Cache, T5
+  name: ящик
+  description: Досить таки старий ящик. Можливо, варто його обшукати. Може, можна знайти щось корисне в ньому.
+  components:
+    - type: StorageFill
+      contents:
+        - id: STCraftNanoChipT5
+          prob: 0.05
+        - id: STCraftHighStrengthKitT5
+          prob: 0.05
+        - id: STCraftCompositeMaterialT5
+          prob: 0.05
+        - id: STCraftAluminumOxideT5
+          prob: 0.05
+        - id: STCraftRedWoodPlankT5
+          prob: 0.05
+        - id: STCraftPlasticFittingT5
+          prob: 0.05
+        - id: STCraftSheetSteelT5
+          prob: 0.05
+        - id: STCraftHighPerformanceChipT4
+          prob: 0.1
+        - id: STCraftIndustrialThreadStaplesKitT4
+          prob: 0.1
+        - id: STCraftPolymerFabricT4
+          prob: 0.1
+        - id: STCraftSapphireCrystalT4
+          prob: 0.1
+        - id: STCraftYewPlankT4
+          prob: 0.1
+        - id: STCraftPlasticFittingT4
+          prob: 0.1
+        - id: STCraftSheetAluminumT4
+          prob: 0.1
+
+- type: entity
+  parent: [STCacheStorageFillT5, STBaseCache]
+  id: STCacheT5
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCacheT5

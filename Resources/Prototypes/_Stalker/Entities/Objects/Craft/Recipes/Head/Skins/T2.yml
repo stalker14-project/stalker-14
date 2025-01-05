@@ -9,11 +9,31 @@
     time: 5
 
 - type: lightCraftingRecipe
+  id:  STCraftSkinClothingHeadInfantryHelmetUN
+  results:
+    - ClothingHeadInfantryHelmetUN
+  steps:
+    firstIngredient: STSkinsKitUnitar
+    secondIngredient: ClothingHeadHelmetInfantry
+    keepFirst: true
+    time: 5
+
+- type: lightCraftingRecipe
   id:  STCraftSkinClothingHeadHelmetInfantryPilgrim
   results:
     - ClothingHeadHelmetInfantryPilgrim
   steps:
     firstIngredient: STSkinsKitPilgrim
+    secondIngredient: ClothingHeadHelmetInfantry
+    keepFirst: true
+    time: 5
+
+- type: lightCraftingRecipe
+  id:  STCraftSkinClothingHeadHelmetInfantryBand
+  results:
+    - ClothingHeadHelmetInfantryBand
+  steps:
+    firstIngredient: STSkinsKitBandits
     secondIngredient: ClothingHeadHelmetInfantry
     keepFirst: true
     time: 5
@@ -55,3 +75,13 @@
     firstIngredient: STSkinsKitPilgrim
     secondIngredient: ClothingHeadHelmetVityaz1C
     keepFirst: true
+  
+- type: lightCraftingRecipe
+  id: STCraftSkinClothingHeadHelmetVityaz1B
+  results:
+    - ClothingHeadHelmetVityaz1B
+  steps:
+    firstIngredient: STSkinsKitBandits
+    secondIngredient: ClothingHeadHelmetVityaz1C
+    keepFirst: true
+

@@ -1,0 +1,203 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageFillT2
+  description: Досить таки стара шафа. Можливо, варто її обшукати. Може, можна знайти щось корисне в ній.
+  abstract: true
+  suffix: ST, Cache, T2
+  name: шафа
+  components:
+    - type: StorageFill
+      contents:
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftTapeKitT2
+          prob: 0.1
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftGlassT2
+          prob: 0.1
+        - id: STCraftBirchPlankT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftSheetIronT2
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: WeaponPistolStalkerGlock
+          prob: 0.005
+        - id: WeaponPistolGSH18
+          prob: 0.005
+        - id: WeaponPistolStalkerAPS
+          prob: 0.005
+        - id: STWeaponShotgunMP153
+          prob: 0.005
+        - id: STWeaponSMGMp5
+          prob: 0.005
+        - id: STWeaponShotgunStalkerSPAS
+          prob: 0.005
+        - id: STWeaponGunAKS74U
+          prob: 0.005
+        - id: WeaponPistolStalkerPM
+          prob: 0.005
+        - id: WeaponPistolStalkerTT
+          prob: 0.005
+        - id: STWeaponRevolverTaurusJudge
+          prob: 0.005
+        - id: STWeaponRevolverTaurusTracker455
+          prob: 0.005
+        - id: STWeaponShotgunMossberg
+          prob: 0.005
+        - id: WeaponShotgunStalkerMP133
+          prob: 0.005
+        - id: STWeaponRifleStalkerSaiga545
+          prob: 0.005
+        - id: BoxArtcont
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.01
+        - id: BaseRadio
+          prob: 0.01
+        - id: HandheldGPSBasic
+          prob: 0.01
+        - id: Defibrillator
+          prob: 0.005
+        - id: MedkitAI2
+          prob: 0.07
+        - id: MedkitMilitary
+          prob: 0.02
+        - id: MedkitScience
+          prob: 0.005
+        - id: psyblock
+          prob: 0.05
+        - id: antiradpill
+          prob: 0.05
+        - id: AntiRadMedipen
+          prob: 0.01
+        - id: radioprotectpill
+          prob: 0.05
+        - id: STBrutepack
+          prob: 0.1
+        - id: STGauze
+          prob: 0.1
+        - id: STOintment
+          prob: 0.1
+        - id: ZoneArtifactPellicle
+          prob: 0.01
+        - id: ZoneArtifactSparkler
+          prob: 0.01
+        - id: ArtMedusa
+          prob: 0.01
+        - id: ZoneArtifactFireball
+          prob: 0.01
+        - id: ZoneArtifactBlood
+          prob: 0.01
+        - id: ZoneArtifactBattery
+          prob: 0.01
+        - id: ZoneArtifactVyvert
+          prob: 0.01
+        - id: ZoneArtifactAmoeba
+          prob: 0.01
+        - id: ZoneArtifactEye
+          prob: 0.01
+        - id: 45ACPMFMJBox
+          prob: 0.01
+        - id: 45ACPRIPBox
+          prob: 0.01
+        - id: 725PTBox
+          prob: 0.01
+        - id: 725LRNPCBox
+          prob: 0.01
+        - id: 919PSTBox
+          prob: 0.01
+        - id: 919RIPBox
+          prob: 0.01
+        - id: 918PSTBox
+          prob: 0.01
+        - id: 918SP7Box
+          prob: 0.01
+        - id: 545FMJBox
+          prob: 0.01
+        - id: 545HPBox
+          prob: 0.01
+        - id: 556FMJBox
+          prob: 0.01
+        - id: 556WarmagBox
+          prob: 0.01
+        - id: 939SP5Box
+          prob: 0.01
+        - id: ToolkitTearTwo
+          prob: 0.0001
+        - id: ToolkitTearOne
+          prob: 0.0001
+        - id: IngotGold1
+          prob: 0.05
+        - id: IngotSilver1
+          prob: 0.05
+        - id: MaterialDiamond1
+          prob: 0.05
+        - id: DrinkGoldenCup
+          prob: 0.1
+        - id: CraftMaterialGunpowder
+          prob: 0.005
+        - id: CraftCardboardTube
+          prob: 0.005
+        - id: CraftFitil
+          prob: 0.005
+
+- type: entity
+  parent: [STCacheStorageFillT2, STBaseCache]
+  id: STCache1T2
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SpawnOnDespawn
+      prototype: STCache1T2
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/bookshelf.rsi
+      state: base
+
+- type: entity
+  parent: [STCacheStorageFillT2, STBaseCache]
+  id: STCache2T2
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SpawnOnDespawn
+      prototype: STCache2T2
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/bookshelf.rsi
+      state: base4
+
+
+- type: entity
+  parent: [STCacheStorageFillT2, STBaseCache]
+  id: STCache3T2
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SpawnOnDespawn
+      prototype: STCache3T2
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/bookshelf.rsi
+      state: base3
+
+- type: entity
+  parent: [STCacheStorageFillT2, STBaseCache]
+  id: STCache4T2
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: SpawnOnDespawn
+      prototype: STCache3T2
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/bookshelf.rsi
+      state: base2

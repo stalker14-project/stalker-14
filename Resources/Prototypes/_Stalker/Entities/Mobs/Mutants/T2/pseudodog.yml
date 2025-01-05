@@ -1,0 +1,66 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantPseudodog
+  name: псевдопес
+  suffix: ST, T2
+  description: Мутований вовк, який може завдати чимало клопоту непідготовленому сталкеру.
+  components:
+    - type: Butcherable
+      spawned:
+        - id: MutantPartPseudodogTail
+          amount: 1
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: pseudodog
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 250
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/bdog_die_0.ogg
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        250: Dead
+    - type: MeleeWeapon
+      attackRate: 1
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.4
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/bdog_attack_2.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 36
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3.2
+      baseSprintSpeed: 4
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/pseudodog.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: pseudodog
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        200: 0.8
+    - type: StaminaDamageOnHit
+      damage: 5
+    - type: STWeight
+      self: 55

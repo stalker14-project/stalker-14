@@ -1,7 +1,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STDetectorAD1Blueprint
-  name: Recipe anomaly detector model 1 (DA-1)
+  name: Рецепт детектора аномалій модель 1 (DA-1)
   components:
     - type: STBlueprint
       blueprint: newrecipeDetectorAD1
@@ -9,15 +9,23 @@
 - type: entity
   parent: STBaseBlueprint
   id: STDetectorAD2Blueprint
-  name: Recipe anomaly detector model 2 (DA-2)
+  name: Рецепт детектора аномалій модель 2 (DA-2)
   components:
     - type: STBlueprint
       blueprint: newrecipeDetectorAD2
 
 - type: entity
   parent: STBaseBlueprint
+  id: STDetectorAD3Blueprint
+  name: Рецепт детектор аномалій 3-ї моделі (ДА-3)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeDetectorAD3
+
+- type: entity
+  parent: STBaseBlueprint
   id: STZoneArtifactDetectorPulseBlueprint
-  name: Artifact Detector Recipe Pulse
+  name: Імпульс рецепту детектора артефактів
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorPulse
@@ -25,7 +33,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STZoneArtifactDetectorHunterBlueprint
-  name: Artifact Detector Recipe Hunter
+  name: Рецепт мисливця за артефактами
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorHunter
@@ -33,7 +41,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STZoneArtifactDetectorResponseBlueprint
-  name: Artifact Detector Recipe Response
+  name: Рецепт детектора артефактів "Відповідь"
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorResponse
@@ -41,7 +49,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STZoneArtifactDetectorSpruceBlueprint
-  name: Artifact Detector Recipe Pine
+  name: Рецепт детектора артефактів "Ялина"
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorSpruce
@@ -49,7 +57,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STZoneArtifactDetectorBarracudaBlueprint
-  name: Barracuda Artifact Detector Recipe
+  name: Рецепт детектора артефактів "Барракуда"
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorBarracuda
@@ -57,7 +65,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STZoneArtifactDetectorBearBlueprint
-  name: Artifact Detector Recipe Bear
+  name: Рецепт детектора артефактів "Ведмедідь"
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorBear
@@ -65,7 +73,7 @@
 - type: entity
   parent: STBaseBlueprint
   id: STZoneArtifactDetectorWolfhoundBlueprint
-  name: Artifact Detector Recipe Vovkodav
+  name: Рецепт детектора артефактів "Вовкодав"
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorWolfhound

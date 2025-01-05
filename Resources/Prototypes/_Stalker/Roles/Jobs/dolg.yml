@@ -1,8 +1,8 @@
 - type: job
   id: StalkerDolg
-  name: Боєць Обов'язку
+  name: боєць Долгу
   icon: Dolg
-  description: Руйнівник Зони.
+  description: Захисник людства.
   playTimeTracker: JobDolg
   whitelisted: true
   requirements:
@@ -21,6 +21,7 @@
         - type: Access
           tags:
             - Dolg
+            - Stalker
         - type: Bands
           band: Stalker
           bandIcon: Dolg
@@ -33,9 +34,9 @@
 
 - type: job
   id: StalkerHeadDolg
-  name: Лідер Обов'язку
+  name: Лидер Обов'язку
   icon: Dolg
-  description: Руйнівник Зони.
+  description: Захисник людства.
   playTimeTracker: JobHeadDolg
   whitelisted: true
   requirements:
@@ -55,6 +56,7 @@
           tags:
             - Dolg
             - DolgHead
+            - Stalker
         - type: Bands
           band: Stalker
           bandIcon: Dolg

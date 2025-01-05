@@ -1,0 +1,25 @@
+- type: entity
+  parent: BaseStructureStalkerDynamic
+  id: STBaseHiddenCache
+  abstract: true
+  components:
+    - type: Transform
+      noRot: true
+    - type: Storage
+      maxItemSize: Large
+      grid:
+        - 0,0,8,8
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+    - type: Clickable
+    - type: AmbientSound
+      volume: -10
+      range: 3
+      enabled: true
+      sound:
+        path: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg

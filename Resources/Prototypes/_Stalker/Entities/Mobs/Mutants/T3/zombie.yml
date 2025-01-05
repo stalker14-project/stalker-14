@@ -1,0 +1,262 @@
+- type: entity
+  name: зомбований
+  suffix: Stalker, Т3
+  parent: BaseMobMutant
+  id: MobStalkerZombieBase
+  description:
+  components:
+    - type: Stamina
+      decay: 14
+      cooldown: 5
+      critThreshold: 600
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 1000
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: zombie
+          sprite: /Textures/_Stalker/Mobs/Mutants/zombie/Stalker.rsi
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: zombie
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Damageable
+      damageContainer: Biological
+      damageModifierSet: MutantZombie
+    - type: Bands
+      band: Zombie
+      bandIcon: zombie
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 150
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 0.7
+      baseSprintSpeed: 1.3
+    - type: Advertise
+      pack: SayStalkerZombie
+      minWait: 60
+      maxWait: 120
+    - type: Speech
+      speechSounds: Alto
+    - type: Vocal
+      sounds:
+        Male: MaleHuman
+        Female: FemaleHuman
+        Unsexed: MaleHuman
+    - type: HTN
+      rootTask:
+        task: STMonolith
+      blackboard:
+        VisionRadius: !type:Single
+          25.0
+    - type: ApproachEmitter
+      range: 0
+      useMinRange: false
+    - type: STWeight
+      self: 90
+    - type: Tag
+      tags:
+        - DoorBumpOpener
+    - type: Tool
+      speed: 1.5
+      qualities:
+        - Prying
+    - type: Prying
+      pryPowered: !type:Bool
+          true
+      force: !type:Bool
+          true
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 1.2
+    - type: BasicEntityAmmoProvider
+      proto: Bullet545PC
+      capacity: 8
+      count: 5
+    - type: Gun
+      fireRate: 6
+      useKey: false
+      selectedMode: FullAuto
+      minAngle: 30
+      maxAngle: 58
+      angleIncrease: 5
+      angleDecay: 30
+      availableModes:
+        - FullAuto
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        150: Dead
+    - type: PassiveDamage
+      allowedStates:
+        - Alive
+        - Critical
+      damageCap: 200
+      damage:
+        groups:
+          Burn: -100
+          Toxin: -100
+          Airloss: -100
+          Brute: -1
+    - type: Butcherable
+      spawned:
+        - id: MutantPartZombieHand
+          maxAmount: 1
+          prob: 0.5
+
+- type: entity
+  name: зомбований
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieSosop
+  description:
+  components:
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: zombie
+          sprite: /Textures/_Stalker/Mobs/Mutants/zombie/Sosop.rsi
+
+- type: entity
+  name: зомбований
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieGlod
+  description:
+  components:
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: zombie
+          sprite: /Textures/_Stalker/Mobs/Mutants/zombie/Glod.rsi
+
+- type: entity
+  name: зомбований
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieISSG
+  description:
+  components:
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: zombie
+          sprite: /Textures/_Stalker/Mobs/Mutants/zombie/ISSG.rsi
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 1.7
+    - type: BasicEntityAmmoProvider
+      proto: Bullet556M855
+      capacity: 5
+      count: 1
+    - type: Gun
+      fireRate: 5
+      useKey: false
+      selectedMode: FullAuto
+      minAngle: 25
+      maxAngle: 50
+      angleIncrease: 4
+      angleDecay: 40
+      availableModes:
+        - FullAuto
+
+- type: entity
+  name: зомбований
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieMerc
+  description:
+  components:
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: zombie
+          sprite: /Textures/_Stalker/Mobs/Mutants/zombie/Merc.rsi
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 1
+    - type: BasicEntityAmmoProvider
+      proto: Bullet556M855
+      capacity: 7
+      count: 5
+    - type: Gun
+      fireRate: 8
+      useKey: false
+      selectedMode: FullAuto
+      minAngle: 29
+      maxAngle: 57
+      angleIncrease: 5
+      angleDecay: 25
+      availableModes:
+        - FullAuto
+
+- type: entity
+  name: зомбований
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieRHBZ
+  description:
+  components:
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: zombie
+          sprite: /Textures/_Stalker/Mobs/Mutants/zombie/RHBZ.rsi
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 0.4
+    - type: BasicEntityAmmoProvider
+      proto: Bullet918PBM
+      capacity: 10
+      count: 1
+    - type: Gun
+      fireRate: 9
+      useKey: false
+      selectedMode: FullAuto
+      minAngle: 35
+      maxAngle: 75
+      angleIncrease: 7
+      angleDecay: 15
+      availableModes:
+        - FullAuto
+
+- type: entity
+  name: зомбований
+  suffix: Stalker, Т3
+  parent: MobStalkerZombieBase
+  id: MobStalkerZombieChN
+  description:
+  components:
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: zombie
+          sprite: /Textures/_Stalker/Mobs/Mutants/zombie/ChN.rsi
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 0.4
+    - type: BasicEntityAmmoProvider
+      proto: Bullet918PBM
+      capacity: 10
+      count: 1
+    - type: Gun
+      fireRate: 9
+      useKey: false
+      selectedMode: FullAuto
+      minAngle: 35
+      maxAngle: 75
+      angleIncrease: 7
+      angleDecay: 15
+      availableModes:
+        - FullAuto

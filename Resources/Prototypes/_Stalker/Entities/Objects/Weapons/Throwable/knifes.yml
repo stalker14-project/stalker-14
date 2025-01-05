@@ -12,6 +12,18 @@
   - type: Tag
     tags:
     - Knife
+  - type: DamageOnLand
+    damage:
+      types:
+        Blunt: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 - type: entity
   name: метальний ніж

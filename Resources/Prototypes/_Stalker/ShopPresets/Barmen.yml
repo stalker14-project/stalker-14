@@ -2,102 +2,150 @@
   id: STNPCBarmenPreset # 0.5x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 225
-    ZoneArtifactEye: 375
-    ZoneArtifactFlame: 750
+    ZoneArtifactFireball: 338
+    ZoneArtifactEye: 562
+    ZoneArtifactFlame: 1125
     # Thermal group - 2
-    ZoneArtifactCristall: 937
-    ZoneArtifactLithosphere: 1500
+    ZoneArtifactCristall: 1406
+    ZoneArtifactLithosphere: 2250
     # Electrical group - 1
-    ZoneArtifactSparkler: 225
-    ZoneArtifactBattery: 450
-    ZoneArtifactFlash: 900
-    ArtMoon: 1125
-    ZoneArtifactTesla: 1687
-    ZoneArtifactIce: 1875
+    ZoneArtifactSparkler: 338
+    ZoneArtifactBattery: 675
+    ZoneArtifactFlash: 1350
+    ArtMoon: 1687
+    ZoneArtifactTesla: 2531
+    ZoneArtifactIce: 2812
     # Gravity group - 1
-    ArtMedusa: 187
-    ZoneArtifactFlower: 375
-    ZoneArtifactNightStar: 937
+    ArtMedusa: 281
+    ZoneArtifactFlower: 562
+    ZoneArtifactNightStar: 1406
     # Gravity group - 2
-    ZoneArtifactVyvert: 225
-    ZoneArtifactAmoeba: 375
-    ZoneArtifactGravi: 1125
-    ZoneArtifactGoldfish: 1500
-    ZoneArtifactSpring: 1875
-    ZoneArtifactFocus: 750
-    ZoneArtifactStuntman: 1500
-    ZoneArtifactDistorter: 2250
-    ZoneArtifactSoul: 1875
+    ZoneArtifactVyvert: 338
+    ZoneArtifactAmoeba: 562
+    ZoneArtifactGravi: 1687
+    ZoneArtifactGoldfish: 2250
+    ZoneArtifactSpring: 2812
+    ZoneArtifactFocus: 1125
+    ZoneArtifactStuntman: 2250
+    ZoneArtifactDistorter: 3375
+    ZoneArtifactSoul: 2812
     # Acidic group - 1
-    ZoneArtifactBlood: 300
-    ZoneArtifactMeat: 562
-    ZoneArtifactKolobok: 750
+    ZoneArtifactBlood: 450
+    ZoneArtifactMeat: 843
+    ZoneArtifactKolobok: 1125
     # Acidic group - 2
-    ZoneArtifactPellicle: 375
-    ZoneArtifactBaloon: 1312
-    # Частини Мутантів
-    FoodMeatSpiderLeg: 37
-    MutantPartBlindDogTail: 67
-    MutantPartZombieHand: 315
-    MutantPartFleshEye: 180
-    MutantPartBoarHoof: 180
-    MutantPartPseudodogTail: 225
-    MutantPartSnorkFoot: 270
-    MutantPartLeshiyRoot: 375
-    MutantPartBloodsuckerTentacles: 450
-    MutantPartPseudogiantHeart: 1875
-    MutantPartOraculeEye: 2250
+    ZoneArtifactPellicle: 562
+    ZoneArtifactBaloon: 1968
 
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 68 # T1
+    MutantPartSeasonedBoarHoof: 162 # T2
+    MutantPartOldBoarHoof: 304 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 45
+    MutantPartFleshEye: 100
+    FoodMeatSpiderLeg: 25
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 450
+    MutantPartPseudodogTail: 225
+    MutantPartSnorkFoot: 225
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 450
+    MutantPartOraculeEye: 1200
+    MutantPartPseudogiantHeart: 3000
+    MutantPartZombieHand: 225
     # Smuggling
     TradeBox: 3300
-
 
   categories:
     - name: Зброя
       priority: 1
       items:
-        STWeaponRifleSKS: 3000
-        STWeaponRifleStalkerAK74: 3500
-        STWeaponSMGPP91: 1500
-        STWeaponRifleM16: 4000
-        STWeaponRifleSig550: 3000
-        STWeaponShotgunProtecta: 5000
+        WeaponPistolStalkerAPS: 825
+        STWeaponRevolverSWModel325: 1275
+        STWeaponRevolverSWModel625: 1650
+        STWeaponShotgunStalkerSPAS: 1875
+        STWeaponShotgunProtecta: 3450
+        STWeaponRifleStalkerAK74: 4950
+        STWeaponRifleM16: 3675
+        STWeaponRifleM4: 5250
+        STWeaponRifleSig550: 5550
+        STWeaponRifleStalkerAKM: 5850
+        STWeaponRifleStalkerFAL: 5475
+        STWeaponRifleStalkerVepr: 14700
+        STWeaponSMGMp5: 3675
+        STWeaponSMGBizon: 5100
+        STWeaponRifleVSS: 13050
     - name: Магазини
       priority: 2
       items:
-        Magazine762x39RPD: 1000
-        Vz61Mag: 100
-        BaseMP5Mag: 245
-        MP40Mag: 200
-        VityazMag: 350
-        BasePPSHMag: 220
-        545Mag30: 350
-        556Mag30: 350
-        739Mag30: 400
-        751Mag30: 400
-        GlockMag24: 350
-        GlockMag33: 400
-        PP91Mag: 300
-        P90Mag: 439
+        BasePMMag: 113
+        TTMag: 113
+        BaseGlockMag10: 128
+        BaseGSH-18Mag10: 128
+        BaseAPSMag: 180
+        SpeedLoader45ACPEmpty: 113
+        545Mag20: 188
+        545Mag30: 263
+        556Mag20: 188
+        556Mag30: 263
+        739Mag30: 338
+        751Mag20: 368
+        Base754Mag5: 548
+        BizonMag: 675
+        BaseMP5Mag: 188
+        939Mag20: 450
     - name: Боєприпаси
       priority: 3
       items:
-        7mmBuckshotBox: 100
-        6mmBuckshotBox: 250
-        8mmBuckshotBox: 1100
-        919RIPBox: 250
-        919PSTBox: 250
-        919PBMBox: 450
-        545HPBox: 400
-        545PCBox: 650
-        556FMJBox: 400
-        556M855Box: 750
-        751UNBox: 600
-        751M80Box: 800
-        739FMJBox: 750
-        754FMJBox: 900
-
+        6mmBuckshotBox: 430
+        8mmBuckshotBox: 1420
+        7mmBuckshotBox: 59
+        # .45
+        45ACPLFMJBox: 150
+        45ACPMFMJBox: 338
+        45ACPRIPBox: 338
+        45ACPAPBox: 675
+        # 7.25
+        725PBox: 150
+        725PTBox: 338
+        725LRNPCBox: 338
+        725PSTBox: 675
+        # 9.19
+        919PSOGJBox: 150
+        919PSTBox: 338
+        919RIPBox: 338
+        919PBMBox: 675
+        # 9.19
+        918PGJBox: 150
+        918PSTBox: 338
+        918SP7Box: 338
+        918PBMBox: 675
+        # 5.45
+        545FMJBox: 375
+        545HPBox: 375
+        545PCBox: 750
+        # 5.56
+        556FMJBox: 450
+        556WarmagBox: 450
+        556M855Box: 825
+        # 7.39
+        739FMJBox: 900
+        739HPBox: 900
+        # 7.51
+        751M80Box: 900
+        751UNBox: 900
+        # 7.54
+        754FMJBox: 975
+        754HPBox: 975
+        # 9.39
+        939SP5Box: 570
+        939SP6Box: 1080
     - name: Броня та спорядження
       priority: 4
       items:
@@ -180,12 +228,12 @@
         STEnergyDrinkRevo: 150
         STDrinkBeerCanBaltic: 90
         DrinkVodkaBottleFull: 55
-        FoodBreadPlain: 35
+        STFoodBreadPlain: 35
         DrinkFlaskOld: 30
         DrinkWaterBottleFull: 45
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
-        FoodMeatSalami: 350
+        STFoodMeatSalami: 350
     - name: Медицина
       priority: 8
       items:
@@ -207,9 +255,11 @@
       priority: 9
       items:
         ClothingBandageStalkerJid: 50
+        ClothingBandageStalkerBelarus: 50
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
+        ClothingUniformJumpsuitTacticool: 10
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         ClothingHeadBandMerc: 30
@@ -224,8 +274,36 @@
         ClothingShoesSwat: 35
         ClothingHeadHatBlacksoft: 10
         ClothingHeadHatGreysoft: 10
-        # Cloaks
+        ClothingHeadHatSovietUshankaStalker: 40
+        ClothingTshirtBlue: 10
+        ClothingTshirtOrange: 10
         ClothingCloakStalker: 30
+        ClothingLegsJeansBlue: 10
+        ClothingLegsJeansStalker: 10
+        ClothingLegsJeansGreenCargo: 10
+        ClothingLegsJeansGreyCargo: 10
+        ClothingLegsJeansBlackCargo: 10
+        ClothingLegsJeansBrownCargo: 10
+        ClothingLegsJeansSandCargo: 10
+        ClothingLegsJeansBlackNew: 20
+        ClothingShoesBootsCombat: 30
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingLegsJeansBereza: 20
+        ClothingOuterCoatKKK: 67
+        # new shit
+        ClothingLegsBattlePantsBlack: 50
+        ClothingLegsVeryBlueJenas: 50
+        ClothingLegsCombatForest: 50
+        ClothingLegsNavyPants: 50
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50
     - name: Розваги
       priority: 10
       items:

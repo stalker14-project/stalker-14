@@ -1,0 +1,94 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantSnork
+  name: снорк
+  suffix: ST, T2
+  description: Мутована або божевільна людина в протигазі надзвичайно небезпечна.
+  components:
+    - type: Butcherable
+      spawned:
+        - id: MutantPartSnorkFoot
+    - type: Damageable
+      damageContainer: Biological
+      damageModifierSet: SnorkMutant
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: snork
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 250
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/boar_death_0.ogg
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.25
+          density: 800
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: Jumpscare
+      chargeDamage:
+        types:
+          Blunt: 15
+          Slash: 45
+      jumpPower: 70
+      updateCooldown: 1
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        250: Dead
+    - type: MeleeWeapon
+      attackRate: 1.2
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.5
+      soundHit:
+        path: /Audio/_Stalker/Mutants/snorm_attack.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/snorm_aggressive.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 45
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 4
+      baseSprintSpeed: 4.6
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+          state: snork
+          sprite: /Textures/_Stalker/Mobs/Mutants/snork.rsi
+          scale: 1.2, 1.2
+    - type: SpriteMovement
+      movementLayers:
+        movement:
+          state: snork_running
+      noMovementLayers:
+        movement:
+          state: snork
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        200: 0.7
+    - type: StaminaDamageOnHit
+      damage: 5
+    - type: STWeight
+      self: 73

@@ -2,94 +2,122 @@
   id: NpcSidor
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 315
-    ZoneArtifactEye: 525
-    ZoneArtifactFlame: 1050
+    ZoneArtifactFireball: 472
+    ZoneArtifactEye: 787
+    ZoneArtifactFlame: 1575
     # Thermal group - 2
-    ZoneArtifactCristall: 1312
-    ZoneArtifactLithosphere: 2100
+    ZoneArtifactCristall: 1968
+    ZoneArtifactLithosphere: 3150
     # Electrical group - 1
-    ZoneArtifactSparkler: 315
-    ZoneArtifactBattery: 630
-    ZoneArtifactFlash: 1260
-    ArtMoon: 1575
-    ZoneArtifactTesla: 2362
-    ZoneArtifactIce: 2625
+    ZoneArtifactSparkler: 472
+    ZoneArtifactBattery: 945
+    ZoneArtifactFlash: 1890
+    ArtMoon: 2362
+    ZoneArtifactTesla: 3543
+    ZoneArtifactIce: 3937
     # Gravity group - 1
-    ArtMedusa: 262
-    ZoneArtifactFlower: 525
-    ZoneArtifactNightStar: 1312
+    ArtMedusa: 393
+    ZoneArtifactFlower: 787
+    ZoneArtifactNightStar: 1968
     # Gravity group - 2
-    ZoneArtifactVyvert: 315
-    ZoneArtifactAmoeba: 525
-    ZoneArtifactGravi: 1575
-    ZoneArtifactGoldfish: 2100
-    ZoneArtifactSpring: 2625
-    ZoneArtifactFocus: 1050
-    ZoneArtifactStuntman: 2100
-    ZoneArtifactDistorter: 3150
-    ZoneArtifactSoul: 2625
+    ZoneArtifactVyvert: 472
+    ZoneArtifactAmoeba: 787
+    ZoneArtifactGravi: 2362
+    ZoneArtifactGoldfish: 3150
+    ZoneArtifactSpring: 3937
+    ZoneArtifactFocus: 1575
+    ZoneArtifactStuntman: 3150
+    ZoneArtifactDistorter: 4725
+    ZoneArtifactSoul: 3937
     # Acidic group - 1
-    ZoneArtifactBlood: 420
-    ZoneArtifactMeat: 787
-    ZoneArtifactKolobok: 1050
+    ZoneArtifactBlood: 630
+    ZoneArtifactMeat: 1181
+    ZoneArtifactKolobok: 1575
     # Acidic group - 2
-    ZoneArtifactPellicle: 525
-    ZoneArtifactBaloon: 1837
-    #############################Частини Мутантів
-    FoodMeatSpiderLeg: 52
-    MutantPartBlindDogTail: 94
-    MutantPartZombieHand: 441
-    MutantPartFleshEye: 252
-    MutantPartBoarHoof: 252
-    MutantPartPseudodogTail: 315
-    MutantPartSnorkFoot: 378
-    MutantPartLeshiyRoot: 525
-    MutantPartBloodsuckerTentacles: 630
-    MutantPartPseudogiantHeart: 2625
-    MutantPartOraculeEye: 3150
+    ZoneArtifactPellicle: 787
+    ZoneArtifactBaloon: 2755
 
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 94 # T1
+    MutantPartSeasonedBoarHoof: 227 # T2
+    MutantPartOldBoarHoof: 425 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 63
+    MutantPartFleshEye: 140
+    FoodMeatSpiderLeg: 35
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 630
+    MutantPartPseudodogTail: 315
+    MutantPartSnorkFoot: 315
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 630
+    MutantPartOraculeEye: 1680
+    MutantPartPseudogiantHeart: 4200
+    MutantPartZombieHand: 315
     # Smuggling
     TradeBox: 1650
   categories:
     - name: Зброя
       priority: 1
       items:
-        STWeaponRifleStalkerSaiga545: 1300
-        STWeaponRifleStalkerFAL: 1700
-        WeaponPistolStalkerAPS: 750
-        STWeaponShotgunStalkerSPAS: 2200
-        STWeaponRifleStalkerL85: 2500
         STWeaponShotgunToz34: 350
-        STWeaponRifleStalkerAK74: 2800
-        STWeaponRifleSig550: 2500
-        STWeaponRifleSCARH: 4500
-
+        WeaponPistolStalkerPM: 293
+        WeaponPistolStalkerTT: 325
+        WeaponPistolStalkerGlock: 390
+        WeaponPistolGSH18: 390
+        STWeaponRevolverTaurusJudge: 585
+        STWeaponRevolverTaurusTracker455: 715
+        STWeaponRevolverSWPC325TR: 943
+        WeaponShotgunStalkerMP133: 715
+        STWeaponShotgunMossberg: 780
+        STWeaponShotgunMP153: 1430
+        STWeaponRifleStalkerSaiga545: 1430
+        STWeaponGunAKS74U: 2730
+        STWeaponRifleStalkerL85: 2730
+        STWeaponRifleStalkerFAL: 4745
+        STWeaponSMGMp5: 3185
+        STWeaponSniperMosin: 3185
     - name: Магазини
       priority: 2
       items:
-        556Mag20: 175
-        545Mag20: 150
-        545Mag30: 250
-        Base751Mag10: 300
-        751Mag20: 450
-        BaseAPSMag: 300
-        GlockMag24: 300
-
-    - name: Патрони
+        BasePMMag: 98
+        TTMag: 98
+        SpeedLoader45ACPEmpty: 98
+        545Mag20: 163
+        556Mag20: 163
+        751Mag20: 319
+        BaseMP5Mag: 163
+        BaseGSH-18Mag10: 111
+    - name: Боєприпаси
       priority: 3
       items:
-        6mmBuckshotBox: 400
-        7mmBuckshotBox: 75
-        919RIPBox: 400
-        919PSTBox: 300
-        918SP7Box: 300
-        545FMJBox: 500
-        545PCBox: 700
-        556FMJBox: 550
-        556M855Box: 900
-        751UNBox: 600
-        751M80Box: 1000
+        6mmBuckshotBox: 390
+        8mmBuckshotBox: 1625
+        7mmBuckshotBox: 52
+        # .45
+        45ACPLFMJBox: 130
+        45ACPMFMJBox: 293
+        # 7.25
+        725PBox: 130
+        725PTBox: 293
+        # 9.19
+        919PSOGJBox: 130
+        919PSTBox: 293
+        # 9.19
+        918PGJBox: 130
+        918PSTBox: 293
+        # 5.45
+        545FMJBox: 325
+        545PCBox: 650
+        # 5.56
+        556FMJBox: 390
+        # 7.54
+        754FMJBox : 845
     - name: Броня та спорядження
       priority: 4
       items:
@@ -105,11 +133,18 @@
         # шоломи
         ClothingHeadHelmetInfantry: 1752
         ClothingHeadHelmetVityaz1C: 2209
-        # рюкзаки
-        ClothingBackpackTacticBlackStalker: 600
-    - name: Інструменти
+    - name: Рюкзаки
       priority: 5
       items:
+        ClothingBackpackDuffelGreenStalker: 65 # 4,4
+        ClothingBackpackDuffelBlackStalker: 65 # 4,4
+        ClothingBackpackTacticBeigeStalker: 350  # 6,5
+        ClothingBackpackTacticOliveStalker: 350
+        ClothingBackpackTacticBlackStalker: 350
+    - name: Утиліти
+      priority: 6
+      items:
+        ClothingBeltBandolierStalker: 35
         STCombatKnife: 25
         TrashBag: 30
         BoxZiptie: 50
@@ -157,12 +192,12 @@
       items:
         STEnergyDrink: 200
         DrinkVodkaBottleFull: 55
-        FoodBreadPlain: 35
+        STFoodBreadPlain: 35
         DrinkFlaskOld: 30
         DrinkWaterBottleFull: 45
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
-        FoodMeatSalami: 350
+        STFoodMeatSalami: 350
     - name: Медицина
       priority: 8
       items:
@@ -203,10 +238,35 @@
         ClothingHeadHatGreysoft: 10
         ClothingTshirtBlue: 10
         ClothingTshirtOrange: 10
-        # Cloaks
         ClothingCloakStalker: 30
+        ClothingLegsJeansBlue: 10
+        ClothingLegsJeansStalker: 10
+        ClothingLegsJeansGreenCargo: 10
+        ClothingLegsJeansGreyCargo: 10
+        ClothingLegsJeansBlackCargo: 10
+        ClothingLegsJeansBrownCargo: 10
+        ClothingLegsJeansSandCargo: 10
+        ClothingLegsJeansBlackNew: 20
+        ClothingShoesBootsCombat: 30
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingLegsJeansBereza: 20
+        ClothingOuterCoatKKK: 67
+        # new shit
+        ClothingLegsBattlePantsBlack: 50
+        ClothingLegsVeryBlueJenas: 50
+        ClothingLegsCombatForest: 50
+        ClothingLegsNavyPants: 50
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50
     - name: Розваги
-      priority: 10
+      priority: 11
       items:
         # Dices
         DiceBag: 20

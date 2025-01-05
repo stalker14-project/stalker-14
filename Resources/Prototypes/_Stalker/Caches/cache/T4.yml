@@ -1,0 +1,89 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageFillT4
+  abstract: true
+  suffix: ST, Cache, T4
+  name: багнет з головою
+  description: Може, можна знайти щось корисне в ньому.
+  components:
+    - type: StorageFill
+      contents:
+        - id: STCraftMultilayerPCBT3
+          prob: 0.1
+        - id: STCraftGlueKitT3
+          prob: 0.1
+        - id: STCraftSturdyHideT3
+          prob: 0.1
+        - id: STCraftQuartzCrystalT3
+          prob: 0.1
+        - id: STCraftOakPlankT3
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.1
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftHighPerformanceChipT4
+          prob: 0.1
+        - id: STCraftIndustrialThreadStaplesKitT4
+          prob: 0.1
+        - id: STCraftPolymerFabricT4
+          prob: 0.1
+        - id: STCraftSapphireCrystalT4
+          prob: 0.1
+        - id: STCraftYewPlankT4
+          prob: 0.1
+        - id: STCraftPlasticFittingT4
+          prob: 0.1
+        - id: STCraftSheetAluminumT4
+          prob: 0.1
+        - id: CraftMaterialGunpowder
+          prob: 0.025
+        - id: CraftCardboardTube
+          prob: 0.025
+        - id: CraftFitil
+          prob: 0.025
+
+- type: entity
+  parent: [STCacheStorageFillT4, STBaseCache]
+  id: STCache1T4
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/heads.rsi
+      state: head_1
+    - type: SpawnOnDespawn
+      prototype: STCache1T4
+
+- type: entity
+  parent: [STCacheStorageFillT4, STBaseCache]
+  id: STCache2T4
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/heads.rsi
+      state: head_2
+    - type: SpawnOnDespawn
+      prototype: STCache2T4
+
+- type: entity
+  parent: [STCacheStorageFillT4, STBaseCache]
+  id: STCache3T4
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/heads.rsi
+      state: head_3
+    - type: SpawnOnDespawn
+      prototype: STCache3T4
+
+- type: entity
+  parent: [STCacheStorageFillT4, STBaseCache]
+  id: STCache4T4
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/heads.rsi
+      state: head_4
+    - type: SpawnOnDespawn
+      prototype: STCache4T4
+

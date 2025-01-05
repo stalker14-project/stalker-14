@@ -126,7 +126,7 @@
           shader: unshaded
     - type: ZoneAnomalyDetector
       level: 2
-      beepSound: /Audio/Items/Detectors/Anomaly/da_beep3.ogg
+      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
       distance: 5
       maxBeepInterval: 0.5
       minBeepInterval: 0.001
@@ -199,3 +199,25 @@
       enabled: true
     - type: ZoneAnomalyDetectorArtifactActivator
       level: 5
+
+- type: entity
+  parent: ZoneAnomalyBaseDetector
+  id: ZoneAnomalyDetectorAD3
+  name: Детектор аномалій 3-й модели (ДА-3)
+  description: Модифікована версія ДА-2, розроблена співробітниками НДІ, може виявляти Аномалії 4 рівня, завдяки новим датчикам виявлення аномалій. У центральній частині пристрою знаходиться артефакт "Батарейка".
+  suffix: Stalker, Detector
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_2m.rsi
+      layers:
+        - state: base
+        - state: screen_off
+          map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
+          shader: unshaded
+    - type: ZoneAnomalyDetector
+      level: 4
+      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
+      distance: 12
+      maxBeepInterval: 0.9
+      minBeepInterval: 0.05
+

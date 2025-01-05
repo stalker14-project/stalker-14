@@ -1,147 +1,3 @@
-# Старі крафти
-
-- type: craftRecipe
-  id: recipeDetectorAD1
-  resultProtos:
-    - ZoneAnomalyDetectorAD1
-  craftTime: 10
-  items:
-    Toolbox:
-      amount: 1
-      catalyzer: true
-    SolderingIron:
-      amount: 1
-      catalyzer: true
-    CraftResistor:
-      amount: 1
-    CraftElectronicBoard:
-      amount: 1
-    CraftBattery:
-      amount: 1
-    CraftSpeaker1:
-      amount: 1
-
-- type: craftRecipe
-  id: recipeDetectorAD2
-  resultProtos:
-    - ZoneAnomalyDetectorAD2
-  craftTime: 5
-  items:
-    Toolbox:
-      amount: 1
-      catalyzer: true
-    SolderingIron:
-      amount: 1
-      catalyzer: true
-    MultitoolStalker:
-      amount: 1
-      catalyzer: true
-    CraftResistor:
-      amount: 1
-    ZoneAnomalyDetectorAD1:
-      amount: 1
-    CraftChip:
-      amount: 1
-
-- type: craftRecipe
-  id: recipeZoneAnomalyDetectorBMT12
-  resultProtos:
-    - ZoneAnomalyDetectorBMT12
-  craftTime: 60
-  items:
-    ToolkitTearThree:
-      amount: 1
-      catalyzer: true
-    SolderingIron:
-      amount: 1
-      catalyzer: true
-    MultitoolStalker:
-      amount: 1
-      catalyzer: true
-    ZoneAnomalyDetectorUpgradeAD2:
-      amount: 1
-    CraftCoil:
-      amount: 1
-    CraftSpeaker2:
-      amount: 1
-    CraftChip:
-      amount: 2
-    CraftMonitor:
-      amount: 1
-    CraftResistor:
-      amount: 1
-    CraftBattery:
-      amount: 1
-
-- type: craftRecipe
-  id: ZoneAnomalyDetectorUAD14A
-  resultProtos:
-    - ZoneAnomalyDetectorUAD14A
-  craftTime: 15
-  items:
-    ToolkitTearThree:
-      amount: 1
-      catalyzer: true
-    Toolbox:
-      amount: 1
-      catalyzer: true
-    SolderingIron:
-      amount: 1
-      catalyzer: true
-    MultitoolStalker:
-      amount: 1
-      catalyzer: true
-    CraftResistor:
-      amount: 3
-    CraftChip:
-      amount: 1
-    CraftElectronicBoard:
-      amount: 2
-    CraftBattery:
-      amount: 2
-    CraftSpeaker1:
-      amount: 1
-    CraftCoil:
-      amount: 2
-
-- type: craftRecipe
-  id: ZoneAnomalyDetectorUAAL7B
-  resultProtos:
-    - ZoneAnomalyDetectorUAAL7B
-  craftTime: 15
-  items:
-    ToolkitTearThree:
-      amount: 1
-      catalyzer: true
-    Toolbox:
-      amount: 1
-      catalyzer: true
-    SolderingIron:
-      amount: 1
-      catalyzer: true
-    MultitoolStalker:
-      amount: 1
-      catalyzer: true
-    ZoneAnomalyDetectorUAD14A:
-      amount: 1
-    ZoneArtifactFlash:
-      anount: 1
-      catalyzer: true
-    CraftCoil:
-      amount: 2
-
-- type: craftRecipe
-  id: ZoneArtifactDetectorModifiedHunter
-  resultProtos:
-    - ZoneArtifactDetectorModifiedHunter
-  craftTime: 15
-  items:
-    ZoneArtifactDetectorHunter:
-      amount: 1
-    CraftBattery:
-      amount: 1
-    CraftCoil:
-      amount: 2
 
 # Нові Крафти
 
@@ -177,7 +33,25 @@
     ZoneAnomalyDetectorAD1:
       amount: 1
 
-# Детектори Артефактов
+- type: craftRecipe
+  id: newrecipeDetectorAD3
+  resultProtos:
+    - ZoneAnomalyDetectorAD3
+  craftTime: 2
+  items:
+    STDetectorAD3Blueprint:
+      amount: 1
+      catalyzer: true
+    STCraftStandardPCBT3:
+      amount: 2
+    STCraftPlasticFittingT3:
+      amount: 1
+    ZoneAnomalyDetectorAD2:
+      amount: 1
+    ZoneArtifactBattery:
+      amount: 1
+
+# Детектори Артефактів
 
 - type: craftRecipe
   id: recipeZoneArtifactDetectorPulse
@@ -307,7 +181,7 @@
     ZoneArtifactNightStar:
       amount: 1
 
-# Металлоискатели
+# Металошукачі
 
 - type: craftRecipe
   id: recipeTrashDetectorTier2

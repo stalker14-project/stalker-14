@@ -90,7 +90,7 @@
   parent: ClothingOuterArmorZoryaHunter
   id: STClothingOuterArmorRassvetSera
   name: комбінезон "Світанок" Серафимів
-  suffix: ST, T2, PVE, Serafim
+  suffix: ST, T1, PVE, Serafim
   description: комбінезон "Світанок", який використовує угруповання "Серафими" для виконання тактичних завдань із підвищеним захистом від агресивної фауни.
   components:
     - type: Sprite
@@ -101,8 +101,10 @@
       clothingPrototype: ClothingHeadCapoSera
       slot: head
     - type: Armor
+      armorClass: 1
       armorLevels:
-        radiation: 1
+        nonPvPPhysical: 2
+        piercing: -1
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -144,7 +146,7 @@
   - type: Armor
     armorClass: 2
     armorLevels:
-      piercing: +2
+      nonPvPPhysical: 1
       environment: -1
 # bonus
   - type: Storage
@@ -180,8 +182,8 @@
     sprite: _Stalker/Clothing/OuterClothing/zorya_poisk.rsi
   - type: Armor
     armorLevels:
-      nonPvPPhysical: -1
-      piercing: 1
+      nonPvPPhysical: 1
+      environment: -1
 
 - type: entity
   parent: STClothingOuterArmorZoryaBase

@@ -1,9 +1,9 @@
 - type: lightCraftingRecipe
   id: LightCraftLeavesCannabisDried
   results:
-    - LeavesCannabisDried
+    - STLeavesCannabisDried
   steps:
-    firstIngredient: LeavesCannabis
+    firstIngredient: STLeavesCannabis
     secondIngredient: STBonfire
     keepSecond: true
     exactSecond: false
@@ -12,20 +12,20 @@
 - type: lightCraftingRecipe
   id: LightCraftGroundCannabis
   results:
-    - GroundCannabis
+    - STGroundCannabis
   steps:
     firstIngredient: STCraftMortarAndPestle
-    secondIngredient: LeavesCannabisDried
+    secondIngredient: STLeavesCannabisDried
     keepFirst: true
     time: 5
 
 - type: lightCraftingRecipe
   id: LightCraftJoint
   results:
-    - Joint
+    - STJoint
   steps:
-    firstIngredient: PaperRolling
-    secondIngredient: GroundCannabis
+    firstIngredient: STPaperRolling
+    secondIngredient: STGroundCannabis
     time: 5
 
 
@@ -35,7 +35,7 @@
     - STCannabisBox
   craftTime: 10
   items:
-    Joint:
+    STJoint:
       amount: 15
     CigCartonRed:
       amount: 1

@@ -1,4 +1,44 @@
 - type: entity
+  description: "Якщо ви хочете захворіти на рак, зробіть це стильно."
+  id: STBaseSmokable
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Smokable
+  - type: Sprite
+  - type: Appearance
+  - type: BurnStateVisuals
+  - type: Tag
+    tags:
+    - Trash
+  - type: SpaceGarbage
+  - type: StaticPrice
+    price: 5
+  - type: InjectableSolution
+    solution: smokable
+
+# Base for all cigars and cigarettes.
+- type: entity
+  parent: STBaseSmokable
+  id: STBaseCigar
+  abstract: true
+  components:
+  - type: Smokable
+    exposeTemperature: 1173.15
+  - type: Cigar
+  - type: Tag
+    tags:
+    - Trash
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+        reagents:
+          - ReagentId: Nicotine
+            Quantity: 10
+
+
+- type: entity
   id: CigPackMarlboro
   parent: CigPackBase
   name: "Мальборо"

@@ -1,0 +1,118 @@
+- type: entity
+  parent: STBaseTrashCache
+  id: STTrashStorageFillT1
+  name: сміття
+  abstract: true
+  suffix: ST, Cache, T1
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxArtcont
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.01
+        - id: BaseRadio
+          prob: 0.01
+        - id: HandheldGPSBasic
+          prob: 0.01
+        - id: Defibrillator
+          prob: 0.005
+        - id: MedkitAI2
+          prob: 0.07
+        - id: MedkitMilitary
+          prob: 0.02
+        - id: MedkitScience
+          prob: 0.005
+        - id: psyblock
+          prob: 0.05
+        - id: antiradpill
+          prob: 0.05
+        - id: AntiRadMedipen
+          prob: 0.01
+        - id: radioprotectpill
+          prob: 0.05
+        - id: STBrutepack
+          prob: 0.1
+        - id: STGauze
+          prob: 0.1
+        - id: STOintment
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: ZoneArtifactPellicle
+          prob: 0.005
+        - id: ZoneArtifactSparkler
+          prob: 0.005
+        - id: ArtMedusa
+          prob: 0.005
+        - id: ZoneArtifactFireball
+          prob: 0.005
+        - id: CraftLeatherbox
+          prob: 0.005
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash1CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 1
+    - type: SpawnOnDespawn
+      prototype: STTrash1CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash2CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 2
+    - type: SpawnOnDespawn
+      prototype: STTrash2CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash3CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 3
+    - type: SpawnOnDespawn
+      prototype: STTrash3CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash4CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 4
+    - type: SpawnOnDespawn
+      prototype: STTrash4CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash5CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 5
+    - type: SpawnOnDespawn
+      prototype: STTrash5CacheT1

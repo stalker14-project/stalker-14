@@ -5,8 +5,8 @@
     - Gauze1
     - Gauze1
   steps:
-    firstIngredient: ScissorsStalker
-    secondIngredient: MaterialCloth1Stalker
+    firstIngredient: STCombatKnife
+    secondIngredient: STCraftCottonFabricT1
     keepFirst: true
     time: 10
 
@@ -29,7 +29,7 @@
     - CraftSmallCardboard
     - CraftSmallCardboard
   steps:
-    firstIngredient: ScissorsStalker
+    firstIngredient: STCombatKnife
     secondIngredient: CraftLargeCardboard
     keepFirst: true
     time: 8
@@ -39,7 +39,8 @@
   results:
     - CraftCardboardTube
   steps:
-    firstIngredient: CraftGlue
+    firstIngredient: STCraftGlueKitT3
+    catalyzer: true
     secondIngredient: CraftSmallCardboard
     keepFirst: true
     time: 5

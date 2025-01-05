@@ -55,12 +55,12 @@
       items:
         STEnergyDrink: 1450
         DrinkVodkaBottleFull: 550
-        FoodBreadPlain: 350
+        STFoodBreadPlain: 350
         DrinkFlaskOld: 300
         DrinkWaterBottleFull: 450
         FoodTinMRE: 1200
         DrinkLemonadehBottleFull: 500
-        FoodMeatSalami: 900
+        STFoodMeatSalami: 900
     - name: Медицина
       priority: 7
       items:
@@ -80,28 +80,39 @@
 - type: shopPreset
   id: SerafimShopPresetLight
   itemsForSale:
-    FoodMeatSpiderLeg: 24
-    MutantPartBlindDogTail: 45
-    MutantPartZombieHand: 210
-    MutantPartFleshEye: 120
-    MutantPartBoarHoof: 120
-    MutantPartPseudodogTail: 150
-    MutantPartSnorkFoot: 180
-    MutantPartLeshiyRoot: 249
-    MutantPartBloodsuckerTentacles: 300
-    MutantPartPseudogiantHeart: 1249
-    MutantPartOraculeEye: 1500
+    # Mutant parts - Персональна Мета на продаж
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 22 # T1 * 0,5
+    MutantPartSeasonedBoarHoof: 100 # T2
+    MutantPartOldBoarHoof: 151 # T3 * 0,75
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 30 #
+    MutantPartFleshEye: 67 #
+    FoodMeatSpiderLeg: 17 #
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 450 # * 1,5
+    MutantPartPseudodogTail: 220 # * 1,5
+    MutantPartSnorkFoot: 150 #
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 200 # * 0,5
+    MutantPartOraculeEye: 250 # * 0,5
+    MutantPartPseudogiantHeart: 3000 # * 1,5
+    MutantPartZombieHand: 400 # * 4
   categories:
     - name: Зброя
       priority: 1
       items:
         STWeaponShotgunMP155T: 25
-        STWeaponShotgunToz34: 300
-        STWeaponSMGStalkerCP2Veresk: 655
-        STWeaponSMGStalkerCP2VereskSera: 655
+        STWeaponShotgunToz34: 123
+        STWeaponSMGStalkerCP2Veresk: 816
+        STWeaponSMGStalkerCP2VereskSera: 816
         STSeraKnife: 10
-        STWeaponShotgunStalkerBenelli: 345
-        STWeaponShotgunStalkerBenelliSera: 345
+        STWeaponShotgunStalkerBenelli: 366
+        STWeaponShotgunStalkerBenelliSera: 366
         STBatMolitoslov: 175
 
     - name: Броня та спорядження
@@ -140,27 +151,51 @@
     - name: Магазини
       priority: 5
       items:
-        545Mag20: 100
-        545Mag30: 150
-        Base751Mag10: 100
-        VityazMag: 180
+        BasePMMag: 33
+        TTMag: 33
+        SpeedLoader45ACPEmpty: 33
+        545Mag20: 54
+        556Mag20: 54
+        751Mag20: 106
+        BaseMP5Mag: 54
+        BaseGSH-18Mag10: 37
+        VityazMag: 82
     - name: Боєприпаси
       priority: 6
       items:
-        7mmBuckshotBox: 16
-        545FMJBox: 83
-        919PSTBox: 83
+        6mmBuckshotBox: 130
+        8mmBuckshotBox: 542
+        7mmBuckshotBox: 17
+        # .45
+        45ACPLFMJBox: 43
+        45ACPMFMJBox: 98
+        # 7.25
+        725PBox: 43
+        725PTBox: 98
+        # 9.19
+        919PSOGJBox: 43
+        919PSTBox: 98
+        # 9.19
+        918PGJBox: 43
+        918PSTBox: 98
+        # 5.45
+        545FMJBox: 108
+        545PCBox: 217
+        # 5.56
+        556FMJBox: 130
+        # 7.54
+        754FMJBox: 282
     - name: Провізія
       priority: 7
       items:
         STEnergyDrink: 40
         DrinkVodkaBottleFull: 70
-        FoodBreadPlain: 5
+        STFoodBreadPlain: 5
         DrinkFlaskOld: 5
         DrinkWaterBottleFull: 5
         FoodTinMRE: 60
         DrinkLemonadehBottleFull: 70
-        FoodMeatSalami: 50
+        STFoodMeatSalami: 50
     - name: Медицина
       priority: 8
       items:
@@ -188,35 +223,46 @@
 - type: shopPreset
   id: SerafimShopPresetHeavy
   itemsForSale:
-    FoodMeatSpiderLeg: 9
-    MutantPartBlindDogTail: 18
-    MutantPartZombieHand: 84
-    MutantPartFleshEye: 48
-    MutantPartBoarHoof: 48
-    MutantPartPseudodogTail: 60
-    MutantPartSnorkFoot: 72
-    MutantPartLeshiyRoot: 99
-    MutantPartBloodsuckerTentacles: 120
-    MutantPartPseudogiantHeart: 499
-    MutantPartOraculeEye: 600
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 99 # T1 * 4
+    MutantPartSeasonedBoarHoof: 54 # T2
+    MutantPartOldBoarHoof: 101 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 15
+    MutantPartFleshEye: 120 # * 4
+    FoodMeatSpiderLeg: 8
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 150
+    MutantPartPseudodogTail: 75
+    MutantPartSnorkFoot: 75
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 150
+    MutantPartOraculeEye: 400
+    MutantPartPseudogiantHeart: 1000
+    MutantPartZombieHand: 75
   categories:
     - name: Зброя
       priority: 1
       items:
-        STWeaponSMGStalkerCP2Veresk: 850
-        STWeaponSMGStalkerCP2VereskSera: 850
-        STWeaponRifleStalkerAK12: 1450
-        STWeaponRifleStalkerAK12Sera: 1450
+        STWeaponSMGStalkerCP2Veresk: 1225
+        STWeaponSMGStalkerCP2VereskSera: 1225
+        STWeaponRifleStalkerAK12: 1650
+        STWeaponRifleStalkerAK12Sera: 1650
         STWeaponRifleStalkerAK104: 1900
-        STWeaponRifleStalkerVeprSerafim: 2500
-        STWeaponShotgunSaiga12Sera: 1200
+        STWeaponRifleStalkerVeprSerafim: 4900
+        STWeaponShotgunSaiga12Sera: 900
         STWeaponShotgunToz34: 100
         STSeraKnife: 30
         STBatMolitoslov: 195
         STWeaponShotgunStalkerBenelli: 385
         STWeaponShotgunStalkerBenelliSera: 385
-        STWeaponRifleSGUSera: 2950
-        STWeaponRifleSGU: 2950
+        STWeaponRifleSVUSera: 7900
+        STWeaponRifleSVU: 7900
     - name: Броня та спорядження
       priority: 2
       items:
@@ -255,12 +301,12 @@
       items:
         STEnergyDrink: 50
         DrinkVodkaBottleFull: 100
-        FoodBreadPlain: 20
+        STFoodBreadPlain: 20
         DrinkFlaskOld: 20
         DrinkWaterBottleFull: 20
         FoodTinMRE: 80
         DrinkLemonadehBottleFull: 80
-        FoodMeatSalami: 60
+        STFoodMeatSalami: 60
     - name: Медицина
       priority: 6
       items:
@@ -284,24 +330,66 @@
     - name: Магазини
       priority: 8
       items:
-        Base1270Mag: 80
-        Base751Mag10: 100
-        545Mag30: 150
-        739Mag30: 180
-        Base754Mag5: 150
-        754Mag10: 380
-        VityazMag: 180
+        BasePMMag: 38
+        TTMag: 38
+        BaseGlockMag10: 43
+        BaseGSH-18Mag10: 43
+        BaseAPSMag: 60
+        SpeedLoader45ACPEmpty: 38
+        545Mag20: 63
+        545Mag30: 88
+        556Mag20: 63
+        556Mag30: 88
+        739Mag30: 113
+        751Mag20: 123
+        Base754Mag5: 183
+        BizonMag: 225
+        BaseMP5Mag: 63
+        939Mag20: 150
+        VityazMag: 93
     - name: Боєприпаси
       priority: 9
       items:
-        7mmBuckshotBox: 33
-        6mmBuckshotBox: 83
-        8mmBuckshotBox: 366
-        545HPBox: 133
-        545PCBox: 216
-        739FMJBox: 250
-        754FMJBox: 300
-        545FMJBox: 133
-        919RIPBox: 83
-        919PSTBox: 83
-        919PBMBox: 150
+        6mmBuckshotBox: 143
+        8mmBuckshotBox: 473
+        7mmBuckshotBox: 20
+        # .45
+        45ACPLFMJBox: 50
+        45ACPMFMJBox: 113
+        45ACPRIPBox: 113
+        45ACPAPBox: 225
+        # 7.25
+        725PBox: 50
+        725PTBox: 113
+        725LRNPCBox: 113
+        725PSTBox: 225
+        # 9.19
+        919PSOGJBox: 50
+        919PSTBox: 113
+        919RIPBox: 113
+        919PBMBox: 225
+        # 9.19
+        918PGJBox: 50
+        918PSTBox: 113
+        918SP7Box: 113
+        918PBMBox: 225
+        # 5.45
+        545FMJBox: 125
+        545HPBox: 125
+        545PCBox: 250
+        # 5.56
+        556FMJBox: 150
+        556WarmagBox: 150
+        556M855Box: 275
+        # 7.39
+        739FMJBox: 300
+        739HPBox: 300
+        # 7.51
+        751M80Box: 300
+        751UNBox: 300
+        # 7.54
+        754FMJBox: 325
+        754HPBox: 325
+        # 9.39
+        939SP5Box: 190
+        939SP6Box: 360

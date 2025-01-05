@@ -113,8 +113,7 @@ public sealed class ShopSystem : SharedShopSystem
             foreach (var kvp in proto.PersonalShopCategories)
             {
                 component.PersonalCategories.TryAdd(kvp.Key, new List<CategoryInfo>());
-                component.PersonalCategories[kvp.Key]
-                    .AddRange(GenerateListingData(kvp.Value, component));
+                component.PersonalCategories[kvp.Key]= GenerateListingData(kvp.Value, component);
             }
         }
 
@@ -331,14 +330,14 @@ public sealed class ShopSystem : SharedShopSystem
     #region Listings
     private List<CategoryInfo> GenerateListingData(List<CategoryInfo> items, ShopComponent component)
     {
-        var result = new List<CategoryInfo>(items);
-        foreach (var category in result)
+        var result = new List<CategoryInfo>();
+        foreach (var category in items)
         {
+            var categoryInfo = new CategoryInfo(category); // copy the whole category here
+
             foreach (var item in category.Items)
             {
                 var proto = _proto.Index<EntityPrototype>(item.Key);
-                if (!proto.TryGetComponent(out CurrencyComponent? currency) && currency == null)
-                    continue;
 
                 var listing = new ListingData
                 {
@@ -355,14 +354,22 @@ public sealed class ShopSystem : SharedShopSystem
                     ProductAction = null,
                     ProductEntity = item.Key,
                 };
-                if (category.ListingItems.Contains(listing))
-                    continue;
-                category.ListingItems.Add(listing);
+                if (!categoryInfo.ListingItems.Contains(listing))
+                    categoryInfo.ListingItems.Add(listing);
             }
+            result.Add(categoryInfo);
         }
 
         return result;
     }
+
+    /// <summary>
+    /// WARNING!! + TODO: This shit is spoiling prototypes, so we need to rewrite it as <see cref="GenerateListingData(System.Collections.Generic.List{Content.Shared._Stalker.Shop.Prototypes.CategoryInfo},Content.Shared._Stalker.Shop.ShopComponent)"/>.
+    /// Before using this in a loop with prototypes' instances make sure to clear them from ref shit
+    /// </summary>
+    /// <param name="items">Items to generate listings for</param>
+    /// <param name="component">Shop component for which we are generating, necessary due to money ID</param>
+    /// <returns>Generated listing data</returns>
     private Dictionary<int, List<CategoryInfo>> GenerateListingData(Dictionary<int, List<CategoryInfo>> items, ShopComponent component)
     {
         var result = new Dictionary<int, List<CategoryInfo>>(items);

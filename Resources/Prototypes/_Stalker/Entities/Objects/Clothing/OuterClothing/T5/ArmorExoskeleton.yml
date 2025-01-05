@@ -5,6 +5,8 @@
   description: Експериментальна броня з сервоприводами, що дозволяє носити купу речей на спині, але значно сповільнює рухи.
   suffix: ST, T5, Універсальне
   components:
+  - type: STWeight
+    self: -50
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/exoskelet_stalker.rsi
     state: icon
@@ -14,18 +16,18 @@
     clothingPrototype: ClothingHeadHelmetExoskelet
   - type: ClothingSpeedModifier
     walkModifier: 0.6
-    sprintModifier: 0.6
+    sprintModifier: 0.5
   - type: Armor
     armorClass: 5
     modifiers:
       coefficients:
-        Blunt: 0.40
-        Slash: 0.40
-        Piercing: 0.20
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.4
         Heat: 0.35
         Radiation: 0.65
   - type: ExplosionResistance
-    damageCoefficient: 0.30
+    damageCoefficient: 0.25
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -36,7 +38,7 @@
   categories: [ HideSpawnMenu ]
   suffix: ST, T5
   name: шолом екзоскелета
-  description: На відміну від самого Екзача, можна сказати, що це абсолютно звичайний шолом.
+  description: На відміну від самого екзачу, можна сказати цілком звичайний шолом, 5й клас.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/exoskelet_helm_stalker.rsi
@@ -45,6 +47,21 @@
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
+  - type: Armor
+    armorClass: 5
+    modifiers:
+      coefficients:
+        Piercing: 0.7
+        Blunt: 0.6
+        Slash: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 360
+    reflects:
+    - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
 
 - type: entity
   parent: ClothingOuterArmorExoskelet

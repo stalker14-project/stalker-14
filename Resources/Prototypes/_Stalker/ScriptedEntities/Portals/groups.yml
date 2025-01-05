@@ -313,7 +313,7 @@
     - type: NewMapTeleport
       portalName: RedForest-Oazis
 
-###################################### Чисте Небо
+###################################### Чисте небо (старий, видалити коли поставлять новий)
 
 - type: entity
   parent: MapTeleportBase
@@ -389,18 +389,6 @@
     - type: AccessReader
       access: [["Deserter"]]
 
-## Циркачі
-- type: entity
-  parent: MapTeleportBase
-  id: Cordon-Circusbase
-  name: Cordon-Circusbase
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-Circusbase
-    - type: AccessReader
-      access: [["Circus"]]
-
 ####################################Найманці
 
 - type: entity
@@ -424,32 +412,6 @@
       portalName: Cordon-Merc
     - type: AccessReader
       access: [["Merc"]]
-
-####################################Механіки
-
-- type: entity
-  parent: MapTeleportBase
-  id: Lobby-Mechanic
-  noSpawn: false
-  name: Lobby-Mechanic
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Lobby-Mechanic
-    - type: AccessReader
-      access: [["Mechanic"]]
-
-- type: entity
-  parent: MapTeleportBaseUncollide
-  id: Lobby-MechanicBandUncollide
-  noSpawn: false
-  name: Lobby-MechanicBandUncollide
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Lobby-Mechanic
-    - type: AccessReader
-      access: [["Mechanic"]]
 
 ###################################Пошук
 
@@ -548,3 +510,30 @@
       portalName: Lobby-Jaba
     - type: AccessReader
       access: [["Jaba"]]
+
+####################################Чистое Небо
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Clear-Sky
+  noSpawn: false
+  name: Lobby-Clear-Sky
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Clear-Sky
+    - type: AccessReader
+      access: [["CN"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-Clear-SkyUncollide
+  noSpawn: false
+  name: Lobby-Clear-SkyUncollide
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Clear-Sky
+    - type: AccessReader
+      access: [["CN"]]
+

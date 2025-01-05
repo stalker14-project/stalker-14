@@ -1,0 +1,225 @@
+- type: entity
+  id: STHiddenCacheStorageFillT1
+  abstract: true
+  suffix: ST, Cache, T1
+  components:
+    - type: StorageFill
+      contents:
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: WeaponPistolStalkerPM
+          prob: 0.005
+        - id: WeaponPistolStalkerTT
+          prob: 0.005
+        - id: STWeaponRevolverTaurusJudge
+          prob: 0.005
+        - id: STWeaponRevolverTaurusTracker455
+          prob: 0.005
+        - id: STWeaponShotgunMossberg
+          prob: 0.005
+        - id: WeaponShotgunStalkerMP133
+          prob: 0.005
+        - id: STWeaponRifleStalkerSaiga545
+          prob: 0.005
+        - id: BoxArtcont
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.01
+        - id: BaseRadio
+          prob: 0.01
+        - id: HandheldGPSBasic
+          prob: 0.01
+        - id: Defibrillator
+          prob: 0.005
+        - id: MedkitAI2
+          prob: 0.07
+        - id: MedkitMilitary
+          prob: 0.02
+        - id: MedkitScience
+          prob: 0.005
+        - id: psyblock
+          prob: 0.05
+        - id: antiradpill
+          prob: 0.05
+        - id: AntiRadMedipen
+          prob: 0.01
+        - id: radioprotectpill
+          prob: 0.05
+        - id: STBrutepack
+          prob: 0.1
+        - id: STGauze
+          prob: 0.1
+        - id: STOintment
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: ZoneArtifactPellicle
+          prob: 0.005
+        - id: ZoneArtifactSparkler
+          prob: 0.005
+        - id: ArtMedusa
+          prob: 0.005
+        - id: ZoneArtifactFireball
+          prob: 0.005
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: ClothingOuterCoatPahanBlueprint
+          prob: 0.005
+        - id: ClothingOuterCoatPoiskBlueprint
+          prob: 0.005
+        - id: STClothingOuterJacketStalkerUpgradeBlueprint
+          prob: 0.005
+        - id: ClothingOuterAnomalyStalkerJacketBlueprint
+          prob: 0.005
+        - id: ST7mmBuckshotBoxCinkBluePrint
+          prob: 0.005
+        - id: ST918PGJBoxCinkBlueprint
+          prob: 0.005
+        - id: ST919PSOGJBoxCinkBlueprint
+          prob: 0.005
+        - id: ST725PBoxCinkBlueprint
+          prob: 0.005
+        - id: STZoneArtifactDetectorHunterBlueprint
+          prob: 0.005
+        - id: STZoneArtifactDetectorPulseBlueprint
+          prob: 0.005
+        - id: STDetectorAD1Blueprint
+          prob: 0.005
+        - id: ToolkitTearOne
+          prob: 0.0005
+        - id: IngotGold1
+          prob: 0.05
+        - id: IngotSilver1
+          prob: 0.05
+        - id: MaterialDiamond1
+          prob: 0.05
+        - id: DrinkGoldenCup
+          prob: 0.05
+        - id: CraftMaterialGunpowder
+          prob: 0.01
+        - id: CraftCardboardTube
+          prob: 0.01
+        - id: CraftFitil
+          prob: 0.01
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, BirchTreeNew02]
+  id: STHiddenCache1T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraRockSolid02]
+  id: STHiddenCache2T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraTree04]
+  id: STHiddenCache3T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, SpruceTreeNew03]
+  id: STHiddenCache4T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, SpruceTreeNew04]
+  id: STHiddenCache5T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraTree05]
+  id: STHiddenCache6T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, PineTreeNew02]
+  id: STHiddenCache7T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraTree06]
+  id: STHiddenCache8T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraRockSolid01]
+  id: STHiddenCache9T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, OakTreeNew01]
+  id: STHiddenCache10T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, OakTreeNew02]
+  id: STHiddenCache11T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, BirchTree01]
+  id: STHiddenCache12T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, BirchTree02]
+  id: STHiddenCache13T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, BirchTree03]
+  id: STHiddenCache14T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraTree01]
+  id: STHiddenCache15T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraTree02]
+  id: STHiddenCache16T1
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: [STBaseHiddenCache, STHiddenCacheStorageFillT1, STFloraTree03]
+  id: STHiddenCache17T1
+  categories: [ HideSpawnMenu ]

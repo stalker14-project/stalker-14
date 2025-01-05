@@ -14,7 +14,7 @@ public sealed class StalkerDbSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
 
-    public const string DefaultStalkerItems = "{\"AllItems\":[{\"ClassType\":\"StackItemStalker\",\"PrototypeName\":\"Roubles\",\"StackCount\":5000,\"CountVendingMachine\":1}]}";
+    public const string DefaultStalkerItems = "{\"AllItems\":[{\"ClassType\":\"StackItemStalker\",\"PrototypeName\":\"Roubles\",\"StackCount\":2000,\"CountVendingMachine\":1}]}";
 
     // login - json
     public ConcurrentDictionary<string, string> Stalkers = new();

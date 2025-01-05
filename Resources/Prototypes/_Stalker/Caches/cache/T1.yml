@@ -1,0 +1,118 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageFillT1
+  abstract: true
+  suffix: ST, Cache, T1
+  name: ящик
+  description: Досить таки старий ящик. Можливо, варто його обшукати. Може, можна знайти щось корисне в ньому.
+  components:
+    - type: StorageFill
+      contents:
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: WeaponPistolStalkerPM
+          prob: 0.005
+        - id: WeaponPistolStalkerTT
+          prob: 0.005
+        - id: STWeaponRevolverTaurusJudge
+          prob: 0.005
+        - id: STWeaponRevolverTaurusTracker455
+          prob: 0.005
+        - id: STWeaponShotgunMossberg
+          prob: 0.005
+        - id: WeaponShotgunStalkerMP133
+          prob: 0.005
+        - id: STWeaponRifleStalkerSaiga545
+          prob: 0.005
+        - id: BoxArtcont
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.01
+        - id: BaseRadio
+          prob: 0.01
+        - id: HandheldGPSBasic
+          prob: 0.01
+        - id: Defibrillator
+          prob: 0.005
+        - id: MedkitAI2
+          prob: 0.07
+        - id: MedkitMilitary
+          prob: 0.02
+        - id: MedkitScience
+          prob: 0.005
+        - id: psyblock
+          prob: 0.05
+        - id: antiradpill
+          prob: 0.05
+        - id: AntiRadMedipen
+          prob: 0.01
+        - id: radioprotectpill
+          prob: 0.05
+        - id: STBrutepack
+          prob: 0.1
+        - id: STGauze
+          prob: 0.1
+        - id: STOintment
+          prob: 0.1
+        - id: ZoneArtifactPellicle
+          prob: 0.01
+        - id: ZoneArtifactSparkler
+          prob: 0.01
+        - id: ArtMedusa
+          prob: 0.01
+        - id: ZoneArtifactFireball
+          prob: 0.01
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: ToolkitTearOne
+          prob: 0.0001
+        - id: IngotGold1
+          prob: 0.05
+        - id: IngotSilver1
+          prob: 0.05
+        - id: MaterialDiamond1
+          prob: 0.05
+        - id: DrinkGoldenCup
+          prob: 0.05
+        - id: CraftMaterialGunpowder
+          prob: 0.005
+        - id: CraftCardboardTube
+          prob: 0.005
+        - id: CraftFitil
+          prob: 0.005
+- type: entity
+  parent: [ STCacheStorageFillT1, STBaseCache]
+  id: STCacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCacheT1

@@ -1,0 +1,12 @@
+- type: entity
+  name: тригер псевдогігант (1) (25%)
+  id: STTriggerPseudogiant125
+  parent: STBaseTrigger125
+  suffix: ST, T3, Trigger
+  components:
+    - type: SpawnOnApproach
+      prototypes:
+        - MobMutantPseudogiant
+      restricted:
+        - MobMutantPseudogiant
+

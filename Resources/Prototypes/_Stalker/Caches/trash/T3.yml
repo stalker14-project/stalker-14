@@ -1,0 +1,142 @@
+- type: entity
+  parent: STBaseTrashCache
+  id: STTrashStorageFillT3
+  abstract: true
+  name: сміття
+  suffix: ST, Cache, T3
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxArtcont
+          prob: 0.05
+        - id: GeigerCounter
+          prob: 0.05
+        - id: BaseRadio
+          prob: 0.05
+        - id: HandheldGPSBasic
+          prob: 0.05
+        - id: Defibrillator
+          prob: 0.01
+        - id: MedkitAI2
+          prob: 0.1
+        - id: MedkitMilitary
+          prob: 0.05
+        - id: MedkitScience
+          prob: 0.025
+        - id: psyblock
+          prob: 0.05
+        - id: antiradpill
+          prob: 0.05
+        - id: AntiRadMedipen
+          prob: 0.01
+        - id: radioprotectpill
+          prob: 0.05
+        - id: STBrutepack
+          prob: 0.3
+        - id: STGauze
+          prob: 0.3
+        - id: STOintment
+          prob: 0.3
+        - id: STCraftMultilayerPCBT3
+          prob: 0.1
+        - id: STCraftGlueKitT3
+          prob: 0.1
+        - id: STCraftSturdyHideT3
+          prob: 0.1
+        - id: STCraftQuartzCrystalT3
+          prob: 0.1
+        - id: STCraftOakPlankT3
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.1
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftTapeKitT2
+          prob: 0.1
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftGlassT2
+          prob: 0.1
+        - id: STCraftBirchPlankT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftSheetIronT2
+          prob: 0.1
+        - id: ZoneArtifactMeat
+          prob: 0.005
+        - id: ZoneArtifactFlash
+          prob: 0.005
+        - id: ArtMoon
+          prob: 0.005
+        - id: ZoneArtifactFlower
+          prob: 0.005
+        - id: ZoneArtifactBlood
+          prob: 0.005
+        - id: ZoneArtifactBattery
+          prob: 0.005
+        - id: ZoneArtifactVyvert
+          prob: 0.005
+        - id: ZoneArtifactAmoeba
+          prob: 0.005
+        - id: ZoneArtifactEye
+          prob: 0.005
+        - id: CraftLeatherbox
+          prob: 0.005
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT3]
+  id: STTrash1CacheT3
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 1
+    - type: SpawnOnDespawn
+      prototype: STTrash1CacheT3
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT3]
+  id: STTrash2CacheT3
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 2
+    - type: SpawnOnDespawn
+      prototype: STTrash2CacheT3
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT3]
+  id: STTrash3CacheT3
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 3
+    - type: SpawnOnDespawn
+      prototype: STTrash3CacheT3
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT3]
+  id: STTrash4CacheT3
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 4
+    - type: SpawnOnDespawn
+      prototype: STTrash4CacheT3
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT3]
+  id: STTrash5CacheT3
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 5
+    - type: SpawnOnDespawn
+      prototype: STTrash5CacheT3

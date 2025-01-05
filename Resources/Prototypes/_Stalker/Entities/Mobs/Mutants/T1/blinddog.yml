@@ -1,0 +1,102 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantBlindDog
+  name: сліпий пес
+  suffix: ST, T1
+  description: Найпоширеніший мутант у зоні. Поодинці вони не такі небезпечні, як у щільній зграї.
+  components:
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBlindDogTail
+          amount: 1
+          prob: 0.7
+        - id: FoodMeatDog
+          maxAmount: 2
+          prob: 0.7
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: blinddog
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 90
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/bdog_die_0.ogg
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        90: Dead
+    - type: MeleeWeapon
+      attackRate: 1
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.1
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+            variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/bdog_attack_2.ogg
+        params:
+            variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 16
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.5
+      baseSprintSpeed: 4
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/blinddog.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: blinddog
+    - type: SlowOnDamage
+    - type: StaminaDamageOnHit
+      damage: 5
+    - type: STWeight
+      self: 35
+
+- type: entity
+  parent: MobMutantBlindDog
+  id: MobMutantBlindDogPackHead
+  name: голова зграї сліпий пес
+  description: ватажок зграї сліпих собак
+  components:
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBlindDogTail
+          amount: 2
+          prob: 0.7
+        - id: FoodMeatDog
+          maxAmount: 3
+          prob: 0.7
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/blinddog.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          scale: 1.2, 1.2
+          state: blinddog
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 200
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/bdog_die_0.ogg
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        160: Dead

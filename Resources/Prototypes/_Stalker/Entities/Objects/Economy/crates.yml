@@ -68,8 +68,8 @@
     - type: SpawnItemsOnUse
       items:
         - id: ClothingBeltTarzanGreen
-        - id: STClothingOuterArmorLightPlateVestBaseUN
-        - id: ClothingHeadAssaultHelmetUN
+        - id: STClothingOuterArmorLightPlateVestBaseANAUN
+        - id: ClothingHeadInfantryHelmetUN
         - id: ClothingBackpackDuffelCommonStalker
         - id: BaseRadio
         - id: Brutepack
@@ -849,7 +849,7 @@
     - type: STWeight
       self: 20
     - type: Item
-      size: Large
+      size: Ginormous
       shape:
         - 0,0,5,5
     - type: Sprite
@@ -1104,16 +1104,6 @@
       components:
       - Gun
       - BallisticAmmoProvider
-
-- type: entity
-  parent: SeedBase
-  name: пакетик трави
-  description: Тільки не попадіться з нею ментам.
-  id: CannabisSeedsStalker
-  suffixx: Stalker
-  components:
-    - type: Sprite
-      sprite: Objects/Specific/Hydroponics/cannabis.rsi
 
 - type: entity
   parent: BaseItem

@@ -199,49 +199,58 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
 
     private void PutInsideHandler(BaseButton.ButtonEventArgs args)
     {
-        if(_selectedControl == null)
+        if (_selectedControl == null)
             return;
+
         var control = _selectedControl;
         switch (control.ItemInfo.UserItem)
         {
             case true when control.ItemInfo.Count == 1:
                 RepositoryButtonPutPressed?.Invoke(control.ItemInfo, 1);
                 break;
+
             case true:
-            {
-                if (_slider is { IsOpen: true })
                 {
-                    _slider.MoveToFront();
+                    if (_slider?.IsOpen == true)
+                    {
+                        _slider.MoveToFront();
+                    }
+                    else
+                    {
+                        _slider = new RepositorySlider.RepositorySlider(control.ItemInfo.Count);
+                        _slider.ConfirmButtonPressed += () =>
+                        {
+                            RepositoryButtonPutPressed?.Invoke(control.ItemInfo, _slider.GetSliderValue());
+                        };
+                        _slider.OpenCentered();
+                    }
+                    break;
                 }
 
-                _slider = new RepositorySlider.RepositorySlider(control.ItemInfo.Count);
-                _slider.ConfirmButtonPressed += () =>
-                {
-                    RepositoryButtonPutPressed?.Invoke(control.ItemInfo, _slider.GetSliderValue());
-                };
-                _slider.OpenCentered();
-                break;
-            }
             case false when control.ItemInfo.Count == 1:
                 RepositoryButtonGetPressed?.Invoke(control.ItemInfo, 1);
                 return;
-            case false:
-            {
-                if (_slider != null && _slider.IsOpen)
-                {
-                    _slider.MoveToFront();
-                }
 
-                _slider = new RepositorySlider.RepositorySlider(control.ItemInfo.Count);
-                _slider.ConfirmButtonPressed += () =>
+            case false:
                 {
-                    RepositoryButtonGetPressed?.Invoke(control.ItemInfo, _slider.GetSliderValue());
-                };
-                _slider.OpenCentered();
-                break;
-            }
+                    if (_slider?.IsOpen == true)
+                    {
+                        _slider.MoveToFront();
+                    }
+                    else
+                    {
+                        _slider = new RepositorySlider.RepositorySlider(control.ItemInfo.Count);
+                        _slider.ConfirmButtonPressed += () =>
+                        {
+                            RepositoryButtonGetPressed?.Invoke(control.ItemInfo, _slider.GetSliderValue());
+                        };
+                        _slider.OpenCentered();
+                    }
+                    break;
+                }
         }
     }
+
 
     private void SetupLabels(StalkerRepositoryItemControl control, RepositoryItemInfo item, Texture? texture)
     {

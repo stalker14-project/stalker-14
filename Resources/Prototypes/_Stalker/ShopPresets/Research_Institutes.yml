@@ -1,53 +1,64 @@
 - type: shopPreset
-  id: NpcResearchInstitut
+  id: NpcResearchInstitut # 0x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 600
-    ZoneArtifactEye: 1000
-    ZoneArtifactFlame: 2000
+    ZoneArtifactFireball: 472
+    ZoneArtifactEye: 787
+    ZoneArtifactFlame: 1575
     # Thermal group - 2
-    ZoneArtifactCristall: 2500
-    ZoneArtifactLithosphere: 4000
+    ZoneArtifactCristall: 1968
+    ZoneArtifactLithosphere: 3150
     # Electrical group - 1
-    ZoneArtifactSparkler: 600
-    ZoneArtifactBattery: 1200
-    ZoneArtifactFlash: 2400
-    ArtMoon: 3000
-    ZoneArtifactTesla: 4500
-    ZoneArtifactIce: 5000
+    ZoneArtifactSparkler: 472
+    ZoneArtifactBattery: 945
+    ZoneArtifactFlash: 1890
+    ArtMoon: 2362
+    ZoneArtifactTesla: 3543
+    ZoneArtifactIce: 3937
     # Gravity group - 1
-    ArtMedusa: 500
-    ZoneArtifactFlower: 1000
-    ZoneArtifactNightStar: 2500
+    ArtMedusa: 393
+    ZoneArtifactFlower: 787
+    ZoneArtifactNightStar: 1968
     # Gravity group - 2
-    ZoneArtifactVyvert: 600
-    ZoneArtifactAmoeba: 1000
-    ZoneArtifactGravi: 3000
-    ZoneArtifactGoldfish: 4000
-    ZoneArtifactSpring: 5000
-    ZoneArtifactFocus: 2000
-    ZoneArtifactStuntman: 4000
-    ZoneArtifactDistorter: 6000
-    ZoneArtifactSoul: 5000
+    ZoneArtifactVyvert: 472
+    ZoneArtifactAmoeba: 787
+    ZoneArtifactGravi: 2362
+    ZoneArtifactGoldfish: 3150
+    ZoneArtifactSpring: 3937
+    ZoneArtifactFocus: 1575
+    ZoneArtifactStuntman: 3150
+    ZoneArtifactDistorter: 4725
+    ZoneArtifactSoul: 3937
     # Acidic group - 1
-    ZoneArtifactBlood: 800
-    ZoneArtifactMeat: 1500
-    ZoneArtifactKolobok: 2000
+    ZoneArtifactBlood: 630
+    ZoneArtifactMeat: 1181
+    ZoneArtifactKolobok: 1575
     # Acidic group - 2
-    ZoneArtifactPellicle: 1000
-    ZoneArtifactBaloon: 3500
-    #############################Частини Мутантів
-    FoodMeatSpiderLeg: 80
-    MutantPartBlindDogTail: 150
-    MutantPartZombieHand: 700
-    MutantPartFleshEye: 200
-    MutantPartBoarHoof: 400
-    MutantPartPseudodogTail: 500
-    MutantPartSnorkFoot: 600
-    MutantPartLeshiyRoot: 750
-    MutantPartBloodsuckerTentacles: 1000
-    MutantPartPseudogiantHeart: 3500
-    MutantPartOraculeEye: 5000
+    ZoneArtifactPellicle: 787
+    ZoneArtifactBaloon: 2755
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 94 # T1
+    MutantPartSeasonedBoarHoof: 227 # T2
+    MutantPartOldBoarHoof: 425 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 63
+    MutantPartFleshEye: 140
+    FoodMeatSpiderLeg: 35
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 630
+    MutantPartPseudodogTail: 315
+    MutantPartSnorkFoot: 315
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 630
+    MutantPartOraculeEye: 1680
+    MutantPartPseudogiantHeart: 4200
+    MutantPartZombieHand: 315
   categories:
     - name: ССП-99
       priority: 1
@@ -113,20 +124,22 @@
         # Anomaly detectors
         ZoneAnomalyDetectorAD1: 50
         ZoneAnomalyDetectorAD2: 250
+        ZoneAnomalyDetectorAD3: 1000
         # Artifact detectors
         ZoneArtifactDetectorPulse: 100
         ZoneArtifactDetectorHunter: 400
         ZoneArtifactDetectorResponse: 1000
+        ZoneArtifactDetectorSpruce: 1500
     - name: Провізія
       priority: 6
       items:
         STEnergyDrink: 100
         DrinkCognacBottleFull: 100
-        FoodBreadPlain: 15
+        STFoodBreadPlain: 15
         DrinkFlaskOld: 15
         DrinkWaterBottleFull: 5
         FoodTinMRE: 15
-        FoodMeatSalami: 60
+        STFoodMeatSalami: 60
     - name: Медицина
       priority: 7
       items:
@@ -159,9 +172,41 @@
         #SelfSteampack: 30
         #MilitarySteampack: 200
         #SciSteampack: 500
-
-    - name: Кастомізація
+    - name: Зброя
       priority: 8
+      items:
+        WeaponPistolStalkerGlock: 300
+        STWeaponRevolverSWModel325: 1275
+        STWeaponRevolverSWModel625: 1650
+        STWeaponShotgunStalkerSPAS: 1250
+        STWeaponRifleStalkerL85: 2100
+        STWeaponSMGMp5: 2450
+        STWeaponShotgunMossberg: 600
+        STWeaponSMGBizon: 3400
+    - name: Магазини
+      priority: 9
+      items:
+        BaseGlockMag10: 85
+        SpeedLoader45ACPEmpty: 75
+        556Mag20: 125
+        556Mag30: 175
+        BaseMP5Mag: 125
+        BizonMag: 450
+    - name: Патрони
+      priority: 10
+      items:
+        7mmBuckshotBox: 50
+        6mmBuckshotBox: 400
+        8mmBuckshotBox: 1400
+        919PSOGJBox: 100
+        919PSTBox: 225
+        45ACPLFMJBox: 100
+        45ACPMFMJBox: 225
+        556FMJBox: 300
+        918PGJBox: 100
+        918PSTBox: 225
+    - name: Кастомізація
+      priority: 11
       items:
         ClothingMaskNeckFacemask: 20
         ClothingHandsGlovesFingerless: 35
@@ -184,14 +229,16 @@
         ClothingUniformJumpsuitCasualPurple: 5
         ClothingUniformJumpsuitCasualBlue: 5
         ClothingUniformJumpsuitCasualRed: 5
+        ClothingHeadHatSovietUshankaStalker: 40
     - name: Крафти
-      priority: 9
+      priority: 12
       items:
         CraftFerments: 450
         # Технічна карти
         TechCardCalibrationDosimeter: 100
         STDetectorAD1Blueprint: 1000
         STDetectorAD2Blueprint: 1000
+        STDetectorAD3Blueprint: 3000
         STZoneArtifactDetectorPulseBlueprint: 3000
         STZoneArtifactDetectorHunterBlueprint: 3000
         STZoneArtifactDetectorResponseBlueprint: 6000

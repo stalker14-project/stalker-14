@@ -1,0 +1,110 @@
+- type: entity
+  name: ВПО-129 7.62x54
+  suffix: ST
+  parent: STBaseWeaponSniper
+  id: STWeaponRifleStalkerVepr
+  description: Карабін ВПО-129 Вепрь-1В - цивільна мисливська зброя з нарізним стволом, створена на основі легендарного легкого кулемета радянської армії.
+  components:
+    - type: STWeight
+      self: 3.2
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/vepr.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/vepr.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/vepr.rsi
+      layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+      - state: muzzle
+        map: ["enum.GunVisualLayers.Muzzle"]
+      - state: sight
+        map: ["enum.GunVisualLayers.Scope"]
+    - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/svd.ogg
+      projectileSpeed: 50
+      minAngle: 50
+      maxAngle: 140
+      angleDecay: 65
+      angleIncrease: 2
+      fireRate: 0.65
+      selectedMode: SemiAuto
+      availableModes:
+        - SemiAuto
+    - type: ChamberMagazineAmmoProvider
+      soundRack:
+        path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Магазин
+          startingItem: 754Mag10
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - Magazine754
+        gun_module_scope:
+          name: Приціл
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleSniperSight
+        gun_module_muzzle:
+          name: Глушник
+          priority: 2
+          whitelist:
+            tags:
+              - STWeaponModuleSniperSilencer
+        gun_chamber:
+          name: Патронник
+          startingItem:
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge754
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_module_muzzle: !type:ContainerSlot
+        gun_module_scope: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Scope
+      zoom: 1.2
+      offset: 8
+
+- type: entity
+  name: Тактичний ВПО-129 Серафимів
+  suffix: ST, Скін
+  parent: STWeaponRifleStalkerVepr
+  id: STWeaponRifleStalkerVeprSerafim
+  description: Тактичний ВПО в розфарбуванні Серафимів.
+  components:
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+
+- type: entity
+  name: ВПО-129 "Трава"
+  suffix: ST, Скін, Кастомка
+  parent: STWeaponRifleStalkerVepr
+  id: STWeaponRifleStalkerVeprFarforik
+  description: Чудове рішення для кущового кемпера.
+  components:
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi

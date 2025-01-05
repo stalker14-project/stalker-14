@@ -33,6 +33,138 @@
           types:
             Radiation: -1
 
+###############Хліб
+
+- type: entity
+  parent: FoodInjectableBase
+  id: STFoodBreadBase
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+  - type: Food
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 26
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+
+- type: entity
+  parent: STFoodBreadBase
+  id: STFoodBreadSliceBase
+  suffix: Stalker, Їжа
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: буханка хліба
+  parent: STFoodBreadBase
+  id: STFoodBreadPlain
+  description: Невідомо, хто примудряється пекти батони на території Зони, або яким чином їх протягують через периметр. Однак цей хліб не заражений, не радіоактивний, досить свіжий і цілком їстівний. У всякому разі, ніхто зі сталкерів поки що не скаржився.
+  suffix: Stalker, Їжа
+  components:
+  - type: Food
+  - type: Sprite
+    layers:
+    - state: plain
+  - type: SliceableFood
+    slice: STFoodBreadPlainSlice
+  - type: Tag
+    tags:
+    - Cooked
+
+- type: entity
+  name: шматок хліба
+  suffix: Stalker, Їжа
+  parent: STFoodBreadBase
+  id: STFoodBreadPlainSlice
+  description: Шматок хліба. На перший погляд досить свіжий і цілком їстівний.
+  components:
+  - type: Food
+  - type: Sprite
+    layers:
+    - state: plain-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Craftable
+
+
+
+#############  Cалями
+
+- type: entity
+  name: шматок ковбаси
+  parent: FoodMeatBase
+  id: STFoodMeatSalamiSlice
+  description: Якщо придивитися досить уважно, можна помітити, що шматок ковбаси складається з м'яса не найвищої якості.
+  suffix: Stalker, Їжа
+  components:
+  - type: STWeight
+    self: 0.2
+  - type: Sprite
+    state: salami-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Craftable
+
+
+- type: entity
+  name: ковбаса «Практична»
+  parent: FoodMeatBase
+  id: STFoodMeatSalami
+  description: Часто через брак кращого, ця ковбаса - суміш курятини і соєвого замінника - стає сніданком, обідом і вечерею сталкера. Через велику кількість консервантів досить довго не псується
+  suffix: Stalker, Їжа
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/salami.rsi
+    state: salami
+  - type: SliceableFood
+    slice: STFoodMeatSalamiSlice
+  - type: MeleeWeapon
+    wideAnimationRotation: 100
+    damage:
+      types:
+        Blunt: 6
+  - type: Wieldable
+  - type: Craftable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: Tag
+    tags:
+    - Cooked
+
 ##### Кабан
 
 - type: entity
@@ -256,6 +388,7 @@
         - ReagentId: Ipecac
           Quantity: 2
 
+
 ###################################
 #             НАПОЇ               #
 ###################################
@@ -281,80 +414,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Drinks/lemonade.rsi
   - type: Sealable
-
-# Інша лабудень
-
-- type: entity
-  name: Бургер зі сліпого пса
-  parent: FoodBurgerBase
-  id: FoodBurgerDog
-  description: Собачий бургер з часником, перцем і листям салату. Дешева альтернатива більш популярному бургеру з кабана.
-  suffix: ST, їжа
-  components:
-  - type: Sprite
-    state: chicken
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Protein
-          Quantity: 7
-        - ReagentId: Vitamin
-          Quantity: 1
-  - type: Tag
-    tags:
-    - Meat
-
-- type: entity
-  name: кабанячий бургер
-  parent: FoodBurgerBase
-  id: FoodBurgerBoar
-  description: Кабанячий бургер з часником, перцем і листям салату. Більш поживний, ніж бургер зі сліпої собаки.
-  suffix: ST, їжа
-  components:
-  - type: Sprite
-    state: chicken
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Protein
-          Quantity: 8
-        - ReagentId: Vitamin
-          Quantity: 2
-  - type: Tag
-    tags:
-    - Meat
-
-- type: entity
-  name: бургер з павуковим м'ясом
-  parent: FoodBurgerBase
-  id: FoodBurgerSpider
-  description: Павуковий бургер з часником, перцем і листям салату. Це не тільки огидна, але й малопоживна їжа
-  suffix: ST, їжа
-  components:
-  - type: Sprite
-    state: soylent
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Protein
-          Quantity: 4
-        - ReagentId: Vitamin
-          Quantity: 1
-  - type: Tag
-    tags:
-    - Meat
+# Stalker
 
 - type: entity
   name: печена картопля
@@ -393,39 +453,6 @@
     - Vegetable
 
 - type: entity
-  name: очищена картопля
-  parent: FoodProduceBase
-  id: FoodPotatoCleaned
-  description: Очищена картопля, яка може бути як простою, так і святковою, вишуканою стравою.
-  suffix: ST, їжа
-  components:
-  - type: STWeight
-    self: 0.39
-  - type: Craftable
-  - type: FlavorProfile
-    flavors:
-      - potatoes
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 13
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 11
-        - ReagentId: Vitamin
-          Quantity: 2
-  - type: Sprite
-    sprite: Objects/Weapons/Bombs/hot_potato.rsi
-    state: icon
-  - type: Item
-    sprite: Objects/Specific/Hydroponics/potato.rsi
-    size: Small
-  - type: Tag
-    tags:
-    - Potato
-    - Vegetable
-
-- type: entity
   name: картопляні очистки
   parent: FoodProduceBase
   id: FoodPotatoCleaning
@@ -456,26 +483,25 @@
     - Potato
     - Vegetable
 
-# Stalker
-
 - type: entity
-  name: бутерброд
-  parent: FoodMeatBase
-  id: FoodMeatButerbrod
-  suffix: ST, їжа
-  description: Шматок хліба або булочка з начинкою з якогось продукту, намазаний або покладений зверху, готовий до вживання
+  name: бутерброд із ковбасою
+  parent: STFoodBreadSliceBase
+  id: STFoodMeatButerbrod
+  suffix: Stalker, Їжа
+  description: Скибочка хліба або булки з намазаною або покладеною зверху начинкою з будь-якого продукту, готового до вживання.
   components:
   - type: STWeight
     self: 0.34
   - type: Craftable
-  - type: Tag
-    tags:
-    - Raw
-    - Cutlet
-    - Meat
-    - meaty
-    - bread
   - type: SolutionContainerManager
+  - type: Sprite
+    layers:
+    - state: sausage-slice
+    size: Small
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - bread
     solutions:
       food:
         reagents:
@@ -485,3 +511,8 @@
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Bread
+    - Slice

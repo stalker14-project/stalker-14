@@ -29,6 +29,30 @@
 
 - type: entity
   parent: BaseMutantPart
+  id: MutantPartOldBoarHoof
+  name: копито старого кабана
+  components:
+    - type: Item
+      size: Small
+    - type: STWeight
+      self: 2
+    - type: Sprite
+      sprite: _Stalker/Objects/MutantParts/Old_boar_hoof.rsi
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartSeasonedBoarHoof
+  name: копито запеклого кабана
+  components:
+    - type: Item
+      size: Small
+    - type: STWeight
+      self: 2
+    - type: Sprite
+      sprite: _Stalker/Objects/MutantParts/Seasoned_boar_hoof.rsi
+
+- type: entity
+  parent: BaseMutantPart
   id: MutantPartBoarHoof
   name: копито кабана
   components:

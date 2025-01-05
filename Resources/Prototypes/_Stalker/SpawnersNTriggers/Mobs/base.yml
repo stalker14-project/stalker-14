@@ -1,0 +1,213 @@
+- type: entity
+  id: FlexibleMarkerTrigger
+  abstract: true
+  suffix: Stalker
+  components:
+  - type: ApproachTrigger
+    range: 40
+    minRange: 15
+    useMinRange: true
+    whitelist:
+      components:
+        - Dna
+  - type: Marker
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Anchorable
+  - type: Pullable
+  - type: MovedByPressure
+  - type: Physics
+    bodyType: Static
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+          - LowImpassable
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Markers/cross.rsi
+    layers:
+      - state: pink
+    requiredTriggeredSpeed: 0.0
+    blacklist:
+      components:
+      - HTN
+- type: entity
+  id: FlexibleMarkerTrigger50
+  parent: FlexibleMarkerTrigger
+  abstract: true
+  suffix: Stalker, КД 40 ХВ
+  components:
+  - type: ApproachTrigger
+    range: 40
+    whitelist:
+      components:
+        - Dna
+
+- type: entity
+  name: базовий тригер (1-4) (20%)
+  abstract: true
+  id: STBaseTrigger1420
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+      range: 40
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 6
+      minOffset: 3
+      cooldown: 1800
+      chance: 0.2
+
+
+- type: entity
+  name: базовий тригер (1-4) (100%)
+  abstract: true
+  id: STBaseTrigger14100
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+      range: 40
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 6
+      minOffset: 3
+      cooldown: 1800
+      chance: 1
+
+- type: entity
+  name: базовий тригер (1-2) (10%)
+  id: STBaseTrigger1210
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+      range: 40
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 6
+      minOffset: 3
+      cooldown: 600
+      chance: 0.10
+
+- type: entity
+  name: базовий тригер (1-2) (100%)
+  id: STBaseTrigger12100
+  abstract: true
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+      range: 40
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 6
+      minOffset: 3
+      cooldown: 600
+      chance: 1
+
+- type: entity
+  name: тригер рідкісний моб (1) (25%)
+  id: STBaseTrigger125
+  abstract: true
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+      range: 40
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 6
+      minOffset: 3
+      cooldown: 1800
+      chance: 0.25
+
+- type: entity
+  name: тригер бос (1) (100%)
+  id: STBaseTriggerBoss
+  abstract: true
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+      range: 40
+      minRange: 15
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 6
+      minOffset: 3
+      cooldown: 3600
+      chance: 1
