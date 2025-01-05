@@ -1,0 +1,169 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageFillProject
+  abstract: true
+  suffix: ST, Cache, Проект
+  name: ящик
+  description: Довольно таки старый ящик. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  components:
+    - type: StorageFill
+      contents:
+        - id: CrateProjectSearcher
+          prob: 0.2
+        - id: CrateProjectFarmer
+          prob: 0.2
+        - id: CrateProjectProtecter
+          prob: 0.2
+        - id: STWeaponShotgunMP155T
+        - id: ClothingOuterCoatDoshdevik
+        - id: ClothingOuterJacketStalker
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: KitchenKnife
+        - id: DrinkWaterBottleFull
+        - id: ClothingMaskNeckBalaklava2
+- type: entity
+  parent: [ STCacheStorageFillProject, STBaseCache]
+  id: STCacheProject
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/project_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCacheProject
+    - type: TimedDespawn
+      lifetime: 14400
+    - type: Storage
+      maxItemSize: Large
+      grid:
+        - 0,0,10,10
+
+- type: entity
+  parent: UNstandartCrate
+  id: CrateProjectFarmer
+  name: Набор Проекта "Охотник"
+  description: Аккуратно запакованный набор стартовой эккипировки
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,4,4
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb1
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb1
+    - type: SpawnItemsOnUse
+      items:
+        - id: FoodTinMRE
+        - id: DrinkWaterBottleFull
+        - id: STGauze
+        - id: STGauze
+        - id: STClothingOuterArmorProjectZarya
+        - id: FlashlightSeclite
+        - id: STWeaponShotgunToz34
+        - id: PowerCellHigh
+        - id: STCombatKnife
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: ClothingBackpackDuffelGreenStalker
+        - id: ClothingBeltBandolierStalker
+        - id: BaseRadio
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: MedkitAI2
+        - id: MedkitAI2
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: UNstandartCrate
+  id: CrateProjectProtecter
+  name: Набор Проекта "Защитник"
+  description: Аккуратно запакованный набор стартовой эккипировки
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,4,4
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb1
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb1
+    - type: SpawnItemsOnUse
+      items:
+        - id: FoodTinMRE
+        - id: DrinkWaterBottleFull
+        - id: STGauze
+        - id: STWeaponSniperMosin
+        - id: FlashlightSeclite
+        - id: STClothingHeadHelmetCombatT1Base
+        - id: STClothingOuterArmorLightPlateVestBaseStalker
+        - id: PowerCellHigh
+        - id: 754FMJBox
+        - id: 754FMJBox
+        - id: 754FMJBox
+        - id: STCombatKnife
+        - id: BoxHandcuff
+        - id: ClothingBackpackDuffelGreenStalker
+        - id: ClothingBeltBandolierStalker
+        - id: BaseRadio
+        - id: STBrutepack
+        - id: MedkitAI2
+        - id: MedkitMilitary
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: UNstandartCrate
+  id: CrateProjectSearcher
+  name: Набор Проекта "Исследователь"
+  description: Аккуратно запакованный набор стартовой эккипировки
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,4,4
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb1
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb1
+    - type: SpawnItemsOnUse
+      items:
+        - id: FoodTinMRE
+        - id: DrinkWaterBottleFull
+        - id: MedkitAI2
+        - id: STOintment
+        - id: STOintment
+        - id: psyblock
+        - id: radioprotectpill
+        - id: GeigerCounter
+        - id: BoxArtcont
+        - id: GL1Grenade
+        - id: ClothingMaskGasM40
+        - id: ClothingOuterArmorRCBZProjectPJ5
+        - id: GL1Grenade
+        - id: WeaponPistolStalkerTT
+        - id: TTMag
+        - id: TTMag
+        - id: TTMag
+        - id: 725PBox
+        - id: 725PBox
+        - id: 725PBox
+        - id: STCombatKnife
+        - id: ZoneArtifactDetectorHunter
+        - id: ClothingBackpackDuffelGreenStalker
+        - id: ClothingBeltBandolierStalker
+        - id: BaseRadio
+        - id: STBrutepack
+        - id: MedkitAI2
+        - id: MedkitAI2
+      sound:
+        path: /Audio/Effects/unwrap.ogg
