@@ -167,20 +167,6 @@ flavor-complex-false-meat = не зовсім схоже на м'ясо
 flavor-complex-paper = як м'яка маса
 flavor-complex-compressed-meat = як спресоване м'ясо
 
-# Напої.
-flavor-complex-water = як вода
-flavor-complex-beer = як сеча
-flavor-complex-cognac = як сухі прянощі
-flavor-complex-violets = як фіалки
-flavor-complex-pyrotton = як палаючий рот
-flavor-complex-mothballs = як нафталін
-flavor-complex-paint-thinner = як розчинник фарби
-flavor-complex-numbing-tranquility = як оніміла тиша
-flavor-complex-true-nature = як справжня природа реальності
-flavor-complex-false-meat = не зовсім як м'ясо
-flavor-complex-paper = як м'яка маса
-flavor-complex-compressed-meat = як стиснуте м'ясо
-
 # Drink-specific flavors.
 
 ## Generic alcohol/soda taste. This should be replaced with an actual flavor profile.
