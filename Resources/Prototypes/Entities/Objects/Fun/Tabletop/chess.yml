@@ -2,8 +2,8 @@
 - type: entity
   parent: BaseBoardEntity
   id: ChessBoard
-  name: chessboard
-  description: A chessboard. Pieces included!
+  name: шахівниця
+  description: Шахова дошка. Фігури в комплекті!
   components:
   - type: Sprite
     sprite: Objects/Fun/Tabletop/chessboard.rsi
@@ -18,7 +18,7 @@
 # Chessboard tabletop item (item only visible in tabletop game)
 - type: entity
   id: ChessBoardTabletop
-  name: chessboard
+  name: шахівниця
   parent: BaseBoardTabletop
   categories: [ HideSpawnMenu ]
   components:
@@ -29,7 +29,7 @@
 # White pieces
 - type: entity
   id: WhiteKing
-  name: white king
+  name: білий король
   parent: BaseTabletopPiece
   components:
   - type: Sprite
@@ -38,7 +38,7 @@
 
 - type: entity
   id: WhiteQueen
-  name: white queen
+  name: біла королева
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -47,7 +47,7 @@
 
 - type: entity
   id: WhiteRook
-  name: white rook
+  name: біла тура
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -56,7 +56,7 @@
 
 - type: entity
   id: WhiteBishop
-  name: white bishop
+  name: білий слон
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -65,7 +65,7 @@
 
 - type: entity
   id: WhiteKnight
-  name: white knight
+  name: білий кінь
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -74,7 +74,7 @@
 
 - type: entity
   id: WhitePawn
-  name: white pawn
+  name: білий пішак
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -84,7 +84,7 @@
 # Black pieces
 - type: entity
   id: BlackKing
-  name: black king
+  name: чорний король
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -93,7 +93,7 @@
 
 - type: entity
   id: BlackQueen
-  name: black queen
+  name: чорна королева
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -102,7 +102,7 @@
 
 - type: entity
   id: BlackRook
-  name: black rook
+  name: чорна тура
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -111,7 +111,7 @@
 
 - type: entity
   id: BlackBishop
-  name: black bishop
+  name: чорний слон
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -120,7 +120,7 @@
 
 - type: entity
   id: BlackKnight
-  name: black knight
+  name: чорний кінь
   parent: BaseTabletopPiece
   components:
     - type: Sprite
@@ -129,7 +129,7 @@
 
 - type: entity
   id: BlackPawn
-  name: black pawn
+  name: чорний пішак
   parent: BaseTabletopPiece
   components:
     - type: Sprite

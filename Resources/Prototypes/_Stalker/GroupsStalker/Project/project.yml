@@ -5,7 +5,7 @@
   parent: ClothingHeadsetGrey
   id: ClothingHeadsetProject
   name: A.A.A.
-  description: Algorithm is active, it is impossible to disable the Algorithm, obey the Algorithm.
+  description: Алгоритм активний, відключити Алгоритм неможливо, підкоритися Алгоритму неможливо.
   components:
     - type: ContainerContainer
       containers:
@@ -35,8 +35,8 @@
 - type: entity
   parent: BaseItem
   id: EncryptionKeyPROJECT
-  name: A.A.A. chip
-  description: Algorithm is not active, re-enabling of Algorithm is impossible, do not obey the Algorithm.
+  name: A.A.A. чіп
+  description: Алгоритм не активний, повторне ввімкнення Алгоритму неможливе, не підкоряйтеся Алгоритму.
   components:
   - type: EncryptionKey
     channels:
@@ -51,7 +51,7 @@
 
 - type: radioChannel
   id: Project3
-  name: Threat Identification
+  name: Ідентифікація загроз
   keycode: '4'
   frequency: 56573
   color: "#ff0000"
@@ -59,7 +59,7 @@
 
 - type: radioChannel
   id: Project2
-  name: Identification of the Unwanted
+  name: Ідентифікація небажаних
   keycode: '5'
   frequency: 75923
   color: "#ffff00"
@@ -67,7 +67,7 @@
 
 - type: radioChannel
   id: Project1
-  name: Identification of the Greens
+  name: Ідентифікація Зелених
   keycode: '6'
   frequency: 25858
   color: "#04ff00"
@@ -75,7 +75,7 @@
 
 - type: radioChannel
   id: Project
-  name: Common Project
+  name: Спільний проект
   keycode: '7'
   frequency: 94384
   color: "#00e1d7"
@@ -84,8 +84,8 @@
 - type: entity
   parent: IDCardStandard
   id: PROJECTIDCard
-  name: Algorithm key card
-  description: The algorithm is eternal!
+  name: Ключова картка алгоритму
+  description: Алгоритм вічний!
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/id_cards.rsi
@@ -99,7 +99,7 @@
   parent: BaseItem
   id: ProjectPDA
   name: PDA ???
-  description: Error Screen, this PDA would not work.
+  description: Екран помилки, цей КПК не буде працювати.
   components:
   - type: Trash
     time: 600
@@ -151,8 +151,8 @@
 - type: entity
   parent: ClothingShoesMilitaryBase
   id: ClothingShoesBootsProject
-  name: project hobnailed boots
-  description: The Algorithm will not die, The Algorithm is eternal, The Algorithm is not afraid of anything!
+  name: черевики на цвяхах проекту
+  description: Алгоритм не помре, Алгоритм вічний, Алгоритм нічого не боїться!
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Shoes/Boots/jackboots_project.rsi
@@ -162,8 +162,8 @@
 - type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltHolsterProject
-  name: shoulder holster project
-  description: Holster for carrying a pistol and ammunition.
+  name: наплічна кобура проекту
+  description: Кобура для носіння пістолета та набоїв.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Belts/holster_project.rsi
@@ -176,8 +176,8 @@
 - type: entity
   parent: ClothingEyesBase
   id: ClothingEyesHudProject
-  name: project visor
-  description: Looking into it, you see the entire algorithm that you follow..., but it only works if you have the same chip built into your head.
+  name: козирок проекту
+  description: Зазирнувши в нього, ви бачите весь алгоритм, якого дотримуєтесь..., але він працює лише в тому випадку, якщо у вас в голові вбудований такий самий чіп.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/Goggles/project_hud.rsi
