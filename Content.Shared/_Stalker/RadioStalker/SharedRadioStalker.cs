@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Serialization;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker.RadioStalker;
 
@@ -46,9 +46,9 @@ public sealed class ToggleRadioSpeakerMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public sealed class SelectRadioChannelMessage : BoundUserInterfaceMessage
 {
-    public string Channel;
+    public int Channel;
 
-    public SelectRadioChannelMessage(string channel)
+    public SelectRadioChannelMessage(int channel)
     {
         Channel = channel;
     }

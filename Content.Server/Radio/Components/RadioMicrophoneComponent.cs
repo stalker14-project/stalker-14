@@ -40,4 +40,7 @@ public sealed partial class RadioMicrophoneComponent : Component
     /// </summary>
     [DataField("unobstructedRequired")]
     public bool UnobstructedRequired = false;
+
+    [DataField] // stalker-changes
+    public int Frequency = 1459; // stalker-changes
 }

@@ -59,7 +59,7 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<RadioStalkerComponent, BeforeActivatableUIOpenEvent>(OnBeforeRadioUiOpen); // Stalker-Changes
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioMicMessage>(OnToggleRadioMic); // Stalker-Changes
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioSpeakerMessage>(OnToggleRadioSpeaker); // Stalker-Changes
-        //SubscribeLocalEvent<RadioStalkerComponent, SelectRadioChannelMessage>(OnSelectRadioChannel); // Stalker-Changes ST-TODO. I have no idea what this method is supposed to do. Removed it for now
+        SubscribeLocalEvent<RadioMicrophoneComponent, SelectRadioChannelMessage>(OnSelectRadioChannel); // Stalker-Changes
     }
 
     public override void Update(float frameTime)
@@ -203,7 +203,7 @@ public sealed class RadioDeviceSystem : EntitySystem
 
         var channel = _protoMan.Index<RadioChannelPrototype>(component.BroadcastChannel)!;
         if (_recentlySent.Add((args.Message, args.Source, channel)))
-            _radio.SendRadioMessage(args.Source, args.Message, channel, uid);
+            _radio.SendRadioMessage(args.Source, args.Message, _protoMan.Index<RadioChannelPrototype>(component.BroadcastChannel), uid, frequency: component.Frequency); // stalker-changes
     }
 
     private void OnAttemptListen(EntityUid uid, RadioMicrophoneComponent component, ListenAttemptEvent args)
@@ -267,10 +267,9 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (ent.Comp.RequiresPower && !this.IsPowered(ent, EntityManager))
             return;
 
-        if (!_protoMan.HasIndex<RadioChannelPrototype>(args.Channel) || !ent.Comp.SupportedChannels.Contains(args.Channel))
-            return;
+        if (!_protoMan.TryIndex<RadioChannelPrototype>(args.Channel, out var channel) || !ent.Comp.SupportedChannels.Contains(args.Channel)) // stalker-changes
 
-        SetIntercomChannel(ent, args.Channel);
+            SetIntercomChannel(ent, args.Channel);
     }
 
     private void SetIntercomChannel(Entity<IntercomComponent> ent, ProtoId<RadioChannelPrototype>? channel)
@@ -288,7 +287,11 @@ public sealed class RadioDeviceSystem : EntitySystem
         }
 
         if (TryComp<RadioMicrophoneComponent>(ent, out var mic))
+        { // stalker-changes-start
             mic.BroadcastChannel = channel;
+            if (_protoMan.TryIndex<RadioChannelPrototype>(channel, out var channelProto))
+                mic.Frequency = _radio.GetChannel(ent, channelProto);
+        } // stalker-changes-end
         if (TryComp<RadioSpeakerComponent>(ent, out var speaker))
             speaker.Channels = new() { channel };
         Dirty(ent);
@@ -318,8 +321,28 @@ public sealed class RadioDeviceSystem : EntitySystem
         UpdateRadioUi(uid);
     }
 
+    private void OnSelectRadioChannel(Entity<RadioMicrophoneComponent> microphone, ref SelectRadioChannelMessage args)
+    {
+        if (!args.Actor.Valid)
+            return;
+        // Update frequency if valid and within range.
+        if (args.Channel >= 999 && args.Channel <= 9999)
+            microphone.Comp.Frequency = args.Channel;
+        // Update UI with current frequency.
+        UpdateRadioUi(microphone);
+    }
 
-    private void UpdateRadioUi(EntityUid uid)
+    private void OnMapInit(EntityUid uid, IntercomComponent ent, MapInitEvent args)
+    {
+        // Set initial frequency (must be done regardless of power/enabled)
+        if (ent.CurrentChannel != null &&
+                _protoMan.TryIndex(ent.CurrentChannel, out var channel) &&
+                TryComp(uid, out RadioMicrophoneComponent? mic))
+        {
+            mic.Frequency = channel.Frequency;
+        }
+    }
+private void UpdateRadioUi(EntityUid uid)
     {
         var micComp = CompOrNull<RadioMicrophoneComponent>(uid);
         var speakerComp = CompOrNull<RadioSpeakerComponent>(uid);

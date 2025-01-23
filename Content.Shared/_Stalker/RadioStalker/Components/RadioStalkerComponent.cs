@@ -1,4 +1,4 @@
-﻿using Content.Shared.Radio;
+using Content.Shared.Radio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Stalker.RadioStalker.Components;
