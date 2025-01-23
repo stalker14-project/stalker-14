@@ -60,6 +60,7 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioMicMessage>(OnToggleRadioMic); // Stalker-Changes
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioSpeakerMessage>(OnToggleRadioSpeaker); // Stalker-Changes
         SubscribeLocalEvent<RadioMicrophoneComponent, SelectRadioChannelMessage>(OnSelectRadioChannel); // Stalker-Changes
+
     }
 
     public override void Update(float frameTime)
@@ -331,17 +332,6 @@ public sealed class RadioDeviceSystem : EntitySystem
         // Update UI with current frequency.
         UpdateRadioUi(microphone);
     }
-
-    private void OnMapInit(EntityUid uid, IntercomComponent ent, MapInitEvent args)
-    {
-        // Set initial frequency (must be done regardless of power/enabled)
-        if (ent.CurrentChannel != null &&
-                _protoMan.TryIndex(ent.CurrentChannel, out var channel) &&
-                TryComp(uid, out RadioMicrophoneComponent? mic))
-        {
-            mic.Frequency = channel.Frequency;
-        }
-    }
 private void UpdateRadioUi(EntityUid uid)
     {
         var micComp = CompOrNull<RadioMicrophoneComponent>(uid);
@@ -352,5 +342,6 @@ private void UpdateRadioUi(EntityUid uid)
         var state = new RadioStalkerBoundUIState(micEnabled, speakerEnabled);
         _ui.SetUiState(uid, RadioStalkerUiKey.Key, state);
     }
- // Stalker-Changes-Ends
+
+    // Stalker-Changes-Ends
 }

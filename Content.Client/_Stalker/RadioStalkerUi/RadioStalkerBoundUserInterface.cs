@@ -31,7 +31,7 @@ public sealed class RadioStalkerBoundUserInterface : BoundUserInterface
         };
         _menu.InputTextEntered += channel =>
         {
-            SendMessage(new SelectRadioChannelMessage(Int32.Parse(channel)));
+            SendMessage(new SelectRadioChannelMessage(channel));
         };
 
         _menu.OnClose += Close;
