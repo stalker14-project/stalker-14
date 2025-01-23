@@ -23,13 +23,15 @@
     reflects:
       - NonEnergy
     soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmet
-  name: штурмовой шлем
-  description: Это шлем, специально разработанный для защиты от колющих атак.
+  name: шлем «Зенит»
+  description: боевой шлем марки «Зенит» третьего класса защиты.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/assault_helm.rsi
@@ -39,8 +41,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmetUN
-  name: штурмовой шлем ООН
-  description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 3
+  name: шлем «Зенит» ООН
+  description: боевой шлем марки «Зенит» третьего класса защиты в цветах миротворцев.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/un_head.rsi
@@ -50,8 +52,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmetDeserter
-  name: штурмовой шлем отступников
-  description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 3
+  name: шлем «Зенит-Л»
+  description: Шлем полностью покрывающий всю голову владельца кроме лица, очки приварены к шлему, не пытайтесь их снять!
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_legat_deserter.rsi
@@ -61,8 +63,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmetMilitary
-  name: штурмовой шлем Военных
-  description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 3
+  name: военный шлем «Зенит»
+  description: боевой шлем марки «Зенит» третьего класса защиты в зелёном цвете.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/assault_helm_military.rsi
@@ -72,8 +74,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base
   id: ClothingHeadAssaultHelmetBandit
-  name: штурмовой шлем Братвы
-  description: Это шлем, специально разработанный для защиты от колющих атак. Класс Брони - 3
+  name: бандитский шлем «Зенит»
+  description: боевой шлем марки «Зенит» третьего класса защиты.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/assault_helm_bandit.rsi

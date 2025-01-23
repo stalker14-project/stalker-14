@@ -27,7 +27,7 @@ public sealed class CraftingPrototype : IPrototype
     /// Chance for disassemble
     /// </summary>
     [DataField]
-    public float DisassembleChance = 0.3f;
+    public float DisassembleChance = 1f;
     /// <summary>
     /// Items required for crafting.
     /// This supports multiple items with details at once.

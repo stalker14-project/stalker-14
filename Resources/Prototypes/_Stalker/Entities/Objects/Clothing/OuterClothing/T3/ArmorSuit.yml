@@ -48,8 +48,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorStalker
-  name: бронекостюм "Барсук"
-  description: Бронекомбинезон третьего класса защиты производста ООО "Подвал бара".
+  name: бронекостюм «Барсук»
+  description: Бронекостюм третьего класса защиты производста ООО «Подвал Бара».
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/stalker_barsuk.rsi
@@ -59,8 +59,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorRenegate
-  name: бронекомбез ренегатов
-  description: Дешёвый и защищающий от мутантов с аномалиями комбез реников. Обеспечивает 3 класс защиты.
+  name: бронекомбез «Сквозняк»
+  description: Дешёвый и защищающий от мутантов с аномалиями комбез ренегатов. Обеспечивает 3 класс защиты.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
@@ -71,7 +71,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorJaba
-  name: бронекомбез жаб
+  name: бронекомбез «Скиталец»
   description: Надёжный бронекомбез III типа, обеспечивающий хорошую защиту от аномальных воздействий и физических повреждений.
   components:
   - type: Sprite
@@ -82,8 +82,8 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorBandits
-  name: бронекомбез бандитов
-  description: Дешёвый и защищающий от мутантов с сталкерами комбез бандюганов. Обеспечивает 3 класс защиты.
+  name: бронекомбез «Валет»
+  description: Дешёвый и защищающий от мутантов с сталкерами комбез бандитов. Обеспечивает 3 класс защиты.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
@@ -135,7 +135,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorFreedomDefender
-  name: бронекомбезон «Страж»
+  name: бронекомбинезон «Страж»
   description: Производимый ремесленниками группировки «Воля» усиленный комбинезон сталкера.Имеет третий класс защиты.
   components:
   - type: Sprite
@@ -217,7 +217,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorPilgrim
-  name: бронекомбез инквизиции
+  name: бронекомбез «Инквизитор»
   suffix: ST, T3, Pilgrim
   description: Дешёвый и защищающий от мутантов и еретиков комбез инквизиции. Обеспечивает 3 класс защиты.
   components:
@@ -226,3 +226,19 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/inquisitor_armor.rsi
 
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: ClothingOuterArmorKeeper
+  name: бронекомбез "Хранитель"
+  suffix: ST, Скин
+  description: Бронекомбез II типа, обеспечивающий малую защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/keeper.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/keeper.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: Armor
+    armorClass: 2

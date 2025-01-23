@@ -16,7 +16,7 @@
     damageCoefficient: 0.95
   - type: Craftable
   - type: Reflect
-    reflectProb: 0.03 
+    reflectProb: 0.03
     spread: 360
     reflects:
       - NonEnergy
@@ -26,43 +26,55 @@
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadHelmetLight
-  name: легкий шлем
-  description: обычный лёгкий шлем
+  name: шлем «Сито»
+  description: Лёгкий шлем, представляющий из себя тончайший кусок металла, способный защитить вашу черепушку от картечины.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_light.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/helm_light.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadHelmetDolg
-  name: легкий шлем авангарда
-  description: обычный пехотный шлем перекрашенный в цвета авангарда.
+  name: шлем «Сито» Долга
+  description: Лёгкий шлем, представляющий из себя тончайший кусок металла, способный защитить вашу черепушку от картечины, но в цветах Долга!
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_dolg.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/helm_dolg.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadMercLight
-  name: легкий шлем наёмника
-  description: Это легкий шлем, разработанный для защиты от колющих атак.
+  name: наёмнический шлем «Сито»
+  description: Лёгкий шлем, представляющий из себя тончайший кусок металла, способный защитить вашу черепушку от картечины.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/merc_head_light.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/merc_head_light.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT1Base
   id: ClothingHeadHelmetLightDeserters
-  name: легкий шлем отступников
-  description: обычный лёгкий шлем отступников
+  name: отступнический шлем «Сито»
+  description: Лёгкий шлем, представляющий из себя тончайший кусок металла, способный защитить вашу черепушку от картечины и излишнего внимания государства.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_light_deserter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/helm_light_deserter.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair

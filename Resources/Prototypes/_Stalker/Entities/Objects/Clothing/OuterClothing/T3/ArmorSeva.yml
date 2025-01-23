@@ -77,7 +77,9 @@
         Slash: 0.95
         Piercing: 0.95
         Compression: 0.95
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
 # Stalker
 
 - type: entity
@@ -107,7 +109,7 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaSciWhite
-  name: белый костюм "Сева" Учёных 
+  name: белый костюм "Сева" Учёных
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны со старым дизайном"
   components:
     - type: Sprite
@@ -121,7 +123,7 @@
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
   id: ClothingHeadHardsuitSevaHelmSci
-  name: шлем севы 
+  name: шлем севы
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
   noSpawn: true
   components:

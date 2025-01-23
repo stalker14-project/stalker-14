@@ -64,7 +64,7 @@
   id: ClothingHeadHelmetReinger
   name: шлем рейнджера
   suffix: ST, T3
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/helm_reinger.rsi
@@ -101,3 +101,6 @@
     reflectProb: 0.15
     reflects:
       - NonEnergy
+  - type: HideLayerClothing
+    slots:
+    - Hair

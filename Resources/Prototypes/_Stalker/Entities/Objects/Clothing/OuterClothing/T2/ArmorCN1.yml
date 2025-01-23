@@ -49,7 +49,7 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetCN1
   name: капюшон «СН-1»
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
@@ -70,6 +70,9 @@
       spread: 360
       reflects:
         - NonEnergy
+    - type: HideLayerClothing
+      slots:
+      - Hair
 
 # Скин
 - type: entity
@@ -91,7 +94,7 @@
   id: ClothingHeadHelmetCN1Green
   suffix: ST, T2, Universal
   name: капюшон «ЗН-1»
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite

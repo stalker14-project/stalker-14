@@ -44,7 +44,7 @@
   id: ClothingHelmRCBZ
   suffix: ST, T2, Env
   name: маска РХБЗ
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   description: Эффективное средство индивидуальной защиты от различных видов химических, биологических и радиоактивных угроз. Они обеспечивают надёжную фильтрацию воздуха, задерживая вредные вещества и частицы, что позволяет защитить дыхательные пути и кожу от воздействия опасных веществ.
   components:
   - type: IngestionBlocker
@@ -66,6 +66,9 @@
       coefficients:
         Radiation: 0.9
         Caustic: 0.8
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Project
 
@@ -86,7 +89,7 @@
 - type: entity
   parent: ClothingHelmRCBZ
   id: ClothingHelmRCBZProjectPJ5
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   name: маска РХБЗ «PJ-5»
   description: Эффективное средство индивидуальной защиты от химических, биологических и радиационных угроз версии «PJ-5», разработанное «Проектом», является первым прототипом шлема, который обеспечивает надежную фильтрацию воздуха, задерживая вредные вещества и частицы, и защищает дыхательные пути и кожу от воздействия опасных факторов.
   components:
@@ -94,4 +97,6 @@
     sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
   - type: Clothing
     sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
