@@ -1,5 +1,6 @@
-﻿using Content.Shared._Stalker.RadioStalker;
+using Content.Shared._Stalker.RadioStalker;
 using JetBrains.Annotations;
+using Robust.Shared.Utility;
 
 namespace Content.Client._Stalker.RadioStalkerUi;
 
@@ -30,7 +31,7 @@ public sealed class RadioStalkerBoundUserInterface : BoundUserInterface
         };
         _menu.InputTextEntered += channel =>
         {
-            SendMessage(new SelectRadioChannelMessage(channel));
+            SendMessage(new SelectRadioChannelMessage(Int32.Parse(channel)));
         };
 
         _menu.OnClose += Close;
