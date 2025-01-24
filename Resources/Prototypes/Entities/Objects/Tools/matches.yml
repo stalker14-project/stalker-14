@@ -33,7 +33,7 @@
     igniteSound:
       path: /Audio/Items/match_strike.ogg
   - type: PointLight
-    enabled: false
+    enabled: false  
     radius: 1.1
     color: darkorange
   - type: Appearance
@@ -41,7 +41,8 @@
     unlitIcon: match_unlit
     litIcon: match_lit
     burntIcon: match_burnt
-
+  - type: Craftable
+  
 - type: entity
   parent: Matchstick
   id: MatchstickSpent
