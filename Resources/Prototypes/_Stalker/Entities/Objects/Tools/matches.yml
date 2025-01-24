@@ -1,0 +1,20 @@
+- type: entity
+  suffix: Stalker, крафт
+  name: спичка
+  parent: Matchstick
+  id: StMatchstick
+  description: Простая спичка, используемая для поджигания хороших курительных смесей.
+  components:
+  - type: Craftable
+
+- type: entity
+  name: спичечный коробок
+  suffix: Stalker, крафт
+  parent: Matchbox
+  id: StMatchbox
+  description: A small box of Almost But Not Quite Plasma Premium Matches.
+  components:
+  - type: StorageFill
+    contents:
+      - id: StMatchstick
+        amount: 6
