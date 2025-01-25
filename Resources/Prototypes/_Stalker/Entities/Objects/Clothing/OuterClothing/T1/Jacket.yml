@@ -55,12 +55,14 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
 
-# Bandit
+
+
+# Bandit - 1
 
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketBandit
-  name: куртка бандитов
+  name: куртка 'Бандитов'
   description: Чёрная кожаная куртка является традиционным атрибутом бандитов. В отличие от курток, которые носят новички, в эту вшиты тонкие металлические пластины, способные слегка защитить от пистолетных патронов. Понятное дело, перед аномалиями и автоматными очередями она не выстоит, однако в перепалке с каким-нибудь новичком может существенно помочь.
   components:
   - type: Sprite
@@ -90,12 +92,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_bandit.rsi
 
-# Stalker
+# Stalker - 2 
 
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketStalker
-  name: куртка сталкера
+  name: куртка 'Сталкера'
   description: Обычная одежда начинающего сталкера. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении.
   components:
   - type: Sprite
@@ -117,12 +119,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
 
-# Freedom
+# Freedom - 3
 
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketFreedom
-  name: куртка группировки «Воля»
+  name: куртка 'Свободы'
   description: Камуфлированная куртка группировки «Воля», используется по большей части новенькими в группировке для ношения в безопасных местах.
   components:
   - type: Sprite
@@ -150,44 +152,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_svoboda.rsi
 
-# Merc
-
-- type: entity
-  parent: STClothingOuterJacketBase
-  id: ClothingOuterJacketMerc
-  name: куртка наёмника
-  description:  Её дизайн основан на костюме, используемом спецназом западных армий. Благодаря специальной обработке ткани обладает повышенной устойчивостью при физическом движении.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_mercenary.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_mercenary.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodJacketMerc
-    slot: head
-  # Bonus
-  - type: Armor
-    armorLevels:
-      environment: -1
-      piercing: 1
-
-- type: entity
-  parent: STClothingHeadHatHoodBase
-  id: ClothingHeadHatHoodJacketMerc
-  categories: [ HideSpawnMenu ]
-  name: капюшон
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_mercenary.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_mercenary.rsi
-
-# Clear Sky
+# Clear Sky - 4
 
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketCN
-  name: куртка чистого неба
+  name: куртка 'Чистого Неба'
   description: Слабо защищающая куртка, выполненная для группировки «Чистое Небо». Эту кожанку производили умельцы «Чистого Неба» до того, как на смену ей, устаревшей и плохо защищаемой от явлений Зоны. Почти ничем не отличается от обычной кожаной куртки, но вполне неплохо защищает от укусов, огня и холода.
   components:
   - type: Sprite
@@ -219,12 +189,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_cn.rsi
 
-# Dolg
+# Dolg - 5
 
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketDolg
-  name: куртка авангарда
+  name: куртка 'Долга'
   description: Комплект брони из штанов, берцов и куртки с бронированными вставками и налокотниками. Малая защита от пулевых попаданий и аномальных воздействий. Возможно спасёт владельца от пули ПМа, но всё же - отличная броня для только что поступивших на службу защитников Земли от заразы Зоны.
   components:
   - type: STWeight
@@ -253,92 +223,33 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_dolg.rsi
 
-# Neutral
+# Military - 6
 
 - type: entity
   parent: STClothingOuterJacketBase
-  id: ClothingOuterJacketNeytral
-  name: куртка нейтралов
-  description: Обычная одежда нейтрала. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении.
+  id: ClothingOuterJacketMilitary
+  name: куртка 'Военных'
+  description: Сшитая по всем стандартам армейского госта. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_neytralov.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_military.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_neytralov.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodCoatStalker
-    slot: head
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_military.rsi
 
-# Аномалисты
-- type: entity
-  parent: STClothingOuterJacketBase
-  id: ClothingOuterCoatIvyAnomalist
-  name: anomalist ivy jacket
-  description: anomalist jacket
-  components:
-    - type: Sprite
-      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
-    - type: Clothing
-      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
-    - type: PersonalDamage
-      interval: 1
-      damage:
-        types:
-          Blunt: -0.1
-          Slash: -0.1
-          Piercing: -0.1
+# Sci - 7
 
 - type: entity
   parent: STClothingOuterJacketBase
-  id: ClothingOuterJacketDeserter
-  name: куртка отступника
-  description: Куртка в Тёмно-сером пиксельном камуфляже, используемая отступниками, имеет наплечники, но они защитят вас лишь от скучного внешнего вида.
+  id: ClothingOuterJacketSCI
+  name: куртка 'НИИЧАЗ'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет хим чисткой...
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_deserters.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_deserters.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodJacketDeserter
-    slot: head
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
 
-- type: entity
-  parent: STClothingHeadHatHoodBase
-  id: ClothingHeadHatHoodJacketDeserter
-  categories: [ HideSpawnMenu ]
-  name: капюшон
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
-
-- type: entity
-  parent: STClothingOuterJacketBase
-  id: ClothingOuterJacketMonolith
-  name: куртка монолита
-  description: Куртка в светло-сером пиксельном камуфляже, используемая монолитом, имеет наплечники, но они защитят вас лишь от скучного внешнего вида.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodJacketMonolith
-    slot: head
-
-- type: entity
-  parent: STClothingHeadHatHoodBase
-  id: ClothingHeadHatHoodJacketMonolith
-  noSpawn: true
-  name: капюшон
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi
-
-# Скинчики
+# Renegate - 8
 
 - type: entity
   parent: STClothingOuterJacketBase
@@ -351,6 +262,49 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_realhuman.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_realhuman.rsi
+
+# Jabs - 9
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketJaba
+  name: куртка 'Жаб'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Сделано из натуральной кожи.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_jabs.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_jabs.rsi
+
+# Zavet - 10
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketZavet
+  name: куртка 'Завета'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. 
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_neytralov.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_neytralov.rsi
+
+# Serafims - 11
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketSera
+  name: куртка 'Последователя'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет какой-то пыльцой...
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi
+
+
+
+# Skins
 
 - type: entity
   parent: STClothingOuterJacketBase
@@ -375,3 +329,119 @@
     sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
+
+
+
+# Old groups
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketMerc
+  name: куртка 'Наёмников'
+  description:  Её дизайн основан на костюме, используемом спецназом западных армий. Благодаря специальной обработке ткани обладает повышенной устойчивостью при физическом движении.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_mercenary.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_mercenary.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodJacketMerc
+    slot: head
+  # Bonus
+  - type: Armor
+    armorLevels:
+      environment: -1
+      piercing: 1
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodJacketMerc
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_mercenary.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_mercenary.rsi
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketNeytral
+  name: куртка 'Нейтралов'
+  description: Обычная одежда нейтрала. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_neytralov.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_neytralov.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatStalker
+    slot: head
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterCoatIvyAnomalist
+  name: anomalist ivy jacket
+  description: anomalist jacket
+  components:
+    - type: Sprite
+      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
+    - type: Clothing
+      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
+    - type: PersonalDamage
+      interval: 1
+      damage:
+        types:
+          Blunt: -0.1
+          Slash: -0.1
+          Piercing: -0.1
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketDeserter
+  name: куртка 'Отступников'
+  description: Куртка в Тёмно-сером пиксельном камуфляже, используемая отступниками, имеет наплечники, но они защитят вас лишь от скучного внешнего вида.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_deserters.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_deserters.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodJacketDeserter
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodJacketDeserter
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_deserter.rsi
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketMonolith
+  name: куртка 'Монолита'
+  description: Куртка в светло-сером пиксельном камуфляже, используемая монолитом, имеет наплечники, но они защитят вас лишь от скучного внешнего вида.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_monolith.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodJacketMonolith
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodJacketMonolith
+  noSpawn: true
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi

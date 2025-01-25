@@ -94,7 +94,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: NpcSidor
+    shopPresetId: NpcPetrAlkash # временно
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -133,7 +133,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: STNPCBarmenPreset
+    shopPresetId: NpcPetrAlkash # временно
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -307,86 +307,6 @@
     channels:
     - Binary
     - Common
-
-- type: entity
-  parent: NPCDoll
-  id: NPCResearchInstitutes
-  name: Проф. Круглый [→   ←]
-  description: Говорят, что у профессора есть диплом об окончании МГУ. Стоит ли верить слухам?
-  components:
-  - type: Sprite
-    sprite: _Stalker/NPC/Scientist.rsi
-    state: scientist
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcResearchInstitut
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
-
-
-- type: entity
-  parent: NPCDoll
-  id: NPCResearchInstitutesPB
-  name: Проф. Хайзенберг [→   ←]
-  description: Верит в магию дружбы, готов обменять ваш хабар на хороший кэш
-  components:
-  - type: Sprite
-    sprite: _Stalker/NPC/Scientist.rsi
-    state: scientist
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcSciPB
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
-
 
 - type: entity
   parent: NPCDoll
@@ -1256,47 +1176,6 @@
   - type: Shop
     moneyId: Fangs
     shopPresetId: SerafimShopPresetLight
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
-
-- type: entity
-  parent: NPCDoll
-  id: NPCSabbatSerafim
-  noSpawn: false
-  name: Саббат [→   ←]
-  suffix: ST, Serafim, bar
-  description: Саббат, паладин, ветеран битв с Ложным Идолом сразивший множество рабов Идола, сейчас он помогает в поставках снаряжения и отправляет поставки провизии и медикаментов в северные ковены.
-  components:
-  - type: Sprite
-    sprite: _Stalker/NPC/Sabbat.rsi
-    state: sabbat
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Fangs
-    shopPresetId: SerafimShopPresetHeavy
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS

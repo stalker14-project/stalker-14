@@ -60,7 +60,7 @@
     MutantPartPseudogiantHeart: 3000
     MutantPartZombieHand: 225
     # Smuggling
-    TradeBox: 3300
+    TradeBox: 4500
 
   categories:
     - name: Оружие
@@ -330,10 +330,13 @@
         # Instruments
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
-    - name: Гранаты
-      priority: 11
+  sponsorCategories:
+    1:
+      - name: sponsor
+        items:
+          STWeaponGunAKS74UWhite: 650
+  contributorCategories:
+    - name: contributor
       items:
-        FragGrenade: 1110
-        IpritGrenadeStalker: 800
-        GL1Grenade: 350
-        SmokeGrenade: 750
+        STWeaponShotgunMP153Voron: 550
+        WeaponPistolStalkerAPSHugo: 250

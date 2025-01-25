@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorLightPlateVestBase
-  name: базовый легкий бронежилет #base
+  name: базовый лёгкий бронежилет #base
   suffix: ST, T2, PvP
   abstract: true
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
@@ -44,10 +44,12 @@
     damageCoefficient: 0.90
   - type: Craftable
 
+# Freedom - 1
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseFreedom
-  name: легкий бронежилет группировки «Воля»
+  name: лёгкий бронежилет 'Свободы'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
   - type: Sprite
@@ -72,21 +74,38 @@
       - 8,2,8,3
       - 10,2,10,3
 
+# Stalker - 2
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseStalker
-  name: легкий бронежилет сталкера
+  name: лёгкий бронежилет 'Сталкера'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_stalker.rsi
+
+# Dolg - 3
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBaseDolg
+  name: лёгкий бронежилет 'Долга'
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_dolg.rsi
+
+# Military - 4
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMilitary
-  name: легкий бронежилет военных
+  name: лёгкий бронежилет 'Военных'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -94,21 +113,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_military.rsi
 
-- type: entity
-  parent: STClothingOuterArmorLightPlateVestBase
-  id: STClothingOuterArmorLightPlateVestBasePolice
-  name: легкий бронежилет полиции
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/plate_police.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/plate_police.rsi
+# Zavet - 5
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseZavet
-  name: легкий бронежилет Завета
+  name: лёгкий бронежилет 'Завета'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -116,10 +126,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zavet_bronik.rsi
 
+# Bandit - 6
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseBand
-  name: легкий бронежилет бандита
+  name: лёгкий бронежилет 'Бандитов'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -145,10 +157,68 @@
       - 5,-2,5,-2
       - 6,-2,6,-2
       - 8,-2,8,-2
+
+# Clear Sky - 7 +
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBaseClearSky
+  name: лёгкий бронежилет 'Чистого Неба'
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_cn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_cn.rsi
+
+# Renegate - 8
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBaseRenegate
+  name: лёгкий бронежилет 'Ренегатов'
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_rene.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_rene.rsi
+  # Bonus
+  - type: STWeight
+    self: -7
+
+# Serafims - 9
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBaseSera
+  name: лёгкий бронежилет 'Серафимов'
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/serafim-light-armor.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/serafim-light-armor.rsi
+
+
+
+# Old groups
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBase
+  id: STClothingOuterArmorLightPlateVestBasePolice
+  name: лёгкий бронежилет полиции
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_police.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/plate_police.rsi
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMerc
-  name: легкий бронежилет наёмников
+  name: лёгкий бронежилет 'Наёмников'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -172,32 +242,18 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseUN
-  name: легкий бронежилет ООН
+  name: лёгкий бронежилет 'ООН'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/un_armor.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/un_armor.rsi
-
-- type: entity
-  parent: STClothingOuterArmorLightPlateVestBase
-  id: STClothingOuterArmorLightPlateVestBaseRenegate
-  name: легкий бронежилет ренегата
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/plate_rene.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/plate_rene.rsi
-  # Bonus
-  - type: STWeight
-    self: -7
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseMonolith
-  name: легкий бронежилет монолита
+  name: лёгкий бронежилет 'Монолита'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -208,7 +264,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBase
   id: STClothingOuterArmorLightPlateVestBasePilgrim
-  name: легкий бронежилет паломника
+  name: лёгкий бронежилет 'Паломников'
   description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -218,14 +274,3 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadPilgrimDoctor
     slot: head
-
-- type: entity
-  parent: STClothingOuterArmorLightPlateVestBase
-  id: STClothingOuterArmorLightPlateVestBaseClearSky
-  name: легкий бронежилет чистого неба
-  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/clear_sky_armor.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/clear_sky_armor.rsi

@@ -39,11 +39,24 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/6B2.rsi
 
+# Renegate - 1
+
+- type: entity
+  parent: STClothingOuterArmor6B2Base
+  id: ClothingOuterArmorRene6B2
+  name: бронежилет 6Б2 'Ренегатов'
+  description: Бронежилет II типа ,обеспечивающий малую защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/6B2_brown.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/6B2_brown.rsi
+# Old groups
 
 - type: entity
   parent: STClothingOuterArmor6B2Base
   id: ClothingOuterArmorDeserter6B2
-  name: бронежилет 6б2 отступников
+  name: бронежилет 6б2 'Отступников'
   description: Бронежилет II типа ,обеспечивающий малую защиту от большинства видов повреждений
   components:
   - type: Sprite

@@ -1,0 +1,462 @@
+# Dolg - 1
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDolg
+  name: Сержант Прокопьенко[→   ←]
+  suffix: ST, Gruppirovki
+  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/Dolg.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: DolgShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Bandits - 2
+
+- type: entity
+  parent: NPCDoll
+  id: NPCBand
+  name: Мафаний 'Барахло'[→   ←]
+  suffix: ST, Gruppirovki
+  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/Band.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: BandsShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Sci - 3
+
+- type: entity
+  parent: NPCDoll
+  id: NPCResearchInstitutes
+  name: Проф. Круглый [→   ←]
+  description: Говорят, что у профессора есть диплом об окончании МГУ. Стоит ли верить слухам?
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Scientist.rsi
+    state: scientist
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcResearchInstitut
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCResearchInstitutesPB
+  name: Проф. Хайзенберг [→   ←]
+  description: Верит в магию дружбы, готов обменять ваш хабар на хороший кэш
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Scientist.rsi
+    state: scientist
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcSciPB
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+
+# Clear Sky - 4
+
+- type: entity
+  parent: NPCDoll
+  id: NPCclearSky
+  name: Димка 'Почтмейтер'[→   ←]
+  suffix: ST, Gruppirovki
+  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/CN.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: ClearSkyShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Freedom - 4
+
+- type: entity
+  parent: NPCDoll
+  id: NPCFreedom
+  name: Васян 'Билибоб'[→   ←]
+  suffix: ST, Gruppirovki
+  description: Сводный отец сталкера по имени 'Кебаб'. Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/freedom.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: FreedomShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Jabs - 5
+
+- type: entity
+  parent: NPCDoll
+  id: NPCJaba
+  name: Евгений 'Сборщик'[→   ←]
+  suffix: ST, Gruppirovki
+  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/Jabs.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: ShopPresetJaba
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Military - 6
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMilitaryOKsop
+  name: Виталий 'Интендант'[→   ←]
+  suffix: ST, Gruppirovki
+  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/Military.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: MilitaryRoublesShopPresetHeavy
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Renegates - 7
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMilitary
+  name: АХмед 'Газоотвод'[→   ←]
+  suffix: ST, Gruppirovki
+  description: Вечно носит противогаз, как дурак. Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/rene.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: RenegatShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Stalker - 8
+
+- type: entity
+  parent: NPCDoll
+  id: NPCStalk
+  name: Шакал [→   ←]
+  suffix: ST, Gruppirovki
+  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/stalkers.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: StalkerShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Serafims - 9
+
+- type: entity
+  parent: NPCDoll
+  id: NPCSabbatSerafim
+  noSpawn: false
+  name: Саббат [→   ←]
+  suffix: ST, Serafim
+  description: Саббат, паладин, ветеран битв с Ложным Идолом сразивший множество рабов Идола, сейчас он помогает в поставках снаряжения и отправляет поставки провизии и медикаментов в северные ковены.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Sabbat.rsi
+    state: sabbat
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: SerafimShopPresetHeavy1
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+
+

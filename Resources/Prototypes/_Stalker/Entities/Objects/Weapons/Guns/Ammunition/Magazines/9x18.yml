@@ -81,6 +81,49 @@
     - type: Appearance
     - type: RepositoryItem
       categoryName: Магазины
+
+- type: entity
+  id: BizonMag9x18
+  name: шнековый магазин "Бизон" (64)
+  description: Шнековый магазин на Бизон под 9х18. Вместимость пуль 64. Изменён с помощью инструментов.
+  parent: VityazMag
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 0.35
+  - type: Tag
+    tags:
+      - MagazineBizon919
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge918
+    capacity: 64
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/bizon.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: Craftable
+  - type: RepositoryItem
+    categoryName: Магазины
 ######################### Скорпион #########################
 - type: entity
   id: Vz61Mag

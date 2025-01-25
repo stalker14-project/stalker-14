@@ -1,16 +1,275 @@
 - type: shopPreset
   id: ShopPresetJaba
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 472
+    ZoneArtifactEye: 787
+    ZoneArtifactFlame: 1575
+    # Thermal group - 2
+    ZoneArtifactCristall: 1968
+    ZoneArtifactLithosphere: 3150
+    # Electrical group - 1
+    ZoneArtifactSparkler: 472
+    ZoneArtifactBattery: 945
+    ZoneArtifactFlash: 1890
+    ArtMoon: 2362
+    ZoneArtifactTesla: 3543
+    ZoneArtifactIce: 3937
+    # Gravity group - 1
+    ArtMedusa: 393
+    ZoneArtifactFlower: 787
+    ZoneArtifactNightStar: 1968
+    # Gravity group - 2
+    ZoneArtifactVyvert: 472
+    ZoneArtifactAmoeba: 787
+    ZoneArtifactGravi: 2362
+    ZoneArtifactGoldfish: 3150
+    ZoneArtifactSpring: 3937
+    ZoneArtifactFocus: 1575
+    ZoneArtifactStuntman: 3150
+    ZoneArtifactDistorter: 4725
+    ZoneArtifactSoul: 3937
+    # Acidic group - 1
+    ZoneArtifactBlood: 630
+    ZoneArtifactMeat: 1181
+    ZoneArtifactKolobok: 1575
+    # Acidic group - 2
+    ZoneArtifactPellicle: 787
+    ZoneArtifactBaloon: 2755
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 94 # T1
+    MutantPartSeasonedBoarHoof: 227 # T2
+    MutantPartOldBoarHoof: 425 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 63
+    MutantPartFleshEye: 140
+    FoodMeatSpiderLeg: 35
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 630
+    MutantPartPseudodogTail: 315
+    MutantPartSnorkFoot: 315
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 630
+    MutantPartOraculeEye: 1680
+    MutantPartPseudogiantHeart: 4200
+    MutantPartZombieHand: 315
   categories:
     - name: Оружие
       priority: 1
       items:
+            # Melee
         STCombatKnife: 10
-    - name: Броня и снаряжение
+            # Guns
+          # 7mm
+        STWeaponShotgunMP155T: 50 #T0.5
+        STWeaponShotgunToz34: 250 # T2
+        WeaponShotgunStalkerMP133: 315 # T1.5
+        STWeaponShotgunMossberg: 800 # T2
+        STWeaponShotgunMP153: 1430 # T3
+        STWeaponShotgunProtecta: 1500
+          # Nato
+        WeaponRifleStalkerGalil: 4900
+        STWeaponRifleStalkerGalatz: 1900
+        STWeaponRifleM16: 2111
+        STWeaponRifleSig550: 2111
+          # Smg
+        STWeaponSMGBizon: 700
+          # Other
+        WeaponPistolStalkerTT: 550
+        WeaponStalkerPistolTec9: 200
+        WeaponPistolStalkerGlock: 200
+        STWeaponRifleSKS: 1400
+    - name: Магазины
       priority: 2
       items:
-        STSkinsKitJabs: 500
-    - name: Кастомизация
+        P90Mag: 500
+          # 7mm
+        Base1270Mag: 100 #T1
+          # 5,45x39
+        Base545Mag10: 50 #T1  
+        545Mag20: 220 #T2
+          # 7,62x51 and 56
+        Base556Mag10: 80
+        556Mag20: 130
+        556Mag30: 300
+        Base739Mag10: 100
+        751Mag30: 550
+          # Smg
+        BizonMag9x18: 300
+        BaseMP5Mag: 260
+        Vz61Mag: 100
+          # Other
+        BaseTEC9Mag: 120
+        BaseGlockMag10: 100
+        TTMag: 98
+        SpeedLoader45ACPEmpty: 98
+        BaseAPSMag: 100
+    - name: Боеприпасы
       priority: 3
+      items:
+        6mmBuckshotBox: 450
+        7mmBuckshotBox: 40
+        # 7.25
+        725PBox: 80
+        725PTBox: 340
+        # 9.19
+        919PSOGJBox: 130
+        918PSTBox: 240
+        919RIPBox: 338
+        919PBMBox: 900
+        918PBMBox: 800
+        # 5.45
+        545FMJBox: 350
+        # 5.56
+        556FMJBox: 220
+        556WarmagBox: 280
+        556M855Box: 1400
+        556M856Box: 2400
+        545M995Box: 5500
+        # 7.51
+        751M80Box: 800
+        # 7.54
+        739FMJBox: 500
+        754HPBox: 430
+    - name: Броня
+      priority: 4
+      items:
+          # Helmets #     
+        ClothingHeadHelmetSH68: 700 # T1 - PVP
+        ClothingHeadHelmetLight: 200 # T1 - PVE
+        ClothingHeadHelmetInfantry: 1500 # T2 - PVP
+        ClothingHeadHelmetVityaz1C: 1000 # T2 - PVE
+        ClothingHeadHelmetBerill5MMilitary: 1500  #T3 - ENV      
+        ClothingHeadAssaultHelmet: 3000 # T3 - PVP
+          # OuterClothing #        
+        ClothingOuterJacketJaba: 39 # T1 - PVE
+        STClothingOuterArmorLightPlateVestBaseStalker: 1850 # T2 - PvP
+        ClothingOuterArmor6B2: 2050 # T2 - PvP
+        ClothingOuterArmorRCBZJabs: 950 # T2 - ENV
+        ClothingOuterArmorZaryaJabs: 800 # T2 - universal
+        STClothingOuterArmorLightPlateVestBaseANAgreen: 4200 # T3 - PVP
+        ClothingOuterArmorJaba: 2100 # T3 - PVE
+        ClothingOuterArmorSevaDolgRed: 1900 # T3 - ENV
+    - name: Хранилища и Контейнеры
+      priority: 4
+      items:
+          # BackPacks              
+        ClothingBackpackDuffelBlackStalker: 30 # T1        
+        ClothingBackpackTacticBlackStalker: 450 # T2         
+        ClothingBackpackMercStalker: 850 # T3
+        ClothingBackpackDuffelBlackMilitaryTacticStalker: 1300
+          # Belts 
+        ClothingBeltBandolierStalker: 20 # T1 - PVE
+        ClothingBeltTarzanBlack: 200 # T1 - PVP
+        ClothingBeltTarzanGreen: 200 # T1 - PVP
+        ClothingBeltTarzanOrange: 200 # T1 - PVP  
+        ClothingBeltVoron: 560 # T2 - PVP 
+          # Containers
+        BoxArtcont: 350 # T1
+        MedkitCMSStalker: 450 # T1
+        MedkitGrizzlyStalker: 850 # T2
+    - name: Плащи и Противогазы
+      priority: 5
+      items:
+          # Cloaks            
+        ClothingOuterCoatDoshdevik: 60 # T1
+        ClothingOuterCoatStalker: 350 # T2
+        ClothingOuterCoatLoyalist: 1250 # T3
+          # Gasmasks               
+        ClothingMaskGasZarya: 100 # T1        
+        ClothingMaskGP5: 200 # T2
+        ClothingMaskGP7: 300 # T3     
+        ClothingMaskM51: 1200       
+    - name: Исследовательское снаряжение
+      priority: 6
+      items:
+        STBoltBagFilled: 50
+        BoxArtcont: 350 # T1
+        ZoneAnomalyDetectorAD1: 450 # T1
+          # Detectors 
+        ZoneArtifactDetectorPulse: 100 # T1
+        ZoneArtifactDetectorHunter: 400 # T2
+        ZoneArtifactDetectorResponse: 900 # T2
+    - name: Утилиты
+      priority: 7
+      items:
+        ST919PBMBoxCinkBlueprint: 10000
+        ST918PBMBoxCinkBlueprint: 10000
+        STGasMaskM51Blueprint: 5000
+        STSkinsKitJabs: 500
+        STCombatKnife: 25
+        TrashBag: 30
+        BoxZiptie: 50
+        BoxSafebox: 300
+        CheapLighter: 5
+        GeigerCounter: 50
+        BaseRadio: 50
+        FlashlightSeclite: 50
+        PowerCellHyper: 50
+        HandheldGPSBasic: 50
+        Paper: 2
+        Pen: 5
+        Binocularus1: 2500
+        BoxFlare: 60
+        ClothingBackpackDuffelGreenStalkerHydroponic: 500
+        Beaker: 40
+        Syringe: 20
+        ClothingGoPro: 250
+        ExtendedEmergencyOxygenTankFilledStalker: 50
+        TrashDetectorTier1: 200
+        Matchbox: 10
+        HatchetStalker: 150
+    - name: Провизия
+      priority: 8
+      items:
+        STEnergyDrink: 200
+        STEnergyDrinkMonster: 200
+        STEnergyDrinkRevo: 150
+        STDrinkBeerCanBaltic: 90
+        DrinkVodkaBottleFull: 55
+        STFoodBreadPlain: 35
+        DrinkFlaskOld: 30
+        DrinkWaterBottleFull: 45
+        FoodTinMRE: 120
+        DrinkLemonadehBottleFull: 50
+        STFoodMeatSalami: 350
+    - name: Медицина # 70% скидка от сталкеров
+      priority: 9
+      items:
+          # Cheap 
+        PillDexalin: 10
+        PillDexalinPlusStalker: 25
+        STOintment: 10
+        STGauze: 15
+        STBrutepack: 10
+          # Expensive 
+        antiradpill: 50
+        radioprotectpill: 70
+        Bloodpack: 90
+        psyblock: 200
+        MedkitAI2: 340
+        MedkitMilitary: 750
+        Defibrillator: 700
+    - name: Модули 
+      priority: 10
+      items:
+        STModuleScopeRiflesT1Ru: 600
+        STModuleScopeRiflesT1Nato: 600
+        STModuleSilencerRiflesT1Ru: 400
+        STModuleSilencerRiflesT1Nato: 400
+        STModuleShotgunChokeT1: 200
+        STModuleSMGGripT1: 600
+        STModuleSilencerSMGT1: 600
+        STModuleSniperSightT1: 600
+        STModuleSilencerSniperT1: 600
+    - name: Кастомизация
+      priority: 11
       items:
         ClothingTorsoJaba: 5
         ClothingLegsJeansJaba: 5
@@ -18,24 +277,68 @@
         ClothingShoesBootsFrogLeather: 30
         ClothingMaskSkull: 10
         ClothingEyesGlassesCheapSunglasses: 5
-    - name: Рецепты
-      priority: 4
+        ClothingHeadHatBeaniehat: 10
+        ClothingMaskNeckFacemask: 10
+        ClothingMaskNeckBalaklava1: 10
+        ClothingUniformJumpsuitTacticool: 10
+        ClothingMaskNeckBalaklava2: 10
+        ClothingMaskNeckBalaklava3: 10
+        ClothingHeadBandMerc: 30
+        ClothingHeadBandSkull: 30
+        ClothingHeadHatUshanka: 30
+        ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesMercFingerless: 60
+        ClothingShoesColorBlack: 30
+        ClothingShoesBootsWork: 30
+        ClothingShoesLeather: 30
+        ClothingShoesBootsMerc: 30
+        ClothingShoesSwat: 35
+        ClothingHeadHatBlacksoft: 10
+        ClothingHeadHatGreysoft: 10
+        ClothingHeadHatSovietUshankaStalker: 40
+        ClothingTshirtBlue: 10
+        ClothingTshirtOrange: 10
+        ClothingCloakStalker: 30
+        ClothingLegsJeansBlue: 10
+        ClothingLegsJeansStalker: 10
+        ClothingLegsJeansGreenCargo: 10
+        ClothingLegsJeansGreyCargo: 10
+        ClothingLegsJeansBlackCargo: 10
+        ClothingLegsJeansBrownCargo: 10
+        ClothingLegsJeansSandCargo: 10
+        ClothingLegsJeansRussianPixel: 20
+        ClothingLegsJeansBlackNew: 20
+        ClothingLegsJeansGorka: 20
+        ClothingShoesBootsCombat: 30
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksGorka: 90
+        ClothingTorsoTurtlenecksGorka6: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingLegsJeansBereza: 20
+        ClothingLegsJeansGorka6: 20
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 67
+        # new shit
+        ClothingLegsBattlePantsBlack: 50
+        ClothingLegsVeryBlueJenas: 50
+        ClothingLegsCombatForest: 50
+        ClothingLegsGorka5: 50
+        ClothingLegsGorka6b: 50
+        ClothingLegsNavyPants: 50
+        ClothingLegsRussianNumber: 50
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksGorka5: 50
+        ClothingTorsoTurtlenecksGorka6B: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50 
+    - name: Металлоискатели
+      priority: 12
       items:
-        ST919PBMBoxCinkBlueprint: 29000
-        ST918PBMBoxCinkBlueprint: 29000
-        STGasMaskM51Blueprint: 18000
-
-    - name: Аномалии
-      priority: 5
-      items:
-        BoxArtcont: 200
-    - name: Развлечения
-      priority: 6
-      items:
-        GoldDiceBag: 300
-        CardBin: 200
-    - name: Утилиты
-      priority: 7
-      items:
-        STCraftIndustrialThreadStaplesKitT4: 3000
-        STCraftPlasticFittingT4: 3000
+        TrashDetectorTier1: 50
+        TrashDetectorTier3: 600
+        TrashDetectorTier4: 3900

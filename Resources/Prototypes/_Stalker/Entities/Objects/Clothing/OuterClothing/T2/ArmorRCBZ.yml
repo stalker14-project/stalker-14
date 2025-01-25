@@ -67,6 +67,134 @@
         Radiation: 0.9
         Caustic: 0.8
 
+# Dolg - 1
+
+- type: entity
+  parent: STClothingOuterArmorRCBZ
+  id: ClothingOuterArmorRCBZDolg
+  name: костюм «РХБЗ» 'Долга'
+  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-dolg.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHelmRCBZDolg
+
+- type: entity
+  parent: ClothingHelmRCBZ
+  id: ClothingHelmRCBZDolg
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/rcbz-dolg-helmet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/rcbz-dolg-helmet.rsi
+
+# Freedom - 2 +
+
+- type: entity
+  parent: STClothingOuterArmorRCBZ
+  id: ClothingOuterArmorRCBZFreedom
+  name: костюм «РХБЗ» 'Свободы'
+  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-freedom.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-freedom.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHelmRCBZFreedom
+
+- type: entity
+  parent: ClothingHelmRCBZ
+  id: ClothingHelmRCBZFreedom
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/rcbz-freedom-helmet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/rcbz-freedom-helmet.rsi
+
+# Jabs - 3
+
+- type: entity
+  parent: STClothingOuterArmorRCBZ
+  id: ClothingOuterArmorRCBZJabs
+  name: костюм «РХБЗ» 'Жаб'
+  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-jabs.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-jabs.rsi
+
+# Renegates - 4
+
+- type: entity
+  parent: STClothingOuterArmorRCBZ
+  id: ClothingOuterArmorRCBZRene
+  name: костюм «РХБЗ» 'Ренегатов'
+  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-renegate.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rcbz-renegate.rsi
+
+# Serafims - 5
+
+- type: entity
+  parent: STClothingOuterArmorRCBZ
+  id: ClothingOuterArmorRCBZSera
+  name: костюм «РХБЗ» 'Серафимов'
+  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/RCBZ-Serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/RCBZ-Serafim.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHelmRCBZSera
+
+- type: entity
+  parent: ClothingHelmRCBZ
+  id: ClothingHelmRCBZSera
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/rcbz-serafim-helmet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/rcbz-serafim-helmet.rsi
+
+# Clear Sky - 7 +
+
+- type: entity
+  parent: STClothingOuterArmorRCBZ
+  id: ClothingOuterArmorRCBZCN
+  name: костюм «РХБЗ» 'Чистого Неба'
+  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rhbz-clearsky.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rhbz-clearsky.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHelmRCBZCN
+
+- type: entity
+  parent: ClothingHelmRCBZ
+  id: ClothingHelmRCBZCN
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_rhbz_cn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_rhbz_cn.rsi
+
+# Old groups
+
 # Project
 
 - type: entity

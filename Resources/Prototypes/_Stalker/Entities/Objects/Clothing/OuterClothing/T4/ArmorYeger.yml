@@ -62,3 +62,37 @@
     lowPressureMultiplier: 1000
   - type: PointLight
     color: "#f9ffaf"
+
+# Freedom - 1 +
+
+- type: entity
+  parent: ClothingOuterArmorYeger
+  id: ClothingOuterArmorYegerFreedom
+  name: костюм «Егерь» 'Свободы'
+  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/yeger-freedom.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/yeger-freedom.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetYegerFreedom
+  - type: Armor
+    armorClass: 3
+    armorLevels:
+      environment: -2
+      piercing: -2
+
+- type: entity
+  parent: ClothingHeadHelmetYeger
+  id: ClothingHeadHelmetYegerFreedom
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: Sprite
+    sprite: yeger-helmet-freedom.rsi
+  - type: Clothing
+    sprite: yeger-helmet-freedom.rsi
+  - type: Armor
+    armorClass: 2
+    armorLevels:
+        shock: -2

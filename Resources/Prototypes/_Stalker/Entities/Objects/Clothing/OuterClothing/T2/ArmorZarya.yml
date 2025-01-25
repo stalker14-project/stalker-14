@@ -32,6 +32,7 @@
     damageCoefficient: 0.90
   - type: Craftable
 
+# Stalker №1 - 1
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -56,6 +57,8 @@
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_stalker.rsi
 
+# Stalker №2
+
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaTourist
@@ -69,11 +72,30 @@
   - type: STWeight
     self: -7
 
+# Stalker №3
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaHunter
+  name: комбинезон «Заря Охотник»
+  description: Крайне популярная среди сталкеров кустарная модификация «Зари» Охотник. Обладает повышенной защитой от когтей и клыков мутантов, однако из-за замены основного материала стала более уязвима для различных аномалий Зоны.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: 2
+      piercing: -1
+
+# Jabs - 2
+
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaJabs
-  name: комбинезон «Заря» Жаб
-  description: «Заря» жаб, с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
+  name: комбинезон «Заря» 'Жаб'
+  description: «Заря» 'Жаб', с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
   components:
   - type: Sprite
     sprite: _Stalker/Clothing/OuterClothing/zarya_jab.rsi
@@ -84,12 +106,47 @@
     baseWalkSpeed: 1.05
     baseSprintSpeed: 1.05
 
-## Seraphims
+# Military - 3 +
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaMilitary
+  name: пустынная «Заря» 'Военных'
+  description: «Заря» 'Военных', с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: 2
+      piercing: -2
+      environment: -1
+
+# Renegates - 4 +
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaRene
+  name: комбинезон «Заря» 'Ренегатов'
+  description: «Заря» 'Ренегатов', с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/rene_zarya.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/rene_zarya.rsi
+  - type: Armor
+    armorLevels:
+      piercing: -1
+      environment: 2
+
+# Serafims - 3
 
 - type: entity
   parent: ClothingOuterArmorZaryaHunter
   id: STClothingOuterArmorRassvetSera
-  name: комбинезон «Рассвет» Серафимов
+  name: комбинезон «Рассвет» 'Серафимов'
   suffix: ST, T1, PVE
   description: комбинезон "Рассвет", используемый группировкой "Серафимы" для выполнения тактических задач с повышенной защитой от агрессивной фауны.
   components:
@@ -122,25 +179,12 @@
     - type: Clothing
       sprite: _Stalker/Clothing/Head/Sera_/rassvet_helm.rsi
 
-- type: entity
-  parent: STClothingOuterArmorZaryaBase
-  id: ClothingOuterArmorZaryaNeutral
-  name: комбинезон «Заря» нейтралов
-  description: «Заря» нейтралов, отлично подойдёт для выхода в Зону и битвы с мутантами, но не перестрелки.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 1
-      piercing: -1
+# Dolg - 4
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorZaryaDolg
-  name: заря авангарда
+  name: комбинезон «Заря» 'Долга'
   description: Представляет собой сочетание двухслойной прорезиненной ткани с плексигласовой прокладкой и встроенного бронежилета. По сути, тот же самый комбинезон "Заря" только модифицирован умельцами группировки "Авангард" для более безопасных вылазок в условиях Зоны.
   components:
   - type: Sprite
@@ -174,35 +218,60 @@
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_dolg.rsi
 
-- type: entity
-  parent: STClothingOuterArmorZaryaBase
-  id: ClothingOuterArmorZaryaPoisk
-  name: комбинезон «Заря» группы поиск
-  description: Легкий и мобильный комбинезон «Заря» группировки "Поиск" представляет собой усовершенствованную версию стандартного костюма.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
-  - type: Clothing
-    sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 1
-      environment: -1
+# Bandits - 5
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
-  id: ClothingOuterArmorZaryaHunter
-  name: комбинезон «Заря Охотник»
-  description: Крайне популярная среди сталкеров кустарная модификация «Зари» Охотник. Обладает повышенной защитой от когтей и клыков мутантов, однако из-за замены основного материала стала более уязвима для различных аномалий Зоны.
+  id: STClothingOuterArmorBandits
+  name: комбинезон «Бродяга» 'Бандитов'
+  description: Совмещённая с плащём "Заря", улучшенная и перекрашенная под бандитские понты. Обеспечивает 2 класс защиты.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 2
-      piercing: -1
+    sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
+# bonus
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - 0,0,0,0
+      - 2,0,2,0
+      - 4,0,4,0
+      - 0,2,0,3
+      - 2,2,2,3
+      - 4,2,4,3
+      - 6,2,7,3
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadWandererCap
+  name: капюшон «Бродяги»
+  description: Тёмный капюшон от бандитского понтового аналога Зари.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Mods
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -234,11 +303,45 @@
     armorLevels:
       environment: 4
 
+# Mods
+
+# Old groups
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaNeutral
+  name: комбинезон «Заря» 'Нейтралов'
+  description: «Заря» нейтралов, отлично подойдёт для выхода в Зону и битвы с мутантами, но не перестрелки.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: 1
+      piercing: -1
+
+- type: entity
+  parent: STClothingOuterArmorZaryaBase
+  id: ClothingOuterArmorZaryaPoisk
+  name: комбинезон «Заря» 'Группы Поиск'
+  description: Легкий и мобильный комбинезон «Заря» группировки "Поиск" представляет собой усовершенствованную версию стандартного костюма.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
+  - type: Armor
+    armorLevels:
+      nonPvPPhysical: 1
+      environment: -1
+
 - type: entity
   parent: STClothingOuterArmorZaryaBase
   id: STClothingOuterArmorDesertersZarya
-  name: Заря отступников "Триарий" # не переименовывайте
-  description: бронекомбез "Заря" Отступников, практически ничем не отличается от обычной, кроме пары дополнительных бронепластин
+  name: Заря «Триарий» 'Отступников' # не переименовывайте
+  description: бронекомбез "Заря" 'Отступников', практически ничем не отличается от обычной, кроме пары дополнительных бронепластин
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_zarya.rsi
@@ -270,40 +373,6 @@
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_project.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_project.rsi
-
-- type: entity
-  parent: STClothingOuterArmorZaryaBase
-  id: STClothingOuterArmorBandits
-  name: заря бандитов "Бродяга"
-  description: Совмещённая с плащём "Заря", улучшенная и перекрашенная под бандитские понты. Обеспечивает 2 класс защиты.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
-# bonus
-  - type: Storage
-    maxItemsize: Large
-    grid:
-      - 0,0,0,0
-      - 2,0,2,0
-      - 4,0,4,0
-      - 0,2,0,3
-      - 2,2,2,3
-      - 4,2,4,3
-      - 6,2,7,3
-
-- type: entity
-  parent: STClothingHeadHatBase
-  id: ClothingHeadWandererCap
-  name: капюшон Бродяги
-  description: Тёмный капюшон от бандитского понтового аналога Зари.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/Bandit_zarya_cap.rsi
 
 #СКИНЫ
 

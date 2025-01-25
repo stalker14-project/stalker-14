@@ -30,3 +30,25 @@
         Compression: 0.65
   - type: ExplosionResistance
     damageCoefficient: 0.6
+
+# Clear Sky - 1
+
+- type: entity
+  parent: ClothingOuterArmorStalkerCombat
+  id: ClothingOuterArmorStalkerCombatCN
+  name: БронеКостюм 'TVM-12'
+  description: Кустарная броня с полным комплексом защиты для уверенных в себе комбатантов.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/tvm-12.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/tvm-12.rsi
+  - type: Armor
+    armorLevels:
+      environment: 3
+      piercing: -1
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - 0,0,2,2
+      - 4,0,4,2

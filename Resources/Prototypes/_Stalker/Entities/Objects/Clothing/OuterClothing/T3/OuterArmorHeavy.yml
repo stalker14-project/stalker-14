@@ -1,0 +1,43 @@
+
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterArmorHeavy
+  name: бронированный комбинезон
+  description: Создан на основе обыкновенного комбинезона, бронированный потому что повышена защита броневыми пластинами от большинства физических повреждений. Так-же увеличивает вес, но предоставленая отличная защита от снарядов для таких комбенизонов как этот.
+  suffix: ST, T3, PvE
+  components:
+  - type: STWeight
+    self: 6.5
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/armored_merc_armor.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/armored_merc_armor.rsi
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 6
+        Slash: 6
+        Piercing: 4
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.7
+        Heat: 0.9
+        Radiation: 0.9
+        Caustic: 0.9
+        Shock: 0.9
+        Compression: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.65
+
+- type: entity
+  parent: STClothingOuterArmorHeavy
+  id: STClothingOuterArmorHeavyDolg
+  name: бронированный комбинезон 'Долга'
+  description: Создан на основе обыкновенного комбинезона, бронированный потому что повышена защита броневыми пластинами от большинства физических повреждений. Так-же увеличивает вес, но предоставленая отличная защита от снарядов для таких комбенизонов как этот.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/armored_dolg_armor.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/armored_dolg_armor.rsi

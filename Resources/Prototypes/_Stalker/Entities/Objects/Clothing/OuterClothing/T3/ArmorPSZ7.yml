@@ -62,3 +62,22 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBasePSZ7
+  id: STClothingOuterArmorLightPlateVestBasePSZ7rene
+  name: палёный ПСЗ-7 'Ренегатов'
+  suffix: ST, T3, PvP
+  description: Армейский бронежилет серии ПСЗ-7 (персональная система защиты) обеспечивает уровень защиты, достаточный для проведения боевых операций против легковооружённого противника. Защита от аномальной активности отсутствует. Только больно уж сильно жмёт в области груди, даже дфшать тяжело
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz7-palionka.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz7-palionka.rsi
+  - type: STWeight
+    self: 6
+  - type: PersonalDamage
+    interval: 1
+    damage:
+      types:
+        Asphyxiation: 0.3

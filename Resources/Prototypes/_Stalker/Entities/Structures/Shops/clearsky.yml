@@ -68,40 +68,6 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: ClearSkyShopPresetZone
+    shopPresetId: ClearSkyShopPreset
 
-- type: entity
-  parent: StalkerShop
-  id: ClearSkyDollarShop
-  suffix: ST, Mapping, Чистое небо T4
-  components:
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.35,0.25,0.35"
-        density: 190
-        mask:
-        - MachineMask
-        layer:
-        - MachineLayer
-  - type: Rotatable
-  - type: Sprite
-    sprite: _Stalker/Structures/Machines/VendingMachines/Shops/anomalist.rsi
-    layers:
-    - state: "off"
-      map: [ "enum.ConstructionVisuals.Layer" ]
-    - state: normal-unshaded
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Dollar
-    shopPresetId: ClearSkyDollarShopPreset
+

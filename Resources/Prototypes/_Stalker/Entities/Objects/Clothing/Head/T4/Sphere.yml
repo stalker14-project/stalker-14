@@ -31,7 +31,18 @@
       - NonEnergy
     soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
 
+# Clear Sky - 1 +
 
+- type: entity
+  parent: STClothingHeadHelmetEnvironmentT3Base
+  id: ClothingHeadHelmetBerill5MCN
+  name: шлем «Сфера-12» 'Чистого Неба'
+  description: Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/bulat_helm_cn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/bulat_helm_cn.rsi
 
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT4Base #Нужны спрайты под шлем с фонариком и без
