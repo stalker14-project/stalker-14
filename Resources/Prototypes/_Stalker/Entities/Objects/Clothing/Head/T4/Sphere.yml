@@ -87,7 +87,7 @@
 # Clear Sky - 1 +
 
 - type: entity
-  parent: STClothingHeadHelmetEnvironmentT3Base
+  parent: STClothingHeadHelmetEnvironmentT4Base
   id: ClothingHeadHelmetBerill5MCN
   name: шлем «Сфера-12» 'Чистого Неба'
   description: Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.
@@ -96,3 +96,13 @@
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_cn.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/bulat_helm_cn.rsi
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      coefficients:
+        Piercing: 0.75
+        Heat: 0.8
+        Shock: 0.80
+        Radiation: 0.80
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
