@@ -6,7 +6,7 @@
   suffix: ST
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Devices/metaldetector.rsi
+    sprite: _Stalker/Objects/Devices/longrangemetaldetector.rsi
     layers:
       - state: icon
       - state: screen
@@ -226,9 +226,9 @@
   - type: Clickable
   - type: Sprite
     noRot: true
-    sprite: _Stalker/Objects/Decoration/nevidimi.rsi
+    sprite: _Stalker/Objects/Decoration/invisible.rsi
     layers:
-      - state: nevidimi
+      - state: invisible
   - type: Craftable
   - type: Spectral
   - type: Fixtures
@@ -293,14 +293,14 @@
 - type: entity
   id: longrangemetaldetectorCrategrass
   parent: BaseStructure
-  name: Тайник (спрайт травы) (Закопанный Тайник, Трава)
+  name: Тайник (спрайт травы)
   description: Закопанный Тайник, Трава
   components:
   - type: Transform
     anchored: true
   - type: Clickable
   - type: Sprite
-    sprite: _Stalker/Decals/greengraseONEST.rsi
+    sprite: _Stalker/Tiles/greengrass.rsi
     layers:
       - state: grass
   - type: SyncSprite
@@ -328,8 +328,8 @@
     - type: Sprite
       layers:
         - state: green
-        - sprite: _Stalker/Decals/greengraseONEST.rsi
-          state: grass
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
     - type: RandomSpawner
       prototypes:
         - longrangemetaldetectorCrategrass
@@ -343,8 +343,8 @@
     - type: Sprite
       layers:
         - state: green
-        - sprite: _Stalker/Decals/greengraseONEST.rsi
-          state: grass
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
     - type: RandomSpawner
       prototypes:
         - longrangemetaldetectorCrategrass
@@ -358,8 +358,8 @@
     - type: Sprite
       layers:
         - state: green
-        - sprite: _Stalker/Decals/greengraseONEST.rsi
-          state: grass
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
     - type: RandomSpawner
       prototypes:
         - longrangemetaldetectorCrategrass
