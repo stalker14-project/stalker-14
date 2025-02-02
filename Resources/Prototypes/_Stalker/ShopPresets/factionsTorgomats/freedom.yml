@@ -6,179 +6,168 @@
     ZoneArtifactEye: 1325
     ZoneArtifactFlame: 2450
     # Thermal group - 2
-    ZoneArtifactCristall: 3412
-    ZoneArtifactLithosphere: 5600
+    ZoneArtifactCristall: 2200
+    ZoneArtifactLithosphere: 4500
     # Electrical group - 1
     ZoneArtifactSparkler: 775
-    ZoneArtifactBattery: 1550
-    ZoneArtifactFlash: 3100
-    ArtMoon: 3975
-    ZoneArtifactTesla: 6762
-    ZoneArtifactIce: 6825
+    ZoneArtifactBattery: 1300
+    ZoneArtifactFlash: 2000
+    ArtMoon: 2800
+    ZoneArtifactTesla: 4200
+    ZoneArtifactIce: 4700
     # Gravity group - 1
-    ArtMedusa: 662
-    ZoneArtifactFlower: 1325
-    ZoneArtifactNightStar: 3112
+    ArtMedusa: 760
+    ZoneArtifactFlower: 1100
+    ZoneArtifactNightStar: 1950
     # Gravity group - 2
-    ZoneArtifactVyvert: 775
-    ZoneArtifactAmoeba: 1325
-    ZoneArtifactGravi: 4075
-    ZoneArtifactGoldfish: 5200
-    ZoneArtifactSpring: 7125
-    ZoneArtifactFocus: 2950
-    ZoneArtifactStuntman: 5500
-    ZoneArtifactDistorter: 7750
-    ZoneArtifactSoul: 6625
+    ZoneArtifactVyvert: 850
+    ZoneArtifactAmoeba: 1000
+    ZoneArtifactGravi: 2760
+    ZoneArtifactGoldfish: 3800
+    ZoneArtifactSpring: 4200
+    ZoneArtifactFocus: 2760
+    ZoneArtifactStuntman: 4200
+    ZoneArtifactDistorter: 5200
+    ZoneArtifactSoul: 6500
     # Acidic group - 1
-    ZoneArtifactBlood: 1110
-    ZoneArtifactMeat: 1887
-    ZoneArtifactKolobok: 2650
+    ZoneArtifactBlood: 2000
+    ZoneArtifactMeat: 2850
+    ZoneArtifactKolobok: 3700
     # Acidic group - 2
-    ZoneArtifactPellicle: 1525
-    ZoneArtifactBaloon: 4237
+    ZoneArtifactPellicle: 1350
+    ZoneArtifactBaloon: 3850
 
     # Mutant parts
 
-    #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 94 # T1
-    MutantPartSeasonedBoarHoof: 227 # T2
-    MutantPartOldBoarHoof: 425 # T3
+  #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 95 # T1
+    MutantPartSeasonedBoarHoof: 155 # T2
+    MutantPartOldBoarHoof: 295 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 63
-    MutantPartFleshEye: 140
-    FoodMeatSpiderLeg: 35
+    MutantPartBlindDogTail: 40
+    MutantPartFleshEye: 90
+    FoodMeatSpiderLeg: 10
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 630
-    MutantPartPseudodogTail: 315
-    MutantPartSnorkFoot: 315
+    MutantPartLeshiyRoot: 250
+    MutantPartPseudodogTail: 125
+    MutantPartSnorkFoot: 200
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 630
-    MutantPartOraculeEye: 1680
-    MutantPartPseudogiantHeart: 4200
-    MutantPartZombieHand: 315
+    MutantPartBloodsuckerTentacles: 250
+    MutantPartOraculeEye: 950
+    MutantPartPseudogiantHeart: 2850
+    MutantPartZombieHand: 125
   categories:
     - name: Оружие
       priority: 1
       items:
-            # Melee
-        STCombatKnife: 10
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T0.5
-        STWeaponShotgunToz34: 250 # T2
-        WeaponShotgunStalkerMP133: 315 # T1.5
-        STWeaponShotgunMossberg: 500 # T2
-        STWeaponShotgunMP153: 830 # T3
+        STWeaponShotgunToz34: 135 # T2
+        WeaponShotgunStalkerMP133: 295 # T1.5
+        STWeaponShotgunMossberg: 950 # T2
+        STWeaponShotgunProtecta: 2500
           # Nato
-        STWeaponRifleStalkerG36: 3930
-        STWeaponRifleStalkerAK104: 2200
-        STWeaponRifleM16: 2900
-        STWeaponRifleStalkerVAL: 4800
-        STWeaponRifleVSS: 4800
-        STWeaponRifleSig550: 2900
-        STWeaponRifleM4: 3100
+        STWeaponRifleStalkerFAL: 2000
+        STWeaponRifleStalkerG36: 6500
+        STWeaponRifleSig550: 3150
+        STWeaponRifleSCARH: 4300
+        STWeaponRifleStalkerL85: 1950
           # Smg
-        STWeaponSubMachineGunVityaz: 2600
+        STWeaponSMGMp5: 1250
           # Other
-        WeaponPistolStalkerTT: 550
-        WeaponStalkerPistolTec9: 200
+        STWeaponRifleVSS: 25000
+        STWeaponRevolverRugerRedhawk: 850
+        STWeaponRevolverSWPC325TR: 450
         WeaponPistolStalkerGlock: 200
-        STWeaponSniperMosin: 1400
+        STWeaponSniperMosin: 1000
     - name: Магазины
       priority: 2
       items:
-        P90Mag: 300
-        Base939Mag10: 80
-        939Mag20: 150
-        939Mag30: 220
+        Base939Mag10: 70
+        939Mag20: 120
+        939Mag30: 450
           # 7mm
         Base1270Mag: 100 #T1
-          # 5,45x39
-        Base545Mag10: 50 #T1  
-        545Mag20: 220 #T2
           # 7,62x51 and 56
         Base556Mag10: 80
-        556Mag20: 130
+        556Mag20: 220
         556Mag45: 400
         Base739Mag10: 100
-        751Mag30: 550
           # Smg
-        VityazMag: 300
         BaseMP5Mag: 260
-        Vz61Mag: 100
           # Other
+        556Mag30: 330
         BaseTEC9Mag: 120
         BaseGlockMag10: 100
-        TTMag: 98
+        GlockMag24: 320
+        GlockMag33: 650
         SpeedLoader45ACPEmpty: 98
-        BaseAPSMag: 100
     - name: Боеприпасы
       priority: 3
       items:
         6mmBuckshotBox: 450
         7mmBuckshotBox: 40
-        # 7.25
-        725PBox: 80
-        725PTBox: 340
         # 9.19
         919PSOGJBox: 130
         919PSTBox: 240
         919RIPBox: 338
         919PBMBox: 900
-        # 5.45
-        545FMJBox: 350
         # 5.56
-        939SP5Box: 220
-        939SP6Box: 900
         939BPBox: 2700
-        556FMJBox: 220
-        556WarmagBox: 280
-        556M855Box: 1400
-        556M856Box: 2400
-        545M995Box: 5500
+        556FMJBox: 195
+        556WarmagBox: 230
+        556M855Box: 1250
+        556M856Box: 2350
         # 7.51
         751M80Box: 800
         # 7.54
         754FMJBox: 700
         754HPBox: 430
+        # .45
+        45ACPLFMJBox: 130
+        45ACPMFMJBox: 400
+        45ACPAPBox: 1100
+        # 9.39
+        939SP5Box: 650
+        939SP6Box: 2500
     - name: Броня
       priority: 4
       items:
-          # Helmets #     
-        ClothingHeadHelmetSH68: 500 # T1 - PVP
-        ClothingHeadHelmetLight: 800 # T1 - PVE
-        ClothingHeadHelmetInfantry: 1000 # T2 - PVP
-        ClothingHeadHelmetVityaz1C: 1300 # T2 - PVE
-        ClothingHeadHelmetBerill5MMilitary: 2500  #T3 - ENV      
+          # Helmets #
+        ClothingHeadHelmetSH68: 280 # T1 - PVP
+        ClothingHeadHelmetInfantry: 850 # T2 - PVP
+        ClothingHeadHelmetVityaz1C: 3350 # T2 - PVE
         ClothingHeadAssaultHelmet: 2700 # T3 - PVP
-        ClothingHeadHelmetBulatMilitary: 2200  # T4 - ENV    
-          # OuterClothing #        
-        ClothingOuterJacketFreedom: 39 # T1 - PVE
-        STClothingOuterArmorLightPlateVestBaseFreedom: 1250 # T2 - PvP
-        ClothingOuterArmor6B2: 1350 # T2 - PvP
+          # OuterClothing #
+        STClothingOuterArmorLightPlateVestBaseANAgray: 2850
+        STClothingOuterArmorLightPlateVestBaseANAgreen: 2850
+        ClothingOuterJacketFreedom: 60 # T1 - PVE
+        STClothingOuterArmorLightPlateVestBaseFreedom: 650 # T2 - PvP
+        ClothingOuterArmor6B2: 900 # T2 - PvP
         ClothingOuterArmorRCBZFreedom: 1150 # T2 - ENV
-        ClothingOuterArmorZN1: 1500 # T2 - universal
-        ClothingOuterArmorAborigineFreedom: 3500 # T3 - PVP
-        ClothingOuterArmorFreedomDefender: 3000 # T3 - PVE
-        ClothingOuterArmorStalkerCombatCN: 6000 # T4 - universal
+        ClothingOuterArmorZN1: 1650 # T2 - universal
+        ClothingOuterArmorAborigineFreedom: 4500 # T3
+        ClothingOuterArmorYegerFreedom: 2850 # т2
+        ClothingOuterArmorFreedomDefender: 5500 # T3
         ClothingOuterArmorSevaStalker: 2000 # T3 - ENV
     - name: Хранилища и Контейнеры
       priority: 5
       items:
-          # BackPacks              
-        ClothingBackpackDuffelGreenStalker: 30 # T1        
-        ClothingBackpackTacticGreenStalker: 450 # T2         
+          # BackPacks
+        ClothingBackpackDuffelGreenStalker: 30 # T1
+        ClothingBackpackTacticGreenStalker: 450 # T2
         ClothingBackpackMercStalker: 650 # T3
-        ClothingBackpackDuffelHikingCommon: 1600                  
-          # Belts 
+        ClothingBackpackDuffelHikingCommon: 1600
+          # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
         ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP  
-        ClothingBeltVoron: 560 # T2 - PVP 
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
+        ClothingBeltVoron: 560 # T2 - PVP
           # Containers
         BoxArtcont: 80 # T1
         MedkitCMSStalker: 450 # T1
@@ -186,14 +175,14 @@
     - name: Плащи и Противогазы
       priority: 6
       items:
-          # Cloaks            
+          # Cloaks
         ClothingOuterCoatDoshdevik: 60 # T1
         ClothingOuterCoatLoyalistLight: 350 # T2
-        STClothingCapeArmorChainmailSeva: 1250 # T3
-          # Gasmasks               
-        ClothingMaskGasFreedom: 100 # T1        
+        STClothingCapeArmorChainmailSeva: 2500 # T3
+          # Gasmasks
+        ClothingMaskGasFreedom: 100 # T1
         ClothingMaskGasM40: 200 # T2
-        ClothingMaskGP21: 1000 # T3        
+        ClothingMaskGP21: 1000 # T3
     - name: Исследовательское снаряжение
       priority: 7
       items:
@@ -201,7 +190,7 @@
         BoxArtcont: 80 # T1
         ZoneAnomalyDetectorAD1: 250 # T1
         ZoneAnomalyDetectorAD2: 650 # T2
-          # Detectors 
+          # Detectors
         ZoneArtifactDetectorPulse: 50 # T1
         ZoneArtifactDetectorHunter: 100 # T2
         ZoneArtifactDetectorResponse: 600 # T2
@@ -224,7 +213,7 @@
         HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
-        Binocularus1: 2500
+        Binocularus1: 1000
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
@@ -237,8 +226,8 @@
     - name: Провизия
       priority: 9
       items:
-        STEnergyDrink: 200
-        STEnergyDrinkMonster: 200
+        STEnergyDrink: 100
+        STEnergyDrinkMonster: 150
         STEnergyDrinkRevo: 150
         STDrinkBeerCanBaltic: 90
         DrinkVodkaBottleFull: 55
@@ -248,36 +237,37 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина # 70% скидка от сталкеров
+    - name: Медицина
       priority: 10
       items:
-          # Cheap 
+          # Cheap
         PillDexalin: 10
         PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
-          # Expensive 
+          # Expensive
         antiradpill: 50
         radioprotectpill: 70
         Bloodpack: 90
         psyblock: 200
         MedkitAI2: 340
-        MedkitElite: 3500
         MedkitMilitary: 850
         Defibrillator: 700
-    - name: Модули 
+    - name: Модули
       priority: 11
       items:
         STModuleScopeRiflesT1Ru: 600
         STModuleScopeRiflesT1Nato: 600
         STModuleSilencerRiflesT1Ru: 400
         STModuleSilencerRiflesT1Nato: 400
-        STModuleShotgunChokeT1: 200
         STModuleSMGGripT1: 600
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
+
+        STModuleScopeRiflesT2Nato: 5500
+        STModuleSilencerRiflesT2Nato: 4600
     - name: Кастомизация
       priority: 12
       items:
@@ -341,8 +331,3 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-    - name: Гранаты
-      priority: 13
-      items:
-        DG05SmokeGrenade: 200
-        FragGrenade: 666   
