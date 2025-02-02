@@ -1,8 +1,8 @@
 - type: entity
   id: longrangemetaldetector
   parent: BaseItem
-  name: longrangemetaldetector
-  description: Металлодетектор
+  name: Металлодетектор дальнего действия
+  description: Аномальный ручной металлодетектор, был узконаправленно модифицирован для поиска тайников.
   suffix: ST
   components:
   - type: Sprite
@@ -42,7 +42,7 @@
   parent: BaseItem
   id: longrangemetaldetectorBox
   name: Коробка с тайника
-  description: Ящик с тайника
+  description: Ящик из тайника
   components:
     - type: Item
       size: Large
@@ -218,7 +218,7 @@
 - type: entity
   id: longrangemetaldetectorCrate
   parent: BaseStructure
-  name: longrangemetaldetectorCrate
+  name: Тайник (Невидимый)
   description: Закопанный Тайник
   components:
   - type: Transform
@@ -246,7 +246,7 @@
       - HideContextMenu
 
 - type: entity
-  name: тайник спавнер полностью прозрачный (10 %)
+  name: тайник спавнер невидимый (10 %)
   id: longrangemetaldetectorCrateSpawner
   parent: MarkerBase
   components:
@@ -261,7 +261,7 @@
       chance: 0.1
 
 - type: entity
-  name: тайник спавнер полностью прозрачный (5 %)
+  name: тайник спавнер невидимый (5 %)
   id: longrangemetaldetectorCrateSpawner05
   parent: MarkerBase
   components:
@@ -276,7 +276,7 @@
       chance: 0.05
 
 - type: entity
-  name: тайник спавнер полностью прозрачный (1 %)
+  name: тайник спавнер невидимый (1 %)
   id: longrangemetaldetectorCrateSpawner01
   parent: MarkerBase
   components:
@@ -293,7 +293,7 @@
 - type: entity
   id: longrangemetaldetectorCrategrass
   parent: BaseStructure
-  name: longrangemetaldetectorCrategrass (Закопанный Тайник, Трава)
+  name: Тайник (спрайт травы) (Закопанный Тайник, Трава)
   description: Закопанный Тайник, Трава
   components:
   - type: Transform
@@ -321,7 +321,7 @@
       - HideContextMenu
 
 - type: entity
-  name: тайник спавнер трава 1 (10 %)
+  name: тайник спавнер трава (10 %)
   id: longrangemetaldetectorCrategrassSpawner
   parent: MarkerBase
   components:
@@ -336,7 +336,7 @@
       chance: 0.1
 
 - type: entity
-  name: тайник спавнер трава 1 (5 %)
+  name: тайник спавнер трава (5 %)
   id: longrangemetaldetectorCrategrassSpawner05
   parent: MarkerBase
   components:
@@ -351,7 +351,7 @@
       chance: 0.05
 
 - type: entity
-  name: тайник спавнер трава 1 (1 %)
+  name: тайник спавнер трава (1 %)
   id: longrangemetaldetectorCrategrassSpawner01
   parent: MarkerBase
   components:
