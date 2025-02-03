@@ -74,8 +74,8 @@
         STWeaponShotgunMossberg: 800 # T2
         STWeaponShotgunProtecta: 2300
           # Nato
-        STWeaponRifleStalkerL85: 1950  
-        STWeaponRifleSig550: 3150  
+        STWeaponRifleStalkerL85: 1950
+        STWeaponRifleSig550: 3150
         WeaponRifleStalkerGalil: 6500
         STWeaponRifleStalkerGalatz: 11000
           # Smg
@@ -117,7 +117,7 @@
         # 9.19
         919PSOGJBox: 130
         919PSTBox: 240
-        919RIPBox: 338
+        919RIPBox: 550
         919PBMBox: 900
         # 9.18
         918PGJBox: 130
@@ -136,13 +136,13 @@
     - name: Броня
       priority: 4
       items:
-          # Helmets #     
+          # Helmets #
         ClothingHeadHelmetSH68: 300 # T1 - PVP
         ClothingHeadHelmetInfantry: 900 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 3350 # T2 - PVE
-        ClothingHeadHelmetBerill5MMilitary: 3000  #T3 - ENV      
+        ClothingHeadHelmetBerill5MMilitary: 3000  #T3 - ENV
         ClothingHeadAssaultHelmet: 2700 # T3 - PVP
-          # OuterClothing #        
+          # OuterClothing #
         ClothingOuterJacketJaba: 39 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseStalker: 1850 # T2 - PvP
         ClothingOuterArmor6B2: 900 # T2 - PvP
@@ -154,19 +154,18 @@
     - name: Хранилища и Контейнеры
       priority: 4
       items:
-          # BackPacks              
-        ClothingBackpackDuffelBlackStalker: 30 # T1        
-        ClothingBackpackTacticBlackStalker: 450 # T2         
-        ClothingBackpackMercStalker: 850 # T3 
+          # BackPacks
+        ClothingBackpackDuffelBlackStalker: 30 # T1
+        ClothingBackpackTacticBlackStalker: 450 # T2
+        ClothingBackpackMercStalker: 850 # T3
         ClothingBackpackDuffelHikingCommon: 900
         ClothingBackpackDuffelBlackTacticStalker: 1300
-        ClothingBackpackDuffelSuperStalker: 2000
-          # Belts 
+          # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
         ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP  
-        ClothingBeltVoron: 560 # T2 - PVP 
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
+        ClothingBeltVoron: 560 # T2 - PVP
           # Containers
         BoxArtcont: 350 # T1
         MedkitCMSStalker: 450 # T1
@@ -174,28 +173,28 @@
     - name: Плащи и Противогазы
       priority: 5
       items:
-          # Cloaks            
+          # Cloaks
         ClothingOuterCoatDoshdevik: 60 # T1
         ClothingOuterCoatStalker: 350 # T2
         STClothingCapeArmorChainmailSeva: 2500 # T3
-          # Gasmasks               
-        ClothingMaskGasZarya: 100 # T1        
+          # Gasmasks
+        ClothingMaskGasZarya: 100 # T1
         ClothingMaskGP5: 200 # T2
-        ClothingMaskGP7: 400 # T3     
-        ClothingMaskM51: 1500    
+        ClothingMaskGP7: 400 # T3
+        ClothingMaskM51: 1500
     - name: Исследовательское снаряжение
       priority: 6
       items:
         STBoltBagFilled: 50
         BoxArtcont: 80 # T1
         ZoneAnomalyDetectorAD1: 1000 # T1
-          # Detectors 
+          # Detectors
         ZoneArtifactDetectorPulse: 50 # T1
         ZoneArtifactDetectorHunter: 100 # T2
         ZoneArtifactDetectorResponse: 600 # T2
         ZoneArtifactDetectorSpruce: 2200 # T2
-        ZoneArtifactDetectorBarracuda: 2900 # T3
-        ZoneArtifactDetectorBear: 4200 # T4
+        ZoneArtifactDetectorBarracuda: 3000 # T3
+        ZoneArtifactDetectorBear: 4500 # T4
     - name: Утилиты
       priority: 7
       items:
@@ -243,16 +242,16 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина 
+    - name: Медицина
       priority: 9
       items:
-          # Cheap 
+          # Cheap
         PillDexalin: 10
         PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
-          # Expensive 
+          # Expensive
         antiradpill: 50
         radioprotectpill: 70
         Bloodpack: 90
@@ -260,7 +259,7 @@
         MedkitAI2: 300
         MedkitMilitary: 700
         Defibrillator: 500
-    - name: Модули 
+    - name: Модули
       priority: 10
       items:
         STModuleScopeRiflesT1Nato: 600
@@ -337,11 +336,10 @@
         ClothingTorsoTurtlenecksGorka5: 50
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
-        ClothingTorsoTurtlenecksMatrosska: 50 
+        ClothingTorsoTurtlenecksMatrosska: 50
     - name: Металлоискатели
       priority: 12
       items:
-        TrashDetectorTier1: 1
-        TrashDetectorTier2: 50
-        TrashDetectorTier3: 100
-        TrashDetectorTier4: 600
+        TrashDetectorTier2: 100
+        TrashDetectorTier3: 300
+        TrashDetectorTier4: 750
