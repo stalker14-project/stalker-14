@@ -5,6 +5,6 @@ namespace Content.Shared._Stalker.ScreenGrabEvent
     [Serializable, NetSerializable]
     public sealed class ScreengrabResponseEvent : EntityEventArgs
     {
-        public byte[] Screengrab = new byte[2500000];
+        public byte[] Screengrab = new byte[5000000];
     }
 }

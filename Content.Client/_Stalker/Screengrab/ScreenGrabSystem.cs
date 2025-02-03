@@ -22,7 +22,7 @@ public sealed class ScreenGrabSystem : EntitySystem
         var image = await _clyde.ScreenshotAsync(ScreenshotType.Final);
         var array = ImageToByteArray(image);
 
-        if (array.Length > 2_500_000)
+        if (array.Length > 5000000)
             return;
 
         var msg = new ScreengrabResponseEvent { Screengrab = array };
