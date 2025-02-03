@@ -80,148 +80,309 @@
 - type: shopPreset
   id: SerafimShopPresetLight
   itemsForSale:
-    StalkerFoodAir: 65
-    StalkerFoodBrusnika: 100
-    StalkerFoodYatrishnik: 150
     # Mutant parts - Персональная Мета на продажу
 
-    #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 22 # T1 * 0,5
-    MutantPartSeasonedBoarHoof: 100 # T2 
-    MutantPartOldBoarHoof: 151 # T3 * 0,75
+    MutantPartBoarHoof: 60 # T1
+    MutantPartSeasonedBoarHoof: 100 # T2
+    MutantPartOldBoarHoof: 150 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 30 #
-    MutantPartFleshEye: 67 #
-    FoodMeatSpiderLeg: 17 #
+    MutantPartBlindDogTail: 24
+    MutantPartFleshEye: 54
+    FoodMeatSpiderLeg: 28
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 450 # * 1,5
-    MutantPartPseudodogTail: 220 # * 1,5
-    MutantPartSnorkFoot: 150 #
+    MutantPartLeshiyRoot: 175
+    MutantPartPseudodogTail: 120
+    MutantPartSnorkFoot: 180
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 200 # * 0,5
-    MutantPartOraculeEye: 250 # * 0,5
-    MutantPartPseudogiantHeart: 3000 # * 1,5
-    MutantPartZombieHand: 400 # * 4
+    MutantPartBloodsuckerTentacles: 260
+    MutantPartOraculeEye: 520
+    MutantPartPseudogiantHeart: 940
+    MutantPartZombieHand: 200
   categories:
     - name: Оружие
       priority: 1
       items:
-        STWeaponShotgunMP155T: 25
-        STWeaponShotgunToz34: 123
-        STWeaponSMGStalkerCP2Veresk: 816
-        STWeaponSMGStalkerCP2VereskSera: 816
-        STSeraKnife: 10
-        STWeaponShotgunStalkerBenelli: 366
-        STWeaponShotgunStalkerBenelliSera: 366
-        STBatMolitoslov: 175
+        STCombatKnife: 2
+       # 7mm
+        STWeaponShotgunMP155T: 10 #T0.5
+        STWeaponShotgunToz34: 24 # T1
+        STWeaponShotgunStalkerBenelliSera: 200
+        STWeaponShotgunStalkerBenelli: 200
+        STWeaponShotgunSaiga12Sera: 380
+        # 5,45x39
+        STWeaponRifleStalkerSaiga545: 260
+        STWeaponGunAKS74U: 360
+        STWeaponRifleStalkerAK12Sera: 1100
+        STWeaponRifleStalkerAK12: 1100
+        # Smg
+        STWeaponSMGMp5: 260
+        STWeaponSMGStalkerCP2VereskSera: 360
+        STWeaponSMGStalkerCP2Veresk: 360
+        # Other
+        WeaponPistolStalkerGlock: 40
+        WeaponPistolStalkerTT: 70
+        STWeaponSniperMosin: 260
+        STWeaponRifleSVUSera: 3000
+        STWeaponRifleSVU: 3000
+        STWeaponRifleStalkerVeprSerafim: 2400
+        STWeaponRifleStalkerAK104: 1100
 
     - name: Броня и снаряжение
       priority: 2
       items:
-        ClothingMaskGasSera: 45
-        STClothingCapeT2SerafimPrestige: 350
-        STClothingOuterCoatHimera: 350
-        STSkinsKitSeraphim: 250
-        ClothingBackpackTacticSera: 95
-        ClothingBackpackDuffelBlackStalker: 20
-        STClothingOuterArmorRassvetSera: 600
-        ClothingBeltBandolierStalker: 10
-        ClothingBeltTarzanBlack: 30
-        ClothingBeltTarzanGreen: 30
-        ClothingBeltTarzanOrange: 30
-        MedkitGrizzlyStalker: 400
+        ClothingHeadHelmetSH68: 70 # T1 - PVE
+        ClothingHeadHelmetInfantry: 200 # T2 - PVP
+        ClothingHeadHelmetVityaz1C: 800 # T2 - PVE
+        ClothingHeadAssaultHelmet: 650 # T3 - PVP
+        STClothingHeadHelmetSeraphimAltin: 800
+          # OuterClothing #
+        ClothingOuterJacketSera: 12 # T1 - PVE
+        STClothingOuterArmorLightPlateVestBaseSera: 190 # T2 - PvP
+        ClothingOuterArmor6B2: 175 # T2 - PvP
+        ClothingOuterArmorRCBZSera: 300 # T2 - ENV
+        STClothingOuterArmorRassvetSera: 270 # T2 - universal
+        STClothingOuterArmorLightPlateVestBaseANAgray: 590
+        STClothingOuterArmorSeraphimStrash: 700 # T3 - PVE
+        ClothingOuterArmorSevasera: 600 # T3 - ENV
+        ClothingOuterCoatSeraphim: 200
     - name: Утилиты
       priority: 3
       items:
-        ExtendedEmergencyOxygenTankFilledStalker: 30
-        DoubleEmergencyOxygenTankStalkerFilled: 200
-        PowerCellHyper: 10
-        Defibrillator: 70
-        GeigerCounter: 25
-        STTorchSera: 25
+        ExtendedEmergencyOxygenTankFilledStalker: 6
+        DoubleEmergencyOxygenTankStalkerFilled: 40
+        STSkinsKitSeraphim: 125
+        STSeraKnife: 2
+        HatchetStalker: 60
+        TrashBag: 20
+        BoxZiptie: 50
+        CheapLighter: 1
+        Matchbox: 12
+        GeigerCounter: 10
+        BaseRadio: 15
+        STTorchSera: 30
+        HandheldGPSBasic: 15
+        ClothingGoPro: 71
+        Paper: 2
+        Pen: 10
+        ClothingBackpackDuffelGreenStalkerHydroponic: 200
+        STBatMolitoslov: 50
     - name: Аномалии
       priority: 4
       items:
-        ZoneArtifactDetectorPulse: 150
-        ZoneArtifactDetectorHunter: 300
-        BoxArtcont: 300
-        # Bolt bags
-        STBoltBagFilled: 65
-        STBoltBagOliveGrayFilled: 65
+        STBoltBagFilled: 10
+        BoxArtcont: 16 # T1
+        ZoneAnomalyDetectorAD1: 50 # T1
+        ZoneAnomalyDetectorAD2: 130 # T2
+          # Detectors
+        ZoneArtifactDetectorPulse: 20 # T1
     - name: Магазины
       priority: 5
       items:
-        BasePMMag: 33
-        TTMag: 33
-        SpeedLoader45ACPEmpty: 33
-        545Mag20: 54
-        556Mag20: 54
-        751Mag20: 106
-        BaseMP5Mag: 54
-        BaseGSH-18Mag10: 37
-        VityazMag: 82
+        Base1270Mag: 20 #T1
+        Saiga1270Mag10: 60
+          # 5,45x39
+        Base545Mag10: 10 #T1
+        545Mag20: 44 #T2
+        545Mag30: 66 #T3
+        545Mag45: 88
+          # 7,62x51 and 56
+        Base556Mag10: 16
+        556Mag20: 44
+        556Mag30: 66
+        Base739Mag10: 20
+        754Mag10: 44
+        751Mag30: 70
+        Base754Mag5: 40 #T1
+          # Smg
+        BaseMP5Mag: 32
+        VityazMag: 43
+          # Other
+        BaseGlockMag10: 20
+        TTMag: 19
+        GlockMag24: 16
+        GlockMag33: 32
     - name: Боеприпасы
       priority: 6
       items:
-        6mmBuckshotBox: 130
-        8mmBuckshotBox: 542
-        7mmBuckshotBox: 17
-        # .45
-        45ACPLFMJBox: 43
-        45ACPMFMJBox: 98
+        6mmBuckshotBox: 90
+        7mmBuckshotBox: 8
         # 7.25
-        725PBox: 43
-        725PTBox: 98
+        725PBox: 16
+        725PTBox: 68
+        918PSTBox: 27
+        725PSTBox: 200
         # 9.19
-        919PSOGJBox: 43
-        919PSTBox: 98
-        # 9.19
-        918PGJBox: 43
-        918PSTBox: 98
+        919PSOGJBox: 26
+        919PSTBox: 48
+        919RIPBox: 32
+        919PBMBox: 140
         # 5.45
-        545FMJBox: 108
-        545PCBox: 217
+        545FMJBox: 70
+        545HPBox: 25
+        545PCBox: 200
+        545BPBox: 440
+        545BSBox: 1200
         # 5.56
-        556FMJBox: 130
+        556FMJBox: 44
+        556WarmagBox: 56
+        556M855Box: 280
+        556M856Box: 480
+        # 7.39
+        739FMJBox: 200
+        739HPBox: 100
+        # 7.51
+        751M80Box: 160
+        751M61Box: 520
+        751M993Box: 780
         # 7.54
-        754FMJBox: 282
+        754FMJBox: 140
+        754HPBox: 86
+        754PCBox: 340
     - name: Провизия
       priority: 7
       items:
-        STEnergyDrink: 40
-        DrinkVodkaBottleFull: 70
-        STFoodBreadPlain: 5
-        DrinkFlaskOld: 5
-        DrinkWaterBottleFull: 5
-        FoodTinMRE: 60
-        DrinkLemonadehBottleFull: 70
+        STEnergyDrink: 20
+        STEnergyDrinkMonster: 30
+        STEnergyDrinkRevo: 30
+        STDrinkBeerCanBaltic: 18
+        DrinkVodkaBottleFull: 11
+        STFoodBreadPlain: 7
+        DrinkFlaskOld: 6
+        DrinkWaterBottleFull: 9
+        FoodTinMRE: 24
+        DrinkLemonadehBottleFull: 10
         STFoodMeatSalami: 50
     - name: Медицина
       priority: 8
       items:
-        PillDexalin: 5
-        PillDexalinPlusStalker: 15
-        radioprotectpill: 30
-        psyblock: 120
-        MedkitAI2Sera: 50
-        STOintmentSera: 5
-        STGauzeSera: 8
-        STBrutepackSera: 17
-        Tourniquet: 3
-        Bloodpack: 100
-        MedkitMilitary: 450
-        antiradpill: 30
+          # Cheap
+        PillDexalin: 2
+        PillDexalinPlusStalker: 5
+        STOintmentSera: 2
+        STGauzeSera: 3
+        STBrutepackSera: 2
+          # Expensive
+        antiradpill: 10
+        radioprotectpill: 14
+        Bloodpack: 18
+        psyblock: 40
+        MedkitAI2Sera: 60
+        MedkitMilitary: 140
+        Defibrillator: 100
     - name: Кастомизация
       priority: 9
       items:
-        ClothingBandageStalkerBlue: 20
+        STClothingHandsGlovesSera: 2
+        STClothingMaskKufei: 2
+        ClothingMaskSkull: 2
+        ClothingEyesGlassesCheapSunglasses: 1
+        ClothingHeadHatBeaniehat: 2
+        ClothingMaskNeckFacemask: 2
+        ClothingMaskNeckBalaklava1: 2
+        ClothingUniformJumpsuitTacticool: 2
+        ClothingMaskNeckBalaklava2: 2
+        ClothingMaskNeckBalaklava3: 2
+        ClothingHeadBandMerc: 6
+        ClothingHeadBandSkull: 6
+        ClothingHeadHatUshanka: 6
+        ClothingHandsGlovesFingerless: 6
+        ClothingHandsGlovesMercFingerless: 12
+        ClothingShoesColorBlack: 6
+        ClothingShoesBootsWork: 6
+        ClothingShoesLeather: 6
+        ClothingShoesBootsMerc: 6
+        ClothingShoesSwat: 7
+        ClothingHeadHatBlacksoft: 2
+        ClothingHeadHatGreysoft: 2
+        ClothingHeadHatSovietUshankaStalker: 8
+        ClothingTshirtBlue: 2
+        ClothingTshirtOrange: 2
+        ClothingCloakStalker: 6
+        ClothingLegsJeansBlue: 2
+        ClothingLegsJeansStalker: 2
+        ClothingLegsJeansGreenCargo: 2
+        ClothingLegsJeansGreyCargo: 2
+        ClothingLegsJeansBlackCargo: 2
+        ClothingLegsJeansBrownCargo: 2
+        ClothingLegsJeansSandCargo: 2
+        ClothingLegsJeansRussianPixel: 4
+        ClothingLegsJeansBlackNew: 4
+        ClothingLegsJeansGorka: 4
+        ClothingShoesBootsCombat: 6
+        ClothingTorsoTShirtPivozavr: 6
+        ClothingTorsoTShirtSailorSuit: 6
+        ClothingTorsoTShirtColorBlack: 6
+        ClothingTorsoTurtlenecksBlack: 18
+        ClothingTorsoTurtlenecksGorka: 18
+        ClothingTorsoTurtlenecksGorka6: 18
+        ClothingTorsoTurtlenecksBereza: 18
+        ClothingLegsJeansBereza: 4
+        ClothingLegsJeansGorka6: 4
+        ClothingTorsoTurtlenecksGorkaRus: 18
+        ClothingOuterCoatKKK: 13
+        # new shit
+        ClothingLegsBattlePantsBlack: 10
+        ClothingLegsVeryBlueJenas: 10
+        ClothingLegsCombatForest: 10
+        ClothingLegsGorka5: 10
+        ClothingLegsGorka6b: 10
+        ClothingLegsNavyPants: 10
+        ClothingLegsRussianNumber: 10
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 10
+        ClothingTorsoTurtlenecksBlackTurtleneck: 10
+        ClothingTorsoTurtlenecksCombatForest: 10
+        ClothingTorsoTurtlenecksGorka5: 10
+        ClothingTorsoTurtlenecksGorka6B: 10
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 10
+        ClothingTorsoTurtlenecksMatrosska: 10
     - name: Обвесы
       priority: 10
       items:
-        STModuleScopeRiflesT1Ru: 400
+        STModuleScopeRiflesT1Nato: 120
+        STModuleScopeRiflesT1Ru: 100
+        STModuleSilencerRiflesT1Nato: 80
+        STModuleSilencerRiflesT1Ru: 70
+        STModuleShotgunChokeT1: 40
+        STModuleSMGGripT1: 120
+        STModuleSilencerSMGT1: 120
+        STModuleSniperSightT1: 120
+        STModuleSilencerSniperT1: 120
+    - name: Плащи и Противогазы
+      priority: 11
+      items:
+          # Cloaks
+        STClothingCapeT1Serafim: 16 # T1
+        STClothingCapeT2SerafimPrestige: 100 # T2
+        STClothingOuterCoatHimera: 70
+        ClothingNeckCloakVoid: 10
+        ClothingOuterCoatSeraphim: 150
+          # Gasmasks
+        ClothingMaskGasSera: 20 # T1
+        ClothingMaskGasM40: 40 # T2
+        ClothingMaskGP21: 200 # T3
+    - name: Хранилища и Контейнеры
+      priority: 12
+      items:
+          # BackPacks
+        ClothingBackpackDuffelBlackStalker: 6 # T1
+        ClothingBackpackTacticBlackStalker: 90 # T2
+        ClothingBackpackTacticSera: 90 # T2
+        ClothingBackpackMercStalker: 170 # T3
+        ClothingBackpackDuffelHikingCommon: 180
+        ClothingBackpackDuffelSuperStalker: 400
+          # Belts
+        ClothingBeltBandolierStalker: 4 # T1 - PVE
+        ClothingBeltTarzanBlack: 40 # T1 - PVP
+        ClothingBeltTarzanGreen: 40 # T1 - PVP
+        ClothingBeltTarzanOrange: 40 # T1 - PVP
+        ClothingBeltVoron: 112 # T2 - PVP
+          # Containers
+        BoxArtcont: 70 # T1
+        MedkitCMSStalker: 90 # T1
+        MedkitGrizzlyStalker: 170 # T2
 
 - type: shopPreset
   id: SerafimShopPresetHeavy
@@ -490,13 +651,13 @@
           # 7mm
         Base1270Mag: 100 #T1
           # 5,45x39
-        Base545Mag10: 50 #T1  
+        Base545Mag10: 50 #T1
         545Mag20: 100 #T2
         545Mag30: 220 #T3
         545Mag45: 300
           # 7,62x54 and 39
         Base739Mag10: 100
-        Base754Mag5: 250 #T1  
+        Base754Mag5: 250 #T1
         739Mag30: 290
         754Mag10: 340
           # Smg
@@ -539,15 +700,15 @@
     - name: Броня
       priority: 4
       items:
-          # Helmets #     
+          # Helmets #
         ClothingHeadHelmetSH68: 500 # T1 - PVP
         ClothingHeadHelmetLight: 200 # T1 - PVE
         ClothingHeadHelmetInfantry: 1000 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 1000 # T2 - PVE
-        ClothingHeadHelmetBerill5MMilitary: 1500  #T3 - ENV      
+        ClothingHeadHelmetBerill5MMilitary: 1500  #T3 - ENV
         ClothingHeadAssaultHelmet: 2500 # T3 - PVP
-        ClothingHeadHelmetUlach: 2700  # T4 - ENV    
-          # OuterClothing #        
+        ClothingHeadHelmetUlach: 2700  # T4 - ENV
+          # OuterClothing #
         ClothingOuterJacketSera: 39 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseSera: 1250 # T2 - PvP
         ClothingOuterArmor6B2: 1350 # T2 - PvP
@@ -560,38 +721,38 @@
     - name: Хранилища и Контейнеры
       priority: 5
       items:
-          # BackPacks              
-        ClothingBackpackDuffelGreenStalker: 30 # T1        
-        ClothingBackpackTacticGreenStalker: 450 # T2           
-        ClothingBackpackMercStalker: 650 # T3           
-          # Belts 
+          # BackPacks
+        ClothingBackpackDuffelGreenStalker: 30 # T1
+        ClothingBackpackTacticGreenStalker: 450 # T2
+        ClothingBackpackMercStalker: 650 # T3
+          # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
         ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP  
-        ClothingBeltVoron: 560 # T2 - PVP 
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
+        ClothingBeltVoron: 560 # T2 - PVP
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
     - name: Плащи и Противогазы
       priority: 6
       items:
-          # Cloaks            
+          # Cloaks
         STClothingCapeT1Serafim: 60 # T1
         STClothingCapeT2SerafimPrestige: 350 # T2
         STClothingOuterCoatHimera: 350 # T2
         ClothingOuterCoatSeraphim: 1250 # T3
-          # Gasmasks               
-        ClothingMaskGasSera: 100 # T1        
+          # Gasmasks
+        ClothingMaskGasSera: 100 # T1
         ClothingMaskGP5: 200 # T2
-        ClothingMaskM50: 500 # T3        
+        ClothingMaskM50: 500 # T3
     - name: Исследовательское снаряжение
       priority: 7
       items:
         STBoltBagFilled: 50
         BoxArtcont: 300
         ZoneAnomalyDetectorAD1: 450 # T1
-          # Detectors 
+          # Detectors
         ZoneArtifactDetectorPulse: 100 # T1
         ZoneArtifactDetectorHunter: 400 # T2
         ZoneArtifactDetectorResponse: 900 # T2
@@ -638,13 +799,13 @@
     - name: Медицина # 50% скидка от сталкеров
       priority: 10
       items:
-          # Cheap 
+          # Cheap
         PillDexalin: 10
         PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
-          # Expensive 
+          # Expensive
         antiradpill: 60
         radioprotectpill: 90
         Bloodpack: 110
@@ -652,7 +813,7 @@
         MedkitAI2: 200
         MedkitMilitary: 550
         Defibrillator: 500
-    - name: Модули 
+    - name: Модули
       priority: 11
       items:
         STModuleScopeRiflesT2Ru: 1000
