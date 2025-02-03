@@ -73,15 +73,15 @@
           # 5,45x39
         STWeaponRifleStalkerSaiga545: 1300
         STWeaponGunAKS74U: 1800
-        STWeaponRifleStalkerAK74: 5000
-        STSTWeaponRifleStalkerAK74M: 7500
+        STWeaponRifleStalkerAK74: 3000
+        STSTWeaponRifleStalkerAK74M: 4500
         WeaponMachineGunRPD: 10000
         STWeaponRifleSVDS: 16000
           # Smg
-        STWeaponSMGPP91: 850
-        STWeaponSMGBizon: 1300
+        STWeaponSMGPP91: 1250
+        STWeaponSMGBizon: 1750
           # Other
-        WeaponPistolStalkerPM: 100 #T1  
+        WeaponPistolStalkerPM: 100 #T1
         WeaponPistolStalkerAPS: 560 #T2
         WeaponPistolStalkerTT: 300
         STWeaponSniperMosin: 1300
@@ -95,13 +95,13 @@
         Base1270Mag: 100 #T1
         Saiga1270Mag10: 300
           # 5,45x39
-        Base545Mag10: 50 #T1  
+        Base545Mag10: 50 #T1
         545Mag20: 100 #T2
         545Mag30: 220 #T3
         545Mag45: 300
           # 7,62x54 and 39
         Base739Mag10: 100
-        Base754Mag5: 250 #T1  
+        Base754Mag5: 250 #T1
         739Mag30: 290
         754Mag10: 340
           # Smg
@@ -153,51 +153,51 @@
     - name: Броня
       priority: 4
       items:
-          # Helmets #     
+          # Helmets #
         ClothingHeadHelmetDolg: 350 # T1 - PVE
         ClothingHeadHelmetInfantry: 1000 # T2 - PVP
         ClothingHeadHelmetVityaz1M: 4000 # T2 - PVE
-        ClothingHeadHelmetBerill5MDolg: 2500  #T2 - ENV      
+        ClothingHeadHelmetBerill5MDolg: 2500  #T2 - ENV
         ClothingHeadAssaultHelmetDolg: 3250 # T3 - PVP
-          # OuterClothing #        
+          # OuterClothing #
         ClothingOuterJacketDolg: 60 # T1 - PVE
-        STClothingOuterArmorLightPlateVestBaseDolg: 750 # T2 - PvP
+        STClothingOuterArmorLightPlateVestBaseDolg: 600 # T2 - PvP
         ClothingOuterArmor6B2: 1000 # T2 - PvP
         ClothingOuterArmorRCBZDolg: 3000 # T2 - ENV
         ClothingOuterArmorZaryaDolg: 1350 # T2 - universal
         STClothingOuterArmorLightPlateVestBaseANAgray: 2950
         STClothingOuterArmorLightPlateVestBaseANAgreen: 2950
         STClothingOuterArmorHeavyDolg: 3950 # T3 - PVE
-        ClothingOuterArmorSevaDolgRed: 6000 # T3 - ENV
+        ClothingOuterArmorSevaDolgRed: 5000 # T3 - ENV
     - name: Хранилища и Контейнеры
       priority: 5
       items:
-          # BackPacks              
-        ClothingBackpackDuffelBlackStalker: 30 # T1        
-        ClothingBackpackTacticBlackRadStalker: 450 # T2         
+          # BackPacks
+        ClothingBackpackDuffelBlackStalker: 30 # T1
+        ClothingBackpackTacticBlackRadStalker: 450 # T2
         ClothingBackpackMercStalker: 650 # T3
         ClothingBackpackDuffelBlackMilitaryTacticStalker: 1050 # T4
-        ClothingBackpackDuffelBlackTacticStalker: 1000 # T4                  
-          # Belts 
+        ClothingBackpackDuffelBlackTacticStalker: 1000 # T4
+          # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
         ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP  
-        ClothingBeltVoron: 560 # T2 - PVP 
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
+        ClothingBeltVoron: 560 # T2 - PVP
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
     - name: Плащи и Противогазы
       priority: 6
       items:
-          # Cloaks            
+          # Cloaks
         ClothingOuterCoatDoshdevik: 60 # T1
         ClothingOuterCoatStalker: 350 # T2
         ClothingOuterCoatLoyalist: 1250 # T3
-          # Gasmasks               
-        ClothingMaskGasDolg1: 100 # T1        
+          # Gasmasks
+        ClothingMaskGasDolg1: 100 # T1
         ClothingMaskGasDolg2: 100 # T2
-        ClothingMaskGP21: 1200 # T3        
+        ClothingMaskGP21: 1200 # T3
     - name: Исследовательское снаряжение
       priority: 7
       items:
@@ -205,7 +205,7 @@
         BoxArtcont: 300
         ZoneAnomalyDetectorAD1: 450 # T1
         ZoneAnomalyDetectorAD2: 1000 # T2
-          # Detectors 
+          # Detectors
         ZoneArtifactDetectorPulse: 100 # T1
     - name: Утилиты
       priority: 8
@@ -250,13 +250,13 @@
     - name: Медицина
       priority: 10
       items:
-          # Cheap 
+          # Cheap
         PillDexalin: 10
         PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
-          # Expensive 
+          # Expensive
         antiradpill: 50
         radioprotectpill: 70
         Bloodpack: 90
@@ -264,7 +264,7 @@
         MedkitAI2: 300
         MedkitMilitary: 410
         Defibrillator: 700
-    - name: Модули 
+    - name: Модули
       priority: 11
       items:
         STModuleScopeRiflesT1Ru: 600
@@ -273,7 +273,7 @@
 
         STModuleShotgunChokeT2: 3200
         STModuleAutoSear: 3200
-        STModuleSilencerRiflesT2Ru: 4300
+        STModuleSilencerRiflesT2Ru: 3200
         STModuleScopeRiflesT2Ru: 1200
     - name: Кастомизация
       priority: 12
