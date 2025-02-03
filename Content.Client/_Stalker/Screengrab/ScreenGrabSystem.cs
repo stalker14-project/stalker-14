@@ -4,16 +4,13 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System.IO;
 
-
 public sealed class ScreenGrabSystem : EntitySystem
 {
-
     [Dependency] private readonly IClyde _clyde = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-
         SubscribeNetworkEvent<ScreengrabRequestEvent>(OnScreenGrabEvent);
     }
 
@@ -25,7 +22,11 @@ public sealed class ScreenGrabSystem : EntitySystem
         if (array.Length > 5000000)
             return;
 
-        var msg = new ScreengrabResponseEvent { Screengrab = array };
+        var msg = new ScreengrabResponseEvent
+        {
+            Screengrab = array,
+            Token = e.Token
+        };
         RaiseNetworkEvent(msg);
     }
 
