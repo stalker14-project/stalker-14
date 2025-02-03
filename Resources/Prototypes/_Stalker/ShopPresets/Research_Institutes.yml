@@ -7,49 +7,25 @@
             # Melee
         STCombatKnife: 10
             # Guns
-          # 7mm
-        STWeaponShotgunMP155T: 50 #T0.5
-        STWeaponShotgunToz34: 250 # T2
-        WeaponShotgunStalkerMP133: 315 # T1.5
-        STWeaponShotgunMossberg: 500 # T2
-        STWeaponShotgunMP153: 830 # T3
-          # Other
-        WeaponPistolStalkerTT: 550
-        WeaponStalkerPistolTec9: 200
         WeaponPistolStalkerGlock: 200
-        STWeaponSniperMosin: 1400
     - name: Магазины
       priority: 2
       items:
-        P90Mag: 300
-          # 7mm
-        Base1270Mag: 100 #T1
-          # Other
-        BaseTEC9Mag: 120
         BaseGlockMag10: 100
-        TTMag: 98
-        SpeedLoader45ACPEmpty: 98
-        BaseAPSMag: 100
+        GlockMag17: 200
+        GlockMag24: 400
     - name: Боеприпасы
       priority: 3
       items:
-        6mmBuckshotBox: 50
-        7mmBuckshotBox: 2
-        919RIPBox: 338
-        919PBMBox: 900
-        # 7.54
-        754FMJBox: 700
+        919PSOGJBox: 130
+        919PSTBox: 240
     - name: Броня
       priority: 4
       items:
           # Helmets #     
-        ClothingHeadHelmetBerill5MMilitary: 1200  #T3 - ENV      
-        ClothingHeadHelmetBulatMilitary: 1800  # T4 - ENV    
-        ClothingHeadHelmetCN3a: 15000
+        STClothingHeadTinfoil: 200
           # OuterClothing #        
         ClothingOuterJacketSCI: 39 # T1 - PVE
-        ClothingOuterArmorSpark: 730 # T2 - PvP
-        ClothingOuterArmorZN1: 1500 # T2 - universal
         ClothingOuterArmorSSP99Amber: 2800
         ClothingOuterArmorSSP99: 2800
         ClothingOuterArmorSSP99White: 2800
@@ -65,14 +41,9 @@
         ClothingBackpackTacticGreenStalker: 450 # T2         
         ClothingBackpackMercStalker: 650 # T3
         ClothingBackpackDuffelMilitaryBlue: 1200                  
-          # Belts 
-        ClothingBeltBandolierStalker: 20 # T1 - PVE
-        ClothingBeltTarzanBlack: 200 # T1 - PVP
-        ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP  
-        ClothingBeltVoron: 560 # T2 - PVP 
           # Containers
         BoxArtcont: 80 # T1
+        BoxArtcont1: 850
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
     - name: Плащи и Противогазы
@@ -80,11 +51,10 @@
       items:
           # Cloaks            
         ClothingOuterCoatDoshdevik: 60 # T1
-        ClothingOuterCoatLoyalistLight: 350 # T2
           # Gasmasks               
         ClothingMaskGasFreedom: 100 # T1        
         ClothingMaskGasM40: 200 # T2
-        ClothingMaskGP21: 1000 # T3        
+        ClothingMaskM51: 1000       
     - name: Исследовательское снаряжение
       priority: 7
       items:
@@ -92,19 +62,17 @@
         BoxArtcont: 80 # T1
         ZoneAnomalyDetectorAD1: 250 # T1
         ZoneAnomalyDetectorAD2: 650 # T2
-        ZoneAnomalyDetectorUAD14A: 1500
           # Detectors 
         ZoneArtifactDetectorPulse: 50 # T1
         ZoneArtifactDetectorHunter: 100 # T2
-        ZoneArtifactDetectorResponse: 600 # T2
+        ZoneArtifactDetectorResponse: 300 # T2
         ZoneArtifactDetectorSpruce: 1200 # T2
         ZoneArtifactDetectorBarracuda: 2100 # T3
         ZoneArtifactDetectorBear: 3200 # T4
-        ZoneArtifactDetectorWolfhound: 6000
+        ZoneArtifactDetectorWolfhound: 5000
     - name: Утилиты
       priority: 8
       items:
-        STSkinsKitFreedom: 500
         STCombatKnife: 25
         TrashBag: 30
         BoxZiptie: 50
