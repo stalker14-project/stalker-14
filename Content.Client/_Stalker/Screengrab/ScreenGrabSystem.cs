@@ -26,11 +26,11 @@ public sealed class ScreenGrabSystem : EntitySystem
             if (imageData.Length > 2700000)
                 return;
 
-            //if (imageData.Length < 300000 && _stateManager.CurrentState is IMainViewportState state)
-            //{
+            if (imageData.Length < 300000 && _stateManager.CurrentState is IMainViewportState state)
+            {
                 state.Viewport.Viewport.Screenshot(screenshot => ProcessScreenshotCallback(screenshot, e.Token));
                 return;
-            //}
+            }
 
             //SendScreenshot(imageData, e.Token);
         }
