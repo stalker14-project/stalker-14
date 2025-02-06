@@ -71,8 +71,8 @@
 - type: entity
   parent: ClothingOuterArmorYeger
   id: ClothingOuterArmorYegerFreedom
-  name: костюм «Егерь» 'Свободы'
-  description: Разработанный для работы в условиях радиационной, химической и биологической защиты (РХБЗ). Применяется в экспедициях на опасные химические зоны для обеспечения безопасности носителя. Не предназначен для боевых действий, а специализирован для обеспечения защиты и безопасности в условиях угрозы от радиации, химических и биологических веществ.
+  name: костюм «Кикимора»
+  description: Универсальный костюм Кикимора сделан умельцами из разнообразных защитных костюмов. Позволяет владельцу комфортно чувствовать себя в зонах с аномальной активностью. Имеет защиту от пуль. Сверху пришита маскировочная сетка.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/yeger-freedom.rsi
@@ -81,14 +81,30 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetYegerFreedom
   - type: Armor
-    armorClass: 3
-    armorLevels:
-      environment: -2
-      piercing: -2
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 3
+        Radiation: 1.5
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+        Radiation: 0.4
+        Caustic: 0.95
+        Shock: 0.80
+        Psy: 0.85
+        Compression: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
 
 - type: entity
   parent: ClothingHeadHelmetYeger
   id: ClothingHeadHelmetYegerFreedom
+  name: шлем «Кикиморы»
   categories: [ HideSpawnMenu ] 
   components:
   - type: Sprite
