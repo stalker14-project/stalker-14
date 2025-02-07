@@ -5,63 +5,63 @@
     ToothStalker: 450
     TradeBox: 5500
     # Thermal group - 1
-    ZoneArtifactFireball: 138
-    ZoneArtifactEye: 362
-    ZoneArtifactFlame: 915
+    ZoneArtifactFireball: 400
+    ZoneArtifactEye: 600
+    ZoneArtifactFlame: 1200
     # Thermal group - 2
-    ZoneArtifactCristall: 1150
-    ZoneArtifactLithosphere: 1500
+    ZoneArtifactCristall: 2400
+    ZoneArtifactLithosphere: 4800
     # Electrical group - 1
-    ZoneArtifactSparkler: 138
-    ZoneArtifactBattery: 450
-    ZoneArtifactFlash: 1000
-    ArtMoon: 1200
-    ZoneArtifactTesla: 2000
-    ZoneArtifactIce: 2400
+    ZoneArtifactSparkler: 400
+    ZoneArtifactBattery: 600
+    ZoneArtifactFlash: 1200
+    ArtMoon: 2400
+    ZoneArtifactTesla: 3600
+    ZoneArtifactIce: 4800
     # Gravity group - 1
-    ArtMedusa: 150
-    ZoneArtifactFlower: 340
-    ZoneArtifactNightStar: 1000
+    ArtMedusa: 400
+    ZoneArtifactFlower: 600
+    ZoneArtifactNightStar: 2400
     # Gravity group - 2
-    ZoneArtifactVyvert: 160
-    ZoneArtifactAmoeba: 350
-    ZoneArtifactGravi: 1300
-    ZoneArtifactGoldfish: 1700
-    ZoneArtifactSpring: 2000
-    ZoneArtifactFocus: 800
-    ZoneArtifactStuntman: 1700
-    ZoneArtifactDistorter: 2700
-    ZoneArtifactSoul: 2200
+    ZoneArtifactVyvert: 400
+    ZoneArtifactAmoeba: 600
+    ZoneArtifactGravi: 1200
+    ZoneArtifactGoldfish: 4800
+    ZoneArtifactSpring: 3600
+    ZoneArtifactFocus: 3600
+    ZoneArtifactStuntman: 4800
+    ZoneArtifactDistorter: 4800
+    ZoneArtifactSoul: 3600
     # Acidic group - 1
-    ZoneArtifactBlood: 250
-    ZoneArtifactMeat: 650
-    ZoneArtifactKolobok: 800
+    ZoneArtifactBlood: 1200
+    ZoneArtifactMeat: 2400
+    ZoneArtifactKolobok: 3600
     # Acidic group - 2
-    ZoneArtifactPellicle: 430
-    ZoneArtifactBaloon: 1500
+    ZoneArtifactPellicle: 400
+    ZoneArtifactBaloon: 3600
 
-    # Mutant parts
+     # Mutant parts
 
-    #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 68 # T1
-    MutantPartSeasonedBoarHoof: 100 # T2
-    MutantPartOldBoarHoof: 190 # T3
+  #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 95 # T1
+    MutantPartSeasonedBoarHoof: 190 # T2
+    MutantPartOldBoarHoof: 285 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 35
-    MutantPartFleshEye: 70
-    FoodMeatSpiderLeg: 10
+    MutantPartBlindDogTail: 65
+    MutantPartFleshEye: 140
+    FoodMeatSpiderLeg: 35
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 350
-    MutantPartPseudodogTail: 185
-    MutantPartSnorkFoot: 165
+    MutantPartLeshiyRoot: 385
+    MutantPartPseudodogTail: 210
+    MutantPartSnorkFoot: 350
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 350
-    MutantPartOraculeEye: 955
-    MutantPartPseudogiantHeart: 2355
-    MutantPartZombieHand: 175
+    MutantPartBloodsuckerTentacles: 525
+    MutantPartOraculeEye: 1120
+    MutantPartPseudogiantHeart: 2800
+    MutantPartZombieHand: 420
   categories:
     - name: Оружие
       priority: 1
@@ -89,6 +89,7 @@
         STWeaponSMGMp5: 1800
         STWeaponRifleSKS: 1900
         WeaponGameRevolverMateba: 300
+        STWeaponSMGViper: 600
     - name: Магазины
       priority: 2
       items:
@@ -110,37 +111,35 @@
     - name: Боеприпасы
       priority: 3
       items:
-        6mmBuckshotBox: 450
-        7mmBuckshotBox: 50
+        6mmBuckshotBox: 115
+        7mmBuckshotBox: 45
         # 7.25
-        725PBox: 80
-        725PTBox: 200
-        725LRNPCBox: 338
-        725PSTBox: 1000
+        725PBox: 85
+        725PTBox: 215
+        725PSTBox: 640
         # 9.19
-        919PSOGJBox: 130
-        919PSTBox: 240
-        919RIPBox: 650
-        919PBMBox: 1100
+        919PSOGJBox: 75
+        919PSTBox: 180
+        919PBMBox: 450
         # 9.18
-        918PGJBox: 130
-        918PSTBox: 450
-        918PBMBox: 1100
+        918PGJBox: 75
+        918PSTBox: 180
+        918PBMBox: 450
         # 5.45
-        545FMJBox: 250
-        545HPBox: 700
+        545FMJBox: 180
+        545HPBox: 450
         545PCBox: 1900
         # 7.39
-        739FMJBox: 950
+        739FMJBox: 675
         # 7.51
-        751M80Box: 1000
+        751M80Box: 745
         # 7.54
-        754FMJBox: 1700
-        754HPBox: 2500
+        754FMJBox: 640
+        754HPBox: 960
          # .45
-        45ACPLFMJBox: 130
-        45ACPMFMJBox: 400
-        45ACPAPBox: 1100
+        45ACPLFMJBox: 100
+        45ACPMFMJBox: 250
+        45ACPAPBox: 625
     - name: Броня
       priority: 4
       items:

@@ -2,63 +2,63 @@
   id: NpcSidor # 0.7x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 338
-    ZoneArtifactEye: 562
-    ZoneArtifactFlame: 1125
+    ZoneArtifactFireball: 400
+    ZoneArtifactEye: 600
+    ZoneArtifactFlame: 1200
     # Thermal group - 2
-    ZoneArtifactCristall: 1406
-    ZoneArtifactLithosphere: 2250
+    ZoneArtifactCristall: 2400
+    ZoneArtifactLithosphere: 4800
     # Electrical group - 1
-    ZoneArtifactSparkler: 338
-    ZoneArtifactBattery: 675
-    ZoneArtifactFlash: 1350
-    ArtMoon: 1687
-    ZoneArtifactTesla: 2531
-    ZoneArtifactIce: 2812
+    ZoneArtifactSparkler: 400
+    ZoneArtifactBattery: 600
+    ZoneArtifactFlash: 1200
+    ArtMoon: 2400
+    ZoneArtifactTesla: 3600
+    ZoneArtifactIce: 4800
     # Gravity group - 1
-    ArtMedusa: 281
-    ZoneArtifactFlower: 562
-    ZoneArtifactNightStar: 1406
+    ArtMedusa: 400
+    ZoneArtifactFlower: 600
+    ZoneArtifactNightStar: 2400
     # Gravity group - 2
-    ZoneArtifactVyvert: 650
-    ZoneArtifactAmoeba: 850
-    ZoneArtifactGravi: 2450
-    ZoneArtifactGoldfish: 3250
-    ZoneArtifactSpring: 3650
-    ZoneArtifactFocus: 2100
-    ZoneArtifactStuntman: 3220
-    ZoneArtifactDistorter: 4500
-    ZoneArtifactSoul: 5500
+    ZoneArtifactVyvert: 400
+    ZoneArtifactAmoeba: 600
+    ZoneArtifactGravi: 1200
+    ZoneArtifactGoldfish: 4800
+    ZoneArtifactSpring: 3600
+    ZoneArtifactFocus: 3600
+    ZoneArtifactStuntman: 4800
+    ZoneArtifactDistorter: 4800
+    ZoneArtifactSoul: 3600
     # Acidic group - 1
-    ZoneArtifactBlood: 1250
-    ZoneArtifactMeat: 2100
-    ZoneArtifactKolobok: 3150
+    ZoneArtifactBlood: 1200
+    ZoneArtifactMeat: 2400
+    ZoneArtifactKolobok: 3600
     # Acidic group - 2
-    ZoneArtifactPellicle: 562
-    ZoneArtifactBaloon: 3500
+    ZoneArtifactPellicle: 400
+    ZoneArtifactBaloon: 3600
 
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
     MutantPartBoarHoof: 135 # T1
-    MutantPartSeasonedBoarHoof: 160 # T2
-    MutantPartOldBoarHoof: 304 # T3
+    MutantPartSeasonedBoarHoof: 270 # T2
+    MutantPartOldBoarHoof: 405 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 65
-    MutantPartFleshEye: 100
-    FoodMeatSpiderLeg: 25
+    MutantPartBlindDogTail: 90
+    MutantPartFleshEye: 200
+    FoodMeatSpiderLeg: 50
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 450
-    MutantPartPseudodogTail: 225
-    MutantPartSnorkFoot: 285
+    MutantPartLeshiyRoot: 550
+    MutantPartPseudodogTail: 300
+    MutantPartSnorkFoot: 500
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 450
-    MutantPartOraculeEye: 1200
-    MutantPartPseudogiantHeart: 3000
-    MutantPartZombieHand: 225
+    MutantPartBloodsuckerTentacles: 750
+    MutantPartOraculeEye: 1600
+    MutantPartPseudogiantHeart: 4000
+    MutantPartZombieHand: 600
   categories:
     - name: Оружие
       priority: 1
@@ -68,21 +68,23 @@
         StalkerBallBat: 370
             # Guns
           # 7mm
-        STWeaponShotgunMP155T: 65 #T1
-        STWeaponShotgunToz34: 220 # T1
-        WeaponShotgunStalkerMP133: 750 # T2
-        STWeaponShotgunMossberg: 1200 # T2
+        STWeaponShotgunMP155T: 50 #T1
+        STWeaponShotgunToz34: 250 # T1
+        WeaponShotgunStalkerMP133: 425 # T2
+        STWeaponShotgunMossberg: 700 # T2
         STWeaponShotgunMP153: 1000 # T2
          # 9x18
         WeaponPistolStalkerPM: 100 #T1
          # 7,62x25
-        WeaponPistolStalkerTT: 200 #T1
+        WeaponPistolStalkerTT: 300 #T1
           # 5,45x39
-        STWeaponRifleStalkerSaiga545: 1600 # T3
-        STWeaponGunAKS74U: 2000 # T3
+        STWeaponRifleStalkerSaiga545: 1250 # T3
+        STWeaponGunAKS74U: 1750 # T3
           # Other
-        WeaponPistolStalkerAPS: 560 #T2
-        STWeaponRifleSKS: 1350 # T2
+        STWeaponSMGMp5: 2000
+        WeaponPistolStalkerAPS: 600 #T2
+        STWeaponRifleSKS: 1850 # T2
+        STWeaponSniperMosin: 1000
           # Nato
     - name: Магазины
       priority: 2
@@ -103,27 +105,37 @@
     - name: Боеприпасы
       priority: 3
       items:
-        6mmBuckshotBox: 100
-        7mmBuckshotBox: 40
+        6mmBuckshotBox: 125
+        7mmBuckshotBox: 50
         # 7.25
-        725PBox: 80
-        725PTBox: 120
-        725LRNPCBox: 220
-        725PSTBox: 1500
+        725PBox: 100
+        725PTBox: 250
+        725PSTBox: 750
         # 5.45
-        545FMJBox: 220
-        545HPBox: 1250
+        545FMJBox: 200
         # 5.56
-        556FMJBox: 280
-        556M855Box: 1500
+        556FMJBox: 350
+        556M855Box: 875
         # 7.39
-        739FMJBox: 1400
+        739FMJBox: 750
         # 7.54
-        754FMJBox: 1400
+        754FMJBox: 750
         # 9.18
-        918PGJBox: 90
-        918PSTBox: 275
-        918PBMBox: 550
+        918PGJBox: 80
+        918PSTBox: 200
+        918PBMBox: 500
+        # 7.51
+        751M80Box: 825
+        # 9.19
+        919PSOGJBox: 80
+        919PSTBox: 200
+        919PBMBox: 500
+        # 9.39
+        939SP5Box: 250
+        # .45 ACP
+        45ACPLFMJBox: 100
+        45ACPMFMJBox: 250
+        45ACPAPBox: 625
     - name: Броня
       priority: 4
       items:

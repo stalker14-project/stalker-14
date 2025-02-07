@@ -82,52 +82,51 @@
   itemsForSale:
     # Mutant parts - Персональная Мета на продажу
 
-    MutantPartBoarHoof: 60 # T1
-    MutantPartSeasonedBoarHoof: 100 # T2
-    MutantPartOldBoarHoof: 150 # T3
+    MutantPartBoarHoof: 35 # T1
+    MutantPartSeasonedBoarHoof: 70 # T2
+    MutantPartOldBoarHoof: 105 # T3
 
     #T1 -------- Health * 1
     MutantPartBlindDogTail: 24
-    MutantPartFleshEye: 54
-    FoodMeatSpiderLeg: 28
+    MutantPartFleshEye: 52
+    FoodMeatSpiderLeg: 13
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 175
-    MutantPartPseudodogTail: 120
-    MutantPartSnorkFoot: 180
+    MutantPartLeshiyRoot: 143
+    MutantPartPseudodogTail: 78
+    MutantPartSnorkFoot: 130
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 260
+    MutantPartBloodsuckerTentacles: 195
     MutantPartOraculeEye: 520
-    MutantPartPseudogiantHeart: 940
-    MutantPartZombieHand: 200
+    MutantPartPseudogiantHeart: 1040
+    MutantPartZombieHand: 156
   categories:
     - name: Оружие
       priority: 1
       items:
         STCombatKnife: 2
        # 7mm
-        STWeaponShotgunMP155T: 10 #T0.5
-        STWeaponShotgunToz34: 24 # T1
-        STWeaponShotgunStalkerBenelliSera: 200
-        STWeaponShotgunStalkerBenelli: 200
-        STWeaponShotgunSaiga12Sera: 380
+        STWeaponShotgunMP155T: 8 #T0.5
+        STWeaponShotgunToz34: 40 # T1
+        STWeaponShotgunStalkerBenelliSera: 220
+        STWeaponShotgunStalkerBenelli: 220
+        STWeaponShotgunSaiga12Sera: 560
         # 5,45x39
-        STWeaponRifleStalkerSaiga545: 260
-        STWeaponGunAKS74U: 360
-        STWeaponRifleStalkerAK12Sera: 1100
-        STWeaponRifleStalkerAK12: 1100
+        STWeaponRifleStalkerSaiga545: 225
+        STWeaponGunAKS74U: 315
+        STWeaponRifleStalkerAK12Sera: 900
+        STWeaponRifleStalkerAK12: 900
         # Smg
-        STWeaponSMGMp5: 260
-        STWeaponSMGStalkerCP2VereskSera: 360
-        STWeaponSMGStalkerCP2Veresk: 360
+        STWeaponSMGMp5: 360
+        STWeaponSMGStalkerCP2VereskSera: 300
+        STWeaponSMGStalkerCP2Veresk: 300
         # Other
-        WeaponPistolStalkerGlock: 40
-        WeaponPistolStalkerTT: 70
-        STWeaponSniperMosin: 260
-        STWeaponRifleSVUSera: 3000
-        STWeaponRifleSVU: 3000
-        STWeaponRifleStalkerVeprSerafim: 2400
+        WeaponPistolStalkerTT: 60
+        STWeaponSniperMosin: 200
+        STWeaponRifleSVUSera: 2200
+        STWeaponRifleSVU: 2200
+        STWeaponRifleStalkerVeprSerafim: 800
         STWeaponRifleStalkerAK104: 1100
 
     - name: Броня и снаряжение
@@ -207,40 +206,37 @@
     - name: Боеприпасы
       priority: 6
       items:
-        6mmBuckshotBox: 90
+        6mmBuckshotBox: 20
         7mmBuckshotBox: 8
         # 7.25
-        725PBox: 16
-        725PTBox: 68
-        918PSTBox: 27
-        725PSTBox: 200
+        725PBox: 18
+        725PTBox: 45
+        725PSTBox: 135
         # 9.19
-        919PSOGJBox: 26
-        919PSTBox: 48
-        919RIPBox: 160
-        919PBMBox: 140
+        919PSOGJBox: 15
+        919PSTBox: 36
+        919PBMBox: 90
         # 5.45
-        545FMJBox: 70
-        545HPBox: 25
-        545PCBox: 200
-        545BPBox: 300
-        545BSBox: 750
+        545FMJBox: 36
+        545HPBox: 135
+        545PCBox: 90
         # 5.56
-        556FMJBox: 44
-        556WarmagBox: 56
-        556M855Box: 280
-        556M856Box: 480
+        556FMJBox: 63
+        556WarmagBox: 235
+        556M855Box: 157
         # 7.39
-        739FMJBox: 200
-        739HPBox: 100
+        739FMJBox: 135
+        739HPBox: 176
         # 7.51
-        751M80Box: 160
-        751M61Box: 520
-        751M993Box: 780
+        751M80Box: 149
+        751UNBox: 223
         # 7.54
-        754FMJBox: 140
-        754HPBox: 86
-        754PCBox: 340
+        754FMJBox: 135
+        754HPBox: 203
+        # 9.18
+        918PGJBox: 15
+        918PSTBox: 36
+        918PBMBox: 90
     - name: Провизия
       priority: 7
       items:
