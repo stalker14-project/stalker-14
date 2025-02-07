@@ -66,9 +66,9 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBasePSZ7
   id: STClothingOuterArmorLightPlateVestBasePSZ7rene
-  name: ПСЗ-7 'Клык'
+  name: палёный ПСЗ-7 'Ренегатов'
   suffix: ST, T3, PvP
-  description: Бывший военный "ПСЗ-7", а теперь - ходячий кошмар. Коричневый комбинезон, костяные шипы, торчащие во все стороны, и череп на поясе, как напоминание. Ты - добыча. Ренегаты превратили эту броню в воплощение своего безумия.
+  description: Армейский бронежилет серии ПСЗ-7 (персональная система защиты) обеспечивает уровень защиты, достаточный для проведения боевых операций против легковооружённого противника. Защита от аномальной активности отсутствует. Только больно уж сильно жмёт в области груди, даже дфшать тяжело
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/psz7-palionka.rsi
@@ -76,3 +76,8 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/psz7-palionka.rsi
   - type: STWeight
     self: 6
+  - type: PersonalDamage
+    interval: 1
+    damage:
+      types:
+        Asphyxiation: 0.3
