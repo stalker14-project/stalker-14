@@ -45,7 +45,7 @@
     noRot: true
     sprite: Structures/Decoration/bonfire.rsi
     layers:
-      - state: bonfire
+      - state: bonfire_extinguished
       - state: burning
   - type: PointLight
     radius: 5
@@ -58,11 +58,82 @@
       path: /Audio/Ambience/Objects/fireplace.ogg
   - type: AlwaysHot
   - type: TimedDespawn
-    lifetime: 300
+    lifetime: 600
   - type: SpawnOnDespawn
     prototype: Ash
   - type: Craftable
 
+- type: entity
+  id: BonfireOnbowler
+  parent: BaseStructure
+  name: костёр с котелком.
+  description: It's magic.
+  components:
+  - type: Microwave
+    capacity: 10
+  - type: Transform
+    anchored: true
+  - type: UserInterface
+    interfaces:
+      enum.MicrowaveUiKey.Key:
+        type: MicrowaveBoundUserInterface
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire_extinguished
+      - state: burning
+  - type: ActivatableUI
+    key: enum.MicrowaveUiKey.Key
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: ApcPowerReceiver
+    powerLoad: 0
+  - type: ContainerContainer
+    containers:
+      microwave_entity_container: !type:Container
+  - type: EmptyOnMachineDeconstruct
+    containers:
+    - microwave_entity_container
+  - type: SpawnOnDespawn
+    prototype: STBowler
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: PointLight
+    radius: 5
+    energy: 3
+    color: "#FFC90C"
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadBase
+  id: STBowler
+  name: Котелок
+  description: Котелок для приготовления пищи.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/bowler.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/bowler.rsi
+  - type: Craftable
+  - type: STWeight
+    self: 2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Piercing: 0.90
+        Slash: 0.90
+        Blunt: 0.90
 ################ Крафт
 
 - type: construction
@@ -99,3 +170,36 @@
               doAfter: 15
     - node: bonfireoff
       entity: BonfireOff
+
+- type: lightCraftingRecipe
+  id: Bonfireoffbowler
+  results:
+    - BonfireOn
+    - STBowler
+  steps:
+    firstIngredient: BonfireOnbowler
+    secondIngredient: CombatKnife
+    keepSecond: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: Bonfireoffbowler2
+  results:
+    - BonfireOn
+    - STBowler
+  steps:
+    firstIngredient: BonfireOnbowler
+    secondIngredient: KitchenKnife
+    keepSecond: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: BonfireOnbowlerCraft
+  results:
+    - BonfireOnbowler
+  steps:
+    firstIngredient: STBowler
+    secondIngredient: BonfireOn
+    time: 5
