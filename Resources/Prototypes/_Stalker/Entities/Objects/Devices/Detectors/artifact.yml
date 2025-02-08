@@ -212,6 +212,36 @@
   - type: ZoneArtifactDetectorAngleIndicator
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
 
+- type: entity
+  parent: ZoneArtifactBaseDetector
+  id: ZoneArtifactDetectorResponseCvoboda
+  name: Детектор "Куст"
+  description: Детектор, способный обнаруживать артефакты первого типа, на небольшем дистанции
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 1
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/ArtifactDetectors/response_cvoboda.rsi
+    layers:
+      - state: base
+        map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneArtifactDetectorVisuals.Layer:
+        base:
+          Enabled: { state: active }
+          Disabled: { state: base }
+          Detected: { state: active }
+  - type: ZoneArtifactDetector
+    level: 1
+    detectionDistance: 6
+    activationDistance: 2
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
+
 # Пиздец
 - type: entity
   parent: ZoneArtifactBaseDetector

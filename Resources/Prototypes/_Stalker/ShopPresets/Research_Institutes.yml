@@ -1,213 +1,141 @@
 - type: shopPreset
   id: NpcResearchInstitut # 0x
-  itemsForSale:
-    # Thermal group - 1
-    ZoneArtifactFireball: 472
-    ZoneArtifactEye: 787
-    ZoneArtifactFlame: 1575
-    # Thermal group - 2
-    ZoneArtifactCristall: 1968
-    ZoneArtifactLithosphere: 3150
-    # Electrical group - 1
-    ZoneArtifactSparkler: 472
-    ZoneArtifactBattery: 945
-    ZoneArtifactFlash: 1890
-    ArtMoon: 2362
-    ZoneArtifactTesla: 3543
-    ZoneArtifactIce: 3937
-    # Gravity group - 1
-    ArtMedusa: 393
-    ZoneArtifactFlower: 787
-    ZoneArtifactNightStar: 1968
-    # Gravity group - 2
-    ZoneArtifactVyvert: 472
-    ZoneArtifactAmoeba: 787
-    ZoneArtifactGravi: 2362
-    ZoneArtifactGoldfish: 3150
-    ZoneArtifactSpring: 3937
-    ZoneArtifactFocus: 1575
-    ZoneArtifactStuntman: 3150
-    ZoneArtifactDistorter: 4725
-    ZoneArtifactSoul: 3937
-    # Acidic group - 1
-    ZoneArtifactBlood: 630
-    ZoneArtifactMeat: 1181
-    ZoneArtifactKolobok: 1575
-    # Acidic group - 2
-    ZoneArtifactPellicle: 787
-    ZoneArtifactBaloon: 2755
-
-    # Mutant parts
-
-    #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 94 # T1
-    MutantPartSeasonedBoarHoof: 227 # T2
-    MutantPartOldBoarHoof: 425 # T3
-
-    #T1 -------- Health * 1
-    MutantPartBlindDogTail: 63
-    MutantPartFleshEye: 140
-    FoodMeatSpiderLeg: 35
-
-    #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 630
-    MutantPartPseudodogTail: 315
-    MutantPartSnorkFoot: 315
-
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 630
-    MutantPartOraculeEye: 1680
-    MutantPartPseudogiantHeart: 4200
-    MutantPartZombieHand: 315
   categories:
-    - name: ССП-99
+    - name: Оружие
       priority: 1
       items:
+            # Melee
+        STCombatKnife: 10
+            # Guns
+        WeaponPistolStalkerGlock: 200
+    - name: Магазины
+      priority: 2
+      items:
+        BaseGlockMag10: 100
+        GlockMag17: 200
+        GlockMag24: 400
+    - name: Боеприпасы
+      priority: 3
+      items:
+        919PSOGJBox: 75
+        919PSTBox: 180
+    - name: Броня
+      priority: 4
+      items:
+          # Helmets #
+        STClothingHeadTinfoil: 200
+          # OuterClothing #
+        ClothingOuterJacketSCI: 39 # T1 - PVE
         ClothingOuterArmorSSP99Amber: 2800
         ClothingOuterArmorSSP99: 2800
         ClothingOuterArmorSSP99White: 2800
-    - name: «Сева»
-      priority: 2
-      items:
-        ClothingOuterArmorSevaSciWhite: 2504
-        ClothingOuterArmorSevaSciRed: 2504
-    - name: Броня и снаряжение
-      priority: 3
-      items:
-        ClothingBackpackDuffelGreenStalker: 30
-        ClothingBackpackDuffelMilitaryOlive: 300
-        ClothingBackpackDuffelMilitaryBlue: 500
-        ClothingBeltBandolierStalker: 20
-        ClothingMaskGP7: 50
-        ClothingMaskGP21: 400
-        # Webbing
-        ClothingBeltTarzanBlack: 150
-        ClothingBeltTarzanGreen: 150
-        ClothingBeltTarzanOrange: 150
-    - name: Утилиты
-      priority: 4
-      items:
-        TrashBag: 5
-        BoxSafebox: 10
-        CheapLighter: 5
-        GeigerCounter: 10
-        BaseRadio: 20
-        FlashlightSeclite: 10
-        PowerCellHyper: 50
-        BoxFlare: 20
-        Defibrillator: 500
-        HandheldGPSBasic: 50
-        Paper: 1
-        Pen: 5
-        Binocularus1: 650
-        BodyBagFolded: 20
-        EmergencyRollerBedSpawnFolded: 800
-        ClothingBackpackDuffelGreenStalkerHydroponic: 400
-        Beaker: 25
-        Syringe: 15
-        ExtendedEmergencyOxygenTankFilledStalker: 10
-        DoubleEmergencyOxygenTankStalkerFilled: 150
-        ClothingGagMuteStalker: 200
-        ClothingHeatBagStalker: 200
-        ClothingGoPro: 250
-        Matchbox: 20
-        HatchetStalker: 150
-        STHelicopterToRedForestTicket: 50
-    - name: Аномалии
+        ClothingOuterArmorSSP24Sapfire: 3200
+        ClothingOuterArmorSevaSciWhite: 1704
+        ClothingOuterArmorSevaSciRed: 1704
+    - name: Хранилища и Контейнеры
       priority: 5
       items:
-        # Bolt bags
-        STBoltBagFilled: 50
-        STBoltBagOliveGrayFilled: 50
-        # Artifact containers
-        BoxArtcont: 50
-        # Anomaly detectors
-        ZoneAnomalyDetectorAD1: 50
-        ZoneAnomalyDetectorAD2: 250
-        ZoneAnomalyDetectorAD3: 1000
-        # Artifact detectors
-        ZoneArtifactDetectorPulse: 100
-        ZoneArtifactDetectorHunter: 400
-        ZoneArtifactDetectorResponse: 1000
-        ZoneArtifactDetectorSpruce: 1500
-    - name: Провизия
+          # BackPacks
+        ClothingBackpackDuffelGreenStalker: 30 # T1
+        ClothingBackpackTacticGreenStalker: 450 # T2
+        ClothingBackpackMercStalker: 650 # T3
+        ClothingBackpackDuffelMilitaryBlue: 1200
+          # Containers
+        BoxArtcont: 80 # T1
+        BoxArtcont1: 850
+        MedkitCMSStalker: 450 # T1
+        MedkitGrizzlyStalker: 850 # T2
+    - name: Плащи и Противогазы
       priority: 6
       items:
-        STEnergyDrink: 100
-        DrinkCognacBottleFull: 100
-        STFoodBreadPlain: 15
-        DrinkFlaskOld: 15
-        DrinkWaterBottleFull: 5
-        FoodTinMRE: 15
-        STFoodMeatSalami: 60
-    - name: Медицина
+          # Cloaks
+        ClothingOuterCoatDoshdevik: 60 # T1
+          # Gasmasks
+        ClothingMaskGasFreedom: 100 # T1
+        ClothingMaskGasM40: 200 # T2
+        ClothingMaskM51: 1000
+    - name: Исследовательское снаряжение
       priority: 7
       items:
-        # Pills
-        PillDexalin: 1
-        PillDexalinPlusStalker: 10
-        radioprotectpill: 20
-        antiradpill: 55
-        psyblock: 50
-        # Medkits
-        MedkitAI2: 10
-        MedkitMilitary: 100
-        MedkitScience: 200
-        # Pack
+        STBoltBagFilled: 50
+        BoxArtcont: 80 # T1
+        ZoneAnomalyDetectorAD1: 250 # T1
+        ZoneAnomalyDetectorAD2: 650 # T2
+          # Detectors
+        ZoneArtifactDetectorPulse: 50 # T1
+        ZoneArtifactDetectorHunter: 100 # T2
+        ZoneArtifactDetectorResponse: 300 # T2
+        ZoneArtifactDetectorSpruce: 1200 # T2
+        ZoneArtifactDetectorBarracuda: 2100 # T3
+        ZoneArtifactDetectorBear: 3200 # T4
+        ZoneArtifactDetectorWolfhound: 5000
+    - name: Утилиты
+      priority: 8
+      items:
+        STCombatKnife: 25
+        TrashBag: 30
+        BoxZiptie: 50
+        BoxSafebox: 300
+        CheapLighter: 5
+        GeigerCounter: 50
+        BaseRadio: 50
+        FlashlightSeclite: 50
+        PowerCellHyper: 50
+        HandheldGPSBasic: 50
+        Paper: 2
+        Pen: 5
+        Binocularus1: 2500
+        BoxFlare: 60
+        ClothingBackpackDuffelGreenStalkerHydroponic: 500
+        Beaker: 40
+        Syringe: 20
+        ClothingGoPro: 250
+        ExtendedEmergencyOxygenTankFilledStalker: 50
+        TrashDetectorTier1: 200
+        Matchbox: 10
+        HatchetStalker: 150
+    - name: Провизия
+      priority: 9
+      items:
+        STEnergyDrink: 200
+        STEnergyDrinkMonster: 200
+        STEnergyDrinkRevo: 150
+        STDrinkBeerCanBaltic: 90
+        DrinkVodkaBottleFull: 55
+        STFoodBreadPlain: 35
+        DrinkFlaskOld: 30
+        DrinkWaterBottleFull: 45
+        FoodTinMRE: 120
+        DrinkLemonadehBottleFull: 50
+        STFoodMeatSalami: 350
+    - name: Медицина # 70% скидка от сталкеров
+      priority: 10
+      items:
+          # Cheap
+        PillDexalin: 10
+        PillDexalinPlusStalker: 25
         STOintment: 10
-        STGauze: 10
-        STBrutepack: 25
-        Tourniquet: 50
-        Bloodpack: 80
-        # Back
-        MedkitCMSStalker: 200
-        MedkitGrizzlyStalker: 400
+        STGauze: 15
+        STBrutepack: 10
+          # Expensive
+        antiradpill: 50
+        radioprotectpill: 70
+        Bloodpack: 90
+        psyblock: 200
+        MedkitAI2: 10
+        MedkitScience: 500
+        MedkitMilitary: 150
+        Defibrillator: 700
         # Crates
         AntiradCrate: 200
         SanitarCrate: 430
         ResearcherCrate: 1350
         SaviorCrate: 1500
         PolevoyVrachCrate: 1740
-        #Stimul
-        #SelfSteampack: 30
-        #MilitarySteampack: 200
-        #SciSteampack: 500
-    - name: Оружие
-      priority: 8
-      items:
-        WeaponPistolStalkerGlock: 300
-        STWeaponRevolverSWModel325: 1275
-        STWeaponRevolverSWModel625: 1650
-        STWeaponShotgunStalkerSPAS: 1250
-        STWeaponRifleStalkerL85: 2100
-        STWeaponSMGMp5: 2450
-        STWeaponShotgunMossberg: 600
-        STWeaponSMGBizon: 3400
-    - name: Магазины
-      priority: 9
-      items:
-        BaseGlockMag10: 85
-        SpeedLoader45ACPEmpty: 75
-        556Mag20: 125
-        556Mag30: 175
-        BaseMP5Mag: 125
-        BizonMag: 450
-    - name: Патроны
-      priority: 10
-      items:
-        7mmBuckshotBox: 50
-        6mmBuckshotBox: 400
-        8mmBuckshotBox: 1400
-        919PSOGJBox: 100
-        919PSTBox: 225
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 225
-        556FMJBox: 300
-        918PGJBox: 100
-        918PSTBox: 225
     - name: Кастомизация
       priority: 11
       items:
+        ClothingBandageStalkerKrest: 5
         ClothingMaskNeckFacemask: 20
         ClothingHandsGlovesFingerless: 35
         ClothingHandsGlovesMercFingerless: 35

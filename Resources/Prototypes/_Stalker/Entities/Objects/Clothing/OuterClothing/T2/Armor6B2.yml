@@ -16,14 +16,13 @@
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: 3
-        Slash: 3
+        Blunt: 4
+        Slash: 4
         Piercing: 4
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.7
-        Heat: 0.95
+        Blunt: 0.75
+        Slash: 0.76
+        Piercing: 0.65
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Craftable
@@ -39,11 +38,24 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/6B2.rsi
 
+# Renegate - 1
+
+- type: entity
+  parent: STClothingOuterArmor6B2Base
+  id: ClothingOuterArmorRene6B2
+  name: бронежилет 6Б2 'Ренегатов'
+  description: Бронежилет II типа ,обеспечивающий малую защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/6B2_brown.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/6B2_brown.rsi
+# Old groups
 
 - type: entity
   parent: STClothingOuterArmor6B2Base
   id: ClothingOuterArmorDeserter6B2
-  name: бронежилет 6б2 отступников
+  name: бронежилет 6б2 'Отступников'
   description: Бронежилет II типа ,обеспечивающий малую защиту от большинства видов повреждений
   components:
   - type: Sprite

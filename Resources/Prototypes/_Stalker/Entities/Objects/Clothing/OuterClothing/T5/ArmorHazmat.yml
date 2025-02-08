@@ -39,7 +39,7 @@
   id: ClothingHeadHazmat
   name: шлем ХАЗМАТа
   description: Встроенный шлем ХАЗМАТа с усиленной зашитой.
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/hazmat_helm.rsi
@@ -63,3 +63,6 @@
           Shock: 0.3
           Radiation: 0.45
           Psy: 0.5
+    - type: HideLayerClothing
+      slots:
+      - Hair

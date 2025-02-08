@@ -1,9 +1,9 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorLightPlateVestBaseANAgreen
-  name: ANA Tactical
+  name: Бронеразгрузка «Степь-4»
   suffix: ST, T3, PvP
-  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины в модном болотно-зелёном цвете.
   components:
   - type: Trash
     time: 900
@@ -29,25 +29,19 @@
   - type: Armor
     armorClass: 3
     modifiers:
-      flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 6
       coefficients:
-        Blunt: 0.8
+        Blunt: 0.4
         Slash: 0.8
         Piercing: 0.5
         Heat: 0.9
-  - type: ExplosionResistance
-    damageCoefficient: 0.8
   - type: Craftable
 
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAgray
-  name: ANA Tactical
-  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  name: Бронеразгрузка «Степь-4»
+  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины, в стильном чёрном цвете.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Gray.rsi
@@ -55,10 +49,24 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Gray.rsi
   - type: Craftable
 
+# Clear Sky - 1 +
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBaseANAgreen
+  id: STClothingOuterArmorLightPlateVestBaseANABlue
+  name: ANA Tactical 'Чистого Неба'
+  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Blue.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Blue.rsi
+  - type: Craftable
+
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAUN
-  name: ANA Tactical ООН
+  name: Бронеразгрузка «Степь-4» ООН
   description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
   components:
   - type: Sprite
@@ -70,7 +78,7 @@
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAPilgrim
-  name: ANA Tactical Паломника
+  name: Паломническая бронеразгрузка «Степь-4»
   description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины либо библию и кадило
   components:
   - type: Sprite

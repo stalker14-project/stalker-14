@@ -396,3 +396,41 @@
   - type: IconSmooth
     key: walls
     base: necropolis
+
+- type: entity
+  parent: BaseWall
+  id: STWallLava
+  suffix: ST, Mapping, wall
+  name: Стена из базальта
+  components:
+  - type: Tag
+    tags:
+      - Wall
+  - type: Sprite
+    sprite: _Stalker/Structures/Walls/wall_lava.rsi
+  - type: Icon
+    sprite: _Stalker/Structures/Walls/wall_lava.rsi
+  - type: IconSmooth
+    key: walls
+    base: wall_lava
+
+- type: entity
+  id: STinvisiblewallforevor
+  name: STinvisiblewallforevor
+  components:
+  - type: Tag
+    tags:
+      - Wall
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+            bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Airtight

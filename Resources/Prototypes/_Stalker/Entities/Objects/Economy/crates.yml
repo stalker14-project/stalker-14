@@ -851,7 +851,28 @@
     - type: Item
       size: Ginormous
       shape:
-        - 0,0,5,5
+        - 0,0,7,8
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: MultiHandedItem
+
+- type: entity
+  parent: BaseItem
+  id: TradeBox2
+  name: брикет запасов и документов сидоровичу
+  description: Тщательно замаскированная под обычную коробку, контрабанда.
+  suffix: Stalker, Economy, For Clear Sky
+  components:
+    - type: STWeight
+      self: 40
+    - type: Item
+      size: Ginormous
+      shape:
+        - 0,0,7,8
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2

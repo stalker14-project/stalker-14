@@ -32,6 +32,17 @@
     sound:
       path: /Audio/_Stalker/Music/Radio/wolf_hunt.ogg
 
+- type: entity
+  parent: RadioStalkerPlayer
+  id: RadioBandPlayer
+  name: кассетный плеер Бандитов
+  suffix: ST, переносной
+  description: Кассетный плеер, представленный в 1983 году и выполненный в ультракомпактном корпусе, который по габаритам меньше даже самой аудиокассеты. Это стало возможным за счёт раздвижной конструкции, что и позволяло установить внутрь кассету.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/mp3playerband.rsi
+    state: base
+
 # КАССЕТЫ
 
 - type: entity

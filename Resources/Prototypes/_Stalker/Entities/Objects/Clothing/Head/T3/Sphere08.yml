@@ -24,6 +24,9 @@
     reflects:
       - NonEnergy
     soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT3Base
@@ -40,7 +43,7 @@
   parent: STClothingHeadHelmetEnvironmentT3Base
   id: ClothingHeadHelmetBerill5MMonolith
   name: шлем «Сфера-08» монолита
-  description: Шлем тех самых фанатиков, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М». Класс брони - 2.
+  description: Шлем тех самых фанатиков, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М». Класс брони - 3.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_monolith.rsi
@@ -50,8 +53,8 @@
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT3Base
   id: ClothingHeadHelmetBerill5MDolg
-  name: Сфера 08 Авангарда aka Каланча
-  description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Авангард. Обеспечивает защиту 2 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
+  name: шлем «Каланча»
+  description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Долг. Обеспечивает защиту 3 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_dolg.rsi

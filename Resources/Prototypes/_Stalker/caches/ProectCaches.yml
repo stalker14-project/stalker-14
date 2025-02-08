@@ -1,0 +1,149 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageProect
+  suffix: Project
+  name: ящик проекта
+  description: Довольно старый ящик. Возможно, стоит его обыскать.
+  components:
+    - type: StorageFill
+      contents:
+        - id: ProectPVP
+          prob: 0.3
+        - id: ProectPVE
+          prob: 0.4
+        - id: ProectENV
+          prob: 0.3
+    - type: TimedDespawn
+      lifetime: 9999999
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
+      state: icon
+
+- type: entity
+  parent: BaseItem
+  id: ProectPVE
+  name: набор Проекта
+  description: Набор стандартный поставки экипировки Проекта
+  suffix: Stalker, т3, Project
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,2,2
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: STClothingOuterArmorProjectZarya
+        - id: STWeaponShotgunMossberg
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: STGauze
+        - id: ClothingMaskNeckFacemask
+        - id: ClothingShoesBootsCombat
+        - id: STCombatKnife
+        - id: ClothingBeltBandolierStalker
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: ClothingHeadHelmetLight
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ProectENV
+  name: набор Проекта
+  description: Набор стандартный поставки экипировки Проекта
+  suffix: Stalker, т3, Project
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,2,2
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorSevaStalker
+        - id: STWeaponRevolverSWPC325TR
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: STGauze
+        - id: AntiRadMedipen
+        - id: antiradpill
+        - id: ClothingMaskNeckFacemask
+        - id: ClothingShoesBootsCombat
+        - id: STOintment
+        - id: PillDexalin
+        - id: STCombatKnife
+        - id: 45ACPMFMJBox
+        - id: 45ACPMFMJBox
+        - id: SpeedLoader45ACPEmpty
+        - id: SpeedLoader45ACPEmpty
+        - id: ZoneAnomalyDetectorAD2
+        - id: GeigerCounter
+        - id: ZoneArtifactDetectorResponse
+        - id: STSkinsKitProject
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ProectPVP
+  name: набор Проекта
+  description: Набор стандартный поставки экипировки Проекта
+  suffix: Stalker, т3, Project
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,2,2
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: STClothingOuterArmorLightPlateVestBaseANAgray
+        - id: STWeaponRevolverChiappaRhino60DS
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: STGauze
+        - id: AntiRadMedipen
+        - id: STBrutepack
+        - id: MedkitMilitary
+        - id: ClothingMaskNeckFacemask
+        - id: ClothingShoesBootsCombat
+        - id: STCombatKnife
+        - id: STWeaponSMGMp5
+        - id: STModuleSMGGripT1
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: 919PSTBox
+        - id: 919PSTBox
+        - id: 919PSTBox
+        - id: 919PBMBox
+        - id: 45ACPAPBox
+        - id: SpeedLoader45ACPEmpty
+        - id: SpeedLoader45ACPEmpty
+        - id: GeigerCounter
+        - id: STSkinsKitProject
+        - id: ClothingHeadAssaultHelmet
+      sound:
+        path: /Audio/Effects/unwrap.ogg

@@ -77,7 +77,9 @@
         Slash: 0.95
         Piercing: 0.95
         Compression: 0.95
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
 # Stalker
 
 - type: entity
@@ -107,7 +109,7 @@
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaSciWhite
-  name: белый костюм "Сева" Учёных 
+  name: белый костюм "Сева" Учёных
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны со старым дизайном"
   components:
     - type: Sprite
@@ -121,7 +123,7 @@
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
   id: ClothingHeadHardsuitSevaHelmSci
-  name: шлем севы 
+  name: шлем севы
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
   noSpawn: true
   components:
@@ -400,3 +402,48 @@
     sprite: _Stalker/Groups/Project/seva_helm.rsi
   - type: Clothing
     sprite: _Stalker/Groups/Project/seva_helm.rsi
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaDolgRed
+  name: костюм "Сева" 'Долга'
+  description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+
+  # Renegaty
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevarenegat
+  name: костюм "СЕВА" 'Ржавчина'
+  description: Эта "СЕВА" видела слишком многое в Зоне. Коричневая резина, баллон цвета хаки, оранжевая мазня и когтистая царапина на шлеме. Ренегаты говорят, что это отметина удачи… или проклятья.
+  components:
+    - type: STWeight
+      self: 12
+    - type: Sprite
+      sprite: _Stalker/Clothing/OuterClothing/seva_renegat.rsi
+    - type: Clothing
+      sprite: _Stalker/Clothing/OuterClothing/seva_renegat.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHardsuitSevaHelmRenegat
+      slot: head
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmRenegat
+  name: шлем севы ренегатов
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Clothing/Head/seva_helmrenegat.rsi
+    - type: Clothing
+      sprite: _Stalker/Clothing/Head/seva_helmrenegat.rsi
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+    - type: PointLight
+      color: orange

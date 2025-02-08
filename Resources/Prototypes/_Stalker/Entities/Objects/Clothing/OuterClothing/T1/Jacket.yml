@@ -54,6 +54,9 @@
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Bandit
 
@@ -224,7 +227,7 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketDolg
-  name: куртка авангарда
+  name: куртка долга
   description: Комплект брони из штанов, берцов и куртки с бронированными вставками и налокотниками. Малая защита от пулевых попаданий и аномальных воздействий. Возможно спасёт владельца от пули ПМа, но всё же - отличная броня для только что поступивших на службу защитников Земли от заразы Зоны.
   components:
   - type: STWeight
@@ -375,3 +378,40 @@
     sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
+
+# Sci - 7
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketSCI
+  name: куртка 'НИИЧАЗ'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет хим чисткой...
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
+
+# Jabs - 9
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketJaba
+  name: куртка 'Жаб'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Сделано из натуральной кожи.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_jabs.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_jabs.rsi
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketSera
+  name: куртка 'Последователя'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет какой-то пыльцой...
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi

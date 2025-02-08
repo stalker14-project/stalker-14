@@ -1,4 +1,3 @@
-
 - type: entity
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorSpark
@@ -66,23 +65,22 @@
           Radiation: 1
           Caustic: 1
 
-
 - type: entity
   parent: ClothingOuterArmorSpark
-  id: ClothingOuterArmorIssgSpark
-  name: костюм «ITF»
+  id: ClothingOuterArmorMilitarySpark
+  name: костюм «ITF» 'Военных'
   suffix: ST, T2, Env
   description: Комбинезон ISSG, более неизвестно. Пассивно выводит радиацию по 0.25 в секунду
   components:
     - type: STWeight
       self: 2.5
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/ISSGspark.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/military-spark.rsi
       state: icon-suit
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/ISSGspark.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/military-spark.rsi
     - type: ToggleableClothing
-      clothingPrototype: ClothingHeadHelmetIssgSpark
+      clothingPrototype: ClothingHeadHelmetMilitarySpark
     - type: PersonalDamage
       interval: 1
       damage:
@@ -103,17 +101,18 @@
 
 - type: entity
   parent: ClothingHeadHelmetSpark
-  id: ClothingHeadHelmetIssgSpark
-  name: капюшон «ITF»
+  id: ClothingHeadHelmetMilitarySpark
+  name: капюшон «ITF» 'Военных'
   description: Плотный кусок резины на вашей голове.
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/ISSGspark.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/military-spark.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/ISSGspark.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/military-spark.rsi
     - type: Armor
       armorClass: 1
       modifiers:
         flatReductions:
           Radiation: 2.5
           Caustic: 1
+

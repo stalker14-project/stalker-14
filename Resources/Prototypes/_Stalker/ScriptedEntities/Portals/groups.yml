@@ -83,7 +83,7 @@
       portalName: Cordon-SvalkaBand
     - type: AccessReader
       access: [["Bandit"]]
-####################################Военные
+####################################Военные (старый, удалить когда поставят новый)
 - type: entity
   parent: MapTeleportBase
   id: Cordon-MilBase
@@ -513,3 +513,26 @@
     - type: AccessReader
       access: [["CN"]]
 
+####################################Военные и ученые
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Agro-MilBase-SciBase
+  name: Lobby-Agro-MilBase-SciBase (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Agro-MilBase-SciBase
+    - type: AccessReader
+      access: [["Military"], ["SciBase"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-Agro-MilBase-SciBase-Uncollide
+  name: Lobby-Agro-MilBase-SciBase-Uncollide (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Agro-MilBase-SciBase
+    - type: AccessReader
+      access: [["Military"], ["SciBase"]]

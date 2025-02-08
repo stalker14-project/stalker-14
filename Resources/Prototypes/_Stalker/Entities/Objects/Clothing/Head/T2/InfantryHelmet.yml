@@ -12,24 +12,26 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Piercing: 0.80
+        Piercing: 0.88
         Slash: 0.9
         Blunt: 0.9
   - type: ExplosionResistance
-    damageCoefficient: 0.85
+    damageCoefficient: 0.9
   - type: Reflect
     reflectProb: 0.08
     spread: 360
     reflects:
       - NonEnergy
     soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetInfantry
-  name: пехотный шлем
-  description: Шлем неизвестного производства и марки, тем не менее защищающий вашу бошечку. Огромная партия этих шлемов как-то попала в ЧЗО.
+  name: шлем «Восток»
+  description: Пехотный шлем марки «Восток» второго класса защиты, производитель неизвестен.
   components:
     - type: Sprite
       sprite: Clothing/Head/Helmets/merc_helmet.rsi
@@ -39,8 +41,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetInfantryBand
-  name: бандитский пехотный шлем
-  description: Пехотный шлем с нанесенными на него полосками, как буд-то adidas, почитается бандитскими формированиями.
+  name: бандитский «Восток»
+  description: Пехотный шлем «Восток» с нанесенными на него полосками, как буд-то adidas, почитается бандитскими формированиями.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/band_helmet.rsi
@@ -50,7 +52,7 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadInfantryHelmetRenegate
-  name: пехотный шлем ренегата
+  name: шлем «Восток» ренегата
   description: Обычный пехотный шлем, перекрашенный в цвета ренегата, и с небольшими изменениями.
   components:
   - type: Sprite
@@ -61,7 +63,7 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadInfantryHelmetDeserter
-  name: пехотный шлем отступников
+  name: шлем «Восток» отступников
   description: Неизвестно, что это за шлем, но он очень хорошо защищает вашу голову.
   components:
   - type: Sprite
@@ -72,8 +74,8 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadInfantryHelmetUN
-  name: пехотный шлем ООН
-  description: Неизвестно, что это за шлем, но он очень хорошо защищает вашу голову.
+  name: шлем «Запад»
+  description: Пехотный шлем «Восток», перекрашенный в голубой цвет.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/pehhelm_un.rsi
@@ -92,3 +94,15 @@
       sprite: _Stalker/Objects/Clothing/hats/inqusitorHelm.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/inqusitorHelm.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetCombatT2Base
+  id: ClothingHeadHelmetKeeper
+  name: шлем "Хранитель"
+  suffix: ST, T2, Скин
+  description: Шлем «Хранитель» второго класса защиты, производитель неизвестен.
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/keeper_helmet.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/keeper_helmet.rsi

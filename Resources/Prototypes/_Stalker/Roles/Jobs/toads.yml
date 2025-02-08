@@ -2,7 +2,7 @@
   id: StalkerJaba
   name: Жаба
   icon: jaba
-  description: Группа особых бандитов
+  description: Группа по интересам.
   playTimeTracker: JobJaba
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: JabaGear
-  supervisors: Вы никому не подчиняетесь...
+  supervisors: Жадность это стиль жизнь, любопытство не порок.
   special:
     - !type:AddComponentSpecial
       components:
@@ -36,8 +36,9 @@
   equipment:
     id: BandPDA
     belt: ClothingBeltStorageWaistbag
-    torso: ClothingTorsoSweaterStalkerGreen
-    legs: ClothingLegsJeansBlue
+    torso: ClothingTorsoJaba
+    legs: ClothingLegsJeansJaba
     shoes: ClothingShoesBootsFrogLeather
-    outerClothing: ClothingOuterCoatBomber
     gloves: ClothingHandsGlovesJabs
+    mask: ClothingMaskSkull
+    pocket1: GoldDiceBag

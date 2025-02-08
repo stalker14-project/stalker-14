@@ -1,3 +1,5 @@
+# Tier 1
+
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelGreenStalker
@@ -8,9 +10,9 @@
       self: 1.7
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Duffels/duffel.rsi
-    - type: Storage
+    - type: Storage #16 клеток
       grid:
-        - 0,0,4,4
+        - 0,0,3,3
       quickInsert: true
       areaInsert: true
 
@@ -24,112 +26,82 @@
       self: 1.7
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Duffels/duffel_gray.rsi
-    - type: Storage
+    - type: Storage #16 клеток
       grid:
-        - 0,0,4,4
+        - 0,0,3,3
       quickInsert: true
       areaInsert: true
 
-# Армейские
+# Tier - 2
 
 - type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackDuffelMilitaryBlue
-  name: Синий армейский рюкзак
-  description: Отличный рюкзак с подсумками для тактических нужд.
+  id: ClothingBackpackTacticBase
+  categories: [ HideSpawnMenu ]
+  # abstract: true
+  parent: ClothingBackpackDuffelGreenStalker
   suffix: ST
   components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackblue.rsi
+  - type: Craftable
   - type: Storage
     grid:
-    - 0,0,6,6
-    - -2,4,-2,5
-    - -2,3,-2,5
-    - -2,0,-2,1
-    - 8,4,8,5
-    - 8,3,8,5
-    - 8,0,8,1
+    - 0,0,5,5 #36 клеток
 
 - type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackDuffelMilitaryOlive
-  name: Темно-зеленый армейский рюкзак
-  description: Отличный рюкзак с дополнительными отделениями.
-  suffix: ST
+  parent: ClothingBackpackTacticBase
+  id: ClothingBackpackTacticBeigeStalker
+  name: бежевый тактический рюкзак
+  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackolive.rsi
-  - type: Storage
-    grid:
-    - -3,1,-2,4
-    - 0,0,6,6
+    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/beige.rsi
 
 - type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackDuffelBlackMilitaryTacticStalker
-  name: чёрный армейский рюкзак
-  description: Рассчитаны на использование в полевых условиях, при этом они многофункциональны и подходят для совершенно разных ситуаций.
-  suffix: ST
+  parent: ClothingBackpackTacticBase
+  id: ClothingBackpackTacticBlackStalker
+  name: чёрный тактический рюкзак
+  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackgray.rsi
-  - type: Storage
-    grid:
-    - -3,1,-2,4
-    - 0,0,6,6
+    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black.rsi
 
 - type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackDuffelHikingVSRF
+  parent: ClothingBackpackTacticBase
+  id: ClothingBackpackTacticBlackRadStalker
+  name: чёрно-красный тактический рюкзак
+  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black-red.rsi
+
+- type: entity
+  parent: ClothingBackpackTacticBase
+  id: ClothingBackpackTacticGreenStalker
+  name: зелёный тактический рюкзак
+  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/green.rsi
+
+- type: entity
+  parent: ClothingBackpackTacticBase
+  id: ClothingBackpackTacticOliveStalker
+  name: оливковый тактический рюкзак
+  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/olive.rsi
+
+- type: entity
+  parent: ClothingBackpackTacticBase
+  id: STClothingBackpackDuffelHikingNeutral
   name: походный рюкзак
   description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
-  suffix: ST
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Hiking/VS_RF.rsi
-  - type: Storage
-    grid:
-    - 0,0,6,5
-    - -4,1,-2,3
-
-- type: entity
-  parent: ClothingBackpackDuffelHikingVSRF
-  id: ClothingBackpackDuffelHikingCommon
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
-  suffix: ST
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/backpacks/Hiking/common.rsi
+      sprite: _Stalker/Objects/Clothing/backpacks/Hiking/hiking_neutral.rsi
 
-- type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackDuffelBlackTacticStalker
-  name: чёрный армейский тактический рюкзак
-  description: Рассчитан на использование в полевых условиях, при этом он многофункционален и подходит для совершенно разных ситуаций.
-  suffix: ST
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Military_tactic/black.rsi
-  - type: Storage
-    grid:
-    - 0,0,7,6
+# Tier - 3
 
-- type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackDuffelOliveTacticStalker
-  name: оливковый армейский тактический рюкзак
-  description: Рассчитаны на использование в полевых условиях, при этом они многофункциональны и подходят для совершенно разных ситуаций.
-  suffix: ST
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Military_tactic/olive.rsi
-  - type: Storage
-    grid:
-    - 0,0,7,6
-
-# Обычные
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackMercStalker
@@ -137,9 +109,9 @@
   description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
   suffix: ST
   components:
-  - type: Storage
+  - type: Storage #40 клеток 42 будет лучше
     grid:
-    - 0,0,6,6
+    - 0,0,7,4
     quickInsert: true
     areaInsert: true
   - type: Sprite
@@ -154,9 +126,135 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Other/backpack1.rsi
+  - type: Storage #44 клеток 48 лучше будет тут
+    grid:
+    - 0,0,7,5
+# Tier - 4
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelMilitaryBlue
+  name: Синий армейский рюкзак
+  description: Отличный рюкзак с подсумками для тактических нужд.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackblue.rsi
+  - type: Storage #55 клеток 56
+    grid:
+    - 0,0,7,6
+
+
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelMilitaryOlive
+  name: Темно-зеленый армейский рюкзак
+  description: Отличный рюкзак с дополнительными отделениями.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackolive.rsi
+  - type: Storage #55 клеток 56
+    grid:
+    - 0,0,7,6
+
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelBlackMilitaryTacticStalker
+  name: чёрный армейский рюкзак
+  description: Рассчитаны на использование в полевых условиях, при этом они многофункциональны и подходят для совершенно разных ситуаций.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackgray.rsi
+  - type: Storage #55 клеток 56
+    grid:
+    - 0,0,7,6
+
+
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelHikingVSRF
+  name: походный рюкзак
+  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Hiking/VS_RF.rsi
+  - type: Storage #54 клеток 56 бы
+    grid:
+    - 0,0,7,6
+
+- type: entity
+  parent: ClothingBackpackDuffelHikingVSRF
+  id: ClothingBackpackDuffelHikingCommon
+  name: походный рюкзак
+  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  suffix: ST
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/backpacks/Hiking/common.rsi
+
+
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelBlackTacticStalker
+  name: чёрный армейский тактический рюкзак
+  description: Рассчитан на использование в полевых условиях, при этом он многофункционален и подходит для совершенно разных ситуаций.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Military_tactic/black.rsi
+  - type: Storage #56 клеток
+    grid:
+    - 0,0,7,6
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelOliveTacticStalker
+  name: оливковый армейский тактический рюкзак
+  description: Рассчитаны на использование в полевых условиях, при этом они многофункциональны и подходят для совершенно разных ситуаций.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Military_tactic/olive.rsi
+  - type: Storage #56 клеток
+    grid:
+    - 0,0,7,6
+
+# Tier - 4.5
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelSuperStalker
+  name: Профессиональный зелёный рюкзак
+  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/backpack-green.rsi
   - type: Storage
     grid:
-    - 0,0,6,6
+    - 0,0,7,7 #66 клеток 64 смог
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelSuperStalkerGray
+  name: Профессиональный серый рюкзак
+  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/backpack-gray.rsi
+  - type: Storage
+    grid:
+    - 0,0,7,7 #66 клеток 64 смог
+
+# Tier - 5
 
 - type: entity
   parent: STClothingBackBase
@@ -169,76 +267,9 @@
     sprite: _Stalker/Objects/Clothing/backpacks/Other/hoarder.rsi
   - type: Storage
     grid:
-    - 0,0,8,8
+    - 0,0,8,7 #72 Клеткок
 
 
-# Тактические Прочие
-
-- type: entity
-  id: ClothingBackpackTacticBase
-  categories: [ HideSpawnMenu ]
-  # abstract: true
-  parent: ClothingBackpackDuffelGreenStalker
-  suffix: ST
-  components:
-  - type: Craftable
-  - type: Storage
-    grid:
-    - 0,0,6,5
-    
-- type: entity
-  parent: ClothingBackpackTacticBase
-  id: ClothingBackpackTacticBeigeStalker
-  name: бежевый тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/beige.rsi
-
-- type: entity
-  parent: STClothingBackTacticBase
-  id: ClothingBackpackTacticBlackStalker
-  name: чёрный тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black.rsi
-
-- type: entity
-  parent: STClothingBackTacticBase
-  id: ClothingBackpackTacticBlackRadStalker
-  name: чёрно-красный тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/black-red.rsi
-
-- type: entity
-  parent: STClothingBackTacticBase
-  id: ClothingBackpackTacticGreenStalker
-  name: зелёный тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/green.rsi
-
-- type: entity
-  parent: STClothingBackTacticBase
-  id: ClothingBackpackTacticOliveStalker
-  name: оливковый тактический рюкзак
-  description: Он никогда не бывает разноцветным и ярким, ведь одна из задач тактических рюкзаков — маскироваться под среду, будь то горы, лес или пустыня.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Tactical/olive.rsi
-
-- type: entity
-  parent: STClothingBackTacticBase
-  id: STClothingBackpackDuffelHikingNeutral
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
-  components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Clothing/backpacks/Hiking/hiking_neutral.rsi
 
 # Аномальные
 

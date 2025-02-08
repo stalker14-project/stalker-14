@@ -49,7 +49,7 @@
   id: STClothingHeadHelmetSSP24Base
   name: шлем зелёного «Эколога»
   description: Защитит от аномалий и радиации, но точно не от пуль.
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   abstract: true
   components:
   - type: Armor
@@ -73,7 +73,9 @@
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
 # Ruby
 
 - type: entity
@@ -98,7 +100,7 @@
   id: ClothingHeadHelmetSSP24Ruby
   name: шлем красного «Рубина»
   description: Защитит от аномалий и радиации, но точно не от пуль.
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/ruby.rsi
@@ -161,7 +163,7 @@
   id: ClothingHeadHelmetSSP24Sapfire
   name: шлем синего «Сапфира»
   description: Защитит от аномалий и радиации, но точно не от пуль.
-  categories: [ HideSpawnMenu ] 
+  categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/sapfire.rsi

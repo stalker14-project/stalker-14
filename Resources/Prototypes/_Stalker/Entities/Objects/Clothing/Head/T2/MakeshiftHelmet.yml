@@ -1,0 +1,45 @@
+- type: entity
+  parent: STClothingHeadBase
+  id: STClothingHeadHelmetMakeshiftTacticalT3
+  name: Шлем «Циклоп»
+  description: шлем, сделанный вручную из качественных материалов, может не самый привлекательный внешне, но защищает хорошо.
+  suffix: ST, T3, Tactical
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/makeshift_helmet.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/makeshift_helmet.rsi
+  - type: Craftable
+  - type: STWeight
+    self: 3.1
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Piercing: 0.82
+        Slash: 0.86
+        Blunt: 0.86
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Reflect
+    reflectProb: 0.08
+    spread: 360
+    reflects:
+      - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+# Jabs - 1
+
+- type: entity
+  parent: STClothingHeadHelmetMakeshiftTacticalT3
+  id: STClothingHeadHelmetMakeshiftTacticalT3Jabs
+  name: Шлем «Циклоп» жаб
+  description: Сделанный вручную шлем из качественных материалов, может не самый привлекательный внешне, но защищает хорошо.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/makeshift_helmet_jabs.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/makeshift_helmet_jabs.rsi

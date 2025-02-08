@@ -8,7 +8,7 @@
 
 - type: entity
   id: BonfireOff
-  parent: STBonfire
+  parent: BaseStructure
   name: основа костра
   description: Основа для костра.
   components:
@@ -20,20 +20,24 @@
     sprite: Structures/Decoration/bonfire.rsi
     layers:
       - state: bonfire
-  - type: AlwaysHot
-  - type: Tag
-    tags:
-      - Structure
   - type: TimedDespawn
     lifetime: 600
   - type: Construction
     graph: BonfireOff
     node: bonfireoff
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
   - type: Craftable
 
 - type: entity
   id: BonfireOn
-  parent: BonfireOff
+  parent: STBonfire
   name: костёр
   description: Что может быть лучше позднего вечера под открытым небом с гитарой и друзьями.
   components:
@@ -57,6 +61,7 @@
     lifetime: 300
   - type: SpawnOnDespawn
     prototype: Ash
+  - type: Craftable
 
 ################ Крафт
 
