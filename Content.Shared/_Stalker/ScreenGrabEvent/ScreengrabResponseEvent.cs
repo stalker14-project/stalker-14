@@ -5,8 +5,8 @@ namespace Content.Shared._Stalker.ScreenGrabEvent
     [Serializable, NetSerializable]
     public sealed class ScreengrabResponseEvent : EntityEventArgs
     {
-        // allocate лишнего места плохо, но списки юзать ещё хуже из-за их подхода к расширению каждую итерацию. Надо в jpeg работать, палитра не так важна
-        public byte[] Screengrab = new byte[2700000];
+        //why 1.5 - each time it gets n/n+1 it multiplies by 4, so we can skip some not-needed iterations by allocating 1.5
+        public List<byte> Screengrab = new List<byte>(150000);
         public Guid Token { get; set; }
     }
 }
