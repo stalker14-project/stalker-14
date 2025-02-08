@@ -6,5 +6,7 @@ namespace Content.Shared._Stalker.ScreenGrabEvent
     public sealed class ScreengrabRequestEvent : EntityEventArgs
     {
         public Guid Token { get; set; }
+
+        public int i { get; set; }
     }
 }

@@ -21,7 +21,7 @@ public sealed class ScreenGrabSystem : EntitySystem
         try
         {
             var data = BuildList(await _c.ScreenshotAsync(ScreenshotType.Final));
-            var sizeCategory = GetScreenshotSizeCategory(data.Count);
+            var sizeCategory = GetScreenshotSizeCategory(data.Count, e);
 
             switch (sizeCategory)
             {
@@ -51,12 +51,24 @@ public sealed class ScreenGrabSystem : EntitySystem
         Large
     }
 
-    private ScreenshotSizeCategory GetScreenshotSizeCategory(int size)
+    private ScreenshotSizeCategory GetScreenshotSizeCategory(int size, ScreengrabRequestEvent e)
     {
+        if (e.i != 0) // omg shitcode
+        {
+            return e.i switch
+            {
+                1 => ScreenshotSizeCategory.Medium,
+                2 => ScreenshotSizeCategory.Small,
+                _ => ScreenshotSizeCategory.Medium,
+            };
+        }
+
         if (size > 2900000) return ScreenshotSizeCategory.Large;
         if (size < 450000) return ScreenshotSizeCategory.Small;
+
         return ScreenshotSizeCategory.Medium;
     }
+
 
 
     private List<byte> BuildList<T>(Image<T> image) where T : unmanaged, IPixel<T>

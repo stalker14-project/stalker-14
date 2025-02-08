@@ -19,12 +19,12 @@ public sealed class ScreengrabSystem : EntitySystem
         SubscribeNetworkEvent<ScreengrabResponseEvent>(OnScreengrabReply);
     }
 
-    public void SendScreengrabRequest(ICommonSession session)
+    public void SendScreengrabRequest(ICommonSession session, int data)
     {
         var token = Guid.NewGuid();
         _pendingRequests[session.UserId] = token;
 
-        RaiseNetworkEvent(new ScreengrabRequestEvent { Token = token }, session);
+        RaiseNetworkEvent(new ScreengrabRequestEvent { Token = token, i = data }, session);
     }
 
     private void OnScreengrabReply(ScreengrabResponseEvent ev, EntitySessionEventArgs args)
