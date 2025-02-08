@@ -64,7 +64,6 @@
       priority: 1
       items:
             # Melee
-        STCombatKnife: 10
         StalkerBallBat: 180
             # Guns
           # 7mm
@@ -76,6 +75,7 @@
           # 5,45x39
         STWeaponRifleStalkerSaiga545: 1065
         STWeaponGunAKS74U: 1490
+        STWeaponRifleStalkerAK74: 3000
         # Smg
         STWeaponSMGMp5: 1700
         STWeaponSMGViper: 700
@@ -83,7 +83,6 @@
         # Other
         WeaponPistolStalkerTT: 250
         WeaponStalkerPistolTec9: 250
-        WeaponPistolStalkerGlock: 270
         WeaponPistolStalkerAPS: 500
         STWeaponSniperMosin: 800
         STWeaponRifleSKS: 1700
@@ -94,23 +93,22 @@
       items:
           # 5,45x39
         Base545Mag10: 50 #T1
-        545Mag20: 100 #T2
-        545Mag30: 220 #T3
+        545Mag20: 175 #T2
+        545Mag30: 275 #T3
           # 7,62x54 and 39
         Base739Mag10: 100
         Base754Mag5: 250 #T1
         739Mag45: 450
           # Smg
-        BaseMP5Mag: 160
+        BaseMP5Mag: 275
         Vz61Mag: 160
         PPSHDrum: 750
         BasePPSHMag: 200
           # Other
         751Mag20: 350
         BaseTEC9Mag: 120
-        BaseGlockMag10: 100
-        TTMag: 98
-        SpeedLoader45ACPEmpty: 98
+        TTMag: 100
+        SpeedLoader45ACPEmpty: 125
         BaseAPSMag: 100
     - name: Боеприпасы
       priority: 3
@@ -129,9 +127,6 @@
         545FMJBox: 180
         545HPBox: 675
         545PCBox: 450
-        # 5.56
-        556FMJBox: 315
-        556M855Box: 785
         # 7.39
         739FMJBox: 675
         # 7.51
@@ -173,11 +168,7 @@
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
-        ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP
-        ClothingBeltVoron: 560 # T2 - PVP
           # Containers
-        BoxArtcont: 450 # T1
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
     - name: Плащи и Противогазы
@@ -195,7 +186,7 @@
       priority: 7
       items:
         STBoltBagFilled: 50
-        BoxArtcont: 400 # T1
+        BoxArtcont: 500 # T1
         ZoneAnomalyDetectorAD1: 450 # T1
           # Detectors
         ZoneArtifactDetectorPulse: 100 # T1

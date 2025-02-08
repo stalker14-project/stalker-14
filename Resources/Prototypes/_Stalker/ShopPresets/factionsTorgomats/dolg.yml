@@ -58,13 +58,13 @@
       items:
         Magazine762x39RPD: 1200
           # 7mm
-        Base1270Mag: 100 #T1
-        Saiga1270Mag10: 300
+        Base1270Mag: 150 #T1
+        Saiga1270Mag10: 350
           # 5,45x39
         Base545Mag10: 50 #T1
-        545Mag20: 100 #T2
-        545Mag30: 220 #T3
-        545Mag45: 300
+        545Mag20: 125 #T2
+        545Mag30: 300 #T3
+        545Mag45: 550
           # 7,62x54 and 39
         Base739Mag10: 100
         Base754Mag5: 250 #T1
@@ -72,15 +72,14 @@
         754Mag10: 340
           # Smg
         BizonMag: 1100
-        BaseMP5Mag: 160
         PP91Mag: 210
           # Other
-        Base939Mag10: 70
-        939Mag20: 120
-        939Mag30: 450
+        Base939Mag10: 100
+        939Mag20: 250
+        939Mag30: 550
         BasePMMag: 70
-        TTMag: 98
-        BaseAPSMag: 100
+        TTMag: 100
+        BaseAPSMag: 150
     - name: Боеприпасы
       priority: 3
       items:
@@ -101,13 +100,9 @@
         545FMJBox: 170
         545HPBox: 640
         545PCBox: 425
-        # 5.56
-        556FMJBox: 315
         # 7.39
         739FMJBox: 640
         739HPBox: 835
-        # 7.51
-        751M80Box: 745
         # 7.54
         754FMJBox: 675
         754HPBox: 1015
@@ -147,9 +142,6 @@
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
-        ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP
-        ClothingBeltVoron: 560 # T2 - PVP
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
@@ -168,11 +160,9 @@
       priority: 7
       items:
         STBoltBagFilled: 50
-        BoxArtcont: 300
+        BoxArtcont: 750
         ZoneAnomalyDetectorAD1: 450 # T1
         ZoneAnomalyDetectorAD2: 1000 # T2
-          # Detectors
-        ZoneArtifactDetectorPulse: 100 # T1
     - name: Утилиты
       priority: 8
       items:
@@ -227,8 +217,8 @@
         radioprotectpill: 70
         Bloodpack: 90
         psyblock: 200
-        MedkitAI2: 300
-        MedkitMilitary: 410
+        MedkitAI2: 200
+        MedkitMilitary: 400
         Defibrillator: 700
     - name: Модули
       priority: 11
@@ -236,11 +226,9 @@
         STModuleScopeRiflesT1Ru: 600
         STModuleScopeRiflesT1Nato: 600
         STModuleShotgunChokeT1: 200
-
-        STModuleShotgunChokeT2: 3200
         STModuleAutoSear: 3200
-        STModuleSilencerRiflesT2Ru: 3200
-        STModuleScopeRiflesT2Ru: 1200
+        STModuleSniperSightT1: 600
+        STModuleSilencerSniperT1: 600
     - name: Кастомизация
       priority: 12
       items:
@@ -248,7 +236,6 @@
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
-        ClothingUniformJumpsuitTacticool: 10
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         ClothingHeadBandMerc: 30
@@ -264,8 +251,6 @@
         ClothingHeadHatBlacksoft: 10
         ClothingHeadHatGreysoft: 10
         ClothingHeadHatSovietUshankaStalker: 40
-        ClothingTshirtBlue: 10
-        ClothingTshirtOrange: 10
         ClothingCloakStalker: 30
         ClothingLegsJeansBlue: 10
         ClothingLegsJeansStalker: 10
