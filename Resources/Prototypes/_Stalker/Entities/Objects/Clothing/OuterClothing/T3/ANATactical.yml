@@ -29,11 +29,17 @@
   - type: Armor
     armorClass: 3
     modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 6
       coefficients:
-        Blunt: 0.4
-        Slash: 0.8
-        Piercing: 0.5
+        Blunt: 0.7
+        Slash: 0.75
+        Piercing: 0.40
         Heat: 0.9
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
   - type: Craftable
 
 

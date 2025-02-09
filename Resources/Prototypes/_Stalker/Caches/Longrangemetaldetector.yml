@@ -26,7 +26,7 @@
     range: 30
     criteria:
       components:
-      - Spectral # reacts to AI eye, intentional
+      - Rangedetector # reacts to AI eye, intentional
   - type: Beeper
     isMuted: true
     minBeepInterval: 0.15
@@ -230,7 +230,7 @@
     layers:
       - state: invisible
   - type: Craftable
-  - type: Spectral
+  - type: Rangedetector
   - type: Fixtures
     fixtures:
       fix1:
@@ -306,7 +306,7 @@
   - type: SyncSprite
   - type: RequiresTile
   - type: Craftable
-  - type: Spectral
+  - type: Rangedetector
   - type: Fixtures
     fixtures:
       fix1:
