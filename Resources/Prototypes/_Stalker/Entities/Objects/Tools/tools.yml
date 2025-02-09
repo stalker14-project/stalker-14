@@ -382,16 +382,19 @@
 # Утилиты
 
 - type: entity
-  name: Лопата
+  name: Лопата для тайников
   parent: Shovel
   id: AAAAStalkerLopata
-  description: A large tool for digging and moving dirt
+  description: Для тайников
   components:
     - type: StalkerShovel
       canPlow: False
     - type: Tool
       qualities:
         - Pulsing
+    - type: Craftable
+    - type: Item
+      size: Small
 
 - type: entity
   parent: Shovel

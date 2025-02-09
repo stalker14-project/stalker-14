@@ -64,7 +64,6 @@
       priority: 1
       items:
             # Melee
-        STCombatKnife: 10
         StalkerBallBat: 370
             # Guns
           # 7mm
@@ -94,23 +93,19 @@
         Base545Mag10: 50 #T1
         545Mag20: 250 #T2
           # 5,56x39
-        Base556Mag10: 70 #T1
-        556Mag20: 500 #T2
+        Base556Mag10: 75 #T1
+        556Mag20: 300 #T2
           # Other
-        Base739Mag10: 300
-        BasePMMag: 70
-        BasePPSHMag: 300
-        TTMag: 100
-        BaseAPSMag: 150
+        BasePMMag: 75
+        BasePPSHMag: 350
+        TTMag: 75
+        BaseAPSMag: 200
+        BaseMP5Mag: 150
     - name: Боеприпасы
       priority: 3
       items:
         6mmBuckshotBox: 125
         7mmBuckshotBox: 50
-        # 7.25
-        725PBox: 100
-        725PTBox: 250
-        725PSTBox: 750
         # 5.45
         545FMJBox: 200
         # 5.56
@@ -124,31 +119,25 @@
         918PGJBox: 80
         918PSTBox: 200
         918PBMBox: 500
-        # 7.51
-        751M80Box: 825
         # 9.19
         919PSOGJBox: 80
         919PSTBox: 200
         919PBMBox: 500
-        # 9.39
-        939SP5Box: 250
         # .45 ACP
         45ACPLFMJBox: 100
-        45ACPMFMJBox: 250
-        45ACPAPBox: 625
     - name: Броня
       priority: 4
       items:
           # Helmets #
         ClothingHeadHelmetLight: 300 # T1 - uni
-        ClothingHeadHelmetInfantry: 1000 # T2 - uni
-        STClothingHeadHelmetMakeshiftTacticalT3: 2000 # T2 - uni
+        ClothingHeadHelmetInfantry: 800 # T2 - uni
+        STClothingHeadHelmetMakeshiftTacticalT3: 1350 # T2 - uni
           # OuterClothing #
-        ClothingOuterJacketStalker: 120 # T1 - uni
-        STClothingOuterArmorLightPlateVestBaseStalker: 700 # T2 - PvP
-        ClothingOuterArmor6B2: 1000
-        STClothingOuterArmorRCBZ: 1750 # T2 - ENV
-        ClothingOuterArmorZaryaStalker: 1500 # T2 - PVE
+        ClothingOuterJacketStalker: 100 # T1 - uni
+        STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
+        ClothingOuterArmor6B2: 1750
+        STClothingOuterArmorRCBZ: 1800 # T2 - ENV
+        ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
         ClothingOuterArmorZaryaHunter: 2000 # T2 - PVE+
 
     - name: Хранилища и Контейнеры
@@ -160,10 +149,8 @@
         ClothingBackpackMercStalker: 1200 # T3
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
-        ClothingBeltTarzanBlack: 200 # T1 - PVP
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
-        ClothingBeltVoron: 200 # T1 - PVP
           # Containers
         BoxArtcont: 450 # T1
         MedkitCMSStalker: 450 # T1
@@ -183,7 +170,7 @@
       priority: 7
       items:
         STBoltBagFilled: 50
-        BoxArtcont: 450 # T1
+        BoxArtcont: 500 # T1
         ZoneAnomalyDetectorAD1: 550 # T1
           # Detectors
         ZoneArtifactDetectorPulse: 100 # T1
@@ -204,7 +191,7 @@
         HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
-        Binocularus1: 2500
+        Binocularus1: 800
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
@@ -242,8 +229,8 @@
         radioprotectpill: 150
         Bloodpack: 250
         psyblock: 350
-        MedkitAI2: 400
-        MedkitMilitary: 800
+        MedkitAI2: 200
+        MedkitMilitary: 400
         Defibrillator: 1000
     - name: Кастомизация
       priority: 11
@@ -253,7 +240,6 @@
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
-        ClothingUniformJumpsuitTacticool: 10
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         ClothingHeadBandMerc: 30
@@ -269,8 +255,6 @@
         ClothingHeadHatBlacksoft: 10
         ClothingHeadHatGreysoft: 10
         ClothingHeadHatSovietUshankaStalker: 40
-        ClothingTshirtBlue: 10
-        ClothingTshirtOrange: 10
         ClothingCloakStalker: 30
         ClothingLegsJeansBlue: 10
         ClothingLegsJeansStalker: 10
