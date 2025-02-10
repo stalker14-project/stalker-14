@@ -36,9 +36,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-using Content.Shared.Access.Systems;
-using Content.Shared._Stalker.PullDoAfter;
-using Content.Shared.Hands;
+using Content.Shared.Access.Systems; // Stalker-storage
+using Content.Shared._Stalker.PullDoAfter; // Stalker-storage
+using Content.Shared.Hands; // Stalker-storage
 
 namespace Content.Shared.Storage.EntitySystems;
 
@@ -64,8 +64,8 @@ public abstract class SharedStorageSystem : EntitySystem
     [Dependency] protected readonly UseDelaySystem UseDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] private readonly SharedPullDoAfterSystem _pullDoAfter = default!; // Stalker-Changes
-    [Dependency] private readonly AccessReaderSystem _access = default!; // Stalker-Changes
+    [Dependency] private readonly SharedPullDoAfterSystem _pullDoAfter = default!; // Stalker-storage
+    [Dependency] private readonly AccessReaderSystem _access = default!; // Stalker-storage
 
     private EntityQuery<ItemComponent> _itemQuery;
     private EntityQuery<StackComponent> _stackQuery;
@@ -137,7 +137,7 @@ public abstract class SharedStorageSystem : EntitySystem
         SubscribeAllEvent<StorageSaveItemLocationEvent>(OnSaveItemLocation);
 
         SubscribeLocalEvent<StorageComponent, GotReclaimedEvent>(OnReclaimed);
-        SubscribeLocalEvent<StorageComponent, PullDoAfterEvent>(OnPull); // Stalker-Changes
+        SubscribeLocalEvent<StorageComponent, PullDoAfterEvent>(OnPull); // Stalker-storage
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenBackpack, InputCmdHandler.FromDelegate(HandleOpenBackpack, handle: false))
@@ -366,11 +366,12 @@ public abstract class SharedStorageSystem : EntitySystem
     /// <returns>true if inserted, false otherwise</returns>
     private void OnInteractUsing(EntityUid uid, StorageComponent storageComp, InteractUsingEvent args)
     {
-        // Stalker-Changes-Start
+        // Stalker-storage-start
         if (!_access.IsAllowed(args.User, args.Target))
             return;
-        // Stalker-Changes-End
-        if (args.Handled || !CanInteract(args.User, (uid, storageComp), storageComp.ClickInsert, false))
+        // Stalker-storage-end
+
+        if (args.Handled || !storageComp.ClickInsert || !CanInteract(args.User, (uid, storageComp), silent: false))
             return;
 
         var attemptEv = new StorageInteractUsingAttemptEvent();
@@ -390,12 +391,14 @@ public abstract class SharedStorageSystem : EntitySystem
     /// </summary>
     private void OnActivate(EntityUid uid, StorageComponent storageComp, ActivateInWorldEvent args)
     {
-        // Stalker-Changes-Start
+        // Stalker-storage-start
         if (!_access.IsAllowed(args.User, args.Target))
             return;
-        // Stalker-Changes-End
-        if (args.Handled || !args.Complex || !CanInteract(args.User, (uid, storageComp), storageComp.ClickInsert))
+        // Stalker-storage-end
+
+        if (args.Handled || !args.Complex || !storageComp.OpenOnActivate || !CanInteract(args.User, (uid, storageComp)))
             return;
+
         // Toggle
         if (_ui.IsUiOpen(uid, StorageComponent.StorageUiKey.Key, args.User))
         {
@@ -607,15 +610,17 @@ public abstract class SharedStorageSystem : EntitySystem
         // If the user's active hand is empty, try pick up the item.
         if (player.Comp.ActiveHandEntity == null)
         {
-            // Stalker-Changes-Start
+            // Stalker-storage-Start
             var entity = GetEntity(msg.InteractedItemUid);
             var uid = GetEntity(msg.StorageUid);
+
             if (TryComp<PullDoAfterComponent>(entity, out var pullComp))
             {
                 _pullDoAfter.StartInteractDoAfter((entity, pullComp), player, uid);
                 return;
             }
-            // Stalker-Changes-End
+            // Stalker-storage-End
+
             _adminLog.Add(
                 LogType.Storage,
                 LogImpact.Low,
@@ -1059,7 +1064,7 @@ public abstract class SharedStorageSystem : EntitySystem
             return false;
         }
 
-        RaiseLocalEvent(toInsert, new HandDeselectedEvent(player)); // Stalker-Changes
+        RaiseLocalEvent(toInsert, new HandDeselectedEvent(player)); // Stalker-storage
         return true;
     }
 
@@ -1532,7 +1537,7 @@ public abstract class SharedStorageSystem : EntitySystem
         return true;
     }
 
-    // Stalker-Changes-Start
+    // Stalker-storage-start
     private void OnPull(Entity<StorageComponent> ent, ref PullDoAfterEvent args)
     {
         if (args.Target == null || args.Cancelled)
@@ -1577,7 +1582,7 @@ public abstract class SharedStorageSystem : EntitySystem
             User = user;
         }
     }
-    // Stalker-Changes-End
+    // Stalker-storage-end
 
     [Serializable, NetSerializable]
     protected sealed class StorageComponentState : ComponentState

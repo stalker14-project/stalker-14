@@ -1,10 +1,12 @@
-using Content.Server._Stalker.Mind;
+using Content.Server._Stalker.Mind; // Stalker-ghost
+using System.Linq;
+using System.Numerics;
 using Content.Server.Administration.Logs;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
-using Content.Server.Respawn;
+using Content.Server.Respawn; // Stalker-ghost
 using Content.Server.Roles.Jobs;
 using Content.Server.Warps;
 using Content.Shared.Actions;
@@ -25,7 +27,7 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Storage.Components;
-using Robust.Server.Console;
+using Robust.Server.Console; // Stalker-ghost
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
@@ -35,14 +37,13 @@ using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using System.Linq;
-using System.Numerics;
 
 namespace Content.Server.Ghost
 {
     public sealed class GhostSystem : SharedGhostSystem
     {
         [Dependency] private readonly SharedActionsSystem _actions = default!;
+        [Dependency] private readonly IAdminLogManager _adminLog = default!;
         [Dependency] private readonly SharedEyeSystem _eye = default!;
         [Dependency] private readonly FollowerSystem _followerSystem = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -63,7 +64,7 @@ namespace Content.Server.Ghost
         [Dependency] private readonly SharedMindSystem _mind = default!;
         [Dependency] private readonly GameTicker _gameTicker = default!;
         [Dependency] private readonly DamageableSystem _damageable = default!;
-        [Dependency] private readonly IServerConsoleHost _consoleHost = default!;
+        [Dependency] private readonly IServerConsoleHost _consoleHost = default!; // Stalker-ghost
 
         private EntityQuery<GhostComponent> _ghostQuery;
         private EntityQuery<PhysicsComponent> _physicsQuery;
@@ -327,6 +328,8 @@ namespace Content.Server.Ghost
 
         private void WarpTo(EntityUid uid, EntityUid target)
         {
+            _adminLog.Add(LogType.GhostWarp, $"{ToPrettyString(uid)} ghost warped to {ToPrettyString(target)}");
+
             if ((TryComp(target, out WarpPointComponent? warp) && warp.Follow) || HasComp<MobStateComponent>(target))
             {
                 _followerSystem.StartFollowingEntity(uid, target);
@@ -442,14 +445,15 @@ namespace Content.Server.Ghost
         public EntityUid? SpawnGhost(Entity<MindComponent?> mind, EntityCoordinates? spawnPosition = null,
             bool canReturn = false)
         {
-            // stalker-changes-start Сталкер воскресе из мертвых, смертью смерть поправ.
-            if (mind.Comp?.Session != null && !HasComp<RespawnOnDeathComponent>(mind))
+            // Stalker-ghost-start
+            // Сталкер воскресе из мертвых, смертью смерть поправ.
+            if (mind.Comp?.Session is not null && !HasComp<RespawnOnDeathComponent>(mind))
             {
                 _gameTicker.Respawn(mind.Comp.Session);
                 return null;
             }
+            // Stalker-ghost-end
 
-            // stalker-changes-end
             if (!Resolve(mind, ref mind.Comp))
                 return null;
 
@@ -499,14 +503,15 @@ namespace Content.Server.Ghost
         {
             if (!Resolve(mindId, ref mind))
                 return false;
-            // stalker-changes-start
-            if (mind.Session != null)
+
+            // Stalker-ghost-start
+            if (mind.Session is not null)
             {
                 _gameTicker.Respawn(mind.Session);
                 return false;
             }
+            // Stalker-ghost-end
 
-            // stalker-changes-end
             var playerEntity = mind.CurrentEntity;
 
             if (playerEntity != null && viaCommand)

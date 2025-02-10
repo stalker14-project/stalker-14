@@ -1,16 +1,16 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Effects;
 using Content.Server.Weapons.Ranged.Systems;
-using Content.Shared.Armor;
+using Content.Shared.Armor;  // Stalker-projectile
 using Content.Shared.Camera;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Prototypes; // Stalker-projectile
 using Content.Shared.Database;
-using Content.Shared.Inventory;
+using Content.Shared.Inventory; // Stalker-projectile
 using Content.Shared.Projectiles;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Prototypes; // Stalker-projectile
 
 namespace Content.Server.Projectiles;
 
@@ -21,8 +21,8 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!; // Stalker-Changes
-    [Dependency] private readonly IPrototypeManager _prototype = default!; // Stalker-Changes
+    [Dependency] private readonly InventorySystem _inventory = default!; // Stalker-projectile
+    [Dependency] private readonly IPrototypeManager _prototype = default!; // Stalker-projectile
 
     public override void Initialize()
     {
@@ -37,7 +37,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             || component.DamagedEntity || component is { Weapon: null, OnlyCollideWhenShot: true })
             return;
 
-        // stalker-changes-start
+        // Stalker-projectile-start
         var ignoreResitance = false;
         List<EntityUid> ignore = new();
         string[] slots = {
@@ -57,6 +57,7 @@ public sealed class ProjectileSystem : SharedProjectileSystem
             "legs",
             "torso"
         };
+        // Stalker-projectile-end
 
         foreach (var slot in slots)
         {
@@ -84,8 +85,8 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         RaiseLocalEvent(uid, ref ev);
 
         var otherName = ToPrettyString(target);
-        var direction = args.OurBody.LinearVelocity.Normalized();
-        var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances || ignoreResitance, origin: component.Shooter, ignoreResistors: ignore); // Stalker-Changes-End
+        var modifiedDamage = _damageableSystem.TryChangeDamage(target, ev.Damage, component.IgnoreResistances || ignoreResitance, origin: component.Shooter, ignoreResistors: ignore); // Stalker-projectile
+
         var deleted = Deleted(target);
 
         if (modifiedDamage is not null && EntityManager.EntityExists(component.Shooter))
@@ -103,7 +104,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         if (!deleted)
         {
             _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound);
-            _sharedCameraRecoil.KickCamera(target, direction);
+
+            if (!args.OurBody.LinearVelocity.IsLengthZero())
+                _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized());
         }
 
         component.DamagedEntity = true;
