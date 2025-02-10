@@ -18,6 +18,11 @@
   special:
     - !type:AddComponentSpecial
       components:
+        - type: Psyonics
+          psy: 300
+        - type: PsyonicsActionSmoke
+          cost: 30
+          duration: 10
         - type: Access
           tags:
             - ProjectPawn
@@ -69,7 +74,13 @@
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-        - type: PsyonicsActionSmoke
+          psy: 500
+        - type: PsyonicsActionSmoke 
+          cost: 30
+          duration: 10
+        - type: PsyonicsActionRift
+          cost: 50
+          duration: 10
         - type: Access
           tags:
             - ProjectPawn
