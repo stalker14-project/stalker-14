@@ -1,0 +1,25 @@
+- type: entity
+  parent: TapePlayer
+  id: BoomboxNW
+  name: boombox
+  description: Be on style.
+  components:
+  - type: Item
+    size: Huge
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/boombox.rsi
+    layers:
+    - state: "full"
+      map: ["enum.TapePlayerVisualLayers.Base"]
+  - type: TapePlayer
+    rolloffFactor: 1.5
+    maxDistance: 20
+  - type: MeleeWeapon
+    attackRate: 0.75
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+  - type: StaminaDamageOnHit
+    damage: 10

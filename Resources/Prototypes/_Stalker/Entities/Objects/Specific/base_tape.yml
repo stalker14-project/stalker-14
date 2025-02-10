@@ -1,0 +1,2292 @@
+- type: entity
+  parent: BaseItem
+  id: BaseMusicTape
+  name: tape
+  abstract: true
+  description:
+  components:
+  - type: MusicTape
+    self: 0.15
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    state: c1
+    sprite: _Stalker/Objects/Misc/casete.rsi
+
+- type: entity
+  parent: BaseMusicTape
+  id: MusicTape1
+  name: cassette tape (Sunset by PigeonBeans)
+  description:
+  components:
+  - type: Sprite
+    state: c1
+  - type: MusicTape
+    songName: Sunset by PigeonBeans Sunset by PigeonBeans
+    sound: /Audio/_Stalker/TapePlayer/Tracks/sunset.ogg
+
+# КАССЕТЫ
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteOneRadio
+  suffix: Stalker, кассета (Я солдат)
+  name: кассета №1 "Я солдат"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: 5nizza - я солдат (недоношенный ребенок войны)
+    sound: /Audio/_Stalker/Music/Radio/kombat.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwoRadio
+  suffix: Stalker, кассета (Есть только миг)
+  name: кассета №2 "Есть только миг"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Олег Анофриев - Есть только миг
+    sound: /Audio/_Stalker/Music/Radio/esttolkomig.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThreeRadio
+  suffix: Stalker, кассета (Музыка Свободы)
+  name: кассета №3 "Музыка Свободы"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Музыка Свободы
+    sound: /Audio/_Stalker/Music/Radio/radio_Svoboda.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFourRadio
+  suffix: Stalker, кассета (Чёрный сталкер)
+  name: кассета №4 "Чёрный сталкер"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: S.T.A.L.K.E.R feat. MALIW4N - ЧЁРНЫЙ СТАЛКЕР
+    sound: /Audio/_Stalker/Music/Radio/cherniy_stalker.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiveRadio
+  suffix: Stalker, кассета (Город которого нет)
+  name: кассета №5 "Город которого нет"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Корнелюк Игорь - Город которого нет
+    sound: /Audio/_Stalker/Music/Radio/gorod_kotorogo_net.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSixRadio
+  suffix: Stalker, кассета (Судная ночь)
+  name: кассета №6 (???)
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Данная кассета очень странно выглядит...
+  components:
+  - type: MusicTape
+    songName: Неизвестно
+    sound: /Audio/_Stalker/Music/Radio/sudnayanoch.ogg
+  - type: Sprite
+    state: c4
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSevenRadio
+  suffix: Stalker, кассета (Бар чистое небо)
+  name: кассета №7 "Бар чистое небо"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Бар "Чистое небо"
+    sound: /Audio/_Stalker/Music/Radio/bar_chistoe_nebo.ogg
+  - type: Sprite
+    state: c2
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteEightRadio
+  suffix: Stalker, кассета (Советский марш)
+  name: кассета №8 "Советский марш"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Red Alert 3 Theme - Soviet March
+    sound: /Audio/_Stalker/Music/Radio/soviet.ogg
+  - type: Sprite
+    state: c3
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteNineRadio
+  suffix: Stalker, кассета (Москва-Владивосток)
+  name: кассета №9 "Москва-Владивосток"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Михаил Шуфутинский - Москва – Владивосток
+    sound: /Audio/_Stalker/Music/Radio/rus_radio2.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTenRadio
+  suffix: Stalker, кассета (Magic Moments)
+  name: кассета №10 "Magic Moments"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Perry Como - Magic Moments (Remastered)
+    sound: /Audio/_Stalker/Music/Radio/un_radio2.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteElevenRadio
+  suffix: Stalker, кассета (In the army now)
+  name: кассета №11 "In the army now"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Status Quo - In The Army Now
+    sound: /Audio/_Stalker/Music/Radio/un_radio.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwelveRadio
+  suffix: Stalker, кассета (Фаина)
+  name: кассета №12 "Фаина"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: На-На - Фаина
+    sound: /Audio/_Stalker/Music/Radio/faina.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirteeneRadio
+  suffix: Stalker, кассета (Пошли вы все)
+  name: кассета №13 "Пошли вы все"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Гражданская оборона - Пошли вы все на хуй
+    sound: /Audio/_Stalker/Music/Radio/poshli_vi_vse.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFourteenRadio
+  suffix: Stalker, кассета (Белая ночь)
+  name: кассета №14 "Белая ночь"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Виктор Салтыков - Белая ночь
+    sound: /Audio/_Stalker/Music/Radio/belaya_noch.ogg
+  - type: Sprite
+    state: c1
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFifteenRadio
+  suffix: Stalker, кассета (Holding Out For A Hero)
+  name: кассета №15 "Holding Out For A Hero"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
+  components:
+  - type: MusicTape
+    songName: Bonnie Tyler - Holding Out For A Hero
+    sound: /Audio/_Stalker/Music/Radio/holding_out_for_a_hero.ogg
+  - type: Sprite
+    state: c1
+
+# ДОНАТНЫЕ КАССЕТЫ
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteOneDonateRadio
+  suffix: Stalker, кассета (Оповещение о выбросе)
+  name: кассета "Оповещение о выбросе"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для KekSeLot
+  components:
+  - type: MusicTape
+    songName: Оповещение о выбросе
+    sound: /Audio/_Stalker/blowout.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwoDonateRadio
+  suffix: Stalker, кассета (Bosanska Artiljeria)
+  name: кассета "Bosanska Artiljeria"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для nexmev
+  components:
+  - type: MusicTape
+    songName: Mertmi - Bosnian Folk Song - Bosanska Artiljerija
+    sound: /Audio/_Stalker/Music/Radio/Donate/Folksong.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThreeDonateRadio
+  suffix: Stalker, кассета (Кукушка)
+  name: кассета "Кукушка"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для SHIRDAN
+  components:
+  - type: MusicTape
+    songName: Полина Гагарина - Кукушка
+    sound: /Audio/_Stalker/Music/Radio/Donate/Kukushka.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFourDonateRadio
+  suffix: Stalker, кассета (Смуглянка Молдованка)
+  name: кассета "Смуглянка Молдованка"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для SHIRDAN
+  components:
+  - type: MusicTape
+    songName: Смуглянка - Молдованка
+    sound: /Audio/_Stalker/Music/Radio/Donate/Moldovanka.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiveDonateRadio
+  suffix: Stalker, кассета (The Man Who Sold The World)
+  name: кассета "The Man Who Sold The World"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Titehunter
+  components:
+  - type: MusicTape
+    songName: Nirvana - The Man Who Sold The World (MTV Unplugged)
+    sound: /Audio/_Stalker/Music/Radio/Donate/Midge.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSixDonateRadio
+  suffix: Stalker, кассета (Солнце, купи мне гитару)
+  name: кассета "Солнце, купи мне гитару"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Seripes
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/kupi_mne.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSevenDonateRadio
+  suffix: Stalker, кассета (3 сентября)
+  name: кассета "3 сентября"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для AktuBHblu_roMeC
+  components:
+  - type: MusicTape
+    songName: Солнце купи мне гитару - Пилот
+    sound: /Audio/_Stalker/Music/Radio/Donate/Tri_sentyabrya.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteEightDonateRadio
+  suffix: Stalker, кассета (Don't stop the fight)
+  name: кассета "Don't stop the fight"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для AktuBHblu_roMeC
+  components:
+  - type: MusicTape
+    songName: Don't stop the fight - FASTWAY
+    sound: /Audio/_Stalker/Music/Radio/Donate/Skullfist.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteNineDonateRadio
+  suffix: Stalker, кассета (Невеста палача)
+  name: кассета "Невеста палача"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для AktuBHblu_roMeC
+  components:
+  - type: MusicTape
+    songName: Невеста палача - Король и Шут
+    sound: /Audio/_Stalker/Music/Radio/Donate/Nevesta_palacha.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTenDonateRadio
+  suffix: Stalker, кассета (600 мб)
+  name: кассета "600 мб"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: 600 мб - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/600mb.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteElevenDonateRadio
+  suffix: Stalker, кассета (Автор)
+  name: кассета "Автор"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: Автор - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/avtor.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwelveDonateRadio
+  suffix: Stalker, кассета (Чапаевская мель)
+  name: кассета "Чапаевская мель"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: Чапаевская мель - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/chapaevskaya_mel.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirteenDonateRadio
+  suffix: Stalker, кассета (День)
+  name: кассета "День"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: День - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/den.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFourteenDonateRadio
+  suffix: Stalker, кассета (Комета)
+  name: кассета "Комета"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: Комета - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/kometa.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiveteenDonateRadio
+  suffix: Stalker, кассета (Ледоруб)
+  name: кассета "Ледоруб"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: Ледоруб - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/ledorub.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSixteenDonateRadio
+  suffix: Stalker, кассета (Патроны)
+  name: кассета "Патроны"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: Патроны - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/patroni.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSeventeenDonateRadio
+  suffix: Stalker, кассета (Время)
+  name: кассета "Время"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для christraitor
+  components:
+  - type: MusicTape
+    songName: Время - МОСТ
+    sound: /Audio/_Stalker/Music/Radio/Donate/vremya.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteEighteenDonateRadio
+  suffix: Stalker, кассета (Вставай Донбасс)
+  name: кассета "Вставай Донбасс"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Denison
+  components:
+  - type: MusicTape
+    songName: Куба - Вставай Донбасс
+    sound: /Audio/_Stalker/Music/Radio/Donate/vstavai_Donbass.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteNineteenDonateRadio
+  suffix: Stalker, кассета (Heathens)
+  name: кассета "Heathens"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Cinnamon Bun
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/21.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyOneDonateRadio
+  suffix: Stalker, кассета (Party Like A Russian)
+  name: кассета "Party Like A Russian"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Cinnamon Bun
+  components:
+  - type: MusicTape
+    songName: twenty one pilots - Heathens
+    sound: /Audio/_Stalker/Music/Radio/Donate/Robby.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyTwoDonateRadio
+  suffix: Stalker, кассета (It's raining men, Tombstone remix)
+  name: кассета "It's raining men"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Cinnamon Bun
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Weather.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyThreeDonateRadio
+  suffix: Stalker, кассета (Wind Rose Diggy Diggy Hole)
+  name: кассета "Wind Rose Diggy Diggy Hole"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Cinnamon Bun
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/wind.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyFourDonateRadio
+  suffix: Stalker, кассета (Welcome to Va 11 HALL-A)
+  name: кассета "Welcome to Va 11 HALL-A"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Cinnamon Bun
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Garoad.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyFiveDonateRadio
+  suffix: Stalker, кассета (Liquid Nights & Disco Lights)
+  name: кассета "Liquid Nights & Disco Lights"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Cinnamon Bun
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Miracle.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyDonateRadio
+  suffix: Stalker, кассета (Nightcall Kavinsky)
+  name: кассета "Nightcall Kavinsky"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Nightcall.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentySixDonateRadio
+  suffix: Stalker, кассета (N.R.M. - Bamžy)
+  name: кассета "N.R.M. - Bamžy"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/bamzy.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentySevenDonateRadio
+  suffix: Stalker, кассета (Воины света)
+  name: кассета "Воины света"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/VoiniSveta.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyEightDonateRadio
+  suffix: Stalker, кассета (Nie ma nieba)
+  name: кассета "Nie ma nieba"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/NieMaNieba.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTwentyNineDonateRadio
+  suffix: Stalker, кассета (The serpent)
+  name: кассета "The serpent"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Serpent.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyOneDonateRadio
+  suffix: Stalker, кассета (Gimme! Gimme!)
+  name: кассета "Gimme! Gimme!"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/GimmeGimme.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyDonateRadio
+  suffix: Stalker, кассета (2nd Warning)
+  name: кассета "2nd Warning"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Carpenters2394
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Warning.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyTwoDonateRadio
+  suffix: Stalker, кассета (Трын трава)
+  name: кассета "Трын трава"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для IWordoloNi
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Trin_trava.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyThreeDonateRadio
+  suffix: Stalker, кассета (Бей)
+  name: кассета "Бей"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для IWordoloNi
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Bey.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyFourDonateRadio
+  suffix: Stalker, кассета (Финский нож)
+  name: кассета "Финский нож"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для IWordoloNi
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Finskiy_noj.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyFiveDonateRadio
+  suffix: Stalker, кассета (The Mercenary Song)
+  name: кассета "The Mercenary Song"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Punk220
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Mercenary.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtySixDonateRadio
+  suffix: Stalker, кассета (Вечеринки для неудачников PAFL)
+  name: кассета "Вечеринки для неудачников. PAFL"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для FOKMA
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/HardbassNight.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtySevenDonateRadio
+  suffix: Stalker, кассета (ABSOLUTE TERRITORY)
+  name: кассета "ABSOLUTE TERRITORY"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для reneretard
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/territory.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyEightDonateRadio
+  suffix: Stalker, кассета (Вот и помер Вова Вист)
+  name: кассета "Вот и помер Вова Вист"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для reneretard
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/vova_vist.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteThirtyNineDonateRadio
+  suffix: Stalker, кассета (Gangsta's Paradise)
+  name: кассета "Gangsta's Paradise"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для reneretard
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/gangstas.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyDonateRadio
+  suffix: Stalker, кассета (Octavia, Cekkist of Storms)
+  name: кассета "Octavia, Cekkist of Storms"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Booba
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/jyc.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyOneDonateRadio
+  suffix: Stalker, кассета (We Are The Helldivers)
+  name: кассета "We Are The Helldivers"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Booba
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/helldivers.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyTwoDonateRadio
+  suffix: Stalker, кассета (Говновоз)
+  name: кассета "Говновоз"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для ironlex
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/govnovoz.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyThreeDonateRadio
+  suffix: Stalker, кассета (Ramstain)
+  name: кассета "Ramstain"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для AktuBHblu_roMeC
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/ramstain.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyFourDonateRadio
+  suffix: Stalker, кассета (Accept)
+  name: кассета "Accept"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для AktuBHblu_roMeC
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/accept.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyFiveDonateRadio
+  suffix: Stalker, кассета (Laura Branigan)
+  name: кассета "Laura Branigan"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для AktuBHblu_roMeC
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/laura.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortySixDonateRadio
+  suffix: Stalker, кассета (Horse Soldier)
+  name: кассета "Horse Soldier"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Punk220
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Horse.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortySevenDonateRadio
+  suffix: Stalker, кассета (FiftyFifty - Cupid)
+  name: кассета "FiftyFifty - Cupid"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для xsainteer
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/lonely.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyEightDonateRadio
+  suffix: Stalker, кассета (Комбат - Любэ)
+  name: кассета "Комбат - Любэ"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Cristicolor
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/KombatL.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFortyNineDonateRadio
+  suffix: Stalker, кассета (кофе с сигой)
+  name: кассета "Кофе с сигой"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gecko
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/kofesiga.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftyDonateRadio
+  suffix: Stalker, кассета (каникулы на марсе)
+  name: кассета "Каникулы на марсе"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gecko
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/kanikuli.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftyOneDonateRadio
+  suffix: Stalker, кассета (беспокойник - снова)
+  name: кассета "Беспокойник - Снова"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gecko
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/bespokoynik.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftyTwoDonateRadio
+  suffix: Stalker, кассета (Глазоеды - Вылечи меня)
+  name: кассета "Глазоеды - Вылечи меня"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gecko
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/glazoedy.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftyThreeDonateRadio
+  suffix: Stalker, кассета (Eagles - Hotel California)
+  name: кассета "Eagles - Hotel California"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gecko
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/eagles.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftyFourDonateRadio
+  suffix: Stalker, кассета (gqtis - Poor)
+  name: кассета "gqtis - Poor"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gecko
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/poor.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftyFiveDonateRadio
+  suffix: Stalker, кассета (Noize MC — 26.04)
+  name: кассета "Noize MC — 26.04"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Retardo Cringos
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/26.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftySixDonateRadio
+  suffix: Stalker, кассета (Meg Myers - Desire)
+  name: кассета "Meg Myers - Desire"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Retardo Cringos
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/desire.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFiftySevenDonateRadio
+  suffix: Stalker, кассета (Noize MC — Грабли)
+  name: кассета "Noize MC — Грабли"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Retardo Cringos
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/grabli.ogg
+  - type: Sprite
+    state: c5
+
+# Groups Donate Cassets
+
+# Bandits
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDOneRadio
+  suffix: Stalker, кассета (Айдамир мугу - черные глаза)
+  name: кассета "Айдамир мугу - черные глаза"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/glaza.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDTwoRadio
+  suffix: Stalker, кассета (Блядская натура)
+  name: кассета "Блядская натура"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/blyad.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDThreeRadio
+  suffix: Stalker, кассета (Розенбаум - фраер, толстый фраер)
+  name: кассета "Розенбаум - фраер, толстый фраер"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/fraer.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDFourRadio
+  suffix: Stalker, кассета (Михаил круг - кольщик)
+  name: кассета "Михаил круг - кольщик"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kolshik.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDFiveRadio
+  suffix: Stalker, кассета (Михаил круг - золотые купола)
+  name: кассета "Михаил круг - золотые купола"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kupola.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDSixRadio
+  suffix: Stalker, кассета (Михаил круг - фраер)
+  name: кассета "Михаил круг - фраер"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/raer.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDSevenRadio
+  suffix: Stalker, кассета (Михаил круг - Владимирский централ)
+  name: кассета "Михаил круг - Владимирский централ"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/central.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDEightRadio
+  suffix: Stalker, кассета (Михаил круг - жиган лимон)
+  name: кассета "Михаил круг - жиган лимон"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/limon.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDNineRadio
+  suffix: Stalker, кассета (Милана Хаметова - ЛП)
+  name: кассета "Милана Хаметова - ЛП"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/milana.ogg
+  - type: Sprite
+    state: c7
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGDTenRadio
+  suffix: Stalker, кассета (Розенбаум - гоп стоп)
+  name: кассета "Розенбаум - гоп стоп"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Димочки
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/gopstop.ogg
+  - type: Sprite
+    state: c7
+
+# Donate Premium
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumOneRadio
+  suffix: Stalker, кассета (Твоими глазами — cold carti)
+  name: кассета "Твоими глазами — cold carti"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/cold.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwoRadio
+  suffix: Stalker, кассета (Saluki — Вылечим)
+  name: кассета "Saluki — Вылечим"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/saluki.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumThreeRadio
+  suffix: Stalker, кассета (Galafo — зачем сугробы этому городу)
+  name: кассета "Galafo — зачем сугробы этому городу"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/galafo.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumFourRadio
+  suffix: Stalker, кассета (Бульвар депо Neonbones)
+  name: кассета "Бульвар депо Neonbones"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/neonbones.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumFiveRadio
+  suffix: Stalker, кассета (Скриптонит — Одно и то же)
+  name: кассета "Скриптонит — Одно и то же"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/odnoi.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumSixRadio
+  suffix: Stalker, кассета (Скриптонит — снова люди пойдут)
+  name: кассета "Скриптонит — снова люди пойдут"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/snova.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumSevenRadio
+  suffix: Stalker, кассета (Свидание — Кавказ)
+  name: кассета "Свидание — Кавказ"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/svidanie.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumEightRadio
+  suffix: Stalker, кассета (Мчт — Последний снег)
+  name: кассета "Мчт — Последний снег"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/zoloto.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumNineRadio
+  suffix: Stalker, кассета (Макулатура — пляж)
+  name: кассета "Макулатура — пляж"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/plaj.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTenRadio
+  suffix: Stalker, кассета (Партизанеоколо — задор да изводы)
+  name: кассета "Партизанеоколо — задор да изводы"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/zador.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumElevenRadio
+  suffix: Stalker, кассета (Целовать другого — Дорн)
+  name: кассета "Целовать другого — Дорн"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/dornc.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwelveRadio
+  suffix: Stalker, кассета (Незаурядность - galafo)
+  name: кассета "Незаурядность - galafo"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/galafon.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumThirteenRadio
+  suffix: Stalker, кассета (Лето подари мне ночи — омонра)
+  name: кассета "Лето подари мне ночи — омонра"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/letop.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumFourteenRadio
+  suffix: Stalker, кассета (Ноктюрн — хаски)
+  name: кассета "Ноктюрн — хаски"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/khaskin.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumFifteenRadio
+  suffix: Stalker, кассета (all my fellas Frizk)
+  name: кассета "all my fellas Frizk"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/frizk.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumSixteenRadio
+  suffix: Stalker, кассета (Скриптонит кое-что лучше меня)
+  name: кассета "Скриптонит кое-что лучше меня"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/skripa.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumSeventeenRadio
+  suffix: Stalker, кассета (Бумбокс - летний дождь)
+  name: кассета "Бумбокс - летний дождь"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/bumka.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumEighteenRadio
+  suffix: Stalker, кассета (chris de burgh — moonlight and vodka)
+  name: кассета "chris de burgh — moonlight and vodka"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/chrisv.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumNineteenRadio
+  suffix: Stalker, кассета (партизанеоколо - славянское гетто)
+  name: кассета "партизанеоколо - славянское гетто"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/pgetto.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwentyRadio
+  suffix: Stalker, кассета (galafo - что может быть лучше)
+  name: кассета "galafo - что может быть лучше"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/gach.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwentyOneRadio
+  suffix: Stalker, кассета (градусы заметает)
+  name: кассета "градусы заметает"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/gradusi.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwentyTwoRadio
+  suffix: Stalker, кассета (central cee obsessed with you)
+  name: кассета "central cee obsessed with you"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Miron
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/cco.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwentyThreeRadio
+  suffix: Stalker, кассета (Силуэты)
+  name: кассета "Силуэты"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwentyFourRadio
+  suffix: Stalker, кассета (Запомню)
+  name: кассета "Запомню"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu.ogg
+  - type: Sprite
+    state: c5
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePremiumTwentyFiveRadio
+  suffix: Stalker, кассета (Low Roar - "I'll Keep Coming")
+  name: кассета "Low Roar - I'll Keep Coming"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
+  - type: Sprite
+    state: c5
+
+# Contributor
+- type: entity
+  parent: BaseItem
+  id: CasetsConBag
+  name: бездонный мешок новых кассет
+  description: "Вся партия новых кассет от «SS14 - Corvax S.T.A.L.K.E.R.»"
+  suffix: Stalker, Contributors
+  components:
+    - type: Storage
+      maxItemsize: Large
+      areaInsert: true
+      quickInsert: true
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          ents: []
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+    - type: STWeight
+      self: 8.4
+    - type: Sprite
+      sprite: _Stalker/Objects/Misc/bolts_bag.rsi
+      state: cassette_bag
+    - type: Clothing
+      slots: [ belt ]
+      quickEquip: false
+    - type: Item
+      size: Normal
+
+- type: entity
+  parent: CasetsConBag
+  id: CasetsConBagFilled
+  suffix: Stalker, Contributors, Полный
+  components:
+    - type: StorageFill
+      contents:
+        - id: Cassete9mmContributorRadio
+        - id: CasseteAction1ContributorRadio
+        - id: CasseteAfterDarkContributorRadio
+        - id: CasseteAlliWantIsYouContributorRadio
+        - id: CasseteArstotzkaOneContributorRadio
+        - id: CasseteArstotzkaThreeContributorRadio
+        - id: CasseteArstotzkaTwoContributorRadio
+        - id: CasseteJusttheTwoofUsAICoverContributorRadio
+        - id: CasseteBattotaiContributorRadio
+        - id: CasseteCPViolationContributorRadio
+        - id: CasseteCUTEDEPRESSEDContributorRadio
+        - id: CasseteCUTEDEPRESSEDLOWEDContributorRadio
+        - id: CasseteChinaContributorRadio
+        - id: CasseteCounterStrikeContributorRadio
+        - id: CasseteEcstacyContributorRadio
+        - id: CasseteErikaContributorRadio
+        - id: CasseteFDJContributorRadio
+        - id: CasseteFUNKESTRANHOContributorRadio
+        - id: CasseteFluxxwaveContributorRadio
+        - id: CasseteFunkedUpContributorRadio
+        - id: CasseteGSN1ContributorRadio
+        - id: CasseteGSN2ContributorRadio
+        - id: CasseteGeneralReleaseContributorRadio
+        - id: CasseteGeranContributorRadio
+        - id: CasseteGimnUSSRContributorRadio
+        - id: CasseteGrooveDealersContributorRadio
+        - id: CasseteHaydiCihadaContributorRadio
+        - id: CasseteHelpUserlfContributorRadio
+        - id: CasseteHorrorContributorRadio
+        - id: CasseteHLCombineContributorRadio
+        - id: CasseteInHeatXBloodPopContributorRadio
+        - id: CasseteInTheHouseInAHeartbeatContributorRadio
+        - id: CasseteIsolationContributorRadio
+        - id: CasseteLinkinParkIntheEndContributorRadio
+        - id: CasseteLittleDarkAgeContributorRadio
+        - id: CasseteLoseMyMindInHysteriaContributorRadio
+        - id: CasseteMamaPriyezzhayIMenyaZaberiContributorRadio
+        - id: CasseteNapoleonContributorRadio
+        - id: CasseteOtmenyajContributorRadio
+        - id: CasseteOstrovContributorRadio
+        - id: CasseteOurBenefactorsContributorRadio
+        - id: CasseteParentIssuesContributorRadio
+        - id: CassetePogasliSvechiContributorRadio
+        - id: CassetePrussiaGloryContributorRadio
+        - id: CasseteS1keContributorRadio
+        - id: CasseteSHADOWContributorRadio
+        - id: CasseteSPEEDISLIFEContributorRadio
+        - id: CasseteStayWithMeContributorRadio
+        - id: CasseteTheWindofFjordsContributorRadio
+        - id: CasseteTriageAtDawnContributorRadio
+        - id: CasseteTokyoRainContributorRadio
+        - id: CasseteUSSRContributorRadio
+        - id: CasseteUntrustUsContributorRadio
+        - id: CasseteXDContributorRadio
+        - id: CasseteYAuyduContributorRadio
+        - id: CasseteYaochenustalContributorRadio
+        - id: CasseteitaggiahContributorRadio
+        - id: CassetevietnamContributorRadio
+
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteArstotzkaOneContributorRadio
+  suffix: Stalker, кассета, (Glory to Arstotzka)
+  name: кассета "Glory to Arstotzka"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_1.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteArstotzkaTwoContributorRadio
+  suffix: Stalker, кассета, (Arstotzka Bad Ending)
+  name: кассета "Arstotzka Bad Ending"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_3.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteArstotzkaThreeContributorRadio
+  suffix: Stalker, кассета, (Arstotzka Good Ending)
+  name: кассета "Arstotzka Good Ending"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_2.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteChinaContributorRadio
+  suffix: Stalker, кассета, (Red Sun In The Sky)
+  name: кассета "Red Sun In The Sky"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/China.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteUSSRContributorRadio
+  suffix: Stalker, кассета, (Советский марш 2)
+  name: кассета "Советский марш 2"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/USSR.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteAction1ContributorRadio
+  suffix: Stalker, кассета, (Экшн 1)
+  name: кассета "Неизвестный экшн"
+  description: Совершенно новая кассета.. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Camelidia_1.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGeneralReleaseContributorRadio
+  suffix: Stalker, кассета, (General Release)
+  name: кассета "General Release"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/GeneralRelease.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGrooveDealersContributorRadio
+  suffix: Stalker, кассета, (Groove Dealers Salam 1996)
+  name: кассета "Salam 1996"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/GrooveDealers.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteInTheHouseInAHeartbeatContributorRadio
+  suffix: Stalker, кассета, (In The House In A Heartbeat)
+  name: кассета "In The House In A Heartbeat"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/InTheHouseInAHeartbeat.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGambit
+  suffix: Stalker, кассета, (Gambit "Баю Бай")
+  name: кассета "Gambit Баю Бай"
+  description: Иногда, музыка может заставить плакать.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Boombox/Gambit.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteAtomicHeartKomarovoContributorRadio
+  suffix: Stalker, кассета, (Atomic Heart)
+  name: кассета "Atomic Heart Komarovo"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/AtomicHeart.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteLinkinParkIntheEndContributorRadio
+  suffix: Stalker, кассета, (Linkin Park In the End)
+  name: кассета "In the End"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/LinkinParkIntheEnd.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTheWindofFjordsContributorRadio
+  suffix: Stalker, кассета, (The Windof Fjords)
+  name: кассета "The Windof Fjords"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/TheWindofFjords.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteNapoleonContributorRadio
+  suffix: Stalker, кассета, (Amour plastique Napoleon)
+  name: кассета "Amour plastique Napoleon"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Napoleon.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFDJContributorRadio
+  suffix: Stalker, кассета, (FDJ)
+  name: кассета "FDJ"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/FDJ.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteCounterStrikeContributorRadio
+  suffix: Stalker, кассета, (Counter-Strike)
+  name: кассета "Counter-Strike"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/CounterStrike.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePrussiaGloryContributorRadio
+  suffix: Stalker, кассета, (Preußens Gloria)
+  name: кассета "Preußens Gloria"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/PrussiaGlory.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGimnUSSRContributorRadio
+  suffix: Stalker, кассета, (Гимн СССР)
+  name: кассета "Гимн СССР"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/GimnUSSR.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteJusttheTwoofUsAICoverContributorRadio
+  suffix: Stalker, кассета, (Hitler AI Cover)
+  name: кассета "Just the Two of Us?"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/JusttheTwoofUsAICover.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteBattotaiContributorRadio
+  suffix: Stalker, кассета, (Battotai)
+  name: кассета "Battotai"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Battotai.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteAfterDarkContributorRadio
+  suffix: Stalker, кассета, (After Dark)
+  name: кассета "After Dark"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/AfterDark.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteLittleDarkAgeContributorRadio
+  suffix: Stalker, кассета, (Little Dark Age)
+  name: кассета "Little Dark Age"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/LittleDarkAge.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteYaochenustalContributorRadio
+  suffix: Stalker, кассета, (Я очень устал)
+  name: кассета "Я очень устал"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Yaochenustal.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFluxxwaveContributorRadio
+  suffix: Stalker, кассета, (Fluxxwave)
+  name: кассета "Fluxxwave"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Fluxxwave.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteOtmenyajContributorRadio
+  suffix: Stalker, кассета, (Отменяй)
+  name: кассета "Отменяй"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Otmenyaj.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteOstrovContributorRadio
+  suffix: Stalker, кассета, (Мы - Остров)
+  name: кассета "Мы - Остров"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Ostrov.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteS1keContributorRadio
+  suffix: Stalker, кассета, (S1KE)
+  name: кассета "S1KE"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/S1ke.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSHADOWContributorRadio
+  suffix: Stalker, кассета, (SHADOW)
+  name: кассета "SHADOW"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/SHADOW.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTokyoRainContributorRadio
+  suffix: Stalker, кассета, (Tokyo Rain)
+  name: кассета "Tokyo Rain"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/TokyoRain.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFunkedUpContributorRadio
+  suffix: Stalker, кассета, (Funked Up)
+  name: кассета "Funked Up"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/FunkedUp.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteLoseMyMindInHysteriaContributorRadio
+  suffix: Stalker, кассета, (Lose My Mind In Hysteria)
+  name: кассета "Lose My Mind In Hysteria"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/LoseMyMindInHysteria.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteOurBenefactorsContributorRadio
+  suffix: Stalker, кассета, (Our Benefactors)
+  name: кассета "Our Benefactors"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/OurBenefactors.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteHLCombineContributorRadio
+  suffix: Stalker, кассета, (Combine Harvester)
+  name: кассета "Combine Harvester"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/HLCombine.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteTriageAtDawnContributorRadio
+  suffix: Stalker, кассета, (Triage at Dawn)
+  name: кассета "Triage at Dawn"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/TriageAtDawn.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteCPViolationContributorRadio
+  suffix: Stalker, кассета, (CP Violation)
+  name: кассета "CP Violation"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/CPViolation.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteYAuyduContributorRadio
+  suffix: Stalker, кассета, (Я уйду)
+  name: кассета "Я уйду"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/YAuydu.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetePogasliSvechiContributorRadio
+  suffix: Stalker, кассета, (Погасли свечи)
+  name: кассета "Погасли свечи"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/PogasliSvechi.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteMamaPriyezzhayIMenyaZaberiContributorRadio
+  suffix: Stalker, кассета, (Мама приезжай и меня забери)
+  name: кассета "Мама приезжай и меня забери"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/MamaPriyezzhayIMenyaZaberi.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGSN1ContributorRadio
+  suffix: Stalker, кассета, (ГСН - А я повыше закатаю рукава)
+  name: кассета "ГСН - А я повыше закатаю рукава"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/GSN1.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGSN2ContributorRadio
+  suffix: Stalker, кассета, (ГСН - Российский Спецназ)
+  name: кассета "ГСН - Российский Спецназ"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/GSN2.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteGeranContributorRadio
+  suffix: Stalker, кассета, (Цветёт герань)
+  name: кассета "Цветёт герань"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Geran.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteIsolationContributorRadio
+  suffix: Stalker, кассета, (Isolation)
+  name: кассета "Isolation"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Isolation.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteXDContributorRadio
+  suffix: Stalker, кассета, (XD Meme)
+  name: кассета "XD"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/XD.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteHaydiCihadaContributorRadio
+  suffix: Stalker, кассета, (Haydi Cihada)
+  name: кассета "Haydi Cihada"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/HaydiCihada.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteitaggiahContributorRadio
+  suffix: Stalker, кассета, (itaggiah)
+  name: кассета "itaggiah"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/itaggiah.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteHorrorContributorRadio
+  suffix: Stalker, кассета, (Horror)
+  name: кассета "???"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/Horror.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: Cassete9mmContributorRadio
+  suffix: Stalker, кассета, (9mm)
+  name: кассета "9mm"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/9mm.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteHelpUserlfContributorRadio
+  suffix: Stalker, кассета, (help_userlf)
+  name: кассета "help_userlf"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/helpuserlf.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteEcstacyContributorRadio
+  suffix: Stalker, кассета, (ecstacy)
+  name: кассета "ecstacy"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/ecstacy.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteAlliWantIsYouContributorRadio
+  suffix: Stalker, кассета, (all i want is you)
+  name: кассета "all i want is you"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/AlliWantIsYou.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteStayWithMeContributorRadio
+  suffix: Stalker, кассета, (Stay With Me)
+  name: кассета "Stay With Me"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/StayWithMe.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteInHeatXBloodPopContributorRadio
+  suffix: Stalker, кассета, (In Heat X BloodPop!)
+  name: кассета "In Heat X BloodPop!"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/InHeatXBloodPop.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteUntrustUsContributorRadio
+  suffix: Stalker, кассета, (Untrust Us)
+  name: кассета "Untrust Us"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/UntrustUs.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteFUNKESTRANHOContributorRadio
+  suffix: Stalker, кассета, (FUNK ESTRANHO)
+  name: кассета "FUNK ESTRANHO"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/FUNKESTRANHO.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteCUTEDEPRESSEDContributorRadio
+  suffix: Stalker, кассета, (CUTE DEPRESSED)
+  name: кассета "CUTE DEPRESSED"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSED.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteCUTEDEPRESSEDLOWEDContributorRadio
+  suffix: Stalker, кассета, (CUTE DEPRESSED SLOWED)
+  name: кассета "CUTE DEPRESSED SLOWED"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSEDLOWED.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteParentIssuesContributorRadio
+  suffix: Stalker, кассета, (Parent issues)
+  name: кассета "Parent issues"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/ParentIssues.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CasseteSPEEDISLIFEContributorRadio
+  suffix: Stalker, кассета, (SPEED IS LIFE)
+  name: кассета "SPEED IS LIFE"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/SPEEDISLIFE.ogg
+  - type: Sprite
+    state: c6
+
+- type: entity
+  parent: BaseMusicTape
+  id: CassetevietnamContributorRadio
+  suffix: Stalker, кассета, (Fortunate Son)
+  name: кассета "Fortunate Son"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: MusicTape
+    songName: В РАЗРАБОТКЕ
+    sound: /Audio/_Stalker/Music/Radio/Contributor/vietnam.ogg
+  - type: Sprite
+    state: c6
