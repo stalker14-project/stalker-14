@@ -1,0 +1,1 @@
+news-write-ui-article-content-label = Сообщение:
