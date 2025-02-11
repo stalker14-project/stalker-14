@@ -2,7 +2,7 @@
   id: StalkerProjectPawn
   name: Следователь Проекта
   icon: project-1
-  description: То что приказывает им Алгоритм, то они и сделают.
+  description: Они выполняют наставления алгоритма.
   playTimeTracker: JobProjectPawn
   whitelisted: true
   requirements:
@@ -14,10 +14,14 @@
       - Human
       - Dwarf
   startingGear: ProjectPawnGear
-  supervisors: Вы подчиняетесь всему Алгоритму «Проекта», а также Оркестратору «Проекта»
+  supervisors: Вы подчиняетесь Алгоритму и Оркестратору «Проекта»
   special:
     - !type:AddComponentSpecial
       components:
+        - type: Psyonics
+          psy: 300
+        - type: PsyonicsActionSmoke 
+          cost: 30
         - type: Access
           tags:
             - ProjectPawn
@@ -52,7 +56,7 @@
   id: StalkerProjectOrchestrator
   name: Оркестратор Проекта
   icon: project-3
-  description: Тайный X
+  description: Следит за выполнением Алгоритма
   playTimeTracker: JobProjectOrchestrator
   whitelisted: true
   requirements:
@@ -64,12 +68,16 @@
       - Human
       - Dwarf
   startingGear: ProjectOrchestratorGear
-  supervisors: Вы управляете всем Алгоритмом «Проекта», ваша обьязанность - направлять свой «Проект» в нужное место.
+  supervisors: Как Оркестратор, вы подчиняетесь непосредственно Алгоритму.
   special:
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-        - type: PsyonicsActionSmoke
+          psy: 500
+        - type: PsyonicsActionSmoke 
+          cost: 30
+        - type: PsyonicsActionRift
+          cost: 50
         - type: Access
           tags:
             - ProjectPawn
