@@ -2024,23 +2024,13 @@
       contents:
         - id: Cassete9mmContributorRadio
         - id: CasseteAction1ContributorRadio
-        - id: CasseteAfterDarkContributorRadio
-        - id: CasseteAlliWantIsYouContributorRadio
         - id: CasseteArstotzkaOneContributorRadio
         - id: CasseteArstotzkaThreeContributorRadio
         - id: CasseteArstotzkaTwoContributorRadio
-        - id: CasseteJusttheTwoofUsAICoverContributorRadio
         - id: CasseteBattotaiContributorRadio
         - id: CasseteCPViolationContributorRadio
-        - id: CasseteCUTEDEPRESSEDContributorRadio
-        - id: CasseteCUTEDEPRESSEDLOWEDContributorRadio
         - id: CasseteChinaContributorRadio
-        - id: CasseteCounterStrikeContributorRadio
-        - id: CasseteEcstacyContributorRadio
-        - id: CasseteErikaContributorRadio
         - id: CasseteFDJContributorRadio
-        - id: CasseteFUNKESTRANHOContributorRadio
-        - id: CasseteFluxxwaveContributorRadio
         - id: CasseteFunkedUpContributorRadio
         - id: CasseteGSN1ContributorRadio
         - id: CasseteGSN2ContributorRadio
@@ -2048,37 +2038,24 @@
         - id: CasseteGeranContributorRadio
         - id: CasseteGimnUSSRContributorRadio
         - id: CasseteGrooveDealersContributorRadio
-        - id: CasseteHaydiCihadaContributorRadio
-        - id: CasseteHelpUserlfContributorRadio
         - id: CasseteHorrorContributorRadio
-        - id: CasseteHLCombineContributorRadio
-        - id: CasseteInHeatXBloodPopContributorRadio
         - id: CasseteInTheHouseInAHeartbeatContributorRadio
-        - id: CasseteIsolationContributorRadio
         - id: CasseteLinkinParkIntheEndContributorRadio
-        - id: CasseteLittleDarkAgeContributorRadio
-        - id: CasseteLoseMyMindInHysteriaContributorRadio
         - id: CasseteMamaPriyezzhayIMenyaZaberiContributorRadio
         - id: CasseteNapoleonContributorRadio
-        - id: CasseteOtmenyajContributorRadio
         - id: CasseteOstrovContributorRadio
         - id: CasseteOurBenefactorsContributorRadio
-        - id: CasseteParentIssuesContributorRadio
         - id: CassetePogasliSvechiContributorRadio
         - id: CassetePrussiaGloryContributorRadio
         - id: CasseteS1keContributorRadio
-        - id: CasseteSHADOWContributorRadio
         - id: CasseteSPEEDISLIFEContributorRadio
         - id: CasseteStayWithMeContributorRadio
         - id: CasseteTheWindofFjordsContributorRadio
         - id: CasseteTriageAtDawnContributorRadio
         - id: CasseteTokyoRainContributorRadio
         - id: CasseteUSSRContributorRadio
-        - id: CasseteUntrustUsContributorRadio
-        - id: CasseteXDContributorRadio
         - id: CasseteYAuyduContributorRadio
         - id: CasseteYaochenustalContributorRadio
-        - id: CasseteitaggiahContributorRadio
         - id: CassetevietnamContributorRadio
 
 
@@ -2354,24 +2331,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CasseteCounterStrikeContributorRadio
-  suffix: Stalker, кассета, (Counter-Strike)
-  name: кассета "Counter-Strike"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/CounterStrike.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
   id: CassetePrussiaGloryContributorRadio
   suffix: Stalker, кассета, (Preußens Gloria)
   name: кассета "Preußens Gloria"
@@ -2408,24 +2367,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CasseteJusttheTwoofUsAICoverContributorRadio
-  suffix: Stalker, кассета, (Hitler AI Cover)
-  name: кассета "Just the Two of Us?"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/JusttheTwoofUsAICover.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
   id: CasseteBattotaiContributorRadio
   suffix: Stalker, кассета, (Battotai)
   name: кассета "Battotai"
@@ -2444,42 +2385,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CasseteAfterDarkContributorRadio
-  suffix: Stalker, кассета, (After Dark)
-  name: кассета "After Dark"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/AfterDark.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteLittleDarkAgeContributorRadio
-  suffix: Stalker, кассета, (Little Dark Age)
-  name: кассета "Little Dark Age"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/LittleDarkAge.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
   id: CasseteYaochenustalContributorRadio
   suffix: Stalker, кассета, (Я очень устал)
   name: кассета "Я очень устал"
@@ -2489,42 +2394,6 @@
     self: 0.15
   - type: Cassete
     sound: /Audio/_Stalker/Music/Radio/Contributor/Yaochenustal.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteFluxxwaveContributorRadio
-  suffix: Stalker, кассета, (Fluxxwave)
-  name: кассета "Fluxxwave"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Fluxxwave.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteOtmenyajContributorRadio
-  suffix: Stalker, кассета, (Отменяй)
-  name: кассета "Отменяй"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Otmenyaj.ogg
   - type: Tag
     tags:
       - Cassete
@@ -2561,24 +2430,6 @@
     self: 0.15
   - type: Cassete
     sound: /Audio/_Stalker/Music/Radio/Contributor/S1ke.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteSHADOWContributorRadio
-  suffix: Stalker, кассета, (SHADOW)
-  name: кассета "SHADOW"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/SHADOW.ogg
   - type: Tag
     tags:
       - Cassete
@@ -2651,24 +2502,6 @@
     self: 0.15
   - type: Cassete
     sound: /Audio/_Stalker/Music/Radio/Contributor/OurBenefactors.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteHLCombineContributorRadio
-  suffix: Stalker, кассета, (Combine Harvester)
-  name: кассета "Combine Harvester"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/HLCombine.ogg
   - type: Tag
     tags:
       - Cassete
@@ -2822,78 +2655,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CasseteIsolationContributorRadio
-  suffix: Stalker, кассета, (Isolation)
-  name: кассета "Isolation"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Isolation.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteXDContributorRadio
-  suffix: Stalker, кассета, (XD Meme)
-  name: кассета "XD"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/XD.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteHaydiCihadaContributorRadio
-  suffix: Stalker, кассета, (Haydi Cihada)
-  name: кассета "Haydi Cihada"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/HaydiCihada.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteitaggiahContributorRadio
-  suffix: Stalker, кассета, (itaggiah)
-  name: кассета "itaggiah"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/itaggiah.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
   id: CasseteHorrorContributorRadio
   suffix: Stalker, кассета, (Horror)
   name: кассета "???"
@@ -2930,60 +2691,6 @@
 
 - type: entity
   parent: BaseItem
-  id: CasseteHelpUserlfContributorRadio
-  suffix: Stalker, кассета, (help_userlf)
-  name: кассета "help_userlf"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/helpuserlf.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteEcstacyContributorRadio
-  suffix: Stalker, кассета, (ecstacy)
-  name: кассета "ecstacy"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/ecstacy.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteAlliWantIsYouContributorRadio
-  suffix: Stalker, кассета, (all i want is you)
-  name: кассета "all i want is you"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/AlliWantIsYou.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
   id: CasseteStayWithMeContributorRadio
   suffix: Stalker, кассета, (Stay With Me)
   name: кассета "Stay With Me"
@@ -2993,114 +2700,6 @@
     self: 0.15
   - type: Cassete
     sound: /Audio/_Stalker/Music/Radio/Contributor/StayWithMe.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteInHeatXBloodPopContributorRadio
-  suffix: Stalker, кассета, (In Heat X BloodPop!)
-  name: кассета "In Heat X BloodPop!"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/InHeatXBloodPop.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteUntrustUsContributorRadio
-  suffix: Stalker, кассета, (Untrust Us)
-  name: кассета "Untrust Us"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/UntrustUs.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteFUNKESTRANHOContributorRadio
-  suffix: Stalker, кассета, (FUNK ESTRANHO)
-  name: кассета "FUNK ESTRANHO"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/FUNKESTRANHO.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteCUTEDEPRESSEDContributorRadio
-  suffix: Stalker, кассета, (CUTE DEPRESSED)
-  name: кассета "CUTE DEPRESSED"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSED.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteCUTEDEPRESSEDLOWEDContributorRadio
-  suffix: Stalker, кассета, (CUTE DEPRESSED SLOWED)
-  name: кассета "CUTE DEPRESSED SLOWED"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSEDLOWED.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteParentIssuesContributorRadio
-  suffix: Stalker, кассета, (Parent issues)
-  name: кассета "Parent issues"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/ParentIssues.ogg
   - type: Tag
     tags:
       - Cassete
