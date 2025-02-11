@@ -8,17 +8,21 @@
         STCombatKnife: 10
             # Guns
         WeaponPistolStalkerGlock: 200
+        STWeaponRevolverSWModel625: 1650
     - name: Магазины
       priority: 2
       items:
         BaseGlockMag10: 100
         GlockMag17: 200
         GlockMag24: 400
+        SpeedLoader45ACPEmpty: 75
     - name: Боеприпасы
       priority: 3
       items:
         919PSOGJBox: 75
         919PSTBox: 180
+        45ACPLFMJBox: 100
+        45ACPMFMJBox: 250
     - name: Броня
       priority: 4
       items:
@@ -26,12 +30,14 @@
         STClothingHeadTinfoil: 200
           # OuterClothing #
         ClothingOuterJacketSCI: 60 # T1 - PVE
-        ClothingOuterArmorSSP99Amber: 2250
-        ClothingOuterArmorSSP99: 2750
+        ClothingOuterArmorSSP99Amber: 1750
+        ClothingOuterArmorSSP99: 2100
         ClothingOuterArmorSSP99White: 2750
         ClothingOuterArmorSSP24Sapfire: 3250
         ClothingOuterArmorSevaSciWhite: 1750
         ClothingOuterArmorSevaSciRed: 1750
+        ClothingOuterArmorSSP24Ruby: 2750
+        ClothingOuterArmorSSP24Topaz: 2750
     - name: Хранилища и Контейнеры
       priority: 5
       items:
@@ -52,7 +58,6 @@
           # Cloaks
         ClothingOuterCoatDoshdevik: 60 # T1
           # Gasmasks
-        ClothingMaskGasFreedom: 100 # T1
         ClothingMaskGasM40: 200 # T2
         ClothingMaskM51: 1000
     - name: Исследовательское снаряжение
@@ -62,6 +67,7 @@
         BoxArtcont: 250 # T1
         ZoneAnomalyDetectorAD1: 250 # T1
         ZoneAnomalyDetectorAD2: 650 # T2
+        ZoneAnomalyDetectorAD3: 1000 # Т3
           # Detectors
         ZoneArtifactDetectorPulse: 50 # T1
         ZoneArtifactDetectorHunter: 100 # T2
@@ -123,9 +129,9 @@
         radioprotectpill: 70
         Bloodpack: 90
         psyblock: 200
-        MedkitAI2: 50
-        MedkitScience: 500
-        MedkitMilitary: 150
+        MedkitAI2: 20
+        MedkitScience: 150
+        MedkitMilitary: 75
         Defibrillator: 700
         # Crates
         AntiradCrate: 200
