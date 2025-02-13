@@ -88,18 +88,18 @@
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: 3
-        Slash: 3
-        Piercing: 3
+        Blunt: 6
+        Slash: 6
+        Piercing: 1
         Heat: 2
         Caustic: 1
         Radiation: 2
         Shock: 1
         Psy: 1
       coefficients:
-        Blunt: 0.55
-        Slash: 0.55
-        Piercing: 0.90
+        Blunt: 0.50
+        Slash: 0.50
+        Piercing: 0.95
         Heat: 0.60
         Caustic: 0.80
         Shock: 0.80
@@ -135,8 +135,27 @@
   description: Он представляет собой высококачественную модификацию базового костюма эколога SSP-99. Единственное внешнее различие между ними заключается только в цвете — стандартный SSP-99 тёмно-оранжевый, а SSP-99M представлен в светло-зелёном цвете.
   components:
   - type: Armor
-    armorLevels:
-      radiation: 6
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 3
+        Heat: 3
+        Caustic: 1
+        Radiation: 10
+        Shock: 1
+        Psy: 1
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+        Heat: 0.60
+        Caustic: 0.70
+        Shock: 0.60
+        Psy: 0.80
+        Radiation: 0.90
+        Compression: 0.80
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/topaz.rsi
     state: icon-suit
@@ -152,6 +171,18 @@
   description: Защитит от аномалий и радиации, но точно не от пуль.
   categories: [ HideSpawnMenu ]
   components:
+    - type: Armor
+      armorClass: 1
+      modifiers:
+        flatReductions:
+          Radiation: 0
+          Caustic: 1
+        coefficients:
+          Heat: 0.55
+          Radiation: 0.70
+          Caustic: 0.55
+          Shock: 0.55
+          Psy: 0.8
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/topaz.rsi
     - type: Clothing
@@ -166,9 +197,27 @@
   description: Высококачественный модифицированный комбинезон ССП-24М, в котором была улучшена защита от пуль и осколков, предназначенный для экипировки охраны научных экспедиций для работы под напряжением.
   components:
   - type: Armor
-    armorLevels:
-      shock: 6
-      psy: 6
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 2
+        Slash: 2
+        Piercing: 6
+        Heat: 3
+        Caustic: 1
+        Radiation: 3
+        Shock: 6
+        Psy: 0
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.65
+        Heat: 0.60
+        Caustic: 0.70
+        Shock: 0.60
+        Psy: 0.80
+        Radiation: 0.80
+        Compression: 0.80
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/Jewelry/sapfire.rsi
     state: icon-suit
