@@ -39,6 +39,6 @@ device-address-prefix-sensor-monitor = МОН-
 device-net-id-private = Частные
 device-net-id-wired = Проводные
 device-net-id-wireless = Беспроводные
-device-net-id-apc = ЛКП
+device-net-id-apc = Электрощиток
 device-net-id-atmos-devices = Атмос-устройства
 device-net-id-reserved = Резерв

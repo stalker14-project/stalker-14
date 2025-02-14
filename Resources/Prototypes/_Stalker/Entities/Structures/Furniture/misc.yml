@@ -103,3 +103,26 @@
         - MachineMask
         layer:
         - WallLayer
+
+- type: entity
+  parent: BaseStructure
+  id: ComputerTablePack
+  name: компьютерный стол 
+  description: Старый компьютерный стол с лампой и древним компьютером. Оно тебе надо?
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/bluprint_computer.rsi
+    state: base
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.376875,-0.275,0.396875,0.275"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
