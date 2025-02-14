@@ -16,6 +16,6 @@ stat-item-values = Размеры предметов
 stat-item-id = ID
 stat-item-price = Размер
 # Draw Rate
-stat-drawrate-values = Уровень потребления ЛКП
+stat-drawrate-values = Уровень потребления Электрощитка
 stat-drawrate-id = ID
 stat-drawrate-rate = Уровень потребления (Вт)

@@ -1,4 +1,4 @@
-apc-menu-title = ЛКП
+apc-menu-title = Электрощиток
 apc-menu-breaker-label = Главный рубильник
 apc-menu-breaker-button = Переключить
 apc-menu-power-label = Нагрузка

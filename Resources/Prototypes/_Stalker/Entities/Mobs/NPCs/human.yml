@@ -1,0 +1,35 @@
+- type: entity
+  name: сталкер новичок
+  parent: BaseMobHuman
+  id: MobStalkerNewbie
+  suffix: Stalker
+  components:
+    - type: NpcFactionMember
+      factions:
+        - NanoTrasen
+    - type: Loadout
+      prototypes:
+        - StalkerNewbieGearRuin
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+        
+- type: entity
+  name: бешеный сталкер новичок
+  parent: BaseMobHuman
+  id: MobStalkerNewbieEvil
+  suffix: Stalker, Evil
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: Loadout
+      prototypes:
+        - StalkerNewbieGearRuin
+    - type: InputMover
+    - type: MobMover
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
