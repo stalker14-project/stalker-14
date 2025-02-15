@@ -3,14 +3,14 @@
   id: STClothingOuterArmorVeryHeavy
   name: КСН-13 «Бегемот»
   description: Костюм Специального Назначения «Бегемот», используется государственными оперативниками в условиях ЧЗО.
-  suffix: ST, T4, PvE
+  suffix: ST, T4, PvP
   components:
   - type: STWeight
     self: 6.5
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/armored_merc_armor.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/HeavySuitBegemot.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/armored_merc_armor.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/HeavySuitBegemot.rsi
   - type: Tag
     tags:
       - BlockBelt
@@ -34,22 +34,49 @@
     armorClass: 4
     modifiers:
       flatReductions:
-        Blunt: 8
-        Slash: 8
-        Piercing: 6
-        Radiation: 2
+        Blunt: 6
+        Slash: 5
+        Piercing: 9
+        Radiation: 1
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.7
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.5
         Heat: 0.8
         Radiation: 0.95
-        Caustic: 0.95
+        Caustic: 0.7
         Shock: 0.9
         Psy: 1
         Compression: 0.8
   - type: ExplosionResistance
-    damageCoefficient: 0.80
+    damageCoefficient: 0.7
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodJacketMerc
+    clothingPrototype: STClothingOuterArmorVeryHeavyHelmet
     slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingOuterArmorVeryHeavyHelmet
+  categories: [ HideSpawnMenu ]
+  name: Шлем «Бегемота»
+  description: Шлем от КСН-13
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/begemot_helm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/begemot_helm.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      coefficients:
+        Piercing: 0.7
+        Slash: 0.8
+        Blunt: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 360
