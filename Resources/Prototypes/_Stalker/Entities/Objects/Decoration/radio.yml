@@ -7,8 +7,8 @@
   suffix: ST, переносной
   description: Кассетный плеер, представленный в 1983 году и выполненный в ультракомпактном корпусе, который по габаритам меньше даже самой аудиокассеты. Это стало возможным за счёт раздвижной конструкции, что и позволяло установить внутрь кассету.
   components:
-  - type: STWeight
-    self: 0.5
+    - type: STWeight
+      self: 0.5
     - type: BoomBox
       slots:
         boombox_slot:
@@ -40,9 +40,9 @@
       interfaces:
         enum.BoomBoxUiKey.Key:
           type: BoomBoxBoundUi
-  - type: Sprite
-    sprite: _Stalker/Objects/Devices/mp3player.rsi
-    state: base
+    - type: Sprite
+      sprite: _Stalker/Objects/Devices/mp3player.rsi
+      state: base
 
 - type: entity
   id: RadioStandStalkerIgorIvanovichTheme
@@ -76,6 +76,8 @@
     - type: Sprite
       sprite: _Stalker/Objects/Misc/casete.rsi
       state: c1
+    - type: StaticPrice
+      price: 1000
     - type: Tag
       tags:
         - BoomBoxTape
@@ -83,7 +85,7 @@
       size: Small
     - type: CargoSellBlacklist
     - type: BoomBoxTape
-      soundPath: /Audio/BoomBox/AssHole.ogg
+      soundPath: /Audio/_Stalker/Music/Radio/kombat.ogg
       syndStatus: false
       syndItem: "SyndicatePersonalAI"
 
@@ -96,11 +98,8 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/kombat.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/kombat.ogg
 
 - type: entity
   parent: BaseBoomBoxTape
@@ -111,12 +110,8 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/esttolkomig.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
-
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/esttolkomig.ogg
 
 - type: entity
   parent: BaseBoomBoxTape
@@ -127,11 +122,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/radio_Svoboda.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/radio_Svoboda.ogg
+
 
 
 - type: entity
@@ -143,11 +136,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/cherniy_stalker.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/cherniy_stalker.ogg
+
 
 
 - type: entity
@@ -159,11 +150,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/gorod_kotorogo_net.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/gorod_kotorogo_net.ogg
+
 
 
 - type: entity
@@ -175,11 +164,9 @@
   components:
   - type: STWeight
     self: 0.20
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/sudnayanoch.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/sudnayanoch.ogg
+
 
 
 - type: entity
@@ -191,11 +178,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/bar_chistoe_nebo.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/bar_chistoe_nebo.ogg
+
 
 
 - type: entity
@@ -207,11 +192,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/soviet.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/soviet.ogg
+
 
 
 - type: entity
@@ -223,11 +206,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/rus_radio2.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/rus_radio2.ogg
+
 
 
 - type: entity
@@ -239,11 +220,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/un_radio2.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/un_radio2.ogg
+
 
 
 - type: entity
@@ -255,11 +234,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/un_radio.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/un_radio.ogg
+
 
 
 - type: entity
@@ -271,11 +248,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/faina.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/faina.ogg
+
 
 
 - type: entity
@@ -287,11 +262,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/poshli_vi_vse.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/poshli_vi_vse.ogg
+
 
 
 - type: entity
@@ -303,11 +276,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/belaya_noch.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/belaya_noch.ogg
+
 
 
 - type: entity
@@ -319,11 +290,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/holding_out_for_a_hero.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/holding_out_for_a_hero.ogg
+
 
 
 # ДОНАТНЫЕ КАССЕТЫ
@@ -337,11 +306,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/blowout.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/blowout.ogg
+
 
 
 - type: entity
@@ -353,11 +320,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Folksong.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Folksong.ogg
+
 
 
 - type: entity
@@ -369,11 +334,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Kukushka.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Kukushka.ogg
+
 
 
 - type: entity
@@ -385,11 +348,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Moldovanka.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Moldovanka.ogg
+
 
 
 - type: entity
@@ -401,11 +362,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Midge.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Midge.ogg
+
 
 
 - type: entity
@@ -417,11 +376,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/kupi_mne.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/kupi_mne.ogg
+
 
 
 - type: entity
@@ -433,11 +390,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Tri_sentyabrya.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Tri_sentyabrya.ogg
+
 
 
 - type: entity
@@ -449,11 +404,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Skullfist.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Skullfist.ogg
+
 
 
 - type: entity
@@ -465,11 +418,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Nevesta_palacha.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Nevesta_palacha.ogg
+
 
 
 - type: entity
@@ -481,11 +432,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/600mb.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/600mb.ogg
+
 
 
 - type: entity
@@ -497,11 +446,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/avtor.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/avtor.ogg
+
 
 
 - type: entity
@@ -513,11 +460,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/chapaevskaya_mel.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/chapaevskaya_mel.ogg
+
 
 
 - type: entity
@@ -529,11 +474,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/den.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/den.ogg
+
 
 
 - type: entity
@@ -545,11 +488,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/kometa.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/kometa.ogg
+
 
 
 - type: entity
@@ -561,11 +502,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/ledorub.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/ledorub.ogg
+
 
 
 - type: entity
@@ -577,11 +516,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/patroni.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/patroni.ogg
+
 
 
 - type: entity
@@ -593,11 +530,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/vremya.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/vremya.ogg
+
 
 
 - type: entity
@@ -609,11 +544,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/vstavai_Donbass.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/vstavai_Donbass.ogg
+
 
 
 - type: entity
@@ -625,11 +558,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/21.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/21.ogg
+
 
 
 - type: entity
@@ -641,11 +572,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Robby.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Robby.ogg
+
 
 
 - type: entity
@@ -657,11 +586,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Weather.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Weather.ogg
+
 
 
 - type: entity
@@ -673,11 +600,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/wind.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/wind.ogg
+
 
 
 - type: entity
@@ -689,11 +614,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Garoad.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Garoad.ogg
+
 
 
 - type: entity
@@ -705,11 +628,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Miracle.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Miracle.ogg
+
 
 
 - type: entity
@@ -721,11 +642,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Nightcall.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Nightcall.ogg
+
 
 
 - type: entity
@@ -737,11 +656,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/bamzy.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/bamzy.ogg
+
 
 
 - type: entity
@@ -753,11 +670,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/VoiniSveta.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/VoiniSveta.ogg
+
 
 
 - type: entity
@@ -769,11 +684,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/NieMaNieba.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/NieMaNieba.ogg
+
 
 
 - type: entity
@@ -785,11 +698,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Serpent.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Serpent.ogg
+
 
 
 - type: entity
@@ -801,11 +712,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/GimmeGimme.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/GimmeGimme.ogg
+
 
 
 - type: entity
@@ -817,11 +726,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Warning.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Warning.ogg
+
 
 
 - type: entity
@@ -833,11 +740,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Trin_trava.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Trin_trava.ogg
+
 
 
 - type: entity
@@ -849,11 +754,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Bey.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Bey.ogg
+
 
 
 - type: entity
@@ -865,11 +768,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Finskiy_noj.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Finskiy_noj.ogg
+
 
 
 - type: entity
@@ -881,11 +782,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Mercenary.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Mercenary.ogg
+
 
 
 - type: entity
@@ -897,11 +796,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/HardbassNight.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/HardbassNight.ogg
+
 
 
 - type: entity
@@ -913,11 +810,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/territory.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/territory.ogg
+
 
 
 - type: entity
@@ -929,11 +824,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/vova_vist.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/vova_vist.ogg
+
 
 
 - type: entity
@@ -945,11 +838,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/gangstas.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/gangstas.ogg
+
 
 
 - type: entity
@@ -961,11 +852,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/jyc.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/jyc.ogg
+
 
 
 - type: entity
@@ -977,11 +866,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/helldivers.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/helldivers.ogg
+
 
 
 - type: entity
@@ -993,11 +880,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/govnovoz.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/govnovoz.ogg
+
 
 
 - type: entity
@@ -1009,11 +894,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/ramstain.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/ramstain.ogg
+
 
 
 - type: entity
@@ -1025,11 +908,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/accept.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/accept.ogg
+
 
 
 - type: entity
@@ -1041,11 +922,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/laura.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/laura.ogg
+
 
 
 - type: entity
@@ -1057,11 +936,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Horse.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Horse.ogg
+
 
 
 - type: entity
@@ -1073,11 +950,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/lonely.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/lonely.ogg
+
 
 
 - type: entity
@@ -1089,11 +964,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/KombatL.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/KombatL.ogg
+
 
 
 - type: entity
@@ -1105,11 +978,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/kofesiga.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/kofesiga.ogg
+
 
 
 - type: entity
@@ -1121,11 +992,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/kanikuli.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/kanikuli.ogg
+
 
 
 - type: entity
@@ -1137,11 +1006,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/bespokoynik.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/bespokoynik.ogg
+
 
 
 - type: entity
@@ -1153,11 +1020,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/glazoedy.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/glazoedy.ogg
+
 
 
 - type: entity
@@ -1169,11 +1034,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/eagles.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/eagles.ogg
+
 
 
 - type: entity
@@ -1185,11 +1048,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/poor.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/poor.ogg
+
 
 
 - type: entity
@@ -1201,11 +1062,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/26.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/26.ogg
+
 
 
 - type: entity
@@ -1217,11 +1076,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/desire.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/desire.ogg
+
 
 
 - type: entity
@@ -1233,11 +1090,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/grabli.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/grabli.ogg
+
 
 
 # Groups Donate Cassets
@@ -1253,11 +1108,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/glaza.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/glaza.ogg
+
 
 
 - type: entity
@@ -1269,11 +1122,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/blyad.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/blyad.ogg
+
 
 
 - type: entity
@@ -1285,11 +1136,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/fraer.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/fraer.ogg
+
 
 
 - type: entity
@@ -1301,11 +1150,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kolshik.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kolshik.ogg
+
 
 
 - type: entity
@@ -1317,11 +1164,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kupola.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kupola.ogg
+
 
 
 - type: entity
@@ -1333,11 +1178,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/raer.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/raer.ogg
+
 
 
 - type: entity
@@ -1349,11 +1192,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/central.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/central.ogg
+
 
 
 - type: entity
@@ -1365,11 +1206,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/limon.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/limon.ogg
+
 
 
 - type: entity
@@ -1381,11 +1220,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/milana.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/milana.ogg
+
 
 
 - type: entity
@@ -1397,11 +1234,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/gopstop.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/gopstop.ogg
+
 
 
 # Donate Premium
@@ -1415,11 +1250,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/cold.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/cold.ogg
+
 
 
 - type: entity
@@ -1431,11 +1264,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/saluki.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/saluki.ogg
+
 
 
 - type: entity
@@ -1447,11 +1278,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/galafo.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/galafo.ogg
+
 
 
 - type: entity
@@ -1463,11 +1292,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/neonbones.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/neonbones.ogg
+
 
 
 - type: entity
@@ -1479,11 +1306,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/odnoi.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/odnoi.ogg
+
 
 
 - type: entity
@@ -1495,11 +1320,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/snova.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/snova.ogg
+
 
 
 - type: entity
@@ -1511,11 +1334,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/svidanie.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/svidanie.ogg
+
 
 
 - type: entity
@@ -1527,11 +1348,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/zoloto.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/zoloto.ogg
+
 
 
 - type: entity
@@ -1543,11 +1362,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/plaj.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/plaj.ogg
+
 
 
 - type: entity
@@ -1559,11 +1376,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/zador.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/zador.ogg
+
 
 
 - type: entity
@@ -1575,11 +1390,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/dornc.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/dornc.ogg
+
 
 
 - type: entity
@@ -1591,11 +1404,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/galafon.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/galafon.ogg
+
 
 
 - type: entity
@@ -1607,11 +1418,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/letop.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/letop.ogg
+
 
 
 - type: entity
@@ -1623,11 +1432,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/khaskin.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/khaskin.ogg
+
 
 
 - type: entity
@@ -1639,11 +1446,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/frizk.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/frizk.ogg
+
 
 
 - type: entity
@@ -1655,11 +1460,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/skripa.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/skripa.ogg
+
 
 
 - type: entity
@@ -1671,11 +1474,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/bumka.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/bumka.ogg
+
 
 
 - type: entity
@@ -1687,11 +1488,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/chrisv.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/chrisv.ogg
+
 
 
 - type: entity
@@ -1703,11 +1502,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/pgetto.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/pgetto.ogg
+
 
 
 - type: entity
@@ -1719,11 +1516,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/gach.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/gach.ogg
+
 
 
 - type: entity
@@ -1735,11 +1530,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/gradusi.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/gradusi.ogg
+
 
 
 - type: entity
@@ -1751,11 +1544,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Premium/cco.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Premium/cco.ogg
+
 
 
 - type: entity
@@ -1767,11 +1558,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
+
 
 
 - type: entity
@@ -1783,11 +1572,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu.ogg
+
 
 
 - type: entity
@@ -1799,11 +1586,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
+
 
 
 # Contributor
@@ -1918,11 +1703,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_1.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_1.ogg
+
 
 
 - type: entity
@@ -1934,11 +1717,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_3.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_3.ogg
+
 
 
 - type: entity
@@ -1950,11 +1731,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_2.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_2.ogg
+
 
 
 - type: entity
@@ -1966,11 +1745,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/China.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/China.ogg
+
 
 
 - type: entity
@@ -1982,11 +1759,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/USSR.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/USSR.ogg
+
 
 
 - type: entity
@@ -1998,11 +1773,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Camelidia_1.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Camelidia_1.ogg
+
 
 
 - type: entity
@@ -2014,11 +1787,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/GeneralRelease.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/GeneralRelease.ogg
+
 
 
 - type: entity
@@ -2030,11 +1801,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/GrooveDealers.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/GrooveDealers.ogg
+
 
 
 - type: entity
@@ -2046,11 +1815,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/InTheHouseInAHeartbeat.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/InTheHouseInAHeartbeat.ogg
+
 
 
 - type: entity
@@ -2062,11 +1829,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Boombox/Gambit.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Boombox/Gambit.ogg
+
 
 
 - type: entity
@@ -2078,11 +1843,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/AtomicHeart.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/AtomicHeart.ogg
+
 
 
 - type: entity
@@ -2094,11 +1857,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/LinkinParkIntheEnd.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/LinkinParkIntheEnd.ogg
+
 
 
 - type: entity
@@ -2110,11 +1871,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/TheWindofFjords.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/TheWindofFjords.ogg
+
 
 
 - type: entity
@@ -2126,11 +1885,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Napoleon.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Napoleon.ogg
+
 
 
 - type: entity
@@ -2142,11 +1899,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/FDJ.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/FDJ.ogg
+
 
 
 - type: entity
@@ -2158,11 +1913,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/CounterStrike.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/CounterStrike.ogg
+
 
 
 - type: entity
@@ -2174,11 +1927,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/PrussiaGlory.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/PrussiaGlory.ogg
+
 
 
 - type: entity
@@ -2190,11 +1941,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/GimnUSSR.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/GimnUSSR.ogg
+
 
 
 - type: entity
@@ -2206,11 +1955,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/JusttheTwoofUsAICover.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/JusttheTwoofUsAICover.ogg
+
 
 
 - type: entity
@@ -2222,11 +1969,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Battotai.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Battotai.ogg
+
 
 
 - type: entity
@@ -2238,11 +1983,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/AfterDark.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/AfterDark.ogg
+
 
 
 - type: entity
@@ -2254,11 +1997,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/LittleDarkAge.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/LittleDarkAge.ogg
+
 
 
 - type: entity
@@ -2270,11 +2011,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Yaochenustal.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Yaochenustal.ogg
+
 
 
 - type: entity
@@ -2286,11 +2025,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Fluxxwave.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Fluxxwave.ogg
+
 
 
 - type: entity
@@ -2302,11 +2039,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Otmenyaj.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Otmenyaj.ogg
+
 
 
 - type: entity
@@ -2318,11 +2053,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Ostrov.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Ostrov.ogg
+
 
 
 - type: entity
@@ -2334,11 +2067,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/S1ke.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/S1ke.ogg
+
 
 
 - type: entity
@@ -2350,11 +2081,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/SHADOW.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/SHADOW.ogg
+
 
 
 - type: entity
@@ -2366,11 +2095,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/TokyoRain.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/TokyoRain.ogg
+
 
 
 - type: entity
@@ -2382,11 +2109,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/FunkedUp.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/FunkedUp.ogg
+
 
 
 - type: entity
@@ -2398,11 +2123,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/LoseMyMindInHysteria.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/LoseMyMindInHysteria.ogg
+
 
 
 - type: entity
@@ -2414,11 +2137,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/OurBenefactors.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/OurBenefactors.ogg
+
 
 
 - type: entity
@@ -2430,11 +2151,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/HLCombine.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/HLCombine.ogg
+
 
 
 - type: entity
@@ -2446,11 +2165,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/TriageAtDawn.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/TriageAtDawn.ogg
+
 
 
 - type: entity
@@ -2462,11 +2179,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/CPViolation.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/CPViolation.ogg
+
 
 
 - type: entity
@@ -2478,11 +2193,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/YAuydu.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/YAuydu.ogg
+
 
 
 - type: entity
@@ -2494,11 +2207,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/PogasliSvechi.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/PogasliSvechi.ogg
+
 
 
 - type: entity
@@ -2510,11 +2221,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/MamaPriyezzhayIMenyaZaberi.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/MamaPriyezzhayIMenyaZaberi.ogg
+
 
 
 - type: entity
@@ -2526,11 +2235,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/GSN1.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/GSN1.ogg
+
 
 
 - type: entity
@@ -2542,11 +2249,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/GSN2.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/GSN2.ogg
+
 
 
 - type: entity
@@ -2558,11 +2263,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Geran.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Geran.ogg
+
 
 
 - type: entity
@@ -2574,11 +2277,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Isolation.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Isolation.ogg
+
 
 
 - type: entity
@@ -2590,11 +2291,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/XD.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/XD.ogg
+
 
 
 - type: entity
@@ -2606,11 +2305,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/HaydiCihada.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/HaydiCihada.ogg
+
 
 
 - type: entity
@@ -2622,11 +2319,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/itaggiah.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/itaggiah.ogg
+
 
 
 - type: entity
@@ -2638,11 +2333,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/Horror.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/Horror.ogg
+
 
 
 - type: entity
@@ -2654,11 +2347,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/9mm.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/9mm.ogg
+
 
 
 - type: entity
@@ -2670,11 +2361,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/helpuserlf.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/helpuserlf.ogg
+
 
 
 - type: entity
@@ -2686,11 +2375,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/ecstacy.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/ecstacy.ogg
+
 
 
 - type: entity
@@ -2702,11 +2389,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/AlliWantIsYou.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/AlliWantIsYou.ogg
+
 
 
 - type: entity
@@ -2718,11 +2403,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/StayWithMe.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/StayWithMe.ogg
+
 
 
 - type: entity
@@ -2734,11 +2417,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/InHeatXBloodPop.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/InHeatXBloodPop.ogg
+
 
 
 - type: entity
@@ -2750,11 +2431,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/UntrustUs.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/UntrustUs.ogg
+
 
 
 - type: entity
@@ -2766,11 +2445,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/FUNKESTRANHO.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/FUNKESTRANHO.ogg
+
 
 
 - type: entity
@@ -2782,11 +2459,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSED.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSED.ogg
+
 
 
 - type: entity
@@ -2798,11 +2473,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSEDLOWED.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSEDLOWED.ogg
+
 
 
 - type: entity
@@ -2814,11 +2487,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/ParentIssues.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/ParentIssues.ogg
+
 
 
 - type: entity
@@ -2830,11 +2501,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/SPEEDISLIFE.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/SPEEDISLIFE.ogg
+
 
 
 - type: entity
@@ -2846,11 +2515,9 @@
   components:
   - type: STWeight
     self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/vietnam.ogg
-  - type: Tag
-    tags:
-      - BoomBoxTape
+  - type: BoomBoxTape
+    soundPath: /Audio/_Stalker/Music/Radio/Contributor/vietnam.ogg
+
 
 # СТАТИЧЕСКОЕ РАДИО
 

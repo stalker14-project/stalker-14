@@ -1,28 +1,16 @@
 - type: entity
+  name: рация
+  description: Это устройство для передачи и приёма аудиосигналов в режиме реального времени без необходимости использования проводного соединения или сети сотовой связи.
+  parent: RadioHandheld
   id: BaseRadio
-  name: radio
-  suffix: Stalker
-  description: One of the most important things in the zone, used to communicate with other stalkers and coordinate actions.
-  parent: BaseItem
   components:
   - type: RadioMicrophone
-    powerRequired: false # Power off to use it in hand
-    unobstructedRequired: false
-    listenRange: 1
-    toggleOnInteract: false
+    broadcastChannel: Handheld
+    toggleOnInteract: false # Nuclear-14
+    frequency: 1001 # Nuclear-14
   - type: RadioSpeaker
-    toggleOnInteract: false
-  - type: RadioStalker
-    requiresPower: false # Power off to use it in hand without power, maybe ill add some battery... hmm...
-  - type: Speech
-    speechVerb: Robotic
-  - type: ExtensionCableReceiver
-  - type: Clickable
-  - type: InteractionOutline
-  - type: Appearance
+    toggleOnInteract: false # Nuclear-14
   - type: Sprite
-    scale: 0.8, 0.8
-    noRot: false
     sprite: _Stalker/Objects/Devices/radio.rsi
     layers:
     - state: base
@@ -34,6 +22,16 @@
       map: ["enum.RadioDeviceVisualLayers.Speaker"]
       shader: unshaded
       visible: false
+  - type: Item
+  # Nuclear-14-Start
+  - type: ActivatableUI
+    key: enum.HandheldRadioUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.HandheldRadioUiKey.Key:
+        type: HandheldRadioBoundUserInterface
+  # Nuclear-14-End
+  - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.RadioDeviceVisuals.Broadcasting:
@@ -44,11 +42,3 @@
         enum.RadioDeviceVisualLayers.Speaker:
           True: { visible: true }
           False: { visible: false }
-  - type: ActivatableUI
-    key: enum.RadioStalkerUiKey.Key
-    singleUser: true
-    closeOnHandDeselect: false # When you change your hand, you can still use its UI(it wont close)
-  - type: UserInterface
-    interfaces:
-      enum.RadioStalkerUiKey.Key:
-        type: RadioStalkerBoundUserInterface
