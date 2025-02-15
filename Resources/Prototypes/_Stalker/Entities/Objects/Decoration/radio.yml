@@ -33,14 +33,13 @@
     - type: Item
       size: Normal
     - type: StaticPrice
-      price: 20000
+      price: 2000
     - type: ActivatableUI
       key: enum.BoomBoxUiKey.Key
     - type: UserInterface
       interfaces:
         enum.BoomBoxUiKey.Key:
           type: BoomBoxBoundUi
-
   - type: Sprite
     sprite: _Stalker/Objects/Devices/mp3player.rsi
     state: base
@@ -71,6 +70,25 @@
 
 - type: entity
   parent: BaseItem
+  id: BaseBoomBoxTape
+  abstract: true
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Misc/casete.rsi
+      state: c1
+    - type: Tag
+      tags:
+        - BoomBoxTape
+    - type: Item
+      size: Small
+    - type: CargoSellBlacklist
+    - type: BoomBoxTape
+      soundPath: /Audio/BoomBox/AssHole.ogg
+      syndStatus: false
+      syndItem: "SyndicatePersonalAI"
+
+- type: entity
+  parent: BaseBoomBoxTape
   id: CasseteOneRadio
   suffix: Stalker, кассета (Я солдат)
   name: кассета №1 "Я солдат"
@@ -82,13 +100,10 @@
     sound: /Audio/_Stalker/Music/Radio/kombat.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwoRadio
   suffix: Stalker, кассета (Есть только миг)
   name: кассета №2 "Есть только миг
@@ -100,13 +115,11 @@
     sound: /Audio/_Stalker/Music/Radio/esttolkomig.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThreeRadio
   suffix: Stalker, кассета (Свобода эмбенд)
   name: кассета №3 "Свобода, эмбенд"
@@ -118,13 +131,11 @@
     sound: /Audio/_Stalker/Music/Radio/radio_Svoboda.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFourRadio
   suffix: Stalker, кассета (Чёрный сталкер)
   name: кассета №4 "Чёрный сталкер"
@@ -136,13 +147,11 @@
     sound: /Audio/_Stalker/Music/Radio/cherniy_stalker.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiveRadio
   suffix: Stalker, кассета (Город которого нет)
   name: кассета №5 "Город которого нет"
@@ -154,13 +163,11 @@
     sound: /Audio/_Stalker/Music/Radio/gorod_kotorogo_net.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSixRadio
   suffix: Stalker, кассета (Судная ночь)
   name: кассета №6 (странная)
@@ -172,13 +179,11 @@
     sound: /Audio/_Stalker/Music/Radio/sudnayanoch.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c4
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSevenRadio
   suffix: Stalker, кассета (Бар чистое небо)
   name: кассета №7 "Бар чистое небо"
@@ -190,13 +195,11 @@
     sound: /Audio/_Stalker/Music/Radio/bar_chistoe_nebo.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c2
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteEightRadio
   suffix: Stalker, кассета (Советский марш)
   name: кассета №8 "Советский марш"
@@ -208,13 +211,11 @@
     sound: /Audio/_Stalker/Music/Radio/soviet.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c3
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteNineRadio
   suffix: Stalker, кассета (Москва-Владивосток)
   name: кассета №9 "Москва-Владивосток"
@@ -226,13 +227,11 @@
     sound: /Audio/_Stalker/Music/Radio/rus_radio2.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTenRadio
   suffix: Stalker, кассета (Magic Moments)
   name: кассета №10 "Magic Moments"
@@ -244,13 +243,11 @@
     sound: /Audio/_Stalker/Music/Radio/un_radio2.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteElevenRadio
   suffix: Stalker, кассета (In the army now)
   name: кассета №11 "In the army now"
@@ -262,13 +259,11 @@
     sound: /Audio/_Stalker/Music/Radio/un_radio.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwelveRadio
   suffix: Stalker, кассета (Фаина)
   name: кассета №12 "Фаина"
@@ -280,13 +275,11 @@
     sound: /Audio/_Stalker/Music/Radio/faina.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirteeneRadio
   suffix: Stalker, кассета (Пошли вы все)
   name: кассета №13 "Пошли вы все"
@@ -298,13 +291,11 @@
     sound: /Audio/_Stalker/Music/Radio/poshli_vi_vse.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFourteenRadio
   suffix: Stalker, кассета (Белая ночь)
   name: кассета №14 "Белая ночь"
@@ -316,13 +307,11 @@
     sound: /Audio/_Stalker/Music/Radio/belaya_noch.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFifteenRadio
   suffix: Stalker, кассета (Holding Out For A Hero)
   name: кассета №15 "Holding Out For A Hero"
@@ -334,15 +323,13 @@
     sound: /Audio/_Stalker/Music/Radio/holding_out_for_a_hero.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c1
+      - BoomBoxTape
+
 
 # ДОНАТНЫЕ КАССЕТЫ
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteOneDonateRadio
   suffix: Stalker, кассета (Оповещение о выбросе)
   name: кассета "Оповещение о выбросе"
@@ -354,13 +341,11 @@
     sound: /Audio/_Stalker/blowout.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwoDonateRadio
   suffix: Stalker, кассета (Bosanska Artiljeria)
   name: кассета "Bosanska Artiljeria"
@@ -372,13 +357,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Folksong.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThreeDonateRadio
   suffix: Stalker, кассета (Кукушка)
   name: кассета "Кукушка"
@@ -390,13 +373,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Kukushka.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFourDonateRadio
   suffix: Stalker, кассета (Смуглянка Молдованка)
   name: кассета "Смуглянка Молдованка"
@@ -408,13 +389,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Moldovanka.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiveDonateRadio
   suffix: Stalker, кассета (The Man Who Sold The World)
   name: кассета "The Man Who Sold The World"
@@ -426,13 +405,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Midge.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSixDonateRadio
   suffix: Stalker, кассета (Солнце, купи мне гитару)
   name: кассета "Солнце, купи мне гитару"
@@ -444,13 +421,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/kupi_mne.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSevenDonateRadio
   suffix: Stalker, кассета (3 сентября)
   name: кассета "3 сентября"
@@ -462,13 +437,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Tri_sentyabrya.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteEightDonateRadio
   suffix: Stalker, кассета (Don't stop the fight)
   name: кассета "Don't stop the fight"
@@ -480,13 +453,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Skullfist.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteNineDonateRadio
   suffix: Stalker, кассета (Невеста палача)
   name: кассета "Невеста палача"
@@ -498,13 +469,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Nevesta_palacha.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTenDonateRadio
   suffix: Stalker, кассета (600 мб)
   name: кассета "600 мб"
@@ -516,13 +485,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/600mb.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteElevenDonateRadio
   suffix: Stalker, кассета (Автор)
   name: кассета "Автор"
@@ -534,13 +501,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/avtor.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwelveDonateRadio
   suffix: Stalker, кассета (Чапаевская мель)
   name: кассета "Чапаевская мель"
@@ -552,13 +517,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/chapaevskaya_mel.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirteenDonateRadio
   suffix: Stalker, кассета (День)
   name: кассета "День"
@@ -570,13 +533,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/den.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFourteenDonateRadio
   suffix: Stalker, кассета (Комета)
   name: кассета "Комета"
@@ -588,13 +549,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/kometa.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiveteenDonateRadio
   suffix: Stalker, кассета (Ледоруб)
   name: кассета "Ледоруб"
@@ -606,13 +565,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/ledorub.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSixteenDonateRadio
   suffix: Stalker, кассета (Патроны)
   name: кассета "Патроны"
@@ -624,13 +581,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/patroni.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSeventeenDonateRadio
   suffix: Stalker, кассета (Время)
   name: кассета "Время"
@@ -642,13 +597,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/vremya.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteEighteenDonateRadio
   suffix: Stalker, кассета (Вставай Донбасс)
   name: кассета "Вставай Донбасс"
@@ -660,13 +613,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/vstavai_Donbass.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteNineteenDonateRadio
   suffix: Stalker, кассета (Heathens)
   name: кассета "Heathens"
@@ -678,13 +629,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/21.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyOneDonateRadio
   suffix: Stalker, кассета (Party Like A Russian)
   name: кассета "Party Like A Russian"
@@ -696,13 +645,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Robby.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyTwoDonateRadio
   suffix: Stalker, кассета (It's raining men, Tombstone remix)
   name: кассета "It's raining men"
@@ -714,13 +661,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Weather.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyThreeDonateRadio
   suffix: Stalker, кассета (Wind Rose Diggy Diggy Hole)
   name: кассета "Wind Rose Diggy Diggy Hole"
@@ -732,13 +677,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/wind.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyFourDonateRadio
   suffix: Stalker, кассета (Welcome to Va 11 HALL-A)
   name: кассета "Welcome to Va 11 HALL-A"
@@ -750,13 +693,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Garoad.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyFiveDonateRadio
   suffix: Stalker, кассета (Liquid Nights & Disco Lights)
   name: кассета "Liquid Nights & Disco Lights"
@@ -768,13 +709,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Miracle.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyDonateRadio
   suffix: Stalker, кассета (Nightcall Kavinsky)
   name: кассета "Nightcall Kavinsky"
@@ -786,13 +725,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Nightcall.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentySixDonateRadio
   suffix: Stalker, кассета (N.R.M. - Bamžy)
   name: кассета "N.R.M. - Bamžy"
@@ -804,13 +741,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/bamzy.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentySevenDonateRadio
   suffix: Stalker, кассета (Воины света)
   name: кассета "Воины света"
@@ -822,13 +757,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/VoiniSveta.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyEightDonateRadio
   suffix: Stalker, кассета (Nie ma nieba)
   name: кассета "Nie ma nieba"
@@ -840,13 +773,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/NieMaNieba.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTwentyNineDonateRadio
   suffix: Stalker, кассета (The serpent)
   name: кассета "The serpent"
@@ -858,13 +789,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Serpent.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyOneDonateRadio
   suffix: Stalker, кассета (Gimme! Gimme!)
   name: кассета "Gimme! Gimme!"
@@ -876,13 +805,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/GimmeGimme.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyDonateRadio
   suffix: Stalker, кассета (2nd Warning)
   name: кассета "2nd Warning"
@@ -894,13 +821,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Warning.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyTwoDonateRadio
   suffix: Stalker, кассета (Трын трава)
   name: кассета "Трын трава"
@@ -912,13 +837,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Trin_trava.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyThreeDonateRadio
   suffix: Stalker, кассета (Бей)
   name: кассета "Бей"
@@ -930,13 +853,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Bey.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyFourDonateRadio
   suffix: Stalker, кассета (Финский нож)
   name: кассета "Финский нож"
@@ -948,13 +869,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Finskiy_noj.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyFiveDonateRadio
   suffix: Stalker, кассета (The Mercenary Song)
   name: кассета "The Mercenary Song"
@@ -966,13 +885,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Mercenary.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtySixDonateRadio
   suffix: Stalker, кассета (Вечеринки для неудачников PAFL)
   name: кассета "Вечеринки для неудачников. PAFL"
@@ -984,13 +901,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/HardbassNight.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtySevenDonateRadio
   suffix: Stalker, кассета (ABSOLUTE TERRITORY)
   name: кассета "ABSOLUTE TERRITORY"
@@ -1002,13 +917,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/territory.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyEightDonateRadio
   suffix: Stalker, кассета (Вот и помер Вова Вист)
   name: кассета "Вот и помер Вова Вист"
@@ -1020,13 +933,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/vova_vist.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteThirtyNineDonateRadio
   suffix: Stalker, кассета (Gangsta's Paradise)
   name: кассета "Gangsta's Paradise"
@@ -1038,13 +949,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/gangstas.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyDonateRadio
   suffix: Stalker, кассета (Octavia, Cekkist of Storms)
   name: кассета "Octavia, Cekkist of Storms"
@@ -1056,13 +965,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/jyc.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyOneDonateRadio
   suffix: Stalker, кассета (We Are The Helldivers)
   name: кассета "We Are The Helldivers"
@@ -1074,13 +981,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/helldivers.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyTwoDonateRadio
   suffix: Stalker, кассета (Говновоз)
   name: кассета "Говновоз"
@@ -1092,13 +997,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/govnovoz.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyThreeDonateRadio
   suffix: Stalker, кассета (Ramstain)
   name: кассета "Ramstain"
@@ -1110,13 +1013,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/ramstain.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyFourDonateRadio
   suffix: Stalker, кассета (Accept)
   name: кассета "Accept"
@@ -1128,13 +1029,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/accept.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyFiveDonateRadio
   suffix: Stalker, кассета (Laura Branigan)
   name: кассета "Laura Branigan"
@@ -1146,13 +1045,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/laura.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortySixDonateRadio
   suffix: Stalker, кассета (Horse Soldier)
   name: кассета "Horse Soldier"
@@ -1164,13 +1061,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Horse.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortySevenDonateRadio
   suffix: Stalker, кассета (FiftyFifty - Cupid)
   name: кассета "FiftyFifty - Cupid"
@@ -1182,13 +1077,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/lonely.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyEightDonateRadio
   suffix: Stalker, кассета (Комбат - Любэ)
   name: кассета "Комбат - Любэ"
@@ -1200,13 +1093,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/KombatL.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFortyNineDonateRadio
   suffix: Stalker, кассета (кофе с сигой)
   name: кассета "Кофе с сигой"
@@ -1218,13 +1109,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/kofesiga.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftyDonateRadio
   suffix: Stalker, кассета (каникулы на марсе)
   name: кассета "Каникулы на марсе"
@@ -1236,13 +1125,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/kanikuli.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftyOneDonateRadio
   suffix: Stalker, кассета (беспокойник - снова)
   name: кассета "Беспокойник - Снова"
@@ -1254,13 +1141,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/bespokoynik.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftyTwoDonateRadio
   suffix: Stalker, кассета (Глазоеды - Вылечи меня)
   name: кассета "Глазоеды - Вылечи меня"
@@ -1272,13 +1157,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/glazoedy.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftyThreeDonateRadio
   suffix: Stalker, кассета (Eagles - Hotel California)
   name: кассета "Eagles - Hotel California"
@@ -1290,13 +1173,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/eagles.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftyFourDonateRadio
   suffix: Stalker, кассета (gqtis - Poor)
   name: кассета "gqtis - Poor"
@@ -1308,13 +1189,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/poor.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftyFiveDonateRadio
   suffix: Stalker, кассета (Noize MC — 26.04)
   name: кассета "Noize MC — 26.04"
@@ -1326,13 +1205,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/26.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftySixDonateRadio
   suffix: Stalker, кассета (Meg Myers - Desire)
   name: кассета "Meg Myers - Desire"
@@ -1344,13 +1221,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/desire.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFiftySevenDonateRadio
   suffix: Stalker, кассета (Noize MC — Грабли)
   name: кассета "Noize MC — Грабли"
@@ -1362,17 +1237,15 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/grabli.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 # Groups Donate Cassets
 
 # Bandits
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDOneRadio
   suffix: Stalker, кассета (Айдамир мугу - черные глаза)
   name: кассета "Айдамир мугу - черные глаза"
@@ -1384,13 +1257,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/glaza.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDTwoRadio
   suffix: Stalker, кассета (Блядская натура)
   name: кассета "Блядская натура"
@@ -1402,13 +1273,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/blyad.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDThreeRadio
   suffix: Stalker, кассета (Розенбаум - фраер, толстый фраер)
   name: кассета "Розенбаум - фраер, толстый фраер"
@@ -1420,13 +1289,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/fraer.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDFourRadio
   suffix: Stalker, кассета (Михаил круг - кольщик)
   name: кассета "Михаил круг - кольщик"
@@ -1438,13 +1305,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kolshik.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDFiveRadio
   suffix: Stalker, кассета (Михаил круг - золотые купола)
   name: кассета "Михаил круг - золотые купола"
@@ -1456,13 +1321,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/kupola.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDSixRadio
   suffix: Stalker, кассета (Михаил круг - фраер)
   name: кассета "Михаил круг - фраер"
@@ -1474,13 +1337,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/raer.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDSevenRadio
   suffix: Stalker, кассета (Михаил круг - Владимирский централ)
   name: кассета "Михаил круг - Владимирский централ"
@@ -1492,13 +1353,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/central.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDEightRadio
   suffix: Stalker, кассета (Михаил круг - жиган лимон)
   name: кассета "Михаил круг - жиган лимон"
@@ -1510,13 +1369,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/limon.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDNineRadio
   suffix: Stalker, кассета (Милана Хаметова - ЛП)
   name: кассета "Милана Хаметова - ЛП"
@@ -1528,13 +1385,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/milana.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGDTenRadio
   suffix: Stalker, кассета (Розенбаум - гоп стоп)
   name: кассета "Розенбаум - гоп стоп"
@@ -1546,15 +1401,13 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Groups/Bandits/gopstop.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c7
+      - BoomBoxTape
+
 
 # Donate Premium
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumOneRadio
   suffix: Stalker, кассета (Твоими глазами — cold carti)
   name: кассета "Твоими глазами — cold carti"
@@ -1566,13 +1419,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/cold.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwoRadio
   suffix: Stalker, кассета (Saluki — Вылечим)
   name: кассета "Saluki — Вылечим"
@@ -1584,13 +1435,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/saluki.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumThreeRadio
   suffix: Stalker, кассета (Galafo — зачем сугробы этому городу)
   name: кассета "Galafo — зачем сугробы этому городу"
@@ -1602,13 +1451,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/galafo.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumFourRadio
   suffix: Stalker, кассета (Бульвар депо Neonbones)
   name: кассета "Бульвар депо Neonbones"
@@ -1620,13 +1467,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/neonbones.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumFiveRadio
   suffix: Stalker, кассета (Скриптонит — Одно и то же)
   name: кассета "Скриптонит — Одно и то же"
@@ -1638,13 +1483,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/odnoi.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumSixRadio
   suffix: Stalker, кассета (Скриптонит — снова люди пойдут)
   name: кассета "Скриптонит — снова люди пойдут"
@@ -1656,13 +1499,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/snova.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumSevenRadio
   suffix: Stalker, кассета (Свидание — Кавказ)
   name: кассета "Свидание — Кавказ"
@@ -1674,13 +1515,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/svidanie.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumEightRadio
   suffix: Stalker, кассета (Мчт — Последний снег)
   name: кассета "Мчт — Последний снег"
@@ -1692,13 +1531,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/zoloto.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumNineRadio
   suffix: Stalker, кассета (Макулатура — пляж)
   name: кассета "Макулатура — пляж"
@@ -1710,13 +1547,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/plaj.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTenRadio
   suffix: Stalker, кассета (Партизанеоколо — задор да изводы)
   name: кассета "Партизанеоколо — задор да изводы"
@@ -1728,13 +1563,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/zador.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumElevenRadio
   suffix: Stalker, кассета (Целовать другого — Дорн)
   name: кассета "Целовать другого — Дорн"
@@ -1746,13 +1579,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/dornc.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwelveRadio
   suffix: Stalker, кассета (Незаурядность - galafo)
   name: кассета "Незаурядность - galafo"
@@ -1764,13 +1595,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/galafon.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumThirteenRadio
   suffix: Stalker, кассета (Лето подари мне ночи — омонра)
   name: кассета "Лето подари мне ночи — омонра"
@@ -1782,13 +1611,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/letop.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumFourteenRadio
   suffix: Stalker, кассета (Ноктюрн — хаски)
   name: кассета "Ноктюрн — хаски"
@@ -1800,13 +1627,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/khaskin.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumFifteenRadio
   suffix: Stalker, кассета (all my fellas Frizk)
   name: кассета "all my fellas Frizk"
@@ -1818,13 +1643,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/frizk.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumSixteenRadio
   suffix: Stalker, кассета (Скриптонит кое-что лучше меня)
   name: кассета "Скриптонит кое-что лучше меня"
@@ -1836,13 +1659,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/skripa.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumSeventeenRadio
   suffix: Stalker, кассета (Бумбокс - летний дождь)
   name: кассета "Бумбокс - летний дождь"
@@ -1854,13 +1675,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/bumka.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumEighteenRadio
   suffix: Stalker, кассета (chris de burgh — moonlight and vodka)
   name: кассета "chris de burgh — moonlight and vodka"
@@ -1872,13 +1691,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/chrisv.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumNineteenRadio
   suffix: Stalker, кассета (партизанеоколо - славянское гетто)
   name: кассета "партизанеоколо - славянское гетто"
@@ -1890,13 +1707,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/pgetto.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwentyRadio
   suffix: Stalker, кассета (galafo - что может быть лучше)
   name: кассета "galafo - что может быть лучше"
@@ -1908,13 +1723,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/gach.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwentyOneRadio
   suffix: Stalker, кассета (градусы заметает)
   name: кассета "градусы заметает"
@@ -1926,13 +1739,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/gradusi.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwentyTwoRadio
   suffix: Stalker, кассета (central cee obsessed with you)
   name: кассета "central cee obsessed with you"
@@ -1944,13 +1755,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Premium/cco.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwentyThreeRadio
   suffix: Stalker, кассета (Силуэты)
   name: кассета "Силуэты"
@@ -1962,13 +1771,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwentyFourRadio
   suffix: Stalker, кассета (Запомню)
   name: кассета "Запомню"
@@ -1980,13 +1787,11 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePremiumTwentyFiveRadio
   suffix: Stalker, кассета (Low Roar - "I'll Keep Coming")
   name: кассета "Low Roar - I'll Keep Coming"
@@ -1998,10 +1803,8 @@
     sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
+      - BoomBoxTape
+
 
 # Contributor
 - type: entity
@@ -2017,7 +1820,7 @@
       quickInsert: true
       whitelist:
         tags:
-          - Cassete
+          - BoomBoxTape
       grid:
         - 0,0,12,5
     - type: ContainerContainer
@@ -2107,7 +1910,7 @@
 
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteArstotzkaOneContributorRadio
   suffix: Stalker, кассета, (Glory to Arstotzka)
   name: кассета "Glory to Arstotzka"
@@ -2119,13 +1922,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_1.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteArstotzkaTwoContributorRadio
   suffix: Stalker, кассета, (Arstotzka Bad Ending)
   name: кассета "Arstotzka Bad Ending"
@@ -2137,13 +1938,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_3.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteArstotzkaThreeContributorRadio
   suffix: Stalker, кассета, (Arstotzka Good Ending)
   name: кассета "Arstotzka Good Ending"
@@ -2155,13 +1954,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_2.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteChinaContributorRadio
   suffix: Stalker, кассета, (Red Sun In The Sky)
   name: кассета "Red Sun In The Sky"
@@ -2173,13 +1970,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/China.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteUSSRContributorRadio
   suffix: Stalker, кассета, (Советский марш 2)
   name: кассета "Советский марш 2"
@@ -2191,13 +1986,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/USSR.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteAction1ContributorRadio
   suffix: Stalker, кассета, (Экшн 1)
   name: кассета "Неизвестный экшн"
@@ -2209,13 +2002,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Camelidia_1.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGeneralReleaseContributorRadio
   suffix: Stalker, кассета, (General Release)
   name: кассета "General Release"
@@ -2227,13 +2018,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/GeneralRelease.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGrooveDealersContributorRadio
   suffix: Stalker, кассета, (Groove Dealers Salam 1996)
   name: кассета "Salam 1996"
@@ -2245,13 +2034,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/GrooveDealers.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteInTheHouseInAHeartbeatContributorRadio
   suffix: Stalker, кассета, (In The House In A Heartbeat)
   name: кассета "In The House In A Heartbeat"
@@ -2263,13 +2050,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/InTheHouseInAHeartbeat.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGambit
   suffix: Stalker, кассета, (Gambit "Баю Бай")
   name: кассета "Gambit Баю Бай"
@@ -2281,13 +2066,11 @@
     sound: /Audio/_Stalker/Music/Boombox/Gambit.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteAtomicHeartKomarovoContributorRadio
   suffix: Stalker, кассета, (Atomic Heart)
   name: кассета "Atomic Heart Komarovo"
@@ -2299,13 +2082,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/AtomicHeart.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteLinkinParkIntheEndContributorRadio
   suffix: Stalker, кассета, (Linkin Park In the End)
   name: кассета "In the End"
@@ -2317,13 +2098,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/LinkinParkIntheEnd.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTheWindofFjordsContributorRadio
   suffix: Stalker, кассета, (The Windof Fjords)
   name: кассета "The Windof Fjords"
@@ -2335,13 +2114,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/TheWindofFjords.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteNapoleonContributorRadio
   suffix: Stalker, кассета, (Amour plastique Napoleon)
   name: кассета "Amour plastique Napoleon"
@@ -2353,13 +2130,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Napoleon.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFDJContributorRadio
   suffix: Stalker, кассета, (FDJ)
   name: кассета "FDJ"
@@ -2371,13 +2146,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/FDJ.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteCounterStrikeContributorRadio
   suffix: Stalker, кассета, (Counter-Strike)
   name: кассета "Counter-Strike"
@@ -2389,13 +2162,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/CounterStrike.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePrussiaGloryContributorRadio
   suffix: Stalker, кассета, (Preußens Gloria)
   name: кассета "Preußens Gloria"
@@ -2407,13 +2178,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/PrussiaGlory.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGimnUSSRContributorRadio
   suffix: Stalker, кассета, (Гимн СССР)
   name: кассета "Гимн СССР"
@@ -2425,13 +2194,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/GimnUSSR.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteJusttheTwoofUsAICoverContributorRadio
   suffix: Stalker, кассета, (Hitler AI Cover)
   name: кассета "Just the Two of Us?"
@@ -2443,13 +2210,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/JusttheTwoofUsAICover.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteBattotaiContributorRadio
   suffix: Stalker, кассета, (Battotai)
   name: кассета "Battotai"
@@ -2461,13 +2226,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Battotai.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteAfterDarkContributorRadio
   suffix: Stalker, кассета, (After Dark)
   name: кассета "After Dark"
@@ -2479,13 +2242,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/AfterDark.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteLittleDarkAgeContributorRadio
   suffix: Stalker, кассета, (Little Dark Age)
   name: кассета "Little Dark Age"
@@ -2497,13 +2258,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/LittleDarkAge.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteYaochenustalContributorRadio
   suffix: Stalker, кассета, (Я очень устал)
   name: кассета "Я очень устал"
@@ -2515,13 +2274,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Yaochenustal.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFluxxwaveContributorRadio
   suffix: Stalker, кассета, (Fluxxwave)
   name: кассета "Fluxxwave"
@@ -2533,13 +2290,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Fluxxwave.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteOtmenyajContributorRadio
   suffix: Stalker, кассета, (Отменяй)
   name: кассета "Отменяй"
@@ -2551,13 +2306,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Otmenyaj.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteOstrovContributorRadio
   suffix: Stalker, кассета, (Мы - Остров)
   name: кассета "Мы - Остров"
@@ -2569,13 +2322,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Ostrov.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteS1keContributorRadio
   suffix: Stalker, кассета, (S1KE)
   name: кассета "S1KE"
@@ -2587,13 +2338,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/S1ke.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSHADOWContributorRadio
   suffix: Stalker, кассета, (SHADOW)
   name: кассета "SHADOW"
@@ -2605,13 +2354,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/SHADOW.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTokyoRainContributorRadio
   suffix: Stalker, кассета, (Tokyo Rain)
   name: кассета "Tokyo Rain"
@@ -2623,13 +2370,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/TokyoRain.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFunkedUpContributorRadio
   suffix: Stalker, кассета, (Funked Up)
   name: кассета "Funked Up"
@@ -2641,13 +2386,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/FunkedUp.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteLoseMyMindInHysteriaContributorRadio
   suffix: Stalker, кассета, (Lose My Mind In Hysteria)
   name: кассета "Lose My Mind In Hysteria"
@@ -2659,13 +2402,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/LoseMyMindInHysteria.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteOurBenefactorsContributorRadio
   suffix: Stalker, кассета, (Our Benefactors)
   name: кассета "Our Benefactors"
@@ -2677,13 +2418,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/OurBenefactors.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteHLCombineContributorRadio
   suffix: Stalker, кассета, (Combine Harvester)
   name: кассета "Combine Harvester"
@@ -2695,13 +2434,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/HLCombine.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteTriageAtDawnContributorRadio
   suffix: Stalker, кассета, (Triage at Dawn)
   name: кассета "Triage at Dawn"
@@ -2713,13 +2450,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/TriageAtDawn.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteCPViolationContributorRadio
   suffix: Stalker, кассета, (CP Violation)
   name: кассета "CP Violation"
@@ -2731,13 +2466,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/CPViolation.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteYAuyduContributorRadio
   suffix: Stalker, кассета, (Я уйду)
   name: кассета "Я уйду"
@@ -2749,13 +2482,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/YAuydu.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetePogasliSvechiContributorRadio
   suffix: Stalker, кассета, (Погасли свечи)
   name: кассета "Погасли свечи"
@@ -2767,13 +2498,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/PogasliSvechi.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteMamaPriyezzhayIMenyaZaberiContributorRadio
   suffix: Stalker, кассета, (Мама приезжай и меня забери)
   name: кассета "Мама приезжай и меня забери"
@@ -2785,13 +2514,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/MamaPriyezzhayIMenyaZaberi.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGSN1ContributorRadio
   suffix: Stalker, кассета, (ГСН - А я повыше закатаю рукава)
   name: кассета "ГСН - А я повыше закатаю рукава"
@@ -2803,13 +2530,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/GSN1.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGSN2ContributorRadio
   suffix: Stalker, кассета, (ГСН - Российский Спецназ)
   name: кассета "ГСН - Российский Спецназ"
@@ -2821,13 +2546,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/GSN2.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteGeranContributorRadio
   suffix: Stalker, кассета, (Цветёт герань)
   name: кассета "Цветёт герань"
@@ -2839,13 +2562,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Geran.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteIsolationContributorRadio
   suffix: Stalker, кассета, (Isolation)
   name: кассета "Isolation"
@@ -2857,13 +2578,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Isolation.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteXDContributorRadio
   suffix: Stalker, кассета, (XD Meme)
   name: кассета "XD"
@@ -2875,13 +2594,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/XD.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteHaydiCihadaContributorRadio
   suffix: Stalker, кассета, (Haydi Cihada)
   name: кассета "Haydi Cihada"
@@ -2893,13 +2610,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/HaydiCihada.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteitaggiahContributorRadio
   suffix: Stalker, кассета, (itaggiah)
   name: кассета "itaggiah"
@@ -2911,13 +2626,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/itaggiah.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteHorrorContributorRadio
   suffix: Stalker, кассета, (Horror)
   name: кассета "???"
@@ -2929,13 +2642,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/Horror.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: Cassete9mmContributorRadio
   suffix: Stalker, кассета, (9mm)
   name: кассета "9mm"
@@ -2947,13 +2658,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/9mm.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteHelpUserlfContributorRadio
   suffix: Stalker, кассета, (help_userlf)
   name: кассета "help_userlf"
@@ -2965,13 +2674,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/helpuserlf.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteEcstacyContributorRadio
   suffix: Stalker, кассета, (ecstacy)
   name: кассета "ecstacy"
@@ -2983,13 +2690,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/ecstacy.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteAlliWantIsYouContributorRadio
   suffix: Stalker, кассета, (all i want is you)
   name: кассета "all i want is you"
@@ -3001,13 +2706,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/AlliWantIsYou.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteStayWithMeContributorRadio
   suffix: Stalker, кассета, (Stay With Me)
   name: кассета "Stay With Me"
@@ -3019,13 +2722,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/StayWithMe.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteInHeatXBloodPopContributorRadio
   suffix: Stalker, кассета, (In Heat X BloodPop!)
   name: кассета "In Heat X BloodPop!"
@@ -3037,13 +2738,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/InHeatXBloodPop.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteUntrustUsContributorRadio
   suffix: Stalker, кассета, (Untrust Us)
   name: кассета "Untrust Us"
@@ -3055,13 +2754,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/UntrustUs.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteFUNKESTRANHOContributorRadio
   suffix: Stalker, кассета, (FUNK ESTRANHO)
   name: кассета "FUNK ESTRANHO"
@@ -3073,13 +2770,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/FUNKESTRANHO.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteCUTEDEPRESSEDContributorRadio
   suffix: Stalker, кассета, (CUTE DEPRESSED)
   name: кассета "CUTE DEPRESSED"
@@ -3091,13 +2786,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSED.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteCUTEDEPRESSEDLOWEDContributorRadio
   suffix: Stalker, кассета, (CUTE DEPRESSED SLOWED)
   name: кассета "CUTE DEPRESSED SLOWED"
@@ -3109,13 +2802,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/CUTEDEPRESSEDLOWED.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteParentIssuesContributorRadio
   suffix: Stalker, кассета, (Parent issues)
   name: кассета "Parent issues"
@@ -3127,13 +2818,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/ParentIssues.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CasseteSPEEDISLIFEContributorRadio
   suffix: Stalker, кассета, (SPEED IS LIFE)
   name: кассета "SPEED IS LIFE"
@@ -3145,13 +2834,11 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/SPEEDISLIFE.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBoomBoxTape
   id: CassetevietnamContributorRadio
   suffix: Stalker, кассета, (Fortunate Son)
   name: кассета "Fortunate Son"
@@ -3163,10 +2850,8 @@
     sound: /Audio/_Stalker/Music/Radio/Contributor/vietnam.ogg
   - type: Tag
     tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
+      - BoomBoxTape
+
 # СТАТИЧЕСКОЕ РАДИО
 
 - type: entity
