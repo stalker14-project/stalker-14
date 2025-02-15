@@ -9,14 +9,38 @@
   components:
   - type: STWeight
     self: 0.5
-  - type: Boombox
-  - type: ItemSlots
-    slots:
-      cassette_slot:
-        name: Cassete
-        whitelist:
-          tags:
-            - Cassete
+    - type: BoomBox
+      slots:
+        boombox_slot:
+          whitelist:
+            tags:
+              - BoomBoxTape
+          locked: false
+          swap: false
+          ejectOnDeconstruct: true
+          ejectOnBreak: true
+    - type: CargoSellBlacklist
+    - type: ItemSlots
+    - type: ContainerContainer
+      containers:
+        boombox_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+    - type: DeviceLinkSource
+      ports:
+      - Pressed
+    - type: Item
+      size: Normal
+    - type: StaticPrice
+      price: 20000
+    - type: ActivatableUI
+      key: enum.BoomBoxUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.BoomBoxUiKey.Key:
+          type: BoomBoxBoundUi
+
   - type: Sprite
     sprite: _Stalker/Objects/Devices/mp3player.rsi
     state: base
