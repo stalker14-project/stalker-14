@@ -239,19 +239,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-2.5
       parent: 104
-- proto: Boombox
-  entities:
-  - uid: 240
-    components:
-    - type: Transform
-      pos: 0.58113754,3.7305756
-      parent: 104
-    - type: ContainerContainer
-      containers:
-        cassette_slot: !type:ContainerSlot {}
-    missingComponents:
-    - Item
-    - Pullable
 - proto: CableApcExtension
   entities:
   - uid: 202
