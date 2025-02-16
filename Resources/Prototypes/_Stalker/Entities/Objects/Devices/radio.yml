@@ -1,13 +1,40 @@
 - type: entity
+  name: handheld radio
+  description: A handy handheld radio.
+  parent: [BaseItem, RecyclableItemDeviceSmall] # Frontier: added RecyclableItemDeviceSmall
+  id: RadioHandheldStalker
+  components:
+  - type: TelecomExempt
+  - type: RadioMicrophone
+    broadcastChannel: Handheld
+  - type: RadioSpeaker
+    channels:
+    - Handheld
+  - type: Speech
+    speechVerb: Robotic
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: walkietalkie
+    - state: walkietalkie-on
+    state: walkietalkie
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: walkietalkie
+  - type: Tag
+    tags:
+    - Radio
+
+- type: entity
   name: рация
   description: Это устройство для передачи и приёма аудиосигналов в режиме реального времени без необходимости использования проводного соединения или сети сотовой связи.
-  parent: RadioHandheld
+  parent: RadioHandheldStalker
   id: BaseRadio
   components:
   - type: RadioMicrophone
     broadcastChannel: Handheld
     toggleOnInteract: false # Nuclear-14
-    frequency: 1001 # Nuclear-14
+    frequency: 9001 # Nuclear-14
   - type: RadioSpeaker
     toggleOnInteract: false # Nuclear-14
   - type: Sprite
