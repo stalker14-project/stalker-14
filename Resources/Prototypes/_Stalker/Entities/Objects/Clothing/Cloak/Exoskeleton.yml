@@ -1,0 +1,16 @@
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingNeckExoskeleton
+  suffix: Stalker
+  name: ent-ClothingNeckExoskeleton
+  description: .desc
+  components:
+  - type: STWeight
+    self: -100
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/exoskelet_science.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/exoskelet_science.rsi
+  - type: ClothingSpeedModifier
+    sprintModifier: 0.5
+
