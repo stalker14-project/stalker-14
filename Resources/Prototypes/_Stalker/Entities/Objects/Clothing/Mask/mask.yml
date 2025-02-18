@@ -194,7 +194,6 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/mask/mask_skull.rsi
   - type: BreathMask
-  - type: IngestionBlocker
   - type: IdentityBlocker
   - type: Tag
     tags:
@@ -219,10 +218,11 @@
   - type: Armor
     armorClass: 3
     modifiers:
-      flatReductions:
-        Piercing: 3
       coefficients:
-        Piercing: 0.95
+        Piercing: 0.80
+        Blunt: 0.80
+        Slash: 0.80
+          
 
 - type: entity
   parent: ClothingMaskPullableBase

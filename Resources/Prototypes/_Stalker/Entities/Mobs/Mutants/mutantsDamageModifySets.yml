@@ -1,35 +1,4 @@
 - type: damageModifierSet
-  id: PathetictMutant
-  class: 1
-  coefficients:
-    Blunt: 1
-    Slash: 1
-    Piercing: 1.1
-    Heat: 3.5
-    Cold: 3.5
-    Caustic: 0.2
-    Compression: 20
-
-- type: damageModifierSet
-  id: DefaultMutant
-  class: 2
-  coefficients:
-    Blunt: 0.8
-    Slash: 0.8
-    Piercing: 1.1
-    Heat: 3
-    Cold: 3
-    Poison: 0
-    Cellular: 0
-    Radiation: 0
-    Caustic: 0.2
-    Compression: 20 #to make boars die from fucking anoms
-    Psy: 0
-  flatReductions:
-    Blunt: 5
-    Slash: 5
-
-- type: damageModifierSet
   id: BushMutant
   class: 5
   coefficients:
@@ -44,68 +13,10 @@
     Caustic: 0
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
   flatReductions:
     Piercing: 2
     Blunt: 5
-
-- type: damageModifierSet
-  id: BuyurerMutant
-  class: 2
-  coefficients:
-    Blunt: 1
-    Slash: 1
-    Piercing: 0.45
-    Heat: 3
-    Cold: 3
-    Poison: 0
-    Cellular: 0
-    Radiation: 0
-    Caustic: 0
-    Compression: 20 #to make boars die from fucking anoms
-    Psy: 0
-  flatReductions:
-    Blunt: 2
-    Slash: 2
-    Piercing: 10
-
-- type: damageModifierSet
-  id: BloodsuckerMutant
-  class: 3
-  coefficients:
-    Blunt: 1
-    Slash: 1
-    Piercing: 0.65
-    Heat: 3
-    Cold: 3
-    Poison: 0
-    Cellular: 0
-    Radiation: 0
-    Caustic: 0
-    Compression: 20 #to make boars die from fucking anoms
-    Psy: 0
-  flatReductions:
-    Blunt: 6
-    Slash: 6
-    Piercing: 10
-
-- type: damageModifierSet
-  id: SnorkMutant
-  class: 2
-  coefficients:
-    Blunt: 1
-    Slash: 1
-    Piercing: 0.6
-    Heat: 3
-    Cold: 3
-    Poison: 0
-    Cellular: 0
-    Radiation: 0
-    Caustic: 0
-    Compression: 20 #to make boars die from fucking anoms
-    Psy: 0
-  flatReductions:
-    Blunt: 5
-    Piercing: 10
 
 - type: damageModifierSet
   id: CloneMutant
@@ -122,14 +33,14 @@
     Caustic: 0
     Compression: 20 #to make boars die from fucking anoms
     Psy: 0
+    Mutant: 1
 
 - type: damageModifierSet
-  id: MutantOracles
-  class: 3
+  id: STMutantBoarDamageModifierSet
+  class: 0
   coefficients:
-    Blunt: 0.9
-    Slash: 0.9
-    Piercing: 0.5
+    Blunt: 0.1
+    Slash: 0.1
     Heat: 0
     Cold: 0
     Poison: 0
@@ -138,63 +49,84 @@
     Caustic: 0
     Compression: 0
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
-    Piercing: 10
+    Slash: 5
 
 - type: damageModifierSet
-  id: PseudogiantMutant
-  class: 3
+  id: STMutantT1DamageModifierSet
+  class: 0
   coefficients:
-    Blunt: 0.9
-    Slash: 0.9
-    Piercing: 0.4
-    Heat: 0
-    Cold: 0
+    Heat: 0.2
+    Cold: 0.2
     Poison: 0
     Cellular: 0
     Radiation: 0
-    Caustic: 0
-    Compression: 0
+    Caustic: 0.2
+    Compression: 5
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
-    Piercing: 10
+    Slash: 5
 
 - type: damageModifierSet
-  id: STMutatedGosha
+  id: STMutantT2DamageModifierSet
+  class: 2
+  coefficients:
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.3
+    Heat: 0.2
+    Cold: 0.2
+    Poison: 0
+    Cellular: 0
+    Radiation: 0
+    Caustic: 0.2
+    Compression: 5
+    Psy: 0
+    Mutant: 1
+  flatReductions:
+    Blunt: 5
+    Slash: 5
+
+- type: damageModifierSet
+  id: STMutantT3DamageModifierSet
+  class: 3
+  coefficients:
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.3
+    Heat: 0.2
+    Cold: 0.2
+    Poison: 0
+    Cellular: 0
+    Radiation: 0
+    Caustic: 0.2
+    Compression: 5
+    Psy: 0
+    Mutant: 1
+  flatReductions:
+    Blunt: 5
+    Slash: 5
+
+- type: damageModifierSet
+  id: STMutantT4DamageModifierSet
   class: 4
   coefficients:
-    Blunt: 0.8
-    Slash: 0.8
-    Piercing: 0.45
-    Heat: 0
-    Cold: 0
+    Blunt: 0.5
+    Slash: 0.5
+    Piercing: 0.3
+    Heat: 0.2
+    Cold: 0.2
     Poison: 0
     Cellular: 0
     Radiation: 0
-    Caustic: 0
-    Compression: 0
+    Caustic: 0.2
+    Compression: 5
     Psy: 0
+    Mutant: 1
   flatReductions:
     Blunt: 5
-    Piercing: 12
-
-- type: damageModifierSet
-  id: MutantZombie
-  class: 3
-  coefficients:
-    Blunt: 0.9
-    Slash: 0.9
-    Piercing: 0.5
-    Heat: 0
-    Cold: 0
-    Poison: 0
-    Cellular: 0
-    Radiation: 0
-    Caustic: 0
-    Compression: 0
-    Psy: 0
-  flatReductions:
-    Blunt: 5
-    Piercing: 5
+    Slash: 5

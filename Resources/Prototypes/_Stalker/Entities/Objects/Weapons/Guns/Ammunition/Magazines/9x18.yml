@@ -81,11 +81,12 @@
     - type: Appearance
     - type: RepositoryItem
       categoryName: Магазины
-
+  
+######################### Бизон #########################
 - type: entity
-  id: BizonMag9x18
+  id: BizonMag
   name: шнековый магазин "Бизон" (64)
-  description: Шнековый магазин на Бизон под 9х18. Вместимость пуль 64. Изменён с помощью инструментов.
+  description: Шнековый магазин на Бизон под 9х18. Вместимость пуль 64. Продают пустым.
   parent: VityazMag
   tag: Stalker
   components:
@@ -93,7 +94,7 @@
     self: 0.35
   - type: Tag
     tags:
-      - MagazineBizon919
+      - MagazineBizon
   - type: BallisticAmmoProvider
     proto:
     mayTransfer: true
@@ -124,6 +125,7 @@
   - type: Craftable
   - type: RepositoryItem
     categoryName: Магазины
+
 ######################### Скорпион #########################
 - type: entity
   id: Vz61Mag

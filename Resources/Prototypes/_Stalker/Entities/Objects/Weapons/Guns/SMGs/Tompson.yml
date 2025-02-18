@@ -19,11 +19,17 @@
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/tommygun.rsi
     - type: Gun
       projectileSpeed: 18
-      minAngle: 60
-      maxAngle: 105
-      angleIncrease: 1
-      angleDecay: 8
-      fireRate: 13
+      minAngle: 45
+      maxAngle: 80
+      angleIncrease: 2
+      angleDecay: 9
+      fireRate: 7
+      shotsPerBurst: 3
+      ShotsPerBurstModified: 3
+      selectedMode: Burst
+      availableModes:
+        - Burst
+        - FullAuto
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/PPSh.ogg
     - type: ItemSlots

@@ -4,11 +4,9 @@
     totalCount: 350
     anomalyEntries:
       - protoId: ZoneAnomalySpringboard
-      - protoId: STAnomalyBarrier
       - protoId: ZoneAnomalyGravi
       - protoId: ZoneAnomalyJarka
       - protoId: ZoneAnomalyElectra
-
 # Кордон XXX
 - type: stAnomalyGenerationOptions
   id: STKordonGenerationOptions
@@ -22,15 +20,13 @@
       - protoId: ZoneAnomalySpringboard
       - protoId: ZoneAnomalyLamp
       - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyEMP
 
 # Свалка XXX
 - type: stAnomalyGenerationOptions
   id: STSvalkaGenerationOptions
   options:
-    totalCount: 250
+    totalCount: 350
     anomalyEntries:
-      - protoId: ZoneAnomalyEMP
       - protoId: ZoneAnomalySmoke
       - protoId: ZoneAnomalyElectra
       - protoId: ZoneAnomalyGravi
@@ -39,7 +35,6 @@
       - protoId: ZoneAnomalyJarka
       - protoId: ZoneAnomalyGazirovka
       - protoId: ZoneAnomalyGarland
-      - protoId: ZoneAnomalyInversion
       - protoId: ZoneAnomalyBarabashka
 
 # Болота XXX
@@ -65,7 +60,7 @@
     totalCount: 250
     anomalyEntries:
     - protoId: ZoneAnomalyGazirovka
-  
+
 # Тёмная лощина XXX
 - type: stAnomalyGenerationOptions
   id: STTemnajLohinaGenerationOptions
@@ -88,7 +83,15 @@
   options:
     totalCount: 400
     anomalyEntries:
-      - protoId: STAnomalyBarrier
+      - protoId: ZoneAnomalySmoke
+      - protoId: ZoneAnomalyElectra
+      - protoId: ZoneAnomalyGravi
+      - protoId: ZoneAnomalySpringboard
+      - protoId: ZoneAnomalyLamp
+      - protoId: ZoneAnomalyJarka
+      - protoId: ZoneAnomalyGazirovka
+      - protoId: ZoneAnomalyGarland
+      - protoId: ZoneAnomalyBarabashka
 
 # Топи XXX
 - type: stAnomalyGenerationOptions
@@ -96,7 +99,15 @@
   options:
     totalCount: 350
     anomalyEntries:
-      - protoId: STAnomalyBarrier
+      - protoId: ZoneAnomalySmoke
+      - protoId: ZoneAnomalyElectra
+      - protoId: ZoneAnomalyGravi
+      - protoId: ZoneAnomalySpringboard
+      - protoId: ZoneAnomalyLamp
+      - protoId: ZoneAnomalyJarka
+      - protoId: ZoneAnomalyGazirovka
+      - protoId: ZoneAnomalyGarland
+      - protoId: ZoneAnomalyBarabashka
 
 
 # Рыжий лес XXX
@@ -127,14 +138,12 @@
   options:
     totalCount: 170
     anomalyEntries:
-      - protoId: STAnomalyBarrier
       - protoId: ZoneAnomalyKissel
       - protoId: ZoneAnomalyPulse
       - protoId: ZoneAnomalyElectra
       - protoId: ZoneAnomalySteam
       - protoId: ZoneAnomalyBarabashka
       - protoId: ZoneAnomalyFreezer
-      - protoId: ZoneAnomalyEMP
       - protoId: STAnomalyHush
 
 # Росток XXX
@@ -155,7 +164,6 @@
       - protoId: ZoneAnomalySmoke
       - protoId: ZoneAnomalyGrabber
       - protoId: ZoneAnomalySteam
-      - protoId: ZoneAnomalyEMP
 
 
 # Оазис XXX
@@ -167,6 +175,3 @@
       - protoId: ZoneAnomalySource
       - protoId: ZoneAnomalyGrabber
       - protoId: STAnomalyHush
-      - protoId: ZoneAnomalyPolymorph
-      - protoId: ZoneAnomalySol
-      - protoId: ZoneAnomalyEMP

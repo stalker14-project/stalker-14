@@ -13,6 +13,9 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/rhbz_iskatel.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/rhbz_iskatel.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHelmRCBZ
+    slot: head
   - type: Armor
     armorClass: 1
     modifiers:
@@ -33,27 +36,25 @@
         Compression: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.90
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHelmRCBZ
-    slot: mask
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
 
 - type: entity
-  parent: ClothingMaskGas
+  parent: ClothingHeadHardsuitWithLightBase
   id: ClothingHelmRCBZ
   suffix: ST, T2, Env
   name: маска РХБЗ
   categories: [ HideSpawnMenu ]
   description: Эффективное средство индивидуальной защиты от различных видов химических, биологических и радиоактивных угроз. Они обеспечивают надёжную фильтрацию воздуха, задерживая вредные вещества и частицы, что позволяет защитить дыхательные пути и кожу от воздействия опасных веществ.
   components:
-  - type: IngestionBlocker
-  - type: IdentityBlocker
   - type: Tag
     tags:
-      - BlockMask
-      - HidesNose
+    - BlockMask
+    - HidesNose
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
   - type: Craftable
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/gasmask_rhbz.rsi
@@ -70,7 +71,11 @@
   - type: HideLayerClothing
     slots:
     - Hair
-
+  - type: PointLight
+    color: orange
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
 # Dolg - 1
 
 - type: entity
@@ -95,9 +100,6 @@
     sprite: _Stalker/Objects/Clothing/mask/rcbz-dolg-helmet.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/mask/rcbz-dolg-helmet.rsi
-  - type: HideLayerClothing
-    slots:
-    - Hair
 
 # Freedom - 2 +
 
@@ -228,7 +230,4 @@
     sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
   - type: Clothing
     sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
-  - type: HideLayerClothing
-    slots:
-    - Hair
 

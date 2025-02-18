@@ -7,9 +7,7 @@
   description: Возможно тут что-то очень важное
   components:
     - type: TimedDespawn
-      lifetime: 14400
-    - type: SpawnOnDespawn
-      prototype: BaseTrashCache
+      lifetime: 3610
     - type: Sprite
       sprite: _Stalker/Objects/Craft/blueprints_container.rsi
       state: base
@@ -18,7 +16,7 @@
     - type: Storage
       maxItemSize: Huge
       grid:
-        - 0,0,6,6
+         - 0,0,8,8
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -212,7 +210,7 @@
       maxAmount: 1
       maxOffset: 0
       minOffset: 0
-      cooldown: 14400
+      cooldown: 3610
       chance: 0.10
       timeoutOnRoll: true
       restricted:

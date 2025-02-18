@@ -87,10 +87,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 2
-      piercing: -1
+
 
 # Jabs - 2
 
@@ -105,9 +102,6 @@
   - type: Clothing
     sprite: _Stalker/Clothing/OuterClothing/zarya_jab.rsi
   # Bonus
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 1.05
-    baseSprintSpeed: 1.05
 
 # Military - 3 +
 
@@ -121,11 +115,7 @@
     sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 2
-      piercing: -2
-      environment: -1
+
 
 # Renegates - 4 +
 
@@ -139,15 +129,12 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/rene_zarya.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/rene_zarya.rsi
-  - type: Armor
-    armorLevels:
-      piercing: -1
-      environment: 2
+
 
 # Serafims - 3
 
 - type: entity
-  parent: ClothingOuterArmorZaryaHunter
+  parent: STClothingOuterArmorZaryaBase
   id: STClothingOuterArmorRassvetSera
   name: комбинезон «Рассвет»
   suffix: ST, T1, PVE
@@ -160,15 +147,6 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadCapoSera
       slot: head
-    - type: Armor
-      armorClass: 1
-      armorLevels:
-        nonPvPPhysical: 3
-        piercing: -2
-        radiation: -2
-        heat: -1
-        psy: -1
-        shock: -1
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -192,10 +170,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_neytralov.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 1
-      piercing: -1
+
 # Dolg - 4
 
 - type: entity
@@ -208,12 +183,6 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
-  - type: Armor
-    armorClass: 2
-    armorLevels:
-      nonPvPPhysical: 1
-      environment: -1
-# bonus
   - type: Storage
     maxItemsize: Large
     grid:
@@ -246,11 +215,6 @@
     sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
-  - type: Armor
-    armorLevels:
-      nonPvPPhysical: 1
-      environment: -1
-
 # Bandits - 5
 
 

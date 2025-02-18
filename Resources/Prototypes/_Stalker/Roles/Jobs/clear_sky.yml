@@ -15,6 +15,7 @@
       - Dwarf
   startingGear: StalkerClearSkyGear
   supervisors: Исследуй Зону и оберегай её секреты от посторонних глаз.
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -23,8 +24,6 @@
           - CN
       - type: Bands
         band: Stalker
-        altBand: stalker
-        canChange: true
         bandIcon: cn
       - type: BlockTackingHolyItems
       - type: TeethPull

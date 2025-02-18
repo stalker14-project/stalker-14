@@ -15,13 +15,13 @@
       - Dwarf
   startingGear: DolgGear
   supervisors: Вы подчиняетесь старшим по званию.
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
         - type: Access
           tags:
             - Dolg
-            - Stalker
         - type: Bands
           band: Stalker
           bandIcon: Dolg
@@ -49,6 +49,7 @@
       - Dwarf
   startingGear: DolgGear
   supervisors: Вы командуете другими бойцами Долга.
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:

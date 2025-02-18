@@ -3,8 +3,10 @@
   parent: BaseMobMutant
   name: контроллёр
   suffix: ST, T3
-  description: с какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
+  description: C какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
   components:
+  - type: Damageable
+    damageModifierSet: STMutantT3DamageModifierSet
   - type: Sprite
     sprite: _Stalker/Mobs/Mutants/controller.rsi
     layers:

@@ -1,28 +1,28 @@
 - type: shopPreset
   id: DolgShopPreset
   itemsForSale:
-    # Mutant parts
+    # Mutant parts 1.5x Sidorovich
 
-    #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 175 # T1
-    MutantPartSeasonedBoarHoof: 350 # T2
-    MutantPartOldBoarHoof: 525 # T3
+    #Boars -------- Health * T *
+    MutantPartBoarHoof: 205 # T1
+    MutantPartSeasonedBoarHoof: 405 # T2
+    MutantPartOldBoarHoof: 610 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 120
-    MutantPartFleshEye: 260
-    FoodMeatSpiderLeg: 65
+    MutantPartBlindDogTail: 135
+    MutantPartFleshEye: 300
+    FoodMeatSpiderLeg: 75
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 715
-    MutantPartPseudodogTail: 390
-    MutantPartSnorkFoot: 650
+    MutantPartLeshiyRoot: 825
+    MutantPartPseudodogTail: 450
+    MutantPartSnorkFoot: 750
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 975
-    MutantPartOraculeEye: 1950
-    MutantPartPseudogiantHeart: 5200
-    MutantPartZombieHand: 780
+    MutantPartBloodsuckerTentacles: 1125
+    MutantPartOraculeEye: 2400
+    MutantPartPseudogiantHeart: 6000
+    MutantPartZombieHand: 900
   categories:
     - name: Оружие
       priority: 1
@@ -41,7 +41,6 @@
         STWeaponGunAKS74U: 1490
         STWeaponRifleStalkerAK74: 3000
         STSTWeaponRifleStalkerAK74M: 4350
-        WeaponMachineGunRPD: 10000
           # Smg
         STWeaponSMGPP91: 1000
         STWeaponSMGBizon: 2000
@@ -51,12 +50,9 @@
         WeaponPistolStalkerTT: 250
         STWeaponSniperMosin: 1000
         STWeaponRifleStalkerAKM: 3000
-        STWeaponRifleStalkerVAL: 15000
-        STWeaponRifleSVDS: 11000
     - name: Магазины
       priority: 2
       items:
-        Magazine762x39RPD: 1200
           # 7mm
         Base1270Mag: 150 #T1
         Saiga1270Mag10: 350
@@ -75,8 +71,6 @@
         PP91Mag: 210
           # Other
         Base939Mag10: 100
-        939Mag20: 250
-        939Mag30: 550
         BasePMMag: 70
         TTMag: 100
         BaseAPSMag: 150
@@ -89,9 +83,6 @@
         725PBox: 90
         725PTBox: 225
         725PSTBox: 675
-        # 9.39
-        939SP5Box: 250
-        939SP6Box: 625
         # 9.19
         919PSOGJBox: 80
         919PSTBox: 200
@@ -126,8 +117,8 @@
         ClothingOuterArmor6B2: 1350 # T2 - PvP
         ClothingOuterArmorRCBZDolg: 1700 # T2 - ENV
         ClothingOuterArmorZaryaDolg: 1850 # T2 - universal
-        STClothingOuterArmorLightPlateVestBaseANAgray: 2250
-        STClothingOuterArmorLightPlateVestBaseANAgreen: 2250
+        STClothingOuterArmorLightPlateVestBaseANAgray: 2750
+        STClothingOuterArmorLightPlateVestBaseANAgreen: 2750
         STClothingOuterArmorHeavyDolg: 2900 # T3 - PVE
         ClothingOuterArmorSevaDolgRed: 3000 # T3 - ENV
     - name: Хранилища и Контейнеры

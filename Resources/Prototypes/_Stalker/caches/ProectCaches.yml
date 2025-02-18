@@ -22,14 +22,16 @@
 - type: entity
   parent: BaseItem
   id: ProectPVE
-  name: набор Проекта
+  name: набор Проекта для охоты
   description: Набор стандартный поставки экипировки Проекта
   suffix: Stalker, т3, Project
   components:
     - type: Item
       size: Small
       shape:
-        - 0,0,2,2
+        - 0,0,3,3
+    - type: STWeight
+      self: 25
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2
@@ -52,20 +54,25 @@
         - id: 7mmBuckshotBox
         - id: 6mmBuckshotBox
         - id: ClothingHeadHelmetLight
+        - id: ClothingBackpackDuffelBlackMilitaryTacticStalker
+        - id: FlashlightSeclite
+        - id: PowerCellHyper
       sound:
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
   parent: BaseItem
   id: ProectENV
-  name: набор Проекта
+  name: набор Проекта для артефактов
   description: Набор стандартный поставки экипировки Проекта
   suffix: Stalker, т3, Project
   components:
     - type: Item
       size: Small
       shape:
-        - 0,0,2,2
+        - 0,0,3,3
+    - type: STWeight
+      self: 25
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2
@@ -95,20 +102,27 @@
         - id: GeigerCounter
         - id: ZoneArtifactDetectorResponse
         - id: STSkinsKitProject
+        - id: ClothingBackpackDuffelBlackMilitaryTacticStalker
+        - id: FlashlightSeclite
+        - id: BoxArtcont
+        - id: BoxArtcont
+        - id: PowerCellHyper
       sound:
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
   parent: BaseItem
   id: ProectPVP
-  name: набор Проекта
+  name: набор Проекта для охоты на двух ногую дичь
   description: Набор стандартный поставки экипировки Проекта
   suffix: Stalker, т3, Project
   components:
     - type: Item
       size: Small
       shape:
-        - 0,0,2,2
+        - 0,0,3,3
+    - type: STWeight
+      self: 25
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2

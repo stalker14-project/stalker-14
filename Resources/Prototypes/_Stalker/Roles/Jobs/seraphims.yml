@@ -15,6 +15,7 @@
       - Dwarf
   startingGear: SeraphimGear
   supervisors: Вы служите во имя Его.
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -27,7 +28,6 @@
         - type: Access
           tags:
             - Seraphims
-            - Stalker
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -66,6 +66,7 @@
       - Dwarf
   startingGear: SeraphimHeadGear
   supervisors: Вы служите во имя Его.
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -76,7 +77,6 @@
           tags:
             - Seraphims
             - SeraphimsHead
-            - Stalker
         - type: Bands
           band: Stalker
           bandIcon: seraphim_officer

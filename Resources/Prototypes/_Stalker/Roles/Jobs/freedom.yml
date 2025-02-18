@@ -15,13 +15,13 @@
       - Dwarf
   startingGear: FreedomGear
   supervisors: Кури, защищай Зону и игнорируй авторитеты.
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
         - type: Access
           tags:
             - Freedom
-            - Stalker
         - type: Bands
           band: Stalker
           bandIcon: freedom
@@ -49,6 +49,7 @@
       - Dwarf
   startingGear: FreedomGear
   supervisors: Командиры? У анархистов?.
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -70,4 +71,3 @@
     legs: ClothingLegsJeansFreedomCamouflage
     shoes: ClothingShoesBootsWork
     torso: ClothingTorsoTurtlenecksFreedomCamouflage
-    pocket1: ZoneArtifactDetectorResponseCvoboda

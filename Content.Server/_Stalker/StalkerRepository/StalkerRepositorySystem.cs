@@ -229,44 +229,57 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     #endregion
 
+    private HashSet<EntityUid> _currentlyProcessingEjects = new HashSet<EntityUid>();
+    private readonly object _ejectLock = new();
+
     private void OnEjectMessage(EntityUid uid, StalkerRepositoryComponent component, RepositoryEjectMessage msg)
     {
-        if (msg.Actor == null)
+        if (msg.Actor == null || _currentlyProcessingEjects.Contains(msg.Actor))
             return;
 
-        // get weight with our new item to check for overflow
-        var sum = component.CurrentWeight - msg.Item.Weight;
-        if (msg.Item.Weight < 0)
+        _currentlyProcessingEjects.Add(msg.Actor);
+
+        try
         {
-            // round item's weight so it'll be more accurate condition
-            if (Math.Round(sum, 2) > component.MaxWeight)
+            lock (_ejectLock)
             {
-                _sawmill.Debug($"Could not eject an item due to its weight. {msg.Item.Identifier} | item weight: {msg.Item.Weight} | repo weight: {component.CurrentWeight}");
-                return;
+                if (msg.Item.Weight < 0)
+                {
+                    var sum = component.CurrentWeight - msg.Item.Weight;
+                    if (Math.Round(sum, 2) > component.MaxWeight)
+                    {
+                        _sawmill.Debug($"Could not eject an item due to its weight. {msg.Item.Identifier} | item weight: {msg.Item.Weight} | repo weight: {component.CurrentWeight}");
+                        return;
+                    }
+                }
+
+                var item = GetFirstItem(component.ContainedItems, msg.Item.Identifier);
+                if (item == null || item.Count < msg.Count)
+                    return;
+
+                item.Count -= msg.Count;
+
+                if (item.SStorageData is IItemStalkerStorage stalker)
+                {
+                    stalker.CountVendingMachine -= (uint)msg.Count;
+                }
+
+                if (item.Count <= 0)
+                    component.ContainedItems.Remove(item);
+
+                EjectItems(GetEntity(msg.Entity), item, msg.Count);
+                _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(msg.Actor):user} ejected {msg.Count} {msg.Item.Name} from repository");
+                _stalkerStorageSystem.SaveStorage(component);
+                UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
             }
         }
-        // gets first item and reduces its count
-        var item = GetFirstItem(component.ContainedItems, msg.Item.Identifier);
-        if (item == null)
-            return;
-        item.Count -= msg.Count;
-
-        // count reducing inside stalker data, saved to database in future
-        if (item.SStorageData is IItemStalkerStorage stalker)
+        finally
         {
-            stalker.CountVendingMachine -= (uint)msg.Count;
+            _currentlyProcessingEjects.Remove(msg.Actor);
         }
-
-        // if item's count became 0, we'll remove it from our repository
-        if (item.Count <= 0)
-            component.ContainedItems.Remove(item);
-
-        // ejecting, logging and ui update
-        EjectItems(GetEntity(msg.Entity), item, msg.Count);
-        _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(msg.Actor):user} ejected {msg.Count} {msg.Item.Name} from repository");
-        _stalkerStorageSystem.SaveStorage(component);
-        UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
     }
+
+
 
     private void OnInjectMessage(EntityUid uid, StalkerRepositoryComponent component,
         RepositoryInjectFromUserMessage msg)

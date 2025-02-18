@@ -8,17 +8,43 @@
         STCombatKnife: 10
             # Guns
         WeaponPistolStalkerGlock: 200
+        STWeaponShotgunToz34: 200
+        STWeaponShotgunMossberg: 650
+        STWeaponRevolverRugerRedhawk: 750
+        STWeaponShotgunStalkerSPAS: 1350
+        STWeaponRevolverSWModel625: 1650
+        STWeaponGunAKS74U: 1750
+        STWeaponSubMachineGunVityaz: 2250
+        STWeaponRifleM16: 3000
+        STWeaponRifleStalkerAK74: 3500
     - name: Магазины
       priority: 2
       items:
         BaseGlockMag10: 100
         GlockMag17: 200
         GlockMag24: 400
+        SpeedLoader45ACPEmpty: 75
+        Base545Mag10: 50 #T1
+        545Mag20: 100 #T2
+        545Mag30: 220 #T3
+        545Mag45: 300
+        VityazMag: 300
+        556Mag30: 330
     - name: Боеприпасы
       priority: 3
       items:
         919PSOGJBox: 75
         919PSTBox: 180
+        45ACPLFMJBox: 100
+        45ACPMFMJBox: 250
+        6mmBuckshotBox: 115
+        7mmBuckshotBox: 45
+        545FMJBox: 170
+        545HPBox: 640
+        545PCBox: 425
+        556FMJBox: 300
+        556WarmagBox: 1115
+        556M855Box: 745
     - name: Броня
       priority: 4
       items:
@@ -26,12 +52,16 @@
         STClothingHeadTinfoil: 200
           # OuterClothing #
         ClothingOuterJacketSCI: 60 # T1 - PVE
-        ClothingOuterArmorSSP99Amber: 2250
-        ClothingOuterArmorSSP99: 2750
+        ClothingOuterArmorSSP99Amber: 1750
+        ClothingOuterArmorSSP99: 2100
         ClothingOuterArmorSSP99White: 2750
         ClothingOuterArmorSSP24Sapfire: 3250
         ClothingOuterArmorSevaSciWhite: 1750
         ClothingOuterArmorSevaSciRed: 1750
+        ClothingOuterArmorSSP24Ruby: 2750
+        ClothingOuterArmorSSP24Topaz: 2750
+        STClothingOuterArmorLightPlateVestBaseANAgray: 2750
+        STClothingOuterArmorLightPlateVestBaseANAgreen: 2750
     - name: Хранилища и Контейнеры
       priority: 5
       items:
@@ -52,7 +82,6 @@
           # Cloaks
         ClothingOuterCoatDoshdevik: 60 # T1
           # Gasmasks
-        ClothingMaskGasFreedom: 100 # T1
         ClothingMaskGasM40: 200 # T2
         ClothingMaskM51: 1000
     - name: Исследовательское снаряжение
@@ -62,6 +91,7 @@
         BoxArtcont: 250 # T1
         ZoneAnomalyDetectorAD1: 250 # T1
         ZoneAnomalyDetectorAD2: 650 # T2
+        ZoneAnomalyDetectorAD3: 1000 # Т3
           # Detectors
         ZoneArtifactDetectorPulse: 50 # T1
         ZoneArtifactDetectorHunter: 100 # T2
@@ -123,9 +153,9 @@
         radioprotectpill: 70
         Bloodpack: 90
         psyblock: 200
-        MedkitAI2: 50
-        MedkitScience: 500
-        MedkitMilitary: 150
+        MedkitAI2: 20
+        MedkitScience: 150
+        MedkitMilitary: 75
         Defibrillator: 700
         # Crates
         AntiradCrate: 200

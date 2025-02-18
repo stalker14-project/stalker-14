@@ -3,7 +3,7 @@
 - type: entity
   id: BaseCartridge919
   name: cartridge (9х19 auto)
-  parent: BaseCartridgeCaselessRifle
+  parent: BaseCartridge
   abstract: true
   components:
   - type: STWeight
@@ -13,14 +13,10 @@
       - Cartridge
       - Cartridge919
   - type: CartridgeAmmo
-    proto: BulletPistol
+    deleteOnSpawn: true
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
-    layers:
-    - state: base
-      map: ["enum.AmmoVisualLayers.Base"]
+    drawdepth: Items
   - type: Appearance
-  - type: SpentAmmoVisuals
   - type: Trash
     time: 300
 
@@ -29,29 +25,57 @@
   name: Патрон (9х19)ПСО гж
   parent: BaseCartridge919
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet919PSOGJ
+  - type: SpentAmmoVisuals
+    state: base
 
 - type: entity
   id: Cartridge919PST
   name: Патрон (9х19)ПСТ
   parent: BaseCartridge919
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet919PST
+  - type: SpentAmmoVisuals
+    state: base
 
 - type: entity
   id: Cartridge919RIP
   name: Патрон (9х19)RIP
   parent: BaseCartridge919
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet919RIP
+  - type: SpentAmmoVisuals
+    state: base
 
 - type: entity
   id: Cartridge919PBM
   name: Патрон (9х19)ПБМ
   parent: BaseCartridge919
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet919PBM
+  - type: SpentAmmoVisuals
+    state: base

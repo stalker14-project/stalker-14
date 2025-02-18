@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -7,6 +8,8 @@ namespace Content.Server._Stalker.Restart;
 public partial class RestartSystem
 {
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
+
+    private readonly HashSet<string> _usedHomeCommand = new();
 
     private void InitializeCommands()
     {
@@ -46,6 +49,12 @@ public partial class RestartSystem
         if (shell.Player == null)
             return;
 
+        string playerId = shell.Player.UserId.ToString();
+
+        if (_usedHomeCommand.Contains(playerId))
+            return;
+
         TpToPurgatory(shell);
+        _usedHomeCommand.Add(playerId);
     }
 }

@@ -5,6 +5,8 @@
   parent: BaseMobMutant
   description: A small rodent that is ready to gnaw right through your flesh.
   components:
+  - type: Damageable
+    damageModifierSet: STMutantT1DamageModifierSet
   - type: CombatMode
   - type: MovementSpeedModifier
     baseWalkSpeed : 3.5
