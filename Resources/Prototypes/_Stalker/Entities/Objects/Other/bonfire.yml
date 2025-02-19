@@ -98,6 +98,10 @@
   - type: ContainerContainer
     containers:
       microwave_entity_container: !type:Container
+       blacklist:
+         entities:
+           - CombatKnife
+           - KitchenKnife
   - type: EmptyOnMachineDeconstruct
     containers:
     - microwave_entity_container
