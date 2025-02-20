@@ -1,0 +1,1 @@
+ent-STBarbedWire = Колючая проволока
