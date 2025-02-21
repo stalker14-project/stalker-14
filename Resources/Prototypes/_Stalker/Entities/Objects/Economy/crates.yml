@@ -96,24 +96,23 @@
 #############################################################
 
 - type: entity
-  parent: UNstandartCrate
+  parent: BaseItem
   id: ArmyAK1Crate
-  name: старый комплект АКСУ ПСЗ-7
-  description: Набор базовой АКСУ ПСЗ-7 первой версии.
+  name: старый комплект ПСЗ-7
+  description: Базовый армейский комплект ПСЗ предназначенный для солдат С.О.П. первой версии.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ1
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
         - id: ClothingHeadBandana2Military
         - id: STWeaponGunAKS74U
         - id: ClothingBeltGreenWebbingStalker
@@ -185,24 +184,23 @@
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  parent: UNstandartCrate
+  parent: BaseItem
   id: ArmyAK2Crate
-  name: комплект АКСУ ПСЗ-7
-  description: Набор базовой АКСУ ПСЗ-7 второй версии.
+  name: комплект ПСЗ-7
+  description: Базовый армейский комплект ПСЗ предназначенный для солдат С.О.П. переделанный под ЧЗО.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ2
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7v1
         - id: ClothingHeadBandana1Military
         - id: STWeaponGunAKS74U
         - id: ClothingBeltGreenWebbingStalker
@@ -344,21 +342,20 @@
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  parent: UNstandartCrate
+  parent: BaseItem
   id: ArmyAKCOfficerCrate
   name: комплект ПСЗ-7 офицерский
-  description: Офицерский набор ПСЗ-7.
+  description: Базовый армейский комплект ПСЗ предназначенный для офицеров С.О.П.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
         - id: STClothingOuterArmorLightPlateVestBasePSZ7
@@ -371,12 +368,12 @@
         - id: 545Mag30
         - id: 545Mag30
         - id: 545Mag30
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary

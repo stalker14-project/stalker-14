@@ -321,3 +321,119 @@
         - state: base
         - state: green_bit
           shader: unshaded
+
+############################################################################# СОП ПСЗ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitary
+  name: склад комплектов СОП
+  description: Склад армейских припасов с комплектами ПСЗ внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MilitaryPSZInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_lot_of_boxes.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Military"]]
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventory
+  startingInventory:
+    ArmyAK2Crate: 4
+    ArmyAK1Crate: 2
+
+- type: entity
+  parent: BaseItem
+  id: MilitaryPSZInventoryRestock
+  name: комплект ПСЗ пополнительный
+  description: Класть на склад.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MilitaryPSZInventory
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+
+
+
+
+############################################################################# СОП ОФЦ ПСЗ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitaryOfficer
+  name: ящик с офицерскими комплектами СОП
+  description: Ящик, содержащий офицерские комплекты ПСЗ внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MilitaryPSZInventoryOfficer
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["MilitaryOfficer"]]
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventoryOfficer
+  startingInventory:
+    ArmyAKCOfficerCrate: 3
+    MilitaryPSZInventoryRestock: 5
+    Screwdriver: 1
+
+- type: entity
+  parent: BaseItem
+  id: MilitaryPSZInventoryRestockOfficer
+  name: комплект ПСЗ офицерский пополнительный
+  description: Класть в офицерский ящик.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MilitaryPSZInventoryOfficer
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon

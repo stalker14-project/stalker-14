@@ -74,26 +74,6 @@
 
 - type: entity
   parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava4
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava4.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava4.rsi
-  - type: IngestionBlocker
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
   id: ClothingMaskNeckBlackFace
   name: маска
   description: Представляет собой маску с отверстиями для глаз и носа.

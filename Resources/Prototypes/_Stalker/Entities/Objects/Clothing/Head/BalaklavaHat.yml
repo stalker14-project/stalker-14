@@ -1,0 +1,63 @@
+- type: entity
+  parent: [ClothingHeadBaseButcherable, BaseFoldable]
+  id: ClothingHeadBalaklavaHatBase
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    folded: true
+  - type: FoldableClothing
+    foldedSlots:
+    - HEAD
+    unfoldedSlots:
+    - MASK
+    foldedHideLayers: []
+    unfoldedHideLayers:
+    - Snout
+    - Hair
+    - FacialHair
+  - type: IdentityBlocker
+    enabled: false
+    coverage: MOUTH
+  - type: Sprite
+    layers:
+    - state: icon
+      map: ["foldedLayer"]
+      visible: true
+    - state: icon_mask
+      map: [ "unfoldedLayer" ]
+      visible: false
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
+    - FacialHair
+    hideOnToggle: true
+
+- type: entity
+  parent: ClothingHeadBalaklavaHatBase
+  id: ClothingHeadBalaklavaHat
+  name: шапка
+  description: Чёрная шапка. Не даст замёрзнуть голове.
+  components:
+  - type: Sprite
+    sprite: _Stalker\Clothing\Head\Hats\balaklavahat.rsi
+
+- type: entity
+  parent: ClothingHeadBalaklavaHatBase
+  id: ClothingMaskBalaklavaHatBase
+  abstract: true
+  components:
+  - type: Foldable
+    canFoldInsideContainer: true
+    folded: false
+
+- type: entity
+  parent: ClothingMaskBalaklavaHatBase
+  id: ClothingMaskBalaklavaHat
+  name: балаклава
+  description: Представляет собой маску с отверстиями для глаз и рта.
+  components:
+  - type: Sprite
+    sprite: _Stalker\Clothing\Head\Hats\balaklavahat.rsi
