@@ -1,0 +1,17 @@
+ent-STPowerlines1 = ЛЭП
+    .desc = Один из компонентов электрической сети, система энергетического оборудования, предназначенная для передачи электроэнергии посредством электрического тока.
+    .suffix = ST, Mapping
+ent-STPowerlines2 = { ent-STPowerlines1 }
+    .suffix = ST, Mapping
+ent-STPowerlines3 = { ent-STPowerlines1 }
+    .suffix = ST, Mapping
+ent-STPowerlines4 = { ent-STPowerlines1 }
+    .suffix = ST, Mapping
+ent-STPowerlines5 = { ent-STPowerlines1 }
+    .suffix = ST, Mapping
+ent-STPowerlines6 = { ent-STPowerlines1 }
+    .suffix = ST, Mapping
+ent-STPowerlines7 = { ent-STPowerlines1 }
+    .suffix = ST, Mapping
+ent-STPowerlines8 = { ent-STPowerlines1 }
+    .suffix = ST, Mapping
