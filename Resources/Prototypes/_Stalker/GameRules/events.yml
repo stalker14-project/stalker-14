@@ -12,3 +12,32 @@
         types:
           Psy: 2
       damageTime: 128
+
+- type: entityTable
+  id: STCalmEventsTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+    - id: AnomalyExplosion
+        
+- type: entityTable
+  id: STBasicGameRulesTable
+  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+    children:
+      - !type:NestedSelector
+        tableId: STCalmEventsTable
+
+- type: entity
+  id: FuckThisShit # iff we make a selector for EntityTables that can respect StationEventComp restrictions, or somehow impliment them otherwise in said tables,
+  parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 180 # 45 mins #shows up like half way through shift.
+    minMaxEventTiming:
+      min: 190 # 20 mins
+      max: 190 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
+    scheduledGameRules: !type:NestedSelector
+      tableId: STBasicGameRulesTable
+
+      
+
+
