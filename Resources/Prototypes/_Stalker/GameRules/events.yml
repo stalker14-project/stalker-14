@@ -7,7 +7,6 @@
       earliestStart: 1
       reoccurrenceDelay: 100
       duration: 325
-      minimumPlayers: 0s
     - type: AnomalyExplosionRule
       damage:
         types:
@@ -20,25 +19,17 @@
     children:
     - id: AnomalyExplosion
         
-- type: entityTable
-  id: STBasicGameRulesTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    children:
-      - !type:NestedSelector
-        tableId: STCalmEventsTable
-
 - type: entity
-  id: FuckThisShit # iff we make a selector for EntityTables that can respect StationEventComp restrictions, or somehow impliment them otherwise in said tables,
+  id: STStationEventScheduler # iff we make a selector for EntityTables that can respect StationEventComp restrictions, or somehow impliment them otherwise in said tables,
   parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.
   components:
   - type: BasicStationEventScheduler
     minimumTimeUntilFirstEvent: 60 # 1 
     minMaxEventTiming:
       min: 60 # 1 mins
-      max: 65 # 1 mins
+      max: 65 # 1 minsв
     scheduledGameRules: !type:NestedSelector
-      tableId: STBasicGameRulesTable
-
+      tableId: STCalmEventsTable
       
 
 
