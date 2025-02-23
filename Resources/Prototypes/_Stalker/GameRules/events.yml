@@ -4,8 +4,8 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      earliestStart: 1
-      reoccurrenceDelay: 100
+      earliestStart: 60
+      reoccurrenceDelay: 60 # min
       duration: 325
     - type: AnomalyExplosionRule
       damage:
@@ -15,7 +15,7 @@
 
 - type: entityTable
   id: STCalmEventsTable
-  table: !type:AllSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
+  table: !type:AllSelector
     children:
     - id: AnomalyExplosion
         
@@ -24,10 +24,10 @@
   parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.
   components:
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 60 # 1 
+    minimumTimeUntilFirstEvent: 600 # sec
     minMaxEventTiming:
-      min: 60 # 1 mins
-      max: 65 # 1 minsв
+      min: 450 # sec
+      max: 700 # sec
     scheduledGameRules: !type:NestedSelector
       tableId: STCalmEventsTable
       
