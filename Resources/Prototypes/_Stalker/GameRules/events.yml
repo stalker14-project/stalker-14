@@ -4,9 +4,10 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      earliestStart: 30
+      earliestStart: 1
       reoccurrenceDelay: 100
       duration: 325
+      minimumPlayers: 0s
     - type: AnomalyExplosionRule
       damage:
         types:
@@ -31,10 +32,10 @@
   parent: BaseGameRule                  # we can remerge this with the other schedulers, but it will silently fail due to that limitation without a separate scheduler to balance atm.
   components:
   - type: BasicStationEventScheduler
-    minimumTimeUntilFirstEvent: 180 # 45 mins #shows up like half way through shift.
+    minimumTimeUntilFirstEvent: 60 # 1 
     minMaxEventTiming:
-      min: 190 # 20 mins
-      max: 190 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
+      min: 60 # 1 mins
+      max: 65 # 1 mins
     scheduledGameRules: !type:NestedSelector
       tableId: STBasicGameRulesTable
 
