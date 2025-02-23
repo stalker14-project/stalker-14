@@ -1,0 +1,9 @@
+ent-BaseShotgunBullet = shell (.50)
+ent-Cartridge7mmBuckshot = 12x70 Картечь 7мм
+ent-Cartridge6mmBuckshot = 12x70 Картечь 6.5мм "Экспресс"
+ent-CartridgeShotgunBullet = 12x70 Пуля
+ent-CartridgeShotgunBulletRIP = 12x70 Пуля RIP
+ent-CartridgeShotgunDart = 12x70 Дротик
+ent-ShellShotgunBeanbagStalker = 12х70 нелетальный
+ent-Cartridge8mmBuckshot = 12x70 Картечь 8.5мм "Магнум"
+ent-CartridgeShotgunFlechette = 12x70 Флешетта

@@ -1,0 +1,12 @@
+ent-STPellet7mm = pellet 7mm
+ent-Bullet7mmBuckshot = bullet (7mm buckshot)
+ent-STPellet65mm = pellet 6.5mm
+ent-Bullet6mmBuckshot = bullet (6.5mm buckshot)
+ent-STPellet85mm = pellet 8.5mm
+ent-Bullet8mmBuckshot = bullet (8.5mm buckshot)
+ent-STPelletFlechetta = pellet flechetta
+ent-BulletShotgunFlechette = bullet (Flechette)
+ent-BulletShotgunBullet = bullet (Bullet)
+ent-BulletShotgunRIP = { ent-BulletShotgunBullet }
+ent-BulletShotgunDart = bullet (Dart)
+ent-PelletShotgunBeanbagStalker = beanbag (.50)
