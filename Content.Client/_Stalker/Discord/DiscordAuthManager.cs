@@ -11,7 +11,7 @@ public sealed class DiscordAuthManager
 
     public string AuthLink = default!;
     public string ErrorMessage = default!;
-    public const string DiscordServerLink = "https://discord.gg/pBFv9pDuqK";
+    public const string DiscordServerLink = "https://discord.gg/SnUSV76zR3";
 
     public void Initialize()
     {
