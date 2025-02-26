@@ -6,87 +6,122 @@ using Robust.Shared.Map;
 using Robust.Server.Audio;
 using Content.Shared.Popups;
 using Content.Shared.Interaction;
-using Content.Server._Stalker.TrashSerchable;
 using Content.Shared.TrashDetector;
 
-namespace Content.Server.TrashDetector
+// Используем правильное имя компонента TrashSearchableComponent
+using Content.Server.TrashSearchable;
+
+// Используем AdvancedRandomSpawnerComponent
+using Content.Server.Spawners.Components;
+using System.Numerics;
+
+namespace Content.Server.TrashDetector;
+
+public sealed partial class TrashDetectorSystem : EntitySystem
 {
-    public sealed partial class TrashDetectorSystem : EntitySystem
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] internal readonly IEntityManager _entityManager = default!;
+    [Dependency] internal readonly IMapManager _mapManager = default!;
+    [Dependency] protected readonly AudioSystem Audio = default!;
+
+    public override void Initialize()
     {
-        [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-        [Dependency] internal readonly IEntityManager _entityManager = default!;
-        [Dependency] internal readonly IMapManager _mapManager = default!;
-        [Dependency] protected readonly AudioSystem Audio = default!;
-        public override void Initialize()
-        {
-            base.Initialize();
-            SubscribeLocalEvent<TrashDetectorComponent, BeforeRangedInteractEvent>(OnUseInHand);
-            SubscribeLocalEvent<TrashDetectorComponent, GetTrashDoAfterEvent>(OnDoAfter);
-        }
+        base.Initialize();
+        SubscribeLocalEvent<TrashDetectorComponent, BeforeRangedInteractEvent>(OnUseInHand);
+        SubscribeLocalEvent<TrashDetectorComponent, GetTrashDoAfterEvent>(OnDoAfter);
+    }
 
-        public override void Update(float frameTime)
-        {
-            base.Update(frameTime);
+    private void OnUseInHand(EntityUid uid, TrashDetectorComponent comp, BeforeRangedInteractEvent args)
+    {
+        if (!args.CanReach)
+            return;
 
-        }
+        OnUse(uid, comp, args.Target, args.User);
+    }
 
-        public void OnUseInHand(EntityUid uid, TrashDetectorComponent comp, BeforeRangedInteractEvent args)
-        {
-            if (!args.CanReach)
-                return;
-            OnUse(uid, comp, args.Target, args.User);
-        }
+    private void OnUse(EntityUid? uid, TrashDetectorComponent comp, EntityUid? target, EntityUid user)
+    {
+        if (target == null)
+            return;
 
-        public void OnUse(EntityUid? uid, TrashDetectorComponent comp, EntityUid? target, EntityUid user)
+        if (!TryComp<TrashSearchableComponent>(target, out var trash))
+            return;
+
+        if (trash.TimeBeforeNextSearch < 0f)
         {
-            if (target == null)
-                return;
-            if (TryComp<TrashSerchableComponent>(target, out var trash) && trash != null)
+            if (!_random.Prob(comp.CommonProbability + comp.RareProbability + comp.LegendaryProbability + comp.NegativeProbability))
             {
-                if (trash.TimeBeforeNextSearch < 0f)
-                {
-                    var doAfterArgs = new DoAfterArgs(_entityManager, user, comp.SearchTime, new GetTrashDoAfterEvent(), uid, target: target, used: uid)
-                    {
-                        BreakOnDamage = true,
-                        NeedHand = true,
-                        DistanceThreshold = 2f,
-                    };
-
-                    _doAfterSystem.TryStartDoAfter(doAfterArgs);
-                }
-                else
-                {
-                    _popupSystem.PopupEntity("Эту кучу уже недавно проверяли", user, PopupType.LargeCaution);
-                }
+                _popupSystem.PopupEntity("Прибор не реагирует.", user, PopupType.LargeCaution);
+                return;
             }
 
-        }
+            var doAfterArgs = new DoAfterArgs(_entityManager, user, comp.SearchTime, new GetTrashDoAfterEvent(), uid, target: target, used: uid)
+            {
+                BreakOnDamage = true,
+                NeedHand = true,
+                DistanceThreshold = 2f,
+            };
 
-        public void OnDoAfter(EntityUid uid, TrashDetectorComponent comp, GetTrashDoAfterEvent args)
+            _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        }
+        else
         {
+            _popupSystem.PopupEntity("Эту кучу уже недавно проверяли", user, PopupType.LargeCaution);
+        }
+    }
 
-            if (args.Handled || args.Cancelled || args.Args.Target == null || !TryComp<TrashSerchableComponent>(args.Args.Target.Value, out var trash))
-                return;
-            var target = args.Args.Target.Value;
+    private void OnDoAfter(EntityUid uid, TrashDetectorComponent comp, GetTrashDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled || args.Args.Target == null)
+            return;
 
-            if (_random.Prob(comp.Probability))
-            {
-                trash.TimeBeforeNextSearch = 900f;
-                _popupSystem.PopupEntity("Прибор пищит", uid, PopupType.LargeCaution);
-                var xform = Transform(uid);
-                var coords = xform.Coordinates;
-                Spawn(comp.Loot, coords);
-            }
-            else
-            {
-                trash.TimeBeforeNextSearch = 900f;
-                _popupSystem.PopupEntity("Прибор не издает звука", uid, PopupType.LargeCaution);
-            }
+        if (!TryComp<TrashSearchableComponent>(args.Args.Target.Value, out var trash))
+            return;
 
-            args.Handled = true;
+        trash.TimeBeforeNextSearch = 900f;
+
+        var spawnerCoords = Transform(uid).Coordinates;
+        var spawnerUid = EntityManager.SpawnEntity(comp.LootSpawner, spawnerCoords);
+
+        if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var advSpawner))
+        {
+            _popupSystem.PopupEntity("Ошибка: спавнер не найден!", uid, PopupType.Medium);
+            return;
         }
 
+        var spawnList = advSpawner.GetRandomPrototypes(_random);
+
+        if (spawnList.Count == 0)
+        {
+            spawnList.AddRange(advSpawner.GetNegativePrototypes(_random));
+            if (spawnList.Count == 0)
+            {
+                _popupSystem.PopupEntity("Ничего не найдено", uid, PopupType.LargeCaution);
+                return;
+            }
+        }
+
+        const float offsetRadius = 1.0f;
+        var baseCoords = Transform(uid).Coordinates;
+
+        foreach (var proto in spawnList)
+        {
+            var displacement = new Vector2(
+                _random.NextFloat(-offsetRadius, offsetRadius),
+                _random.NextFloat(-offsetRadius, offsetRadius)
+            );
+            var finalCoords = baseCoords.Offset(displacement);
+
+            EntityManager.SpawnEntity(proto, finalCoords);
+        }
+
+        if (advSpawner.DeleteSpawnerAfterSpawn && EntityManager.EntityExists(spawnerUid))
+        {
+            QueueDel(spawnerUid);
+        }
+
+        args.Handled = true;
     }
 }

@@ -1,3 +1,6 @@
+# =============================================================================
+# Ящик-спавнер, содержащий AdvancedRandomSpawnerComponent
+# =============================================================================
 - type: entity
   id: RandomTrashDetectorSpawner
   name: спавнер случайного мусора (металлоискатель)
@@ -7,9 +10,12 @@
     - type: Sprite
       sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
       state: icon
-    - type: RandomSpawner
-      prototypes:
-        # Tier 2 Crafting Materials
+
+    - type: AdvancedRandomSpawner
+      # Списки прототипов для разных категорий (common, rare, legendary, negative)
+
+      # 1) Common Prototypes
+      commonPrototypes:
         - STCraftStandardPCBT2
         - STCraftTapeKitT2
         - STCraftHideT2
@@ -17,8 +23,9 @@
         - STCraftBirchPlankT2
         - STCraftPlasticFittingT2
         - STCraftSheetIronT2
+
+      # 2) Rare Prototypes
       rarePrototypes:
-        # Tier 3 Crafting Materials (перенесены в редкие)
         - STCraftMultilayerPCBT3
         - STCraftGlueKitT3
         - STCraftSturdyHideT3
@@ -26,7 +33,6 @@
         - STCraftOakPlankT3
         - STCraftPlasticFittingT3
         - STCraftSheetBrassT3
-        #  Weapons
         - STWeaponShotgunMP153
         - STWeaponShotgunMossberg
         - WeaponPistolStalkerAPS
@@ -35,15 +41,44 @@
         - STWeaponRifleStalkerSaiga545
         - STWeaponSniperMosin
         - STWeaponRifleSKS
-        # Utility Items
         - DoubleEmergencyOxygenTankStalkerFilled
         - ExtendedEmergencyOxygenTankFilledStalker
         - Binocularus1
         - AAAAStalkerLopata
-      rareChance: 0.05   # 5% шанс спавна редкого предмета
-      chance: 1
-      offset: 0.5
 
+      # 3) Legendary Prototypes
+      legendaryPrototypes:
+        - STWeaponShotgunMP153
+
+      # 4) Negative Prototypes
+      negativePrototypes:
+        - MobMutantBoar  # Дикий кабан-мутант
+
+      # Вероятности и настройки (шансы, количество, разброс)
+      commonChance: 0.8
+      rareChance: 0.05
+      legendaryChance: 0.02
+      negativeEventChance: 0.1
+
+      minCommonCount: 1
+      maxCommonCount: 3
+      minRareCount: 0
+      maxRareCount: 2
+      minLegendaryCount: 0
+      maxLegendaryCount: 1
+      minNegativeCount: 1
+      maxNegativeCount: 2
+
+      offset: 0.5
+      deleteSpawnerAfterSpawn: false
+
+# =============================================================================
+# Металлоискатели разных уровней (Tier1..Tier5)
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Tier 1 (Простофиля)
+# -----------------------------------------------------------------------------
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier1
@@ -53,153 +88,135 @@
   components:
     - type: STWeight
       self: 6
+
     - type: Item
       size: Large
       shape:
         - 0,0,1,1
+
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T1_trash_detector.rsi
       state: icon
+
     - type: TrashDetector
       searchTime: 40
-      probability: 0.1
+      commonProbability: 0.5
+      rareProbability: 0.1
+      legendaryProbability: 0.02
+      negativeProbability: 0.05
 
+# -----------------------------------------------------------------------------
+# Tier 2 (Копатель)
+# -----------------------------------------------------------------------------
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier2
   name: металлоискатель "Копатель"
-  description: Хороший металлоискатель, качественно сделанный. Если порыться им в больших кучах мусора, то возможно вы что-то найдете.
+  description: Хороший металлоискатель, качественно сделанный.
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
       self: 4.5
+
     - type: Item
       size: Large
       shape:
         - 0,0,1,1
+
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T2_trash_detector.rsi
       state: icon
+
     - type: TrashDetector
       searchTime: 20
-      probability: 0.3
+      commonProbability: 0.6
+      rareProbability: 0.15
+      legendaryProbability: 0.03
+      negativeProbability: 0.04
 
+# -----------------------------------------------------------------------------
+# Tier 3 (Шахтёр)
+# -----------------------------------------------------------------------------
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier3
   name: металлоискатель "Шахтёр"
-  description: Дорогой, импортный металлоискатель. Прямо из Германии. Если порыться им в больших кучах мусора, то возможно вы что-то найдете.
+  description: Дорогой, импортный металлоискатель. Прямо из Германии...
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
       self: 3.5
+
     - type: Item
       size: Large
       shape:
         - 0,0,1,1
+
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T3_trash_detector.rsi
       state: icon
+
     - type: TrashDetector
       searchTime: 20
-      probability: 0.5
+      commonProbability: 0.7
+      rareProbability: 0.2
+      legendaryProbability: 0.05
+      negativeProbability: 0.03
 
+# -----------------------------------------------------------------------------
+# Tier 4 (Находка)
+# -----------------------------------------------------------------------------
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier4
   name: металлоискатель "Находка"
-  description: Очень Дорогой, металлоискатель модиффицированный с помощью частей гравитационных артефактов. Если порыться им в больших кучах мусора, то с большой вероятностью вы что-то найдете.
+  description: Очень дорогой, модифицированный с помощью артефактов...
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
       self: 0.5
+
     - type: Item
       size: Large
       shape:
         - 0,0,1,1
+
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T4_trash_detector.rsi
       state: icon
-    - type: TrashDetector
-      searchTime: 0
-      probability: 0.80
 
+    - type: TrashDetector
+      searchTime: 10
+      commonProbability: 0.8
+      rareProbability: 0.3
+      legendaryProbability: 0.1
+      negativeProbability: 0.02
+
+# -----------------------------------------------------------------------------
+# Tier 5 (Аномалист)
+# -----------------------------------------------------------------------------
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier5
   name: металлоискатель "Аномалист"
-  description: Крайне Дорогой, металлоискатель, является улучшенной версией металлоискателя "Находка". Обладает исключительными свойствами по поиску сборочных компонентов. Если порыться им в больших кучах мусора, то вы обязательно что-то найдете.
+  description: Крайне дорогой, улучшенная версия "Находка"...
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
       self: -2
+
     - type: Item
       size: Large
       shape:
         - 0,0,1,1
+
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T5_trash_detector.rsi
       state: icon
-    - type: TrashDetector
-      searchTime: 0
-      probability: 1
 
-- type: entity
-  id: RandomTrashDetectorSpawner2
-  name: спавнер случайного мусора (металлоискатель)
-  suffix: Stalker
-  parent: FlexibleMarker
-  components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
-      state: icon
-    - type: AdvancedRandomSpawner
-      commonPrototypes:
-        # Tier 2 Crafting Materials
-        - STCraftStandardPCBT2
-        - STCraftTapeKitT2
-        - STCraftHideT2
-        - STCraftGlassT2
-        - STCraftBirchPlankT2
-        - STCraftPlasticFittingT2
-        - STCraftSheetIronT2
-      rarePrototypes:
-        # Tier 3 Crafting Materials
-        - STCraftMultilayerPCBT3
-        - STCraftGlueKitT3
-        - STCraftSturdyHideT3
-        - STCraftQuartzCrystalT3
-        - STCraftOakPlankT3
-        - STCraftPlasticFittingT3
-        - STCraftSheetBrassT3
-      legendaryPrototypes:
-        # Weapons and special items
-        - STWeaponShotgunMP153
-        - STWeaponShotgunMossberg
-        - WeaponPistolStalkerAPS
-        - KhattabkaGrenade
-        - STWeaponGunAKS74U
-        - STWeaponRifleStalkerSaiga545
-        - STWeaponSniperMosin
-        - STWeaponRifleSKS
-        - DoubleEmergencyOxygenTankStalkerFilled
-        - ExtendedEmergencyOxygenTankFilledStalker
-        - Binocularus1
-        - AAAAStalkerLopata
-      negativePrototypes:
-        # "Плохие события" - враги, мутанты
-        - MobMutantBoar  # Дикий кабан-мутант
-      commonChance: 0.8  # 80% шанс выпадения обычных предметов (если провален → спавн мутанта)
-      rareChance: 0.05    # 5% шанс выпадения редкого предмета
-      legendaryChance: 0.02  # 2% шанс выпадения легендарного предмета (оружия и ценных предметов)
-      negativeEventChance: 0.1  # 10% шанс появления "плохого события"
-      minCommonCount: 1   # Минимум 1 обычный предмет (гарантированно)
-      maxCommonCount: 3   # Максимум 3 обычных предмета (третий выпадает с шансом 50%)
-      minRareCount: 0     # Минимум 0 редких предметов
-      maxRareCount: 2     # Максимум 2 редких предмета
-      minLegendaryCount: 0 # Минимум 0 легендарных предметов
-      maxLegendaryCount: 1 # Максимум 1 легендарный предмет
-      minNegativeCount: 1  # Минимум 1 "плохое событие"
-      maxNegativeCount: 2  # Максимум 2 "плохих события"
-      offset: 0.5          # Разброс координат при спавне
-      deleteSpawnerAfterSpawn: true  # Удалять спавнер после спавна
+    - type: TrashDetector
+      searchTime: 5
+      commonProbability: 0.9
+      rareProbability: 0.4
+      legendaryProbability: 0.2
+      negativeProbability: 0.01
