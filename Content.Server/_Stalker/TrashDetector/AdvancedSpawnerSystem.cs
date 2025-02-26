@@ -3,13 +3,12 @@ using Content.Server.Spawners.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
-using Robust.Shared.GameObjects;
 
 namespace Content.Server.Spawners.EntitySystems
 {
     /// <summary>
-    /// Отдельная система, которая отвечает за спавн предметов через AdvancedRandomSpawnerComponent.
-    /// Не изменяет другие спавнеры и работает отдельно.
+    /// Отдельная система для спавна предметов через AdvancedRandomSpawnerComponent.
+    /// Полностью адаптирована под старый движок, без использования новых методов Robust Engine.
     /// </summary>
     [UsedImplicitly]
     public sealed class AdvancedSpawnerSystem : EntitySystem
@@ -27,35 +26,46 @@ namespace Content.Server.Spawners.EntitySystems
         /// </summary>
         private void OnAdvancedSpawnerMapInit(EntityUid uid, AdvancedRandomSpawnerComponent component, MapInitEvent args)
         {
-            SpawnItems(uid, component);
-            if (component.DeleteSpawnerAfterSpawn)
-                QueueDel(uid);
-        }
+            // ✅ Вызываем метод для выбора предметов или "плохих событий"
+            var randomPrototypes = component.GetRandomPrototypes(_random);
 
-        /// <summary>
-        /// Логика спавна предметов, учитывая редкость и количество.
-        /// </summary>
-        private void SpawnItems(EntityUid uid, AdvancedRandomSpawnerComponent component)
-        {
-            if (Deleted(uid) || component.CommonPrototypes.Count == 0 && component.RarePrototypes.Count == 0 && component.LegendaryPrototypes.Count == 0)
+            // Если предметов нет, проверяем плохие события
+            if (randomPrototypes.Length == 0)
             {
-                Log.Warning($"Prototype list in AdvancedRandomSpawnerComponent is empty! Entity: {ToPrettyString(uid)}");
-                return;
+                var negativePrototypes = component.GetNegativePrototypes(_random);
+
+                if (negativePrototypes.Length == 0)
+                    return; // Ничего не спавним
+
+                foreach (var proto in negativePrototypes)
+                {
+                    var offset = component.Offset;
+                    var xOffset = _random.NextFloat(-offset, offset);
+                    var yOffset = _random.NextFloat(-offset, offset);
+                    var coordinates = Transform(uid).Coordinates.Offset(new Vector2(xOffset, yOffset));
+
+                    EntityManager.SpawnEntity(proto, coordinates);
+                }
+            }
+            else
+            {
+                foreach (var proto in randomPrototypes)
+                {
+                    var offset = component.Offset;
+                    var xOffset = _random.NextFloat(-offset, offset);
+                    var yOffset = _random.NextFloat(-offset, offset);
+                    var coordinates = Transform(uid).Coordinates.Offset(new Vector2(xOffset, yOffset));
+
+                    EntityManager.SpawnEntity(proto, coordinates);
+                }
             }
 
-            var randomPrototypes = component.GetRandomPrototypes(_random);
-            if (randomPrototypes.Count == 0)
-                return;
-
-            foreach (var proto in randomPrototypes)
+            // Удаляем спавнер, если это требуется
+            if (component.DeleteSpawnerAfterSpawn && Exists(uid))
             {
-                var offset = component.Offset;
-                var xOffset = _random.NextFloat(-offset, offset);
-                var yOffset = _random.NextFloat(-offset, offset);
-                var coordinates = Transform(uid).Coordinates.Offset(new Vector2(xOffset, yOffset));
-
-                EntityManager.SpawnEntity(proto, coordinates);
+                QueueDel(uid);
             }
         }
     }
 }
+

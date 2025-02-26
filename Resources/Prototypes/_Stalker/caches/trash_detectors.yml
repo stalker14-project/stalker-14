@@ -155,6 +155,7 @@
       state: icon
     - type: AdvancedRandomSpawner
       commonPrototypes:
+        # Tier 2 Crafting Materials
         - STCraftStandardPCBT2
         - STCraftTapeKitT2
         - STCraftHideT2
@@ -163,6 +164,7 @@
         - STCraftPlasticFittingT2
         - STCraftSheetIronT2
       rarePrototypes:
+        # Tier 3 Crafting Materials
         - STCraftMultilayerPCBT3
         - STCraftGlueKitT3
         - STCraftSturdyHideT3
@@ -170,11 +172,8 @@
         - STCraftOakPlankT3
         - STCraftPlasticFittingT3
         - STCraftSheetBrassT3
-        - DoubleEmergencyOxygenTankStalkerFilled
-        - ExtendedEmergencyOxygenTankFilledStalker
-        - Binocularus1
-        - AAAAStalkerLopata
       legendaryPrototypes:
+        # Weapons and special items
         - STWeaponShotgunMP153
         - STWeaponShotgunMossberg
         - WeaponPistolStalkerAPS
@@ -183,12 +182,24 @@
         - STWeaponRifleStalkerSaiga545
         - STWeaponSniperMosin
         - STWeaponRifleSKS
-      rareChance: 0.05       # 5% шанс появления редкого предмета
-      legendaryChance: 0.01  # 1% шанс появления легендарного предмета (оружия)
-      minCommonCount: 1      # Минимум 1 обычный предмет
-      maxCommonCount: 3      # Максимум 3 обычных предмета
-      offset: 0.2            # Разброс координат
-      deleteSpawnerAfterSpawn: true # Удалять спавнер после спавна
-
-
-
+        - DoubleEmergencyOxygenTankStalkerFilled
+        - ExtendedEmergencyOxygenTankFilledStalker
+        - Binocularus1
+        - AAAAStalkerLopata
+      negativePrototypes:
+        # "Плохие события" - враги, мутанты
+        - MobMutantBoar  # Дикий кабан-мутант
+      commonChance: 0.8  # 80% шанс выпадения обычных предметов (если провален → спавн мутанта)
+      rareChance: 0.05    # 5% шанс выпадения редкого предмета
+      legendaryChance: 0.02  # 2% шанс выпадения легендарного предмета (оружия и ценных предметов)
+      negativeEventChance: 0.1  # 10% шанс появления "плохого события"
+      minCommonCount: 1   # Минимум 1 обычный предмет (гарантированно)
+      maxCommonCount: 3   # Максимум 3 обычных предмета (третий выпадает с шансом 50%)
+      minRareCount: 0     # Минимум 0 редких предметов
+      maxRareCount: 2     # Максимум 2 редких предмета
+      minLegendaryCount: 0 # Минимум 0 легендарных предметов
+      maxLegendaryCount: 1 # Максимум 1 легендарный предмет
+      minNegativeCount: 1  # Минимум 1 "плохое событие"
+      maxNegativeCount: 2  # Максимум 2 "плохих события"
+      offset: 0.5          # Разброс координат при спавне
+      deleteSpawnerAfterSpawn: true  # Удалять спавнер после спавна
