@@ -1,6 +1,3 @@
-# =============================================================================
-# Ящик-спавнер, содержащий AdvancedRandomSpawnerComponent
-# =============================================================================
 - type: entity
   id: RandomTrashDetectorSpawner
   name: спавнер случайного мусора (металлоискатель)
@@ -12,9 +9,13 @@
       state: icon
 
     - type: AdvancedRandomSpawner
-      # Списки прототипов для разных категорий (common, rare, legendary, negative)
-
-      # 1) Common Prototypes
+      minCount: 1          # Общий минимальный диапазон для всех категорий
+      maxCount: 3          # Общий максимальный диапазон для всех категорий
+      categoryChances:
+        common: 0.6
+        rare: 0.2
+        legendary: 0.1
+        negative: 0.1
       commonPrototypes:
         - STCraftStandardPCBT2
         - STCraftTapeKitT2
@@ -23,8 +24,6 @@
         - STCraftBirchPlankT2
         - STCraftPlasticFittingT2
         - STCraftSheetIronT2
-
-      # 2) Rare Prototypes
       rarePrototypes:
         - STCraftMultilayerPCBT3
         - STCraftGlueKitT3
@@ -45,35 +44,22 @@
         - ExtendedEmergencyOxygenTankFilledStalker
         - Binocularus1
         - AAAAStalkerLopata
-
-      # 3) Legendary Prototypes
       legendaryPrototypes:
         - STWeaponShotgunMP153
-
-      # 4) Negative Prototypes
       negativePrototypes:
-        - MobMutantBoar  # Дикий кабан-мутант
-
-      # Вероятности и настройки (шансы, количество, разброс)
-      commonChance: 0.8
-      rareChance: 0.05
-      legendaryChance: 0.02
-      negativeEventChance: 0.1
-
-      minCommonCount: 1
-      maxCommonCount: 3
-      minRareCount: 0
+        - MobMutantBoar
+      # Индивидуальные диапазоны переопределяют общие
+      minRareCount: 1
       maxRareCount: 2
-      minLegendaryCount: 0
+      minLegendaryCount: 1
       maxLegendaryCount: 1
       minNegativeCount: 1
-      maxNegativeCount: 2
-
-      offset: 0.5
+      maxNegativeCount: 3
+      offset: 0.2
       deleteSpawnerAfterSpawn: false
 
 # =============================================================================
-# Металлоискатели разных уровней (Tier1..Tier5)
+# Металлоискатели (Tier 1-8) с плавными вероятностями
 # =============================================================================
 
 # -----------------------------------------------------------------------------
@@ -83,16 +69,11 @@
   parent: BaseItem
   id: TrashDetectorTier1
   name: металлоискатель "Простофиля"
-  description: Сделан из говна и палок, но если порыться им в больших кучах мусора, то возможно вы что-то найдете.
+  description: Сделан из говна и палок, но если порыться в кучах мусора, то возможно что-то найдёшь.
   suffix: Stalker, металлоискатель
   components:
     - type: STWeight
       self: 6
-
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
 
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T1_trash_detector.rsi
@@ -100,10 +81,10 @@
 
     - type: TrashDetector
       searchTime: 40
-      commonProbability: 0.5
-      rareProbability: 0.1
-      legendaryProbability: 0.02
-      negativeProbability: 0.05
+      commonProbability: 0.35
+      rareProbability: 0.02
+      legendaryProbability: 0.002
+      negativeProbability: 0.10
 
 # -----------------------------------------------------------------------------
 # Tier 2 (Копатель)
@@ -118,21 +99,16 @@
     - type: STWeight
       self: 4.5
 
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
-
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T2_trash_detector.rsi
       state: icon
 
     - type: TrashDetector
       searchTime: 20
-      commonProbability: 0.6
-      rareProbability: 0.15
-      legendaryProbability: 0.03
-      negativeProbability: 0.04
+      commonProbability: 0.45
+      rareProbability: 0.07
+      legendaryProbability: 0.022
+      negativeProbability: 0.08
 
 # -----------------------------------------------------------------------------
 # Tier 3 (Шахтёр)
@@ -147,21 +123,16 @@
     - type: STWeight
       self: 3.5
 
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
-
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T3_trash_detector.rsi
       state: icon
 
     - type: TrashDetector
       searchTime: 20
-      commonProbability: 0.7
-      rareProbability: 0.2
-      legendaryProbability: 0.05
-      negativeProbability: 0.03
+      commonProbability: 0.55
+      rareProbability: 0.12
+      legendaryProbability: 0.042
+      negativeProbability: 0.06
 
 # -----------------------------------------------------------------------------
 # Tier 4 (Находка)
@@ -176,21 +147,16 @@
     - type: STWeight
       self: 0.5
 
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
-
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T4_trash_detector.rsi
       state: icon
 
     - type: TrashDetector
       searchTime: 10
-      commonProbability: 0.8
-      rareProbability: 0.3
-      legendaryProbability: 0.1
-      negativeProbability: 0.02
+      commonProbability: 0.65
+      rareProbability: 0.17
+      legendaryProbability: 0.062
+      negativeProbability: 0.04
 
 # -----------------------------------------------------------------------------
 # Tier 5 (Аномалист)
@@ -205,18 +171,83 @@
     - type: STWeight
       self: -2
 
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
-
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T5_trash_detector.rsi
       state: icon
 
     - type: TrashDetector
       searchTime: 5
-      commonProbability: 0.9
-      rareProbability: 0.4
-      legendaryProbability: 0.2
-      negativeProbability: 0.01
+      commonProbability: 0.75
+      rareProbability: 0.22
+      legendaryProbability: 0.082
+      negativeProbability: 0.02
+
+# -----------------------------------------------------------------------------
+# Tier 6 (Артефакт) – 100% легендарный
+# -----------------------------------------------------------------------------
+- type: entity
+  parent: BaseItem
+  id: TrashDetectorTier6
+  name: металлоискатель "Артефакт"
+  description: Легендарный детектор, позволяющий находить только самые ценные вещи.
+  suffix: Stalker, металлоискатель
+  components:
+    - type: STWeight
+      self: -2
+
+    - type: Sprite
+      sprite: _Stalker/Objects/Tools/Trash_detectors/T5_trash_detector.rsi
+      state: icon
+    - type: TrashDetector
+      searchTime: 3
+      commonProbability: 0.0
+      rareProbability: 0.0
+      legendaryProbability: 1.0
+      negativeProbability: 0.0
+
+# -----------------------------------------------------------------------------
+# Tier 7 (Легенда) – 100% редкий
+# -----------------------------------------------------------------------------
+- type: entity
+  parent: BaseItem
+  id: TrashDetectorTier7
+  name: металлоискатель "Легенда"
+  description: Этот прибор предназначен только для поиска редких находок.
+  suffix: Stalker, металлоискатель
+  components:
+    - type: STWeight
+      self: -2
+
+    - type: Sprite
+      sprite: _Stalker/Objects/Tools/Trash_detectors/T5_trash_detector.rsi
+      state: icon
+    - type: TrashDetector
+      searchTime: 3
+      commonProbability: 0.0
+      rareProbability: 1.0
+      legendaryProbability: 0.0
+      negativeProbability: 0.0
+
+# -----------------------------------------------------------------------------
+# Tier 8 (Мастер) – 100% легендарный + 100% редкий
+# -----------------------------------------------------------------------------
+- type: entity
+  parent: BaseItem
+  id: TrashDetectorTier8
+  name: металлоискатель "Мастер"
+  description: Комбинация лучших технологий, обеспечивающая поиск только редчайших предметов.
+  suffix: Stalker, металлоискатель
+  components:
+    - type: STWeight
+      self: -2
+
+    - type: Sprite
+      sprite: _Stalker/Objects/Tools/Trash_detectors/T5_trash_detector.rsi
+      state: icon
+    - type: TrashDetector
+      searchTime: 3
+      commonProbability: 0.0
+      rareProbability: 1.0
+      legendaryProbability: 1.0
+      negativeProbability: 0.0
+

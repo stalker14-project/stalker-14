@@ -8,160 +8,156 @@ using Robust.Shared.ViewVariables;
 namespace Content.Server.Spawners.Components
 {
     [RegisterComponent]
-    public sealed partial class AdvancedRandomSpawnerComponent : Component
+    public partial class AdvancedRandomSpawnerComponent : Component
     {
-        [ViewVariables(VVAccess.ReadWrite)]
+        // Общие параметры для всех категорий
+        [DataField("minCount")]
+        public int MinCount { get; private set; } = 1; // Минимальное количество по умолчанию
+
+        [DataField("maxCount")]
+        public int MaxCount { get; private set; } = 3; // Максимальное количество по умолчанию
+
+        // Списки прототипов для категорий
         [DataField("commonPrototypes")]
         public List<string> CommonPrototypes { get; private set; } = new();
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("rarePrototypes")]
         public List<string> RarePrototypes { get; private set; } = new();
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("legendaryPrototypes")]
         public List<string> LegendaryPrototypes { get; private set; } = new();
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("negativePrototypes")]
         public List<string> NegativePrototypes { get; private set; } = new();
 
-        [ViewVariables(VVAccess.ReadWrite)]
+        // Шансы для выбора прототипов внутри категории
         [DataField("commonChance")]
         public float CommonChance { get; private set; } = 0.8f;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("rareChance")]
-        public float RareChance { get; private set; } = 0.1f;
+        public float RareChance { get; private set; } = 0.05f;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("legendaryChance")]
         public float LegendaryChance { get; private set; } = 0.02f;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("negativeEventChance")]
-        public float NegativeEventChance { get; private set; } = 0.05f;
+        public float NegativeEventChance { get; private set; } = 0.1f;
 
-        [ViewVariables(VVAccess.ReadWrite)]
-        [DataField("offset")]
-        public float Offset { get; private set; } = 0.2f;
-
-        [ViewVariables(VVAccess.ReadWrite)]
+        // Индивидуальные диапазоны количества для категорий (необязательные)
         [DataField("minCommonCount")]
-        public int MinCommonCount { get; private set; } = 2;
+        public int? MinCommonCount { get; private set; } = null;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("maxCommonCount")]
-        public int MaxCommonCount { get; private set; } = 3;
+        public int? MaxCommonCount { get; private set; } = null;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("minRareCount")]
-        public int MinRareCount { get; private set; } = 0;
+        public int? MinRareCount { get; private set; } = null;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("maxRareCount")]
-        public int MaxRareCount { get; private set; } = 2;
+        public int? MaxRareCount { get; private set; } = null;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("minLegendaryCount")]
-        public int MinLegendaryCount { get; private set; } = 0;
+        public int? MinLegendaryCount { get; private set; } = null;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("maxLegendaryCount")]
-        public int MaxLegendaryCount { get; private set; } = 1;
+        public int? MaxLegendaryCount { get; private set; } = null;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("minNegativeCount")]
-        public int MinNegativeCount { get; private set; } = 1;
+        public int? MinNegativeCount { get; private set; } = null;
 
-        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("maxNegativeCount")]
-        public int MaxNegativeCount { get; private set; } = 2;
+        public int? MaxNegativeCount { get; private set; } = null;
 
+        // Другие параметры
         [DataField("deleteSpawnerAfterSpawn")]
-        public bool DeleteSpawnerAfterSpawn { get; private set; } = true;
+        public bool DeleteSpawnerAfterSpawn { get; private set; } = false;
 
-        public List<string> GetRandomPrototypes(IRobustRandom random)
+        [DataField("offset")]
+        public float Offset { get; private set; } = 0f;
+
+        [DataField("categoryChances")]
+        public Dictionary<string, float> CategoryChances { get; private set; } = new()
+        {
+            { "common", 0.7f },
+            { "rare", 0.2f },
+            { "legendary", 0.05f },
+            { "negative", 0.05f }
+        };
+
+        // Методы
+        public List<string> GetFinalizedPrototypes(IRobustRandom random)
         {
             var result = new List<string>();
+            var category = PickCategory(random);
 
-            if (!random.Prob(CommonChance))
+            switch (category)
             {
-                return GetNegativePrototypes(random);
+                case "common":
+                    result.AddRange(GetItemsWithScalingChance(random, CommonPrototypes, CommonChance,
+                        MinCommonCount ?? MinCount, MaxCommonCount ?? MaxCount));
+                    break;
+                case "rare":
+                    result.AddRange(GetItemsWithScalingChance(random, RarePrototypes, RareChance,
+                        MinRareCount ?? MinCount, MaxRareCount ?? MaxCount));
+                    break;
+                case "legendary":
+                    result.AddRange(GetItemsWithScalingChance(random, LegendaryPrototypes, LegendaryChance,
+                        MinLegendaryCount ?? MinCount, MaxLegendaryCount ?? MaxCount));
+                    break;
+                case "negative":
+                    result.AddRange(GetItemsWithScalingChance(random, NegativePrototypes, NegativeEventChance,
+                        MinNegativeCount ?? MinCount, MaxNegativeCount ?? MaxCount));
+                    break;
             }
-
-            // Добавляем Legendary с уменьшающимся шансом
-            if (LegendaryPrototypes.Count > 0 && random.Prob(LegendaryChance))
-            {
-                int count = GetItemCount(random, MinLegendaryCount, MaxLegendaryCount);
-                result.AddRange(PickUnique(random, LegendaryPrototypes, count));
-            }
-
-            // Добавляем Rare с уменьшающимся шансом
-            if (RarePrototypes.Count > 0 && random.Prob(RareChance))
-            {
-                int count = GetItemCount(random, MinRareCount, MaxRareCount);
-                result.AddRange(PickUnique(random, RarePrototypes, count));
-            }
-
-            // Добавляем Common с уменьшающимся шансом
-            int commonCount = GetItemCount(random, MinCommonCount, MaxCommonCount);
-            result.AddRange(PickUnique(random, CommonPrototypes, commonCount));
 
             return result;
         }
 
-        public List<string> GetNegativePrototypes(IRobustRandom random)
+        private string PickCategory(IRobustRandom random)
         {
-            var result = new List<string>();
+            float roll = random.NextFloat(0, 1);
+            float cumulative = 0f;
 
-            if (NegativePrototypes.Count > 0 && random.Prob(NegativeEventChance))
+            foreach (var (category, chance) in CategoryChances)
             {
-                int count = GetItemCount(random, MinNegativeCount, MaxNegativeCount);
-                result.AddRange(PickUnique(random, NegativePrototypes, count));
+                cumulative += chance;
+                if (roll < cumulative)
+                    return category;
             }
 
-            return result;
+            return "common"; // Запасной вариант на случай ошибки
         }
 
-        /// <summary>
-        /// Вычисляет количество предметов с уменьшающимся шансом.
-        /// </summary>
-        private int GetItemCount(IRobustRandom random, int min, int max)
+        private List<string> GetItemsWithScalingChance(IRobustRandom random, List<string> prototypes, float baseChance, int minCount, int maxCount)
         {
-            int count = min;
-            int extraItems = max - min;
-            float dropChance = 0.5f;
+            var result = new List<string>();
+            if (prototypes.Count == 0 || minCount > maxCount) return result;
+            var availableItems = new List<string>(prototypes);
 
-            for (int i = 0; i < extraItems; i++)
+            // Шаг 1: Гарантируем добавление minCount предметов, если достаточно прототипов
+            for (int i = 0; i < minCount && availableItems.Count > 0; i++)
             {
-                if (random.Prob(dropChance))
+                var item = random.PickAndTake(availableItems);
+                result.Add(item);
+            }
+
+            // Шаг 2: Пытаемся добавить дополнительные предметы до maxCount с убывающим шансом
+            float chance = baseChance;
+            while (result.Count < maxCount && availableItems.Count > 0)
+            {
+                if (chance >= 1.0f || random.Prob(chance))
                 {
-                    count++;
-                    dropChance /= 2;
+                    var item = random.PickAndTake(availableItems);
+                    result.Add(item);
+                    chance /= 2f; // Уменьшаем шанс только после успешного добавления
                 }
                 else
                 {
-                    break;
+                    break; // Прерываем, если шанс не сработал
                 }
-            }
-
-            return count;
-        }
-
-        private List<T> PickUnique<T>(IRobustRandom random, List<T> list, int count)
-        {
-            var tempList = new List<T>(list);
-            var result = new List<T>();
-
-            for (int i = 0; i < count && tempList.Count > 0; i++)
-            {
-                var picked = random.PickAndTake(tempList);
-                result.Add(picked);
             }
 
             return result;
         }
     }
 }
-
