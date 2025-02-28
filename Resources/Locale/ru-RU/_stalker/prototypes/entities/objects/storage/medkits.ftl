@@ -1,0 +1,10 @@
+ent-ClothingBeltMedicalStalker = медицинский пояс
+    .desc = Переносной медицинский пояс, используемый в боевых условиях для переноски лекарств.
+    .suffix = Stalker
+ent-ClothingBackpackDuffelMedicalStalker = медицинская сумка
+    .desc = Переносная сумка, используемая для переноски различных лекарств.
+    .suffix = { ent-ClothingBeltMedicalStalker.suffix }
+ent-MedkitCMSStalker = аптечка CMS
+    .desc = Компактная аптечка CMS, используемая для переноски различных медикаментов, может вмещать в себя дефибрилятор.
+ent-MedkitGrizzlyStalker = аптечка Grizzly
+    .desc = Компактная аптечка Grizzly, используемая для переноски различных медикаментов, может вмещать в себя дефибрилятор. Более расширенная версия.
