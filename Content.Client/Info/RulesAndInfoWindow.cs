@@ -64,7 +64,7 @@ namespace Content.Client.Info
 
         private static Control MakeSection(string title, string path, bool markup, IResourceManager res)
         {
-            return new InfoSection(title, res.ContentFileReadAllText($"/ServerInfo/{path}"), markup);
+            return new InfoSection(title, res.ContentFileReadAllText($"/ServerInfo/_Stalker/{path}"), markup); // Stalker-Changes
         }
 
     }
