@@ -103,10 +103,9 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
     private void OnClearArenaGrids(RequestClearArenaGridsEvent args)
     {
-        List<EntityUid?> entitiesToDelete = new();
-
-        foreach (var data in StalkerArenaDataList)
+        for (int i = 0; i < StalkerArenaDataList.Count; i++) // InvalidOperationException
         {
+            var data = StalkerArenaDataList[i];
             var gridIdNet = NetEntity.Parse(data.GridId.ToString());
 
             if (!_ent.TryGetEntity(gridIdNet, out var gridId) || !_ent.HasComponent<MapGridComponent>(gridId))
@@ -115,16 +114,10 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
             if (!TryComp<TransformComponent>(gridId, out var transform))
                 continue;
 
-            bool hasMind = false;
-
-            List<EntityUid> children = new();
             var enumerator = transform.ChildEnumerator;
-            while (enumerator.MoveNext(out var ent))
-            {
-                children.Add(ent);
-            }
+            var hasMind = false;
 
-            foreach (var ent in children)
+            while (enumerator.MoveNext(out var ent))
             {
                 if (TryComp<MindContainerComponent>(ent, out var mind) && mind.HasMind)
                 {
@@ -133,19 +126,13 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
                 }
             }
 
-            if (!hasMind)
-            {
-                entitiesToDelete.Add(gridId);
-                RemoveFromStalkerTeleportDataList(data.Login);
-            }
-        }
+            if (hasMind)
+                continue;
 
-        foreach (var entity in entitiesToDelete)
-        {
-            _ent.DeleteEntity(entity);
+            _ent.QueueDeleteEntity(gridId);
+            StalkerArenaDataList.RemoveAt(i);
         }
     }
-
 
 
     // При столкновении с телепортом в сталкер арене происходит телепортация в тот телепорт из которого был выполнен вход в сталкер арену
@@ -284,19 +271,6 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
             }
         }
         return null!;
-    }
-
-    public bool RemoveFromStalkerTeleportDataList(string inputLogin)
-    {
-        for (int i = 0; i < StalkerArenaDataList.Count; i++) // InvalidOperationException
-        {
-            if (StalkerArenaDataList[i].Login == inputLogin)
-            {
-                StalkerArenaDataList.RemoveAt(i);
-                return true;
-            }
-        }
-        return false;
     }
 
 
