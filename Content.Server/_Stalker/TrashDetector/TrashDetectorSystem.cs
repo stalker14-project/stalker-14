@@ -1,3 +1,4 @@
+using Content.Server._Stalker.AdvancedSpawner;
 using Content.Server.TrashDetector.Components;
 using Content.Server.Popups;
 using Robust.Shared.Random;
@@ -10,6 +11,7 @@ using Content.Server.TrashSearchable;
 using Content.Shared.TrashDetector;
 using Content.Server.Spawners.Components;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Content.Server.TrashDetector
 {
@@ -19,8 +21,7 @@ namespace Content.Server.TrashDetector
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
         [Dependency] internal readonly IEntityManager _entityManager = default!;
-        [Dependency] internal readonly IMapManager _mapManager = default!;
-        [Dependency] protected readonly AudioSystem Audio = default!;
+        [Dependency] private readonly AdvancedRandomSpawnerSystem _spawnerSystem = default!;
 
         public override void Initialize()
         {
@@ -70,29 +71,54 @@ namespace Content.Server.TrashDetector
             trash.TimeBeforeNextSearch = 900f;
             var spawnCoords = Transform(args.Args.Target.Value).Coordinates;
 
-            var spawnerUid = EntityManager.SpawnEntity(comp.LootSpawner, spawnCoords);
+            // Создаем спавнер
+            var spawnerUid = _entityManager.SpawnEntity(TrashDetectorComponent.LootSpawner, spawnCoords);
             if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
             {
                 _popupSystem.PopupEntity("Ошибка: спавнер не найден!", spawnerUid, PopupType.Medium);
                 return;
             }
 
-            var lootList = spawner.GetFinalizedPrototypes(_random);
-
-            if (lootList.Count > 0)
+            // Проверяем, существует ли категория, к которой относится дополнительный предмет
+            if (!spawner.CategoryWeights.ContainsKey(comp.ExtraPrototypeCategory))
             {
-                _popupSystem.PopupEntity("Прибор пищит! Вы нашли что-то!", uid, PopupType.LargeCaution);
-                foreach (var loot in lootList)
+                _popupSystem.PopupEntity($"Ошибка: категория {comp.ExtraPrototypeCategory} не найдена!", spawnerUid, PopupType.Medium);
+                return;
+            }
+
+            // Увеличиваем вес категории, связанной с данным детектором
+            spawner.CategoryWeights[comp.ExtraPrototypeCategory] += comp.AdditionalSpawnWeight;
+
+            // Если у детектора есть доп. предмет, добавляем его в нужную категорию
+            if (!string.IsNullOrEmpty(comp.ExtraPrototype))
+            {
+                var categoryList = GetPrototypeListByCategory(comp.ExtraPrototypeCategory, spawner);
+
+                if (!categoryList.Any(x => x.PrototypeId == comp.ExtraPrototype))
                 {
-                    EntityManager.SpawnEntity(loot, spawnCoords);
+                    categoryList.Add(new SpawnEntry { PrototypeId = comp.ExtraPrototype, Weight = 1 });
                 }
             }
-            else
-            {
-                _popupSystem.PopupEntity("Прибор не издает звука", uid, PopupType.Medium);
-            }
+
+            // Вызываем спавн через AdvancedRandomSpawnerSystem
+            _spawnerSystem.TrySpawnEntities(spawnerUid, spawner);
 
             args.Handled = true;
+        }
+
+        /// <summary>
+        /// Получает список прототипов для указанной категории.
+        /// </summary>
+        private List<SpawnEntry> GetPrototypeListByCategory(string category, AdvancedRandomSpawnerComponent spawner)
+        {
+            return category switch
+            {
+                "Common" => spawner.CommonPrototypes,
+                "Rare" => spawner.RarePrototypes,
+                "Legendary" => spawner.LegendaryPrototypes,
+                "Negative" => spawner.NegativePrototypes,
+                _ => new List<SpawnEntry>(), // Если категория не найдена, возвращаем пустой список
+            };
         }
     }
 }
