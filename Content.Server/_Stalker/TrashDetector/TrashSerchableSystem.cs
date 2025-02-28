@@ -1,14 +1,14 @@
-namespace Content.Server._Stalker.TrashSerchable;
+namespace Content.Server.TrashSearchable;
 
-public sealed class TrashSerchableSystem : EntitySystem
+public sealed class TrashSearchableSystem : EntitySystem
 {
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<TrashSerchableComponent>();
-        while (query.MoveNext(out var uid, out var resist))
+
+        foreach (var comp in EntityQuery<TrashSearchableComponent>())
         {
-            resist.TimeBeforeNextSearch -= frameTime;
+            comp.TimeBeforeNextSearch -= frameTime;
         }
     }
 }
