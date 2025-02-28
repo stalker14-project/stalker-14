@@ -68,17 +68,8 @@
     state: base
   - type: InteractionOutline
   - type: Physics
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.796875,-0.875,0.796875,0.875"
-        density: 155
-        mask:
-        - MachineMask
-        layer:
-        - WallLayer
+    bodyType: Static
+    canCollide: false
 
 - type: entity
   id: STKeyboard
@@ -92,14 +83,6 @@
     state: base
   - type: InteractionOutline
   - type: Physics
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.796875,-0.875,0.796875,0.875"
-        density: 155
-        mask:
-        - MachineMask
-        layer:
-        - WallLayer
+    bodyType: Static
+    canCollide: false
+
