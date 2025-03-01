@@ -1,4 +1,4 @@
-# Спавнер для общего использования (если нужен базовый спавнер)
+# 🔹 Базовый спавнер (используется для поиска мусора)
 - type: entity
   id: RandomTrashDetectorSpawner
   name: спавнер случайного мусора (металлоискатель)
@@ -17,36 +17,14 @@
       commonPrototypes:
         - id: STCraftStandardPCBT2
           weight: 10
-        - id: STCraftTapeKitT2
-          weight: 10
-        - id: STCraftHideT2
-          weight: 10
-        - id: STCraftGlassT2
-          weight: 10
-        - id: STCraftBirchPlankT2
-          weight: 10
-        - id: STCraftPlasticFittingT2
-          weight: 10
-        - id: STCraftSheetIronT2
+        - id: STCraftBasicPCBT1
           weight: 10
       rarePrototypes:
         - id: STCraftMultilayerPCBT3
           weight: 5
-        - id: STCraftGlueKitT3
-          weight: 5
-        - id: STCraftSturdyHideT3
-          weight: 5
-        - id: STCraftQuartzCrystalT3
-          weight: 5
-        - id: STCraftOakPlankT3
-          weight: 5
-        - id: STCraftPlasticFittingT3
-          weight: 5
-        - id: STCraftSheetBrassT3
-          weight: 5
       legendaryPrototypes:
-        - id: STWeaponShotgunMP153
-          weight: 1
+        - id: STWeaponRifleStalkerAK74
+          weight: 2
       negativePrototypes:
         - id: MobMutantBoar
           weight: 3
@@ -55,16 +33,16 @@
       maxSpawnCount: 3
 
 # =============================================================================
-# Металлоискатели (Tier 1-5) с весами категорий
+# 🔹 Металлоискатели (Tier 1-5) с настройками
 # =============================================================================
 
-# Tier 1 (Простофиля)
+# 🔸 Tier 1 (Простофиля) — Больше мусора, меньше редких предметов
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier1
   name: металлоискатель "Простофиля"
-  description: Сделан из говна и палок, но если порыться в кучах мусора, то возможно что-то найдёшь.
   suffix: Stalker, металлоискатель
+  description: Делает много шума, но редко находит что-то ценное.
   components:
     - type: STWeight
       self: 6
@@ -73,15 +51,34 @@
       state: icon
     - type: TrashDetector
       searchTime: 40
-      additionalSpawnWeight: 5
+      commonWeightMod: 15
+      rareWeightMod: -5
+      legendaryWeightMod: -10
+      negativeWeightMod: 5
+      extraCommonPrototypes:
+        - id: STCraftBasicPCBT1
+          weight: 10
+          count: 2
+      extraRarePrototypes:
+        - id: MutantPartBlindDogTail
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponPistolStalkerAPS
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MobMutantBoar
+          weight: 5
+          count: 1
 
-# Tier 2 (Копатель)
+# 🔸 Tier 2 (Копатель) — Чуть лучше, уменьшает шанс мобов
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier2
   name: металлоискатель "Копатель"
-  description: Хороший металлоискатель, качественно сделанный.
   suffix: Stalker, металлоискатель
+  description: Может найти полезные вещи, если повезёт.
   components:
     - type: STWeight
       self: 4.5
@@ -90,15 +87,34 @@
       state: icon
     - type: TrashDetector
       searchTime: 20
-      additionalSpawnWeight: 7
+      commonWeightMod: 10
+      rareWeightMod: 5
+      legendaryWeightMod: 0
+      negativeWeightMod: -5
+      extraCommonPrototypes:
+        - id: STCraftStandardPCBT2
+          weight: 10
+          count: 1
+      extraRarePrototypes:
+        - id: STCraftQuartzCrystalT3
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponShotgunStalkerSPAS
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MutantPartSeasonedBoarHoof
+          weight: 5
+          count: 1
 
-# Tier 3 (Шахтёр)
+# 🔸 Tier 3 (Шахтёр) — Хороший баланс, увеличивает шанс редкого лута
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier3
   name: металлоискатель "Шахтёр"
-  description: Дорогой, импортный металлоискатель. Прямо из Германии...
   suffix: Stalker, металлоискатель
+  description: Полупрофессиональный металлоискатель для опытных искателей.
   components:
     - type: STWeight
       self: 3.5
@@ -107,15 +123,34 @@
       state: icon
     - type: TrashDetector
       searchTime: 20
-      additionalSpawnWeight: 10
+      commonWeightMod: 5
+      rareWeightMod: 10
+      legendaryWeightMod: 5
+      negativeWeightMod: -10
+      extraCommonPrototypes:
+        - id: STCraftMultilayerPCBT3
+          weight: 10
+          count: 1
+      extraRarePrototypes:
+        - id: ZoneArtifactSparkler
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponRifleStalkerAKM
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MutantPartPseudodogTail
+          weight: 5
+          count: 1
 
-# Tier 4 (Находка)
+# 🔸 Tier 4 (Находка) — Ищет хорошие предметы, почти нет мобов
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier4
   name: металлоискатель "Находка"
-  description: Очень дорогой, модифицированный с помощью артефактов...
   suffix: Stalker, металлоискатель
+  description: Высокоточный прибор для опытных археологов.
   components:
     - type: STWeight
       self: 0.5
@@ -124,15 +159,35 @@
       state: icon
     - type: TrashDetector
       searchTime: 10
-      additionalSpawnWeight: 12
+      commonWeightMod: 0
+      rareWeightMod: 15
+      legendaryWeightMod: 10
+      negativeWeightMod: -15
+      extraCommonPrototypes:
+        - id: ZoneArtifactKolobok
+          weight: 10
+          count: 1
+      extraRarePrototypes:
+        - id: STWeaponSniperMosin
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponRifleM16
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MutantPartBloodsuckerTentacles
+          weight: 5
+          count: 1
 
-# Tier 5 (Аномалист)
+
+# 🔸 Tier 5 (Аномалист) — Лучший детектор, находит самые редкие предметы
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier5
   name: металлоискатель "Аномалист"
-  description: Крайне дорогой, улучшенная версия "Находка"...
   suffix: Stalker, металлоискатель
+  description: Экспериментальный металлоискатель, разработанный с применением аномальных технологий.
   components:
     - type: STWeight
       self: -2
@@ -141,4 +196,31 @@
       state: icon
     - type: TrashDetector
       searchTime: 5
-      additionalSpawnWeight: 15
+      commonWeightMod: -10  # Убирает мусор
+      rareWeightMod: 20  # Максимально увеличивает шанс редкого лута
+      legendaryWeightMod: 15  # Большой шанс на топовые вещи
+      negativeWeightMod: -20  # Полностью убирает мобов
+
+      # 🔹 Список предметов для Common (Самые дорогие ресурсы)
+      extraCommonPrototypes:
+        - id: ZoneArtifactNightStar
+          weight: 10
+          count: 1
+
+      # 🔹 Список предметов для Rare (Уникальные редкие вещи)
+      extraRarePrototypes:
+        - id: STWeaponShotgunSaiga
+          weight: 7
+          count: 1
+
+      # 🔹 Список предметов для Legendary (Лучшие вещи в игре)
+      extraLegendaryPrototypes:
+        - id: STWeaponSniperVSSVintorez
+          weight: 3
+          count: 1
+
+      # 🔹 Список предметов для Negative (Но тут он уменьшает шанс)
+      extraNegativePrototypes:
+        - id: MutantPartControllerBrain
+          weight: 2
+          count: 1

@@ -41,20 +41,42 @@ namespace Content.Server._Stalker.AdvancedSpawner
             if (comp.NegativePrototypes.Count > 0)
                 categories.Add(new SpawnCategory { Id = "Negative", Weight = comp.CategoryWeights.GetValueOrDefault("Negative", 0), Prototypes = comp.NegativePrototypes });
 
+            if (categories.Count == 0)
+                return; // Нет доступных категорий для спавна
+
             int itemCount = DetermineItemCount(comp);
+            var spawnCoords = Transform(uid).MapPosition; // Получаем глобальные координаты
 
             for (int i = 0; i < itemCount; i++)
             {
                 var chosenCategory = PickRandomCategory(categories);
-                if (chosenCategory == null)
-                    return;
+                if (chosenCategory == null || chosenCategory.Prototypes.Count == 0)
+                    continue;
 
-                var chosenEntry = PickRandomEntry(chosenCategory.Prototypes);
-                if (chosenEntry == null)
-                    return;
+                var entry = PickWeighted(chosenCategory.Prototypes, e => e.Weight);
+                if (entry == null || !_random.Prob(1.0f)) // 100% шанс спавна
+                    continue;
 
-                var spawnCoords = Transform(uid).Coordinates;
-                EntityManager.SpawnEntity(chosenEntry.PrototypeId, spawnCoords);
+                for (int j = 0; j < entry.Count; j++) // Учитываем количество предметов
+                {
+                    // Генерируем случайное смещение
+                    var angle = _random.NextFloat() * MathF.PI * 2;
+                    var radius = _random.NextFloat() * comp.Offset;
+                    var offsetX = MathF.Cos(angle) * radius;
+                    var offsetY = MathF.Sin(angle) * radius;
+
+                    // Создаем новые MapCoordinates
+                    var newCoords = new MapCoordinates(
+                        spawnCoords.Position.X + offsetX,
+                        spawnCoords.Position.Y + offsetY,
+                        spawnCoords.MapId
+                    );
+
+                    // Преобразуем MapCoordinates в EntityCoordinates
+                    var entityCoords = Transform(uid).Coordinates.WithPosition(newCoords.Position);
+
+                    EntityManager.SpawnEntity(entry.PrototypeId, entityCoords);
+                }
             }
         }
 
@@ -78,6 +100,9 @@ namespace Content.Server._Stalker.AdvancedSpawner
             foreach (var category in categories)
                 totalWeight += category.Weight;
 
+            if (totalWeight == 0)
+                return null;
+
             int roll = _random.Next(0, totalWeight);
             foreach (var category in categories)
             {
@@ -86,26 +111,29 @@ namespace Content.Server._Stalker.AdvancedSpawner
                 roll -= category.Weight;
             }
 
-            return categories[0];
+            return categories[0]; // Если что-то пошло не так, выбираем первую категорию
         }
 
-        private SpawnEntry? PickRandomEntry(List<SpawnEntry> entries)
+        private SpawnEntry? PickWeighted(List<SpawnEntry> entries, Func<SpawnEntry, int> weightSelector)
         {
             if (entries.Count == 0) return null;
 
             int totalWeight = 0;
             foreach (var entry in entries)
-                totalWeight += entry.Weight;
+                totalWeight += weightSelector(entry);
+
+            if (totalWeight == 0)
+                return null;
 
             int roll = _random.Next(0, totalWeight);
             foreach (var entry in entries)
             {
-                if (roll < entry.Weight)
+                if (roll < weightSelector(entry))
                     return entry;
-                roll -= entry.Weight;
+                roll -= weightSelector(entry);
             }
 
-            return entries[0];
+            return entries[0]; // Если что-то пошло не так, выбираем первый элемент
         }
     }
 
@@ -116,4 +144,3 @@ namespace Content.Server._Stalker.AdvancedSpawner
         public List<SpawnEntry> Prototypes { get; set; } = new();
     }
 }
-

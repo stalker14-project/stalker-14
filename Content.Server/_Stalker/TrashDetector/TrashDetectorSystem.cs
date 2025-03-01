@@ -79,46 +79,59 @@ namespace Content.Server.TrashDetector
                 return;
             }
 
-            // Проверяем, существует ли категория, к которой относится дополнительный предмет
-            if (!spawner.CategoryWeights.ContainsKey(comp.ExtraPrototypeCategory))
-            {
-                _popupSystem.PopupEntity($"Ошибка: категория {comp.ExtraPrototypeCategory} не найдена!", spawnerUid, PopupType.Medium);
-                return;
-            }
+            // 🔹 Модифицируем веса категорий (вероятность выбора категории)
+            spawner.CategoryWeights["Common"] += comp.CommonWeightMod;
+            spawner.CategoryWeights["Rare"] += comp.RareWeightMod;
+            spawner.CategoryWeights["Legendary"] += comp.LegendaryWeightMod;
+            spawner.CategoryWeights["Negative"] += comp.NegativeWeightMod;
 
-            // Увеличиваем вес категории, связанной с данным детектором
-            spawner.CategoryWeights[comp.ExtraPrototypeCategory] += comp.AdditionalSpawnWeight;
+            // 🔹 Добавляем список предметов в категории, сохраняя их количество (Count)
+            foreach (var entry in comp.ExtraCommonPrototypes)
+                spawner.CommonPrototypes.Add(new SpawnEntry { PrototypeId = entry.PrototypeId, Weight = entry.Weight, Count = entry.Count });
 
-            // Если у детектора есть доп. предмет, добавляем его в нужную категорию
-            if (!string.IsNullOrEmpty(comp.ExtraPrototype))
-            {
-                var categoryList = GetPrototypeListByCategory(comp.ExtraPrototypeCategory, spawner);
+            foreach (var entry in comp.ExtraRarePrototypes)
+                spawner.RarePrototypes.Add(new SpawnEntry { PrototypeId = entry.PrototypeId, Weight = entry.Weight, Count = entry.Count });
 
-                if (!categoryList.Any(x => x.PrototypeId == comp.ExtraPrototype))
-                {
-                    categoryList.Add(new SpawnEntry { PrototypeId = comp.ExtraPrototype, Weight = 1 });
-                }
-            }
+            foreach (var entry in comp.ExtraLegendaryPrototypes)
+                spawner.LegendaryPrototypes.Add(new SpawnEntry { PrototypeId = entry.PrototypeId, Weight = entry.Weight, Count = entry.Count });
 
-            // Вызываем спавн через AdvancedRandomSpawnerSystem
+            foreach (var entry in comp.ExtraNegativePrototypes)
+                spawner.NegativePrototypes.Add(new SpawnEntry { PrototypeId = entry.PrototypeId, Weight = entry.Weight, Count = entry.Count });
+
+            // 🔹 Запускаем спавн
             _spawnerSystem.TrySpawnEntities(spawnerUid, spawner);
 
-            args.Handled = true;
-        }
+            // 🔹 Определяем сообщение и звук прибора
+            string message = "Прибор не издает звука";
+            PopupType popupType = PopupType.LargeCaution;
 
-        /// <summary>
-        /// Получает список прототипов для указанной категории.
-        /// </summary>
-        private List<SpawnEntry> GetPrototypeListByCategory(string category, AdvancedRandomSpawnerComponent spawner)
-        {
-            return category switch
+            // Получаем категорию спавна (берём самую высокую вероятность)
+            var highestCategory = spawner.CategoryWeights.OrderByDescending(kv => kv.Value).FirstOrDefault().Key ?? "Common";
+
+            switch (highestCategory)
             {
-                "Common" => spawner.CommonPrototypes,
-                "Rare" => spawner.RarePrototypes,
-                "Legendary" => spawner.LegendaryPrototypes,
-                "Negative" => spawner.NegativePrototypes,
-                _ => new List<SpawnEntry>(), // Если категория не найдена, возвращаем пустой список
-            };
+                case "Legendary":
+                    message = "Прибор пищит очень громко! Что-то ценное!";
+                    popupType = PopupType.LargeCaution;
+                    break;
+                case "Rare":
+                    message = "Прибор подает заметный сигнал. Неплохо!";
+                    popupType = PopupType.MediumCaution;
+                    break;
+                case "Common":
+                    message = "Прибор слабо пищит. Ничего особенного.";
+                    popupType = PopupType.SmallCaution;
+                    break;
+                case "Negative":
+                    message = "Прибор издает странный звук… Ты привлек внимание мутанта!";
+                    popupType = PopupType.LargeCaution;
+                    break;
+            }
+
+            // 🔹 Отображаем сообщение
+            _popupSystem.PopupEntity(message, uid, popupType);
+
+            args.Handled = true;
         }
     }
 }

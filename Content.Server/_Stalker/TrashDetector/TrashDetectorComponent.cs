@@ -1,6 +1,8 @@
+using Content.Server._Stalker.AdvancedSpawner; // Используем правильный неймспейс
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
 using System;
+using System.Collections.Generic;
 
 namespace Content.Server.TrashDetector.Components
 {
@@ -14,26 +16,39 @@ namespace Content.Server.TrashDetector.Components
         public float SearchTime { get; set; } = 5f;
 
         /// <summary>
-        /// Спавнер, который будет использоваться для выбора предметов. Он всегда "RandomTrashDetectorSpawner".
+        /// Базовый спавнер, который будет использоваться.
         /// </summary>
         public const string LootSpawner = "RandomTrashDetectorSpawner";
 
         /// <summary>
-        /// Дополнительный шанс к спавну в указанной категории.
+        /// Модификаторы веса категорий (вероятность выпадения категории).
         /// </summary>
-        [DataField("additionalSpawnWeight")]
-        public int AdditionalSpawnWeight { get; set; } = 0;
+        [DataField("commonWeightMod")]
+        public int CommonWeightMod { get; set; } = 0;
+
+        [DataField("rareWeightMod")]
+        public int RareWeightMod { get; set; } = 0;
+
+        [DataField("legendaryWeightMod")]
+        public int LegendaryWeightMod { get; set; } = 0;
+
+        [DataField("negativeWeightMod")]
+        public int NegativeWeightMod { get; set; } = 0;
 
         /// <summary>
-        /// Дополнительный предмет, который добавляется в общий список спавна.
+        /// Дополнительные предметы, которые добавляются в категории с их весами и количеством.
         /// </summary>
-        [DataField("extraPrototype")]
-        public string? ExtraPrototype { get; set; }
+        [DataField("extraCommonPrototypes")]
+        public List<SpawnEntry> ExtraCommonPrototypes { get; set; } = new();
 
-        /// <summary>
-        /// Категория, в которую будет добавлен ExtraPrototype (Common, Rare, Legendary, Negative).
-        /// </summary>
-        [DataField("extraPrototypeCategory")]
-        public string ExtraPrototypeCategory { get; set; } = "Common";
+        [DataField("extraRarePrototypes")]
+        public List<SpawnEntry> ExtraRarePrototypes { get; set; } = new();
+
+        [DataField("extraLegendaryPrototypes")]
+        public List<SpawnEntry> ExtraLegendaryPrototypes { get; set; } = new();
+
+        [DataField("extraNegativePrototypes")]
+        public List<SpawnEntry> ExtraNegativePrototypes { get; set; } = new();
     }
 }
+

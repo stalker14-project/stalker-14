@@ -37,9 +37,12 @@ namespace Content.Server._Stalker.AdvancedSpawner
     public sealed partial class SpawnEntry
     {
         [DataField("id")]
-        public string PrototypeId { get; set; } = string.Empty;  // <-- Теперь можно изменять
+        public string PrototypeId { get; set; } = string.Empty;
 
         [DataField("weight")]
-        public int Weight { get; set; } = 1;  // <-- Теперь можно изменять
+        public int Weight { get; set; } = 1;
+
+        [DataField("count", required: false)]
+        public int Count { get; set; } = 1; // Если count не указан, будет 1
     }
 }
