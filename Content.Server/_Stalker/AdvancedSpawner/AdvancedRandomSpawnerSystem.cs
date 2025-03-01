@@ -5,26 +5,30 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.IoC;
-using Content.Shared.Popups;
 using Content.Server._Stalker.AdvancedSpawner;
 using Content.Server.TrashDetector.Components;
-
-public class SpawnCategory
-{
-    public string Id { get; set; }
-    public int Weight { get; set; }
-    public List<SpawnEntry> Prototypes { get; set; }
-
-    public SpawnCategory(string id, int weight, List<SpawnEntry> prototypes)
-    {
-        Id = id;
-        Weight = weight;
-        Prototypes = prototypes;
-    }
-}
+using Robust.Shared.Prototypes;
+using Content.Shared.Popups;
+using System.Numerics;
+using Robust.Shared.Maths;
 
 namespace Content.Server._Stalker.AdvancedSpawner
 {
+    // Класс для описания категории спавна
+    public sealed class SpawnCategory
+    {
+        public string Id { get; }
+        public int Weight { get; }
+        public List<SpawnEntry> Prototypes { get; }
+
+        public SpawnCategory(string id, int weight, List<SpawnEntry> prototypes)
+        {
+            Id = id;
+            Weight = weight;
+            Prototypes = prototypes;
+        }
+    }
+
     public sealed class AdvancedRandomSpawnerSystem : EntitySystem
     {
         [Dependency] private readonly IRobustRandom _random = default!;
@@ -48,63 +52,177 @@ namespace Content.Server._Stalker.AdvancedSpawner
                 EntityManager.RemoveComponent<TempDetectorDataComponent>(uid);
             }
 
-            // При инициализации можно проигнорировать возвращаемое значение.
             SpawnEntitiesFromModifiedConfig(uid, config);
         }
 
-        // Метод возвращает список заспавненных категорий (имён категорий).
         public List<string> SpawnEntitiesFromModifiedConfig(EntityUid uid, AdvancedRandomSpawnerConfig config)
         {
             var availableCategories = GetAvailableCategories(config);
-            var chosenCategory = PickWeighted(availableCategories, c => c.Weight);
+            if (availableCategories.Count == 0)
+            {
+                Logger.Warning($"Нет доступных категорий для спавна сущности {uid}");
+                return new List<string>();
+            }
 
-            if (chosenCategory == null || chosenCategory.Prototypes.Count == 0)
+            var finalCategory = SelectFinalCategory(availableCategories);
+            if (finalCategory == null || finalCategory.Prototypes.Count == 0)
             {
                 Logger.Warning($"Не удалось выбрать категорию для сущности {uid}");
                 return new List<string>();
             }
 
-            Logger.Info($"Выбрана категория: {chosenCategory.Id}");
+            Logger.Info($"Выбрана категория: {finalCategory.Id}");
 
-            // Получаем базовые координаты спавна.
-            var spawnCoords = Transform(uid).MapPosition;
-            // Вызываем метод, в который передаем и координаты, и величину смещения.
-            TrySpawnEntities(uid, chosenCategory, spawnCoords, config.Offset);
+            var finalPrototype = SelectFinalPrototype(finalCategory.Prototypes);
+            if (finalPrototype == null)
+            {
+                Logger.Warning($"Не удалось выбрать прототип из категории {finalCategory.Id}");
+                return new List<string>();
+            }
 
-            _popupSystem.PopupEntity($"Заспавнены предметы из категории: {chosenCategory.Id}", uid);
+            Logger.Info($"Выбран прототип: {finalPrototype.PrototypeId}");
+
+            var spawnCoords = Transform(uid).Coordinates; // Используем EntityCoordinates
+            TrySpawnEntities(uid, finalCategory.Id, finalPrototype, spawnCoords, config.Offset, config.MaxSpawnCount);
+
+            _popupSystem.PopupEntity($"Заспавнен предмет: {finalPrototype.PrototypeId}", uid);
 
             if (config.DeleteSpawnerAfterSpawn)
                 QueueDel(uid);
 
-            // Возвращаем список с единственным элементом – именем выбранной категории.
-            return new List<string> { chosenCategory.Id };
+            return new List<string> { finalCategory.Id };
         }
 
-        // Изменённый метод TrySpawnEntities теперь принимает базовые координаты и offset.
-        private void TrySpawnEntities(EntityUid uid, SpawnCategory chosenCategory, MapCoordinates spawnCoords, float offset)
+        private SpawnCategory? SelectFinalCategory(List<SpawnCategory> categories)
         {
-            int itemCount = GetItemCount(chosenCategory.Id);
-            Logger.Info($"Спавн {itemCount} предметов из категории {chosenCategory.Id}");
+            if (categories.Count == 0)
+            {
+                Logger.Warning("Список категорий пуст");
+                return null;
+            }
 
-            // Для каждого спавна выбираем прототип с учётом веса.
-            var chosenItem = PickWeighted(chosenCategory.Prototypes, e => e.Weight);
-            if (chosenItem == null)
-                return;
+            int totalWeight = categories.Sum(c => c.Weight);
+            if (totalWeight <= 0)
+            {
+                Logger.Warning("Сумма весов категорий равна 0 или отрицательна");
+                return null;
+            }
+
+            // Этап 1: 13 бросков
+            var firstStageWinners = new List<SpawnCategory>();
+            for (int i = 0; i < 13; i++)
+            {
+                int roll = _random.Next(totalWeight);
+                int currentSum = 0;
+                foreach (var category in categories)
+                {
+                    currentSum += category.Weight;
+                    if (roll < currentSum)
+                    {
+                        firstStageWinners.Add(category);
+                        break;
+                    }
+                }
+            }
+
+            if (firstStageWinners.Count == 0)
+            {
+                Logger.Warning("Не удалось выбрать ни одной категории на первом этапе");
+                return null;
+            }
+
+            // Этап 2: 6 бросков из 13
+            var secondStageWinners = new List<SpawnCategory>();
+            for (int i = 0; i < 6; i++)
+            {
+                int roll = _random.Next(firstStageWinners.Count);
+                secondStageWinners.Add(firstStageWinners[roll]);
+            }
+
+            if (secondStageWinners.Count == 0)
+            {
+                Logger.Warning("Не удалось выбрать ни одной категории на втором этапе");
+                return null;
+            }
+
+            // Этап 3: 1 бросок из 6
+            int finalRoll = _random.Next(secondStageWinners.Count);
+            return secondStageWinners[finalRoll];
+        }
+
+        private SpawnEntry? SelectFinalPrototype(List<SpawnEntry> prototypes)
+        {
+            if (prototypes.Count == 0)
+            {
+                Logger.Warning("Список прототипов пуст");
+                return null;
+            }
+
+            int totalWeight = prototypes.Sum(p => p.Weight);
+            if (totalWeight <= 0)
+            {
+                Logger.Warning("Сумма весов прототипов равна 0 или отрицательна");
+                return null;
+            }
+
+            // Этап 1: 13 бросков
+            var firstStageWinners = new List<SpawnEntry>();
+            for (int i = 0; i < 13; i++)
+            {
+                int roll = _random.Next(totalWeight);
+                int currentSum = 0;
+                foreach (var prototype in prototypes)
+                {
+                    currentSum += prototype.Weight;
+                    if (roll < currentSum)
+                    {
+                        firstStageWinners.Add(prototype);
+                        break;
+                    }
+                }
+            }
+
+            if (firstStageWinners.Count == 0)
+            {
+                Logger.Warning("Не удалось выбрать ни одного прототипа на первом этапе");
+                return null;
+            }
+
+            // Этап 2: 6 бросков из 13
+            var secondStageWinners = new List<SpawnEntry>();
+            for (int i = 0; i < 6; i++)
+            {
+                int roll = _random.Next(firstStageWinners.Count);
+                secondStageWinners.Add(firstStageWinners[roll]);
+            }
+
+            if (secondStageWinners.Count == 0)
+            {
+                Logger.Warning("Не удалось выбрать ни одного прототипа на втором этапе");
+                return null;
+            }
+
+            // Этап 3: 1 бросок из 6
+            int finalRoll = _random.Next(secondStageWinners.Count);
+            return secondStageWinners[finalRoll];
+        }
+
+        private void TrySpawnEntities(EntityUid uid, string category, SpawnEntry chosenPrototype, EntityCoordinates spawnCoords, float offset, int maxSpawnCount)
+        {
+            // Определяем количество предметов для спавна
+            int itemCount = GetItemCount(category, maxSpawnCount);
+
+            Logger.Info($"Спавн {itemCount} экземпляров прототипа {chosenPrototype.PrototypeId}");
 
             for (int i = 0; i < itemCount; i++)
             {
-                // Для каждого экземпляра рассчитываем случайное смещение.
-                for (int j = 0; j < chosenItem.Count; j++)
-                {
-                    var angle = _random.NextFloat() * MathF.PI * 2;
-                    var radius = _random.NextFloat() * offset;
-                    var offsetX = MathF.Cos(angle) * radius;
-                    var offsetY = MathF.Sin(angle) * radius;
-                    var newCoords = new MapCoordinates(spawnCoords.Position.X + offsetX, spawnCoords.Position.Y + offsetY, spawnCoords.MapId);
-                    // Обновляем координаты сущности, используя новое смещение.
-                    var entityCoords = Transform(uid).Coordinates.WithPosition(newCoords.Position);
-                    EntityManager.SpawnEntity(chosenItem.PrototypeId, entityCoords);
-                }
+                var angle = _random.NextFloat() * MathF.PI * 2;
+                var radius = _random.NextFloat() * offset;
+                var offsetX = MathF.Cos(angle) * radius;
+                var offsetY = MathF.Sin(angle) * radius;
+                var newPosition = spawnCoords.Position + new Vector2(offsetX, offsetY);
+                var newCoords = spawnCoords.WithPosition(newPosition);
+                EntityManager.SpawnEntity(chosenPrototype.PrototypeId, newCoords);
             }
         }
 
@@ -112,55 +230,40 @@ namespace Content.Server._Stalker.AdvancedSpawner
         {
             return new List<SpawnCategory>
             {
-                new("Common", config.CategoryWeights.GetValueOrDefault("Common", 50), config.CommonPrototypes),
-                new("Rare", config.CategoryWeights.GetValueOrDefault("Rare", 30), config.RarePrototypes),
-                new("Legendary", config.CategoryWeights.GetValueOrDefault("Legendary", 10), config.LegendaryPrototypes),
-                new("Negative", config.CategoryWeights.GetValueOrDefault("Negative", 10), config.NegativePrototypes)
+                new SpawnCategory("Common", config.CategoryWeights.GetValueOrDefault("Common", 50), config.CommonPrototypes),
+                new SpawnCategory("Rare", config.CategoryWeights.GetValueOrDefault("Rare", 30), config.RarePrototypes),
+                new SpawnCategory("Legendary", config.CategoryWeights.GetValueOrDefault("Legendary", 10), config.LegendaryPrototypes),
+                new SpawnCategory("Negative", config.CategoryWeights.GetValueOrDefault("Negative", 10), config.NegativePrototypes)
             }.Where(c => c.Prototypes.Count > 0).ToList();
         }
 
-        private int GetItemCount(string category)
+        // Новый метод GetItemCount с ограничением
+        private int GetItemCount(string category, int maxItems)
         {
-            double mean = 3 / 2.5;
-            double stdDev = 3 / 6.0;
+            int itemCount = 1; // Начинаем с 1 предмета
+            int probability; // Шанс в процентах
 
-            if (category == "Legendary")
+            // Задаём шансы в зависимости от категории
+            switch (category)
             {
-                mean = 1.2;
-                stdDev = 0.4;
-            }
-            else if (category == "Rare")
-            {
-                mean = 1.8;
-                stdDev = 0.6;
+                case "Legendary":
+                    probability = 10; // 10% шанс на доп. предмет
+                    break;
+                case "Rare":
+                    probability = 20; // 20% шанс на доп. предмет
+                    break;
+                default: // "Common" и "Negative"
+                    probability = 50; // 50% шанс
+                    break;
             }
 
-            int itemCount;
-            do
+            // Подбрасываем "кубик" для каждого дополнительного предмета
+            while (itemCount < maxItems && _random.Next(100) < probability)
             {
-                itemCount = (int)Math.Round(_random.NextGaussian(mean, stdDev));
+                itemCount++;
             }
-            while (itemCount < 1 || itemCount > 3);
 
             return itemCount;
-        }
-
-        private T? PickWeighted<T>(List<T> items, Func<T, int> weightSelector) where T : class
-        {
-            if (items.Count == 0)
-                return default;
-
-            int totalWeight = items.Sum(weightSelector);
-            int roll = _random.Next(0, totalWeight);
-            int currentWeight = 0;
-
-            foreach (var item in items)
-            {
-                currentWeight += weightSelector(item);
-                if (roll < currentWeight)
-                    return item;
-            }
-            return items.Last();
         }
     }
 }
