@@ -1,4 +1,4 @@
-using Content.Server._Stalker.AdvancedSpawner; // Используем правильный неймспейс
+using Content.Server._Stalker.AdvancedSpawner; // Подключаем SpawnEntry
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Content.Server.TrashDetector.Components
 {
     [RegisterComponent]
-    public partial class TrashDetectorComponent : Component
+    public sealed partial class TrashDetectorComponent : Component
     {
         /// <summary>
         /// Время на поиск (сколько секунд длится DoAfter).
@@ -49,6 +49,20 @@ namespace Content.Server.TrashDetector.Components
 
         [DataField("extraNegativePrototypes")]
         public List<SpawnEntry> ExtraNegativePrototypes { get; set; } = new();
+
+        /// <summary>
+        /// Возвращает модификатор веса для указанной категории.
+        /// </summary>
+        public int GetWeightModifier(string category)
+        {
+            return category switch
+            {
+                "Common" => CommonWeightMod,
+                "Rare" => RareWeightMod,
+                "Legendary" => LegendaryWeightMod,
+                "Negative" => NegativeWeightMod,
+                _ => 0
+            };
+        }
     }
 }
-

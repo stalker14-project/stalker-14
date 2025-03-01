@@ -8,7 +8,6 @@ using Content.Shared.Popups;
 using Content.Shared.Interaction;
 using Content.Server.TrashSearchable;
 using Content.Shared.TrashDetector;
-using Content.Server.Spawners.Components;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -70,21 +69,23 @@ namespace Content.Server.TrashDetector
             trash.TimeBeforeNextSearch = 900f;
             var spawnCoords = Transform(args.Args.Target.Value).Coordinates;
             var spawnerUid = _entityManager.SpawnEntity(TrashDetectorComponent.LootSpawner, spawnCoords);
-            Logger.InfoS("trashdetector", $"Спавнер {TrashDetectorComponent.LootSpawner} создан с id {spawnerUid}");
 
-            if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
+            if (TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
+            {
+                var tempComp = _entityManager.AddComponent<TempDetectorDataComponent>(spawnerUid);
+                tempComp.Detector = comp;
+            }
+            else
             {
                 _popupSystem.PopupEntity("Ошибка: спавнер не найден!", spawnerUid, PopupType.MediumCaution);
                 return;
             }
 
-            // Создаем конфигурацию спавнера и применяем модификаторы из детектора.
             var config = new AdvancedRandomSpawnerConfig(spawner);
             config.ApplyModifiers(comp);
 
-            // Вызываем метод спавна, использующий модифицированную конфигурацию.
+            // Здесь переменная spawnedCategories получает список, возвращённый методом.
             var spawnedCategories = _spawnerSystem.SpawnEntitiesFromModifiedConfig(spawnerUid, config);
-            Logger.InfoS("trashdetector", $"Выбраны категории: {string.Join(", ", spawnedCategories)}");
 
             string message = "Прибор не издает звука";
             PopupType popupType = PopupType.LargeCaution;

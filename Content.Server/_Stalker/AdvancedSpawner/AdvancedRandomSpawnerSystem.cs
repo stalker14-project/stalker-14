@@ -1,16 +1,34 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.IoC;
-using Content.Server.TrashDetector.Components; // Добавлено для доступа к TrashDetectorComponent
+using Content.Shared.Popups;
+using Content.Server._Stalker.AdvancedSpawner;
+using Content.Server.TrashDetector.Components;
+
+public class SpawnCategory
+{
+    public string Id { get; set; }
+    public int Weight { get; set; }
+    public List<SpawnEntry> Prototypes { get; set; }
+
+    public SpawnCategory(string id, int weight, List<SpawnEntry> prototypes)
+    {
+        Id = id;
+        Weight = weight;
+        Prototypes = prototypes;
+    }
+}
 
 namespace Content.Server._Stalker.AdvancedSpawner
 {
     public sealed class AdvancedRandomSpawnerSystem : EntitySystem
     {
         [Dependency] private readonly IRobustRandom _random = default!;
+        [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
         public override void Initialize()
         {
@@ -20,183 +38,129 @@ namespace Content.Server._Stalker.AdvancedSpawner
 
         private void OnMapInit(EntityUid uid, AdvancedRandomSpawnerComponent comp, MapInitEvent args)
         {
-            Logger.InfoS("advancedspawner", $"OnMapInit вызван для сущности {uid}");
+            Logger.Info($"OnMapInit вызван для сущности {uid}");
             var config = new AdvancedRandomSpawnerConfig(comp);
 
-            // Применяем модификаторы, если компонент детектора присутствует
-            var detector = EntityManager.GetComponentOrNull<TrashDetectorComponent>(uid);
-            if (detector != null)
+            var detectorData = EntityManager.GetComponentOrNull<TempDetectorDataComponent>(uid);
+            if (detectorData != null)
             {
-                config.ApplyModifiers(detector);
-                Logger.InfoS("advancedspawner", $"Модификаторы применены для сущности {uid}");
-            }
-            else
-            {
-                Logger.InfoS("advancedspawner", $"Компонент TrashDetector не найден для сущности {uid}");
+                config.ApplyModifiers(detectorData.Detector);
+                EntityManager.RemoveComponent<TempDetectorDataComponent>(uid);
             }
 
+            // При инициализации можно проигнорировать возвращаемое значение.
             SpawnEntitiesFromModifiedConfig(uid, config);
         }
 
+        // Метод возвращает список заспавненных категорий (имён категорий).
         public List<string> SpawnEntitiesFromModifiedConfig(EntityUid uid, AdvancedRandomSpawnerConfig config)
         {
-            Logger.InfoS("advancedspawner", $"SpawnEntitiesFromModifiedConfig вызван для сущности {uid}");
-            var spawnedCategories = TrySpawnEntities(uid, config);
-            if (config.DeleteSpawnerAfterSpawn)
-                QueueDel(uid);
-            return spawnedCategories;
-        }
+            var availableCategories = GetAvailableCategories(config);
+            var chosenCategory = PickWeighted(availableCategories, c => c.Weight);
 
-        private List<string> TrySpawnEntities(EntityUid uid, AdvancedRandomSpawnerConfig config)
-        {
-            var categories = new List<SpawnCategory>();
-
-            if (config.CommonPrototypes.Count > 0)
-                categories.Add(new SpawnCategory { Id = "Common", Weight = config.CategoryWeights.GetValueOrDefault("Common", 50), Prototypes = config.CommonPrototypes });
-
-            if (config.RarePrototypes.Count > 0)
-                categories.Add(new SpawnCategory { Id = "Rare", Weight = config.CategoryWeights.GetValueOrDefault("Rare", 30), Prototypes = config.RarePrototypes });
-
-            if (config.LegendaryPrototypes.Count > 0)
-                categories.Add(new SpawnCategory { Id = "Legendary", Weight = config.CategoryWeights.GetValueOrDefault("Legendary", 10), Prototypes = config.LegendaryPrototypes });
-
-            if (config.NegativePrototypes.Count > 0)
-                categories.Add(new SpawnCategory { Id = "Negative", Weight = config.CategoryWeights.GetValueOrDefault("Negative", 10), Prototypes = config.NegativePrototypes });
-
-            if (categories.Count == 0)
+            if (chosenCategory == null || chosenCategory.Prototypes.Count == 0)
             {
-                Logger.WarningS("advancedspawner", $"Нет доступных категорий для сущности {uid}");
+                Logger.Warning($"Не удалось выбрать категорию для сущности {uid}");
                 return new List<string>();
             }
 
-            var spawnedCategories = new List<string>();
+            Logger.Info($"Выбрана категория: {chosenCategory.Id}");
+
+            // Получаем базовые координаты спавна.
             var spawnCoords = Transform(uid).MapPosition;
+            // Вызываем метод, в который передаем и координаты, и величину смещения.
+            TrySpawnEntities(uid, chosenCategory, spawnCoords, config.Offset);
 
-            // Определяем, сколько предметов нужно заспавнить.
-            var categoryItems = DetermineItemCount(config, categories);
-            if (categoryItems.Count == 0)
-            {
-                Logger.WarningS("advancedspawner", $"Не выбран ни один предмет для спавна для сущности {uid}. Прерываем спавн.");
-                return spawnedCategories;
-            }
+            _popupSystem.PopupEntity($"Заспавнены предметы из категории: {chosenCategory.Id}", uid);
 
-            foreach (var (category, items) in categoryItems)
-            {
-                spawnedCategories.Add(category.Id);
-                foreach (var entry in items)
-                {
-                    if (string.IsNullOrWhiteSpace(entry.PrototypeId))
-                    {
-                        Logger.WarningS("advancedspawner", $"Пропускаем запись с пустым PrototypeId в категории {category.Id} для сущности {uid}");
-                        continue;
-                    }
-                    for (int j = 0; j < entry.Count; j++)
-                    {
-                        var entityCoords = GetRandomSpawnCoords(spawnCoords, config.Offset);
-                        EntityManager.SpawnEntity(entry.PrototypeId, entityCoords);
-                        Logger.InfoS("advancedspawner", $"Заспаунен предмет {entry.PrototypeId} на {entityCoords}");
-                    }
-                }
-            }
-            return spawnedCategories;
+            if (config.DeleteSpawnerAfterSpawn)
+                QueueDel(uid);
+
+            // Возвращаем список с единственным элементом – именем выбранной категории.
+            return new List<string> { chosenCategory.Id };
         }
 
-        private Dictionary<SpawnCategory, List<SpawnEntry>> DetermineItemCount(AdvancedRandomSpawnerConfig config, List<SpawnCategory> categories)
+        // Изменённый метод TrySpawnEntities теперь принимает базовые координаты и offset.
+        private void TrySpawnEntities(EntityUid uid, SpawnCategory chosenCategory, MapCoordinates spawnCoords, float offset)
         {
-            int itemCount = 1;
-            while (itemCount < config.MaxSpawnCount && _random.Prob(0.5f))
-            {
-                itemCount++;
-            }
-            Logger.InfoS("advancedspawner", $"Определено количество предметов: {itemCount}");
+            int itemCount = GetItemCount(chosenCategory.Id);
+            Logger.Info($"Спавн {itemCount} предметов из категории {chosenCategory.Id}");
 
-            var categorySpawn = new Dictionary<SpawnCategory, List<SpawnEntry>>();
+            // Для каждого спавна выбираем прототип с учётом веса.
+            var chosenItem = PickWeighted(chosenCategory.Prototypes, e => e.Weight);
+            if (chosenItem == null)
+                return;
 
-            int legendaryLimit = 1;
-            int rareLimit = 2;
-            var categoryCounts = new Dictionary<string, int>
+            for (int i = 0; i < itemCount; i++)
             {
-                { "Legendary", 0 },
-                { "Rare", 0 }
-            };
-
-            int allocated = 0;
-            while (allocated < itemCount)
-            {
-                var availableCategories = new List<SpawnCategory>();
-                foreach (var cat in categories)
+                // Для каждого экземпляра рассчитываем случайное смещение.
+                for (int j = 0; j < chosenItem.Count; j++)
                 {
-                    if (cat.Id == "Legendary" && categoryCounts["Legendary"] >= legendaryLimit)
-                        continue;
-                    if (cat.Id == "Rare" && categoryCounts["Rare"] >= rareLimit)
-                        continue;
-                    availableCategories.Add(cat);
+                    var angle = _random.NextFloat() * MathF.PI * 2;
+                    var radius = _random.NextFloat() * offset;
+                    var offsetX = MathF.Cos(angle) * radius;
+                    var offsetY = MathF.Sin(angle) * radius;
+                    var newCoords = new MapCoordinates(spawnCoords.Position.X + offsetX, spawnCoords.Position.Y + offsetY, spawnCoords.MapId);
+                    // Обновляем координаты сущности, используя новое смещение.
+                    var entityCoords = Transform(uid).Coordinates.WithPosition(newCoords.Position);
+                    EntityManager.SpawnEntity(chosenItem.PrototypeId, entityCoords);
                 }
-
-                if (availableCategories.Count == 0)
-                {
-                    Logger.WarningS("advancedspawner", "Нет доступных категорий для выбора, лимиты исчерпаны.");
-                    break;
-                }
-
-                var chosenCategory = PickWeighted(availableCategories, c => c.Weight);
-                if (chosenCategory == null)
-                    break;
-
-                if (chosenCategory.Id == "Legendary")
-                    categoryCounts["Legendary"]++;
-                if (chosenCategory.Id == "Rare")
-                    categoryCounts["Rare"]++;
-
-                var chosenItem = PickWeighted(chosenCategory.Prototypes, e => e.Weight);
-                if (chosenItem == null)
-                    continue;
-
-                if (!categorySpawn.ContainsKey(chosenCategory))
-                    categorySpawn[chosenCategory] = new List<SpawnEntry>();
-                categorySpawn[chosenCategory].Add(chosenItem);
-                allocated++;
             }
-
-            return categorySpawn;
         }
 
-        private MapCoordinates GetRandomSpawnCoords(MapCoordinates baseCoords, float offset)
+        private List<SpawnCategory> GetAvailableCategories(AdvancedRandomSpawnerConfig config)
         {
-            var angle = _random.NextFloat() * MathF.PI * 2;
-            var radius = _random.NextFloat() * offset;
-            var offsetX = MathF.Cos(angle) * radius;
-            var offsetY = MathF.Sin(angle) * radius;
-            return new MapCoordinates(baseCoords.Position.X + offsetX, baseCoords.Position.Y + offsetY, baseCoords.MapId);
+            return new List<SpawnCategory>
+            {
+                new("Common", config.CategoryWeights.GetValueOrDefault("Common", 50), config.CommonPrototypes),
+                new("Rare", config.CategoryWeights.GetValueOrDefault("Rare", 30), config.RarePrototypes),
+                new("Legendary", config.CategoryWeights.GetValueOrDefault("Legendary", 10), config.LegendaryPrototypes),
+                new("Negative", config.CategoryWeights.GetValueOrDefault("Negative", 10), config.NegativePrototypes)
+            }.Where(c => c.Prototypes.Count > 0).ToList();
         }
 
-        private T? PickWeighted<T>(List<T> items, Func<T, int> weightSelector)
+        private int GetItemCount(string category)
         {
-            int totalWeight = 0;
-            foreach (var item in items)
+            double mean = 3 / 2.5;
+            double stdDev = 3 / 6.0;
+
+            if (category == "Legendary")
             {
-                int weight = weightSelector(item);
-                if (weight > 0)
-                    totalWeight += weight;
+                mean = 1.2;
+                stdDev = 0.4;
             }
-            if (totalWeight == 0)
+            else if (category == "Rare")
+            {
+                mean = 1.8;
+                stdDev = 0.6;
+            }
+
+            int itemCount;
+            do
+            {
+                itemCount = (int)Math.Round(_random.NextGaussian(mean, stdDev));
+            }
+            while (itemCount < 1 || itemCount > 3);
+
+            return itemCount;
+        }
+
+        private T? PickWeighted<T>(List<T> items, Func<T, int> weightSelector) where T : class
+        {
+            if (items.Count == 0)
                 return default;
+
+            int totalWeight = items.Sum(weightSelector);
             int roll = _random.Next(0, totalWeight);
+            int currentWeight = 0;
+
             foreach (var item in items)
             {
-                int weight = weightSelector(item);
-                if (weight > 0 && roll < weight)
+                currentWeight += weightSelector(item);
+                if (roll < currentWeight)
                     return item;
-                roll -= weight;
             }
-            return items[^1];
+            return items.Last();
         }
-    }
-
-    public sealed class SpawnCategory
-    {
-        public string Id { get; set; } = string.Empty;
-        public int Weight { get; set; } = 1;
-        public List<SpawnEntry> Prototypes { get; set; } = new();
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
+using Content.Server._Stalker.AdvancedSpawner; // Подключаем SpawnEntry
 
 namespace Content.Server._Stalker.AdvancedSpawner
 {
@@ -31,18 +32,5 @@ namespace Content.Server._Stalker.AdvancedSpawner
 
         [DataField("maxSpawnCount")]
         public int MaxSpawnCount { get; set; } = 3;
-    }
-
-    [DataDefinition]
-    public sealed partial class SpawnEntry
-    {
-        [DataField("id")]
-        public string PrototypeId { get; set; } = string.Empty;
-
-        [DataField("weight")]
-        public int Weight { get; set; } = 1;
-
-        [DataField("count", required: false)]
-        public int Count { get; set; } = 1; // Если count не указан, будет 1
     }
 }
