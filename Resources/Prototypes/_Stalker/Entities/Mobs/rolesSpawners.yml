@@ -46,6 +46,42 @@
       prototypes: [ MilitaryGearHead ]
 
 - type: entity
+  parent: MobHuman
+  id: MobHumanMilitarySpetsnazAKS
+  name: спецназовец
+  suffix: ST, T4, СПАВН СПЕЦНАЗА СОП, АКС, ПС
+  components:
+    - type: Access
+      groups:
+        - Military
+        - MilitaryHead
+        - MilitaryOfficer
+    - type: Loadout
+      prototypes: [MilitarySpetsnazGearAKSPS]
+    - type: RandomMetadata
+      nameSegments:
+      - NamesRankSpetsnazMilitary
+      - NameSurnameSpetsnazMilitary
+
+- type: entity
+  parent: MobHuman
+  id: MobHumanMilitarySpetsnazRPD
+  name: спецназовец
+  suffix: ST, T4, СПАВН СПЕЦНАЗА СОП, РПД, ПС
+  components:
+    - type: Access
+      groups:
+        - Military
+        - MilitaryHead
+        - MilitaryOfficer
+    - type: Loadout
+      prototypes: [MilitarySpetsnazGearRPDPS]
+    - type: RandomMetadata
+      nameSegments:
+      - NamesRankSpetsnazMilitary
+      - NameSurnameSpetsnazMilitary
+
+- type: entity
   name: кукла ренегат (переименуй меня)
   suffix: Stalker, пешка с нашивкой
   parent: MobHuman

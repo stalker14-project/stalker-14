@@ -48,7 +48,7 @@
         # STWeaponGunAKS74U: 1
         WeaponRifleStalkerGroza545: 14
         # STSTWeaponRifleStalkerAK74M: 4
-        STWeaponRifleStalkerAK74: 3
+        STWeaponRifleStalkerAKS74: 3
     - name: Броня
       priority: 2
       items:
@@ -192,7 +192,7 @@
         STWeaponShotgunSaiga12: 3150 # T4
           # 5,45x39
         STWeaponGunAKS74U: 1490
-        STWeaponRifleStalkerAK74: 3000
+        STWeaponRifleStalkerAKS74: 3000
         STSTWeaponRifleStalkerAK74M: 4350
         WeaponMachineGunRPD: 9000
         STWeaponRifleSVDS: 11000
@@ -467,7 +467,7 @@
       items:
         CheapLighter: 15
         Lighter: 30
-        DrinkFlaskOld: 30
+        DrinkMREFlask: 30
         STFoodBreadPlain: 35
         FoodTinMRE: 120
         STEnergyDrink: 150
@@ -499,6 +499,9 @@
       items:
           # 5,45x39
         STWeaponGunAKS74U: 1490
+        STWeaponGunAKS74UBlack: 1690
+        STWeaponRifleStalkerAKS74: 3000
+        STWeaponRifleStalkerAKS74Green: 3250
 
     - name: Медицина
       priority: 6
@@ -531,13 +534,14 @@
         BoxFlare: 60
         ExtendedEmergencyOxygenTankFilledStalker: 50
         Matchbox: 10
+        ClothingHeatBagStalker: 15
 
     - name: Плащи и Противогазы
       priority: 8
       items:
           # Cloaks
           # Gasmasks
-        ClothingMaskGasM40Military: 100 # T2
+        ClothingMaskGasXM40: 500 # T3
 
     - name: Исследовательское снаряжение
       priority: 9
@@ -548,12 +552,3 @@
           # Detectors
           # Пусто
 
-- type: shopPreset
-  id: MilitaryPSZShopPreset
-  categories:
-    - name: Броня
-      priority: 1
-      items:
-        ArmyAK2Crate: 1
-        ArmyAK1Crate: 1
-        ArmyAKCOfficerCrate: 10

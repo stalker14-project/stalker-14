@@ -16,8 +16,7 @@
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
     - type: Gun
       soundGunshot:
-        path: /Audio/_Stalker/Effects/Guns/ak.ogg
-      projectileSpeed: 30
+        path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
       minAngle: 45
       maxAngle: 75
       angleIncrease: 4.5
@@ -30,7 +29,7 @@
       slots:
         gun_magazine:
           name: Magazine
-          startingItem: Base545Mag10
+          startingItem: 545Mag30
           insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
           ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
           priority: 4
@@ -127,3 +126,20 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+
+
+
+- type: entity
+  name: АКС-74У "Чёрный", использует 5,45x39
+  suffix: ST, Скин
+  parent: STWeaponGunAKS74U
+  id: STWeaponGunAKS74UBlack
+  description: АКСУ с чёрным пластиковым цевьём и чёрной ручкой.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+

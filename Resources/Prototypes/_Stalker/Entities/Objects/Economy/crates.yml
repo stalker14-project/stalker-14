@@ -98,7 +98,7 @@
 - type: entity
   parent: BaseItem
   id: ArmyAK1Crate
-  name: старый комплект ПСЗ-7
+  name: старый комплект ПСЗ-7 АКСУ
   description: Базовый армейский комплект ПСЗ предназначенный для солдат С.О.П. первой версии.
   suffix: Stalker, т3
   components:
@@ -112,38 +112,12 @@
       state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7v3Filled
         - id: ClothingHeadBandana2Military
         - id: STWeaponGunAKS74U
-        - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
+        - id: ClothingBeltGreenWebbingStalkerFilled
         - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
         - id: BaseRadio
-        - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -186,7 +160,7 @@
 - type: entity
   parent: BaseItem
   id: ArmyAK2Crate
-  name: комплект ПСЗ-7
+  name: комплект ПСЗ-7 АКСУ
   description: Базовый армейский комплект ПСЗ предназначенный для солдат С.О.П. переделанный под ЧЗО.
   suffix: Stalker, т3
   components:
@@ -200,144 +174,64 @@
       state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ7v1
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7v1Filled
         - id: ClothingHeadBandana1Military
         - id: STWeaponGunAKS74U
-        - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
+        - id: ClothingBeltGreenWebbingStalkerFilled
         - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
         - id: BaseRadio
-        - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
       sound:
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
   parent: UNstandartCrate
   id: ArmyAKC1Crate
-  name: старый комплект АКС ПСЗ-7
-  description: Набор базовой АКС ПСЗ-7 первой версии.
+  name: старый комплект ПСЗ-7 АКС
+  description: Старый армейский комплект ПСЗ предназначенный для солдат С.О.П.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ1
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7v3Filled
         - id: ClothingHeadBandana2Military
-        - id: STWeaponRifleStalkerAK74
-        - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
+        - id: STWeaponRifleStalkerAKS74
+        - id: ClothingBeltGreenWebbingStalkerFilled
         - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
         - id: BaseRadio
-        - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
       sound:
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
   parent: UNstandartCrate
   id: ArmyAKC2Crate
-  name: комплект АКС ПСЗ-7
-  description: Набор базовой АКС ПСЗ-7 второй версии.
+  name: комплект ПСЗ-7 АКС
+  description: Базовый армейский комплект ПСЗ предназначенный для солдат С.О.П. переделанный под ЧЗО.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ2
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7v1Filled
         - id: ClothingHeadBandana1Military
-        - id: STWeaponRifleStalkerAK74
-        - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
+        - id: STWeaponRifleStalkerAKS74
+        - id: ClothingBeltGreenWebbingStalkerFilled
         - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
         - id: BaseRadio
-        - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -358,38 +252,12 @@
       state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ7
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7Filled
         - id: ClothingHeadBeretMilitary
         - id: STWeaponGunAKS74U
-        - id: ClothingBeltWebbingOfficerStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
+        - id: ClothingBeltWebbingOfficerStalkerFilled
         - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
         - id: BaseRadio
-        - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -512,7 +380,7 @@
         - id: 545Mag30
         - id: 545Mag30
         - id: 545Mag30
-        - id: STWeaponRifleStalkerAK74
+        - id: STWeaponRifleStalkerAKS74
         - id: ClothingBackpackDuffelMilitaryOlive
         - id: 545PCBox
         - id: 545PCBox
