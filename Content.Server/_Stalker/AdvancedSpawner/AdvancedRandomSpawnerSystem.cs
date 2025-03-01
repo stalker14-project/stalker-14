@@ -25,7 +25,7 @@ namespace Content.Server._Stalker.AdvancedSpawner
                 QueueDel(uid);
         }
 
-        public void TrySpawnEntities(EntityUid uid, AdvancedRandomSpawnerComponent comp)
+        public List<string> TrySpawnEntities(EntityUid uid, AdvancedRandomSpawnerComponent comp)
         {
             var categories = new List<SpawnCategory>();
 
@@ -42,53 +42,46 @@ namespace Content.Server._Stalker.AdvancedSpawner
                 categories.Add(new SpawnCategory { Id = "Negative", Weight = comp.CategoryWeights.GetValueOrDefault("Negative", 0), Prototypes = comp.NegativePrototypes });
 
             if (categories.Count == 0)
-                return; // Нет доступных категорий для спавна
+                return new List<string>(); // Нет доступных категорий
 
+            // Выбор одной категории на основе её веса
+            var chosenCategory = PickRandomCategory(categories);
+            if (chosenCategory == null || chosenCategory.Prototypes.Count == 0)
+                return new List<string>();
+
+            // Спавн предметов только из выбранной категории
+            var spawnedCategories = new List<string> { chosenCategory.Id };
+            var spawnCoords = Transform(uid).MapPosition;
             int itemCount = DetermineItemCount(comp);
-            var spawnCoords = Transform(uid).MapPosition; // Получаем глобальные координаты
 
             for (int i = 0; i < itemCount; i++)
             {
-                var chosenCategory = PickRandomCategory(categories);
-                if (chosenCategory == null || chosenCategory.Prototypes.Count == 0)
-                    continue;
-
                 var entry = PickWeighted(chosenCategory.Prototypes, e => e.Weight);
-                if (entry == null || !_random.Prob(1.0f)) // 100% шанс спавна
+                if (entry == null || !_random.Prob(1.0f))
                     continue;
 
-                for (int j = 0; j < entry.Count; j++) // Учитываем количество предметов
+                for (int j = 0; j < entry.Count; j++)
                 {
-                    // Генерируем случайное смещение
                     var angle = _random.NextFloat() * MathF.PI * 2;
                     var radius = _random.NextFloat() * comp.Offset;
                     var offsetX = MathF.Cos(angle) * radius;
                     var offsetY = MathF.Sin(angle) * radius;
-
-                    // Создаем новые MapCoordinates
-                    var newCoords = new MapCoordinates(
-                        spawnCoords.Position.X + offsetX,
-                        spawnCoords.Position.Y + offsetY,
-                        spawnCoords.MapId
-                    );
-
-                    // Преобразуем MapCoordinates в EntityCoordinates
+                    var newCoords = new MapCoordinates(spawnCoords.Position.X + offsetX, spawnCoords.Position.Y + offsetY, spawnCoords.MapId);
                     var entityCoords = Transform(uid).Coordinates.WithPosition(newCoords.Position);
-
                     EntityManager.SpawnEntity(entry.PrototypeId, entityCoords);
                 }
             }
+
+            return spawnedCategories;
         }
 
         private int DetermineItemCount(AdvancedRandomSpawnerComponent comp)
         {
-            int itemCount = 1; // Первый предмет всегда спавнится.
-
-            while (itemCount < comp.MaxSpawnCount && _random.Prob(0.5f)) // 50% шанс на каждый следующий предмет
+            int itemCount = 1;
+            while (itemCount < comp.MaxSpawnCount && _random.Prob(0.5f))
             {
                 itemCount++;
             }
-
             return itemCount;
         }
 
@@ -111,7 +104,7 @@ namespace Content.Server._Stalker.AdvancedSpawner
                 roll -= category.Weight;
             }
 
-            return categories[0]; // Если что-то пошло не так, выбираем первую категорию
+            return categories[0];
         }
 
         private SpawnEntry? PickWeighted(List<SpawnEntry> entries, Func<SpawnEntry, int> weightSelector)
@@ -133,7 +126,7 @@ namespace Content.Server._Stalker.AdvancedSpawner
                 roll -= weightSelector(entry);
             }
 
-            return entries[0]; // Если что-то пошло не так, выбираем первый элемент
+            return entries[0];
         }
     }
 
