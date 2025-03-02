@@ -42,9 +42,6 @@ namespace Content.Server._Stalker.AdvancedSpawner
             };
         }
 
-        /// <summary>
-        /// Спавнит предметы на указанных координатах с учетом весов и динамических шансов.
-        /// </summary>
         public List<string> SpawnEntities(EntityCoordinates spawnCoords, float offset)
         {
             List<string> spawnedItems = new();
@@ -67,9 +64,6 @@ namespace Content.Server._Stalker.AdvancedSpawner
             return spawnedItems;
         }
 
-        /// <summary>
-        /// Спавнит прототип из выбранной категории с учетом его веса.
-        /// </summary>
         private void SpawnPrototype(string category, EntityCoordinates spawnCoords, float offset, List<string> spawnedItems)
         {
             SpawnEntry prototype = SelectPrototypeWithWeights(category);
@@ -82,9 +76,6 @@ namespace Content.Server._Stalker.AdvancedSpawner
             }
         }
 
-        /// <summary>
-        /// Спавнит одну сущность с небольшим смещением.
-        /// </summary>
         private void SpawnEntity(SpawnEntry prototype, EntityCoordinates spawnCoords, float offset)
         {
             var angle = _random.NextFloat() * MathF.PI * 2;
@@ -97,9 +88,6 @@ namespace Content.Server._Stalker.AdvancedSpawner
             _entityManager.SpawnEntity(prototype.PrototypeId, newCoords);
         }
 
-        /// <summary>
-        /// Выбирает категорию с учетом её веса.
-        /// </summary>
         private string SelectCategoryWithWeights()
         {
             int totalWeight = categoryWeights.Values.Sum();
@@ -113,12 +101,9 @@ namespace Content.Server._Stalker.AdvancedSpawner
                     return category;
             }
 
-            return "Common"; // Запасной вариант
+            return "Common";
         }
 
-        /// <summary>
-        /// Выбирает прототип внутри категории с учетом его веса.
-        /// </summary>
         private SpawnEntry SelectPrototypeWithWeights(string category)
         {
             var entries = prototypes[category];
@@ -133,12 +118,9 @@ namespace Content.Server._Stalker.AdvancedSpawner
                     return prototype;
             }
 
-            return entries.First(); // Запасной вариант
+            return entries.First();
         }
 
-        /// <summary>
-        /// Вычисляет шанс продолжения спавна для категории на основе весов и номера спавна.
-        /// </summary>
         private double GetChanceForCategory(string category, int spawnNumber)
         {
             if (!categoryWeights.TryGetValue(category, out int categoryWeight))
