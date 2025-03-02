@@ -84,8 +84,8 @@ namespace Content.Server.TrashDetector
             var config = new AdvancedRandomSpawnerConfig(spawner);
             config.ApplyModifiers(comp);
 
-            // Здесь переменная spawnedCategories получает список, возвращённый методом.
-            var spawnedCategories = _spawnerSystem.SpawnEntitiesFromModifiedConfig(spawnerUid, config);
+            // Здесь метод возвращает список заспавненных категорий.
+            var spawnedCategories = _spawnerSystem.SpawnEntitiesUsingSpawner(uid, config);
 
             string message = "Прибор не издает звука";
             PopupType popupType = PopupType.LargeCaution;

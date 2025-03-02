@@ -10,10 +10,10 @@
 
     - type: AdvancedRandomSpawner
       categoryWeights:
-        Common: 700   # Обычные предметы - 70%
-        Rare: 100     # Редкие предметы - 10%
-        Legendary: 50 # Легендарные предметы - 5%
-        Negative: 150 # Негативные спавны - 15%
+        Common: 800  # Обычные предметы - 80%
+        Rare: 50  # Редкие предметы - 10%
+        Legendary: 20 # Легендарные предметы - 2%
+        Negative: 130 # Негативные спавны - 13%
 
       # Обычные предметы (Общий вес: 245)
       commonPrototypes:
@@ -130,34 +130,35 @@
       # Негативные спавны (Общий вес: 81)
       negativePrototypes:
         - id: MobMutantBoar
-          weight: 5   # ~6.17% (5/81)
+          weight: 74    # ~7.4% (74/1000)
           count: 1
         - id: MobMutantFleshNeutral
-          weight: 15  # ~18.52% (15/81)
+          weight: 221   # ~22.1% (221/1000)
           count: 1
         - id: MobMutantBlindDog
-          weight: 15  # ~18.52% (15/81)
+          weight: 221   # ~22.1% (221/1000)
           count: 1
         - id: MobMutantRodent
-          weight: 15  # ~18.52% (15/81)
+          weight: 221   # ~22.1% (221/1000)
           count: 1
         - id: MobMutantBush
-          weight: 15  # ~18.52% (15/81)
+          weight: 221   # ~22.1% (221/1000)
           count: 1
         - id: MobMutantBloodsucker
-          weight: 5   # ~6.17% (5/81)
+          weight: 7     # 0.7% (7/1000)
           count: 1
         - id: MobMutantPseudodog
-          weight: 5   # ~6.17% (5/81)
+          weight: 10    # 1% (10/1000)
           count: 1
         - id: MobMutantOraclesBrown
-          weight: 1   # ~1.23% (1/81)
+          weight: 5     # 0.5% (5/1000)
           count: 1
         - id: MobMutantSnork
-          weight: 5   # ~6.17% (5/81)
+          weight: 20    # 2% (20/1000)
           count: 1
 
       offset: 0.2
+
       deleteSpawnerAfterSpawn: false
       maxSpawnCount: 5
 

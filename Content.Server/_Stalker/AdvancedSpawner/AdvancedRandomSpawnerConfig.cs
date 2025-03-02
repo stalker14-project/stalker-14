@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Content.Server.TrashDetector.Components;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Log;
 
 namespace Content.Server._Stalker.AdvancedSpawner
 {
@@ -30,16 +31,34 @@ namespace Content.Server._Stalker.AdvancedSpawner
 
         public void ApplyModifiers(TrashDetectorComponent detector)
         {
+            Logger.Info($"[ApplyModifiers] Применение модификаций от детектора {detector.Owner}");
+
             foreach (var category in new[] { "Common", "Rare", "Legendary", "Negative" })
             {
                 if (CategoryWeights.ContainsKey(category))
-                    CategoryWeights[category] = Math.Max(1, CategoryWeights[category] + detector.GetWeightModifier(category));
+                {
+                    int oldWeight = CategoryWeights[category];
+                    int modifier = detector.GetWeightModifier(category);
+                    CategoryWeights[category] = Math.Max(1, oldWeight + modifier);
+                    Logger.Info($"[ApplyModifiers] {category}: {oldWeight} -> {CategoryWeights[category]} (модификатор: {modifier})");
+                }
             }
 
+            // Логирование добавленных прототипов
+            Logger.Info($"[ApplyModifiers] Добавление новых прототипов:");
+
+            Logger.Info($"Common: {detector.ExtraCommonPrototypes.Count} новых элементов");
             CommonPrototypes.AddRange(detector.ExtraCommonPrototypes);
+
+            Logger.Info($"Rare: {detector.ExtraRarePrototypes.Count} новых элементов");
             RarePrototypes.AddRange(detector.ExtraRarePrototypes);
+
+            Logger.Info($"Legendary: {detector.ExtraLegendaryPrototypes.Count} новых элементов");
             LegendaryPrototypes.AddRange(detector.ExtraLegendaryPrototypes);
+
+            Logger.Info($"Negative: {detector.ExtraNegativePrototypes.Count} новых элементов");
             NegativePrototypes.AddRange(detector.ExtraNegativePrototypes);
         }
     }
 }
+

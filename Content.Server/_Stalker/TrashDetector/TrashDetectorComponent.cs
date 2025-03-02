@@ -3,6 +3,7 @@ using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
 using System;
 using System.Collections.Generic;
+using Robust.Shared.Log;
 
 namespace Content.Server.TrashDetector.Components
 {
@@ -24,16 +25,16 @@ namespace Content.Server.TrashDetector.Components
         /// Модификаторы веса категорий (вероятность выпадения категории).
         /// </summary>
         [DataField("commonWeightMod")]
-        public int CommonWeightMod { get; set; } = 0;
+        public int CommonWeightMod { get; set; } = 5;
 
         [DataField("rareWeightMod")]
-        public int RareWeightMod { get; set; } = 0;
+        public int RareWeightMod { get; set; } = 3;
 
         [DataField("legendaryWeightMod")]
-        public int LegendaryWeightMod { get; set; } = 0;
+        public int LegendaryWeightMod { get; set; } = 1;
 
         [DataField("negativeWeightMod")]
-        public int NegativeWeightMod { get; set; } = 0;
+        public int NegativeWeightMod { get; set; } = -2;
 
         /// <summary>
         /// Дополнительные предметы, которые добавляются в категории с их весами и количеством.
@@ -55,7 +56,7 @@ namespace Content.Server.TrashDetector.Components
         /// </summary>
         public int GetWeightModifier(string category)
         {
-            return category switch
+            int modifier = category switch
             {
                 "Common" => CommonWeightMod,
                 "Rare" => RareWeightMod,
@@ -63,6 +64,9 @@ namespace Content.Server.TrashDetector.Components
                 "Negative" => NegativeWeightMod,
                 _ => 0
             };
+
+            Logger.Info($"[TrashDetectorComponent] GetWeightModifier: {category} = {modifier}");
+            return modifier;
         }
     }
 }
