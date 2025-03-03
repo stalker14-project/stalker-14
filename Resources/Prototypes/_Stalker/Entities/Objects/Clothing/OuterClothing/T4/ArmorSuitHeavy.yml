@@ -33,17 +33,22 @@
   - type: Armor
     armorClass: 4
     modifiers:
-      flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 9
+       flatReductions:
+        Blunt: 7
+        Slash: 7
+        Piercing: 7
       coefficients:
-        Blunt: 0.8
-        Slash: 0.8
-        Piercing: 0.5
-        Compression: 0.9
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.4
+        Heat: 0.7
+        Radiation: 0.6
+        Caustic: 0.9
+        Shock: 0.7
+        Psy: 0.9
+        Compression: 0.65
   - type: ExplosionResistance
-    damageCoefficient: 0.7
+    damageCoefficient: 0.6
   - type: ToggleableClothing
     clothingPrototype: STClothingOuterArmorVeryHeavyHelmet
     slot: head
