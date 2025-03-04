@@ -1,0 +1,1 @@
+ent-STNPCSniper = sniper

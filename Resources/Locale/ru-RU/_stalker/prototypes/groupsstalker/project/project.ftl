@@ -1,0 +1,14 @@
+ent-ClothingHeadsetProject = А.А.А.
+    .desc = Алгоритм активен, отключить Алгоритм невозможно, подчиняйтесь Алгоритму.
+ent-EncryptionKeyPROJECT = чип А.А.А.
+    .desc = Алгоритм не активен, повторное включение Алгоритма невозможно, не подчиняйтесь Алгоритму.
+ent-PROJECTIDCard = ключ-карта Алгоритма
+    .desc = Алгоритм вечен!
+ent-ProjectPDA = КПК &#@*$!^
+    .desc = &#@*$!^ Error Screen, A problem has been detected and &#@*$!^ has been shut down to prevent damage to your device. Technical Information: STOP: 0x0000008E (0xC0000005, 0x804E3B58, 0xBA4C7B28, 0x00000000) KERNEL_STACK_INPAGE_ERROR. Refer to your &#@*$!^ user manual or visit www.&#@*$!^.com/support for more information.
+ent-ClothingShoesBootsProject = подкованные сапоги проекта
+    .desc = Алгоритм не умрёт, Алгоритм вечен, Алгоритм ничего не боится!
+ent-ClothingBeltHolsterProject = плечевая кобура проекта
+    .desc = Кобура для ношения пистолета и боеприпасов.
+ent-ClothingEyesHudProject = визор проекта
+    .desc = Смотря в него, вы видите весь алгоритм которому следуете..., но работает лишь если у вас в голове встроен сам-же чип.

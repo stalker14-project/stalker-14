@@ -1,0 +1,9 @@
+ent-ActionPsyonicsSpringboard = springboard
+ent-ActionPsyonicsRift = rift
+ent-ActionPsyonicsSmoke = smoke
+ent-ActionPsyonicsGrab = grab
+ent-ActionPsyonicsFireball = fireball
+ent-ActionPsyonicsShield = shield
+ent-ActionPsyonicsMeditation = meditation
+ent-ActionPsyonicsLight = light
+ent-ActionPsyonicsDizzy = dizzy
