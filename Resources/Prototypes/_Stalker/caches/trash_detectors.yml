@@ -7,43 +7,162 @@
     - type: Sprite
       sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
       state: icon
-    - type: RandomSpawner
-      prototypes:
-        # Tier 2 Crafting Materials
-        - STCraftStandardPCBT2
-        - STCraftTapeKitT2
-        - STCraftHideT2
-        - STCraftGlassT2
-        - STCraftBirchPlankT2
-        - STCraftPlasticFittingT2
-        - STCraftSheetIronT2
-      rarePrototypes:
-        # Tier 3 Crafting Materials (перенесены в редкие)
-        - STCraftMultilayerPCBT3
-        - STCraftGlueKitT3
-        - STCraftSturdyHideT3
-        - STCraftQuartzCrystalT3
-        - STCraftOakPlankT3
-        - STCraftPlasticFittingT3
-        - STCraftSheetBrassT3
-        #  Weapons
-        - STWeaponShotgunMP153
-        - STWeaponShotgunMossberg
-        - WeaponPistolStalkerAPS
-        - KhattabkaGrenade
-        - STWeaponGunAKS74U
-        - STWeaponRifleStalkerSaiga545
-        - STWeaponSniperMosin
-        - STWeaponRifleSKS
-        # Utility Items
-        - DoubleEmergencyOxygenTankStalkerFilled
-        - ExtendedEmergencyOxygenTankFilledStalker
-        - Binocularus1
-        - AAAAStalkerLopata
-      rareChance: 0.05   # 5% шанс спавна редкого предмета
-      chance: 1
-      offset: 0.5
 
+    - type: AdvancedRandomSpawner
+      categoryWeights:
+        Common: 800  # Обычные предметы - 80%
+        Rare: 50  # Редкие предметы - 10%
+        Legendary: 20 # Легендарные предметы - 2%
+        Negative: 130 # Негативные спавны - 13%
+
+      # Обычные предметы (Общий вес: 245)
+      commonPrototypes:
+        # Tier 2 (вес 25, количество 2, ~10.20% каждый, всего ~71.43%)
+        - id: STCraftStandardPCBT2
+          weight: 25  # ~10.20%
+          count: 2
+        - id: STCraftTapeKitT2
+          weight: 25  # ~10.20%
+          count: 2
+        - id: STCraftHideT2
+          weight: 25  # ~10.20%
+          count: 2
+        - id: STCraftGlassT2
+          weight: 25  # ~10.20%
+          count: 2
+        - id: STCraftBirchPlankT2
+          weight: 25  # ~10.20%
+          count: 2
+        - id: STCraftPlasticFittingT2
+          weight: 25  # ~10.20%
+          count: 2
+        - id: STCraftSheetIronT2
+          weight: 25  # ~10.20%
+          count: 2
+        # Tier 3 (вес 10, количество 1, ~4.08% каждый, всего ~28.57%)
+        - id: STCraftMultilayerPCBT3
+          weight: 10  # ~4.08%
+          count: 1
+        - id: STCraftGlueKitT3
+          weight: 10  # ~4.08%
+          count: 1
+        - id: STCraftSturdyHideT3
+          weight: 10  # ~4.08%
+          count: 1
+        - id: STCraftQuartzCrystalT3
+          weight: 10  # ~4.08%
+          count: 1
+        - id: STCraftOakPlankT3
+          weight: 10  # ~4.08%
+          count: 1
+        - id: STCraftPlasticFittingT3
+          weight: 10  # ~4.08%
+          count: 1
+        - id: STCraftSheetBrassT3
+          weight: 10  # ~4.08%
+          count: 1
+
+      # Редкие предметы (Общий вес: 120)
+      rarePrototypes:
+        # Оружие (вес 10, количество 1, ~8.33% каждый)
+        - id: STWeaponShotgunMP153
+          weight: 10  # ~8.33%
+          count: 1
+        - id: STWeaponShotgunMossberg
+          weight: 10  # ~8.33%
+          count: 1
+        - id: WeaponPistolStalkerAPS
+          weight: 10  # ~8.33%
+          count: 1
+        - id: KhattabkaGrenade
+          weight: 10  # ~8.33%
+          count: 1
+        - id: STWeaponGunAKS74U
+          weight: 10  # ~8.33%
+          count: 1
+        - id: STWeaponRifleStalkerSaiga545
+          weight: 10  # ~8.33%
+          count: 1
+        - id: STWeaponSniperMosin
+          weight: 10  # ~8.33%
+          count: 1
+        - id: STWeaponRifleSKS
+          weight: 10  # ~8.33%
+          count: 1
+        # Утилитарные предметы (вес 10, количество 1, ~8.33% каждый)
+        - id: DoubleEmergencyOxygenTankStalkerFilled
+          weight: 10  # ~8.33%
+          count: 1
+        - id: ExtendedEmergencyOxygenTankFilledStalker
+          weight: 10  # ~8.33%
+          count: 1
+        - id: Binocularus1
+          weight: 10  # ~8.33%
+          count: 1
+        - id: AAAAStalkerLopata
+          weight: 10  # ~8.33%
+          count: 1
+
+      # Легендарные предметы (Общий вес: 2)
+      legendaryPrototypes:
+        - id: STWeaponRifleStalkerAK74
+          weight: 6   # ~11.11% (6/54)
+          count: 1
+        - id: ClothingOuterArmorSevaStalker
+          weight: 6   # ~11.11% (6/54)
+          count: 1
+        - id: STClothingCapeArmorChainmailSeva
+          weight: 6   # ~11.11% (6/54)
+          count: 1
+        - id: ZoneArtifactDetectorSpruce
+          weight: 6   # ~11.11% (6/54)
+          count: 1
+        - id: STWeaponRifleStalkerL85
+          weight: 10  # ~18.52% (10/54)
+          count: 1
+        - id: STWeaponSMGMp5
+          weight: 10  # ~18.52% (10/54)
+          count: 1
+        - id: 556Mag45
+          weight: 10  # ~18.52% (10/54)
+          count: 1
+
+      # Негативные спавны (Общий вес: 81)
+      negativePrototypes:
+        - id: MobMutantBoar
+          weight: 74    # ~7.4% (74/1000)
+          count: 1
+        - id: MobMutantFleshNeutral
+          weight: 221   # ~22.1% (221/1000)
+          count: 1
+        - id: MobMutantBlindDog
+          weight: 221   # ~22.1% (221/1000)
+          count: 1
+        - id: MobMutantRodent
+          weight: 221   # ~22.1% (221/1000)
+          count: 1
+        - id: MobMutantBush
+          weight: 221   # ~22.1% (221/1000)
+          count: 1
+        - id: MobMutantBloodsucker
+          weight: 7     # 0.7% (7/1000)
+          count: 1
+        - id: MobMutantPseudodog
+          weight: 10    # 1% (10/1000)
+          count: 1
+        - id: MobMutantOraclesBrown
+          weight: 5     # 0.5% (5/1000)
+          count: 1
+        - id: MobMutantSnork
+          weight: 20    # 2% (20/1000)
+          count: 1
+
+      offset: 0.2
+
+      deleteAfterSpawn: false
+      maxSpawnCount: 5
+
+# 🔷 Tier 1 (Базовый) — Простой металлоискатель с базовыми шансами
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier1
@@ -62,84 +181,175 @@
       state: icon
     - type: TrashDetector
       searchTime: 40
-      probability: 0.1
-
+      commonWeightMod: 15
+      rareWeightMod: -5
+      legendaryWeightMod: -10
+      negativeWeightMod: 5
+      extraCommonPrototypes:
+        - id: STCraftBasicPCBT1
+          weight: 10
+          count: 2
+      extraRarePrototypes:
+        - id: MutantPartBlindDogTail
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponPistolStalkerAPS
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MobMutantBoar
+          weight: 5
+          count: 1
+# 🔸 Tier 2 (Копатель) — Чуть лучше, уменьшает шанс мобов
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier2
   name: металлоискатель "Копатель"
-  description: Хороший металлоискатель, качественно сделанный. Если порыться им в больших кучах мусора, то возможно вы что-то найдете.
   suffix: Stalker, металлоискатель
+  description: Может найти полезные вещи, если повезёт.
   components:
     - type: STWeight
       self: 4.5
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T2_trash_detector.rsi
       state: icon
     - type: TrashDetector
       searchTime: 20
-      probability: 0.3
+      commonWeightMod: 10
+      rareWeightMod: 5
+      legendaryWeightMod: 0
+      negativeWeightMod: -5
+      extraCommonPrototypes:
+        - id: STCraftStandardPCBT2
+          weight: 10
+          count: 1
+      extraRarePrototypes:
+        - id: STCraftQuartzCrystalT3
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponShotgunStalkerSPAS
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MutantPartSeasonedBoarHoof
+          weight: 5
+          count: 1
 
+# 🔸 Tier 3 (Шахтёр) — Хороший баланс, увеличивает шанс редкого лута
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier3
   name: металлоискатель "Шахтёр"
-  description: Дорогой, импортный металлоискатель. Прямо из Германии. Если порыться им в больших кучах мусора, то возможно вы что-то найдете.
   suffix: Stalker, металлоискатель
+  description: Полупрофессиональный металлоискатель для опытных искателей.
   components:
     - type: STWeight
       self: 3.5
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T3_trash_detector.rsi
       state: icon
     - type: TrashDetector
       searchTime: 20
-      probability: 0.5
+      commonWeightMod: 5
+      rareWeightMod: 10
+      legendaryWeightMod: 5
+      negativeWeightMod: -10
+      extraCommonPrototypes:
+        - id: STCraftMultilayerPCBT3
+          weight: 10
+          count: 1
+      extraRarePrototypes:
+        - id: ZoneArtifactSparkler
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponRifleStalkerAKM
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MutantPartPseudodogTail
+          weight: 5
+          count: 1
 
+# 🔸 Tier 4 (Находка) — Ищет хорошие предметы, почти нет мобов
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier4
   name: металлоискатель "Находка"
-  description: Очень Дорогой, металлоискатель модиффицированный с помощью частей гравитационных артефактов. Если порыться им в больших кучах мусора, то с большой вероятностью вы что-то найдете.
   suffix: Stalker, металлоискатель
+  description: Высокоточный прибор для опытных археологов.
   components:
     - type: STWeight
       self: 0.5
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T4_trash_detector.rsi
       state: icon
     - type: TrashDetector
-      searchTime: 0
-      probability: 0.80
+      searchTime: 10
+      commonWeightMod: 0
+      rareWeightMod: 15
+      legendaryWeightMod: 10
+      negativeWeightMod: -15
+      extraCommonPrototypes:
+        - id: ZoneArtifactKolobok
+          weight: 999
+          count: 5
+      extraRarePrototypes:
+        - id: STWeaponSniperMosin
+          weight: 7
+          count: 1
+      extraLegendaryPrototypes:
+        - id: STWeaponRifleM16
+          weight: 3
+          count: 1
+      extraNegativePrototypes:
+        - id: MutantPartBloodsuckerTentacles
+          weight: 5
+          count: 1
 
+
+# 🔸 Tier 5 (Аномалист) — Лучший детектор, находит самые редкие предметы
 - type: entity
   parent: BaseItem
   id: TrashDetectorTier5
   name: металлоискатель "Аномалист"
-  description: Крайне Дорогой, металлоискатель, является улучшенной версией металлоискателя "Находка". Обладает исключительными свойствами по поиску сборочных компонентов. Если порыться им в больших кучах мусора, то вы обязательно что-то найдете.
   suffix: Stalker, металлоискатель
+  description: Экспериментальный металлоискатель, разработанный с применением аномальных технологий.
   components:
     - type: STWeight
       self: -2
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,1,1
     - type: Sprite
       sprite: _Stalker/Objects/Tools/Trash_detectors/T5_trash_detector.rsi
       state: icon
     - type: TrashDetector
-      searchTime: 0
-      probability: 1
+      searchTime: 5
+      commonWeightMod: -10  # Убирает мусор
+      rareWeightMod: 20  # Максимально увеличивает шанс редкого лута
+      legendaryWeightMod: 15  # Большой шанс на топовые вещи
+      negativeWeightMod: -20  # Полностью убирает мобов
+
+      # 🔹 Список предметов для Common (Самые дорогие ресурсы)
+      extraCommonPrototypes:
+        - id: ZoneArtifactNightStar
+          weight: 10
+          count: 1
+
+      # 🔹 Список предметов для Rare (Уникальные редкие вещи)
+      extraRarePrototypes:
+        - id: STWeaponShotgunSaiga
+          weight: 7
+          count: 1
+
+      # 🔹 Список предметов для Legendary (Лучшие вещи в игре)
+      extraLegendaryPrototypes:
+        - id: STWeaponSniperVSSVintorez
+          weight: 3
+          count: 1
+
+      # 🔹 Список предметов для Negative (Но тут он уменьшает шанс)
+      extraNegativePrototypes:
+        - id: MutantPartControllerBrain
+          weight: 2
+          count: 1

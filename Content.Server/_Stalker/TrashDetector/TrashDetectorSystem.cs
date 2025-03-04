@@ -1,92 +1,138 @@
+using System.Linq;
+using Content.Server._Stalker.AdvancedSpawner;
 using Content.Server.TrashDetector.Components;
 using Content.Server.Popups;
 using Robust.Shared.Random;
 using Content.Shared.DoAfter;
-using Robust.Shared.Map;
-using Robust.Server.Audio;
 using Content.Shared.Popups;
 using Content.Shared.Interaction;
-using Content.Server._Stalker.TrashSerchable;
+using Content.Server.TrashSearchable;
 using Content.Shared.TrashDetector;
+using Robust.Shared.GameObjects;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Map;
+using Robust.Shared.Physics;
+using Robust.Server.Player;
+using Robust.Shared.Timing;
+using Content.Shared.Physics;
+using System.Numerics;
+using Robust.Shared.Maths;
+using Robust.Shared.Localization;
 
-namespace Content.Server.TrashDetector
+namespace Content.Server.TrashDetector;
+
+public sealed partial class TrashDetectorSystem : EntitySystem
 {
-    public sealed partial class TrashDetectorSystem : EntitySystem
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] internal readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly AdvancedRandomSpawnerSystem _spawnerSystem = default!;
+    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    private readonly ISawmill _sawmill = Logger.GetSawmill("TrashDetector");
+
+    private const float SearchRadius = 1.0f;
+    private const int AngleStep = 30;
+    private const int FullCircle = 360;
+
+    public override void Initialize()
     {
-        [Dependency] private readonly PopupSystem _popupSystem = default!;
-        [Dependency] private readonly IRobustRandom _random = default!;
-        [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-        [Dependency] internal readonly IEntityManager _entityManager = default!;
-        [Dependency] internal readonly IMapManager _mapManager = default!;
-        [Dependency] protected readonly AudioSystem Audio = default!;
-        public override void Initialize()
-        {
-            base.Initialize();
-            SubscribeLocalEvent<TrashDetectorComponent, BeforeRangedInteractEvent>(OnUseInHand);
-            SubscribeLocalEvent<TrashDetectorComponent, GetTrashDoAfterEvent>(OnDoAfter);
-        }
+        base.Initialize();
+        SubscribeLocalEvent<TrashDetectorComponent, BeforeRangedInteractEvent>(OnUseInHand);
+        SubscribeLocalEvent<TrashDetectorComponent, GetTrashDoAfterEvent>(OnDoAfter);
+    }
 
-        public override void Update(float frameTime)
-        {
-            base.Update(frameTime);
+    private void OnUseInHand(EntityUid uid, TrashDetectorComponent comp, BeforeRangedInteractEvent args)
+    {
+        if (!args.CanReach)
+            return;
+        OnUse(uid, comp, args.Target, args.User);
+    }
 
-        }
+    private void OnUse(EntityUid uid, TrashDetectorComponent comp, EntityUid? target, EntityUid user)
+    {
+        if (target == null || !TryComp<TrashSearchableComponent>(target.Value, out var trash))
+            return;
 
-        public void OnUseInHand(EntityUid uid, TrashDetectorComponent comp, BeforeRangedInteractEvent args)
+        if (trash.TimeBeforeNextSearch <= 0f)
         {
-            if (!args.CanReach)
-                return;
-            OnUse(uid, comp, args.Target, args.User);
-        }
-
-        public void OnUse(EntityUid? uid, TrashDetectorComponent comp, EntityUid? target, EntityUid user)
-        {
-            if (target == null)
-                return;
-            if (TryComp<TrashSerchableComponent>(target, out var trash) && trash != null)
+            var doAfterArgs = new DoAfterArgs(_entityManager, user, comp.SearchTime, new GetTrashDoAfterEvent(), uid, target: target.Value, used: uid)
             {
-                if (trash.TimeBeforeNextSearch < 0f)
-                {
-                    var doAfterArgs = new DoAfterArgs(_entityManager, user, comp.SearchTime, new GetTrashDoAfterEvent(), uid, target: target, used: uid)
-                    {
-                        BreakOnDamage = true,
-                        NeedHand = true,
-                        DistanceThreshold = 2f,
-                    };
-
-                    _doAfterSystem.TryStartDoAfter(doAfterArgs);
-                }
-                else
-                {
-                    _popupSystem.PopupEntity("Эту кучу уже недавно проверяли", user, PopupType.LargeCaution);
-                }
-            }
-
+                BreakOnDamage = true,
+                NeedHand = true,
+                DistanceThreshold = 2f,
+            };
+            _doAfterSystem.TryStartDoAfter(doAfterArgs);
         }
-
-        public void OnDoAfter(EntityUid uid, TrashDetectorComponent comp, GetTrashDoAfterEvent args)
+        else
         {
+            _popupSystem.PopupEntity(Loc.GetString("trash-detector-already-checked"), user, PopupType.LargeCaution);
+        }
+    }
 
-            if (args.Handled || args.Cancelled || args.Args.Target == null || !TryComp<TrashSerchableComponent>(args.Args.Target.Value, out var trash))
-                return;
-            var target = args.Args.Target.Value;
+    private void OnDoAfter(EntityUid uid, TrashDetectorComponent comp, GetTrashDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled || args.Args.Target == null)
+            return;
 
-            if (_random.Prob(comp.Probability))
-            {
-                trash.TimeBeforeNextSearch = 900f;
-                _popupSystem.PopupEntity("Прибор пищит", uid, PopupType.LargeCaution);
-                var xform = Transform(uid);
-                var coords = xform.Coordinates;
-                Spawn(comp.Loot, coords);
-            }
-            else
-            {
-                trash.TimeBeforeNextSearch = 900f;
-                _popupSystem.PopupEntity("Прибор не издает звука", uid, PopupType.LargeCaution);
-            }
+        if (!TryComp<TrashSearchableComponent>(args.Args.Target.Value, out var trash))
+            return;
 
-            args.Handled = true;
+        if (!TryComp<TransformComponent>(args.Args.Target.Value, out var targetTransform))
+            return;
+
+        var spawnCoords = FindFreePosition(targetTransform.Coordinates);
+        var spawnerUid = _entityManager.SpawnEntity(TrashDetectorComponent.LootSpawner, spawnCoords);
+
+        if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
+        {
+            _sawmill.Warning("Error: Spawner not found! Deleting object.");
+            _entityManager.DeleteEntity(spawnerUid);
+            return;
         }
 
+        var config = new AdvancedRandomSpawnerConfig(spawner);
+        config.ApplyModifiers(comp);
+        var spawnedCategories = _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
+
+        var categoryData = new Dictionary<string, (string locKey, float time)>
+        {
+            { "Legendary", ("trash-detector-legendary", 1200f) },
+            { "Rare", ("trash-detector-rare", 900f) },
+            { "Common", ("trash-detector-common", 600f) },
+            { "Negative", ("trash-detector-negative", 300f) }
+        };
+
+        var entry = categoryData.FirstOrDefault(pair => spawnedCategories.Contains(pair.Key));
+        string message;
+        if (entry.Key == null)
+        {
+            message = Loc.GetString("trash-detector-no-signal");
+        }
+        else
+        {
+            message = Loc.GetString(entry.Value.locKey);
+            trash.TimeBeforeNextSearch = entry.Value.time;
+        }
+
+        _popupSystem.PopupEntity(message, uid, PopupType.LargeCaution);
+        args.Handled = true;
+    }
+
+    private EntityCoordinates FindFreePosition(EntityCoordinates origin)
+    {
+        for (var i = 0; i < FullCircle; i += AngleStep)
+        {
+            var angle = i * (float)(System.Math.PI / 180.0);
+            var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
+            var testCoords = new EntityCoordinates(origin.EntityId, origin.Position + offset);
+
+            if (!_entityManager.TryGetComponent(testCoords.EntityId, out PhysicsComponent? physics) || !physics.CanCollide)
+            {
+                return testCoords;
+            }
+        }
+        return origin;
     }
 }
