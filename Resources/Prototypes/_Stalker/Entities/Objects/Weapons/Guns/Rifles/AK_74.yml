@@ -1,9 +1,9 @@
 - type: entity
-  name: АК-74
+  name: АКС-74
   suffix: ST
   parent: STBaseWeaponRifle
-  id: STWeaponRifleStalkerAK74
-  description: АК-74 - бессмертная классика с деревянной фурнитурой.
+  id: STWeaponRifleStalkerAKS74
+  description: АКS-74 - складная версия бессмертной классики с деревянной фурнитурой.
   components:
   - type: STWeight
     self: 3.7
@@ -19,7 +19,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Base545Mag10
+        startingItem: 545Mag30
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 4
@@ -45,14 +45,14 @@
           tags:
             - Cartridge545
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak74.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak74.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak74.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
 
 - type: entity
-  parent: STWeaponRifleStalkerAK74
+  parent: STWeaponRifleStalkerAKS74
   name: АК-74М
   id: STSTWeaponRifleStalkerAK74M
   description: Оснащен складывающимся влево пластиковым прикладом, фурнитурой из ударостойкой пластмассы и универсальной планкой "Ласточкин хвост" для крепления прицелов, таким образом заменив собой сразу несколько версий автомата. Использует калибр 5,45x39
@@ -99,3 +99,33 @@
     scale: 0.75, 0.75
   - type: Gun
     fireRate: 7.75
+
+
+
+- type: entity
+  name: АКС-74
+  suffix: ST, Скин
+  parent: STWeaponRifleStalkerAKS74
+  id: STWeaponRifleStalkerAKS74Pink
+  description: Автомат Калашникова Складной с розовым цевьём и ручкой.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-pink.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-pink.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-pink.rsi
+
+- type: entity
+  name: АКС-74
+  suffix: ST, Скин
+  parent: STWeaponRifleStalkerAKS74
+  id: STWeaponRifleStalkerAKS74Green
+  description: Автомат Калашникова Складной с зелёным цевьём и ручкой.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
