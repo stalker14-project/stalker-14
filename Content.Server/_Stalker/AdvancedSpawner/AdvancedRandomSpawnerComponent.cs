@@ -1,36 +1,25 @@
-using System;
 using System.Collections.Generic;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
-using Content.Server._Stalker.AdvancedSpawner; // Подключаем SpawnEntry
 
 namespace Content.Server._Stalker.AdvancedSpawner
 {
     [RegisterComponent]
     public sealed partial class AdvancedRandomSpawnerComponent : Component
     {
-        [DataField("categoryWeights")]
-        public Dictionary<string, int> CategoryWeights { get; set; } = new();
+        // Использование SpawnCategoryType вместо string
+        [DataField] public Dictionary<SpawnCategoryType, int> CategoryWeights = new();
+        [DataField] public List<SpawnEntry> CommonPrototypes = new();
+        [DataField] public List<SpawnEntry> RarePrototypes = new();
+        [DataField] public List<SpawnEntry> LegendaryPrototypes = new();
+        [DataField] public List<SpawnEntry> NegativePrototypes = new();
+        [DataField] public float Offset = 0.2f;
+        [DataField] public bool DeleteAfterSpawn = true;
+        [DataField] public int MaxSpawnCount = 3;
 
-        [DataField("commonPrototypes")]
-        public List<SpawnEntry> CommonPrototypes { get; set; } = new();
-
-        [DataField("rarePrototypes")]
-        public List<SpawnEntry> RarePrototypes { get; set; } = new();
-
-        [DataField("legendaryPrototypes")]
-        public List<SpawnEntry> LegendaryPrototypes { get; set; } = new();
-
-        [DataField("negativePrototypes")]
-        public List<SpawnEntry> NegativePrototypes { get; set; } = new();
-
-        [DataField("offset")]
-        public float Offset { get; set; } = 0.2f;
-
-        [DataField("deleteSpawnerAfterSpawn")]
-        public bool DeleteSpawnerAfterSpawn { get; set; } = true;
-
-        [DataField("maxSpawnCount")]
-        public int MaxSpawnCount { get; set; } = 3;
+        public AdvancedRandomSpawnerConfig ToConfig()
+        {
+            return new AdvancedRandomSpawnerConfig(this);
+        }
     }
 }

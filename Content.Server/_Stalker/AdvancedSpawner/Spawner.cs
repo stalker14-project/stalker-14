@@ -6,136 +6,137 @@ using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Maths;
 using System.Numerics;
+using Content.Server._Stalker.AdvancedSpawner;
+using Content.Server.TrashDetector;
 
-namespace Content.Server._Stalker.AdvancedSpawner
+public class Spawner
 {
-    public class Spawner
+    private readonly IRobustRandom _random;
+    private readonly IEntityManager _entityManager;
+    private int _spawnCount = 0;
+
+    private readonly List<SpawnCategory> _categories;
+    private readonly int _maxSpawnCount;
+
+    public Spawner(
+        IRobustRandom random,
+        IEntityManager entityManager,
+        List<SpawnCategory> categories,
+        int maxSpawnCount)
     {
-        private readonly IRobustRandom _random;
-        private readonly IEntityManager _entityManager;
-        private int spawnCount = 0;
+        _random = random;
+        _entityManager = entityManager;
+        _categories = categories;
+        _maxSpawnCount = maxSpawnCount;
+    }
 
-        private readonly Dictionary<string, int> categoryWeights; // Веса категорий
-        private readonly Dictionary<string, List<SpawnEntry>> prototypes; // Прототипы внутри категорий
-        private readonly int maxSpawnCount; // Максимальное количество спавнов
+    public List<string> SpawnEntities(EntityCoordinates spawnCoords, float offset, AdvancedRandomSpawnerConfig config)
+    {
+        List<string> spawnedItems = new();
+        _spawnCount = 0;
 
-        public Spawner(
-            IRobustRandom random,
-            IEntityManager entityManager,
-            Dictionary<string, int> categoryWeights,
-            List<SpawnEntry> commonPrototypes,
-            List<SpawnEntry> rarePrototypes,
-            List<SpawnEntry> legendaryPrototypes,
-            List<SpawnEntry> negativePrototypes,
-            int maxSpawnCount)
+        while (_spawnCount < _maxSpawnCount)
         {
-            _random = random;
-            _entityManager = entityManager;
-            this.categoryWeights = categoryWeights;
-            this.maxSpawnCount = maxSpawnCount;
-            this.prototypes = new Dictionary<string, List<SpawnEntry>>
-            {
-                { "Common", commonPrototypes },
-                { "Rare", rarePrototypes },
-                { "Legendary", legendaryPrototypes },
-                { "Negative", negativePrototypes }
-            };
+            var category = SelectCategoryWithWeights();
+            SpawnPrototype(category, spawnCoords, offset, spawnedItems);
+            _spawnCount++;
+
+            if (_spawnCount >= _maxSpawnCount)
+                break;
+
+            double chance = GetChanceForCategory(category, _spawnCount, config);
+            if (_random.NextDouble() >= chance)
+                break;
         }
 
-        public List<string> SpawnEntities(EntityCoordinates spawnCoords, float offset)
+        return spawnedItems;
+    }
+
+    private void SpawnPrototype(SpawnCategory category, EntityCoordinates spawnCoords, float offset, List<string> spawnedItems)
+    {
+        SpawnEntry prototype = SelectPrototypeWithWeights(category);
+        int spawnAmount = prototype.Count;
+        for (int i = 0; i < spawnAmount && _spawnCount < _maxSpawnCount; i++)
         {
-            List<string> spawnedItems = new();
-            spawnCount = 0;
-
-            while (spawnCount < maxSpawnCount)
-            {
-                string category = SelectCategoryWithWeights();
-                SpawnPrototype(category, spawnCoords, offset, spawnedItems);
-                spawnCount++;
-
-                if (spawnCount >= maxSpawnCount)
-                    break;
-
-                double chance = GetChanceForCategory(category, spawnCount);
-                if (_random.NextDouble() >= chance)
-                    break;
-            }
-
-            return spawnedItems;
-        }
-
-        private void SpawnPrototype(string category, EntityCoordinates spawnCoords, float offset, List<string> spawnedItems)
-        {
-            SpawnEntry prototype = SelectPrototypeWithWeights(category);
-            int spawnAmount = prototype.Count;
-            for (int i = 0; i < spawnAmount && spawnCount < maxSpawnCount; i++)
-            {
-                SpawnEntity(prototype, spawnCoords, offset);
-                spawnedItems.Add(category);
-                spawnCount++;
-            }
-        }
-
-        private void SpawnEntity(SpawnEntry prototype, EntityCoordinates spawnCoords, float offset)
-        {
-            var angle = _random.NextFloat() * MathF.PI * 2;
-            var radius = _random.NextFloat() * offset;
-            var offsetX = MathF.Cos(angle) * radius;
-            var offsetY = MathF.Sin(angle) * radius;
-            var newPosition = spawnCoords.Position + new Vector2(offsetX, offsetY);
-            var newCoords = spawnCoords.WithPosition(newPosition);
-
-            _entityManager.SpawnEntity(prototype.PrototypeId, newCoords);
-        }
-
-        private string SelectCategoryWithWeights()
-        {
-            int totalWeight = categoryWeights.Values.Sum();
-            int roll = _random.Next(totalWeight);
-            int currentSum = 0;
-
-            foreach (var (category, weight) in categoryWeights)
-            {
-                currentSum += weight;
-                if (roll < currentSum)
-                    return category;
-            }
-
-            return "Common";
-        }
-
-        private SpawnEntry SelectPrototypeWithWeights(string category)
-        {
-            var entries = prototypes[category];
-            int totalWeight = entries.Sum(p => p.Weight);
-            int roll = _random.Next(totalWeight);
-            int currentSum = 0;
-
-            foreach (var prototype in entries)
-            {
-                currentSum += prototype.Weight;
-                if (roll < currentSum)
-                    return prototype;
-            }
-
-            return entries.First();
-        }
-
-        private double GetChanceForCategory(string category, int spawnNumber)
-        {
-            if (!categoryWeights.TryGetValue(category, out int categoryWeight))
-                return 0.0;
-
-            int totalWeight = categoryWeights.Values.Sum();
-            double baseChance = (double)categoryWeight / totalWeight;
-
-            if (spawnNumber >= maxSpawnCount)
-                return 0.0;
-
-            double coefficient = 1.0 - (double)spawnNumber / maxSpawnCount;
-            double chance = baseChance * coefficient;
-
-            return Math.Max(0.0, chance);
+            SpawnEntity(prototype, spawnCoords, offset);
+            spawnedItems.Add(prototype.PrototypeId); // Добавляем ID прототипа
+            _spawnCount++;
         }
     }
+
+    private void SpawnEntity(SpawnEntry prototype, EntityCoordinates spawnCoords, float offset)
+    {
+        var angle = _random.NextFloat() * MathF.PI * 2;
+        var radius = _random.NextFloat() * offset;
+        var offsetX = MathF.Cos(angle) * radius;
+        var offsetY = MathF.Sin(angle) * radius;
+        var newPosition = spawnCoords.Position + new Vector2(offsetX, offsetY);
+        var newCoords = spawnCoords.WithPosition(newPosition);
+
+        _entityManager.SpawnEntity(prototype.PrototypeId, newCoords);
+    }
+
+    private SpawnCategory SelectCategoryWithWeights()
+    {
+        int totalWeight = _categories.Sum(c => c.Weight);
+        int roll = _random.Next(totalWeight);
+        int currentSum = 0;
+
+        foreach (var category in _categories)
+        {
+            currentSum += category.Weight;
+            if (roll < currentSum)
+                return category;
+        }
+
+        return _categories.First();
+    }
+
+    private SpawnEntry SelectPrototypeWithWeights(SpawnCategory category)
+    {
+        var entries = category.Prototypes;
+        int totalWeight = entries.Sum(p => p.Weight);
+        int roll = _random.Next(totalWeight);
+        int currentSum = 0;
+
+        foreach (var prototype in entries)
+        {
+            currentSum += prototype.Weight;
+            if (roll < currentSum)
+                return prototype;
+        }
+
+        return entries.First();
+    }
+
+    private double GetChanceForCategory(SpawnCategory category, int spawnNumber, AdvancedRandomSpawnerConfig config)
+    {
+        int modifier = TrashDetectorUtils.GetWeightModifier(category.Name,
+            config.CommonWeightMod,
+            config.RareWeightMod,
+            config.LegendaryWeightMod,
+            config.NegativeWeightMod);
+
+        int categoryWeight = Math.Max(1, category.Weight + modifier);
+        int totalWeight = _categories.Sum(c => c.Weight +
+            TrashDetectorUtils.GetWeightModifier(c.Name,
+                config.CommonWeightMod,
+                config.RareWeightMod,
+                config.LegendaryWeightMod,
+                config.NegativeWeightMod));
+
+        if (totalWeight == 0)
+            return 0.0;
+
+        double baseChance = (double)categoryWeight / totalWeight;
+
+        if (spawnNumber >= config.MaxSpawnCount)
+            return 0.0;
+
+        double coefficient = Math.Pow(1.0 - (double)spawnNumber / config.MaxSpawnCount, 2);
+        double chance = baseChance * coefficient;
+
+        return chance;
+    }
 }
+

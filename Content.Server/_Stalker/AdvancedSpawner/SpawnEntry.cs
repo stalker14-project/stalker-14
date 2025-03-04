@@ -5,14 +5,11 @@ namespace Content.Server._Stalker.AdvancedSpawner
     [DataDefinition]
     public sealed partial class SpawnEntry
     {
-        [DataField("id")]
-        public string PrototypeId { get; set; } = string.Empty;
+        [DataField("id")] public string PrototypeId = string.Empty;
+        [DataField] public int Weight = 1;
+        [DataField] public int Count = 1;
 
-        [DataField("weight")]
-        public int Weight { get; set; } = 1;
-
-        [DataField("count", required: false)]
-        public int Count { get; set; } = 1;
+        public SpawnEntry() { }
 
         public SpawnEntry(string prototypeId, int weight, int count)
         {
@@ -21,4 +18,4 @@ namespace Content.Server._Stalker.AdvancedSpawner
             Count = count;
         }
     }
-    }
+}

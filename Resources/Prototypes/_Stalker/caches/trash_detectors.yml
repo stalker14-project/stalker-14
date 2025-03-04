@@ -159,7 +159,7 @@
 
       offset: 0.2
 
-      deleteSpawnerAfterSpawn: false
+      deleteAfterSpawn: false
       maxSpawnCount: 5
 
 # 🔷 Tier 1 (Базовый) — Простой металлоискатель с базовыми шансами
@@ -294,8 +294,8 @@
       negativeWeightMod: -15
       extraCommonPrototypes:
         - id: ZoneArtifactKolobok
-          weight: 10
-          count: 1
+          weight: 999
+          count: 5
       extraRarePrototypes:
         - id: STWeaponSniperMosin
           weight: 7

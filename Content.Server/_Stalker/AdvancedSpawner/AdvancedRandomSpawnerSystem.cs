@@ -1,17 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Content.Server.TrashDetector.Components;
+using Content.Shared.Popups;
 using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
-using Robust.Shared.IoC;
-using Robust.Shared.Maths;
-using Content.Server._Stalker.AdvancedSpawner;
-using Content.Server.TrashDetector.Components;
-using Robust.Shared.Prototypes;
-using Content.Shared.Popups;
-using System.Numerics;
 using Robust.Shared.Log;
+using Content.Server.TrashDetector;
+
 
 namespace Content.Server._Stalker.AdvancedSpawner
 {
@@ -19,23 +14,22 @@ namespace Content.Server._Stalker.AdvancedSpawner
     {
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-        private ISawmill _sawmill = default!;
 
         public override void Initialize()
         {
             base.Initialize();
-            _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("AdvancedSpawner");
             SubscribeLocalEvent<AdvancedRandomSpawnerComponent, MapInitEvent>(OnMapInit);
         }
 
-        private void OnMapInit(EntityUid uid, AdvancedRandomSpawnerComponent comp, MapInitEvent args)
+        private void OnMapInit(EntityUid uid, AdvancedRandomSpawnerComponent component, MapInitEvent args)
         {
-            _sawmill.Info($"OnMapInit вызван для сущности {uid}");
-            var config = new AdvancedRandomSpawnerConfig(comp);
+            Log.Debug($"[AdvancedSpawner] Initializing entity {uid}");
 
-            var detectorData = EntityManager.GetComponentOrNull<TempDetectorDataComponent>(uid);
-            if (detectorData != null)
+            var config = new AdvancedRandomSpawnerConfig(component);
+
+            if (EntityManager.TryGetComponent<TempDetectorDataComponent>(uid, out var detectorData))
             {
+                Log.Debug($"[AdvancedSpawner] Applying modifiers from TempDetectorDataComponent on {uid}");
                 config.ApplyModifiers(detectorData.Detector);
                 EntityManager.RemoveComponent<TempDetectorDataComponent>(uid);
             }
@@ -47,27 +41,45 @@ namespace Content.Server._Stalker.AdvancedSpawner
         {
             var spawnCoords = Transform(uid).Coordinates;
 
+            foreach (var category in config.Categories)
+            {
+                int modifier = TrashDetectorUtils.GetWeightModifier(category.Name,
+                    config.CommonWeightMod,
+                    config.RareWeightMod,
+                    config.LegendaryWeightMod,
+                    config.NegativeWeightMod);
+
+                category.Weight = Math.Max(1, category.Weight + modifier);
+
+                foreach (var entry in category.Prototypes)
+                {
+                    entry.Weight = Math.Max(1, entry.Weight + modifier);
+                }
+
+                Log.Debug($"[Spawner] Updated weights for category {category.Name}. New weight: {category.Weight}");
+            }
+
             var spawner = new Spawner(
                 _random,
                 EntityManager,
-                config.CategoryWeights,
-                config.CommonPrototypes,
-                config.RarePrototypes,
-                config.LegendaryPrototypes,
-                config.NegativePrototypes,
+                config.Categories,
                 config.MaxSpawnCount
             );
 
-            var spawnedItems = spawner.SpawnEntities(spawnCoords, config.Offset);
+
+            var spawnedItems = spawner.SpawnEntities(spawnCoords, config.Offset, config);
+
+            Log.Debug($"[AdvancedSpawner] Spawned {spawnedItems.Count} entities at {spawnCoords}");
 
             foreach (var item in spawnedItems)
             {
-                _popupSystem.PopupEntity($"Заспавнен предмет: {item}", uid);
+                _popupSystem.PopupEntity($"Spawned item: {item}", uid);
             }
 
-            if (config.DeleteSpawnerAfterSpawn)
+            if (config.DeleteAfterSpawn)
             {
-                QueueDel(uid);
+                Log.Debug($"[AdvancedSpawner] Deleting entity {uid} after spawn");
+                EntityManager.QueueDeleteEntity(uid);
             }
 
             return spawnedItems;
