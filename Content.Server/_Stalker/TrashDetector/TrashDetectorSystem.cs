@@ -74,9 +74,8 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             return;
         }
 
-        // Используем правильный конструктор DoAfterArgs
         var doAfterArgs = new DoAfterArgs(
-            _entityManager, // Передаем entityManager, как в старом рабочем коде
+            _entityManager,
             user,
             TimeSpan.FromSeconds(comp.SearchTime),
             new GetTrashDoAfterEvent(),
@@ -101,10 +100,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
         if (!TryComp<TrashSearchableComponent>(args.Args.Target.Value, out var trash))
             return;
 
-        if (!TryComp<TransformComponent>(args.Args.Target.Value, out var targetTransform))
-            return;
-
-        var spawnCoords = FindFreePosition(targetTransform.Coordinates);
+        var spawnCoords = FindFreePosition(args.Args.User);
         var spawnerUid = _entityManager.SpawnEntity(comp.LootSpawner, spawnCoords);
 
         if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
@@ -128,8 +124,13 @@ public sealed partial class TrashDetectorSystem : EntitySystem
         args.Handled = true;
     }
 
-    private EntityCoordinates FindFreePosition(EntityCoordinates origin)
+    private EntityCoordinates FindFreePosition(EntityUid user)
     {
+        if (!TryComp<TransformComponent>(user, out var userTransform))
+            return new EntityCoordinates(user, Vector2.Zero);
+
+        var origin = userTransform.Coordinates;
+
         for (var i = 0; i < FullCircle; i += AngleStep)
         {
             var angle = i * (float)(Math.PI / 180.0);
