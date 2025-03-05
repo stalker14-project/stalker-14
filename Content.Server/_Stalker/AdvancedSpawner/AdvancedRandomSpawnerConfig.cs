@@ -1,38 +1,26 @@
 using System;
 using System.Collections.Generic;
-using Content.Server.TrashDetector.Components;
-using Content.Server.TrashDetector;
-using Content.Server._Stalker.AdvancedSpawner; // Убедиться, что здесь нужные using
+using Content.Server._Stalker.AdvancedSpawner;
 
 public class AdvancedRandomSpawnerConfig
 {
-    public readonly Dictionary<SpawnCategoryType, int> CategoryWeights;
+    public readonly Dictionary<string, int> CategoryWeights;
     public readonly List<SpawnCategory> Categories;
-    public readonly Dictionary<SpawnCategoryType, List<SpawnEntry>> Prototypes;
+    public readonly Dictionary<string, List<SpawnEntry>> Prototypes;
     public readonly float Offset;
     public readonly bool DeleteAfterSpawn;
     public readonly int MaxSpawnCount;
 
-    public int CommonWeightMod { get; private set; }
-    public int RareWeightMod { get; private set; }
-    public int LegendaryWeightMod { get; private set; }
-    public int NegativeWeightMod { get; private set; }
-
     public AdvancedRandomSpawnerConfig(AdvancedRandomSpawnerComponent comp)
     {
-        CategoryWeights = new Dictionary<SpawnCategoryType, int>();
+        CategoryWeights = new Dictionary<string, int>(comp.CategoryWeights);
         Categories = new List<SpawnCategory>();
-        Prototypes = new Dictionary<SpawnCategoryType, List<SpawnEntry>>();
+        Prototypes = new Dictionary<string, List<SpawnEntry>>();
 
-        foreach (SpawnCategoryType category in Enum.GetValues(typeof(SpawnCategoryType)))
+        foreach (var category in comp.CategoryWeights.Keys)
         {
-            var weight = comp.CategoryWeights.GetValueOrDefault(category, 1);
-            CategoryWeights[category] = weight;
-
-            if (!Prototypes.ContainsKey(category))
-                Prototypes[category] = new List<SpawnEntry>(GetPrototypeList(category, comp));
-
-            Categories.Add(new SpawnCategory(category, weight, Prototypes[category]));
+            Prototypes[category] = new List<SpawnEntry>(comp.PrototypeLists.GetValueOrDefault(category, new List<SpawnEntry>()));
+            Categories.Add(new SpawnCategory(category, CategoryWeights[category], Prototypes[category]));
         }
 
         Offset = comp.Offset;
@@ -40,43 +28,30 @@ public class AdvancedRandomSpawnerConfig
         MaxSpawnCount = comp.MaxSpawnCount;
     }
 
-    private static List<SpawnEntry> GetPrototypeList(SpawnCategoryType category, AdvancedRandomSpawnerComponent comp) => category switch
+    public void ApplyModifiers(Dictionary<string, int> weightModifiers, Dictionary<string, List<SpawnEntry>> extraPrototypes)
     {
-        SpawnCategoryType.Common => comp.CommonPrototypes,
-        SpawnCategoryType.Rare => comp.RarePrototypes,
-        SpawnCategoryType.Legendary => comp.LegendaryPrototypes,
-        SpawnCategoryType.Negative => comp.NegativePrototypes,
-        _ => new List<SpawnEntry>()
-    };
-
-    public void ApplyModifiers(TrashDetectorComponent detector)
-    {
-
-        CommonWeightMod = detector.CommonWeightMod;
-        RareWeightMod = detector.RareWeightMod;
-        LegendaryWeightMod = detector.LegendaryWeightMod;
-        NegativeWeightMod = detector.NegativeWeightMod;
+        foreach (var (category, modifier) in weightModifiers)
+        {
+            if (CategoryWeights.ContainsKey(category))
+                CategoryWeights[category] = Math.Max(1, CategoryWeights[category] + modifier);
+        }
 
         foreach (var category in CategoryWeights.Keys)
         {
-            CategoryWeights[category] = Math.Max(1, CategoryWeights[category] +
-                TrashDetectorUtils.GetWeightModifier(category.ToString(),
-                    CommonWeightMod, RareWeightMod, LegendaryWeightMod, NegativeWeightMod));
+            if (!Prototypes.ContainsKey(category))
+                Prototypes[category] = new List<SpawnEntry>();
         }
 
+        foreach (var (category, extraEntries) in extraPrototypes)
+        {
+            if (!Prototypes.ContainsKey(category))
+                Prototypes[category] = new List<SpawnEntry>();
 
-        if (!Prototypes.ContainsKey(SpawnCategoryType.Common))
-            Prototypes[SpawnCategoryType.Common] = new List<SpawnEntry>();
-        if (!Prototypes.ContainsKey(SpawnCategoryType.Rare))
-            Prototypes[SpawnCategoryType.Rare] = new List<SpawnEntry>();
-        if (!Prototypes.ContainsKey(SpawnCategoryType.Legendary))
-            Prototypes[SpawnCategoryType.Legendary] = new List<SpawnEntry>();
-        if (!Prototypes.ContainsKey(SpawnCategoryType.Negative))
-            Prototypes[SpawnCategoryType.Negative] = new List<SpawnEntry>();
-
-        Prototypes[SpawnCategoryType.Common].AddRange(detector.ExtraCommonPrototypes);
-        Prototypes[SpawnCategoryType.Rare].AddRange(detector.ExtraRarePrototypes);
-        Prototypes[SpawnCategoryType.Legendary].AddRange(detector.ExtraLegendaryPrototypes);
-        Prototypes[SpawnCategoryType.Negative].AddRange(detector.ExtraNegativePrototypes);
+            foreach (var entry in extraEntries)
+            {
+                if (!Prototypes[category].Exists(e => e.PrototypeId == entry.PrototypeId))
+                    Prototypes[category].Add(entry);
+            }
+        }
     }
 }

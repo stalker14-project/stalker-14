@@ -15,150 +15,142 @@
         Legendary: 20 # Легендарные предметы - 2%
         Negative: 130 # Негативные спавны - 13%
 
-      # Обычные предметы (Общий вес: 245)
-      commonPrototypes:
-        # Tier 2 (вес 25, количество 2, ~10.20% каждый, всего ~71.43%)
-        - id: STCraftStandardPCBT2
-          weight: 25  # ~10.20%
-          count: 2
-        - id: STCraftTapeKitT2
-          weight: 25  # ~10.20%
-          count: 2
-        - id: STCraftHideT2
-          weight: 25  # ~10.20%
-          count: 2
-        - id: STCraftGlassT2
-          weight: 25  # ~10.20%
-          count: 2
-        - id: STCraftBirchPlankT2
-          weight: 25  # ~10.20%
-          count: 2
-        - id: STCraftPlasticFittingT2
-          weight: 25  # ~10.20%
-          count: 2
-        - id: STCraftSheetIronT2
-          weight: 25  # ~10.20%
-          count: 2
-        # Tier 3 (вес 10, количество 1, ~4.08% каждый, всего ~28.57%)
-        - id: STCraftMultilayerPCBT3
-          weight: 10  # ~4.08%
-          count: 1
-        - id: STCraftGlueKitT3
-          weight: 10  # ~4.08%
-          count: 1
-        - id: STCraftSturdyHideT3
-          weight: 10  # ~4.08%
-          count: 1
-        - id: STCraftQuartzCrystalT3
-          weight: 10  # ~4.08%
-          count: 1
-        - id: STCraftOakPlankT3
-          weight: 10  # ~4.08%
-          count: 1
-        - id: STCraftPlasticFittingT3
-          weight: 10  # ~4.08%
-          count: 1
-        - id: STCraftSheetBrassT3
-          weight: 10  # ~4.08%
-          count: 1
+      prototypeLists:
+        Common:
+          - id: STCraftStandardPCBT2
+            weight: 25
+            count: 2
+          - id: STCraftTapeKitT2
+            weight: 25
+            count: 2
+          - id: STCraftHideT2
+            weight: 25
+            count: 2
+          - id: STCraftGlassT2
+            weight: 25
+            count: 2
+          - id: STCraftBirchPlankT2
+            weight: 25
+            count: 2
+          - id: STCraftPlasticFittingT2
+            weight: 25
+            count: 2
+          - id: STCraftSheetIronT2
+            weight: 25
+            count: 2
+          - id: STCraftMultilayerPCBT3
+            weight: 10
+            count: 1
+          - id: STCraftGlueKitT3
+            weight: 10
+            count: 1
+          - id: STCraftSturdyHideT3
+            weight: 10
+            count: 1
+          - id: STCraftQuartzCrystalT3
+            weight: 10
+            count: 1
+          - id: STCraftOakPlankT3
+            weight: 10
+            count: 1
+          - id: STCraftPlasticFittingT3
+            weight: 10
+            count: 1
+          - id: STCraftSheetBrassT3
+            weight: 10
+            count: 1
 
-      # Редкие предметы (Общий вес: 120)
-      rarePrototypes:
-        # Оружие (вес 10, количество 1, ~8.33% каждый)
-        - id: STWeaponShotgunMP153
-          weight: 10  # ~8.33%
-          count: 1
-        - id: STWeaponShotgunMossberg
-          weight: 10  # ~8.33%
-          count: 1
-        - id: WeaponPistolStalkerAPS
-          weight: 10  # ~8.33%
-          count: 1
-        - id: KhattabkaGrenade
-          weight: 10  # ~8.33%
-          count: 1
-        - id: STWeaponGunAKS74U
-          weight: 10  # ~8.33%
-          count: 1
-        - id: STWeaponRifleStalkerSaiga545
-          weight: 10  # ~8.33%
-          count: 1
-        - id: STWeaponSniperMosin
-          weight: 10  # ~8.33%
-          count: 1
-        - id: STWeaponRifleSKS
-          weight: 10  # ~8.33%
-          count: 1
-        # Утилитарные предметы (вес 10, количество 1, ~8.33% каждый)
-        - id: DoubleEmergencyOxygenTankStalkerFilled
-          weight: 10  # ~8.33%
-          count: 1
-        - id: ExtendedEmergencyOxygenTankFilledStalker
-          weight: 10  # ~8.33%
-          count: 1
-        - id: Binocularus1
-          weight: 10  # ~8.33%
-          count: 1
-        - id: AAAAStalkerLopata
-          weight: 10  # ~8.33%
-          count: 1
+        Rare:
+          - id: STWeaponShotgunMP153
+            weight: 10
+            count: 1
+          - id: STWeaponShotgunMossberg
+            weight: 10
+            count: 1
+          - id: WeaponPistolStalkerAPS
+            weight: 10
+            count: 1
+          - id: KhattabkaGrenade
+            weight: 10
+            count: 1
+          - id: STWeaponGunAKS74U
+            weight: 10
+            count: 1
+          - id: STWeaponRifleStalkerSaiga545
+            weight: 10
+            count: 1
+          - id: STWeaponSniperMosin
+            weight: 10
+            count: 1
+          - id: STWeaponRifleSKS
+            weight: 10
+            count: 1
+          - id: DoubleEmergencyOxygenTankStalkerFilled
+            weight: 10
+            count: 1
+          - id: ExtendedEmergencyOxygenTankFilledStalker
+            weight: 10
+            count: 1
+          - id: Binocularus1
+            weight: 10
+            count: 1
+          - id: AAAAStalkerLopata
+            weight: 10
+            count: 1
 
-      # Легендарные предметы (Общий вес: 2)
-      legendaryPrototypes:
-        - id: STWeaponRifleStalkerAK74
-          weight: 6   # ~11.11% (6/54)
-          count: 1
-        - id: ClothingOuterArmorSevaStalker
-          weight: 6   # ~11.11% (6/54)
-          count: 1
-        - id: STClothingCapeArmorChainmailSeva
-          weight: 6   # ~11.11% (6/54)
-          count: 1
-        - id: ZoneArtifactDetectorSpruce
-          weight: 6   # ~11.11% (6/54)
-          count: 1
-        - id: STWeaponRifleStalkerL85
-          weight: 10  # ~18.52% (10/54)
-          count: 1
-        - id: STWeaponSMGMp5
-          weight: 10  # ~18.52% (10/54)
-          count: 1
-        - id: 556Mag45
-          weight: 10  # ~18.52% (10/54)
-          count: 1
+        Legendary:
+          - id: STWeaponRifleStalkerAK74
+            weight: 6
+            count: 1
+          - id: ClothingOuterArmorSevaStalker
+            weight: 6
+            count: 1
+          - id: STClothingCapeArmorChainmailSeva
+            weight: 6
+            count: 1
+          - id: ZoneArtifactDetectorSpruce
+            weight: 6
+            count: 1
+          - id: STWeaponRifleStalkerL85
+            weight: 10
+            count: 1
+          - id: STWeaponSMGMp5
+            weight: 10
+            count: 1
+          - id: 556Mag45
+            weight: 10
+            count: 1
 
-      # Негативные спавны (Общий вес: 81)
-      negativePrototypes:
-        - id: MobMutantBoar
-          weight: 74    # ~7.4% (74/1000)
-          count: 1
-        - id: MobMutantFleshNeutral
-          weight: 221   # ~22.1% (221/1000)
-          count: 1
-        - id: MobMutantBlindDog
-          weight: 221   # ~22.1% (221/1000)
-          count: 1
-        - id: MobMutantRodent
-          weight: 221   # ~22.1% (221/1000)
-          count: 1
-        - id: MobMutantBush
-          weight: 221   # ~22.1% (221/1000)
-          count: 1
-        - id: MobMutantBloodsucker
-          weight: 7     # 0.7% (7/1000)
-          count: 1
-        - id: MobMutantPseudodog
-          weight: 10    # 1% (10/1000)
-          count: 1
-        - id: MobMutantOraclesBrown
-          weight: 5     # 0.5% (5/1000)
-          count: 1
-        - id: MobMutantSnork
-          weight: 20    # 2% (20/1000)
-          count: 1
+        Negative:
+          - id: MobMutantBoar
+            weight: 74
+            count: 1
+          - id: MobMutantFleshNeutral
+            weight: 221
+            count: 1
+          - id: MobMutantBlindDog
+            weight: 221
+            count: 1
+          - id: MobMutantRodent
+            weight: 221
+            count: 1
+          - id: MobMutantBush
+            weight: 221
+            count: 1
+          - id: MobMutantBloodsucker
+            weight: 7
+            count: 1
+          - id: MobMutantPseudodog
+            weight: 10
+            count: 1
+          - id: MobMutantOraclesBrown
+            weight: 5
+            count: 1
+          - id: MobMutantSnork
+            weight: 20
+            count: 1
 
       offset: 0.2
-
       deleteAfterSpawn: false
       maxSpawnCount: 5
 
@@ -181,26 +173,29 @@
       state: icon
     - type: TrashDetector
       searchTime: 40
-      commonWeightMod: 15
-      rareWeightMod: -5
-      legendaryWeightMod: -10
-      negativeWeightMod: 5
-      extraCommonPrototypes:
-        - id: STCraftBasicPCBT1
-          weight: 10
-          count: 2
-      extraRarePrototypes:
-        - id: MutantPartBlindDogTail
-          weight: 7
-          count: 1
-      extraLegendaryPrototypes:
-        - id: STWeaponPistolStalkerAPS
-          weight: 3
-          count: 1
-      extraNegativePrototypes:
-        - id: MobMutantBoar
-          weight: 5
-          count: 1
+      weightModifiers:
+        Common: 15
+        Rare: -5
+        Legendary: -10
+        Negative: 5
+      extraPrototypes:
+        Common:
+          - id: STCraftBasicPCBT1
+            weight: 10
+            count: 2
+        Rare:
+          - id: MutantPartBlindDogTail
+            weight: 7
+            count: 1
+        Legendary:
+          - id: STWeaponPistolStalkerAPS
+            weight: 3
+            count: 1
+        Negative:
+          - id: MobMutantBoar
+            weight: 5
+            count: 1
+
 # 🔸 Tier 2 (Копатель) — Чуть лучше, уменьшает шанс мобов
 - type: entity
   parent: BaseItem
@@ -216,26 +211,28 @@
       state: icon
     - type: TrashDetector
       searchTime: 20
-      commonWeightMod: 10
-      rareWeightMod: 5
-      legendaryWeightMod: 0
-      negativeWeightMod: -5
-      extraCommonPrototypes:
-        - id: STCraftStandardPCBT2
-          weight: 10
-          count: 1
-      extraRarePrototypes:
-        - id: STCraftQuartzCrystalT3
-          weight: 7
-          count: 1
-      extraLegendaryPrototypes:
-        - id: STWeaponShotgunStalkerSPAS
-          weight: 3
-          count: 1
-      extraNegativePrototypes:
-        - id: MutantPartSeasonedBoarHoof
-          weight: 5
-          count: 1
+      weightModifiers:
+        Common: 10
+        Rare: 5
+        Legendary: 0
+        Negative: -5
+      extraPrototypes:
+        Common:
+          - id: STCraftStandardPCBT2
+            weight: 10
+            count: 1
+        Rare:
+          - id: STCraftQuartzCrystalT3
+            weight: 7
+            count: 1
+        Legendary:
+          - id: STWeaponShotgunStalkerSPAS
+            weight: 3
+            count: 1
+        Negative:
+          - id: MutantPartSeasonedBoarHoof
+            weight: 5
+            count: 1
 
 # 🔸 Tier 3 (Шахтёр) — Хороший баланс, увеличивает шанс редкого лута
 - type: entity
@@ -252,26 +249,28 @@
       state: icon
     - type: TrashDetector
       searchTime: 20
-      commonWeightMod: 5
-      rareWeightMod: 10
-      legendaryWeightMod: 5
-      negativeWeightMod: -10
-      extraCommonPrototypes:
-        - id: STCraftMultilayerPCBT3
-          weight: 10
-          count: 1
-      extraRarePrototypes:
-        - id: ZoneArtifactSparkler
-          weight: 7
-          count: 1
-      extraLegendaryPrototypes:
-        - id: STWeaponRifleStalkerAKM
-          weight: 3
-          count: 1
-      extraNegativePrototypes:
-        - id: MutantPartPseudodogTail
-          weight: 5
-          count: 1
+      weightModifiers:
+        Common: 5
+        Rare: 10
+        Legendary: 5
+        Negative: -10
+      extraPrototypes:
+        Common:
+          - id: STCraftMultilayerPCBT3
+            weight: 10
+            count: 1
+        Rare:
+          - id: ZoneArtifactSparkler
+            weight: 7
+            count: 1
+        Legendary:
+          - id: STWeaponRifleStalkerAKM
+            weight: 3
+            count: 1
+        Negative:
+          - id: MutantPartPseudodogTail
+            weight: 5
+            count: 1
 
 # 🔸 Tier 4 (Находка) — Ищет хорошие предметы, почти нет мобов
 - type: entity
@@ -288,27 +287,28 @@
       state: icon
     - type: TrashDetector
       searchTime: 10
-      commonWeightMod: 0
-      rareWeightMod: 15
-      legendaryWeightMod: 10
-      negativeWeightMod: -15
-      extraCommonPrototypes:
-        - id: ZoneArtifactKolobok
-          weight: 999
-          count: 5
-      extraRarePrototypes:
-        - id: STWeaponSniperMosin
-          weight: 7
-          count: 1
-      extraLegendaryPrototypes:
-        - id: STWeaponRifleM16
-          weight: 3
-          count: 1
-      extraNegativePrototypes:
-        - id: MutantPartBloodsuckerTentacles
-          weight: 5
-          count: 1
-
+      weightModifiers:
+        Common: 0
+        Rare: 15
+        Legendary: 10
+        Negative: -15
+      extraPrototypes:
+        Common:
+          - id: ZoneArtifactKolobok
+            weight: 999
+            count: 5
+        Rare:
+          - id: STWeaponSniperMosin
+            weight: 7
+            count: 1
+        Legendary:
+          - id: STWeaponRifleM16
+            weight: 3
+            count: 1
+        Negative:
+          - id: MutantPartBloodsuckerTentacles
+            weight: 5
+            count: 1
 
 # 🔸 Tier 5 (Аномалист) — Лучший детектор, находит самые редкие предметы
 - type: entity
@@ -325,31 +325,25 @@
       state: icon
     - type: TrashDetector
       searchTime: 5
-      commonWeightMod: -10  # Убирает мусор
-      rareWeightMod: 20  # Максимально увеличивает шанс редкого лута
-      legendaryWeightMod: 15  # Большой шанс на топовые вещи
-      negativeWeightMod: -20  # Полностью убирает мобов
-
-      # 🔹 Список предметов для Common (Самые дорогие ресурсы)
-      extraCommonPrototypes:
-        - id: ZoneArtifactNightStar
-          weight: 10
-          count: 1
-
-      # 🔹 Список предметов для Rare (Уникальные редкие вещи)
-      extraRarePrototypes:
-        - id: STWeaponShotgunSaiga
-          weight: 7
-          count: 1
-
-      # 🔹 Список предметов для Legendary (Лучшие вещи в игре)
-      extraLegendaryPrototypes:
-        - id: STWeaponSniperVSSVintorez
-          weight: 3
-          count: 1
-
-      # 🔹 Список предметов для Negative (Но тут он уменьшает шанс)
-      extraNegativePrototypes:
-        - id: MutantPartControllerBrain
-          weight: 2
-          count: 1
+      weightModifiers:
+        Common: -10  # Убирает мусор
+        Rare: 20  # Максимально увеличивает шанс редкого лута
+        Legendary: 15  # Большой шанс на топовые вещи
+        Negative: -20  # Полностью убирает мобов
+      extraPrototypes:
+        Common:
+          - id: ZoneArtifactNightStar
+            weight: 10
+            count: 1
+        Rare:
+          - id: STWeaponShotgunSaiga
+            weight: 7
+            count: 1
+        Legendary:
+          - id: STWeaponSniperVSSVintorez
+            weight: 3
+            count: 1
+        Negative:
+          - id: MutantPartControllerBrain
+            weight: 2
+            count: 1

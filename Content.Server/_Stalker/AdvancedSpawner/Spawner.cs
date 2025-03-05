@@ -7,7 +7,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Maths;
 using System.Numerics;
 using Content.Server._Stalker.AdvancedSpawner;
-using Content.Server.TrashDetector;
 
 public class Spawner
 {
@@ -37,7 +36,11 @@ public class Spawner
 
         while (_spawnCount < _maxSpawnCount)
         {
-            var category = SelectCategoryWithWeights();
+            var category = SelectCategoryWithWeights(config);
+
+            if (!config.Prototypes.ContainsKey(category.Name) || config.Prototypes[category.Name].Count == 0)
+                continue;
+
             SpawnPrototype(category, spawnCoords, offset, spawnedItems);
             _spawnCount++;
 
@@ -54,12 +57,12 @@ public class Spawner
 
     private void SpawnPrototype(SpawnCategory category, EntityCoordinates spawnCoords, float offset, List<string> spawnedItems)
     {
-        SpawnEntry prototype = SelectPrototypeWithWeights(category);
+        var prototype = SelectPrototypeWithWeights(category);
         int spawnAmount = prototype.Count;
         for (int i = 0; i < spawnAmount && _spawnCount < _maxSpawnCount; i++)
         {
             SpawnEntity(prototype, spawnCoords, offset);
-            spawnedItems.Add(prototype.PrototypeId); // Добавляем ID прототипа
+            spawnedItems.Add(prototype.PrototypeId);
             _spawnCount++;
         }
     }
@@ -76,15 +79,16 @@ public class Spawner
         _entityManager.SpawnEntity(prototype.PrototypeId, newCoords);
     }
 
-    private SpawnCategory SelectCategoryWithWeights()
+    private SpawnCategory SelectCategoryWithWeights(AdvancedRandomSpawnerConfig config)
     {
-        int totalWeight = _categories.Sum(c => c.Weight);
+        int totalWeight = _categories.Sum(c => c.Weight + config.CategoryWeights.GetValueOrDefault(c.Name, 0));
         int roll = _random.Next(totalWeight);
         int currentSum = 0;
 
         foreach (var category in _categories)
         {
-            currentSum += category.Weight;
+            int categoryWeight = category.Weight + config.CategoryWeights.GetValueOrDefault(category.Name, 0);
+            currentSum += categoryWeight;
             if (roll < currentSum)
                 return category;
         }
@@ -111,19 +115,9 @@ public class Spawner
 
     private double GetChanceForCategory(SpawnCategory category, int spawnNumber, AdvancedRandomSpawnerConfig config)
     {
-        int modifier = TrashDetectorUtils.GetWeightModifier(category.Name,
-            config.CommonWeightMod,
-            config.RareWeightMod,
-            config.LegendaryWeightMod,
-            config.NegativeWeightMod);
-
+        int modifier = config.CategoryWeights.GetValueOrDefault(category.Name, 0);
         int categoryWeight = Math.Max(1, category.Weight + modifier);
-        int totalWeight = _categories.Sum(c => c.Weight +
-            TrashDetectorUtils.GetWeightModifier(c.Name,
-                config.CommonWeightMod,
-                config.RareWeightMod,
-                config.LegendaryWeightMod,
-                config.NegativeWeightMod));
+        int totalWeight = _categories.Sum(c => c.Weight + config.CategoryWeights.GetValueOrDefault(c.Name, 0));
 
         if (totalWeight == 0)
             return 0.0;
@@ -139,4 +133,3 @@ public class Spawner
         return chance;
     }
 }
-

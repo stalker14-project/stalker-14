@@ -19,6 +19,7 @@ using Content.Shared.Physics;
 using System.Numerics;
 using Robust.Shared.Maths;
 using Robust.Shared.Localization;
+using System.Collections.Generic;
 
 namespace Content.Server.TrashDetector;
 
@@ -55,20 +56,35 @@ public sealed partial class TrashDetectorSystem : EntitySystem
         if (target == null || !TryComp<TrashSearchableComponent>(target.Value, out var trash))
             return;
 
-        if (trash.TimeBeforeNextSearch <= 0f)
+
+        var detectorPrototypeId = Comp<MetaDataComponent>(uid).EntityPrototype?.ID;
+        if (detectorPrototypeId == null)
         {
-            var doAfterArgs = new DoAfterArgs(_entityManager, user, comp.SearchTime, new GetTrashDoAfterEvent(), uid, target: target.Value, used: uid)
-            {
-                BreakOnDamage = true,
-                NeedHand = true,
-                DistanceThreshold = 2f,
-            };
-            _doAfterSystem.TryStartDoAfter(doAfterArgs);
+            _popupSystem.PopupEntity(Loc.GetString("trash-detector-invalid"), user, PopupType.LargeCaution);
+            return;
         }
-        else
+
+
+        if (comp.AllowedDetectors.Count > 0 && !comp.AllowedDetectors.Contains(detectorPrototypeId))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("trash-detector-not-compatible"), user, PopupType.LargeCaution);
+            return;
+        }
+
+
+        if (trash.TimeBeforeNextSearch > 0f)
         {
             _popupSystem.PopupEntity(Loc.GetString("trash-detector-already-checked"), user, PopupType.LargeCaution);
+            return;
         }
+
+        var doAfterArgs = new DoAfterArgs(_entityManager, user, comp.SearchTime, new GetTrashDoAfterEvent(), uid, target: target.Value, used: uid)
+        {
+            BreakOnDamage = true,
+            NeedHand = true,
+            DistanceThreshold = 2f,
+        };
+        _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
     private void OnDoAfter(EntityUid uid, TrashDetectorComponent comp, GetTrashDoAfterEvent args)
@@ -83,7 +99,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             return;
 
         var spawnCoords = FindFreePosition(targetTransform.Coordinates);
-        var spawnerUid = _entityManager.SpawnEntity(TrashDetectorComponent.LootSpawner, spawnCoords);
+        var spawnerUid = _entityManager.SpawnEntity(comp.LootSpawner, spawnCoords);
 
         if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
         {
@@ -92,9 +108,12 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             return;
         }
 
+
         var config = new AdvancedRandomSpawnerConfig(spawner);
-        config.ApplyModifiers(comp);
+        config.ApplyModifiers(comp.WeightModifiers, comp.ExtraPrototypes);
+
         var spawnedCategories = _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
+
 
         var categoryData = new Dictionary<string, (string locKey, float time)>
         {
@@ -104,7 +123,9 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             { "Negative", ("trash-detector-negative", 300f) }
         };
 
+
         var entry = categoryData.FirstOrDefault(pair => spawnedCategories.Contains(pair.Key));
+
         string message;
         if (entry.Key == null)
         {
@@ -114,6 +135,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
         {
             message = Loc.GetString(entry.Value.locKey);
             trash.TimeBeforeNextSearch = entry.Value.time;
+            _sawmill.Info($"[TrashDetector] Setting TimeBeforeNextSearch = {entry.Value.time} for entity {args.Args.Target.Value}");
         }
 
         _popupSystem.PopupEntity(message, uid, PopupType.LargeCaution);

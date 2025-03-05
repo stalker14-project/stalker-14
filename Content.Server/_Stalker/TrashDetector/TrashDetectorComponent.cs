@@ -1,7 +1,6 @@
-using Content.Server._Stalker.AdvancedSpawner; // Connecting SpawnEntry
+using Content.Server._Stalker.AdvancedSpawner;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Serialization.Manager.Attributes;
-using System;
 using System.Collections.Generic;
 
 namespace Content.Server.TrashDetector.Components;
@@ -9,44 +8,18 @@ namespace Content.Server.TrashDetector.Components;
 [RegisterComponent]
 public sealed partial class TrashDetectorComponent : Component
 {
-    /// <summary>
-    /// Search time (how many seconds DoAfter lasts).
-    /// </summary>
-    [DataField]
-    public float SearchTime { get; set; } = 5f;
 
-    /// <summary>
-    /// The base spawner that will be used.
-    /// </summary>
-    public const string LootSpawner = "RandomTrashDetectorSpawner";
+    [DataField] public float SearchTime { get; set; } = 5f;
 
-    /// <summary>
-    /// Category weight modifiers (probability of category drop).
-    /// </summary>
-    [DataField]
-    public int CommonWeightMod { get; set; } = 5;
 
-    [DataField]
-    public int RareWeightMod { get; set; } = 3;
+    [DataField] public string LootSpawner { get; set; } = "RandomTrashDetectorSpawner";
 
-    [DataField]
-    public int LegendaryWeightMod { get; set; } = 1;
 
-    [DataField]
-    public int NegativeWeightMod { get; set; } = -2;
+    [DataField] public Dictionary<string, int> WeightModifiers { get; set; } = new();
 
-    /// <summary>
-    /// Additional items added to categories with their weights and quantity.
-    /// </summary>
-    [DataField]
-    public List<SpawnEntry> ExtraCommonPrototypes { get; set; } = new();
 
-    [DataField]
-    public List<SpawnEntry> ExtraRarePrototypes { get; set; } = new();
+    [DataField] public Dictionary<string, List<SpawnEntry>> ExtraPrototypes { get; set; } = new();
 
-    [DataField]
-    public List<SpawnEntry> ExtraLegendaryPrototypes { get; set; } = new();
 
-    [DataField]
-    public List<SpawnEntry> ExtraNegativePrototypes { get; set; } = new();
+    [DataField] public List<string> AllowedDetectors { get; set; } = new();
 }

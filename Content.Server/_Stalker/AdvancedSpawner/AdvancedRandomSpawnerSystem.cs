@@ -7,7 +7,6 @@ using Robust.Shared.Random;
 using Robust.Shared.Log;
 using Content.Server.TrashDetector;
 
-
 namespace Content.Server._Stalker.AdvancedSpawner
 {
     public sealed class AdvancedRandomSpawnerSystem : EntitySystem
@@ -30,7 +29,10 @@ namespace Content.Server._Stalker.AdvancedSpawner
             if (EntityManager.TryGetComponent<TempDetectorDataComponent>(uid, out var detectorData))
             {
                 Log.Debug($"[AdvancedSpawner] Applying modifiers from TempDetectorDataComponent on {uid}");
-                config.ApplyModifiers(detectorData.Detector);
+
+
+                config.ApplyModifiers(detectorData.Detector.WeightModifiers, detectorData.Detector.ExtraPrototypes);
+
                 EntityManager.RemoveComponent<TempDetectorDataComponent>(uid);
             }
 
@@ -41,32 +43,7 @@ namespace Content.Server._Stalker.AdvancedSpawner
         {
             var spawnCoords = Transform(uid).Coordinates;
 
-            foreach (var category in config.Categories)
-            {
-                int modifier = TrashDetectorUtils.GetWeightModifier(category.Name,
-                    config.CommonWeightMod,
-                    config.RareWeightMod,
-                    config.LegendaryWeightMod,
-                    config.NegativeWeightMod);
-
-                category.Weight = Math.Max(1, category.Weight + modifier);
-
-                foreach (var entry in category.Prototypes)
-                {
-                    entry.Weight = Math.Max(1, entry.Weight + modifier);
-                }
-
-                Log.Debug($"[Spawner] Updated weights for category {category.Name}. New weight: {category.Weight}");
-            }
-
-            var spawner = new Spawner(
-                _random,
-                EntityManager,
-                config.Categories,
-                config.MaxSpawnCount
-            );
-
-
+            var spawner = new Spawner(_random, EntityManager, config.Categories, config.MaxSpawnCount);
             var spawnedItems = spawner.SpawnEntities(spawnCoords, config.Offset, config);
 
             Log.Debug($"[AdvancedSpawner] Spawned {spawnedItems.Count} entities at {spawnCoords}");
