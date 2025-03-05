@@ -29,7 +29,8 @@
   - type: Occluder
     boundingBox: "-1.5,-1.0,1.4,-0.25"
   - type: TrashSearchable
-    TimeBeforeNextSearch: 600
+    timeBeforeNextSearch: 1
+    cooldownAfterSearch: 600
   - type: TrashDetector
     LootSpawner: "RandomTrashDetectorSpawner"
     AllowedDetectors:
@@ -70,7 +71,8 @@
   - type: Occluder
     boundingBox: "-1.2,-1.2,1.2,0.6"
   - type: TrashSearchable
-    TimeBeforeNextSearch: 600
+    timeBeforeNextSearch: 1
+    cooldownAfterSearch: 600
   - type: TrashDetector
     LootSpawner: "RandomTrashDetectorSpawner"
     AllowedDetectors:

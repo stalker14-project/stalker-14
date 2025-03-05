@@ -1,25 +1,22 @@
-using System.Linq;
+using System; // Для TimeSpan
+using System.Numerics;
 using Content.Server._Stalker.AdvancedSpawner;
-using Content.Server.TrashDetector.Components;
 using Content.Server.Popups;
-using Robust.Shared.Random;
-using Content.Shared.DoAfter;
-using Content.Shared.Popups;
-using Content.Shared.Interaction;
+using Content.Server.TrashDetector.Components;
 using Content.Server.TrashSearchable;
+using Content.Shared.DoAfter;
+using Content.Shared.Interaction;
+using Content.Shared.Physics;
+using Content.Shared.Popups;
 using Content.Shared.TrashDetector;
+using Robust.Server.Player;
 using Robust.Shared.GameObjects;
-using Robust.Shared.Physics.Components;
-using Robust.Shared.Map.Components;
+using Robust.Shared.Localization;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
-using Robust.Server.Player;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Content.Shared.Physics;
-using System.Numerics;
-using Robust.Shared.Maths;
-using Robust.Shared.Localization;
-using System.Collections.Generic;
 
 namespace Content.Server.TrashDetector;
 
@@ -31,6 +28,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
     [Dependency] internal readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly AdvancedRandomSpawnerSystem _spawnerSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+
     private readonly ISawmill _sawmill = Logger.GetSawmill("TrashDetector");
 
     private const float SearchRadius = 1.0f;
@@ -48,6 +46,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
     {
         if (!args.CanReach)
             return;
+
         OnUse(uid, comp, args.Target, args.User);
     }
 
@@ -56,7 +55,6 @@ public sealed partial class TrashDetectorSystem : EntitySystem
         if (target == null || !TryComp<TrashSearchableComponent>(target.Value, out var trash))
             return;
 
-
         var detectorPrototypeId = Comp<MetaDataComponent>(uid).EntityPrototype?.ID;
         if (detectorPrototypeId == null)
         {
@@ -64,13 +62,11 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             return;
         }
 
-
         if (comp.AllowedDetectors.Count > 0 && !comp.AllowedDetectors.Contains(detectorPrototypeId))
         {
             _popupSystem.PopupEntity(Loc.GetString("trash-detector-not-compatible"), user, PopupType.LargeCaution);
             return;
         }
-
 
         if (trash.TimeBeforeNextSearch > 0f)
         {
@@ -78,12 +74,22 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             return;
         }
 
-        var doAfterArgs = new DoAfterArgs(_entityManager, user, comp.SearchTime, new GetTrashDoAfterEvent(), uid, target: target.Value, used: uid)
+        // Используем правильный конструктор DoAfterArgs
+        var doAfterArgs = new DoAfterArgs(
+            _entityManager, // Передаем entityManager, как в старом рабочем коде
+            user,
+            TimeSpan.FromSeconds(comp.SearchTime),
+            new GetTrashDoAfterEvent(),
+            uid,
+            target: target.Value,
+            used: uid
+        )
         {
             BreakOnDamage = true,
             NeedHand = true,
-            DistanceThreshold = 2f,
+            DistanceThreshold = 2f
         };
+
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
     }
 
@@ -108,37 +114,17 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             return;
         }
 
-
         var config = new AdvancedRandomSpawnerConfig(spawner);
         config.ApplyModifiers(comp.WeightModifiers, comp.ExtraPrototypes);
 
-        var spawnedCategories = _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
+        _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
 
+        trash.TimeBeforeNextSearch = trash.CooldownAfterSearch;
+        _sawmill.Info($"[TrashDetector] Setting TimeBeforeNextSearch = {trash.CooldownAfterSearch} for entity {args.Args.Target.Value}");
 
-        var categoryData = new Dictionary<string, (string locKey, float time)>
-        {
-            { "Legendary", ("trash-detector-legendary", 1200f) },
-            { "Rare", ("trash-detector-rare", 900f) },
-            { "Common", ("trash-detector-common", 600f) },
-            { "Negative", ("trash-detector-negative", 300f) }
-        };
-
-
-        var entry = categoryData.FirstOrDefault(pair => spawnedCategories.Contains(pair.Key));
-
-        string message;
-        if (entry.Key == null)
-        {
-            message = Loc.GetString("trash-detector-no-signal");
-        }
-        else
-        {
-            message = Loc.GetString(entry.Value.locKey);
-            trash.TimeBeforeNextSearch = entry.Value.time;
-            _sawmill.Info($"[TrashDetector] Setting TimeBeforeNextSearch = {entry.Value.time} for entity {args.Args.Target.Value}");
-        }
-
+        var message = Loc.GetString("trash-detector-search-complete");
         _popupSystem.PopupEntity(message, uid, PopupType.LargeCaution);
+
         args.Handled = true;
     }
 
@@ -146,7 +132,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
     {
         for (var i = 0; i < FullCircle; i += AngleStep)
         {
-            var angle = i * (float)(System.Math.PI / 180.0);
+            var angle = i * (float)(Math.PI / 180.0);
             var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
             var testCoords = new EntityCoordinates(origin.EntityId, origin.Position + offset);
 

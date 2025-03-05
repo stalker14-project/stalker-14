@@ -1,3 +1,5 @@
+using Robust.Shared.GameObjects;
+
 namespace Content.Server.TrashSearchable;
 
 public sealed class TrashSearchableSystem : EntitySystem
@@ -9,7 +11,7 @@ public sealed class TrashSearchableSystem : EntitySystem
         base.Update(frameTime);
 
         _updateTimer += frameTime;
-        if (_updateTimer < 1f) // Update once per second
+        if (_updateTimer < 1f)
             return;
 
         _updateTimer = 0f;

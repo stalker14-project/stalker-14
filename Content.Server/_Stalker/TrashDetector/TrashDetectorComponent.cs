@@ -11,7 +11,6 @@ public sealed partial class TrashDetectorComponent : Component
 
     [DataField] public float SearchTime { get; set; } = 5f;
 
-
     [DataField] public string LootSpawner { get; set; } = "RandomTrashDetectorSpawner";
 
 
