@@ -17,7 +17,9 @@ public sealed class TrashSearchableSystem : EntitySystem
         foreach (var comp in EntityQuery<TrashSearchableComponent>())
         {
             if (comp.TimeBeforeNextSearch > 0)
+            {
                 comp.TimeBeforeNextSearch -= 1f;
+            }
         }
     }
 }

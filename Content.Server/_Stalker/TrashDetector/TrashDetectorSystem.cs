@@ -20,8 +20,6 @@ public sealed class TrashDetectorSystem : EntitySystem
     [Dependency] private readonly AdvancedRandomSpawnerSystem _spawnerSystem = default!;
     [Dependency] internal readonly SharedTransformSystem TransformSystem = default!;
 
-    private readonly ISawmill _sawmill = Logger.GetSawmill("TrashDetector");
-
     private const float SearchRadius = 1.0f;
     private const int AngleStep = 30;
     private const int FullCircle = 360;
@@ -53,7 +51,7 @@ public sealed class TrashDetectorSystem : EntitySystem
             return;
         }
 
-        if (comp.AllowedDetectors.Count > 0 && !comp.AllowedDetectors.Contains(detectorPrototypeId))
+        if (trash.AllowedDetectors.Count > 0 && !trash.AllowedDetectors.Contains(detectorPrototypeId))
         {
             _popupSystem.PopupEntity(Loc.GetString("trash-detector-not-compatible"), user, PopupType.LargeCaution);
             return;
@@ -91,12 +89,15 @@ public sealed class TrashDetectorSystem : EntitySystem
         if (!TryComp<TrashSearchableComponent>(args.Args.Target.Value, out var trash))
             return;
 
+        var spawnerPrototype = trash.LootSpawner;
+        if (string.IsNullOrEmpty(spawnerPrototype))
+            return;
+
         var spawnCoords = FindFreePosition(args.Args.User);
-        var spawnerUid = EntityManager.SpawnEntity(comp.LootSpawner, spawnCoords);
+        var spawnerUid = EntityManager.SpawnEntity(spawnerPrototype, spawnCoords);
 
         if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
         {
-            _sawmill.Warning("Error: Spawner not found! Deleting object.");
             EntityManager.DeleteEntity(spawnerUid);
             return;
         }
@@ -107,11 +108,8 @@ public sealed class TrashDetectorSystem : EntitySystem
         _spawnerSystem.SpawnEntitiesUsingSpawner(spawnerUid, config);
 
         trash.TimeBeforeNextSearch = trash.CooldownAfterSearch;
-        _sawmill.Info($"[TrashDetector] Setting TimeBeforeNextSearch = {trash.CooldownAfterSearch} for entity {args.Args.Target.Value}");
 
-        var message = Loc.GetString("trash-detector-search-complete");
-        _popupSystem.PopupEntity(message, uid, PopupType.LargeCaution);
-
+        _popupSystem.PopupEntity(Loc.GetString("trash-detector-search-complete"), uid, PopupType.LargeCaution);
         args.Handled = true;
     }
 
