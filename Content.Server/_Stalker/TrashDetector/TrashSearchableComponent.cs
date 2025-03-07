@@ -1,7 +1,4 @@
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-
-namespace Content.Server.TrashSearchable;
+namespace Content.Server._Stalker.TrashDetector;
 
 [RegisterComponent]
 public sealed partial class TrashSearchableComponent : Component
@@ -9,12 +6,10 @@ public sealed partial class TrashSearchableComponent : Component
     [DataField]
     public float CooldownAfterSearch = 600f;
 
-    [DataField]
-    public float TimeBeforeNextSearch = 0f;
+    [DataField] internal float TimeBeforeNextSearch;
 
     public void SetTimeBeforeNextSearch(float time)
     {
         TimeBeforeNextSearch = time;
-        Dirty();
     }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using Content.Server._Stalker.AdvancedSpawner;
+namespace Content.Server._Stalker.AdvancedSpawner;
 
 public class AdvancedRandomSpawnerConfig
 {

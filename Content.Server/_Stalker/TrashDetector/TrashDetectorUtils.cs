@@ -1,13 +1,11 @@
-using Robust.Shared.Log;
-using System.Collections.Generic;
-
-namespace Content.Server.TrashDetector;
+namespace Content.Server._Stalker.TrashDetector;
 
 public static class TrashDetectorUtils
 {
+    [Obsolete("Obsolete")]
     public static int GetWeightModifier(string category, Dictionary<string, int> weightModifiers)
     {
-        int modifier = weightModifiers.GetValueOrDefault(category, 0);
+        var modifier = weightModifiers.GetValueOrDefault(category, 0);
         Logger.Info($"[TrashDetectorUtils] GetWeightModifier: {category} = {modifier}");
         return modifier;
     }

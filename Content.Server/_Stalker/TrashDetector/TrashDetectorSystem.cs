@@ -1,33 +1,24 @@
-using System; // Для TimeSpan
 using System.Numerics;
 using Content.Server._Stalker.AdvancedSpawner;
 using Content.Server.Popups;
-using Content.Server.TrashDetector.Components;
-using Content.Server.TrashSearchable;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Physics;
 using Content.Shared.Popups;
 using Content.Shared.TrashDetector;
-using Robust.Server.Player;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Localization;
 using Robust.Shared.Map;
-using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
-using Robust.Shared.Timing;
 
-namespace Content.Server.TrashDetector;
+namespace Content.Server._Stalker.TrashDetector;
 
-public sealed partial class TrashDetectorSystem : EntitySystem
+public sealed class TrashDetectorSystem : EntitySystem
 {
     [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] internal readonly IRobustRandom Random = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] internal readonly IEntityManager _entityManager = default!;
+    [Dependency] internal new readonly IEntityManager EntityManager = default!;
     [Dependency] private readonly AdvancedRandomSpawnerSystem _spawnerSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
+    [Dependency] internal readonly SharedTransformSystem TransformSystem = default!;
 
     private readonly ISawmill _sawmill = Logger.GetSawmill("TrashDetector");
 
@@ -75,7 +66,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
         }
 
         var doAfterArgs = new DoAfterArgs(
-            _entityManager,
+            EntityManager,
             user,
             TimeSpan.FromSeconds(comp.SearchTime),
             new GetTrashDoAfterEvent(),
@@ -101,12 +92,12 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             return;
 
         var spawnCoords = FindFreePosition(args.Args.User);
-        var spawnerUid = _entityManager.SpawnEntity(comp.LootSpawner, spawnCoords);
+        var spawnerUid = EntityManager.SpawnEntity(comp.LootSpawner, spawnCoords);
 
         if (!TryComp<AdvancedRandomSpawnerComponent>(spawnerUid, out var spawner))
         {
             _sawmill.Warning("Error: Spawner not found! Deleting object.");
-            _entityManager.DeleteEntity(spawnerUid);
+            EntityManager.DeleteEntity(spawnerUid);
             return;
         }
 
@@ -126,7 +117,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
 
     private EntityCoordinates FindFreePosition(EntityUid user)
     {
-        if (!TryComp<TransformComponent>(user, out var userTransform))
+        if (!EntityManager.TryGetComponent(user, out TransformComponent? userTransform))
             return new EntityCoordinates(user, Vector2.Zero);
 
         var origin = userTransform.Coordinates;
@@ -137,7 +128,7 @@ public sealed partial class TrashDetectorSystem : EntitySystem
             var offset = new Vector2(MathF.Cos(angle) * SearchRadius, MathF.Sin(angle) * SearchRadius);
             var testCoords = new EntityCoordinates(origin.EntityId, origin.Position + offset);
 
-            if (!_entityManager.TryGetComponent(testCoords.EntityId, out PhysicsComponent? physics) || !physics.CanCollide)
+            if (!EntityManager.TryGetComponent(testCoords.EntityId, out PhysicsComponent? physics) || !physics.CanCollide)
             {
                 return testCoords;
             }

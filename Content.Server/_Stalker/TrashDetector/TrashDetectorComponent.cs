@@ -1,9 +1,6 @@
 using Content.Server._Stalker.AdvancedSpawner;
-using Robust.Shared.GameObjects;
-using Robust.Shared.Serialization.Manager.Attributes;
-using System.Collections.Generic;
 
-namespace Content.Server.TrashDetector.Components;
+namespace Content.Server._Stalker.TrashDetector;
 
 [RegisterComponent]
 public sealed partial class TrashDetectorComponent : Component

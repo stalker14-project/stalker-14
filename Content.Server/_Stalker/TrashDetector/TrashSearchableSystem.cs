@@ -1,10 +1,8 @@
-using Robust.Shared.GameObjects;
-
-namespace Content.Server.TrashSearchable;
+namespace Content.Server._Stalker.TrashDetector;
 
 public sealed class TrashSearchableSystem : EntitySystem
 {
-    private float _updateTimer = 0f;
+    private float _updateTimer;
 
     public override void Update(float frameTime)
     {

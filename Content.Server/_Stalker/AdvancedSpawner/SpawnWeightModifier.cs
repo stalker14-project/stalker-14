@@ -1,13 +1,11 @@
-using System;
-using System.Collections.Generic;
-using Content.Server._Stalker.AdvancedSpawner;
+namespace Content.Server._Stalker.AdvancedSpawner;
 
 public static class SpawnWeightModifier
 {
     public static void ApplyModifiers(Dictionary<string, int> categoryWeights,
-                                      Dictionary<string, List<SpawnEntry>> prototypes,
-                                      Dictionary<string, int> weightModifiers,
-                                      Dictionary<string, List<SpawnEntry>> extraPrototypes)
+        Dictionary<string, List<SpawnEntry>> prototypes,
+        Dictionary<string, int> weightModifiers,
+        Dictionary<string, List<SpawnEntry>> extraPrototypes)
     {
 
         foreach (var (category, modifier) in weightModifiers)

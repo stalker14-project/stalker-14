@@ -1,18 +1,8 @@
-using System.Collections.Generic;
+namespace Content.Server._Stalker.AdvancedSpawner;
 
-namespace Content.Server._Stalker.AdvancedSpawner
+public class SpawnCategory(string name, int weight, List<SpawnEntry> prototypes)
 {
-    public class SpawnCategory
-    {
-        public string Name { get; }
-        public int Weight { get; set; }
-        public List<SpawnEntry> Prototypes { get; }
-
-        public SpawnCategory(string name, int weight, List<SpawnEntry> prototypes)
-        {
-            Name = name;
-            Weight = weight;
-            Prototypes = prototypes;
-        }
-    }
+    public string Name { get; } = name;
+    public int Weight { get; set; } = weight;
+    public List<SpawnEntry> Prototypes { get; } = prototypes;
 }
