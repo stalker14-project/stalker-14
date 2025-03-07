@@ -4,10 +4,10 @@ using Content.Server.Popups;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
-using Content.Shared.TrashDetector;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
+using GetTrashDoAfterEvent = Content.Shared._Stalker.TrashDetector.GetTrashDoAfterEvent;
 
 namespace Content.Server._Stalker.TrashDetector;
 
