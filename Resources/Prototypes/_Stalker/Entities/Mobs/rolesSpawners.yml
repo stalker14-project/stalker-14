@@ -266,6 +266,38 @@
     - type: Loadout
       prototypes: [ StalkerGearT4 ]
 
+- type: entity
+  name: кукла Сталкера (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerStalker
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: stalker
+    - type: Access
+      tags:
+        - Stalker
+    - type: Loadout
+      prototypes: [ StalkerGear ]
+
+- type: entity
+  name: кукла СБУ (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSBU
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: sbu
+    - type: Access
+      groups:
+        - Military
+        - MilitaryHead
+        - MilitaryOfficer
+    - type: Loadout
+      prototypes: [ SBUGear ]
+
 - type: startingGear
   id: StalkerGearT4
   equipment:
@@ -281,3 +313,13 @@
     pocket2: 8mmBuckshotBox
     head: ClothingHeadRatnik
     mask: ClothingMaskM51
+
+- type: startingGear
+  id: SBUGear
+  equipment:
+    id: MilitaryPDA
+    belt: ClothingBeltStorageWaistbag
+    legs: ClothingLegsJeansGreenCargo
+    torso: ClothingTorsoTurtlenecksMilitary
+    shoes: ClothingShoesBootsCombatFilled
+    pocket1: PassportSBU
