@@ -45,14 +45,14 @@
           tags:
             - Cartridge545
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak74.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74.rsi
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak74.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak74.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74.rsi
 
 - type: entity
-  parent: STWeaponRifleStalkerAK74
+  parent: STWeaponRifleStalkerAKS74
   name: АК-74М
   id: STSTWeaponRifleStalkerAK74M
   description: Оснащен складывающимся влево пластиковым прикладом, фурнитурой из ударостойкой пластмассы и универсальной планкой "Ласточкин хвост" для крепления прицелов, таким образом заменив собой сразу несколько версий автомата. Использует калибр 5,45x39
@@ -67,7 +67,18 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
 
-
+- type: entity
+  parent: STWeaponRifleStalkerAK74
+  name: АКС-74
+  id: STWeaponRifleStalkerAKS74
+  description: Автомат складной, образца 1974 года под патрон 5,45 × 39. Представляет собой простое и надёжное оружие, хотя дешевизна в производстве несколько сказалась на удобстве использования и точности боя. В Зоне это основное оружие военных, сталкеров и многих одиночек.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
 
 - type: entity
   name: Сайга 5,45
@@ -99,3 +110,33 @@
     scale: 0.75, 0.75
   - type: Gun
     fireRate: 7.75
+
+
+
+- type: entity
+  name: АКС-74
+  suffix: ST, Скин
+  parent: STWeaponRifleStalkerAK74
+  id: STWeaponRifleStalkerAKS74Pink
+  description: Автомат складной, образца 1974 года под патрон 5,45 × 39. Представляет собой простое и надёжное оружие, хотя дешевизна в производстве несколько сказалась на удобстве использования и точности боя. В Зоне это основное оружие военных, сталкеров и многих одиночек. Цевьё и ручка покрашены в розовый цвет.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-pink.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-pink.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-pink.rsi
+
+- type: entity
+  name: АКС-74
+  suffix: ST, Скин
+  parent: STWeaponRifleStalkerAK74
+  id: STWeaponRifleStalkerAKS74Green
+  description: Автомат складной, образца 1974 года под патрон 5,45 × 39. Представляет собой простое и надёжное оружие, хотя дешевизна в производстве несколько сказалась на удобстве использования и точности боя. В Зоне это основное оружие военных, сталкеров и многих одиночек. Цевьё и ручка покрашены в зелёный цвет.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi

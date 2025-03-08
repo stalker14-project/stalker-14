@@ -66,10 +66,11 @@
 - type: entity
   parent: ClothingMaskBalaklavaBase
   id: ClothingMaskNeckBalaklava3
-  name: балаклава
-  description: Представляет собой лыжную маску с прорезями для глаз и рта.
+  name: лыжная маска
+  description: Представляет собой лыжную маску с прорезью для глаз.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
+  - type: IngestionBlocker
