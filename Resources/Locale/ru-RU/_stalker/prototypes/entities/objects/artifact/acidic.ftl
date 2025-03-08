@@ -1,0 +1,10 @@
+ent-ZoneArtifactPellicle = Плёнка
+    .suffix = Stalker, Плёнка
+ent-ZoneArtifactBlood = Кровь Камня
+    .suffix = Stalker, Кровь Камня
+ent-ZoneArtifactMeat = Ломоть мяса
+    .suffix = Stalker, Ломоть мяса
+ent-ZoneArtifactKolobok = Колобок
+    .suffix = Stalker, Колобок
+ent-ZoneArtifactBaloon = { ent-BaseArtifact }
+    .suffix = Stalker, Пузырь
