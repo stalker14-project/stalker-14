@@ -1,3 +1,12 @@
+- type: lightCraftingRecipe
+  id: CraftHideSTCraftHideT1
+  results:
+  - STCraftHideT1
+  steps:
+    firstIngredient: STCombatKnife
+    secondIngredient: CraftHide
+    keepFirst: true
+    time: 7
 
 - type: lightCraftingRecipe
   id: CraftHideSTCraftHideT2
@@ -16,15 +25,5 @@
   steps:
     firstIngredient: CraftLeatherbox
     secondIngredient: CraftHideBloodSucker
-    keepFirst: true
-    time: 15
-
-- type: lightCraftingRecipe
-  id: CraftHideGoliathSTCraftHideT3
-  results:
-    - STCraftSturdyHideT3
-  steps:
-    firstIngredient: CraftLeatherbox
-    secondIngredient: MaterialGoliathHide1
     keepFirst: true
     time: 15

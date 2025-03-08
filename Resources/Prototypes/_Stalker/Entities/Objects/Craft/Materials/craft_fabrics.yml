@@ -20,6 +20,26 @@
 
 - type: entity
   parent: STBaseIngridient
+  id: STCraftHideT1
+  name: шкура Т1
+  desciption: Натуральная, но плохо обработанная шкура животного. Т1.
+  suffix: Stalker, крафт, T1
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Hide: 150
+  - type: Sprite
+    state: hide_t2
+    sprite: _Stalker/Objects/Craft/Materials/craft_fabrics.rsi
+  - type: Stack
+    stackType: STHideT1
+    count: 1
+  - type: Craftable
+  - type: RepositoryItem
+    categoryName: Крафты
+
+- type: entity
+  parent: STBaseIngridient
   id: STCraftHideT2
   name: шкура Т2
   desciption: натуральная шкура животного, используется для более прочной одежды и легкой брони. T2
