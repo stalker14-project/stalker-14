@@ -7,26 +7,26 @@
     FoodTinPeachesTrash: 0
     FoodTinBeansTrash: 0
   categories:
-    # - name: Оружие
+    # - name: shop-category-weapons
     #   priority: 1
     #   items:
     #     WeaponMachineGunRPD: 9
     #     STWeaponRifleM14: 15
     #     STWeaponRifleStalkerAK103: 11
     #     STWeaponRifleSVDS: 13
-    - name: Броня и снаряжение
+    - name: shop-category-armor
       priority: 2
       items:
         ClothingHeadAssaultHelmetMilitary: 5
         # ClothingOuterArmor6B13: 15 Убрано всё т4 по просьбе вииса
         ClothingHeadHelmetBulatMilitary: 4
         # STClothingOuterArmorBerill5M: 15 Убрано всё т4 по просьбе вииса
-    - name: Бумажная работа
+    - name: shop-category-paperwork
       priority: 3
       items:
         hunterLicense: 2
         militaryLicense: 3
-    - name: Гранаты
+    - name: shop-category-grenades
       priority: 4
       items:
         FragGrenade: 2
@@ -38,7 +38,7 @@
     ClothingNeckDogtagBrigand: 2
     ClothingNeckDogtagStalker: 1
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
         ArmySaigaCrate: 5
@@ -49,7 +49,7 @@
         WeaponRifleStalkerGroza545: 14
         # STSTWeaponRifleStalkerAK74M: 4
         STWeaponRifleStalkerAK74: 3
-    - name: Броня
+    - name: shop-category-armor
       priority: 2
       items:
         STClothingOuterArmorLightPlateVestBaseMilitary: 1
@@ -59,7 +59,7 @@
         ClothingMaskGP7: 2
         # STClothingOuterArmorRatnik: 20 T5 жирно для старта
         # ClothingOuterArmorBulatMilitary: 20 T5 жирно для старта
-    - name: Патроны
+    - name: shop-category-ammunition
       priority: 3
       items:
         45ACPLFMJBox: 1
@@ -73,7 +73,7 @@
         # 545BPBox: 1 T4 Ammo
         # 751M993Box: 2 T5 Ammo
         # 754BTBox: 2 T5 Ammo
-    - name: Рюкзаки и снаряжение
+    - name: shop-category-storage-and-containers
       priority: 4
       items:
         ClothingBeltMedicalStalker: 1
@@ -84,7 +84,7 @@
         ClothingBackpackDuffelMilitaryOlive: 2
         ClothingBeltBandolierStalker: 1
         MedkitCMSStalker: 1
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 5
       items:
         751Mag20: 1
@@ -93,7 +93,7 @@
         754Mag20: 2
         # Magazine762x39RPD: 2
         # 739Mag45: 2
-    - name: Обвесы
+    - name: shop-category-modules
       priority: 6
       items:
         STModuleScopeRiflesT1Ru: 2
@@ -101,13 +101,13 @@
         STModuleScopeRiflesT2Ru: 3
         STModuleSniperSightT2: 3
         STModuleSilencerRiflesT2Ru: 3
-    - name: Гранаты
+    - name: shop-category-grenades
       priority: 7
       items:
         DG05SmokeGrenade: 2
         RGD5Grenade: 2
         GL1Grenade: 1
-    - name: Другое
+    - name: shop-category-other
       priority: 8
       items:
         CraftBag: 1
@@ -115,7 +115,7 @@
         Binocularus1: 1
         Defibrillator: 1
         DoubleEmergencyOxygenTankStalkerFilled: 1
-    - name: Бумажная работа
+    - name: shop-category-paperwork
       priority: 9
       items:
         hunterLicense: 4
@@ -128,7 +128,7 @@
     FoodTinPeachesTrash: 0
     FoodTinBeansTrash: 0
   categories:
-    - name: Коптёр
+    - name: shop-category-what
       priority: 1
       items:
         SupplyTalons: 1111
@@ -182,7 +182,7 @@
   itemsForSale:
     TradeBox: 1
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
             # Guns
@@ -212,7 +212,7 @@
         ArmyCrateNewStandart: 6000
         ArmyCrateNewOfficer: 9000
 
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 2
       items:
         Magazine762x39RPD: 1200
@@ -237,7 +237,7 @@
         BasePMMag: 70
         TTMag: 98
         BaseAPSMag: 100
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 115
@@ -267,7 +267,7 @@
         # 7.54
         754FMJBox: 675
         754HPBox: 1015
-    - name: Броня
+    - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
@@ -284,7 +284,7 @@
         STClothingOuterArmorLightPlateVestBaseANAgreen: 2250 # T3 - PVP
         STClothingOuterArmorLightPlateVestBasePSZ7v3: 3000
         STClothingOuterArmorLightPlateVestBasePSZ7v1: 3000
-    - name: Хранилища и Контейнеры
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
            # BackPacks
@@ -302,7 +302,7 @@
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
@@ -311,7 +311,7 @@
           # Gasmasks
         ClothingMaskGasM40Military: 100 # T2
         ClothingMaskGP21: 1200 # T3
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 7
       items:
         STBoltBagFilled: 50
@@ -319,7 +319,7 @@
         ZoneAnomalyDetectorAD2: 1000 # T2
           # Detectors
           # Пусто
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 8
       items:
         STCombatKnife: 25
@@ -344,7 +344,7 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 150
@@ -358,7 +358,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 10
       items:
          # Cheap
@@ -374,7 +374,7 @@
         psyblock: 200
         MedkitMilitary: 210
         Defibrillator: 700
-    - name: Модули
+    - name: shop-category-modules
       priority: 11
       items:
         STModuleScopeRiflesT1Ru: 600
@@ -387,7 +387,7 @@
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
         STModuleAutoSear: 600
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 12
       items:
         ClothingBandageStalkerRed: 5
@@ -455,14 +455,14 @@
     FoodTinBeansTrash: 0
   categories:
 
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 1
       items:
         ClothingHeadBandana1Military: 15
         ClothingHeadBandana2Military: 15
         ClothingMaskNeckBalaklava1: 50
 
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 2
       items:
         CheapLighter: 15
@@ -481,7 +481,7 @@
         CigCartonBlack: 125
         MilitaryPSZInventoryRestock: 2000
 
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         # 5.45
@@ -489,18 +489,18 @@
         545HPBox: 640
         545PCBox: 425
 
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 4
       items:
         545Mag30: 220 #T3
 
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 5
       items:
           # 5,45x39
         STWeaponGunAKS74U: 1490
 
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 6
       items:
          # Cheap
@@ -517,7 +517,7 @@
         MedkitMilitary: 210
         Defibrillator: 700
 
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 7
       items:
         STCombatKnife: 25
@@ -532,14 +532,14 @@
         ExtendedEmergencyOxygenTankFilledStalker: 50
         Matchbox: 10
 
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 8
       items:
           # Cloaks
           # Gasmasks
         ClothingMaskGasM40Military: 100 # T2
 
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 9
       items:
         STBoltBagFilled: 50
@@ -551,7 +551,7 @@
 - type: shopPreset
   id: MilitaryPSZShopPreset
   categories:
-    - name: Броня
+    - name: shop-category-armor
       priority: 1
       items:
         ArmyAK2Crate: 1

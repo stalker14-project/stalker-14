@@ -1,8 +1,8 @@
 - type: job
   id: Police
-  name: полицейский
+  name: job-police
   icon: police
-  description: Занимаются обеспечением безопасности и следят за соблюдением законов в предбаннике.
+  description: job-police-desc
   playTimeTracker: JobPolice
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: PoliceGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: job-police-supervisor
   special:
     - !type:AddComponentSpecial
       components:

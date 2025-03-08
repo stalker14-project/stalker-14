@@ -1,8 +1,8 @@
 - type: job
   id: StalkerProjectPawn
-  name: Следователь Проекта
+  name: job-project-pawn
   icon: project-1
-  description: То что приказывает им Алгоритм, то они и сделают.
+  description: job-project-pawn-desc
   playTimeTracker: JobProjectPawn
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: ProjectPawnGear
-  supervisors: Вы подчиняетесь всему Алгоритму «Проекта», а также Оркестратору «Проекта»
+  supervisors: job-project-pawn-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -51,9 +51,9 @@
 
 - type: job
   id: StalkerProjectOrchestrator
-  name: Оркестратор Проекта
+  name: job-project-orchestrator
   icon: project-3
-  description: Тайный X
+  description: job-project-orchestrator-desc
   playTimeTracker: JobProjectOrchestrator
   whitelisted: true
   requirements:
@@ -65,7 +65,7 @@
       - Human
       - Dwarf
   startingGear: ProjectOrchestratorGear
-  supervisors: Вы управляете всем Алгоритмом «Проекта», ваша обьязанность - направлять свой «Проект» в нужное место.
+  supervisors: job-project-orchestrator-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

@@ -1,8 +1,8 @@
 - type: job
   id: StalkerSBU
-  name: Боец СБУ
+  name: job-sbu
   icon: sbu
-  description: Член защиты службы безопасности Украины.
+  description: job-sbu-desc
   playTimeTracker: JobSBU
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGear
-  supervisors: Подчиняйся старшим по званию.
+  supervisors: job-sbu-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

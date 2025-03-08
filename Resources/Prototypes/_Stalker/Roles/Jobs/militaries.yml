@@ -1,8 +1,8 @@
 - type: job
   id: MilitaryStalker
-  name: Военстал
+  name: job-military-stalker
   icon: voen
-  description: Солдаты, прошедшие после опыта службы в Зоне специальную подготовку, или сталкеры, подписавшие контракт с армией.
+  description: job-military-stalker-desc
   playTimeTracker: JobMilitaryStalker
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: MilitarySpecGear
-  supervisors: Ты будешь терпеть и страдать, Victoria cruenta
+  supervisors: job-military-stalker-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -36,9 +36,9 @@
 
 - type: job
   id: Military
-  name: Военный
+  name: job-military
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: job-military-desc
   playTimeTracker: JobMilitary
   whitelisted: true
   requirements:
@@ -50,7 +50,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: job-military-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -71,9 +71,9 @@
 
 - type: job
   id: MilitaryHead
-  name: Начальник Гарнизона
+  name: job-military-head
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: job-military-head-desc
   playTimeTracker: JobHeadMilitary
   whitelisted: true
   requirements:
@@ -85,7 +85,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGearHead
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: job-military-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -105,9 +105,9 @@
 
 - type: job
   id: MilitaryOfficer
-  name: Командир Военных
+  name: job-military-officer
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: job-military-officer-desc
   playTimeTracker: JobOfficerMilitary
   whitelisted: true
   requirements:
@@ -119,7 +119,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGearOfficer
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: job-military-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

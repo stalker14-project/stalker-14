@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerNeutral
-  name: Нейтрал
+  name: job-neutral-stalker
   icon: ne
-  description: Защитники слабых
+  description: job-neutral-stalker-desc
   playTimeTracker: JobNeutral
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - Human
       - Dwarf
   startingGear: NeutralGear
-  supervisors: Вы подчиняетесь своему лидеру
+  supervisors: job-neutral-stalker-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
