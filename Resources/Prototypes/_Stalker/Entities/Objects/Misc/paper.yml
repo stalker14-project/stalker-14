@@ -11,3 +11,13 @@
     - state: bloody_paper
   - type: PaperVisuals
     backgroundImagePath: "/Textures/_Stalker/Interface/Paper/paper_background_default.svg.96dpi.png"
+
+- type: entity
+  name: Бумага
+  parent: Paper
+  id: STPaper
+  description: 'Лист белой бумаги'
+  suffix: Stalker
+  components:
+  - type: Paper
+    contentSize: 4000

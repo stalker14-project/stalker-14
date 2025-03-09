@@ -1,5 +1,4 @@
 #####################################################Вояки
-
 - type: shopPreset
   id: MilitaryShopPreset
   itemsForSale:
@@ -120,7 +119,6 @@
       items:
         hunterLicense: 4
         militaryLicense: 5
-
 - type: shopPreset
   id: MilitaryRoublesShopPreset
   itemsForSale:
@@ -176,7 +174,6 @@
         CheapLighter: 25
         CigPackBlack: 20
         CigCartonBlack: 125
-
 - type: shopPreset
   id: MilitaryRoublesShopPresetHeavy
   itemsForSale:
@@ -211,7 +208,6 @@
         STWeaponRifleVSS: 12000
         ArmyCrateNewStandart: 6000
         ArmyCrateNewOfficer: 9000
-
     - name: Магазины
       priority: 2
       items:
@@ -332,7 +328,8 @@
         FlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
-        Paper: 2
+        STPaper: 2
+        STBook: 60
         Pen: 5
         Binocularus1: 2500
         BoxFlare: 60
@@ -446,7 +443,6 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-
 - type: shopPreset
   id: MilitaryRoublesShopPresetNerf
   itemsForSale:
@@ -454,14 +450,12 @@
     FoodTinPeachesTrash: 0
     FoodTinBeansTrash: 0
   categories:
-
     - name: Кастомизация
       priority: 1
       items:
         ClothingHeadBandana1Military: 15
         ClothingHeadBandana2Military: 15
         ClothingMaskNeckBalaklava1: 50
-
     - name: Провизия
       priority: 2
       items:
@@ -480,7 +474,6 @@
         CigPackBlack: 20
         CigCartonBlack: 125
         MilitaryPSZInventoryRestock: 2000
-
     - name: Боеприпасы
       priority: 3
       items:
@@ -488,18 +481,15 @@
         545FMJBox: 170
         545HPBox: 640
         545PCBox: 425
-
     - name: Магазины
       priority: 4
       items:
         545Mag30: 220 #T3
-
     - name: Оружие
       priority: 5
       items:
           # 5,45x39
         STWeaponGunAKS74U: 1490
-
     - name: Медицина
       priority: 6
       items:
@@ -516,7 +506,6 @@
         psyblock: 200
         MedkitMilitary: 210
         Defibrillator: 700
-
     - name: Утилиты
       priority: 7
       items:
@@ -531,14 +520,12 @@
         BoxFlare: 60
         ExtendedEmergencyOxygenTankFilledStalker: 50
         Matchbox: 10
-
     - name: Плащи и Противогазы
       priority: 8
       items:
           # Cloaks
           # Gasmasks
         ClothingMaskGasM40Military: 100 # T2
-
     - name: Исследовательское снаряжение
       priority: 9
       items:
@@ -547,7 +534,6 @@
         ZoneAnomalyDetectorAD2: 1000 # T2
           # Detectors
           # Пусто
-
 - type: shopPreset
   id: MilitaryPSZShopPreset
   categories:

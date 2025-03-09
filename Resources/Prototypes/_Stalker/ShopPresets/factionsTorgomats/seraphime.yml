@@ -37,6 +37,7 @@
         HandheldGPSBasic: 100
         ClothingGoPro: 356
         Paper: 10
+        STBook: 300
         Pen: 50
         ClothingBackpackDuffelGreenStalkerHydroponic: 1000
     - name: Аномалии
@@ -75,26 +76,21 @@
         Bloodpack: 800
         MedkitMilitary: 7000
         antiradpill: 300
-
 - type: shopPreset
   id: SerafimShopPresetLight
   itemsForSale:
     # Mutant parts - Персональная Мета на продажу
-
     MutantPartBoarHoof: 35 # T1
     MutantPartSeasonedBoarHoof: 70 # T2
     MutantPartOldBoarHoof: 105 # T3
-
     #T1 -------- Health * 1
     MutantPartBlindDogTail: 24
     MutantPartFleshEye: 52
     FoodMeatSpiderLeg: 13
-
     #T2 -------- Health * 1.8
     MutantPartLeshiyRoot: 143
     MutantPartPseudodogTail: 78
     MutantPartSnorkFoot: 130
-
     #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 195
     MutantPartOraculeEye: 520
@@ -127,7 +123,6 @@
         STWeaponRifleSVU: 2200
         STWeaponRifleStalkerVeprSerafim: 800
         STWeaponRifleStalkerAK104: 1100
-
     - name: Броня и снаряжение
       priority: 2
       items:
@@ -163,7 +158,7 @@
         STTorchSera: 30
         HandheldGPSBasic: 15
         ClothingGoPro: 71
-        Paper: 2
+        STPaper: 2
         Pen: 10
         ClothingBackpackDuffelGreenStalkerHydroponic: 200
         STBatMolitoslov: 50
@@ -357,27 +352,22 @@
         BoxArtcont: 70 # T1
         MedkitCMSStalker: 90 # T1
         MedkitGrizzlyStalker: 170 # T2
-
 - type: shopPreset
   id: SerafimShopPresetHeavy
   itemsForSale:
     # Mutant parts
-
     #Boars -------- Health * T * 0.45
     MutantPartBoarHoof: 99 # T1 * 4
     MutantPartSeasonedBoarHoof: 54 # T2
     MutantPartOldBoarHoof: 101 # T3
-
     #T1 -------- Health * 1
     MutantPartBlindDogTail: 15
     MutantPartFleshEye: 120 # * 4
     FoodMeatSpiderLeg: 8
-
     #T2 -------- Health * 1.8
     MutantPartLeshiyRoot: 150
     MutantPartPseudodogTail: 75
     MutantPartSnorkFoot: 75
-
     #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 150
     MutantPartOraculeEye: 400
@@ -530,7 +520,6 @@
         # 9.39
         939SP5Box: 190
         939SP6Box: 360
-
 - type: shopPreset
   id: SerafimShopPresetHeavy1
   itemsForSale:
@@ -569,24 +558,19 @@
     # Acidic group - 2
     ZoneArtifactPellicle: 562
     ZoneArtifactBaloon: 1968
-
     # Mutant parts
-
     #Boars -------- Health * T * 0.45
     MutantPartBoarHoof: 145 # T1
     MutantPartSeasonedBoarHoof: 324 # T2
     MutantPartOldBoarHoof: 707 # T3
-
     #T1 -------- Health * 1
     MutantPartBlindDogTail: 120
     MutantPartFleshEye: 200
     FoodMeatSpiderLeg: 50
-
     #T2 -------- Health * 1.8
     MutantPartLeshiyRoot: 900
     MutantPartPseudodogTail: 450
     MutantPartSnorkFoot: 650
-
     #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 900
     MutantPartOraculeEye: 2400
@@ -744,7 +728,8 @@
         FlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
-        Paper: 2
+        STPaper: 2
+        STBook: 60
         Pen: 5
         Binocularus1: 2500
         BoxFlare: 60
@@ -802,7 +787,6 @@
     - name: Кастомизация
       priority: 12
       items:
-
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
