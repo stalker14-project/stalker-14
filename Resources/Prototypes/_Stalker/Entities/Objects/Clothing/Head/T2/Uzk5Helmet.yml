@@ -1,0 +1,38 @@
+- type: entity
+  parent: ClothingHeadLightBase
+  id: ClothingHeadUzk5Helm
+  name: шлем «УЗК-5»
+  description: Шлем от бронекостюма "УЗК-5".
+  suffix: ST, T2, Tactical
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/uzk5_helmet.rsi
+  - type: PointLight
+    color: white
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/uzk5_helmet.rsi
+  - type: Craftable
+  - type: STWeight
+    self: 3.1
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Piercing: 0.75
+  - type: Reflect
+    reflectProb: 0.07
+    spread: 360
+    reflects:
+      - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: RepositoryItem
+    categoryName: Экипировка
+  - type: PullDoAfter
+    pullTime: 2
+  - type: Tag
+    tags:
+      - ClothMade
+      - WhitelistChameleon
