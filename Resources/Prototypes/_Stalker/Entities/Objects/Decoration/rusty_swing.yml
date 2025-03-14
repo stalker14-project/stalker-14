@@ -1,10 +1,22 @@
 - type: entity
   id: STRustySwing
-  parent: BaseStructureStalkerDynamic
+  parent: BaseRock
   name: ржавые качели
   suffix: ST, Mapping
   description: Ржавые качели, скрипящие на ветру, словно забытые воспоминания о давно ушедших днях детства.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Decoration/rusty_swing.rsi
-    state: base
+    sprite: _Stalker/Objects/Decoration/r_swing.rsi
+    state: rs
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.8,-0.7,0.6,0.7"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
