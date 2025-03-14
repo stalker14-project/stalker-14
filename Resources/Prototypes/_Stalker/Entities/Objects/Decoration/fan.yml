@@ -1,47 +1,28 @@
 - type: entity
   id: FanStalker
-  parent: BaseStructure
   name: вентилятор
   suffix: ST, Mapping
   description: Механическое устройство для перемещения воздуха или другого газа (воздушный насос) с создаваемым полным напором. Удивительно, как он еще работает...
   placement:
-    mode: SnapgridCenter
+    mode: PlaceFree
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/fan.rsi
+    drawdepth: SmallObjects
     state: icon
-    drawDepth: SmallObjects
-  - type: InteractionOutline
   - type: Physics
     bodyType: Static
-  - type: Transform
-    noRot: true
+  - type: Clickable
+  - type: Pullable
+  - type: Climbable
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.08,-0.08,0.08,0.08"
+          bounds: "-0.17,0,0.20,0.4"
+        density: 155
         mask:
-        - TabletopMachineMask
+        - MachineMask
         layer:
-        - TabletopMachineLayer
-        density: 200
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 100
-      behaviors:
-      - !type:DoActsBehavior
-        acts: ["Breakage"]
-      - !type:EjectVendorItems
-    - trigger:
-        !type:DamageTrigger
-        damage: 200
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-      - !type:PlaySoundBehavior
-        sound:
-          path: /Audio/Effects/metal_break1.ogg
+        - HalfWallLayer
