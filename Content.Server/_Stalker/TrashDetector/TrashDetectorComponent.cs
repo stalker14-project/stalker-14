@@ -1,15 +1,13 @@
-namespace Content.Server.TrashDetector.Components
+using Content.Server._Stalker.AdvancedSpawner;
+
+namespace Content.Server._Stalker.TrashDetector;
+
+[RegisterComponent]
+public sealed partial class TrashDetectorComponent : Component
 {
-    [RegisterComponent]
-    public sealed partial class TrashDetectorComponent : Component
-    {
-        [DataField]
-        public float SearchTime = 5;
+    [DataField] public float SearchTime { get; set; } = 5f;
 
-        [DataField]
-        public float Probability = 0.5f;
+    [DataField] public Dictionary<string, int> WeightModifiers { get; set; } = new();
 
-        [DataField]
-        public string Loot = "RandomTrashDetectorSpawner";
-    }
+    [DataField] public Dictionary<string, List<SpawnEntry>> ExtraPrototypes { get; set; } = new();
 }

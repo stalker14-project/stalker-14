@@ -28,7 +28,16 @@
   - type: Appearance
   - type: Occluder
     boundingBox: "-1.5,-1.0,1.4,-0.25"
-  - type: TrashSerchable
+  - type: TrashSearchable
+    timeBeforeNextSearch: 1
+    cooldownAfterSearch: 600
+    LootSpawner: "RandomTrashDetectorSpawner"
+    AllowedDetectors:
+    - "TrashDetectorTier1"
+    - "TrashDetectorTier2"
+    - "TrashDetectorTier3"
+    - "TrashDetectorTier4"
+    - "TrashDetectorTier5"
 
 - type: entity
   id: StalkerTrashPile2
@@ -60,4 +69,13 @@
   - type: Appearance
   - type: Occluder
     boundingBox: "-1.2,-1.2,1.2,0.6"
-  - type: TrashSerchable
+  - type: TrashSearchable
+    timeBeforeNextSearch: 1
+    cooldownAfterSearch: 600
+    LootSpawner: "RandomTrashDetectorSpawner"
+    AllowedDetectors:
+    - "TrashDetectorTier1"
+    - "TrashDetectorTier2"
+    - "TrashDetectorTier3"
+    - "TrashDetectorTier4"
+    - "TrashDetectorTier5"
