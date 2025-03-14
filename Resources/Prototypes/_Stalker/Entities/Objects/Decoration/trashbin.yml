@@ -7,7 +7,7 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/trashbin.rsi
-    state: base
+    state: green_tb
   - type: UserInterface
     interfaces:
         enum.StorageUiKey.Key:
@@ -56,3 +56,14 @@
               collection: MetalBreak
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+
+- type: entity
+  id: TrashBinBlue
+  parent: TrashBin
+  name: синяя урна
+  suffix: ST, Mapping
+  description: вы задавались вопросом сколько мусора ежегодно проходит через этих маленьких плохишей?
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/trashbin.rsi
+    state: blue_tb
