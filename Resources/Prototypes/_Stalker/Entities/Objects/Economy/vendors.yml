@@ -338,6 +338,8 @@
       dispenseOnHitThreshold: 2
       offState: off
       brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/military_lot_of_boxes.rsi
       layers:
@@ -359,6 +361,8 @@
   startingInventory:
     ArmyAK2Crate: 4
     ArmyAK1Crate: 2
+    ArmyAKC1Crate: 1
+    ArmyAKC2Crate: 1
 
 - type: entity
   parent: BaseItem
@@ -369,6 +373,7 @@
     - type: VendingMachineRestock
       canRestock:
         - MilitaryPSZInventory
+        - MilitaryPSZInventoryOfficer
     - type: STWeight
       self: 87.2
     - type: Item
@@ -397,6 +402,8 @@
       dispenseOnHitThreshold: 2
       offState: off
       brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/military_green_box.rsi
       layers:
@@ -417,7 +424,7 @@
   id: MilitaryPSZInventoryOfficer
   startingInventory:
     ArmyAKCOfficerCrate: 3
-    MilitaryPSZInventoryRestock: 5
+    MilitaryPSZInventoryRestock: 2
     Screwdriver: 1
 
 - type: entity
