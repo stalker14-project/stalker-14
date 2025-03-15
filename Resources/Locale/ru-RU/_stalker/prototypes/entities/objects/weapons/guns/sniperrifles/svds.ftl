@@ -1,0 +1,15 @@
+ent-STWeaponRifleSVDS = СВДС
+    .desc = Снайперская Винтовка Драгунова Складная, улучшенная версия СВД под тот же 7,62х54 с прицелом средней дальности.
+    .suffix = ST, Sniper
+ent-STWeaponRifleCovenantSVDS = СВДС Завета
+    .desc = Снайперская Винтовка Драгунова Складная Завета, улучшенная версия СВД под тот же 7,62x54 с прицелом средней дальности.
+    .suffix = ST, Sniper, Завет, Скин
+ent-STWeaponRifleSVDSGrass = СВДС маскировочный
+    .desc = Снайперская Винтовка Драгунова Складная, улучшенная версия СВД под тот же 7,62х54 с прицелом средней дальности. С камуфляжной сеткой и небольшим напиллингом.
+    .suffix = ST, Скин
+ent-STWeaponRifleSVU = СВУ
+    .desc = Снайперская Винтовка Укороченная, улучшенная версия СВД под тот же 7,62х54 с прицелом средней дальности.
+    .suffix = { ent-STWeaponRifleSVDSGrass.suffix }
+ent-STWeaponRifleSVUSera = СВУ серафимов
+    .desc = { ent-STWeaponRifleSVU.desc }
+    .suffix = { ent-STWeaponRifleSVDSGrass.suffix }

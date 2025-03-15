@@ -1,8 +1,8 @@
 - type: job
   id: Stalker
-  name: Одиночка
+  name: job-stalker
   icon: stalker
-  description: Это кочевая полуобъединенная группировка, которая просто живёт за счет Зоны, чтобы заработать немного монет на свою повседневную жизнь.
+  description: job-stalker-desc
   playTimeTracker: JobStalker
   whitelisted: false
   requirements:
@@ -32,7 +32,7 @@
     #   time: 1
     #   inverted: true
   startingGear: StalkerGear
-  supervisors: Вы работаете сами на себя
+  supervisors: job-stalker-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

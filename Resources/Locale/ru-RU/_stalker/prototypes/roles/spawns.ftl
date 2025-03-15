@@ -1,0 +1,14 @@
+ent-SpawnPointStalker = Сталкер Job Spawn
+    .suffix = Stalker
+ent-SpawnPointSci = Учёный Job Spawn
+    .suffix = { ent-SpawnPointStalker.suffix }
+ent-SpawnPointStalkerAnomalist = Аномалист Job Spawn
+    .suffix = { ent-SpawnPointStalker.suffix }
+ent-SpawnPointBand = Бандит Job Spawn
+    .suffix = { ent-SpawnPointStalker.suffix }
+ent-SpawnPointMilitary = Военный Job Spawn
+    .suffix = { ent-SpawnPointStalker.suffix }
+ent-SpawnPointNeutral = Нейтрал Job Spawn
+    .suffix = { ent-SpawnPointStalker.suffix }
+ent-SpawnPointPoisk = Поиск Job Spawn
+    .suffix = { ent-SpawnPointStalker.suffix }

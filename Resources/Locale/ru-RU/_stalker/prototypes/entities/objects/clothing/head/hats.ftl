@@ -1,0 +1,12 @@
+ent-ClothingHeadWildHat = wild hat
+    .desc = A hat for true adventure lovers.
+    .suffix = ST
+ent-ClothingHeadWildHatAnomalist = anomalist wild hat
+    .desc = A anomalists hat to jump through gravi.
+    .suffix = ST
+ent-ClothingHeadPilgrimDoctor = маска с клювом
+    .desc = Необычно выглядящяя шапка паломника.
+    .suffix = ST
+ent-ClothingHeadPsyHelm = psy helmet
+    .desc = A customized prototype developed by scientists to protect against psi radiation.
+    .suffix = ST, event
