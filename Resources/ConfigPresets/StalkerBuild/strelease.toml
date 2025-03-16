@@ -1,6 +1,6 @@
 [game]
-hostname = "☢️ S.T.A.L.K.E.R. Release."
-desc = "Server at S.T.A.L.K.E.R. setting.\nIn devlopment."
+hostname = "☢️S.T.A.L.K.E.R. [EN Test] ☣️"
+desc = "Server in S.T.A.L.K.E.R. setting. Now in English!"
 #map = "STWorld" # st-changes-dev-map
 map_pool = "STDefaultMapPool"  # st-changes-map-pool
 maxplayers = 80
@@ -37,8 +37,23 @@ punctuation = false
 [tts]
 enabled = false
 
+[database]
+# Database type to use. Can be "sqlite" or "postgres" currently.
+engine = "postgres"
+
+# Path to store the database at when using SQLite. Note that is NOT a disk path.
+# This is relative to the server data directory, which is specified by --data-dir when starting the server from the command (or automatically set by SS14.Watchdog)
+sqlite_dbpath = "preferences.db"
+
+# PostgreSQL database configuration, should be self explanatory.
+pg_host = "localhost"
+pg_port = 5432
+pg_database = "ss14"
+pg_username = "ss14user"
+pg_password = "Stalker"
+
 [infolinks]
-discord = "https://discord.gg/pu6DEPGjsN"
+discord = "https://discord.gg/SnUSV76zR3"
 patreon = "https://boosty.to/stalkerss14"
 
 [net]
@@ -49,8 +64,9 @@ receivebuffersize = 393213
 maxlinvelocity = 60.0
 
 [hub]
-advertise = false
-tags = "lang:ru,lang:en,rp:high,region:eu_e"
+advertise = true
+tags = "lang:en,rp:high,region:us_e"
+hub_urls = "https://hub.spacestation14.com/"
 
 [events]
 # Annoying
@@ -60,6 +76,9 @@ enabled = false
 #enabled = false
 #[procgen]
 #preload = false
+
+[console]
+login_host_user = "coolmankid12345"
 
 [crewmanifest]
 no_entity = false
