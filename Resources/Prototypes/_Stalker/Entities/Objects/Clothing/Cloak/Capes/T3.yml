@@ -373,45 +373,13 @@
     - Hair
 
 - type: entity
-  parent: STClothingCapeBase
+  parent: ClothingOuterCoatLoyalist
   id: ClothingOuterCoatChNKevlar
   name: небесно-голубой кевларовый плащ
   description: Плащ, модифицированный группировкой "Чистое Небо".
   suffix: ST, T3, Скин
   components:
-  - type: STWeight
-    self: 6
   - type: Sprite
     sprite: _Stalker/Clothing/cloak/ChN_kevlar_cape.rsi
   - type: Clothing
     sprite: _Stalker/Clothing/cloak/ChN_kevlar_cape.rsi
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
-        Heat: 0.9
-  - type: Storage
-    maxItemSize: Normal
-    grid:
-      - 0,2,0,3
-      - 0,-2,0,0
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 8,-2,8,0
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-  - type: Craftable
