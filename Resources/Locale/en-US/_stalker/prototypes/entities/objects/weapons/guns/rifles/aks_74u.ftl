@@ -1,0 +1,15 @@
+ent-STWeaponGunAKS74U = AKS-74U
+    .desc = The AK74 assault rifle was developed in the late 1970s and early 1980s to arm crews of combat vehicles, aircraft, gun crews, and paratroopers. Uses 5,45x39
+    .suffix = ST
+ent-STWeaponGunAKS74UTac = AKS-74U shortened. Uses 5.45x39
+    .desc = Shortened modification.
+    .suffix = ST, Skin
+ent-STWeaponGunAKS74UModifedTwo = AKS-74U type II, uses 5.45x39
+    .desc = Judging by the mark, this is the second revision of this sample. It looks like Shpagin's PP.
+    .suffix = { ent-STWeaponGunAKS74UTac.suffix }
+ent-STWeaponGunAKS74UModifedThree = AKS-74U type III, uses 5.45x39
+    .desc = Judging by the mark, this is the third revision of this sample.
+    .suffix = { ent-STWeaponGunAKS74UTac.suffix }
+ent-STWeaponGunAKS74UWhite = AKS-74U "Winter", uses 5.45x39
+    .desc = Slightly improved AKSU in white camouflage.
+    .suffix = { ent-STWeaponGunAKS74UTac.suffix }

@@ -1,0 +1,13 @@
+ent-OldWoodTable = old wooden table
+    .desc = This table was once a pride, but now it's an item that takes up a lot of space.
+    .suffix = ST, Mapping
+ent-OldBlackTable = old black table
+    .suffix = { ent-OldWoodTable.suffix }
+ent-OldStoneTable = old steel table
+    .suffix = { ent-OldWoodTable.suffix }
+ent-BiliardTableStalker = billiard table
+    .desc = Consists of a frame, tabletop, base of the playing surface, supports, sides, and pockets. Designed for playing billiards.
+    .suffix = { ent-OldWoodTable.suffix }
+ent-TableOneStalker = large table
+    .desc = { ent-OldWoodTable.desc }
+    .suffix = { ent-OldWoodTable.suffix }

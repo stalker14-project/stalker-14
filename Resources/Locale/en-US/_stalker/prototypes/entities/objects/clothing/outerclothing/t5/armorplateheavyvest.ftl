@@ -1,0 +1,14 @@
+ent-STClothingOuterArmorHeavyPlateVestBase = Heavy Body Armor
+    .suffix = ST, T5, PvP
+ent-STClothingOuterArmorLightPlateVestBaseHeavyMilitary = Citadel Military Body Armor
+    .desc = Heavy body armor type V, providing decent protection against most types of damage.
+ent-STClothingOuterArmorLightPlateVestBaseHeavyMonolith = Monolith Citadel Body Armor
+    .desc = Heavy body armor type V, providing decent protection against most types of damage.
+ent-STClothingOuterArmorLightPlateVestBaseHeavyBandit = Citadel Bandit Body Armor
+    .desc = A scrapped and repainted Type V heavy body armor that provides decent protection against most types of damage.
+ent-ClothingOuterArmorHeavyJaba = Toad Citadel Body Armor
+    .desc = Heavy body armor Type IV that provides sufficient protection against physical damage.
+ent-ClothingOuterArmorHeavyUNTAR = UNTAR-H Body Armor
+    .desc = Heavy body armor type V, providing decent protection against most types of damage.
+ent-ClothingOuterArmorHeavyDebt = Debt Citadel Body Armor
+    .desc = Type V heavy body armor, upgraded by Duty craftsmen, specifically for heavy skirmishes between factions.

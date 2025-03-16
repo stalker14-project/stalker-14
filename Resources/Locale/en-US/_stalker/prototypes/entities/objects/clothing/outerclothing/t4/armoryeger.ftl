@@ -1,0 +1,9 @@
+ent-ClothingOuterArmorYeger = Jaeger
+    .desc = Animalist-designed suit for fighting in anomalous zones. Due to the impregnation in the anomaly, it has excellent bullet resistance.
+    .suffix = ST, T4, Env
+ent-ClothingHeadHelmetYeger = Jaeger Helmet
+    .desc = Protects against anomalies and radiation, but definitely not against bullets.
+    .suffix = ST, T4
+ent-ClothingOuterArmorYegerFreedom = Kikimora costume
+    .desc = Kikimora's versatile costume is made by craftsmen from a variety of protective suits. Allows the wearer to feel comfortable in areas with abnormal activity. It has bullet protection. A camouflage net is sewn on top.
+ent-ClothingHeadHelmetYegerFreedom = Kikimora Helmet

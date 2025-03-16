@@ -1,0 +1,5 @@
+ent-Bullet45ACPLFMJ = bullet (.45 ACP Lasermatch FMJ magnum)
+ent-Bullet45ACPMFMJ = bullet (.45 ACP Match FMJ magnum)
+ent-Bullet45ACPHydroshock = bullet (.45 ACP Hydra-Shok magnum)
+ent-Bullet45ACPRIP = bullet (.45 ACP RIP magnum)
+ent-Bullet45ACPAP = bullet (.45 ACP AP magnum)

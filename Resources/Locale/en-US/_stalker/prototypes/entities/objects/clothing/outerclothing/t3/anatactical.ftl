@@ -1,0 +1,11 @@
+ent-STClothingOuterArmorLightPlateVestBaseANAgreen = Steppe-4 Armor Unloading
+    .desc = Reliable armor load of armor class 3, accommodating magazines of any size in fashionable swamp green.
+    .suffix = ST, T3, PvP
+ent-STClothingOuterArmorLightPlateVestBaseANAgray = Steppe-4 Armor Unload
+    .desc = Reliable armor load of armor class 3, accommodating magazines of any size, in stylish black.
+ent-STClothingOuterArmorLightPlateVestBaseANABlue = ANA Tactical 'Clear Sky'
+    .desc = Reliable armor load of armor class 3, accommodating magazines of any size.
+ent-STClothingOuterArmorLightPlateVestBaseANAUN = UN Steppe-4 Armored Unloading
+    .desc = Reliable armor load of armor class 3, accommodating magazines of any size.
+ent-STClothingOuterArmorLightPlateVestBaseANAPilgrim = Steppe-4 Armored Pilgrimage
+    .desc = Reliable armor load of armor class 3, accommodating magazines of any size, or a bible and censer

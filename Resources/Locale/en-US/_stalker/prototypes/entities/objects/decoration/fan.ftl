@@ -1,0 +1,3 @@
+ent-FanStalker = fan
+    .desc = A mechanical device for moving air or other gas (air pump) with a total head generated. It's amazing how it still works...
+    .suffix = ST, Mapping

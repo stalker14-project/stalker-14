@@ -1,0 +1,3 @@
+ent-STHeadLight = Headlamp
+    .desc = Put on the ear...
+    .suffix = ST
