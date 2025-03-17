@@ -1,3 +1,3 @@
-ent-SupplyTalons = талоны снабжения
-    .desc = Талоны снабжения Института.
+ent-SupplyTalons = Supply Talons
+    .desc = Institute Supply Coupons.
     .suffix = Stalker

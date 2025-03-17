@@ -1,3 +1,3 @@
-ent-Fangs = Клыки
-    .desc = Вырванные клыки из передних челюстей разных мутантов... Да только фанатик бы стал таким заниматься!
-    .suffix = ST, НЕ СПАВНИТЬ
+ent-Fangs = Fangs
+    .desc = Fangs torn out from the front jaws of various mutants... But a fanatic would do this!
+    .suffix = ST, DO NOT SPAWN

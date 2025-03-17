@@ -1,3 +1,3 @@
-ent-Dollar = доллар
-    .desc = Денежная единица США, одна из основных резервных валют мира.
+ent-Dollar = dollar
+    .desc = U.S. currency, one of the world's major reserve currencies.
     .suffix = Stalker

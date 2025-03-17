@@ -1,3 +1,3 @@
-ent-Roubles = рубли
-    .desc = Национальная валюта Российской Федерации. Интересный факт - 1 рубль равен 100 копейкам.
+ent-Roubles = roubles
+    .desc = National currency of the Russian Federation. An interesting fact is that 1 ruble is equal to 100 kopecks.
     .suffix = Stalker

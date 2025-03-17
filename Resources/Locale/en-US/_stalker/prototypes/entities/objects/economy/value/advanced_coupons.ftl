@@ -1,3 +1,3 @@
-ent-PremiumSupplyTalons = премиальные талоны снабжения
-    .desc = Талоны снабжения Института.
-    .suffix = ST, НЕ СПАВНИТЬ
+ent-PremiumSupplyTalons = Premium Supply Talons
+    .desc = Institute Supply Coupons.
+    .suffix = ST, DO NOT SPAWN
