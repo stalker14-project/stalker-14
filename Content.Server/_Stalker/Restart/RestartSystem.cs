@@ -54,10 +54,10 @@ public partial class RestartSystem : EntitySystem
             return;
 
         var delta = data.Comp.Time - _timing.CurTime;
-        _chat.DispatchServerAnnouncement($"Перезапуск сервера через: {Math.Round(delta.TotalMinutes, 1)} минут");
+        _chat.DispatchServerAnnouncement($"Restarting the server in: {Math.Round(delta.TotalMinutes, 1)} minutes");
         if (delta < _teleportDelay)
         {
-            _chat.DispatchServerAnnouncement($"Вы можете использовать команду home для быстрого возврата в Чистилище");
+            _chat.DispatchServerAnnouncement($"You can use the home command to quickly return to spawn");
         }
 
         data.Comp.IntervalLast = _timing.CurTime + data.Comp.IntervalDelay;
@@ -66,7 +66,7 @@ public partial class RestartSystem : EntitySystem
     public void StartRestart(TimeSpan delay)
     {
         var data = GetData();
-        _chat.DispatchServerAnnouncement($"Запущен авто-рестарт сервера через: {Math.Round(delay.TotalMinutes, 1)} минут");
+        _chat.DispatchServerAnnouncement($"Launched auto-restart of the server in: {Math.Round(delay.TotalMinutes, 1)} minutes");
 
         data.Comp.Time = _timing.CurTime + delay;
         data.Comp.IntervalLast = _timing.CurTime + data.Comp.IntervalDelay;
