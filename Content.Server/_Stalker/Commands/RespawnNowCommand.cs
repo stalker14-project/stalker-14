@@ -55,11 +55,11 @@ public sealed class RespawnNowCommand : IConsoleCommand
 
         if (player.AttachedEntity == null)
             return;
-        if (entityManager.TryGetComponent(player.AttachedEntity, out GhostComponent? _))
+        /*if (entityManager.TryGetComponent(player.AttachedEntity, out GhostComponent? _))
         {
             shell.WriteLine("You cannot respawnnow from ghost");
             return;
-        }
+        }*/
 
         if (!playerMgr.TryGetSessionById(player.UserId, out var targetPlayer))
         {
@@ -98,7 +98,7 @@ public sealed class RespawnNowCommand : IConsoleCommand
         {
             if (MComponent.EntityPrototype != null)
             {
-                if (MComponent.EntityPrototype.ID == "HeadHuman")
+                if (MComponent.EntityPrototype.ID == "HeadHuman" || entityManager.TryGetComponent(player.AttachedEntity, out GhostComponent? _))
                 {
                     shell.WriteLine("Respawning from head...");
 
