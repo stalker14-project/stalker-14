@@ -6,11 +6,22 @@
   description: .desc
   components:
   - type: STWeight
-    self: -100
+    self: 10
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/cloak/exoskelet_science.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/exoskelet_science.rsi
-  - type: ClothingSpeedModifier
-    sprintModifier: 0.5
+  - type: STPoweredExoskeleton
+    OverloadChange: 150
+    MaximumChange: 200
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
 
