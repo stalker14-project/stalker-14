@@ -14,7 +14,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "http://178.156.140.40:27690/" # TODO: Point stalkers14.xyz to the same IP
+ROBUST_CDN_URL = "http://178.156.140.40:27690/fork/stalker_eng" # TODO: Point stalkers14.xyz to the same IP
 
 def main():
     session = requests.Session()
