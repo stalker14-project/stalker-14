@@ -1,1 +1,1 @@
-ent-STClothingHeadTinfoilBlueprint = Рецепт шапочки из фольги
+ent-STClothingHeadTinfoilBlueprint = Foil Hat Recipe

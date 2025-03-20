@@ -9,6 +9,16 @@ repository-ui-search-clear-button = Clear
 repository-misc-category = ETC
 repository-user-category = Your items
 repository-all-category = All
+repository-crafting-category = Materials
+repository-artifact-category = Artifacts
+repository-equipment-category = Equipment
+repository-armor-category = Armor
+repository-detectors-cateogry = Detectors
+repository-money-category = Money
+repository-tools-category = Tools
+repository-cartridges-category = Cartridges
+repository-magazines-category = Magazines
+repository-weapons-category = Weapons
 
 # Items
 repository-item-name-display = Name: { $name }

@@ -1,2 +1,2 @@
-ent-ClothingHeadAssaultHelmetBlueprint = Рецепт штурмового шлема
-ent-STClothingHeadHelmetMakeshiftTacticalT3Blueprint = Рецепт кустарного шлема
+ent-ClothingHeadAssaultHelmetBlueprint = Assault Helmet Recipe
+ent-STClothingHeadHelmetMakeshiftTacticalT3Blueprint = Homemade Helmet Recipe

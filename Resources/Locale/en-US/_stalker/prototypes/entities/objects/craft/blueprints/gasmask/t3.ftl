@@ -1,1 +1,1 @@
-ent-STGasMaskM50Blueprint = Рецепт противогаза M50
+ent-STGasMaskM50Blueprint = M50 Gas Mask Recipe

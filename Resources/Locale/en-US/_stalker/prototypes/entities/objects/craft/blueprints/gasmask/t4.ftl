@@ -1,2 +1,2 @@
-ent-STGasMaskM51Blueprint = Рецепт противогаза M51
-ent-STGasMaskGP21lueprint = Рецепт противогаза ГП-21
+ent-STGasMaskM51Blueprint = M51 Gas Mask Recipe
+ent-STGasMaskGP21lueprint = GP21 Gas Mask Recipe

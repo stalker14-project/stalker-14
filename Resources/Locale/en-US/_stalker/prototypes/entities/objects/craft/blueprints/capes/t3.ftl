@@ -1,1 +1,1 @@
-ent-STClothingCapeCoatReinforcedBlueprint = Рецепт укреплённого плаща
+ent-STClothingCapeCoatReinforcedBlueprint = Reinforced Coat Recipe

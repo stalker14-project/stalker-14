@@ -29,7 +29,7 @@ job-head-dolg = leader of duty
 job-head-dolg-desc = Defender of humanity.
 job-head-dolg-supervisor = You command other Duty units.
 
-job-freedom = freedom fighter
+job-freedom = Freedom Fighter
 job-freedom-desc = Zone Defender.
 job-freedom-supervisor = Kuri, protect the Zone and ignore authority.
 job-head-freedom = Ataman
@@ -40,7 +40,7 @@ job-journalist = Journalist
 job-journalist-desc = Zone Bulletins.
 job-journalist-supervisor = You are subordinate to the editorial board and the UN...
 
-job-mercenary = mercenary
+job-mercenary = Mercenary
 job-mercenary-desc = Adventurers and thugs from all over the world.
 job-mercenary-supervisor = A well-planned operation with excellent preparation is the key to your success.
 job-head-mercenary = Mercenary Commander
@@ -50,11 +50,11 @@ Job-Head-Mercenary-Supervisor = You coordinate tactical operations, ensure effec
 job-military-stalker = Voenstal
 job-military-stalker-desc = Soldiers who have undergone special training after the experience of service in the Zone, or stalkers who have signed a contract with the army.
 job-military-stalker-supervisor = You will endure and suffer, Victoria cruenta
-job-military = military
+job-military = Military
 job-military-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any persons.
 job-military-head = Garrison Commander
 job-military-head-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any persons.
-job-military-officer = military commander
+job-military-officer = Military commander
 job-military-officer-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any person.
 job-military-supervisor = You report to your superiors.
 
@@ -69,7 +69,7 @@ job-neutral-stalker-supervisor = You obey your leader
 job-postulant = Pilgrim
 job-postulant-desc = Novice in a monastic order
 job-postulant-supervisor = You obey everyone above you in the hierarchy
-job-bishop = bishop
+job-bishop = Bishop
 job-bishop-desc = head of the monastic order
 job-bishop-supervisor = You are subject only to our Lord God
 
@@ -88,15 +88,15 @@ job-project-orchestrator = project orchestrator
 job-project-orchestrator-desc = Secret X
 job-project-orchestrator-supervisor = You manage the entire "Project" Algorithm, your responsibility is to direct your "Project" to the right place.
 
-job-renegade = renegade
+job-renegade = Renegade
 job-renegade-desc = Just some kind of degenerate.
 job-renegade-supervisor = "."
 
-job-scientist = scientist
+job-scientist = Scientist
 job-scientist-desc = The main goal is to study all aspects of the Site, using scientific methods to further explain what the Site is and its purpose.
 job-issg = SSGI Operative
 job-issg-desc = Following the orders of the institute is your everything.
-job-head-scientist = lead scientist
+job-head-scientist = Lead Scientist
 job-head-scientist-desc = The main goal is to study all aspects of the Site, using scientific methods to further explain what the Site is and its purpose.
 job-scientist-supervisor = You report to the senior staff member and the Institute.
 

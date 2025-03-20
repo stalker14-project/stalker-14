@@ -1,1 +1,1 @@
-ent-STClothingCapeArmorChainmailSevaBlueprint = Рецепт плаща Сева
+ent-STClothingCapeArmorChainmailSevaBlueprint = Seva Cloak Recipe

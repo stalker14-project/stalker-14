@@ -1,3 +1,3 @@
-ent-ClothingHeadHelmetBulatMilitaryBlueprint = Рецепт шлема «Сфера-12» военных
-ent-ClothingHeadHelmetUlachBlueprint = Рецепт шлема улач
-ent-ClothingHeadHelmetRatnikBlueprint = Рецепт шлема 6Б47
+ent-ClothingHeadHelmetBulatMilitaryBlueprint = Military Helmet "Sphere-12" Recipe
+ent-ClothingHeadHelmetUlachBlueprint = Ulach Helmet Recipe
+ent-ClothingHeadHelmetRatnikBlueprint = 6B47 Helmet Recipe

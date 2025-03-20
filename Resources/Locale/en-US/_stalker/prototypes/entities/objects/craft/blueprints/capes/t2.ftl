@@ -1,2 +1,2 @@
-ent-ClothingOuterCoatBolotniyBlueprint = Рецепт болотного плаща
-ent-ClothingOuterCoatKolchygaBlueprint = Рецепт плаща Кольчуга
+ent-ClothingOuterCoatBolotniyBlueprint = Swamp Cloak Recipe
+ent-ClothingOuterCoatKolchygaBlueprint = Kolchuga Cloak Recipe

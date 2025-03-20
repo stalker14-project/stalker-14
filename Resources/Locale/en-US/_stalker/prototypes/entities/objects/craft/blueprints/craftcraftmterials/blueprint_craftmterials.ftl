@@ -1,1 +1,1 @@
-ent-STCraftLinenFabricT1Blueprint = Рецепт Т1 ткани
+ent-STCraftLinenFabricT1Blueprint = T1 Fabric Recipe

@@ -1,2 +1,2 @@
-ent-ClothingOuterCoatPahanBlueprint = Рецепт плаща пахана
-ent-ClothingOuterCoatPoiskBlueprint = Рецепт плаща Поиска
+ent-ClothingOuterCoatPahanBlueprint = Pahan's Cloak Recipe
+ent-ClothingOuterCoatPoiskBlueprint = Search Cloak Recipe

@@ -1,4 +1,4 @@
-ent-TrashDetectorTier2Blueprint = Рецепт металлоискатель "Копатель"
-ent-TrashDetectorTier3Blueprint = Рецепт металлоискатель "Шахтёр"
-ent-TrashDetectorTier4Blueprint = Рецепт металлоискатель "Находка"
-ent-TrashDetectorTier5Blueprint = Рецепт металлоискатель "Аномалист"
+ent-TrashDetectorTier2Blueprint = Metal Detector "Digger" Recipe
+ent-TrashDetectorTier3Blueprint = Metal Detector "Miner" Recipe
+ent-TrashDetectorTier4Blueprint = Metal Detector "Finder" Recipe
+ent-TrashDetectorTier5Blueprint = Metal Detector "Anomalist" Recipe
