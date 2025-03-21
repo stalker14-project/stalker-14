@@ -384,3 +384,20 @@
     sprite: _Stalker/Objects/Clothing/cloak/coat_Ret.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/coat_Ret.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterCoatRetHat
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingOuterCoatRetHat
+  name: Воротник
+  description: просто Воротник.
+  suffix: ST, Скин
+  components:
+  - type: Sprite
+    sprite: _Stalker/Clothing/Head/Hats/Ret4hat.rsi
+  - type: Clothing
+    sprite: _Stalker/Clothing/Head/Hats/Ret4hat.rsi
