@@ -5,49 +5,46 @@
     Blunt: 2
     Slash: 4
     Piercing: 0.35
-    Heat: 3
-    Cold: 3
+    Heat: 0.2
+    Cold: 0.2
     Poison: 0
     Cellular: 0
     Radiation: 0
-    Caustic: 0
-    Compression: 20 #to make boars die from fucking anoms
+    Caustic: 0.2
+    Compression: 5
     Psy: 0
     Mutant: 1
   flatReductions:
-    Piercing: 2
     Blunt: 5
 
 - type: damageModifierSet
   id: CloneMutant
   class: 0
   coefficients:
-    Blunt: 5
-    Slash: 5
-    Piercing: 1
-    Heat: 0
-    Cold: 0
+    Heat: 0.2
+    Cold: 0.2
     Poison: 0
     Cellular: 0
     Radiation: 0
-    Caustic: 0
-    Compression: 20 #to make boars die from fucking anoms
+    Caustic: 0.2
+    Compression: 5
     Psy: 0
     Mutant: 1
+  flatReductions:
+    Blunt: 29
+    Slash: 29
 
 - type: damageModifierSet
   id: STMutantBoarDamageModifierSet
   class: 0
   coefficients:
-    Blunt: 0.1
-    Slash: 0.1
-    Heat: 0
-    Cold: 0
+    Heat: 0.2
+    Cold: 0.2
     Poison: 0
     Cellular: 0
     Radiation: 0
-    Caustic: 0
-    Compression: 0
+    Caustic: 0.2
+    Compression: 5
     Psy: 0
     Mutant: 1
   flatReductions:

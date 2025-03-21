@@ -11,7 +11,7 @@ namespace Content.Shared._Stalker.Jumpscare
         public float AttackRadius = 6f;
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float AttackDistance = 0.1f;
+        public float AttackDistance = 1.5f;
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float JumpDistance = 7f;

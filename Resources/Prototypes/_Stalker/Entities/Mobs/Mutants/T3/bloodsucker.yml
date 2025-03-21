@@ -5,12 +5,36 @@
   suffix: ST, T3
   description: A humanoid mutant with abilities beyond the biological capabilities of earthly species.
   components:
+    - type: HTN
+      rootTask:
+        task: STBloodsuckerCompound
+      blackboard:
+        VisionRadius: !type:Single
+          25
+        AggroVisionRadius: !type:Single
+          15
     - type: Butcherable
       spawned:
         - id: MutantPartBloodsuckerTentacles
+          maxAmount: 1
+          prob: 0.9
         - id: CraftHideBloodSucker
           maxAmount: 1
           prob: 0.30
+        - id: MutantPartBloodsuckerHead
+          prob: 0.05
+          maxAmount: 1
+    - type: NPCBloodsucker
+      stunTime: 2
+      damageOnSuck:
+        types:
+          Bloodloss: 17
+        ModifyBloodLevel: -30
+      healOnSuck:
+        groups:
+          Brute: -258
+          Burn: -258
+        ModifyBloodLevel: 133
     - type: DamageStateVisuals
       states:
         Alive:
@@ -56,7 +80,7 @@
       footstepSoundCollection:
         path: /Audio/_Stalker/Mutants/bloodsucker_breath2.ogg
         params:
-          volume: -8
+          volume: -999999
     - type: MobThresholds
       thresholds:
         0: Alive
@@ -79,25 +103,26 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Blunt: 40
-          Bloodloss: 5
+          Blunt: 35
+          Slash: 15
+          Bloodloss: 7
     - type: MovementSpeedModifier
-      baseWalkSpeed: 3
-      baseSprintSpeed: 4
+      baseWalkSpeed: 2.3
+      baseSprintSpeed: 5.6
     - type: SlowOnDamage
       speedModifierThresholds:
-        200: 0.7
+        250: 0.9
     - type: Sprite
       layers:
         - map: ["enum.DamageStateVisualLayers.Base"]
           state: bloodsucker
           sprite: /Textures/_Stalker/Mobs/Mutants/bloodsucker.rsi
-          scale: 1.2, 1.2
+          scale: 1.22, 1.22
     - type: StaminaDamageOnHit
-      damage: 10
+      damage: 13
     - type: Stealth
     - type: StealthOnMove
-      passiveVisibilityRate: 1
-      movementVisibilityRate: -0.4
+      passiveVisibilityRate: 0.5
+      movementVisibilityRate: -0.7
     - type: STWeight
-      self: 100
+      self: 96

@@ -1,0 +1,254 @@
+- type: htnCompound
+  id: STBloodsuckerCompound
+  branches:
+    - tasks:
+      - !type:HTNCompoundTask
+        task: STBloodsuckerMeleeCombatCompound
+    
+    - tasks:
+      - !type:HTNCompoundTask
+        task: STBloodsuckerRoarRestoreCompound
+
+      - !type:HTNCompoundTask
+        task: IdleCompound
+
+- type: htnCompound
+  id: STBloodsuckerMeleeCombatCompound
+  branches:
+    - tasks:
+      - !type:HTNPrimitiveTask
+        operator: !type:UtilityOperator
+          proto: NearbyMeleeTargets
+
+      - !type:HTNCompoundTask
+        task: STBloodsuckerRoarCompound
+   
+      - !type:HTNCompoundTask
+        task: STBloodsuckerMeleeAttackTargetCompound
+
+- type: htnCompound
+  id: STBloodsuckerRoarRestoreCompound
+  preconditions:
+    - !type:KeyBoolEqualsPrecondition
+      key: Roared
+      value: true
+  branches:
+    - tasks:
+      - !type:HTNPrimitiveTask
+        operator: !type:SetBoolOperator
+          targetKey: Roared
+          value: false
+
+- type: htnCompound
+  id: STBloodsuckerRoarCompound
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: Target
+    - !type:KeyBoolEqualsPrecondition
+      key: Roared
+      value: false
+  branches:
+    - tasks:
+
+      - !type:HTNPrimitiveTask
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetFloatOperator
+          targetKey: AttackDelay
+          amount: 0.3
+
+      - !type:HTNPrimitiveTask
+        operator: !type:WaitOperator
+          key: AttackDelay
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: AttackDelay
+
+      - !type:HTNPrimitiveTask
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetFloatOperator
+          targetKey: AttackDelay
+          amount: 0.3
+
+      - !type:HTNPrimitiveTask
+        operator: !type:WaitOperator
+          key: AttackDelay
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: AttackDelay
+
+      - !type:HTNPrimitiveTask
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetFloatOperator
+          targetKey: AttackDelay
+          amount: 0.3
+
+      - !type:HTNPrimitiveTask
+        operator: !type:WaitOperator
+          key: AttackDelay
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: AttackDelay
+
+      - !type:HTNPrimitiveTask
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetFloatOperator
+          targetKey: AttackDelay
+          amount: 0.3
+
+      - !type:HTNPrimitiveTask
+        operator: !type:WaitOperator
+          key: AttackDelay
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: AttackDelay
+
+      - !type:HTNPrimitiveTask
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetFloatOperator
+          targetKey: AttackDelay
+          amount: 0.3
+
+      - !type:HTNPrimitiveTask
+        operator: !type:WaitOperator
+          key: AttackDelay
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: AttackDelay
+
+      - !type:HTNPrimitiveTask
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetFloatOperator
+          targetKey: AttackDelay
+          amount: 0.3
+
+      - !type:HTNPrimitiveTask
+        operator: !type:WaitOperator
+          key: AttackDelay
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: AttackDelay
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetBoolOperator
+          targetKey: Roared
+          value: true
+
+- type: htnCompound
+  id: STBloodsuckerMeleeAttackTargetCompound
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: Target
+  branches:
+    - tasks:
+      - !type:HTNPrimitiveTask
+        operator: !type:MoveToOperator
+          shutdownState: PlanFinished
+          pathfindInPlanning: true
+          removeKeyOnFinish: false
+          targetKey: TargetCoordinates
+          pathfindKey: TargetPathfind
+          rangeKey: MeleeRange
+
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:MeleeOperator
+          targetKey: Target
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: Target
+          - !type:TargetInRangePrecondition
+            targetKey: Target
+            rangeKey: MeleeRange
+          - !type:KeyBoolEqualsPrecondition
+             key: Roared
+             value: true
+        services:
+          - !type:UtilityService
+            id: MeleeService
+            proto: NearbyMeleeTargets
+            key: Target
+
+      - !type:HTNPrimitiveTask
+        operator: !type:JukeOperator
+          jukeType: AdjacentTile
+
+      - !type:HTNPrimitiveTask
+        operator: !type:SetBoolOperator
+          targetKey: Roared
+          value: false

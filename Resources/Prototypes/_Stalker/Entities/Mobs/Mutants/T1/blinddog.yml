@@ -12,7 +12,9 @@
         task: STBlindDogCompound
       blackboard:
         VisionRadius: !type:Single
-          15.0
+          20
+        AggroVisionRadius: !type:Single
+          10
     - type: Butcherable
       spawned:
         - id: MutantPartBlindDogTail
