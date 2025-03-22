@@ -17,6 +17,8 @@ public partial class RestartSystem : EntitySystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
     private ISawmill _sawmill = default!;
+    private readonly HashSet<string> _usedHomeCommand = new();
+
 
     private readonly TimeSpan _updateDelay = TimeSpan.FromSeconds(60f);
     private readonly TimeSpan _teleportDelay = TimeSpan.FromMinutes(5f);
@@ -68,7 +70,7 @@ public partial class RestartSystem : EntitySystem
 
         data.Comp.Time = _timing.CurTime + delay;
         data.Comp.IntervalLast = _timing.CurTime + data.Comp.IntervalDelay;
-
+        _usedHomeCommand.Clear();
         _updateTime = TimeSpan.Zero;
     }
 
@@ -104,6 +106,16 @@ public partial class RestartSystem : EntitySystem
             return;
         }
 
+        var uid = session.UserId.ToString();
+
+        if (_usedHomeCommand.Contains(uid))
+        {
+            var message = $"Телепортация возможнa только один раз";
+            shell.WriteError(message);
+            _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} пытался повторно телепортироваться в чистилище");
+            return;
+        }
+
         var transformSystem = _entityManager.System<SharedTransformSystem>();
         var targetCoords = new EntityCoordinates(spawn.Owner, Vector2.Zero);
 
@@ -111,6 +123,7 @@ public partial class RestartSystem : EntitySystem
         transformSystem.AttachToGridOrMap(session.AttachedEntity.Value);
         _sawmill.Info($"{session.AttachedEntity.Value.Id} {session.Name} телепортировался в Чистилище");
         shell.WriteLine("Успешная телепортация");
+        _usedHomeCommand.Add(uid);
     }
 
     private Entity<RestartComponent> GetData()

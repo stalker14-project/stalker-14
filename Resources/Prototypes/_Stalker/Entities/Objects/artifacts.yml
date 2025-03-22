@@ -41,12 +41,17 @@
     maxItemSize: Normal
     grid:
     - 0,0,1,1
+  - type: Clothing
+    quickEquip: true
+    slots:
+      - ARTIFACT
   - type: RadiationBlockingContainer
     resistance: 2
   - type: SuppressArtifactContainer
   - type: Sprite
     sprite: _Stalker/Objects/Misc/artcontainers.rsi
     state: old
+    scale: 0.5, 0.5
 
 - type: entity
   name: продвинутый контейнер для артефактов
@@ -54,10 +59,17 @@
   id: BoxArtcont1
   description: Вмещает в себя до 3 штук артефактов и полностью блокирует их свойства. Улучшенная кустарно версия, которую достаточно сложно найти.
   components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,5,1
   - type: Storage
     maxItemSize: Normal
     grid:
     - 0,0,5,1
+    whitelist:
+      tags:
+        - STArtifact
   - type: PersonalDamageBlock
   - type: RadiationBlockingContainer
     resistance: 5
@@ -65,6 +77,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/artcontainers.rsi
     state: new
+
 
 # Артефакты 32x32
 

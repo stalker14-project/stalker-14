@@ -9,8 +9,6 @@ public partial class RestartSystem
 {
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
 
-    private readonly HashSet<string> _usedHomeCommand = new();
-
     private void InitializeCommands()
     {
         _consoleHost.RegisterCommand(
@@ -49,12 +47,6 @@ public partial class RestartSystem
         if (shell.Player == null)
             return;
 
-        string playerId = shell.Player.UserId.ToString();
-
-        if (_usedHomeCommand.Contains(playerId))
-            return;
-
         TpToPurgatory(shell);
-        _usedHomeCommand.Add(playerId);
     }
 }

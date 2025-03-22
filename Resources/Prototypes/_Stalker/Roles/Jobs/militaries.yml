@@ -71,7 +71,7 @@
 
 - type: job
   id: MilitaryHead
-  name: Глава Военных
+  name: Начальник Гарнизона
   icon: army
   description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobHeadMilitary
@@ -84,7 +84,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: MilitaryGear
+  startingGear: MilitaryGearHead
   supervisors: Вы подчиняетесь старшим по званию.
   canBeAntag: false
   special:
@@ -105,7 +105,7 @@
 
 - type: job
   id: MilitaryOfficer
-  name: Офицер Военных
+  name: Командир Военных
   icon: army
   description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobOfficerMilitary
@@ -118,7 +118,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: MilitaryGear
+  startingGear: MilitaryGearOfficer
   supervisors: Вы подчиняетесь старшим по званию.
   canBeAntag: false
   special:
@@ -135,23 +135,25 @@
 - type: startingGear
   id: MilitaryGear
   equipment:
-    id: MilitaryPDA
-    belt: ClothingBeltStorageWaistbag
-    legs: ClothingLegsJeansGreenCargo
-    torso: ClothingTorsoTurtlenecksMilitary
+    legs: ClothingLegsBoxersMilitary
+    torso: ClothingTorsoTankMilitary
     shoes: ClothingShoesPortyanki
-    head: STClothingHeadTinfoil
+
+- type: startingGear
+  id: MilitaryGearOfficer
+  equipment:
+    id: MilitaryPDA
+    legs: ClothingLegsBoxersMilitary
+    torso: ClothingTorsoTankMilitary
+    shoes: ClothingShoesPortyanki
 
 - type: startingGear
   id: MilitaryGearHead
   equipment:
     id: MilitaryPDA
-    belt: ClothingBeltAssault
-    legs: ClothingLegsJeansGreenCargo
-    torso: ClothingTorsoTurtlenecksMilitary
+    legs: ClothingLegsBoxersMilitary
+    torso: ClothingTorsoTankMilitary
     shoes: ClothingShoesPortyanki
-    head: STClothingHeadTinfoil
-    pocket1: STJobMilitaryIDCard
 
 - type: startingGear
   id: MilitarySpecGear
@@ -161,18 +163,3 @@
     legs: ClothingLegsJeansGreenCargo
     torso: ClothingTorsoTurtlenecksMilitary
     shoes: ClothingShoesBootsCombatFilled
-
-- type: startingGear
-  id: OksopSpecOps
-  equipment:
-    id: MilitaryPDA
-    belt: ClothingBeltMercWebbingStalker
-    mask: ClothingMaskNeckBalaklava3
-    back: ClothingBackpackDuffelCommonStalker
-    legs: ClothingLegsJeansGreenCargo
-    torso: ClothingTorsoTurtlenecksMilitary
-    shoes: ClothingShoesBootsCombat
-    outerarmor: STClothingOuterArmorLightPlateVestBaseHeavyMilitary
-    pocket1: 739Mag75
-    pocket2: 739Mag75
-    suitstorage: STWeaponRifleStalkerAK103

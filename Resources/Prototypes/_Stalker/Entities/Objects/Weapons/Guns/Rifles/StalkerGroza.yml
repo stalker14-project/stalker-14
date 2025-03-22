@@ -3,29 +3,34 @@
   suffix: ST
   parent: STBaseWeaponRifle
   id: WeaponRifleStalkerGroza545
-  description: Представляет собой вариант автомата ОЦ-12 (в свою очередь созданного на базе АКС74У), выполненный по схеме булл-пап. Эта модификация под калибр 5.45 - наиболее распространённый в Зоне.
+  description: Представляет собой вариант автомата ОЦ-12 , выполненный по схеме булл-пап. Эта модификация под калибр 5.45 - наиболее распространённый в Зоне.
   components:
     - type: STWeight
-      self: 2.7
+      self: 3.5
     - type: Clothing
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/groza.rsi
-      equipDelay: 2
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/groza.rsi
-      size: Large
-      shape:
-        - 0,0,5,1
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/groza.rsi
     - type: Gun
+      fireRate: 6
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/groza_shot.ogg
+        params:
+            volume: -2
       projectileSpeed: 30
-      minAngle: 42
-      maxAngle: 72
+      minAngle: 50
+      maxAngle: 90
       angleIncrease: 3
-      angleDecay: 30
-      fireRate: 5
+      angleDecay: 15
+      shotsPerBurst: 3
+      ShotsPerBurstModified: 3
+      selectedMode: Burst
+      availableModes:
+        - Burst
+        - SemiAuto
+        - FullAuto
       soundRack:
         path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
     - type: ItemSlots

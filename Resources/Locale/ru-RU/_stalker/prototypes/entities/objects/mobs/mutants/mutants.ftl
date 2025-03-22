@@ -30,3 +30,4 @@ ent-MobMutantPseudodog = псевдопёс
 ent-MobMutantOraclesBrown = оракул
     .desc = Беги!
     .suffix = { ent-BaseMobMutant.suffix }
+action-bloodsucker-sucks-blood = валит жертву на пол, начиная высасывать кровь

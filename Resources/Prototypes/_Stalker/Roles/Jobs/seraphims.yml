@@ -20,8 +20,9 @@
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-          psy: 20
+          psy: 50
         - type: PsyonicsActionLight
+        - type: PsyonicsActionSmoke
         - type: Bands
           band: Stalker
           bandIcon: seraphim
@@ -71,8 +72,10 @@
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-          psy: 50
+          psy: 75
         - type: PsyonicsActionLight
+        - type: PsyonicsActionGrab
+        - type: PsyonicsActionSmoke
         - type: Access
           tags:
             - Seraphims

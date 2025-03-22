@@ -6,7 +6,7 @@
   description: Немецкая винтовка СИГ под 5.56.
   components:
   - type: STWeight
-    self: 4.1
+    self: 3.5
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
   - type: Sprite
@@ -19,10 +19,18 @@
       path: /Audio/_Stalker/Effects/Guns/scar.ogg
       params:
         volume: -2
+    projectileSpeed: 30
     minAngle: 50
     maxAngle: 90
     angleIncrease: 3
     angleDecay: 15
+    shotsPerBurst: 3
+    ShotsPerBurstModified: 3
+    selectedMode: Burst
+    availableModes:
+      - Burst
+      - SemiAuto
+      - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -53,3 +61,62 @@
         whitelist:
           tags:
             - Cartridge556
+
+- type: entity
+  name: SigXI 739
+  suffix: ST, Skin
+  parent: STBaseWeaponRifle
+  id: STWeaponRifleSigSniper
+  description: Немецкая винтовка СИГ, модифицированная в карабин под советский 7.62х39
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sigsniper.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sigsniper.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sigsniper.rsi
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/sks_shoot.ogg
+      params:
+        volume: 0
+    projectileSpeed: 35
+    minAngle: 44
+    maxAngle: 120
+    angleIncrease: 5
+    angleDecay: 45
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base739Mag10
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine739
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSight
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge739
