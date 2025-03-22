@@ -1,0 +1,26 @@
+- type: entity
+  id: bushCurtains
+  parent: BaseCurtains
+  suffix: ST, Mapping
+  name: Шторы
+  description: Старые шторы со знакомым узором.
+  components:
+   - type: Sprite
+     snapCardinals: true
+     sprite: _Stalker/Objects/Decoration/bush_curtain.rsi
+     layers:
+     - state: closed
+       map: ["enum.DoorVisualLayers.Base"]
+
+- type: entity
+  id: bushCurtainsOpen
+  parent: bushCurtains
+  suffix: ST, Mapping
+  name: Шторы (Открытые)
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Physics
+    canCollide: false
