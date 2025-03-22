@@ -1,4 +1,4 @@
-﻿using Content.Shared._Stalker.Shop.Prototypes;
+using Content.Shared._Stalker.Shop.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Store;
 using Robust.Shared.Prototypes;
@@ -26,7 +26,8 @@ public sealed class ShopUpdateState : BoundUserInterfaceState
     public readonly List<CategoryInfo>? SponsorCategories;
     public readonly List<CategoryInfo>? ContribCategories;
     public readonly List<CategoryInfo>? PersonalCategories;
-
+    public readonly bool IsBarter;
+    public readonly Dictionary<string, int>? BarterRequirements;
     public ShopUpdateState(
         int balance,
         string moneyId,
@@ -35,7 +36,9 @@ public sealed class ShopUpdateState : BoundUserInterfaceState
         List<CategoryInfo>? sponsorCategories,
         List<CategoryInfo>? contribCategories,
         List<CategoryInfo>? personalCategories,
-        List<ListingData> userItems)
+        List<ListingData> userItems,
+        bool isBarter,
+        Dictionary<string, int>? barterRequirements)
     {
         Balance = balance;
         MoneyId = moneyId;
@@ -45,6 +48,8 @@ public sealed class ShopUpdateState : BoundUserInterfaceState
         ContribCategories = contribCategories;
         PersonalCategories = personalCategories;
         UserItems = userItems;
+        IsBarter = isBarter;
+        BarterRequirements = barterRequirements;
     }
 }
 [Serializable, NetSerializable]

@@ -65,16 +65,24 @@ public sealed partial class ShopMenu : DefaultWindow
         _moneyId = moneyId ?? _moneyId;
         _locMoneyName = locMoneyName ?? _locMoneyName;
 
-        // Captialize first letter
-        var displayname =
-            string.Concat(_locMoneyName[0].ToString().ToUpper(), _locMoneyName.AsSpan(1));
+        var displayName = !string.IsNullOrEmpty(_locMoneyName)
+            ? string.Concat(
+                char.ToUpper(_locMoneyName[0]),
+                _locMoneyName.Length > 1 ? _locMoneyName.Substring(1) : "")
+            : "Unknown Currency";
 
-        var balanceStr = Loc.GetString("store-ui-balance-display", ("amount", balance),
-            ("currency", displayname));
+        var balanceStr = Loc.GetString("store-ui-balance-display",
+            ("amount", balance),
+            ("currency", displayName));
+
         BalanceInfo.SetMarkup(balanceStr.TrimEnd());
     }
 
-    public void UpdateListing(List<CategoryInfo> categories, List<ListingData> userItems)
+    public void UpdateListing(
+        List<CategoryInfo> categories,
+        List<ListingData> userItems,
+        bool isBarter,
+        Dictionary<string, int>? barterRequirements)
     {
         var listings = new List<ListingData>();
         foreach (var el in categories)
@@ -90,15 +98,17 @@ public sealed partial class ShopMenu : DefaultWindow
             listings.AddRange(userItems);
         }
 
-        // Linq, fuck...
         var sorted = listings.OrderBy(l => l.Priority).ThenBy(l => l.OriginalCost.Values.Sum());
-
-        // TODO: should probably chunk these out instead. to-do if this clogs the internet tubes. maybe read clients prototypes instead?
         ClearListings();
 
         foreach (var item in sorted)
         {
-            AddListingGui(item, CurrentCategory == UserCategory);
+            AddListingGui(
+                item,
+                sell: CurrentCategory == UserCategory,
+                isBarter: isBarter,
+                barterRequirements: barterRequirements
+            );
         }
     }
 
@@ -109,7 +119,11 @@ public sealed partial class ShopMenu : DefaultWindow
     #endregion
 
     #region ListingsOperations
-    private void AddListingGui(ListingData listing, bool sell = false)
+    private void AddListingGui(
+        ListingData listing,
+        bool sell = false,
+        bool isBarter = false,
+        Dictionary<string, int>? barterRequirements = null)
     {
         var listingName = Loc.GetString(listing.Name ?? "");
         var listingDesc = Loc.GetString(listing.Description ?? "");
@@ -150,7 +164,30 @@ public sealed partial class ShopMenu : DefaultWindow
             canBuy = false;
         }
 
-        var newListing = new ShopListingControl(listingName, listingDesc, listingInStock, canBuy, sell, texture, listingCount);
+        if (isBarter && barterRequirements != null)
+        {
+            canBuy = true;
+        }
+        else
+        {
+            canBuy = !sell && CanBuyListing(_balance, listingPrice.Values.First());
+        }
+
+        // Создаём текст цены/бартера
+        string priceText = isBarter
+            ? FormatBarterText(barterRequirements)
+            : GetListingPriceString(listing);
+
+        var newListing = new ShopListingControl(
+            listingName,
+            listingDesc,
+            priceText,
+            canBuy,
+            sell,
+            texture,
+            listingCount
+        );
+
         newListing.ShopItemButton.OnButtonDown += (args) =>
         {
             if (!sell)
@@ -271,4 +308,20 @@ public sealed partial class ShopMenu : DefaultWindow
         public CategoryInfo? CategoryInfo;
     }
     #endregion
+    private string GetItemName(string prototypeId)
+{
+    if (_prototypeManager.TryIndex<EntityPrototype>(prototypeId, out var proto))
+        return Loc.GetString(proto.Name);
+    return prototypeId;
+}
+
+    private string FormatBarterText(Dictionary<string, int>? requirements)
+    {
+        if (requirements == null)
+            return string.Empty;
+
+        return string.Join(", ", requirements.Select(r =>
+            $"{r.Value}x {GetItemName(r.Key)}"
+        ));
+    }
 }
