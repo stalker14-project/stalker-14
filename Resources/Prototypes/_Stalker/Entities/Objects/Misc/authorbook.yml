@@ -7,3 +7,27 @@
   components:
     - type: Paper
       content: book-text-cooking-stalker
+
+- type: entity
+  parent: BookBase
+  id: STArtGuide
+  name: book-text-artguide-stalker.name
+  description: book-text-artguide-stalker.desc
+  suffix: book-text-artguide-stalker.suffix
+  components:
+    - type: Paper
+      content: book-text-artguide-stalker
+      stampState: paper_stamp-trader
+      stampedBy:
+      - stampedName: Студентка
+        stampedColor: "#dfb2f4"
+    - type: Sprite
+      sprite: Objects/Misc/books.rsi
+      layers:
+        - state: paper
+        - state: cover_old
+          color: "#8e795c"
+        - state: decor_wingette
+          color: "#453827"
+        - state: icon_stars
+    
