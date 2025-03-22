@@ -1,2 +1,2 @@
-ent-STReinforcedWindow = reinforced window
-    .suffix = ST, Mapping
+ent-STReinforcedWindow = усиленное окно
+    .desc = Не запачкай стекло.

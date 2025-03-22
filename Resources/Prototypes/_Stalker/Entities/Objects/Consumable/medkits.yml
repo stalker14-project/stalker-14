@@ -51,12 +51,18 @@
   - type: Stack
     stackType: STBrutepack
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: brutepack
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: brutepack
 
 - type: stack
   id: STBrutepack
   name: набор от ушибов
   icon:
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
   spawn: STBrutepack
   maxCount: 10
@@ -97,12 +103,18 @@
   - type: Stack
     stackType: STOintment
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: ointment
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: ointment
 
 - type: stack
   id: STOintment
   name: мазь
   icon:
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Stalker/Objects/medicine.rsi
     state: ointment
   spawn: STOintment
   maxCount: 10
@@ -155,6 +167,12 @@
   - type: Stack
     stackType: STGauze
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
 
 - type: stack
   id: STGauze

@@ -624,21 +624,6 @@
     repositoryWeight: 2500
 # Repository for Poisk - End
 
-# Repository for Project - Start
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandProjectRepository
-  suffix: 2000
-  name: Band-Project-Repository
-  description: Band-MilitaryStalker-Repository-desc
-  components:
-  - type: AccessReader
-    access: [["Project"]]
-  - type: StalkerBandTeleport
-    portalName: _PortalBandProjectRepository
-    repositoryWeight: 2000
-# Repository for Poisk - End
-
 # Repository for Monolith - Start
 - type: entity
   parent: BandRepositoryBase

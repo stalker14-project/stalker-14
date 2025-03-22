@@ -48,7 +48,7 @@
   id: ClothingHeadPsyHelm
   name: psy helmet
   description: A customized prototype developed by scientists to protect against psi radiation.
-  suffix: ST, event
+  suffix: ST
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/psyhelm.rsi
@@ -62,3 +62,27 @@
     modifiers:
       flatReductions:
         Psy: 5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: STClothingHeadTankHelm
+  name: tank helmet
+  description: Just an worn tank helmet. Nothing more.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/tank_helmet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/tank_helmet.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: STClothingHeadUshanka
+  name: ushanka hat
+  description: Just an worn ushanka hat. Nothing more.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/ushanka.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/ushanka.rsi
