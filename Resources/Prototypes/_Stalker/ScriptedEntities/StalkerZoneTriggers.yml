@@ -57,13 +57,14 @@
           layer:
             - WallLayer
           hard: false
+
 # Pacif
 - type: entity
   id: StalkerPaciTriggerIn
   parent: MarkerBase
   name: Включение пацифизма
   description: Transports you to a linked destination!
-  suffix: Stalker
+  suffix: ST
   components:
     - type: Sprite
       layers:
@@ -88,7 +89,8 @@
     - type: StalkerPacifiedZone
       Pacified: true
     - type: STAnomalyGeneratorSpawnBlocker
-      size: 10
+      size: 5
+
 - type: entity
   id: StalkerPaciTriggerOut
   name: Выключение пацифизма
@@ -158,7 +160,7 @@
   name: Выход из сейфзоны
   description: Transports you to a linked destination!
   parent: MarkerBase
-  suffix: Stalker
+  suffix: ST
   components:
     - type: AddOrDelOnCollideSafeZone
       MustAdd: false
@@ -184,3 +186,28 @@
           hard: false
     - type: StalkerPacifiedZone
       Pacified: false
+
+# Renegate
+- type: entity
+  id: STRenegadePacifiedIn
+  parent: StalkerPaciTriggerIn
+  name: включение пацифизма ренегат
+  suffix: ST, Renegade
+  components:
+    - type: AccessReader
+      access: [["Renegat"]]
+    - type: StalkerPacifiedZone
+      Pacified: true
+      reader: true
+
+- type: entity
+  id: STRenegadePacifiedOut
+  name: выключение пацифизма ренегат
+  parent: StalkerPaciTriggerOut
+  suffix: ST, Renegade
+  components:
+    - type: AccessReader
+      access: [["Renegat"]]
+    - type: StalkerPacifiedZone
+      Pacified: false
+      reader: true
