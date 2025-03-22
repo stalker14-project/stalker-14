@@ -12,10 +12,12 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/exoskelet_science.rsi
   - type: STPoweredExoskeleton
-    OverloadChange: 150
-    MaximumChange: 200
+    OverloadChange: 1500
+    MaximumChange: 2000
   - type: PowerCellSlot
     cellSlotId: cell_slot
+  - type: PowerCellDraw
+    drawRate: 2
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
