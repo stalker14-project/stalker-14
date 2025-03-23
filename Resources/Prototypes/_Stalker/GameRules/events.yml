@@ -1,10 +1,11 @@
 - type: entity
   parent: BaseGameRule
   id: AnomalyExplosion
+  categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      earliestStart: 1
-      reoccurrenceDelay: 7
+      earliestStart: 30
+      reoccurrenceDelay: 100
       duration: 325
     - type: AnomalyExplosionRule
       damage:
