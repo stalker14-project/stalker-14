@@ -16,5 +16,8 @@ public sealed class ShopPresetPrototype : IPrototype
 
     [DataField("categories")]
     public List<ShopPresetCategory> Categories = new();
+
+    [DataField("itemsForSale")]
+    public Dictionary<string, int> SellingItems = new();
 }
 

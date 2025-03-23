@@ -8,6 +8,8 @@ using Content.Shared._Stalker.Shop.Prototypes;
 using Content.Shared.Store;
 using System.Linq;
 using Content.Shared.FixedPoint;
+using Content.Server.Store.Components;
+using Content.Shared.Popups;
 
 namespace Content.Server._Stalker.Shop;
 
@@ -18,6 +20,7 @@ public sealed class ShopSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
     {
@@ -97,39 +100,50 @@ public sealed class ShopSystem : EntitySystem
 
     private void OnSellRequest(EntityUid uid, ShopComponent shop, ShopRequestSellMessage msg)
     {
+        if (!_proto.TryIndex<ShopPresetPrototype>(shop.ShopPreset, out var preset))
+            return;
+
+        var currencyProto = shop.Currencies.FirstOrDefault();
+
+        if (!preset.SellingItems.TryGetValue(msg.ProductId, out var pricePerItem))
+        {
+            _popup.PopupEntity("item-not-buying", uid);
+            return;
+        }
+
         var items = GetContainedItems(msg.Actor)
             .Where(e => MetaData(e).EntityPrototype?.ID == msg.ProductId)
             .Take(msg.Count)
             .ToList();
 
         if (items.Count < msg.Count)
+        {
+            _popup.PopupEntity("not-enought-items-for-sale", uid);
             return;
+        }
 
         foreach (var item in items)
-            Del(item);
+            QueueDel(item);
 
-        var currency = shop.Currencies.FirstOrDefault();
-        var totalValue = msg.PricePerItem * msg.Count;
-        _currency.AddCurrency(msg.Actor, currency, totalValue);
+        var totalValue = pricePerItem * msg.Count;
+        _currency.AddCurrency(msg.Actor, currencyProto, totalValue);
 
         UpdateShopUi(uid, msg.Actor, shop);
     }
 
     private void UpdateShopUi(EntityUid shopUid, EntityUid user, ShopComponent shop)
     {
-        var balances = _currency.GetBalances(user, shop.Currencies); // TODO tryBalance not exists
         var userListings = GetUserListings(user);
 
         var state = new ShopUpdateState(
-            balances,
-            shop.Categories.Values.ToList(),
-            null, // TODO sponsor
-            null, // TODO contrib
-            null, // TODO personal
-            userListings
+            categories: shop.Categories.Values.ToList(),
+            sponsorCategories: null, // todo sponsor
+            contribCategories: null, // todo contrib
+            personalCategories: null, // todo personal
+            userListings: userListings
         );
 
-        _ui.TrySetUiState(shopUid, ShopUiKey.Key, state); // TODO ui state updates here 
+        _ui.TrySetUiState(shopUid, ShopUiKey.Key, state);
     }
 
     private List<EntityUid> GetContainedItems(EntityUid uid)

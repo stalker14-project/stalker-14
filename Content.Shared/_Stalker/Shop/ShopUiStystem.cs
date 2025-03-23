@@ -10,7 +10,6 @@ namespace Content.Shared._Stalker.Shop;
 [Serializable, NetSerializable]
 public sealed class ShopUpdateState : BoundUserInterfaceState
 {
-    public readonly Dictionary<string, int> Balances;
     public readonly List<ShopCategory> Categories;
     public readonly List<ShopCategory>? SponsorCategories;
     public readonly List<ShopCategory>? ContribCategories;
@@ -18,14 +17,12 @@ public sealed class ShopUpdateState : BoundUserInterfaceState
     public readonly List<ListingData> UserListings;
 
     public ShopUpdateState(
-        Dictionary<string, int> balances,
         List<ShopCategory> categories,
         List<ShopCategory>? sponsorCategories,
         List<ShopCategory>? contribCategories,
         List<ShopCategory>? personalCategories,
         List<ListingData> userListings)
     {
-        Balances = balances;
         Categories = categories;
         SponsorCategories = sponsorCategories;
         ContribCategories = contribCategories;
@@ -50,12 +47,12 @@ public sealed class ShopRequestBuyMessage : BoundUserInterfaceMessage
 [Serializable, NetSerializable]
 public sealed class ShopRequestSellMessage : BoundUserInterfaceMessage
 {
-    public ListingData ListingToSell;
-    public int Count;
+    public string ProductId { get; }
+    public int Count { get; }
 
-    public ShopRequestSellMessage(ListingData listingData, int count = 1)
+    public ShopRequestSellMessage(string productId, int count)
     {
-        ListingToSell = listingData;
+        ProductId = productId;
         Count = count;
     }
 }
