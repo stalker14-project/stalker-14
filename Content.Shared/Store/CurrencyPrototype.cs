@@ -37,4 +37,35 @@ public sealed partial class CurrencyPrototype : IPrototype
     /// </summary>
     [DataField("canWithdraw")]
     public bool CanWithdraw { get; private set; } = true;
+
+    [DataField("entity", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string EntityId { get; } = string.Empty;
+
+
+    // stalker-changes-start
+    /// <summary>
+    /// Display name for UI
+    /// </summary>
+    [DataField("name")]
+    public string Name { get; } = string.Empty;
+
+    /// <summary>
+    /// Icon to display in shop interface
+    /// </summary>
+    [DataField("icon")]
+    public string Icon { get; } = string.Empty;
+
+    /// <summary>
+    /// Can this currency be used for purchases?
+    /// </summary>
+    [DataField("canBuy")]
+    public bool CanBuy { get; } = true;
+
+    /// <summary>
+    /// Can this currency be received from sales?
+    /// </summary>
+    [DataField("canSell")]
+    public bool CanSell { get; } = true;
+
+    // stalker-changes-end
 }

@@ -12,7 +12,7 @@ public sealed class ShopPresetPrototype : IPrototype
     public string ID { get; } = default!;
 
     [DataField("currencies")]
-    public HashSet<ProtoId<STCurrencyPrototype>> Currencies = new();
+    public HashSet<ProtoId<CurrencyPrototype>> Currencies = new();
 
     [DataField("categories")]
     public List<ShopPresetCategory> Categories = new();

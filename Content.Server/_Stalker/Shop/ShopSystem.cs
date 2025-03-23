@@ -31,12 +31,15 @@ public sealed class ShopSystem : EntitySystem
         if (!_proto.TryIndex<ShopPresetPrototype>(component.ShopPreset, out var preset))
             return;
 
+        // Получаем первую валюту из списка
+        var mainCurrency = component.Currencies.FirstOrDefault();
+
         component.Categories = preset.Categories
             .Select(c => new ShopCategory(
                 c.Id,
                 c.Name,
                 c.Priority,
-                GenerateListings(c.Items, component.Currencies)
+                GenerateListings(c.Items, mainCurrency)
             ))
             .ToDictionary(c => c.Id);
     }

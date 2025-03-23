@@ -4,6 +4,7 @@ using Content.Shared.Stacks;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared._Stalker.Shop.Prototypes;
 using Content.Shared.FixedPoint;
+using Content.Shared.Store;
 
 namespace Content.Server._Stalker.Shop;
 
@@ -15,7 +16,7 @@ public sealed class STCurrencySystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
 
 
-    public bool TryDeductCurrencies(EntityUid uid, IReadOnlyDictionary<ProtoId<STCurrencyPrototype>, FixedPoint2> costs)
+    public bool TryDeductCurrencies(EntityUid uid, IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> costs)
     {
         foreach (var (currencyProto, amount) in costs)
         {
@@ -24,7 +25,7 @@ public sealed class STCurrencySystem : EntitySystem
         }
         return true;
     }
-    public bool TryDeductCurrency(EntityUid uid, ProtoId<STCurrencyPrototype> currencyProto, int amount)
+    public bool TryDeductCurrency(EntityUid uid, ProtoId<CurrencyPrototype> currencyProto, int amount)
     {
         var totalFound = 0;
         var toRemove = new List<EntityUid>();
