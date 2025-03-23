@@ -7,32 +7,41 @@ namespace Content.Server._Stalker.PacifiedZone;
 
 public sealed class StalkerPacifiedZoneSystem : EntitySystem
 {
-    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+
+    [Dependency] private readonly AccessReaderSystem _access = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<StalkerPacifiedZoneComponent, StartCollideEvent>(HandleCollision);
+
+        SubscribeLocalEvent<StalkerPacifiedZoneComponent, StartCollideEvent>(OnCollideStalkerPacifiedZone);
     }
 
-    private void HandleCollision(EntityUid zoneUid, StalkerPacifiedZoneComponent zoneComponent, ref StartCollideEvent args)
+    private void OnCollideStalkerPacifiedZone(EntityUid uid, StalkerPacifiedZoneComponent component, ref StartCollideEvent args)
     {
-        var entity = args.OtherEntity;
-        if (entity == EntityUid.Invalid)
+        var target = args.OtherEntity;
+
+        if (target == EntityUid.Invalid)
             return;
 
-        if (!TryComp(entity, out StrapComponent? strap))
+        if (!TryComp(target, out StrapComponent? strap))
         {
-            RemComp<StrapComponent>(entity);
+            RemComp<StrapComponent>(target);
             return;
         }
 
-        if (zoneComponent.Reader && _accessReader.IsAllowed(entity, args.OurEntity))
+        if (component.Reader && _access.IsAllowed(args.OtherEntity, args.OurEntity))
             return;
 
-        if (zoneComponent.Pacified)
-            EnsureComp<PacifiedComponent>(entity);
+        if (component.Pacified)
+        {
+            EnsureComp<PacifiedComponent>(target);
+        }
         else
-            RemComp<PacifiedComponent>(entity);
+        {
+            RemComp<PacifiedComponent>(target);
+        }
+
     }
+
 }
