@@ -16,4 +16,7 @@ public sealed partial class ShopComponent : Component
 
     [DataField("categories")]
     public Dictionary<string, ShopCategory> Categories = new();
+
+    [ViewVariables]
+    public BoundUserInterface? UserInterface;
 }

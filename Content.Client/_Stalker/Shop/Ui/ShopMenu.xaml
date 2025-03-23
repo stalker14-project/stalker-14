@@ -1,4 +1,4 @@
-﻿<DefaultWindow
+<DefaultWindow
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'shop-ui-default-title'}"
@@ -6,11 +6,7 @@
     SetSize="847 622">
     <BoxContainer Orientation="Vertical" VerticalExpand="True">
         <BoxContainer Orientation="Horizontal" Margin="4,4,4,4">
-            <RichTextLabel
-                Name="BalanceInfo"
-                HorizontalAlignment="Left"
-                Access="Public"
-                HorizontalExpand="True"/>
+            <Control HorizontalExpand="True"/>
             <Button
                 Name="RefreshButton"
                 MinWidth="64"
@@ -19,32 +15,42 @@
         </BoxContainer>
         <PanelContainer VerticalExpand="True">
             <PanelContainer.PanelOverride>
-                <gfx:StyleBoxFlat BackgroundColor="#000000FF" />
+                <gfx:StyleBoxFlat
+                    BackgroundColor="#1A1A1AFF"
+                    BorderColor="#404040FF"
+                    BorderThickness="1" />
             </PanelContainer.PanelOverride>
             <BoxContainer Orientation="Horizontal" VerticalExpand="True">
-                <PanelContainer VerticalExpand="True">
+                <PanelContainer
+                    VerticalExpand="True"
+                    MinSize="200 0"
+                    HorizontalExpand="False">
                     <PanelContainer.PanelOverride>
-                        <gfx:StyleBoxFlat BackgroundColor="#80808005" />
+                        <gfx:StyleBoxFlat
+                            BackgroundColor="#0F0F0FFF"
+                            BorderColor="#404040FF"
+                            BorderThickness="0 0 1 0"/>
                     </PanelContainer.PanelOverride>
-                    <BoxContainer Name="CategoryListContainer" Orientation="Vertical">
-                        <!--  Category buttons are added here by code  -->
-                    </BoxContainer>
+                    <ScrollContainer
+                        HScrollEnabled="False"
+                        VerticalExpand="True">
+                        <BoxContainer
+                            Name="CategoryListContainer"
+                            Orientation="Vertical"
+                            SeparationOverride="2"/>
+                    </ScrollContainer>
                 </PanelContainer>
+
                 <ScrollContainer
                     Name="StoreListingsScroll"
                     HScrollEnabled="False"
-                    HorizontalExpand="True"
-                    MinSize="100 256"
-                    SizeFlagsStretchRatio="2"
-                    VerticalExpand="True">
+                    VerticalExpand="True"
+                    HorizontalExpand="True">
                     <BoxContainer
                         Name="StoreListingsContainer"
-                        MinSize="100 256"
                         Orientation="Vertical"
-                        SizeFlagsStretchRatio="2"
-                        VerticalExpand="True">
-                        <!--  Listings are added here by code  -->
-                    </BoxContainer>
+                        SeparationOverride="4"
+                        Margin="4,4,4,4"/>
                 </ScrollContainer>
             </BoxContainer>
         </PanelContainer>

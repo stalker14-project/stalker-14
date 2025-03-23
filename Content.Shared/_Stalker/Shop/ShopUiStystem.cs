@@ -32,6 +32,14 @@ public sealed class ShopUpdateState : BoundUserInterfaceState
 }
 
 [Serializable, NetSerializable]
+public sealed class ShopRequestUpdateInterfaceMessage : BoundUserInterfaceMessage
+{
+    public ShopRequestUpdateInterfaceMessage()
+    {
+    }
+}
+
+[Serializable, NetSerializable]
 public sealed class ShopRequestBuyMessage : BoundUserInterfaceMessage
 {
     public string CategoryId;

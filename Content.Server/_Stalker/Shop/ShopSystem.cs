@@ -1,4 +1,3 @@
-using Content.Server.Hands.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -8,8 +7,8 @@ using Content.Shared._Stalker.Shop.Prototypes;
 using Content.Shared.Store;
 using System.Linq;
 using Content.Shared.FixedPoint;
-using Content.Server.Store.Components;
 using Content.Shared.Popups;
+using Content.Shared.UserInterface;
 
 namespace Content.Server._Stalker.Shop;
 
@@ -24,19 +23,33 @@ public sealed class ShopSystem : EntitySystem
 
     public override void Initialize()
     {
+        base.Initialize();
+
+        SubscribeLocalEvent<ShopComponent, BeforeActivatableUIOpenEvent>(BeforeUIOpen);
         SubscribeLocalEvent<ShopComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<ShopComponent, ShopRequestBuyMessage>(OnBuyRequest);
         SubscribeLocalEvent<ShopComponent, ShopRequestSellMessage>(OnSellRequest);
+        SubscribeLocalEvent<ShopComponent, ShopRequestUpdateInterfaceMessage>(OnRequestUpdate);
+
     }
+
+    private void OnRequestUpdate(EntityUid uid, ShopComponent component, ShopRequestUpdateInterfaceMessage args)
+    {
+        UpdateShopUi(GetEntity(args.Entity), args.Actor, component);
+    }
+
+    private void BeforeUIOpen(EntityUid uid, ShopComponent component, BeforeActivatableUIOpenEvent args)
+    {
+        UpdateShopUi(uid, args.User, component);
+    }
+
 
     private void OnInit(EntityUid uid, ShopComponent component, ComponentInit args)
     {
-        if (!_proto.TryIndex<ShopPresetPrototype>(component.ShopPreset, out var preset))
+        if (!_proto.TryIndex(component.ShopPreset, out ShopPresetPrototype? preset))
             return;
 
-        // Получаем первую валюту из списка
         var mainCurrency = component.Currencies.FirstOrDefault();
-
         component.Categories = preset.Categories
             .Select(c => new ShopCategory(
                 c.Id,
@@ -133,24 +146,27 @@ public sealed class ShopSystem : EntitySystem
 
     private void UpdateShopUi(EntityUid shopUid, EntityUid user, ShopComponent shop)
     {
+        if (shop.UserInterface == null)
+            return;
+
         var userListings = GetUserListings(user);
 
         var state = new ShopUpdateState(
-            categories: shop.Categories.Values.ToList(),
-            sponsorCategories: null, // todo sponsor
-            contribCategories: null, // todo contrib
-            personalCategories: null, // todo personal
-            userListings: userListings
+            shop.Categories.Values.ToList(),
+            null,
+            null,
+            null,
+            userListings
         );
 
-        _ui.TrySetUiState(shopUid, ShopUiKey.Key, state);
+        _ui.SetUiState(shopUid, ShopUiKey.Key, state);
     }
 
     private List<EntityUid> GetContainedItems(EntityUid uid)
     {
         return _container.GetAllContainers(uid)
             .SelectMany(c => c.ContainedEntities)
-            .ToList();
+            .ToList();  
     }
 
     private List<ListingData> GetUserListings(EntityUid uid)

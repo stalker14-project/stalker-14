@@ -2,6 +2,7 @@ using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Store;
 
@@ -38,34 +39,33 @@ public sealed partial class CurrencyPrototype : IPrototype
     [DataField("canWithdraw")]
     public bool CanWithdraw { get; private set; } = true;
 
-    [DataField("entity", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-    public string EntityId { get; } = string.Empty;
-
 
     // stalker-changes-start
+    [DataField("entity", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    public string EntityId { get; private set; } = string.Empty;
     /// <summary>
     /// Display name for UI
     /// </summary>
     [DataField("name")]
-    public string Name { get; } = string.Empty;
+    public string Name { get; private set; } = string.Empty;
 
     /// <summary>
     /// Icon to display in shop interface
     /// </summary>
     [DataField("icon")]
-    public string Icon { get; } = string.Empty;
+    public string Icon { get; private set; } = string.Empty;
 
     /// <summary>
     /// Can this currency be used for purchases?
     /// </summary>
     [DataField("canBuy")]
-    public bool CanBuy { get; } = true;
+    public bool CanBuy { get; private set; } = true;
 
     /// <summary>
     /// Can this currency be received from sales?
     /// </summary>
     [DataField("canSell")]
-    public bool CanSell { get; } = true;
+    public bool CanSell { get; private set; } = true;
 
     // stalker-changes-end
 }

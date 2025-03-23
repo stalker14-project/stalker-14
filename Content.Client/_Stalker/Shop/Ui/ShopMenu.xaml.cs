@@ -4,6 +4,7 @@ using Content.Client.Actions;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Message;
 using Content.Client.Store.Ui;
+using Content.Shared._Stalker.Shop;
 using Content.Shared._Stalker.Shop.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Store;
@@ -74,7 +75,7 @@ public sealed partial class ShopMenu : DefaultWindow
         BalanceInfo.SetMarkup(balanceStr.TrimEnd());
     }
 
-    public void UpdateListing(List<CategoryInfo> categories, List<ListingData> userItems)
+    public void UpdateListing(List<ShopCategory> categories, List<ListingData> userItems)
     {
         var listings = new List<ListingData>();
         foreach (var el in categories)
@@ -82,7 +83,7 @@ public sealed partial class ShopMenu : DefaultWindow
             if (el.Name != CurrentCategory)
                 continue;
 
-            listings.AddRange(el.ListingItems);
+            listings.AddRange(el.Listings);
         }
 
         if (CurrentCategory == UserCategory)
@@ -225,7 +226,7 @@ public sealed partial class ShopMenu : DefaultWindow
     #endregion
 
     #region CategoryControls
-    public void PopulateStoreCategoryButtons(List<CategoryInfo> categories, List<ListingData> items)
+    public void PopulateStoreCategoryButtons(List<ShopCategory> categories, List<ListingData> items)
     {
         var allCategories = categories;
 
@@ -244,10 +245,10 @@ public sealed partial class ShopMenu : DefaultWindow
             var catButton = new ShopCategoryButton
             {
                 Text = Loc.GetString(category.Name),
-                CategoryInfo = category,
+                ShopCategory = category,
             };
 
-            catButton.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, catButton.CategoryInfo.Name);
+            catButton.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, catButton.ShopCategory.Name);
             CategoryListContainer.AddChild(catButton);
         }
 
@@ -255,20 +256,21 @@ public sealed partial class ShopMenu : DefaultWindow
         var youCategory = new ShopCategoryButton
         {
             Text = Loc.GetString("shop-your-items-category"),
-            CategoryInfo = new CategoryInfo
-            {
-                Items = new Dictionary<string, int>(),
-                Name = UserCategory
-            }
+            ShopCategory = new ShopCategory(
+                id: "user_sell",
+                name: UserCategory,
+                priority: 1000,
+                listings: new List<ListingData>()
+            )
         };
 
-        youCategory.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, youCategory.CategoryInfo.Name);
+        youCategory.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, youCategory.ShopCategory.Id);
         CategoryListContainer.AddChild(youCategory);
     }
 
     private sealed class ShopCategoryButton : Button
     {
-        public CategoryInfo? CategoryInfo;
+        public ShopCategory? ShopCategory;
     }
     #endregion
 }
