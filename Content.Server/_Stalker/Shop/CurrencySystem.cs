@@ -3,6 +3,7 @@ using Robust.Shared.Prototypes;
 using Content.Shared.Stacks;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared._Stalker.Shop.Prototypes;
+using Content.Shared.FixedPoint;
 
 namespace Content.Server._Stalker.Shop;
 
@@ -14,7 +15,7 @@ public sealed class STCurrencySystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
 
 
-    public bool TryDeductCurrencies(EntityUid uid, IReadOnlyDictionary<ProtoId<CurrencyPrototype>, FixedPoint2> costs)
+    public bool TryDeductCurrencies(EntityUid uid, IReadOnlyDictionary<ProtoId<STCurrencyPrototype>, FixedPoint2> costs)
     {
         foreach (var (currencyProto, amount) in costs)
         {
