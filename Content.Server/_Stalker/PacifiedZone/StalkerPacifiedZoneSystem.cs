@@ -1,36 +1,38 @@
-﻿using Content.Shared.CombatMode.Pacification;
-using Robust.Server.GameObjects;
+using Content.Shared.CombatMode.Pacification;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Player;
+using Content.Shared.Access.Systems;
+using Content.Shared.Buckle.Components;
 
 namespace Content.Server._Stalker.PacifiedZone;
 
 public sealed class StalkerPacifiedZoneSystem : EntitySystem
 {
+    [Dependency] private readonly AccessReaderSystem _accessReader = default!;
+
     public override void Initialize()
     {
         base.Initialize();
-
-        SubscribeLocalEvent<StalkerPacifiedZoneComponent, StartCollideEvent>(OnCollideStalkerPacifiedZone);
+        SubscribeLocalEvent<StalkerPacifiedZoneComponent, StartCollideEvent>(HandleCollision);
     }
 
-    private void OnCollideStalkerPacifiedZone(EntityUid uid, StalkerPacifiedZoneComponent component, ref StartCollideEvent args)
+    private void HandleCollision(EntityUid zoneUid, StalkerPacifiedZoneComponent zoneComponent, ref StartCollideEvent args)
     {
-        if (!TryComp(args.OtherEntity, out ActorComponent? actor))
+        var entity = args.OtherEntity;
+        if (entity == EntityUid.Invalid)
             return;
 
-        if (actor.PlayerSession.AttachedEntity == null)
-            return;
-
-        if (component.Pacified)
+        if (!TryComp(entity, out StrapComponent? strap))
         {
-            EnsureComp<PacifiedComponent>(actor.PlayerSession.AttachedEntity.Value);
+            RemComp<StrapComponent>(entity);
+            return;
         }
+
+        if (zoneComponent.Reader && _accessReader.IsAllowed(entity, args.OurEntity))
+            return;
+
+        if (zoneComponent.Pacified)
+            EnsureComp<PacifiedComponent>(entity);
         else
-        {
-            RemComp<PacifiedComponent>(actor.PlayerSession.AttachedEntity.Value);
-        }
-
+            RemComp<PacifiedComponent>(entity);
     }
-
 }

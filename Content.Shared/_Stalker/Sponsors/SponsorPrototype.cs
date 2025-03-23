@@ -1,4 +1,5 @@
-﻿using Content.Shared._Stalker.Shop.Prototypes;
+using Content.Shared._Stalker.Shop;
+using Content.Shared._Stalker.Shop.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stalker.Sponsors;
@@ -17,7 +18,7 @@ public sealed class SponsorPrototype : IPrototype
     public Dictionary<int, List<EntProtoId>> RepositorySponsorItems = new();
 
     [DataField(serverOnly: true)]
-    public Dictionary<string, List<CategoryInfo>> PersonalShopCategories = new();
+    public Dictionary<string, List<ShopCategory>> PersonalShopCategories = new();
 
     [DataField]
     public List<EntProtoId> ContribItems = new();

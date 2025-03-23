@@ -1,34 +1,22 @@
-using Content.Shared._Stalker.Shop.Prototypes;
 using Robust.Shared.Prototypes;
+using Content.Shared._Stalker.Shop.Prototypes;
+using Content.Shared._Stalker.Shop;
+using Content.Shared.Store;
 
 namespace Content.Shared._Stalker.Shop;
 
 [RegisterComponent]
 public sealed partial class ShopComponent : Component
 {
-    /// <summary>
-    /// Id of currency the shop using right now
-    /// This will influence on item the shop is trying to find in player's inventory
-    /// </summary>
-    [DataField]
-    public string MoneyId = "Roubles";
+    [DataField("currencies")]
+    public HashSet<ProtoId<CurrencyPrototype>> Currencies = new();
 
-    [DataField("shopPresetId")]
-    public string ShopPresetPrototype = "DebugShopPreset";
+    [DataField("shopPreset")]
+    public ProtoId<ShopPresetPrototype> ShopPreset = default!;
 
-    [DataField("permitId")]
-    public EntProtoId? Permit = default!;
+    [DataField("categories")]
+    public Dictionary<string, ShopCategory> Categories = new();
 
-    /// <summary>
-    /// Made to not renew listings on each UI update
-    /// </summary>
-    public List<CategoryInfo> ShopCategories = new();
-
-    public Dictionary<int, List<CategoryInfo>> ShopSponsorCategories = new();
-
-    public List<CategoryInfo> ContributorCategories = new();
-
-    public Dictionary<string, List<CategoryInfo>> PersonalCategories = new();
-
-    public int CurrentBalance = 0;
+    [ViewVariables]
+    public BoundUserInterface? UserInterface;
 }

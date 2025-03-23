@@ -1,4 +1,4 @@
-﻿using Content.Shared._Stalker.Shop;
+using Content.Shared._Stalker.Shop;
 using Content.Shared._Stalker.Shop.Prototypes;
 using JetBrains.Annotations;
 
@@ -24,7 +24,6 @@ public sealed class ShopBoundUserInterface : BoundUserInterface
 
         _menu.OnClose += () =>
         {
-            SendMessage(new ShopClosedMessage());
             Close();
         };
 
@@ -40,13 +39,26 @@ public sealed class ShopBoundUserInterface : BoundUserInterface
             switch (sell)
             {
                 case false:
-                    SendMessage(new ShopRequestBuyMessage(listing, balance));
+                    if (_menu?.CurrentCategory == null || listing.ProductEntity == null)
+                        return;
+
+                    var categoryId = _menu.CurrentCategory;
+                    var productId = listing.ProductEntity.ToString();
+
+                    if (string.IsNullOrEmpty(productId))
+                        return;
+
+                    SendMessage(new ShopRequestBuyMessage(categoryId, productId));
                     break;
 
                 default:
                     if (count == null)
                         return;
-                    SendMessage(new ShopRequestSellMessage(listing, balance, count.Value));
+
+                    var sellProductId = listing.ProductEntity.ToString();
+                    if (string.IsNullOrEmpty(sellProductId))
+                        return;
+                    SendMessage(new ShopRequestSellMessage(sellProductId, count.Value));
                     break;
             }
         };
@@ -58,35 +70,19 @@ public sealed class ShopBoundUserInterface : BoundUserInterface
 
     protected override void UpdateState(BoundUserInterfaceState state)
     {
-        base.UpdateState(state);
-
-        if (_menu is not { } menu)
+        if (state is not ShopUpdateState updateState || _menu == null)
             return;
 
-        // Place for menu updates
-        switch (state)
-        {
-            // TODO: It makes sense to update either only the balance, or only the category, etc.
-            //
-            // I just looked over the code, and i think its unnecessary,
-            // because of buying/selling requires to update both, balance and listings like
-            // reducing amount of item or removing listing from category at all
-            case ShopUpdateState msg:
-                // cringe
-                var categories = new List<CategoryInfo>();
-                categories.AddRange(msg.Categories);
-                if (msg.SponsorCategories != null)
-                    categories.AddRange(msg.SponsorCategories);
-                if (msg.ContribCategories != null)
-                    categories.AddRange(msg.ContribCategories);
-                if (msg.PersonalCategories != null)
-                    categories.AddRange(msg.PersonalCategories);
+        var allCategories = new List<ShopCategory>(updateState.Categories);
+        if (updateState.SponsorCategories != null)
+            allCategories.AddRange(updateState.SponsorCategories);
+        if (updateState.ContribCategories != null)
+            allCategories.AddRange(updateState.ContribCategories);
+        if (updateState.PersonalCategories != null)
+            allCategories.AddRange(updateState.PersonalCategories);
 
-                menu.UpdateBalance(msg.Balance, msg.MoneyId, msg.LocMoneyId);
-                menu.PopulateStoreCategoryButtons(categories, msg.UserItems);
-                menu.UpdateListing(categories, msg.UserItems);
-                break;
-        }
+        _menu.PopulateStoreCategoryButtons(allCategories, updateState.UserListings);
+        _menu.UpdateListing(allCategories, updateState.UserListings);
     }
 
     protected override void Dispose(bool disposing)
