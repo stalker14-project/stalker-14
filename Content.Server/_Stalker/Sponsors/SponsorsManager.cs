@@ -179,30 +179,30 @@ public sealed class SponsorsManager
 
     public void FillSponsorCategories(
         ICommonSession session,
-        ref List<CategoryInfo>? sponsorCategories,
-        ref List<CategoryInfo>? contribCategories,
+        ref List<ShopCategory>? sponsorCategories,
+        ref List<ShopCategory>? contribCategories,
         ShopComponent comp)
     {
-        sponsorCategories ??= [];
-        contribCategories ??= [];
+        //sponsorCategories ??= [];
+        //contribCategories ??= [];
 
-        var sponsorDict = comp.ShopSponsorCategories;
-        var contribList = comp.ContributorCategories;
+        //var sponsorDict = comp.Categories.Spons;
+        //var contribList = comp.ContributorCategories;
 
-        if (!TryGetInfo(session.UserId, out var info))
-        {
-            sponsorCategories = null;
-            contribCategories = null;
-            return;
-        }
+        //if (!TryGetInfo(session.UserId, out var info))
+        //{
+        //    sponsorCategories = null;
+        //    contribCategories = null;
+        //    return;
+        //}
 
-        var found = sponsorDict
-            .Where(kv => kv.Key <= (int) info.Level)
-            .SelectMany(kv => kv.Value)
-            .ToList();
+        //var found = sponsorDict
+        //    .Where(kv => kv.Key <= (int) info.Level)
+        //    .SelectMany(kv => kv.Value)
+        //    .ToList();
 
-        sponsorCategories = found.Count == 0 ? null : found;
-        contribCategories = !info.Contributor ? null : contribList;
+        //sponsorCategories = found.Count == 0 ? null : found;
+        //contribCategories = !info.Contributor ? null : contribList;
     }
 
     private sealed class RolesResponse

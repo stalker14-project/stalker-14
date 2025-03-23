@@ -4,6 +4,7 @@
   name: торгомат, общий
   description: Теперь ещё и покупает!
   suffix: ST, Mapping, общий
+  abstract: true
   components:
   - type: Physics
     bodyType: Static
@@ -36,9 +37,3 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcSidor
-
-# ТОРГОМАТЫ ГРУППИРОВОК
-

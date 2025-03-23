@@ -1,4 +1,4 @@
-﻿- type: Tag
+- type: Tag
   id: SupplyTalons
 - type: entity
   parent: BaseItem
@@ -42,6 +42,9 @@
   cash:
     1: SupplyTalons
   canWithdraw: true
+  entity: SupplyTalons
+  name: Талоны
+  icon: { sprite: /Textures/_Stalker/Objects/Economy/rubles.rsi, state: cash }
 
 - type: stack
   id: SupplyTalons

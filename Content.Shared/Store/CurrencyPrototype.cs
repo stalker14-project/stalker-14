@@ -41,7 +41,7 @@ public sealed partial class CurrencyPrototype : IPrototype
 
 
     // stalker-changes-start
-    [DataField("entity", required: true, customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
+    [DataField("entity", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string EntityId { get; private set; } = string.Empty;
     /// <summary>
     /// Display name for UI

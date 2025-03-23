@@ -47,7 +47,8 @@ public sealed partial class ShopMenu : DefaultWindow
     /// Current category user chosen, if its null on open, we will take the first one(by priority)
     /// </summary>
     public string? CurrentCategory;
-    private const string UserCategory = "UserItems";
+    private const string UserCategory = "user_sell";
+    private List<ListingData> userItemListing = new();
 
     public ShopMenu()
     {
@@ -60,20 +61,6 @@ public sealed partial class ShopMenu : DefaultWindow
     }
 
     #region Updates
-    public void UpdateBalance(int balance, string? moneyId, string? locMoneyName)
-    {
-        _balance = balance;
-        _moneyId = moneyId ?? _moneyId;
-        _locMoneyName = locMoneyName ?? _locMoneyName;
-
-        // Captialize first letter
-        var displayname =
-            string.Concat(_locMoneyName[0].ToString().ToUpper(), _locMoneyName.AsSpan(1));
-
-        var balanceStr = Loc.GetString("store-ui-balance-display", ("amount", balance),
-            ("currency", displayname));
-        BalanceInfo.SetMarkup(balanceStr.TrimEnd());
-    }
 
     public void UpdateListing(List<ShopCategory> categories, List<ListingData> userItems)
     {
@@ -89,6 +76,8 @@ public sealed partial class ShopMenu : DefaultWindow
         if (CurrentCategory == UserCategory)
         {
             listings.AddRange(userItems);
+            userItemListing.Clear();
+            userItemListing.AddRange(userItems);
         }
 
         // Linq, fuck...
@@ -226,33 +215,21 @@ public sealed partial class ShopMenu : DefaultWindow
     #endregion
 
     #region CategoryControls
-    public void PopulateStoreCategoryButtons(List<ShopCategory> categories, List<ListingData> items)
+    public void PopulateStoreCategoryButtons(List<ShopCategory> categories)
     {
-        var allCategories = categories;
-
-        allCategories = allCategories.OrderBy(c => c.Priority).ToList();
-
-        if (CurrentCategory == null && allCategories.Count > 0)
-            CurrentCategory = allCategories.First().Name;
-
-        if (allCategories.Count <= 1)
-            return;
-
         CategoryListContainer.Children.Clear();
 
-        foreach (var category in allCategories)
+        foreach (var category in categories.OrderBy(c => c.Priority))
         {
             var catButton = new ShopCategoryButton
             {
                 Text = Loc.GetString(category.Name),
                 ShopCategory = category,
             };
-
-            catButton.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, catButton.ShopCategory.Name);
+            catButton.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, category.Id);
             CategoryListContainer.AddChild(catButton);
         }
 
-        // Sell items category
         var youCategory = new ShopCategoryButton
         {
             Text = Loc.GetString("shop-your-items-category"),
@@ -260,11 +237,10 @@ public sealed partial class ShopMenu : DefaultWindow
                 id: "user_sell",
                 name: UserCategory,
                 priority: 1000,
-                listings: new List<ListingData>()
+                listings: userItemListing
             )
         };
-
-        youCategory.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, youCategory.ShopCategory.Id);
+        youCategory.OnPressed += args => OnCategoryButtonPressed?.Invoke(args, "user_sell");
         CategoryListContainer.AddChild(youCategory);
     }
 
