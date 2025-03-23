@@ -31,10 +31,4 @@ public sealed partial class ShopComponent : Component
     public Dictionary<string, List<CategoryInfo>> PersonalCategories = new();
 
     public int CurrentBalance = 0;
-
-    [DataField("barter")]
-    public bool BarterEnabled = false;
-
-    [DataField("barterPreset")]
-    public ProtoId<BarterPresetPrototype>? BarterPreset;
 }

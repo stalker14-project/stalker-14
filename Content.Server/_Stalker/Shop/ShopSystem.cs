@@ -206,26 +206,18 @@ public sealed class ShopSystem : SharedShopSystem
         var userItems = GetContainerItemsWithoutMoney(user.Value, component);
         var userListings = GetListingData(userItems, component, proto.SellingItems);
 
-        var barterPreset = component.BarterEnabled ? _proto.Index<BarterPresetPrototype>(component.BarterPreset!.Value) : null;
-
         var money = sellBuyBalance ?? GetMoneyFromList(GetContainersElements(user.Value), component);
         component.CurrentBalance = money;
         _sawmill.Debug($"Sent balance to client: {component.CurrentBalance}");
-
         var state = new ShopUpdateState(
-            balance: component.BarterEnabled ? 0 : component.CurrentBalance,
-            moneyId: component.BarterEnabled ? "" : component.MoneyId,
-            locMoneyId: component.BarterEnabled ? "" : curProto.DisplayName,
-            categories: categories,
-            sponsorCategories: sponsorCategory,
-            contribCategories: contribCategories,
-            personalCategories: personalCategories,
-            userItems: userListings,
-            isBarter: component.BarterEnabled,
-            barterRequirements: component.BarterEnabled
-                ? barterPreset?.ItemRequirements
-                : null
-        );
+            money,
+            component.MoneyId,
+            curProto.DisplayName,
+            categories,
+            sponsorCategory, // sponsor shop categories for people who pays MONEY
+            contribCategories, // contrib shop categories for less favorite than personals :(
+            personalCategories, // personal stuff for Valdis' favourites ;)
+            userListings);
 
         _ui.SetUiState(shop, ShopUiKey.Key, state);
     }
@@ -239,19 +231,24 @@ public sealed class ShopSystem : SharedShopSystem
         return entityPrototypeId ?? string.Empty;
     }
 
-    private List<EntityUid> GetContainersElements(EntityUid uid, ContainerManagerComponent? manager = null)
+    private List<EntityUid> GetContainersElements(EntityUid uid, ContainerManagerComponent? managerComponent = null)
     {
         var result = new List<EntityUid>();
-        if (!Resolve(uid, ref manager))
-            return result;
+        if (!Resolve(uid, ref managerComponent))
+            return new List<EntityUid>();
 
-        foreach (var container in manager.Containers.Values)
+        foreach (var container in managerComponent.Containers.Values)
         {
-            foreach (var entity in container.ContainedEntities)
+            foreach (var element in container.ContainedEntities)
             {
-                result.Add(entity);
-                if (TryComp<ContainerManagerComponent>(entity, out var nestedManager))
-                    result.AddRange(GetContainersElements(entity, nestedManager));
+                if (TryComp<ContainerManagerComponent>(element, out var manager))
+                {
+                    result.AddRange(GetContainersElements(element, manager));
+                }
+                else
+                {
+                    result.Add(element);
+                }
             }
         }
         return result;
@@ -473,7 +470,6 @@ public sealed class ShopSystem : SharedShopSystem
 
     private void OnBuyListing(EntityUid uid, ShopComponent component, ShopRequestBuyMessage msg)
     {
-
         var listing = msg.ListingToBuy;
         var balance = component.CurrentBalance;
 
@@ -491,48 +487,34 @@ public sealed class ShopSystem : SharedShopSystem
             }
             return;
         }
+        // Check that we have enough money
+        if (money > balance)
+            return;
 
-        if (component.BarterEnabled)
+        // Subtract the cash
+        SubtractBalance(buyer, component, money.Int());
+        balance -= money.Int();
+
+        if (listing.ProductEntity != null)
         {
-            var preset = _proto.Index<BarterPresetPrototype>(component.BarterPreset!);
-            if (!CheckBarterItems(buyer, preset.ItemRequirements))
-            {
-                _popup.PopupEntity(Loc.GetString("barter-not-enough-items"), uid);
-                return;
-            }
-            RemoveBarterItems(buyer, component, preset.ItemRequirements);
+            var product = Spawn(listing.ProductEntity, Transform(buyer).Coordinates);
+            _hands.PickupOrDrop(buyer, product);
         }
-        else
+
+        if (!string.IsNullOrWhiteSpace(listing.ProductAction))
         {
-            // Check that we have enough money
-            if (money > balance)
-                return;
-
-            // Subtract the cash
-            SubtractBalance(buyer, component, money.Int());
-            balance -= money.Int();
-
-            if (listing.ProductEntity != null)
-            {
-                var product = Spawn(listing.ProductEntity, Transform(buyer).Coordinates);
-                _hands.PickupOrDrop(buyer, product);
-            }
-
-            if (!string.IsNullOrWhiteSpace(listing.ProductAction))
-            {
-                _actions.AddAction(buyer, listing.ProductAction);
-            }
-
-            if (listing.ProductEvent != null)
-            {
-                RaiseLocalEvent(listing.ProductEvent);
-            }
-
-            listing.PurchaseAmount++;
-            component.CurrentBalance = balance;
-            _sawmill.Debug($"Sent balance to client(buy listing): {component.CurrentBalance}");
-            UpdateShopUI(buyer, uid, component.CurrentBalance, component);
+            _actions.AddAction(buyer, listing.ProductAction);
         }
+
+        if (listing.ProductEvent != null)
+        {
+            RaiseLocalEvent(listing.ProductEvent);
+        }
+
+        listing.PurchaseAmount++;
+        component.CurrentBalance = balance;
+        _sawmill.Debug($"Sent balance to client(buy listing): {component.CurrentBalance}");
+        UpdateShopUI(buyer, uid, component.CurrentBalance, component);
     }
 
     private void OnSellListing(EntityUid uid, ShopComponent component, ShopRequestSellMessage msg)
@@ -708,54 +690,4 @@ public sealed class ShopSystem : SharedShopSystem
         }
     }
     #endregion
-
-// 1. Модифицируем метод CheckBarterItems
-private bool CheckBarterItems(EntityUid user, Dictionary<string, int> requirements)
-{
-    var items = GetContainersElements(user)
-        .Select(e => (ProtoId: GetItemProtoId(e), Entity: e))
-        .Where(x => !string.IsNullOrEmpty(x.ProtoId))
-        .GroupBy(x => x.ProtoId)
-        .ToDictionary(g => g.Key!, g => g.Count());
-
-    return requirements.All(req => 
-        items.TryGetValue(req.Key, out var count) && count >= req.Value
-    );
-}
-
-// 2. Перерабатываем RemoveBarterItems
-private void RemoveBarterItems(EntityUid user, ShopComponent shopComponent, Dictionary<string, int> requirements)
-{
-    foreach (var (itemId, amount) in requirements)
-    {
-        var toDelete = amount;
-        var entities = GetContainersElements(user)
-            .Where(e => GetItemProtoId(e) == itemId)
-            .ToList();
-
-        foreach (var entity in entities)
-        {
-            if (toDelete <= 0) break;
-            
-            // Учитываем вложенные контейнеры
-            if (TryComp<ContainerManagerComponent>(entity, out var container))
-            {
-                var nested = GetContainersElements(entity, container);
-                foreach (var nestedEntity in nested)
-                {
-                    if (GetItemProtoId(nestedEntity) == itemId)
-                    {
-                        QueueDel(nestedEntity);
-                        toDelete--;
-                    }
-                }
-            }
-
-            QueueDel(entity);
-            toDelete--;
-        }
-    }
-}
-
-// 3. Вспомогательный метод для рекурсивного сбора предмето
 }

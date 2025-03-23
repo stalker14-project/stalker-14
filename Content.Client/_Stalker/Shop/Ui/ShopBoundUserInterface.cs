@@ -1,4 +1,4 @@
-using Content.Shared._Stalker.Shop;
+﻿using Content.Shared._Stalker.Shop;
 using Content.Shared._Stalker.Shop.Prototypes;
 using JetBrains.Annotations;
 
@@ -63,25 +63,29 @@ public sealed class ShopBoundUserInterface : BoundUserInterface
         if (_menu is not { } menu)
             return;
 
-        if (state is ShopUpdateState msg)
+        // Place for menu updates
+        switch (state)
         {
-            var categories = new List<CategoryInfo>();
-            categories.AddRange(msg.Categories);
-            if (msg.SponsorCategories != null)
-                categories.AddRange(msg.SponsorCategories);
-            if (msg.ContribCategories != null)
-                categories.AddRange(msg.ContribCategories);
-            if (msg.PersonalCategories != null)
-                categories.AddRange(msg.PersonalCategories);
+            // TODO: It makes sense to update either only the balance, or only the category, etc.
+            //
+            // I just looked over the code, and i think its unnecessary,
+            // because of buying/selling requires to update both, balance and listings like
+            // reducing amount of item or removing listing from category at all
+            case ShopUpdateState msg:
+                // cringe
+                var categories = new List<CategoryInfo>();
+                categories.AddRange(msg.Categories);
+                if (msg.SponsorCategories != null)
+                    categories.AddRange(msg.SponsorCategories);
+                if (msg.ContribCategories != null)
+                    categories.AddRange(msg.ContribCategories);
+                if (msg.PersonalCategories != null)
+                    categories.AddRange(msg.PersonalCategories);
 
-            menu.UpdateBalance(msg.Balance, msg.MoneyId, msg.LocMoneyId);
-            menu.PopulateStoreCategoryButtons(categories, msg.UserItems);
-            menu.UpdateListing(
-                categories: categories,
-                userItems: msg.UserItems,
-                isBarter: msg.IsBarter,
-                barterRequirements: msg.BarterRequirements
-            );
+                menu.UpdateBalance(msg.Balance, msg.MoneyId, msg.LocMoneyId);
+                menu.PopulateStoreCategoryButtons(categories, msg.UserItems);
+                menu.UpdateListing(categories, msg.UserItems);
+                break;
         }
     }
 
