@@ -10,3 +10,5 @@ ent-STMonitor = Monitor
 ent-STKeyboard = keyboard
     .desc = An old, but still functional keyboard with worn keys and erased characters, it bears the traces of many printed stories.
     .suffix = { ent-Pit.suffix }
+ent-ComputerTablePack = computer desk
+    .desc = An old computer desk with a lamp and an ancient computer. Do you need it?

@@ -28,6 +28,9 @@ ent-ZoneArtifactDetectorWolfhound = Wolfhound detector
 ent-ZoneArtifactDetectorDaDa = detector "Yes yes?"
     .desc = Yes yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes?
     .suffix = stalker, detector, admemes
+ent-ZoneArtifactDetectorResponseCvoboda = Bush detector
+    .desc = A detector capable of detecting artifacts of the first type, at a short distance
+    .suffix = Stalker, Detector
 
 distance-indicator-component-disabled = Disabled
 distance-indicator-component-search = Search...

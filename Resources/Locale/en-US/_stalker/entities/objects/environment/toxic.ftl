@@ -9,3 +9,6 @@ ent-STPoisonShroom = poisonous mushrooms
 
 ent-STToxicBarrelBase = acid barrel
   .desc = suspicious-looking barrel of green liquid
+
+ent-STCraftGlassMetallT3Trigger = Acid T3 Steel and Glass Trigger (20%)
+    .suffix = ST | CD 1 hour

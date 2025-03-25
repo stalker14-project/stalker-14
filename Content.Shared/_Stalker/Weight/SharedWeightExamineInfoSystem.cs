@@ -26,7 +26,7 @@ public sealed class SharedWeightExamineInfoSystem : EntitySystem
         }
 
         var colorString = $"#{r}{g}00";
-        var str = $"Весит [color={colorString}]{component.Total:0.00}[/color] кг";
+        var str = $"Weighs [color={colorString}]{component.Total:0.00}[/color] kg";
 
         args.PushMarkup(str);
     }

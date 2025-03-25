@@ -13,3 +13,6 @@ ent-STWeaponGunAKS74UModifedThree = AKS-74U type III, uses 5.45x39
 ent-STWeaponGunAKS74UWhite = AKS-74U "Winter", uses 5.45x39
     .desc = Slightly improved AKSU in white camouflage.
     .suffix = { ent-STWeaponGunAKS74UTac.suffix }
+ent-STWeaponGunAKS74UBlack = AKS-74U "Black", uses 5.45x39
+    .desc = In terms of size and weight, it is close to submachine guns, but the principle of operation of the mechanism of this weapon and the cartridge used in it make it a representative of the class of assault rifles. The advantages include small dimensions, which is extremely useful when fighting in urban conditions, and a fairly high penetrating power of the cartridge. The main disadvantages are a short sighting range and a tendency to quickly overheat when firing in bursts. The handguard and handle are painted black.
+    .suffix = ST, Skin

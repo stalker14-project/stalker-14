@@ -1,0 +1,1 @@
+ent-STBaseCache = cache base

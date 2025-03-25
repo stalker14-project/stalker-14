@@ -19,7 +19,7 @@ ent-ST918PBMBBoxCinkBlueprint = Recipe for a box of 9x18 PBMB bullets.
 ent-ST919PSOGJBoxCinkBlueprint = Recipe for a box of 9x19 SIG bullets
 ent-ST919PSTBoxCinkBlueprint = Recipe for 9x19 PST Box of Bullets
 ent-ST919RIPBoxCinkBlueprint = Recipe for 9x19 RIP box of bullets
-ent-ST919PBMBBoxCinkBlueprint = Recipe for 9x19 PBMB BoxCinkBlueprint = Recipe for 9x19 PBM BoxCinkBlueprint
+ent-ST919PBMBBoxCinkBlueprint = Recipe for 9x19 PBMB BoxCinkBlueprint
 ent-ST754FMJBoxCinkBlueprint = Recipe for 7.62x54 FMJ bullet box
 ent-ST754PCBoxCinkBlueprint = Recipe for 7.62x54 PC box of bullets
 ent-ST754HPBoxCinkBlueprint = Recipe for 7.62x54 HP BT box of bullets.
@@ -54,3 +54,8 @@ ent-ST939BPBoxCinkBlueprint = Recipe for 9x39 BP Box of Bullets
 ent-ST1255PS12ACinkBlueprint = Recipe for 12.7x55 PS12A box of bullets
 ent-ST1255TPCinkBlueprint = Recipe for 12.7x55 TP bullet box
 ent-ST1255BPCinkBlueprint = Bullet Box Recipe 12,7x55 BP
+ent-STShotgunDarttBoxCinkBlueprint = Dart Box Recipe (12х70)
+ent-ST918PBMBoxCinkBlueprint = Recipe Bullet Box 9x18 PBM gzh
+ent-ST919PBMBoxCinkBlueprint = Recipe Bullet Box 9x19 PBM gzh
+ent-ST754SNBBoxCinkBlueprint = Recipe Bullet Box 7.62x54 SNB
+ent-ST45ACPMFMJBoxCinkBlueprint = Recipe Box of Bullets .45 ACP Match FMJ

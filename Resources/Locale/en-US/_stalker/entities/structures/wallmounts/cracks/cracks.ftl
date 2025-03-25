@@ -1,4 +1,4 @@
-ent-crack1Stalker = crack
+ent-Crack1Stalker = crack
     .desc = Apparently cracked
     .suffix = ST, Mapping, 1
 ent-Crack2Stalker = { ent-Crack1Stalker }
