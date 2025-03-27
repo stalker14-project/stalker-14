@@ -25,3 +25,32 @@
         Caustic: 0.8
         Shock: 0.8
         Psy: 0.8
+
+- type: entity
+  parent: STClothingCapeArmorChainmailSeva
+  id: FreedomChainmail
+  name: кольчужный плащ свободы
+  description: "кольчужный плащ с маскировочной сеткой, перекрашенной в цвета свободы."
+    sprite: _Stalker/Objects/Clothing/cloak/FreeChain.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/FreeChain.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetcoatFreeChain
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetcoatFreeChain
+  name: Капюшон кольчужного плаща
+  description: защитит голову... от дождя... наверное?
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_freechain.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_freechain.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
