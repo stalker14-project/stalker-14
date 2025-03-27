@@ -1,6 +1,13 @@
 - type: shopPreset
   id: BandsShopPreset
   itemsForSale:
+    # values
+    IngotGold1: 750
+    IngotSilver1: 500
+    MaterialDiamond1: 1000
+    DrinkGoldenCup: 400
+    STCraftSheetCopperT1: 40
+    STCraftSheetBrassT3:  100
     # Thermal group - 1
     ZoneArtifactFireball: 400
     ZoneArtifactEye: 600
@@ -228,7 +235,7 @@
         ClothingOuterJacketBandit: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseBand: 1000 # T2 - PvP
         ClothingOuterArmor6B2: 1400 # T2 - PvP
-        STClothingOuterArmorBandits: 2900 # T3 - PVE
+        STClothingOuterArmorBandits: 1800 # T2 - PVE
         STClothingOuterArmorLightPlateVestBaseANAgray: 2250 # T3 - PVP
         ClothingOuterArmorBandits: 2900 # T3 - PVE
     - name: shop-category-storage-and-containers
@@ -334,6 +341,12 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 400
+    - name: Металлоискатели
+      priority: 12
+      items:
+        TrashDetectorTier2: 500
+        TrashDetectorTier3: 2000
+        TrashDetectorTier4: 3999
     - name: shop-category-customization
       priority: 12
       items:
