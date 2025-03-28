@@ -57,28 +57,6 @@
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
     state: equipped-HELMET
 
-# KKK
-- type: entity
-  parent: STClothingCapeT1Base
-  id: ClothingOuterCoatKKK
-  name: ku-klux-klan hoodie
-  suffix: ST, T1
-  description: The Ku Klux Klan's white robes are long white hooded garments that symbolize the anonymity and unity of the organization's members. These robes are often associated with the racist actions of the KKK, emphasizing their ideology of white supremacy.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/cloak/kkk.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/cloak/kkk.rsi
-  - type: ToggleableClothing
-    slot: head
-    requiredSlot: CLOAK
-    clothingPrototype: ClothingHeadHelmetKKKCoat
-  - type: Armor
-    armorClass: 1
-    modifiers:
-      flatReductions:
-        Heat: 0.5
-
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetKKKCoat
