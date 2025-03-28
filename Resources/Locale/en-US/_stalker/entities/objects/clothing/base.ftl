@@ -1,0 +1,15 @@
+ent-STClothingOuterArmorStorageBasic = Armor Suit Base with Pouches
+    .suffix = ST
+ent-ClothingOuterArmorStorageToggleableBasic = { ent-STClothingOuterArmorStorageBasic }
+    .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
+ent-STClothingHeadHatBase = Built-in head base
+    .desc = Hoods, helmets etc theme
+    .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
+ent-STClothingHeadBase = Helmet Base
+    .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
+ent-ClothingHeadStalkerLightBase = Helmet base with flashlight
+    .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
+ent-ClothingBeltStorageStalkerBase = RPS base
+    .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
+ent-STClothingCapeBase = Base of raincoats
+    .suffix = { ent-STClothingOuterArmorStorageBasic.suffix }
