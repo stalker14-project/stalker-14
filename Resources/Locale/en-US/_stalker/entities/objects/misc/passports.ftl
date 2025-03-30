@@ -1,6 +1,6 @@
-ent-PassportBelarus = Паспорт Беларуси
-ent-PassportRussia = Паспорт России
-ent-PassportKazakhstan = Паспорт Казахстана
-ent-PassportUkraine = Паспорт Украины
-ent-PassportSBU = удостоверение СБУ
-    .desc = Подлинное удостоверение личности члена СБУ, на территории ЧЗО.
+ent-PassportBelarus = Belarus Passport
+ent-PassportRussia = Russian Passport
+ent-PassportKazakhstan = Kazakhstan Passport
+ent-PassportUkraine = Ukraine Passport
+ent-PassportSBU = SBU certificate
+    .desc = Authentic identity card of a member of the SBU, in the territory of the Chernobyl Exclusion Zone.
