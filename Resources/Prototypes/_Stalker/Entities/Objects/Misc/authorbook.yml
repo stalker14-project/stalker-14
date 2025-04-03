@@ -7,3 +7,27 @@
   components:
     - type: Paper
       content: book-text-cooking-stalker
+
+- type: entity
+  parent: BookBase
+  id: STArtGuide
+  name: Battered book
+  description: A battered hardcover book with "By Ms Student♥" written on the spine.
+  suffix: ST
+  components:
+    - type: Paper
+      content: ent-STArtGuide.content
+      stampState: paper_stamp-trader
+      stampedBy:
+      - stampedName: Студентка
+        stampedColor: "#dfb2f4"
+    - type: Sprite
+      sprite: Objects/Misc/books.rsi
+      layers:
+        - state: paper
+        - state: cover_old
+          color: "#8e795c"
+        - state: decor_wingette
+          color: "#453827"
+        - state: icon_stars
+    

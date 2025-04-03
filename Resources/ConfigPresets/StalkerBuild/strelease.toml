@@ -37,21 +37,6 @@ punctuation = false
 [tts]
 enabled = false
 
-[database]
-# Database type to use. Can be "sqlite" or "postgres" currently.
-engine = "postgres"
-
-# Path to store the database at when using SQLite. Note that is NOT a disk path.
-# This is relative to the server data directory, which is specified by --data-dir when starting the server from the command (or automatically set by SS14.Watchdog)
-sqlite_dbpath = "preferences.db"
-
-# PostgreSQL database configuration, should be self explanatory.
-pg_host = "localhost"
-pg_port = 5432
-pg_database = "ss14"
-pg_username = "ss14user"
-pg_password = "Stalker"
-
 [infolinks]
 discord = "https://discord.gg/SnUSV76zR3"
 patreon = "https://boosty.to/stalkerss14"

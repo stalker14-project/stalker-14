@@ -7,6 +7,10 @@ ent-WoodenBox2 = wooden box
 ent-WoodenBox1 = Box
     .desc = { ent-WoodenBox2.desc }
     .suffix = { ent-WoodenBoxWithLoot.suffix }
+ent-WoodenBox0 = Box
+    .desc = { ent-WoodenBox2.desc }
+    .suffix = { ent-WoodenBoxWithLoot.suffix }
+
 ent-WoodenBox1a2 = wooden boxes
 ent-WoodenYaschik1 = old wooden nightstand
     .desc = Old wooden nightstand. Hmm. does not open. There is hardly anything valuable there. Do not waste your nerves and energy on it.

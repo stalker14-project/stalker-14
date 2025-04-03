@@ -28,3 +28,6 @@ ent-MutantPartPseudogiantHeart = pseudogiant heart
 ent-MutantPartOldBoarHoof = hoof of an old boar
 ent-MutantPartSeasonedBoarHoof = hoof of a mature boar
 ent-MutantPartLeshiyRoot = leshiy's root
+
+ent-MutantPartPsiDogTail = psi dog tail
+ent-MutantPartBloodsuckerHead = bloodsucker head

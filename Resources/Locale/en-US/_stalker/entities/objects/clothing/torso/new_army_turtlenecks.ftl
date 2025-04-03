@@ -4,3 +4,4 @@ ent-STClothingTosroTurtlenecksKz = Kazakhstan army turtlenecks
 ent-STClothingTosroTurtlenecksLit = Litva army turtlenecks
 ent-STClothingTosroTurtlenecksPol = Poland army turtlenecks
 ent-STClothingTosroTurtlenecksRu = Russian army turtlenecks
+ent-ClothingTorsoTankMilitary = military tank

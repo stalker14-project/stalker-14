@@ -7,8 +7,8 @@ ent-Smudges2Stalker = { ent-Smudges1Stalker }
 ent-Smudges3Stalker = { ent-Smudges1Stalker }
     .desc = { ent-Smudges1Stalker.desc }
     .suffix = ST, Mapping, 3
-ent-smudges4Stalker = gray leak
-    .desc = Something leaked before
+ent-Smudges4Stalker = Серый Подтёк
+    .desc = Что-то раньше протекло
     .suffix = ST, Mapping, 4
 ent-Smudges5Stalker = { ent-Smudges4Stalker }
     .desc = { ent-Smudges4Stalker.desc }
@@ -25,3 +25,4 @@ ent-Smudges8Stalker = { ent-Smudges7Stalker }
 ent-Smudges9Stalker = { ent-Smudges7Stalker }
     .desc = { ent-Smudges7Stalker.desc }
     .suffix = ST, Mapping, 9
+
