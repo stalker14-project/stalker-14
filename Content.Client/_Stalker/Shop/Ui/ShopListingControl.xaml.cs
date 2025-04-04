@@ -21,7 +21,7 @@ public sealed partial class ShopListingControl : Control
         {
             null => null,
             1 => null,
-            _ => $"{count} шт."
+            _ => $"{count} pieces."
         };
 
         // Buttons

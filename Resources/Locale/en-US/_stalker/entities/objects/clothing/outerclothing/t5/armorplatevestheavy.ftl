@@ -1,6 +1,6 @@
 ent-STClothingOuterArmorHeavyPlateVestBase = Heavy Body Armor
     .suffix = ST, T5, PvP
-ent-STClothingOuterArmorLightPlateVestBaseHeavyMilitary = Military Citadel  Body Armor
+ent-STClothingOuterArmorLightPlateVestBaseHeavyMilitary = Military Citadel Body Armor
     .desc = Heavy body armor type V, providing decent protection against most types of damage.
 ent-STClothingOuterArmorLightPlateVestBaseHeavyMonolith = Monolith Citadel Body Armor
     .desc = { ent-STClothingOuterArmorLightPlateVestBaseHeavyMilitary.desc }

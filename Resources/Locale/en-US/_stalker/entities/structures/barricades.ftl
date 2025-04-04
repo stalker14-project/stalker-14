@@ -1,6 +1,6 @@
-ent-STBarricade = { ent-BaseBarricade }
-    .desc = { ent-BaseBarricade.desc }
-ent-STBarricadeBlock = { ent-Barricade }
+ent-STBarricade = { ent-Barricade }
     .desc = { ent-Barricade.desc }
-ent-STBarricadeDirectional = { ent-BaseBarricade }
-    .desc = { ent-BaseBarricade.desc }
+ent-STBarricadeBlock = { ent-BarricadeBlock }
+    .desc = { ent-BarricadeBlock.desc }
+ent-STBarricadeDirectional = { ent-Barricade }
+    .desc = { ent-Barricade.desc }

@@ -1,5 +1,5 @@
-ent-PliersStalker = плоскогубцы
-    .desc = Инструмент который используется в сгибании проволоки, но кто-то его использует по другому.
+ent-PliersStalker = pliers
+    .desc = A tool that is used in wire bending, but someone else uses it differently.
     .suffix = Stalker
-ent-ToothStalker = Зуб
-    .desc = Обычный целый зуб.
+ent-ToothStalker = tooth
+    .desc = An ordinary whole tooth.

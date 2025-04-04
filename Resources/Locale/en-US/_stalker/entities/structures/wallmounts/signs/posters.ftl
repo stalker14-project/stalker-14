@@ -238,6 +238,3 @@ ent-Kover9 = { ent-Kover1 }
 ent-PosterShotaAshot = Shota at Ashot
     .desc = A sign indicating Ashot's shop. A person from whom you can buy fresh ammo.
     .suffix = ST, Mapping
-ent-posterLegitAnatomyHuman = Human Anatomy
-    .desc = The human body is an amazing system made up of various organs and tissues, each with its own unique role in sustaining life. This poster provides a comprehensive overview of human anatomy, helping to better understand its structure and function.
-    .suffix = { ent-PosterShotaAshot.suffix }
