@@ -1,2 +1,2 @@
-ent-STTorchSera = факел
-    .suffix = ST, Скин
+ent-STTorchSera = Torch
+    .suffix = ST, Skin

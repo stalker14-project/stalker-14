@@ -1,6 +1,12 @@
 ent-OldWoodChairStalker = old wooden chair
     .desc = This chair was once a pride, but now it's an item that takes up a lot of space.
     .suffix = ST, Mapping
+ent-OldWoodChairStalker2 = { ent-OldWoodChairStalker }
+    .desc = { ent-OldWoodChairStalker.desc }
+    .suffix = { ent-OldWoodChairStalker.suffix }
+ent-OldWoodChairStalker3 = { ent-OldWoodChairStalker }
+    .desc = { ent-OldWoodChairStalker.desc }
+    .suffix = { ent-OldWoodChairStalker.suffix }
 ent-ChairWoodStalker = Wooden Chair
     .suffix = { ent-OldWoodChairStalker.suffix }
 ent-STSeatBase = chair

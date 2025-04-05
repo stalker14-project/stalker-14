@@ -1,5 +1,17 @@
 ent-STMBedBase = bed
     .desc = Old but still comfortable bed.
+ent-STBed1 = { ent-STMBedBase }
+    .desc = { ent-STMBedBase.desc }
+ent-STBed2 = { ent-STMBedBase }
+    .desc = { ent-STMBedBase.desc }
+ent-STBed3 = { ent-STMBedBase }
+    .desc = { ent-STMBedBase.desc }
+ent-STBed4 = { ent-STMBedBase }
+    .desc = { ent-STMBedBase.desc }
+ent-STBed5 = { ent-STMBedBase }
+    .desc = { ent-STMBedBase.desc }
+ent-STBed6 = { ent-STMBedBase }
+    .desc = { ent-STMBedBase.desc }
 ent-STOldBed = bed
     .desc = This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
     .suffix = ST, Mapping

@@ -1,2 +1,2 @@
-ent-LandMineRickRoll = Я МИНА
-    .suffix = Stalker Memes
+ent-LandMineRickRoll = Land Mine
+    .suffix = Stalker, Memes
