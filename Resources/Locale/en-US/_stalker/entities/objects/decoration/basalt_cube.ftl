@@ -3,3 +3,6 @@ ent-STBasaltCube = Basalt Cube
     .suffix = ST, Basalt, Mapping
 ent-STBasaltCubeSmall = Small basalt cube
     .desc = A small basalt cube that is pleasant to the touch.
+ent-STBasaltCubeGaint = { ent-STBasaltCube }
+    .desc = { ent-STBasaltCube.desc }
+    .suffix = { ent-STBasaltCube.suffix }
