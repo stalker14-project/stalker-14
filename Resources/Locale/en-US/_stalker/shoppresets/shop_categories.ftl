@@ -25,3 +25,7 @@ shop-category-blueprints-gasmasks = Blueprints - Gas masks
 shop-category-blueprints-helmets = Blueprints - Helmets
 shop-category-blueprints-outerwear = Blueprints - Outerwear
 shop-category-blueprints-ammunition = Blueprints - Ammo
+
+shop-category-electronics = Electronics
+shop-category-cassettes = Cassettes
+shop-category-donator = Donator Cassettes
