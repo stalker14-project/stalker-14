@@ -67,7 +67,9 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
-
+      - type: NpcFactionMember
+        factions:
+        - Military
 
 - type: job
   id: MilitaryHead
@@ -102,7 +104,12 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
-
+        - type: NpcFactionMember
+          factions:
+          - Military
+        - type: GuardFactionController
+          toggleOffAction: GuardFactionControllerOffAction
+          toggleOnAction: GuardFactionControllerOnAction
 - type: job
   id: MilitaryOfficer
   name: job-military-officer
@@ -131,6 +138,9 @@
           band: Stalker
           bandIcon: army
         - type: BlockTackingHolyItems
+        - type: NpcFactionMember
+          factions:
+          - Military
 
 - type: startingGear
   id: MilitaryGear
@@ -163,3 +173,18 @@
     legs: ClothingLegsJeansGreenCargo
     torso: ClothingTorsoTurtlenecksMilitary
     shoes: ClothingShoesBootsCombatFilled
+ 
+- type: startingGear
+  id: OksopSpecOps
+  equipment:
+    id: MilitaryPDA
+    belt: ClothingBeltMercWebbingStalker
+    mask: ClothingMaskNeckBalaklava3
+    back: ClothingBackpackDuffelCommonStalker
+    legs: ClothingLegsJeansGreenCargo
+    torso: ClothingTorsoTurtlenecksMilitary
+    shoes: ClothingShoesBootsCombat
+    outerarmor: STClothingOuterArmorLightPlateVestBaseHeavyMilitary
+    pocket1: 739Mag75
+    pocket2: 739Mag75
+    suitstorage: STWeaponRifleStalkerAK103
