@@ -1,0 +1,14 @@
+ent-STClothingHeadHelmetTacticalT3Base = T3 Tactical Helmet Base
+    .suffix = ST, T3, Tactical
+ent-ClothingHeadHelmetVityaz1C = Vityaz 1C helmet
+    .desc = The Vityaz-S shockproof helmet was manufactured at the Steel Research Institute. Development of the helmet began in the late 1980s. The helmet received a visor, although it turned out to be massive.
+ent-ClothingHeadHelmetVityaz1T = Vityaz 1T helmet
+    .desc = Vityaz 1S shockproof helmet modified by renegades
+ent-ClothingHeadHelmetVityaz1L = Vityaz 1L helmet
+    .desc = Shockproof helmet "Vityaz 1C", modified by the Renegades.
+ent-ClothingHeadHelmetVityaz1B = Vityaz 1B helmet
+    .desc = Vityaz 1C shockproof helmet with three stripes
+ent-ClothingHeadHelmetVityaz1P = "Capelan" helmet
+    .desc = Shockproof helmet "Vityaz 1C", modified by the Pilgrims.
+ent-ClothingHeadHelmetVityaz1M = Vityaz 1M 'Duty' helmet
+    .desc = The Vityaz-M shockproof helmet was manufactured at the Research Institute of Steel. Development of the helmet began in the late 1980s. The helmet received a visor, although it turned out to be massive.

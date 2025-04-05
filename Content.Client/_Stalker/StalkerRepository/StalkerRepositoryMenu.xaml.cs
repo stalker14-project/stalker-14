@@ -293,7 +293,7 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
             AmmoContainerStalker ammo => Loc.GetString("repository-ammo-item-ammo-amount-display", ("amount", ammo.AmmoCount)),
             StackItemStalker stack => Loc.GetString("repository-stack-item-stack-amount-display", ("stackCount", stack.StackCount)),
             SolutionItemStalker solution => Loc.GetString("repository-solution-item-volume-display", ("volume", solution.Volume.Int())),
-            AmmoItemStalker cartridge => Loc.GetString("repository-cartridge-item-exhausted-display", ("exhausted", cartridge.Exhausted ? "Истрачен" : "Заряжен")),
+            AmmoItemStalker cartridge => Loc.GetString("repository-cartridge-item-exhausted-display", ("exhausted", cartridge.Exhausted ? "Spent" : "Charged")),
             _ => string.Empty
         };
     }

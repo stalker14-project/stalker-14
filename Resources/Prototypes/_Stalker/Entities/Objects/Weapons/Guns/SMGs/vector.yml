@@ -1,0 +1,104 @@
+
+
+- type: entity
+  name: KRISS Vector-9
+  suffix: ST, Спонсор
+  parent: STWeaponSMGMp5
+  id: STWeaponSMGVector9
+  description: ПП нового поколения с свободным затвором, а значит огромной скорострельностью.
+  components:
+  - type: STWeight
+    self: 2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
+    size: Large
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: muzzle
+      map: ["enum.GunVisualLayers.Muzzle"]
+    - state: grip
+      map: ["enum.GunVisualLayers.Underbarrel"]
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
+    scale: 0.75, 0.75
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
+  - type: Gun
+    angleIncrease: 2
+    angleDecay: 10
+    fireRate: 14
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/919.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_module_underbarrel: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: STScopeVisuals
+    scopeState: scope
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BaseMP5Mag
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - MagazineMP5
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge919PSOGJ
+          priority: 1
+          whitelist:
+            tags:
+            - Cartridge919
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleSMGSilencer
+      gun_module_underbarrel:
+        name: Underbarrel
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSMGGrip
+
+- type: entity
+  name: KRISS Vector-9
+  suffix: ST, Спонсор
+  parent: STWeaponSMGVector9
+  id: STWeaponSMGVector92
+  description: ПП нового поколения с свободным затвором, а значит огромной скорострельностью. Версия в чёрной фурнитуре.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_black.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_black.rsi
+    scale: 0.75, 0.75
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_black.rsi
+
+- type: entity
+  name: KRISS Vector-9 Лес
+  suffix: ST, Спонсор, Skin
+  parent: STWeaponSMGVector9
+  id: STWeaponSMGVector9Forest
+  description: ПП нового поколения с свободным затвором, а значит огромной скорострельностью. Камуфлированный под лес.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_forest.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_forest.rsi
+    scale: 0.75, 0.75
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_forest.rsi

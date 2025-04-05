@@ -1,0 +1,27 @@
+shop-category-weapons = Weapons
+shop-category-magazines = Magazines
+shop-category-ammunition = Ammunition
+shop-category-armor = Armor and Equipment
+shop-category-storage-and-containers = Storage & Containers
+shop-category-raincoats-and-gasmasks = Raincoats and Gas Masks
+shop-category-research-equipment = Research Equipment
+shop-category-utilities = Utilities
+shop-category-provisions = Provisions
+shop-category-medicine = Medicine
+shop-category-modules = Modules
+shop-category-customization = Customization
+shop-category-entertainment = Entertainment
+shop-category-metal-detectors = Metal detectors
+shop-category-other = Other
+shop-category-grenades = Grenades
+shop-category-paperwork = Paperwork
+shop-category-what = Copter
+shop-category-tools = Tools
+
+shop-category-blueprints-research-equipment = Blueprints - Anomaly and Artifact Detectors
+shop-category-blueprints-metal-detectors = Blueprints - Metal detectors
+shop-category-blueprints-raincoats = Blueprints - Raincoats
+shop-category-blueprints-gasmasks = Blueprints - Gas masks
+shop-category-blueprints-helmets = Blueprints - Helmets
+shop-category-blueprints-outerwear = Blueprints - Outerwear
+shop-category-blueprints-ammunition = Blueprints - Ammo

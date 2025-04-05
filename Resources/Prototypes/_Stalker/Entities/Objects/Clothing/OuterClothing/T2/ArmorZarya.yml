@@ -285,32 +285,6 @@
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
-  id: STClothingOuterArmorProjectZarya
-  name: Заря сделанная по непонятному проекту
-  description: Странная заря сделанная непонятно кем и непонятно зачем
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/project_zarya.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/project_zarya.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadCapoProject
-    slot: head
-
-- type: entity
-  parent: STClothingHeadHatBase
-  id: ClothingHeadCapoProject
-  name: капюшон
-  description: Защиты не обеспечивает.
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Clothing/hats/zarya_helm_project.rsi
-    - type: Clothing
-      sprite: _Stalker/Objects/Clothing/hats/zarya_helm_project.rsi
-
-- type: entity
-  parent: STClothingOuterArmorZaryaBase
   id: STClothingOuterArmorBandits
   name: заря бандитов «Бродяга»
   description: Совмещённая с плащём «Заря», улучшенная и перекрашенная под бандитские понты. Обеспечивает 2 класс защиты.

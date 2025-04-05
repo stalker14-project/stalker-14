@@ -1,0 +1,9 @@
+ent-STWeaponRifleStalkerVepr = VPO-129 7.62x54
+    .desc = Carbine VPO-129 Vepr-1V is a civilian hunting weapon with a rifled barrel, created based on the legendary light machine gun of the Soviet Army.
+    .suffix = ST
+ent-STWeaponRifleStalkerVeprSerafim = Seraphim's tactical VPO-129
+    .desc = Seraph Tactical Malware
+    .suffix = ST, Skin
+ent-STWeaponRifleStalkerVeprFarforik = VPO-129 "Grass"
+    .desc = A wonderful solution for a bush camper.
+    .suffix = ST, Skin, Custom

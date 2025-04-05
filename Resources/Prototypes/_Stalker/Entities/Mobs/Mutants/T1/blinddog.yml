@@ -12,7 +12,9 @@
         task: STBlindDogCompound
       blackboard:
         VisionRadius: !type:Single
-          15.0
+          20
+        AggroVisionRadius: !type:Single
+          10
     - type: Butcherable
       spawned:
         - id: MutantPartBlindDogTail
@@ -62,8 +64,8 @@
         types:
           Slash: 16
     - type: MovementSpeedModifier
-      baseWalkSpeed: 2
-      baseSprintSpeed: 4
+      baseWalkSpeed: 1
+      baseSprintSpeed: 3
     - type: Sprite
       sprite: /Textures/_Stalker/Mobs/Mutants/blinddog.rsi
       layers:

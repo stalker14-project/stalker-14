@@ -71,7 +71,7 @@ public sealed class ServerClothingSystem : ClothingSystem
             Gender.Epicene or Gender.Neuter or _ => Loc.GetString("identity-gender-person")
         };
 
-        _metaSystem.SetEntityName(entity, $"[${code}] {genderString} {ageString}");
+        _metaSystem.SetEntityName(entity, $"[${code}] {ageString} {genderString}");
     }
     // stalker-changes-ends
 }

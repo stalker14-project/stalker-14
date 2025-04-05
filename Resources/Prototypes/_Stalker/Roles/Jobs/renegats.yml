@@ -1,8 +1,8 @@
 - type: job
   id: StalkerRene
-  name: Ренегат
+  name: job-renegade
   icon: rene
-  description: Просто какой-то дегенерат.
+  description: job-renegade-desc
   playTimeTracker: JobRenegat
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: ReneGear
-  supervisors: "ебаш."
+  supervisors: job-renegade-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

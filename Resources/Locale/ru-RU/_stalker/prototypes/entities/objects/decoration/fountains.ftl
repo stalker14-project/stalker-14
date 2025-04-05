@@ -1,0 +1,9 @@
+ent-STFountainWater = Фонтан с водой
+    .desc = Старенький фонтан совестких времен. Функционирует исправно.
+    .suffix = ST, Mapping
+ent-STFountainShit = Фонтан с фекалиями
+    .desc = Старенький фонтан советских времен, неприятно пахнет. Не ясно как сюда попала эта жижа...
+    .suffix = { ent-STFountainWater.suffix }
+ent-STFountainBlood = Фонтан с кровью
+    .desc = Старенький фонтан советских времен. Наполнен кровью грешников.
+    .suffix = { ent-STFountainWater.suffix }

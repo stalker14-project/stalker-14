@@ -1,11 +1,11 @@
-<!-- По всем вопросам обращайтесь в наш дискорд https://discord.gg/stalker14 -->
+<!-- If you have any questions, please contact our discord https://discord.gg/SnUSV76zR3 -->
 
-## Что я изменил
-<!-- Напишите что вы изменили или добавьте картинки -->
+## What I changed
+<!-- Write what you changed or add pictures -->
 
-<!-- Проставить X — [X]: -->
-## Убедитесь что вы проверили и согласны со следующим
-- [ ] Да, я запустил свой код и протестил что изменения работают
-- [ ] Да, я проверил что в консольном выводе клиента и сервера не появилось ошибок после моих изменений
-- [ ] Я согласен, что отправляя PR соглашаюсь на условия лицензии [Лицензия](https://github.com/stalker14-project/stalker-14/edit/master/LICENSE.TXT).
-- [ ] Я проверил и подтверждаю, что все картинки и аудио файлы которые я добавил в PR принадлежат мне или находятся под открытой лицензией
+<!-- Put X — [X]: -->
+## Make sure you check and agree to the following
+- [ ] Yes, I ran my code and tested that the changes worked
+- [ ] Yes, I checked that there were no errors in the console output of the client and server after my changes
+- [ ] I agree that by submitting a PR I agree to the terms of the [license](https://github.com/stalker14-project/stalker-14/edit/master/LICENSE.TXT).
+- [ ] I have checked and confirm that all images and audio files that I have added to the PR belong to me or are under an open license

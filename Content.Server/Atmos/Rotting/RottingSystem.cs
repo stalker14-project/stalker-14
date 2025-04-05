@@ -124,7 +124,7 @@ public sealed class RottingSystem : SharedRottingSystem
                 }
             }
 
-            if (RotStage(uid, rotting, perishable) >= 1) // Stalker-Changes-Start
+            if (RotStage(uid, rotting, perishable) >= 3) // Stalker-Changes-Start
             {
                 Respawn(uid);
                 QueueDel(uid);

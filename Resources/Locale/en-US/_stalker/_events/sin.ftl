@@ -1,0 +1,16 @@
+ent-GrehAlarmLightingnorth = Glowing Sin Notice
+    .suffix = north
+ent-GrehAlarmLightingeast = { ent-GrehAlarmLightingnorth }
+    .suffix = east
+ent-GrehAlarmLightingsouth = { ent-GrehAlarmLightingnorth }
+    .suffix = south
+ent-GrehAlarmLightingwest = { ent-GrehAlarmLightingnorth }
+    .suffix = west
+ent-GrehAlarmLightingnorthTrigger = Triggering People to Sin
+    .suffix = { ent-GrehAlarmLightingnorth.suffix }
+ent-GrehAlarmLightingeastTrigger = { ent-GrehAlarmLightingnorthTrigger }
+    .suffix = { ent-GrehAlarmLightingeast.suffix }
+ent-GrehAlarmLightingsouthTrigger = { ent-GrehAlarmLightingnorthTrigger }
+    .suffix = { ent-GrehAlarmLightingsouth.suffix }
+ent-GrehAlarmLightingwestTrigger = { ent-GrehAlarmLightingnorthTrigger }
+    .suffix = { ent-GrehAlarmLightingwest.suffix }

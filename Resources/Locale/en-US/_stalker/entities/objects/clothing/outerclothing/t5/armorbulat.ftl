@@ -1,0 +1,12 @@
+ent-STClothingOuterArmorBulatBase = damask
+    .suffix = ST, T5, PvE
+ent-ClothingOuterArmorBulatCovenant = Covenant Damask
+    .desc = Type V damask material, which provides decent protection against most types of damage.
+ent-ClothingOuterArmorBulatMercenary = mercenary bulat
+    .desc = Type IV Damask Steel, which provides decent protection against most types of damage
+ent-ClothingOuterArmorBulatMonolith = monolith damask
+    .desc = Type V damask steel, which provides decent protection against most types of damage
+ent-ClothingOuterArmorBulatMilitary = Military Bulat
+    .desc = Type IV Damask Steel, which provides decent protection against most types of damage
+ent-ClothingOuterArmorLegatDeserter = Renegade Legate
+    .desc = Renegade Damask that provides excellent protection.

@@ -1,0 +1,9 @@
+ent-STOldicarus = old ikarus-280
+    .desc = Hungarian Urban Articulated High-Floor Medium-Drive Bus with Extra Large Capacity by Ikarus. Looks old.
+    .suffix = ST, Mapping
+ent-STOldNiva = Niva
+    .desc = Staraya Niva produced in the USSR.
+    .suffix = { ent-STOldicarus.suffix }
+ent-STOldLincoln = Lincoln
+    .desc = Old Lincoln from the Cold War.
+    .suffix = { ent-STOldicarus.suffix }

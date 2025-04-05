@@ -1,9 +1,9 @@
 - type: entity
   id: Pit
   parent: BaseStructure
-  name: Колодец
+  name: well
   suffix: ST, Mapping
-  description: Глубокая шахта опускающаяся на многие метры вниз, до самых грунтовых вод.
+  description: A deep shaft descending many meters down to the groundwater.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Pit.rsi
@@ -35,7 +35,7 @@
 - type: entity
   id: MoonshineStill
   parent: BaseStructure
-  name: Самогонный аппарат
+  name: moonshine still
   suffix: ST, Mapping
   description: Большое устройство, предназначенное для фильтрации спирта и преобразования его в самогон.
   components:
@@ -59,9 +59,9 @@
 - type: entity
   id: STMonitor
   parent: BaseStructure
-  name: монитор
+  name: monitor
   suffix: ST, Mapping
-  description: Старый, но всё ещё исправно работающий монитор с потёртой рамкой и тусклым экраном, напоминает о первых днях цифровой эпохи.
+  description: An old but still functional monitor with a worn frame and a dim screen, reminiscent of the early days of the digital age.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/monitor.rsi
@@ -74,9 +74,9 @@
 - type: entity
   id: STKeyboard
   parent: BaseStructure
-  name: клавиатура
+  name: keyboard
   suffix: ST, Mapping
-  description: Старая, но всё ещё функциональная клавиатура с потертыми клавишами и стершимися символами, хранит в себе следы множества напечатанных историй.
+  description: An old but still functional keyboard with worn keys and worn symbols holds traces of many printed stories.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/keyboard.rsi
@@ -89,8 +89,8 @@
 - type: entity
   parent: BaseStructure
   id: ComputerTablePack
-  name: компьютерный стол 
-  description: Старый компьютерный стол с лампой и древним компьютером. Оно тебе надо?
+  name: computer desk
+  description: An old computer desk with a lamp and an ancient computer. Do you need it?
   components:
   - type: Sprite
     sprite: _Stalker/Objects/NPCs/bluprint_computer.rsi

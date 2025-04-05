@@ -57,34 +57,12 @@
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
     state: equipped-HELMET
 
-# KKK
-- type: entity
-  parent: STClothingCapeT1Base
-  id: ClothingOuterCoatKKK
-  name: куклус плащ
-  suffix: ST, T1
-  description: ккк.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/cloak/kkk.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/cloak/kkk.rsi
-  - type: ToggleableClothing
-    slot: head
-    requiredSlot: CLOAK
-    clothingPrototype: ClothingHeadHelmetKKKCoat
-  - type: Armor
-    armorClass: 1
-    modifiers:
-      flatReductions:
-        Heat: 0.5
-
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetKKKCoat
-  name: капюшон куклус плаща
+  name: capirot
   categories: [ HideSpawnMenu ]
-  description: Покрывает вашу голову ККК.
+  description: A medieval Spanish headdress, a pointed conical cap. Originally made of cardboard, capirotes were used by Spanish flagellants. During the Inquisition, cloth-covered capirotes were used, along with yellow capes, to dress those condemned to death.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/kkk_hood.rsi
@@ -262,5 +240,3 @@
     sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
-
-

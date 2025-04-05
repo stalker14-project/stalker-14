@@ -1,0 +1,15 @@
+ent-BoxCrate = Valuable Box
+    .desc = A box made with new technology is quite heavy. The contents are unknown.
+    .suffix = Stalker, TrainStation
+ent-TriggerBoxDrawer = large pile of boxes
+    .desc = A large pile of boxes of different shapes and suits. I wonder what is stored in them. Is it worth taking a box?
+    .suffix = Stalker, TrainStation
+ent-BoxDrawer = Box Spawner.
+    .desc = Just a crate spawner, what else?
+    .suffix = Stalker, TrainStation
+ent-DrawerDispenser = Crate Dispenser...
+    .desc =, did you spawn this at all?
+    .suffix = Stalker, TrainStation
+ent-NPCAlexBaron = Lyoshka Baron [Fence]
+    .desc = This character is engaged in a very important business - reselling crates. Should you trust him?
+    .suffix = Stalker, TrainStation

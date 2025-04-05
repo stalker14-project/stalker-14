@@ -3,7 +3,7 @@
   parent: STBaseWeaponRifle
   suffix: ST
   id: STWeaponGunAKS74U
-  name: AKS-74U
+  name: АКС-74У
   description: По своим габаритам и массе близок к пистолетам-пулемётам, однако принцип действия механизма данного оружия и применяемый в нём патрон делают его представителем класса автоматов. К достоинствам относятся малые габариты, что крайне полезно при ведении боя в городских условиях, и довольно высокая пробивающая способность патрона. Главные недостатки — малая прицельная дальность и склонность к быстрому перегреву при стрельбе очередями.
   components:
     - type: STWeight
@@ -62,57 +62,7 @@
             tags:
               - Cartridge545
 
-# Скинчики пошли
-- type: entity
-  name: АКС-74У укороченный. Использует 5,45x39
-  suffix: ST, Скин
-  parent: STWeaponGunAKS74U
-  id: STWeaponGunAKS74UTac
-  description: Укороченная модификация.
-  components:
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74ut.rsi
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74ut.rsi
-      size: Large
-      shape:
-        - 0,0,4,1
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74ut.rsi
-
-
-- type: entity
-  name: АКС-74У тип II, использует 5,45x39
-  suffix: ST, Скин
-  parent: STWeaponGunAKS74U
-  id: STWeaponGunAKS74UModifedTwo
-  description: Судя по пометке - это вторая ревизия данного образца. Выглядит, как ПП Шпагина.
-  components:
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74utwo.rsi
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74utwo.rsi
-      size: Large
-      shape:
-        - 0,0,4,1
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74utwo.rsi
-
-- type: entity
-  name: АКС-74У тип III, использует 5,45x39
-  suffix: ST, Скин
-  parent: STWeaponGunAKS74U
-  id: STWeaponGunAKS74UModifedThree
-  description: Судя по пометке - это третия ревизия данного образца.
-  components:
-  - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74uthree.rsi
-  - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74uthree.rsi
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74uthree.rsi
-
-
+# Скин
 - type: entity
   name: АКС-74У "Зима", использует 5,45x39
   suffix: ST, Скин
@@ -126,8 +76,6 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
-
-
 
 - type: entity
   name: АКС-74У "Чёрный", использует 5,45x39

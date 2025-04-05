@@ -1,0 +1,14 @@
+ent-STWeaponRifleStalkerAKS74 = AKS-74
+    .desc = Folding assault rifle, model 1974, chambered for 5.45 × 39. It is a simple and reliable weapon, although the cheapness of production has somewhat affected the ease of use and accuracy of combat. In the Zone, this is the main weapon of the military, stalkers and many loners.
+    .suffix = ST
+ent-STSTWeaponRifleStalkerAK74M = AK-74M
+    .desc = Equipped with a left-folding plastic stock, impact-resistant plastic hardware, and a universal dovetail rail for attaching sights, thus replacing several versions of the assault rifle at once. Uses 5.45x39 caliber
+ent-STWeaponRifleStalkerSaiga545 = Saiga 5.45
+    .desc = AK-74M fixed stock and single fire mode - civilian version.
+    .suffix = { ent-STWeaponRifleStalkerAKS74.suffix }
+ent-STWeaponRifleStalkerA545 = A-545
+    .desc = A-545 is a Russian assault rifle with balanced automatics. Further development of AEK-971.
+    .suffix = ST, Skin
+ent-STWeaponRifleStalkerAKS74Green = { ent-STWeaponRifleStalkerAKS74 }
+    .desc = Folding assault rifle, model 1974, chambered for 5.45 × 39. It is a simple and reliable weapon, although the cheapness of production has somewhat affected the ease of use and accuracy of combat. In the Zone, this is the main weapon of the military, stalkers and many loners. The handguard and handle are painted green.
+    .suffix = { ent-STWeaponRifleStalkerA545.suffix }

@@ -270,20 +270,6 @@
     access: [["CN"]]
 
 - type: entity
-  id: StalkerDublicateProject
-  parent: StalkerDuplicateTeleportBase
-  name: Подвал в логово
-  description: С помощью этого подвала вы можете попасть в своё логово.
-  suffix: Teleport, Portal, Duplicate, Project
-  components:
-  - type: DuplicateTeleport
-    prefix: Project
-    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 150
-  - type: AccessReader
-    access: [["Project"]]
-
-- type: entity
   id: StalkerDublicatePoisk
   parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
@@ -384,7 +370,6 @@
     - Military
     - RedForest
     - Poisk
-    - Project
     - Neutral
     - Bar
     - Jaba

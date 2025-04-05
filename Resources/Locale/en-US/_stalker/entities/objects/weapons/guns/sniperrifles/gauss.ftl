@@ -1,0 +1,16 @@
+ent-STBaseWeaponGauss = STBaseWeaponGauss
+    .desc = A rooty tooty point and shooty.
+ent-STWeaponRifleGauss = Gauss Gun
+    .desc = Secret development
+    .suffix = ST
+ent-STCartridgeGauss = Electro-magnetic charge
+    .desc = Inserted into the battery, serves as a cartridge for the Gauss gun
+    .suffix = { ent-STWeaponRifleGauss.suffix }
+ent-STCartridgeGauss2 = Overloaded electro-magnetic charge
+ent-STBulletGauss = bullet gauss
+    .suffix = { ent-STWeaponRifleGauss.suffix }
+ent-STBulletGauss2 = bullet gauss 2
+ent-STMagazineGauss = Gauss Battery Gun
+    .desc = Consumes electro-magnetic charges as ammunition
+    .suffix = { ent-STWeaponRifleGauss.suffix }
+ent-STMagazineGauss2 = Overloaded Gauss Cannon Battery

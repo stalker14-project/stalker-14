@@ -1,0 +1,10 @@
+ent-LogStalker = Log
+    .suffix = Stalker, kraft
+ent-STLogStalkerT1 = Pine log
+    .suffix = { ent-LogStalker.suffix }
+ent-STLogStalkerT2 = Birch log
+    .suffix = { ent-LogStalker.suffix }
+ent-STLogStalkerT3 = Log of the Red Forest
+    .suffix = { ent-LogStalker.suffix }
+ent-STLogStalkerT4 = Willow Log
+    .suffix = { ent-LogStalker.suffix }

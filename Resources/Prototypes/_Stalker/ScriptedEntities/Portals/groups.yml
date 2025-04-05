@@ -320,31 +320,6 @@
     - type: AccessReader
       access: [["CN"]]
 
-###################################### Проект
-
-- type: entity
-  parent: MapTeleportBase
-  id: Cordon-TemnajaLoshina
-  # categories: [ HideSpawnMenu ]
-  name: Cordon-TemnajaLoshina
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-TemnajaLoshina
-    - type: AccessReader
-      access: [["ProjectPawn"]]
-- type: entity
-  parent: MapTeleportBaseUncollide
-  id: Cordon-TemnajaLoshinaUncollide
-  # categories: [ HideSpawnMenu ]
-  name: Cordon-TemnajaLoshinaUncollide
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-TemnajaLoshina
-    - type: AccessReader
-      access: [["ProjectPawn"]]
-
 ####################################Отступники
 
 - type: entity
@@ -413,29 +388,6 @@
       portalName: Cordon-Poisk
     - type: AccessReader
       access: [["Poisk"]]
-
-###################################Проект
-
-- type: entity
-  parent: MapTeleportBase
-  id: Cordon-Project
-  name: Cordon-Project
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-Project
-    - type: AccessReader
-      access: [["Project"]]
-- type: entity
-  parent: MapTeleportBaseUncollide
-  id: Cordon-ProjectUncollide
-  name: Cordon-ProjectUncollide
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-Project
-    - type: AccessReader
-      access: [["Project"]]
 
 ###################################Нейтралы
 

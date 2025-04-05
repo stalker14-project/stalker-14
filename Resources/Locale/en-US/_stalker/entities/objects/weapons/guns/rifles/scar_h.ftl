@@ -1,0 +1,9 @@
+ent-STWeaponRifleSCARH = FN SCAR-H
+    .desc = Belgian rifle for 7.62x51 with dual-mode mode selector.
+    .suffix = ST
+ent-STWeaponRifleSCARHShort = SCAR Shortened
+    .desc = A shortened version of the Belgian SCAR rifle
+    .suffix = ST, Skin
+ent-STWeaponRifleARX160 = ARX-160
+    .desc = Beretta ARX-160 is an Italian assault rifle created as part of the Soldier of the Future program.
+    .suffix = { ent-STWeaponRifleSCARHShort.suffix }

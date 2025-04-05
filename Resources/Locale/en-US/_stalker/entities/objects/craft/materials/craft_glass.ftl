@@ -1,0 +1,15 @@
+ent-STCraftGlassT1 = T1 low-quality  glass
+    .desc = plain glass of poor quality, used for temporary structures and windows in minor buildings. T1
+    .suffix = Stalker, crafting, T1
+ent-STCraftGlassT2 = T2 glass
+    .desc = improved glass of medium quality, used for standard windows and decorative elements. T2
+    .suffix = Stalker, crafting, T2
+ent-STCraftQuartzCrystalT3 = T3 Quartz Crystal
+    .desc = high-quality quartz crystal, used for optical instruments and high-end designs. T3
+    .suffix = Stalker, crafting, T3
+ent-STCraftSapphireCrystalT4 = T4 Sapphire Crystal
+    .desc = premium sapphire crystal with high transparency and strength, used in architectural and scientific projects. T4
+    .suffix = Stalker, crafting, T4
+ent-STCraftAluminumOxideT5 = T5 Aluminum
+    .desc = high-strength and damage-resistant aluminum oxide, used in military equipment and advanced technology. T5
+    .suffix = Stalker, crafting, T5

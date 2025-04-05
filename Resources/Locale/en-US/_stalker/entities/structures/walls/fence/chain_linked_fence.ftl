@@ -1,0 +1,17 @@
+ent-STBaseFenceMetal = chain link fence
+    .desc = A metal piece of fencing cordoning off something likely very important.
+ent-StalkerFenceMetalBroken = Barbed wire bitten
+    .desc = Material that is used to fence and protect an area from unauthorized entry.
+    .suffix = ST, Mapping
+ent-StalkerFenceMetalStraight = Barbed wire
+    .desc = { ent-StalkerFenceMetalBroken.desc }
+    .suffix = ST, Mapping, traight
+ent-StalkerFenceMetalStraightConst = { ent-StalkerFenceMetalStraight }
+    .desc = { ent-StalkerFenceMetalBroken.desc }
+    .suffix = ST, Mapping, traight, разбираемый
+ent-StalkerFenceRazorMetalCorner = { ent-StalkerFenceMetalStraight }
+    .desc = { ent-StalkerFenceMetalBroken.desc }
+    .suffix = ST, Mapping, corner
+ent-StalkerFenceMetalEnd = { ent-StalkerFenceMetalStraight }
+    .desc = { ent-StalkerFenceMetalBroken.desc }
+    .suffix = ST, Mapping, end

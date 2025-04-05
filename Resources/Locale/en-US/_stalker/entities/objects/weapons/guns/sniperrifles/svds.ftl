@@ -1,0 +1,15 @@
+ent-STWeaponRifleSVDS = SVDS
+    .desc = Dragunov Sniper Rifle Foldable, an improved version of the SVD chambered for the same 7.62x54 medium range scope.
+    .suffix = ST, Sniper
+ent-STWeaponRifleCovenantSVDS = Covenant SVDS
+    .desc = Dragunov Folding Covenant Sniper Rifle, an improved version of the SVD chambered for the same 7.62x54 medium range scope.
+    .suffix = ST, Sniper, Covenant, Skin
+ent-STWeaponRifleSVDSGrass = SVDS camouflage
+    .desc = Dragunov Sniper Rifle Foldable, an improved version of the SVD chambered for the same 7.62x54 medium range scope. With camouflage mesh and a little pilling.
+    .suffix = ST, Skin
+ent-STWeaponRifleSVU = SVU
+    .desc = Sniper Rifle Shortened, an improved version of the SVD for the same 7.62x54 with a medium-range scope.
+    .suffix = { ent-STWeaponRifleSVDSGrass.suffix }
+ent-STWeaponRifleSVUSera = Seraphim SVUs
+    .desc = { ent-STWeaponRifleSVU.desc }
+    .suffix = { ent-STWeaponRifleSVDSGrass.suffix }

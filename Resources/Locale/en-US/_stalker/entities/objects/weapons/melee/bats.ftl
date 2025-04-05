@@ -1,0 +1,12 @@
+ent-StalkerBaseBallBat = baseball bat
+    .desc = A robust baseball bat.
+    .suffix = ST, Melee
+ent-StalkerBallBat = { ent-StalkerBaseBallBat }
+    .desc = { ent-StalkerBaseBallBat.desc }
+    .suffix = ST
+ent-SpikyBallBat = spiky ball bat
+    .desc = Bonk!
+    .suffix = { ent-StalkerBallBat.suffix }
+ent-STBatMolitoslov = siddur seraphim
+    .desc = A collection of prayers or prayer chants, texts by which people turn to God.
+    .suffix = { ent-StalkerBallBat.suffix }

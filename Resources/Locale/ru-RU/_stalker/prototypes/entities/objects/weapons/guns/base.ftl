@@ -1,0 +1,1 @@
+ent-STBaseWeaponGun = A gun

@@ -1,0 +1,14 @@
+ent-ClothingHeadsetProject = AA
+    .desc = Algorithm is active, it is impossible to disable the Algorithm, obey the Algorithm.
+ent-EncryptionKeyPROJECT = AA chip
+    .desc = The Algorithm is not active, it is not possible to re-enable the Algorithm, do not obey the Algorithm.
+ent-PROJECTIDCard = Algorithm key card
+    .desc = Algorithm is eternal!
+ent-ProjectPDA = PDA &#@*$!^
+    .desc = &#@*$!^ Error Screen, A problem has been detected and &#@*$!^ has been shut down to prevent damage to your device. Technical Information: STOP: 0x0000008E (0xC0000005, 0x804E3B58, 0xBA4C7B28, 0x00000000) KERNEL_STACK_INPAGE_ERROR. Refer to your &#@*$!^ user manual or visit www.&#@*$!^.com/support for more information.
+ent-ClothingShoesBootsProject = Shod Boots Project
+    .desc = Algorithm will not die, Algorithm is eternal, Algorithm is not afraid of anything!
+ent-ClothingBeltHolsterProject = Project Shoulder Holster
+    .desc = Holster for carrying a pistol and ammunition.
+ent-ClothingEyesHudProject = project visor
+    .desc = Looking at it, you see the whole algorithm you're following..., but it only works if you have the chip built into your head.

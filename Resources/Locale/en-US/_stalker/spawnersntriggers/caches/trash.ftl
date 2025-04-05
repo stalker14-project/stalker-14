@@ -1,0 +1,10 @@
+ent-STTrashT1CacheSpawner = trash trigger T1 (25%)
+    .suffix = ST, T1, Trigger, Cache
+ent-STTrashT2CacheSpawner = trash trigger T2 (25%)
+    .suffix = ST, T2, Trigger, Cache
+ent-STTrashT3CacheSpawner = trash trigger T3 (25%)
+    .suffix = ST, T3, Trigger, Cache
+ent-STTrashT4CacheSpawner = trash trigger T4 (25%)
+    .suffix = ST, T4, Trigger, Cache
+ent-STTrashT5CacheSpawner = trash trigger T5 (25%)
+    .suffix = ST, T5, Trigger, Cache

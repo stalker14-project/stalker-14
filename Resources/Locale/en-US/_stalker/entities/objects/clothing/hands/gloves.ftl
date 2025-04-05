@@ -1,0 +1,11 @@
+ent-ClothingHandsGlovesMitts = black mitts
+    .desc = Plain black gloves without fingertips for the hard working.
+    .suffix = Stalker
+ent-ClothingHandsGlovesJabs = toad gloves
+    .desc = Toad's Unique Battle Gloves.
+    .suffix = Stalker
+ent-STClothingHandsGlovesSera = Seraphim Windings
+    .desc = Cloth flap wrappings to replace the seraph's gloves. If you look closely, you can see that the prayers of the seraphim to their God are neatly written on the rags.
+    .suffix = ST, Skin
+ent-STClothingHandsGlovesCombat = combat gloves
+    .desc = These tactical gloves are fireproof

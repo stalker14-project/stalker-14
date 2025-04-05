@@ -1,0 +1,16 @@
+ent-STFloorWaterEntity = water
+    .desc = A real thirst quencher.
+ent-FloorWaterEntityStalker1 = water
+    .desc = Muddy Water of the Zone.
+    .suffix = Stalker
+ent-FloorWaterEntityStalker2 = { ent-FloorWaterEntityStalker1 }
+    .desc = { ent-FloorWaterEntityStalker1.desc }
+    .suffix = { ent-FloorWaterEntityStalker1.suffix }
+ent-FloorWaterEntityStalker3 = { ent-FloorWaterEntityStalker1 }
+    .desc = { ent-FloorWaterEntityStalker1.desc }
+    .suffix = { ent-FloorWaterEntityStalker1.suffix }
+ent-FloorWaterEntityStalker4 = { ent-FloorWaterEntityStalker1 }
+    .desc = { ent-FloorWaterEntityStalker1.desc }
+    .suffix = { ent-FloorWaterEntityStalker1.suffix }
+ent-FloorWaterEntityStalker5 = Chemical Waste
+    .desc = Bright Chemical Waste Site.

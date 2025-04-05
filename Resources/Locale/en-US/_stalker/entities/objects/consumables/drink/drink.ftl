@@ -1,0 +1,9 @@
+ent-STEnergyDrink = energy drink
+    .desc = Often used by stalkers on multi-day hikes when there is no opportunity to stop and rest. The drink contains easily digestible carbohydrates, as well as drugs that cause the release of adrenaline into the blood.
+    .suffix = ST
+ent-STDrinkBeerCanBaltic = Baltika beer
+    .desc = Taste of Childhood
+ent-STEnergyDrinkMonster = Energy Monster
+    .desc = Free the beast
+ent-STEnergyDrinkRevo = Energy Revo
+    .desc = Energy for your hangout!

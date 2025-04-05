@@ -1,0 +1,11 @@
+ent-STClothingOuterArmorLightPlateVestBaseANAgreen = Бронеразгрузка «Степь-4»
+    .desc = Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины в модном болотно-зелёном цвете.
+    .suffix = ST, T3, PvP
+ent-STClothingOuterArmorLightPlateVestBaseANAgray = Бронеразгрузка «Степь-4»
+    .desc = Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины, в стильном чёрном цвете.
+ent-STClothingOuterArmorLightPlateVestBaseANABlue = ANA Tactical 'Чистого Неба'
+    .desc = Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+ent-STClothingOuterArmorLightPlateVestBaseANAUN = Бронеразгрузка «Степь-4» ООН
+    .desc = Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+ent-STClothingOuterArmorLightPlateVestBaseANAPilgrim = Паломническая бронеразгрузка «Степь-4»
+    .desc = Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины либо библию и кадило

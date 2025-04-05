@@ -1,0 +1,10 @@
+ent-STClothingOuterArmorIOTVBase = IOTV Body Armor
+    .suffix = ST, T4, PvE
+ent-STClothingOuterArmorIOTVBlack = Khokhloma-Ch body armor
+    .desc = Body armor of the fourth class of protection in stylish Black, looks impressive.
+ent-STClothingOuterArmorIOTVGreen = Khokhloma-Z body armor
+    .desc = Body armor of the fourth class of protection in the most fashionable swamp green, looks impressive
+ent-STClothingOuterArmorIOTVFreedom = Varyag-S body armor
+    .desc = Modified Type IV body armor, adapted by Svoboda Svoboda in makeshift conditions.
+ent-STClothingOuterArmorIOTVMerc = Varyag-M body armor
+    .desc = Standard US Type IV body armor adapted by mercenaries

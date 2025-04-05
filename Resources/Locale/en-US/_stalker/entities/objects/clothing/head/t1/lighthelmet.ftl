@@ -1,0 +1,10 @@
+ent-STClothingHeadHelmetTacticalT1Base = T1 Tactical Helmet Base
+    .suffix = ST, T1, Tactical
+ent-ClothingHeadHelmetLight = Sieve Helmet
+    .desc = A lightweight helmet, which is the thinnest piece of metal that can protect your skull from buckshot.
+ent-ClothingHeadHelmetDolg = Duty Sieve Helmet
+    .desc = A lightweight helmet, which is the thinnest piece of metal that can protect your skull from buckshot, but in the colors of Duty!
+ent-ClothingHeadMercLight = Sieve Mercenary Helmet
+    .desc = A lightweight helmet, which is the thinnest piece of metal that can protect your skull from buckshot.
+ent-ClothingHeadHelmetLightDeserters = Renegade Sieve Helmet
+    .desc = A lightweight helmet, which is the thinnest piece of metal that can protect your skull from buckshot and excessive attention from the state.

@@ -19,10 +19,6 @@
   name: Военстал
 
 - type: accessLevel
-  id: PoliceOfficer
-  name: Полицейский
-
-- type: accessLevel
   id: MilitaryHead
   name: Штаб
 
@@ -48,19 +44,10 @@
     - MilitaryOfficer
 
 - type: accessGroup
-  id: PoliceOfficer
-  tags:
-    - Military
-    - MilitaryBarraks
-    - PoliceOfficer
-
-- type: accessGroup
   id: MilitaryStalker
   tags:
     - Military
-    - MilitaryBarraks
     - MilitaryStalker
-    - MilitaryOfficer
 
 - type: accessGroup
   id: MilitaryHead

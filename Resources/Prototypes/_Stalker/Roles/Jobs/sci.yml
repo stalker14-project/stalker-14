@@ -1,8 +1,8 @@
 - type: job
   id: StalkerScientist
-  name: Учёный
+  name: job-scientist
   icon: sci
-  description: Основная цель - изучение всех аспектов Зоны, использование научных методов для дальнейшего объяснения того, что это за Зона и её предназначения.
+  description: job-scientist-desc
   playTimeTracker: JobStalkerSci
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -34,9 +34,9 @@
 
 - type: job
   id: StalkerISSG
-  name: Оперативник SSGI
+  name: job-issg
   icon: ecologists
-  description: Выполнения приказов института - ваше всё.
+  description: job-issg-desc
   playTimeTracker: JobStalkerISSG
   whitelisted: true
   requirements:
@@ -48,7 +48,7 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -68,9 +68,9 @@
 
 - type: job
   id: StalkerHeadScientist
-  name: Ведущий Учёный
+  name: job-head-scientist
   icon: sci
-  description: Основная цель - изучение всех аспектов Зоны, использование научных методов для дальнейшего объяснения того, что это за Зона и её предназначения.
+  description: job-head-scientist-desc
   playTimeTracker: JobHeadStalkerSci
   whitelisted: true
   requirements:
@@ -82,7 +82,7 @@
       - Human
       - Dwarf
   startingGear: SciGear
-  supervisors: Вы подчиняетесь старшему сотруднику и Институту.
+  supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

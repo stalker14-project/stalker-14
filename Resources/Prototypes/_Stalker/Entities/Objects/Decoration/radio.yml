@@ -3148,9 +3148,9 @@
 - type: entity
   id: RadioBaseStalker
   parent: BaseStructure
-  name: радио
-  suffix: Stalker, без музыки
-  description: Первая беспроводная связь. Носителем сигнала являются радиоволны, распространяющиеся в пространстве.
+  name: Radio
+  suffix: Stalker, without music
+  description: The first wireless communication. The carrier of the signal is radio waves propagating in space.
   abstract: true
   components:
   - type: AmbientSound
@@ -3546,3 +3546,21 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/serafim_embient.ogg
+
+- type: entity
+  parent: BaseItem
+  id: CasseteRapGod
+  suffix: Stalker, кассета, (Rap God)
+  name: Cassette "Rap God"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Contributor/RapGod.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c6

@@ -1,0 +1,2 @@
+ent-STClothingOuterJacketStalkerUpgradeBlueprint = Improved Stalker Jacket Recipe
+ent-ClothingOuterAnomalyStalkerJacketBlueprint = Anomalous Stalker Jacket Recipe
