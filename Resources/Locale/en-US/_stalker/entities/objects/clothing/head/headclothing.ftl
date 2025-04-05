@@ -36,3 +36,5 @@ ent-ClothingHeadHatGeneral = General's Cap
 ent-STClothingHeadPeakCap = visor
     .desc = Sailorless Visor, it's strange to see it in the Zone.
     .suffix = ST, Deliko
+ent-ClothingHeadCapMerc = merc's cap
+    .suffix = Stalker

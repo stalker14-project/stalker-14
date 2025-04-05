@@ -32,3 +32,5 @@ ent-PP91Mag = PP-91 9x19 magazine (30)
     .desc = 9x19 mm magazine for PP-91 "Kedr". Bullet capacity 30. They sell empty.
 ent-P90Mag = P90 9x19 magazine (50)
     .desc = 9x19mm magazine for the P90. Bullet capacity 50. They sell empty.
+ent-MP5Mag50 = MP-5 Magazine (50)
+    .desc = MP-5 9x19 magazine. Bullet capacity 50. They sell empty.

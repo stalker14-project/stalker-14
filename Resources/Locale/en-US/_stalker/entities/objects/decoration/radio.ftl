@@ -508,3 +508,6 @@ ent-CassetevietnamContributorRadio = кассета "Fortunate Son"
 ent-RadioBaseStalker = radio
     .desc = The first wireless communication. The carrier of the signal is radio waves propagating in space.
     .suffix = Stalker, without music
+ent-CasseteRapGod = Cassette "Rap God"
+    .desc = Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+    .suffix = Stalker, кассета, (Rap God)
