@@ -1,5 +1,5 @@
 ent-ClothingShoesPortyanki = footcloths
-    .desc = Pieces of cloth to wrap your feet around before putting them into boots or boots. Designed to protect the feet from rubbing with the inner parts of the shoe.
+    .desc = Pieces of cloth to wrap your feet around before putting them into shoes or boots. Designed to protect the feet from rubbing with the inner parts of the shoe.
 ent-ClothingShoesPVH = PVC Boots
     .desc = Reliable protection against moisture, dirt, toxic waste and in the most unpleasant weather conditions. Made of durable and flexible polyvinyl chloride that prevents reagents from penetrating inside your feet.
 ent-ClothingShoesBootsLeather = leather boots
