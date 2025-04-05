@@ -1,8 +1,8 @@
 - type: job
   id: Seraphim
-  name: job-seraphim
+  name: Серафим
   icon: seraphim
-  description: job-seraphim-desc
+  description: Таинственная группировка, появившаяся с первых дней жизни Зоны.
   playTimeTracker: JobSeraphims
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: SeraphimGear
-  supervisors: job-seraphim-supervisor
+  supervisors: Вы служите во имя Его.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -52,9 +52,9 @@
 
 - type: job
   id: SeraphimHead
-  name: job-head-seraphim
+  name: Офицер Серафимов
   icon: seraphim_officer
-  description: job-head-seraphim-desc
+  description: Таинственная группировка, появившаяся с первых дней жизни Зоны.
   playTimeTracker: JobHeadSeraphims
   whitelisted: true
   requirements:
@@ -66,7 +66,7 @@
       - Human
       - Dwarf
   startingGear: SeraphimHeadGear
-  supervisors: job-seraphim-supervisor
+  supervisors: Вы служите во имя Его.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

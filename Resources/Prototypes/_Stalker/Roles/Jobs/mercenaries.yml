@@ -1,8 +1,8 @@
 - type: job
   id: StalkerMercenary
-  name: job-mercenary
+  name: Наёмник
   icon: merc
-  description: job-mercenary-desc
+  description: Искатели приключений и головорезы со всего мира.
   playTimeTracker: JobStalkerMercenary
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: StalkerMercenaryGear
-  supervisors: job-mercenary-supervisor
+  supervisors: Чётко спланированная операция с отличной подготовкой — вот залог вашего успеха.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -23,8 +23,6 @@
           tags:
             - Merc
         - type: Bands
-          altBand: stalker
-          canChange: true
           band: Stalker
           bandIcon: merc
         - type: BlockTackingHolyItems
@@ -46,9 +44,9 @@
 
 - type: job
   id: StalkerHeadMercenary
-  name: job-head-mercenary
+  name: Командир наёмников
   icon: merc
-  description: job-head-mercenary-desc
+  description: Ваша обязанность - поддержка связи с штабом и непосредственное принятие решений по контракту.
   playTimeTracker: JobStalkerHeadMercenary
   whitelisted: true
   requirements:
@@ -60,8 +58,8 @@
       - Human
       - Dwarf
   startingGear: StalkerHeadMercenaryGear
-  supervisors: job-head-mercenary-supervisor
-  canBeAntag: false
+  supervisors: вы координируете тактические операции, обеспечиваете эффективное взаимодействие членов группировки и принимаете оперативные решения на поле боя
+  canBeAntag: false 
   special:
     - !type:AddComponentSpecial
       components:
@@ -70,8 +68,6 @@
             - HeadMerc
             - Merc
         - type: Bands
-          altBand: stalker
-          canChange: true
           band: Stalker
           bandIcon: merc
         - type: BlockTackingHolyItems

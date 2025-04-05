@@ -1,3 +1,0 @@
-ent-Zerkalo = Mirror
-    .desc = You see a reflection of yourself, and you are a stylish stalker...
-    .suffix = ST, Mapping

@@ -1,9 +1,0 @@
-ent-ZoneAnomalyKissel = Kissel
-    .desc = Kissel
-    .suffix = Stalker, Kissel, Anomaly
-ent-ZoneAnomalyGazirovka = Soda
-    .desc = Soda
-    .suffix = Stalker, Soda, Anomaly
-ent-ZoneAnomalySmoke = Smoke
-    .desc = Smoke
-    .suffix = Stalker, Smoke, Anomaly

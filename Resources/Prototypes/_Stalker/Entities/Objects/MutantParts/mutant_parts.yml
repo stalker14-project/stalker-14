@@ -5,12 +5,6 @@
   components:
     - type: Sprite
       sprite: _Stalker/Objects/MutantParts/blind_dog_tail.rsi
-    - type: Item
-      size: Small
-      shape:
-        - 0,0,0,1
-    - type: STWeight
-      self: 0.8
 
 - type: entity
   parent: BaseMutantPart
@@ -18,27 +12,9 @@
   name: pseudodog tail
   components:
     - type: STWeight
-      self: 1.6
+      self: 2
     - type: Sprite
       sprite: _Stalker/Objects/MutantParts/pseudodog_tail.rsi
-    - type: Item
-      size: Small
-      shape:
-        - 0,0,0,1
-
-- type: entity
-  parent: BaseMutantPart
-  id: MutantPartPsiDogTail
-  name: psi dog tail
-  components:
-    - type: STWeight
-      self: 1.6
-    - type: Sprite
-      sprite: _Stalker/Objects/MutantParts/pseudodog_tail.rsi
-    - type: Item
-      size: Small
-      shape:
-        - 0,0,0,1
 
 - type: entity
   parent: BaseMutantPart
@@ -46,85 +22,70 @@
   name: pseudogiant heart
   components:
     - type: STWeight
-      self: 8
+      self: 2
     - type: Sprite
       sprite: _Stalker/Objects/MutantParts/pseudogiant_heart.rsi
       scale: 0.4, 0.4
-    - type: Item
-      size: Small
-      shape:
-        - 0,0,2,2
 
 - type: entity
   parent: BaseMutantPart
   id: MutantPartOldBoarHoof
-  name: old boar hoof
+  name: копыто старого кабана
   components:
-    - type: STWeight
-      self: 2.5
-    - type: Sprite
-      sprite: _Stalker/Objects/MutantParts/Old_boar_hoof.rsi
     - type: Item
       size: Small
-      shape:
-        - 0,0,1,0
-        - 0,1,0,1
+    - type: STWeight
+      self: 2
+    - type: Sprite
+      sprite: _Stalker/Objects/MutantParts/Old_boar_hoof.rsi
 
 - type: entity
   parent: BaseMutantPart
   id: MutantPartSeasonedBoarHoof
-  name: seasoned boar hoof
+  name: копыто матерого кабана
   components:
-    - type: STWeight
-      self: 2.75
-    - type: Sprite
-      sprite: _Stalker/Objects/MutantParts/Seasoned_boar_hoof.rsi
     - type: Item
       size: Small
-      shape:
-        - 0,0,1,0
-        - 0,1,0,1
+    - type: STWeight
+      self: 2
+    - type: Sprite
+      sprite: _Stalker/Objects/MutantParts/Seasoned_boar_hoof.rsi
 
 - type: entity
   parent: BaseMutantPart
   id: MutantPartBoarHoof
-  name: boar hoof
+  name: копыто кабана
   components:
-    - type: STWeight
-      self: 3.25
-    - type: Sprite
-      sprite: _Stalker/Objects/MutantParts/boar_hoof.rsi
     - type: Item
       size: Small
-      shape:
-        - 0,0,1,0
-        - 0,1,0,1
+    - type: STWeight
+      self: 2
+    - type: Sprite
+      sprite: _Stalker/Objects/MutantParts/boar_hoof.rsi
 
 - type: entity
   parent: BaseMutantPart
   id: MutantPartFleshEye
   name: flesh eye
   components:
-    - type: STWeight
-      self: 1.75
-    - type: Sprite
-      sprite: _Stalker/Objects/MutantParts/flesh_eye.rsi
     - type: Item
       size: Small
       shape:
-        - 0,0,0,1
+        - 0,0,1,1
+    - type: STWeight
+      self: 1.2
+    - type: Sprite
+      sprite: _Stalker/Objects/MutantParts/flesh_eye.rsi
 
 - type: entity
   parent: BaseMutantPart
   id: MutantPartSnorkFoot
   name: snork foot
   components:
-    - type: STWeight
-      self: 1.5
     - type: Item
       size: Small
       shape:
-        - 0,0,1,1
+        - 0,0,0,1
     - type: Sprite
       sprite: _Stalker/Objects/MutantParts/snork_foot.rsi
 
@@ -133,40 +94,18 @@
   id: MutantPartBloodsuckerTentacles
   name: bloodsucker tentacles
   components:
-    - type: STWeight
-      self: 2.75
     - type: Sprite
       sprite: _Stalker/Objects/MutantParts/bloodsucker_tentacles.rsi
-    - type: Item
-      size: Small
-      shape:
-        - 0,0,1,1
-
-- type: entity
-  parent: BaseMutantPart
-  id: MutantPartBloodsuckerHead
-  name: bloodsucker head
-  components:
-    - type: STWeight
-      self: 6
-    - type: Sprite
-      sprite: _Stalker/Objects/Clothing/mask/bloodsucker.rsi
-    - type: Item
-      size: Small
-      shape:
-        - 1,1,1,1
 
 - type: entity
   parent: BaseMutantPart
   id: MutantPartOraculeEye
   name: oracule eye
   components:
-    - type: STWeight
-      self: 3.25
     - type: Item
       size: Small
       shape:
-        - 1,1,1,1
+        - 0,0,0,1
     - type: Sprite
       sprite: _Stalker/Objects/MutantParts/oracule_eye.rsi
 
@@ -175,8 +114,6 @@
   id: MutantPartZombieHand
   name: zombie hand
   components:
-    - type: STWeight
-      self: 3.25
     - type: Item
       size: Small
       shape:
@@ -189,8 +126,6 @@
   id: MutantPartLeshiyRoot
   name: leshiy's root
   components:
-    - type: STWeight
-      self: 2.75
     - type: Item
       size: Small
       shape:

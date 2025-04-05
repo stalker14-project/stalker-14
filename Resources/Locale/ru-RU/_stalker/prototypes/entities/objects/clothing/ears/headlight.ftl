@@ -1,3 +1,0 @@
-ent-STHeadLight = Налобный фонарик
-    .desc = Надеваеться на ухо...
-    .suffix = ST

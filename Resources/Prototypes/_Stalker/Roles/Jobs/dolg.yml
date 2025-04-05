@@ -1,8 +1,8 @@
 - type: job
   id: StalkerDolg
-  name: job-dolg
+  name: Боец Долга
   icon: Dolg
-  description: job-dolg-desc
+  description: Защитник человечества.
   playTimeTracker: JobDolg
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: job-dolg-supervisor
+  supervisors: Вы подчиняетесь старшим по званию.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -34,9 +34,9 @@
 
 - type: job
   id: StalkerHeadDolg
-  name: job-head-dolg
+  name: Лидер Долга
   icon: Dolg
-  description: job-head-dolg-desc
+  description: Защитник человечества.
   playTimeTracker: JobHeadDolg
   whitelisted: true
   requirements:
@@ -48,7 +48,7 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: job-head-dolg-supervisor
+  supervisors: Вы командуете другими бойцами Долга.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

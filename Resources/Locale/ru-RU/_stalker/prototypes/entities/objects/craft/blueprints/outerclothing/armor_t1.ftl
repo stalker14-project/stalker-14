@@ -1,2 +1,0 @@
-ent-STClothingOuterJacketStalkerUpgradeBlueprint = Рецепт улучшенной куртки сталкера
-ent-ClothingOuterAnomalyStalkerJacketBlueprint = Рецепт аномальной куртки сталкера

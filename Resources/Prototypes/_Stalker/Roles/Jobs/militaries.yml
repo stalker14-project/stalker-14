@@ -1,8 +1,8 @@
 - type: job
   id: MilitaryStalker
-  name: job-military-stalker
+  name: Военстал
   icon: voen
-  description: job-military-stalker-desc
+  description: Солдаты, прошедшие после опыта службы в Зоне специальную подготовку, или сталкеры, подписавшие контракт с армией.
   playTimeTracker: JobMilitaryStalker
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: MilitarySpecGear
-  supervisors: job-military-stalker-supervisor
+  supervisors: Ты будешь терпеть и страдать, Victoria cruenta
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -36,9 +36,9 @@
 
 - type: job
   id: Military
-  name: job-military
+  name: Военный
   icon: army
-  description: job-military-desc
+  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobMilitary
   whitelisted: true
   requirements:
@@ -50,7 +50,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGear
-  supervisors: job-military-supervisor
+  supervisors: Вы подчиняетесь старшим по званию.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -73,9 +73,9 @@
 
 - type: job
   id: MilitaryHead
-  name: job-military-head
+  name: Начальник Гарнизона
   icon: army
-  description: job-military-head-desc
+  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobHeadMilitary
   whitelisted: true
   requirements:
@@ -87,7 +87,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGearHead
-  supervisors: job-military-supervisor
+  supervisors: Вы подчиняетесь старшим по званию.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -112,9 +112,9 @@
           toggleOnAction: GuardFactionControllerOnAction
 - type: job
   id: MilitaryOfficer
-  name: job-military-officer
+  name: Командир Военных
   icon: army
-  description: job-military-officer-desc
+  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
   playTimeTracker: JobOfficerMilitary
   whitelisted: true
   requirements:
@@ -126,7 +126,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGearOfficer
-  supervisors: job-military-supervisor
+  supervisors: Вы подчиняетесь старшим по званию.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -188,4 +188,3 @@
     pocket1: 739Mag75
     pocket2: 739Mag75
     suitstorage: STWeaponRifleStalkerAK103
-

@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerDeserter
-  name: job-deserter
+  name: Отступник
   icon: "deserter"
-  description: job-deserter-desc
+  description: Дезертир из государственых структур.
   playTimeTracker: JobDeserter
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - Human
       - Dwarf
   startingGear: StalkerDeserterGear
-  supervisors: job-deserter-supervisor
+  supervisors: Ослушайся приказов диктаторов! Защити честь и достоинство зоны!
   special:
     - !type:AddComponentSpecial
       components:

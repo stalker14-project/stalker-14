@@ -1,8 +1,8 @@
 - type: job
   id: StalkerAnomalist
-  name: job-anomalist
+  name: Аномалист
   icon: tec
-  description: job-anomalist-desc
+  description: Изучение и сохранение зоны. Активное использование аномалий и артефактов. Создание новых аномалий и артефактов. Создание аппаратуры на основе аномалий/артефактов или для работы с аномалиями.
   playTimeTracker: JobStalkerAnomalist
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: AnomalistGear
-  supervisors: job-anomalist-supervisor
+  supervisors: Вы работаете сами на себя
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
@@ -46,9 +46,9 @@
 
 - type: job
   id: StalkerAnomalistGuardian
-  name: job-anomalist-guardian
+  name: Хранитель
   icon: tec
-  description: job-anomalist-guardian-desc
+  description: Изучение и сохранение зоны. Активное использование аномалий и артефактов. Создание новых аномалий и артефактов. Создание аппаратуры на основе аномалий/артефактов или для работы с аномалиями.
   playTimeTracker: StalkerAnomalistGuardian
   whitelisted: true
   requirements:

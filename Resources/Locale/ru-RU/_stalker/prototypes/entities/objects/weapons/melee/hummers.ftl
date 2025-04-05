@@ -1,6 +1,2 @@
-ent-BaseHummer = hummer
-    .desc = Bonk!
-    .suffix = ST, Melee
-ent-SledgehammerRenegats = кувалда
-    .desc = { ent-BaseHummer.desc }
-    .suffix = ST, ренегаты
+ent-BaseHummer = боевой молоток
+    .desc = Бонк!

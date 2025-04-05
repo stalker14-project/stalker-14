@@ -1,8 +1,8 @@
 - type: job
   id: StalkerFreedom
-  name: job-freedom
+  name: Боец Свободы
   icon: freedom
-  description: job-freedom-desc
+  description: Защитник зоны.
   playTimeTracker: JobFreedom
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: FreedomGear
-  supervisors: job-freedom-supervisor
+  supervisors: Кури, защищай Зону и игнорируй авторитеты.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -34,9 +34,9 @@
 
 - type: job
   id: StalkerHeadFreedom
-  name: job-head-freedom
+  name: Атаман
   icon: freedom
-  description: job-head-freedom-desc
+  description: Защитник зоны.
   playTimeTracker: JobHeadFreedom
   whitelisted: true
   requirements:
@@ -48,7 +48,7 @@
       - Human
       - Dwarf
   startingGear: FreedomGear
-  supervisors: job-head-freedom-supervisor
+  supervisors: Командиры? У анархистов?.
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

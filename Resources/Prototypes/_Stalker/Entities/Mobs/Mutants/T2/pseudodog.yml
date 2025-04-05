@@ -12,9 +12,7 @@
         task: STBlindDogCompound
       blackboard:
         VisionRadius: !type:Single
-          20
-        AggroVisionRadius: !type:Single
-          13
+          15.0
     - type: Butcherable
       spawned:
         - id: MutantPartPseudodogTail
@@ -39,7 +37,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        175: Dead
+        250: Dead
     - type: MeleeWeapon
       attackRate: 1
       heavyWindupModifier: 1
@@ -61,7 +59,7 @@
           Slash: 32
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
-      baseSprintSpeed: 4
+      baseSprintSpeed: 5
     - type: Sprite
       sprite: /Textures/_Stalker/Mobs/Mutants/pseudodog.rsi
       layers:

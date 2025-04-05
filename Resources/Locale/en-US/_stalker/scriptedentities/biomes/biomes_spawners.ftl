@@ -1,1 +1,0 @@
-ent-STBaseBiomeSpawner = biome spawner

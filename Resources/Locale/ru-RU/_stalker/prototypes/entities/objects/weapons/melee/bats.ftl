@@ -1,12 +1,2 @@
-ent-StalkerBaseBallBat = baseball bat
-    .desc = A robust baseball bat.
-    .suffix = ST, Melee
-ent-StalkerBallBat = { ent-StalkerBaseBallBat }
-    .desc = { ent-StalkerBaseBallBat.desc }
-    .suffix = ST
-ent-SpikyBallBat = spiky ball bat
-    .desc = Bonk!
-    .suffix = { ent-StalkerBallBat.suffix }
-ent-STBatMolitoslov = сидур серафимов
-    .desc = Cборник молитв или молитвенных песнопений, текстов, с помощью которых люди обращаются к Богу.
-    .suffix = { ent-StalkerBallBat.suffix }
+ent-SpikyBallBat = шипастая бейсбольная бита
+    .desc = Колкая штука.

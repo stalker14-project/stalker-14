@@ -1,20 +1,6 @@
 - type: shopPreset
   id: BandsShopPreset
   itemsForSale:
-    # values
-    IngotGold1: 750
-    IngotSilver1: 500
-    MaterialDiamond1: 1000
-    DrinkGoldenCup: 400
-    # craftcmp
-    STCraftSheetCopperT1: 60
-    STCraftSheetBrassT3:  1000
-    STCraftStandardPCBT2: 300
-    STCraftSheetIronT2: 200
-    STCraftMultilayerPCBT3: 500
-    STCraftQuartzCrystalT3: 650
-    STCraftGlassT2: 100
-
     # Thermal group - 1
     ZoneArtifactFireball: 400
     ZoneArtifactEye: 600
@@ -148,7 +134,7 @@
     STWeaponRevolverSWModel625: 725
 
   categories:
-    - name: shop-category-weapons
+    - name: Оружие
       priority: 1
       items:
             # Melee
@@ -176,7 +162,7 @@
         STWeaponRifleSKS: 1700
         STWeaponRevolverSWPC325TR: 700
         STWeaponRifleSCARH: 3500
-    - name: shop-category-magazines
+    - name: Магазины
       priority: 2
       items:
           # 5,45x39
@@ -198,7 +184,7 @@
         TTMag: 100
         SpeedLoader45ACPEmpty: 125
         BaseAPSMag: 100
-    - name: shop-category-ammunition
+    - name: Боеприпасы
       priority: 3
       items:
         6mmBuckshotBox: 100
@@ -230,7 +216,7 @@
         918PGJBox: 65
         918PSTBox: 170
         918PBMBox: 425
-    - name: shop-category-armor
+    - name: Броня
       priority: 4
       items:
           # Helmets #
@@ -242,10 +228,10 @@
         ClothingOuterJacketBandit: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseBand: 1000 # T2 - PvP
         ClothingOuterArmor6B2: 1400 # T2 - PvP
-        STClothingOuterArmorBandits: 1800 # T2 - PVE
+        STClothingOuterArmorBandits: 2900 # T3 - PVE
         STClothingOuterArmorLightPlateVestBaseANAgray: 2250 # T3 - PVP
         ClothingOuterArmorBandits: 2900 # T3 - PVE
-    - name: shop-category-storage-and-containers
+    - name: Хранилища и Контейнеры
       priority: 5
       items:
           # BackPacks
@@ -259,7 +245,7 @@
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
-    - name: shop-category-raincoats-and-gasmasks
+    - name: Плащи и Противогазы
       priority: 6
       items:
           # Cloaks
@@ -270,7 +256,7 @@
         ClothingMaskXoma: 100 # T1
         ClothingMaskGP5: 200 # T2
         ClothingMaskGP7: 600 # T3
-    - name: shop-category-research-equipment
+    - name: Исследовательское снаряжение
       priority: 7
       items:
         STBoltBagFilled: 50
@@ -280,7 +266,7 @@
         ZoneArtifactDetectorPulse: 100 # T1
         ZoneArtifactDetectorHunter: 400 # T2
         ZoneArtifactDetectorResponse: 900 # T2
-    - name: shop-category-utilities
+    - name: Утилиты
       priority: 8
       items:
         STSkinsKitBandits: 500
@@ -291,7 +277,7 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
-        STFlashlightSeclite: 50
+        FlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
@@ -306,7 +292,7 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-    - name: shop-category-provisions
+    - name: Провизия
       priority: 9
       items:
         STEnergyDrink: 100
@@ -320,7 +306,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: shop-category-medicine # 50% скидка от сталкеров
+    - name: Медицина # 50% скидка от сталкеров
       priority: 10
       items:
           # Cheap
@@ -336,7 +322,7 @@
         psyblock: 150
         MedkitAI2: 150
         Defibrillator: 500
-    - name: shop-category-modules
+    - name: Модули
       priority: 11
       items:
         STModuleScopeRiflesT1Ru: 600
@@ -348,13 +334,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 400
-    - name: Металлоискатели
-      priority: 12
-      items:
-        TrashDetectorTier2: 500
-        TrashDetectorTier3: 2000
-        TrashDetectorTier4: 3999
-    - name: shop-category-customization
+    - name: Кастомизация
       priority: 12
       items:
         ClothingTorsoJacketAdidasBlue: 5
@@ -403,6 +383,7 @@
         ClothingLegsJeansBereza: 20
         ClothingLegsJeansGorka6: 20
         ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 67
         # new shit
         ClothingLegsBattlePantsBlack: 50
         ClothingLegsVeryBlueJenas: 50

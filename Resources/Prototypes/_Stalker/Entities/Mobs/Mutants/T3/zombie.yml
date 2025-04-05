@@ -62,9 +62,7 @@
         task: STMonolith
       blackboard:
         VisionRadius: !type:Single
-          25
-        AggroVisionRadius: !type:Single
-          20
+          25.0
     - type: ApproachEmitter
       range: 0
       useMinRange: false
@@ -118,6 +116,7 @@
       spawned:
         - id: MutantPartZombieHand
           maxAmount: 1
+          prob: 0.5
 
 - type: entity
   name: зомбированный

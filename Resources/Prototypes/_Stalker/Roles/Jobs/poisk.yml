@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerPoisk
-  name: job-poisk
+  name: Поиск
   icon: poisk
-  description: job-poisk-desc
+  description: Поиск
   playTimeTracker: JobPoisk
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - Human
       - Dwarf
   startingGear: PoiskGear
-  supervisors: job-poisk-supervisor
+  supervisors: Вы подчиняетесь своему лидеру
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

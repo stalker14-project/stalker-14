@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerJournalist
-  name: job-journalist
+  name: Журналист
   icon: journalist
-  description: job-journalist-desc
+  description: Вестники Зоны.
   playTimeTracker: JobJournalist
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - Human
       - Dwarf
   startingGear: JurGear
-  supervisors: job-journalist-supervisor
+  supervisors: Вы подчиняетесь редакции и ООН...
   canBeAntag: false
   special:
     - !type:AddComponentSpecial

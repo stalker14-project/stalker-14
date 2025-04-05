@@ -1,2 +1,0 @@
-ent-ClothingHeadAssaultHelmetBlueprint = Assault Helmet Recipe
-ent-STClothingHeadHelmetMakeshiftTacticalT3Blueprint = Homemade Helmet Recipe

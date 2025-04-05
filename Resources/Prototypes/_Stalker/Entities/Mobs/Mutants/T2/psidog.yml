@@ -12,9 +12,7 @@
         task: STPsidogCompound
       blackboard:
         VisionRadius: !type:Single
-          20
-        AggroVisionRadius: !type:Single
-          15
+          15.0
     - type: STWeight
       self: 55
     - type: Sprite
@@ -37,24 +35,10 @@
         300: Dead
     - type: SlowOnDamage
       speedModifierThresholds:
-        250: 0.8
+        200: 0.8
     - type: MovementSpeedModifier
-      baseWalkSpeed : 2.6
-      baseSprintSpeed : 5.2
-    - type: NPCUseAction
-      actionId: ActionPsyonicsDizzyMutant
-    - type: Psyonics
-      psy: 1000000
-    - type: PsyonicsActionDizzy
-      cost: 0
-      duration: 3
-      actionId: ActionPsyonicsDizzyMutant
-      damage:
-        types:
-          Psy: 26
-    - type: PsyonicsShieldVisuals
-      sprite: _Stalker/Effects/psyonic_shield.rsi
-      state: Standing
+      baseWalkSpeed : 2
+      baseSprintSpeed : 4
     - type: MeleeWeapon
       attackRate: 0.7
       heavyWindupModifier: 1
@@ -76,6 +60,10 @@
           Slash: 26
     - type: StaminaDamageOnHit
       damage: 5
+    - type: Butcherable
+      spawned:
+        - id: MutantPseudoPart
+          amount: 1
     - type: Destructible
       thresholds:
         - trigger:
@@ -86,7 +74,7 @@
               acts: [ "Destruction" ]
             - !type:SpawnEntitiesBehavior
               spawn:
-                MutantPartPsiDogTail:
+                MutantPartPseudodogTail:
                   min: 1
                   max: 1
             - !type:PlaySoundBehavior

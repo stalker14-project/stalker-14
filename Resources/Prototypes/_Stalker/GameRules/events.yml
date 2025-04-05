@@ -4,12 +4,11 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      earliestStart: 100
-      weight: 3
-      reoccurrenceDelay: 2400
+      earliestStart: 30
+      reoccurrenceDelay: 100
       duration: 325
     - type: AnomalyExplosionRule
       damage:
         types:
-          Psy: 4
+          Psy: 2
       damageTime: 128
