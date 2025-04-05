@@ -1,6 +1,6 @@
-ent-GuardFactionControllerOffAction = Прекратить атаку
-    .desc = Делает всех людей поблизости неатакуемыми мутантами. Люди снова будут атакованы мутантами либо через 2 минуты, либо если отменить это.
+ent-GuardFactionControllerOffAction = Stop the attack
+    .desc = Makes all nearby people unattackable by mutants. Humans will be attacked by mutants again, either after 2 minutes or if this is canceled.
     .suffix = ST
-ent-GuardFactionControllerOnAction = В бой
-    .desc = Приказывает всем мутантам по близости продолжить атаковать.
+ent-GuardFactionControllerOnAction = Into battle
+    .desc = Tells all nearby mutants to continue attacking.
     .suffix = { ent-GuardFactionControllerOffAction.suffix }
