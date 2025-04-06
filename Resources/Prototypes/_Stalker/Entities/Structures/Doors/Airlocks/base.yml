@@ -741,3 +741,74 @@
   - type: AccessReader
     access: [["Pilgrim"]]
 
+# Жабам и бандитам
+- type: entity
+  id: WoodDoorFalloutBanditJaba
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, BanditJaba
+  components:
+  - type: AccessReader
+    access: [["- BanditJaba"]]
+
+- type: entity
+  id: MetalDoorFalloutBanditJabaClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, BanditJaba
+  components:
+  - type: AccessReader
+    access: [["- BanditJaba"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutBanditJabaClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, BanditJaba
+  components:
+  - type: AccessReader
+    access: [["- BanditJaba"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutBanditJabaClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, BanditJaba
+  components:
+  - type: AccessReader
+    access: [["- BanditJaba"]]
+
+- type: entity
+  parent: HermoDverTypeOne
+  id: HermoDverTypeOneBanditJabaClosed
+  suffix: ST, Mapping, BanditJaba
+  components:
+  - type: AccessReader
+    access: [["- BanditJaba"]]
+
+- type: entity
+  parent: MetalAltDoorFallout
+  id: MetalAltDoorFalloutBanditJabaClosed
+  suffix: ST, Mapping, BanditJaba
+  components:
+    - type: AccessReader
+      access: [["- BanditJaba"]]
+
+- type: entity
+  parent: StalkerGate
+  id: StalkerGateLeftBanditJabaClosed
+  suffix: ST, Mapping, BanditJaba, Left
+  components:
+    - type: AccessReader
+      access: [["- BanditJaba"]]
+- type: entity
+  parent: StalkerGater
+  id: StalkerGateRightBanditJabaClosed
+  suffix: ST, Mapping, BanditJaba, Right
+  components:
+    - type: AccessReader
+      access: [["- BanditJaba"]]
