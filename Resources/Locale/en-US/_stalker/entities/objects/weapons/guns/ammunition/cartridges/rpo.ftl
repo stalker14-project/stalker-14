@@ -1,2 +1,2 @@
-ent-CartridgeRocketRPO = Выстрел РПО
-    .desc = Военные преступления
+ent-CartridgeRocketRPO = RPO Shot
+    .desc = War crimes

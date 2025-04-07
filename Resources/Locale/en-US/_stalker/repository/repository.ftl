@@ -11,6 +11,7 @@ repository-user-category = Your items
 repository-all-category = All
 repository-crafting-category = Materials
 repository-artifact-category = Artifacts
+repository-medicine-category = Medicine
 repository-equipment-category = Equipment
 repository-armor-category = Armor
 repository-detectors-category = Detectors

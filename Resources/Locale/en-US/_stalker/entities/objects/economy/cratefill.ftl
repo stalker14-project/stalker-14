@@ -1,1 +1,1 @@
-ent-545Mag30Red = магазин 5,45х39 (30)
+ent-545Mag30Red = Magazine 5.45х39 (30)

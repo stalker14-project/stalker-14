@@ -1,7 +1,7 @@
-ent-RadioStalkerPlayer = кассетный плеер
-    .desc = Кассетный плеер, представленный в 1983 году и выполненный в ультракомпактном корпусе, который по габаритам меньше даже самой аудиокассеты. Это стало возможным за счёт раздвижной конструкции, что и позволяло установить внутрь кассету.
-    .suffix = ST, переносной
-ent-RadioBandPlayer = кассетный плеер Бандитов
+ent-RadioStalkerPlayer = Cassette Player
+    .desc = A cassette player introduced in 1983 and made in an ultra-compact case, which is smaller than even the audio cassette itself. This became possible due to the sliding design, which made it possible to install the cassette inside.
+    .suffix = ST, Portable
+ent-RadioBandPlayer = Bandit Cassette Player
     .desc = { ent-RadioStalkerPlayer.desc }
     .suffix = { ent-RadioStalkerPlayer.suffix }
 ent-CasseteOneRadio = кассета №1 "Я солдат"

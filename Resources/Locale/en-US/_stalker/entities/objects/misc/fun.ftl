@@ -1,11 +1,11 @@
-ent-d20GoldDice = d20
-    .desc = Золотая кость с 20 сторонами. Предпочтительная кость для броска в Гейм-мастера.
+ent-d20GoldDice = Golden D20
+    .desc = A gold die with 20 sides. The preferred die for throwing at the Game Master.
     .suffix = Stalker
-ent-GoldPercentileDie = золотая процентная кость
-    .desc = Золотая кость с 10 сторонами. Подходит для броска на d100 лучше, чем этот золотой мячик для гольфа.
+ent-GoldPercentileDie = Golden Percentile Die
+    .desc = A gold die with 10 sides. Better for rolling a d100 than this gold golf ball.
     .suffix = { ent-d20GoldDice.suffix }
-ent-GoldDiceBag = золотой мешочек с золотыми костями
-    .desc = Содержит всю удачу, собранную по всей зоне.
+ent-GoldDiceBag = golden bag with golden dice
+    .desc = Contains all the luck collected throughout the zone.
     .suffix = { ent-d20GoldDice.suffix }
 ent-LoadedD6Dice = d6
     .desc = A die with six sides. Basic and serviceable.
