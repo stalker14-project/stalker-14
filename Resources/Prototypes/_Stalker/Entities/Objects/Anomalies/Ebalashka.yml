@@ -1,0 +1,30 @@
+- type: entity
+  id: EbalashkaAnom
+  name: Ебалашка
+  description: Портативная невидимая слоновья нога.
+  components:
+  - type: Clickable
+  - type: Physics
+    bodyType: Dynamic
+    bodyStatus: InAir
+  - type: CanMoveInAir
+  - type: Fixtures
+    fixtures:
+      EventHorizonCollider: 
+        shape:
+          !type:PhysShapeCircle
+            radius: 0.35
+        hard: true
+        restitution: 0.8
+        density: 99999
+        mask:
+        - SingularityLayer
+        layer:
+        - SingularityLayer
+  - type: RandomWalk
+    maxSpeed: 2.5
+    minSpeed: 1.875
+  - type: RadiationSource
+    slope: 1 
+    intensity: 10
+  - type: Appearance
