@@ -1,3 +1,4 @@
+ent-ST-TurnCard = перевернуть карту
 ent-BaseCard = карта
     .desc = Приятная на ощупь бумажная игральная карта выпуска NanoTrasen.
     .suffix = ST

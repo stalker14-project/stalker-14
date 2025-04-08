@@ -56,7 +56,3 @@ ent-MutantPartZombieHand = рука зомбированного
 ent-MutantPartLeshiyRoot = корень лешего
     .desc = Причудливый узловатый корень, напоминающий часть человеческого тела. По легендам, эти корни впитывают кровь погибших и могут использоваться в странных ритуалах.
     .suffix = { ent-BaseMutantPart.suffix }
-ent-MutantPartPseudogiantHeart = pseudogiant heart
-ent-MutantPartOldBoarHoof = копыто старого кабана
-ent-MutantPartSeasonedBoarHoof = копыто матерого кабана
-ent-MutantPartLeshiyRoot = leshiy's root
