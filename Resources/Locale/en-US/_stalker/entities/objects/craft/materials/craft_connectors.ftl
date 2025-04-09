@@ -1,0 +1,15 @@
+ent-STCraftBasicThreadKitT1 = Base Thread Set T1
+    .desc = a simple set of threads of different colors and strengths, used for sewing and light repair of clothes. T1
+    .suffix = Stalker, crafting, T1
+ent-STCraftTapeKitT2 = T2 tape and glue set
+    .desc = the set includes different types of tape and glue, used for temporary repairs and fastening materials. T2
+    .suffix = Stalker, crafting, T2
+ent-STCraftGlueKitT3 = T3 Glue Kit
+    .desc = includes various types of adhesive for permanent repairs and bonding of materials. T3
+    .suffix = Stalker, crafting, T3
+ent-STCraftIndustrialThreadStaplesKitT4 = T4 Industrial Thread and Staple Set
+    .desc = includes high-strength threads and metal staples for repairing and fastening heavy materials. T4
+    .suffix = Stalker, crafting, T4
+ent-STCraftHighStrengthKitT5 = T5 High Strength Adhesive and Staple Set
+    .desc = includes high-quality materials for maximum strength and durability, used for the most reliable connections and repairs. T5
+    .suffix = Stalker, crafting, T5

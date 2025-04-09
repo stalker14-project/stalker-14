@@ -1,0 +1,17 @@
+ent-STGrille = metal grille
+    .desc = cheap and angry
+    .suffix = ST, Mapping
+ent-STClockworkGrille = clockwork grille
+    .desc = A flimsy framework of iron rods assembled in traditional Ratvarian fashion.
+    .suffix = { ent-STGrille.suffix }
+ent-STGrilleBroken = grille
+    .desc = A flimsy framework of iron rods. It has seen better days.
+    .suffix = { ent-STGrille.suffix }
+ent-STClockworkGrilleBroken = { ent-STClockworkGrille }
+    .desc = A flimsy framework of iron rods assembled in traditional Ratvarian fashion. It has seen better days.
+    .suffix = { ent-STGrille.suffix }
+ent-STGrilleDiagonal = diagonal grille
+    .desc = { ent-STGrilleBroken.desc }
+    .suffix = { ent-STGrille.suffix }
+ent-STClockworkGrilleDiagonal = diagonal clockwork grille
+    .suffix = { ent-STGrille.suffix }

@@ -1,0 +1,11 @@
+ent-ClothingShoesPortyanki = footcloths
+    .desc = Pieces of cloth to wrap your feet around before putting them into shoes or boots. Designed to protect the feet from rubbing with the inner parts of the shoe.
+ent-ClothingShoesPVH = PVC Boots
+    .desc = Reliable protection against moisture, dirt, toxic waste and in the most unpleasant weather conditions. Made of durable and flexible polyvinyl chloride that prevents reagents from penetrating inside your feet.
+ent-ClothingShoesBootsLeather = leather boots
+    .desc = Regular leather boots made from various leather scraps. Homemade, it is clearly clear that such a master created them.
+ent-ClothingShoesBootsFrogLeather = leather boots of toads
+    .desc = Leather boots repainted in a dark green shade. A unique shoe used by members of the Toad's faction.
+ent-STClothingShoesBootsSeraFilled = Hunter Boots
+    .desc = Combat boots repainted in a dark green shade. A unique shoe used by members of the Seraphim's faction.
+    .suffix = ST, Skin

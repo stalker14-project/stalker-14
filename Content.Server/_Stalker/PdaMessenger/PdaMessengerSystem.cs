@@ -24,7 +24,7 @@ public sealed class PdaMessengerSystem : EntitySystem
     [Dependency] private readonly RingerSystem _ringer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
-    private readonly List<PdaChat> _chats = new() { new PdaChat("Общий") };
+    private readonly List<PdaChat> _chats = new() { new PdaChat("General") };
     private WebhookIdentifier? _webhookIdentifier;
 
     public override void Initialize()
@@ -77,7 +77,7 @@ public sealed class PdaMessengerSystem : EntitySystem
         _adminLogger.Add(LogType.PdaMessage, LogImpact.Medium, $"{ToPrettyString(user):player} send message to {message.Message.Receiver}, title: {message.Message.Title}, content: {message.Message.Content}");
 
         message.Message.Title = $"{senderPda.OwnerName}: {message.Message.Title}";
-        if (message.Message.Receiver == "Общий")
+        if (message.Message.Receiver == "General")
         {
             _chats[0].Messages.Add(message.Message);
             SendMessageDiscordMessage(message.Message, senderPda.OwnerName);
@@ -106,7 +106,7 @@ public sealed class PdaMessengerSystem : EntitySystem
             if (sended)
                 continue;
 
-            var newChat = new PdaChat($"Отправитель {senderPda.OwnerName}", message.Message.Receiver, senderPda.OwnerName);
+            var newChat = new PdaChat($"Sender {senderPda.OwnerName}", message.Message.Receiver, senderPda.OwnerName);
             newChat.Messages.Add(message.Message);
             _chats.Add(newChat);
         }

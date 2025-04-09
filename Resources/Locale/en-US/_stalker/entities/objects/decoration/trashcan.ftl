@@ -1,0 +1,12 @@
+ent-TrashCanS1 = trash can
+    .desc = A specialized container used to collect household or construction waste.
+    .suffix = ST, Mapping
+ent-TrashCanS2 = { ent-TrashCanS1 }
+    .desc = { ent-TrashCanS1.desc }
+    .suffix = { ent-TrashCanS1.suffix }
+ent-TrashCanS3 = { ent-TrashCanS1 }
+    .desc = { ent-TrashCanS1.desc }
+    .suffix = { ent-TrashCanS1.suffix }
+ent-TrashCanS4 = { ent-TrashCanS1 }
+    .desc = { ent-TrashCanS1.desc }
+    .suffix = { ent-TrashCanS1.suffix }

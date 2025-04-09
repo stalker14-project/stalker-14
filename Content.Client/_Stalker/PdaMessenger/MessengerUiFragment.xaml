@@ -4,23 +4,23 @@
        xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
        xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
        Margin="5">
-    
+
     <PanelContainer StyleClasses="BackgroundDark"/>
-    
+
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
-        
+
         <BoxContainer Name="MenuSelection" Orientation="Horizontal" HorizontalExpand="True" Align="Center">
-            <Button Name="ToWrite" MinWidth="80" Text="Написать"/>
-            <Button Name="ToRead" MinWidth="80" Text="Прочитать"/>
+            <Button Name="ToWrite" MinWidth="80" Text="Write"/>
+            <Button Name="ToRead" MinWidth="80" Text="Read"/>
         </BoxContainer>
-        
+
         <BoxContainer Name="MenuWrite" Visible="False" Orientation="Vertical">
-            <Button Name="WriteToSelection" MinWidth="80" HorizontalAlignment="Left" Text="Назад"/>
+            <Button Name="WriteToSelection" MinWidth="80" HorizontalAlignment="Left" Text="Backwards"/>
             <BoxContainer Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True" Margin="15 0 0 0">
                 <GridContainer Rows="2" HorizontalExpand="True">
-                    <Label Text="Получатель:"/>
+                    <Label Text="Recipient:"/>
                     <LineEdit Name="InputReciver" MinSize="60 0" VerticalAlignment="Top" Margin="4 0 0 0" Access="Public" HorizontalExpand="True"/>
-                    <Label Text="Название:"/>
+                    <Label Text="Title:"/>
                     <LineEdit Name="InputTitle" MinSize="60 0" VerticalAlignment="Top" Margin="4 0 0 0" Access="Public" HorizontalExpand="True"/>
                 </GridContainer>
                 <customControls:HSeparator StyleClasses="LowDivider" Margin="0 5 0 5"/>
@@ -31,23 +31,23 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="ContentInput" HorizontalExpand="True"/>
                 </PanelContainer>
-                <Button Name="SendMessage" MinWidth="80" HorizontalAlignment="Left" Text="Отправить" Margin="0 4 4 4"/>
+                <Button Name="SendMessage" MinWidth="80" HorizontalAlignment="Left" Text="Send" Margin="0 4 4 4"/>
             </BoxContainer>
         </BoxContainer>
-        
+
         <BoxContainer Name="MenuRead" Visible="False" Orientation="Vertical">
-            <Button Name="ReadToSelection" MinWidth="80" HorizontalAlignment="Left" Text="Назад"/>
+            <Button Name="ReadToSelection" MinWidth="80" HorizontalAlignment="Left" Text="Backwards"/>
             <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" MinSize="100 256" SizeFlagsStretchRatio="2" VerticalExpand="True">
                 <GridContainer Name="ChatContainer" Margin="8 0 0 0" Columns="1"/>
             </ScrollContainer>
         </BoxContainer>
-        
+
         <BoxContainer Name="MenuChat" Visible="False" Orientation="Vertical">
-            <Button Name="ChatToRead" MinWidth="80" HorizontalAlignment="Left" Text="Назад"/>
+            <Button Name="ChatToRead" MinWidth="80" HorizontalAlignment="Left" Text="Backwards"/>
             <ScrollContainer HScrollEnabled="False" HorizontalExpand="True" MinSize="100 256" SizeFlagsStretchRatio="2" VerticalExpand="True">
                 <GridContainer Name="MessageContainer" Margin="8 0 0 0" Columns="1"/>
             </ScrollContainer>
         </BoxContainer>
-        
+
     </BoxContainer>
 </pdaMessenger:MessengerUiFragment>

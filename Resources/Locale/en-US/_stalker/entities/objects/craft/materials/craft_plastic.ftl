@@ -1,0 +1,15 @@
+ent-STCraftPlasticFittingT1 = T1 Plastic Fittings
+    .desc = Basic plastic hardware, made from cheap and fragile plastic, is suitable for temporary structures and light tasks.
+    .suffix = Stalker, crafting, T1
+ent-STCraftPlasticFittingT2 = T2 Plastic Fittings
+    .desc = Medium quality plastic hardware, stronger and more durable than T1, suitable for appliances and furniture.
+    .suffix = Stalker, crafting, T2
+ent-STCraftPlasticFittingT3 = T3 Plastic Fittings
+    .desc = High quality plastic hardware with good strength and durability, used in household and office furniture.
+    .suffix = Stalker, crafting, T3
+ent-STCraftPlasticFittingT4 = T4 Plastic Fittings
+    .desc = Premium plastic hardware with high strength and durability, used in automotive parts and high-end furniture.
+    .suffix = Stalker, crafting, T4
+ent-STCraftPlasticFittingT5 = T5 Plastic Fittings
+    .desc = The tallest plastic hardware made of high-strength plastic is used in the aerospace and medical industries.
+    .suffix = Stalker, crafting, T5

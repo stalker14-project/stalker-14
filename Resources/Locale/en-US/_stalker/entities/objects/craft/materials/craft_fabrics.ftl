@@ -1,0 +1,15 @@
+ent-STCraftCottonFabricT1 = T1 Cotton Fabric
+    .desc = natural material made from linen fibers, used for lightweight clothing and basic protection. T1
+    .suffix = Stalker, crafting, T1
+ent-STCraftHideT2 = T2 Skin
+    .desc = natural animal skin, used for more durable clothing and lighter armor. T2
+    .suffix = Stalker, crafting, T2
+ent-STCraftSturdyHideT3 = T3 Tough Hide
+    .desc = reinforced hide, which provides high protection and durability, is used for reliable armor and durable clothing. T3
+    .suffix = Stalker, crafting, T3
+ent-STCraftPolymerFabricT4 = T4 Polymer Fabric
+    .desc = a high-quality synthetic material that provides excellent protection and durability, used for quality armor and protective clothing. T4
+    .suffix = Stalker, crafting, T4
+ent-STCraftCompositeMaterialT5 = T5 Composite Material
+    .desc = an advanced multi-layer synthetic material that provides maximum protection and functionality, used for advanced armor and specialized clothing. T5
+    .suffix = Stalker, crafting, T5

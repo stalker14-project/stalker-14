@@ -1,0 +1,12 @@
+ent-ZoneAnomalyElectra = Electra
+    .desc = garland
+    .suffix = Stalker, Electra, Anomaly
+ent-ZoneAnomalyEMP = EMP
+    .desc = EMP
+    .suffix = Stalker, EMP, Anomaly
+ent-ZoneAnomalyGarland = Garland
+    .desc = garland
+    .suffix = Stalker, Garland, Anomaly
+ent-ZoneAnomalySource = Source
+    .desc = source
+    .suffix = Stalker, Source, Anomaly

@@ -1,0 +1,6 @@
+ent-MobMutantFleshNeutral = flesh
+    .desc = Flesh - Mutated beyond recognition, pigs are some of the most harmless mutants in the Zone, perhaps...
+    .suffix = Stalker, Mutant, Neutral
+ent-MobMutantFleshAgressive = flesh
+    .desc = Flesh - Mutated beyond recognition, pigs are some of the most harmless mutants in the Zone, possibly...
+    .suffix = Stalker, Mutant, Aggressive

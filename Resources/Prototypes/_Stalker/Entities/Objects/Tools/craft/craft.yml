@@ -40,7 +40,7 @@
           - CraftMaterialGunpowder
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: repository-crafting-category
 
 - type: entity
   parent: MaterialBase
@@ -79,7 +79,7 @@
       types:
         Heat: 1000
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: repository-crafting-category
   - type: Craftable
   - type: Destructible
     thresholds:
@@ -124,7 +124,9 @@
       scale: 0.4, 0.4
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: repository-crafting-category
+    - type: Trash
+      time: 300
 
 - type: entity
   parent: PartBase
@@ -144,7 +146,7 @@
       self: 1.2
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: repository-crafting-category
 
 - type: entity
   parent: BaseItem
@@ -165,7 +167,7 @@
       state: bag1
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: repository-crafting-category
 
 - type: entity
   parent: BaseItem
@@ -186,7 +188,7 @@
       layers:
         - state: beakernoreact
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: repository-crafting-category
 
 - type: entity
   parent: BaseItem
@@ -207,7 +209,7 @@
   - type: Craftable
   - type: Appearance
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: repository-crafting-category
 
 - type: entity
   id: CraftSmallCardboard
@@ -228,7 +230,7 @@
   - type: SpaceGarbage
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: repository-crafting-category
 
 - type: entity
   id: CraftCardboardTube
@@ -250,7 +252,7 @@
   - type: SpaceGarbage
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: repository-crafting-category
 
 
 - type: entity
@@ -278,7 +280,7 @@
   - type: ExplodeOnTrigger
   - type: Craftable
   - type: RepositoryItem
-    categoryName: Крафты
+    categoryName: repository-crafting-category
 
 
 - type: entity
@@ -298,7 +300,7 @@
       scale: 0.7, 0.7
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: repository-crafting-category
 
 - type: entity
   parent: BaseItem
@@ -319,4 +321,4 @@
       scale: 0.8, 0.8
     - type: Craftable
     - type: RepositoryItem
-      categoryName: Крафты
+      categoryName: repository-crafting-category
