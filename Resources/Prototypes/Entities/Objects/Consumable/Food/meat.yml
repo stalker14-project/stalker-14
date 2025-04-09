@@ -439,33 +439,6 @@
     state: plant
 
 - type: entity
-  name: rotten meat
-  parent: FoodMeatBase
-  id: FoodMeatRotten
-  description: Halfway to becoming fertilizer for your garden.
-  components:
-  - type: Trash
-    time: 300
-  - type: Tag
-    tags:
-    - Raw
-    - Meat
-    - Trash
-    - Recyclable
-  - type: Sprite
-    state: rotten
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-        - ReagentId: GastroToxin
-          Quantity: 4
-        - ReagentId: Fat
-          Quantity: 4
-
-- type: entity
   name: raw spider meat
   parent: FoodMeatRawBase
   id: FoodMeatSpider
