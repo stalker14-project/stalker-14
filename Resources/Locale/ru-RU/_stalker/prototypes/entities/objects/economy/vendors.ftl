@@ -20,3 +20,44 @@ ent-VendingMachineLaborer = раздатчик грузчиков
     .suffix = { ent-VendingMachineMilitary.suffix }
 ent-VendingMachineRestockLaborer = Снабжение ящиков грузчиков
     .desc = Ящик с ящиками для грузчиков
+	
+ent-MilitaryInventory = раздатчик военных
+    .desc = Заменил коптёра в современности.
+    .suffix = Stalker
+
+ent-PoliceInventory = раздатчик полиции
+    .desc = раздатчик полиции.
+    .suffix = Stalker
+
+ent-UNInventory = раздатчик ООН
+    .desc = раздатчик ООН.
+    .suffix = Stalker
+
+ent-LaborerInventory = раздатчик грузчиков
+    .desc = раздатчик грузчиков. Отнесите ящики Лёшке барону, чтобы немного заработать
+    .suffix = Stalker
+
+ent-VendingMachineBoxesPSZMilitary = склад комплектов СОП
+    .desc = Склад армейских припасов с комплектами ПСЗ внутри.
+    .suffix = Stalker
+
+ent-MilitaryPSZInventory = склад комплектов СОП
+    .desc = Склад армейских припасов с комплектами ПСЗ внутри.
+    .suffix = Stalker
+
+ent-MilitaryPSZInventoryRestock = комплект ПСЗ пополнительный
+    .desc = Класть на склад.
+    .suffix = Stalker
+
+ent-VendingMachineBoxesPSZMilitaryOfficer = ящик с офицерскими комплектами СОП
+    .desc = Ящик, содержащий офицерские комплекты ПСЗ внутри.
+    .suffix = Stalker
+
+ent-MilitaryPSZInventoryOfficer = ящик с офицерскими комплектами СОП
+    .desc = Ящик, содержащий офицерские комплекты ПСЗ внутри.
+    .suffix = Stalker
+
+ent-MilitaryPSZInventoryRestockOfficer = комплект ПСЗ офицерский пополнительный
+    .desc = Класть в офицерский ящик.
+    .suffix = Stalker
+

@@ -161,13 +161,13 @@
         STWeaponShotgunMossberg: 630 # T2
         STWeaponShotgunMP153: 900 # T3
           # 5,45x39
-        STWeaponRifleStalkerSaiga545: 1065
-        STWeaponGunAKS74U: 1490
-        STWeaponRifleStalkerAKS74: 3000
+        STWeaponRifleStalkerSaiga545: 1700
+        STWeaponGunAKS74U: 2000
+        STWeaponRifleStalkerAKS74: 4000
         # Smg
-        STWeaponSMGMp5: 1700
-        STWeaponSMGViper: 700
-        STWeaponPPsh: 2500
+        STWeaponSMGMp5: 1200
+        STWeaponSMGViper: 500
+        STWeaponPPsh: 1000
         # Other
         WeaponPistolStalkerTT: 250
         WeaponStalkerPistolTec9: 250
@@ -175,50 +175,51 @@
         STWeaponSniperMosin: 800
         STWeaponRifleSKS: 1700
         STWeaponRevolverSWPC325TR: 700
-        STWeaponRifleSCARH: 3500
+        STWeaponRifleSCARH: 4000
     - name: shop-category-magazines
       priority: 2
       items:
           # 5,45x39
         Base545Mag10: 50 #T1
-        545Mag20: 175 #T2
-        545Mag30: 275 #T3
+        545Mag20: 300 #T2
+        545Mag30: 700 #T3
           # 7,62x54 and 39
         Base739Mag10: 100
         Base754Mag5: 250 #T1
         739Mag45: 450
           # Smg
-        BaseMP5Mag: 275
-        Vz61Mag: 160
-        PPSHDrum: 750
+        BaseMP5Mag: 200
+        Vz61Mag: 100
+        PPSHDrum: 400
         BasePPSHMag: 200
           # Other
         751Mag20: 350
         BaseTEC9Mag: 120
         TTMag: 100
-        SpeedLoader45ACPEmpty: 125
+        SpeedLoader45ACPEmpty: 200
         BaseAPSMag: 100
     - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 100
         7mmBuckshotBox: 35
+        8mmBuckshotBox: 215
          # 7.25
         725PBox: 90
-        725PTBox: 225
-        725PSTBox: 675
+        725PTBox: 180
+        725PSTBox: 200
         # 9.19
         919PSOGJBox: 65
         919PSTBox: 170
-        919PBMBox: 425
+        919PBMBox: 225
         # 5.45
-        545FMJBox: 180
-        545HPBox: 675
-        545PCBox: 450
+        545FMJBox: 480
+        545HPBox: 1000
+        545PCBox: 850
         # 7.39
         739FMJBox: 675
         # 7.51
-        751M80Box: 745
+        751M80Box: 1000
         # 7.54
         754FMJBox: 640
         754HPBox: 960
@@ -229,7 +230,8 @@
          # 9.18
         918PGJBox: 65
         918PSTBox: 170
-        918PBMBox: 425
+        918PBMBox: 200
+
     - name: shop-category-armor
       priority: 4
       items:
@@ -276,13 +278,10 @@
         STBoltBagFilled: 50
         BoxArtcont: 500 # T1
         ZoneAnomalyDetectorAD1: 450 # T1
-          # Detectors
-        ZoneArtifactDetectorPulse: 100 # T1
-        ZoneArtifactDetectorHunter: 400 # T2
-        ZoneArtifactDetectorResponse: 900 # T2
     - name: shop-category-utilities
       priority: 8
       items:
+        Saw: 1000
         STSkinsKitBandits: 500
         STCombatKnife: 25
         TrashBag: 30

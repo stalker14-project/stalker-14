@@ -387,11 +387,28 @@
   name: куртка 'НИИЧАЗ'
   description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет хим чисткой...
   components:
+  - type: ToggleableClothing
+    clothingPrototype: ClothingJacketSci
+    slot: head
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
 
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingJacketSci
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sci.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sci.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    
 # Jabs - 9
 
 - type: entity
