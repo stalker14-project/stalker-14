@@ -52,9 +52,9 @@ job-military-stalker-desc = Soldiers who have undergone special training after t
 job-military-stalker-supervisor = You will endure and suffer, Victoria cruenta
 job-military = Military
 job-military-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any persons.
-job-military-head = Garrison Commander
+job-military-head = Chief of the Garrison
 job-military-head-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any persons.
-job-military-officer = Military commander
+job-military-officer = Military Commander
 job-military-officer-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any person.
 job-military-supervisor = You report to your superiors.
 
