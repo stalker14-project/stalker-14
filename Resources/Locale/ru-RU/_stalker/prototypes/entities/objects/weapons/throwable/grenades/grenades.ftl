@@ -27,3 +27,12 @@ ent-StielhandgranateM24Bundle = Stielhandgranate M24 Bundle
 ent-StielhandgranateM24 = Stielhandgranate M24
     .desc = Немецкая осколочная граната, широко использовавшаяся во время Второй мировой войны. Она известна также под неофициальным названием "картофелемялка" из-за характерной формы с длинной рукояткой и цилиндрическим корпусом.
     .suffix = { ent-FragGrenade.suffix }
+	
+ent-STExplosionPack = Взрывпакет
+    .desc = Рюкзак, набитый взрывчаткой. Увы, без взрывателя - придётся инициировать подрыв как-то ещё.
+    .suffix = Stalker, Взрывчатка
+
+ent-STClothingBeltShahid = пояс шахида
+    .desc = Пояс и подсумки, забитые плотно взрывчаткой.
+    .suffix = ST, Взрывчатка
+
