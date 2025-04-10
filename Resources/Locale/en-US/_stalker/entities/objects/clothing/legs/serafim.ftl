@@ -1,0 +1,3 @@
+ent-STClothingLegsSerafimPants = pants of the follower of the son of the star
+    .desc = Material unknown. Size unknown. The sewing method is unknown. This is something very unusual...
+    .suffix = Stalker, Legs, Seraphim

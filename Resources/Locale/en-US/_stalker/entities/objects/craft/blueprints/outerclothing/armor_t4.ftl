@@ -1,0 +1,9 @@
+ent-ClothingOuterArmorAVSplateblackBlueprint = AVS Plate IV Ranger Armor Recipe
+ent-ClothingOuterArmorStalkerCombatBlueprint = Combat Armor Recipe
+ent-STClothingOuterArmorIOTVGreenBlueprint = Green IOTV Armor Vest Recipe
+ent-STClothingOuterArmor6B13Blueprint = Military 6B13 Recipe
+ent-STClothingOuterArmorBerill5MBlueprint = Beryl-5M Armor Suit Recipe
+ent-STClothingOuterArmorHeavyBlueprint = Armored Coveralls Recipe
+ent-STClothingOuterArmorSSP99Blueprint = Green SSP-99M “Ecologist” Recipe
+ent-STClothingOuterArmorYegerBlueprint = Yeger Recipe
+ent-STClothingOuterArmorReingerBlueprint = Ranger Combat Armor Recipe

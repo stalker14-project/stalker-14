@@ -1,0 +1,14 @@
+ent-STClothingHeadHelmetTacticalT4Base = T4 Tactical Helmet Base
+    .suffix = ST, T4, Tactical
+ent-ClothingHeadHelmetUlach = ulach
+    .desc = This is a helmet specifically designed to protect against stabbing attacks.
+ent-ClothingHeadHelmetUlachUN = UN Ulach
+    .desc = UN Contingent Helmet.
+ent-ClothingHeadHelmetUlachZavet = Covenant Ulach
+    .desc = Ulac, used by the Covenant group.
+    .suffix = Stalker, Covenant
+ent-ClothingHeadHelmetHardUlachUN = UN Tactical Shock Absorber
+    .desc = UN contingent helmet, has great protection against shock attacks, as well as thrust attacks. It is a modified helmet from UN Ulac, but more advanced. Armor class - 3
+ent-ClothingHeadHelmetUlachEasy = lightweight
+    .desc = This is a helmet specifically designed for piercing protection and mobility for the Mercenaries faction. Armor class - 2.
+    .suffix = Stalker, Mercenaries

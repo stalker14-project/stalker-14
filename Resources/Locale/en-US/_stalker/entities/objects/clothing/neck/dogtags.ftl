@@ -1,0 +1,11 @@
+ent-ClothingNeckDogtagBase = dogtag
+    .desc = standard dogtag
+    .suffix = ST
+ent-ClothingNeckDogtagBrigand = { ent-ClothingNeckDogtagBase }
+    .desc = { ent-ClothingNeckDogtagBase.desc }
+ent-ClothingNeckDogtagOfficial = { ent-ClothingNeckDogtagBase }
+    .desc = { ent-ClothingNeckDogtagBase.desc }
+ent-ClothingNeckDogtagStalker = { ent-ClothingNeckDogtagBase }
+    .desc = { ent-ClothingNeckDogtagBase.desc }
+ent-ClothingNeckDogtagPilgrim = cross
+    .suffix = ST, Pilgrims

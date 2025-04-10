@@ -75,8 +75,8 @@ public sealed class StaggerSystem : EntitySystem
                 continue;
             }
 
-            stagger.MovementSpeedModifier = Math.Min(stagger.SlownessDistanceMax, closestDistance + stagger.SlownessDistanceMin) / stagger.SlownessDistanceMax;
-            _movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
+            //stagger.MovementSpeedModifier = Math.Min(stagger.SlownessDistanceMax, closestDistance + stagger.SlownessDistanceMin) / stagger.SlownessDistanceMax;
+            //_movementSpeedModifier.RefreshMovementSpeedModifiers(uid);
         }
     }
 

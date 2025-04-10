@@ -1,0 +1,23 @@
+ent-STBoltBag = bolt bag
+    .desc = Allows you to carry your 3 tons of bolts to detect anomalies in the zone. The best friend of a stalker who will always lead you out of a difficult situation.
+    .suffix = Stalker
+ent-STBoltBagFilled = { ent-STBoltBag }
+    .desc = { ent-STBoltBag.desc }
+    .suffix = stalker, filled
+ent-STBoltBagOliveGray = { ent-STBoltBag }
+    .desc = { ent-STBoltBag.desc }
+ent-STBoltBagOliveGrayFilled = { ent-STBoltBagOliveGray }
+    .desc = { ent-STBoltBagOliveGray.desc }
+    .suffix = stalker, filled
+#золотые bolts, they are sold at the sidor for 5k
+ent-STBoltBagGolden = bolt bag
+    .desc = Allows you to carry your 3 tons of GOLD bolts to identify anomalies in the zone. The best friend of a rich stalker who will always lead you out of a difficult situation.
+    .suffix = Stalker, Filled, Gold
+ent-STBoltBagFilledGolden = { ent-STBoltBag }
+    .desc = Allows you to carry your 3 tons of GOLD bolts to identify anomalies in the zone. The best friend of a rich stalker who will always lead you out of a difficult situation.
+    .suffix = Stalker, Filled, Gold
+ent-STBoltBagOliveGrayGolden = { ent-STBoltBag }
+    .desc = { ent-STBoltBagFilledGolden.desc }
+ent-STBoltBagOliveGrayFilledGolden = { ent-STBoltBagOliveGray }
+    .desc = Allows you to carry your 3 tons of GOLD bolts to identify anomalies in the zone. The best friend of a rich stalker who will always lead you out of a difficult situation.
+    .suffix = Stalker, Filled, Gold

@@ -1,0 +1,12 @@
+ent-LocalTeleportBasement5 = Чистилище-Сталкер1
+ent-LocalTeleportBasement51 = Чистилище-Сталкер1 нонколлижн
+ent-LocalTeleportBasement52 = Чистилище-Сталкер2
+ent-LocalTeleportBasement512 = Чистилище-Сталкер2 нонколлижн
+ent-LocalTeleportMilBase1 = Военная база 1
+ent-LocalTeleportMilBase2 = Военная база 2
+ent-LocalTeleportMilBase3 = Военная база 3
+ent-LocalTeleportSvUnderground = Подземелье Свалки 1
+ent-LocalTeleportSvUnderground2 = Подземелье Свалки 2
+ent-LocalTeleportJabasFloors = Жабий подвал
+ent-LocalTeleportmonolith = LocalTeleportmonolith
+ent-LocalTeleportmonolithUncollide = LocalTeleportmonolithUncollide

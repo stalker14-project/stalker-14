@@ -1,0 +1,15 @@
+ent-STCraftBasicPCBT1 = Basic T1 PCB
+    .desc = single-sided board with a minimum number of components, used for simple electrical circuits. T1
+    .suffix = Stalker, crafting, T1
+ent-STCraftStandardPCBT2 = T2 Standard PCB
+    .desc = double-sided board with a basic set of components, used in consumer electronics. T2
+    .suffix = Stalker, crafting, T2
+ent-STCraftMultilayerPCBT3 = T3 Multilayer PCB
+    .desc = multi-layer board, provides greater circuit complexity and component density, used in computers. T3
+    .suffix = Stalker, crafting, T3
+ent-STCraftHighPerformanceChipT4 = T4 High-Performance Microprocessor
+    .desc = a complex chip with many transistors, provides high performance, used in high-end computers. T4
+    .suffix = Stalker, crafting, T4
+ent-STCraftNanoChipT5 = T5 nanoelectronic chip
+    .desc = state-of-the-art chip, uses nanotechnology for maximum density and performance, applied in the latest technology. T5
+    .suffix = Stalker, crafting, T5

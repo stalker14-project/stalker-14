@@ -1,0 +1,12 @@
+ent-Base556Mag10 = Magazine 5.56 (10)
+    .desc = 5.56 magazine for assault rifles. Bullet capacity 10. They sell empty.
+ent-556Mag20 = Magazine 5.56 (20)
+    .desc = 5.56 magazine for assault rifles. Bullet capacity 20. They sell empty.
+ent-556Mag30 = Magazine 5.56 (30)
+    .desc = 5.56 magazine for assault rifles. Bullet capacity 30. They sell empty.
+ent-556Mag45 = Magazine 5.56 (45)
+    .desc = 5.56 magazine for assault rifles. Bullet capacity 45. They sell empty.
+ent-556Mag60 = Magazine 5.56 (60)
+    .desc = 5.56 magazine for assault rifles. Bullet capacity 60. They sell empty.
+ent-556box249 = box M249 (5.56)
+    .desc = 5.56 box for the M249 machine gun. Bullet capacity 100. They sell empty.

@@ -1,0 +1,9 @@
+ent-ZoneAnomalyBarabashka = Thief
+    .desc = Thief
+    .suffix = Stalker, Thief, Anomaly
+ent-ZoneAnomalyPolymorph = Polymorph
+    .desc = Polymorph
+    .suffix = Stalker, Polymorph, Anomaly
+ent-ZoneAnomalyBubble = Bubble
+    .desc = Bubble
+    .suffix = Stalker, Bubble, Anomaly

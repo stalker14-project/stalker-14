@@ -373,7 +373,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         var metaData = MetaData(item);
         if (TryComp<RepositoryItemComponent>(item, out var repoItem))
         {
-            catName = repoItem.CategoryName;
+            catName = Loc.GetString(repoItem.CategoryName);
         }
 
         // gets item weight

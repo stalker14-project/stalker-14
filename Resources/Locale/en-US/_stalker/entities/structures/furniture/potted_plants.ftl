@@ -1,0 +1,9 @@
+ent-STPottedPlantBase = potted plant
+    .desc = A little bit of nature contained in a pot.
+    .suffix = ST, Mapping
+ent-STPottedPlantBioluminscent = bioluminescent potted plant
+    .desc = It produces light!
+ent-STPottedPlantRD = RD's potted plant
+    .desc = A gift from the botanical staff, presented after the RD's reassignment. There's a tag on it that says "Y'all come back now, y'hear?"
+ent-STPottedPlant27 = plastic potted plant
+    .desc = A fake, cheap looking, plastic tree. Perfect for people who kill every plant they touch.
