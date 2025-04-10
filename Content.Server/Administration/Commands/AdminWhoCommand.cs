@@ -7,7 +7,8 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Administration.Commands;
 
-[AnyCommand] /*[AdminCommand(AdminFlags.AdminWho)] // stalker-changes */
+ /*[AdminCommand(AdminFlags.AdminWho)] // stalker-changes */
+ [AdminCommand(AdminFlags.Admin)]
 public sealed class AdminWhoCommand : IConsoleCommand
 {
     public string Command => "adminwho";
