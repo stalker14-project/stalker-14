@@ -323,6 +323,20 @@
       toggleable-clothing: !type:ContainerSlot {}
 
 - type: entity
+  parent: ClothingHeadHelmetLoyalistCoat
+  id: ClothingHeadHelmetKevlarMercenaries
+  name: Mercenarty Kevlar Hood
+  description: Sadly to small to fit over your helmet.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_mercs.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_mercs.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
   parent: ClothingOuterCoatLoyalist
   id: ClothingOuterCoatRenegat
   name: кевларовый плащ Ренегата
