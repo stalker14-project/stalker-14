@@ -1,6 +1,6 @@
 ent-StalkerMapGrass1 = Трава
     .suffix = Stalker, Mapping
-	
+
 ent-StalkerMapGrass2 = Трава
     .suffix = Stalker, Mapping
 

@@ -26,6 +26,8 @@
         - type: Bands
           band: Stalker
           bandIcon: band
+          bandProto: STBanditsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -61,6 +63,8 @@
         - type: Bands
           band: Stalker
           bandIcon: band
+          bandProto: STBanditsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -78,3 +82,13 @@
     legs: ClothingLegsJeansBlue
     torso: ClothingTorsoJacketAdidas
     pocket1: RadioBandPlayer
+- type: stBand
+  id: STBanditsBand
+  name: Bandits
+  factionId: Bandits
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerBandit
+    2: StalkerHeadBandit
+

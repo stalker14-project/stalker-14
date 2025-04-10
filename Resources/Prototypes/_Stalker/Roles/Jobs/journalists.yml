@@ -27,6 +27,8 @@
         - type: Bands
           band: Stalker
           bandIcon: journalist
+          bandProto: STJournalistsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -42,3 +44,12 @@
     torso: ClothingTorsoSweaterStalkerGreen
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsCombatFilled
+- type: stBand
+  id: STJournalistsBand
+  name: Journalists
+  factionId: Journalists
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerJournalist
+

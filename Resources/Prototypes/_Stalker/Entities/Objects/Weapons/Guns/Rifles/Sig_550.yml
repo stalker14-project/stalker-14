@@ -67,7 +67,7 @@
   suffix: ST, Skin
   parent: STBaseWeaponRifle
   id: STWeaponRifleSigSniper
-  description: Немецкая винтовка СИГ, модифицированная в карабин под советский 7.62х39
+  description: Немецкая винтовка СИГ, модифицированная в карабин под советский 7.62х39. Имеет встроенный оптический прицел.
   components:
   - type: STWeight
     self: 5
@@ -108,15 +108,12 @@
         whitelist:
           tags:
           - STWeaponModuleRifleSilencerNato
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleSniperSight
       gun_chamber:
         name: Chamber
         priority: 1
         whitelist:
           tags:
           - Cartridge739
+  - type: Scope
+    zoom: 1.4
+    offset: 12

@@ -25,6 +25,8 @@
       - type: Bands
         band: Stalker
         bandIcon: cn
+        bandProto: STClearSkyBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -41,3 +43,12 @@
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsWork
     outerClothing: ClothingOuterCoatBomber
+- type: stBand
+  id: STClearSkyBand
+  name: Clear Sky
+  factionId: ClearSky
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerClearSky
+

@@ -25,6 +25,8 @@
       - type: Bands
         band: Stalker
         bandIcon: sci
+        bandProto: STSciBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -62,6 +64,8 @@
       - type: Bands
         band: Stalker
         bandIcon: ecologists
+        bandProto: STSciBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -99,6 +103,8 @@
         - type: Bands
           band: Stalker
           bandIcon: sci
+          bandProto: STSciBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -116,3 +122,14 @@
     legs: ClothingLegsJeansSandCargo
     shoes: ClothingShoesBootsCombatFilled
     torso: ClothingTorsoShirtWhiteScientific
+- type: stBand
+  id: STSciBand
+  name: Scientists
+  factionId: Scientists
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerScientist
+    2: StalkerISSG
+    3: StalkerHeadScientist
+
