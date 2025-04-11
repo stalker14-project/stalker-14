@@ -51,10 +51,10 @@
 
 - type: entity
   id: StalkerGate
-  name: Створка ворот
+  name: Gate
   parent: STBaseMaterialDoor
-  description: Жёсткая рама, которую изготавливают из трубы квадратного сечения. Облицовкой служит металлический профнастил, покрытый полимерным покрытием. Неплохо сохранилась для своих лет.
-  suffix: ST, mapping, левая
+  description: A rigid frame that is made of a square pipe. The cladding is a metal corrugated sheeting covered with a polymer coating. It is well preserved for its age.
+  suffix: ST, mapping, Left
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Doors/Gate/Gate.rsi
@@ -76,10 +76,10 @@
 
 - type: entity
   id: StalkerGater
-  name: Створка ворот
+  name: Gate
   parent: STBaseMaterialDoor
-  description: Жёсткая рама, которую изготавливают из трубы квадратного сечения. Облицовкой служит металлический профнастил, покрытый полимерным покрытием. Неплохо сохранилась для своих лет.
-  suffix: ST, mapping, правая
+  description: A rigid frame that is made of a square pipe. The cladding is a metal corrugated sheeting covered with a polymer coating. It is well preserved for its age.
+  suffix: ST, mapping, Right
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Doors/Gate/Gater.rsi
@@ -100,10 +100,10 @@
 
 - type: entity
   id: StalkerGateFixed
-  name: Створка ворот
+  name: Gate
   parent: BaseStructure
-  description: Жёсткая рама, которую изготавливают из трубы квадратного сечения. Облицовкой служит металлический профнастил, покрытый полимерным покрытием. Неплохо сохранилась для своих лет.
-  suffix: ST, mapping, левая, незакрываемая
+  description: A rigid frame that is made of a square pipe. The cladding is a metal corrugated sheeting covered with a polymer coating. It is well preserved for its age.
+  suffix: ST, mapping, Left, Unlockable
   components:
     - type: InteractionOutline
     - type: Sprite

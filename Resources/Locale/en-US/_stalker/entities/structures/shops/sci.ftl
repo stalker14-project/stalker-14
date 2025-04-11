@@ -1,3 +1,3 @@
-ent-StalkerShopSci = Torgomat, scientists
+ent-StalkerShopSci = Torgomat, Scientists
     .desc = Now he also buys!
-    .suffix = ST, Mapping, scientists
+    .suffix = ST, Mapping, Scientists
