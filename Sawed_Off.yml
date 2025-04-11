@@ -1,0 +1,75 @@
+
+
+- type: entity
+  name: Обрез
+  parent: STBaseWeaponShotgun
+  id: STWeaponShotgunSawn
+  description: Обрез охотничьего ружья с горизонтальным расположением стволов. Значительно компактней и легче двустволки, но эффективен только в ближнем бою. Один из самых распространённых видов оружия у новичков.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
+  - type: Item
+    size: Small
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
+    heldPrefix: sawn
+  - type: STWeight
+    self: 2.0
+  - type: Gun
+    projectileSpeed: 13
+    minAngle: 30
+    maxAngle: 80
+    fireRate: 7
+    angleIncrease: 15
+    angleDecay: 75
+  - type: BallisticAmmoProvider
+    capacity: 2
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    boltClosed: false
+    canRack: false
+    soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+
+- type: entity
+  parent: STWeaponShotgunSawn
+  id: WeaponShotgunAnomalySawedOff
+  name: аномальный обрез
+  suffix: ST, Дробовик, Аномальное
+  description: Обрез охотничьего ружья с горизонтальным расположением стволов. Значительно компактней и легче двустволки, но эффективен только в ближнем бою. Один из самых распространённых видов оружия у новичков.
+  components:
+    - type: STWeight
+      self: 1
+    - type: Item
+      size: Normal
+      shape:
+        - 0,0,3,1
+    - type: BallisticAmmoProvider
+      capacity: 4
+    - type: ContainerContainer
+      containers:
+        gun_chamber: !type:ContainerSlot
+    - type: ChamberMagazineAmmoProvider
+      autoCycle: false
+      boltClosed: false
+      canRack: false
+      soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+      soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+      soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+      proto: Cartridge7mmBuckshot
+      whitelist:
+        tags:
+          - ShellShotgun
+    - type: Gun
+      projectileSpeed: 26
+      minAngle: 30
+      maxAngle: 80
+      fireRate: 7
+      angleIncrease: 15
+      angleDecay: 75
+

@@ -1,0 +1,77 @@
+
+
+- type: entity
+  name: ТОЗ-34
+  suffix: ST
+  parent: STBaseWeaponShotgun
+  id: STWeaponShotgunToz34
+  description: Широко распространённое охотничье ружьё - «вертикалка» — благодаря достаточной точности и хорошему останавливающему действию — обеспечивает более надёжную защиту от мутантов, чем пистолет.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
+  - type: Craftable
+  - type: STWeight
+    self: 3.2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
+    size: Large
+    shape:
+      - 0,0,7,1
+  - type: BallisticAmmoProvider
+    capacity: 2
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    boltClosed: false
+    canRack: false
+    soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+  - type: Gun
+    projectileSpeed: 16
+    minAngle: 60
+    maxAngle: 70
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 7
+
+
+- type: entity
+  parent: BaseWeaponShotgun
+  id: STWeaponShotgunAnomalyToz34
+  name: аномальный ТОЗ-34
+  description: Широко распространённое охотничье ружьё - «вертикалка» — благодаря достаточной точности и хорошему останавливающему действию — обеспечивает более надёжную защиту от мутантов, чем пистолет.
+  suffix: ST, Дробовик, Аномальное
+  components:
+    - type: STWeight
+      self: 2.8
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
+      equipDelay: 2
+    - type: BallisticAmmoProvider
+      capacity: 4
+    - type: ContainerContainer
+      containers:
+        gun_chamber: !type:ContainerSlot
+    - type: ChamberMagazineAmmoProvider
+      autoCycle: false
+      boltClosed: false
+      canRack: false
+      soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+      soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+      soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    - type: Gun
+      projectileSpeed: 25
+      minAngle: 60
+      maxAngle: 70
+      angleIncrease: 10
+      angleDecay: 50
+      fireRate: 7
