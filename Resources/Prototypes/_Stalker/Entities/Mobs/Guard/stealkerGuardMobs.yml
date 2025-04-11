@@ -1,6 +1,6 @@
 - type: entity
   name: постовой СОП
-  suffix: Stalker, Т5
+  suffix: Stalker, Т5, немощный
   parent: BaseMobMutant
   id: MobStalkerMilitaryGuard
   description:
@@ -23,12 +23,12 @@
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: zombie
-      sprite: /Textures/_Stalker/Mobs/Mutants/zombie/Stalker.rsi
+      state: alive
+      sprite: /Textures/_Stalker/Mobs/Military/PSZ.rsi
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: zombie
+        Base: alive
       Critical:
         Base: dead
       Dead:
@@ -76,19 +76,21 @@
     force: !type:Bool
       true
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 1.2
+    rechargeCooldown: 60
   - type: BasicEntityAmmoProvider
     proto: Bullet545PC
-    capacity: 8
-    count: 5
+    capacity: 1
+    count: 300
   - type: Gun
-    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 5
     useKey: false
     selectedMode: FullAuto
-    minAngle: 30
-    maxAngle: 58
-    angleIncrease: 5
-    angleDecay: 30
+    minAngle: 45
+    maxAngle: 75
+    angleIncrease: 2
+    angleDecay: 15
     availableModes:
     - FullAuto
   - type: MobThresholds
@@ -110,3 +112,97 @@
   - type: NpcFactionMember
     factions:
     - Military
+
+- type: entity
+  name: Вова Вист
+  suffix: Stalker, Т6, мега-мощный
+  parent: MobStalkerMilitaryGuard
+  id: MobStalkerMilitaryVovaVist
+  description: Вова Вист обладает превосходными навыками ведения стрельбы из пулемёта, в совокупности с аномальной мощью его пулемёта, этого достаточно, чтобы сделать военного одним из самых опасных людей в Зоне. Даже такой легендарный сталкер, как Шрам, продемонстрировал нечеловеческие возможности и все свои навыки, выложившись на полную и получив огромную порцию пятиточечной боли, чтобы прорваться в Деревню Новичков, избегая зоркого глаза, доведённого до предела мастерства и смертельных пуль Вовы Виста.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/Mobs/Military/Vist.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: HTN
+    rootTask:
+      task: TurretCompound
+    blackboard:
+      VisionRadius: !type:Single
+        100
+      AggroVisionRadius: !type:Single
+        100
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 60
+  - type: BasicEntityAmmoProvider
+    proto: Bullet918PGJ
+    capacity: 999999999
+    count: 999999999
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/pkm_shot.ogg
+    fireRate: 10
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 10
+    maxAngle: 20
+    angleIncrease: 5
+    angleDecay: 30
+    availableModes:
+    - FullAuto
+
+- type: entity
+  name: Рядовой Оковчук
+  suffix: Stalker, Т5, мощный
+  parent: MobStalkerMilitaryGuard
+  id: MobStalkerMilitarySniper
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/Mobs/Military/Sniper.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: HTN
+    rootTask:
+      task: TurretCompound
+    blackboard:
+      VisionRadius: !type:Single
+        1000
+      AggroVisionRadius: !type:Single
+        1000
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 10
+  - type: BasicEntityAmmoProvider
+    proto: Bullet754FMJ
+    capacity: 1
+    count: 1
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 1
+    maxAngle: 1
+    angleIncrease: 1
+    angleDecay: 1
+    availableModes:
+    - FullAuto
