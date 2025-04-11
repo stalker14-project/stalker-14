@@ -23,6 +23,7 @@ ent-STCraftMortarAndPestle = ступка и пестик
     .desc = сначало человек придумал измельчать камнем. на следующий день он придумал измельчать двумя камнями
     .suffix = { ent-BoltCutter.suffix }
 ent-CraftSaw = пила
+    .desc = { ent-BoltCutter.desc }
     .suffix = { ent-BoltCutter.suffix }
 ent-ChainsawStalker = бензопила
     .desc = Разновидность ручной цепной пилы, снабжённая двигателем внутреннего сгорания, как правило, двухтактным.

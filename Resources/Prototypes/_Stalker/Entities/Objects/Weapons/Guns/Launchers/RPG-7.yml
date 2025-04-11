@@ -6,14 +6,14 @@
   description: Оружие возмездия СОПа
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Launchers/rocket.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rpg-7.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Launchers/rocket.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rpg-7.rsi
   - type: Gun
     fireRate: 0.5
     soundGunshot:
@@ -37,4 +37,6 @@
     pullTime: 2.0
   - type: RepositoryItem
     categoryName: repository-weapons-category
+  - type: Wieldable
+  - type: GunRequiresWield
 

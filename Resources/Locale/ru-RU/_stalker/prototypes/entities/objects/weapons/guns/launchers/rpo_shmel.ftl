@@ -1,3 +1,3 @@
-ent-STWeaponLauncherRocketShmel = РПО Шмель
-    .desc = Чудесный инструмент военных преступлений
+ent-STWeaponLauncherRocketShmel = РПО-А "Шмель"
+    .desc = Советский одноразовый реактивный пехотный огнемёт, использующий термобарический боеприпас.
     .suffix = ST

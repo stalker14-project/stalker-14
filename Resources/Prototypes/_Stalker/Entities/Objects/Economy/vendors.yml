@@ -347,6 +347,17 @@
           map: ["enum.VendingMachineVisualLayers.Base"]
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-1.05,-0.15,1,0.65"
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+          density: 200
     - type: AccessReader
       access: [["Military"]]
     - type: AmbientSound
@@ -363,6 +374,10 @@
     ArmyAK1Crate: 2
     ArmyAKC1Crate: 1
     ArmyAKC2Crate: 1
+    ArmyProvisionCrate: 3
+    ArmyMedkitMilitaryCrate: 5
+    Army545Mag30Crate: 5
+    Army545Crate: 5
 
 - type: entity
   parent: BaseItem
@@ -382,9 +397,6 @@
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/olive_bag.rsi
       state: icon
-
-
-
 
 ############################################################################# СОП ОФЦ ПСЗ
 
@@ -411,6 +423,17 @@
           map: ["enum.VendingMachineVisualLayers.Base"]
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
     - type: AccessReader
       access: [["MilitaryOfficer"]]
     - type: AmbientSound
@@ -424,7 +447,7 @@
   id: MilitaryPSZInventoryOfficer
   startingInventory:
     ArmyAKCOfficerCrate: 3
-    MilitaryPSZInventoryRestock: 2
+    MilitaryPSZInventoryRestock: 6
     Screwdriver: 1
 
 - type: entity
