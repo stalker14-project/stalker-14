@@ -16,3 +16,6 @@ ent-ClothingHeadHelmetInfantryPilgrim = шлем инквизитора
 ent-ClothingHeadHelmetKeeper = шлем "Хранитель"
     .desc = Шлем «Хранитель» второго класса защиты, производитель неизвестен.
     .suffix = ST, T2, Скин
+ent-ClothingHeadHelmetInfantryMerc = шлем "Bastion"
+    .desc = Шлем «Bastion» второго класса защиты, производитель неизвестен.
+    .suffix = ST, T2, Скин
