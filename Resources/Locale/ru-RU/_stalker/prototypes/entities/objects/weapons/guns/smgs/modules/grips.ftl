@@ -1,7 +1,5 @@
-ent-STBaseModuleUnderbarrelSMG = рукоятка
-ent-STModuleSMGGripT1 = самодельная рукоятка ПП
-    .desc = Самодельная рукоятка для ПП.
+ent-STBaseModuleUnderbarrelSMG = grip
+ent-STModuleSMGGripT1 = makeshift SMG grip
     .suffix = ST, grip, T1
-ent-STModuleSMGGripT2 = рукоятка ПП
-    .desc = Фабричная рукоятка для ПП.
+ent-STModuleSMGGripT2 = legal SMG grip
     .suffix = ST, grip, T2

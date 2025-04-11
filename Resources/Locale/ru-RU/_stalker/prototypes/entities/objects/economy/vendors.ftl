@@ -20,7 +20,7 @@ ent-VendingMachineLaborer = раздатчик грузчиков
     .suffix = { ent-VendingMachineMilitary.suffix }
 ent-VendingMachineRestockLaborer = Снабжение ящиков грузчиков
     .desc = Ящик с ящиками для грузчиков
-
+	
 ent-MilitaryInventory = раздатчик военных
     .desc = Заменил коптёра в современности.
     .suffix = Stalker

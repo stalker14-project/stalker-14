@@ -11,7 +11,7 @@ ent-BiliardTableStalker = бильярдный стол
 ent-TableOneStalker = большой стол
     .desc = { ent-OldWoodTable.desc }
     .suffix = { ent-OldWoodTable.suffix }
-
+	
 ent-OldWoodTable2 = старый чёрный стол
     .desc = Некогда этот стол был гордостью, но сейчас предмет, который занимает много места.
     .suffix = ST, Mapping

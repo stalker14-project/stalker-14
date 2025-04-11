@@ -14,9 +14,9 @@ public sealed partial class NpcFactionPrototype : IPrototype
 
     [DataField]
     public List<ProtoId<NpcFactionPrototype>> Friendly = new();
+
     [DataField]
     public List<ProtoId<NpcFactionPrototype>> Hostile = new();
-
 }
 
 /// <summary>

@@ -1,7 +1,7 @@
 ent-PremiumSupplyTalons = премиальные талоны снабжения
     .desc = Талоны снабжения Института.
     .suffix = ST, НЕ СПАВНИТЬ
-
+	
 ent-PremiumSupplyTalons10 = премиальный талон
     .desc = Талоны снабжения Института.
     .suffix = Stalker, 10

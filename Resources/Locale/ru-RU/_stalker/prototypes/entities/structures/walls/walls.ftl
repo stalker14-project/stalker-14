@@ -40,6 +40,7 @@ ent-STWallNecropolis = стена чистилища
     .suffix = ST, Mapping, wall
 ent-STWallLava = Стена из базальта
     .suffix = { ent-STWallNecropolis.suffix }
+ent-STinvisiblewallforevor = STinvisiblewallforevor
     .desc = Вот-вот разрушится, если по нему постучать.
     .suffix = ST, Mapping, wall
 

@@ -29,8 +29,6 @@
           altBand: project-2
           canChange: true
           bandIcon: project-1
-          bandProto: STProjectBand
-          bandRankId: 2
         - type: IdentityBlocker
         - type: BlockTackingHolyItems
         - type: TeethPull
@@ -85,8 +83,6 @@
           altBand: project-4
           canChange: true
           bandIcon: project-3
-          bandProto: STProjectBand
-          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: IdentityBlocker
         - type: TeethPull
@@ -106,13 +102,3 @@
     ears: ClothingHeadsetProject
     eyes: ClothingEyesHudProject
     gloves: ClothingHandsGlovesFingerless
-- type: stBand
-  id: STProjectBand
-  name: Project
-  factionId: Project
-  maxMembers: 10
-  managingRankId: 3
-  hierarchy:
-    1: StalkerProjectPawn
-    2: StalkerProjectOrchestrator
-

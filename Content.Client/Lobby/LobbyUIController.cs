@@ -240,7 +240,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         _savePanel.SaveButton.OnPressed += _ =>
         {
             // stalker-changes-start
-            /*if (EditedProfile is null)
+            if (EditedProfile is null)
                 return;
             if (!EditedProfile.Changeable)
             {
@@ -248,7 +248,7 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
                 return;
             }
 
-            EditedProfile.Changeable = false;*/
+            EditedProfile.Changeable = false;
             // stalker-changes-end
             SaveProfile();
 

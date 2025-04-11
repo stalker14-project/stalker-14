@@ -8,11 +8,9 @@ ent-CraftHide = шкура
     .desc = Необработанная шкура животного.
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-PartRodMetalStalker = металические трубы
-    .desc = { ent-CraftGunpowderBank.desc }
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-CraftBag = мешок
-    .desc = { ent-CraftGunpowderBank.suffix }
-    .suffix = { ent-CraftGunpowderBank.desc }
+    .suffix = { ent-CraftGunpowderBank.suffix }
 ent-CraftFerments = набор ферментизации
     .desc = Одноразовый набор ферментизации, следует применять крайне осторожно.
     .suffix = { ent-CraftGunpowderBank.suffix }
@@ -27,15 +25,18 @@ ent-CraftCardboardTube = картонная труба
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-StickDynamite = динамитная шашка без фитиля
     .desc = То что может взоваться если её попытаться сломать.
-    .desc = { ent-StickDynamite.desc }
 ent-CraftFitil = фитиль
     .desc = Скрутка из фитиля, используется для поджигания или поддержания огня, особенно в свечах.
     .suffix = { ent-CraftGunpowderBank.suffix }
 ent-CraftHideBloodSucker = шкура мутанта
     .desc = Необработанная шкура кровососа, достаточно крепкая.
     .suffix = { ent-CraftGunpowderBank.suffix }
+	
+ent-GunpowderStalker = чёрный порох
+    .desc = Взрывчатое соединение.
+    .suffix = Stalker, крафт
 
-ent-GunpowderStalker_craft = чёрный порох
+ent-GunpowderStalker = чёрный порох
     .desc = Взрывчатое соединение.
     .suffix = Stalker, крафт
 

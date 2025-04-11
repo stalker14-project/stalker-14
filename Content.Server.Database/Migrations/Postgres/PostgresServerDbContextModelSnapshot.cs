@@ -1333,54 +1333,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("stalkers", (string)null);
                 });
 
-            modelBuilder.Entity("Content.Server.Database.StalkerBand", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("stalker_bands_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("BandProtoId")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("band_proto_id");
-
-                    b.Property<float>("RewardPoints")
-                        .HasColumnType("real")
-                        .HasColumnName("reward_points");
-
-                    b.HasKey("Id")
-                        .HasName("PK_stalker_bands");
-
-                    b.ToTable("stalker_bands", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.StalkerFaction", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("stalker_factions_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("FactionProtoId")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("faction_proto_id");
-
-                    b.Property<float>("RewardPoints")
-                        .HasColumnType("real")
-                        .HasColumnName("reward_points");
-
-                    b.HasKey("Id")
-                        .HasName("PK_stalker_factions");
-
-                    b.ToTable("stalker_factions", (string)null);
-                });
-
             modelBuilder.Entity("Content.Server.Database.StalkerStats", b =>
                 {
                     b.Property<int>("Id")
@@ -1412,44 +1364,6 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasName("PK_stalker_stats");
 
                     b.ToTable("stalker_stats", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.StalkerZoneOwnership", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("stalker_zone_ownerships_id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("BandId")
-                        .HasColumnType("integer")
-                        .HasColumnName("band_id");
-
-                    b.Property<int?>("FactionId")
-                        .HasColumnType("integer")
-                        .HasColumnName("faction_id");
-
-                    b.Property<DateTime?>("LastCapturedByCurrentOwnerAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("last_captured_by_current_owner_at");
-
-                    b.Property<string>("ZoneProtoId")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("zone_proto_id");
-
-                    b.HasKey("Id")
-                        .HasName("PK_stalker_zone_ownerships");
-
-                    b.HasIndex("BandId")
-                        .HasDatabaseName("IX_stalker_zone_ownerships_band_id");
-
-                    b.HasIndex("FactionId")
-                        .HasDatabaseName("IX_stalker_zone_ownerships_faction_id");
-
-                    b.ToTable("stalker_zone_ownerships", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
@@ -2076,25 +1990,6 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("Ban");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.StalkerZoneOwnership", b =>
-                {
-                    b.HasOne("Content.Server.Database.StalkerBand", "Band")
-                        .WithMany("ZoneOwnerships")
-                        .HasForeignKey("BandId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .HasConstraintName("FK_stalker_zone_ownerships_stalker_bands_band_id");
-
-                    b.HasOne("Content.Server.Database.StalkerFaction", "Faction")
-                        .WithMany("ZoneOwnerships")
-                        .HasForeignKey("FactionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .HasConstraintName("FK_stalker_zone_ownerships_stalker_factions_faction_id");
-
-                    b.Navigation("Band");
-
-                    b.Navigation("Faction");
-                });
-
             modelBuilder.Entity("Content.Server.Database.Trait", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2233,16 +2128,6 @@ namespace Content.Server.Database.Migrations.Postgres
             modelBuilder.Entity("Content.Server.Database.ServerRoleBan", b =>
                 {
                     b.Navigation("Unban");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.StalkerBand", b =>
-                {
-                    b.Navigation("ZoneOwnerships");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.StalkerFaction", b =>
-                {
-                    b.Navigation("ZoneOwnerships");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,3 +1,2 @@
-ent-STModuleAutoSear = автоматический ресивер
-    .desc = Ресивер, позволяющий модифицировать гражданские версии оружия в автоматику.
+ent-STModuleAutoSear = Auto Sear
     .suffix = ST, module

@@ -26,8 +26,6 @@
         - type: Bands
           band: Stalker
           bandIcon: seraphim
-          bandProto: STSeraphimsBand
-          bandRankId: 2
         - type: Access
           tags:
             - Seraphims
@@ -85,8 +83,6 @@
         - type: Bands
           band: Stalker
           bandIcon: seraphim_officer
-          bandProto: STSeraphimsBand
-          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -109,13 +105,3 @@
     gloves: STClothingHandsGlovesSera
     pocket1: STBoltBagFilled
     pocket2: GeigerCounter
-- type: stBand
-  id: STSeraphimsBand
-  name: Seraphims
-  factionId: Seraphims
-  maxMembers: 10
-  managingRankId: 3
-  hierarchy:
-    1: Seraphim
-    2: SeraphimHead
-
