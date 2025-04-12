@@ -21,6 +21,16 @@
       - 0,0,7,1
   - type: BallisticAmmoProvider
     capacity: 2
+  - type: ContainerContainer
+    containers:
+      gun_chamber: !type:ContainerSlot
+  - type: ChamberMagazineAmmoProvider
+    autoCycle: false
+    boltClosed: false
+    canRack: false
+    soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+    soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
   - type: Gun
     projectileSpeed: 16
     minAngle: 60
@@ -48,6 +58,16 @@
       equipDelay: 2
     - type: BallisticAmmoProvider
       capacity: 4
+    - type: ContainerContainer
+      containers:
+        gun_chamber: !type:ContainerSlot
+    - type: ChamberMagazineAmmoProvider
+      autoCycle: false
+      boltClosed: false
+      canRack: false
+      soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+      soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
+      soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
     - type: Gun
       projectileSpeed: 25
       minAngle: 60
