@@ -51,16 +51,6 @@
         - 0,0,3,1
     - type: BallisticAmmoProvider
       capacity: 4
-    - type: ContainerContainer
-      containers:
-        gun_chamber: !type:ContainerSlot
-    - type: ChamberMagazineAmmoProvider
-      autoCycle: false
-      boltClosed: false
-      canRack: false
-      soundBoltClosed: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
-      soundBoltOpened: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
-      soundRack: /Audio/Weapons/Guns/Cock/revolver_cock.ogg
       proto: Cartridge7mmBuckshot
       whitelist:
         tags:
