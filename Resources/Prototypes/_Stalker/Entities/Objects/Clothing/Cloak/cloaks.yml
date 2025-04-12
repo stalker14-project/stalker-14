@@ -94,6 +94,30 @@
 
 - type: entity
   parent: STClothingCapeBase
+  id: ClothingCloakFoma
+  name: Чёрная мантия
+  description: Чёрная мантия – лёгкая, просторная, из дышащей ткани. Надёжно защищает от солнца, создаёт тень, сохраняет прохладу. Традиционный арабский наряд для жаркого климата
+  suffix: Stalker, Плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/foma_cloak.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/foma_cloak.rsi
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+      - 0,2,0,3
+      - 0,-2,0,0
+      - 2,2,2,3
+      - 2,-1,3,-0
+      - 4,2,4,3
+      - 5,-1,6,-0
+      - 6,2,6,3
+      - 8,2,8,3
+      - 8,-2,8,0
+
+- type: entity
+  parent: STClothingCapeBase
   id: ClothingCloakGreen
   name: Зеленый плащ
   description: Для фанатов "Болотного доктора"
