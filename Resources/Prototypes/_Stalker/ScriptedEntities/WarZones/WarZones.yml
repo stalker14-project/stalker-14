@@ -10,6 +10,17 @@
     - !type:CaptureTimeRequirenment
       captureTime: 1800
 
+- type: stWarZone
+  id: SvalkaDepo
+  rewardPointsPerPeriod: 0
+  rewardPeriod: 1800
+  captureCooldownHours: 24
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:CaptureTimeRequirenment
+    captureTime: 1800
+
 # Entity prototype referencing the above meta-prototype
 - type: entity
   id: WarZoneEntity_Kordon
@@ -39,3 +50,32 @@
       radius: 4
       color: Cyan
       energy: 1
+
+- type: entity
+  id: WarZoneEntity_Svalka_Depo
+  parent: MarkerBase
+  name: Depo War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: SvalkaDepo
+    portalName: Depo
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 15
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 4
+    color: Cyan
+    energy: 1
