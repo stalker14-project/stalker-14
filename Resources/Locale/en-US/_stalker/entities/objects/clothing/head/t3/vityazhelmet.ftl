@@ -12,3 +12,5 @@ ent-ClothingHeadHelmetVityaz1P = "Capelan" helmet
     .desc = Shockproof helmet "Vityaz 1C", modified by the Pilgrims.
 ent-ClothingHeadHelmetVityaz1M = Vityaz 1M 'Duty' helmet
     .desc = The Vityaz-M shockproof helmet was manufactured at the Research Institute of Steel. Development of the helmet began in the late 1980s. The helmet received a visor, although it turned out to be massive.
+ent-ClothingHeadHelmetVityaz1Merc = Vityaz 1S 'Mercenary' Helmet
+    .desc = Vityaz 1C helmet modified by a certain mercenary company.

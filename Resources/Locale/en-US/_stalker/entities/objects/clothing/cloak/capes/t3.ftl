@@ -44,3 +44,7 @@ ent-ClothingOuterCoatRet = insulated Kevlar raincoat
 ent-ClothingOuterCoatRetHat = Collar
     .desc = just Collar.
     .suffix = ST, Skin
+ent-ClothingOuterCoatKevlarMercenaries = Mercenary Kevlar Coat
+    .desc = Kevlar coat of the mercenaries.
+ent-ClothingHeadHelmetKevlarMercenaries = Mercenary Kevlar Hood
+    .desc = Sadly to small to fit over your helmet.
