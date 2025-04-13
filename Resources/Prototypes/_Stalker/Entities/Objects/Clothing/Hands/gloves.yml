@@ -24,6 +24,18 @@
 
 - type: entity
   parent: ClothingHandsBase
+  id: ClothingHandsGlovesFoma
+  name: Тактические перчатки
+  suffix: ST, Скин
+  description: Тактические перчатки – износостойкие, с усиленными ладонями, защитой костяшек и тактильной чувствительностью для оружия и работы.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/gloves/foma_gloves.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/gloves/foma_gloves.rsi
+
+- type: entity
+  parent: ClothingHandsBase
   id: STClothingHandsGlovesSera
   name: обмотки серафимов
   suffix: ST, Скин

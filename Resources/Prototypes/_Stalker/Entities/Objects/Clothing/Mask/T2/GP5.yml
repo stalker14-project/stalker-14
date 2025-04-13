@@ -44,3 +44,26 @@
   - type: HideLayerClothing
     slots:
     - Hair
+
+- type: entity
+  parent: ClothingMaskGP5
+  id: ClothingMaskGP5Foma
+  suffix: ST, T2, Caustic, Скин
+  name: Антирадиационный противогаз
+  description: Антирадиационный противогаз – защищает органы дыхания и глаза от радиоактивной пыли, токсинов и бактерий. Герметичный, с фильтром.
+  components:
+  - type: Tag
+    tags:
+      - BlockMask
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/foma_mask.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/foma_mask.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+        Radiation: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
