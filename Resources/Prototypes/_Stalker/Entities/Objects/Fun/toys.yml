@@ -1,0 +1,26 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieOracul
+  name: Плюшевый оракул
+  description: Причудливая игрушка опасной разновидности жаб. Кто это сделал?
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Fun/toys.rsi
+    state: plushie_oracul
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/_Stalker/Mutants/oracles_attack.ogg
