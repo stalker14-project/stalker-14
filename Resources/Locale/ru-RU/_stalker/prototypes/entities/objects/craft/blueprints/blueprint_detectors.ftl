@@ -1,0 +1,10 @@
+ent-STDetectorAD1Blueprint = Рецепт детектор аномалий 1-й модели (ДА-1)
+ent-STDetectorAD2Blueprint = Рецепт детектор аномалий 2-й модели (ДА-2)
+ent-STDetectorAD3Blueprint = Рецепт детектор аномалий 3-й модели (ДА-3)
+ent-STZoneArtifactDetectorPulseBlueprint = Рецепт Детектора артефактов "Пульс"
+ent-STZoneArtifactDetectorHunterBlueprint = Рецепт Детектора артефактов "Охотник"
+ent-STZoneArtifactDetectorResponseBlueprint = Рецепт Детектора артефактов "Отклик"
+ent-STZoneArtifactDetectorSpruceBlueprint = Рецепт Детектора артефактов "Хвоя"
+ent-STZoneArtifactDetectorBarracudaBlueprint = Рецепт Детектора артефактов "Барракуда"
+ent-STZoneArtifactDetectorBearBlueprint = Рецепт Детектора артефактов "Медведь"
+ent-STZoneArtifactDetectorWolfhoundBlueprint = Рецепт Детектора артефактов "Волкодав"

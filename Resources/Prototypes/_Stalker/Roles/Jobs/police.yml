@@ -1,0 +1,48 @@
+- type: job
+  id: Police
+  name: job-police
+  icon: police
+  description: job-police-desc
+  playTimeTracker: JobPolice
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobPolice
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: PoliceGear
+  supervisors: job-police-supervisor
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          groups:
+            - PoliceOfficer
+        - type: Bands
+          band: Stalker
+          bandIcon: police
+          bandProto: STPoliceBand
+          bandRankId: 2
+        - type: BlockTackingHolyItems
+
+- type: startingGear
+  id: PoliceGear
+  equipment:
+    id: StalkerPDA
+    torso: ClothingTorsoJacketPolice
+    legs: ClothingLegsJeansPolice
+    shoes: ClothingShoesBootsCombatFilled
+
+
+- type: stBand
+  id: STPoliceBand
+  name: Police
+  factionId: Police
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: Police
+

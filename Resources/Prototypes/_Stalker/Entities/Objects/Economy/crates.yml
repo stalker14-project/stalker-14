@@ -114,9 +114,9 @@
       items:
         - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
         - id: Zipties
-        - id: Zipties
         - id: ClothingHeatBagStalker
         - id: PowerCellHyper
+        - id: Binocularus1
         - id: ClothingHeadBandana2Military
         - id: STWeaponGunAKS74U
         - id: ClothingBeltGreenWebbingStalker
@@ -125,6 +125,7 @@
         - id: Zipties
         - id: Zipties
         - id: STCombatKnife
+        - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
@@ -203,9 +204,9 @@
       items:
         - id: STClothingOuterArmorLightPlateVestBasePSZ7v1
         - id: Zipties
-        - id: Zipties
         - id: ClothingHeatBagStalker
         - id: PowerCellHyper
+        - id: Binocularus1
         - id: ClothingHeadBandana1Military
         - id: STWeaponGunAKS74U
         - id: ClothingBeltGreenWebbingStalker
@@ -214,6 +215,7 @@
         - id: Zipties
         - id: Zipties
         - id: STCombatKnife
+        - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
@@ -256,9 +258,9 @@
       items:
         - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
         - id: Zipties
-        - id: Zipties
         - id: ClothingHeatBagStalker
         - id: PowerCellHyper
+        - id: Binocularus1
         - id: ClothingHeadBandana2Military
         - id: STWeaponRifleStalkerAKS74
         - id: ClothingBeltGreenWebbingStalker
@@ -267,6 +269,7 @@
         - id: Zipties
         - id: Zipties
         - id: STCombatKnife
+        - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
@@ -309,9 +312,9 @@
       items:
         - id: STClothingOuterArmorLightPlateVestBasePSZ7v1
         - id: Zipties
-        - id: Zipties
         - id: ClothingHeatBagStalker
         - id: PowerCellHyper
+        - id: Binocularus1
         - id: ClothingHeadBandana1Military
         - id: STWeaponRifleStalkerAKS74
         - id: ClothingBeltGreenWebbingStalker
@@ -320,6 +323,7 @@
         - id: Zipties
         - id: Zipties
         - id: STCombatKnife
+        - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
@@ -362,7 +366,6 @@
       items:
         - id: STClothingOuterArmorLightPlateVestBasePSZ7
         - id: Zipties
-        - id: Zipties
         - id: ClothingHeatBagStalker
         - id: PowerCellHyper
         - id: Binocularus1
@@ -374,6 +377,7 @@
         - id: Zipties
         - id: Zipties
         - id: STCombatKnife
+        - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitMilitary
@@ -1357,5 +1361,112 @@
         - id: STBrutepack
         - id: MedkitMilitary
         - id: MedkitMilitary
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+### ПРОВИЗИЯ СОП
+
+- type: entity
+  parent: BaseItem
+  id: ArmyProvisionCrate
+  name: амейский комплект провизии
+  description: Базовый армейский комплект, содержащий продовольственные запасы, предназначенный для солдат С.О.П.
+  suffix: Stalker
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: STFoodBreadPlain
+        - id: STFoodBreadPlain
+        - id: STFoodBreadPlain
+        - id: STFoodBreadPlain
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ArmyMedkitMilitaryCrate
+  name: армейский комплект аптечек
+  description: Базовый армейский комплект, содержащий армейские аптечки, предназначенный для солдат С.О.П.
+  suffix: Stalker
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: Army545Mag30Crate
+  name: армейский комплект обойм 5.45
+  description: Базовый армейский комплект, содержащий обоймы на 30 патрон под калибр 5.45 х 39, предназначенный для солдат С.О.П.
+  suffix: Stalker
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: Army545Crate
+  name: армейский комплект ПС патронов 5.45
+  description: Базовый армейский комплект, содержащий ПС патроны калибра 5.45 х 39, предназначенный для солдат С.О.П.
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
       sound:
         path: /Audio/Effects/unwrap.ogg

@@ -1,1 +1,16 @@
 ent-ST-TurnCard = перевернуть карту
+ent-BaseCard = карта
+    .desc = Приятная на ощупь бумажная игральная карта выпуска NanoTrasen.
+    .suffix = ST
+ent-CardBinEmpty = колода карт
+    .desc = Колода карт для тех кому действительно более не чем занятся.
+    .suffix = Пустая
+ent-PokerCardBinEmpty = { ent-CardBinEmpty }
+    .desc = Покерная колода карт для тех кому действительно более не чем занятся.
+    .suffix = { ent-CardBinEmpty.suffix }
+ent-PokerCardBin = { ent-CardBinEmpty }
+    .desc = { ent-PokerCardBinEmpty.desc }
+    .suffix = 52
+ent-CardBin = { ent-CardBinEmpty }
+    .desc = { ent-CardBinEmpty.desc }
+    .suffix = 36

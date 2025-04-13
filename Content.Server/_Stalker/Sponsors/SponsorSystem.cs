@@ -15,7 +15,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Sponsors;
 
-public sealed class SponsorSystem : EntitySystem
+public sealed partial class SponsorSystem : EntitySystem
 {
     [Dependency] private readonly IConsoleHost _consoleHost = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -34,6 +34,8 @@ public sealed class SponsorSystem : EntitySystem
 
         // debug
         _consoleHost.RegisterCommand("st_list_sponsors", ListSponsors);
+        
+        InitializeJobs();
     }
 
     #region GiveLoadout

@@ -1,0 +1,58 @@
+- type: job
+  id: StalkerTrader
+  name: job-trader
+  icon: trader
+  description: job-trader-desc
+  playTimeTracker: JobTrader
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobTrader
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: TraderGear
+  supervisors: job-trader-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Stalker
+      - type: Bands
+        band: Stalker
+        bandIcon: trader
+        bandProto: STTradersBand
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
+- type: startingGear
+  id: TraderGear
+  equipment:
+    id: StalkerPDA
+    legs: ClothingLegsJeansSandCargo
+    torso: ClothingTorsoTurtlenecksDeserterCamouflage
+    shoes: ClothingShoesAerostatic
+    belt: ClothingBeltMedicalStalker
+    eyes: ClothingEyesGogglesAnomalist
+    outerClothing: ClothingOuterCoatDetectiveDark
+    neck: ClothingOuterCoatDetectiveDark
+    gloves: ClothingHandsMercGlovesCombat
+    head: ClothingHeadHatGreyFlatcap
+- type: stBand
+  id: STTradersBand
+  name: Traders
+  factionId: Traders
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerTrader
+

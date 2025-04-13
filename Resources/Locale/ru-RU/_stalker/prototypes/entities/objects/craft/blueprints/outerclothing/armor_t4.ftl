@@ -1,0 +1,9 @@
+ent-ClothingOuterArmorAVSplateblackBlueprint = Рецепт AVS Plate IV тира
+ent-ClothingOuterArmorStalkerCombatBlueprint = Рецепт боевой брони
+ent-STClothingOuterArmorIOTVGreenBlueprint = Рецепт зеленого IOTV бронижилета
+ent-STClothingOuterArmor6B13Blueprint = Рецепт 6B13 военный
+ent-STClothingOuterArmorBerill5MBlueprint = Рецепт бронекостюм «Берилл-5М»
+ent-STClothingOuterArmorHeavyBlueprint = Рецепт бронированный комбинезон
+ent-STClothingOuterArmorSSP99Blueprint = Рецепт Зеленый ССП-99М «Эколог»
+ent-STClothingOuterArmorYegerBlueprint = Рецепт Егерь
+ent-STClothingOuterArmorReingerBlueprint = Рецепт боевая броня рейнджера

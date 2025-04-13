@@ -1,0 +1,12 @@
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingNeckExoSpeed
+  suffix: Stalker, Спонсор
+  name: экзоскелет
+  description: Версия экзоскелета на ноги, позволяющего быстрее бегать. По сути - технологичные ходули.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/exo_speed.rsi
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 1.1

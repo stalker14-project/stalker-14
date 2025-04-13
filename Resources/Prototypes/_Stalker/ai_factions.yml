@@ -5,6 +5,7 @@
     - Stalker
     - Mutated
     - NanoTrasen
+    - Military
 
 - type: npcFaction
   id: Mutated
@@ -13,8 +14,26 @@
     - Stalker
     - MutatedHunter
     - NanoTrasen
+    - Military
 
 - type: npcFaction
   id: Stalker
   hostile:
     - Mutated
+    - Military
+
+- type: npcFaction
+  id: Military
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Stalker
+  - NanoTrasen
+  - Passive
+
+- type: npcFaction
+  id: Bandit
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Military

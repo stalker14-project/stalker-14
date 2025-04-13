@@ -62,9 +62,10 @@
     MutantPartZombieHand: 380
 
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
+        STCombatKnife: 10
           # shotgun
         STWeaponShotgunMossberg: 630
         STWeaponShotgunStalkerSPAS: 1300
@@ -78,7 +79,7 @@
         STWeaponRifleSig550: 3700
         STWeaponRifleSCARH: 3250
         STWeaponRifleStalkerL85: 1900
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 2
       items:
         Base939Mag10: 70
@@ -94,7 +95,7 @@
         GlockMag33: 440
         Base751Mag10: 200
         751Mag20: 400
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 115
@@ -110,7 +111,7 @@
         556FMJBox: 280
         556M855Box: 700
         556WarmagBox: 1050
-    - name: Броня и снаряжение
+    - name: shop-category-armor
       priority: 4
       items:
         STSkinsKitMercenary: 500
@@ -119,7 +120,7 @@
         ClothingOuterArmorSevaMerc: 2500
         ClothingOuterArmorMerc: 3100
         ClothingHeadMercLight: 300
-    - name: Хранилища и Контейнеры
+    - name:  = Хранилища и Контейнеры
       priority: 5
       items:
         ClothingBackpackDuffelGreenStalker: 30
@@ -130,7 +131,7 @@
         ClothingBeltTarzanOrange: 200
         MedkitCMSStalker: 450
         MedkitGrizzlyStalker: 850
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
         ClothingOuterCoatDoshdevik: 100
@@ -138,8 +139,8 @@
         ClothingMaskGasZarya: 100
         ClothingMaskGasM40: 250
         ClothingMaskGP7: 900
-    - name: Утилиты
-      priority: 8
+    - name: shop-category-utilities
+      priority: 7
       items:
         STCombatKnife: 25
         TrashBag: 30
@@ -148,6 +149,9 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
+    - name: shop-category-research-equipment
+      priority: 8
+      items:
         STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
@@ -165,7 +169,7 @@
         HatchetStalker: 150
         STBoltBagFilled: 50
         ZoneAnomalyDetectorAD1: 550
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 250
@@ -179,7 +183,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 10
       items:
           # Cheap
@@ -196,7 +200,7 @@
         MedkitAI2: 200
         MedkitMilitary: 400
         Defibrillator: 1000
-    - name: Модули
+    - name: shop-category-modules
       priority: 11
       items:
         STModuleScopeRiflesT1Nato: 600
@@ -205,7 +209,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
-    - name: Развлечения
+    - name: shop-category-entertainment
       priority: 12
       items:
         # Dices
@@ -220,7 +224,7 @@
         # Instruments
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 13
       items:
         ClothingBandageStalkerGreen: 5

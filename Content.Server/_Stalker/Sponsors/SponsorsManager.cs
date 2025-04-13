@@ -28,6 +28,8 @@ public sealed class SponsorsManager
     private readonly HttpClient _httpClient = new();
     private readonly Dictionary<NetUserId, SponsorData> _cachedSponsors = new();
 
+    public event Action<NetUserId>? SponsorPlayerCached;
+
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
     private bool _enabled;
@@ -199,6 +201,7 @@ public sealed class SponsorsManager
 
         var data = new SponsorData(level, e.UserId, isGiven, contrib);
         _cachedSponsors.Add(e.UserId, data);
+        SponsorPlayerCached?.Invoke(e.UserId);
 
         _sawmill.Debug($"{e.UserId} is sponsor now. UserId: {e.UserId}. Level: {Enum.GetName(data.Level)}:{(int)data.Level}");
     }

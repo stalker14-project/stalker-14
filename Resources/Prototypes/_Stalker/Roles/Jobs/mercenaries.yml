@@ -1,8 +1,8 @@
 - type: job
   id: StalkerMercenary
-  name: Наёмник
+  name: job-mercenary
   icon: merc
-  description: Искатели приключений и головорезы со всего мира.
+  description: job-mercenary-desc
   playTimeTracker: JobStalkerMercenary
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: StalkerMercenaryGear
-  supervisors: Чётко спланированная операция с отличной подготовкой — вот залог вашего успеха.
+  supervisors: job-mercenary-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -27,6 +27,8 @@
           canChange: true
           band: Stalker
           bandIcon: merc
+          bandProto: STMercenariesBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -46,9 +48,9 @@
 
 - type: job
   id: StalkerHeadMercenary
-  name: Командир наёмников
+  name: job-head-mercenary
   icon: merc
-  description: Ваша обязанность - поддержка связи с штабом и непосредственное принятие решений по контракту.
+  description: job-head-mercenary-desc
   playTimeTracker: JobStalkerHeadMercenary
   whitelisted: true
   requirements:
@@ -60,8 +62,8 @@
       - Human
       - Dwarf
   startingGear: StalkerHeadMercenaryGear
-  supervisors: вы координируете тактические операции, обеспечиваете эффективное взаимодействие членов группировки и принимаете оперативные решения на поле боя
-  canBeAntag: false 
+  supervisors: job-head-mercenary-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -74,6 +76,8 @@
           canChange: true
           band: Stalker
           bandIcon: merc
+          bandProto: STMercenariesBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -91,3 +95,13 @@
     torso: STClothingTorsoJacketGray
     legs: STClothingLegsPantsGray
     shoes: ClothingShoesSwat
+- type: stBand
+  id: STMercenariesBand
+  name: Mercenaries
+  factionId: Mercenaries
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerMercenary
+    2: StalkerHeadMercenary
+

@@ -2,13 +2,15 @@
   id: SerafimShopPresetSimple
   itemsForSale:
     FoodTinMRETrash: 5
+    #Fix
+    Roubles: 0
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
         STWeaponShotgunToz34: 900
         STWeaponShotgunMP155T: 100
-    - name: Броня и снаряжение
+    - name: shop-category-armor
       priority: 2
       items:
         ClothingMaskGasSera: 180
@@ -22,7 +24,7 @@
         ClothingBeltTarzanOrange: 1000
         STClothingCapeT1Serafim: 356
         STSkinsKitSeraphim: 1000
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 3
       items:
         ExtendedEmergencyOxygenTankFilledStalker: 30
@@ -39,17 +41,17 @@
         Paper: 10
         Pen: 50
         ClothingBackpackDuffelGreenStalkerHydroponic: 1000
-    - name: Аномалии
+    - name: shop-category-research-equipment
       priority: 4
       items:
         # Bolt bags
         STBoltBagFilled: 65
         STBoltBagOliveGrayFilled: 65
-    - name: Патроны
+    - name: shop-category-ammunition
       priority: 5
       items:
         7mmBuckshotBox: 170
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 6
       items:
         STEnergyDrink: 1450
@@ -60,7 +62,7 @@
         FoodTinMRE: 1200
         DrinkLemonadehBottleFull: 500
         STFoodMeatSalami: 900
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 7
       items:
         PillDexalin: 400
@@ -100,8 +102,10 @@
     MutantPartOraculeEye: 520
     MutantPartPseudogiantHeart: 1040
     MutantPartZombieHand: 156
+    #Fix
+    Roubles: 0
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
         STCombatKnife: 2
@@ -128,7 +132,7 @@
         STWeaponRifleStalkerVeprSerafim: 800
         STWeaponRifleStalkerAK104: 1100
 
-    - name: Броня и снаряжение
+    - name: shop-category-armor
       priority: 2
       items:
         ClothingHeadHelmetSH68: 40 # T1 - PVE
@@ -146,7 +150,7 @@
         STClothingOuterArmorSeraphimStrash: 700 # T3 - PVE
         ClothingOuterArmorSevasera: 500 # T3 - ENV
         ClothingOuterCoatSeraphim: 200
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 3
       items:
         ExtendedEmergencyOxygenTankFilledStalker: 6
@@ -167,7 +171,7 @@
         Pen: 10
         ClothingBackpackDuffelGreenStalkerHydroponic: 200
         STBatMolitoslov: 50
-    - name: Аномалии
+    - name: shop-category-research-equipment
       priority: 4
       items:
         STBoltBagFilled: 10
@@ -176,7 +180,7 @@
         ZoneAnomalyDetectorAD2: 130 # T2
           # Detectors
         ZoneArtifactDetectorPulse: 20 # T1
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 5
       items:
         Base1270Mag: 20 #T1
@@ -195,7 +199,7 @@
           # Other
         TTMag: 19
         739Mag30: 60
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 6
       items:
         6mmBuckshotBox: 20
@@ -222,7 +226,7 @@
         919PSOGJBox: 15
         919PSTBox: 36
         919PBMBox: 90
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 7
       items:
         STEnergyDrink: 20
@@ -236,7 +240,7 @@
         FoodTinMRE: 24
         DrinkLemonadehBottleFull: 10
         STFoodMeatSalami: 50
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 8
       items:
           # Cheap
@@ -253,7 +257,7 @@
         MedkitAI2Sera: 60
         MedkitMilitary: 140
         Defibrillator: 100
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 9
       items:
         STClothingHandsGlovesSera: 2
@@ -316,7 +320,7 @@
         ClothingTorsoTurtlenecksGorka6B: 10
         ClothingTorsoTurtlenecksKhakiTurtleneck: 10
         ClothingTorsoTurtlenecksMatrosska: 10
-    - name: Обвесы
+    - name: shop-category-modules
       priority: 10
       items:
         STModuleScopeRiflesT1Nato: 120
@@ -328,7 +332,7 @@
         STModuleSilencerSMGT1: 120
         STModuleSniperSightT1: 120
         STModuleSilencerSniperT1: 120
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 11
       items:
           # Cloaks
@@ -340,7 +344,7 @@
         ClothingMaskGasSera: 20 # T1
         ClothingMaskGasM40: 40 # T2
         ClothingMaskGP21: 200 # T3
-    - name: Хранилища и Контейнеры
+    - name: shop-category-storage-and-containers
       priority: 12
       items:
           # BackPacks
@@ -382,8 +386,10 @@
     MutantPartOraculeEye: 400
     MutantPartPseudogiantHeart: 1000
     MutantPartZombieHand: 75
+    #Fix
+    Roubles: 0
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
         STWeaponSMGStalkerCP2Veresk: 1225
@@ -399,7 +405,7 @@
         STWeaponShotgunStalkerBenelli: 385
         STWeaponShotgunStalkerBenelliSera: 385
         STWeaponRifleSVU: 7900
-    - name: Броня и снаряжение
+    - name: shop-category-armor
       priority: 2
       items:
         ClothingBackpackTacticSera: 120
@@ -413,13 +419,13 @@
         ClothingOuterArmorSevasera: 850
         STSkinsKitSeraphim: 200
         STClothingHeadHelmetSeraphimAltin: 900
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 3
       items:
         ExtendedEmergencyOxygenTankFilledStalker: 300
         DoubleEmergencyOxygenTankStalkerFilled: 200
         STTorchSera: 50
-    - name: Аномалии
+    - name: shop-category-research-equipment
       priority: 4
       items:
         BoxArtcont: 125
@@ -432,7 +438,7 @@
         # Bolt bags
         STBoltBagFilled: 25
         STBoltBagOliveGrayFilled: 25
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 5
       items:
         STEnergyDrink: 50
@@ -443,7 +449,7 @@
         FoodTinMRE: 80
         DrinkLemonadehBottleFull: 80
         STFoodMeatSalami: 60
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 6
       items:
         PillDexalin: 15
@@ -459,11 +465,11 @@
         MedkitMilitary: 500
         antiradpill: 50
         MedkitGrizzlyStalker: 200
-    - name: Обвесы
+    - name: shop-category-modules
       priority: 7
       items:
         STModuleScopeRiflesT2Ru: 1100
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 8
       items:
         BasePMMag: 38
@@ -483,7 +489,7 @@
         BaseMP5Mag: 63
         939Mag20: 150
         VityazMag: 93
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 9
       items:
         6mmBuckshotBox: 143
@@ -591,8 +597,10 @@
     MutantPartOraculeEye: 2400
     MutantPartPseudogiantHeart: 6000
     MutantPartZombieHand: 750
+    #Fix
+    Roubles: 0
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
             # Melee
@@ -618,7 +626,7 @@
         WeaponStalkerPistolTec9: 200
         WeaponPistolStalkerGlock: 200
         STWeaponSniperMosin: 800
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 2
       items:
           # 7mm
@@ -643,7 +651,7 @@
         SpeedLoader45ACPEmpty: 98
         BaseAPSMag: 100
         P90Mag: 300
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 290
@@ -670,7 +678,7 @@
         754HPBox: 430
         754PCBox: 1400
         754BTBox: 3600
-    - name: Броня
+    - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
@@ -691,7 +699,7 @@
         STClothingOuterArmorSeraphimStrash: 3100 # T3 - PVE
         ClothingOuterArmorSevasera: 2900 # T3 - ENV
         STClothingOuterArmorHeavySera: 6000 # T4 - PVE
-    - name: Хранилища и Контейнеры
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
           # BackPacks
@@ -707,7 +715,7 @@
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
@@ -719,7 +727,7 @@
         ClothingMaskGasSera: 100 # T1
         ClothingMaskGP5: 200 # T2
         ClothingMaskM50: 500 # T3
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 7
       items:
         STBoltBagFilled: 50
@@ -729,7 +737,7 @@
         ZoneArtifactDetectorPulse: 100 # T1
         ZoneArtifactDetectorHunter: 400 # T2
         ZoneArtifactDetectorResponse: 900 # T2
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 8
       items:
         STTorchSera: 150
@@ -755,7 +763,7 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 200
@@ -769,7 +777,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина # 50% скидка от сталкеров
+    - name: shop-category-medicine # 50% скидка от сталкеров
       priority: 10
       items:
           # Cheap
@@ -786,7 +794,7 @@
         MedkitAI2: 200
         MedkitMilitary: 550
         Defibrillator: 500
-    - name: Модули
+    - name: shop-category-modules
       priority: 11
       items:
         STModuleScopeRiflesT2Ru: 1000
@@ -798,7 +806,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 12
       items:
 

@@ -1,8 +1,8 @@
 - type: job
   id: StalkerFreedom
-  name: Боец Свободы
+  name: job-freedom
   icon: freedom
-  description: Защитник зоны.
+  description: job-freedom-desc
   playTimeTracker: JobFreedom
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: FreedomGear
-  supervisors: Кури, защищай Зону и игнорируй авторитеты.
+  supervisors: job-freedom-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -25,6 +25,8 @@
         - type: Bands
           band: Stalker
           bandIcon: freedom
+          bandProto: STFreedomBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -34,9 +36,9 @@
 
 - type: job
   id: StalkerHeadFreedom
-  name: Атаман
+  name: job-head-freedom
   icon: freedom
-  description: Защитник зоны.
+  description: job-head-freedom-desc
   playTimeTracker: JobHeadFreedom
   whitelisted: true
   requirements:
@@ -48,7 +50,7 @@
       - Human
       - Dwarf
   startingGear: FreedomGear
-  supervisors: Командиры? У анархистов?.
+  supervisors: job-head-freedom-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -61,6 +63,8 @@
         - type: Bands
           band: Stalker
           bandIcon: freedom
+          bandProto: STFreedomBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
 
 - type: startingGear
@@ -71,3 +75,13 @@
     legs: ClothingLegsJeansFreedomCamouflage
     shoes: ClothingShoesBootsWork
     torso: ClothingTorsoTurtlenecksFreedomCamouflage
+- type: stBand
+  id: STFreedomBand
+  name: Freedom
+  factionId: Freedom
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerFreedom
+    2: StalkerHeadFreedom
+

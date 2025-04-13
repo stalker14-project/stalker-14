@@ -1,8 +1,8 @@
 - type: job
   id: StalkerMonolith
-  name: Скиталец
+  name: job-monolith
   icon: monolith
-  description: Символ тихого, но пугающего присутствия.
+  description: job-monolith-desc
   playTimeTracker: JobMonolith
   whitelisted: true
   requirements:
@@ -19,7 +19,7 @@
     #   time: 1
     #   inverted: true
   startingGear: MonolithGear
-  supervisors: служите Его голосу
+  supervisors: job-monolith-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -30,6 +30,8 @@
       - type: Bands
         band: Stalker
         bandIcon: monolith
+        bandProto: STMonolithBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -46,3 +48,12 @@
     legs: ClothingLegsJeansMonolithCamouflage
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesFingerless
+- type: stBand
+  id: STMonolithBand
+  name: Monolith
+  factionId: Monolith
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerMonolith
+

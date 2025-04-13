@@ -1,7 +1,7 @@
 - type: shopPreset
   id: NpcResearchInstitut # 0x
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
             # Melee
@@ -17,7 +17,7 @@
         STWeaponSubMachineGunVityaz: 2250
         STWeaponRifleM16: 3000
         STWeaponRifleStalkerAKS74: 3500
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 2
       items:
         BaseGlockMag10: 100
@@ -30,7 +30,7 @@
         545Mag45: 300
         VityazMag: 300
         556Mag30: 330
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         919PSOGJBox: 75
@@ -45,7 +45,7 @@
         556FMJBox: 300
         556WarmagBox: 1115
         556M855Box: 745
-    - name: Броня
+    - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
@@ -62,7 +62,7 @@
         ClothingOuterArmorSSP24Topaz: 2750
         STClothingOuterArmorLightPlateVestBaseANAgray: 2750
         STClothingOuterArmorLightPlateVestBaseANAgreen: 2750
-    - name: Хранилища и Контейнеры
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
           # BackPacks
@@ -75,7 +75,7 @@
         MedkitGrizzlyStalker: 850 # T2
           # Belts
         ClothingBeltBandolierStalker: 50
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
@@ -83,7 +83,7 @@
           # Gasmasks
         ClothingMaskGasM40: 200 # T2
         ClothingMaskM51: 1000
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 7
       items:
         STBoltBagFilled: 50
@@ -99,7 +99,7 @@
         ZoneArtifactDetectorBarracuda: 2100 # T3
         ZoneArtifactDetectorBear: 3200 # T4
         ZoneArtifactDetectorWolfhound: 5000
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 8
       items:
         STCombatKnife: 25
@@ -130,7 +130,7 @@
         CigPackBlack: 100
         CigarCase: 500
         CigarGoldCase: 1000
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 200
@@ -144,7 +144,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина # 70% скидка от сталкеров
+    - name: shop-category-medicine # 70% скидка от сталкеров
       priority: 10
       items:
           # Cheap
@@ -168,7 +168,7 @@
         ResearcherCrate: 1350
         SaviorCrate: 1500
         PolevoyVrachCrate: 1740
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 11
       items:
         ClothingBandageStalkerKrest: 5
@@ -242,7 +242,7 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-    - name: Развлечения
+    - name: shop-category-entertainment
       priority: 12
       items:
         # Dices
@@ -257,7 +257,7 @@
         # Instruments
         CardBin: 100
         PokerCardBin: 150
-    - name: Крафты
+    - name: shop-category-blueprints-research-equipment
       priority: 13
       items:
         # Tech cards

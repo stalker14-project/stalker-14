@@ -1,8 +1,8 @@
 - type: job
   id: StalkerSBU
-  name: Боец СБУ
+  name: job-sbu
   icon: sbu
-  description: Член защиты службы безопасности Украины.
+  description: job-sbu-desc
   playTimeTracker: JobSBU
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: MilitaryGear
-  supervisors: Подчиняйся старшим по званию.
+  supervisors: job-sbu-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -27,10 +27,21 @@
           canChange: true
           band: Stalker
           bandIcon: sbu
+          bandProto: STSsuBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+
+- type: stBand
+  id: STSsuBand
+  name: SSU
+  factionId: SSU
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerSBU
 

@@ -1,8 +1,8 @@
 - type: job
   id: StalkerJaba
-  name: Жаба
+  name: job-jaba
   icon: jaba
-  description: Группа по интересам.
+  description: job-jaba-desc
   playTimeTracker: JobJaba
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: JabaGear
-  supervisors: Жадность это стиль жизнь, любопытство не порок.
+  supervisors: job-jaba-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -25,6 +25,8 @@
       - type: Bands
         band: Stalker
         bandIcon: jaba
+        bandProto: STToadsBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -43,3 +45,12 @@
     gloves: ClothingHandsGlovesJabs
     mask: ClothingMaskSkull
     pocket1: GoldDiceBag
+- type: stBand
+  id: STToadsBand
+  name: Toads
+  factionId: Toads
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerJaba
+

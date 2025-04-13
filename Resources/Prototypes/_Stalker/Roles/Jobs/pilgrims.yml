@@ -1,8 +1,8 @@
 - type: job
   id: StalkerPostulant
-  name: Паломник
+  name: job-postulant
   icon: pilgrim
-  description: Послушник в монашеском ордене
+  description: job-postulant-desc
   playTimeTracker: JobPostulant
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: PilgrimPostulantGear
-  supervisors: Вы подчиняетесь все кто выше вас в иерархии
+  supervisors: job-postulant-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -29,6 +29,8 @@
         - type: Bands
           band: Stalker
           bandIcon: pilgrim
+          bandProto: STPilgrimsBand
+          bandRankId: 2
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
@@ -37,9 +39,9 @@
 
 - type: job
   id: StalkerBishop
-  name: Епископ
+  name: job-bishop
   icon: pilgrim
-  description: глава монашеского ордена
+  description: job-bishop-desc
   playTimeTracker: JobBishop
   whitelisted: true
   requirements:
@@ -51,7 +53,7 @@
       - Human
       - Dwarf
   startingGear: PilgrimMonkGear
-  supervisors: Вы подчиняетесь только господу нашему Богу
+  supervisors: job-bishop-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -68,6 +70,8 @@
         - type: Bands
           band: Stalker
           bandIcon: pilgrim
+          bandProto: STPilgrimsBand
+          bandRankId: 2
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
@@ -95,3 +99,13 @@
     pocket1: STPilgrimBible
     torso: ClothingTorsoTShirtColorBlack
     pocket2: ClothingNeckDogtagPilgrim
+- type: stBand
+  id: STPilgrimsBand
+  name: Pilgrims
+  factionId: Pilgrims
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerPostulant
+    2: StalkerBishop
+
