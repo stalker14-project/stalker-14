@@ -1,6 +1,6 @@
-ent-STDetectorAD1Blueprint = Anomaly Detector Model 1 (DA-1) Recipe
-ent-STDetectorAD2Blueprint = Anomaly Detector Model 2 (DA-2) Recipe
-ent-STDetectorAD3Blueprint = Anomaly Detector Model 3 (DA-3) Recipe
+ent-STDetectorAD1Blueprint = Anomaly Detector Model 1 (AD-1) Recipe
+ent-STDetectorAD2Blueprint = Anomaly Detector Model 2 (AD-2) Recipe
+ent-STDetectorAD3Blueprint = Anomaly Detector Model 3 (AD-3) Recipe
 ent-STZoneArtifactDetectorPulseBlueprint = Pulse Artifact Detector Recipe
 ent-STZoneArtifactDetectorHunterBlueprint = Hunter Artifact Detector Recipe
 ent-STZoneArtifactDetectorResponseBlueprint = Response Artifact Detector Recipe

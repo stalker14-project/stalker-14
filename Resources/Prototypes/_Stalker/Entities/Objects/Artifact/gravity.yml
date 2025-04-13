@@ -42,6 +42,39 @@
 
 - type: entity
   parent: BaseArtifact
+  id: ZoneArtifactWhirlwind
+  name: Whirlwind
+  suffix: Stalker, Whirlwind
+  components:
+  - type: Sprite
+    state: whirlwind
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyPulse
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 2
+  - type: PointLight
+    radius: 1.5
+    energy: 4.5
+    color: "#f89b08"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Piercing: -0.25
+        Compression: -0.5
+        Radiation: 0.3
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Piercing: -1
+      coefficients:
+        Compression: 0.75
+
+- type: entity
+  parent: BaseArtifact
   id: ZoneArtifactFlower
   suffix: Stalker, Каменный цветок
   components:

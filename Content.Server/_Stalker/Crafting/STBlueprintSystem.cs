@@ -40,7 +40,7 @@ public sealed class STBlueprintSystem : EntitySystem
         }
         AddDescriptions();
         SubscribeLocalEvent<STBlueprintComponent, ExaminedEvent>(OnBlueprintExamine);
-        SubscribeLocalEvent<STBlueprintComponent, ComponentStartup>(OnComponentStartup);
+        /*SubscribeLocalEvent<STBlueprintComponent, ComponentStartup>(OnComponentStartup);*/
     }
 
     /// <summary>
@@ -62,7 +62,7 @@ public sealed class STBlueprintSystem : EntitySystem
     /// если рецепт расположен в интерфейсе торговца он будет показывать имя из yml. Но хотя бы если на полу
     /// и т.д., мы получим актуальное имя
     /// </summary>
-    public void OnComponentStartup(EntityUid uid, STBlueprintComponent component, ComponentStartup args)
+    /*public void OnComponentStartup(EntityUid uid, STBlueprintComponent component, ComponentStartup args)
     {
         if (!component.BlueprintId.HasValue)
             return;
@@ -71,7 +71,7 @@ public sealed class STBlueprintSystem : EntitySystem
             return;
 
         _metaSystem.SetEntityName(uid, name);
-    }
+    }*/
 
     private void AddDescriptions()
     {
