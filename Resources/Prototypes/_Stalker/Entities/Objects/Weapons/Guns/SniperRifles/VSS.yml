@@ -35,16 +35,13 @@
       angleIncrease: 2
       angleDecay: 20
       fireRate: 6
-    - type: ChamberMagazineAmmoProvider
-      soundRack:
-        path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
     - type: ItemSlots
       slots:
         gun_magazine:
           name: Magazine
           startingItem: Base939Mag10
-          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
           priority: 4
           whitelist:
             tags:
