@@ -48,3 +48,6 @@ ent-kraz2 = { ent-kraz }
     .desc = A three-axle heavy-duty off-road truck designed for the transport of goods.
 ent-icarus = ikarus-280
     .desc = Hungarian Urban Articulated High-Floor Medium-Drive Bus with Extra Large Capacity by Ikarus.
+ent-STtank = Tank
+    .desc = An armored combat vehicle, on a tracked track, with cannon and additional machine-gun armament mounted in a rotating full-turn turret.
+    .suffix = ST, Mapping
