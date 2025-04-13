@@ -4,3 +4,6 @@ ent-ClothingMaskGP5 = противогаз ГП-5
 ent-ClothingMaskGP5Green = противогаз ГП-5 Зелёный
     .desc = { ent-ClothingMaskGP5.desc }
     .suffix = ST, T2, Caustic, PodpivAss_Lex
+ent-ClothingMaskGP5Foma = Антирадиационный противогаз
+    .desc = Антирадиационный противогаз – защищает органы дыхания и глаза от радиоактивной пыли, токсинов и бактерий. Герметичный, с фильтром.
+    .suffix = ST, T2, Caustic, Foma
