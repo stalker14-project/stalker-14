@@ -1,0 +1,34 @@
+- type: entity
+  name: триггер спавна постового сталкера (1) (100%)
+  id: STGuardSpawnerStalker
+  parent: MarkerBase
+  components:
+  - type: ApproachTrigger
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: crit
+    - state: ai
+  - type: SpawnOnApproach
+    minAmount: 1
+    maxAmount: 1
+    maxOffset: 1
+    minOffset: 1
+    cooldown: 6000
+    chance: 1
+    prototypes:
+      - MobStalkerGuard
+    restricted:
+      - MobStalkerGuard
+
+- type: entity
+  name: триггер спавна постового СОП (1) (100%)
+  id: STGuardSpawnerMilitary
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobStalkerMilitaryGuard
+    restricted:
+    - MobStalkerMilitaryGuard

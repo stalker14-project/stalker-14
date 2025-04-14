@@ -1,0 +1,49 @@
+- type: entity
+  name: Сталкер Ополченец
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobStalkerGuard
+  description: Ополченец с неплохим снаряжением, стоящий на защите сталкерства.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Milita
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/Mobs/Guards/Stalker.rsi
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 10
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 15
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1
