@@ -1,5 +1,78 @@
 - type: entity
-  parent: BasePlushie
+  parent: BaseItem
+  id: STBasePlushie
+  suffix: ST, Stalker
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Fun/toys.rsi
+  - type: Tag
+    tags:
+      - Payload
+      - ClothMade
+  - type: EmitSoundOnUse
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnActivate
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnCollide
+    sound:
+      collection: ToySqueak
+  - type: EmitSoundOnLand
+    sound:
+      collection: ToyFall
+  - type: EmitSoundOnTrigger
+    sound:
+      collection: ToySqueak
+  - type: UseDelay
+    delay: 1.0
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      collection: ToySqueak
+    damage:
+      types:
+        Blunt: 0
+    hidden: true
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 100
+  - type: StaticPrice
+    price: 5
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      collection: ToySqueak
+    delay: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 10
+  - type: ContainerContainer
+    containers:
+      stash: !type:ContainerSlot {}
+  - type: Speech
+    speechVerb: Default # for pais (In the secret stash)
+  - type: SecretStash
+    secretStashName: secret-stash-plushie
+    blacklist:
+      components:
+      - SecretStash # Prevents being able to insert plushies inside each other (infinite plush)!
+      - NukeDisk # Could confuse the nukies if they don't know that plushies have a stash.
+      tags:
+      - QuantumSpinInverter # It will cause issues with the grinder...
+      - FakeNukeDisk # So you can't tell if the nuke disk is real or fake depending on if it can be inserted or not.
+  - type: ToolOpenable
+    openToolQualityNeeded: Slicing
+    closeToolQualityNeeded: Slicing # Should probably be stitching or something if that gets added
+    name: secret-stash-plushie
+
+- type: entity
+  parent: STBasePlushie
   id: STPlushieOracul
   name: Plush oracle
   description: Literally an exact copy of the famous zone mutant in the form of a toad. The best gift for a stalker and protecting your dignity from the threats of the zone! Kva.
@@ -11,17 +84,32 @@ The label says Genok.
   - type: EmitSoundOnUse
     sound:
       path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+      params:
+        volume: -10
   - type: EmitSoundOnLand
     sound:
       path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+      params:
+        volume: -10
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+      params:
+        volume: -10
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+      params:
+        volume: -10
   - type: Food
     requiresSpecialDigestion: true
     useSound:
       path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+      params:
+        volume: -10
   - type: MeleeWeapon
     wideAnimationRotation: 180
     soundHit:
       path: /Audio/_Stalker/Mutants/oracles_attack.ogg
+      params:
+        volume: -10
