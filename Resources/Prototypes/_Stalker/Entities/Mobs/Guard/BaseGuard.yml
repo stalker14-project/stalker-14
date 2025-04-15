@@ -113,3 +113,10 @@
   - type: NpcFactionMember
     factions:
     - Military
+  - type: Trash
+    time: 6000
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
