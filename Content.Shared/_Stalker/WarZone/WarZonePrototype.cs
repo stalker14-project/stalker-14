@@ -22,7 +22,7 @@ public sealed partial class STWarZonePrototype : IPrototype
     public HashSet<BaseWarZoneRequirenment>? Requirements;
 
     [DataField]
-    public int CaptureCooldownHours { get; set; } = 12;
+    public float CaptureCooldownHours { get; set; } = 12;
 
     [DataField]
     public bool ShouldAwardWhenDefenderPresent { get; set; } = false;

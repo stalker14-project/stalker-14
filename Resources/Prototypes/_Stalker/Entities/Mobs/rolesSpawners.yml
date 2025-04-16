@@ -50,6 +50,42 @@
       prototypes: [ MilitaryGearHead ]
 
 - type: entity
+  name: кукла Ополчение (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitia
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: militia
+      bandProto: STMilitiaBand
+      bandRankId: 1
+    - type: Access
+      tags:
+        - MilitiaAccess
+        - Stalker
+    - type: Loadout
+      prototypes: [ MilitiaGear ]
+
+- type: entity
+  name: кукла Командир Ополчение (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitiaCommander
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: militia
+      bandProto: STMilitiaBand
+      bandRankId: 2
+    - type: Access
+      tags:
+        - MilitiaAccess
+        - Stalker
+    - type: Loadout
+      prototypes: [ MilitiaCommanderGear ]
+
+- type: entity
   name: кукла ренегат (переименуй меня)
   suffix: Stalker, пешка с нашивкой
   parent: MobHuman
@@ -121,6 +157,31 @@
     - type: Bands
       band: Stalker
       bandIcon: band
+      bandProto: STBanditsBand
+      bandRankId: 1
+    - type: NpcFactionMember
+      factions:
+      - Bandit
+    - type: Loadout
+      prototypes: [ BandGear ]
+
+- type: entity
+  name: кукла жаба (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerToad
+  components:
+    - type: Access
+      tags:
+        - Jaba
+    - type: Bands
+      band: Stalker
+      bandIcon: jaba
+      bandProto: STToadsBand
+      bandRankId: 1
+    - type: NpcFactionMember
+      factions:
+      - Bandit
     - type: Loadout
       prototypes: [ BandGear ]
 

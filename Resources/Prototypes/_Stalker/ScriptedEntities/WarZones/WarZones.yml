@@ -14,13 +14,13 @@
   rewardPointsPerPeriod: 1
   rewardPeriod: 15
   captureCooldownHours: 0.05
-  captureTime: 360 # Время захвата зоны в секундах. 30 минут.
+  captureTime: 1200 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
   - !type:TimeWindowRequirenment
-    startHourUtc: 13 # Start hour in UTC (e.g., 10:00 UTC = 10)
-    endHourUtc: 19   # End hour in UTC (e.g., 18:00 UTC = 18)
+    startHourUtc: 14 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 20   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 # Entity prototype referencing the above meta-prototype
 - type: entity
@@ -77,6 +77,6 @@
         - MidImpassable
   - type: PointLight
     enabled: true
-    radius: 4
+    radius: 15
     color: Cyan
     energy: 1
