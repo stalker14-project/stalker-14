@@ -1,0 +1,60 @@
+- type: entity
+  name: Неизвестный
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobHostileGuardPatrool
+  description: Агрессивный уебан, хрен пойми кто - но враждебен.
+  components:
+  - type: HTN
+    rootTask:
+      task: STMonolith
+    blackboard:
+      VisionRadius: !type:Single
+        25
+      AggroVisionRadius: !type:Single
+        20
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1.2
+    baseSprintSpeed: 1.4
+  - type: NpcFactionMember
+    factions:
+    - Hostile
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/Mobs/Guards/Stalker.rsi
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 3
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 0
+    maxAngle: 35
+    angleIncrease: 1
+    angleDecay: 20
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Critical
+      81: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 82
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1

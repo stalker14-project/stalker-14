@@ -32,3 +32,16 @@
     - MobStalkerMilitaryGuard
     restricted:
     - MobStalkerMilitaryGuard
+
+- type: entity
+  name: триггер спавна агрессивного уёбка (1) (50%)
+  id: STGuardSpawnerHostile
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    cooldown: 1800
+    chance: 0.5
+    prototypes:
+    - MobHostileGuardPatrool
+    restricted:
+    - MobHostileGuardPatrool
