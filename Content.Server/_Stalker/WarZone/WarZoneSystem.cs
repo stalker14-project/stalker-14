@@ -197,7 +197,7 @@ public sealed partial class WarZoneSystem : EntitySystem
         bool zoneCooldownActive = comp.CooldownEndTime.HasValue && now < comp.CooldownEndTime.Value;
         if (zoneCooldownActive)
         {
-            if (attackerEntity.HasValue) // Show popup only if a single potential attacker is present
+            if (attackerEntity.HasValue && comp.CooldownEndTime != null) // Show popup only if a single potential attacker is present
             {
                 // Use .Value directly as HasValue guarantees non-null here.
                 var remainingTime = comp.CooldownEndTime.Value - now;

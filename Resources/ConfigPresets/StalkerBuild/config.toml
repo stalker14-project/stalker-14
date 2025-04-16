@@ -29,29 +29,11 @@ camera_rotation_locked = true
 flavor_text = true
 punctuation = false
 
-[database]
-# Database type to use. Can be "sqlite" or "postgres" currently.
-engine = "postgres"
-
-# Path to store the database at when using SQLite. Note that is NOT a disk path.
-# This is relative to the server data directory, which is specified by --data-dir when starting the server from the command (or automatically set by SS14.Watchdog)
-sqlite_dbpath = "preferences.db"
-
-# PostgreSQL database configuration, should be self explanatory.
-pg_host = "stalkers14.xyz"
-pg_port = 5433
-pg_database = "stalkerdb"
-pg_username = "postgres"
-pg_password = "SlFJNKGObySMWvveXEQkKJFSNZvXPJRxeFtzazJiMSgRSmCxVI"
-
 [infolinks]
 discord = "https://discord.gg/SnUSV76zR3"
 patreon = "https://boosty.to/stalkerss14"
 
-[physics]
-grid_splitting = false
-maxlinvelocity = 72
-target_minimum_tickrate = 120
+
 
 [npc]
 max_updates = 150
@@ -60,11 +42,6 @@ max_updates = 150
 advertise = true
 tags = "lang:en,rp:high,region:us_e"
 hub_urls = "https://hub.spacestation14.com/"
-
-[watchdog]
-token = "ftLKmd1v0P4qXHt9c8JW0h5a7TUXUG00Z10tM0BOLdcJJvKR0qV6Bjx5aTM3eIPIP90"
-key = "stalker"
-baseUrl = "https://localhost:5000/"
 
 [net]
 sendbuffersize = 393213
