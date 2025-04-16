@@ -1,11 +1,8 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.Server.Mind;
 using Content.Shared._Stalker.Bands;
-using Content.Shared.Database;
 using Content.Shared.Roles;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -13,14 +10,10 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Content.Shared.Actions;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
-using Robust.Shared.Player;
 using Content.Server.Players.JobWhitelist;
-using Robust.Shared.Log;
 using Content.Shared._Stalker.Bands.Components;
 using Content.Server._Stalker.WarZone;
-using Content.Shared._Stalker.WarZone;
 
 namespace Content.Server._Stalker.Bands
 {
@@ -52,11 +45,10 @@ namespace Content.Server._Stalker.Bands
             SubscribeLocalEvent<BandsComponent, ComponentInit>(OnInit);
         }
 
-        // --- UI Update Subscription & Handling ---
         private void SubscribeUpdateUiState<T>(Entity<BandsManagingComponent> ent, ref T ev) where T : notnull
         {
-             // Call UpdateUiState, passing null for actor as ComponentStartup doesn't have one readily available.
-             // UpdateUiState will attempt to find a session from the UI itself.
+            // Call UpdateUiState, passing null for actor as ComponentStartup doesn't have one readily available.
+            // UpdateUiState will attempt to find a session from the UI itself.
             UpdateUiState(ent);
         }
 
@@ -66,7 +58,6 @@ namespace Content.Server._Stalker.Bands
         }
 
 
-        // --- UI State Update Method ---
         private async void UpdateUiState(Entity<BandsManagingComponent> ent, EntityUid? actor = null)
         {
             var (uid, component) = ent;
@@ -84,10 +75,10 @@ namespace Content.Server._Stalker.Bands
             // If userId is still null after checks, we cannot proceed.
             if (session.UserId == null)
             {
-                 Logger.ErrorS("bands", $"Failed to obtain NetUserId for BandsManaging UI update on {ToPrettyString(uid)}.");
-                 // Send empty state if UserId is null
+                Logger.ErrorS("bands", $"Failed to obtain NetUserId for BandsManaging UI update on {ToPrettyString(uid)}.");
+                // Send empty state if UserId is null
                 _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false, new(), new()));
-                 return;
+                return;
             }
 
 
@@ -122,10 +113,10 @@ namespace Content.Server._Stalker.Bands
                     : 0f;
 
                 string attacker = "None";
-                 if (!string.IsNullOrEmpty(wzComp.CurrentAttackerBandProtoId))
-                     attacker = $"Band {wzComp.CurrentAttackerBandProtoId}";
-                 else if (!string.IsNullOrEmpty(wzComp.CurrentAttackerFactionProtoId))
-                     attacker = $"Faction {wzComp.CurrentAttackerFactionProtoId}";
+                if (!string.IsNullOrEmpty(wzComp.CurrentAttackerBandProtoId))
+                    attacker = $"Band {wzComp.CurrentAttackerBandProtoId}";
+                else if (!string.IsNullOrEmpty(wzComp.CurrentAttackerFactionProtoId))
+                    attacker = $"Faction {wzComp.CurrentAttackerFactionProtoId}";
 
                 string defender = "None";
                 if (!string.IsNullOrEmpty(wzComp.DefendingBandProtoId))
@@ -189,7 +180,7 @@ namespace Content.Server._Stalker.Bands
             var currentMembers = await GetBandMembersAsync(leaderBandInfo.Prototype);
             if (currentMembers.Count >= leaderBandInfo.Prototype.MaxMembers)
             {
-                 // TODO: Send feedback to the user that the band is full
+                // TODO: Send feedback to the user that the band is full
                 return;
             }
 
@@ -202,7 +193,7 @@ namespace Content.Server._Stalker.Bands
             var targetBandInfo = await GetPlayerBandInfoAsync(targetUserId);
             if (targetBandInfo != null)
             {
-                 // TODO: Send feedback to the user that the target player is already in another band
+                // TODO: Send feedback to the user that the target player is already in another band
                 return;
             }
 
@@ -240,7 +231,7 @@ namespace Content.Server._Stalker.Bands
 
             // Prevent leader from removing themselves via this UI (they should leave the band differently)
             if (leaderUserId.UserId == msg.PlayerUserId)
-                 return;
+                return;
 
             var leaderBandInfo = await GetPlayerBandInfoAsync(leaderUserId);
             if (leaderBandInfo == null)
@@ -306,7 +297,7 @@ namespace Content.Server._Stalker.Bands
 
         private void OnChange(Entity<BandsComponent> entity, ref ChangeBandEvent args)
         {
-             if (args.Handled) // Check Handled flag
+            if (args.Handled)
                 return;
 
             var comp = entity.Comp;
@@ -367,32 +358,32 @@ namespace Content.Server._Stalker.Bands
         private async Task<List<BandMemberInfo>> GetBandMembersAsync(STBandPrototype bandProto)
         {
             var members = new List<BandMemberInfo>();
-            
+
             // Collect all role IDs associated with this band
             var bandRoleIds = bandProto.Hierarchy.Values.Select(p => p.ToString()).ToHashSet();
             bandRoleIds.Add(bandProto.ID.ToString()); // Include the base/leader role
-            
+
             // Get all players who have any of these roles whitelisted
             var playersWithRoles = await _dbManager.GetPlayersWithRoleWhitelistAsync(bandRoleIds);
-            
+
             // Convert database players to PlayerRecords and create BandMemberInfo for each
             foreach (var player in playersWithRoles)
             {
                 var userId = new NetUserId(player.UserId);
-                
+
                 // Get all whitelisted jobs for this player
                 var whitelistedJobs = await _dbManager.GetJobWhitelists(player.UserId);
-                
+
                 // Filter to only jobs relevant to this band
                 var bandJobs = whitelistedJobs.Where(job => bandRoleIds.Contains(job)).ToList();
-                
+
                 if (!bandJobs.Any())
                     continue; // Skip if no relevant jobs (shouldn't happen due to our query, but just in case)
-                
+
                 // Find the highest rank role this player has in the band's hierarchy
                 string displayRole = "Unknown";
                 int highestRank = -1;
-                
+
                 foreach (var job in bandJobs)
                 {
                     // If job is the band leader role
@@ -401,7 +392,7 @@ namespace Content.Server._Stalker.Bands
                         displayRole = job;
                         break; // Leader role takes precedence
                     }
-                    
+
                     // Find the rank in the hierarchy
                     var rankEntry = bandProto.Hierarchy.FirstOrDefault(h => h.Value == job);
                     if (rankEntry.Value != default && rankEntry.Key > highestRank)
@@ -410,10 +401,10 @@ namespace Content.Server._Stalker.Bands
                         displayRole = job;
                     }
                 }
-                
+
                 members.Add(new BandMemberInfo(userId, player.LastSeenUserName, displayRole));
             }
-            
+
             return members;
         }
 

@@ -4,22 +4,23 @@
   rewardPointsPerPeriod: 1 # Сколько очков будет начисляться за период
   rewardPeriod: 30 # Период начисления очков в секундах
   captureCooldownHours: 2 # Время перезарядки захвата зоны в часах
+  captureTime: 1800 # Время захвата зоны в секундах. 30 минут.
   requirements:
     - !type:ZoneOwnershipRequirenment
       requiredZones: [] # Здесь можно указать зоны, которые должны быть захвачены для захвата этой зоны. Не тестил.
-    - !type:CaptureTimeRequirenment
-      captureTime: 1800 # Время захвата зоны в секундах. 30 минут.
 
 - type: stWarZone
   id: SvalkaDepo
   rewardPointsPerPeriod: 0
   rewardPeriod: 1800
   captureCooldownHours: 24
+  captureTime: 1800 # Время захвата зоны в секундах. 30 минут.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
-  - !type:CaptureTimeRequirenment
-    captureTime: 1800
+  - !type:TimeWindowRequirenment
+    startHourUtc: 13 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 15   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 # Entity prototype referencing the above meta-prototype
 - type: entity

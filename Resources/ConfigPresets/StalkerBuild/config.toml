@@ -10,7 +10,7 @@ peaceful_end = false
 contraband_examine = false
 
 [rules]
-time = 10.0
+time = 30.0
 
 [netres]
 limit = 25.0
@@ -45,8 +45,13 @@ pg_username = "postgres"
 pg_password = "SlFJNKGObySMWvveXEQkKJFSNZvXPJRxeFtzazJiMSgRSmCxVI"
 
 [infolinks]
-discord = "patreon = "https://discord.gg/SnUSV76zR3"
+discord = "https://discord.gg/SnUSV76zR3"
 patreon = "https://boosty.to/stalkerss14"
+
+[physics]
+grid_splitting = false
+maxlinvelocity = 72
+target_minimum_tickrate = 120
 
 [npc]
 max_updates = 150

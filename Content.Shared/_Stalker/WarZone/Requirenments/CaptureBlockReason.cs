@@ -9,5 +9,6 @@ public enum CaptureBlockReason
     Cooldown, // Zone is on capture cooldown
     Ownership, // Attacker does not own required zones
     CaptureTime, // Capture time requirement not met
+    TimeWindow, // Capture is outside the allowed time window
     Other // Generic block reason
 }

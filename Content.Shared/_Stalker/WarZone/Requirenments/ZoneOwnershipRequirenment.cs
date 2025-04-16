@@ -18,7 +18,9 @@ public sealed partial class ZoneOwnershipRequirenment : BaseWarZoneRequirenment
         Dictionary<ProtoId<STWarZonePrototype>, DateTime?> lastCaptureTimes,
         Dictionary<ProtoId<STWarZonePrototype>, STWarZonePrototype> zonePrototypes,
         ProtoId<STWarZonePrototype> currentZoneId,
-        float frameTime)
+        float frameTime,
+        EntityUid? attackerEntity,
+        Action<EntityUid, string, (string, object)[]?>? feedbackCallback) // Added attackerEntity and feedbackCallback
     {
         foreach (var zoneId in RequiredZones)
         {
@@ -35,17 +37,7 @@ public sealed partial class ZoneOwnershipRequirenment : BaseWarZoneRequirenment
                 return CaptureBlockReason.Ownership;
         }
 
-        // Check capture cooldown for this zone
-        if (lastCaptureTimes.TryGetValue(currentZoneId, out var lastCaptureTime) &&
-            lastCaptureTime != null &&
-            zonePrototypes.TryGetValue(currentZoneId, out var proto))
-        {
-            var cooldown = TimeSpan.FromHours(proto.CaptureCooldownHours);
-            if (DateTime.UtcNow - lastCaptureTime < cooldown)
-            {
-                return CaptureBlockReason.Cooldown;
-            }
-        }
+        // Cooldown check moved to WarZoneSystem
 
         return CaptureBlockReason.None;
     }

@@ -4,7 +4,7 @@
   suffix: ST, Скин
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK12
-  description: Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы. 
+  description: Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы.
   components:
   - type: STWeight
     self: 4.5
@@ -65,3 +65,43 @@
     scale: 0.7, 0.7
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak12sera.rsi
+
+- type: entity
+  name: РПК-16
+  parent: STWeaponRifleStalkerAK12
+  id: STWeaponRifleStalkerRPK16
+  description: Вариация АК-12 под взводный ручной пулемёт.
+  suffix: ST, Скин, Спонсор
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16.rsi
+    scale: 0.7, 0.7
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/ak.ogg
+    minAngle: 40
+    maxAngle: 85
+    angleIncrease: 3
+    angleDecay: 25
+    fireRate: 7.5
+  - type: STWeight
+    self: 6
+
+- type: entity
+  name: РПК-16 "Осень"
+  parent: STWeaponRifleStalkerRPK16
+  id: STWeaponRifleStalkerRPK16Camo
+  description: Вариация АК-12 под взводный ручной пулемёт в осеннем комуфляже.
+  suffix: ST, Скин, Спонсор
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16camo.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16camo.rsi
+    scale: 0.7, 0.7
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16camo.rsi
