@@ -2365,6 +2365,38 @@ entities:
           decals:
             48: 6,2
         - node:
+            cleanable: True
+            color: '#FFFFFFFF'
+            id: a
+          decals:
+            2528: 11.302516,9.875997
+        - node:
+            angle: 1.5707963267948966 rad
+            color: '#FFFFFFFF'
+            id: arrow
+          decals:
+            2512: 21,9
+            2518: 22,9
+            2519: 12,9
+        - node:
+            angle: 3.141592653589793 rad
+            color: '#FFFFFFFF'
+            id: arrow
+          decals:
+            2510: 22,11
+            2511: 22,10
+            2521: 11,6
+            2522: 11,5
+            2523: 11,4
+            2524: 11,4
+            2525: 11,3
+        - node:
+            angle: 4.71238898038469 rad
+            color: '#FFFFFFFF'
+            id: arrow
+          decals:
+            2520: 10,9
+        - node:
             angle: -1.5707963267948966 rad
             color: '#FFFFFFFF'
             id: bar1
@@ -2722,6 +2754,24 @@ entities:
             id: burnt4
           decals:
             2444: 52.013664,-39.987988
+        - node:
+            cleanable: True
+            color: '#FFFFFFFF'
+            id: d
+          decals:
+            2529: 11.719388,9.855164
+        - node:
+            cleanable: True
+            color: '#FFFFFFFF'
+            id: e
+          decals:
+            2527: 10.896064,9.89683
+        - node:
+            cleanable: True
+            color: '#FFFFFFFF'
+            id: r
+          decals:
+            2526: 10.395816,9.875997
         - node:
             color: '#FFFFFFFF'
             id: skull
@@ -11144,6 +11194,45 @@ entities:
     - type: Transform
       pos: 61.5,-82.5
       parent: 1
+- proto: Paper
+  entities:
+  - uid: 7793
+    components:
+    - type: Transform
+      anchored: True
+      pos: 11.5,9.5
+      parent: 1
+    - type: Paper
+      stampState: paper_stamp-cap
+      stampedBy:
+      - stampedColor: '#3681BBFF'
+        stampedName: Stalker Training Program
+      content: >+
+        ATTENTION!! 
+
+
+        If you used the portal to get to bar as a newer player. This area isn't suitable for newer/less experienced players. It is best when you are able to respawn please follow the arrows at spawn to the loner symbol to reach the rookie village. 
+
+
+        More experienced Stalkers 
+
+
+        Congrats on reaching bar! The bar man sells good weaponry, ammo, armor, and some utilities at a cost of course. 
+
+
+        Beware the more north you head you will reach the most difficult areas in the zone (As of current version) These areas are Red Forest and Oasis! These areas have great value though in loots and artifacts, HOWEVER the enemies you will face are much more difficult. Even the most veteran of stalkers still struggle to survive in those areas at times. 
+
+
+        If you go south of this note there is a lathe for crafting and experienced work out station enjoy!
+
+    - type: Godmode
+    - type: Anchorable
+    - type: Physics
+      canCollide: False
+      bodyType: Static
+    missingComponents:
+    - Flammable
+    - Food
 - proto: PaperBin
   entities:
   - uid: 566
@@ -11161,13 +11250,13 @@ entities:
       parent: 1
     - type: Paper
       content: >
-        Эй, тот кто читает это - Я свернул торговую точку тут, денег заимел знатно и принял решение уехать из зоны, нечего тут, здоровье лишним не бывает!
+        Hey, whoever is reading this - I closed the trading point here, made a lot of money and decided to leave the zone, there's nothing to do here, health is never superfluous!
 
 
-        Передай другим, что б не искали меня, я с другими торгашами перетер по ситуации и "Баксы" не буду приниматься как валюта, если не уже. 
+        Tell the others not to look for me, I've discussed the situation with other traders and "Bucks" will not be accepted as currency, if not already.
 
 
-        Чао. Иваныч.
+        Ciao. Ivanovich.
     missingComponents:
     - Item
     - Flammable
@@ -13406,6 +13495,13 @@ entities:
     - type: Transform
       pos: -0.5,-53.5
       parent: 1
+- proto: STBenchPressExpirienced
+  entities:
+  - uid: 7792
+    components:
+    - type: Transform
+      pos: 10.5,1.5
+      parent: 1
 - proto: STBonfire
   entities:
   - uid: 940
@@ -13485,8 +13581,10 @@ entities:
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 16.44333,5.577326
+      pos: 16.5,5.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: STChairWood
   entities:
   - uid: 954
@@ -13494,91 +13592,123 @@ entities:
     - type: Transform
       pos: 2.5,-1.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 955
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -0.5,-2.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 956
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 1.2618985,19.563957
+      pos: 1.5,19.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 957
     components:
     - type: Transform
-      pos: 0.46328735,20.224138
+      pos: 0.5,20.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 958
     components:
     - type: Transform
-      pos: -0.571435,20.460415
+      pos: -0.5,20.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 959
     components:
     - type: Transform
-      pos: 60.540222,-104.518234
+      pos: 60.5,-104.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 960
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 60.352722,-106.19648
+      pos: 60.5,-106.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 961
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -14.705821,-54.482464
+      pos: -14.5,-54.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 962
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -16.340246,-53.456417
+      pos: -16.5,-53.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 963
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 59.59619,-44.366013
+      pos: 59.5,-44.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 964
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: 59.731606,-43.41744
+      pos: 59.5,-43.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 965
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 61.47119,-43.407013
+      pos: 61.5,-43.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 966
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 61.492023,-44.324318
+      pos: 61.5,-44.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 967
     components:
     - type: Transform
-      pos: 46.536495,-26.519398
+      pos: 46.5,-26.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 968
     components:
     - type: Transform
-      pos: 47.473995,-26.380413
+      pos: 47.5,-26.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 969
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 47.467937,-28.341328
+      pos: 47.5,-28.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: STClockworkGrille
   entities:
   - uid: 970
@@ -14425,6 +14555,13 @@ entities:
     components:
     - type: Transform
       pos: -10.5,4.5
+      parent: 1
+- proto: STPunchingBagExpirienced
+  entities:
+  - uid: 7791
+    components:
+    - type: Transform
+      pos: 10.5,2.5
       parent: 1
 - proto: STTrashT1CacheSpawner
   entities:
@@ -46423,6 +46560,15 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 11.5,20.5
+      parent: 1
+- proto: WarpPoint
+  entities:
+  - uid: 7794
+    components:
+    - type: MetaData
+      name: Barman
+    - type: Transform
+      pos: 3.5,2.5
       parent: 1
 - proto: WaterCooler
   entities:
