@@ -50,3 +50,25 @@
         Compression: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.80
+
+- type: entity
+  parent: STClothingOuterArmorVeryHeavy
+  id: ClothingOuterArmorPSZ9D
+  name: ПСЗ-13Д
+  description: Отличный костюм Долга для защиты от угроз зоны.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz13d.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz13d.rsi
+
+- type: entity
+  parent: STClothingOuterArmorVeryHeavy
+  id: STClothingOuterArmorHeavySera
+  name: бронированный комбинезон OP-14 'Серафимов'
+  description: Создан на основе обыкновенного комбинезона, бронированный потому что повышена защита броневыми пластинами от большинства физических повреждений. Так-же увеличивает вес, но предоставленая отличная защита от снарядов для таких комбенизонов как этот.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/OuterClothing/serafim-T4PVE.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/OuterClothing/serafim-T4PVE.rsi
