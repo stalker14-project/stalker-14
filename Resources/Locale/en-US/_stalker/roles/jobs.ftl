@@ -90,7 +90,7 @@ job-project-orchestrator-supervisor = You manage the entire "Project" Algorithm,
 
 job-renegade = Renegade
 job-renegade-desc = Just some kind of degenerate.
-job-renegade-supervisor = "."
+job-renegade-supervisor = "Flesh"
 
 job-scientist = Scientist
 job-scientist-desc = The main goal is to study all aspects of the Site, using scientific methods to further explain what the Site is and its purpose.
@@ -133,3 +133,11 @@ job-tulpari-supervisor = You don't obey anyone...
 job-un = UN Representative
 job-un-desc = Representative of heights.
 job-un-supervisor = You don't obey anyone...
+
+job-militia = Militia Fighter
+job-militia-desc = Stalker militia.
+job-militia-supervisor = You are subordinate to the militia commanders.
+
+job-militia-commander = Militia Commander
+job-militia-commander-desc = Stalker militia. There can be many commanders.
+job-militia-commander-supervisor = You consult with other militia commanders.

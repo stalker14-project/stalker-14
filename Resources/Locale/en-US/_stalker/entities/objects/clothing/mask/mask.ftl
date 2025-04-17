@@ -1,11 +1,5 @@
 ent-ClothingMaskNeckFacemask = mask
     .desc = Protective face mask connected to an air supply source.
-ent-ClothingMaskNeckBalaklava1 = balaclava
-    .desc = A mask with holes for the eyes and nose.
-ent-ClothingMaskNeckBalaklava2 = balaclava
-    .desc = A mask with holes for the eyes and nose.
-ent-ClothingMaskNeckBalaklava3 = balaclava
-    .desc = A mask with holes for the eyes and nose.
 ent-ClothingMaskNeckBalaklava4 = balaclava
     .desc = A mask with holes for the eyes and nose.
 ent-ClothingMaskNeckBlackFace = mask

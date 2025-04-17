@@ -3619,21 +3619,3 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteMagaHero
-  suffix: Stalker, кассета (Maga Hero)
-  name: кассета "Maga Hero"
-  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/MagaHero.ogg
-  - type: Tag
-    tags:
-    - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6

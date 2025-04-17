@@ -1,5 +1,3 @@
-ent-NPCAlexBaron = Lyoshka Baron [→ ←]
-    .desc = This character is engaged in a very important business - reselling crates. Should you trust him?
 ent-NPCSidorovich = Sidorovich [→   ←]
     .desc = An old squeeze who will not donate even a ruble to save someone. Rancorous.
 ent-NPCBarmen = Barman [→   ←]

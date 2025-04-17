@@ -1,11 +1,3 @@
 ent-STWeaponRifleStalkerAK74 = AK-74
     .desc = AK-74 - an immortal classic with wooden hardware.
     .suffix = ST
-ent-STSTWeaponRifleStalkerAK74M = AK-74M
-    .desc = Equipped with a left-folding plastic stock, impact-resistant plastic hardware, and a universal dovetail rail for attaching sights, thus replacing several versions of the assault rifle at once. Uses 5.45x39 caliber
-ent-STWeaponRifleStalkerSaiga545 = Saiga 5.45
-    .desc = AK-74M fixed stock and single fire mode - civilian version.
-    .suffix = { ent-STWeaponRifleStalkerAK74.suffix }
-ent-STWeaponRifleStalkerA545 = A-545
-    .desc = A-545 is a Russian assault rifle with balanced automatics. Further development of AEK-971.
-    .suffix = ST, Skin
