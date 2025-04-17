@@ -1,16 +1,16 @@
 - type: entity
   parent: STClothingOuterArmorStorageBasic
-  id: ClothingOuterArmorPSZ13D
-  name: ПСЗ-13Д
-  description: Отличный костюм Долга для защиты от угроз зоны. 
+  id: STClothingOuterArmorVeryHeavy
+  name: КСН-13 «Бегемот»
+  description: Костюм Специального Назначения «Бегемот», используется государственными оперативниками в условиях ЧЗО.
   suffix: ST, T4, PvE
   components:
   - type: STWeight
     self: 10
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/psz13d.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/HeavySuitBegemot.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/psz13d.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/HeavySuitBegemot.rsi
   - type: Tag
     tags:
       - BlockBelt
@@ -53,14 +53,14 @@
 
 - type: entity
   parent: STClothingOuterArmorVeryHeavy
-  id: ClothingOuterArmorVeryHeavyBegemot
-  name: КСН-13 «Бегемот»
-  description: Костюм Специального Назначения «Бегемот», используется государственными оперативниками в условиях ЧЗО.
+  id: ClothingOuterArmorPSZ9D
+  name: ПСЗ-13Д
+  description: Отличный костюм Долга для защиты от угроз зоны.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/HeavySuitBegemot.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz13d.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/HeavySuitBegemot.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz13d.rsi
 
 - type: entity
   parent: STClothingOuterArmorVeryHeavy
