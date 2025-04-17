@@ -1545,9 +1545,13 @@ namespace Content.Client.Lobby.UI
 
         private void RandomizeEverything()
         {
-            Profile = HumanoidCharacterProfile.Random();
-            SetProfile(Profile, CharacterSlot);
-            SetDirty();
+            if (Profile is not null && Profile.Changeable)
+            {
+
+                Profile = HumanoidCharacterProfile.Random();
+                SetProfile(Profile, CharacterSlot);
+                SetDirty();
+            }
         }
 
         private void RandomizeName()

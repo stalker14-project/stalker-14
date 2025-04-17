@@ -16,84 +16,6 @@
 
 - type: entity
   parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava1
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava1.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava1.rsi
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-  - type: HideLayerClothing
-    slots:
-    - Hair
-   # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava2
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava2.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava2.rsi
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava3
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
-  - type: IngestionBlocker
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava4
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava4.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava4.rsi
-  - type: IngestionBlocker
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
   id: ClothingMaskNeckBlackFace
   name: маска
   description: Представляет собой маску с отверстиями для глаз и носа.
@@ -215,13 +137,15 @@
   - type: Tag
     tags:
       - HidesNose
+      - BlockMask
   - type: Armor
     armorClass: 3
     modifiers:
-      flatReductions:
-        Piercing: 3
       coefficients:
-        Piercing: 0.95
+        Piercing: 0.80
+        Blunt: 0.80
+        Slash: 0.80
+          
 
 - type: entity
   parent: ClothingMaskPullableBase

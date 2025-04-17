@@ -1,0 +1,11 @@
+ent-STMBedBase = кровать
+    .desc = Старая, но всё ещё удобная кровать.
+ent-STOldBed = bed
+    .desc = This is used to lie in, sleep in or strap on. Resting here provides extremely slow healing.
+    .suffix = ST, Mapping
+ent-STOldMedicalBed = medical bed
+    .desc = A hospital bed for patients to recover in. Resting here provides fairly slow healing.
+    .suffix = { ent-STOldBed.suffix }
+ent-STOldMattress = mattress
+    .desc = Better sleep in that then on the floor i guess.
+    .suffix = { ent-STOldBed.suffix }

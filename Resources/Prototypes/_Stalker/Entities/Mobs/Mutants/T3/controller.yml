@@ -3,8 +3,10 @@
   parent: BaseMobMutant
   name: контроллёр
   suffix: ST, T3
-  description: с какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
+  description: C какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
   components:
+  - type: Damageable
+    damageModifierSet: STMutantT3DamageModifierSet
   - type: Sprite
     sprite: _Stalker/Mobs/Mutants/controller.rsi
     layers:
@@ -68,8 +70,8 @@
   - type: Butcherable
     spawned:
     - id: Roubles500
-      amount: 2
-      prob: 0.5
+      amount: 3
+      prob: 1
     - id: Roubles1000
       amount: 1
-      prob: 0.1
+      prob: 0.5

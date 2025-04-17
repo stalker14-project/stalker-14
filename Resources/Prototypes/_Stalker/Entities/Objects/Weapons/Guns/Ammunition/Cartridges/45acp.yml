@@ -2,12 +2,10 @@
 - type: entity
   id: BaseCartridge45ACP
   name: cartridge (.45 ACP auto)
-  parent: BaseCartridgeCaselessRifle
+  parent: BaseCartridge
   suffix: Stalker
   abstract: true
   components:
-    - type: Trash
-      time: 1
     - type: STWeight
       self: 0.01
     - type: Tag
@@ -15,7 +13,7 @@
         - Cartridge
         - Cartridge45ACP
     - type: CartridgeAmmo
-      proto: BulletMagnum
+      deleteOnSpawn: true
     - type: Sprite
       sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
       layers:
@@ -23,8 +21,7 @@
           map: ["enum.AmmoVisualLayers.Base"]
     - type: Appearance
     - type: SpentAmmoVisuals
-    - type: StaticPrice
-      price: 10
+      state: "base"
 
 - type: entity
   id: Cartridge45ACPLFMJ

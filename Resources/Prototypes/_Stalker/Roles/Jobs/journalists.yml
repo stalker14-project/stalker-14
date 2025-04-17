@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerJournalist
-  name: Журналист
+  name: job-journalist
   icon: journalist
-  description: Вестники Зоны.
+  description: job-journalist-desc
   playTimeTracker: JobJournalist
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - Human
       - Dwarf
   startingGear: JurGear
-  supervisors: Вы подчиняетесь редакции и ООН...
+  supervisors: job-journalist-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -27,6 +27,8 @@
         - type: Bands
           band: Stalker
           bandIcon: journalist
+          bandProto: STJournalistsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -42,3 +44,12 @@
     torso: ClothingTorsoSweaterStalkerGreen
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsCombatFilled
+- type: stBand
+  id: STJournalistsBand
+  name: Journalists
+  factionId: Stalker
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerJournalist
+

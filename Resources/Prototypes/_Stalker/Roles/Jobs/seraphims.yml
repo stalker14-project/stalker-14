@@ -1,8 +1,8 @@
 - type: job
   id: Seraphim
-  name: Серафим
+  name: job-seraphim
   icon: seraphim
-  description: Таинственная группировка, появившаяся с первых дней жизни Зоны.
+  description: job-seraphim-desc
   playTimeTracker: JobSeraphims
   whitelisted: true
   requirements:
@@ -14,17 +14,20 @@
       - Human
       - Dwarf
   startingGear: SeraphimGear
-  supervisors: Вы служите во имя Его.
+  supervisors: job-seraphim-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-          psy: 20
+          psy: 50
         - type: PsyonicsActionLight
+        - type: PsyonicsActionSmoke
         - type: Bands
           band: Stalker
           bandIcon: seraphim
+          bandProto: STSeraphimsBand
+          bandRankId: 2
         - type: Access
           tags:
             - Seraphims
@@ -34,6 +37,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Bandit
 - type: startingGear
   id: SeraphimGear
   equipment:
@@ -51,9 +57,9 @@
 
 - type: job
   id: SeraphimHead
-  name: Офицер Серафимов
+  name: job-head-seraphim
   icon: seraphim_officer
-  description: Таинственная группировка, появившаяся с первых дней жизни Зоны.
+  description: job-head-seraphim-desc
   playTimeTracker: JobHeadSeraphims
   whitelisted: true
   requirements:
@@ -65,14 +71,16 @@
       - Human
       - Dwarf
   startingGear: SeraphimHeadGear
-  supervisors: Вы служите во имя Его.
+  supervisors: job-seraphim-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
         - type: Psyonics
-          psy: 50
+          psy: 75
         - type: PsyonicsActionLight
+        - type: PsyonicsActionGrab
+        - type: PsyonicsActionSmoke
         - type: Access
           tags:
             - Seraphims
@@ -80,6 +88,8 @@
         - type: Bands
           band: Stalker
           bandIcon: seraphim_officer
+          bandProto: STSeraphimsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -89,6 +99,9 @@
         - type: AutoImplant
           implants:
           - STSeraBombImplant
+        - type: NpcFactionMember
+          factions:
+          - Bandit
 - type: startingGear
   id: SeraphimHeadGear
   equipment:
@@ -102,3 +115,13 @@
     gloves: STClothingHandsGlovesSera
     pocket1: STBoltBagFilled
     pocket2: GeigerCounter
+- type: stBand
+  id: STSeraphimsBand
+  name: Seraphims
+  factionId: Bandit
+  maxMembers: 17
+  managingRankId: 2
+  hierarchy:
+    1: Seraphim
+    2: SeraphimHead
+

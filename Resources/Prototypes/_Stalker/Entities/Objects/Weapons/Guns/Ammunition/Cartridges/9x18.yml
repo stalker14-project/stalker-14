@@ -3,56 +3,78 @@
 - type: entity
   id: BaseCartridge918
   name: cartridge (9х18 auto)
-  parent: BaseCartridgeCaselessRifle
+  parent: BaseCartridge
   abstract: true
   components:
+  - type: STWeight
+    self: 0.01
   - type: Tag
     tags:
       - Cartridge
       - Cartridge918
   - type: CartridgeAmmo
-    proto: BulletPistol
+    deleteOnSpawn: true
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
-    layers:
-    - state: base
-      map: ["enum.AmmoVisualLayers.Base"]
+    drawdepth: Items
   - type: Appearance
-  - type: SpentAmmoVisuals
-  - type: STWeight
-    self: 0.01
-  - type: Trash
-    time: 300
 
 - type: entity
   id: Cartridge918PGJ
   name: Патрон (9х18)П гж
   parent: BaseCartridge918
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet918PGJ
+  - type: SpentAmmoVisuals
+    state: "base"
 
 - type: entity
   id: Cartridge918PST
   name: Патрон (9х18)ПСТ
   parent: BaseCartridge918
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet918PST
+  - type: SpentAmmoVisuals
+    state: "base"
 
 - type: entity
   id: Cartridge918SP7
   name: Патрон (9х18)СП7 гж
   parent: BaseCartridge918
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet918SP7
+  - type: SpentAmmoVisuals
+    state: "base"
 
 - type: entity
   id: Cartridge918PBM
   name: Патрон (9х18)ПБМ
   parent: BaseCartridge918
   components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: CartridgeAmmo
     proto: Bullet918PBM
+  - type: SpentAmmoVisuals
+    state: "base"
 

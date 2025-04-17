@@ -1,16 +1,20 @@
 - type: entity
-  parent: BaseMobMutant
+  parent: STBaseMobMutant
   id: MobMutantBlindDog
   name: слепой пёс
   suffix: ST, T1
   description: The most common mutant in the zone. They are not as dangerous alone as in a dense flock.
   components:
+    - type: Damageable
+      damageModifierSet: STMutantT1DamageModifierSet
     - type: HTN
       rootTask:
         task: STBlindDogCompound
       blackboard:
         VisionRadius: !type:Single
-          12.0
+          20
+        AggroVisionRadius: !type:Single
+          10
     - type: Butcherable
       spawned:
         - id: MutantPartBlindDogTail
@@ -60,7 +64,7 @@
         types:
           Slash: 16
     - type: MovementSpeedModifier
-      baseWalkSpeed: 3
+      baseWalkSpeed: 2
       baseSprintSpeed: 4
     - type: Sprite
       sprite: /Textures/_Stalker/Mobs/Mutants/blinddog.rsi

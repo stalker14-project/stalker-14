@@ -23,3 +23,23 @@
       angleIncrease: 10
       angleDecay: 50
       fireRate: 2
+
+#skins
+
+
+- type: entity
+  name: Protecta
+  suffix: ST
+  parent: STWeaponShotgunProtecta
+  id: STweaponShotgunPRETecta
+  description: Дробовик "Protecta" с деревянным прикладом и обмотанный кое-где бинтами.
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/saiga_shoot.ogg

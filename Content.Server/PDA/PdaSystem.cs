@@ -61,15 +61,15 @@ namespace Content.Server.PDA
 
         private void OnEntityRenamed(ref EntityRenamedEvent ev)
         {
-            var query = EntityQueryEnumerator<PdaComponent>();
+            //var query = EntityQueryEnumerator<PdaComponent>(); // stalker-changes-start
 
-            while (query.MoveNext(out var uid, out var comp))
-            {
-                if (comp.PdaOwner == ev.Uid)
-                {
-                    SetOwner(uid, comp, ev.Uid, ev.NewName);
-                }
-            }
+            //while (query.MoveNext(out var uid, out var comp))
+            //{
+            //    if (comp.PdaOwner == ev.Uid)
+            //    {
+            //        SetOwner(uid, comp, ev.Uid, ev.NewName);
+            //    } // stalker-changes-end
+            //}
         }
 
         protected override void OnComponentInit(EntityUid uid, PdaComponent pda, ComponentInit args)

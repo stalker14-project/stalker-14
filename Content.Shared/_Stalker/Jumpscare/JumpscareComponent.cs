@@ -8,28 +8,20 @@ namespace Content.Shared._Stalker.Jumpscare
     public sealed partial class JumpscareComponent : Component
     {
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float StaminaDamage = 0f;
-
-        [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float AttackRadius = 6f;
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float AttackDistance = 0.1f;
+        public float AttackDistance = 1.5f;
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float JumpPower = 30f;
+        public float JumpDistance = 7f;
 
         [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float JumpDistance = 5f;
-
-        [ViewVariables(VVAccess.ReadWrite)]
-        public bool Jumping = false;
+        public float JumpPower = 14f;
 
         [DataField(required: true), ViewVariables(VVAccess.ReadWrite)]
         public DamageSpecifier ChargeDamage = default!;
 
-        [DataField, ViewVariables(VVAccess.ReadWrite)]
-        public float DamageRadius = 0.5f;
         [AutoPausedField]
         public TimeSpan? StartTime = TimeSpan.FromSeconds(0f);
         [AutoPausedField]
@@ -39,10 +31,6 @@ namespace Content.Shared._Stalker.Jumpscare
         public float RandomiseReloadTime = 2f;
 
         [AutoPausedField]
-        public TimeSpan? JumpStartTime = TimeSpan.FromSeconds(0f);
-        [AutoPausedField]
-        public TimeSpan? JumpEndTime = TimeSpan.FromSeconds(0f);
-        [AutoPausedField]
         public TimeSpan? PreparingStartTime = TimeSpan.FromSeconds(0f);
         [AutoPausedField]
         public TimeSpan? PreparingEndTime = TimeSpan.FromSeconds(0f);
@@ -51,12 +39,33 @@ namespace Content.Shared._Stalker.Jumpscare
 
         [ViewVariables(VVAccess.ReadWrite)]
         public bool OnCoolDown = true;
-        public Vector2 Targeting = new(0, 0);
 
         [AutoPausedField]
         public TimeSpan? NextTimeUpdate;
-        // seconds
+
         [DataField]
         public float UpdateCooldown;
+
+        [DataField, AutoPausedField]
+        public TimeSpan SlowdownTime = TimeSpan.FromSeconds(0.1f);
+
+        // steps params
+        [ViewVariables(VVAccess.ReadWrite)]
+        public Vector2 JumpTarget = new(0, 0);
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int CurrentStep = 0;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public int TotalSteps = 3;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public float StepInterval = 0.025f;
+
+        [AutoPausedField]
+        public TimeSpan? NextStepTime;
+
+        [ViewVariables(VVAccess.ReadWrite)]
+        public bool MovingToJumpTarget = false;
     }
 }

@@ -49,6 +49,8 @@
   - type: PhysicalComposition
     materialComposition:
       Meaterial: 300
+  - type: Trash
+    time: 600
 
 - type: entity
   parent: FoodMeatBase
@@ -435,31 +437,6 @@
   components:
   - type: Sprite
     state: plant
-
-- type: entity
-  name: rotten meat
-  parent: FoodMeatBase
-  id: FoodMeatRotten
-  description: Halfway to becoming fertilizer for your garden.
-  components:
-  - type: Tag
-    tags:
-    - Raw
-    - Meat
-    - Trash
-    - Recyclable
-  - type: Sprite
-    state: rotten
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-        - ReagentId: GastroToxin
-          Quantity: 4
-        - ReagentId: Fat
-          Quantity: 4
 
 - type: entity
   name: raw spider meat

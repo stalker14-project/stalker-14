@@ -5,6 +5,16 @@
   suffix: ST, T2
   description: A mutated wolf that can cause a lot of trouble to an unprepared stalker.
   components:
+    - type: Damageable
+      damageModifierSet: STMutantT2DamageModifierSet
+    - type: HTN
+      rootTask:
+        task: STBlindDogCompound
+      blackboard:
+        VisionRadius: !type:Single
+          20
+        AggroVisionRadius: !type:Single
+          13
     - type: Butcherable
       spawned:
         - id: MutantPartPseudodogTail
@@ -48,10 +58,10 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Slash: 36
+          Slash: 32
     - type: MovementSpeedModifier
-      baseWalkSpeed: 3.2
-      baseSprintSpeed: 4
+      baseWalkSpeed: 2.5
+      baseSprintSpeed: 5
     - type: Sprite
       sprite: /Textures/_Stalker/Mobs/Mutants/pseudodog.rsi
       layers:

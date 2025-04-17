@@ -348,9 +348,9 @@
   suffix: ST, T3, Скин
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
+    sprite: _Stalker/Objects/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
+    sprite: _Stalker/Objects/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetLoyalistCoatSeraphim
     requiredSlot:
@@ -365,10 +365,39 @@
   suffix: ST, Скин
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
   - type: HideLayerClothing
     slots:
     - Hair
 
+
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatRet
+  name: утеплённый кевларовый плащ
+  description: Плащ, сделанный в условиях зоны, на удивление качественная работа, сделан из качественной кожи и прошит кевларом,кое-где вставлены бронепластины, окрашен в коричневый с пришитым воротником.
+  suffix: ST, T3, Renegat
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_Ret.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_Ret.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterCoatRetHat
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingOuterCoatRetHat
+  name: Воротник
+  description: просто Воротник.
+  suffix: ST, Скин
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Head/Hats/Ret4hat.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Head/Hats/Ret4hat.rsi

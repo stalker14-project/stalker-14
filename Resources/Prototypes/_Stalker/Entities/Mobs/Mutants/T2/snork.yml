@@ -9,7 +9,7 @@
       spawned:
         - id: MutantPartSnorkFoot
     - type: Damageable
-      damageModifierSet: SnorkMutant
+      damageModifierSet: STMutantT3DamageModifierSet
     - type: DamageStateVisuals
       states:
         Alive:
@@ -43,8 +43,11 @@
         types:
           Blunt: 12
           Slash: 30
-      jumpPower: 60
-      updateCooldown: 3
+      jumpPower: 6
+      jumpDistance: 10
+      updateCooldown: 0.5
+      totalSteps: 3
+      stepInterval: 0.025
     - type: MobThresholds
       thresholds:
         0: Alive

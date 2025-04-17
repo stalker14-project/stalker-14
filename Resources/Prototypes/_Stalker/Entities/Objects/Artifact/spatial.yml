@@ -5,6 +5,7 @@
   components:
     - type: Sprite
       state: soul
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget
@@ -35,6 +36,37 @@
       walkModifier: 1.2
       sprintModifier: 1.1
 
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactFloodlight
+  suffix: Stalker, Артефакт-фонарь
+  components:
+    - type: Sprite
+      state: artifactFloodlight
+      scale: 0.5, 0.5
+    - type: ZoneArtifact
+      anomaly: ZoneAnomalyLamp
+    - type: ZoneArtifactDetectorTarget
+      detectedLevel: 1
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,1,1
+    - type: Clothing
+      quickEquip: true
+      slots:
+        - ARTIFACT
+        - pocket
+    - type: PointLight
+      radius: 20
+      energy: 8
+      color: "#c2a41f"
+      netsync: false
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: 0.1
+      interval: 1
 #
 - type: entity
   parent: BaseArtifactStorage
@@ -43,6 +75,7 @@
   components:
     - type: Sprite
       state: magnetic_flower
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget
@@ -77,6 +110,7 @@
   components:
     - type: Sprite
       state: atom
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget

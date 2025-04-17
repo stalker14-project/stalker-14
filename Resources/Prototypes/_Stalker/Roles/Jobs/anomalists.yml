@@ -1,8 +1,8 @@
 - type: job
   id: StalkerAnomalist
-  name: Аномалист
+  name: job-anomalist
   icon: tec
-  description: Изучение и сохранение зоны. Активное использование аномалий и артефактов. Создание новых аномалий и артефактов. Создание аппаратуры на основе аномалий/артефактов или для работы с аномалиями.
+  description: job-anomalist-desc
   playTimeTracker: JobStalkerAnomalist
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: AnomalistGear
-  supervisors: Вы работаете сами на себя
+  supervisors: job-anomalist-supervisor
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
@@ -25,6 +25,8 @@
     - type: Bands
       band: Stalker
       bandIcon: tec
+      bandProto: STAnomalistsBand
+      bandRankId: 2
     - type: BlockTackingHolyItems
     - type: TeethPull
       teethProto: ToothStalker
@@ -46,9 +48,9 @@
 
 - type: job
   id: StalkerAnomalistGuardian
-  name: Хранитель
+  name: job-anomalist-guardian
   icon: tec
-  description: Изучение и сохранение зоны. Активное использование аномалий и артефактов. Создание новых аномалий и артефактов. Создание аппаратуры на основе аномалий/артефактов или для работы с аномалиями.
+  description: job-anomalist-guardian-desc
   playTimeTracker: StalkerAnomalistGuardian
   whitelisted: true
   requirements:
@@ -72,9 +74,21 @@
     - type: Bands
       band: Stalker
       bandIcon: tec
+      bandProto: STAnomalistsBand
+      bandRankId: 2
     - type: BlockTackingHolyItems
     - type: TeethPull
       teethProto: ToothStalker
       pullingItemTag: PliersStalker
       teethCount: 3
       initialTeeth: 3
+- type: stBand
+  id: STAnomalistsBand
+  name: Anomalists
+  factionId: Stalker
+  maxMembers: 10
+  managingRankId: 2
+  hierarchy:
+    1: StalkerAnomalist
+    2: StalkerAnomalistGuardian
+

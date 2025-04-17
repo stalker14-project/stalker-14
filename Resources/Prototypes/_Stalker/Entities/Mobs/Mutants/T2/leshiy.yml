@@ -4,6 +4,8 @@
   id: MobMutantLeshiy
   suffix: ST, T2
   components:
+  - type: Damageable
+    damageModifierSet: STMutantT2DamageModifierSet
   - type: Bloodstream
     bloodReagent: Water
     bloodMaxVolume: 650
@@ -38,14 +40,19 @@
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
+      blackboard:
+        VisionRadius: !type:Single
+          20
+        AggroVisionRadius: !type:Single
+          15
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 1.5
+    rechargeCooldown: 3
   - type: BasicEntityAmmoProvider
     proto: STBulletAcid
     capacity: 3
     count: 3
   - type: Gun
-    fireRate: 3
+    fireRate: 2
     useKey: false
     selectedMode: FullAuto
     availableModes:

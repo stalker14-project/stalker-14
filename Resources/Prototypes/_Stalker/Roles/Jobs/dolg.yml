@@ -1,8 +1,8 @@
 - type: job
   id: StalkerDolg
-  name: Боец Долга
+  name: job-dolg
   icon: Dolg
-  description: Защитник человечества.
+  description: job-dolg-desc
   playTimeTracker: JobDolg
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: job-dolg-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -25,6 +25,8 @@
         - type: Bands
           band: Stalker
           bandIcon: Dolg
+          bandProto: STDolgBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -34,9 +36,9 @@
 
 - type: job
   id: StalkerHeadDolg
-  name: Лидер Долга
+  name: job-head-dolg
   icon: Dolg
-  description: Защитник человечества.
+  description: job-head-dolg-desc
   playTimeTracker: JobHeadDolg
   whitelisted: true
   requirements:
@@ -48,7 +50,7 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: Вы командуете другими бойцами Долга.
+  supervisors: job-head-dolg-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -61,6 +63,8 @@
         - type: Bands
           band: Stalker
           bandIcon: Dolg
+          bandProto: STDolgBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -77,3 +81,13 @@
     shoes: ClothingShoesBootsWork
     torso: ClothingTorsoTurtlenecksDolgCamouflage
     cloak: ClothingNeckCloakDolg
+- type: stBand
+  id: STDolgBand
+  name: Dolg
+  factionId: Dolg
+  maxMembers: 35
+  managingRankId: 2
+  hierarchy:
+    1: StalkerDolg
+    2: StalkerHeadDolg
+

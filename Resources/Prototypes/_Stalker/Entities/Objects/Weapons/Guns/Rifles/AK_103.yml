@@ -27,8 +27,8 @@
       gun_magazine:
         name: Magazine
         startingItem: Base739Mag10
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
         priority: 4
         whitelist:
           tags:
@@ -72,3 +72,26 @@
     fireRate: 8
   - type: GunWieldBonus
     minAngle: -45
+
+- type: entity
+  parent: STWeaponRifleStalkerAK103
+  id: STWeaponRifleAK203
+  name: АК-203
+  description: Один из последних АК, разработанных Михаилом Калашниковым, дальнейшее улучшение АК-103.
+  suffix: ST, Скин
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak203.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak203.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak203.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/203_Sound.ogg
+    projectileSpeed: 32
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 6
+    angleDecay: 30
+    fireRate: 7

@@ -27,7 +27,7 @@
           base:
             Activated: { state: active }
             Charging: { state: idle }
-            Idle: { state: idle }
+            Idle: { state: idle2 }
     - type: AmbientSound
       volume: -22
       range: 3
@@ -36,7 +36,10 @@
     - type: ZoneArtifactSpawner
       artifacts:
         - id: null
-          ratio: 340
+          ratio: 140
+        - id: ZoneArtifactFloodlight
+          tier: 1
+          ratio: 25
         - id: ZoneArtifactSoul
           tier: 5
           ratio: 10

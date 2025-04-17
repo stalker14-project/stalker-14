@@ -19,6 +19,7 @@
         path: /Audio/_Stalker/Effects/Guns/scar.ogg
         params:
           volume: -2
+      projectileSpeed: 30
       minAngle: 50
       maxAngle: 125
       angleIncrease: 5.5
@@ -32,8 +33,8 @@
         gun_magazine:
           name: Magazine
           startingItem: Base751Mag10
-          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
           priority: 4
           whitelist:
             tags:
@@ -91,3 +92,6 @@
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/ARX160.rsi
       scale: 0.75, 0.75
+    - type: Gun
+      angleIncrease: 5
+      angleDecay: 29

@@ -280,9 +280,9 @@
   description: anomalist jacket
   components:
     - type: Sprite
-      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
+      sprite: _Stalker/Objects/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
     - type: Clothing
-      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
+      sprite: _Stalker/Objects/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
     - type: PersonalDamage
       interval: 1
       damage:
@@ -375,9 +375,9 @@
   suffix: ST, T1, Deliko
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/jacket_gray.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/jacket_gray.rsi
 
 # Sci - 7
 
@@ -387,10 +387,27 @@
   name: куртка 'НИИЧАЗ'
   description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет хим чисткой...
   components:
+  - type: ToggleableClothing
+    clothingPrototype: ClothingJacketSci
+    slot: head
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingJacketSci
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sci.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sci.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Jabs - 9
 

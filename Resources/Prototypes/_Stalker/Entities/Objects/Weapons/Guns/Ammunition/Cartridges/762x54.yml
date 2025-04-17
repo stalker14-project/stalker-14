@@ -3,7 +3,7 @@
 - type: entity
   id: BaseCartridge754
   name: cartridge (7,62x54 rifle)
-  parent: BaseCartridgeCaselessRifle
+  parent: BaseCartridge
   abstract: true
   components:
   - type: Tag
@@ -11,7 +11,7 @@
     - Cartridge
     - Cartridge754
   - type: CartridgeAmmo
-    proto: BulletLightRifle
+    deleteOnSpawn: true
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -19,6 +19,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+    state: "base"
   - type: STWeight
     self: 0.02
 

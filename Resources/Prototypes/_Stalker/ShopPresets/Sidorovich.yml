@@ -22,6 +22,7 @@
     # Gravity group - 2
     ZoneArtifactVyvert: 400
     ZoneArtifactAmoeba: 600
+    ZoneArtifactFloodlight: 600
     ZoneArtifactGravi: 1200
     ZoneArtifactGoldfish: 4800
     ZoneArtifactSpring: 3600
@@ -60,7 +61,7 @@
     MutantPartPseudogiantHeart: 4000
     MutantPartZombieHand: 600
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
             # Melee
@@ -85,7 +86,7 @@
         STWeaponRifleSKS: 1850 # T2
         STWeaponSniperMosin: 1000
           # Nato
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 2
       items:
 
@@ -101,7 +102,7 @@
         TTMag: 75
         BaseAPSMag: 200
         BaseMP5Mag: 150
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 125
@@ -125,7 +126,7 @@
         919PBMBox: 500
         # .45 ACP
         45ACPLFMJBox: 100
-    - name: Броня
+    - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
@@ -139,7 +140,7 @@
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
 
-    - name: Хранилища и Контейнеры
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
           # BackPacks
@@ -151,11 +152,10 @@
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
           # Containers
-        BoxArtcont: 450 # T1
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
          # T4
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
@@ -165,7 +165,7 @@
         ClothingMaskGasZarya: 100 # T1
         ClothingMaskGP5: 200 # T2
         ClothingMaskGP7: 900  # T3
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 7
       items:
         STBoltBagFilled: 50
@@ -175,7 +175,7 @@
         ZoneArtifactDetectorPulse: 100 # T1
         ZoneArtifactDetectorHunter: 400 # T2
         ZoneArtifactDetectorResponse: 1200 # T2
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 8
       items:
         STCombatKnife: 25
@@ -185,7 +185,7 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
-        FlashlightSeclite: 50
+        STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
@@ -200,7 +200,7 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 250
@@ -214,7 +214,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 10
       items:
           # Cheap
@@ -231,7 +231,7 @@
         MedkitAI2: 200
         MedkitMilitary: 400
         Defibrillator: 1000
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 11
       items:
         ClothingBandageStalkerJid: 50
@@ -292,7 +292,7 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-    - name: Развлечения
+    - name: shop-category-entertainment
       priority: 12
       items:
         # Dices

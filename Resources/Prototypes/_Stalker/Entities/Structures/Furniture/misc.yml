@@ -1,9 +1,9 @@
 - type: entity
   id: Pit
   parent: BaseStructure
-  name: Колодец
+  name: well
   suffix: ST, Mapping
-  description: Глубокая шахта опускающаяся на многие метры вниз, до самых грунтовых вод.
+  description: A deep shaft descending many meters down to the groundwater.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Pit.rsi
@@ -35,14 +35,14 @@
 - type: entity
   id: MoonshineStill
   parent: BaseStructure
-  name: Самогонный аппарат
+  name: moonshine still
   suffix: ST, Mapping
   description: Большое устройство, предназначенное для фильтрации спирта и преобразования его в самогон.
   components:
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/MoonshineStill.rsi
     state: samogoni
-  - type: InteractionOutline
+  - type: Clickable
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -58,46 +58,63 @@
 
 - type: entity
   id: STMonitor
-  parent: BaseStructure
-  name: монитор
+  name: monitor
   suffix: ST, Mapping
-  description: Старый, но всё ещё исправно работающий монитор с потёртой рамкой и тусклым экраном, напоминает о первых днях цифровой эпохи.
+  description: An old but still functional monitor with a worn frame and a dim screen, reminiscent of the early days of the digital age.
+  placement:
+    mode: PlaceFree
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/monitor.rsi
+    drawdepth: SmallObjects
     state: base
-  - type: InteractionOutline
   - type: Physics
+    bodyType: Static
+  - type: Clickable
+  - type: Pullable
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.796875,-0.875,0.796875,0.875"
+          bounds: "-0.17,0.1,0.19,-0.3"
         density: 155
         mask:
         - MachineMask
         layer:
-        - WallLayer
+        - HalfWallLayer
 
 - type: entity
   id: STKeyboard
   parent: BaseStructure
-  name: клавиатура
+  name: keyboard
   suffix: ST, Mapping
-  description: Старая, но всё ещё функциональная клавиатура с потертыми клавишами и стершимися символами, хранит в себе следы множества напечатанных историй.
+  description: An old but still functional keyboard with worn keys and worn symbols holds traces of many printed stories.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/keyboard.rsi
     state: base
-  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+
+- type: entity
+  parent: BaseStructure
+  id: ComputerTablePack
+  name: computer desk
+  description: An old computer desk with a lamp and an ancient computer. Do you need it?
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/bluprint_computer.rsi
+    state: base
   - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.796875,-0.875,0.796875,0.875"
+          bounds: "-0.376875,-0.275,0.396875,0.275"
         density: 155
         mask:
         - MachineMask

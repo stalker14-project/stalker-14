@@ -5,6 +5,8 @@
   suffix: ST, T2
   description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
   components:
+    - type: Damageable
+      damageModifierSet: STMutantBoarDamageModifierSet
     - type: Butcherable
       spawned:
         - id: MutantPartSeasonedBoarHoof
@@ -85,3 +87,12 @@
       damage: 10
     - type: STWeight
       self: 120
+    - type: Jumpscare
+      chargeDamage:
+        types:
+          Blunt: 25
+      jumpPower: 2
+      jumpDistance: 4
+      updateCooldown: 0.25
+      totalSteps: 6
+      stepInterval: 0.001

@@ -19,11 +19,11 @@
       sprite: _Stalker/Objects/Weapons/Guns/SMGs/tommygun.rsi
     - type: Gun
       projectileSpeed: 18
-      minAngle: 45
-      maxAngle: 80
+      minAngle: 50
+      maxAngle: 90
       angleIncrease: 2
-      angleDecay: 9
-      fireRate: 7
+      angleDecay: 12
+      fireRate: 12
       shotsPerBurst: 3
       ShotsPerBurstModified: 3
       selectedMode: Burst
@@ -37,8 +37,8 @@
         gun_magazine:
           name: Magazine
           startingItem: BaseTommyGunMag
-          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
           priority: 2
           whitelist:
             tags:
