@@ -37,6 +37,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Bandit
 - type: startingGear
   id: SeraphimGear
   equipment:
@@ -96,6 +99,9 @@
         - type: AutoImplant
           implants:
           - STSeraBombImplant
+        - type: NpcFactionMember
+          factions:
+          - Bandit
 - type: startingGear
   id: SeraphimHeadGear
   equipment:
@@ -112,8 +118,8 @@
 - type: stBand
   id: STSeraphimsBand
   name: Seraphims
-  factionId: Bandits
-  maxMembers: 10
+  factionId: Bandit
+  maxMembers: 17
   managingRankId: 2
   hierarchy:
     1: Seraphim

@@ -10,3 +10,4 @@ st-warzone-capture-started = Capture attempt by {$attacker} started on '{$zone}'
 st-warzone-captured = Zone '{$zone}' captured by {$attacker}!
 st-warzone-cooldown = Zone '{$zone}' is on cooldown. Next capture available in {$minutes} minutes.
 st-warzone-timewindow-fail = Zone is not opne for wars
+st-warzone-progress = Capture progress '{$zone}' {$percent}%

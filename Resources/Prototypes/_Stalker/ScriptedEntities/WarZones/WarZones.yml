@@ -12,15 +12,16 @@
 - type: stWarZone
   id: SvalkaDepo
   rewardPointsPerPeriod: 1
-  rewardPeriod: 15
-  captureCooldownHours: 0.05
-  captureTime: 1200 # Время захвата зоны в секундах.
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 420 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
   - !type:TimeWindowRequirenment
-    startHourUtc: 14 # Start hour in UTC (e.g., 10:00 UTC = 10)
-    endHourUtc: 20   # End hour in UTC (e.g., 18:00 UTC = 18)
+    startHourUtc: 16 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 18   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 # Entity prototype referencing the above meta-prototype
 - type: entity
@@ -69,7 +70,7 @@
       trigger:
         shape:
           !type:PhysShapeCircle
-          radius: 15
+          radius: 5
         hard: false
         mask:
         - MobMask

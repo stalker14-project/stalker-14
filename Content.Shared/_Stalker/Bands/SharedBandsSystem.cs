@@ -101,13 +101,15 @@ namespace Content.Shared._Stalker.Bands
     public sealed class BandMemberInfo
     {
         public NetUserId UserId { get; }
-        public string PlayerName { get; }
+        public string PlayerName { get; } // Keep this for now (ckey)
+        public string CharacterName { get; } // Add this field
         public string RoleId { get; }
 
-        public BandMemberInfo(NetUserId userId, string playerName, string roleId)
+        public BandMemberInfo(NetUserId userId, string playerName, string characterName, string roleId)
         {
             UserId = userId;
             PlayerName = playerName;
+            CharacterName = characterName;
             RoleId = roleId;
         }
     }

@@ -1,0 +1,79 @@
+################# Куртки Новичка
+
+#Брезентовая
+
+- type: entity
+  parent: BaseItem
+  id: SetJacketNoviceBrezentBuyableCrate
+  name: комплект куртки новичка
+  description: Обычная одежда начинающего сталкера. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. В комплекте куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
+  suffix: Stalker, т1
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/jacket-novice-brezent.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterJacketStalker
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBackpackTownBlackStalker
+        - id: ClothingBeltBandolierStalker
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+#Белая
+
+- type: entity
+  parent: BaseItem
+  id: SetJacketNoviceWhiteBuyableCrate
+  name: комплект белой куртки новичка
+  description: Обычная одежда начинающего сталкера. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. В комплекте куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
+  suffix: Stalker, т1
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/jacket-novice-white.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterJacketStalkerWhite
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBackpackTownBlackStalker
+        - id: ClothingBeltBandolierStalker
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+#Бандитская
+
+- type: entity
+  parent: BaseItem
+  id: SetJacketBanditBuyableCrate
+  name: комплект кожаной куртки бандита
+  description: Традиционная одежда бандита — кожаная куртка со вшитыми броневыми элементами. Даёт защиту, крайне недостаточную в жёстких условиях Зоны. В комплекте куртка, марлевая повязка, белый городской рюкзак и набор подсумков новичка.
+  suffix: Stalker, т1
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/jacket-novice-bandit.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterJacketBandit
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBackpackTownWhiteStalker
+        - id: ClothingBeltBandolierStalker
+      sound:
+        path: /Audio/Effects/unwrap.ogg

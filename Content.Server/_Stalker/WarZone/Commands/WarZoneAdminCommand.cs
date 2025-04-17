@@ -17,14 +17,14 @@ public sealed class WarZoneAdminCommand : IConsoleCommand
     [Dependency] private readonly EntityManager _entityManager = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    public string Command => "warzoneadmin";
+    public string Command => "st_warzoneadmin";
     public string Description => "Admin command to modify warzone points and ownership.";
     public string Help => "Usage:\n" +
-                          "warzoneadmin setpoints band <bandProtoId> <points>\n" +
-                          "warzoneadmin setpoints faction <factionProtoId> <points>\n" +
-                          "warzoneadmin setowner <zoneProtoId> band <bandProtoId>\n" +
-                          "warzoneadmin setowner <zoneProtoId> faction <factionProtoId>\n" +
-                          "warzoneadmin clearowner <zoneProtoId>";
+                          "st_warzoneadmin setpoints band <bandProtoId> <points>\n" +
+                          "st_warzoneadmin setpoints faction <factionProtoId> <points>\n" +
+                          "st_warzoneadmin setowner <zoneProtoId> band <bandProtoId>\n" +
+                          "st_warzoneadmin setowner <zoneProtoId> faction <factionProtoId>\n" +
+                          "st_warzoneadmin clearowner <zoneProtoId>";
 
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {

@@ -63,7 +63,7 @@ namespace Content.Client._Stalker.Bands.UI
 
                     var nameLabel = new Label
                     {
-                        Text = member.PlayerName,
+                        Text = member.CharacterName, // Display CharacterName instead of PlayerName (ckey)
                         HorizontalExpand = true,
                     };
 

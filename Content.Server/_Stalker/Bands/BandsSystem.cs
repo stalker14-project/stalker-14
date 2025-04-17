@@ -371,6 +371,20 @@ namespace Content.Server._Stalker.Bands
             {
                 var userId = new NetUserId(player.UserId);
 
+                // --- Get Character Name ---
+                string characterName = player.LastSeenUserName; // Default to ckey if not found
+                var prefs = await _dbManager.GetPlayerPreferencesAsync(userId, default);
+                if (prefs != null)
+                {
+                    var profile = prefs.SelectedCharacter;
+                    // Assuming HumanoidCharacterProfile for now, adjust if other types are possible
+                    if (profile is Content.Shared.Preferences.HumanoidCharacterProfile humanoidProfile)
+                    {
+                        characterName = humanoidProfile.Name;
+                    }
+                }
+                // --- End Get Character Name ---
+
                 // Get all whitelisted jobs for this player
                 var whitelistedJobs = await _dbManager.GetJobWhitelists(player.UserId);
 
@@ -402,7 +416,7 @@ namespace Content.Server._Stalker.Bands
                     }
                 }
 
-                members.Add(new BandMemberInfo(userId, player.LastSeenUserName, displayRole));
+                members.Add(new BandMemberInfo(userId, player.LastSeenUserName, characterName, displayRole));
             }
 
             return members;

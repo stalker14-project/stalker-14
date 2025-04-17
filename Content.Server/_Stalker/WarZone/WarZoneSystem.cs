@@ -152,6 +152,13 @@ public sealed partial class WarZoneSystem : EntitySystem
         }
     }
 
+    private void ResetCaptureProgress(WarZoneComponent comp)
+    {
+        comp.CaptureProgressTime = 0f;
+        comp.CaptureProgress = 0f;
+        comp.LastAnnouncedProgressStep = 0;
+    }
+
     private async Task UpdateCaptureAsync(EntityUid zone, WarZoneComponent comp, TimeSpan now, float effectiveFrameTime)
     {
         if (!comp.InitialLoadComplete || !_prototypeManager.TryIndex<STWarZonePrototype>(comp.ZoneProto, out var wzProto))
@@ -268,12 +275,12 @@ public sealed partial class WarZoneSystem : EntitySystem
         bool isNewAttacker = (currentAttackerBand != comp.CurrentAttackerBandProtoId || currentAttackerFaction != comp.CurrentAttackerFactionProtoId);
         if (isNewAttacker)
         {
-            ResetCaptureProgress(comp); // Reset progress for the new attacker
-            comp.CurrentAttackerBandProtoId = currentAttackerBand;
-            comp.CurrentAttackerFactionProtoId = currentAttackerFaction;
-            // Announce based on who is attacking (band or faction)
-            string attackerName = GetAttackerName(currentAttackerBand, currentAttackerFaction);
-            AnnounceCaptureStartedLocal(zone, comp, attackerName);
+            ResetCaptureProgress(comp);
+             comp.CurrentAttackerBandProtoId = currentAttackerBand;
+             comp.CurrentAttackerFactionProtoId = currentAttackerFaction;
+             // Announce based on who is attacking (band or faction)
+             string attackerName = GetAttackerName(currentAttackerBand, currentAttackerFaction);
+             AnnounceCaptureStartedLocal(zone, comp, attackerName);
         }
 
         // Check Requirements
@@ -337,6 +344,15 @@ public sealed partial class WarZoneSystem : EntitySystem
         comp.CaptureProgressTime += effectiveFrameTime;
         comp.CaptureProgress = Math.Clamp(comp.CaptureProgressTime / wzProto.CaptureTime, 0f, 1f);
 
+        // Announce each 10% increment locally
+        var step = (int)(comp.CaptureProgress * 10);
+        if (step > comp.LastAnnouncedProgressStep)
+        {
+            comp.LastAnnouncedProgressStep = step;
+            if (feedbackEntity.HasValue)
+                AnnounceCaptureProgressLocal(zone, comp, step * 10);
+        }
+
         // Check for Capture Completion
         if (comp.CaptureProgressTime < wzProto.CaptureTime)
             return; // Not captured yet
@@ -391,14 +407,10 @@ public sealed partial class WarZoneSystem : EntitySystem
 
         // Finalize progress state
         comp.CaptureProgress = 1f;
-        // Attacker becomes the defender, no need to reset CurrentAttacker here
-    }
-
-
-    private void ResetCaptureProgress(WarZoneComponent comp)
-    {
+        // Reset progress time and clear attacker for next capture
         comp.CaptureProgressTime = 0f;
-        comp.CaptureProgress = 0f;
+        comp.CurrentAttackerBandProtoId = null;
+        comp.CurrentAttackerFactionProtoId = null;
     }
 
     private void ResetAllRequirements(EntityUid zone)
@@ -427,14 +439,10 @@ public sealed partial class WarZoneSystem : EntitySystem
         if (wzComp.DefendingBandProtoId == null && wzComp.DefendingFactionProtoId == null)
         {
             // Only award if ShouldAwardWhenDefenderPresent is true and zone is uncaptured
-             if (!wzProto.ShouldAwardWhenDefenderPresent)
+            if (!wzProto.ShouldAwardWhenDefenderPresent)
                 return;
-             // If ShouldAwardWhenDefenderPresent is true, proceed to check if *anyone* should get points (e.g., default faction?)
-             // Current logic below only awards to specific band/faction defenders. Needs adjustment if uncaptured zones give points.
-             // For now, assume points are only for the *current* defender.
-             return;
+            // If ShouldAwardWhenDefenderPresent is true, proceed with awarding logic below even when uncaptured
         }
-
 
         var points = wzProto.RewardPointsPerPeriod;
         bool rewarded = false;
@@ -654,6 +662,15 @@ public sealed partial class WarZoneSystem : EntitySystem
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, message, message, zoneUid, false, true, colorOverride: null);
     }
 
+
+    private void AnnounceCaptureProgressLocal(EntityUid zoneUid, WarZoneComponent wzComp, int percent)
+    {
+        var portalName = wzComp.PortalName ?? "Unknown";
+        var message = Loc.GetString("st-warzone-progress", ("zone", portalName), ("percent", percent));
+        var mapCoords = _transformSystem.GetMapCoordinates(zoneUid);
+        var filter = Filter.Empty().AddInRange(mapCoords, ChatSystem.VoiceRange);
+        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, message, message, zoneUid, false, true, colorOverride: null);
+    }
     // Load initial zone ownership and cooldown state from DB
     private async Task LoadInitialZoneStateAsync(EntityUid zoneUid, WarZoneComponent component)
     {

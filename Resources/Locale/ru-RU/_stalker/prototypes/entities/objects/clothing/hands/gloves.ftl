@@ -9,3 +9,5 @@ ent-STClothingHandsGlovesSera = обмотки серафимов
     .suffix = ST, Скин
 ent-STClothingHandsGlovesCombat = combat gloves
     .desc = These tactical gloves are fireproof
+ent-STClothingHandsGlovesFoma = combat gloves
+    .desc = Тактические перчатки – износостойкие, с усиленными ладонями, защитой костяшек и тактильной чувствительностью для оружия и работы.

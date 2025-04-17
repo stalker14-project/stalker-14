@@ -28,7 +28,7 @@
     autoRecharge: true
     autoRechargeRate: 2
   - type: ProjectileBatteryAmmoProvider
-    proto: Bullet545PC
+    proto: Bullet919PST
     fireCost: 5
   - type: Gun
     soundGunshot:
@@ -36,9 +36,9 @@
     fireRate: 3
     useKey: false
     selectedMode: FullAuto
-    minAngle: 0
-    maxAngle: 35
-    angleIncrease: 2
+    minAngle: 15
+    maxAngle: 65
+    angleIncrease: 3
     angleDecay: 20
     availableModes:
     - FullAuto
@@ -51,10 +51,18 @@
     allowedStates:
     - Alive
     - Critical
-    damageCap: 82
     damage:
       groups:
         Burn: -100
         Toxin: -100
         Airloss: -100
         Brute: -1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 90
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
