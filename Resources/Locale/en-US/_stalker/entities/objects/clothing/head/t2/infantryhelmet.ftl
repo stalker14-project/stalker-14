@@ -16,3 +16,6 @@ ent-ClothingHeadHelmetInfantryPilgrim = Inquisitor's Helmet
 ent-ClothingHeadHelmetKeeper = Guardian Helmet
     .desc = Class II Guardian helmet, manufacturer unknown.
     .suffix = ST, T2, Skin
+ent-ClothingHeadHelmetInfantryMerc = Mercenary "Bastion" helmet
+    .desc = "Bastion" helmet of the second class of protection, manufacturer unknown.
+    .suffix = ST, T2, Skin

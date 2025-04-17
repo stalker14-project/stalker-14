@@ -18,3 +18,5 @@ ent-ClothingMaskGasRenegats = Rogue Standard Gas Mask
     .desc = Cheap and efficient. It protects against radiation, but is still good at protecting against its chemicals.
 ent-ClothingMaskGasAnomalists = standard anomalists gas mask
     .desc = Perhaps there is an outstanding fisherman behind him. Protects against radiation.
+ent-ClothingMaskGasMarlya = Gauze bandage
+    .desc = A green gauze bandage designed to protect the human respiratory system from radioactive dust. Better than nothing.

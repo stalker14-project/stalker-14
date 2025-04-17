@@ -1,4 +1,10 @@
 ent-STWeaponRifleStalkerAK12 = АК-12
-    .desc = Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы.
-    .suffix = ST, Скин
-ent-STWeaponRifleStalkerAK12Sera = АК-12 серафимов
+    .desc = This model is the pinnacle of the development of the AK system and differs from previous generations in well-thought-out ergonomics, adaptation to all-day use and increased accuracy and accuracy of fire.
+    .suffix = ST, Skin
+ent-STWeaponRifleStalkerAK12Sera = AK-12 Seraphim
+ent-STWeaponRifleStalkerRPK16 = RPK 16
+    .desc = A variation of the AK-12 for a platoon light machine gun.
+    .suffix = ST, Skin, Sponsor
+ent-STWeaponRifleStalkerRPK16Camo = RPK-16 "Autumn"
+    .desc = A variation of the AK-12 for the platoon light machine gun in autumn camouflage.
+    .suffix = { ent-STWeaponRifleStalkerRPK16.suffix }

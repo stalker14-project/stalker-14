@@ -9,3 +9,6 @@ ent-STClothingHandsGlovesSera = Seraphim Windings
     .suffix = ST, Skin
 ent-STClothingHandsGlovesCombat = combat gloves
     .desc = These tactical gloves are fireproof
+ent-STClothingHandsGlovesFoma = Tactical Gloves
+    .desc = Tactical gloves are hard-wearing, with reinforced palms, knuckle protection and tactile sensitivity for weapons and work.
+    .suffix = ST, Skin

@@ -1,0 +1,9 @@
+ent-SetJacketNoviceBrezentBuyableCrate = Beginner's Jacket Set
+    .desc = Normal clothing of a novice stalker. It does not save the wearer from either a bullet or anomalies, but it is comfortable to wear. Includes a jacket, gauze bandage, black city backpack and a set of beginner's pouches.
+    .suffix = Stalker, t1
+ent-SetJacketNoviceWhiteBuyableCrate = White Beginner's Jacket Set
+    .desc = { ent-SetJacketNoviceBrezentBuyableCrate.desc }
+    .suffix = { ent-SetJacketNoviceBrezentBuyableCrate.suffix }
+ent-SetJacketBanditBuyableCrate = Bandit Leather Jacket Set
+    .desc = Traditional bandit attire is a leather jacket with sewn-in armor pieces. It gives protection, which is extremely insufficient in the harsh conditions of the Zone. The set includes a jacket, a gauze bandage, a white city backpack and a set of beginner's pouches.
+    .suffix = { ent-SetJacketNoviceBrezentBuyableCrate.suffix }

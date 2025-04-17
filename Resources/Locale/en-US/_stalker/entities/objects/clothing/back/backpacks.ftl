@@ -54,3 +54,7 @@ ent-ClothingBackpackDuffelHikingVSRFAnomaly = Abnormal Hiking Backpack
     .suffix = ST, T5, Lord, ADMIN
 ent-ClothingBackpackTacticSera = Camouflage Tactical Backpack
     .desc = It's never colorful or bright, as one of the jobs of tactical backpacks is to disguise themselves as an environment. Such are used by the Seraphim group.
+ent-ClothingBackpackTownBlackStalker = Black Urban Backpack
+    .desc = A comfortable but roomy backpack for pennies.
+ent-ClothingBackpackTownWhiteStalker = White Urban Backpack
+    .desc = { ent-ClothingBackpackTownBlackStalker.desc }

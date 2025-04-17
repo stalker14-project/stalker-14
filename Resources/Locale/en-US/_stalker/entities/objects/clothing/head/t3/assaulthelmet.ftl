@@ -1,6 +1,6 @@
 ent-STClothingHeadHelmetCombatT3Base = T3 Combat Helmet Base
     .suffix = ST, T3, Combat
-ent-ClothingHeadAssaultHelmet = Zenit helmet
+ent-ClothingHeadAssaultHelmet = Zenith helmet
     .desc = Zenit combat helmet of the third class of protection.
 ent-ClothingHeadAssaultHelmetUN = UN Zenith helmet
     .desc = Zenit Class III combat helmet in the colors of the Peacekeepers.
@@ -11,4 +11,6 @@ ent-ClothingHeadAssaultHelmetMilitary = Zenith Military Helmet
 ent-ClothingHeadAssaultHelmetBandit = Zenith Bandit Helmet
     .desc = Zenit combat helmet of the third class of protection.
 ent-ClothingHeadAssaultHelmetDolg = Dutys's Zenith Helmet
+    .desc = Zenit combat helmet of the third class of protection.
+ent-ClothingHeadAssaultHelmetMerc = Mercenary Zenith helmet
     .desc = Zenit combat helmet of the third class of protection.

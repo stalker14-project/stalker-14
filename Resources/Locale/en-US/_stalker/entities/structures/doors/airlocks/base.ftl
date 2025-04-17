@@ -214,3 +214,6 @@ ent-STMetalBarDoorFalloutSeraphimsClosed = { ent-MetalBarDoorFalloutMercClosed }
 ent-WoodDoorFalloutPilgrim = { ent-WoodDoorFalloutJaba }
     .desc = { ent-WoodDoorFalloutJaba.desc }
     .suffix = ST, mapping, Pilgrim
+ent-MetalDoorFalloutOpolchenciClosed = Steel Door
+    .desc = Strong steel door with a secure lock.
+    .suffix = ST, mapping, Militia

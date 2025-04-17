@@ -45,3 +45,6 @@ ent-ClothingOuterJacketJaba = 'Toad' jacket
     .desc = Does not save the wearer from bullets or anomalies, but is comfortable to wear. Made of genuine leather.
 ent-ClothingOuterJacketSera = 'Follower' Jacket
     .desc = Does not save the wearer from bullets or anomalies, but is comfortable to wear. It smells like some kind of pollen...
+ent-ClothingOuterJacketStalkerWhite = White Stalker Jacket
+    .desc = Normal clothing of a novice stalker. It does not save the wearer from either a bullet or anomalies, but it is comfortable to wear.
+ent-ClothingHeadHatHoodJacketStalkerWhite = hood

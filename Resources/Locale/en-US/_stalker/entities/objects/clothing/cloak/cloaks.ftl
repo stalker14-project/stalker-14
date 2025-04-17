@@ -28,3 +28,6 @@ ent-ClothingCloakGreen = Green Cloak
 ent-ClothingCloakNavy = Navy Cloak
     .desc = I didn't come up with a "funny" description for this raincoat...
     .suffix = Stalker, Cloak
+ent-ClothingCloakFoma = Black cloak
+    .desc = Black cloak
+    .suffix = Stalker, Cloak, Sponsor
