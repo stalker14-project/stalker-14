@@ -9,6 +9,7 @@
     - Bandit
     - Hostile
     - Sci
+    - Merc
 
 - type: npcFaction
   id: Mutated
@@ -21,6 +22,7 @@
     - Bandit
     - Hostile
     - Sci
+    - Merc
 
 - type: npcFaction
   id: Hostile
@@ -66,6 +68,7 @@
   - Passive
   - Bandit
   - Hostile
+  - Merc
 
 - type: npcFaction
   id: Bandit
@@ -76,3 +79,10 @@
   - Milita
   - Hostile
   - Sci
+
+- type: npcFaction
+  id: Merc
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Military
