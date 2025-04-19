@@ -1,5 +1,5 @@
 ent-StalkerShopMilitary = Torgomat, OKSOP
-    .desc = Oxop Supply. It works on coupons, as in the USSR.
+    .desc = OXSOP Supply. It works on coupons, as in the USSR.
     .suffix = ST, Mapping, military
 ent-STPremiumShopMilitary = Torgomat Premium, OKSOP
     .desc = OKSOP Premium Supply. He works on bonus coupons, as in the USSR.

@@ -1,8 +1,8 @@
 ent-MobStalkerUN = UN doll (rename me)
     .suffix = Stalker, Pawn with a patch
-ent-MobStalkerMilitary = OKSOP doll (rename me)
+ent-MobStalkerMilitary = Military doll (rename me)
     .suffix = { ent-MobStalkerUN.suffix }
-ent-MobStalkerMilitaryHead = head OKSOP doll (rename me)
+ent-MobStalkerMilitaryHead = Military Head doll (rename me)
     .suffix = { ent-MobStalkerUN.suffix }
 ent-MobStalkerRene = renegade doll (rename me)
     .suffix = { ent-MobStalkerUN.suffix }
