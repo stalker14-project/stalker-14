@@ -43,6 +43,57 @@ public sealed partial class WarZoneSystem : EntitySystem
         _factionPoints[protoId] = points;
     }
 
+    /// <summary>
+    /// Gets the current points for a specific band.
+    /// </summary>
+    /// <param name="bandProtoId">The prototype ID of the band.</param>
+    /// <returns>The points for the band, or 0 if the band is not tracked.</returns>
+    public float GetBandPoints(string bandProtoId)
+    {
+        return _bandPoints.TryGetValue(bandProtoId, out var points) ? points : 0f;
+    }
+
+    /// <summary>
+    /// Attempts to modify the points for a specific band by a given delta.
+    /// Updates the internal cache and persists the change to the database.
+    /// Use this instead of SetBandPoints for incremental changes.
+    /// </summary>
+    /// <param name="bandProtoId">The prototype ID of the band.</param>
+    /// <param name="delta">The amount to change the points by (can be negative).</param>
+    /// <returns>True if the points were successfully modified (even if clamped), false if the band prototype ID is invalid.</returns>
+    public bool TryModifyBandPoints(string bandProtoId, float delta)
+    {
+        // Check if the band exists in prototypes to avoid adding points for invalid bands
+        if (!_prototypeManager.HasIndex<STBandPrototype>(bandProtoId))
+        {
+            Logger.WarningS("warzone", $"Attempted to modify points for non-existent band prototype ID: {bandProtoId}");
+            return false;
+        }
+
+        var currentPoints = GetBandPoints(bandProtoId);
+        var newPoints = currentPoints + delta;
+
+        // Prevent points from going below zero? Or allow debt? Assuming non-negative for now.
+        if (newPoints < 0)
+        {
+             Logger.InfoS("warzone", $"Attempted to set points below zero for band {bandProtoId}. Clamping to 0.");
+             newPoints = 0; // Clamp to zero if modification results in negative points
+        }
+
+
+        _bandPoints[bandProtoId] = newPoints;
+
+        // Persist the change to the database asynchronously.
+        // We don't necessarily need to wait for this to complete before returning true,
+        // as the in-memory value is updated. Error handling for DB failure might be needed.
+        _dbManager.SetStalkerBandAsync(new ProtoId<STBandPrototype>(bandProtoId), newPoints);
+
+        Logger.DebugS("warzone", $"Modified points for band {bandProtoId} by {delta}. New total: {newPoints}");
+        return true;
+    }
+
+    // Note: SetBandPoints and SetFactionPoints are still useful for direct setting, like in admin commands or initialization.
+
     public IEnumerable<(EntityUid Uid, WarZoneComponent Component)> GetAllWarZones()
     {
         var query = EntityQueryEnumerator<WarZoneComponent>();

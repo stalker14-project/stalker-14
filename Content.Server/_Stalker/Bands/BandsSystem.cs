@@ -14,6 +14,8 @@ using Content.Shared.StatusIcon.Components;
 using Content.Server.Players.JobWhitelist;
 using Content.Shared._Stalker.Bands.Components;
 using Content.Server._Stalker.WarZone;
+using Content.Shared.Interaction;
+using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Server._Stalker.Bands
 {
@@ -28,9 +30,12 @@ namespace Content.Server._Stalker.Bands
         [Dependency] private readonly MobStateSystem _mobState = default!;
         [Dependency] private readonly JobWhitelistManager _jobWhitelistManager = default!;
         [Dependency] private readonly WarZoneSystem _warZoneSystem = default!;
+        [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
 
-        // Define a server-side representation combining prototype and potentially DB info
         private sealed record ServerBandInfo(STBandPrototype Prototype, StalkerBand? DbBand = null);
+
+        private Dictionary<EntityUid, List<BandShopItem>> _loadedShopItems = new();
 
 
         public override void Initialize()
@@ -43,6 +48,9 @@ namespace Content.Server._Stalker.Bands
             SubscribeLocalEvent<BandsManagingComponent, BandsManagingRemoveMemberMessage>(OnRemoveMember);
 
             SubscribeLocalEvent<BandsComponent, ComponentInit>(OnInit);
+
+            // Subscribe to the new buy message
+            SubscribeLocalEvent<BandsManagingComponent, BandsManagingBuyItemMessage>(OnBuyItem);
         }
 
         private void SubscribeUpdateUiState<T>(Entity<BandsManagingComponent> ent, ref T ev) where T : notnull
@@ -58,9 +66,32 @@ namespace Content.Server._Stalker.Bands
         }
 
 
+        private async Task LoadShopItems(Entity<BandsManagingComponent> ent)
+        {
+            var (uid, component) = ent;
+            if (_prototypeManager.TryIndex(component.ShopListingsProto, out var shopProto))
+            {
+                _loadedShopItems[uid] = shopProto.Items;
+            }
+            else
+            {
+                Logger.ErrorS("bands", $"Failed to load BandShopListingsPrototype with ID {component.ShopListingsProto} for entity {ToPrettyString(uid)}");
+                _loadedShopItems[uid] = new List<BandShopItem>(); // Ensure the key exists even if loading fails
+            }
+            // No need for async void here, but keep Task for potential future async ops
+            await Task.CompletedTask;
+        }
+
+
         private async void UpdateUiState(Entity<BandsManagingComponent> ent, EntityUid? actor = null)
         {
             var (uid, component) = ent;
+
+            // Ensure shop items are loaded for this component instance
+            if (!_loadedShopItems.ContainsKey(uid))
+            {
+                await LoadShopItems(ent); // Load items if not already loaded
+            }
 
             if (actor == null)
                 return;
@@ -68,7 +99,7 @@ namespace Content.Server._Stalker.Bands
             if (!_mindSystem.TryGetMind(actor.Value, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
             {
                 // Send empty state if session cannot be found
-                _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false, new(), new()));
+                _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false, new(), new(), new())); // Added shop items list
                 return;
             }
 
@@ -77,7 +108,7 @@ namespace Content.Server._Stalker.Bands
             {
                 Logger.ErrorS("bands", $"Failed to obtain NetUserId for BandsManaging UI update on {ToPrettyString(uid)}.");
                 // Send empty state if UserId is null
-                _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false, new(), new()));
+                _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false, new(), new(), new())); // Added shop items list
                 return;
             }
 
@@ -140,7 +171,11 @@ namespace Content.Server._Stalker.Bands
             }
 
             // --- Create and Send State ---
-            var state = new BandsManagingBoundUserInterfaceState(bandName, maxMembers, members, canManage, warZoneInfos, bandPointsInfos);
+            // Get the loaded shop items for this specific component instance
+            var shopItems = _loadedShopItems.GetValueOrDefault(uid, new List<BandShopItem>());
+
+            // --- Create and Send State ---
+            var state = new BandsManagingBoundUserInterfaceState(bandName, maxMembers, members, canManage, warZoneInfos, bandPointsInfos, shopItems);
 
             // Use the correct SetUiState overload - no session needed here.
             _uiSystem.SetUiState(uid, BandsUiKey.Key, state);
@@ -452,6 +487,85 @@ namespace Content.Server._Stalker.Bands
 
             // 5. Compare to ManagingRankId
             return rankId >= bandProto.ManagingRankId;
+        }
+
+        private async void OnBuyItem(EntityUid uid, BandsManagingComponent component, BandsManagingBuyItemMessage msg)
+        {
+            // Use the requested pattern for getting session from the message actor
+            if (!_mindSystem.TryGetMind(msg.Actor, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
+                return;
+
+            var buyer = msg.Actor;
+            var buyerUserId = session.UserId;
+
+            // 1. Verify the player can manage the band (required to buy for the band)
+            if (!await CanPlayerManageBandAsync(buyerUserId))
+            {
+                Logger.WarningS("bands", $"Player {buyerUserId} attempted to buy band item {msg.ItemId} without managing rights.");
+                // TODO: Send feedback to user?
+                return;
+            }
+
+            // 2. Get the player's band info
+            var bandInfo = await GetPlayerBandInfoAsync(buyerUserId);
+            if (bandInfo == null)
+            {
+                Logger.WarningS("bands", $"Player {buyerUserId} attempted to buy band item {msg.ItemId} but is not in a band.");
+                return; // Should not happen if CanPlayerManageBandAsync passed, but check anyway
+            }
+            var bandProtoId = bandInfo.Prototype.ID;
+
+            // 3. Find the item in the loaded shop items for this component
+            if (!_loadedShopItems.TryGetValue(uid, out var shopItems))
+            {
+                Logger.ErrorS("bands", $"Shop items not loaded for BandsManagingComponent {ToPrettyString(uid)} when player {buyerUserId} tried to buy {msg.ItemId}.");
+                return;
+            }
+
+            var itemToBuy = shopItems.FirstOrDefault(item => item.ProductEntity == msg.ItemId);
+            if (itemToBuy == null)
+            {
+                Logger.WarningS("bands", $"Player {buyerUserId} attempted to buy unknown item {msg.ItemId}.");
+                // TODO: Send feedback to user?
+                return;
+            }
+
+            // 4. Check band points
+            var currentPoints = _warZoneSystem.GetBandPoints(bandProtoId); // Assuming WarZoneSystem manages points
+            if (currentPoints < itemToBuy.Price)
+            {
+                Logger.InfoS("bands", $"Band {bandProtoId} has insufficient points ({currentPoints}) to buy {msg.ItemId} (cost: {itemToBuy.Price}).");
+                // TODO: Send feedback to user
+                return;
+            }
+
+            // 5. Deduct points
+            if (!_warZoneSystem.TryModifyBandPoints(bandProtoId, -itemToBuy.Price))
+            {
+                Logger.ErrorS("bands", $"Failed to deduct points from band {bandProtoId} for item {msg.ItemId}.");
+                // This likely indicates an issue with WarZoneSystem point management
+                return;
+            }
+
+            // 6. Spawn item
+            var coordinates = Transform(buyer).Coordinates;
+            if (!coordinates.IsValid(_entityManager)) // Ensure coordinates are valid before spawning
+            {
+                Logger.WarningS("bands", $"Cannot spawn item {msg.ItemId} for player {buyerUserId} at invalid coordinates.");
+                // Refund points? Or handle differently? For now, log and stop.
+                _warZoneSystem.TryModifyBandPoints(bandProtoId, itemToBuy.Price); // Attempt refund
+                return;
+            }
+
+            var product = Spawn(itemToBuy.ProductEntity, coordinates);
+
+            // 7. Give item to player
+            _hands.PickupOrDrop(buyer, product); // Use PickupOrDrop as requested
+
+            Logger.InfoS("bands", $"Player {buyerUserId} (Band: {bandProtoId}) bought item {msg.ItemId} for {itemToBuy.Price} points.");
+
+            // 8. Update UI state for all clients viewing this UI
+            UpdateUiState((uid, component), buyer);
         }
     }
 }

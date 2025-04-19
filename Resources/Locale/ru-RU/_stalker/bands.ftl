@@ -25,3 +25,9 @@ bands-managing-window-warzone-attacker = Нападающий: {$attacker}
 bands-managing-window-warzone-defender = Защищающий: {$defender}
 bands-managing-window-warzone-progress = Прогресс: {$progress}%
 bands-managing-window-band-points-entry = {$bandName}: {$points} очки
+# Окно управления группировкой - Вкладка Магазин
+bands-managing-window-shop-tab-title = Магазин
+bands-managing-window-shop-list-header = Магазин группировки
+bands-managing-window-no-shop-items-text = В магазине нет доступных предметов.
+bands-managing-window-shop-item-entry = { $itemName } - { $price } Очков
+bands-managing-window-buy-button = Купить

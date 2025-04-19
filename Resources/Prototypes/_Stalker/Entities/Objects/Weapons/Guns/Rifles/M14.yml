@@ -1,61 +1,60 @@
 - type: entity
-  name: M14
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponRifle
-  id: STWeaponRifleM14
-  description: Американская автоматическая винтовка под 7,62х51.
+  id: STBaseWeaponRifleM14
   components:
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
-    - type: STWeight
-      self: 4.5
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
-      size: Large
-      shape:
-        - 0,0,7,1
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
-      equipDelay: 3
-      state: base
-    - type: Gun
-      fireRate: 4
-      soundGunshot:
-        path: /Audio/_Stalker/Effects/Guns/fal.ogg
-        params:
-          volume: -2
-      projectileSpeed: 35
-      minAngle: 50
-      maxAngle: 150
-      angleIncrease: 5.5
-      angleDecay: 27.5
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem: Base751Mag10
-          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
-          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-          priority: 4
-          whitelist:
-            tags:
-              - Magazine751
-        gun_module_muzzle:
-          name: Muzzle
-          priority: 3
-          whitelist:
-            tags:
-              - STWeaponModuleRifleSilencerNato
-        gun_module_scope:
-          name: Scope
-          priority: 2
-          whitelist:
-            tags:
-              - STWeaponModuleRifleScopeNato
-        gun_chamber:
-          name: Chamber
-          startingItem:
-          priority: 1
-          whitelist:
-            tags:
-              - Cartridge751
+  - type: STWeight
+    self: 4.5
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m14.rsi
+  - type: Gun
+    fireRate: 4
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/fal.ogg
+      params:
+        volume: -2
+    projectileSpeed: 35
+    minAngle: 50
+    maxAngle: 150
+    angleIncrease: 5.5
+    angleDecay: 27.5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base751Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine751
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge751
+
+- type: entity
+  parent: STBaseWeaponRifleM14
+  id: STWeaponRifleM14
+  name: M14
+  description: Powerful American battle rifle chambered in 7.62x51mm NATO. Appears in the Zone through military shipments and as trophies. Prized for stopping power and range, but heavy and maintenance-heavy.

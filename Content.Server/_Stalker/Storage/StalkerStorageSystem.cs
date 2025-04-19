@@ -9,7 +9,6 @@ using Robust.Shared.Containers;
 using System.Text.Json.Nodes;
 using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.StalkerRepository;
-using Content.Server.Paper;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Stalker.StalkerRepository;
@@ -22,24 +21,22 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Light.Components;
 using Content.Shared.Paper;
 using Content.Shared.Stacks;
-using Content.Shared.Tag;
 using Content.Shared.Weapons.Ranged.Systems;
-using Robust.Shared.Prototypes;
 using Content.Server.Botany.Components;
+using Content.Shared._Stalker;
 using Content.Shared._Stalker.Storage;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Storage;
 
 public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 {
-    [Dependency] private readonly VendingMachineSystem _vendingMachineSystem = default!;
-    [Dependency] private readonly UserInterfaceSystem _userInterfaceSystem = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly StalkerDbSystem _stalkerDbSystem = default!;
     [Dependency] private readonly BatterySystem _batterySys = default!;
     [Dependency] private readonly StalkerRepositorySystem _stalkerRepositorySystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly SharedGunSystem _gun = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     private delegate List<object> DelegateItemStalkerConverter(EntityUid inputEntityUid);
 
@@ -47,6 +44,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     private readonly Dictionary<string, DelegateItemStalkerConverter> _convertersItemStalker = new(0);
     private readonly HashSet<Type> _blackListDelChildrenOnSpawnComponent = new(0);
     private readonly HashSet<string> _blackListContainerNames = new(0);
+    private readonly Dictionary<EntProtoId, EntProtoId> _mapping = [];
 
     private void InstallLists()
     {
@@ -73,22 +71,32 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     public override void Initialize()
     {
         InstallLists();
+
         SubscribeLocalEvent<StalkerStorageComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<StalkerStorageComponent, VendingMachineEjectMessage>(OnInventoryEjectMessage);
-        //Обычный предмет
+
+        // Обычный предмет
         _convertersItemStalker.Add("M", ConverterSimpleItemStalker);
 
-        //Предмет с патронами(например магазин)
+        // Предмет с патронами(например магазин)
         _convertersItemStalker.Add("MB", ConverterAmmoItemStalker);
 
-        //Предмет который имеет стак
+        // Предмет который имеет стак
         _convertersItemStalker.Add("MS", ConverterStackItemStalker);
 
         _convertersItemStalker.Add("MP", ConverterPaperItemStalker);
         _convertersItemStalker.Add("ML", ConverterBatteryItemStalker);
         _convertersItemStalker.Add("ME", ConverterSolutionItemStalker); // Solutions
         _convertersItemStalker.Add("MC", ConverterCartridgeItemStalker);
-        //Доделать еще конвентеры для предметов с жидкостями и т.д.
+        // Доделать еще конвентеры для предметов с жидкостями и т.д.
+
+        foreach (var migration in _prototype.EnumeratePrototypes<STStashMigrationPrototype>())
+        {
+            foreach (var (key, value) in migration.Mapping)
+            {
+                _mapping.TryAdd(key, value);
+            }
+        }
     }
 
     #region HelperMethods
@@ -278,27 +286,46 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
 
     public void LoadStalkerItemsByEntityUid(EntityUid inputEntity)
     {
-        Console.WriteLine("LoadStalkerItemsByEntityUid");
-        var deserializedFromJson = new List<IItemStalkerStorage>(0);
-        if (!TryComp(inputEntity, out StalkerRepositoryComponent? _stalkerRepositoryComponent) ||
-            _stalkerRepositoryComponent.LoadedDbJson == string.Empty)
+        var deserializedFromJson = new List<IItemStalkerStorage>();
+        if (!TryComp(inputEntity, out StalkerRepositoryComponent? stalkerRepositoryComponent) || stalkerRepositoryComponent.LoadedDbJson == string.Empty)
             return;
 
-        var fromDbPlayerInventory = InventoryFromJson(_stalkerRepositoryComponent.LoadedDbJson);
+        var fromDbPlayerInventory = InventoryFromJson(stalkerRepositoryComponent.LoadedDbJson);
 
-        foreach (var toCast in fromDbPlayerInventory.AllItems)
+        foreach (var item in fromDbPlayerInventory.AllItems)
         {
-            if (toCast is IItemStalkerStorage castedItem)
-                deserializedFromJson.Add(castedItem);
+            if (item is not IItemStalkerStorage storageItem)
+                continue;
+
+            storageItem.PrototypeName = MapPrototype(storageItem.PrototypeName);
+
+            if (item is AmmoContainerStalker ammoContainer)
+                ammoContainer.EntProtoIds = MapPrototype(ammoContainer.EntProtoIds);
+
+            deserializedFromJson.Add(storageItem);
         }
 
-        //Добавление предметов в схрон
         foreach (var itemConverted in deserializedFromJson)
         {
-            AddToVendingMachineProtoByName(itemConverted.Identifier(), itemConverted.PrototypeName, _stalkerRepositoryComponent, itemConverted);
-
-            //AddToVendingMachineProtoByName(itemConverted.Identifier(), itemConverted.PrototypeName,vendingComponent,itemConverted);
+            AddToVendingMachineProtoByName(itemConverted.Identifier(), itemConverted.PrototypeName, stalkerRepositoryComponent, itemConverted);
         }
+    }
+
+    private List<EntProtoId> MapPrototype(in List<EntProtoId> protoIds)
+    {
+        return protoIds.Select(MapPrototype).ToList();
+    }
+
+    private EntProtoId MapPrototype(EntProtoId protoId)
+    {
+        var prototype = protoId;
+        if (_mapping.TryGetValue(prototype, out var newPrototype))
+            prototype = newPrototype;
+
+        if (!_prototype.HasIndex(prototype))
+            Log.Error($"A non-existent prototype entity in the stash {prototype}");
+
+        return prototype;
     }
 
     public void SpawnedItem(EntityUid inputItemUid, IItemStalkerStorage? nextSpawnOptions)

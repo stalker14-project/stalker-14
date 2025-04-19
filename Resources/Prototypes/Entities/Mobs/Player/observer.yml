@@ -64,12 +64,42 @@
     tags:
     - BypassInteractionRangeChecks
 
+#Stalker changes start
+- type: entity
+  parent:
+  - Incorporeal
+  - BaseMob
+  id: MobObserverStalker
+  abstract: true
+  name: observer
+  description: Boo!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 1
+    baseWalkSpeed: 1
+  - type: Sprite
+    sprite: Mobs/Ghosts/ghost_human.rsi
+    color: "#fff8"
+    layers:
+    - state: animated
+      shader: unshaded
+  - type: Input
+    context: "ghost"
+  - type: Examiner
+    skipChecks: true
+  - type: Tag
+    tags:
+    - BypassInteractionRangeChecks
+
 # proto for player ghosts specifically
 - type: entity
-  parent: MobObserverBase
+  parent: MobObserverStalker
   id: MobObserver
   components:
   - type: Spectral
+
+#Stalker changes end
 
 - type: entity
   id: ActionGhostBoo

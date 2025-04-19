@@ -1,0 +1,62 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponModule
+  id: STBaseModuleSniperSight
+  name: choke
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/Modules/sniper_sights.rsi
+    scale: 0.6, 0.6
+  - type: Icon
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/Modules/sniper_sights.rsi
+    scale: 0.6, 0.6
+  - type: Scope
+    zoom: 1.5
+    delay: 1
+    offset: 14
+    useInHand: true
+  - type: STWeaponModule
+    scopeEffect:
+      delay: 1
+      requireWielding: true
+      useInHand: false
+
+- type: entity
+  parent: STBaseModuleSniperSight
+  id: STModuleSniperSightT1
+  name: makeshift sniper sight
+  suffix: ST, T1, sniper sight
+  components:
+  - type: Tag
+    tags:
+      - STWeaponModuleSniperSight
+  - type: STWeaponModule
+    effect:
+      minAngleModifier: 0.9
+    scopeEffect:
+      zoom: 1.4
+      offset: 13
+  - type: Sprite
+    state: sniper_sight_T1
+  - type: Icon
+    state: sniper_sight_T1
+
+- type: entity
+  parent: STBaseModuleSniperSight
+  id: STModuleSniperSightT2
+  name: legal sniper sight
+  suffix: ST, T2, sniper sight
+  components:
+  - type: Tag
+    tags:
+      - STWeaponModuleSniperSight
+  - type: STWeaponModule
+    effect:
+      minAngleModifier: 0.7
+    scopeEffect:
+      zoom: 1.4
+      offset: 14
+  - type: Sprite
+    state: sniper_sight_T2
+  - type: Icon
+    state: sniper_sight_T2

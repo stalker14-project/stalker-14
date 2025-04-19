@@ -103,5 +103,31 @@
             </PanelContainer>
 
         </BoxContainer>
+
+        <!-- New Shop Tab -->
+        <BoxContainer Name="ShopTab" Orientation="Vertical" HorizontalExpand="True" Margin="10" SeparationOverride="10" Access="Public">
+            <!-- Tab title will be set in code-behind -->
+
+            <!-- Shop List Header -->
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202025" />
+                </PanelContainer.PanelOverride>
+                <Label Text="{Loc 'bands-managing-window-shop-list-header'}" Align="Center" />
+            </PanelContainer>
+
+            <!-- Shop Item List -->
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                </PanelContainer.PanelOverride>
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="ShopItemList" Orientation="Vertical" Margin="4" HorizontalExpand="True">
+                        <Label Name="NoShopItemsLabel" Text="{Loc 'bands-managing-window-no-shop-items-text'}" StyleClasses="LabelSecondaryColor" />
+                    </BoxContainer>
+                </ScrollContainer>
+            </PanelContainer>
+
+        </BoxContainer>
     </TabContainer>
 </controls:FancyWindow>

@@ -6,7 +6,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker.Bands;
 
-[Prototype("stBand"), Serializable, NetSerializable]
+[Prototype("stBand")]
 public sealed class STBandPrototype : IPrototype
 {
     [ViewVariables]

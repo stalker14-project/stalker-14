@@ -4,51 +4,66 @@
   name: A gun
   abstract: true
   components:
-    # Allows guns to get effects from modules,
-    # without this, YOU CAN add modules but NO EFFECT
-    - type: STWeaponModuleContainer
-    - type: STWeight
-      self: 2.7
-    - type: Clothing
-      equipDelay: 1
-      slots:
-        - Back
-        - SuitStorage
-      quickEquip: false
-    - type: AmmoCounter
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,5,1
-    - type: Sprite
-      layers:
-        - state: base
-          map: ["enum.GunVisualLayers.Base"]
-        - state: mag-0
-          map: ["enum.GunVisualLayers.Mag"]
-    # - type: ChamberMagazineAmmoProvider
-    - type: ItemSlots
-      # If you change the caliber,
-      # you need to completely rewrite every property described here
-      slots:
-        gun_magazine:
-          name: Magazine
-          priority: 3
-        # Here you have to customize your wunderwaffle modules,
-        # you can put them on the gun initially through startingItem,
-        # but remember if you change the containers,
-        # you have to re-specify them all again
-        gun_chamber:
-          name: Chamber
-          priority: 1
-    - type: ContainerContainer
-      containers:
-        gun_magazine: !type:ContainerSlot
-        gun_chamber: !type:ContainerSlot
-      muzzleState: muzzle
-    - type: Appearance
-    - type: PullDoAfter
-      pullTime: 2.5
-    - type: Craftable
-    - type: RepositoryItem
-      categoryName: repository-weapons-category
+  - type: AmmoCounter
+  - type: Appearance
+  - type: Craftable
+  # Allows guns to get effects from modules,
+  # without this, YOU CAN add modules but NO EFFECT
+  - type: STWeight
+    self: 2.7
+  - type: Clothing
+    equipDelay: 1
+    slots:
+    - Back
+    - Back2
+    - SuitStorage
+    quickEquip: false
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: ItemSlots
+    # If you change the caliber,
+    # you need to completely rewrite every property described here
+    slots:
+      gun_magazine:
+        name: Magazine
+        priority: 3
+      # Here you have to customize your wunderwaffle modules,
+      # you can put them on the gun initially through startingItem,
+      # but remember if you change the containers,
+      # you have to re-specify them all again
+      gun_chamber:
+        name: Chamber
+        priority: 1
+  - type: STWeaponModuleContainer
+  - type: STWeaponAccuracy
+  - type: STWeaponDamageFalloff
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: PullDoAfter
+    pullTime: 2.5
+  - type: RepositoryItem
+    categoryName: Оружие
+  - type: Gun
+    projectileSpeed: 50
+    fireRate: 1
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: STMuzzleVisuals
+    muzzleState: muzzle
+  - type: STScopeVisuals
+    scopeState: scope
+  - type: STUnderbarrelVisuals
+    underbarrelState: grip

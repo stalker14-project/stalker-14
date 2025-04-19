@@ -1,4 +1,4 @@
-using Content.Shared._Stalker.WeaponModule;
+using Content.Shared._Stalker.Weapon.Module;
 using Robust.Shared.Containers;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
