@@ -10,28 +10,14 @@
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
-    - state: mag-0
-      map: ["enum.GunVisualLayers.Mag"]
-    - state: muzzle
-      map: ["enum.GunVisualLayers.Muzzle"]
-    - state: sight
-      map: ["enum.GunVisualLayers.Scope"]
-  - type: Item
-    size: Large
-    shape:
-      - 0,0,7,1
+    - map: ["enum.GunVisualLayers.Mag"]
+    - map: ["scope"]
   - type: Wieldable
   - type: GunWieldBonus
     minAngle: -50
     maxAngle: -50
-  - type: RepositoryItem
-    categoryName: repository-weapons-category
   - type: Clothing
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
-    quickEquip: false
-    slots:
-    - Back
-    - suitStorage
   - type: AmmoCounter
   - type: Gun
     projectileSpeed: 75
@@ -60,18 +46,12 @@
         priority: 2
         whitelist:
           tags:
-            - STWeaponModuleSniperSight
+          - STWeaponModuleSniperSight
       gun_module_muzzle:
         name: Muzzle
         priority: 1
         whitelist:
           tags:
-            - STWeaponModuleSniperSilencer
-  - type: Scope
-    zoom: 1.3
-    delay: 1
-    requireWielding: true
-    offset: 9
-    useInHand: false
+          - STWeaponModuleSniperSilencer
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0

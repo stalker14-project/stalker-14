@@ -86,8 +86,8 @@ public sealed class STProjectileSystem : EntitySystem
         var startMapCoordinates = _transform.ToMapCoordinates(ent.Comp.StartCoordinates.Value);
         var targetMapCoordinates = _transform.ToMapCoordinates(targetCoordinates);
 
-        if (!_examine.InRangeUnOccluded(startMapCoordinates, targetMapCoordinates, distance, null))
-            accuracy += ent.Comp.TargetOccluded;
+        //if (!_examine.InRangeUnOccluded(startMapCoordinates, targetMapCoordinates, distance, null))
+        //    accuracy += ent.Comp.TargetOccluded;
 
         accuracy -= _evasion.GetEvasion(args.OtherEntity);
         accuracy = accuracy > ent.Comp.MinAccuracy ? accuracy : ent.Comp.MinAccuracy;

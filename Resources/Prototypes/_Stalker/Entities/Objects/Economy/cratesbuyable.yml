@@ -6,7 +6,7 @@
   parent: BaseItem
   id: SetJacketNoviceBrezentBuyableCrate
   name: комплект куртки новичка
-  description: Обычная одежда начинающего сталкера. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. В комплекте куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
+  description: В комплекте куртка новичка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
   suffix: Stalker, т1
   components:
     - type: STWeight
@@ -32,7 +32,7 @@
   parent: BaseItem
   id: SetJacketNoviceWhiteBuyableCrate
   name: комплект белой куртки новичка
-  description: Обычная одежда начинающего сталкера. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. В комплекте куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
+  description: В комплекте белая куртка новичка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
   suffix: Stalker, т1
   components:
     - type: STWeight
@@ -58,7 +58,7 @@
   parent: BaseItem
   id: SetJacketBanditBuyableCrate
   name: комплект кожаной куртки бандита
-  description: Традиционная одежда бандита — кожаная куртка со вшитыми броневыми элементами. Даёт защиту, крайне недостаточную в жёстких условиях Зоны. В комплекте куртка, марлевая повязка, белый городской рюкзак и набор подсумков новичка.
+  description: В комплекте куртка бандита, марлевая повязка, белый городской рюкзак и набор подсумков новичка.
   suffix: Stalker, т1
   components:
     - type: STWeight
@@ -77,3 +77,85 @@
         - id: ClothingBeltBandolierStalker
       sound:
         path: /Audio/Effects/unwrap.ogg
+
+################# Кольчужные Куртки Новичка
+
+#Брезентовая
+
+- type: entity
+  parent: BaseItem
+  id: SetArmourJacketNoviceBrezentBuyableCrate
+  name: комплект кольчужной куртки сталкера
+  description: В комплекте кольчужная куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
+  suffix: Stalker, т2
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/jacket-novice-brezent.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmourJacketStalker
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBackpackTownBlackStalker
+        - id: ClothingBeltBandolierStalker
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+#Белая
+
+- type: entity
+  parent: BaseItem
+  id: SetArmourJacketNoviceWhiteBuyableCrate
+  name: комплект кольчужной куртки сталкера
+  description: В комплекте белая кольчужная куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
+  suffix: Stalker, т2
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/jacket-novice-white.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmourJacketStalkerWhite
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBackpackTownBlackStalker
+        - id: ClothingBeltBandolierStalker
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+#Бандитская
+
+- type: entity
+  parent: BaseItem
+  id: SetArmoutJacketBanditBuyableCrate
+  name: комплект кольчужной куртки бандита
+  description: В комплекте кольчужная куртка бандита, марлевая повязка, белый городской рюкзак и набор подсумков новичка.
+  suffix: Stalker, т2
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/jacket-novice-bandit.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmourJacketBandit
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBackpackTownWhiteStalker
+        - id: ClothingBeltBandolierStalker
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+

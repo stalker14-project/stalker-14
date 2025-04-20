@@ -21,7 +21,7 @@
   - type: Item
     size: Large
     shape:
-    - 0,0,5,1
+    - 0,0,7,1
   - type: Sprite
     layers:
     - state: base
@@ -61,9 +61,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-  - type: STMuzzleVisuals
-    muzzleState: muzzle
-  - type: STScopeVisuals
-    scopeState: scope
-  - type: STUnderbarrelVisuals
-    underbarrelState: grip
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true

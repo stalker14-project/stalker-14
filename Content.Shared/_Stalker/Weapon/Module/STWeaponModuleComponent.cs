@@ -10,6 +10,12 @@ namespace Content.Shared._Stalker.Weapon.Module;
 public sealed partial class STWeaponModuleComponent : Component
 {
     [DataField, ViewVariables, AutoNetworkedField]
+    public string Layer = string.Empty;
+
+    [DataField, ViewVariables, AutoNetworkedField]
+    public string StatePostfix = string.Empty;
+
+    [DataField, ViewVariables, AutoNetworkedField]
     public STWeaponModuleEffect Effect;
 
     [DataField, ViewVariables, AutoNetworkedField]
