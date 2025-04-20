@@ -13,11 +13,7 @@ public sealed class STEvasionSystem : EntitySystem
 
     public float GetEvasion(Entity<STEvasionComponent?> ent)
     {
-        if (ent.Comp != null)
-        {
-            return Resolve(ent, ref ent.Comp) ? ent.Comp.ModifiedEvasion : STEvasionComponent.DefaultEvasion;
-        }
-        return 0;
+        return Resolve(ent, ref ent.Comp) ? ent.Comp.ModifiedEvasion : STEvasionComponent.DefaultEvasion;
     }
 
     private void RefreshEvasionModifiers<T>(Entity<STEvasionComponent> ent, ref T _)

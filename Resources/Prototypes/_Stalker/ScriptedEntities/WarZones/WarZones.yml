@@ -19,6 +19,9 @@
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 16 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 18   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 # Entity prototype referencing the above meta-prototype
 - type: entity
