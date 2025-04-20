@@ -74,6 +74,10 @@ public sealed class STProjectileSystem : EntitySystem
         if (args.Cancelled || ent.Comp.ForceHit || ent.Comp.StartCoordinates is null)
             return;
 
+        var evasion = _evasion.GetEvasion(args.OtherEntity);
+        if (evasion == 0)
+            return;
+
         var accuracy = ent.Comp.Accuracy;
         var targetCoordinates = _transform.GetMoverCoordinates(args.OtherEntity);
         var distance = (targetCoordinates.Position - ent.Comp.StartCoordinates.Value.Position).Length();
@@ -82,12 +86,6 @@ public sealed class STProjectileSystem : EntitySystem
         {
             accuracy += CalculateFalloff(distance - threshold.Range, threshold.Falloff, threshold.AccuracyGrowth);
         }
-
-        var startMapCoordinates = _transform.ToMapCoordinates(ent.Comp.StartCoordinates.Value);
-        var targetMapCoordinates = _transform.ToMapCoordinates(targetCoordinates);
-
-        //if (!_examine.InRangeUnOccluded(startMapCoordinates, targetMapCoordinates, distance, null))
-        //    accuracy += ent.Comp.TargetOccluded;
 
         accuracy -= _evasion.GetEvasion(args.OtherEntity);
         accuracy = accuracy > ent.Comp.MinAccuracy ? accuracy : ent.Comp.MinAccuracy;
