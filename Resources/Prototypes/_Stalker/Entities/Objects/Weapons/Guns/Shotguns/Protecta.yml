@@ -1,38 +1,36 @@
-
 - type: entity
-  name: Protecta
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponShotgun
-  id: STWeaponShotgunProtecta
-  description: Компактный южноафриканский дробовик с неотъёмным магазином револьверного типа на 12 патрон. Откуда это в Зоне?
+  id: STBaseWeaponShotgunProtecta
   components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
-    - type: STWeight
-      self: 4.3
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
-    - type: BallisticAmmoProvider
-      capacity: 12
-    - type: Gun
-      projectileSpeed: 20
-      minAngle: 40
-      maxAngle: 50
-      angleIncrease: 10
-      angleDecay: 50
-      fireRate: 2
-
-#skins
-
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
+  - type: STWeight
+    self: 4.3
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
+  - type: BallisticAmmoProvider
+    capacity: 12
+  - type: Gun
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 2
 
 - type: entity
-  name: Protecta
-  suffix: ST
-  parent: STWeaponShotgunProtecta
+  parent: STBaseWeaponShotgunProtecta
+  id: STWeaponShotgunProtecta
+  name: Protecta Revolver Shotgun
+  description: South African revolver-type shotgun with 12-round capacity. A rarity in the Zone, likely smuggled via black market. Powerful and unusual choice for eccentric stalkers.
+
+- type: entity
+  parent: STBaseWeaponShotgunProtecta
   id: STweaponShotgunPRETecta
-  description: Дробовик "Protecta" с деревянным прикладом и обмотанный кое-где бинтами.
+  name: Protecta "Stalker"
+  description: Modified Protecta with wooden stock and cloth wraps. Zone craftsmen attempted to adapt this exotic weapon for local conditions.
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi

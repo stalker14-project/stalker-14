@@ -5,9 +5,6 @@
   description: Очень полезная чёрная РПС для переноски любых вещей, от рации до магазинов. Пользуется особой популярностью среди сталкерского сообщества.
   suffix: ST
   components:
-  - type: Tag
-    tags:
-      - BlockBelt
   - type: STWeight
     self: 1
   - type: Storage
@@ -56,20 +53,17 @@
 - type: entity
   parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltBandolierStalker
-  name: патронташ
-  description: Патронташ для патронов любого калибра.
+  name: набор подсумков новичка
+  description: Подсумки для патронов любого калибра.
   components:
     - type: STWeight
       self: 0.5
     - type: Sprite
-      sprite: Clothing/Belt/bandolier.rsi
+      sprite: _Stalker/Objects/Clothing/belt/belt_novice.rsi
     - type: Clothing
-      sprite: Clothing/Belt/bandolier.rsi
+      sprite: _Stalker/Objects/Clothing/belt/belt_novice.rsi
     - type: Item
       size: Huge
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemSize: Normal
       grid:
@@ -80,7 +74,6 @@
         tags:
           - CartridgeAmmo
           - Cartridge
-
 
 - type: entity
   parent: ClothingBeltStorageStalkerBase
@@ -96,9 +89,6 @@
       sprite: _Stalker/Objects/Clothing/Belts/knife_belt.rsi
     - type: Item
       size: Huge
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemSize: Normal
       grid:
@@ -120,7 +110,7 @@
     - type: Appearance
 
 - type: entity
-  parent: ClothingBeltTarzanBlack
+  parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltGreenWebbingStalker
   name: поясная сумка ПСЗ
   description: Набор подсумков и поясная сумка старого зелёного варианта комплекта персональной системы защиты, не предназаченного для местности ЧЗО.
@@ -128,9 +118,6 @@
   components:
     - type: STWeight
       self: 3
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemsize: Large
       grid:
@@ -145,7 +132,7 @@
       sprite: _Stalker/Objects/Clothing/belt/belt_green.rsi
 
 - type: entity
-  parent: ClothingBeltTarzanBlack
+  parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltWebbingOfficerStalker
   name: поясная сумка с кобурой ПСЗ
   description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
@@ -153,9 +140,6 @@
   components:
     - type: STWeight
       self: 3
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemsize: Large
       grid:
@@ -180,9 +164,6 @@
   components:
     - type: STWeight
       self: 3
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemsize: Large
       grid:

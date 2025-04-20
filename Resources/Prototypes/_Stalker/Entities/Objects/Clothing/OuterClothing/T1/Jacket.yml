@@ -120,6 +120,34 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
 
+# Stalker White
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketStalkerWhite
+  name: белая куртка сталкера
+  description: Обычная одежда начинающего сталкера. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_stalker_white.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_stalker_white.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodJacketStalkerWhite
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodJacketStalkerWhite
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker_white.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker_white.rsi
+
+
 # Freedom
 
 - type: entity

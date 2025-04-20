@@ -1,58 +1,60 @@
 - type: entity
-  name: M16
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponRifle
-  id: STWeaponRifleM16
-  description: Colt M16 - бессмертная классика времён ещё Вьетнамской войны.
+  id: STBaseWeaponRifleM16
   components:
-    - type: STWeight
-      self: 3
-    - type: Item
-      size: Large
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
-      shape:
-        - 0,0,7,1
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
-    - type: Gun
-      fireRate: 6
-      soundGunshot:
-        path: /Audio/_Stalker/Effects/Guns/m4.ogg
-        params:
-          volume: -2
-      minAngle: 50
-      maxAngle: 100
-      angleIncrease: 2
-      angleDecay: 10
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem: Base556Mag10
-          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
-          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-          priority: 4
-          whitelist:
-            tags:
-              - Magazine556
-        gun_module_muzzle:
-          name: Muzzle
-          priority: 3
-          whitelist:
-            tags:
-              - STWeaponModuleRifleSilencerNato
-        gun_module_scope:
-          name: Scope
-          priority: 2
-          whitelist:
-            tags:
-              - STWeaponModuleRifleScopeNato
-        gun_chamber:
-          name: Chamber
-          startingItem:
-          priority: 1
-          whitelist:
-            tags:
-              - Cartridge556
+  - type: STWeight
+    self: 3
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/m4.ogg
+      params:
+        volume: -2
+    minAngle: 50
+    maxAngle: 100
+    angleIncrease: 2
+    angleDecay: 10
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base556Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine556
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge556
+
+- type: entity
+  parent: STBaseWeaponRifleM16
+  id: STWeaponRifleM16
+  name: M16
+  description: Legendary American rifle from Vietnam era. Appears in the Zone through military depots and black market dealers. Despite its age, remains a formidable weapon in skilled hands.
+

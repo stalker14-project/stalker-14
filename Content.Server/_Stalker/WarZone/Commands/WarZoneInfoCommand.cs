@@ -18,15 +18,46 @@ public sealed class WarZoneInfoCommand : IConsoleCommand
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
-    public string Command => "warzoneinfo";
-    public string Description => "Lists warzones, their owners, cooldowns, and points for bands and factions.";
-    public string Help => "Usage: warzoneinfo";
+    public string Command => "st_warzoneinfo";
+    public string Description => "Lists information about warzones, bands, and factions.";
+    public string Help => "Usage: st_warzoneinfo [section]\n" +
+                         "Sections:\n" +
+                         "  zones    - Lists all warzones and their current status\n" +
+                         "  bands    - Lists all bands and their points\n" +
+                         "  factions - Lists all factions and their points\n" +
+                         "If no section is specified, this help message will be shown.";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
-        var warZoneSystem = _entityManager.System<WarZoneSystem>();
-        var sb = new StringBuilder();
+        if (args.Length == 0)
+        {
+            shell.WriteLine(Help);
+            return;
+        }
 
+        var warZoneSystem = _entityManager.System<WarZoneSystem>();
+        var section = args[0].ToLowerInvariant();
+
+        switch (section)
+        {
+            case "zones":
+                ListZones(shell, warZoneSystem);
+                break;
+            case "bands":
+                ListBands(shell, warZoneSystem);
+                break;
+            case "factions":
+                ListFactions(shell, warZoneSystem);
+                break;
+            default:
+                shell.WriteLine($"Unknown section '{section}'\n{Help}");
+                break;
+        }
+    }
+
+    private void ListZones(IConsoleShell shell, WarZoneSystem warZoneSystem)
+    {
+        var sb = new StringBuilder();
         sb.AppendLine("=== Warzones ===");
         foreach (var (uid, wzComp) in warZoneSystem.GetAllWarZones())
         {
@@ -92,7 +123,13 @@ public sealed class WarZoneInfoCommand : IConsoleCommand
             sb.AppendLine($"Zone: {zoneId}, Owner: {owner}, Cooldown: {cooldown:F0}s, Attacker: {attacker}, Defender: {defender}, Progress: {progress * 100:F1}%, EntityUid: {uid}");
         }
 
-        sb.AppendLine("\n=== Band Points ===");
+        shell.WriteLine(sb.ToString());
+    }
+
+    private void ListBands(IConsoleShell shell, WarZoneSystem warZoneSystem)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine("=== Band Points ===");
         foreach (var kvp in warZoneSystem.BandPoints)
         {
             string name = "Unknown";
@@ -101,8 +138,13 @@ public sealed class WarZoneInfoCommand : IConsoleCommand
 
             sb.AppendLine($"Band Proto ID: {kvp.Key}, Name: {name}, Points: {kvp.Value}");
         }
+        shell.WriteLine(sb.ToString());
+    }
 
-        sb.AppendLine("\n=== Faction Points ===");
+    private void ListFactions(IConsoleShell shell, WarZoneSystem warZoneSystem)
+    {
+        var sb = new StringBuilder();
+        sb.AppendLine("=== Faction Points ===");
         foreach (var kvp in warZoneSystem.FactionPoints)
         {
             string name = "Unknown";
@@ -111,7 +153,6 @@ public sealed class WarZoneInfoCommand : IConsoleCommand
 
             sb.AppendLine($"Faction Proto ID: {kvp.Key}, Name: {name}, Points: {kvp.Value}");
         }
-
         shell.WriteLine(sb.ToString());
     }
 }

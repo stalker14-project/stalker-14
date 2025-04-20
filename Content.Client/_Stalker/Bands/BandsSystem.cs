@@ -34,7 +34,6 @@ public sealed class BandsSystem : SharedBandsSystem
         if (component.BandName != band.BandName)
             return;
 
-        // Apply status icon
         args.StatusIcons.Add(_proto.Index<JobIconPrototype>(component.BandStatusIcon));
     }
 }

@@ -1,9 +1,0 @@
-ent-STWeaponRifleSCARH = FN SCAR-H
-    .desc = Бельгийская винтовка под 7,62х51 с двухрежимным селектором режима.
-    .suffix = ST
-ent-STWeaponRifleSCARHShort = SCAR укороченный
-    .desc = Укороченная модификация бельгийской винтовки SCAR
-    .suffix = ST, Скин
-ent-STWeaponRifleARX160 = ARX-160
-    .desc = Beretta ARX-160 — итальянский автомат, созданный в рамках программы «Солдат будущего».
-    .suffix = { ent-STWeaponRifleSCARHShort.suffix }

@@ -58,6 +58,12 @@ public sealed partial class WarZoneComponent : Component
     public float CaptureProgress = 0f;
 
     /// <summary>
+    /// Last announced progress step (each 10% increment: 0–10)
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public int LastAnnouncedProgressStep = 0;
+
+    /// <summary>
     /// The next game time when the capture logic should be updated for this zone.
     /// </summary>
     [DataField]

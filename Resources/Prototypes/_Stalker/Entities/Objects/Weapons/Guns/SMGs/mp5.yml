@@ -1,0 +1,131 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSMG
+  id: STBaseWeaponSMGMP5
+  components:
+  - type: STWeight
+    self: 3.1
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5.rsi
+  - type: Gun
+    minAngle: 45
+    maxAngle: 90
+    angleIncrease: 3.5
+    angleDecay: 13.5
+    fireRate: 10
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_mp5_shot.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BaseMP5Mag
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - MagazineMP5
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleSMGSilencer
+      gun_module_underbarrel:
+        name: Underbarrel
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSMGGrip
+      gun_chamber:
+        name: Chamber
+        startingItem: STCartridge919PSOGJ
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge919
+
+- type: entity
+  parent: STBaseWeaponSMGMP5
+  id: STWeaponSMGMP5
+  name: H&K MP-5
+  description: The legendary Heckler & Koch MP-5 submachine gun chambered in 9x19mm Parabellum. Renowned for its precision and reliability, it remains a favorite among Zone operatives despite newer designs.
+
+- type: entity
+  parent: STBaseWeaponSMGMP5
+  id: STWeaponSMGMP5Celebra
+  name: H&K MP-5 "Celebra"
+  description: Custom MP-5 variant with distinctive Poisk faction markings. Features unique blue finish while maintaining all the reliability of the original design.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5Selebra.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5Selebra.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5Selebra.rsi
+
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSMGMP5 # Kekw
+  id: STBaseWeaponSMGVector9
+  components:
+  - type: STWeight
+    self: 2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
+    scale: 0.75, 0.75
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
+  - type: Gun
+    minAngle: 45
+    maxAngle: 85
+    angleIncrease: 2
+    angleDecay: 10
+    fireRate: 14
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/919.ogg
+  - type: STScopeVisuals
+    scopeState: scope
+
+- type: entity
+  parent: STBaseWeaponSMGVector9
+  id: STWeaponSMGVector9
+  name: KRISS Vector 9mm
+  description: Next-generation submachine gun with unique delayed blowback system delivering exceptional controllability during high-rate fire. Chambered in 9x19mm Parabellum.
+
+- type: entity
+  parent: STBaseWeaponSMGVector9
+  id: STWeaponSMGVector9Black
+  name: KRISS Vector 9mm (Black)
+  description: Tactical black variant maintaining all advanced recoil mitigation features in sleek low-visibility package.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_black.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_black.rsi
+    scale: 0.75, 0.75
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_black.rsi
+
+- type: entity
+  parent: STBaseWeaponSMGVector9
+  id: STWeaponSMGVector9Forest
+  name: KRISS Vector 9mm (Forest Camo)
+  description: Woodland camouflage version optimized for northern forested areas of the Zone.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_forest.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_forest.rsi
+    scale: 0.75, 0.75
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector_forest.rsi

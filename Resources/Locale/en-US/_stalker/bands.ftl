@@ -25,3 +25,9 @@ bands-managing-window-warzone-attacker = Attacker: {$attacker}
 bands-managing-window-warzone-defender = Defender: {$defender}
 bands-managing-window-warzone-progress = Progress: {$progress}%
 bands-managing-window-band-points-entry = {$bandName}: {$points} points
+# Bands Managing Window - Shop Tab
+bands-managing-window-shop-tab-title = Shop
+bands-managing-window-shop-list-header = Band Shop
+bands-managing-window-no-shop-items-text = No items available in the shop.
+bands-managing-window-shop-item-entry = { $itemName } - { $price } Points
+bands-managing-window-buy-button = Buy

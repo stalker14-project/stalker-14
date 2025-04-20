@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseWall
   id: WallWoodFallout
-  name: Деревянная стена
+  name: деревянная стена
   suffix: ST, Mapping, wall, KMIN
   components:
   - type: Tag
@@ -9,6 +9,8 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/wood.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/wood.rsi
   - type: Damageable
@@ -22,13 +24,15 @@
   parent: BaseWall
   id: WallSidingFallout
   name: ПВХ стена
-  suffix: ST, Mapping, wall, KMIN
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/siding.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/siding.rsi
   - type: Damageable
@@ -41,14 +45,16 @@
 - type: entity
   parent: BaseWall
   id: WallBrickFallout
-  name: Кирпичная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: кирпичная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/brick.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/brick.rsi
   - type: Damageable
@@ -61,14 +67,16 @@
 - type: entity
   parent: BaseWall
   id: WallBunkerFallout
-  name: Бункерная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: бункерная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/bunker.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/bunker.rsi
   - type: Damageable
@@ -81,14 +89,16 @@
 - type: entity
   parent: BaseWall
   id: WallDungeonFallout
-  name: Укрепленная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: укрепленная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/dungeon.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/dungeon.rsi
   - type: Damageable
@@ -101,14 +111,16 @@
 - type: entity
   parent: BaseWall
   id: WallMetalFallout
-  name: Стальная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: стальная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/metal.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/metal.rsi
   - type: Damageable
@@ -121,14 +133,16 @@
 - type: entity
   parent: BaseWall
   id: WallRustMetalFallout
-  name: Ржавая стена
-  suffix: ST, Mapping, wall, KMIN
+  name: ржавая стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rustmetal.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rustmetal.rsi
   - type: Damageable
@@ -141,14 +155,16 @@
 - type: entity
   parent: BaseWall
   id: WallScrapFallout
-  name: Профнастиловая стена
-  suffix: ST, Mapping, wall, KMIN
+  name: профнастиловая стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/scrap.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/scrap.rsi
   - type: Damageable
@@ -161,14 +177,16 @@
 - type: entity
   parent: BaseWall
   id: WallSewerFallout
-  name: Канализационная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: канализационная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/sewer.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/sewer.rsi
   - type: Damageable
@@ -181,14 +199,16 @@
 - type: entity
   parent: BaseWall
   id: WallReinfMetalFallout
-  name: Бронированная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: бронированная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rmetal.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rmetal.rsi
   - type: Damageable
@@ -201,14 +221,16 @@
 - type: entity
   parent: BaseWall
   id: WallRustReinfMetalFallout
-  name: Ржавая бронированная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: ржавая бронированная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rrmetal.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rrmetal.rsi
   - type: Damageable
@@ -221,14 +243,16 @@
 - type: entity
   parent: BaseWall
   id: WallVaultFallout
-  name: Стена убежища
-  suffix: ST, Mapping, wall, KMIN
+  name: стена убежища
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/vault.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/vault.rsi
   - type: Damageable
@@ -241,8 +265,8 @@
 - type: entity
   parent: BaseWall
   id: WallConcreteFallout
-  name: Бетонная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: бетонная стена
+  suffix: ST, Mapping, wall
   description: Стена, для создания которой устраивается опалубка с железной арматурой внутри, в которую заливается жидкий бетон.
   components:
   - type: Tag
@@ -250,6 +274,8 @@
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/concrete.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/concrete.rsi
   - type: Damageable
@@ -262,14 +288,16 @@
 - type: entity
   parent: BaseWall
   id: WallRockFallout
-  name: Каменная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: каменная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/rock.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/rock.rsi
   - type: Damageable
@@ -282,14 +310,16 @@
 - type: entity
   parent: BaseWall
   id: WallPrisonFallout
-  name: Тюремная стена
-  suffix: ST, Mapping, wall, KMIN
+  name: тюремная стена
+  suffix: ST, Mapping, wall
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/prison.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/prison.rsi
   - type: Damageable
@@ -302,15 +332,17 @@
 - type: entity
   parent: BaseWall
   id: WallConcreteFalloutDestructible
-  name: Ветхая бетонная стена
+  name: ветхая бетонная стена
   description: Вот-вот разрушится, если по ней постучать.
-  suffix: ST, Mapping, wall, KMIN, разрушимое
+  suffix: ST, Mapping, wall, разрушимое
   components:
   - type: Tag
     tags:
       - Wall
   - type: Sprite
     sprite: _Stalker/Structures/Walls/concrete.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
     sprite: _Stalker/Structures/Walls/concrete.rsi
   - type: IconSmooth
@@ -390,12 +422,17 @@
     tags:
       - Wall
   - type: Sprite
-    sprite: Structures/Walls/necropolis.rsi
+    sprite: _Stalker/Structures/Walls/metal.rsi
+    drawdepth: Mobs
+  - type: SpriteFade
   - type: Icon
-    sprite: Structures/Walls/necropolis.rsi
+    sprite: _Stalker/Structures/Walls/metal.rsi
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
   - type: IconSmooth
     key: walls
-    base: necropolis
+    base: metal
 
 - type: entity
   parent: BaseWall

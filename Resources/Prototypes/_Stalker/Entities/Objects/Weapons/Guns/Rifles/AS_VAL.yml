@@ -1,71 +1,70 @@
 - type: entity
-  name: АС-ВАЛ
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponRifle
-  id: STWeaponRifleStalkerVAL
-  description: Автомат Специальный под редкий и убойный калибр 9х39.
+  id: STBaseWeaponRifleASVAL
   components:
-    - type: STWeight
-      self: 3
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aval.rsi
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aval.rsi
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aval.rsi
-    - type: Gun
-      soundGunshot:
-        path: /Audio/_Stalker/Effects/Guns/n_val_shot.ogg
-      projectileSpeed: 25
-      minAngle: 55
-      maxAngle: 90
-      angleIncrease: 3
-      angleDecay: 15
-      fireRate: 10
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem: Base939Mag10
-          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
-          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-          priority: 4
-          whitelist:
-            tags:
-              - Magazine939
-        gun_module_muzzle:
-          name: Muzzle
-          priority: 3
-          whitelist:
-            tags:
-              - STWeaponModuleRifleSilencerRu
-        gun_module_scope:
-          name: Scope
-          priority: 2
-          whitelist:
-            tags:
-              - STWeaponModuleRifleScopeRu
-        gun_chamber:
-          name: Chamber
-          startingItem:
-          priority: 1
-          whitelist:
-            tags:
-              - Cartridge939
+  - type: STWeight
+    self: 3
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aval.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aval.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aval.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/as_val_shot.ogg
+    minAngle: 55
+    maxAngle: 90
+    angleIncrease: 3
+    angleDecay: 15
+    fireRate: 10
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base939Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine939
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge939
 
-#
-# Скины
-#
 - type: entity
-  name: АС-ВАЛ "Селебра"
-  parent: STWeaponRifleStalkerVAL
-  id: STSkinVALPoiskSelebra
-  description: Автомат Специальный под редкий и убойный калибр 9х39.
-  suffix: ST, Поиск, Скин
+  parent: STBaseWeaponRifleASVAL
+  id: STWeaponRifleASVAL
+  name: AS-VAL
+  description: Silent assault rifle chambered in 9x39mm. Favored by scouts and saboteurs in the Zone. Capable of penetrating heavy armor but expensive to maintain.
+
+- type: entity
+  parent: STBaseWeaponRifleASVAL
+  id: STWeaponRifleASVALSelebra
+  name: AS-VAL "Selebra"
+  description: Custom AS VAL with "Poisk" camouflage pattern. Often used by experienced lone stalkers who prefer to work quietly and efficiently.
   components:
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/val_poisk.rsi
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/val_poisk.rsi
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/val_poisk.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/val_poisk.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/val_poisk.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/val_poisk.rsi

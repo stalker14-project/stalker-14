@@ -19,6 +19,11 @@
     modifiers:
       coefficients:
         Radiation: 0.85
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - FacialHair
+    hideOnToggle: true
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base
@@ -128,3 +133,18 @@
       sprite: _Stalker/Objects/Clothing/mask/gasmask_cn.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/mask/gasmask_cn.rsi
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasMarlya
+  name: марлевая повязка
+  description: Марлевая повязка зелёного цвета, предназначаемая для защиты органов дыхания человека от радиоактивной пыли. Лучше чем ничего.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/marlya.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/marlya.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.95

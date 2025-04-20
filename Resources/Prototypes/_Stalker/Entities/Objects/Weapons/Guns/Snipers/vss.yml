@@ -1,0 +1,87 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSniper
+  id: STBaseWeaponSniperVSS
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/base.rsi
+    equipDelay: 1.5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/base.rsi
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/base.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/vss_shot.ogg
+      volume: -6
+    minAngle: 50
+    maxAngle: 85
+    angleIncrease: 2
+    angleDecay: 20
+    fireRate: 6
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base939Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 3
+        whitelist:
+          tags:
+          - Magazine939
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSight
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge939
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+      gun_module_scope: !type:ContainerSlot
+  - type: PullDoAfter
+    pullTime: 1.5
+
+- type: entity
+  parent: STBaseWeaponSniperVSS
+  id: STWeaponSniperVSS
+  name: VSS Vintorez
+  description: Special Sniper Rifle chambered in the rare but devastating 9x39mm caliber. Comes equipped with medium-range optics and integrated suppressor.
+
+- type: entity
+  parent: STBaseWeaponSniperVSS
+  id: STWeaponSniperVSSOracle
+  name: VSS Vintorez (Oracle)
+  description: Carefully modified version of the Air Force “Vintorez” with improved characteristics and appearance. There are many marks and various scuffs on the rifle, as well as traces of careful care.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/swamp.rsi
+    equipDelay: 1.5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/swamp.rsi
+    shape:
+    - 0,0,5,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/swamp.rsi
+  - type: PullDoAfter
+    pullTime: 1.5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/vss_shot.ogg
+      volume: -10
+    minAngle: 55
+    maxAngle: 70
+    angleIncrease: 1.5
+    angleDecay: 25
+    fireRate: 4

@@ -43,6 +43,57 @@ public sealed partial class WarZoneSystem : EntitySystem
         _factionPoints[protoId] = points;
     }
 
+    /// <summary>
+    /// Gets the current points for a specific band.
+    /// </summary>
+    /// <param name="bandProtoId">The prototype ID of the band.</param>
+    /// <returns>The points for the band, or 0 if the band is not tracked.</returns>
+    public float GetBandPoints(string bandProtoId)
+    {
+        return _bandPoints.TryGetValue(bandProtoId, out var points) ? points : 0f;
+    }
+
+    /// <summary>
+    /// Attempts to modify the points for a specific band by a given delta.
+    /// Updates the internal cache and persists the change to the database.
+    /// Use this instead of SetBandPoints for incremental changes.
+    /// </summary>
+    /// <param name="bandProtoId">The prototype ID of the band.</param>
+    /// <param name="delta">The amount to change the points by (can be negative).</param>
+    /// <returns>True if the points were successfully modified (even if clamped), false if the band prototype ID is invalid.</returns>
+    public bool TryModifyBandPoints(string bandProtoId, float delta)
+    {
+        // Check if the band exists in prototypes to avoid adding points for invalid bands
+        if (!_prototypeManager.HasIndex<STBandPrototype>(bandProtoId))
+        {
+            Logger.WarningS("warzone", $"Attempted to modify points for non-existent band prototype ID: {bandProtoId}");
+            return false;
+        }
+
+        var currentPoints = GetBandPoints(bandProtoId);
+        var newPoints = currentPoints + delta;
+
+        // Prevent points from going below zero? Or allow debt? Assuming non-negative for now.
+        if (newPoints < 0)
+        {
+             Logger.InfoS("warzone", $"Attempted to set points below zero for band {bandProtoId}. Clamping to 0.");
+             newPoints = 0; // Clamp to zero if modification results in negative points
+        }
+
+
+        _bandPoints[bandProtoId] = newPoints;
+
+        // Persist the change to the database asynchronously.
+        // We don't necessarily need to wait for this to complete before returning true,
+        // as the in-memory value is updated. Error handling for DB failure might be needed.
+        _dbManager.SetStalkerBandAsync(new ProtoId<STBandPrototype>(bandProtoId), newPoints);
+
+        Logger.DebugS("warzone", $"Modified points for band {bandProtoId} by {delta}. New total: {newPoints}");
+        return true;
+    }
+
+    // Note: SetBandPoints and SetFactionPoints are still useful for direct setting, like in admin commands or initialization.
+
     public IEnumerable<(EntityUid Uid, WarZoneComponent Component)> GetAllWarZones()
     {
         var query = EntityQueryEnumerator<WarZoneComponent>();
@@ -150,6 +201,13 @@ public sealed partial class WarZoneSystem : EntitySystem
         {
             DistributeRewards(zone, lastRewardTime, now);
         }
+    }
+
+    private void ResetCaptureProgress(WarZoneComponent comp)
+    {
+        comp.CaptureProgressTime = 0f;
+        comp.CaptureProgress = 0f;
+        comp.LastAnnouncedProgressStep = 0;
     }
 
     private async Task UpdateCaptureAsync(EntityUid zone, WarZoneComponent comp, TimeSpan now, float effectiveFrameTime)
@@ -268,12 +326,12 @@ public sealed partial class WarZoneSystem : EntitySystem
         bool isNewAttacker = (currentAttackerBand != comp.CurrentAttackerBandProtoId || currentAttackerFaction != comp.CurrentAttackerFactionProtoId);
         if (isNewAttacker)
         {
-            ResetCaptureProgress(comp); // Reset progress for the new attacker
-            comp.CurrentAttackerBandProtoId = currentAttackerBand;
-            comp.CurrentAttackerFactionProtoId = currentAttackerFaction;
-            // Announce based on who is attacking (band or faction)
-            string attackerName = GetAttackerName(currentAttackerBand, currentAttackerFaction);
-            AnnounceCaptureStartedLocal(zone, comp, attackerName);
+            ResetCaptureProgress(comp);
+             comp.CurrentAttackerBandProtoId = currentAttackerBand;
+             comp.CurrentAttackerFactionProtoId = currentAttackerFaction;
+             // Announce based on who is attacking (band or faction)
+             string attackerName = GetAttackerName(currentAttackerBand, currentAttackerFaction);
+             AnnounceCaptureStartedLocal(zone, comp, attackerName);
         }
 
         // Check Requirements
@@ -337,6 +395,15 @@ public sealed partial class WarZoneSystem : EntitySystem
         comp.CaptureProgressTime += effectiveFrameTime;
         comp.CaptureProgress = Math.Clamp(comp.CaptureProgressTime / wzProto.CaptureTime, 0f, 1f);
 
+        // Announce each 10% increment locally
+        var step = (int)(comp.CaptureProgress * 10);
+        if (step > comp.LastAnnouncedProgressStep)
+        {
+            comp.LastAnnouncedProgressStep = step;
+            if (feedbackEntity.HasValue)
+                AnnounceCaptureProgressLocal(zone, comp, step * 10);
+        }
+
         // Check for Capture Completion
         if (comp.CaptureProgressTime < wzProto.CaptureTime)
             return; // Not captured yet
@@ -391,14 +458,10 @@ public sealed partial class WarZoneSystem : EntitySystem
 
         // Finalize progress state
         comp.CaptureProgress = 1f;
-        // Attacker becomes the defender, no need to reset CurrentAttacker here
-    }
-
-
-    private void ResetCaptureProgress(WarZoneComponent comp)
-    {
+        // Reset progress time and clear attacker for next capture
         comp.CaptureProgressTime = 0f;
-        comp.CaptureProgress = 0f;
+        comp.CurrentAttackerBandProtoId = null;
+        comp.CurrentAttackerFactionProtoId = null;
     }
 
     private void ResetAllRequirements(EntityUid zone)
@@ -427,14 +490,10 @@ public sealed partial class WarZoneSystem : EntitySystem
         if (wzComp.DefendingBandProtoId == null && wzComp.DefendingFactionProtoId == null)
         {
             // Only award if ShouldAwardWhenDefenderPresent is true and zone is uncaptured
-             if (!wzProto.ShouldAwardWhenDefenderPresent)
+            if (!wzProto.ShouldAwardWhenDefenderPresent)
                 return;
-             // If ShouldAwardWhenDefenderPresent is true, proceed to check if *anyone* should get points (e.g., default faction?)
-             // Current logic below only awards to specific band/faction defenders. Needs adjustment if uncaptured zones give points.
-             // For now, assume points are only for the *current* defender.
-             return;
+            // If ShouldAwardWhenDefenderPresent is true, proceed with awarding logic below even when uncaptured
         }
-
 
         var points = wzProto.RewardPointsPerPeriod;
         bool rewarded = false;
@@ -654,6 +713,15 @@ public sealed partial class WarZoneSystem : EntitySystem
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, message, message, zoneUid, false, true, colorOverride: null);
     }
 
+
+    private void AnnounceCaptureProgressLocal(EntityUid zoneUid, WarZoneComponent wzComp, int percent)
+    {
+        var portalName = wzComp.PortalName ?? "Unknown";
+        var message = Loc.GetString("st-warzone-progress", ("zone", portalName), ("percent", percent));
+        var mapCoords = _transformSystem.GetMapCoordinates(zoneUid);
+        var filter = Filter.Empty().AddInRange(mapCoords, ChatSystem.VoiceRange);
+        _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, message, message, zoneUid, false, true, colorOverride: null);
+    }
     // Load initial zone ownership and cooldown state from DB
     private async Task LoadInitialZoneStateAsync(EntityUid zoneUid, WarZoneComponent component)
     {

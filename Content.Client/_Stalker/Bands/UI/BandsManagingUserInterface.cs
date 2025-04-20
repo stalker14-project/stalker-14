@@ -24,6 +24,7 @@ namespace Content.Client._Stalker.Bands.UI
             {
                 _window.OnAddMemberButtonPressed += AddMember;
                 _window.OnRemoveMemberButtonPressed += RemoveMember;
+                _window.OnBuyItemButtonPressed += BuyItem;
             }
         }
 
@@ -36,6 +37,11 @@ namespace Content.Client._Stalker.Bands.UI
         private void RemoveMember(Guid memberUserId)
         {
             SendMessage(new BandsManagingRemoveMemberMessage(memberUserId));
+        }
+
+        private void BuyItem(string itemId)
+        {
+            SendMessage(new BandsManagingBuyItemMessage(itemId));
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)
@@ -52,6 +58,7 @@ namespace Content.Client._Stalker.Bands.UI
             {
                 _window.OnAddMemberButtonPressed -= AddMember;
                 _window.OnRemoveMemberButtonPressed -= RemoveMember;
+                _window.OnBuyItemButtonPressed -= BuyItem;
                 _window.Dispose();
             }
         }

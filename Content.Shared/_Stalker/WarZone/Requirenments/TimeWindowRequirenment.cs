@@ -24,38 +24,38 @@ public sealed partial class TimeWindowRequirenment : BaseWarZoneRequirenment
         EntityUid? attackerEntity,
         Action<EntityUid, string, (string, object)[]?>? feedbackCallback)
     {
-        var currentUtcTime = DateTime.UtcNow;
-        var currentHour = currentUtcTime.Hour;
+        // Determine current UTC hour
+        var currentHour = DateTime.UtcNow.Hour;
+        bool withinWindow;
 
+        // Validate configured hours
         if (StartHourUtc < 0 || StartHourUtc > 23 || EndHourUtc < 0 || EndHourUtc > 23)
         {
-            return CaptureBlockReason.TimeWindow; // Or a specific Error reason
+            withinWindow = false;
         }
-
-        // Handle time ranges that span across midnight
-        if (StartHourUtc <= EndHourUtc)
+        else if (StartHourUtc <= EndHourUtc)
         {
-            // Standard range (e.g., 8 to 16)
-            if (currentHour >= StartHourUtc && currentHour < EndHourUtc)
-            {
-                return CaptureBlockReason.None;
-            }
+            // Simple range (e.g., 8 to 16)
+            withinWindow = currentHour >= StartHourUtc && currentHour < EndHourUtc;
         }
         else
         {
-            // Range spans midnight (e.g., 22 to 4)
-            if (currentHour >= StartHourUtc || currentHour < EndHourUtc)
-            {
-                return CaptureBlockReason.None;
-            }
+            // Overnight range (e.g., 22 to 4)
+            withinWindow = currentHour >= StartHourUtc || currentHour < EndHourUtc;
         }
 
-        if (attackerEntity.HasValue && feedbackCallback != null)
+        // Block if outside allowed window
+        if (!withinWindow)
         {
-            // Provide feedback using the callback
-            var args = new (string, object)[] { ("startHour", StartHourUtc), ("endHour", EndHourUtc) };
-            feedbackCallback(attackerEntity.Value, "st-warzone-timewindow-fail", args);
+            // Always provide feedback if callback is available; fallback uses default EntityUid
+            if (feedbackCallback != null)
+            {
+                var args = new (string, object)[] { ("startHour", StartHourUtc), ("endHour", EndHourUtc) };
+                var target = attackerEntity ?? default;
+                feedbackCallback(target, "st-warzone-timewindow-fail", args);
+            }
+            return CaptureBlockReason.TimeWindow;
         }
-        return CaptureBlockReason.TimeWindow;
+        return CaptureBlockReason.None;
     }
 }
