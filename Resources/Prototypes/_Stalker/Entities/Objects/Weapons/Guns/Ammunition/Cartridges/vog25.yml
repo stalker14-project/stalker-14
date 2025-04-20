@@ -1,0 +1,73 @@
+- type: entity
+  parent: BaseGrenade
+  id: GrenadeVOGbase
+  name: vog25 base
+  suffix: ST, ВОГ-25
+  abstract: true
+  components:
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - Vog25grenade
+      - Cartridge
+  - type: STWeight
+    self: 0.25
+
+
+- type: entity
+  parent: GrenadeVOGbase
+  id: GrenadeVOG25
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeVOG25
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Explosives/vog25.rsi
+    layers:
+    - state: vog25
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+
+
+- type: entity
+  parent: GrenadeVOGbase
+  id: GrenadeVOG25P
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeVOG25P
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Explosives/vog25.rsi
+    layers:
+    - state: vog25p
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+
+
+- type: entity
+  parent: GrenadeVOGbase
+  id: GrenadeVOG25gvozd
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeVOG25Gvozd
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Explosives/vog25.rsi
+    layers:
+    - state: vog-gvozd
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+
+
+- type: entity
+  parent: GrenadeVOGbase
+  id: GrenadeVOG25smoke
+  components:
+  - type: CartridgeAmmo
+    proto: BulletGrenadeVDG40
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Explosives/vog25.rsi
+    layers:
+    - state: vog-smoke
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+
+

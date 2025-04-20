@@ -1,12 +1,4 @@
 ent-STTorchSera = факел
-    .suffix = ST, Скин
-	
-ent-turn_on = факел
-    .suffix = ST, Скин
-
-ent-turn_on = факел
-    .suffix = ST, Скин
-
-ent-fade_out = факел
+    .desc = Факел.
     .suffix = ST, Скин
 

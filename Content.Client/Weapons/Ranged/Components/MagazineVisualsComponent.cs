@@ -30,12 +30,4 @@ public enum GunVisualLayers : byte
     BaseUnshaded,
     Mag,
     MagUnshaded,
-    // stalker starts
-    Muzzle,
-    MuzzleUnshaded,
-    Scope,
-    ScopeUnshaded,
-    Underbarrel,
-    UnderbarrelUnshaded,
-    // stalker ends
 }

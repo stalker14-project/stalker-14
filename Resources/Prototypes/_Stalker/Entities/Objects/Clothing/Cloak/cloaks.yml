@@ -35,7 +35,7 @@
 - type: entity
   parent: STClothingCapeBase
   id: ClothingNeckAnomalistLurker
-  name: плащ «Скрытень» аномалистов 
+  name: плащ «Скрытень» аномалистов
   description: Тебя не пристрелят, если не найдут.
   suffix: Stalker, Плащ, Аномалисты
   components:
@@ -115,3 +115,27 @@
     sprite: _Stalker/Objects/Clothing/cloak/navy.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/navy.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCloakFoma
+  name: Black cloak
+  description: Black cloak
+  suffix: Stalker, Cloak, Sponsor
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/foma.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/foma.rsi
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,2,0,3
+    - 0,-2,0,0
+    - 2,2,2,3
+    - 2,-1,3,-0
+    - 4,2,4,3
+    - 5,-1,6,-0
+    - 6,2,6,3
+    - 8,2,8,3
+    - 8,-2,8,0

@@ -25,6 +25,8 @@
     - type: Bands
       band: Stalker
       bandIcon: tec
+      bandProto: STAnomalistsBand
+      bandRankId: 2
     - type: BlockTackingHolyItems
     - type: TeethPull
       teethProto: ToothStalker
@@ -72,9 +74,21 @@
     - type: Bands
       band: Stalker
       bandIcon: tec
+      bandProto: STAnomalistsBand
+      bandRankId: 2
     - type: BlockTackingHolyItems
     - type: TeethPull
       teethProto: ToothStalker
       pullingItemTag: PliersStalker
       teethCount: 3
       initialTeeth: 3
+- type: stBand
+  id: STAnomalistsBand
+  name: Anomalists
+  factionId: Stalker
+  maxMembers: 10
+  managingRankId: 2
+  hierarchy:
+    1: StalkerAnomalist
+    2: StalkerAnomalistGuardian
+

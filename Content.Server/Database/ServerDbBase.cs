@@ -4,15 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using Content.Server._Stalker.WarZone;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Shared._Stalker.Bands;
 using Content.Shared._Stalker.Characteristics;
+using Content.Shared._Stalker.WarZone;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
@@ -1666,6 +1670,33 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         #endregion
         #region Stalker-Changes
 
+        /// <summary>
+        /// Gets all Player records for users who have at least one of the specified role IDs whitelisted.
+        /// </summary>
+        /// <remarks>
+        /// This is a virtual base implementation. Specific database providers might override it.
+        /// </remarks>
+        public virtual async Task<List<Player>> GetPlayersWithRoleWhitelistAsync(IEnumerable<string> roleIds, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var roleIdSet = roleIds.ToHashSet(); // Use HashSet for potentially better performance if roleIds is large
+
+            // Get PlayerUserIds that have any of the specified roles
+            var playerIds = await db.DbContext.RoleWhitelists
+                .Where(rw => roleIdSet.Contains(rw.RoleId))
+                .Select(rw => rw.PlayerUserId)
+                .Distinct()
+                .ToListAsync(cancel);
+
+            // Fetch the full Player records for those UserIds
+            var players = await db.DbContext.Player
+                .Where(p => playerIds.Contains(p.UserId))
+                .ToListAsync(cancel);
+
+            return players;
+        }
+
         public async Task SaveCharacterChangeable(NetUserId userId, bool changeable, int slot)
         {
             await using var db = await GetDb();
@@ -1753,6 +1784,160 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return record;
         }
 
+        public async Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerBands.FirstOrDefaultAsync(s => s.BandProtoId == band.Id);
+            if (record is null)
+            {
+                var newBand = new StalkerBand()
+                {
+                    BandProtoId = band.Id,
+                    RewardPoints = rewardPoints
+                };
+                db.DbContext.StalkerBands.Add(newBand);
+            }
+            else
+            {
+                record.RewardPoints = rewardPoints;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<StalkerBand?> GetStalkerBandAsync(ProtoId<STBandPrototype> band)
+        {
+            await using var db = await GetDb();
+            var record = await db.DbContext.StalkerBands
+                .Include(b => b.ZoneOwnerships)
+                .FirstOrDefaultAsync(s => s.BandProtoId == band.Id);
+
+            return record;
+        }
+
+        public async Task SetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction, float rewardPoints)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerFactions.FirstOrDefaultAsync(s => s.FactionProtoId == faction.Id);
+            if (record is null)
+            {
+                var newBand = new StalkerFaction()
+                {
+                    FactionProtoId = faction.Id,
+                    RewardPoints = rewardPoints
+                };
+                db.DbContext.StalkerFactions.Add(newBand);
+            }
+            else
+            {
+                record.RewardPoints = rewardPoints;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<StalkerFaction?> GetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction)
+        {
+            await using var db = await GetDb();
+            var record = await db.DbContext.StalkerFactions
+                .Include(b => b.ZoneOwnerships)
+                .FirstOrDefaultAsync(s => s.FactionProtoId == faction.Id);
+
+            return record;
+        }
+
+        public async Task SetStalkerZoneOwnershipAsync(
+            ProtoId<STWarZonePrototype> warZone,
+            ProtoId<STBandPrototype>? capturingBand = null,
+            ProtoId<NpcFactionPrototype>? capturingFaction = null)
+        {
+            if (capturingBand is null && capturingFaction is null)
+                throw new ArgumentNullException("No band or faction was provided for zone capture");
+
+            if (capturingBand is not null && capturingFaction is not null)
+                throw new ArgumentException("A zone can't be simultaneously captured by both band and faction");
+
+            await using var db = await GetDb();
+
+            int? bandId = null;
+            int? factionId = null;
+
+            if (capturingBand is not null)
+            {
+                var bandRecord = await GetStalkerBandAsync(capturingBand.Value);
+                if (bandRecord == null)
+                {
+                    await SetStalkerBandAsync(capturingBand.Value, 0);
+                    bandRecord = await GetStalkerBandAsync(capturingBand.Value);
+                }
+                bandId = bandRecord!.Id;
+            }
+            else if (capturingFaction is not null)
+            {
+                var factionRecord = await GetStalkerFactionAsync(capturingFaction.Value);
+                if (factionRecord == null)
+                {
+                    await SetStalkerFactionAsync(capturingFaction.Value, 0);
+                    factionRecord = await GetStalkerFactionAsync(capturingFaction.Value);
+                }
+                factionId = factionRecord!.Id;
+            }
+
+            var record = await db.DbContext.StalkerZoneOwnerships
+                .FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+
+            if (record is null)
+            {
+                var newZone = new StalkerZoneOwnership
+                {
+                    ZoneProtoId = warZone.Id,
+                    BandId = bandId,
+                    FactionId = factionId,
+                    LastCapturedByCurrentOwnerAt = DateTime.UtcNow
+                };
+                db.DbContext.StalkerZoneOwnerships.Add(newZone);
+            }
+            else
+            {
+                record.BandId = bandId;
+                record.FactionId = factionId;
+                record.LastCapturedByCurrentOwnerAt = DateTime.UtcNow;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+
+        public async Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
+        {
+            await using var db = await GetDb();
+            var record = await db.DbContext.StalkerZoneOwnerships.FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+
+            return record;
+        }
+
+        /// <summary>
+        /// Clears ownership of the specified warzone (sets both band and faction to null).
+        /// </summary>
+        /// <param name="warZone">The warzone prototype ID.</param>
+        public async Task ClearStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerZoneOwnerships
+                .FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+
+            if (record is null)
+                return;
+
+            record.BandId = null;
+            record.FactionId = null;
+            record.LastCapturedByCurrentOwnerAt = DateTime.UnixEpoch;
+
+            await db.DbContext.SaveChangesAsync();
+        }
         #endregion
         #region Job Whitelists
 

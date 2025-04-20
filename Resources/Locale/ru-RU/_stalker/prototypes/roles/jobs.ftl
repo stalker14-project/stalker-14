@@ -133,3 +133,11 @@ job-tulpari-supervisor = Вы никому не подчиняетесь...
 job-un = Представитель ООН
 job-un-desc = Представитель высот.
 job-un-supervisor = Вы не кому не подчиняетесь...
+
+job-militia = Боец ополчения
+job-militia-desc = Сталкерское ополчение.
+job-militia-supervisor = Вы подчиняетесь командирам ополчения.
+
+job-militia-commander = Командир ополчения
+job-militia-commander-desc = Сталкерское ополчение. Командиров может быть много.
+job-militia-commander-supervisor = Вы советуетесь с другими командирами ополчения

@@ -741,3 +741,14 @@
   - type: AccessReader
     access: [["Pilgrim"]]
 
+#Ополчению
+- type: entity
+  id: MetalDoorFalloutOpolchenciClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Militia
+  components:
+  - type: AccessReader
+    access: [["MilitiaAccess"]]
+

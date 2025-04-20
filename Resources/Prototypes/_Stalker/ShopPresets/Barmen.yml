@@ -70,17 +70,17 @@
         WeaponPistolStalkerAPS: 800
         STWeaponRevolverSWModel325: 1000
         STWeaponRevolverSWModel625: 1450
-        STWeaponShotgunStalkerSPAS: 1450
+        STWeaponShotgunSPAS: 1450
         STWeaponShotgunProtecta: 2900
-        STWeaponRifleStalkerAKS74: 3500
+        STWeaponRifleAKS74: 3500
         STWeaponRifleM16: 3250
-        STWeaponRifleSig550: 4250
-        WeaponRifleStalkerGroza545: 4250
-        STWeaponRifleStalkerAKM: 3750
+        STWeaponRifleSIG550: 4250
+        STWeaponRifleOC14: 4250
+        STWeaponRifleAKM: 3750
         STWeaponSniperMosin: 1300
-        STWeaponRifleStalkerFAL: 2125
-        STWeaponSMGMp5: 2600
-        STWeaponSMGBizon: 2300
+        STWeaponRifleFAL: 2125
+        STWeaponSMGMP5: 2600
+        STWeaponSMGPP19: 2300
     - name: shop-category-magazines
       priority: 2
       items:
@@ -89,7 +89,7 @@
         BaseGlockMag10: 135
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
-        SpeedLoader45ACPEmpty: 120
+        STSpeedLoader45ACPEmpty: 120
         545Mag20: 175
         545Mag30: 275
         556Mag20: 200
@@ -139,6 +139,8 @@
       priority: 4
       items:
         # body
+        SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
+        SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
         STClothingOuterArmorLightPlateVestBaseANAgray: 2900
         STClothingOuterArmorLightPlateVestBaseANAgreen: 2900
         ClothingOuterArmorStalker: 3100
@@ -420,9 +422,9 @@
           1:
             - name: sponsor
               items:
-                STWeaponGunAKS74UWhite: 650
+                STWeaponRifleAKS74UWhite: 650
   contributorCategories:
           - name: contributor
             items:
-              STWeaponShotgunMP153Voron: 550
+              STWeaponShotgunMP153Raven: 550
               WeaponPistolStalkerAPSHugo: 250

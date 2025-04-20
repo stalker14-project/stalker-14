@@ -2,9 +2,9 @@
 - type: entity
   id: helicopterStructure
   parent: BaseShippingContainer
-  name: Сломанный вертолёт
+  name: broken helicopter
   suffix: ST, Mapping
-  description: Разбился в результате катастрофы, модель неизвестна.
+  description: Crashed as a result of a disaster, the model is unknown.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/helicopter.rsi
@@ -28,8 +28,8 @@
 - type: entity
   id: STForgottenCar
   parent: OldCarGreen
-  name: брошенная машина
-  description: Уж сколько лет этому памятнику автопрома, а сколько наскальной живописи на нем?
+  name: abandoned car
+  description: How old is this monument to the automotive industry, and how many rock paintings are on it?
   suffix: ST, Mapping
   components:
   - type: Sprite
@@ -42,9 +42,9 @@
 - type: entity
   id: UAZStructure
   parent: BaseShippingContainer
-  name: УАЗ-452
+  name: UAZ-452
   suffix: ST, Mapping
-  description: Семейство полноприводных внедорожных фургонов и легких грузовиков с кузовом на раме и кабиной над двигателем, выпускаемых Ульяновским автомобильным заводом (УАЗ) с 1965 года.
+  description: A family of four-wheel drive off-road vans and light trucks with a body on a frame and a cabin above the engine, produced by the Ulyanovsk Automobile Plant (UAZ) since 1965.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/uaz.rsi
@@ -80,7 +80,7 @@
 - type: entity
   id: UAZStructureRusted
   parent: UAZStructure
-  name: ржавый УАЗ-452
+  name: rusty UAZ-452
   suffix: ST, Mapping
   components:
   - type: Sprite
@@ -91,9 +91,9 @@
 - type: entity
   id: OldCarGreen
   parent: BaseShippingContainer
-  name: старая зелёная машина
+  name: old green car
   suffix: ST, Mapping
-  description: Довольно старая машина, производимая ещё в советское время. Время не щадит никого, поэтому она в таком плохом состоянии. К сожалению, невозможно различить марку машины. По крайней мере, вы таких не знаете.
+  description: It's a pretty old car, made back in Soviet times. Time spares no one, that's why she's in such a bad state. Unfortunately, it is impossible to distinguish the make of the car. At least, you don't know them.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
@@ -129,7 +129,7 @@
 - type: entity
   id: OldCarRed
   parent: OldCarGreen
-  name: старая красная машина
+  name: old red car
   suffix: ST, Mapping
   components:
   - type: Sprite
@@ -140,29 +140,51 @@
 - type: entity
   id: CarRedUS
   parent: OldCarGreen
-  name: старая красная импортная машина
+  name: old red imported car
   suffix: ST, Mapping
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
     scale: 0.8, 0.8
     state: car_red_us
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.7,-1.4,0.6,1.3"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
 
 - type: entity
   id: CarGreenUS
   parent: OldCarGreen
-  name: старая зелёная импортная машина
+  name: old green imported car
   suffix: ST, Mapping
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
     scale: 0.8, 0.8
     state: car_green_us
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.7,-1.4,0.6,1.3"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
 
 - type: entity
   id: BrokenCarGreen
   parent: OldCarGreen
-  name: старая разбитая машина
+  name: old wrecked car
   suffix: ST, Mapping
   components:
   - type: Sprite
@@ -173,22 +195,33 @@
 - type: entity
   id: BrokenCarRed
   parent: OldCarGreen
-  name: старая разбитая машина
+  name: old wrecked car
   suffix: ST, Mapping
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
     scale: 0.8, 0.8
     state: linkoln_broken
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.7,-1.4,0.6,1.3"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
 
 # ЗИЛы
 
 - type: entity
   id: ZIL
   parent: BaseShippingContainer
-  name: ЗИЛ-130
+  name: ZIL-130
   suffix: ST, Mapping
-  description: Советский и российский среднетоннажный грузовой автомобиль третьего поколения разработки и производства автомобильного завода имени Лихачёва в Москве.
+  description: A Soviet and Russian medium-tonnage truck of the third generation developed and manufactured by the Likhachev Automobile Plant in Moscow.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/zil.rsi
@@ -200,7 +233,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.3,-1.4,0.8,1.5"
+          bounds: "-0.7,-1.9,1.0,1.9"
         density: 155
         mask:
         - MachineMask
@@ -234,9 +267,9 @@
 - type: entity
   id: boatStalker1
   parent: BaseShippingContainer
-  name: лодка
+  name: boat
   suffix: ST, Mapping
-  description: Небольшое беспалубное судно.
+  description: A small deckless vessel.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/boat1.rsi
@@ -258,9 +291,9 @@
 
 - type: entity
   id: boatStalker2
-  name: моторная лодка
+  name: motor boat
   parent: boatStalker1
-  description: Небольшое беспалубное судно, с мотором.
+  description: A small deckless vessel with a motor.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/boat2.rsi
@@ -285,9 +318,9 @@
 - type: entity
   id: Moskvich
   parent: BaseShippingContainer
-  name: Москвич-412
+  name: Moskvich-412
   suffix: ST, Mapping
-  description: Советский и российский заднеприводной автомобиль II группы малого класса, выпускавшийся с октября 1967 по 1976 год на заводе МЗМА.
+  description: A Soviet and Russian rear-wheel drive car of the II group of small class, produced from October 1967 to 1976 at the MZMA plant.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Transport/moskvich.rsi
@@ -300,7 +333,7 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.7,-1.2,0.8,1.0"
+          bounds: "-0.6,-1.0,0.6,0.8"
         density: 155
         mask:
         - MachineMask
@@ -325,8 +358,8 @@
 
 - type: entity
   id: kraz
-  name: КрАЗ-260
-  description: Трёхосный крупнотоннажный грузовой автомобиль повышенной проходимости, предназначенный для перевозки грузов. Тент перекрашент под военные нужды.
+  name: KrAZ-260
+  description: A three-axle large-tonnage off-road truck designed for cargo transportation. The awning was repainted for military needs.
   parent: ZIL
   components:
   - type: Sprite
@@ -335,8 +368,8 @@
 
 - type: entity
   id: kraz2
-  name: КрАЗ-260
-  description: Трёхосный крупнотоннажный грузовой автомобиль повышенной проходимости, предназначенный для перевозки грузов.
+  name: KrAZ-260
+  description: A three-axle large-tonnage off-road truck designed for cargo transportation.
   parent: kraz
   components:
   - type: Sprite
@@ -348,7 +381,7 @@
 - type: entity
   id: icarus
   name: ikarus-280
-  description: Венгерский городской сочленённый высокопольный среднеприводный автобус особо большой вместимости фирмы Ikarus.
+  description: Hungarian urban articulated high-floor medium-drive bus with extra large capacity from Ikarus.
   parent: kraz
   components:
   - type: Sprite
@@ -359,9 +392,49 @@
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.8,-2.7,0.4,2.9"
+          bounds: "-0.8,-2.7,0.7,2.9"
         density: 155
         mask:
         - MachineMask
         layer:
         - WallLayer
+
+# Танк
+
+- type: entity
+  id: STtank
+  parent: kraz
+  name: танк
+  suffix: ST, Mapping
+  description: An armored combat vehicle, on a tracked track, with cannon and additional machine-gun armament mounted in a rotating full-turn turret.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Transport/tank.rsi
+    scale: 0.9, 0.9
+    state: tank_one
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.2,-1.9,1.4,2.2"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1000
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]

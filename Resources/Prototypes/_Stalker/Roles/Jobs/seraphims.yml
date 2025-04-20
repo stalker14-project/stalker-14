@@ -26,6 +26,8 @@
         - type: Bands
           band: Stalker
           bandIcon: seraphim
+          bandProto: STSeraphimsBand
+          bandRankId: 2
         - type: Access
           tags:
             - Seraphims
@@ -35,6 +37,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Bandit
 - type: startingGear
   id: SeraphimGear
   equipment:
@@ -83,6 +88,8 @@
         - type: Bands
           band: Stalker
           bandIcon: seraphim_officer
+          bandProto: STSeraphimsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -92,6 +99,9 @@
         - type: AutoImplant
           implants:
           - STSeraBombImplant
+        - type: NpcFactionMember
+          factions:
+          - Bandit
 - type: startingGear
   id: SeraphimHeadGear
   equipment:
@@ -105,3 +115,13 @@
     gloves: STClothingHandsGlovesSera
     pocket1: STBoltBagFilled
     pocket2: GeigerCounter
+- type: stBand
+  id: STSeraphimsBand
+  name: Seraphims
+  factionId: Bandit
+  maxMembers: 17
+  managingRankId: 2
+  hierarchy:
+    1: Seraphim
+    2: SeraphimHead
+

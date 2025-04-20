@@ -25,12 +25,17 @@
       - type: Bands
         band: Stalker
         bandIcon: jaba
+        bandProto: STToadsBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - Bandit
 
 - type: startingGear
   id: JabaGear
@@ -43,3 +48,12 @@
     gloves: ClothingHandsGlovesJabs
     mask: ClothingMaskSkull
     pocket1: GoldDiceBag
+- type: stBand
+  id: STToadsBand
+  name: Toads
+  factionId: Bandit
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerJaba
+

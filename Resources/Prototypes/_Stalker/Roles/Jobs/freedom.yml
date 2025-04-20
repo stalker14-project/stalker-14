@@ -25,6 +25,8 @@
         - type: Bands
           band: Stalker
           bandIcon: freedom
+          bandProto: STFreedomBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -61,6 +63,8 @@
         - type: Bands
           band: Stalker
           bandIcon: freedom
+          bandProto: STFreedomBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
 
 - type: startingGear
@@ -71,3 +75,13 @@
     legs: ClothingLegsJeansFreedomCamouflage
     shoes: ClothingShoesBootsWork
     torso: ClothingTorsoTurtlenecksFreedomCamouflage
+- type: stBand
+  id: STFreedomBand
+  name: Freedom
+  factionId: Freedom
+  maxMembers: 20
+  managingRankId: 2
+  hierarchy:
+    1: StalkerFreedom
+    2: StalkerHeadFreedom
+

@@ -1,1 +1,0 @@
-ent-STBaseWeaponRifle = A rifle

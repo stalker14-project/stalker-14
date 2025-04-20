@@ -54,6 +54,31 @@
     - Hair
 
 - type: entity
+  parent: [ClothingHeadBase, BaseFoldable]
+  id: STClothingHeadHatFoma
+  name: старая ушанка
+  description: Серая советская ушанка – практичный зимний головной убор из плотного сукна с меховыми отворотами. Надежно защищает от мороза, универсален и лаконичен. Классика советской эпохи.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/foma.rsi
+  - type: Appearance
+  - type: AddAccentClothing
+    accent: RussianAccent
+  - type: Foldable
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedEquippedPrefix: up
+    foldedHeldPrefix: up
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/foma.rsi
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon-up
+      map: ["foldedLayer"]
+      visible: false
+
+- type: entity
   parent: ClothingHeadBase
   id: ClothingHeatBagStalker
   name: мешок на голову
@@ -162,9 +187,9 @@
   suffix: ST, Deliko
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/Hats/peak_cap.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/peak_cap.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/Hats/peak_cap.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/peak_cap.rsi
 
 - type: entity
   parent: STClothingHeadBase

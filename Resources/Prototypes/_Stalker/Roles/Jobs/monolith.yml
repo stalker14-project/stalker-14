@@ -30,6 +30,8 @@
       - type: Bands
         band: Stalker
         bandIcon: monolith
+        bandProto: STMonolithBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -46,3 +48,12 @@
     legs: ClothingLegsJeansMonolithCamouflage
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesFingerless
+- type: stBand
+  id: STMonolithBand
+  name: Monolith
+  factionId: Monolith
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerMonolith
+

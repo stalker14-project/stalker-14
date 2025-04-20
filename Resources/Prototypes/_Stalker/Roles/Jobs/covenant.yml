@@ -27,6 +27,8 @@
       - type: Bands
         band: Stalker
         bandIcon: zavet
+        bandProto: STCovenantBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -51,3 +53,12 @@
     torso: ClothingTorsoTurtlenecksCovenant
     legs: ClothingLegsJeansBrownCargo
     shoes: ClothingShoesBootsWork
+- type: stBand
+  id: STCovenantBand
+  name: Covenant
+  factionId: Covenant
+  maxMembers: 1
+  managingRankId: 2
+  hierarchy:
+    1: StalkerZavet
+

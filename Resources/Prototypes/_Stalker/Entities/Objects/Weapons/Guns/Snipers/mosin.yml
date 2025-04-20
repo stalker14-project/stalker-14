@@ -1,0 +1,36 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSniper
+  id: STBaseWeaponSniperMosin
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/Mosin.rsi
+  - type: STWeight
+    self: 4.5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/Mosin.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/Mosin.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/mosin.ogg
+    minAngle: 50
+    maxAngle: 80
+    angleIncrease: 5
+    angleDecay: 25
+    fireRate: 0.3
+  - type: BallisticAmmoProvider
+    capacity: 5
+    proto: STCartridge754FMJ
+    whitelist:
+      tags:
+      - STCartridge754
+
+- type: entity
+  parent: STBaseWeaponSniperMosin
+  id: STWeaponSniperMosin
+  name: Mosin-Nagant Rifle
+  description: The legendary Mosin-Nagant bolt-action rifle chambered in 7.62x54mmR. While slow to reload and limited by its 5-round capacity, its stopping power makes it a formidable choice when modern weapons aren't available in the Zone.
