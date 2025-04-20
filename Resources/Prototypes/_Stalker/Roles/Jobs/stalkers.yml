@@ -1,8 +1,8 @@
 - type: job
   id: Stalker
-  name: Одиночка
+  name: job-stalker
   icon: stalker
-  description: Это кочевая полуобъединенная группировка, которая просто живёт за счет Зоны, чтобы заработать немного монет на свою повседневную жизнь.
+  description: job-stalker-desc
   playTimeTracker: JobStalker
   whitelisted: false
   requirements:
@@ -32,7 +32,7 @@
     #   time: 1
     #   inverted: true
   startingGear: StalkerGear
-  supervisors: Вы работаете сами на себя
+  supervisors: job-stalker-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -43,6 +43,8 @@
       - type: Bands
         band: Stalker
         bandIcon: stalker
+        bandProto: STStalkerBand
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -58,3 +60,15 @@
     torso: ClothingTorsoSweaterStalkerGreen
     legs: ClothingLegsJeansStalker
     shoes: ClothingShoesBootsCombat
+    back: STWeaponShotgunMP155T
+    pocket1: Cartridge7mmBuckshot
+    pocket2: Cartridge7mmBuckshot
+
+- type: stBand
+  id: STStalkerBand
+  name: Stalker
+  factionId: Stalker
+  maxMembers: 10000
+  managingRankId: 999
+  hierarchy:
+    1: Stalker

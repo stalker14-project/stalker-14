@@ -545,16 +545,6 @@
     access: [["Neutral"]]
 
 - type: entity
-  id: MetalAltDoorFalloutPoliceOfficerClosed
-  name: стальная дверь полиции
-  parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
-  suffix: ST, mapping, Полиция
-  components:
-    - type: AccessReader
-      access: [["PoliceOfficer"]]
-
-- type: entity
   id: MetalWindowDoorFalloutPoiskClosed
   name: стальная дверь
   parent: MetalWindowDoorFallout
@@ -593,46 +583,6 @@
   components:
   - type: AccessReader
     access: [["Poisk"]]
-
-- type: entity
-  id: MetalWindowDoorFalloutProjectClosed
-  name: стальная дверь
-  parent: MetalWindowDoorFallout
-  description: Крепкая стальная дверь, с окном и надёжным замком.
-  suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
-
-- type: entity
-  id: STMetalBarDoorFalloutProjectClosed
-  name: решетчатая дверь
-  parent: MetalBarDoorFallout
-  description: Решётчатая дверь с надёжным замком.
-  suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
-
-- type: entity
-  id: STHermoDverTypeTwoProjectClosed
-  name: гермодверь
-  parent: HermoDverTypeTwo
-  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
-  suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
-
-- type: entity
-  id: STMetalAltDoorFalloutProjectClosed
-  name: стальная дверь
-  parent: MetalAltDoorFallout
-  description: Крепкая стальная дверь с надёжным замком.
-  suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
 
 # Жабам
 - type: entity
@@ -790,4 +740,15 @@
   components:
   - type: AccessReader
     access: [["Pilgrim"]]
+
+#Ополчению
+- type: entity
+  id: MetalDoorFalloutOpolchenciClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Militia
+  components:
+  - type: AccessReader
+    access: [["MilitiaAccess"]]
 

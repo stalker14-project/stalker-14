@@ -15,7 +15,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 35
   - type: Item
     size: Small
@@ -41,6 +41,30 @@
     categoryName: Магазины
 
 - type: entity
+  id: MP5Mag50
+  name: магазин магазин МП-5 (50)
+  description: Магазин на MP-5 9x19. Вместимость пуль 50. Продают пустым.
+  parent: BaseMP5Mag
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 0.5
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+      - STCartridge919
+    capacity: 50
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/glock/33.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
   id: BaseGlockMag10
   name: магазин Glock 9x19 (10)
   description: Магазин на Glock 9x19. Вместимость пуль 10. Продают пустым.
@@ -57,7 +81,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 10
     - type: Item
       size: Small
@@ -94,7 +118,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 17
     - type: Item
       size: Small
@@ -123,7 +147,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 24
     - type: Item
       size: Small
@@ -151,7 +175,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 33
     - type: Sprite
       scale: 0.8, 0.8
@@ -179,7 +203,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 10
     - type: Item
       size: Small
@@ -216,7 +240,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 18
     - type: Item
       size: Small
@@ -253,7 +277,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 30
   - type: Item
     size: Small
@@ -293,7 +317,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 64
   - type: Item
     size: Normal
@@ -368,7 +392,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 40
   - type: Item
     size: Small
@@ -409,7 +433,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 60
 
 - type: entity
@@ -438,7 +462,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 60
 
 - type: entity
@@ -467,7 +491,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 100
 
 - type: entity
@@ -487,7 +511,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 30
   - type: Item
     size: Small
@@ -527,7 +551,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 30
   - type: Item
     size: Small
@@ -567,7 +591,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 50
   - type: Item
     size: Small

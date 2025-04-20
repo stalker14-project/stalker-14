@@ -1,4 +1,3 @@
-
 - type: entity
   parent: STClothingOuterBaseLarge
   id: ClothingOuterArmorUzk5
@@ -19,9 +18,9 @@
     armorClass: 3
     modifiers:
       flatReductions:
-        Blunt: 8
-        Slash: 8
-        Piercing: 8
+        Blunt: 2
+        Slash: 2
+        Piercing: 4
         Caustic: 1
         Radiation: 3.5
         Heat: 1
@@ -66,12 +65,7 @@
       unequipSound: null
     - type: Armor
       armorClass: 2
-      modifiers:
-        flatReductions:
-          Piercing: 7
-          Blunt: 1
-          Slash: 1
-        coefficients:
+      coefficients:
           Piercing: 0.75
     - type: Reflect
       reflectProb: 0.07

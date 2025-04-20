@@ -3,15 +3,15 @@
 - type: entity
   id: BaseCartridge939
   name: cartridge (9х39 rifle)
-  parent: BaseCartridgeCaselessRifle
+  parent: BaseCartridge
   abstract: true
   components:
   - type: Tag
     tags:
     - Cartridge
-    - Cartridge939
+    - STCartridge939
   - type: CartridgeAmmo
-    proto: BulletLightRifle
+    deleteOnSpawn: true
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -19,6 +19,7 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+    state: "base"
 
 - type: entity
   id: Cartridge939SP5

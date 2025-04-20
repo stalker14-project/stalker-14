@@ -1,9 +1,9 @@
 # 7.62x25
 
 - type: entity
-  id: BaseCartridge725
+  id: BaseSTCartridge725
   name: cartridge (7,62x25 rifle)
-  parent: BaseCartridgeCaselessRifle
+  parent: BaseCartridge
   abstract: true
   components:
   - type: STWeight
@@ -11,9 +11,9 @@
   - type: Tag
     tags:
     - Cartridge
-    - Cartridge725
+    - STCartridge725
   - type: CartridgeAmmo
-    proto: BulletLightRifle
+    deleteOnSpawn: true
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
@@ -21,35 +21,36 @@
       map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+    state: "base"
 
 - type: entity
-  id: Cartridge725PGL
+  id: STCartridge725PGL
   name: Патрон (7,62x25)П гл
-  parent: BaseCartridge725
+  parent: BaseSTCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725PGL
 
 - type: entity
-  id: Cartridge725PTGJ
+  id: STCartridge725PTGJ
   name: Патрон (7,62x25)ПТ гж
-  parent: BaseCartridge725
+  parent: BaseSTCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725PTGJ
 
 - type: entity
-  id: Cartridge725LRNPC
+  id: STCartridge725LRNPC
   name: Патрон (7,62x25)LRNPC
-  parent: BaseCartridge725
+  parent: BaseSTCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725LRNPC
 
 - type: entity
-  id: Cartridge725PSTGJ
+  id: STCartridge725PSTGJ
   name: Патрон (7,62x25)Пст гж
-  parent: BaseCartridge725
+  parent: BaseSTCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725PSTGJ

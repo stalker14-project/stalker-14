@@ -22,6 +22,8 @@
     - type: Bands
       band: Stalker
       bandIcon: army
+      bandProto: STMilitaryBand
+      bandRankId: 1
     - type: Access
       groups:
         - Military
@@ -37,6 +39,8 @@
     - type: Bands
       band: Stalker
       bandIcon: army
+      bandProto: STMilitaryBand
+      bandRankId: 3
     - type: Access
       groups:
         - Military
@@ -44,6 +48,42 @@
         - MilitaryOfficer
     - type: Loadout
       prototypes: [ MilitaryGearHead ]
+
+- type: entity
+  name: кукла Ополчение (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitia
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: militia
+      bandProto: STMilitiaBand
+      bandRankId: 1
+    - type: Access
+      tags:
+        - MilitiaAccess
+        - Stalker
+    - type: Loadout
+      prototypes: [ MilitiaGear ]
+
+- type: entity
+  name: кукла Командир Ополчение (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitiaCommander
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: militia
+      bandProto: STMilitiaBand
+      bandRankId: 2
+    - type: Access
+      tags:
+        - MilitiaAccess
+        - Stalker
+    - type: Loadout
+      prototypes: [ MilitiaCommanderGear ]
 
 - type: entity
   name: кукла ренегат (переименуй меня)
@@ -117,6 +157,31 @@
     - type: Bands
       band: Stalker
       bandIcon: band
+      bandProto: STBanditsBand
+      bandRankId: 1
+    - type: NpcFactionMember
+      factions:
+      - Bandit
+    - type: Loadout
+      prototypes: [ BandGear ]
+
+- type: entity
+  name: кукла жаба (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerToad
+  components:
+    - type: Access
+      tags:
+        - Jaba
+    - type: Bands
+      band: Stalker
+      bandIcon: jaba
+      bandProto: STToadsBand
+      bandRankId: 1
+    - type: NpcFactionMember
+      factions:
+      - Bandit
     - type: Loadout
       prototypes: [ BandGear ]
 
@@ -242,6 +307,8 @@
         - Stalker
     - type: Bands
       band: Stalker
+      bandProto: STStalkerBand
+      bandRankId: 1
       bandIcon: stalker
     - type: Loadout
       prototypes: [ StalkerGear ]
@@ -262,9 +329,43 @@
         - Stalker
     - type: Bands
       band: Stalker
+      bandProto: STStalkerBand
+      bandRankId: 1
       bandIcon: stalker
     - type: Loadout
       prototypes: [ StalkerGearT4 ]
+
+- type: entity
+  name: кукла Сталкера (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerStalker
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: stalker
+    - type: Access
+      tags:
+        - Stalker
+    - type: Loadout
+      prototypes: [ StalkerGear ]
+
+- type: entity
+  name: кукла СБУ (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSBU
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: sbu
+    - type: Access
+      groups:
+        - Military
+        - MilitaryHead
+        - MilitaryOfficer
+    - type: Loadout
+      prototypes: [ SBUGear ]
 
 - type: startingGear
   id: StalkerGearT4
@@ -277,7 +378,17 @@
     cloak: ClothingOuterCoatLoyalist
     outerClothing: ClothingOuterArmorStalkerCombat
     back: ClothingBackpackMercStalker
-    pocket1: WeaponShotgunAnomalySawedOff
+    pocket1: STWeaponShotgunSawedOfAnomaly
     pocket2: 8mmBuckshotBox
     head: ClothingHeadRatnik
     mask: ClothingMaskM51
+
+- type: startingGear
+  id: SBUGear
+  equipment:
+    id: MilitaryPDA
+    belt: ClothingBeltStorageWaistbag
+    legs: ClothingLegsJeansGreenCargo
+    torso: ClothingTorsoTurtlenecksMilitary
+    shoes: ClothingShoesBootsCombatFilled
+    pocket1: PassportSBU

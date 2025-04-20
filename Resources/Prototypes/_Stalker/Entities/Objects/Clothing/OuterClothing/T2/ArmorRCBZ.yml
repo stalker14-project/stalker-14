@@ -1,4 +1,3 @@
-
 - type: entity
   parent: STClothingOuterBaseLarge
   id: STClothingOuterArmorRCBZ
@@ -30,7 +29,7 @@
         Piercing: 0.8
         Heat: 0.5
         Radiation: 0.6
-        Caustic: 0.4
+        Caustic: 0.6
         Shock: 0.6
         Psy: 0.8
         Compression: 0.8
@@ -203,31 +202,3 @@
     sprite: _Stalker/Objects/Clothing/mask/gasmask_rhbz_cn.rsi
 
 # Old groups
-
-# Project
-
-- type: entity
-  parent: STClothingOuterArmorRCBZ
-  id: ClothingOuterArmorRCBZProjectPJ5
-  name: костюм «РХБЗ PJ-5»
-  description: Универсальная разработка «Проекта» прототипа костюма РХБЗ версии «PJ-5» которое представляет собой защитное снаряжение, специально разработанное для обеспечения максимальной защиты в условиях химических, биологических и радиационных атмосфер.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Groups/Project/rcbz_pj5.rsi
-  - type: Clothing
-    sprite: _Stalker/Groups/Project/rcbz_pj5.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHelmRCBZProjectPJ5
-
-- type: entity
-  parent: ClothingHelmRCBZ
-  id: ClothingHelmRCBZProjectPJ5
-  categories: [ HideSpawnMenu ]
-  name: маска РХБЗ «PJ-5»
-  description: Эффективное средство индивидуальной защиты от химических, биологических и радиационных угроз версии «PJ-5», разработанное «Проектом», является первым прототипом шлема, который обеспечивает надежную фильтрацию воздуха, задерживая вредные вещества и частицы, и защищает дыхательные пути и кожу от воздействия опасных факторов.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
-  - type: Clothing
-    sprite: _Stalker/Groups/Project/rcbz_helm_pj5.rsi
-

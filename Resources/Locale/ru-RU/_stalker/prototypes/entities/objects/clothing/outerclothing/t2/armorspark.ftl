@@ -1,0 +1,10 @@
+ent-ClothingOuterArmorSpark = костюм «Искра»
+    .desc = Самопальный костюм, производимый умельцами «НИИ» из подручных предметов. Пассивно выводит радиацию по 0.1 в секунду
+    .suffix = ST, T2, Env
+ent-ClothingHeadHelmetSpark = капюшон «Искры»
+    .desc = Плотный кусок резины на вашей голове.
+ent-ClothingOuterArmorMilitarySpark = костюм «ITF» 'Военных'
+    .desc = Комбинезон ISSG, более неизвестно. Пассивно выводит радиацию по 0.25 в секунду
+    .suffix = ST, T2, Env
+ent-ClothingHeadHelmetMilitarySpark = капюшон «ITF» 'Военных'
+    .desc = Плотный кусок резины на вашей голове.

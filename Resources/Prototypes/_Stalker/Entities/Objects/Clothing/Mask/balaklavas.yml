@@ -1,0 +1,76 @@
+- type: entity
+  parent: [ClothingMaskBaseButcherable, BaseFoldable]
+  id: ClothingMaskBalaklavaBase
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedSlots:
+    - HEAD
+    unfoldedSlots:
+    - MASK
+    foldedHideLayers: []
+    unfoldedHideLayers:
+    - Snout
+    - Hair
+    - FacialHair
+  - type: IdentityBlocker
+    enabled: false
+    coverage: MOUTH
+  - type: Sprite
+    layers:
+    - state: icon_head
+      map: ["foldedLayer"]
+      visible: true
+    - state: icon
+      map: [ "unfoldedLayer" ]
+      visible: false
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - Hair
+    - FacialHair
+    hideOnToggle: true
+
+
+# Трёхдырчатая балаклава 
+
+- type: entity
+  parent: ClothingMaskBalaklavaBase
+  id: ClothingMaskNeckBalaklava1
+  name: трёхдырчатая балаклава 
+  description: Представляет собой вязанную балаклаву с тремя отверстиями для глаз и рта.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/balaklava1.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/balaklava1.rsi
+
+# Лыжная  маска со ртом
+
+- type: entity
+  parent: ClothingMaskBalaklavaBase
+  id: ClothingMaskNeckBalaklava2
+  name: лыжная маска со ртом
+  description: Представляет собой лыжную маску с прорезями для глаз и рта.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/balaklava2.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/balaklava2.rsi
+
+# Лыжная маска
+
+- type: entity
+  parent: ClothingMaskBalaklavaBase
+  id: ClothingMaskNeckBalaklava3
+  name: лыжная маска
+  description: Представляет собой лыжную маску с прорезью для глаз.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
+  - type: IngestionBlocker

@@ -1,77 +1,155 @@
-using Content.Shared.Actions;
+using System;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
-using Robust.Shared.Network;
+using Robust.Shared.GameObjects;
+using Robust.Shared.IoC;
 using Robust.Shared.Prototypes;
+using Content.Shared.Actions;
+using Robust.Shared.Serialization;
+using Robust.Shared.Network;
+using Content.Shared._Stalker.Bands;
 
-namespace Content.Shared._Stalker.Bands;
-/// <summary>
-/// Handles assigning and removing <see cref="BandsComponent"/> to remove/assign action on entity
-/// </summary>
-public sealed class SharedBandsSystem : EntitySystem
+namespace Content.Shared._Stalker.Bands
 {
-    [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-    public override void Initialize()
+    // UI key for bands managing UI
+    [Serializable, NetSerializable]
+    public enum BandsUiKey
     {
-        base.Initialize();
+        Key = 0
+    }
+    [Virtual]
+    public class SharedBandsSystem : EntitySystem
+    {
+        [Dependency] private readonly SharedActionsSystem _actions = default!;
+        [Dependency] private readonly MobStateSystem _mobState = default!;
+        [Dependency] private readonly IPrototypeManager _protoManager = default!;
 
-        SubscribeLocalEvent<BandsComponent, ComponentInit>(OnInit);
-        SubscribeLocalEvent<BandsComponent, ComponentRemove>(OnRemove);
-        SubscribeLocalEvent<BandsComponent, ToggleBandsEvent>(OnToggle);
-        SubscribeLocalEvent<BandsComponent, ChangeBandEvent>(OnChange);
+        public override void Initialize()
+        {
+            base.Initialize();
+        }
     }
 
-    private void OnInit(EntityUid uid, BandsComponent component, ComponentInit args)
+    [Serializable, NetSerializable]
+    public sealed class BandsManagingBoundUserInterfaceState : BoundUserInterfaceState
     {
-        EnsureComp<StatusIconComponent>(uid);
+        public string? BandName { get; }
+        public int MaxMembers { get; }
+        public List<BandMemberInfo> Members { get; }
+        public bool CanManage { get; }
+        public List<WarZoneInfo> WarZones { get; }
+        public List<BandPointsInfo> BandPoints { get; }
+        public List<BandShopItem> ShopItems { get; } // Added shop items
 
-        var proto = _proto.Index<JobIconPrototype>(component.BandStatusIcon);
-        //if (proto.HideOnStealth)
-        //    return;
-        if (component is { AltBand: not null, CanChange: true })
-            _actions.AddAction(uid, ref component.ActionChangeEntity, component.ActionChange, uid);
-
-        _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
+        public BandsManagingBoundUserInterfaceState(
+            string? bandName,
+            int maxMembers,
+            List<BandMemberInfo> members,
+            bool canManage,
+            List<WarZoneInfo>? warZones,
+            List<BandPointsInfo>? bandPoints,
+            List<BandShopItem>? shopItems) // Added shop items
+        {
+            BandName = bandName;
+            MaxMembers = maxMembers;
+            Members = members; // Assuming members is never null based on existing code
+            CanManage = canManage;
+            WarZones = warZones ?? new List<WarZoneInfo>();
+            BandPoints = bandPoints ?? new List<BandPointsInfo>();
+            ShopItems = shopItems ?? new List<BandShopItem>(); // Added shop items
+        }
     }
 
-    private void OnChange(Entity<BandsComponent> entity, ref ChangeBandEvent args)
-    {
-        var comp = entity.Comp;
-        if (comp.AltBand == null || !comp.CanChange)
-            return;
+    // --- New Data Structures for War Zone Tab ---
 
-        (comp.BandStatusIcon, comp.AltBand) = (comp.AltBand, comp.BandStatusIcon);
-        Dirty(entity);
-        args.Handled = true;
+    [Serializable, NetSerializable]
+    public sealed class WarZoneInfo
+    {
+        public string ZoneId { get; }
+        public string Owner { get; }
+        public float Cooldown { get; } // In seconds
+        public string Attacker { get; }
+        public string Defender { get; }
+        public float Progress { get; } // 0.0 to 1.0. TODO: Not implemented yet
+
+        public WarZoneInfo(string zoneId, string owner, float cooldown, string attacker, string defender, float progress)
+        {
+            ZoneId = zoneId;
+            Owner = owner;
+            Cooldown = cooldown;
+            Attacker = attacker;
+            Defender = defender;
+            Progress = progress;
+        }
     }
 
-    private void OnRemove(EntityUid uid, BandsComponent component, ComponentRemove args)
+    [Serializable, NetSerializable]
+    public sealed class BandPointsInfo
     {
-        RemComp<StatusIconComponent>(uid);
+        public string BandProtoId { get; }
+        public string BandName { get; }
+        public float Points { get; }
 
-        var proto = _proto.Index<JobIconPrototype>(component.BandStatusIcon);
-        //if (proto.HideOnStealth)
-        //    return;
-
-        _actions.RemoveAction(uid, component.ActionEntity);
-        if (component.ActionChangeEntity != null)
-            _actions.RemoveAction(uid, component.ActionChangeEntity);
+        public BandPointsInfo(string bandProtoId, string bandName, float points)
+        {
+            BandProtoId = bandProtoId;
+            BandName = bandName;
+            Points = points;
+        }
     }
-    private void OnToggle(EntityUid uid, BandsComponent component, ToggleBandsEvent args)
+
+    // --- Existing Data Structures ---
+
+    [Serializable, NetSerializable]
+    public sealed class BandMemberInfo
     {
-        if (!_mobState.IsAlive(uid))
-            return;
+        public NetUserId UserId { get; }
+        public string PlayerName { get; } // Keep this for now (ckey)
+        public string CharacterName { get; } // Add this field
+        public string RoleId { get; }
 
-        var proto = _proto.Index<JobIconPrototype>(component.BandStatusIcon);
-        //if (proto.HideOnStealth)
-        //    return;
+        public BandMemberInfo(NetUserId userId, string playerName, string characterName, string roleId)
+        {
+            UserId = userId;
+            PlayerName = playerName;
+            CharacterName = characterName;
+            RoleId = roleId;
+        }
+    }
 
-        component.Enabled = !component.Enabled;
-        Dirty(uid, component);
+    [Serializable, NetSerializable]
+    public sealed class BandsManagingAddMemberMessage : BoundUserInterfaceMessage
+    {
+        public string PlayerName { get; }
 
-        args.Handled = true;
+        public BandsManagingAddMemberMessage(string playerName)
+        {
+            PlayerName = playerName;
+        }
+    }
+
+    [Serializable, NetSerializable]
+    public sealed class BandsManagingRemoveMemberMessage : BoundUserInterfaceMessage
+    {
+        public Guid PlayerUserId { get; }
+
+        public BandsManagingRemoveMemberMessage(Guid playerUserId)
+        {
+            PlayerUserId = playerUserId;
+        }
+    }
+
+    // --- New Message for Buying Items ---
+    [Serializable, NetSerializable]
+    public sealed class BandsManagingBuyItemMessage : BoundUserInterfaceMessage
+    {
+        public string ItemId { get; } // The ProductEntity ID of the item to buy
+
+        public BandsManagingBuyItemMessage(string itemId)
+        {
+            ItemId = itemId;
+        }
     }
 }
+

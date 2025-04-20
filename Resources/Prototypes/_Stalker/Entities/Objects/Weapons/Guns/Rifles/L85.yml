@@ -1,68 +1,68 @@
 - type: entity
-  name: L85
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponRifle
-  id: STWeaponRifleStalkerL85
-  description: Британская основная штурмовая винтовка под 5.56, отличается крайне низким разбросом.
+  id: STBaseWeaponRifleL85
   components:
-    - type: STWeight
-      self: 4.2
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
-    - type: Gun
-      fireRate: 6
-      soundGunshot:
-        path: /Audio/_Stalker/Effects/Guns/l85.ogg
-        params:
-          volume: -2
-      minAngle: 55
-      maxAngle: 75
-      angleIncrease: 3.5
-      angleDecay: 17.5
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem: Base556Mag10
-          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
-          priority: 4
-          whitelist:
-            tags:
-              - Magazine556
-        gun_module_muzzle:
-          name: Muzzle
-          priority: 3
-          whitelist:
-            tags:
-              - STWeaponModuleRifleSilencerNato
-        gun_module_scope:
-          name: Scope
-          priority: 2
-          whitelist:
-            tags:
-              - STWeaponModuleRifleScopeNato
-        gun_chamber:
-          name: Chamber
-          startingItem:
-          priority: 1
-          whitelist:
-            tags:
-              - Cartridge556
-
-
-# Скинчики
+  - type: STWeight
+    self: 4.2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/l85.rsi
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/l85.ogg
+      params:
+        volume: -2
+    minAngle: 55
+    maxAngle: 75
+    angleIncrease: 3.5
+    angleDecay: 17.5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base556Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine556
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge556
 
 - type: entity
-  name: L85 Strawberry
-  suffix: ST, Скин
-  parent: STWeaponRifleStalkerL85
-  id: STWeaponGunAKS74UWhiteStrawberry
-  description: Британская L85 в малиновой раскраске.
+  parent: STBaseWeaponRifleL85
+  id: STWeaponRifleL85
+  name: L85
+  description: British bullpup assault rifle with unique layout. Extremely rare in the Zone, usually brought by UN military observers. Notable for exceptional accuracy but finicky maintenance.
+
+- type: entity
+  parent: STBaseWeaponRifleL85
+  id: STWeaponRifleL85WhiteStrawberry
+  name: L85 (Raspberry Tea)
+  description: Exotic version in raspberry camouflage. Allegedly custom-ordered for urban operations. In the Zone considered either a sign of bad taste or subtle irony.
   components:
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/l85_straberry.rsi

@@ -51,12 +51,18 @@
   - type: Stack
     stackType: STBrutepack
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: brutepack
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: brutepack
 
 - type: stack
   id: STBrutepack
   name: набор от ушибов
   icon:
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
   spawn: STBrutepack
   maxCount: 10
@@ -97,12 +103,18 @@
   - type: Stack
     stackType: STOintment
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: ointment
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: ointment
 
 - type: stack
   id: STOintment
   name: мазь
   icon:
-    sprite: Objects/Specific/Medical/medical.rsi
+    sprite: _Stalker/Objects/medicine.rsi
     state: ointment
   spawn: STOintment
   maxCount: 10
@@ -155,6 +167,12 @@
   - type: Stack
     stackType: STGauze
     count: 10
+  - type: Item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
 
 - type: stack
   id: STGauze
@@ -201,7 +219,15 @@
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
+    sprite: _Stalker/Objects/Medicine/medkit/ai1.rsi
     state: medkit-1
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai1.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damage:
       groups:
@@ -220,7 +246,7 @@
   id: MedkitAI2
   name: Аптечка АИ-2
   icon:
-    sprite: _Stalker/Objects/medicine.rsi
+    sprite: "_Stalker/Objects/Medicine/medkit/ai1.rsi"
     state: medkit-1
   spawn: MedkitAI2
   maxCount: 4
@@ -263,7 +289,15 @@
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
+    sprite: _Stalker/Objects/Medicine/medkit/ai2.rsi
     state: medkit-2
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai2.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damage:
       groups:
@@ -282,8 +316,8 @@
   id: MedkitMilitary
   name: Армейская Аптечка
   icon:
-    sprite: _Stalker/Objects/medicine.rsi
-    state: medkit-1
+    sprite: "_Stalker/Objects/Medicine/medkit/ai2.rsi"
+    state: medkit-2
   spawn: MedkitMilitary
   maxCount: 4
 
@@ -299,7 +333,15 @@
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
+    sprite: _Stalker/Objects/Medicine/medkit/ai3.rsi
     state: medkit-3
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai3.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damage:
       groups:
@@ -320,8 +362,8 @@
   id: MedkitScience
   name: Научная Аптечка
   icon:
-    sprite: "_Stalker/Objects/medicine.rsi"
-    state: medkit-1
+    sprite: "_Stalker/Objects/Medicine/medkit/ai3.rsi"
+    state: medkit-3
   spawn: MedkitScience
   maxCount: 4
 
@@ -340,8 +382,15 @@
     tags:
     - Brutepack
   - type: Sprite
-    sprite: _Stalker/Objects/medicine.rsi
+    sprite: _Stalker/Objects/Medicine/medkit/ai4.rsi
     state: medkit-4
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai4.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damageContainers:
       - Biological
@@ -368,7 +417,7 @@
   id: MedkitElite
   name: Элитная Аптечка
   icon:
-    sprite: "_Stalker/Objects/medicine.rsi"
+    sprite: "_Stalker/Objects/Medicine/medkit/ai4.rsi"
     state: medkit-4
   spawn: MedkitElite
   maxCount: 4
@@ -388,8 +437,15 @@
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
-    sprite: _Stalker/Objects/medicine.rsi
+    sprite: _Stalker/Objects/Medicine/medkit/ai5.rsi
     state: medkit-5
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/medkit/ai5.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Healing
     damageContainers:
       - Biological
@@ -413,7 +469,7 @@
   id: MedkitLAR
   name: Аптечка «LAR»
   icon:
-    sprite: "_Stalker/Objects/medicine.rsi"
+    sprite: "_Stalker/Objects/Medicine/medkit/ai5.rsi"
     state: medkit-5
   spawn: MedkitLAR
   maxCount: 4

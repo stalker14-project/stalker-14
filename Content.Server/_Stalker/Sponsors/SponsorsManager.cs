@@ -1,7 +1,11 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Content.Server._Stalker.Discord.DiscordAuth;
 using Content.Shared._Stalker.CCCCVars;
@@ -21,19 +25,17 @@ public sealed class SponsorsManager
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
     [Dependency] private readonly INetManager _netMgr = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
+    private readonly HttpClient _httpClient = new();
+    private readonly Dictionary<NetUserId, SponsorData> _cachedSponsors = new();
 
+    public event Action<NetUserId>? SponsorPlayerCached;
 
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
-    private bool _enabled = false;
+    private bool _enabled;
     private int _priorityTier = 3;
-    private string _guildId = default!;
-
-    private HttpClient _httpClient = new();
-    private ISawmill _sawmill = default!;
-
-
-    private Dictionary<NetUserId, SponsorData> _cachedSponsors = new();
+    private string _guildId = null!;
+    private ISawmill _sawmill = null!;
 
     public void Initialize()
     {
@@ -46,6 +48,9 @@ public sealed class SponsorsManager
 
         _discordAuthManager.PlayerVerified += OnPlayerVerified;
         _netMgr.Disconnect += OnDisconnect;
+
+        _httpClient.DefaultRequestHeaders.Authorization =
+            new AuthenticationHeaderValue("Bearer", _apiKey);
     }
 
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
@@ -63,78 +68,53 @@ public sealed class SponsorsManager
         return _cachedSponsors;
     }
 
-    private async void OnPlayerVerified(object? sender, ICommonSession e)
-    {
-        if (!_enabled)
-            return;
-
-        var roles = await GetRoles(e.UserId);
-        if (roles == null)
-            return;
-
-        var isGiven = await IsGiven(e.UserId);
-
-        var level = SponsorData.ParseRoles(roles);
-        var contrib = SponsorData.ParseContrib(roles);
-        if (level == SponsorLevel.None && !contrib)
-            return;
-
-        var data = new SponsorData(level, e.UserId, isGiven);
-        data.Contributor = contrib;
-        _cachedSponsors.Add(e.UserId, data);
-
-        _sawmill.Info($"{e.UserId} is sponsor now.\nUserId: {e.UserId}. Level: {Enum.GetName(data.Level)}:{(int)data.Level}");
-    }
-
-    private async Task<List<string>?> GetRoles(NetUserId userId)
-    {
-        var requestUrl = $"{_apiUrl}/roles?userid={userId}&guildid={_guildId}&api_token={_apiKey}";
-        var response = await _httpClient.GetAsync(requestUrl);
-
-        if (!response.IsSuccessStatusCode)
-        {
-            _sawmill.Error($"Failed to retrieve roles for user {userId}: {response.StatusCode}");
-            return null;
-        }
-
-        var responseContent = await response.Content.ReadAsStringAsync();
-
-        var rolesJson = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(responseContent);
-
-        if (rolesJson != null && rolesJson.TryGetValue("roles", out var roles))
-        {
-            return roles;
-        }
-
-        _sawmill.Error($"Roles not found in response for user {userId}");
-        return null;
-    }
-
     private async Task<bool> IsGiven(NetUserId userId)
     {
-        var requestUrl = $"{_apiUrl}/is_given?id={userId}&method=ss14&api_token={_apiKey}";
+        var requestUrl = $"{_apiUrl}/extra?method=uid&id={userId}";
         var response = await _httpClient.GetAsync(requestUrl);
+        if (!response.IsSuccessStatusCode)
+        {
+            _sawmill.Error($"Failed to retrieve user with id {userId}");
+            return false;
+        }
 
-        return (int)response.StatusCode == 200;
+        var responseContent = await response.Content.ReadFromJsonAsync<ExtraPatchBody>();
+
+        if (responseContent is not null)
+            return responseContent.LoadoutGiven == 1;
+
+        _sawmill.Error($"Failed to parse response content {userId}");
+        return false;
+
     }
 
     public async Task SetGiven(NetUserId userId, bool given)
     {
-        var requestUrl = $"{_apiUrl}/given?id={userId}&given={(given ? 1 : 0)}&method=ss14&api_token={_apiKey}";
-        var response = await _httpClient.PostAsync(requestUrl, null);
-        if (!response.IsSuccessStatusCode)
-            _sawmill.Error($"Error setting given value for {userId}");
+        var requestUrl = $"{_apiUrl}/extra?method=uid&id={userId}";
+        var body = new ExtraPatchBody { LoadoutGiven = given ? 1 : 0 };
+        var content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, "application/json");
+        var response = await _httpClient.PatchAsync(requestUrl, content);
 
-        if (TryGetInfo(userId, out var data))
+        if (!response.IsSuccessStatusCode)
         {
-            data.IsGiven = given;
+            _sawmill.Error($"Failed to set given user {userId}: {response.StatusCode}");
+            return;
         }
+
+        if (TryGetInfo(userId, out var info))
+            info.IsGiven = given;
     }
 
     public async Task MakeWipe()
     {
-        var requestUrl = $"{_apiUrl}/wipe_given?api_token={_apiKey}";
-        var response = await _httpClient.PostAsync(requestUrl, null);
+        var requestUrl = $"{_apiUrl}/each/extra";
+        var request = new HttpRequestMessage(HttpMethod.Delete, requestUrl)
+        {
+            Content = new StringContent("{\"fields\": [\"loadout_given\"]}", Encoding.UTF8, "application/json"),
+        };
+
+        var response = await _httpClient.SendAsync(request);
+        _sawmill.Debug($"Status Code: {response.StatusCode}");
         if (!response.IsSuccessStatusCode)
             _sawmill.Error("Error wiping given records.");
 
@@ -202,55 +182,61 @@ public sealed class SponsorsManager
         sponsorCategories = found.Count == 0 ? null : found;
         contribCategories = !info.Contributor ? null : contribList;
     }
-}
 
-public sealed class SponsorData
-{
-    public static readonly Dictionary<string, SponsorLevel> RolesMap = new()
+    private async void OnPlayerVerified(object? sender, ICommonSession e)
     {
-        { "1172510785415684136", SponsorLevel.Bread },
-        { "1158896573569318933", SponsorLevel.Backer },
-        { "1233831223118266398", SponsorLevel.OMind },
-        { "1233831339682172979", SponsorLevel.Pseudogiant }
-    };
+        if (!_enabled)
+            return;
 
-    public const string ContribRole = "1173624167053140108";
+        var roles = await GetRoles(e.UserId);
+        if (roles is null)
+            return;
 
-    public static SponsorLevel ParseRoles(List<string> roles)
+        var isGiven = await IsGiven(e.UserId);
+
+        var level = SponsorData.ParseRoles(roles);
+        var contrib = SponsorData.ParseContrib(roles);
+        if (level is SponsorLevel.None && !contrib)
+            return;
+
+        var data = new SponsorData(level, e.UserId, isGiven, contrib);
+        _cachedSponsors.Add(e.UserId, data);
+        SponsorPlayerCached?.Invoke(e.UserId);
+
+        _sawmill.Debug($"{e.UserId} is sponsor now. UserId: {e.UserId}. Level: {Enum.GetName(data.Level)}:{(int)data.Level}");
+    }
+
+    private async Task<List<string>?> GetRoles(NetUserId userId)
     {
-        var highestRole = SponsorLevel.None;
-        foreach (var role in roles)
+        var requestUrl = $"{_apiUrl}/roles?method=uid&id={userId}&guildId={_guildId}";
+        var response = await _httpClient.GetAsync(requestUrl);
+
+        if (!response.IsSuccessStatusCode)
         {
-            if (!RolesMap.ContainsKey(role))
-                continue;
-
-            if ((int)RolesMap[role] > (int)highestRole)
-                highestRole = RolesMap[role];
+            _sawmill.Error($"Failed to retrieve roles for user {userId}: {response.StatusCode}");
+            return null;
         }
 
-        return highestRole;
-    }
+        var responseContent = await response.Content.ReadFromJsonAsync<RolesResponse>();
 
-    public static bool ParseContrib(List<string> roles)
-    {
-        foreach (var role in roles)
+        if (responseContent is not null)
         {
-            if (ContribRole == role)
-                return true;
+            return responseContent.Roles.ToList();
         }
 
-        return false;
+        _sawmill.Error($"Roles not found in response for user {userId}");
+        return null;
     }
 
-    public SponsorData(SponsorLevel level, NetUserId userId, bool given)
+    private sealed class RolesResponse
     {
-        Level = level;
-        UserId = userId;
-        IsGiven = given;
+        [JsonPropertyName("roles")]
+        public string[] Roles { get; set; } = [];
     }
 
-    public SponsorLevel Level;
-    public NetUserId UserId;
-    public bool IsGiven;
-    public bool Contributor = false;
+    private sealed class ExtraPatchBody
+    {
+        [JsonPropertyName("loadout_given")]
+        public int? LoadoutGiven { get; set; } = 0;
+    }
 }

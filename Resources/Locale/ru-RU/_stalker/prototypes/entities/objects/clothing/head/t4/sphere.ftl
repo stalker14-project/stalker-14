@@ -1,0 +1,13 @@
+ent-STClothingHeadHelmetEnvironmentT4Base = база шлема защиты от окружения T4
+    .suffix = ST, T4, Env
+ent-ClothingHeadHelmetBulatMercenary = шлем «Сфера-12» наёмников
+    .desc = Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.
+ent-ClothingHeadHelmetBulatMonolith = шлем «Сфера-12» монолита
+    .desc = Является шлемом от Берилла.
+ent-ClothingHeadHelmetBulatMilitary = шлем «Сфера-12» военных
+    .desc = Является шлемом от Булата.
+ent-ClothingHeadHelmetBulatCovenant = шлем «Сфера-12» Завета
+    .desc = Является шлемом от Булата.
+    .suffix = Stalker, Завет
+ent-ClothingHeadHelmetBerill5MCN = шлем «Сфера-12» 'Чистого Неба'
+    .desc = Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.

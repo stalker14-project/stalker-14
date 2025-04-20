@@ -5,17 +5,19 @@
   suffix: ST, Mapping
   description: Резервуар для обмывания и погружения разных частей тела в воду.
   components:
+  - type: InteractionOutline
+  - type: Strap
+    rotation: 0
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/bathroom.rsi
     state: b1
-  - type: InteractionOutline
   - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeAabb
-          bounds: "-0.1,-0.4,0.1,0.4"
+          bounds: "-0.1,-0.2,0.1,0.2"
         density: 155
         mask:
         - MachineMask

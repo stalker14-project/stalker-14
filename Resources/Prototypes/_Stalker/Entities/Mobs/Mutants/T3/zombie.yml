@@ -62,7 +62,9 @@
         task: STMonolith
       blackboard:
         VisionRadius: !type:Single
-          25.0
+          25
+        AggroVisionRadius: !type:Single
+          20
     - type: ApproachEmitter
       range: 0
       useMinRange: false

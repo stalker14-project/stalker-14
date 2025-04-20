@@ -1,0 +1,59 @@
+# Brown
+
+- type: entity
+  parent: STClothingOuterCoatBase
+  id: ClothingOuterArmourCoatBanditBrown
+  name: кольчужный кожаный плащ бандитов
+  description: Обычный плащ из коричневой кожи, но в подкладку вшито кольчужное полотно. Довольно неудобен в условиях Зоны, но, тем не менее, часто используется бандитами — возможно, исключительно из-за внешнего вида.
+  suffix: ST, T2, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_brown.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_brown.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatBanditBrown
+    slot: head
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 4
+        Piercing: 3
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.50
+        Piercing: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+
+# Black
+
+- type: entity
+  parent: STClothingOuterCoatBase
+  id: ClothingOuterArmourCoatBanditBlack
+  name: кольчужный кожаный плащ бандитов
+  description: Обычный плащ из чёрной кожи, но в подкладку вшито кольчужное полотно. Довольно неудобен в условиях Зоны, но, тем не менее, часто используется бандитами — возможно, исключительно из-за внешнего вида.
+  suffix: ST, T2, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_black.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatBanditBlack
+    slot: head
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 4
+        Piercing: 3
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.50
+        Piercing: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.7

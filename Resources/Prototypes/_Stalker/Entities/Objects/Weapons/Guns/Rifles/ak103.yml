@@ -1,0 +1,97 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifle
+  id: STBaseWeaponRifleAK103
+  components:
+  - type: STWeight
+    self: 3.6
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak103.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
+    minAngle: 50
+    maxAngle: 100
+    angleIncrease: 6
+    angleDecay: 25
+    fireRate: 7
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base739Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine739
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge739
+
+- type: entity
+  parent: STBaseWeaponRifleAK103
+  id: STWeaponRifleAK103
+  name: AK-103
+  description: Modern Kalashnikov variant chambered in 7.62x39mm. Prized in the Zone for reliability and firepower. Main weapon of many factions.
+
+- type: entity
+  parent: STBaseWeaponRifleAK103
+  id: STWeaponRifleAK103Kamo
+  name: AK-103 "Veteran"
+  description: Carefully modified AK-103 with improved characteristics. Shows signs of numerous customizations - clearly a weapon of an experienced stalker.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak103donate.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak103donate.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak103donate.rsi
+  - type: Gun
+    angleDecay: 35
+    projectileSpeed: 35
+    angleIncrease: 5
+    fireRate: 8
+  - type: GunWieldBonus
+    minAngle: -45
+
+- type: entity
+  parent: STBaseWeaponRifleAK103
+  id: STWeaponRifleAK203
+  name: AK-203
+  description: Latest evolution of Kalashnikov rifle. Rare in the Zone, usually comes with military expeditions. Retains all advantages of 103 model with improved ergonomics.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak203.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak203.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak203.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/203_Sound.ogg
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 6
+    angleDecay: 30
+    fireRate: 7

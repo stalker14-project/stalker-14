@@ -13,6 +13,10 @@ contraband_examine = false
 role_whitelist = true
 maxcharacterslots = 1
 
+[server]
+default_guide = "STNewPlayer"
+rules_file = "STRuleset"
+
 [rules]
 time = 10.0
 
@@ -37,19 +41,11 @@ enabled = false
 discord = "https://discord.gg/pu6DEPGjsN"
 patreon = "https://boosty.to/stalkerss14"
 
-[net]
-sendbuffersize = 393213
-receivebuffersize = 393213
-
-[physics]
-maxlinvelocity = 60.0
-
 [hub]
 advertise = false
 tags = "lang:ru,lang:en,rp:high,region:eu_e"
 
 [events]
-# Annoying
 enabled = false
 
 #[worldgen]

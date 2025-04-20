@@ -1,0 +1,19 @@
+- type: constructionGraph
+  id: Joint
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: jointend
+      steps:
+      - material: PaperRolling
+        icon:
+          sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
+          state: cigpaper
+      - material: GroundCannabis
+        icon:
+          sprite: Objects/Misc/reagent_fillings.rsi
+          state: powderpile
+        doAfter: 2
+  - node: jointend
+    entity: Joint

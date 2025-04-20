@@ -886,9 +886,10 @@
 - type: entity
   parent: BaseStalkerPDA
   id: MonolithPDA
-  name: КПК бойца «Монолита»
+  name: КПК бойца «Монолита» 
   description: В КПК много записей, не имеющих явного смысла, но одно всё же привлекает внимание - «Монолит обратился к внимающим ему, и приказал собрать излишки снаряжения и поместить их в скрытые от неверных места, места же отметить его знаком. Настанут трудные времена и те, кто слышит великий Монолит, воспользуются его мудростью… Я передал волю Монолита своим братьям, и указал, где поместить припасы…»
   components:
+  - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#797B80"
   - type: Icon
@@ -961,7 +962,13 @@
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
-
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      coefficients:
+        Radiation: 0.25
+        Psy: 0
+        
 - type: entity
   parent: BaseStalkerPDA
   id: JabaPDA

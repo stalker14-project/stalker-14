@@ -6,10 +6,13 @@
   suffix: ST, T3, Tactical
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/makeshift_helmet.rsi
+    sprite: _Stalker/Objects/Clothing/Head/makeshift_helmet.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/makeshift_helmet.rsi
+    sprite: _Stalker/Objects/Clothing/Head/makeshift_helmet.rsi
   - type: Craftable
+  - type: Tag
+    tags:
+      - BlockMask
   - type: STWeight
     self: 3.1
   - type: Armor

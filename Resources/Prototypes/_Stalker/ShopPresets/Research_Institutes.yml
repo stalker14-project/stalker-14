@@ -1,36 +1,36 @@
 - type: shopPreset
   id: NpcResearchInstitut # 0x
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
             # Melee
         STCombatKnife: 10
             # Guns
         WeaponPistolStalkerGlock: 200
-        STWeaponShotgunToz34: 200
-        STWeaponShotgunMossberg: 650
+        STWeaponShotgunTOZ34: 200
+        STWeaponShotgunMossbergM88: 650
         STWeaponRevolverRugerRedhawk: 750
-        STWeaponShotgunStalkerSPAS: 1350
+        STWeaponShotgunSPAS: 1350
         STWeaponRevolverSWModel625: 1650
-        STWeaponGunAKS74U: 1750
-        STWeaponSubMachineGunVityaz: 2250
+        STWeaponRifleAKS74U: 1750
+        STWeaponSMGPP1901: 2250
         STWeaponRifleM16: 3000
-        STWeaponRifleStalkerAK74: 3500
-    - name: Магазины
+        STWeaponRifleAKS74: 3500
+    - name: shop-category-magazines
       priority: 2
       items:
         BaseGlockMag10: 100
         GlockMag17: 200
         GlockMag24: 400
-        SpeedLoader45ACPEmpty: 75
+        STSpeedLoader45ACPEmpty: 75
         Base545Mag10: 50 #T1
         545Mag20: 100 #T2
         545Mag30: 220 #T3
         545Mag45: 300
         VityazMag: 300
         556Mag30: 330
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         919PSOGJBox: 75
@@ -45,7 +45,7 @@
         556FMJBox: 300
         556WarmagBox: 1115
         556M855Box: 745
-    - name: Броня
+    - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
@@ -63,7 +63,8 @@
         STClothingOuterArmorLightPlateVestBaseANAgray: 2750
         STClothingOuterArmorLightPlateVestBaseANAgreen: 2750
         STClothingNeckExoskeletonSci: 5000
-    - name: Хранилища и Контейнеры
+        
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
           # BackPacks
@@ -76,8 +77,7 @@
         MedkitGrizzlyStalker: 850 # T2
           # Belts
         ClothingBeltBandolierStalker: 50
-        ClothingBeltVoron: 45
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
@@ -85,7 +85,7 @@
           # Gasmasks
         ClothingMaskGasM40: 200 # T2
         ClothingMaskM51: 1000
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 7
       items:
         STBoltBagFilled: 50
@@ -101,7 +101,7 @@
         ZoneArtifactDetectorBarracuda: 2100 # T3
         ZoneArtifactDetectorBear: 3200 # T4
         ZoneArtifactDetectorWolfhound: 5000
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 8
       items:
         STCombatKnife: 25
@@ -109,9 +109,10 @@
         BoxZiptie: 50
         BoxSafebox: 300
         CheapLighter: 5
+        FlippoLighter: 200
         GeigerCounter: 50
         BaseRadio: 50
-        FlashlightSeclite: 50
+        STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
@@ -121,12 +122,17 @@
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
         Syringe: 20
+        LargeBeaker: 50
+        BaseChemistryEmptyVial: 40
         ClothingGoPro: 250
         ExtendedEmergencyOxygenTankFilledStalker: 50
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-    - name: Провизия
+        CigPackBlack: 100
+        CigarCase: 500
+        CigarGoldCase: 1000
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 200
@@ -140,7 +146,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина # 70% скидка от сталкеров
+    - name: shop-category-medicine # 70% скидка от сталкеров
       priority: 10
       items:
           # Cheap
@@ -164,13 +170,15 @@
         ResearcherCrate: 1350
         SaviorCrate: 1500
         PolevoyVrachCrate: 1740
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 11
       items:
         ClothingBandageStalkerKrest: 5
         ClothingMaskNeckFacemask: 20
         ClothingHandsGlovesFingerless: 35
         ClothingHandsGlovesMercFingerless: 35
+        ClothingHandsGlovesNitrile: 35
+        ClothingHandsGlovesLatex: 35
         ClothingShoesBootsMerc: 5
         ClothingShoesSwat: 5
         ClothingOuterCoatLab: 5
@@ -184,8 +192,75 @@
         ClothingOuterBioScientist: 200
         ClothingHeadHatHoodBioScientist: 50
         ClothingHeadHatSovietUshankaStalker: 40
-    - name: Крафты
+        ClothingEyesGlassesCheapSunglasses: 35
+        ClothingEyesGlasses: 35
+        ClothingHeadBeretUN: 100
+        ClothingBandageStalkerJid: 50
+        ClothingBandageStalkerBelarus: 50
+        ClothingHeadHatBeaniehat: 10
+        ClothingHeadBandMerc: 30
+        ClothingHeadBandSkull: 30
+        ClothingHeadHatUshanka: 30
+        ClothingShoesColorBlack: 30
+        ClothingShoesBootsWork: 30
+        ClothingShoesLeather: 30
+        ClothingHeadHatBlacksoft: 10
+        ClothingHeadHatGreysoft: 10
+        ClothingCloakStalker: 30
+        ClothingLegsJeansBlue: 10
+        ClothingLegsJeansStalker: 10
+        ClothingLegsJeansGreenCargo: 10
+        ClothingLegsJeansGreyCargo: 10
+        ClothingLegsJeansBlackCargo: 10
+        ClothingLegsJeansBrownCargo: 10
+        ClothingLegsJeansSandCargo: 10
+        ClothingLegsJeansRussianPixel: 20
+        ClothingLegsJeansBlackNew: 20
+        ClothingLegsJeansGorka: 20
+        ClothingShoesBootsCombat: 30
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksGorka: 90
+        ClothingTorsoTurtlenecksGorka6: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingLegsJeansBereza: 20
+        ClothingLegsJeansGorka6: 20
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 67
+        # new shit
+        ClothingLegsBattlePantsBlack: 50
+        ClothingLegsVeryBlueJenas: 50
+        ClothingLegsCombatForest: 50
+        ClothingLegsGorka5: 50
+        ClothingLegsGorka6b: 50
+        ClothingLegsNavyPants: 50
+        ClothingLegsRussianNumber: 50
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksGorka5: 50
+        ClothingTorsoTurtlenecksGorka6B: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50
+    - name: shop-category-entertainment
       priority: 12
+      items:
+        # Dices
+        DiceBag: 20
+        # Board games
+        CheckerBoard: 40
+        ChessBoard: 40
+        BackgammonBoard: 40
+        # Battle maps
+        SandBattlemap: 60
+        GrassBattlemap: 60
+        # Instruments
+        CardBin: 100
+        PokerCardBin: 150
+    - name: shop-category-blueprints-research-equipment
+      priority: 13
       items:
         # Tech cards
         TechCardCalibrationDosimeter: 100
@@ -199,3 +274,4 @@
         STZoneArtifactDetectorBarracudaBlueprint: 18000
         STZoneArtifactDetectorBearBlueprint: 25000
         STZoneArtifactDetectorWolfhoundBlueprint: 40000
+

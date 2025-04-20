@@ -11,9 +11,6 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
-  - type: Tag
-    tags:
-      - BlockBelt
   - type: Storage
     maxItemsize: Large
     grid:
@@ -163,7 +160,7 @@
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorCN3a
   name: бронекомбез «ЧН-3а»
-  description: Штатная экипировка штурмовых отрядов «Чистого неба». Бронежилет способен остановить пистолетную пулю, а встроенный противогаз и брезентовый комбинезон с особой пропиткой обеспечивают хорошую защиту от аномальных воздействий. 3 класс
+  description: Штатная экипировка штурмовых отрядов «Чистого неба». Бронежилет способен остановить пистолетную пулю, а встроенный брезентовый комбинезон с особой пропиткой обеспечивают хорошую защиту от аномальных воздействий. 3 класс
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
@@ -242,3 +239,15 @@
     - Hair
   - type: Armor
     armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 6
+        Slash: 8
+        Piercing: 4
+      coefficients:
+        Blunt: 0.65
+        Slash: 0.65
+        Piercing: 0.5
+        Heat: 0.9
+        Caustic: 0.9
+        Compression: 0.75
