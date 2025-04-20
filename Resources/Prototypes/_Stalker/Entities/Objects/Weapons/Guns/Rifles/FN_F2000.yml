@@ -1,59 +1,55 @@
 - type: entity
-  abstract: true
+  name: FN F2000
+  suffix: ST
   parent: STBaseWeaponRifle
-  id: STBaseWeaponRifleF2000
+  id: WeaponRifleStalkerF2000
+  description: Экспериментальная австрийская винтовка FN F2000 с компьютеризированным прицелом.
   components:
-  - type: STWeight
-    self: 4
-  - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
-  - type: Gun
-    fireRate: 12
-    soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/n_fn2000_shot.ogg
-      params:
-        volume: -2
-    minAngle: 42
-    maxAngle: 85
-    angleIncrease: 4
-    angleDecay: 20
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: Base556Mag10
-        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
-        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-        priority: 4
-        whitelist:
-          tags:
-          - Magazine556
-      gun_module_muzzle:
-        name: Muzzle
-        priority: 3
-        whitelist:
-          tags:
-          - STWeaponModuleRifleSilencerNato
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeNato
-      gun_chamber:
-        name: Chamber
-        startingItem:
-        priority: 1
-        whitelist:
-          tags:
-          - STCartridge556
-
-- type: entity
-  parent: STBaseWeaponRifleF2000
-  id: STWeaponRifleF2000
-  name:  FN F2000 "Tourist"
-  description: Belgian bullpup with integrated optic sight. A rare sight in the Zone - usually brought by western mercs or scientists. High-maintenance but lethal.
+    - type: STWeight
+      self: 4
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    - type: Gun
+      fireRate: 12
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/n_fn2000_shot.ogg
+        params:
+          volume: -2
+      minAngle: 42
+      maxAngle: 85
+      angleIncrease: 4
+      angleDecay: 20
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: Base556Mag10
+          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - Magazine556
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleRifleSilencerNato
+        gun_module_scope:
+          name: Scope
+          priority: 2
+          whitelist:
+            tags:
+              - STWeaponModuleRifleScopeNato
+        gun_chamber:
+          name: Chamber
+          startingItem:
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge556

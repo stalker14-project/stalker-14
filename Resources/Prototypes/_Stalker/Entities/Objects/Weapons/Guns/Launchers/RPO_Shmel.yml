@@ -1,9 +1,9 @@
 - type: entity
-  name: РПО-А "Шмель"
+  name: РПО Шмель
   suffix: ST
   parent: STWeaponLauncherRocket
   id: STWeaponLauncherRocketShmel
-  description: Советский одноразовый реактивный пехотный огнемёт, использующий термобарический боеприпас.
+  description: Чудесный инструмент военных преступлений
   components:
   - type: Wieldable
   - type: GunRequiresWield
@@ -11,10 +11,3 @@
     whitelist: Null
     proto: CartridgeRocketRPO
     capacity: 1
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rpo-shmel.rsi
-    layers:
-      - state: icon
-        map: ["enum.GunVisualLayers.Base"]
-  - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rpo-shmel.rsi

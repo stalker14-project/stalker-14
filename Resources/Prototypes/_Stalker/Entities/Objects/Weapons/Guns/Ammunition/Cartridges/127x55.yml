@@ -1,7 +1,7 @@
 # 12.7x55
 
 - type: entity
-  id: STCartridge1255PS12A
+  id: Cartridge1255PS12A
   name: Патрон (12,7x55) ПС12А
   parent: BaseCartridgeCaselessRifle
   components:
@@ -17,22 +17,22 @@
   - type: Tag
     tags:
     - Cartridge
-    - STCartridge1255
+    - Cartridge1255
 
 
 - type: entity
-  id: STCartridge1255TP
+  id: Cartridge1255TP
   name: Патрон (12,7x55) ТП
-  parent: STCartridge1255PS12A
+  parent: Cartridge1255PS12A
   components:
   - type: CartridgeAmmo
     proto: Bullet1255TP
 
 
 - type: entity
-  id: STCartridge1255BP
+  id: Cartridge1255BP
   name: Патрон (12,7x55) БП
-  parent: STCartridge1255PS12A
+  parent: Cartridge1255PS12A
   components:
   - type: CartridgeAmmo
     proto: Bullet1255BP

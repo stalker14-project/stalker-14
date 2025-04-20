@@ -1,75 +1,72 @@
 - type: entity
-  abstract: true
+  name: M4
+  suffix: ST
   parent: STBaseWeaponRifle
-  id: STBaseWeaponRifleM4
-  components:
-  - type: STWeight
-    self: 2.8
-  - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
-    equipDelay: 2
-  - type: Gun
-    fireRate: 8
-    soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/m4.ogg
-      params:
-        volume: -2
-    minAngle: 52
-    maxAngle: 105
-    angleIncrease: 4.5
-    angleDecay: 22.5
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: Base556Mag10
-        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
-        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-        priority: 5
-        whitelist:
-          tags:
-          - Magazine556
-      gun_auto_sear:
-        name: Insides
-        priority: 4
-        whitelist:
-          tags:
-          - STModuleAutoSear
-      gun_module_muzzle:
-        name: Muzzle
-        priority: 3
-        whitelist:
-          tags:
-          - STWeaponModuleRifleSilencerNato
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeNato
-      gun_chamber:
-        name: Chamber
-        startingItem:
-        priority: 1
-        whitelist:
-          tags:
-          - STCartridge556
-
-- type: entity
-  parent: STBaseWeaponRifleM4
   id: STWeaponRifleM4
-  name: Colt M4 "Cobra"
-  description: American assault rifle that became an icon of modern warfare. Appears in the Zone with western mercenaries and military expeditions. Lightweight, accurate and reliable in any conditions.
+  description: Colt M4 на базе AR-15 - одна из самых известных штурмовых винтовок, под 5.56.
+  components:
+    - type: STWeight
+      self: 2.8
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/m4.rsi
+      equipDelay: 2
+    - type: Gun
+      fireRate: 8
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/m4.ogg
+        params:
+          volume: -2
+      minAngle: 52
+      maxAngle: 105
+      angleIncrease: 4.5
+      angleDecay: 22.5
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: Base556Mag10
+          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+          priority: 5
+          whitelist:
+            tags:
+              - Magazine556
+        gun_auto_sear:
+          name: Insides
+          priority: 4
+          whitelist:
+            tags:
+              - STModuleAutoSear
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleRifleSilencerNato
+        gun_module_scope:
+          name: Scope
+          priority: 2
+          whitelist:
+            tags:
+              - STWeaponModuleRifleScopeNato
+        gun_chamber:
+          name: Chamber
+          startingItem:
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge556
 
 - type: entity
-  parent: STBaseWeaponRifleM4
+  name: HK-416
+  suffix: ST, Скин
+  parent: STWeaponRifleM4
   id: STWeaponRifleHK416
-  name: HK416
-  description: German M4 upgrade with G36's gas system. Considered a weapon of true professionals in the Zone - silent and lethal. Rumored to use special armor-piercing rounds.
+  description: HK-416 Немецкий автомат, адаптированный под американскую модульную систему AR-15, созданный фирмой Heckler & Koch.
   components:
   - type: STWeight
     self: 3.8

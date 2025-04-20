@@ -1,0 +1,28 @@
+
+- type: entity
+  name: МР-155Т
+  suffix: ST
+  parent: STBaseWeaponShotgun
+  id: STWeaponShotgunMP155T
+  description: Однозарядный, коцанный, кривой и косой дробаш. Даже приклад отхерачили. Дешевле и хуже некуда.
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp155t.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp155t.rsi
+    - type: STWeight
+      self: 3.3
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp155t.rsi
+      size: Large
+      shape:
+        - 0,0,6,1
+    - type: BallisticAmmoProvider
+      capacity: 1
+    - type: Gun
+      projectileSpeed: 10
+      minAngle: 50
+      maxAngle: 100
+      angleIncrease: 20
+      angleDecay: 100
+      fireRate: 1

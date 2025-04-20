@@ -1,0 +1,29 @@
+
+- type: entity
+  name: MP-133
+  suffix: ST
+  parent: STBaseWeaponShotgun
+  id: WeaponShotgunStalkerMP133
+  description: Универсальное помповое ружье, надёжный для охоты, спорта и охраны. Простота и доступность делают его популярным среди различных сталкеров. Дешёвый аналог Mossberg M88.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp-133.rsi
+    scale: 0.7, 0.7
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp-133.rsi
+  - type: STWeight
+    self: 3.45
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp-133.rsi
+    size: Large
+    shape:
+      - 0,0,7,1
+  - type: BallisticAmmoProvider
+    capacity: 6
+  - type: Gun
+    projectileSpeed: 15
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 15
+    angleDecay: 75
+    fireRate: 0.8

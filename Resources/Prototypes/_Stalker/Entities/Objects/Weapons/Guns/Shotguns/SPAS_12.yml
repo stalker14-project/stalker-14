@@ -1,0 +1,27 @@
+
+- type: entity
+  name: SPAS-12
+  suffix: ST
+  parent: STBaseWeaponShotgun
+  id: STWeaponShotgunStalkerSPAS
+  description: Представляющий собой итальянский дробовик, сочетает в себе функциональность помпового и полуавтоматического режимов стрельбы. Этот винтовочный дробовик стал предпочтением стрелков благодаря своей надежности и многофункциональности.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/spas.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/spas.rsi
+  - type: STWeight
+    self: 4.4
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/spas.rsi
+  - type: BallisticAmmoProvider
+    capacity: 8
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/spas_shoot.ogg
+    projectileSpeed: 18
+    minAngle: 60
+    maxAngle: 80
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 2

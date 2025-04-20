@@ -1,7 +1,7 @@
 # 5.45x39
 
 - type: entity
-  id: BaseSTCartridge545
+  id: BaseCartridge545
   name: cartridge (5,45x39)
   parent: BaseCartridge
   abstract: true
@@ -11,7 +11,7 @@
   - type: Tag
     tags:
     - Cartridge
-    - STCartridge545
+    - Cartridge545
   - type: CartridgeAmmo
     deleteOnSpawn: true
   - type: Sprite
@@ -24,49 +24,49 @@
     state: "base"
 
 - type: entity
-  id: STCartridge545FMJ
+  id: Cartridge545FMJ
   name: Патрон (5,45x39)FMJ
-  parent: BaseSTCartridge545
+  parent: BaseCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545FMJ
 
 - type: entity
-  id: STCartridge545PC
+  id: Cartridge545PC
   name: Патрон (5,45x39)ПС
-  parent: BaseSTCartridge545
+  parent: BaseCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545PC
 
 - type: entity
-  id: STCartridge545HP
+  id: Cartridge545HP
   name: Патрон (5,45x39)HP
-  parent: BaseSTCartridge545
+  parent: BaseCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545HP
 
 - type: entity
-  id: STCartridge545BP
+  id: Cartridge545BP
   name: Патрон (5,45x39)БП
-  parent: BaseSTCartridge545
+  parent: BaseCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545BP
 
 - type: entity
-  id: STCartridge545BS
+  id: Cartridge545BS
   name: Патрон (5,45x39)БС
-  parent: BaseSTCartridge545
+  parent: BaseCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545BS
 
 - type: entity
-  id: STCartridge545NE
+  id: Cartridge545NE
   name: Патрон (5,45x39)"Игольник"
-  parent: BaseSTCartridge545
+  parent: BaseCartridge545
   components:
   - type: CartridgeAmmo
     proto: Bullet545NE

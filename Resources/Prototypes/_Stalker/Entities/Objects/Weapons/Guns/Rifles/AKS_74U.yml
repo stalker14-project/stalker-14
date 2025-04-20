@@ -1,0 +1,93 @@
+# The way the guns should be made
+- type: entity
+  parent: STBaseWeaponRifle
+  suffix: ST
+  id: STWeaponGunAKS74U
+  name: АКС-74У
+  description: По своим габаритам и массе близок к пистолетам-пулемётам, однако принцип действия механизма данного оружия и применяемый в нём патрон делают его представителем класса автоматов. К достоинствам относятся малые габариты, что крайне полезно при ведении боя в городских условиях, и довольно высокая пробивающая способность патрона. Главные недостатки — малая прицельная дальность и склонность к быстрому перегреву при стрельбе очередями.
+  components:
+    - type: STWeight
+      self: 3.2
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+      minAngle: 45
+      maxAngle: 75
+      angleIncrease: 4.5
+      angleDecay: 15
+      fireRate: 5
+    - type: ItemSlots
+      # Here you have to declare the slots for your wunderwaffle modules,
+      # but remember if you change the containers,
+      # you have to re-specify them all again
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: Base545Mag10
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - Magazine545
+        gun_module_muzzle:
+          # Built-in modules in the cannon,
+          # they can be removed and the cannon will be purchased with them
+          # startingItem: SomePrototypeId
+          # You can block the ability to remove or add modules
+          # for fully embedded modules,
+          # but the schema will parse them, so it's useless
+          # locked: true
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleRifleSilencerRu
+        gun_module_scope:
+          name: Scope
+          priority: 2
+          whitelist:
+            tags:
+              - STWeaponModuleRifleScopeRu
+        gun_chamber:
+          name: Chamber
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge545
+
+# Скин
+- type: entity
+  name: АКС-74У "Зима", использует 5,45x39
+  suffix: ST, Скин
+  parent: STWeaponGunAKS74U
+  id: STWeaponGunAKS74UWhite
+  description: Немного улучшенный АКСУ в белом камуфляже.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+
+- type: entity
+  name: АКС-74У "Чёрный", использует 5,45x39
+  suffix: ST, Скин
+  parent: STWeaponGunAKS74U
+  id: STWeaponGunAKS74UBlack
+  description: По своим габаритам и массе близок к пистолетам-пулемётам, однако принцип действия механизма данного оружия и применяемый в нём патрон делают его представителем класса автоматов. К достоинствам относятся малые габариты, что крайне полезно при ведении боя в городских условиях, и довольно высокая пробивающая способность патрона. Главные недостатки — малая прицельная дальность и склонность к быстрому перегреву при стрельбе очередями. Цевьё и ручка покрашены в чёрный цвет.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+

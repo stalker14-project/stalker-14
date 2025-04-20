@@ -2,7 +2,7 @@
 ##################### .45 ACP #############################
 
 - type: entity
-  id: BaseSTSpeedLoader45ACP
+  id: BaseSpeedLoader45ACP
   name: спидлоадер (.45 ACP)
   suffix: Stalker
   parent: BaseItem
@@ -10,7 +10,7 @@
   components:
     - type: Tag
       tags:
-        - STSpeedLoader45ACP
+        - SpeedLoader45ACP
     - type: SpeedLoader
     - type: BallisticAmmoProvider
       whitelist:
@@ -24,8 +24,8 @@
           ents: []
 
 - type: entity
-  parent: BaseSTSpeedLoader45ACP
-  id: STSpeedLoader45ACP
+  parent: BaseSpeedLoader45ACP
+  id: SpeedLoader45ACP
   categories: [ HideSpawnMenu ] # На будущее и на тесты
   name: Спидлоадер (.45 ACP)
   suffix: Stalker
@@ -46,8 +46,8 @@
     - type: Appearance
 
 - type: entity
-  parent: STSpeedLoader45ACP
-  id: STSpeedLoader45ACPEmpty
+  parent: SpeedLoader45ACP
+  id: SpeedLoader45ACPEmpty
   suffix: Stalker, Пустой
   components:
     - type: BallisticAmmoProvider

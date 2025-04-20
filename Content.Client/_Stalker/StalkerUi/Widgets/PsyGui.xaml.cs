@@ -10,8 +10,9 @@ public sealed partial class PsyGui : UIWidget
     public PsyGui()
     {
         RobustXamlLoader.Load(this);
-        LayoutContainer.SetGrowVertical(this, LayoutContainer.GrowDirection.Begin);
+        var hotbarController = UserInterfaceManager.GetUIController<PsyUiController>();
 
+        LayoutContainer.SetGrowVertical(this, LayoutContainer.GrowDirection.Begin);
         PsyTexture.TexturePath = "/Textures/_Stalker/Interface/Icons/psy_ball/psy.png";
     }
 

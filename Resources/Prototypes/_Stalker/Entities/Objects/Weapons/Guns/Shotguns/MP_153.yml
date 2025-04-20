@@ -1,0 +1,91 @@
+
+- type: entity
+  name: MP-153
+  suffix: ST
+  parent: STBaseWeaponShotgun
+  id: STWeaponShotgunMP153
+  description: Это гладкоствольное ружье с полуавтоматическим режимом, широко используемое охотниками, спортсменами и охранниками. Оно вмещает до 5 патронов и пользуется популярностью среди сталкеров как доступная альтернатива SPAS-12. Все это делает его привлекательным выбором для тех, кто ценит надежность, эффективность.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
+  - type: STWeight
+    self: 3.3
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
+    size: Large
+    shape:
+      - 0,0,7,1
+  - type: BallisticAmmoProvider
+    capacity: 5
+  - type: Gun
+    projectileSpeed: 18
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 2.3
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
+    scale: 0.6, 0.6
+
+
+
+# скинчики
+- type: entity
+  name: MP-153 "Селебра"
+  parent: STWeaponShotgunMP153
+  id: STWeaponShotgunMP153PoiskSelebra
+  suffix: ST, Поиск, Скин
+  description: Это гладкоствольное ружье с полуавтоматическим режимом, широко используемое охотниками, спортсменами и охранниками. Оно вмещает до 5 патронов и пользуется популярностью среди сталкеров как доступная альтернатива SPAS-12. Все это делает его привлекательным выбором для тех, кто ценит надежность, эффективность.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153Selebra.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153Selebra.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153Selebra.rsi
+
+- type: entity
+  name: MP-153 "Ворон"
+  parent: STWeaponShotgunMP153
+  id: STWeaponShotgunMP153Voron
+  suffix: ST, Контрибутер, Скин
+  description: Это гладкоствольное ружье с полуавтоматическим режимом, широко используемое охотниками, спортсменами и охранниками. Оно вмещает до 5 патронов и пользуется популярностью среди сталкеров как доступная альтернатива SPAS-12. Все это делает его привлекательным выбором для тех, кто ценит надежность, эффективность.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
+
+- type: entity
+  name: Benelli M4 Super 90
+  suffix: ST, Скин
+  parent: STWeaponShotgunMP153
+  id: STWeaponShotgunStalkerBenelli
+  description: Гладскоствольное полуавтоматическое ружье, разработанное в Италии фирмой 'Benelli Armi S.p.A.' Излюбленное оружие Охотников зоны, но не такое распостраненное как его конкуренты. Высокая скорострельность и удобство использования делает его одним из лучших дробовиков в своём сегменте цен.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+    scale: 1, 1
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+  - type: STWeight
+    self: 3
+
+- type: entity
+  name: Benelli M4 Super 90 серафимов
+  suffix: ST, Скин
+  parent: STWeaponShotgunStalkerBenelli
+  description: Benelli M4s90 — это не просто оружие, это надежный друг охотника Серафимов, который сопровождает его в самые ответственные моменты. Он также покрыт особой раскраской Серафимов и имеет ритуальные знаки и различные обереги, некоторые из них обозначают кто стал первой жертвой этого оружия
+  id: STWeaponShotgunStalkerBenelliSera
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi

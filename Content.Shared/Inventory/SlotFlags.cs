@@ -28,7 +28,7 @@ public enum SlotFlags
     FEET = 1 << 15,
     SUITSTORAGE = 1 << 16,
     ARTIFACT = 1 << 17, // Stalker-Changes-UI
-    BACK2 = 1 << 18, // Stalker-Changes-UI
+    DOPWEAPON = 1 << 18, // Stalker-Changes-UI
     CLOAK = 1 << 19, // Stalker-Changes-UI
     All = ~NONE,
 

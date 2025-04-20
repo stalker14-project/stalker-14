@@ -1,13 +1,10 @@
 ﻿[game]
-hostname = "☢️ S.T.A.L.K.E.R. ☢️ Debug."
-desc = "In devlopment."
-
-map = "STDev"
-map_pool = "STDefaultMapPool"
-
-map_rotation = false
-
+hostname = "☢️ S.T.A.L.K.E.R. Debug."
 lobbyenabled = false
+desc = "Server at S.T.A.L.K.E.R. setting.\nIn devlopment."
+map = "STDev" # st-changes-dev-map
+map_pool = "STDefaultMapPool"  # st-changes-map-pool
+map_rotation = false
 
 maxplayers = 80
 soft_max_players = 60
@@ -23,16 +20,7 @@ rules_file = "STRuleset"
 [rules]
 time = 10.0
 
-[netres]
-limit = 25
-
 [whitelist]
-enabled = false
-
-[explosion]
-can_create_vacuum = false
-
-[tips]
 enabled = false
 
 [shuttle]
@@ -46,33 +34,24 @@ camera_rotation_locked = true
 flavor_text = true
 punctuation = false
 
-[infolinks]
-discord = "https://discord.gg/BuvKkKhrjn"
-patreon = "https://boosty.to/stalkerss14"
-
-[hub]
-advertise = false
-tags = "lang:ru,lang:en,rp:medium,region:eu_e"
-hub_urls = "https://hub.spacestation14.com/"
-
-[events]
+[tts]
 enabled = false
 
-[physics]
-grid_splitting = false
-maxlinvelocity = 72
-target_minimum_tickrate = 120
-
-[npc]
-max_updates = 150
+[infolinks]
+discord = "https://discord.gg/pu6DEPGjsN"
+patreon = "https://boosty.to/stalkerss14"
 
 [net]
 sendbuffersize = 393213
 receivebuffersize = 393213
-pvs_range = 25
-tickrate = 30
-max_buffer_size = 1024
-log_late_msg = false
 
-[crewmanifest]
-no_entity = false
+[physics]
+maxlinvelocity = 60.0
+
+[hub]
+advertise = false
+tags = "lang:ru,lang:en,rp:medium,region:eu_e"
+
+[events]
+# Annoying
+enabled = false

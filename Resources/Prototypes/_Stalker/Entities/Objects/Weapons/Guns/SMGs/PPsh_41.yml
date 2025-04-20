@@ -1,0 +1,51 @@
+- type: entity
+  name: ППШ-41
+  suffix: ST
+  parent: STBaseWeaponSubMachineGun
+  id: STWeaponPPsh
+  description: Иконический пистолет-пулемёт времён Второй Мировой под 7.62х25.
+  components:
+    - type: STWeight
+      self: 3.2
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/ppsh41.rsi
+      size: Large
+      shape:
+        - 0,0,6,1
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/ppsh41.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/ppsh41.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 65
+      maxAngle: 110
+      angleIncrease: 3
+      angleDecay: 10
+      fireRate: 14
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/PPSh.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: BasePPSHMag
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazinePPSh
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleSMGSilencer
+        gun_chamber:
+          name: Chamber
+          startingItem:
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge725

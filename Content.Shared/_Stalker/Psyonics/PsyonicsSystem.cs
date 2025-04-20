@@ -1,4 +1,3 @@
-using Content.Shared.Mind;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
 
@@ -7,7 +6,6 @@ namespace Content.Shared._Stalker.Psyonics;
 public sealed partial class PsyonicsSystem
 {
     [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
     public override void Initialize()
@@ -15,13 +13,13 @@ public sealed partial class PsyonicsSystem
         base.Initialize();
 
         InitializeSource();
-
         SubscribeLocalEvent<PsyonicsComponent, ComponentStartup>(OnStartup);
     }
 
-    private void OnStartup(Entity<PsyonicsComponent> ent, ref ComponentStartup args)
+    private void OnStartup(EntityUid uid, PsyonicsComponent component, ComponentStartup args)
     {
-        SetPsy(ent, ent.Comp.Psy);
+        var psyMessage = new PsyEnergyChangedMessage(component.PsyMax, component.Psy, component.Psy);
+        RaiseNetworkEvent(psyMessage);
     }
 
     public float GetPsy(Entity<PsyonicsComponent> psionics)
@@ -48,13 +46,9 @@ public sealed partial class PsyonicsSystem
     {
         var newValue = Math.Clamp(value, 0, psionics.Comp.PsyMax);
         var psyMessage = new PsyEnergyChangedMessage(psionics.Comp.PsyMax, psionics.Comp.Psy, newValue);
-
         psionics.Comp.Psy = newValue;
+        RaiseNetworkEvent(psyMessage);
         Dirty(psionics);
-
-        if (_mind.TryGetMind(psionics, out _, out var mind) && mind.Session is not null)
-            RaiseNetworkEvent(psyMessage, mind.Session);
-
         return newValue;
     }
 }

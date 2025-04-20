@@ -16,7 +16,6 @@ using Robust.Shared.Maths;
 using Robust.Shared.Utility;
 using static Content.Shared.Administration.PermissionsEuiMsg;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
-using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.Administration.UI
 {

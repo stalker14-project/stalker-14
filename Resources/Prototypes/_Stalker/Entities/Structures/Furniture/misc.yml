@@ -42,7 +42,7 @@
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/MoonshineStill.rsi
     state: samogoni
-  - type: Clickable
+  - type: InteractionOutline
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -58,31 +58,18 @@
 
 - type: entity
   id: STMonitor
+  parent: BaseStructure
   name: monitor
   suffix: ST, Mapping
   description: An old but still functional monitor with a worn frame and a dim screen, reminiscent of the early days of the digital age.
-  placement:
-    mode: PlaceFree
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/monitor.rsi
-    drawdepth: SmallObjects
     state: base
+  - type: InteractionOutline
   - type: Physics
     bodyType: Static
-  - type: Clickable
-  - type: Pullable
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.17,0.1,0.19,-0.3"
-        density: 155
-        mask:
-        - MachineMask
-        layer:
-        - HalfWallLayer
+    canCollide: false
 
 - type: entity
   id: STKeyboard
@@ -94,7 +81,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/keyboard.rsi
     state: base
-  - type: Clickable
+  - type: InteractionOutline
   - type: Physics
     bodyType: Static
     canCollide: false

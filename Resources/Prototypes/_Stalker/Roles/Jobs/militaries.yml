@@ -61,8 +61,6 @@
       - type: Bands
         band: Stalker
         bandIcon: army
-        bandProto: STMilitaryBand
-        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -72,7 +70,6 @@
       - type: NpcFactionMember
         factions:
         - Military
-
 
 - type: job
   id: MilitaryHead
@@ -101,8 +98,6 @@
         - type: Bands
           band: Stalker
           bandIcon: army
-          bandProto: STMilitaryBand
-          bandRankId: 3
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -142,8 +137,6 @@
         - type: Bands
           band: Stalker
           bandIcon: army
-          bandProto: STMilitaryBand
-          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: NpcFactionMember
           factions:
@@ -180,7 +173,7 @@
     legs: ClothingLegsJeansGreenCargo
     torso: ClothingTorsoTurtlenecksMilitary
     shoes: ClothingShoesBootsCombatFilled
-
+ 
 - type: startingGear
   id: OksopSpecOps
   equipment:
@@ -194,15 +187,4 @@
     outerarmor: STClothingOuterArmorLightPlateVestBaseHeavyMilitary
     pocket1: 739Mag75
     pocket2: 739Mag75
-    suitstorage: STWeaponRifleAK103
-
-- type: stBand
-  id: STMilitaryBand
-  name: Military
-  factionId: Military
-  maxMembers: 16
-  managingRankId: 3
-  hierarchy:
-    1: Military
-    2: MilitaryOfficer
-    3: MilitaryHead
+    suitstorage: STWeaponRifleStalkerAK103

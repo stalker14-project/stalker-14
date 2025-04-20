@@ -25,12 +25,7 @@
         - type: Bands
           band: Stalker
           bandIcon: rene
-          bandProto: STRenegatsBand
-          bandRankId: 2
         - type: BlockTackingHolyItems
-        - type: NpcFactionMember
-          factions:
-          - Bandit
 
 - type: startingGear
   id: ReneGear
@@ -41,12 +36,3 @@
     torso: ClothingTorsoTShirtColorBlack
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsWork
-- type: stBand
-  id: STRenegatsBand
-  name: Renegats
-  factionId: Bandit
-  maxMembers: 12
-  managingRankId: 3
-  hierarchy:
-    1: StalkerRene
-

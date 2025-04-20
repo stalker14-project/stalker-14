@@ -290,7 +290,7 @@
     # stalker-changes-start
   - type: Stagger
   - type: Inventory
-    templateId: STMain
+    templateId: stalkerhuman
   - type: PsyonicsShieldVisuals
     sprite: _Stalker/Effects/psyonic_shield.rsi
     state: Standing
@@ -314,7 +314,7 @@
   - type: RespawnOnDeath
   - type: ApproachEmitter
     range: 30
-    minRange: 20
+    minRange: 10
     useMinRange: true
     # stalker-changes-end
 

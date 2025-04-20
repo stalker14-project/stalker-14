@@ -2,17 +2,13 @@ using System.Collections.Immutable;
 using System.IO;
 using System.Net;
 using System.Text.Json;
-using Content.Server._Stalker.WarZone;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
-using Content.Shared._Stalker.Bands;
 using Content.Shared._Stalker.Characteristics;
-using Content.Shared._Stalker.WarZone;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Content.Shared.NPC.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Microsoft.Data.Sqlite;
@@ -348,23 +344,9 @@ namespace Content.Server.Database
         Task<string?> GetLoginItems(string login);
         Task SetStalkerStatsAsync(string login, CharacteristicType characteristic, float value, DateTime? trainTime);
         Task<StalkerStats?> GetStalkerStatAsync(string login, CharacteristicType characteristic);
-
-        Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints);
-
-        Task<StalkerBand?> GetStalkerBandAsync(ProtoId<STBandPrototype> band);
-        Task SetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction, float rewardPoints);
-
-        Task<StalkerFaction?> GetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction);
-        Task SetStalkerZoneOwnershipAsync(
-            ProtoId<STWarZonePrototype> warZone,
-            ProtoId<STBandPrototype>? capturingBand = null,
-            ProtoId<NpcFactionPrototype>? capturingFaction = null);
-
-        Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone);
-        Task ClearStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone);
-        Task<List<Player>> GetPlayersWithRoleWhitelistAsync(IEnumerable<string> roleIds, CancellationToken cancel = default); // Added for BandsSystem
         #endregion
     }
+
     /// <summary>
     /// Represents a notification sent between servers via the database layer.
     /// </summary>
@@ -1060,60 +1042,10 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetStalkerStatAsync(login, characteristic));
         }
 
-        public Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SetStalkerBandAsync(band, rewardPoints));
-        }
-
-        public Task<StalkerBand?> GetStalkerBandAsync(ProtoId<STBandPrototype> band)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetStalkerBandAsync(band));
-        }
-        public Task SetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction, float rewardPoints)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SetStalkerFactionAsync(faction, rewardPoints));
-        }
-
-        public Task<StalkerFaction?> GetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetStalkerFactionAsync(faction));
-        }
-
-        public Task SetStalkerZoneOwnershipAsync(
-            ProtoId<STWarZonePrototype> warZone,
-            ProtoId<STBandPrototype>? capturingBand = null,
-            ProtoId<NpcFactionPrototype>? capturingFaction = null)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.SetStalkerZoneOwnershipAsync(warZone, capturingBand, capturingFaction));
-        }
-
-        public Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetStalkerWarOwnershipAsync(warZone));
-        }
-
-        public Task ClearStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
-        {
-            DbWriteOpsMetric.Inc();
-            return RunDbCommand(() => _db.ClearStalkerZoneOwnershipAsync(warZone));
-        }
-
         public Task<string?> GetLoginItems(string login)
         {
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetLoginItems(login));
-        }
-
-        public Task<List<Player>> GetPlayersWithRoleWhitelistAsync(IEnumerable<string> roleIds, CancellationToken cancel = default) // Added for BandsSystem
-        {
-            DbReadOpsMetric.Inc();
-            return RunDbCommand(() => _db.GetPlayersWithRoleWhitelistAsync(roleIds, cancel));
         }
 
         #endregion

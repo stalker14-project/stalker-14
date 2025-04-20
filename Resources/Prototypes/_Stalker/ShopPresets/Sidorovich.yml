@@ -30,11 +30,6 @@
     ZoneArtifactStuntman: 4800
     ZoneArtifactDistorter: 4800
     ZoneArtifactSoul: 3600
-    # Food
-    FoodMeatDogCooked: 50
-    STFoodMeatSpiderCooked: 25
-    FoodMeatBoarCooked: 80
-    
     # Acidic group - 1
     ZoneArtifactBlood: 1200
     ZoneArtifactMeat: 2400
@@ -74,21 +69,21 @@
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T1
-        STWeaponShotgunTOZ34: 250 # T1
-        STWeaponShotgunMP133: 425 # T2
-        STWeaponShotgunMossbergM88: 700 # T2
+        STWeaponShotgunToz34: 250 # T1
+        WeaponShotgunStalkerMP133: 425 # T2
+        STWeaponShotgunMossberg: 700 # T2
         STWeaponShotgunMP153: 1000 # T2
          # 9x18
         WeaponPistolStalkerPM: 100 #T1
          # 7,62x25
         WeaponPistolStalkerTT: 300 #T1
           # 5,45x39
-        STWeaponRifleSaiga545: 1250 # T3
-        STWeaponRifleAKS74U: 1750 # T3
+        STWeaponRifleStalkerSaiga545: 1250 # T3
+        STWeaponGunAKS74U: 1750 # T3
           # Other
-        STWeaponSMGMP5: 2000
+        STWeaponSMGMp5: 2000
         WeaponPistolStalkerAPS: 600 #T2
-        STWeaponSniperSKS: 1850 # T2
+        STWeaponRifleSKS: 1850 # T2
         STWeaponSniperMosin: 1000
           # Nato
     - name: shop-category-magazines
@@ -139,11 +134,8 @@
         ClothingHeadHelmetInfantry: 800 # T2 - uni
         STClothingHeadHelmetMakeshiftTacticalT3: 1350 # T2 - uni
           # OuterClothing #
-        SetJacketNoviceBrezentBuyableCrate: 500 # T1 - uni
-        SetJacketNoviceWhiteBuyableCrate: 500 # T1 - uni
+        ClothingOuterJacketStalker: 100 # T1 - uni
         STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
-        SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
-        SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
         ClothingOuterArmor6B2: 1750
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
@@ -319,9 +311,9 @@
     1:
       - name: sponsor
         items:
-          STWeaponRifleAKS74UWhite: 650
+          STWeaponGunAKS74UWhite: 650
   contributorCategories:
     - name: contributor
       items:
-        STWeaponShotgunMP153Raven: 550
+        STWeaponShotgunMP153Voron: 550
         WeaponPistolStalkerAPSHugo: 250

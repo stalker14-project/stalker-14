@@ -1,0 +1,77 @@
+- type: entity
+  name: G-36
+  suffix: ST
+  parent: STBaseWeaponRifle
+  id: STWeaponRifleStalkerG36
+  description: Немецкая штурмовая винтовка G-36 под 5.56.
+  components:
+    - type: STWeight
+      self: 3.4
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
+      equipDelay: 2
+    - type: Gun
+      fireRate: 8
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/g36_shoot.ogg
+        params:
+          volume: -2
+      minAngle: 50
+      maxAngle: 95
+      angleIncrease: 3
+      angleDecay: 15
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: Base556Mag10
+          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - Magazine556
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleRifleSilencerNato
+        gun_module_scope:
+          name: Scope
+          priority: 2
+          whitelist:
+            tags:
+              - STWeaponModuleRifleScopeNato
+        gun_chamber:
+          name: Chamber
+          startingItem:
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge556
+    - type: MagazineVisuals
+      magState: mag
+      steps: 6
+      zeroVisible: true
+
+#
+# Скины
+#
+- type: entity
+  parent: STWeaponRifleStalkerG36
+  id: STWeaponRifleCovenantG36
+  name: G-36 Завета
+  description: Немецкая штурмовая винтовка G-36 Завета под 5.56.
+  suffix: ST, Завет, Скин
+  components:
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/covenant_g36.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/covenant_g36.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/covenant_g36.rsi

@@ -1,7 +1,7 @@
 # 7.62x39
 
 - type: entity
-  id: BaseSTCartridge739
+  id: BaseCartridge739
   name: cartridge (7,62x39 rifle)
   parent: BaseCartridge
   abstract: true
@@ -11,7 +11,7 @@
   - type: Tag
     tags:
     - Cartridge
-    - STCartridge739
+    - Cartridge739
   - type: CartridgeAmmo
     deleteOnSpawn: true
   - type: Sprite
@@ -24,33 +24,33 @@
     state: "base"
 
 - type: entity
-  id: STCartridge739FMJ
+  id: Cartridge739FMJ
   name: Патрон (7,62x39)FMJ
-  parent: BaseSTCartridge739
+  parent: BaseCartridge739
   components:
   - type: CartridgeAmmo
     proto: Bullet739FMJ
 
 - type: entity
-  id: STCartridge739HP
+  id: Cartridge739HP
   name: Патрон (7,62x39)HP
-  parent: BaseSTCartridge739
+  parent: BaseCartridge739
   components:
   - type: CartridgeAmmo
     proto: Bullet739HP
 
 - type: entity
-  id: STCartridge739PC
+  id: Cartridge739PC
   name: Патрон (7,62x39)ПС
-  parent: BaseSTCartridge739
+  parent: BaseCartridge739
   components:
   - type: CartridgeAmmo
     proto: Bullet739PC
 
 - type: entity
-  id: STCartridge739BP
+  id: Cartridge739BP
   name: Патрон (7,62x39)БП
-  parent: BaseSTCartridge739
+  parent: BaseCartridge739
   components:
   - type: CartridgeAmmo
     proto: Bullet739BP

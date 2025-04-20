@@ -1,47 +1,43 @@
 - type: entity
-  abstract: true
   parent: STBaseWeaponMachineGun
-  id: STBaseWeaponMachineGunRPD
+  id: WeaponMachineGunRPD
+  name: РПД
+  description: Ручной Пулемёт Дегтярёва — советский ручной пулемёт, разработанный в 1944 году под 7,62x39 патрон.
+  suffix: ST, Machine gun
   components:
-  - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
-    equipDelay: 4
-  - type: Gun
-    fireRate: 12
-    minAngle: 100
-    maxAngle: 170
-    angleIncrease: 1
-    angleDecay: 5
-  - type: ItemSlots
-    slots:
-      gun_magazine:
-        name: Magazine
-        startingItem: null
-        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
-        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
-        priority: 2
-        whitelist:
-          tags:
-          - Magazine762x39RPD
-      gun_chamber:
-        name: Chamber
-        startingItem: null
-        priority: 1
-        whitelist:
-          tags:
-          - STCartridge739
-  - type: GunWieldBonus
-    minAngle: -70
-    maxAngle: -60
-  - type: PullDoAfter
-    pullTime: 5
-
-- type: entity
-  parent: STBaseWeaponMachineGunRPD
-  id: STWeaponMachineGunRPD
-  name: RPD (Light Machine Gun)
-  description: Soviet light machine gun (1944). Prized in the Zone for reliability and 7.62x39mm firepower. Heavy but can saturate large areas with lead.
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
+      equipDelay: 4
+    - type: Gun
+      fireRate: 12
+      minAngle: 100
+      maxAngle: 170
+      angleIncrease: 1
+      angleDecay: 5
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: null
+          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - Magazine762x39RPD
+        gun_chamber:
+          name: Chamber
+          startingItem: null
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge739
+    - type: GunWieldBonus
+      minAngle: -70
+      maxAngle: -60
+    - type: PullDoAfter
+      pullTime: 5

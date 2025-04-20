@@ -26,17 +26,12 @@
         - type: Bands
           band: Stalker
           bandIcon: band
-          bandProto: STBanditsBand
-          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
-        - type: NpcFactionMember
-          factions:
-          - Bandit
 
 - type: job
   id: StalkerHeadBandit
@@ -66,17 +61,12 @@
         - type: Bands
           band: Stalker
           bandIcon: band
-          bandProto: STBanditsBand
-          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
-        - type: NpcFactionMember
-          factions:
-          - Bandit
 
 - type: startingGear
   id: BandGear
@@ -88,14 +78,3 @@
     legs: ClothingLegsJeansBlue
     torso: ClothingTorsoJacketAdidas
     pocket1: RadioBandPlayer
-    
-- type: stBand
-  id: STBanditsBand
-  name: Bandits
-  factionId: Bandit
-  maxMembers: 25
-  managingRankId: 2
-  hierarchy:
-    1: StalkerBandit
-    2: StalkerHeadBandit
-

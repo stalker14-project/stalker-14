@@ -36,11 +36,4 @@ public sealed partial class BandsComponent : Component
 
     [AutoNetworkedField]
     public bool Enabled = true;
-
-    [DataField("bandProto"), ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<STBandPrototype> BandProto;
-
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public int BandRankId = 1;
-
 }

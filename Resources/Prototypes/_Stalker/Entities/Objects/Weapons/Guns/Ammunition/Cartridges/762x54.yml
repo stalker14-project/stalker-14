@@ -1,7 +1,7 @@
 # 7.62x54
 
 - type: entity
-  id: BaseSTCartridge754
+  id: BaseCartridge754
   name: cartridge (7,62x54 rifle)
   parent: BaseCartridge
   abstract: true
@@ -9,7 +9,7 @@
   - type: Tag
     tags:
     - Cartridge
-    - STCartridge754
+    - Cartridge754
   - type: CartridgeAmmo
     deleteOnSpawn: true
   - type: Sprite
@@ -24,41 +24,41 @@
     self: 0.02
 
 - type: entity
-  id: STCartridge754FMJ
+  id: Cartridge754FMJ
   name: Патрон (7,62x54)FMJ
-  parent: BaseSTCartridge754
+  parent: BaseCartridge754
   components:
     - type: CartridgeAmmo
       proto: Bullet754FMJ
 
 - type: entity
-  id: STCartridge754PC
+  id: Cartridge754PC
   name: Патрон (7,62x54)ПС
-  parent: BaseSTCartridge754
+  parent: BaseCartridge754
   components:
   - type: CartridgeAmmo
     proto: Bullet754PC
 
 - type: entity
-  id: STCartridge754HPBT
+  id: Cartridge754HPBT
   name: Патрон (7,62x54)HP BT
-  parent: BaseSTCartridge754
+  parent: BaseCartridge754
   components:
   - type: CartridgeAmmo
     proto: Bullet754HPBT
 
 - type: entity
-  id: STCartridge754BT
+  id: Cartridge754BT
   name: Патрон (7,62x54)БТ
-  parent: BaseSTCartridge754
+  parent: BaseCartridge754
   components:
   - type: CartridgeAmmo
     proto: Bullet754BT
 
 - type: entity
-  id: STCartridge754SNB
+  id: Cartridge754SNB
   name: Патрон (7,62x54)СНБ
-  parent: BaseSTCartridge754
+  parent: BaseCartridge754
   components:
   - type: CartridgeAmmo
     proto: Bullet754SAPB

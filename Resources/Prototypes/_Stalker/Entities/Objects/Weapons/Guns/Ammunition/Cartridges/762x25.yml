@@ -1,7 +1,7 @@
 # 7.62x25
 
 - type: entity
-  id: BaseSTCartridge725
+  id: BaseCartridge725
   name: cartridge (7,62x25 rifle)
   parent: BaseCartridge
   abstract: true
@@ -11,7 +11,7 @@
   - type: Tag
     tags:
     - Cartridge
-    - STCartridge725
+    - Cartridge725
   - type: CartridgeAmmo
     deleteOnSpawn: true
   - type: Sprite
@@ -24,33 +24,33 @@
     state: "base"
 
 - type: entity
-  id: STCartridge725PGL
+  id: Cartridge725PGL
   name: Патрон (7,62x25)П гл
-  parent: BaseSTCartridge725
+  parent: BaseCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725PGL
 
 - type: entity
-  id: STCartridge725PTGJ
+  id: Cartridge725PTGJ
   name: Патрон (7,62x25)ПТ гж
-  parent: BaseSTCartridge725
+  parent: BaseCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725PTGJ
 
 - type: entity
-  id: STCartridge725LRNPC
+  id: Cartridge725LRNPC
   name: Патрон (7,62x25)LRNPC
-  parent: BaseSTCartridge725
+  parent: BaseCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725LRNPC
 
 - type: entity
-  id: STCartridge725PSTGJ
+  id: Cartridge725PSTGJ
   name: Патрон (7,62x25)Пст гж
-  parent: BaseSTCartridge725
+  parent: BaseCartridge725
   components:
   - type: CartridgeAmmo
     proto: Bullet725PSTGJ

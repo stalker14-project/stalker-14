@@ -1,7 +1,5 @@
 ent-STBaseModuleSilencerSMG = silencer
-ent-STModuleSilencerSMGT1 = самодельный глушитель ПП
+ent-STModuleSilencerSMGT1 = makeshift SMG silencer RU
     .suffix = ST, silencer, T1
-    .desc = Самодельный глушитель ПП.
-ent-STModuleSilencerSMGT2 = фабричный глушитель ПП
-    .desc = Фабричный глушитель ПП.
+ent-STModuleSilencerSMGT2 = legal SMG silencer
     .suffix = ST, silencer, T2

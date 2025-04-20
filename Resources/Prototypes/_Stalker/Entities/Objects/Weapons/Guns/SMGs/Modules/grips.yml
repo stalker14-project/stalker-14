@@ -4,12 +4,12 @@
   id: STBaseModuleUnderbarrelSMG
   name: grip
   components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/SMGs/Modules/smg_grips.rsi
-    scale: 0.6, 0.6
-  - type: Icon
-    sprite: _Stalker/Objects/Weapons/Guns/SMGs/Modules/smg_grips.rsi
-    scale: 0.6, 0.6
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/Modules/smg_grips.rsi
+      scale: 0.6, 0.6
+    - type: Icon
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/Modules/smg_grips.rsi
+      scale: 0.6, 0.6
 
 - type: entity
   parent: STBaseModuleUnderbarrelSMG
@@ -17,16 +17,16 @@
   name: makeshift SMG grip
   suffix: ST, grip, T1
   components:
-  - type: Tag
-    tags:
-    - STWeaponModuleSMGGrip
-  - type: STWeaponModule
-    effect:
-      minAngleModifier: 0.9
-  - type: Sprite
-    state: smg_grip_T1
-  - type: Icon
-    state: smg_grip_T1
+    - type: Tag
+      tags:
+        - STWeaponModuleSMGGrip
+    - type: STWeaponModule
+      effect:
+        minAngleModifier: 0.9
+    - type: Sprite
+      state: smg_grip_T1
+    - type: Icon
+      state: smg_grip_T1
 
 - type: entity
   parent: STBaseModuleUnderbarrelSMG
@@ -34,13 +34,13 @@
   name: legal SMG grip
   suffix: ST, grip, T2
   components:
-  - type: Tag
-    tags:
-    - STWeaponModuleSMGGrip
-  - type: STWeaponModule
-    effect:
-      minAngleModifier: 0.7
-  - type: Sprite
-    state: smg_grip_T2
-  - type: Icon
-    state: smg_grip_T2
+    - type: Tag
+      tags:
+        - STWeaponModuleSMGGrip
+    - type: STWeaponModule
+      effect:
+        minAngleModifier: 0.7
+    - type: Sprite
+      state: smg_grip_T2
+    - type: Icon
+      state: smg_grip_T2

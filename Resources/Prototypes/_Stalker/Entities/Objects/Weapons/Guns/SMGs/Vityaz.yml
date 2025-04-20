@@ -1,0 +1,54 @@
+- type: entity
+  name: ПП-19-01 "Витязь"
+  suffix: ST
+  parent: STBaseWeaponSubMachineGun
+  id: STWeaponSubMachineGunVityaz
+  description: Довольно свежий ПП российского производства под НАТОВский 9х19.
+  components:
+    - type: STWeight
+      self: 2.9
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/pp19.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/pp19.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/pp19.rsi
+    - type: Gun
+      projectileSpeed: 18
+      minAngle: 45
+      maxAngle: 80
+      angleIncrease: 2
+      angleDecay: 14
+      fireRate: 9
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/919.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: VityazMag
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 2
+          whitelist:
+            tags:
+              - MagazineVityaz
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleSMGSilencer
+        gun_module_underbarrel:
+          name: Underbarrel
+          priority: 2
+          whitelist:
+            tags:
+              - STWeaponModuleSMGGrip
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge919PSOGJ
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge919

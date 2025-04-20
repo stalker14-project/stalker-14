@@ -273,40 +273,7 @@ public abstract partial class InventorySystem
             {
                 return false;
             }
-        } 
-		
-		if (slot == "cloak" && TryGetSlotEntity(target, "outerClothing", out var outerCloakItem, inventory))
-        {
-            if (_tagSystem.HasTag(itemUid, "BlockCloak") && _tagSystem.HasTag(outerCloakItem.Value, "BlockCloak"))
-            {
-                return false;
-            }
-        }
-
-        if (slot == "outerClothing" && TryGetSlotEntity(target, "cloak", out var cloakItem, inventory))
-        {
-            if (_tagSystem.HasTag(itemUid, "BlockCloak") && _tagSystem.HasTag(cloakItem.Value, "BlockCloak"))
-            {
-                return false;
-            }
-        }
-		
-		if (slot == "back" && TryGetSlotEntity(target, "outerClothing", out var outerBackItem, inventory))
-        {
-            if (_tagSystem.HasTag(itemUid, "BlockBack") && _tagSystem.HasTag(outerBackItem.Value, "BlockBack"))
-            {
-                return false;
-            }
-        }
-
-        if (slot == "outerClothing" && TryGetSlotEntity(target, "back", out var backItem, inventory))
-        {
-            if (_tagSystem.HasTag(itemUid, "BlockBack") && _tagSystem.HasTag(backItem.Value, "BlockBack"))
-            {
-                return false;
-            }
-        }// Stalker-Changes-End
-		
+        } // Stalker-Changes-End
         if (slotDefinition == null && !TryGetSlot(target, slot, out slotDefinition, inventory: inventory))
             return false;
 

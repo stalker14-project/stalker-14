@@ -1,0 +1,64 @@
+- type: entity
+  name: Автомат Штурмовой-12,7x55
+  suffix: ST
+  parent: STBaseWeaponRifle
+  id: STWeaponSubMachineGunStalkerAH12
+  description: АШ-12 — российский крупнокалиберный штурмовой автомат, созданный в ЦКИБ СОО для нужд подразделений спецназначения ФСБ России вместе со снайперской винтовкой ВССК.
+  components:
+    - type: STWeight
+      self: 2.2
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
+      size: Large
+      shape:
+        - 0,0,5,2
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
+      scale: 0.7, 0.7
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
+      equipDelay: 1
+    - type: Gun
+      projectileSpeed: 20
+      minAngle: 51
+      maxAngle: 75
+      angleIncrease: 2
+      angleDecay: 20
+      fireRate: 7.5
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/l85.ogg
+      selectedMode: FullAuto
+      availableModes:
+        - SemiAuto
+        - FullAuto
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: AS12Mag
+          insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - MagazineAS12
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleRifleSilencerRu
+        gun_module_scope:
+          name: Scope
+          priority: 2
+          startingItem: STModuleScopeRiflesT1Ru
+          whitelist:
+            tags:
+              - STWeaponModuleRifleScopeRu
+        gun_chamber:
+          name: Chamber
+          startingItem: Cartridge1255BP
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge1255

@@ -1,7 +1,7 @@
 # 9x18
 
 - type: entity
-  id: BaseSTCartridge918
+  id: BaseCartridge918
   name: cartridge (9х18 auto)
   parent: BaseCartridge
   abstract: true
@@ -11,7 +11,7 @@
   - type: Tag
     tags:
       - Cartridge
-      - STCartridge918
+      - Cartridge918
   - type: CartridgeAmmo
     deleteOnSpawn: true
   - type: Sprite
@@ -19,9 +19,9 @@
   - type: Appearance
 
 - type: entity
-  id: STCartridge918PGJ
+  id: Cartridge918PGJ
   name: Патрон (9х18)П гж
-  parent: BaseSTCartridge918
+  parent: BaseCartridge918
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
@@ -34,9 +34,9 @@
     state: "base"
 
 - type: entity
-  id: STCartridge918PST
+  id: Cartridge918PST
   name: Патрон (9х18)ПСТ
-  parent: BaseSTCartridge918
+  parent: BaseCartridge918
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
@@ -49,9 +49,9 @@
     state: "base"
 
 - type: entity
-  id: STCartridge918SP7
+  id: Cartridge918SP7
   name: Патрон (9х18)СП7 гж
-  parent: BaseSTCartridge918
+  parent: BaseCartridge918
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
@@ -64,9 +64,9 @@
     state: "base"
 
 - type: entity
-  id: STCartridge918PBM
+  id: Cartridge918PBM
   name: Патрон (9х18)ПБМ
-  parent: BaseSTCartridge918
+  parent: BaseCartridge918
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi

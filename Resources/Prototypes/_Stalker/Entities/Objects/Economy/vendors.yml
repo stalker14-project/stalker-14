@@ -214,7 +214,7 @@
     BoxFlare: 50
     BoxZiptie: 5
     UNstandartCrateT3: 10
-    STWeaponSMGMP5: 10
+    STWeaponSMGMp5: 10
     PillDexalin: 50
     radioprotectpill: 5
     psyblock: 5
@@ -235,10 +235,10 @@
     FlashlightSeclite: 50
     PowerCellHyper: 100
     HandheldGPSBasic: 50
-    STWeaponRifleSIG550: 4
-    STWeaponRifleL85: 4
+    STWeaponRifleSig550: 4
+    STWeaponRifleStalkerL85: 4
     STWeaponRifleM4: 6
-    STWeaponShotgunSPAS: 6
+    STWeaponShotgunStalkerSPAS: 6
     7mmBuckshotBox: 20
     556Mag30: 30
     556FMJBox: 50
@@ -347,17 +347,6 @@
           map: ["enum.VendingMachineVisualLayers.Base"]
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-1.05,-0.15,1,0.65"
-          mask:
-          - MachineMask
-          layer:
-          - MachineLayer
-          density: 200
     - type: AccessReader
       access: [["Military"]]
     - type: AmbientSound
@@ -374,10 +363,6 @@
     ArmyAK1Crate: 2
     ArmyAKC1Crate: 1
     ArmyAKC2Crate: 1
-    ArmyProvisionCrate: 3
-    ArmyMedkitMilitaryCrate: 5
-    Army545Mag30Crate: 5
-    Army545Crate: 5
 
 - type: entity
   parent: BaseItem
@@ -397,6 +382,9 @@
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/olive_bag.rsi
       state: icon
+
+
+
 
 ############################################################################# СОП ОФЦ ПСЗ
 
@@ -423,17 +411,6 @@
           map: ["enum.VendingMachineVisualLayers.Base"]
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.25,0.25,0.25,0.35"
-          density: 50
-          mask:
-          - CrateMask
-          layer:
-          - MachineLayer
     - type: AccessReader
       access: [["MilitaryOfficer"]]
     - type: AmbientSound
@@ -447,7 +424,7 @@
   id: MilitaryPSZInventoryOfficer
   startingInventory:
     ArmyAKCOfficerCrate: 3
-    MilitaryPSZInventoryRestock: 6
+    MilitaryPSZInventoryRestock: 2
     Screwdriver: 1
 
 - type: entity

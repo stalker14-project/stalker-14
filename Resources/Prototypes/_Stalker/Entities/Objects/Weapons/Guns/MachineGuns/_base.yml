@@ -1,0 +1,57 @@
+- type: entity
+  parent: BaseItem
+  id: STBaseWeaponMachineGun
+  abstract: true
+  suffix: ST, Machine gun
+  components:
+    - type: STWeight
+      self: 7.4
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,8,1
+    - type: Sprite
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: Clothing
+      quickEquip: false
+      slots:
+        - back
+        - suitStorage
+    - type: Wieldable
+    - type: GunRequiresWield
+    - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/l85.ogg
+        params:
+          volume: -2
+      selectedMode: FullAuto
+      availableModes:
+        - FullAuto
+    - type: GunWieldBonus
+      minAngle: -100
+      maxAngle: -100
+    - type: ChamberMagazineAmmoProvider
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: null
+          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+        gun_chamber:
+          name: Chamber
+          startingItem: null
+          priority: 1
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance

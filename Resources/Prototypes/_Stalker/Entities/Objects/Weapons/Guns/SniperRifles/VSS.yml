@@ -1,0 +1,86 @@
+
+# Винторезы
+- type: entity
+  name: ВСС-Винторез
+  suffix: ST
+  parent: STBaseWeaponSniper
+  id: STWeaponRifleVSS
+  description: Винтовка Снайперская Специальная под редкий и убойный калибр 9x39. Оснащён оптикой среднего радиуса.
+  components:
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
+      equipDelay: 3
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
+      size: Large
+      shape:
+        - 0,0,6,1
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/vss.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-0
+          map: ["enum.GunVisualLayers.Mag"]
+        - state: muzzle
+          map: ["enum.GunVisualLayers.Muzzle"]
+        - state: sight
+          map: ["enum.GunVisualLayers.Scope"]
+    - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/n_val_shot.ogg
+      projectileSpeed: 25
+      minAngle: 50
+      maxAngle: 85
+      angleIncrease: 2
+      angleDecay: 20
+      fireRate: 6
+    - type: ChamberMagazineAmmoProvider
+      soundRack:
+        path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: Base939Mag10
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - Magazine939
+        gun_module_scope:
+          name: Scope
+          priority: 3
+          whitelist:
+            tags:
+              - STWeaponModuleSniperSight
+        gun_module_muzzle:
+          name: Muzzle
+          priority: 2
+          whitelist:
+            tags:
+              - STWeaponModuleSniperSilencer
+        gun_chamber:
+          name: Chamber
+          startingItem:
+          priority: 1
+          whitelist:
+            tags:
+              - Cartridge939
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+        gun_module_scope: !type:ContainerSlot
+        gun_module_muzzle: !type:ContainerSlot
+    - type: MagazineVisuals
+      magState: mag
+      steps: 1
+      zeroVisible: true
+    - type: Appearance
+    - type: PullDoAfter
+      pullTime: 3.5
+    - type: Scope
+      zoom: 1.2
+      offset: 8

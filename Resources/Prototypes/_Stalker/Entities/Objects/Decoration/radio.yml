@@ -1343,60 +1343,6 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c5
 
-- type: entity
-  parent: BaseItem
-  id: CasseteFiftyEightDonateRadio
-  suffix: Stalker, кассета, (nx chvxs - KharmaGuess)
-  name: кассета "nx chvxs - KharmaGuess"
-  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Ret4.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/NXCHVXS.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
-
-- type: entity
-  parent: BaseItem
-  id: CasseteFiftyNineDonateRadio
-  suffix: Stalker, кассета, (Aramis - Futuro)
-  name: кассета "Aramis - Futuro"
-  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Ret4.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/FuturoAramis.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
-
-- type: entity
-  parent: BaseItem
-  id: CasseteSixtyDonateRadio
-  suffix: Stalker, кассета, (дурной вкус - пластинки)
-  name: кассета "дурной вкус - пластинки"
-  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Ret4.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Donate/Plastinki.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c5
-
 # Groups Donate Cassets
 
 # Bandits
@@ -3575,7 +3521,6 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/Music/Radio/stalker_combat_theme2.ogg
-
 #DONATE SPONSOR RADIO
 
 - type: entity

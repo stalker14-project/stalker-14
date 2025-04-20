@@ -12,5 +12,3 @@ ent-ClothingHeadAssaultHelmetBandit = бандитский шлем «Зенит
     .desc = боевой шлем марки «Зенит» третьего класса защиты.
 ent-ClothingHeadAssaultHelmetDolg = шлем «Зенит» Долга
     .desc = боевой шлем марки «Зенит» третьего класса защиты.
-ent-ClothingHeadAssaultHelmetMerc = шлем «Зенит» Наёмников
-    .desc = боевой шлем марки «Зенит» третьего класса защиты.

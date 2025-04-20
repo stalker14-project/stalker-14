@@ -1,6 +1,6 @@
 
 - type: inventoryTemplate
-  id: STMain
+  id: stalkerhuman
   slots:
     - name: pocket1
       slotTexture: pocket
@@ -57,7 +57,7 @@
       strippingWindowPos: 0,5
       displayName: Back
     # Artifacts (Colum 1)
-    - name: artifact1
+    - name: artifact1 # Stalker-Changes-UI-Start
       slotTexture: artifact
       slotFlags: ARTIFACT
       stripTime: 6
@@ -88,7 +88,7 @@
       uiWindowPos: 0,4
       strippingWindowPos: 3,0
       displayName: Test
-      stripHidden: true
+      stripHidden: true  # Stalker-Changes-UI-End
     # Main body (Colum 2)
     - name: legs
       slotTexture: legs
@@ -157,18 +157,18 @@
       uiWindowPos: 2,4
       strippingWindowPos: 2,0
       displayName: Ears
-    - name: cloak
+    - name: cloak  # Stalker-Changes-UI-Start
       slotTexture: cloak
       slotFlags: CLOAK
       stripTime: 5
       uiWindowPos: 3,0
       strippingWindowPos: 3,4
       displayName: Cloak
-    - name: back2
+    - name: dopweapon
       slotTexture: suit_storage
-      slotFlags: BACK2
+      slotFlags: DOPWEAPON
       slotGroup: MainHotbar
       stripTime: 3
       uiWindowPos: 6,0
       strippingWindowPos: 3,5
-      displayName: Back
+      displayName: Dop Weapon # Stalker-Changes-UI-End

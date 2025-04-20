@@ -1,0 +1,37 @@
+# КРАФТ НЕ РАБОТАЕТ
+
+- type: construction
+  name: косяк
+  id: Joint
+  hide: false # stalker-changes
+  graph: JointStage
+  startNode: start
+  targetNode: JointStageEnd
+  category: construction-category-utilities
+  description: Эх, сейчас бы затянуться :3
+  icon: { sprite: Objects/Consumable/Smokeables/Cannabis/joint.rsi, state: unlit-icon }
+  objectType: Item
+
+- type: constructionGraph
+  id: JointStage
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: JointStageEnd
+          steps:
+            - tag: PaperRolling1
+              amount: 1
+              name: сигаретная бумага
+              icon:
+                sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
+                state: cigpaper
+            - tag: GroundCannabis
+              amount: 1
+              name: измельчённая конопля
+              icon:
+                sprite: Objects/Misc/reagent_fillings.rsi
+                state: powderpile
+              doAfter: 3
+    - node: JointStageEnd
+      entity: Joint
