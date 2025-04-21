@@ -227,8 +227,8 @@ namespace Content.Server.Atmos.EntitySystems
                 ? (-1f, 1f)
                 : (1f, -1f);
             // bring each entity to the same firestack mass, firestacks being scaled by the other's mass
-            AdjustFireStacks(uid, src * avg * mass2, flammable, ignite: true);
-            AdjustFireStacks(otherUid, dest * avg * mass1, otherFlammable, ignite: true);
+            //AdjustFireStacks(uid, src * avg * mass2, flammable, ignite: true);
+            //AdjustFireStacks(otherUid, dest * avg * mass1, otherFlammable, ignite: true);
         }
 
         private void OnIsHot(EntityUid uid, FlammableComponent flammable, IsHotEvent args)
