@@ -8,7 +8,7 @@
   - type: NewMapTeleport
     portalName: GreatSwamps-Cordon1
     cooldownEnabled: true
-    cooldownTime: 60
+    cooldownTime: 30
     godmodeCooldown: 5
 
 - type: entity
@@ -19,7 +19,7 @@
   - type: NewMapTeleport
     portalName: GreatSwamps-Cordon2
     cooldownEnabled: true
-    cooldownTime: 60
+    cooldownTime: 30
     godmodeCooldown: 5
 
 - type: entity
@@ -30,7 +30,7 @@
   - type: NewMapTeleport
     portalName: GreatSwamps-Agroprom
     cooldownEnabled: true
-    cooldownTime: 60
+    cooldownTime: 30
     godmodeCooldown: 5
 
 - type: entity
@@ -41,5 +41,16 @@
   - type: NewMapTeleport
     portalName: Agroprom-Rostok
     cooldownEnabled: true
-    cooldownTime: 60
+    cooldownTime: 30
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-Oasis
+  name: RedForest - Oasis
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Oasis
+    cooldownEnabled: true
+    cooldownTime: 30
     godmodeCooldown: 5
