@@ -1,5 +1,4 @@
-ent-BaseSpeedLoader45ACP = speedloader (.45 ACP)
+ent-BaseSTSpeedLoader45ACP = спидлоадер (.45 ACP)
     .suffix = Stalker
-ent-SpeedLoader45ACP = Speedloader (.45 ACP)
-    .suffix = { ent-BaseSpeedLoader45ACP.suffix }
-ent-SpeedLoader45ACPEmpty = { ent-SpeedLoader45ACP }
+ent-STSpeedLoader45ACP = Спидлоадер (.45 ACP)
+    .suffix = { ent-BaseSTSpeedLoader45ACP.suffix }

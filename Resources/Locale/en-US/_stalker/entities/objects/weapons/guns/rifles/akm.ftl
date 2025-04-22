@@ -1,3 +1,2 @@
-ent-STWeaponRifleStalkerAKM = AKM
-    .desc = A weapon-building icon, a polished and improved AK known as the AKM. The most popular weapon in the world, uses a caliber of 7.62x39.
-    .suffix = ST
+ent-STWeaponRifleAKM = AKM "Zone Legend"
+    .desc = Improved modernization of Kalashnikov rifle chambered in 7.62x39mm. Found everywhere in the Zone - from rookies to veterans. Symbol of reliability in toughest conditions.

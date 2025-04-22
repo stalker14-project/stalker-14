@@ -1,0 +1,2 @@
+ent-STWeaponShotgunSPAS = SPAS-12 Combat Shotgun
+    .desc = Italian combat shotgun with dual pump-action/semi-auto firing modes. Highly valued in the Zone for its stopping power against mutants and reliability in harsh conditions.

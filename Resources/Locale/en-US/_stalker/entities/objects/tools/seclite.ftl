@@ -1,3 +1,3 @@
 ent-STFlashlightSeclite = seclite
-    .desc = A robust flashligt.
+    .desc = A robust flashlight.
     .suffix = ST

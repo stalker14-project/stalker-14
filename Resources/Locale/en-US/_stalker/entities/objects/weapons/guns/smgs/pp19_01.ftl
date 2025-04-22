@@ -1,0 +1,2 @@
+ent-STWeaponSMGPP1901 = PP-19-01 "Vityaz" submachine gun
+    .desc = A modern Russian submachine gun chambered in 9x19mm Parabellum. Features polymer furniture and folding stock, making it compact yet effective for urban combat scenarios in the Zone.

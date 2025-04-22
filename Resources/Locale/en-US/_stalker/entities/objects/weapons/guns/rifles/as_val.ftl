@@ -1,6 +1,4 @@
-ent-STWeaponRifleStalkerVAL = AS-VAL
-    .desc = Special assault rifle for the rare and killer caliber 9x39.
-    .suffix = ST
-ent-STSkinVALPoiskSelebra = AS-VAL "Celebra"
-    .desc = { ent-STWeaponRifleStalkerVAL.desc }
-    .suffix = ST, Search, Skin
+ent-STWeaponRifleASVAL = AS-VAL
+    .desc = Silent assault rifle chambered in 9x39mm. Favored by scouts and saboteurs in the Zone. Capable of penetrating heavy armor but expensive to maintain.
+ent-STWeaponRifleASVALSelebra = AS-VAL "Selebra"
+    .desc = Custom AS VAL with "Poisk" camouflage pattern. Often used by experienced lone stalkers who prefer to work quietly and efficiently.

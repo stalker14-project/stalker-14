@@ -3,7 +3,7 @@
 - type: entity
   parent: BaseItem
   id: RoublesFake
-  name: рубли
+  name: rubles
   description: Национальная валюта Российской Федерации. Интересный факт - 1 рубль равен 100 копейкам.
   suffix: Stalker, FAKE
   components:
@@ -41,13 +41,13 @@
     - RoublesFake
 - type: currency
   id: RoublesFake
-  displayName: рубли
+  displayName: rubles
   cash:
     1: RoublesFake
   canWithdraw: true
 - type: stack
   id: RoublesFake
-  name: рубли
+  name: rubles
   icon: { sprite: "/Textures/_Stalker/Objects/Economy/rubles.rsi", state: cash }
   spawn: RoublesFake
 

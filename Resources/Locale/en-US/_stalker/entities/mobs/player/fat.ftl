@@ -1,0 +1,1 @@
+ent-MobHumanFat = Faturist

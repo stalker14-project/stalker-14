@@ -40,3 +40,6 @@ ent-ClothingHeadCapMerc = merc's cap
     .suffix = Stalker
 ent-STClothingHeadHatFoma = Old Ushanka
     .desc = Gray Soviet ushanka is a practical winter headdress made of thick cloth with fur lapels. It reliably protects against frost, is versatile and concise. Classics of the Soviet era.
+ent-STClothingHeadBeretDolg = Duty's beret
+    .desc = This is the Red Beret of the officers of the Duty.
+    .suffix = Stalker

@@ -1,0 +1,2 @@
+ent-STWeaponRifleAH12 = ASH-12 "Mutant Hunter"
+    .desc = Russian heavy assault rifle chambered in 12.7x55mm. Used in the Zone against heavily armored mutants and protected targets. Distinctive 'pop' sound can be heard hundreds of meters away.

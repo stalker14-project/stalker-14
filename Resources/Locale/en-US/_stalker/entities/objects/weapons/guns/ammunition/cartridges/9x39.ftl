@@ -1,4 +1,4 @@
-ent-BaseCartridge939 = cartridge (9х39 rifle)
-ent-Cartridge939SP5 = Патрон (9х39)СП-5
-ent-Cartridge939SP6 = Патрон (9х39)СП-6
-ent-Cartridge939BP = Патрон (9х39)БП
+ent-BaseCartridge939 = Cartridge (9x39 Rifle)
+ent-Cartridge939SP5 = Cartridge (9x39) SP-5
+ent-Cartridge939SP6 = Cartridge (9x39) SP-6
+ent-Cartridge939BP = Cartridge (9x39) BP

@@ -1,5 +1,5 @@
-ent-BaseCartridge725 = cartridge (7,62x25 rifle)
-ent-Cartridge725PGL = Патрон (7,62x25)П гл
-ent-Cartridge725PTGJ = Патрон (7,62x25)ПТ гж
-ent-Cartridge725LRNPC = Патрон (7,62x25)LRNPC
-ent-Cartridge725PSTGJ = Патрон (7,62x25)Пст гж
+ent-BaseSTCartridge725 = Cartridge (7.62x25 Rifle)
+ent-STCartridge725PGL = Cartridge (7.62x25) P gl
+ent-STCartridge725PTGJ = Cartridge (7.62x25) PT gzh
+ent-STCartridge725LRNPC = Cartridge (7.62x25) LRNPC
+ent-STCartridge725PSTGJ = Cartridge (7.62x25) PST gzh

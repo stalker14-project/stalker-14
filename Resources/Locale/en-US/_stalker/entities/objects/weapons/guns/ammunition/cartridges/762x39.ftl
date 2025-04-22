@@ -1,5 +1,5 @@
-ent-BaseCartridge739 = cartridge (7,62x39 rifle)
-ent-Cartridge739FMJ = Патрон (7,62x39)FMJ
-ent-Cartridge739HP = Патрон (7,62x39)HP
-ent-Cartridge739PC = Патрон (7,62x39)ПС
-ent-Cartridge739BP = Патрон (7,62x39)БП
+ent-BaseSTCartridge739 = Cartridge (7.62x39 Rifle)
+ent-STCartridge739FMJ = Cartridge (7.62x39) FMJ
+ent-STCartridge739HP = Cartridge (7.62x39) HP
+ent-STCartridge739PC = Cartridge (7.62x39) PS
+ent-STCartridge739BP = Cartridge (7.62x39) BP

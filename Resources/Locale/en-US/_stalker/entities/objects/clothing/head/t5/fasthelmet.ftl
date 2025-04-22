@@ -1,6 +1,6 @@
-ent-STClothingHeadHelmetCombatT5Base = база боевого шлема T5
+ent-STClothingHeadHelmetCombatT5Base = T5 Combat Helmet Base
     .suffix = ST, T5, Combat
-ent-STClothingHeadHelmetFASTNeutralBlack = черный шлем «FAST»
-    .desc = Защищающий от режущего и тупого урона
-ent-STClothingHeadHelmetFASTNeutral = шлем «FAST» нейтралов
-    .desc = Перекрашенный и слегка доработанный умельцами из нейтралов шлем "FAST". Класс брони - 3
+ent-STClothingHeadHelmetFASTNeutralBlack = FAST Helmet (Black)
+    .desc = Provides protection against cutting and blunt damage
+ent-STClothingHeadHelmetFASTNeutral = FAST Helmet (Neutral)
+    .desc = A repainted and slightly modified FAST helmet by Neutral craftsmen. Armor class - 3

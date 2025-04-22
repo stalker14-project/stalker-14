@@ -1,0 +1,2 @@
+ent-STWeaponSMGPP19 = PP-19 "Bizon" SMG
+    .desc = The modern Russian PP-19 Bizon submachine gun chambered in 9x18mm Makarov. Features a unique helical magazine with 64-round capacity, making it ideal for sustained firefights in Zone conditions.

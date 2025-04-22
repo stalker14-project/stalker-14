@@ -1,6 +1,6 @@
-ent-BaseCartridge754 = cartridge (7,62x54 rifle)
-ent-Cartridge754FMJ = Патрон (7,62x54)FMJ
-ent-Cartridge754PC = Патрон (7,62x54)ПС
-ent-Cartridge754HPBT = Патрон (7,62x54)HP BT
-ent-Cartridge754BT = Патрон (7,62x54)БТ
-ent-Cartridge754SNB = Патрон (7,62x54)СНБ
+ent-BaseSTCartridge754 = Cartridge (7.62x54 Rifle)
+ent-STCartridge754FMJ = Cartridge (7.62x54) FMJ
+ent-STCartridge754PC = Cartridge (7.62x54) PS
+ent-STCartridge754HPBT = Cartridge (7.62x54) HP BT
+ent-STCartridge754BT = Cartridge (7.62x54) BT
+ent-STCartridge754SNB = Cartridge (7.62x54) SNB

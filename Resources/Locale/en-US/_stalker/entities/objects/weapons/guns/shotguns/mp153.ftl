@@ -1,0 +1,10 @@
+ent-STWeaponShotgunMP153 = MP-153
+    .desc = Semi-automatic shotgun - an affordable alternative to expensive imported analogs. Stalkers love it for its reliability in the Zone.
+ent-STWeaponShotgunMP153Celebra = MR-153 (Celebra)
+    .desc = A variant of MP-153 with "Celabra" camouflage. Just as reliable, but with individual style.
+ent-STWeaponShotgunMP153Raven = MR-153 (Raven)
+    .desc = Black tactical version of MP-153. Popular among lone stalkers for its intimidating appearance.
+ent-STWeaponShotgunBenelliM4Super90 = benelli M4 Super 90
+    .desc = Elite Italian semi-automatic. Rare in the Zone, more often found among professional mutant hunters.
+ent-STWeaponShotgunBenelliM4Super90Seraphim = benelli M4 "Seraphim"
+    .desc = Ritual weapon of seraphim hunters. Decorated with amulets and marks of victories over anomalies.

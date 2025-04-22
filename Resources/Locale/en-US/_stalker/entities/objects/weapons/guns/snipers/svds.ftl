@@ -1,0 +1,10 @@
+ent-STWeaponSniperSVDS = SVDS (Dragunov Sniper Rifle)
+    .desc = A modernized folding version of the legendary SVD sniper rifle, chambered in 7.62x54mmR. Features improved ergonomics and comes equipped with a medium-range scope. A favorite among Zone marksmen for its reliability and stopping power.
+ent-STWeaponSniperSVDSGrass = SVDS Ghillie Sniper Rifle
+    .desc = A carefully modified SVDS with camouflage netting and minor tuning for maximum concealment in the Zone's wilderness. The 7.62x54mmR rounds ensure no mutant walks away from a well-placed shot.
+ent-STWeaponSniperSVDSCovenant = Covenant SVDS Sniper Rifle
+    .desc = A custom SVDS variant used by Covenant faction snipers. Features unique camouflage and faction markings while retaining all the deadly precision of the original. Chambered in 7.62x54mmR.
+ent-STWeaponSniperSVU = SVU Compact Sniper Rifle
+    .desc = A bullpup conversion of the SVDS designed for urban operations in the Zone. The shortened barrel reduces range but improves handling in tight spaces, while still delivering 7.62x54mmR stopping power.
+ent-STWeaponSniperSVUSeraphim = Seraphim SVU Sniper Rifle
+    .desc = An elite SVU variant used by the mysterious Seraphim faction. Features advanced modifications and distinctive white finish, making it both deadly and recognizable in the Zone's harsh environment.

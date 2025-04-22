@@ -1,3 +1,3 @@
-ent-BloodyPaper = кровавая бумага
-    .desc = Потрёпанная бумага, покрыта кровью.
+ent-BloodyPaper = Bloody Paper
+    .desc = Shabby paper, covered in blood.
     .suffix = Stalker

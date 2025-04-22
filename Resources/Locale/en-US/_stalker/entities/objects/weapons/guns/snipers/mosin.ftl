@@ -1,0 +1,2 @@
+ent-STWeaponSniperMosin = Mosin-Nagant Rifle
+    .desc = The legendary Mosin-Nagant bolt-action rifle chambered in 7.62x54mmR. While slow to reload and limited by its 5-round capacity, its stopping power makes it a formidable choice when modern weapons aren't available in the Zone.

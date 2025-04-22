@@ -1,7 +1,7 @@
-ent-BaseCartridge545 = cartridge (5,45x39)
-ent-Cartridge545FMJ = Патрон (5,45x39)FMJ
-ent-Cartridge545PC = Патрон (5,45x39)ПС
-ent-Cartridge545HP = Патрон (5,45x39)HP
-ent-Cartridge545BP = Патрон (5,45x39)БП
-ent-Cartridge545BS = Патрон (5,45x39)БС
-ent-Cartridge545NE = Патрон (5,45x39)"Игольник"
+ent-BaseSTCartridge545 = Cartridge (5.45x39)
+ent-STCartridge545FMJ = Cartridge (5.45x39) FMJ
+ent-STCartridge545PC = Cartridge (5.45x39) PS
+ent-STCartridge545HP = Cartridge (5.45x39) HP
+ent-STCartridge545BP = Cartridge (5.45x39) BP
+ent-STCartridge545BS = Cartridge (5.45x39) BS
+ent-STCartridge545NE = Cartridge (5.45x39) "Needler"

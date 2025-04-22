@@ -1,0 +1,9 @@
+ent-STClothingOuterCoatBase = Basic Cloak
+    .desc = Basic description of the cloak.
+    .suffix = ST, T1, Universal
+ent-ClothingOuterCoatBanditBrown = Bandit Leather Cloak
+    .desc = Normal brown leather cloak. It does not provide noticeable protection to the carrier. Except that it will not let you freeze at night and soften the bite of a blind dog. Quite inconvenient in the conditions of the Zone, but, nevertheless, it is often used by bandits - perhaps solely because of its appearance.
+ent-ClothingHeadHatHoodCoatBanditBrown = hood
+ent-ClothingOuterCoatBanditBlack = { ent-ClothingOuterCoatBanditBrown }
+    .desc = An ordinary cloak made of black leather. It does not provide noticeable protection to the carrier. Except that it will not let you freeze at night and soften the bite of a blind dog. Quite inconvenient in the conditions of the Zone, but, nevertheless, it is often used by bandits - perhaps solely because of its appearance.
+ent-ClothingHeadHatHoodCoatBanditBlack = { ent-ClothingHeadHatHoodCoatBanditBrown }

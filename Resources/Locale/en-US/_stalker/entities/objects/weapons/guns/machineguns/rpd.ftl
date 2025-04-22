@@ -1,3 +1,2 @@
-ent-WeaponMachineGunRPD = RPD
-    .desc = Degtyarev Light Machine Gun is a Soviet light machine gun developed in 1944 for 7.62x39 rounds.
-    .suffix = ST, Machine gun
+ent-STWeaponMachineGunRPD = RPD (Light Machine Gun)
+    .desc = Soviet light machine gun (1944). Prized in the Zone for reliability and 7.62x39mm firepower. Heavy but can saturate large areas with lead.

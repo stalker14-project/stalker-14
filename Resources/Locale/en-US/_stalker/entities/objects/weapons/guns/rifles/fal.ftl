@@ -1,0 +1,2 @@
+ent-STWeaponRifleFAL = FN FAL
+    .desc = Legendary Belgian battle rifle chambered in powerful 7.62x51mm NATO. Appears in the Zone via mercenaries and smugglers. Each shot hits like a sledgehammer, but semi-auto only. "A gentleman's weapon", as veterans say.

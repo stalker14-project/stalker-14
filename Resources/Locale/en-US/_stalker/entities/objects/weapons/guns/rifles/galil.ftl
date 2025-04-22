@@ -1,3 +1,2 @@
-ent-WeaponRifleStalkerGalil = Galil
-    .desc = Israeli automatic shotgun chambered for 5.56 caliber.
-    .suffix = ST
+ent-STWeaponRifleGalil = Galil ARM
+    .desc = Israeli assault rifle designed for harsh climates. Appears in the Zone via Middle-Eastern mercenaries. Hardy as a camel, with burst-fire more accurate than most automatic rifles.

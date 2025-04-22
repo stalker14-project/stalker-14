@@ -1,0 +1,13 @@
+ent-STWeaponRifleAKS74 = AKS-74
+    .desc = classical folding assault rifle chambered in 5.45x39mm. Main weapon of military and stalkers in the Zone. Reliable as hammer but requires skill for accurate fire
+ent-STWeaponRifleAK74M = AK-74M "Modern"
+    .desc = Modern modification with polymer furniture and optics rail. Valued in the Zone for versatility and improved ergonomics.
+ent-STWeaponRifleSaiga545 = saiga 5.45 "Hunter"
+    .desc = Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
+ent-STWeaponRifleA545 = A-545 "Balalaika"
+    .desc = Assault rifle with balanced recoil system. Rare in the Zone, usually comes with military expeditions. Nicknamed 'Balalaika' for distinctive sound.
+ent-STWeaponRifleAKS74Green = AKS-74 (Forest)
+    .desc = Variant with green polymer furniture. Ideal for operations in northern forest areas of the Zone.
+ent-STWeaponRifleAKS74U = AKS-74U
+ent-STWeaponRifleAKS74UWhite = AKS-74U (Winter)
+ent-STWeaponRifleAKS74UBlack = AKS-74U (Night)
