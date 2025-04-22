@@ -4,10 +4,8 @@
   icon: pack
   description: Свирепый воин стаи, представляющий её дикую мощь и первичные инстинкты.
   playTimeTracker: JobEvolverPackFang
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobEvolverPackFang
-      time: 1
     - !type:SpeciesRequirement
       species:
       - Moth
@@ -28,6 +26,8 @@
         - type: Bands
           band: Evolver
           bandIcon: pack
+          bandProto: STEvolversBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -51,10 +51,8 @@
   icon: pack
   description: лидер стаи, управляющий её действиями и защищающий её законы и порядок.
   playTimeTracker: JobEvolverPackAlpha
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobEvolverPackAlpha
-      time: 1
     - !type:SpeciesRequirement
       species:
       - Moth
@@ -75,6 +73,8 @@
         - type: Bands
           band: Evolver
           bandIcon: pack
+          bandProto: STEvolversBand
+          bandRankId: 4
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker

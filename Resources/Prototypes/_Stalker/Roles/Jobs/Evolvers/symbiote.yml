@@ -4,10 +4,8 @@
   icon: symbiote
   description: управляющий телепатией и пси-энергиями
   playTimeTracker: JobEvolverSymbioteMedium
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobEvolverSymbioteMedium
-      time: 1
     - !type:SpeciesRequirement
       species:
       - Moth
@@ -27,6 +25,8 @@
         - type: Bands
           band: Evolver
           bandIcon: symbiote
+          bandProto: STEvolversBand
+          bandRankId: 3
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -40,10 +40,8 @@
   icon: symbiote
   description: высший симбиот, обладающий абсолютной властью над пси-энергией и пространством
   playTimeTracker: JobEvolverSymbioteArchon
+  whitelisted: true
   requirements:
-    - !type:RoleTimeRequirement
-      role: JobEvolverSymbioteArchon
-      time: 1
     - !type:SpeciesRequirement
       species:
       - Moth
@@ -63,6 +61,8 @@
         - type: Bands
           band: Evolver
           bandIcon: symbiote
+          bandProto: STEvolversBand
+          bandRankId: 5
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker

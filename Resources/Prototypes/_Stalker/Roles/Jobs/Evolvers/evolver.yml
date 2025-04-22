@@ -4,6 +4,7 @@
   icon: evolver
   description: разумные мутанты, стремящиеся к постоянной эволюции и адаптации в Зоне.
   playTimeTracker: JobEvolver
+  whitelisted: true
   requirements:
     - !type:SpeciesRequirement
       species:
@@ -24,6 +25,8 @@
         - type: Bands
           band: Evolver
           bandIcon: pack
+          bandProto: STEvolversBand
+          bandRankId: 1
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
