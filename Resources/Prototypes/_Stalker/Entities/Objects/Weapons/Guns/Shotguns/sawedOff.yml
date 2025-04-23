@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: STBaseWeaponShotgun
+  parent: STBaseWeaponShotgunCompact
   id: STBaseWeaponShotgunSawedOf
   components:
   - type: Sprite
@@ -16,7 +16,7 @@
   - type: Gun
     minAngle: 30
     maxAngle: 80
-    fireRate: 7
+    fireRate: 2
     angleIncrease: 15
     angleDecay: 75
   - type: BallisticAmmoProvider

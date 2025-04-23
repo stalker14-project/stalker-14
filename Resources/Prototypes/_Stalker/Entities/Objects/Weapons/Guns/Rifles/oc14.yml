@@ -17,9 +17,9 @@
       path: /Audio/_Stalker/Effects/Guns/groza_shot.ogg
       params:
           volume: -2
-    minAngle: 50
-    maxAngle: 90
-    angleIncrease: 3
+    minAngle: 40
+    maxAngle: 75
+    angleIncrease: 0.7
     angleDecay: 15
     shotsPerBurst: 3
     ShotsPerBurstModified: 3
@@ -58,6 +58,8 @@
         whitelist:
           tags:
           - STCartridge545
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.4
 
 - type: entity
   parent: STBaseWeaponRifleOC14

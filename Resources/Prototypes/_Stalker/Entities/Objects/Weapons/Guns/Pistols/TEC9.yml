@@ -19,7 +19,7 @@
     projectileSpeed: 20
     minAngle: 5
     maxAngle: 40
-    angleIncrease: 3
+    angleIncrease: 1
     angleDecay: 15
     fireRate: 3
     availableModes:
@@ -52,7 +52,4 @@
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: GunWieldBonus
-    minAngle: -5
-    maxAngle: -25
 

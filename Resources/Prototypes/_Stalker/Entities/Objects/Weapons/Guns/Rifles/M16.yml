@@ -12,15 +12,15 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/m16.rsi
   - type: Gun
-    fireRate: 6
+    fireRate: 5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/m4.ogg
       params:
         volume: -2
     minAngle: 50
     maxAngle: 100
-    angleIncrease: 2
-    angleDecay: 10
+    angleIncrease: 1
+    angleDecay: 15
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -51,6 +51,10 @@
         whitelist:
           tags:
           - STCartridge556
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponRifleM16

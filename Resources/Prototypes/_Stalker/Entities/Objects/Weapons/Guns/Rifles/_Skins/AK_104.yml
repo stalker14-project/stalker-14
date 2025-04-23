@@ -17,9 +17,9 @@
     projectileSpeed: 30
     minAngle: 55
     maxAngle: 95
-    angleIncrease: 4
+    angleIncrease: 1.8
     angleDecay: 25
-    fireRate: 5
+    fireRate: 5.5
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -49,3 +49,7 @@
         whitelist:
           tags:
             - STCartridge739
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 1.2
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 0.9

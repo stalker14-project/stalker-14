@@ -46,7 +46,15 @@
   - type: TimedDespawn
     lifetime: 10
   - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.03
   - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.03
+    - range: 20
+      falloff: 0.2
 
 - type: entity
   parent: STBaseBullet
@@ -70,3 +78,105 @@
         - Impassable
         - BulletImpassable
       fly-by: *flybyfixture
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseBean #Low range, almost melee
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.1
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 2
+      falloff: 0.05
+    - range: 8
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBasePistolBullet #Low range
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.1
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 2
+      falloff: 0.05
+    - range: 8
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseLRBullet #Medium range, light rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.05
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.05
+    - range: 15
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseMRBullet #Medium to high range, medium rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.03
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.03
+    - range: 20
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseHRBullet #High range, heavy rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.01
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.01
+    - range: 30
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseSPBullet #Spacial ammo like 9x39 or .300 blackout
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 2
+      falloff: 0.08
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 2
+      falloff: 0.07
+    - range: 15
+      falloff: 0.2

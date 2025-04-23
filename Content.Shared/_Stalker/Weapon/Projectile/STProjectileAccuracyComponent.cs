@@ -14,7 +14,7 @@ public sealed partial class STProjectileAccuracyComponent : Component
     [DataField, AutoNetworkedField]
     public List<AccuracyFalloffThreshold> Thresholds = new()
     {
-        new AccuracyFalloffThreshold(5f, 0.1f, false),
+        new AccuracyFalloffThreshold(5f, 0.05f, false),
     };
 
     [DataField, AutoNetworkedField]
@@ -24,7 +24,7 @@ public sealed partial class STProjectileAccuracyComponent : Component
     /// Minimum hit chance.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float MinAccuracy = 0.05f;
+    public float MinAccuracy = 0.15f;
 
     /// <summary>
     /// The accuracy of the projectile before taking into account any modifiers reliant on the target.

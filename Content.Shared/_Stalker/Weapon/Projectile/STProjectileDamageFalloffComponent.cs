@@ -13,15 +13,15 @@ public sealed partial class STProjectileDamageFalloffComponent : Component
     [DataField, AutoNetworkedField]
     public List<DamageFalloffThreshold> Thresholds = new()
     {
-        new DamageFalloffThreshold(0f, 1, false),
-        new DamageFalloffThreshold(22f, 9999, true),
+        new DamageFalloffThreshold(6f, 0.01f, false),
+        new DamageFalloffThreshold(35f, 1f, true),
     };
 
     /// <summary>
     /// This determines the minimum fraction of the projectile's original damage that must remain after falloff is applied.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float MinRemainingDamageModifier = 0.05f;
+    public float MinRemainingDamageModifier = 0.15f;
 
     /// <summary>
     /// This is the additional falloff multiplier applied by the firing weapon.

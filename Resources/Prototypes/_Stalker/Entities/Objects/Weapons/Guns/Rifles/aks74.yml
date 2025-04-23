@@ -14,10 +14,10 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/ak.ogg
-    minAngle: 52
+    minAngle: 50
     maxAngle: 95
-    angleIncrease: 4.5
-    angleDecay: 40
+    angleIncrease: 1.5
+    angleDecay: 20
     fireRate: 6
   - type: ItemSlots
     slots:
@@ -55,6 +55,7 @@
   name: AKS-74
   description: classical folding assault rifle chambered in 5.45x39mm. Main weapon of military and stalkers in the Zone. Reliable as hammer but requires skill for accurate fire
 
+
 - type: entity
   parent: STBaseWeaponRifleAKS74
   id: STWeaponRifleAK74M
@@ -62,14 +63,21 @@
   description: Modern modification with polymer furniture and optics rail. Valued in the Zone for versatility and improved ergonomics.
   components:
   - type: Gun
-    angleIncrease: 4
+    angleIncrease: 1
     fireRate: 7
+    minAngle: 50
+    maxAngle: 90
+    angleDecay: 25
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponRifleAKS74
@@ -84,10 +92,18 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
   - type: Gun
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 1
+    angleDecay: 15
     fireRate: 3
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponRifleAKS74
@@ -103,7 +119,13 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/A-545.rsi
     scale: 0.75, 0.75
   - type: Gun
-    fireRate: 7.75
+    minAngle: 45
+    maxAngle: 90
+    angleIncrease: 0.8
+    angleDecay: 30
+    fireRate: 9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.5
 
 - type: entity
   parent: STBaseWeaponRifleAKS74
@@ -139,6 +161,11 @@
     maxAngle: 75
     angleDecay: 15
     fireRate: 5
+    angleIncrease: 1.75
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 1.2
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 0.7
 
 - type: entity
   parent: STBaseWeaponRifleAKS74U

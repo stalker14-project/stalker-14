@@ -3,7 +3,7 @@
   abstract: True
   id: STBasePellet
   categories: [ HideSpawnMenu ]
-  parent: STBaseBullet
+  parent: STBaseBean
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
@@ -111,7 +111,7 @@
 - type: entity
   id: BulletShotgunBullet
   name: bullet (Bullet)
-  parent: STBasePellet
+  parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -126,7 +126,7 @@
 - type: entity
   id: BulletShotgunRIP
   name: bullet (Bullet)
-  parent: STBasePellet
+  parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -142,7 +142,7 @@
 - type: entity
   id: BulletShotgunDart
   name: bullet (Dart)
-  parent: STBasePellet
+  parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -157,7 +157,7 @@
   id: PelletShotgunBeanbagStalker
   name: beanbag (.50)
   categories: [ HideSpawnMenu ]
-  parent: STBaseBullet
+  parent: STBaseSPBullet
   components:
     - type: Sprite
       sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi

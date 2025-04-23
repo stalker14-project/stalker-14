@@ -1,7 +1,7 @@
 # Кастомка серафимов
 - type: entity
   name: АК-12
-  suffix: ST, Скин
+  suffix: ST, t4
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK12
   description: Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы.
@@ -20,7 +20,7 @@
       path: /Audio/_Stalker/Effects/Guns/ak.ogg
     minAngle: 48
     maxAngle: 95
-    angleIncrease: 3.6
+    angleIncrease: 0.8
     angleDecay: 25
     fireRate: 7
   - type: ItemSlots
@@ -52,6 +52,8 @@
         whitelist:
           tags:
             - STCartridge545
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   name: АК-12 серафимов
@@ -85,11 +87,13 @@
       path: /Audio/_Stalker/Effects/Guns/ak.ogg
     minAngle: 40
     maxAngle: 85
-    angleIncrease: 3
+    angleIncrease: 0.8
     angleDecay: 25
     fireRate: 7.5
   - type: STWeight
     self: 6
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.3
 
 - type: entity
   name: РПК-16 "Осень"

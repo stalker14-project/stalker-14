@@ -1,0 +1,51 @@
+- type: emoteSounds
+  id: STMaleHuman
+  params:
+    variation: 0.125
+  sounds:
+    STScream:
+      collection: MaleScreams
+    STLaugh:
+      collection: MaleLaugh
+    STSigh:
+      collection: MaleSigh
+    STCrying:
+      collection: MaleCry
+    STWhistle:
+      collection: Whistles
+    STGasp:
+      collection: MaleGasp
+    STDefaultDeathgasp:
+      collection: MaleDeathGasp
+
+- type: emoteSounds
+  id: STFemaleHuman
+  params:
+    variation: 0.125
+  sounds:
+    STScream:
+      collection: FemaleScreams
+    STLaugh:
+      collection: FemaleLaugh
+    STSigh:
+      collection: FemaleSigh
+    STCrying:
+      collection: FemaleCry
+    STWhistle:
+      collection: Whistles
+    STGasp:
+      collection: FemaleGasp
+    STDefaultDeathgasp:
+      collection: FemaleDeathGasp
+
+- type: emoteSounds
+  id: STBodyEmotes
+  sounds:
+    STClap:
+      collection: Claps
+    STSnap:
+      collection: Snaps
+      params:
+        volume: -6
+    STSalute:
+      collection: Salutes

@@ -17,10 +17,10 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/sks_shoot.ogg
-    minAngle: 62
-    maxAngle: 80
-    angleIncrease: 5.5
-    angleDecay: 27.5
+    minAngle: 50
+    maxAngle: 85
+    angleIncrease: 1.5
+    angleDecay: 30
     fireRate: 2
   - type: BallisticAmmoProvider
     capacity: 10
@@ -28,6 +28,10 @@
     whitelist:
       tags:
       - STCartridge739
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 2
 
 - type: entity
   parent: STBaseWeaponSniperSKS

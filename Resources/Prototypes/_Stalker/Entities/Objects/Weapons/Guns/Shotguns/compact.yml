@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: STBaseWeaponShotgun
+  parent: STBaseWeaponGun
   id: STBaseWeaponShotgunCompact
   components:
   - type: STWeight
@@ -12,14 +12,25 @@
     size: Small
     shape:
     - 0,0,1,1
-  - type: BallisticAmmoProvider
-    capacity: 1
   - type: Gun
     minAngle: 50
     maxAngle: 100
     angleIncrease: 20
     angleDecay: 100
     fireRate: 2
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: BallisticAmmoProvider
+    capacity: 1
+    whitelist:
+      tags:
+      - ShellShotgun
+      - CartridgeShotgunBullet
+      - CartridgeShotgunBulletRIP
+  - type: PullDoAfter
+    pullTime: 0.5
 
 - type: entity
   parent: STBaseWeaponShotgunCompact

@@ -21,8 +21,8 @@
         volume: -2
     minAngle: 105
     maxAngle: 160
-    angleIncrease: 4
-    angleDecay: 20
+    angleIncrease: 1
+    angleDecay: 50
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -51,6 +51,10 @@
     maxAngle: -100
   - type: PullDoAfter
     pullTime: 5
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponMachineGunM249SAW

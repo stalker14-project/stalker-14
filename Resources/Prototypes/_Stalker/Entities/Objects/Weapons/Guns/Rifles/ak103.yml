@@ -16,8 +16,8 @@
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
     minAngle: 50
     maxAngle: 100
-    angleIncrease: 6
-    angleDecay: 25
+    angleIncrease: 1.8
+    angleDecay: 40
     fireRate: 7
   - type: ItemSlots
     slots:
@@ -48,6 +48,10 @@
         whitelist:
           tags:
           - STCartridge739
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.85
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponRifleAK103
@@ -69,11 +73,8 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak103donate.rsi
   - type: Gun
     angleDecay: 35
-    projectileSpeed: 35
-    angleIncrease: 5
+    angleIncrease: 1.8
     fireRate: 8
-  - type: GunWieldBonus
-    minAngle: -45
 
 - type: entity
   parent: STBaseWeaponRifleAK103
@@ -92,6 +93,10 @@
       path: /Audio/_Stalker/Effects/Guns/203_Sound.ogg
     minAngle: 50
     maxAngle: 95
-    angleIncrease: 6
+    angleIncrease: 1.25
     angleDecay: 30
     fireRate: 7
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.85
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.6

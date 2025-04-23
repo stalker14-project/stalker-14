@@ -3,7 +3,7 @@
   parent: STBaseWeaponPistol
   id: WeaponPistolGSH18
   suffix: ST
-  description: Пистолет ГШ-18 был разработан в конце 1990-х годов в тульском Конструкторском бюро приборостроения (КБП). Название он получил по первым буквам фамилий конструкторов, под руководством которых проектировался – Василия Грязева и Аркадия Шипунова, и числа «18», означающего емкость магазина.
+  description: Пистолет ГШ-18 был разработан в конце 1990-х годов в тульском Конструкторском бюро приборостроения (КБП). Название он получил по первым буквам фамилий конструкторов, под руководством которых проектировался – Василия Грязева и Аркадия Шипунова, и числа «18», означало емкость магазина. Но сейчас поставляется с разными магазинами.
   components:
     - type: STWeight
       self: 0.47
@@ -21,7 +21,7 @@
       projectileSpeed: 20
       minAngle: 3
       maxAngle: 40
-      angleIncrease: 4
+      angleIncrease: 1
       angleDecay: 25
       fireRate: 3
       availableModes:
@@ -55,6 +55,3 @@
         gun_magazine: !type:ContainerSlot
         gun_chamber: !type:ContainerSlot
     - type: Craftable
-    - type: GunWieldBonus
-      minAngle: -25
-      maxAngle: -5

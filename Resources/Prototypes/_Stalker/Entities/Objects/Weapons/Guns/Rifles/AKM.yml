@@ -16,9 +16,9 @@
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
     minAngle: 52
     maxAngle: 125
-    angleIncrease: 6
-    angleDecay: 25
-    fireRate: 4
+    angleIncrease: 2
+    angleDecay: 35
+    fireRate: 4.5
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -49,6 +49,8 @@
         whitelist:
           tags:
           - STCartridge739
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.9
 
 - type: entity
   parent: STBaseWeaponRifleAKM
