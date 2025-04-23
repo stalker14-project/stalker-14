@@ -4,6 +4,3 @@ ent-STWeaponRifleStalkerAK103 = AK-103
 ent-STWeaponRifleAK103kamo = AK-103 Special
     .desc = Greatly improved AK-103. Someone's personal weapon, which was handled with care.
     .suffix = ST, Skin
-ent-STWeaponRifleAK203 = AK-203
-    .desc = One of the last AKs developed by Mikhail Kalashnikov, a further improvement on the AK-103.
-    .suffix = ST, Skin

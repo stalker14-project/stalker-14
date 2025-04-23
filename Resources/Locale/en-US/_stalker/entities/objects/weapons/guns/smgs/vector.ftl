@@ -1,9 +1,3 @@
-ent-STWeaponSMGVector9 = KRISS Vector-9
-    .desc = A new generation SMG with a free bolt, which means a huge rate of fire.
-    .suffix = ST, Sponsor
 ent-STWeaponSMGVector92 = { ent-STWeaponSMGVector9 }
     .desc = A new generation SMG with a free bolt, which means a huge rate of fire. Version in black fittings.
     .suffix = { ent-STWeaponSMGVector9.suffix }
-ent-STWeaponSMGVector9Forest = KRISS Vector-9 Forest
-    .desc = A new generation SMG with a free bolt, which means a huge rate of fire. Camouflaged as a forest.
-    .suffix = ST, Sponsor, Skin

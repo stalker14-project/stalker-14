@@ -1,6 +1,3 @@
-ent-STWeaponShotgunMP153 = MP-153
-    .desc = This is a semi-automatic smoothbore shotgun widely used by hunters, sportsmen, and security guards. It holds up to 5 rounds and is popular among stalkers as an affordable alternative to the SPAS-12. All this makes it an attractive choice for those who value reliability and efficiency.
-    .suffix = ST
 ent-STWeaponShotgunMP153PoiskSelebra = MP-153 "Celebra"
     .desc = { ent-STWeaponShotgunMP153.desc }
     .suffix = ST, Search, Skin
