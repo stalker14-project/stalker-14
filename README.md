@@ -9,7 +9,7 @@ It is based on the [space-syndicate/space-station-14](https://github.com/space-s
 
 ## Contribute
 
-This build is private, and only members of the [Stalker](https://github.com/stalker14-project) team can make changes. If you want to help the project in any way, you can join our ranks or submit a bug report/suggestion on our [Discord](https://discord.gg/pu6DEPGjsN)
+This build is private, and only members of the [Stalker](https://github.com/stalker14-project) team can make changes. If you want to help the project in any way, you can join our ranks or submit a bug report/suggestion on our [Discord](https://discord.gg/SnUSV76zR3)
 
 ## License
 
