@@ -1,5 +1,5 @@
-﻿repository-insert-item = Add
-repository-eject-item = Pull
+﻿repository-insert-item = Insert
+repository-eject-item = Withdraw
 repository-more-info = More details
 repository-ui-default-title = Repository
 repository-ui-search-label = Search:
@@ -28,7 +28,7 @@ repository-item-category-display = Category: { $category }
 repository-item-not-chosen = Item not chosen
 repository-weight-inside = Weight of items in the cache: { $weight }/{ $maxWeight }
 repository-item-weight-display = Item weight: { $weight }
-repository-item-sum-weight-display = Item weight: { $weight }
+repository-item-sum-weight-display = Total item weight: { $weight }
 
 # Special Items
 repository-battery-item-current-charge-display = Current charge: {$charge}
