@@ -21,7 +21,7 @@ public sealed partial class StalkerRepositoryItemControl : Control
         {
             name = item.Name[.._nameLength] + "..";
         }
-        ItemName.Text = item.Count == 1 ? name : $"{name}\n{item.Count} units.";
+        ItemName.Text = item.Count == 1 ? name : $"{name}\n{item.Count} pieces.";
         SelectButton.Text = "Select";
         SelectButton.ToggleMode = true;
 
