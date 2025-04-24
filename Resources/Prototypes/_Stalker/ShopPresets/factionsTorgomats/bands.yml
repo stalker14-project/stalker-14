@@ -1,6 +1,20 @@
 - type: shopPreset
   id: BandsShopPreset
   itemsForSale:
+    # values
+    IngotGold1: 750
+    IngotSilver1: 500
+    MaterialDiamond1: 1000
+    DrinkGoldenCup: 400
+    # craftcmp
+    STCraftSheetCopperT1: 60
+    STCraftSheetBrassT3:  1000
+    STCraftStandardPCBT2: 300
+    STCraftSheetIronT2: 200
+    STCraftMultilayerPCBT3: 500
+    STCraftQuartzCrystalT3: 650
+    STCraftGlassT2: 100
+
     # Thermal group - 1
     ZoneArtifactFireball: 400
     ZoneArtifactEye: 600
@@ -22,6 +36,7 @@
     # Gravity group - 2
     ZoneArtifactVyvert: 400
     ZoneArtifactAmoeba: 600
+    ZoneArtifactFloodlight: 600
     ZoneArtifactGravi: 1200
     ZoneArtifactGoldfish: 4800
     ZoneArtifactSpring: 3600
@@ -59,81 +74,81 @@
     MutantPartOraculeEye: 1120
     MutantPartPseudogiantHeart: 2800
     MutantPartZombieHand: 420
-    
+
      #Weapons and armour ---- min cost / 2
-    
+
     #12x70
     STWeaponShotgunMP155T: 20
-    STWeaponShotgunToz34: 100
-    WeaponShotgunStalkerMP133: 170
+    STWeaponShotgunTOZ34: 100
+    STWeaponShotgunMP133: 170
     STWeaponShotgunMP153: 400
-    STWeaponShotgunStalkerBenelli: 550
-    STWeaponShotgunMossberg: 280
-    STWeaponShotgunStalkerSPAS: 580
+    STWeaponShotgunBenelliM4Super90: 550
+    STWeaponShotgunMossbergM88: 280
+    STWeaponShotgunSPAS: 580
     STWeaponShotgunProtecta: 1305
     STWeaponShotgunSaiga12: 140
-    
+
     #5.45x39
-    STWeaponRifleStalkerSaiga545: 400
-    STWeaponGunAKS74U: 745
-    STWeaponRifleStalkerAK74: 1500
-    STSTWeaponRifleStalkerAK74M: 2175
+    STWeaponRifleSaiga545: 400
+    STWeaponRifleAKS74U: 745
+    STWeaponRifleAKS74: 1500
+    STWeaponRifleAK74M: 2175
     STWeaponRifleStalkerAK12: 2250
-    
+
     #5.56x39
-    STWeaponRifleStalkerL85: 950
+    STWeaponRifleL85: 950
     STWeaponRifleM16: 1550
-    STWeaponRifleSig550: 1800
+    STWeaponRifleSIG550: 1800
     STWeaponRifleM4: 1600
-    WeaponRifleStalkerGalil: 2250
-    STWeaponRifleStalkerG36: 2175
-    
+    STWeaponRifleGalil: 2250
+    STWeaponRifleG36: 2175
+
     #7.62x39
-    STWeaponRifleStalkerAKM: 1500
-    STWeaponRifleStalkerAK103: 2500
+    STWeaponRifleAKM: 1500
+    STWeaponRifleAK103: 2500
     STWeaponRifleStalkerAK104: 2750
-    WeaponMachineGunRPD: 4500
-    STWeaponRifleSKS: 850
-    
+    STWeaponMachineGunRPD: 4500
+    STWeaponSniperSKS: 850
+
     #7.62x51
-    STWeaponRifleStalkerFAL: 750
-    STWeaponRifleStalkerGalatz: 2000
+    STWeaponRifleFAL: 750
+    STWeaponRifleGalatz: 2000
     STWeaponRifleSCARH: 1625
     STWeaponRifleM14: 2125
-    
+
     #7.62x54
     STWeaponSniperMosin: 400
-    STWeaponRifleSVDS: 5500
-    STWeaponRifleSVU: 5500
-    STWeaponRifleStalkerVepr: 2000
-    
+    STWeaponSniperSVDS: 5500
+    STWeaponSniperSVU: 5500
+    STWeaponSniperVepr: 2000
+
     #9x18
     WeaponPistolStalkerGlock: 100
     WeaponStalkerPistolTec9: 125
     STWeaponSMGMP40: 150
-    STWeaponSMGMp5: 850
+    STWeaponSMGMP5: 850
     STWeaponSMGPP91: 375
-    WeaponSubMachineGunStalkerTommyGun: 2500
+    STWeaponSMGThompson: 2500
     STWeaponSMGStalkerCP2Veresk: 750
-    STWeaponSubMachineGunVityaz: 750
-    
+    STWeaponSMGPP1901: 750
+
     #7.62x25
     WeaponPistolStalkerTT: 125
-    STWeaponPPsh: 1250
-    
+    STWeaponSMGPPSh41: 600
+
     #9x39
-    STWeaponRifleStalkerVAL: 7500
-    STWeaponRifleVSS: 6000
-    
+    STWeaponRifleASVAL: 7500
+    STWeaponSniperVSS: 6000
+
     #.45 acp
     STWeaponRevolverRugerRedhawk: 150
     STWeaponRevolverSWPC325TR: 425
     STWeaponRevolverChiappaRhino60DS: 450
     STWeaponRevolverSWModel325: 550
     STWeaponRevolverSWModel625: 725
-    
+
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
             # Melee
@@ -141,69 +156,70 @@
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 45 #T0.5
-        STWeaponShotgunToz34: 225 # T2
-        WeaponShotgunStalkerMP133: 385 # T1.5
-        STWeaponShotgunMossberg: 630 # T2
+        STWeaponShotgunTOZ34: 225 # T2
+        STWeaponShotgunMP133: 385 # T1.5
+        STWeaponShotgunMossbergM88: 630 # T2
         STWeaponShotgunMP153: 900 # T3
           # 5,45x39
-        STWeaponRifleStalkerSaiga545: 1065
-        STWeaponGunAKS74U: 1490
-        STWeaponRifleStalkerAK74: 3000
+        STWeaponRifleSaiga545: 1700
+        STWeaponRifleAKS74U: 2000
+        STWeaponRifleAKS74: 4000
         # Smg
-        STWeaponSMGMp5: 1700
-        STWeaponSMGViper: 700
-        STWeaponPPsh: 2500
+        STWeaponSMGMP5: 1200
+        STWeaponSMGVZ61: 500
+        STWeaponSMGPPSh41: 1000
         # Other
         WeaponPistolStalkerTT: 250
         WeaponStalkerPistolTec9: 250
         WeaponPistolStalkerAPS: 500
         STWeaponSniperMosin: 800
-        STWeaponRifleSKS: 1700
+        STWeaponSniperSKS: 1700
         STWeaponRevolverSWPC325TR: 700
-        STWeaponRifleSCARH: 3500
-    - name: Магазины
+        STWeaponRifleSCARH: 4000
+    - name: shop-category-magazines
       priority: 2
       items:
           # 5,45x39
         Base545Mag10: 50 #T1
-        545Mag20: 175 #T2
-        545Mag30: 275 #T3
+        545Mag20: 300 #T2
+        545Mag30: 700 #T3
           # 7,62x54 and 39
         Base739Mag10: 100
         Base754Mag5: 250 #T1
         739Mag45: 450
           # Smg
-        BaseMP5Mag: 275
-        Vz61Mag: 160
-        PPSHDrum: 750
+        BaseMP5Mag: 200
+        Vz61Mag: 100
+        PPSHDrum: 800
         BasePPSHMag: 200
           # Other
         751Mag20: 350
         BaseTEC9Mag: 120
         TTMag: 100
-        SpeedLoader45ACPEmpty: 125
+        STSpeedLoader45ACPEmpty: 200
         BaseAPSMag: 100
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 100
         7mmBuckshotBox: 35
+        8mmBuckshotBox: 215
          # 7.25
         725PBox: 90
-        725PTBox: 225
-        725PSTBox: 675
+        725PTBox: 180
+        725PSTBox: 200
         # 9.19
         919PSOGJBox: 65
         919PSTBox: 170
-        919PBMBox: 425
+        919PBMBox: 225
         # 5.45
-        545FMJBox: 180
-        545HPBox: 675
-        545PCBox: 450
+        545FMJBox: 480
+        545HPBox: 1000
+        545PCBox: 850
         # 7.39
         739FMJBox: 675
         # 7.51
-        751M80Box: 745
+        751M80Box: 1000
         # 7.54
         754FMJBox: 640
         754HPBox: 960
@@ -214,8 +230,9 @@
          # 9.18
         918PGJBox: 65
         918PSTBox: 170
-        918PBMBox: 425
-    - name: Броня
+        918PBMBox: 200
+
+    - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
@@ -224,13 +241,18 @@
         ClothingHeadHelmetVityaz1B: 2200 # T2 - PVE
         ClothingHeadAssaultHelmetBandit: 1400 # T3 - PVP
           # OuterClothing #
-        ClothingOuterJacketBandit: 60 # T1 - PVE
+        SetJacketBanditBuyableCrate: 300 # T1 - uni
+        ClothingOuterCoatBanditBrown: 325 # T1 - uni
+        ClothingOuterCoatBanditBlack: 325 # T1 - uni
         STClothingOuterArmorLightPlateVestBaseBand: 1000 # T2 - PvP
+        SetArmoutJacketBanditBuyableCrate: 1025 # T2 - PvP
+        ClothingOuterArmourCoatBanditBrown: 1050 # T2 - PvP
+        ClothingOuterArmourCoatBanditBlack: 1050 # T2 - PvP
         ClothingOuterArmor6B2: 1400 # T2 - PvP
-        STClothingOuterArmorBandits: 2900 # T3 - PVE
+        STClothingOuterArmorBandits: 1800 # T2 - PVE
         STClothingOuterArmorLightPlateVestBaseANAgray: 2250 # T3 - PVP
         ClothingOuterArmorBandits: 2900 # T3 - PVE
-    - name: Хранилища и Контейнеры
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
           # BackPacks
@@ -244,7 +266,7 @@
           # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
@@ -255,19 +277,16 @@
         ClothingMaskXoma: 100 # T1
         ClothingMaskGP5: 200 # T2
         ClothingMaskGP7: 600 # T3
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 7
       items:
         STBoltBagFilled: 50
         BoxArtcont: 500 # T1
         ZoneAnomalyDetectorAD1: 450 # T1
-          # Detectors
-        ZoneArtifactDetectorPulse: 100 # T1
-        ZoneArtifactDetectorHunter: 400 # T2
-        ZoneArtifactDetectorResponse: 900 # T2
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 8
       items:
+        CraftSaw: 1000
         STSkinsKitBandits: 500
         STCombatKnife: 25
         TrashBag: 30
@@ -276,7 +295,7 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
-        FlashlightSeclite: 50
+        STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
@@ -291,7 +310,7 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 100
@@ -305,7 +324,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина # 50% скидка от сталкеров
+    - name: shop-category-medicine # 50% скидка от сталкеров
       priority: 10
       items:
           # Cheap
@@ -321,7 +340,7 @@
         psyblock: 150
         MedkitAI2: 150
         Defibrillator: 500
-    - name: Модули
+    - name: shop-category-modules
       priority: 11
       items:
         STModuleScopeRiflesT1Ru: 600
@@ -333,8 +352,14 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 400
-    - name: Кастомизация
+    - name: shop-category-metalsearchers
       priority: 12
+      items:
+        TrashDetectorTier2: 500
+        TrashDetectorTier3: 2000
+        TrashDetectorTier4: 3999
+    - name: shop-category-customization
+      priority: 13
       items:
         ClothingTorsoJacketAdidasBlue: 5
         ClothingTorsoJacketAdidasRed: 5

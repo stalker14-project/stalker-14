@@ -1,0 +1,10 @@
+ent-tire1 = покрышка
+    .suffix = ST, Mapping
+ent-tire2 = { ent-tire1 }
+    .suffix = { ent-tire1.suffix }
+ent-tire3 = { ent-tire1 }
+    .suffix = { ent-tire1.suffix }
+ent-tire4 = { ent-tire1 }
+    .suffix = Stalker
+ent-tire5 = { ent-tire1 }
+    .suffix = { ent-tire1.suffix }

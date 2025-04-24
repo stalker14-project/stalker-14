@@ -16,6 +16,9 @@
             <BoxContainer Orientation="Vertical" Margin="50 20 50 20">
                 <RichTextLabel Name="InfoLabel"  />
             </BoxContainer>
+            <BoxContainer Orientation="Vertical">
+                <RichTextLabel Name="ErrorMessage" />
+            </BoxContainer>
             <BoxContainer HorizontalExpand="True">
                 <LineEdit Editable="False" Name="AuthLinkEdit" HorizontalExpand="True" />
                 <LineEdit Editable="False" Name="DLinkEdit" HorizontalExpand="True" />

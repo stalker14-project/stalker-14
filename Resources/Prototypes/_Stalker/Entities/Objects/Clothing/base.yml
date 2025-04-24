@@ -3,6 +3,10 @@
   id: BlockMask
 - type: Tag
   id: BlockBelt
+- type: Tag
+  id: BlockBack
+- type: Tag
+  id: BlockCloak
 
 ###============------------------------------------============###
 ###============------------[New Одежда]------------============###
@@ -33,6 +37,10 @@
     categoryName: Экипировка
   - type: PullDoAfter
     pullTime: 2
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - FacialHair
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -61,7 +69,6 @@
   components:
   - type: Tag
     tags:
-      - BlockBelt
       - Folder
   - type: RepositoryItem
     categoryName: Экипировка
@@ -253,7 +260,8 @@
   - type: Dumpable
   - type: Tag
     tags:
-      - Folder
+    - Folder
+    - BlockBelt
 
 - type: entity
   abstract: true
@@ -284,6 +292,9 @@
     size: Large
     shape:
       - 0,0,3,2
+  - type: Tag
+    tags:
+    - BlockCloak
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -309,6 +320,7 @@
     - type: Tag
       tags:
       - Folder
+      - BlockBack
     - type: Craftable
 
 - type: entity

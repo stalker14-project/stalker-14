@@ -1,0 +1,125 @@
+[game]
+hostname = "[New season started] ☢️ S.T.A.L.K.E.R. ☢️"
+desc = "In devlopment."
+
+map_pool = "STDefaultMapPool"
+
+maxplayers = 140
+soft_max_players = 80
+
+map_rotation = false
+role_timers = true
+peaceful_end = false
+contraband_examine = false
+
+[metrics]
+enabled = true
+host = "localhost" # Address to bind the metrics server to, use "*" for all local interfaces
+port = 44882
+
+[loki]
+enabled = true
+address = "http://localhost:3100"
+name = "mainStalker"
+
+[rules]
+time = 10.0
+
+[netres]
+limit = 25
+
+[whitelist]
+enabled = true
+
+[explosion]
+can_create_vacuum = false
+
+[tips]
+enabled = false
+
+[shuttle]
+auto_call_time = 0
+emergency = false
+arrivals = false
+preload_grids = false
+camera_rotation_locked = true
+
+[ic]
+flavor_text = true
+punctuation = false
+
+[infolinks]
+discord = "https://discord.gg/BuvKkKhrjn"
+patreon = "https://boosty.to/stalkerss14"
+
+[hub]
+advertise = true
+tags = "lang:ru,region:eu_e,rp:med"
+hub_urls = "https://hub.spacestation14.com/"
+
+[events]
+enabled = false
+
+[physics]
+grid_splitting = false
+maxlinvelocity = 72
+target_minimum_tickrate = 120
+
+[npc]
+max_updates = 150
+
+[net]
+sendbuffersize = 393213
+receivebuffersize = 393213
+pvs_range = 25
+tickrate = 30
+log_late_msg = false
+
+[crewmanifest]
+no_entity = false
+
+[watchdog]
+token = "ftLKmd1v0P4qXHt9c8JW0h5a7TUXUG00Z10tM0BOLdcJJvKR0qV6Bjx5aTM3eIPIP90"
+key = "stalker"
+baseUrl = "https://localhost:5000/"
+
+[discord]
+ahelp_webhook = "https://discord.com/api/webhooks/1297314968508567572/bAJNu6rbtr2aU_wu_eISLGzD_Uy9dqnh1-3xDHiHuKAwfHp6jsX2lz0WSZEvXIMU7MId"
+round_pda_message_webhook = "https://discord.com/api/webhooks/1209017748563165224/nEuOyKfM_qtNvyVPsSj4cBt491ns-uPqJUuB4Xsq6u8t-CQe59Xf5Zcx3h0mhDXbtma9"
+round_update_webhook = "https://discord.com/api/webhooks/1201620394508030093/K_n6Y-5D-OdiW5DeygDmaCc9MvIipU66h6YIzFo24lVtJ1A1m-oJ2BdV8kLCKB_XpRio"
+
+[stalker]
+ban_webhook = "https://discord.com/api/webhooks/1297316486829838336/54eIT1IXTKTNMkEc3FbZ5NdmoPHzPilwbddtOTKpqXJHO7bCPxAvADE1Sgh-0FlkCTBd"
+server_token = "qqAxoTUXtPQ2m3VvqA8UXhqQvaEWepUQ6C4ItiCclj1iPG55LPD63o7xif4Qxwmc"
+sin_light_webhook = "https://discord.com/api/webhooks/1224769881711444104/FPOes1G4kdnNopHc8fGbbO45afgh2hB2P45oU-YBhy8YwqGuKlQynBRT6eY3clSWGFfr"
+discord_auth_enabled = true
+discord_auth_url = "http://127.0.0.1:2424/api"
+discord_auth_token = "qqAxoTUXtPQ2m3VvqA8UXhqQvaEWepUQ6C4ItiCclj1iPG55LPD63o7xif4Qxwmc"
+queue_enabled = true
+
+[sponsors]
+api_url = "http://127.0.0.1:2424/api"
+api_key = "qqAxoTUXtPQ2m3VvqA8UXhqQvaEWepUQ6C4ItiCclj1iPG55LPD63o7xif4Qxwmc"
+priorityJoinTier = 2
+
+[auth]
+mode = 1
+server = "https://auth.spacestation14.com/"
+
+[console]
+login_host_user = "JerryImMouse"
+
+[database]
+# Database type to use. Can be "sqlite" or "postgres" currently.
+engine = "postgres"
+
+# Path to store the database at when using SQLite. Note that is NOT a disk path.
+# This is relative to the server data directory, which is specified by --data-dir when starting the server from the command (or automatically set by SS14.Watchdog)
+sqlite_dbpath = "preferences.db"
+
+# PostgreSQL database configuration, should be self explanatory.
+pg_host = "stalkers14.xyz"
+pg_port = 5433
+pg_database = "stalkerdb"
+pg_username = "postgres"
+pg_password = "SlFJNKGObySMWvveXEQkKJFSNZvXPJRxeFtzazJiMSgRSmCxVI"

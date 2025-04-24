@@ -1,25 +1,43 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunProtecta
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
+  - type: STWeight
+    self: 4.3
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
+  - type: BallisticAmmoProvider
+    capacity: 12
+  - type: Gun
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 2
 
 - type: entity
-  name: Protecta
-  suffix: ST
-  parent: STBaseWeaponShotgun
+  parent: STBaseWeaponShotgunProtecta
   id: STWeaponShotgunProtecta
-  description: Компактный южноафриканский дробовик с неотъёмным магазином револьверного типа на 12 патрон. Откуда это в Зоне?
+  name: Protecta Revolver Shotgun
+  description: South African revolver-type shotgun with 12-round capacity. A rarity in the Zone, likely smuggled via black market. Powerful and unusual choice for eccentric stalkers.
+
+- type: entity
+  parent: STBaseWeaponShotgunProtecta
+  id: STweaponShotgunPRETecta
+  name: Protecta "Stalker"
+  description: Modified Protecta with wooden stock and cloth wraps. Zone craftsmen attempted to adapt this exotic weapon for local conditions.
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
-    - type: STWeight
-      self: 4.3
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi
     - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/chipper.rsi
-    - type: BallisticAmmoProvider
-      capacity: 12
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pRetecta.rsi
     - type: Gun
-      projectileSpeed: 20
-      minAngle: 40
-      maxAngle: 50
-      angleIncrease: 10
-      angleDecay: 50
-      fireRate: 2
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/saiga_shoot.ogg

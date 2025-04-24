@@ -1,69 +1,59 @@
 - type: entity
-  name: M249
-  id: WeaponLMGM249
+  abstract: true
   parent: STBaseWeaponMachineGun
-  description: Классика американской армии, 249й по 5,56, питается коробами или магазинами системы STANAG.
-  suffix: ST
+  id: STBaseWeaponMachineGunM249SAW
   components:
-    - type: STWeight
-      self: 6.9
-    - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/MGs/m249.rsi
-      size: Large
-      shape:
-        - 0,0,8,1
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/MGs/m249.rsi
-      layers:
-        - state: base
-          map: ["enum.GunVisualLayers.Base"]
-        - state: mag-0
-          map: ["enum.GunVisualLayers.Mag"]
-    - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/MGs/m249.rsi
-      equipDelay: 3
-    - type: Gun
-      fireRate: 10
-      soundGunshot:
-        path: /Audio/_Stalker/Effects/Guns/l85.ogg
-        params:
-          volume: -2
-      minAngle: 105
-      maxAngle: 160
-      angleIncrease: 4
-      angleDecay: 20
-    - type: ChamberMagazineAmmoProvider
-    - type: ItemSlots
-      slots:
-        gun_magazine:
-          name: Magazine
-          startingItem:
-          insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
-          ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
-          priority: 2
-          whitelist:
-            tags:
-              - Magazine556
-              - Box556
-        gun_chamber:
-          name: Chamber
-          startingItem:
-          priority: 1
-          whitelist:
-            tags:
-              - Cartridge556
-    - type: ContainerContainer
-      containers:
-        gun_magazine: !type:ContainerSlot
-        gun_chamber: !type:ContainerSlot
-    - type: MagazineVisuals
-      magState: mag
-      steps: 1
-      zeroVisible: true
-    - type: Appearance
-    - type: Wieldable
-    - type: GunWieldBonus
-      minAngle: -100
-      maxAngle: -100
-    - type: PullDoAfter
-      pullTime: 5
+  - type: STWeight
+    self: 6.9
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/MGs/m249.rsi
+    shape:
+    - 0,0,8,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/MGs/m249.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/MGs/m249.rsi
+  - type: Gun
+    fireRate: 10
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/l85.ogg
+      params:
+        volume: -2
+    minAngle: 105
+    maxAngle: 160
+    angleIncrease: 4
+    angleDecay: 20
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem:
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - Magazine556
+          - Box556
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge556
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: GunWieldBonus
+    minAngle: -100
+    maxAngle: -100
+  - type: PullDoAfter
+    pullTime: 5
+
+- type: entity
+  parent: STBaseWeaponMachineGunM249SAW
+  id: STWeaponMachineGunM249SAW
+  name: M249 SAW
+  description: American squad automatic weapon, rare in the Zone. Feeds from both STANAG mags and belts. Powerful but maintenance-heavy - not every stalker dares take it into anomalies.

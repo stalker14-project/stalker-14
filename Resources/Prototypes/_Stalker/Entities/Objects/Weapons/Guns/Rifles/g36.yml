@@ -1,0 +1,91 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifle
+  id: STBaseWeaponRifleG36
+  components:
+  - type: STWeight
+    self: 3.4
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
+    equipDelay: 2
+  - type: Gun
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/g36_shoot.ogg
+      params:
+        volume: -2
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 3
+    angleDecay: 15
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base556Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine556
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge556
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: true
+
+- type: entity
+  parent: STBaseWeaponRifleG36
+  id: STWeaponRifleG36
+  name: HK G-36 "Outlander"
+  description: German assault rifle with composite frame. Appears in the Zone with western mercs and smuggler stalkers. Reliable but ammunition-sensitive.
+
+- type: entity
+  parent: STBaseWeaponRifleG36
+  id: STWeaponRifleG36Covenant
+  name: HK G-36 "Prophet"
+  description: Custom G-36 with Covenant markings. Distinctive rifle of Zone fanatics, repainted in ominous colors. Rumored to be loaded with "blessed" ammunition.
+  components:
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/covenant_g36.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/covenant_g36.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/covenant_g36.rsi
+
+- type: entity
+  parent: STBaseWeaponRifleG36
+  id: STWeaponRifleAUG
+  name: AUG
+  description: Australian assault rifle with integrated scope.
+  tags: ST, Sponsor
+  components:
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aug.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aug.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Rifles/aug.rsi

@@ -98,9 +98,9 @@
   description: «Заря» жаб, чуть-чуть легче обычной
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/OuterClothing/zarya_jab.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/zarya_jab.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/OuterClothing/zarya_jab.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/zarya_jab.rsi
   # Bonus
 
 # Military - 3 +
@@ -112,9 +112,9 @@
   description: «Заря» 'Военных', с усиленной бронёй и увеличенными защитами вообще от всего - эталон модификации бандитских умельцев.
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/zarya_military.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/OuterClothing/zarya_military.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/zarya_military.rsi
 
 
 # Renegates - 4 +
@@ -141,9 +141,9 @@
   description: комбинезон «Рассвет», используемый группировкой «Серафимы» для выполнения тактических задач с повышенной защитой от агрессивной фауны.
   components:
     - type: Sprite
-      sprite: _Stalker/Clothing/OuterClothing/_Sera/rassvet.rsi
+      sprite: _Stalker/Objects/Clothing/OuterClothing/_Sera/rassvet.rsi
     - type: Clothing
-      sprite: _Stalker/Clothing/OuterClothing/_Sera/rassvet.rsi
+      sprite: _Stalker/Objects/Clothing/OuterClothing/_Sera/rassvet.rsi
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadCapoSera
       slot: head
@@ -156,9 +156,9 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
-      sprite: _Stalker/Clothing/Head/Sera_/rassvet_helm.rsi
+      sprite: _Stalker/Objects/Clothing/Head/Sera_/rassvet_helm.rsi
     - type: Clothing
-      sprite: _Stalker/Clothing/Head/Sera_/rassvet_helm.rsi
+      sprite: _Stalker/Objects/Clothing/Head/Sera_/rassvet_helm.rsi
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -212,9 +212,9 @@
   description: Легкий и мобильный комбинезон «Заря» группировки «Поиск» представляет собой усовершенствованную версию стандартного костюма.
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/zarya_poisk.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/OuterClothing/zarya_poisk.rsi
+    sprite: _Stalker/Objects/Clothing/OuterClothing/zarya_poisk.rsi
 # Bandits - 5
 
 
@@ -282,32 +282,6 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_zarya.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_zarya.rsi
-
-- type: entity
-  parent: STClothingOuterArmorZaryaBase
-  id: STClothingOuterArmorProjectZarya
-  name: Заря сделанная по непонятному проекту
-  description: Странная заря сделанная непонятно кем и непонятно зачем
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/project_zarya.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/project_zarya.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadCapoProject
-    slot: head
-
-- type: entity
-  parent: STClothingHeadHatBase
-  id: ClothingHeadCapoProject
-  name: капюшон
-  description: Защиты не обеспечивает.
-  categories: [ HideSpawnMenu ]
-  components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Clothing/hats/zarya_helm_project.rsi
-    - type: Clothing
-      sprite: _Stalker/Objects/Clothing/hats/zarya_helm_project.rsi
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase

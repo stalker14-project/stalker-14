@@ -1,8 +1,8 @@
 - type: job
   id: StalkerRene
-  name: Ренегат
+  name: job-renegade
   icon: rene
-  description: Просто какой-то дегенерат.
+  description: job-renegade-desc
   playTimeTracker: JobRenegat
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: ReneGear
-  supervisors: "ебаш."
+  supervisors: job-renegade-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -25,7 +25,12 @@
         - type: Bands
           band: Stalker
           bandIcon: rene
+          bandProto: STRenegatsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
+        - type: NpcFactionMember
+          factions:
+          - Bandit
 
 - type: startingGear
   id: ReneGear
@@ -36,3 +41,12 @@
     torso: ClothingTorsoTShirtColorBlack
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsWork
+- type: stBand
+  id: STRenegatsBand
+  name: Renegats
+  factionId: Bandit
+  maxMembers: 12
+  managingRankId: 3
+  hierarchy:
+    1: StalkerRene
+

@@ -13,6 +13,10 @@ role_timers = true
 peaceful_end = false
 contraband_examine = false
 
+[server]
+default_guide = "STNewPlayer"
+rules_file = "STRuleset"
+
 [rules]
 time = 10.0
 
@@ -25,6 +29,7 @@ emergency = false
 arrivals = false
 preload_grids = false
 camera_rotation_locked = true
+
 [ic]
 flavor_text = true
 punctuation = false
@@ -35,13 +40,6 @@ enabled = false
 [infolinks]
 discord = "https://discord.gg/pu6DEPGjsN"
 patreon = "https://boosty.to/stalkerss14"
-
-[net]
-sendbuffersize = 393213
-receivebuffersize = 393213
-
-[physics]
-maxlinvelocity = 60.0
 
 [hub]
 advertise = false

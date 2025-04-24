@@ -1,0 +1,14 @@
+ent-STClothingHeadHelmetTacticalT4Base = база тактического шлема T4
+    .suffix = ST, T4, Tactical
+ent-ClothingHeadHelmetUlach = улач
+    .desc = Это шлем, специально разработанный для защиты от колющих атак.
+ent-ClothingHeadHelmetUlachUN = улач ООН
+    .desc = Шлем контингента ООН.
+ent-ClothingHeadHelmetUlachZavet = улач Завета
+    .desc = Улач, используемый группировкой «Завет».
+    .suffix = Stalker, Завет
+ent-ClothingHeadHelmetHardUlachUN = тактический противоударный улач ООН
+    .desc = Шлем контингента ООН, имеет большую защиту от ударных атак, а также колющих атак. Является модифицированным шлемом от «Улач ООН» но более продвинутый. Класс брони - 3
+ent-ClothingHeadHelmetUlachEasy = легкий улач
+    .desc = Это шлем, специально разработанный для защиты от колющих атак и мобильности для группировки «Наёмники». Класс Брони - 2.
+    .suffix = Stalker, Наёмники

@@ -1,0 +1,31 @@
+- type: entity
+  id: GuardFactionControllerOffAction
+  name: Прекратить атаку
+  description: Делает всех людей поблизости неатакуемыми мутантами. Люди снова будут атакованы мутантами либо через 2 минуты, либо если отменить это.
+  suffix: ST
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 1
+    checkCanInteract: false
+    checkConsciousness: false
+    icon:
+      sprite: _Stalker/Interface/Actions/sin.rsi
+      state: off
+    event: !type:GuardFactionControllerOffActionEvent
+
+- type: entity
+  id: GuardFactionControllerOnAction
+  name: В бой
+  description: Приказывает всем мутантам по близости продолжить атаковать.
+  suffix: ST
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 1
+    checkCanInteract: false
+    checkConsciousness: false
+    icon:
+      sprite: _Stalker/Interface/Actions/sin.rsi
+      state: on
+    event: !type:GuardFactionControllerOnActionEvent

@@ -1,0 +1,30 @@
+- type: entity
+  name: Monolith Stimpack
+  parent: ChemicalMedipen
+  id: STStimpackMololith
+  suffix: ST, Lord
+  description: Contains enough unknow serum for you to have the chemical's effect for 30 seconds. Use it when you're sure you're ready to throw down.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: stimpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 60
+        reagents:
+        - ReagentId: STStimulants
+          Quantity: 60
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: stimpen_empty
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+  - type: Tag
+    tags: []

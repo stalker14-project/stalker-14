@@ -65,13 +65,30 @@
 
 - type: entity
   parent: STBucket
-  name: Навозное ведро
+  name: навозное ведро
   id: STNavozBucket
+  suffix: Fill
   description: Обычное оцинкованное ведро.
   components:
+    - type: STWeight
+      self: 2.0
     - type: SolutionContainerManager
       solutions:
         bucket:
           reagents:
             - ReagentId: STNavoz
               Quantity: 250
+
+- type: entity
+  parent: STBucket
+  name: ведро
+  id: STEmpBucket
+  suffix: Empty
+  description: Обычное оцинкованное ведро.
+  components:
+    - type: STWeight
+      self: 1.0
+    - type: SolutionContainerManager
+      solutions:
+        bucket:
+          maxVol: 250

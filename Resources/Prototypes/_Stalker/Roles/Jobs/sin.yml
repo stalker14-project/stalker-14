@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerGreh
-  name: Грех
+  name: job-sin
   icon: greh
-  description: ВО СЛАВУ МАТЕРИ!
+  description: job-sin-desc
   playTimeTracker: JobGreh
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - Human
       - Dwarf
   startingGear: StalkerGrehGear
-  supervisors: Защищайте оазис во имя матери зоны.
+  supervisors: job-sin-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -29,6 +29,8 @@
         - type: Bands
           band: Stalker
           bandIcon: greh
+          bandProto: STGrehBand
+          bandRankId: 2
         - type: NpcFactionMember
           factions:
             - Mutated
@@ -63,3 +65,12 @@
     shoes: ClothingShoesSwat
     mask: ClothingMaskGreh
     gloves: ClothingHandsGlovesColorBlack
+- type: stBand
+  id: STGrehBand
+  name: Sin
+  factionId: Sin
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerGreh
+

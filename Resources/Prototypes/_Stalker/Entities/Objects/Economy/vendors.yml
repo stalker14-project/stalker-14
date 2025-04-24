@@ -214,7 +214,7 @@
     BoxFlare: 50
     BoxZiptie: 5
     UNstandartCrateT3: 10
-    STWeaponSMGMp5: 10
+    STWeaponSMGMP5: 10
     PillDexalin: 50
     radioprotectpill: 5
     psyblock: 5
@@ -235,10 +235,10 @@
     FlashlightSeclite: 50
     PowerCellHyper: 100
     HandheldGPSBasic: 50
-    STWeaponRifleSig550: 4
-    STWeaponRifleStalkerL85: 4
+    STWeaponRifleSIG550: 4
+    STWeaponRifleL85: 4
     STWeaponRifleM4: 6
-    STWeaponShotgunStalkerSPAS: 6
+    STWeaponShotgunSPAS: 6
     7mmBuckshotBox: 20
     556Mag30: 30
     556FMJBox: 50
@@ -321,3 +321,149 @@
         - state: base
         - state: green_bit
           shader: unshaded
+
+############################################################################# СОП ПСЗ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitary
+  name: склад комплектов СОП
+  description: Склад армейских припасов с комплектами ПСЗ внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MilitaryPSZInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_lot_of_boxes.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-1.05,-0.15,1,0.65"
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+          density: 200
+    - type: AccessReader
+      access: [["Military"]]
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventory
+  startingInventory:
+    ArmyAK2Crate: 4
+    ArmyAK1Crate: 2
+    ArmyAKC1Crate: 1
+    ArmyAKC2Crate: 1
+    ArmyProvisionCrate: 3
+    ArmyMedkitMilitaryCrate: 5
+    Army545Mag30Crate: 5
+    Army545Crate: 5
+
+- type: entity
+  parent: BaseItem
+  id: MilitaryPSZInventoryRestock
+  name: комплект ПСЗ пополнительный
+  description: Класть на склад.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MilitaryPSZInventory
+        - MilitaryPSZInventoryOfficer
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+
+############################################################################# СОП ОФЦ ПСЗ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitaryOfficer
+  name: ящик с офицерскими комплектами СОП
+  description: Ящик, содержащий офицерские комплекты ПСЗ внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MilitaryPSZInventoryOfficer
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AccessReader
+      access: [["MilitaryOfficer"]]
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventoryOfficer
+  startingInventory:
+    ArmyAKCOfficerCrate: 3
+    MilitaryPSZInventoryRestock: 6
+    Screwdriver: 1
+
+- type: entity
+  parent: BaseItem
+  id: MilitaryPSZInventoryRestockOfficer
+  name: комплект ПСЗ офицерский пополнительный
+  description: Класть в офицерский ящик.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MilitaryPSZInventoryOfficer
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon

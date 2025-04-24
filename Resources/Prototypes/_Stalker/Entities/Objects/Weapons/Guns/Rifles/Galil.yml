@@ -1,16 +1,12 @@
 - type: entity
-  name: Galil
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponRifle
-  id: WeaponRifleStalkerGalil
-  description: Израильское автоматическое ружьё под калибр 5,56.
+  id: STBaseWeaponRifleGalil
   components:
   - type: STWeight
     self: 4.5
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galil.rsi
-    shape:
-      - 0,0,7,1
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galil.rsi
   - type: Clothing
@@ -29,36 +25,42 @@
     ShotsPerBurstModified: 3
     selectedMode: Burst
     availableModes:
-      - Burst
-      - SemiAuto
-      - FullAuto
+    - Burst
+    - SemiAuto
+    - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: Base556Mag10
-        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
         priority: 4
         whitelist:
           tags:
-            - Magazine556
+          - Magazine556
       gun_module_muzzle:
         name: Muzzle
         priority: 3
         whitelist:
           tags:
-            - STWeaponModuleRifleSilencerNato
+          - STWeaponModuleRifleSilencerNato
       gun_module_scope:
         name: Scope
         priority: 2
         whitelist:
           tags:
-            - STWeaponModuleRifleScopeNato
+          - STWeaponModuleRifleScopeNato
       gun_chamber:
         name: Chamber
         startingItem:
         priority: 1
         whitelist:
           tags:
-            - Cartridge556
+          - STCartridge556
+
+- type: entity
+  parent: STBaseWeaponRifleGalil
+  id: STWeaponRifleGalil
+  name: galil ARM
+  description: Israeli assault rifle designed for harsh climates. Appears in the Zone via Middle-Eastern mercenaries. Hardy as a camel, with burst-fire more accurate than most automatic rifles.

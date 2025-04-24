@@ -27,6 +27,11 @@
     - type: HTN
       rootTask:
         task: STSimpleHostileCompound
+      blackboard:
+        VisionRadius: !type:Single
+          20
+        AggroVisionRadius: !type:Single
+          15
     - type: NpcFactionMember
       factions:
         - Mutated
@@ -149,7 +154,6 @@
     - type: DoAfter
     - type: Climbing
     - type: Polymorphable
-    - type: Pullable
     - type: Buckle
     - type: StandingState
     - type: Alerts

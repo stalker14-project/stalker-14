@@ -1,16 +1,12 @@
 - type: entity
-  name: Galatz
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponRifle
-  id: STWeaponRifleStalkerGalatz
-  description: Galatz - израильская мощная "марксменка" под 7,62. Она же - лицензионный Форт-301.
+  id: STBaseWeaponRifleGalatz
   components:
   - type: STWeight
     self: 3.5
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galatz.rsi
-    shape:
-    - 0,0,7,1
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/galatz.rsi
   - type: Clothing
@@ -33,28 +29,34 @@
       gun_magazine:
         name: Magazine
         startingItem: Base751Mag10
-        insertSound: /Audio/Weapons/Guns/MagIn/hpistol_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/hpistol_magout.ogg
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
         priority: 4
         whitelist:
           tags:
-            - Magazine751
+          - Magazine751
       gun_module_muzzle:
         name: Muzzle
         priority: 3
         whitelist:
           tags:
-            - STWeaponModuleRifleSilencerNato
+          - STWeaponModuleRifleSilencerNato
       gun_module_scope:
         name: Scope
         priority: 2
         whitelist:
           tags:
-            - STWeaponModuleRifleScopeNato
+          - STWeaponModuleRifleScopeNato
       gun_chamber:
         name: Chamber
         startingItem:
         priority: 1
         whitelist:
           tags:
-            - Cartridge751
+          - STCartridge751
+
+- type: entity
+  parent: STBaseWeaponRifleGalatz
+  id: STWeaponRifleGalatz
+  name: galatz "Wanderer"
+  description: Israeli designated marksman rifle chambered in powerful 7.62x51mm NATO. Rare in the Zone, mostly used by professional mercenaries and veteran stalkers. Locals call it "Fort-301" due to its resemblance to Ukrainian licensed version.

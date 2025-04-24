@@ -1,9 +1,7 @@
 - type: entity
-  name: АКМ
-  suffix: ST
+  abstract: true
   parent: STBaseWeaponRifle
-  id: STWeaponRifleStalkerAKM
-  description: Икона оружестроения, доведённый до ума и улучшенный АК, известный как АКМ. Самое популярное оружие в мире, использует калибр 7.62х39.
+  id: STBaseWeaponRifleAKM
   components:
   - type: STWeight
     self: 3.1
@@ -16,7 +14,6 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
-    projectileSpeed: 30
     minAngle: 52
     maxAngle: 125
     angleIncrease: 6
@@ -27,28 +24,34 @@
       gun_magazine:
         name: Magazine
         startingItem: Base739Mag10
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
         priority: 4
         whitelist:
           tags:
-            - Magazine739
+          - Magazine739
       gun_module_muzzle:
         name: Muzzle
         priority: 3
         whitelist:
           tags:
-            - STWeaponModuleRifleSilencerRu
+          - STWeaponModuleRifleSilencerRu
       gun_module_scope:
         name: Scope
         priority: 2
         whitelist:
           tags:
-            - STWeaponModuleRifleScopeRu
+          - STWeaponModuleRifleScopeRu
       gun_chamber:
         name: Chamber
         startingItem:
         priority: 1
         whitelist:
           tags:
-            - Cartridge739
+          - STCartridge739
+
+- type: entity
+  parent: STBaseWeaponRifleAKM
+  id: STWeaponRifleAKM
+  name: AKM "Zone Legend"
+  description: Improved modernization of Kalashnikov rifle chambered in 7.62x39mm. Found everywhere in the Zone - from rookies to veterans. Symbol of reliability in toughest conditions.

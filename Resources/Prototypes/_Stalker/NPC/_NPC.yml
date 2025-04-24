@@ -321,13 +321,15 @@
     bodyType: Static
   - type: Advertise
     pack: NPCStalkerTraderAds
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
   - type: ActivatableUI
-    key: enum.ShopUiKey.Key
+    key: enum.BandsUiKey.Key
     singleUser: true
   - type: UserInterface
     interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
+      enum.BandsUiKey.Key:
+        type: BandsManagingUserInterface
   - type: Shop
     moneyId: Dollar
     shopPresetId: IgorIvanovichShopPreset

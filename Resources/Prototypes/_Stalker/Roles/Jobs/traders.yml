@@ -1,8 +1,8 @@
 - type: job
   id: StalkerTrader
-  name: торговец
+  name: job-trader
   icon: trader
-  description: Группировка торговцев и барыг всея Зоны
+  description: job-trader-desc
   playTimeTracker: JobTrader
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: TraderGear
-  supervisors: Вы работаете сами на себя.
+  supervisors: job-trader-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -25,6 +25,8 @@
       - type: Bands
         band: Stalker
         bandIcon: trader
+        bandProto: STTradersBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -45,3 +47,12 @@
     neck: ClothingOuterCoatDetectiveDark
     gloves: ClothingHandsMercGlovesCombat
     head: ClothingHeadHatGreyFlatcap
+- type: stBand
+  id: STTradersBand
+  name: Traders
+  factionId: Traders
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerTrader
+

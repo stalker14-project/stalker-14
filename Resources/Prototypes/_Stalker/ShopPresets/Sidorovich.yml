@@ -22,6 +22,7 @@
     # Gravity group - 2
     ZoneArtifactVyvert: 400
     ZoneArtifactAmoeba: 600
+    ZoneArtifactFloodlight: 600
     ZoneArtifactGravi: 1200
     ZoneArtifactGoldfish: 4800
     ZoneArtifactSpring: 3600
@@ -29,6 +30,11 @@
     ZoneArtifactStuntman: 4800
     ZoneArtifactDistorter: 4800
     ZoneArtifactSoul: 3600
+    # Food
+    FoodMeatDogCooked: 50
+    STFoodMeatSpiderCooked: 25
+    FoodMeatBoarCooked: 80
+    
     # Acidic group - 1
     ZoneArtifactBlood: 1200
     ZoneArtifactMeat: 2400
@@ -60,7 +66,7 @@
     MutantPartPseudogiantHeart: 4000
     MutantPartZombieHand: 600
   categories:
-    - name: Оружие
+    - name: shop-category-weapons
       priority: 1
       items:
             # Melee
@@ -68,24 +74,24 @@
             # Guns
           # 7mm
         STWeaponShotgunMP155T: 50 #T1
-        STWeaponShotgunToz34: 250 # T1
-        WeaponShotgunStalkerMP133: 425 # T2
-        STWeaponShotgunMossberg: 700 # T2
+        STWeaponShotgunTOZ34: 250 # T1
+        STWeaponShotgunMP133: 425 # T2
+        STWeaponShotgunMossbergM88: 700 # T2
         STWeaponShotgunMP153: 1000 # T2
          # 9x18
         WeaponPistolStalkerPM: 100 #T1
          # 7,62x25
         WeaponPistolStalkerTT: 300 #T1
           # 5,45x39
-        STWeaponRifleStalkerSaiga545: 1250 # T3
-        STWeaponGunAKS74U: 1750 # T3
+        STWeaponRifleSaiga545: 1250 # T3
+        STWeaponRifleAKS74U: 1750 # T3
           # Other
-        STWeaponSMGMp5: 2000
+        STWeaponSMGMP5: 2000
         WeaponPistolStalkerAPS: 600 #T2
-        STWeaponRifleSKS: 1850 # T2
+        STWeaponSniperSKS: 1850 # T2
         STWeaponSniperMosin: 1000
           # Nato
-    - name: Магазины
+    - name: shop-category-magazines
       priority: 2
       items:
 
@@ -101,7 +107,7 @@
         TTMag: 75
         BaseAPSMag: 200
         BaseMP5Mag: 150
-    - name: Боеприпасы
+    - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 125
@@ -125,7 +131,7 @@
         919PBMBox: 500
         # .45 ACP
         45ACPLFMJBox: 100
-    - name: Броня
+    - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
@@ -133,13 +139,16 @@
         ClothingHeadHelmetInfantry: 800 # T2 - uni
         STClothingHeadHelmetMakeshiftTacticalT3: 1350 # T2 - uni
           # OuterClothing #
-        ClothingOuterJacketStalker: 100 # T1 - uni
+        SetJacketNoviceBrezentBuyableCrate: 500 # T1 - uni
+        SetJacketNoviceWhiteBuyableCrate: 500 # T1 - uni
         STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
+        SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
+        SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
         ClothingOuterArmor6B2: 1750
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
 
-    - name: Хранилища и Контейнеры
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
           # BackPacks
@@ -151,11 +160,10 @@
         ClothingBeltTarzanGreen: 200 # T1 - PVP
         ClothingBeltTarzanOrange: 200 # T1 - PVP
           # Containers
-        BoxArtcont: 450 # T1
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
          # T4
-    - name: Плащи и Противогазы
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
@@ -165,7 +173,7 @@
         ClothingMaskGasZarya: 100 # T1
         ClothingMaskGP5: 200 # T2
         ClothingMaskGP7: 900  # T3
-    - name: Исследовательское снаряжение
+    - name: shop-category-research-equipment
       priority: 7
       items:
         STBoltBagFilled: 50
@@ -175,7 +183,7 @@
         ZoneArtifactDetectorPulse: 100 # T1
         ZoneArtifactDetectorHunter: 400 # T2
         ZoneArtifactDetectorResponse: 1200 # T2
-    - name: Утилиты
+    - name: shop-category-utilities
       priority: 8
       items:
         STCombatKnife: 25
@@ -185,7 +193,7 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
-        FlashlightSeclite: 50
+        STFlashlightSeclite: 50
         PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
@@ -200,7 +208,7 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-    - name: Провизия
+    - name: shop-category-provisions
       priority: 9
       items:
         STEnergyDrink: 250
@@ -214,7 +222,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
-    - name: Медицина
+    - name: shop-category-medicine
       priority: 10
       items:
           # Cheap
@@ -231,7 +239,7 @@
         MedkitAI2: 200
         MedkitMilitary: 400
         Defibrillator: 1000
-    - name: Кастомизация
+    - name: shop-category-customization
       priority: 11
       items:
         ClothingBandageStalkerJid: 50
@@ -292,7 +300,7 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-    - name: Развлечения
+    - name: shop-category-entertainment
       priority: 12
       items:
         # Dices
@@ -311,9 +319,9 @@
     1:
       - name: sponsor
         items:
-          STWeaponGunAKS74UWhite: 650
+          STWeaponRifleAKS74UWhite: 650
   contributorCategories:
     - name: contributor
       items:
-        STWeaponShotgunMP153Voron: 550
+        STWeaponShotgunMP153Raven: 550
         WeaponPistolStalkerAPSHugo: 250

@@ -2,6 +2,34 @@
   abstract: true
   id: StalkerDuplicateTeleportBase
   suffix: Teleport, Portal
+  components:
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    layers:
+      - state: t2
+    scale: 0.7, 0.7
+    sprite: _Stalker/Objects/Other/teleport.rsi
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.48,0.25,0.48"
+        mask:
+          - FullTileMask
+        layer:
+          - TableLayer
+        hard: false
+  - type: PointLight
+    color: OrangeRed
+    radius: 3
+    energy: 1
+    netsync: false
 
 - type: entity
   parent: StalkerDuplicateTeleportBase
@@ -49,38 +77,11 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Kordon
   components:
-  - type: Transform
-    anchored: True
-  - type: InteractionOutline
-  - type: Clickable
-  - type: Physics
-    bodyType: Static
-  - type: Sprite
-    layers:
-      - state: t2
-    scale: 0.7, 0.7
-    sprite: _Stalker/Objects/Other/teleport.rsi
-  - type: Fixtures
-    fixtures:
-      portalFixture:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.48,0.25,0.48"
-        mask:
-          - FullTileMask
-        layer:
-          - TableLayer
-        hard: false
-  - type: PointLight
-    color: OrangeRed
-    radius: 3
-    energy: 1
-    netsync: false
   - type: DuplicateTeleport
     prefix: PB
     maxWeight: 350
-  #- type: AccessReader
-  #  access: [["Stalker"]]
+  - type: AccessReader
+    access: [["Stalker"]]
 
 - type: entity
   parent: StalkerDuplicateTeleportBase
@@ -89,33 +90,6 @@
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, OrangeForest
   components:
-  - type: Transform
-    anchored: True
-  - type: InteractionOutline
-  - type: Clickable
-  - type: Physics
-    bodyType: Static
-  - type: Sprite
-    layers:
-      - state: t2
-    scale: 0.7, 0.7
-    sprite: _Stalker/Objects/Other/teleport.rsi
-  - type: Fixtures
-    fixtures:
-      portalFixture:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.25,-0.48,0.25,0.48"
-        mask:
-          - FullTileMask
-        layer:
-          - TableLayer
-        hard: false
-  - type: PointLight
-    color: OrangeRed
-    radius: 3
-    energy: 1
-    netsync: false
   - type: DuplicateTeleport
     prefix: RedForest
     maxWeight: 200
@@ -129,7 +103,7 @@
 
 - type: entity
   id: StalkerDublicateMilitary
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Military
@@ -143,7 +117,7 @@
 
 - type: entity
   id: StalkerDublicateSci
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Sci
@@ -157,7 +131,7 @@
 
 - type: entity
   id: StalkerDublicateBandit
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Bandit
@@ -171,7 +145,7 @@
 
 - type: entity
   id: StalkerDublicateSeraphims
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Seraphims
@@ -185,7 +159,7 @@
 
 - type: entity
   id: StalkerDublicateDolg
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Dolg
@@ -199,7 +173,7 @@
 
 - type: entity
   id: StalkerDublicateFreedom
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Freedom
@@ -213,7 +187,7 @@
 
 - type: entity
   id: StalkerDublicateRenegats
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Renegat
@@ -227,7 +201,7 @@
 
 - type: entity
   id: StalkerDublicateCovenant
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Covenant
@@ -241,7 +215,7 @@
 
 - type: entity
   id: StalkerDublicateAnomalists
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Anomalist
@@ -255,7 +229,7 @@
 
 - type: entity
   id: StalkerDublicateMerc
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Mercenary
@@ -269,7 +243,7 @@
 
 - type: entity
   id: StalkerDublicateGreh
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Greh
@@ -283,7 +257,7 @@
 
 - type: entity
   id: StalkerDublicateClearSky
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Clear Sky
@@ -296,22 +270,8 @@
     access: [["CN"]]
 
 - type: entity
-  id: StalkerDublicateProject
-  parent: StalkerDublicateKordon
-  name: Подвал в логово
-  description: С помощью этого подвала вы можете попасть в своё логово.
-  suffix: Teleport, Portal, Duplicate, Project
-  components:
-  - type: DuplicateTeleport
-    prefix: Project
-    mapPath: /Maps/_ST/PersonalStalkerArena/BandStalkerArenaV1.yml
-    maxWeight: 150
-  - type: AccessReader
-    access: [["Project"]]
-
-- type: entity
   id: StalkerDublicatePoisk
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Poisk
@@ -325,7 +285,7 @@
 
 - type: entity
   id: StalkerDublicateNeutral
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Neutral
@@ -339,7 +299,7 @@
 
 - type: entity
   id: StalkerDublicateDeserter
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Deserter
@@ -353,7 +313,7 @@
 
 - type: entity
   id: StalkerDublicateJaba
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Jaba
@@ -367,7 +327,7 @@
 
 - type: entity
   id: StalkerDublicateMechanic
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Mechanic
@@ -381,7 +341,7 @@
 
 - type: entity
   id: StalkerDublicateBar
-  parent: StalkerDublicateKordon
+  parent: StalkerDuplicateTeleportBase
   name: Подвал в логово
   description: С помощью этого подвала вы можете попасть в своё логово.
   suffix: Teleport, Portal, Duplicate, Bar
@@ -410,7 +370,6 @@
     - Military
     - RedForest
     - Poisk
-    - Project
     - Neutral
     - Bar
     - Jaba

@@ -60,6 +60,15 @@
           enum.ConstructionVisuals.Layer:
             Primed: { state: primed }
             Unprimed: { state: icon }
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 60
+        behaviors:
+        - !type:TriggerBehavior
+        - !type:DoActsBehavior
+          acts: ["Destruction"]
 
 - type: entity
   parent: GrenadeBase
@@ -103,7 +112,7 @@
     - type: DeleteOnTrigger
     - type: SpawnOnTrigger
       proto: HowitzerTimedSpawnerfast
-    
+
 
 - type: entity
   parent: SmokeGrenade
@@ -270,3 +279,91 @@
           enum.ConstructionVisuals.Layer:
             Primed: { state: primed }
             Unprimed: { state: icon }
+
+######################## Шахиды
+- type: entity
+  parent: Clothing
+  id: STExplosionPack
+  name: Взрывпакет
+  description: Рюкзак, набитый взрывчаткой. Увы, без взрывателя - придётся инициировать подрыв как-то ещё.
+  suffix: Stalker, Взрывчатка
+  components:
+  - type: STWeight
+    self: 10
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 500
+    canCreateVacuum: false
+  - type: Sprite
+    sprite: Corvax/Back/Backpacks/military.rsi
+  - type: Item
+    size: Huge
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+  - type: RepositoryItem
+    categoryName: Оружие
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Appearance
+
+- type: entity
+  parent: ClothingBeltTarzanBlack
+  id: STClothingBeltShahid
+  name: пояс шахида
+  description: Пояс и подсумки, забитые плотно взрывчаткой.
+  suffix: ST, Взрывчатка
+  components:
+  - type: STWeight
+    self: 5
+  - type: Tag
+    tags:
+    - Folder
+  - type: Storage
+    maxItemsize: Large
+    grid:
+    - 2,0,7,3
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/belt/belt_green.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/belt/belt_green.rsi
+  - type: RepositoryItem
+    categoryName: Оружие
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 30
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+  - type: Appearance
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 10
+    intensitySlope: 3
+    totalIntensity: 200
+    canCreateVacuum: false
+  - type: SubdermalImplant
+    permanent: true
+    implantAction: ActionActivateMicroBomb
+  - type: TriggerImplantAction
+  - type: ExplodeOnTrigger
+  - type: GibOnTrigger
+    deleteItems: true

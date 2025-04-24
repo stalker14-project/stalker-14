@@ -1,0 +1,91 @@
+# 1. Создание прототипа зоны
+- type: stWarZone
+  id: KordonVillage # Идентификатор зоны. Сохраняется в БД, поэтому не меняйте его.
+  rewardPointsPerPeriod: 1 # Сколько очков будет начисляться за период
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 2 # Время перезарядки захвата зоны в часах
+  captureTime: 1800 # Время захвата зоны в секундах. 30 минут.
+  requirements:
+    - !type:ZoneOwnershipRequirenment
+      requiredZones: [] # Здесь можно указать зоны, которые должны быть захвачены для захвата этой зоны. Не тестил.
+
+- type: stWarZone
+  id: SvalkaDepo
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 420 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 16 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 18   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+# Entity prototype referencing the above meta-prototype
+- type: entity
+  id: WarZoneEntity_Kordon
+  parent: MarkerBase
+  name: Kordon Village War Zone
+  description: A physical marker for the Kordon War Zone.
+  components:
+    - type: WarZone # Нужен этот компонент. Он будет сохранять состояние.
+      proto: KordonVillage
+      portalName: Kordon Village
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 3 # Радиус зоны захвата. Выйти за зону и захват прекратиться
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: PointLight # Подсвечивает зону
+      enabled: true
+      radius: 4
+      color: Cyan
+      energy: 1
+
+- type: entity
+  id: WarZoneEntity_Svalka_Depo
+  parent: MarkerBase
+  name: Depo War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: SvalkaDepo
+    portalName: Depo
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
+- type: stBandShopListings
+  id: STBandShopListings
+  name: Band Shop Listings
+  description: A list of items available for purchase in the Band Shop.
+  items:
+    - productEntity: FitnessCenterCard
+      price: 100

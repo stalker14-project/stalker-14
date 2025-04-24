@@ -27,6 +27,9 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
+using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Content.Server.Station.Systems;
 
@@ -192,6 +195,22 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
                 AddComp<DetailExaminableComponent>(entity.Value).Content = profile.FlavorText;
             }
         }
+
+        // stalker-changes-start
+        if (profile != null && InventorySystem.TryGetSlotEntity(entity.Value, "id", out var idUid) && TryComp<PdaComponent>(idUid.Value, out var pdaComponent))
+        {
+            unchecked
+            {
+                int hash = 17; // lmao shizo
+                foreach (char c in profile.Name)
+                {
+                    hash = hash * 31 + c;
+                }
+                long numericHash = Math.Abs(hash) % 100_000_000;
+                _pdaSystem.SetOwner(idUid.Value, pdaComponent, entity.Value, numericHash.ToString("D8"));
+            }
+        }
+        // stalker-changes-end
 
         DoJobSpecials(job, entity.Value);
         _identity.QueueIdentityUpdate(entity.Value);

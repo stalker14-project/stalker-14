@@ -5,6 +5,7 @@
   components:
     - type: Sprite
       state: soul
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget
@@ -42,6 +43,7 @@
   components:
     - type: Sprite
       state: artifactFloodlight
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyLamp
     - type: ZoneArtifactDetectorTarget
@@ -63,7 +65,7 @@
     - type: PersonalDamage
       damage:
         types:
-          Radiation: 0.2
+          Radiation: 0.1
       interval: 1
 #
 - type: entity
@@ -73,6 +75,7 @@
   components:
     - type: Sprite
       state: magnetic_flower
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget
@@ -107,6 +110,7 @@
   components:
     - type: Sprite
       state: atom
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget

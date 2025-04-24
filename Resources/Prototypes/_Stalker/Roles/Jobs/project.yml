@@ -1,8 +1,8 @@
 - type: job
   id: StalkerProjectPawn
-  name: Следователь Проекта
+  name: job-project-pawn
   icon: project-1
-  description: То что приказывает им Алгоритм, то они и сделают.
+  description: job-project-pawn-desc
   playTimeTracker: JobProjectPawn
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
       - Human
       - Dwarf
   startingGear: ProjectPawnGear
-  supervisors: Вы подчиняетесь всему Алгоритму «Проекта», а также Оркестратору «Проекта»
+  supervisors: job-project-pawn-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -29,6 +29,8 @@
           altBand: project-2
           canChange: true
           bandIcon: project-1
+          bandProto: STProjectBand
+          bandRankId: 2
         - type: IdentityBlocker
         - type: BlockTackingHolyItems
         - type: TeethPull
@@ -51,9 +53,9 @@
 
 - type: job
   id: StalkerProjectOrchestrator
-  name: Оркестратор Проекта
+  name: job-project-orchestrator
   icon: project-3
-  description: Тайный X
+  description: job-project-orchestrator-desc
   playTimeTracker: JobProjectOrchestrator
   whitelisted: true
   requirements:
@@ -65,7 +67,7 @@
       - Human
       - Dwarf
   startingGear: ProjectOrchestratorGear
-  supervisors: Вы управляете всем Алгоритмом «Проекта», ваша обьязанность - направлять свой «Проект» в нужное место.
+  supervisors: job-project-orchestrator-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -83,6 +85,8 @@
           altBand: project-4
           canChange: true
           bandIcon: project-3
+          bandProto: STProjectBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: IdentityBlocker
         - type: TeethPull
@@ -102,3 +106,13 @@
     ears: ClothingHeadsetProject
     eyes: ClothingEyesHudProject
     gloves: ClothingHandsGlovesFingerless
+- type: stBand
+  id: STProjectBand
+  name: Project
+  factionId: Project
+  maxMembers: 10
+  managingRankId: 2
+  hierarchy:
+    1: StalkerProjectPawn
+    2: StalkerProjectOrchestrator
+

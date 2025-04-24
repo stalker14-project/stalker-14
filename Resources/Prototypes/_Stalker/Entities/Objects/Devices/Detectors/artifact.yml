@@ -110,9 +110,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorAngleIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -152,9 +150,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorDistanceIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -176,9 +172,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorDistanceIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -218,9 +212,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorAngleIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
 
 - type: entity
   parent: ZoneArtifactDetectorBear
@@ -241,9 +233,7 @@
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorAngleIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -267,15 +257,13 @@
           Detected: { state: active }
   - type: ZoneArtifactDetector
     level: 1
-    detectionDistance: 6
+    detectionDistance: 10
     activationDistance: 2
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorAngleIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
 
 # Пиздец
 - type: entity
