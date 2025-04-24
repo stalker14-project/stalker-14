@@ -151,9 +151,11 @@ public sealed partial class WarZoneSystem : EntitySystem
             }
 
             component.InitialLoadComplete = false;
-            component.PresentBandProtoIds = new();
-            component.PresentFactionProtoIds = new(); // Keep this for collision logic, but derive factions for capture logic
+            component.PresentBandProtoIds = new(); // Represents bands with count > 0
+            component.PresentFactionProtoIds = new(); // Represents factions with count > 0
             component.PresentEntities = new();
+            component.PresentBandCounts = new(); // Initialize new dictionary
+            component.PresentFactionCounts = new(); // Initialize new dictionary
 
             _ = LoadInitialZoneStateAsync(uid, component);
 
@@ -323,9 +325,12 @@ public sealed partial class WarZoneSystem : EntitySystem
         }
 
         // Check for New Attacker (Band or Faction)
+        // This logic remains the same, but the underlying PresentBandProtoIds/PresentFactionProtoIds
+        // are now more stable due to the count-based updates in collision handlers.
         bool isNewAttacker = (currentAttackerBand != comp.CurrentAttackerBandProtoId || currentAttackerFaction != comp.CurrentAttackerFactionProtoId);
         if (isNewAttacker)
         {
+            // Logger.InfoS("warzone", $"Zone '{comp.PortalName}': Attacker changed. Calculated: B={currentAttackerBand ?? "N"}, F={currentAttackerFaction ?? "N"}. Stored: B={comp.CurrentAttackerBandProtoId ?? "N"}, F={comp.CurrentAttackerFactionProtoId ?? "N"}. Resetting progress."); // Optional debug log
             ResetCaptureProgress(comp);
              comp.CurrentAttackerBandProtoId = currentAttackerBand;
              comp.CurrentAttackerFactionProtoId = currentAttackerFaction;
@@ -544,7 +549,7 @@ public sealed partial class WarZoneSystem : EntitySystem
         return null;
     }
 
-    // Collision Handling - Populates PresentEntities, PresentBandProtoIds, PresentFactionProtoIds
+    // Collision Handling - Manages counts and presence sets
     private void OnStartCollide(EntityUid uid, WarZoneComponent component, ref readonly StartCollideEvent args)
     {
         var other = args.OtherEntity;
@@ -561,33 +566,65 @@ public sealed partial class WarZoneSystem : EntitySystem
             factionId = bandProto.FactionId;
         }
 
+        // Ensure collections are initialized (should be by OnWarZoneInit, but safety first)
         component.PresentEntities ??= new();
         component.PresentBandProtoIds ??= new();
         component.PresentFactionProtoIds ??= new();
+        component.PresentBandCounts ??= new();
+        component.PresentFactionCounts ??= new();
 
+        // Add entity first. If already present, do nothing (collision might fire multiple times).
+        if (!component.PresentEntities.Add(other))
+            return;
+
+        // Update counts and presence sets
+        bool changedState = false;
         if (bandId != null)
-            component.PresentBandProtoIds.Add(bandId);
+        {
+            component.PresentBandCounts.TryGetValue(bandId, out var currentBandCount);
+            component.PresentBandCounts[bandId] = currentBandCount + 1;
+            if (currentBandCount == 0) // Only add to set if count was zero before increment
+            {
+                component.PresentBandProtoIds.Add(bandId);
+                changedState = true; // Band presence changed from none to some
+            }
+        }
         if (factionId != null)
-            component.PresentFactionProtoIds.Add(factionId);
-        component.PresentEntities.Add(other);
+        {
+            component.PresentFactionCounts.TryGetValue(factionId, out var currentFactionCount);
+            component.PresentFactionCounts[factionId] = currentFactionCount + 1;
+            if (currentFactionCount == 0) // Only add to set if count was zero before increment
+            {
+                 component.PresentFactionProtoIds.Add(factionId);
+                 // Note: Faction presence change doesn't trigger immediate update on its own,
+                 // as band presence change is usually the more critical factor for capture state.
+            }
+        }
+
+        // Force an update check if a new band appeared
+        if (changedState)
+        {
+            component.NextCheckTime = TimeSpan.Zero;
+        }
     }
 
     private void OnEndCollide(EntityUid uid, WarZoneComponent component, ref readonly EndCollideEvent args)
     {
         var other = args.OtherEntity;
 
-        // Check if the component or sets are null before proceeding
-        if (component.PresentEntities == null || component.PresentBandProtoIds == null || component.PresentFactionProtoIds == null)
+        // Check if the component or necessary collections are null before proceeding
+        if (component.PresentEntities == null || component.PresentBandProtoIds == null || component.PresentFactionProtoIds == null || component.PresentBandCounts == null || component.PresentFactionCounts == null)
             return;
 
-        // Only remove if the entity is actually present
-        if (!component.PresentEntities.Contains(other))
-             return;
+        // Only process if the entity was actually present and is now leaving
+        if (!component.PresentEntities.Remove(other))
+             return; // Entity wasn't in the set, maybe EndCollide fired before StartCollide processed?
 
         if (!_entityManager.TryGetComponent(other, out BandsComponent? bands) || bands.BandProto == default)
         {
-             // If entity has no band component but was somehow in PresentEntities, just remove it
-             component.PresentEntities.Remove(other);
+             // Entity had no band component, but was somehow in PresentEntities.
+             // Just ensure NextCheckTime is reset in case its removal matters.
+             component.NextCheckTime = TimeSpan.Zero;
              return;
         }
 
@@ -600,66 +637,134 @@ public sealed partial class WarZoneSystem : EntitySystem
             factionId = bandProto.FactionId;
         }
 
-        // Remove from sets
-        if (bandId != null)
-            component.PresentBandProtoIds.Remove(bandId);
-        if (factionId != null)
-            component.PresentFactionProtoIds.Remove(factionId);
-        component.PresentEntities.Remove(other);
-
-         // Logger.DebugS("warzone", $"Entity {other} left zone {uid}. Band: {bandId}, Faction: {factionId}. Present Bands: {component.PresentBandProtoIds.Count}, Present Factions: {component.PresentFactionProtoIds.Count}");
-
-        // Trigger an immediate check if the zone might become empty or uncontested
-        // This helps reset state faster than waiting for the next 1-second tick.
-        // Use TryComp to avoid issues if the zone entity is deleting.
-        if (TryComp<WarZoneComponent>(uid, out var wzComp))
+        // Update counts and presence sets
+        bool changedState = false;
+        if (bandId != null && component.PresentBandCounts.TryGetValue(bandId, out var currentBandCount))
         {
-             // Reset NextCheckTime to force an update on the next frame
-             wzComp.NextCheckTime = TimeSpan.Zero;
+            if (currentBandCount > 1)
+            {
+                component.PresentBandCounts[bandId] = currentBandCount - 1;
+            }
+            else // Count is 1, will become 0
+            {
+                component.PresentBandCounts.Remove(bandId);
+                if (component.PresentBandProtoIds.Remove(bandId)) // Remove from set only when count reaches zero
+                    changedState = true; // Band presence changed from some to none
+            }
+        }
+        else if (bandId != null)
+        {
+             Logger.WarningS("warzone", $"Entity {other} ending collision in zone {uid} had band {bandId}, but band count was not found or already zero.");
+        }
+
+        if (factionId != null && component.PresentFactionCounts.TryGetValue(factionId, out var currentFactionCount))
+        {
+             if (currentFactionCount > 1)
+            {
+                component.PresentFactionCounts[factionId] = currentFactionCount - 1;
+            }
+            else // Count is 1, will become 0
+            {
+                component.PresentFactionCounts.Remove(factionId);
+                component.PresentFactionProtoIds.Remove(factionId); // Remove from set only when count reaches zero
+                // Note: Faction presence change doesn't trigger immediate update on its own.
+            }
+        }
+         else if (factionId != null)
+        {
+             Logger.WarningS("warzone", $"Entity {other} ending collision in zone {uid} had faction {factionId}, but faction count was not found or already zero.");
+        }
+
+        // Trigger an immediate check if a band disappeared entirely
+        if (changedState)
+        {
+             // Use TryComp as the zone entity might be deleting simultaneously
+             if (TryComp<WarZoneComponent>(uid, out var wzComp))
+                 wzComp.NextCheckTime = TimeSpan.Zero;
         }
     }
 
-    // Entity Termination Handling
-    private void OnEntityTerminating(EntityUid uid, MetaDataComponent component, ref EntityTerminatingEvent args)
+    // Entity Termination Handling - Refactored for clarity and safety
+    private void OnEntityTerminating(EntityUid uid, MetaDataComponent meta, ref EntityTerminatingEvent args)
     {
-        // Use a separate method to handle removal logic
-        RemoveEntityFromAllCaptures(uid);
-    }
-
-    private void RemoveEntityFromAllCaptures(EntityUid uid)
-    {
+        // Check if the terminating entity has a BandsComponent
         if (!_entityManager.TryGetComponent(uid, out BandsComponent? bands) || bands.BandProto == default)
-            return;
+            return; // Not a player/band member we track for captures
 
         string? bandId = null;
         string? factionId = null;
-
         if (_prototypeManager.TryIndex<STBandPrototype>(bands.BandProto, out var bandProto))
         {
             bandId = bandProto.ID;
             factionId = bandProto.FactionId;
         }
 
-        // Iterate through all war zones
+        // Find all zones this entity might be in and remove it
         var query = EntityQueryEnumerator<WarZoneComponent>();
         while (query.MoveNext(out var zoneUid, out var wzComp))
         {
-            bool changed = false;
+            RemoveEntityFromCaptureZone(zoneUid, wzComp, uid, bandId, factionId);
+        }
+    }
 
-            // Remove from sets if present
-            if (wzComp.PresentEntities != null && wzComp.PresentEntities.Remove(uid))
-                changed = true;
-            if (wzComp.PresentBandProtoIds != null && bandId != null && wzComp.PresentBandProtoIds.Remove(bandId))
-                changed = true;
-            if (wzComp.PresentFactionProtoIds != null && factionId != null && wzComp.PresentFactionProtoIds.Remove(factionId))
-                changed = true;
+    /// <summary>
+    /// Helper method to remove a specific entity from a single capture zone's tracking state.
+    /// Called by OnEndCollide (indirectly via OnEntityTerminating).
+    /// </summary>
+    private void RemoveEntityFromCaptureZone(EntityUid zoneUid, WarZoneComponent wzComp, EntityUid entityUid, string? bandId, string? factionId)
+    {
+        // Check if the component or necessary collections are null before proceeding
+        if (wzComp.PresentEntities == null || wzComp.PresentBandProtoIds == null || wzComp.PresentFactionProtoIds == null || wzComp.PresentBandCounts == null || wzComp.PresentFactionCounts == null)
+            return;
 
-            // If the entity's removal potentially changed the zone state, force an update check
-            if (changed)
+        // Only process if the entity was actually present
+        if (!wzComp.PresentEntities.Remove(entityUid))
+            return; // Entity wasn't in this zone's set
+
+        // Update counts and presence sets
+        bool changedState = false;
+        if (bandId != null && wzComp.PresentBandCounts.TryGetValue(bandId, out var currentBandCount))
+        {
+            if (currentBandCount > 1)
             {
-                 // Reset NextCheckTime to force an update on the next frame
-                 wzComp.NextCheckTime = TimeSpan.Zero;
+                wzComp.PresentBandCounts[bandId] = currentBandCount - 1;
             }
+            else // Count is 1, will become 0
+            {
+                wzComp.PresentBandCounts.Remove(bandId);
+                if (wzComp.PresentBandProtoIds.Remove(bandId)) // Remove from set only when count reaches zero
+                    changedState = true; // Band presence changed from some to none
+            }
+        }
+         else if (bandId != null)
+        {
+             Logger.WarningS("warzone", $"Terminating entity {entityUid} in zone {zoneUid} had band {bandId}, but band count was not found or already zero.");
+        }
+
+
+        if (factionId != null && wzComp.PresentFactionCounts.TryGetValue(factionId, out var currentFactionCount))
+        {
+             if (currentFactionCount > 1)
+            {
+                wzComp.PresentFactionCounts[factionId] = currentFactionCount - 1;
+            }
+            else // Count is 1, will become 0
+            {
+                wzComp.PresentFactionCounts.Remove(factionId);
+                wzComp.PresentFactionProtoIds.Remove(factionId); // Remove from set only when count reaches zero
+                // Note: Faction presence change doesn't trigger immediate update on its own.
+            }
+        }
+        else if (factionId != null)
+        {
+             Logger.WarningS("warzone", $"Terminating entity {entityUid} in zone {zoneUid} had faction {factionId}, but faction count was not found or already zero.");
+        }
+
+        // If the entity's removal caused a band to disappear entirely, force an update check
+        if (changedState)
+        {
+             // Reset NextCheckTime to force an update on the next frame
+             wzComp.NextCheckTime = TimeSpan.Zero;
         }
     }
 

@@ -14,8 +14,8 @@ This document outlines the design and current implementation status of the Facti
 - **Ownership:** A zone is owned by either a single Band or a single Faction. Ownership is tracked persistently in the `stalker_zone_ownerships` database table via `ServerDbManager`.
 - **Capture Mechanics:**
     - Players (with a `BandsComponent`) entering a zone's trigger area are registered.
-    - The system tracks present Bands and Factions (`PresentBandProtoIds`, `PresentFactionProtoIds` in `WarZoneComponent`).
-    - If only one non-owning Band/Faction is present and the zone is not on cooldown, capture begins.
+    - The system tracks entities entering/leaving the zone via collision events. It maintains counts of players per Band and Faction (`PresentBandCounts`, `PresentFactionCounts`) and uses these counts to manage sets of currently present groups (`PresentBandProtoIds`, `PresentFactionProtoIds` in `WarZoneComponent`). A group is considered present only if its count is greater than zero.
+    - If only one non-owning Band/Faction group (as determined by the presence sets) is present and the zone is not on cooldown, capture begins.
     - Capture progress (`CaptureProgress` in `WarZoneComponent`) advances based on requirements, primarily `CaptureTimeRequirenment`.
     - If multiple potential attackers enter, or the defender re-enters, capture progress is halted/reset.
     - If the attacker leaves, the capture attempt is abandoned.
@@ -51,13 +51,15 @@ This document outlines the design and current implementation status of the Facti
     - `CurrentAttackerBandProtoId`/`CurrentAttackerFactionProtoId`: Current group attempting capture.
     - `CooldownEndTime`: Timestamp when the zone cooldown expires.
     - `InitialLoadComplete`: Flag indicating if initial state loaded from DB.
-    - `PresentBandProtoIds`/`PresentFactionProtoIds`: Sets tracking which groups are physically inside the zone trigger.
+    - `PresentEntities`: Set tracking the specific `EntityUid`s currently inside the zone trigger.
+    - `PresentBandCounts`/`PresentFactionCounts`: Dictionaries tracking the *number* of entities per Band/Faction currently inside the zone.
+    - `PresentBandProtoIds`/`PresentFactionProtoIds`: Sets indicating which Band/Faction *groups* have at least one member present (derived from the counts). These are used for capture logic checks.
     - `CaptureProgress`: Tracks the current capture progress (0.0 to 1.0).
 - **`BandsComponent`:** Attached to player entities, tracks their band membership (`BandProto`).
 
 ### War Zone System (`Content.Server/_Stalker/WarZone/WarZoneSystem.cs`)
 - **Initialization:** Loads Band/Faction points and zone ownership from the database on startup (`InitializeWarZoneAsync`, `LoadInitialZoneStateAsync`). Initializes points to 0 if not found.
-- **Presence Tracking:** Uses physics collision events (`StartCollideEvent`, `EndCollideEvent`) with the zone's trigger fixture to update `PresentBandProtoIds` and `PresentFactionProtoIds`. Handles entity termination (`EntityTerminatingEvent`) to remove entities from zones.
+- **Presence Tracking:** Uses physics collision events (`StartCollideEvent`, `EndCollideEvent`) with the zone's trigger fixture. It updates `PresentEntities`, increments/decrements counts in `PresentBandCounts` and `PresentFactionCounts`, and updates the `PresentBandProtoIds`/`PresentFactionProtoIds` sets only when a group's count transitions between zero and non-zero. Handles entity termination (`EntityTerminatingEvent`) via `RemoveEntityFromCaptureZone` to correctly decrement counts and update sets.
 - **Capture Logic (`UpdateCaptureAsync`):**
     - Runs periodically.
     - Checks for contestation (multiple attackers present) or defender presence; resets requirements (like capture time) if contested.

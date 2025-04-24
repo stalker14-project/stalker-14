@@ -46,6 +46,18 @@ public sealed partial class WarZoneComponent : Component
     public HashSet<EntityUid> PresentEntities = new();
 
     /// <summary>
+    /// Tracks the count of entities per band currently inside the zone.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public Dictionary<string, int> PresentBandCounts = new();
+
+    /// <summary>
+    /// Tracks the count of entities per faction currently inside the zone.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public Dictionary<string, int> PresentFactionCounts = new();
+
+    /// <summary>
     /// Current capture progress in seconds
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]

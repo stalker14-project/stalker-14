@@ -6,22 +6,25 @@
   playTimeTracker: JobStalker
   whitelisted: false
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: StalkerAdvanced
-      time: 1
-      inverted: true
-    - !type:DepartmentTimeRequirement
-      department: StalkerBrigands
-      time: 1
-      inverted: true
-    - !type:DepartmentTimeRequirement
-      department: StalkerOfficials
-      time: 1
-      inverted: true
-    - !type:DepartmentTimeRequirement
-      department: StalkerReligius
-      time: 1
-      inverted: true
+    # Обнулил требования, так как люди не могут зайти за сталкера когда их турнули
+    # c ГП. И по сути не могут играть вообще. Я хз как это сделать лучше, но то что есть сейчас
+    # не даёт людям вообще играть.
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAdvanced
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerBrigands
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerOfficials
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerReligius
+    #   time: 1
+    #   inverted: true
     - !type:SpeciesRequirement
       species:
       - Human
