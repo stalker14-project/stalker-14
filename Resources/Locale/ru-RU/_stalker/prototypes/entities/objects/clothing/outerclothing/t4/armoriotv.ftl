@@ -1,10 +1,10 @@
 ent-STClothingOuterArmorIOTVBase = бронежилет IOTV
     .suffix = ST, T4, PvE
-ent-STClothingOuterArmorIOTVBlack = бронежилет «Хохлома-Ч»
+ent-STClothingOuterArmorIOTVBlack = бронежилет IOTV чёрный
     .desc = Бронежилет четвёртого класса защиты в стильном Чёрном цвете, выглядит внушительно.
-ent-STClothingOuterArmorIOTVGreen = бронежилет «Хохлома-З»
+ent-STClothingOuterArmorIOTVGreen = бронежилет IOTV зелёный
     .desc = Бронежилет четвёртого класса защиты в моднейшем болотно-зелёном цвете, выглядит внушительно
-ent-STClothingOuterArmorIOTVFreedom = Бронежилет «Варяг-С»
+ent-STClothingOuterArmorIOTVFreedom = Бронежилет IOTV Свободы
     .desc = Модифицированный бронежилет IV типа, адаптированный умельцами из группировки «Свобода» в кустарных условиях.
-ent-STClothingOuterArmorIOTVMerc = бронежилет "Варяг-М"
+ent-STClothingOuterArmorIOTVMerc = бронежилет IOTV Наёмников
     .desc = Стандартный бронежилет США IV типа, адаптированный наёмниками

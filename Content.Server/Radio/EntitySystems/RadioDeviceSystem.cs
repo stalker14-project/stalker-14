@@ -59,7 +59,8 @@ public sealed class RadioDeviceSystem : EntitySystem
         SubscribeLocalEvent<RadioStalkerComponent, BeforeActivatableUIOpenEvent>(OnBeforeRadioUiOpen); // Stalker-Changes
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioMicMessage>(OnToggleRadioMic); // Stalker-Changes
         SubscribeLocalEvent<RadioStalkerComponent, ToggleRadioSpeakerMessage>(OnToggleRadioSpeaker); // Stalker-Changes
-        //SubscribeLocalEvent<RadioStalkerComponent, SelectRadioChannelMessage>(OnSelectRadioChannel); // Stalker-Changes ST-TODO. I have no idea what this method is supposed to do. Removed it for now
+        SubscribeLocalEvent<RadioStalkerComponent, SelectRadioChannelMessage>(OnSelectRadioChannel); // Stalker-Changes
+        SubscribeLocalEvent<RadioReceiveAttemptEvent>(OnStalkerReceiveAttempt, before: new []{typeof(RadioSystem)}); // Stalker-Changes - Add attempt handler
     }
 
     public override void Update(float frameTime)
@@ -205,7 +206,6 @@ public sealed class RadioDeviceSystem : EntitySystem
         if (_recentlySent.Add((args.Message, args.Source, channel)))
             _radio.SendRadioMessage(args.Source, args.Message, channel, uid);
     }
-
     private void OnAttemptListen(EntityUid uid, RadioMicrophoneComponent component, ListenAttemptEvent args)
     {
         if (component.PowerRequired && !this.IsPowered(uid, EntityManager)
@@ -219,16 +219,36 @@ public sealed class RadioDeviceSystem : EntitySystem
     {
         if (uid == args.RadioSource)
             return;
+        // Stalker-Changes-Start
+        string name;
+        if (args.Channel.ID == "StalkerInternal" && TryComp<RadioStalkerComponent>(uid, out var receiverStalkerComp) && receiverStalkerComp.CurrentFrequency != null)
+        {
+            // Frequencies matched in OnStalkerReceiveAttempt.
+            var speechVerb = _chat.GetSpeechVerb(args.MessageSource, args.Message);
+            var wrappedMessage = Loc.GetString("chat-radio-message-wrap",
+                ("channel", string.Empty), // receiverStalkerComp.CurrentFrequency
+                ("fontType", speechVerb.FontId),
+                ("fontSize", speechVerb.FontSize),
+                ("verb", string.Empty), // Loc.GetString(speechVerb.ID)
+                ("color", args.Channel.Color),
+                ("name", Name(args.MessageSource)),
+                ("message", args.Message));
 
-        var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
-        RaiseLocalEvent(args.MessageSource, nameEv);
+            _chat.TrySendInGameICMessage(uid, wrappedMessage, InGameICChatType.Whisper, ChatTransmitRange.GhostRangeLimit, checkRadioPrefix: false);
+            return;
+        }
+        else
+        {
+            // Default handling for non-StalkerInternal channels
+        // Stalker-Changes-End
+            var nameEv = new TransformSpeakerNameEvent(args.MessageSource, Name(args.MessageSource));
+            RaiseLocalEvent(args.MessageSource, nameEv);
+            name = Loc.GetString("speech-name-relay",
+                ("speaker", Name(uid)),
+                ("originalName", nameEv.VoiceName));
 
-        var name = Loc.GetString("speech-name-relay",
-            ("speaker", Name(uid)),
-            ("originalName", nameEv.VoiceName));
-
-        // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
-        _chat.TrySendInGameICMessage(uid, args.Message, InGameICChatType.Whisper, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);
+             _chat.TrySendInGameICMessage(uid, args.Message, InGameICChatType.Whisper, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);
+        }
     }
 
     private void OnIntercomEncryptionChannelsChanged(Entity<IntercomComponent> ent, ref EncryptionChannelsChangedEvent args)
@@ -295,18 +315,28 @@ public sealed class RadioDeviceSystem : EntitySystem
     }
 
  // Stalker-Changes
+    private void OnSelectRadioChannel(EntityUid uid, RadioStalkerComponent comp, SelectRadioChannelMessage msg)
+    {
+        if (comp.RequiresPower && !this.IsPowered(uid, EntityManager))
+            return;
+
+        // Store the raw frequency string
+        comp.CurrentFrequency = msg.Channel;
+
+        UpdateRadioUi(uid, comp); // Pass component
+    }
     private void OnBeforeRadioUiOpen(EntityUid uid, RadioStalkerComponent component, BeforeActivatableUIOpenEvent args)
     {
-        UpdateRadioUi(uid);
+        UpdateRadioUi(uid, component);
     }
     private void OnToggleRadioMic(EntityUid uid, RadioStalkerComponent component, ToggleRadioMicMessage args)
     {
-        if (component.RequiresPower)
+        if (component.RequiresPower && !this.IsPowered(uid, EntityManager))
             return;
 
         SetMicrophoneEnabled(uid, args.Actor, args.Enabled, true);
         SetSpeakerEnabled(uid, args.Actor, false, true);
-        UpdateRadioUi(uid);
+        UpdateRadioUi(uid, component);
     }
     private void OnToggleRadioSpeaker(EntityUid uid, RadioStalkerComponent component, ToggleRadioSpeakerMessage args)
     {
@@ -315,19 +345,53 @@ public sealed class RadioDeviceSystem : EntitySystem
 
         SetSpeakerEnabled(uid, args.Actor, args.Enabled, true);
         SetMicrophoneEnabled(uid, args.Actor, false, true);
-        UpdateRadioUi(uid);
+        UpdateRadioUi(uid, component);
     }
 
 
-    private void UpdateRadioUi(EntityUid uid)
+    private void UpdateRadioUi(EntityUid uid, RadioStalkerComponent? stalkerComp = null)
     {
+        if (!Resolve(uid, ref stalkerComp))
+            return;
+
         var micComp = CompOrNull<RadioMicrophoneComponent>(uid);
         var speakerComp = CompOrNull<RadioSpeakerComponent>(uid);
 
         var micEnabled = micComp?.Enabled ?? false;
         var speakerEnabled = speakerComp?.Enabled ?? false;
-        var state = new RadioStalkerBoundUIState(micEnabled, speakerEnabled);
+        var state = new RadioStalkerBoundUIState(micEnabled, speakerEnabled, stalkerComp.CurrentFrequency);
         _ui.SetUiState(uid, RadioStalkerUiKey.Key, state);
     }
  // Stalker-Changes-Ends
+
+    // Stalker-Changes: New handler to filter messages based on frequency before they are fully processed
+    private void OnStalkerReceiveAttempt(ref RadioReceiveAttemptEvent args)
+    {
+        // Only filter messages on the internal channel
+        if (args.Channel.ID != "StalkerInternal")
+            return;
+
+        // Check if the intended receiver is a stalker radio and has a frequency set
+        if (!TryComp<RadioStalkerComponent>(args.RadioReceiver, out var receiverStalkerComp) || receiverStalkerComp.CurrentFrequency == null)
+        {
+            args.Cancelled = true; // Cancel the event for this receiver
+            return;
+        }
+
+        // Check if the sending radio device is a stalker radio and has a frequency set
+        if (!TryComp<RadioStalkerComponent>(args.RadioSource, out var senderStalkerComp) || senderStalkerComp.CurrentFrequency == null)
+        {
+            args.Cancelled = true; // Cancel the event for this receiver
+            return;
+        }
+
+        // Check if frequencies match
+        if (receiverStalkerComp.CurrentFrequency != senderStalkerComp.CurrentFrequency)
+        {
+            args.Cancelled = true; // Cancel the event for this receiver
+            return;
+        }
+
+        // If we reach here, frequencies match, so allow the message to proceed for this receiver.
+    }
 }

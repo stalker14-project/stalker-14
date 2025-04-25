@@ -18,3 +18,32 @@
   - type: Craftable
   - type: RepositoryItem
     categoryName: Инструменты
+
+- type: entity
+  parent: BaseKnife
+  id: STSpanishKnife
+  name: испанский армейский нож
+  description: Нож и резак для проволки в одном
+  suffix: Stalker, Инструменты
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/debug.rsi
+      state: icon
+    - type: Item
+      sprite: Objects/Tools/debug.rsi
+      size: Small
+      SelfWeight: 0.5
+      shape:
+        - 0,0,0,0
+    - type: Tool
+      qualities:
+      - Biting
+      useSound:
+        path: /Audio/Items/ratchet.ogg
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Инструменты
+    - type: Tag
+      tags:
+      - STCombatKnife
+      - Knife

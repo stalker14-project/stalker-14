@@ -566,6 +566,64 @@
 
 - type: entity
   parent: NPCDoll
+  id: NPCSecurityZhorik
+  name: Жорик
+  description: Проходи, не задерживайся!
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Security.rsi
+    state: zhorik
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerSecurityAds
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCSecurityGarrik
+  name: Гаррик
+  description: Тебе сюда нельзя!
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Security.rsi
+    state: garrik
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerSecurityAds
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
   id: NPCPetrAlkash
   name: Петруха [→   ←]
   description: Заядлый алкаш и курильщик. Продаёт водку и сигареты. Покупает окурки и пустые бутылки из-под водки по достаточно хорошей цене. Основатель и CEO Б.О.М.Ж.

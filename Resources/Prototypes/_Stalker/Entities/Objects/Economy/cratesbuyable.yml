@@ -158,4 +158,75 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
+#Комбинезон Наёмника
 
+#Наёмник
+
+- type: entity
+  parent: BaseItem
+  id: SetMercBuyableCrate
+  name: комплект бронекомбеза наёмника
+  description: В комплекте бронекомбенизон, противогаз и поясная сумка с кобурой.
+  suffix: Stalker, т3
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/merc.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorMerc
+        - id: ClothingMaskGasMercStalker
+        - id: ClothingBeltWebbingHolsterMerc
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: SetMerc2BuyableCrate
+  name: комплект бронекомбеза наёмника
+  description: В комплекте бронекомбенизон, марлевая повязка и поясная сумка с кобурой.
+  suffix: Stalker, т3
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/merc_2.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorMerc2
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBeltWebbingHolsterMerc2
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: SetMercBanditBuyableCrate
+  name: комплект бронекомбеза «Валет»
+  description: В комплекте бронекомбенизон, марлевая повязка и поясная сумка с кобурой.
+  suffix: Stalker, т3
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/merc_bandit.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorBandits
+        - id: ClothingMaskGasMarlya
+        - id: ClothingBeltWebbingHolsterMercBandit
+      sound:
+        path: /Audio/Effects/unwrap.ogg

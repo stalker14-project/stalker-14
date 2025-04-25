@@ -8,9 +8,9 @@
   - type: STWeight
     self: 6.5
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/armored_merc_armor.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/armored_merc_armor.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor.rsi
   - type: Armor
     armorClass: 3
     modifiers:
@@ -29,6 +29,13 @@
         Compression: 0.75
   - type: ExplosionResistance
     damageCoefficient: 0.65
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodMerc
+    slot: head
+  - type: Tag
+    tags:
+    - BlockBack
+    - BlockCloak
 
 - type: entity
   parent: STClothingOuterArmorHeavyM

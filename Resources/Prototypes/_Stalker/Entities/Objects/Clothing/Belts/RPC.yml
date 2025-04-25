@@ -181,3 +181,66 @@
       state: icon
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/belt/belt_berill.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMerc
+  name: поясная сумка с кобурой наёмника
+  description: Поясной сумка из комплекта наёмника с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMerc2
+  name: поясная сумка с кобурой наёмника
+  description: Поясной сумка из комплекта берёзки наёмника с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_2.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_2.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMercBandit
+  name: поясная сумка с кобурой «Валет»
+  description: Поясной сумка из бандитского комплекта «Валет» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_bandit.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_bandit.rsi

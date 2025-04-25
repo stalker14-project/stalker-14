@@ -60,6 +60,17 @@
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasMercStalker
+  name: стандартный противогаз наёмников
+  description: Скрывает глаза и злые помыслы. Защищает от радиации.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_merc.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_merc.rsi
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
   id: ClothingMaskGasChN
   name: стандартный противогаз Чистого Неба
   description: Возможно за ним выдающийся учёный, но скорее просто живая дубина.  Защищает от радиации.

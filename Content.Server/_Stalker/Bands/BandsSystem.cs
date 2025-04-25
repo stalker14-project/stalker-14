@@ -186,7 +186,6 @@ namespace Content.Server._Stalker.Bands
         // OnAddMember and OnRemoveMember remain largely the same, but call the new UpdateUiState
         private async void OnAddMember(EntityUid uid, BandsManagingComponent component, BandsManagingAddMemberMessage msg)
         {
-            // Use the requested pattern for getting session from the message actor
             if (!_mindSystem.TryGetMind(msg.Actor, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
                 return;
 

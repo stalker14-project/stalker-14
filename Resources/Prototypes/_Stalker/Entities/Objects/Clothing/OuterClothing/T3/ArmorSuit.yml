@@ -15,14 +15,12 @@
     maxItemsize: Large
     grid:
       - 0,2,0,3
-      - 0,-2,0,0
       - 2,2,2,3
-      - 2,-1,3,-0
       - 4,2,4,3
-      - 5,-1,6,-0
+      - 6,-1,8,-0
       - 6,2,6,3
       - 8,2,8,3
-      - 8,-2,8,0
+      - 10,2,10,3
   - type: Armor
     armorClass: 3
     modifiers:
@@ -40,6 +38,10 @@
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Craftable
+  - type: Tag
+    tags:
+    - BlockBack
+    - BlockCloak
 
 # stalker
 - type: entity
@@ -83,24 +85,24 @@
   description: Дешёвый и защищающий от мутантов с сталкерами комбез бандитов. Обеспечивает 3 класс защиты.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_bandit.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_armor.rsi
-# bonus
-  - type: Storage
-    maxItemsize: Large
-    grid:
-      - 0,2,0,3
-      - 0,-2,0,0
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 8,-2,8,0
-      - 10,2,10,3
-      - -2,2,-2,3
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_bandit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodMercBandit
+    slot: head
+
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodMercBandit
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/hood_merc_bandit.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/hood_merc_bandit.rsi
 
 - type: entity
   parent: STClothingOuterArmorBase
@@ -125,9 +127,44 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodJacketMerc
+    clothingPrototype: ClothingHeadHatHoodMerc
     slot: head
 
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodMerc
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/hood_merc_1.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/hood_merc_1.rsi
+
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorMerc2
+  name: бронекомбез наёмника
+  description: Имеет камуфляж «Берёзка» в серой расскраске. За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты. Обеспечивает 3 класс защиты.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_2.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_2.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodMerc2
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodMerc2
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/hood_merc_2.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/hood_merc_2.rsi
 
 - type: entity
   parent: STClothingOuterArmorBase
