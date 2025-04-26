@@ -1,3 +1,4 @@
+using Content.Server._Stalker.AI;
 using Content.Server._Stalker.Discord;
 using Content.Server._Stalker.Discord.DiscordAuth;
 using Content.Server._Stalker.JoinQueue;
@@ -77,6 +78,7 @@ namespace Content.Server.IoC
             IoCManager.Register<PlayerRateLimitManager>();
             IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             IoCManager.Register<MappingManager>();
+            IoCManager.Register<AIManager>(); // stalker-changes-auth
             IoCManager.Register<DiscordAuthManager>(); // stalker-changes-auth
             IoCManager.Register<JoinQueueManager>(); // stalker-changes - Corvax Queue Adaptation
             IoCManager.Register<SponsorsManager>(); // stalker-changes-sponsors

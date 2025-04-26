@@ -85,4 +85,16 @@ public sealed class CCCCVars
 
     public static readonly CVarDef<string> DiscordPdaMessageWebhook =
         CVarDef.Create("discord.round_pda_message_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /*
+    * Stalker OpenRouter KEY
+    */ 
+    public static readonly CVarDef<string> OpenRouterApiKey =
+        CVarDef.Create("openrouter.apikey", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    public static readonly CVarDef<string> OpenRouterModel =
+        CVarDef.Create("openrouter.model", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    public static readonly CVarDef<string> OpenRouterUrl =
+        CVarDef.Create("openrouter.url", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }
