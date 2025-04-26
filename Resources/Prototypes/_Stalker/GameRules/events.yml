@@ -5,8 +5,8 @@
   - type: BasicStationEventScheduler
     minimumTimeUntilFirstEvent: 0 # sec
     minMaxEventTiming:
-      min: 1800 # sec
-      max: 3600 # sec
+      min: 7200 # sec
+      max: 14400 # sec
     scheduledGameRules: !type:EntSelector
         id: STAnomalyExplosion
 
