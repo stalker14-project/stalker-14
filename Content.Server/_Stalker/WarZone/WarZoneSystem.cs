@@ -157,19 +157,20 @@ public sealed partial class WarZoneSystem : EntitySystem
             component.PresentBandCounts = new(); // Initialize new dictionary
             component.PresentFactionCounts = new(); // Initialize new dictionary
 
-            _ = LoadInitialZoneStateAsync(uid, component);
+            var initialOwnership = await _dbManager.GetStalkerWarOwnershipAsync(component.ZoneProto);
 
-            // Initialize Last Reward Time based on DB ownership
-            var ownership = await _dbManager.GetStalkerWarOwnershipAsync(component.ZoneProto);
-            if (ownership != null && (ownership.BandId != null || ownership.FactionId != null))
+            _ = LoadInitialZoneStateAsync(uid, component, initialOwnership);
+
+            if (initialOwnership != null && (initialOwnership.BandId != null || initialOwnership.FactionId != null))
             {
-                var lastRewardTime = ownership.LastCapturedByCurrentOwnerAt.HasValue
-                    ? _gameTiming.CurTime - (DateTime.UtcNow - ownership.LastCapturedByCurrentOwnerAt.Value)
+                var lastRewardTime = initialOwnership.LastCapturedByCurrentOwnerAt.HasValue
+                    ? _gameTiming.CurTime - (DateTime.UtcNow - initialOwnership.LastCapturedByCurrentOwnerAt.Value)
                     : _gameTiming.CurTime;
 
                 _lastRewardTimes[uid] = lastRewardTime;
 
-                Logger.InfoS("warzone", $"Initialized reward timing for zone '{component.PortalName}', owned by {(ownership.BandId != null ? $"band:{ownership.BandId}" : $"faction:{ownership.FactionId}")}");
+                var ownerDesc = initialOwnership.BandId != null ? $"band:{initialOwnership.BandId}" : (initialOwnership.FactionId != null ? $"faction:{initialOwnership.FactionId}" : "unknown");
+                Logger.InfoS("warzone", $"Initialized reward timing for zone '{component.PortalName}', owned by {ownerDesc}");
             }
         }
         catch (Exception ex)
@@ -827,25 +828,24 @@ public sealed partial class WarZoneSystem : EntitySystem
         var filter = Filter.Empty().AddInRange(mapCoords, ChatSystem.VoiceRange);
         _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, message, message, zoneUid, false, true, colorOverride: null);
     }
-    // Load initial zone ownership and cooldown state from DB
-    private async Task LoadInitialZoneStateAsync(EntityUid zoneUid, WarZoneComponent component)
+    // Load initial zone ownership and cooldown state from pre-fetched DB data
+    private async Task LoadInitialZoneStateAsync(EntityUid zoneUid, WarZoneComponent component, StalkerZoneOwnership? ownership) // Added ownership parameter
     {
         try
         {
             if (!_prototypeManager.TryIndex<STWarZonePrototype>(component.ZoneProto, out var wzProto))
             {
                 Logger.ErrorS("warzone", $"Could not find STWarZonePrototype with ID '{component.ZoneProto}' during async state load for zone {zoneUid}.");
-                component.InitialLoadComplete = true; // Mark as complete even on error to prevent blocking
+                component.InitialLoadComplete = true;
                 return;
             }
 
-            var ownership = await _dbManager.GetStalkerWarOwnershipAsync(component.ZoneProto);
-
             if (ownership != null)
             {
-                // Load defender info
+                Logger.InfoS("warzone", $"Zone '{component.PortalName}' ({component.ZoneProto}): Loading ownership. BandProtoId from DB record: '{ownership.Band?.BandProtoId ?? "NULL"}', FactionProtoId from DB record: '{ownership.Faction?.FactionProtoId ?? "NULL"}'");
                 component.DefendingBandProtoId = ownership.Band?.BandProtoId;
                 component.DefendingFactionProtoId = ownership.Faction?.FactionProtoId;
+                Logger.InfoS("warzone", $"Zone '{component.PortalName}' ({component.ZoneProto}): Loaded ownership from init. Assigned DefendingBandProtoId: '{component.DefendingBandProtoId ?? "NULL"}', DefendingFactionProtoId: '{component.DefendingFactionProtoId ?? "NULL"}'");
 
                 // Load cooldown state
                 if (ownership.LastCapturedByCurrentOwnerAt.HasValue && wzProto.CaptureCooldownHours > 0)
@@ -865,7 +865,7 @@ public sealed partial class WarZoneSystem : EntitySystem
             }
              else
              {
-                 Logger.InfoS("warzone", $"Zone '{component.PortalName}' loaded with no current ownership.");
+                 Logger.InfoS("warzone", $"Zone '{component.PortalName}' ({component.ZoneProto}): No ownership record passed from init.");
              }
 
             component.InitialLoadComplete = true;

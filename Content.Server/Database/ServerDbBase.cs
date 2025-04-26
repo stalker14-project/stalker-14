@@ -1913,7 +1913,10 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         public async Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
         {
             await using var db = await GetDb();
-            var record = await db.DbContext.StalkerZoneOwnerships.FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+            var record = await db.DbContext.StalkerZoneOwnerships
+                .Include(o => o.Band)
+                .Include(o => o.Faction)
+                .FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
 
             return record;
         }

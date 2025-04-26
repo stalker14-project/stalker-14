@@ -1,12 +1,23 @@
 - type: entity
+  id: STAnomalyExplosionEventScheduler
   parent: BaseGameRule
-  id: AnomalyExplosion
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 0 # sec
+    minMaxEventTiming:
+      min: 1800 # sec
+      max: 3600 # sec
+    scheduledGameRules: !type:EntSelector
+        id: STAnomalyExplosion
+
+- type: entity
+  parent: BaseGameRule
+  id: STAnomalyExplosion
   categories: [ HideSpawnMenu ]
   components:
     - type: StationEvent
-      earliestStart: 100
-      weight: 3
-      reoccurrenceDelay: 2400
+      earliestStart: 1 # minutes
+      reoccurrenceDelay: 0 # minutes
       duration: 325
     - type: AnomalyExplosionRule
       damage:

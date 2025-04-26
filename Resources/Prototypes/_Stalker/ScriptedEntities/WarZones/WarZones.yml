@@ -4,7 +4,7 @@
   rewardPointsPerPeriod: 1 # Сколько очков будет начисляться за период
   rewardPeriod: 30 # Период начисления очков в секундах
   captureCooldownHours: 2 # Время перезарядки захвата зоны в часах
-  captureTime: 1800 # Время захвата зоны в секундах. 30 минут.
+  captureTime: 10 # Время захвата зоны в секундах. 30 минут.
   requirements:
     - !type:ZoneOwnershipRequirenment
       requiredZones: [] # Здесь можно указать зоны, которые должны быть захвачены для захвата этой зоны. Не тестил.
@@ -15,7 +15,7 @@
   rewardPeriod: 30 # Период начисления очков в секундах
   captureCooldownHours: 2
   shouldAwardWhenDefenderPresent: true
-  captureTime: 420 # Время захвата зоны в секундах.
+  captureTime: 350 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
