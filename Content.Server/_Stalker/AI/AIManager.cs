@@ -186,34 +186,52 @@ namespace Content.Server._Stalker.AI
                 // Check for tool calls first
                 if (message?.ToolCalls != null && message.ToolCalls.Count > 0)
                 {
-                    // For now, only process the first tool call
-                    var toolCall = message.ToolCalls[0];
-                    if (toolCall.Function == null || string.IsNullOrWhiteSpace(toolCall.Function.Name) || string.IsNullOrWhiteSpace(toolCall.Function.Arguments))
+                    var toolCallRequests = new List<AIToolCall>();
+                    _sawmill.Debug($"AI returned {message.ToolCalls.Count} tool calls for {npcUid}.");
+
+                    foreach (var toolCall in message.ToolCalls)
                     {
-                        _sawmill.Warning($"Received invalid tool call structure from OpenRouter for {npcUid}: {JsonSerializer.Serialize(toolCall)}");
-                        return AIResponse.Failure("Received invalid tool call from AI.");
+                        if (toolCall.Function == null || string.IsNullOrWhiteSpace(toolCall.Function.Name) || string.IsNullOrWhiteSpace(toolCall.Function.Arguments))
+                        {
+                            _sawmill.Warning($"Received invalid tool call structure in multi-call response from OpenRouter for {npcUid}: {JsonSerializer.Serialize(toolCall)}");
+                            // Skip this invalid tool call and continue with others
+                            continue;
+                        }
+
+                        _sawmill.Debug($"Processing tool call: {toolCall.Function.Name} with args: {toolCall.Function.Arguments}");
+                        try
+                        {
+                            // Attempt to parse arguments string into a JsonObject
+                            var argumentsNode = JsonNode.Parse(toolCall.Function.Arguments);
+                            if (argumentsNode is JsonObject argumentsObject)
+                            {
+                                // Add the valid tool call request to the list
+                                toolCallRequests.Add(new AIToolCall(toolCall.Function.Name, argumentsObject));
+                            }
+                            else
+                            {
+                                _sawmill.Warning($"Could not parse tool call arguments as JSON object for {npcUid} (Tool: {toolCall.Function.Name}): {toolCall.Function.Arguments}");
+                                // Optionally, return a failure for the entire request if one tool call is bad?
+                                // For now, just skip this specific tool call.
+                            }
+                        }
+                        catch (JsonException jsonEx)
+                        {
+                            _sawmill.Warning($"Failed to parse tool call arguments JSON for {npcUid} (Tool: {toolCall.Function.Name}): {jsonEx.Message}. Arguments: {toolCall.Function.Arguments}");
+                            // Optionally, return a failure for the entire request if one tool call is bad?
+                            // For now, just skip this specific tool call.
+                        }
                     }
 
-                    _sawmill.Debug($"AI requested tool call: {toolCall.Function.Name} with args: {toolCall.Function.Arguments}");
-                    try
+                    // Return the list of successfully parsed tool call requests
+                    if (toolCallRequests.Count > 0)
                     {
-                        // Attempt to parse arguments string into a JsonObject
-                        var argumentsNode = JsonNode.Parse(toolCall.Function.Arguments);
-                        if (argumentsNode is JsonObject argumentsObject)
-                        {
-                            // Return the tool call request for AINPCSystem to handle
-                            return AIResponse.ToolCall(toolCall.Function.Name, argumentsObject);
-                        }
-                        else
-                        {
-                            _sawmill.Warning($"Could not parse tool call arguments as JSON object for {npcUid}: {toolCall.Function.Arguments}");
-                            return AIResponse.Failure("Failed to parse tool call arguments.");
-                        }
+                        return AIResponse.ToolCalls(toolCallRequests); // Use the new factory method
                     }
-                    catch (JsonException jsonEx)
+                    else
                     {
-                        _sawmill.Warning($"Failed to parse tool call arguments JSON for {npcUid}: {jsonEx.Message}. Arguments: {toolCall.Function.Arguments}");
-                        return AIResponse.Failure("Failed to parse tool call arguments JSON.");
+                        _sawmill.Warning($"AI returned tool calls, but none could be successfully parsed for {npcUid}.");
+                        return AIResponse.Failure("AI returned tool calls, but failed to parse arguments.");
                     }
                 }
                 // Check for text content if no tool calls
@@ -460,16 +478,18 @@ namespace Content.Server._Stalker.AI
     {
         public bool Success { get; private init; }
         public string? TextResponse { get; private init; }
-        public AIToolCall? ToolCallRequest { get; private init; }
+        public List<AIToolCall>? ToolCallRequests { get; private init; } // Changed to List<AIToolCall>
         public string? ErrorMessage { get; private init; }
 
         private AIResponse() { } // Private constructor
 
         public static AIResponse Text(string text) => new() { Success = true, TextResponse = text };
-        public static AIResponse ToolCall(string toolName, JsonObject arguments) => new() { Success = true, ToolCallRequest = new AIToolCall(toolName, arguments) };
+        // Updated factory method for multiple tool calls
+        public static AIResponse ToolCalls(List<AIToolCall> toolCalls) => new() { Success = true, ToolCallRequests = toolCalls };
         public static AIResponse Failure(string error) => new() { Success = false, ErrorMessage = error };
     }
 
     // Represents a request for AINPCSystem to execute a tool
+    // No changes needed here, AINPCSystem will handle the list
     public record AIToolCall(string ToolName, JsonObject Arguments);
 }

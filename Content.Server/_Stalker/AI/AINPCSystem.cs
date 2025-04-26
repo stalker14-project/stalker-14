@@ -181,27 +181,31 @@ namespace Content.Server._Stalker.AI
                 // Add assistant's response to history (no name or UserId needed for assistant role)
                 AddMessageToHistory(uid, component, "assistant", response.TextResponse);
             }
-            else if (response.ToolCallRequest != null)
+            else if (response.ToolCallRequests != null && response.ToolCallRequests.Count > 0) // Check for multiple tool calls
             {
-                _sawmill.Debug($"NPC {ToPrettyString(uid)} received tool call request: {response.ToolCallRequest.ToolName}");
+                 _sawmill.Debug($"NPC {ToPrettyString(uid)} received {response.ToolCallRequests.Count} tool call requests.");
 
-                // Execute the tool call
-                var (success, resultMessage) = ExecuteToolCall(uid, component, response.ToolCallRequest);
+                // Execute each tool call sequentially
+                foreach (var toolCall in response.ToolCallRequests)
+                {
+                    _sawmill.Debug($"Executing tool call: {toolCall.ToolName}");
+                    var (success, resultMessage) = ExecuteToolCall(uid, component, toolCall);
 
-                // TODO: Add assistant's attempt and tool's result to history
-                // This requires passing the tool call ID back from AIManager and potentially modifying AddMessageToHistory
-                // Example (requires AIResponse to contain the original tool call ID):
-                // if (response.ToolCallRequest.TryGetOriginalId(out var toolCallId)) // Fictional method
-                // {
-                //    AddMessageToHistory(uid, component, "assistant", null, toolCalls: new List<OpenRouterToolCall> { /* construct tool call representation */ }); // Assistant message indicating tool use
-                //    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCallId); // Tool result message
-                // }
+                    // TODO: Add assistant's attempt and tool's result to history for *each* tool call.
+                    // This requires passing the tool call ID back from AIManager and potentially modifying AddMessageToHistory.
+                    // Example (requires AIResponse/AIToolCall to contain the original tool call ID):
+                    // if (toolCall.TryGetOriginalId(out var toolCallId)) // Fictional method
+                    // {
+                    //    AddMessageToHistory(uid, component, "assistant", null, toolCalls: new List<OpenRouterToolCall> { /* construct tool call representation for *this* call */ }); // Assistant message indicating tool use
+                    //    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCallId); // Tool result message
+                    // }
 
-                _sawmill.Info($"Tool '{response.ToolCallRequest.ToolName}' executed for {ToPrettyString(uid)}. Success: {success}. Result: {resultMessage}");
+                    _sawmill.Info($"Tool '{toolCall.ToolName}' executed for {ToPrettyString(uid)}. Success: {success}. Result: {resultMessage}");
 
-                // TODO: After executing a tool, send the result back to the AI
-                // This involves another call to GetActionAsync with a "tool" role message containing the result.
-                // For now, we just execute the tool.
+                    // TODO: After executing *all* tools, send the results back to the AI.
+                    // This involves another call to GetActionAsync with multiple "tool" role messages containing the results.
+                    // For now, we just execute the tools sequentially.
+                }
             }
             else
             {
@@ -357,7 +361,7 @@ namespace Content.Server._Stalker.AI
         private List<string> GetAvailableToolDescriptions(EntityUid uid, AiNpcComponent component)
         {
             var descriptions = new List<string>();
-            descriptions.Add(GetChatToolDescription());
+            descriptions.Add(GetChatToolDescription(component));
             // Only add GiveItem tool if the NPC actually has givable items defined
             if (component.GivableItems.Count > 0) // Use GivableItems
             {
@@ -367,23 +371,37 @@ namespace Content.Server._Stalker.AI
             return descriptions;
         }
 
-        private string GetChatToolDescription()
+        private string GetChatToolDescription(AiNpcComponent component)
         {
+            // Build the list of allowed items for the description from GivableItems
+            var allowedItemsList = component.QuestItems // Use GivableItems
+                .Select(item => $"- {item.ProtoId} (Max Quantity: {item.MaxQuantity}, Rarity: {item.Rarity})")
+                .ToList();
+            var allowedItemsString = allowedItemsList.Count > 0
+                ? string.Join("\n", allowedItemsList)
+                : "None";
             // OpenAI/OpenRouter tool format requires parameters as a JSON schema object
-            return @"{
+
+            var description = $@"Respond verbally to a user or initiate conversation.
+                If user asks for quests: 
+                ONLY GIVE QUESTS TO ITEMS FROM THE LIST.
+                {allowedItemsString}";
+
+
+            return $@"{{
                 ""name"": ""TryChat"",
-                ""description"": ""Respond verbally to a user or initiate conversation."",
-                ""parameters"": {
+                ""description"": ""{JsonEncodedText.Encode(description)}"",
+                ""parameters"": {{
                     ""type"": ""object"",
-                    ""properties"": {
-                        ""message"": {
+                    ""properties"": {{
+                        ""message"": {{
                             ""type"": ""string"",
                             ""description"": ""The message the NPC should say.""
-                        }
-                    },
+                        }}
+                    }},
                     ""required"": [""message""]
-                }
-            }";
+                }}
+            }}";
         }
 
 
@@ -400,8 +418,11 @@ namespace Content.Server._Stalker.AI
             // Dynamically generate the description including allowed items
             // Use System.Text.Json for safe encoding within the JSON string
             var description = $@"Spawn and give a specified quantity of an item (by prototype ID) to a target player.
+ONLY GIVE ITEMS AS REWARDS OR IF ITs NEEDED FOR THE QUEST. REJECT OTHERWISE.
+FIRST, use the 'TryTakeItem' tool to take quest item from the player.
 You can ONLY give items from the following list, respecting their Max Quantity:
-{allowedItemsString}";
+{allowedItemsString}
+IMPORTANT: When using this tool, ALSO use the 'TryChat' tool in the same response to inform the player what you are giving them (e.g., ""Here is the item you asked for."").";
 
              return $@"{{
                 ""name"": ""TryGiveItem"",
@@ -433,7 +454,7 @@ You can ONLY give items from the following list, respecting their Max Quantity:
         {
              return @"{
                 ""name"": ""TryTakeItem"",
-                ""description"": ""Request an item from a target player and take it if offered."",
+                ""description"": ""Request an item from a target player and take it if offered. IMPORTANT: When using this tool, ALSO use the 'TryChat' tool in the same response to inform the player what you are taking from them "",
                 ""parameters"": {
                     ""type"": ""object"",
                     ""properties"": {
@@ -587,26 +608,21 @@ You can ONLY give items from the following list, respecting their Max Quantity:
             }
 
             // --- 4. Perform Transfer (Simplified - Assumes Consent) ---
-            // This simulates the player dropping and the NPC picking up, bypassing actual interaction.
-            // A real implementation needs a request/response mechanism.
-            if (_hands.TryDrop(targetPlayer.Value, itemToTake.Value)) // Player drops
+            // Player drops the item at their feet first.
+            // A real implementation might need a more robust interaction system (e.g., trade window).
+            if (_hands.TryDrop(targetPlayer.Value, itemToTake.Value, checkActionBlocker: false)) // Player drops the item
             {
-                if (_hands.TryPickupAnyHand(npc, itemToTake.Value)) // NPC picks up
-                {
-                    _sawmill.Info($"NPC {ToPrettyString(npc)} successfully took item {ToPrettyString(itemToTake.Value)} from {ToPrettyString(targetPlayer.Value)} (simulated).");
-                    return true;
-                }
-                else
-                {
-                    _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} dropped item {ToPrettyString(itemToTake.Value)}, but NPC {ToPrettyString(npc)} failed to pick it up.");
-                    // Item is on the ground. Maybe try to make player pick it back up?
-                    _hands.TryPickupAnyHand(targetPlayer.Value, itemToTake.Value); // Attempt to give it back
-                    return false;
-                }
+                // Now move the dropped item to the NPC's location
+                var npcTransform = Transform(npc);
+                var itemTransform = Transform(itemToTake.Value);
+                itemTransform.Coordinates = npcTransform.Coordinates; // Move item to NPC's feet
+
+                _sawmill.Info($"NPC {ToPrettyString(npc)} successfully received item {ToPrettyString(itemToTake.Value)} from {ToPrettyString(targetPlayer.Value)} (dropped at NPC location).");
+                return true; // Success is player dropping the item near the NPC
             }
             else
             {
-                 _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} failed to drop item {ToPrettyString(itemToTake.Value)} for NPC {ToPrettyString(npc)} to take.");
+                 _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} failed to drop item {ToPrettyString(itemToTake.Value)} for NPC {ToPrettyString(npc)}.");
                  return false;
             }
         }
@@ -645,7 +661,10 @@ You can ONLY give items from the following list, respecting their Max Quantity:
             // Now enumerate hands using the component
             foreach (var hand in _hands.EnumerateHands(holder, handsComp))
             {
-                if (hand.HeldEntity != null && Name(hand.HeldEntity.Value).Equals(itemName, StringComparison.OrdinalIgnoreCase))
+                if (hand.HeldEntity is null)
+                    continue;
+
+                if (Prototype(hand.HeldEntity.Value).ID.Equals(itemName, StringComparison.OrdinalIgnoreCase))
                 {
                     return hand.HeldEntity;
                 }
