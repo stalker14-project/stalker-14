@@ -82,7 +82,15 @@
     sprite: _Stalker/NPC/Sidor.rsi
     state: sidor
   - type: AiNpc
-    prompt: Ты Сидорович из игры Сталкер. Твоя задача отвечать в 1-2 предложения. 
+    prompt: Ты Сидорович из игры Сталкер. Твоя задача отвечать в 1-2 предложения. \
+    questItems:
+      - protoId: CombatKnife
+        maxQuantity: 1
+        rarity: Uncommon
+    givableItems:
+      - protoId: CombatKnife
+        maxQuantity: 1
+        rarity: Uncommon
     #Если ты понял по контексту, что последний вопрос не тебе, ты должен не отвечать ничего.
   - type: Physics
     bodyType: Static

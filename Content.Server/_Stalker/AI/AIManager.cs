@@ -257,26 +257,46 @@ namespace Content.Server._Stalker.AI
             {
                 try
                 {
+                    _sawmill.Debug($"Attempting to parse tool description JSON: {jsonString}");
                     // Deserialize the JSON string which should represent the 'function' part of the tool
                     var function = JsonSerializer.Deserialize<OpenRouterFunction>(jsonString);
-                    if (function != null && !string.IsNullOrWhiteSpace(function.Name))
+
+                    if (function == null)
                     {
-                        // Ensure parameters are represented as JsonObject if present
-                        if (function.ParametersRaw != null)
+                        _sawmill.Warning($"Deserialized function description is null for JSON: {jsonString}");
+                        continue; // Skip this tool
+                    }
+
+                    if (string.IsNullOrWhiteSpace(function.Name))
+                    {
+                         _sawmill.Warning($"Deserialized function has missing name for JSON: {jsonString}");
+                         continue; // Skip this tool
+                    }
+
+                    _sawmill.Debug($"Parsed function name: {function.Name}");
+
+                    // Ensure parameters are represented as JsonObject if present
+                    if (function.ParametersRaw != null)
+                    {
+                        _sawmill.Debug($"Function '{function.Name}' has ParametersRaw: {function.ParametersRaw.ToJsonString()}");
+                        function.Parameters = function.ParametersRaw as JsonObject;
+                        if (function.Parameters == null)
                         {
-                            function.Parameters = function.ParametersRaw as JsonObject;
-                            if (function.Parameters == null)
-                            {
-                                _sawmill.Warning($"Tool description parameters for '{function.Name}' could not be parsed as a JSON object: {function.ParametersRaw.ToJsonString()}");
-                                // Decide if this is a fatal error or if the tool can be added without parameters
-                            }
+                            _sawmill.Warning($"Tool description parameters for '{function.Name}' could not be parsed as a JSON object: {function.ParametersRaw.ToJsonString()}");
+                            // Decide if this is a fatal error or if the tool can be added without parameters. Let's add it without for now.
                         }
-                        tools.Add(new OpenRouterTool { Type = "function", Function = function });
+                        else
+                        {
+                             _sawmill.Debug($"Successfully parsed parameters for '{function.Name}' as JsonObject.");
+                        }
                     }
                     else
                     {
-                        _sawmill.Warning($"Failed to deserialize tool description or missing name: {jsonString}");
+                         _sawmill.Debug($"Function '{function.Name}' has no ParametersRaw field.");
                     }
+
+                    tools.Add(new OpenRouterTool { Type = "function", Function = function });
+                    _sawmill.Debug($"Successfully added tool '{function.Name}' to list.");
                 }
                 catch (JsonException e)
                 {
@@ -284,6 +304,7 @@ namespace Content.Server._Stalker.AI
                     return null; // Indicate failure - parsing one tool failed
                 }
             }
+            _sawmill.Debug($"Finished parsing tool descriptions. Total tools parsed: {tools.Count}");
             return tools;
         }
 
@@ -303,7 +324,11 @@ namespace Content.Server._Stalker.AI
 
         [JsonPropertyName("name")] // Added field for speaker name (OpenAI compatible)
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? Name { get; set; }
+        public string? Name { get; set; } // Character Name
+
+        [JsonPropertyName("ckey")] // Changed field name to reflect CKey/Username usage
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CKey { get; set; }
 
         [JsonPropertyName("tool_calls")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -355,9 +380,9 @@ namespace Content.Server._Stalker.AI
 
         // We deserialize the raw parameters description first
         [JsonPropertyName("parameters")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.Always)] // Don't serialize this directly back
+        // [JsonIgnore(Condition = JsonIgnoreCondition.Always)] // REMOVED: This might interfere with deserialization.
         public JsonNode? ParametersRaw { get; set; }
-
+    
         // We expose the parsed JsonObject for use, but don't serialize it directly
         [JsonIgnore]
         public JsonObject? Parameters { get; set; }

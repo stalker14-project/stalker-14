@@ -17,6 +17,7 @@ using Content.Shared.Hands.Components;
 using Robust.Shared.Player; // For AIResponse, OpenRouterMessage, AIToolCall
 using Content.Server._Stalker.AI;
 using Content.Shared._Stalker.AI;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.AI
 {
@@ -27,6 +28,7 @@ namespace Content.Server._Stalker.AI
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly EntityManager _entity = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
+        [Dependency] private readonly IPrototypeManager _proto = default!;
         // [Dependency] private readonly InventorySystem _inventory = default!; // Might need later for searching inventory
         // [Dependency] private readonly SharedContainerSystem _container = default!; // Might need later
 
@@ -59,7 +61,13 @@ namespace Content.Server._Stalker.AI
                 !HasComp<ActorComponent>(args.Source)) // Added check for ActorComponent
                 return;
 
-            var speakerName = Name(args.Source); // Get the speaker's name
+            var speakerName = Name(args.Source); // Get the speaker's character name
+            // Get speaker's NetUserId (CKey)
+            string? speakerCKey = null; // Changed variable name
+            if (TryComp<ActorComponent>(args.Source, out var actor))
+            {
+                speakerCKey = actor.PlayerSession.Name; // Use PlayerSession.Name for CKey
+            }
 
             // Find nearby AI NPCs that heard this message
             var query = EntityQueryEnumerator<AiNpcComponent, TransformComponent>();
@@ -87,8 +95,8 @@ namespace Content.Server._Stalker.AI
 
                 _sawmill.Debug($"NPC {ToPrettyString(npcUid)} heard speech from {ToPrettyString(args.Source)}: \"{args.Message}\"");
 
-                // Add user message to history, including the speaker's name
-                AddMessageToHistory(npcUid, aiComp, "user", args.Message, speakerName: speakerName);
+                // Add user message to history, including the speaker's name and CKey
+                AddMessageToHistory(npcUid, aiComp, "user", args.Message, speakerName: speakerName, speakerCKey: speakerCKey);
 
                 // Prepare data for AI Manager
                 var tools = GetAvailableToolDescriptions(npcUid, aiComp);
@@ -170,7 +178,7 @@ namespace Content.Server._Stalker.AI
             {
                 _sawmill.Debug($"NPC {ToPrettyString(uid)} received text response: {response.TextResponse}");
                 TryChat(uid, response.TextResponse);
-                // Add assistant's response to history (no name needed for assistant role)
+                // Add assistant's response to history (no name or UserId needed for assistant role)
                 AddMessageToHistory(uid, component, "assistant", response.TextResponse);
             }
             else if (response.ToolCallRequest != null)
@@ -185,7 +193,7 @@ namespace Content.Server._Stalker.AI
                 // Example (requires AIResponse to contain the original tool call ID):
                 // if (response.ToolCallRequest.TryGetOriginalId(out var toolCallId)) // Fictional method
                 // {
-                //    AddMessageToHistory(uid, component, "assistant", null, toolCalls: new List<OpenRouterToolCall> { /* construct tool call representation */ }, speakerName: Name(uid)); // Assistant message
+                //    AddMessageToHistory(uid, component, "assistant", null, toolCalls: new List<OpenRouterToolCall> { /* construct tool call representation */ }); // Assistant message indicating tool use
                 //    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCallId); // Tool result message
                 // }
 
@@ -224,12 +232,15 @@ namespace Content.Server._Stalker.AI
 
                     case nameof(TryGiveItem): // Use nameof
                         if (TryGetStringArgument(toolCall.Arguments, "targetPlayer", out var targetPlayer) &&
-                            TryGetStringArgument(toolCall.Arguments, "itemToGive", out var itemToGive))
+                            TryGetStringArgument(toolCall.Arguments, "itemPrototypeId", out var itemPrototypeId))
                         {
-                            success = TryGiveItem(uid, targetPlayer, itemToGive);
+                            // Ensure quantity is positive
+                            TryGetIntArgument(toolCall.Arguments, "quantity", out var quantity);
+                            quantity = Math.Max(1, quantity);
+                            success = TryGiveItem(uid, targetPlayer, itemPrototypeId, quantity); // Pass new args
                             resultMessage = success ? "Give item action performed." : "Give item action failed.";
                         }
-                        else resultMessage = "Missing or invalid arguments for TryGiveItem.";
+                        else resultMessage = "Missing or invalid arguments for TryGiveItem (expected targetPlayer, itemPrototypeId, quantity).";
                         break;
 
                     case nameof(TryTakeItem): // Use nameof
@@ -285,15 +296,35 @@ namespace Content.Server._Stalker.AI
             return history;
         }
 
+        // Helper to safely extract int arguments from JsonObject
+        private bool TryGetIntArgument(JsonObject args, string key, out int value)
+        {
+            value = 0;
+            if (args.TryGetPropertyValue(key, out var node) && node is JsonValue val && val.TryGetValue(out int intValue))
+            {
+                value = intValue;
+                return true;
+            }
+            // Try parsing from string as fallback
+            if (args.TryGetPropertyValue(key, out var strNode) && strNode is JsonValue strVal && strVal.TryGetValue(out string? strString) && int.TryParse(strString, out int parsedInt))
+            {
+                value = parsedInt;
+                return true;
+            }
+            _sawmill.Warning($"Failed to get int argument '{key}' from tool call arguments: {args.ToJsonString()}");
+            return false;
+        }
+
+
         /// <summary>
         /// Adds a message to the NPC's conversation history, managed by this system.
         /// </summary>
-        private void AddMessageToHistory(EntityUid npcUid, AiNpcComponent component, string role, string? content, string? speakerName = null, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null)
+        private void AddMessageToHistory(EntityUid npcUid, AiNpcComponent component, string role, string? content, string? speakerName = null, string? speakerCKey = null, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null) // Renamed parameter
         {
             var history = GetHistoryForNpc(npcUid);
 
-            // Basic history addition, include speaker name if provided (typically for 'user' role)
-            history.Add(new OpenRouterMessage { Role = role, Content = content, Name = speakerName, ToolCalls = toolCalls, ToolCallId = toolCallId });
+            // Basic history addition, include speaker name and CKey if provided (typically for 'user' role)
+            history.Add(new OpenRouterMessage { Role = role, Content = content, Name = speakerName, CKey = speakerCKey, ToolCalls = toolCalls, ToolCallId = toolCallId }); // Use CKey field
 
             // Trim history if it exceeds the maximum length defined in the component
             while (history.Count > component.MaxHistory)
@@ -327,8 +358,11 @@ namespace Content.Server._Stalker.AI
         {
             var descriptions = new List<string>();
             descriptions.Add(GetChatToolDescription());
-            // TODO: Add logic to conditionally add tools based on NPC state (e.g., has items to give?)
-            descriptions.Add(GetGiveItemToolDescription());
+            // Only add GiveItem tool if the NPC actually has givable items defined
+            if (component.GivableItems.Count > 0) // Use GivableItems
+            {
+                descriptions.Add(GetGiveItemToolDescription(component)); // Pass component data
+            }
             descriptions.Add(GetTakeItemToolDescription());
             return descriptions;
         }
@@ -353,26 +387,45 @@ namespace Content.Server._Stalker.AI
         }
 
 
-        private string GetGiveItemToolDescription()
+        private string GetGiveItemToolDescription(AiNpcComponent component)
         {
-             return @"{
+            // Build the list of allowed items for the description from GivableItems
+            var allowedItemsList = component.GivableItems // Use GivableItems
+                .Select(item => $"- {item.ProtoId} (Max Quantity: {item.MaxQuantity}, Rarity: {item.Rarity})")
+                .ToList();
+            var allowedItemsString = allowedItemsList.Count > 0
+                ? string.Join("\n", allowedItemsList)
+                : "None";
+
+            // Dynamically generate the description including allowed items
+            // Use System.Text.Json for safe encoding within the JSON string
+            var description = $@"Spawn and give a specified quantity of an item (by prototype ID) to a target player.
+You can ONLY give items from the following list, respecting their Max Quantity:
+{allowedItemsString}";
+
+             return $@"{{
                 ""name"": ""TryGiveItem"",
-                ""description"": ""Give an item from the NPC's inventory to a target player."",
-                ""parameters"": {
+                ""description"": ""{JsonEncodedText.Encode(description)}"",
+                ""parameters"": {{
                     ""type"": ""object"",
-                    ""properties"": {
-                         ""targetPlayer"": {
+                    ""properties"": {{
+                         ""targetPlayer"": {{
                             ""type"": ""string"",
-                            ""description"": ""The identifier (e.g., name or entity UID string) of the player to give the item to.""
-                        },
-                        ""itemToGive"": {
+                            ""description"": ""The unique CKey (username) or exact character name of the player who should receive the item(s). Use the speaker's CKey if they ask for themselves.""
+                        }},
+                        ""itemPrototypeId"": {{
                             ""type"": ""string"",
-                            ""description"": ""The identifier (e.g., name or entity UID string) of the item in the NPC's inventory to give.""
-                        }
-                    },
-                    ""required"": [""targetPlayer"", ""itemToGive""]
-                }
-            }";
+                            ""description"": ""The exact, case-sensitive prototype ID string of the item to spawn and give from the allowed list.""
+                        }},
+                        ""quantity"": {{
+                            ""type"": ""integer"",
+                            ""description"": ""The number of items to give (must not exceed the Max Quantity for the item)."",
+                            ""default"": 1
+                        }}
+                    }},
+                    ""required"": [""targetPlayer"", ""itemPrototypeId""]
+                }}
+            }}";
         }
 
 
@@ -386,11 +439,11 @@ namespace Content.Server._Stalker.AI
                     ""properties"": {
                          ""targetPlayer"": {
                             ""type"": ""string"",
-                            ""description"": ""The identifier (e.g., name or entity UID string) of the player to request the item from.""
+                            ""description"": ""The unique CKey (username) or exact character name of the player to request the item from.""
                         },
                         ""requestedItemName"": {
                             ""type"": ""string"",
-                            ""description"": ""The name of the item the NPC wants to receive.""
+                            ""description"": ""The exact name of the item the NPC wants to receive (e.g., 'CombatKnife', 'Medkit').""
                         }
                     },
                     ""required"": [""targetPlayer"", ""requestedItemName""]
@@ -413,13 +466,19 @@ namespace Content.Server._Stalker.AI
         }
 
 
-        public bool TryGiveItem(EntityUid npc, string targetPlayerIdentifier, string itemIdentifier)
+        // Updated TryGiveItem to spawn based on prototype ID and quantity
+        public bool TryGiveItem(EntityUid npc, string targetPlayerIdentifier, string itemPrototypeId, int quantity)
         {
-             _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting give item: Item='{itemIdentifier}', Target='{targetPlayerIdentifier}'");
+             _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting give item: Proto='{itemPrototypeId}', Qty={quantity}, Target='{targetPlayerIdentifier}'");
+
+            // --- 0. Get NPC Component ---
+            if (!TryComp<AiNpcComponent>(npc, out var aiComp))
+            {
+                _sawmill.Error($"NPC {ToPrettyString(npc)} is missing AiNpcComponent in TryGiveItem.");
+                return false; // Should not happen if called correctly
+            }
 
             // --- 1. Find Target Player ---
-            // TODO: Implement robust player lookup (e.g., by name, CKey, or UID string)
-            // Placeholder: Assume identifier is the entity name for now.
             EntityUid? targetPlayer = FindPlayerByIdentifier(targetPlayerIdentifier);
             if (targetPlayer == null || !targetPlayer.Value.Valid)
             {
@@ -427,45 +486,72 @@ namespace Content.Server._Stalker.AI
                 return false;
             }
 
-            // --- 2. Find Item in NPC's Inventory/Hands ---
-            // TODO: Implement robust item lookup in NPC inventory (hands, pockets, backpack?)
-            // Placeholder: Check only hands for now.
-            EntityUid? itemToGive = FindItemInHands(npc, itemIdentifier);
-            if (itemToGive == null || !itemToGive.Value.Valid)
+            // --- 2. Validate Item Against Givable List & Quantity ---
+            var givableItemInfo = aiComp.GivableItems.FirstOrDefault(item => item.ProtoId.Id.Equals(itemPrototypeId, StringComparison.OrdinalIgnoreCase)); // Use GivableItems
+
+            if (givableItemInfo == null) // Check givableItemInfo
             {
-                 _sawmill.Warning($"NPC {ToPrettyString(npc)} could not find item '{itemIdentifier}' in hands for TryGiveItem.");
+                _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give non-givable item '{itemPrototypeId}'. Denying.");
+                // Optionally provide feedback to AI? "I cannot give that item."
+                return false;
+            }
+
+            if (quantity <= 0)
+            {
+                _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give zero or negative quantity ({quantity}) of '{itemPrototypeId}'. Setting to 1.");
+                quantity = 1; // Default to 1 if invalid quantity requested
+            }
+
+            if (quantity > givableItemInfo.MaxQuantity) // Use givableItemInfo
+            {
+                _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give {quantity} of '{itemPrototypeId}', but max allowed is {givableItemInfo.MaxQuantity}. Clamping quantity.");
+                quantity = givableItemInfo.MaxQuantity; // Clamp to max allowed using givableItemInfo
+            }
+
+            // --- 3. Validate Prototype ID (Redundant check, but safe) ---
+            if (!_proto.HasIndex<EntityPrototype>(itemPrototypeId))
+            {
+                 _sawmill.Warning($"Invalid prototype ID '{itemPrototypeId}' requested by NPC {ToPrettyString(npc)} for TryGiveItem (passed managed check somehow?).");
                  return false;
             }
 
-            // --- 3. Check Range & Interaction ---
-            // TODO: Add range checks and CanInteract checks between NPC and Player
+            // --- 4. Check Range & Interaction ---
             if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > 2.0f) // Example range
             {
                  _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far for NPC {ToPrettyString(npc)} to give item.");
                  return false;
             }
 
-            // --- 4. Perform Transfer ---
-            // Use PickupOrDrop similar to BandsSystem example. This handles putting it in hands or dropping it nearby.
-            if (_hands.TryDrop(npc, itemToGive.Value)) // Drop it first
+            // --- 5. Spawn and Give Items ---
+            var npcCoords = Transform(npc).Coordinates;
+            if (!npcCoords.IsValid(EntityManager))
             {
-                 if (_hands.TryPickupAnyHand(targetPlayer.Value, itemToGive.Value)) // Then try to make the target pick it up
-                 {
-                     _sawmill.Info($"NPC {ToPrettyString(npc)} successfully gave item {ToPrettyString(itemToGive.Value)} to {ToPrettyString(targetPlayer.Value)}.");
-                     return true;
-                 }
-                 else
-                 {
-                     _sawmill.Warning($"NPC {ToPrettyString(npc)} dropped item {ToPrettyString(itemToGive.Value)}, but target {ToPrettyString(targetPlayer.Value)} failed to pick it up.");
-                     // Item is dropped on the ground near the player. Still counts as a partial success?
-                     return false; // Or maybe true depending on desired behaviour
-                 }
-            }
-            else
-            {
-                 _sawmill.Warning($"NPC {ToPrettyString(npc)} failed to drop item {ToPrettyString(itemToGive.Value)}.");
+                 _sawmill.Warning($"NPC {ToPrettyString(npc)} has invalid coordinates, cannot spawn items.");
                  return false;
             }
+
+            int givenCount = 0;
+            for (int i = 0; i < quantity; i++) // Use the potentially clamped quantity
+            {
+                var spawnedItem = Spawn(itemPrototypeId, npcCoords);
+                if (!_hands.TryPickupAnyHand(targetPlayer.Value, spawnedItem, checkActionBlocker: false)) // Attempt to put directly into player's hand
+                {
+                    // If pickup fails, try dropping it near the player as a fallback
+                    _sawmill.Warning($"Failed direct pickup for item {i+1}/{quantity} ({ToPrettyString(spawnedItem)}) by {ToPrettyString(targetPlayer.Value)}. Dropping near NPC.");
+                    Transform(spawnedItem).Coordinates = npcCoords;
+                }
+                else
+                {
+                    givenCount++;
+                }
+            }
+
+            if (givenCount > 0)
+                 _sawmill.Info($"NPC {ToPrettyString(npc)} successfully gave {givenCount}/{quantity} of '{itemPrototypeId}' to {ToPrettyString(targetPlayer.Value)}.");
+            else
+                 _sawmill.Warning($"NPC {ToPrettyString(npc)} failed to give any '{itemPrototypeId}' to {ToPrettyString(targetPlayer.Value)} (pickup/drop failed).");
+
+            return givenCount > 0; // Return true if at least one item was successfully given
         }
 
 
@@ -527,13 +613,19 @@ namespace Content.Server._Stalker.AI
 
         // --- Placeholder Helper Methods ---
 
-        // TODO: Replace with robust entity lookup system
+        // TODO: Replace with robust entity lookup system (by CKey first, then maybe name)
         private EntityUid? FindPlayerByIdentifier(string identifier)
         {
-            // Extremely basic placeholder - iterates all players and checks name. VERY INEFFICIENT.
+            // Extremely basic placeholder - iterates all players and checks CKey then name. VERY INEFFICIENT.
             var query = EntityQueryEnumerator<MetaDataComponent, ActorComponent>(); // Assuming players have ActorComponent
-            while (query.MoveNext(out var uid, out var meta, out _))
+            while (query.MoveNext(out var uid, out var meta, out var actor))
             {
+                // Check CKey first
+                if (actor.PlayerSession.Name.Equals(identifier, StringComparison.OrdinalIgnoreCase))
+                {
+                    return uid;
+                }
+                // Fallback to checking character name
                 if (meta.EntityName.Equals(identifier, StringComparison.OrdinalIgnoreCase))
                 {
                     return uid;
