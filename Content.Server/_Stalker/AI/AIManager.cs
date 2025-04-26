@@ -117,8 +117,10 @@ namespace Content.Server._Stalker.AI
             {
                 new() { Role = "system", Content = npcPrompt }
             };
+            // The conversationHistory list already contains the latest user message with the speaker name,
+            // added by AINPCSystem. Do not add currentUserMessage separately here.
             messages.AddRange(conversationHistory);
-            messages.Add(new OpenRouterMessage { Role = "user", Content = currentUserMessage });
+            // messages.Add(new OpenRouterMessage { Role = "user", Content = currentUserMessage }); // REMOVED redundant message add
 
             var tools = ParseToolDescriptions(toolDescriptionsJson);
             if (tools == null)
@@ -143,7 +145,23 @@ namespace Content.Server._Stalker.AI
 
             try
             {
+                // Log the request payload before sending
+                try
+                {
+                    var payloadJson = JsonSerializer.Serialize(requestPayload, new JsonSerializerOptions { WriteIndented = true });
+                    _sawmill.Debug($"OpenRouter Request Payload for {npcUid}:\n{payloadJson}");
+                }
+                catch (Exception jsonEx)
+                {
+                    _sawmill.Error($"Failed to serialize request payload for logging: {jsonEx.Message}");
+                }
+
                 var response = await _httpClient.PostAsJsonAsync(requestUrl, requestPayload, cancel);
+
+                // Log raw response content regardless of status code for debugging
+                string rawResponseContent = await response.Content.ReadAsStringAsync(cancel);
+                _sawmill.Debug($"OpenRouter Raw Response for {npcUid} (Status: {response.StatusCode}):\n{rawResponseContent}");
+
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -152,8 +170,10 @@ namespace Content.Server._Stalker.AI
                     return AIResponse.Failure($"Error communicating with AI service: {response.ReasonPhrase} ({response.StatusCode})");
                 }
 
-                var responseData = await response.Content.ReadFromJsonAsync<OpenRouterChatResponse>(options: null, cancellationToken: cancel); // Use default options
+                // Attempt to deserialize the logged raw response
+                var responseData = JsonSerializer.Deserialize<OpenRouterChatResponse>(rawResponseContent);
 
+                // Original checks remain
                 if (responseData == null || responseData.Choices == null || responseData.Choices.Count == 0)
                 {
                     _sawmill.Warning($"Received empty or invalid response from OpenRouter for {npcUid}. URL: {requestUrl}");
@@ -280,6 +300,10 @@ namespace Content.Server._Stalker.AI
         [JsonPropertyName("content")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] // Content is null for tool calls
         public string? Content { get; set; }
+
+        [JsonPropertyName("name")] // Added field for speaker name (OpenAI compatible)
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Name { get; set; }
 
         [JsonPropertyName("tool_calls")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

@@ -53,9 +53,13 @@ namespace Content.Server._Stalker.AI
 
         private void OnEntitySpoke(EntitySpokeEvent args)
         {
-            // Ignore if message is empty or from the AI NPC itself
-            if (string.IsNullOrWhiteSpace(args.Message) || HasComp<AiNpcComponent>(args.Source))
+            // Ignore if message is empty, from an AI NPC, or not from a player character
+            if (string.IsNullOrWhiteSpace(args.Message) ||
+                HasComp<AiNpcComponent>(args.Source) ||
+                !HasComp<ActorComponent>(args.Source)) // Added check for ActorComponent
                 return;
+
+            var speakerName = Name(args.Source); // Get the speaker's name
 
             // Find nearby AI NPCs that heard this message
             var query = EntityQueryEnumerator<AiNpcComponent, TransformComponent>();
@@ -83,8 +87,8 @@ namespace Content.Server._Stalker.AI
 
                 _sawmill.Debug($"NPC {ToPrettyString(npcUid)} heard speech from {ToPrettyString(args.Source)}: \"{args.Message}\"");
 
-                // Add user message to history, managed by the system now
-                AddMessageToHistory(npcUid, aiComp, "user", args.Message);
+                // Add user message to history, including the speaker's name
+                AddMessageToHistory(npcUid, aiComp, "user", args.Message, speakerName: speakerName);
 
                 // Prepare data for AI Manager
                 var tools = GetAvailableToolDescriptions(npcUid, aiComp);
@@ -166,7 +170,7 @@ namespace Content.Server._Stalker.AI
             {
                 _sawmill.Debug($"NPC {ToPrettyString(uid)} received text response: {response.TextResponse}");
                 TryChat(uid, response.TextResponse);
-                // Add assistant's response to history
+                // Add assistant's response to history (no name needed for assistant role)
                 AddMessageToHistory(uid, component, "assistant", response.TextResponse);
             }
             else if (response.ToolCallRequest != null)
@@ -181,8 +185,8 @@ namespace Content.Server._Stalker.AI
                 // Example (requires AIResponse to contain the original tool call ID):
                 // if (response.ToolCallRequest.TryGetOriginalId(out var toolCallId)) // Fictional method
                 // {
-                //    AddMessageToHistory(uid, component, "assistant", null, toolCalls: new List<OpenRouterToolCall> { /* construct tool call representation */ });
-                //    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCallId);
+                //    AddMessageToHistory(uid, component, "assistant", null, toolCalls: new List<OpenRouterToolCall> { /* construct tool call representation */ }, speakerName: Name(uid)); // Assistant message
+                //    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCallId); // Tool result message
                 // }
 
                 _sawmill.Info($"Tool '{response.ToolCallRequest.ToolName}' executed for {ToPrettyString(uid)}. Success: {success}. Result: {resultMessage}");
@@ -284,12 +288,12 @@ namespace Content.Server._Stalker.AI
         /// <summary>
         /// Adds a message to the NPC's conversation history, managed by this system.
         /// </summary>
-        private void AddMessageToHistory(EntityUid npcUid, AiNpcComponent component, string role, string? content, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null)
+        private void AddMessageToHistory(EntityUid npcUid, AiNpcComponent component, string role, string? content, string? speakerName = null, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null)
         {
             var history = GetHistoryForNpc(npcUid);
 
-            // Basic history addition
-            history.Add(new OpenRouterMessage { Role = role, Content = content, ToolCalls = toolCalls, ToolCallId = toolCallId });
+            // Basic history addition, include speaker name if provided (typically for 'user' role)
+            history.Add(new OpenRouterMessage { Role = role, Content = content, Name = speakerName, ToolCalls = toolCalls, ToolCallId = toolCallId });
 
             // Trim history if it exceeds the maximum length defined in the component
             while (history.Count > component.MaxHistory)
