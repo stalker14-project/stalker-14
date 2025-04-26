@@ -1,67 +1,67 @@
 - type: shopPreset
-  id: MercShopPreset
+  id: MercShopPreset # 0.5x sido
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 400
-    ZoneArtifactEye: 600
-    ZoneArtifactFlame: 1200
+    ZoneArtifactFireball: 200
+    ZoneArtifactEye: 300
+    ZoneArtifactFlame: 600
     # Thermal group - 2
-    ZoneArtifactCristall: 2400
-    ZoneArtifactLithosphere: 4800
+    ZoneArtifactCristall: 1200
+    ZoneArtifactLithosphere: 2400
     # Electrical group - 1
-    ZoneArtifactSparkler: 400
-    ZoneArtifactBattery: 600
-    ZoneArtifactFlash: 1200
+    ZoneArtifactSparkler: 200
+    ZoneArtifactBattery: 300
+    ZoneArtifactFlash: 600
     ArtMoon: 2400
-    ZoneArtifactTesla: 3600
-    ZoneArtifactIce: 4800
+    ZoneArtifactTesla: 1800
+    ZoneArtifactIce: 2400
     # Gravity group - 1
-    ArtMedusa: 400
-    ZoneArtifactWhirlwind: 500
-    ZoneArtifactFlower: 600
-    ZoneArtifactNightStar: 2400
+    ArtMedusa: 200
+    ZoneArtifactWhirlwind: 250
+    ZoneArtifactFlower: 300
+    ZoneArtifactNightStar: 1200
     # Gravity group - 2
-    ZoneArtifactVyvert: 400
-    ZoneArtifactAmoeba: 600
-    ZoneArtifactGravi: 1200
-    ZoneArtifactGoldfish: 4800
-    ZoneArtifactSpring: 3600
-    ZoneArtifactFocus: 3600
-    ZoneArtifactStuntman: 4800
-    ZoneArtifactDistorter: 4800
-    ZoneArtifactSoul: 3600
+    ZoneArtifactVyvert: 200
+    ZoneArtifactAmoeba: 300
+    ZoneArtifactGravi: 600
+    ZoneArtifactGoldfish: 2400
+    ZoneArtifactSpring: 1800
+    ZoneArtifactFocus: 1800
+    ZoneArtifactStuntman: 2400
+    ZoneArtifactDistorter: 2400
+    ZoneArtifactSoul: 1800
     # Acidic group - 1
-    ZoneArtifactBlood: 1200
-    ZoneArtifactMeat: 2400
-    ZoneArtifactKolobok: 3600
+    ZoneArtifactBlood: 600
+    ZoneArtifactMeat: 1200
+    ZoneArtifactKolobok: 1800
     # Acidic group - 2
-    ZoneArtifactPellicle: 400
-    ZoneArtifactBaloon: 3600
+    ZoneArtifactPellicle: 200
+    ZoneArtifactBaloon: 1800
 
 
-     # Mutant parts
+     # Mutant parts 1.5x Sidorovich
 
   #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 85 # T1
-    MutantPartSeasonedBoarHoof: 170 # T2
-    MutantPartOldBoarHoof: 255 # T3
+    MutantPartBoarHoof: 205 # T1
+    MutantPartSeasonedBoarHoof: 405 # T2
+    MutantPartOldBoarHoof: 610 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 55
-    MutantPartFleshEye: 125
-    FoodMeatSpiderLeg: 30
+    MutantPartBlindDogTail: 135
+    MutantPartFleshEye: 300
+    FoodMeatSpiderLeg: 75
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 345
-    MutantPartPsiDogTail: 285
-    MutantPartPseudodogTail: 190
-    MutantPartSnorkFoot: 315
+    MutantPartLeshiyRoot: 825
+    MutantPartPsiDogTail: 725
+    MutantPartPseudodogTail: 450
+    MutantPartSnorkFoot: 750
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 470
-    MutantPartOraculeEye: 1000
-    MutantPartPseudogiantHeart: 2500
-    MutantPartZombieHand: 380
+    MutantPartBloodsuckerTentacles: 1125
+    MutantPartOraculeEye: 2400
+    MutantPartPseudogiantHeart: 6000
+    MutantPartZombieHand: 900
 
   categories:
     - name: shop-category-weapons
@@ -71,16 +71,21 @@
           # shotgun
         STWeaponShotgunMossbergM88: 630
         STWeaponShotgunSPAS: 1300
-        STWeaponShotgunProtecta: 2610
+        STWeaponShotgunProtecta: 2550
           # prostogun
         WeaponPistolStalkerGlock: 180
-        STWeaponSMGMP5: 1800
-        STWeaponRifleFAL: 1500
+        STWeaponSMGMP5: 1700
+        STWeaponRifleFAL: 1250
         STWeaponRifleG36: 4250
-        STWeaponRevolverSWPC325TR: 1075
-        STWeaponRifleM4: 3200
-        STWeaponRifleSIG550: 3700
-        STWeaponRifleSCARH: 3250
+        STWeaponRevolverSWPC325TR: 800
+        STWeaponRifleM4: 2900
+        STWeaponRifleM16: 3000
+        STWeaponRifleSIG550: 3550
+        STWeaponRifleSCARH: 3150
+        STWeaponRifleAUG: 2675
+        STWeaponRifleARX160: 5500
+        STWeaponRifleGalil: 8000
+        STWeaponRifleGalatz: 6500
         STWeaponRifleL85: 1900
     - name: shop-category-magazines
       priority: 2
@@ -98,6 +103,7 @@
         GlockMag33: 440
         Base751Mag10: 200
         751Mag20: 400
+        STSpeedLoader45ACPEmpty: 90
     - name: shop-category-ammunition
       priority: 3
       items:
