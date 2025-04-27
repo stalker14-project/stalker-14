@@ -47,7 +47,7 @@ job-head-mercenary = Mercenary Commander
 job-head-mercenary-desc = Your duty is to keep in touch with the headquarters and directly make decisions on the contract.
 Job-Head-Mercenary-Supervisor = You coordinate tactical operations, ensure effective interaction between faction members, and make operational decisions on the battlefield
 
-job-military-stalker = OKSOP
+job-military-stalker = Military Stalker
 job-military-stalker-desc = Soldiers who have undergone special training after the experience of service in the Zone, or stalkers who have signed a contract with the army.
 job-military-stalker-supervisor = You will endure and suffer, Victoria cruenta
 job-military = Military
