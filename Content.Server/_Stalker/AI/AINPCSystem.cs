@@ -185,26 +185,29 @@ namespace Content.Server._Stalker.AI
             {
                  _sawmill.Debug($"NPC {ToPrettyString(uid)} received {response.ToolCallRequests.Count} tool call requests.");
 
-                // Execute each tool call sequentially
+                // 1. Add the assistant's decision to use tools to the history
+                var assistantToolCalls = response.ToolCallRequests.Select(tc => new OpenRouterToolCall
+                {
+                    Id = tc.ToolCallId, // Use the ID passed from AIManager
+                    Type = "function",
+                    Function = new OpenRouterToolFunction { Name = tc.ToolName, Arguments = tc.Arguments.ToJsonString() } // Convert args back to string for history
+                }).ToList();
+                AddMessageToHistory(uid, component, "assistant", null, toolCalls: assistantToolCalls);
+
+                // 2. Execute each tool call sequentially and add its result to history
                 foreach (var toolCall in response.ToolCallRequests)
                 {
-                    _sawmill.Debug($"Executing tool call: {toolCall.ToolName}");
-                    var (success, resultMessage) = ExecuteToolCall(uid, component, toolCall);
+                    _sawmill.Debug($"Executing tool call: {toolCall.ToolName} (ID: {toolCall.ToolCallId})");
+                    var (success, resultMessage) = ExecuteToolCall(uid, component, toolCall); // Execute the tool
 
-                    // TODO: Add assistant's attempt and tool's result to history for *each* tool call.
-                    // This requires passing the tool call ID back from AIManager and potentially modifying AddMessageToHistory.
-                    // Example (requires AIResponse/AIToolCall to contain the original tool call ID):
-                    // if (toolCall.TryGetOriginalId(out var toolCallId)) // Fictional method
-                    // {
-                    //    AddMessageToHistory(uid, component, "assistant", null, toolCalls: new List<OpenRouterToolCall> { /* construct tool call representation for *this* call */ }); // Assistant message indicating tool use
-                    //    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCallId); // Tool result message
-                    // }
+                    // Add the result of this specific tool call to the history
+                    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCall.ToolCallId);
 
-                    _sawmill.Info($"Tool '{toolCall.ToolName}' executed for {ToPrettyString(uid)}. Success: {success}. Result: {resultMessage}");
+                    _sawmill.Info($"Tool '{toolCall.ToolName}' (ID: {toolCall.ToolCallId}) executed for {ToPrettyString(uid)}. Success: {success}. Result: {resultMessage}");
 
-                    // TODO: After executing *all* tools, send the results back to the AI.
-                    // This involves another call to GetActionAsync with multiple "tool" role messages containing the results.
-                    // For now, we just execute the tools sequentially.
+                    // TODO: Consider if we need to immediately re-query the AI after *each* tool result,
+                    // or only after all requested tools in a batch are executed.
+                    // Current implementation executes all requested tools before potentially re-querying (if implemented).
                 }
             }
             else
@@ -229,7 +232,15 @@ namespace Content.Server._Stalker.AI
                         if (TryGetStringArgument(toolCall.Arguments, "message", out var message))
                         {
                             success = TryChat(uid, message);
-                            resultMessage = success ? "Chat action performed." : "Chat action failed.";
+                            if (success)
+                            {
+                                // History is now added in HandleAIResponse for tool results.
+                                resultMessage = "Chat action performed.";
+                            }
+                            else
+                            {
+                                resultMessage = "Chat action failed.";
+                            }
                         }
                         else resultMessage = "Missing or invalid 'message' argument for TryChat.";
                         break;
@@ -383,10 +394,7 @@ namespace Content.Server._Stalker.AI
             // OpenAI/OpenRouter tool format requires parameters as a JSON schema object
 
             var description = $@"Respond verbally to a user or initiate conversation.
-                If user asks for quests: 
-                ONLY GIVE QUESTS TO ITEMS FROM THE LIST.
-                {allowedItemsString}";
-
+                Allowed Quest Items: {allowedItemsString}";
 
             return $@"{{
                 ""name"": ""TryChat"",
@@ -418,11 +426,7 @@ namespace Content.Server._Stalker.AI
             // Dynamically generate the description including allowed items
             // Use System.Text.Json for safe encoding within the JSON string
             var description = $@"Spawn and give a specified quantity of an item (by prototype ID) to a target player.
-ONLY GIVE ITEMS AS REWARDS OR IF ITs NEEDED FOR THE QUEST. REJECT OTHERWISE.
-FIRST, use the 'TryTakeItem' tool to take quest item from the player.
-You can ONLY give items from the following list, respecting their Max Quantity:
-{allowedItemsString}
-IMPORTANT: When using this tool, ALSO use the 'TryChat' tool in the same response to inform the player what you are giving them (e.g., ""Here is the item you asked for."").";
+                Allowed Reward Items: {allowedItemsString}";
 
              return $@"{{
                 ""name"": ""TryGiveItem"",

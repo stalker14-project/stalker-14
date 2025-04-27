@@ -205,8 +205,8 @@ namespace Content.Server._Stalker.AI
                             var argumentsNode = JsonNode.Parse(toolCall.Function.Arguments);
                             if (argumentsNode is JsonObject argumentsObject)
                             {
-                                // Add the valid tool call request to the list
-                                toolCallRequests.Add(new AIToolCall(toolCall.Function.Name, argumentsObject));
+                                // Add the valid tool call request to the list, including the ID
+                                toolCallRequests.Add(new AIToolCall(toolCall.Id, toolCall.Function.Name, argumentsObject));
                             }
                             else
                             {
@@ -491,5 +491,5 @@ namespace Content.Server._Stalker.AI
 
     // Represents a request for AINPCSystem to execute a tool
     // No changes needed here, AINPCSystem will handle the list
-    public record AIToolCall(string ToolName, JsonObject Arguments);
+    public record AIToolCall(string ToolCallId, string ToolName, JsonObject Arguments); // Added ToolCallId
 }
