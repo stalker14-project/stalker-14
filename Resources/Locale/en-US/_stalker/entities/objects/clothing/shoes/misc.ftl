@@ -9,3 +9,5 @@ ent-ClothingShoesBootsFrogLeather = leather boots of toads
 ent-STClothingShoesBootsSeraFilled = Hunter Boots
     .desc = Combat boots repainted in a dark green shade. A unique shoe used by members of the Seraphim's faction.
     .suffix = ST, Skin
+ent-ClothingShoesNovice = Beginner's Boots
+    .desc = Regular leather boots made from scraps of leather.

@@ -22,3 +22,5 @@ ent-ClothingMaskGasMarlya = Marlya Gas Mask
     .desc = A green gauze mask designed to protect the human respiratory system from radioactive dust. Better than nothing.
 ent-ClothingMaskGasMercStalker = Standard Mercenary Gas Mask
     .desc = Hides the eyes and evil intentions. Protects against radiation.
+ent-ClothingMaskGasZaryaMono = Monolens stalker gas mask
+    .desc = Cheap and effective. Protects against radiation. Features a monolens.
