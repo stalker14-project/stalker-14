@@ -12,6 +12,17 @@
 
 - type: entity
   parent: ClothingShoesBase
+  id: ClothingShoesNovice
+  name: ботинки новичка
+  description: Обычные кожаные ботинки сделанные из обрезков кожи.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/shoes/boots_novice.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/shoes/boots_novice.rsi
+
+- type: entity
+  parent: ClothingShoesBase
   id: ClothingShoesPVH
   name: сапоги ПВХ
   description: Надежная защита от влаги, грязи, токсичных отдоходов и в самых неприятных погодных условиях. Изготовленные из прочного и гибкого поливинилхлорида не дающий реагентам проникнуть внутрь ваших ног.

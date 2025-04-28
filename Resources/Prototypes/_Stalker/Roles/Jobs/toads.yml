@@ -6,15 +6,48 @@
   playTimeTracker: JobJaba
   whitelisted: true
   requirements:
-    # - !type:RoleTimeRequirement
-    #   role: JobJaba
-    #   time: 1
     - !type:SpeciesRequirement
       species:
       - Human
       - Dwarf
   startingGear: JabaGear
   supervisors: job-jaba-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Jaba
+      - type: Bands
+        band: Stalker
+        bandIcon: jaba
+        bandProto: STToadsBand
+        bandRankId: 1
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - Bandit
+
+- type: job
+  id: StalkerJabaAce
+  name: job-jaba-ace
+  icon: jaba
+  description: job-jaba-ace-desc
+  playTimeTracker: JobJabaAce
+  whitelisted: true
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: JabaGear
+  supervisors: job-jaba-ace-supervisor
   canBeAntag: false
   special:
     - !type:AddComponentSpecial
@@ -53,7 +86,8 @@
   name: Toads
   factionId: Bandit
   maxMembers: 10
-  managingRankId: 3
+  managingRankId: 2
   hierarchy:
     1: StalkerJaba
+    2: StalkerJabaAce
 
