@@ -1,2 +1,2 @@
-ent-ClothingHeadHelmetCN3a = шлем «СН-3а»
+ent-ClothingHeadHelmetCN3a = CN-3a Helmet
     .suffix = ST, T5, Env

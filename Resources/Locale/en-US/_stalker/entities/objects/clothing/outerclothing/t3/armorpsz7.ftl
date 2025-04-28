@@ -12,3 +12,6 @@ ent-STClothingOuterArmorDesertersPSZ7 = Decurion Renegade PSZ-7
 ent-STClothingOuterArmorLightPlateVestBasePSZ7rene = PSZ-7 'Fang'
     .desc = Former military "PSZ-7" and now a walking nightmare. A brown jumpsuit, bone spikes sticking out in all directions, and a skull on his belt as a reminder. You're the prey. The renegades have turned this armor into the embodiment of their madness.
     .suffix = ST, T3, PvP
+ent-STClothingOuterArmorSeraphimStrash = "Guardian" Armor Suit
+    .desc = An old, battle-worn Bulat suit from the Monolith arsenal, marked by the passage of time and fierce battles. Despite its age, it remains a reliable shield protecting its wearer from the dangers of the Zone. The Seraphim camouflage gives it a unique appearance, while the numerous prayer symbols and sacred charms carefully applied to it make it not just armor, but a true talisman of faith and strength.
+    .suffix = ST, T3, PVP, Skin

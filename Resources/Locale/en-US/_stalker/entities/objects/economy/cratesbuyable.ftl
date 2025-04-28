@@ -16,4 +16,13 @@ ent-SetArmourJacketNoviceWhiteBuyableCrate = { ent-SetArmourJacketNoviceBrezentB
 ent-SetArmoutJacketBanditBuyableCrate = Bandit Chainmail Jacket Set
     .desc = Includes a bandit chainmail jacket, gauze mask, white urban backpack, and a novice pouch kit.
     .suffix = { ent-SetArmourJacketNoviceBrezentBuyableCrate.suffix }
+ent-SetMercBuyableCrate = Mercenary Armor Set
+    .desc = Includes an armored jumpsuit, a gauze mask, and a belt pouch with a holster.
+    .suffix = Stalker, T3
+ent-SetMerc2BuyableCrate = Mercenary Armor Set
+    .desc = Includes an armored jumpsuit, a gauze mask, and a belt pouch with a holster.
+    .suffix = Stalker, T3
+ent-SetMercBanditBuyableCrate = "Valet" Mercenary Armor Set
+    .desc = Includes an armored jumpsuit, a gauze mask, and a belt pouch with a holster.
+    .suffix = Stalker, T3
 

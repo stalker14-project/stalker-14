@@ -1,6 +1,6 @@
-ent-STClothingHeadHelmetTacticalT5Base = база тактического шлема T5
+ent-STClothingHeadHelmetTacticalT5Base = T5 Tactical Helmet Base
     .suffix = ST, T5, Tactical
-ent-ClothingHeadHelmetPSZ9D = шлем «ПСЗ-9д»
-    .desc = Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.
-ent-ClothingHeadHelmet1SHBandit = шлем «ПСЗ-9д» бандитов
-    .desc = Крутой шлем для крутых пацанов.
+ent-ClothingHeadHelmetPSZ9D = PSZ-9D Helmet
+    .desc = This helmet was specially designed for protection against piercing attacks. It also has resistance to other types of damage.
+ent-ClothingHeadHelmet1SHBandit = PSZ-9D Helmet (Bandit)
+    .desc = A cool helmet for cool guys.

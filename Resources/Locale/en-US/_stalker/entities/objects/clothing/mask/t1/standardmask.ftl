@@ -20,3 +20,5 @@ ent-ClothingMaskGasAnomalists = standard anomalists gas mask
     .desc = Perhaps there is an outstanding fisherman behind him. Protects against radiation.
 ent-ClothingMaskGasMarlya = Marlya Gas Mask
     .desc = A green gauze mask designed to protect the human respiratory system from radioactive dust. Better than nothing.
+ent-ClothingMaskGasMercStalker = Standard Mercenary Gas Mask
+    .desc = Hides the eyes and evil intentions. Protects against radiation.

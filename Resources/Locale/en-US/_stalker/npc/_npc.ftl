@@ -75,3 +75,7 @@ ent-NPCFil = Phil[→  ←]
 ent-NPCRasputin = Rasputin[→  ←]
     .desc = Dealer in a wide range of high penetration calibers.
     .suffix = { ent-NPCFil.suffix }
+ent-NPCSecurityZhorik = Zhorik
+    .desc = Move along, don't linger!
+ent-NPCSecurityGarrik = Garrik
+    .desc = You're not allowed here!
