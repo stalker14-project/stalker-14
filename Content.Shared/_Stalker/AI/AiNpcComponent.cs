@@ -64,5 +64,27 @@ namespace Content.Shared._Stalker.AI
         [DataField("questItems")]
         [ViewVariables(VVAccess.ReadWrite)]
         public List<ManagedItemInfo> QuestItems { get; private set; } = new();
+
+        /// <summary>
+        /// Damage specifier applied when the TryPunishPlayer tool is used.
+        /// If null, no damage is applied.
+        /// </summary>
+        [DataField("punishmentDamage")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public Shared.Damage.DamageSpecifier? PunishmentDamage { get; private set; }
+
+        /// <summary>
+        /// Sound played when the TryPunishPlayer tool is used.
+        /// </summary>
+        [DataField("punishmentSound")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public Robust.Shared.Audio.SoundSpecifier? PunishmentSound { get; private set; }
+
+        /// <summary>
+        /// Entities matching this whitelist will not be affected by the TryPunishPlayer tool.
+        /// </summary>
+        [DataField("punishmentWhitelist")]
+        [ViewVariables(VVAccess.ReadWrite)]
+        public Shared.Whitelist.EntityWhitelist? PunishmentWhitelist { get; private set; }
     }
 }

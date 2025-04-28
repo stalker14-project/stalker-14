@@ -104,16 +104,24 @@ The system is primarily composed of three parts: a server-side manager for API c
 ## 5. Tools
 
 -   Tools represent actions the AI can request the NPC to perform.
--   They are defined as public methods within `AINPCSystem` (e.g., `TryChat`, `TryGiveItem`).
--   Each tool has a corresponding JSON description method (`GetChatToolDescription`, etc.) that returns a schema matching the OpenAI function/tool definition format. The description for `TryGiveItem` dynamically includes the list of items the specific NPC is allowed to give, based on its `GivableItems` component data. This description is sent to the LLM.
+-   They are defined as public methods within `AINPCSystem` (e.g., `TryChat`, `TryGiveItem`, `TryTakeItem`, `TryPunishPlayer`).
+-   Each tool has a corresponding JSON description method (`GetChatToolDescription`, etc.) that returns a schema matching the OpenAI function/tool definition format. The description for `TryGiveItem` dynamically includes the list of items the specific NPC is allowed to give, based on its `GivableItems` component data. The description for `TryPunishPlayer` includes the configured damage. These descriptions are sent to the LLM.
 -   When the LLM decides to use a tool, `AIManager` parses the requested tool name and arguments.
--   `AINPCSystem` receives the parsed tool request and calls the corresponding C# method via `ExecuteToolCall`. The `TryGiveItem` method now includes validation logic to ensure the requested item and quantity are permitted according to the NPC's `GivableItems` list.
+-   `AINPCSystem` receives the parsed tool request and calls the corresponding C# method via `ExecuteToolCall`. The `TryGiveItem` method includes validation logic based on `GivableItems`. The `TryPunishPlayer` method applies damage and sound effects based on `PunishmentDamage` and `PunishmentSound` in the `AiNpcComponent`, after checking faction and range.
+
+### 5.1. Available Tools
+
+-   **`TryChat`**: Makes the NPC speak a given message.
+-   **`TryGiveItem`**: Spawns and attempts to give an item (from the NPC's `GivableItems` list) to a player.
+-   **`TryTakeItem`**: Attempts to take a specified item from a player's hands (requires player cooperation/interaction).
+-   **`TryPunishPlayer`**: Applies damage (defined in `AiNpcComponent.PunishmentDamage`) and plays a sound (defined in `AiNpcComponent.PunishmentSound`) to a target player within range. Intended for use when the AI determines a player is being excessively rude, hostile, or deceitful, according to its prompt instructions. Requires `targetPlayer` and `reason` arguments.
 
 ## 6. Current Limitations / Future Improvements
 
 -   **Entity Lookup:** Identifying players and items based on string names/identifiers provided by the AI is currently very basic (placeholder `FindPlayerByIdentifier`, `FindItemInHands`). A more robust lookup system (using CKey/UserId, EntityUid parsing, or better inventory searching) is needed.
 -   **`TryTakeItem` Interaction:** The current implementation assumes player consent and simulates the item transfer. A proper implementation requires a player interaction flow (dialogue prompt, UI confirmation, etc.).
 -   **Tool Result Feedback:** The system currently executes tools but doesn't report the success/failure result back to the LLM in a subsequent API call. Implementing this feedback loop would allow the AI to react to the outcome of its requested actions (e.g., confirming an item was given or explaining why it failed).
--   **Multiple Tool Calls:** The API supports multiple tool calls in one response, but the current implementation only processes the first one.
+-   **Multiple Tool Calls:** The system now supports processing multiple tool calls returned by the AI in a single response.
 -   **Error Handling:** More nuanced error handling and potential fallback responses for the NPC could be added.
 -   **Contextual Awareness:** The context provided to the AI is currently limited to conversation history. Adding information about the NPC's inventory, surroundings, or current game state could enable more complex behaviors.
+-   **Punishment Nuance:** The `TryPunishPlayer` tool is a blunt instrument. Future improvements could involve more nuanced responses to negative interactions (e.g., refusing service, reporting to security, changing disposition).

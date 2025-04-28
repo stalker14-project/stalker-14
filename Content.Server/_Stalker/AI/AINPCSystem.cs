@@ -18,6 +18,11 @@ using Robust.Shared.Player; // For AIResponse, OpenRouterMessage, AIToolCall
 using Content.Server._Stalker.AI;
 using Content.Shared._Stalker.AI;
 using Robust.Shared.Prototypes;
+using Content.Shared.Damage; // Added for DamageableSystem
+using Content.Shared.NPC.Systems; // Added for NpcFactionSystem
+using Content.Shared.Whitelist; // Added for EntityWhitelistSystem
+using Robust.Server.Audio; // Added for AudioSystem
+using Content.Shared.NPC.Prototypes; // Added for NpcFactionPrototype ProtoId
 
 namespace Content.Server._Stalker.AI
 {
@@ -29,10 +34,17 @@ namespace Content.Server._Stalker.AI
         [Dependency] private readonly EntityManager _entity = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly IPrototypeManager _proto = default!;
+        [Dependency] private readonly DamageableSystem _damageable = default!; // Added
+        [Dependency] private readonly NpcFactionSystem _npcFaction = default!; // Added
+        [Dependency] private readonly AudioSystem _audio = default!; // Added
+        [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!; // Added
         // [Dependency] private readonly InventorySystem _inventory = default!; // Might need later for searching inventory
         // [Dependency] private readonly SharedContainerSystem _container = default!; // Might need later
 
         private ISawmill _sawmill = default!;
+
+        // Define the player faction ID (adjust if needed)
+        private static readonly ProtoId<NpcFactionPrototype> PlayerFaction = "Stalker";
 
         public override void Initialize()
         {
@@ -268,6 +280,16 @@ namespace Content.Server._Stalker.AI
                         else resultMessage = "Missing or invalid arguments for TryTakeItem.";
                         break;
 
+                    case nameof(TryPunishPlayer): // Added case for the new tool
+                        if (TryGetStringArgument(toolCall.Arguments, "targetPlayer", out targetPlayer) &&
+                            TryGetStringArgument(toolCall.Arguments, "reason", out var reason)) // Added reason argument
+                        {
+                            success = TryPunishPlayer(uid, component, targetPlayer, reason); // Pass component and reason
+                            resultMessage = success ? "Punish player action performed." : "Punish player action failed.";
+                        }
+                        else resultMessage = "Missing or invalid arguments for TryPunishPlayer (expected targetPlayer, reason).";
+                        break;
+
                     default:
                         _sawmill.Warning($"NPC {ToPrettyString(uid)} received request for unknown tool: {toolCall.ToolName}");
                         // resultMessage remains "Unknown tool name."
@@ -379,6 +401,11 @@ namespace Content.Server._Stalker.AI
                 descriptions.Add(GetGiveItemToolDescription(component)); // Pass component data
             }
             descriptions.Add(GetTakeItemToolDescription());
+            // Add the new punish tool description if the component allows it (e.g., has damage defined)
+            if (component.PunishmentDamage != null || component.PunishmentSound != null)
+            {
+                descriptions.Add(GetPunishPlayerToolDescription(component));
+            }
             return descriptions;
         }
 
@@ -436,7 +463,7 @@ namespace Content.Server._Stalker.AI
                     ""properties"": {{
                          ""targetPlayer"": {{
                             ""type"": ""string"",
-                            ""description"": ""The unique CKey (username) or exact character name of the player who should receive the item(s). Use the speaker's CKey if they ask for themselves.""
+                            ""description"": ""The unique CKey of the player who should receive the item(s). Use the speaker's CKey if they ask for themselves.""
                         }},
                         ""itemPrototypeId"": {{
                             ""type"": ""string"",
@@ -464,7 +491,7 @@ namespace Content.Server._Stalker.AI
                     ""properties"": {
                          ""targetPlayer"": {
                             ""type"": ""string"",
-                            ""description"": ""The unique CKey (username) or exact character name of the player to request the item from.""
+                            ""description"": ""The unique CKey (username) to request the item from.""
                         },
                         ""requestedItemName"": {
                             ""type"": ""string"",
@@ -476,6 +503,31 @@ namespace Content.Server._Stalker.AI
             }";
         }
 
+        private string GetPunishPlayerToolDescription(AiNpcComponent component)
+        {
+            // Use System.Text.Json for safe encoding within the JSON string
+            // Simplified description
+            var description = $@"Punish a player perceived as rude, lying, or hostile by attacking them. Requires a reason.";
+
+            return $@"{{
+                ""name"": ""TryPunishPlayer"",
+                ""description"": ""{JsonEncodedText.Encode(description)}"",
+                ""parameters"": {{
+                    ""type"": ""object"",
+                    ""properties"": {{
+                         ""targetPlayer"": {{
+                            ""type"": ""string"",
+                            ""description"": ""The unique CKey (username) of the player to punish.""
+                        }},
+                        ""reason"": {{
+                            ""type"": ""string"",
+                            ""description"": ""A brief explanation why the player is being punished""
+                        }}
+                    }},
+                    ""required"": [""targetPlayer"", ""reason""]
+                }}
+            }}";
+        }
 
 
         // Actual tool methods, invoked locally after AI response parsing
@@ -631,6 +683,65 @@ namespace Content.Server._Stalker.AI
             }
         }
 
+        /// <summary>
+        /// Attempts to punish a player by applying damage.
+        /// </summary>
+        public bool TryPunishPlayer(EntityUid npc, AiNpcComponent aiComp, string targetPlayerIdentifier, string reason)
+        {
+            _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting to punish player: Target='{targetPlayerIdentifier}', Reason='{reason}'");
+
+            // --- 1. Find Target Player ---
+            EntityUid? targetPlayer = FindPlayerByIdentifier(targetPlayerIdentifier);
+            if (targetPlayer == null || !targetPlayer.Value.Valid)
+            {
+                _sawmill.Warning($"Could not find target player '{targetPlayerIdentifier}' for TryPunishPlayer.");
+                return false;
+            }
+
+
+            // Check if the target is whitelisted from punishment by this NPC
+            if (aiComp.PunishmentWhitelist != null && _whitelistSystem.IsWhitelistPass(aiComp.PunishmentWhitelist, targetPlayer.Value))
+            {
+                _sawmill.Info($"Target player {ToPrettyString(targetPlayer.Value)} is whitelisted. Punishment aborted.");
+                return false;
+            }
+
+            // --- 3. Check Range ---
+            // Use a slightly longer range for punishment than giving items?
+            const float punishRange = 5.0f;
+            if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > punishRange)
+            {
+                _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far ({distance}m) for NPC {ToPrettyString(npc)} to punish.");
+                // Optionally, make the NPC say something like "Get back here!"?
+                return false;
+            }
+
+            // --- 4. Apply Punishment ---
+            bool damageApplied = false;
+            if (aiComp.PunishmentDamage != null)
+            {
+                var damageResult = _damageable.TryChangeDamage(targetPlayer.Value, aiComp.PunishmentDamage, ignoreResistances: true); // Apply damage, ignore resistance for punishment?
+                damageApplied = damageResult != null;
+                _sawmill.Info($"NPC {ToPrettyString(npc)} applied damage to {ToPrettyString(targetPlayer.Value)}. Success. Reason: {reason}");
+            }
+            else
+            {
+                _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to punish, but no PunishmentDamage is defined in its AiNpcComponent.");
+            }
+
+            // Play sound effect if defined
+            if (aiComp.PunishmentSound != null)
+            {
+                _audio.PlayPvs(aiComp.PunishmentSound, Transform(npc).Coordinates);
+            }
+
+            // Optionally, make the NPC say something aggressive based on the reason?
+            // TryChat(npc, $"You dare insult me?! ({reason})"); // Example
+
+            return damageApplied; // Return true if damage was successfully applied
+        }
+
+
         // --- Placeholder Helper Methods ---
 
         // TODO: Replace with robust entity lookup system (by CKey first, then maybe name)
@@ -665,12 +776,15 @@ namespace Content.Server._Stalker.AI
             // Now enumerate hands using the component
             foreach (var hand in _hands.EnumerateHands(holder, handsComp))
             {
-                if (hand.HeldEntity is null)
-                    continue;
-
-                if (Prototype(hand.HeldEntity.Value).ID.Equals(itemName, StringComparison.OrdinalIgnoreCase))
+                // Check if the hand is holding an entity
+                if (hand.HeldEntity is {} heldEntityValue)
                 {
-                    return hand.HeldEntity;
+                    var proto = Prototype(heldEntityValue);
+
+                    if (proto != null && string.Equals(proto.ID, itemName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return heldEntityValue;
+                    }
                 }
             }
             return null;
