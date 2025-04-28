@@ -119,8 +119,12 @@ job-stalker-desc = Это кочевая полуобъединенная гру
 job-stalker-supervisor = Вы работаете сами на себя
 
 job-jaba = Жаба
-job-jaba-desc = Группа по интересам.
-job-jaba-supervisor = Жадность это стиль жизнь, любопытство не порок.
+job-jaba-desc = Группа по интересам. Жадность это стиль жизнь, любопытство не порок.
+job-jaba-supervisor = Вы подчиняетесь Тузу Жаб.
+
+job-jaba-ace = Туз Жаб
+job-jaba-ace-desc = Группа по интересам.
+job-jaba-ace-supervisor = Вы никому не подчиняетесь.
 
 job-trader = торговец
 job-trader-desc = Группировка торговцев и барыг всея Зоны

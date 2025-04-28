@@ -3197,6 +3197,43 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
+
+- type: entity
+  parent: BaseItem
+  id: CasseteHerzContributorRadio
+  suffix: Stalker, кассета, (Herz)
+  name: кассета "Herz"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+    - type: STWeight
+      self: 0.15
+    - type: Cassete
+      sound: /Audio/_Stalker/Music/Radio/Contributor/Herz.ogg
+    - type: Tag
+      tags:
+        - Cassete
+    - type: Sprite
+      sprite: _Stalker/Objects/Misc/casete.rsi
+      state: c6
+
+- type: entity
+  parent: BaseItem
+  id: CasseteJewishTailorContributorRadio
+  suffix: Stalker, кассета, (Еврейский портной)
+  name: кассета "Еврейский портной"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+    - type: STWeight
+      self: 0.15
+    - type: Cassete
+      sound: /Audio/_Stalker/Music/Radio/Contributor/JewishTailor.ogg
+    - type: Tag
+      tags:
+        - Cassete
+    - type: Sprite
+      sprite: _Stalker/Objects/Misc/casete.rsi
+      state: c6
+  
 # СТАТИЧЕСКОЕ РАДИО
 
 - type: entity

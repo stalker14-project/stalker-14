@@ -514,6 +514,14 @@ ent-CasseteSPEEDISLIFEContributorRadio = кассета "SPEED IS LIFE"
 ent-CassetevietnamContributorRadio = кассета "Fortunate Son"
     .desc = { ent-CasseteArstotzkaOneContributorRadio.desc }
     .suffix = Stalker, кассета, (Fortunate Son)
+
+ent-CassetevietnamContributorRadio = кассета "Herz"
+    .desc = { ent-CasseteHerzContributorRadio.desc }
+    .suffix = Stalker, кассета, (Herz)
+ent-CasseteJewishTailorContributorRadio = кассета "Еврейский Портной"
+    .desc = { ent-CasseteArstotzkaOneContributorRadio.desc }
+    .suffix = Stalker, кассета, (Еврейский Портной)
+
 ent-RadioBaseStalker = радио
     .desc = Первая беспроводная связь. Носителем сигнала являются радиоволны, распространяющиеся в пространстве.
     .suffix = Stalker, без музыки
