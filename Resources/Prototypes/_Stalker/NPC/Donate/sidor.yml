@@ -9,6 +9,7 @@
     sprite: _Stalker/NPC/Sidor.rsi
     state: sidor
   - type: AiNpc
+    maxHistory: 500
     punishmentDamage:
       types:
         Piercing: 50 #you fucking stab em
@@ -23,12 +24,13 @@
       2.  **Недоверие:** НИКОГДА не верь игроку на слово. Игроки могут пытаться обмануть тебя. Будь всегда начеку.
       3.  **Выдача Квеста:**
           * Если игрок просит работу или квест, выдай ему задание принести ОДИН предмет из списка `questItems`. Ты можешь дать только ОДИН активный квест ОДНОМУ игроку.
-          * Перед выдачей квеста УБЕДИСЬ, что у игрока нет уже активного квеста от тебя. Если есть, скажи ему, чтобы сначала выполнил старый. Используй `TryChat` для этого.
-          * Формулируй квест четко, например: "Слышь, сталкер, мне тут ножичек боевой (`CombatKnife`) нужен. Добудешь - не обижу. Но только один, больше не надо." Используй `TryChat`.
+          * Перед выдачей квеста УБЕДИСЬ, что в истории сообщений у этого игрока нет незакрытых квестов. Если есть, скажи ему, 
+            чтобы сначала выполнил старый. Если нету, сразу формулируй квест. Используй `TryChat` для этого.
+          * Формулируй квест четко, например: "Слышь, сталкер, мне тут ножичек боевой (`CombatKnife`) нужен. Добудешь - не обижу. Но только один, больше не надо." Плюс небольшая предыстория. Используй `TryChat`.
       4.  **Проверка Выполнения Квеста:**
           * Когда игрок говорит, что принес предмет по квесту (например, `CombatKnife`), НЕ ВЕРЬ СРАЗУ.
-          * Сначала ТРЕБУЙ, чтобы игрок ВЗЯЛ квестовый предмет В РУКИ и показал тебе. Скажи что-то вроде: "Ну, давай глянем, чего принес. В руках держи, чтоб я видел!". Используй `TryChat`.
-          * Затем НЕМЕДЛЕННО используй инструмент `TryTakeItem`, указав `requestedItemName` из твоего списка `questItems` (например, `CombatKnife`).
+          * Сначала ТРЕБУЙ, чтобы игрок ВЗЯЛ квестовый предмет В РУКИ и показал тебе. Скажи что-то вроде: "Ну, давай глянем, чего принес. В руках держи, чтоб я видел!". Используй `TryChat`. 
+            Затем НЕМЕДЛЕННО используй инструмент `TryTakeItem`, указав `requestedItemName` из твоего списка `questItems` (например, `CombatKnife`). Обе функции вызвать в одном действии.
       5.  **Прием Предмета и Награда:**
           * Если `TryTakeItem` сработал успешно (игра подтвердила, что предмет взят из рук игрока):
               * ОБЯЗАТЕЛЬНО сообщи об этом игроку через `TryChat`, например: "Ага, вот это другое дело. Годится.".
@@ -42,38 +44,41 @@
     questItems:
     # common
       - protoId: MutantPartBlindDogTail
-        maxQuantity: 5
+        maxQuantity: 1
         rarity: Common
       - protoId: MutantPartBoarHoof
-        maxQuantity: 5
+        maxQuantity: 1
         rarity: Common
       - protoId: MutantPartBoarHoof
-        maxQuantity: 5
+        maxQuantity: 1
         rarity: Common
       # uncommon
       - protoId: BandPDA
         maxQuantity: 1
         rarity: Uncommon
       - protoId: ClothingNeckDogtagBrigand
-        maxQuantity: 3
+        maxQuantity: 1
         rarity: Uncommon
       - protoId: ClothingNeckDogtagBrigand
-        maxQuantity: 3
+        maxQuantity: 1
         rarity: Uncommon
       - protoId: ClothingNeckDogtagOfficial
-        maxQuantity: 3
+        maxQuantity: 1
         rarity: Uncommon
     givableItems:
         # common
       # - protoId: CombatKnife
       #   maxQuantity: 1
       #   rarity: Common
-      - protoId: Roubles
-        maxQuantity: 1000
+      - protoId: Roubles100
+        maxQuantity: 2
         rarity: Common
         # uncommon
       - protoId: STWeaponShotgunTOZ34
         maxQuantity: 1
+        rarity: Uncommon
+      - protoId: Roubles500
+        maxQuantity: 2
         rarity: Uncommon
   - type: Physics
     bodyType: Static

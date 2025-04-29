@@ -107,8 +107,10 @@ namespace Content.Server._Stalker.AI
 
                 _sawmill.Debug($"NPC {ToPrettyString(npcUid)} heard speech from {ToPrettyString(args.Source)}: \"{args.Message}\"");
 
+                // Trim history *before* adding user message
+                TrimHistory(npcUid, aiComp, 1); // Make space for 1 user message
                 // Add user message to history, including the speaker's name and CKey
-                AddMessageToHistory(npcUid, aiComp, "user", args.Message, speakerName: speakerName, speakerCKey: speakerCKey);
+                AddMessageToHistory(npcUid, aiComp, "user", args.Message, speakerName: speakerName, speakerCKey: speakerCKey); // AddMessageToHistory no longer trims
 
                 // Prepare data for AI Manager
                 var tools = GetAvailableToolDescriptions(npcUid, aiComp);
@@ -190,14 +192,16 @@ namespace Content.Server._Stalker.AI
             {
                 _sawmill.Debug($"NPC {ToPrettyString(uid)} received text response: {response.TextResponse}");
                 TryChat(uid, response.TextResponse);
+                // Trim history *before* adding assistant message
+                TrimHistory(uid, component, 1); // Make space for 1 assistant message
                 // Add assistant's response to history (no name or UserId needed for assistant role)
-                AddMessageToHistory(uid, component, "assistant", response.TextResponse);
+                AddMessageToHistory(uid, component, "assistant", response.TextResponse); // AddMessageToHistory no longer trims
             }
             else if (response.ToolCallRequests != null && response.ToolCallRequests.Count > 0) // Check for multiple tool calls
             {
                  _sawmill.Debug($"NPC {ToPrettyString(uid)} received {response.ToolCallRequests.Count} tool call requests.");
 
-                // 1. Add the assistant's decision to use tools to the history
+                // 1. Prepare new messages (without adding yet)
                 var assistantToolCalls = response.ToolCallRequests.Select(tc => new OpenRouterToolCall
                 {
                     Id = tc.ToolCallId, // Use the ID passed from AIManager
@@ -363,10 +367,30 @@ namespace Content.Server._Stalker.AI
             // Basic history addition, include speaker name and CKey if provided (typically for 'user' role)
             history.Add(new OpenRouterMessage { Role = role, Content = content, Name = speakerName, CKey = speakerCKey, ToolCalls = toolCalls, ToolCallId = toolCallId }); // Use CKey field
 
-            // Trim history if it exceeds the maximum length defined in the component
-            while (history.Count > component.MaxHistory)
+            // REMOVED trimming logic from here. Trimming is now done proactively before adding.
+        }
+
+        /// <summary>
+        /// Trims the history list for an NPC if it exceeds the max limit,
+        /// making space for a specified number of new messages.
+        /// Removes messages from the beginning (oldest).
+        /// </summary>
+        private void TrimHistory(EntityUid npcUid, AiNpcComponent component, int spaceNeeded)
+        {
+            var history = GetHistoryForNpc(npcUid);
+            int maxAllowed = component.MaxHistory;
+            // Calculate how many messages *currently* exceed the limit if we add the new ones
+            int removeCount = (history.Count + spaceNeeded) - maxAllowed;
+
+            if (removeCount > 0)
             {
-                history.RemoveAt(0); // Remove the oldest message
+                // Ensure we don't try to remove more messages than exist
+                int actualRemoveCount = Math.Min(removeCount, history.Count);
+                if (actualRemoveCount > 0)
+                {
+                    history.RemoveRange(0, actualRemoveCount);
+                    _sawmill.Debug($"Trimmed {actualRemoveCount} messages from history for {ToPrettyString(npcUid)} to make space for {spaceNeeded}. New count: {history.Count}");
+                }
             }
         }
 
