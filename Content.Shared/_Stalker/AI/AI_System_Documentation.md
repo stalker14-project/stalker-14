@@ -28,16 +28,16 @@ The system is primarily composed of three parts: a server-side manager for API c
 -   **Responsibilities:**
     -   Manages entities possessing the `AiNpcComponent`.
     -   Subscribes to `EntitySpokeEvent` to detect nearby speech from player characters (`ActorComponent`).
-    -   Manages the conversation history for each individual AI NPC internally (using a `Dictionary<EntityUid, List<OpenRouterMessage>>`). History includes speaker name and UserId (CKey) for user messages.
-    -   Defines the available "tools" (C# methods like `TryChat`, `TryGiveItem`, `TryTakeItem`) that the AI can request to use.
-    -   Provides JSON descriptions of these tools to `AIManager` for inclusion in the API request. The description for `TryGiveItem` is dynamically generated based on the NPC's `GivableItems` list.
+    -   Manages the conversation history for each AI NPC, storing separate histories for each interacting player (identified by CKey) internally (using a `Dictionary<EntityUid, Dictionary<string, List<OpenRouterMessage>>>`). History includes speaker name and CKey for user messages, assistant responses, tool calls, and tool results.
+    -   Defines the available "tools" (C# methods like `TryChat`, `TryOfferQuest`, `TryGiveItem`, `TryTakeItem`, `TryPunishPlayer`) that the AI can request to use.
+    -   Provides JSON descriptions of these tools to `AIManager` for inclusion in the API request. Descriptions for tools involving items (`TryGiveItem`, `TryOfferQuest`) dynamically include the relevant item lists (`GivableItems`, `QuestItems`) from the NPC's component data.
     -   Calls `AIManager.GetActionAsync` asynchronously when an NPC needs to respond to speech.
     -   Processes the `AIResponse` returned by `AIManager` on the main game thread:
         -   If it's a text response, uses `ChatSystem` to make the NPC speak.
         -   If it's a tool call request, parses the arguments and invokes the corresponding local tool method (e.g., `TryGiveItem`).
     -   Handles the game logic for executing the tool actions (spawning items, initiating transfers via `SharedHandsSystem`, etc.). `TryGiveItem` now validates the requested item and quantity against the NPC's `GivableItems` list before proceeding.
-    -   Manages cleanup of conversation history when an NPC entity is removed.
--   **Key Interactions:** Listens for `EntitySpokeEvent`; calls `AIManager`; calls `ChatSystem` and `SharedHandsSystem` to perform actions.
+    -   Manages cleanup of all associated player conversation histories when an NPC entity is removed.
+-   **Key Interactions:** Listens for `EntitySpokeEvent`; calls `AIManager` (passing player-specific history); calls `ChatSystem` and `SharedHandsSystem` to perform actions.
 
 ### 2.3. `AiNpcComponent` (Shared - `Content.Shared/_Stalker/AI/AiNpcComponent.cs`)
 
@@ -46,10 +46,10 @@ The system is primarily composed of three parts: a server-side manager for API c
     -   Networked (`[NetworkedComponent]`) so clients are aware of the component's existence (though its state is minimal).
     -   Stores basic, potentially configurable parameters:
         -   `BasePrompt`: The initial system prompt/personality instruction sent to the LLM.
-        -   `MaxHistory`: The maximum number of messages to retain in the server-side conversation history for this NPC.
+        -   `MaxHistoryPerPlayer`: The maximum number of messages (user, assistant, tool calls/results) to retain in the server-side conversation history *for each individual player* interacting with this NPC.
         -   `GivableItems`: A list (`List<ManagedItemInfo>`) defining items the NPC can potentially give out (e.g., as rewards, trade), along with their `ProtoId`, `MaxQuantity` (per interaction), and `ItemRarity`. The `TryGiveItem` tool is restricted to this list.
-        -   `QuestItems`: A list (`List<ManagedItemInfo>`) defining items relevant to quests (e.g., items the player needs to find), along with their `ProtoId`, `MaxQuantity`, and `ItemRarity`. (Currently used for context, future quest systems might leverage this more directly).
--   **Key Interactions:** Attached to NPC entities; read by `AINPCSystem`. **Crucially, it does NOT store the conversation history itself**, as that is server-only state managed by the system.
+        -   `QuestItems`: A list (`List<ManagedItemInfo>`) defining items relevant to quests (e.g., items the player needs to find), along with their `ProtoId`, `MaxQuantity`, and `ItemRarity`. The `TryOfferQuest` tool uses this list.
+-   **Key Interactions:** Attached to NPC entities; read by `AINPCSystem`. **Crucially, it does NOT store the conversation history itself**, as that is server-only state managed by `AINPCSystem`.
 
 ## 3. Interaction Flow (Example: Player Speaks to NPC)
 
@@ -58,16 +58,16 @@ The system is primarily composed of three parts: a server-side manager for API c
 3.  `AINPCSystem.OnEntitySpoke` receives the event.
 4.  It identifies the speaker (player) and nearby AI NPCs within range.
 5.  It filters out the NPC reacting to itself or non-player entities.
-6.  For each relevant NPC, it retrieves/updates the internal conversation history, adding the player's message (with name and UserId).
-7.  It gathers the NPC's `BasePrompt`, the current `history`, the player's `userMessage`, and the JSON descriptions of available tools.
-8.  It calls `AIManager.GetActionAsync` in a background task, passing this data.
-9.  `AIManager` constructs the JSON payload for the OpenRouter API (using OpenAI format).
+6.  For each relevant NPC, it retrieves/updates the internal conversation history *specific to that player* (using the player's CKey), adding the player's message (with name and CKey). History is trimmed if it exceeds `MaxHistoryPerPlayer`.
+7.  It gathers the NPC's `BasePrompt`, the player's specific `history`, and the JSON descriptions of available tools.
+8.  It calls `AIManager.GetActionAsync` in a background task, passing this data (history only, no separate user message needed).
+9.  `AIManager` constructs the JSON payload for the OpenRouter API (using OpenAI format), including only the messages from the specific player's history.
 10. `AIManager` sends the request via `HttpClient` and awaits the response.
-11. `AIManager` parses the response, determining if it's text or a tool call, and creates an `AIResponse` record.
-12. The background task queues a `ProcessAIResponseEvent` containing the `AIResponse` back to the main game thread, targeting the specific NPC.
+11. `AIManager` parses the response, determining if it's text or tool calls, and creates an `AIResponse` record.
+12. The background task queues a `ProcessAIResponseEvent` containing the `AIResponse` and the original player's `CKey` back to the main game thread, targeting the specific NPC.
 13. `AINPCSystem.HandleAIResponse` receives the event on the main thread.
-14. If the `AIResponse` contains text, `AINPCSystem` calls `TryChat` to make the NPC speak, and updates the history with the assistant's message.
-15. If the `AIResponse` contains one or more tool call requests, `AINPCSystem` calls `ExecuteToolCall` for each. `ExecuteToolCall` first checks for an `npcResponse` argument and makes the NPC speak that message immediately. Then, it parses the remaining arguments and invokes the appropriate local method (`TryOfferQuest`, `TryGiveItem`, `TryTakeItem`, etc.). The result of the tool execution is logged, and both the assistant's tool call attempt and the tool's result message are added to the history.
+14. If the `AIResponse` contains text, `AINPCSystem` calls `TryChat` to make the NPC speak, trims the specific player's history, and updates that player's history with the assistant's message.
+15. If the `AIResponse` contains one or more tool call requests, `AINPCSystem` adds the assistant's tool call decision to the player's history. It then calls `ExecuteToolCall` for each request. `ExecuteToolCall` handles the optional `npcResponse` for immediate speech, executes the tool's logic, trims the specific player's history, and adds the tool's result message to that player's history.
 
 ## 4. Configuration
 
@@ -77,7 +77,7 @@ The system is primarily composed of three parts: a server-side manager for API c
     -   `openrouter.url`: The base URL for the API endpoint (e.g., `https://openrouter.ai/api/v1`).
 -   **NPC:** Configured via `AiNpcComponent` fields in entity prototypes:
     -   `prompt`: Sets the base personality/instructions.
-    -   `maxHistory`: Controls conversation memory length.
+    -   `maxHistoryPerPlayer`: Controls conversation memory length per player.
     -   `givableItems`: Defines the list of items the NPC is allowed to give. Example structure:
         ```yaml
         - type: AiNpc

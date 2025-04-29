@@ -44,10 +44,10 @@ namespace Content.Shared._Stalker.AI
         public string BasePrompt { get; private set; } = "You are a helpful NPC in a space station environment.";
 
         /// <summary>
-        /// Maximum number of messages (user + assistant) to keep in history.
+        /// Maximum number of messages (user + assistant + tool) to keep in history *per player*.
         /// </summary>
-        [DataField("maxHistory"), ViewVariables(VVAccess.ReadWrite)]
-        public int MaxHistory { get; private set; } = 10;
+        [DataField("maxHistoryPerPlayer"), ViewVariables(VVAccess.ReadWrite)]
+        public int MaxHistoryPerPlayer { get; private set; } = 20; // Increased default slightly
 
         /// <summary>
         /// A list defining items this NPC can potentially give out (e.g., as rewards, trade).

@@ -62,8 +62,9 @@ namespace Content.Server._Stalker.AI
 
         // Dictionary to keep track of ongoing AI requests per NPC to prevent spamming
         private readonly Dictionary<EntityUid, CancellationTokenSource> _ongoingRequests = new();
-        // Dictionary to store conversation history per NPC
-        private readonly Dictionary<EntityUid, List<OpenRouterMessage>> _conversationHistories = new();
+        // Dictionary to store conversation history per NPC, keyed by NPC UID.
+        // The inner dictionary stores history per player, keyed by player CKey.
+        private readonly Dictionary<EntityUid, Dictionary<string, List<OpenRouterMessage>>> _conversationHistories = new();
 
         private void OnEntitySpoke(EntitySpokeEvent args)
         {
@@ -78,7 +79,14 @@ namespace Content.Server._Stalker.AI
             string? speakerCKey = null; // Changed variable name
             if (TryComp<ActorComponent>(args.Source, out var actor))
             {
-                speakerCKey = actor.PlayerSession.Name; // Use PlayerSession.Name for CKey
+                speakerCKey = actor.PlayerSession.Name; // Use PlayerSession.Name for CKey (Username)
+            }
+
+            // If we couldn't get a CKey for the speaker, we cannot track history per player.
+            if (speakerCKey == null)
+            {
+                _sawmill.Warning($"Could not get CKey for speaker {ToPrettyString(args.Source)}. Cannot process AI interaction.");
+                return;
             }
 
             // Find nearby AI NPCs that heard this message
@@ -107,17 +115,20 @@ namespace Content.Server._Stalker.AI
 
                 _sawmill.Debug($"NPC {ToPrettyString(npcUid)} heard speech from {ToPrettyString(args.Source)}: \"{args.Message}\"");
 
-                // Trim history *before* adding user message
-                TrimHistory(npcUid, aiComp, 1); // Make space for 1 user message
-                // Add user message to history, including the speaker's name and CKey
-                AddMessageToHistory(npcUid, aiComp, "user", args.Message, speakerName: speakerName, speakerCKey: speakerCKey); // AddMessageToHistory no longer trims
+                // Trim the specific player's history *before* adding their message
+                // Trim the specific player's history *before* adding their message
+                TrimHistory(npcUid, speakerCKey, aiComp, 1); // Error CS0103 fixed by re-adding TrimHistory below
+                // Add user message to the specific player's history
+                // Fixed CS1744/CS1503: Ensure arguments match definition order
+                AddMessageToHistory(npcUid, speakerCKey, aiComp, "user", args.Message, speakerName, speakerCKey);
 
                 // Prepare data for AI Manager
                 var tools = GetAvailableToolDescriptions(npcUid, aiComp);
-                // Get history from our internal dictionary
-                var history = GetHistoryForNpc(npcUid);
+                // Get the specific player's history from our internal dictionary
+                var history = GetHistoryForNpcAndPlayer(npcUid, speakerCKey);
                 var prompt = aiComp.BasePrompt;
-                var userMessage = args.Message; // The message that was just spoken
+                // Note: userMessage is already part of the history list passed to AIManager
+                // var userMessage = args.Message; // We don't need to pass this separately anymore
 
                 // Create a cancellation token for this request
                 var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30)); // Added 30s timeout
@@ -128,21 +139,25 @@ namespace Content.Server._Stalker.AI
                 {
                     try
                     {
-                        var response = await _aiManager.GetActionAsync(npcUid, prompt, history, userMessage, tools, cts.Token);
+                        // Pass the specific player's history to the AI Manager
+                        // Fixed CS1503: Re-adding placeholder for potentially expected userMessage argument
+                        var response = await _aiManager.GetActionAsync(npcUid, prompt, history, string.Empty, tools, cts.Token); // Added string.Empty placeholder
 
-                        // Queue the response processing back to the main game thread using the system's method
-                        QueueLocalEvent(new ProcessAIResponseEvent(npcUid, response)); // Pass UID to event if needed
+                        // Queue the response processing back to the main game thread, including the player CKey
+                        QueueLocalEvent(new ProcessAIResponseEvent(npcUid, speakerCKey, response));
                     }
                     catch (OperationCanceledException)
                     {
                          _sawmill.Debug($"AI request for NPC {ToPrettyString(npcUid)} timed out or was cancelled.");
                          // Queue a failure response to ensure state is cleaned up
-                         QueueLocalEvent(new ProcessAIResponseEvent(npcUid, AIResponse.Failure("Request timed out or cancelled.")));
+                         // Fixed CS7036: Add missing 'response' argument
+                         QueueLocalEvent(new ProcessAIResponseEvent(npcUid, speakerCKey, AIResponse.Failure("Request timed out or cancelled.")));
                     }
                     catch (Exception e)
                     {
                         _sawmill.Error($"Unhandled exception during async AI request for {ToPrettyString(npcUid)}: {e}");
-                        QueueLocalEvent(new ProcessAIResponseEvent(npcUid, AIResponse.Failure($"Internal error: {e.Message}")));
+                         // Fixed CS7036: Add missing 'response' argument
+                        QueueLocalEvent(new ProcessAIResponseEvent(npcUid, speakerCKey, AIResponse.Failure($"Internal error: {e.Message}")));
                     }
                     // No finally block needed here for removal, HandleAIResponse will do it.
                     // Dispose CTS on the main thread in HandleAIResponse.
@@ -153,11 +168,13 @@ namespace Content.Server._Stalker.AI
         // Event to process AI response on the main thread
         private sealed class ProcessAIResponseEvent : EntityEventArgs
         {
-            public EntityUid Target { get; } // Store the target UID
+            public EntityUid TargetNpc { get; } // Store the target NPC UID
+            public string PlayerCKey { get; } // Store the CKey of the player this response is for
             public AIResponse Response { get; }
-            public ProcessAIResponseEvent(EntityUid target, AIResponse response)
+            public ProcessAIResponseEvent(EntityUid targetNpc, string playerCKey, AIResponse response)
             {
-                Target = target;
+                TargetNpc = targetNpc;
+                PlayerCKey = playerCKey;
                 Response = response;
             }
         }
@@ -167,13 +184,15 @@ namespace Content.Server._Stalker.AI
         // Note: The event subscription is now just ProcessAIResponseEvent, not tied to AiNpcComponent directly
         private void HandleAIResponse(ProcessAIResponseEvent args)
         {
-            var uid = args.Target;
+            var npcUid = args.TargetNpc;
+            var playerCKey = args.PlayerCKey; // Get the player CKey from the event
+
             // Ensure the entity still exists and has the component before processing
-            if (!TryComp<AiNpcComponent>(uid, out var component))
+            if (!TryComp<AiNpcComponent>(npcUid, out var component))
                 return;
 
             // Clean up the cancellation token source and remove the ongoing request marker
-            if (_ongoingRequests.Remove(uid, out var cts))
+            if (_ongoingRequests.Remove(npcUid, out var cts))
             {
                 cts.Dispose();
             }
@@ -182,24 +201,26 @@ namespace Content.Server._Stalker.AI
 
             if (!response.Success)
             {
-                _sawmill.Warning($"AI request failed for NPC {ToPrettyString(uid)}: {response.ErrorMessage}");
+                _sawmill.Warning($"AI request failed for NPC {ToPrettyString(npcUid)} (Player: {playerCKey}): {response.ErrorMessage}");
                 // Optionally, make the NPC say something generic about being confused?
-                // TryChat(uid, "...");
+                // TryChat(npcUid, "...");
                 return;
             }
 
             if (response.TextResponse != null)
             {
-                _sawmill.Debug($"NPC {ToPrettyString(uid)} received text response: {response.TextResponse}");
-                TryChat(uid, response.TextResponse);
-                // Trim history *before* adding assistant message
-                TrimHistory(uid, component, 1); // Make space for 1 assistant message
-                // Add assistant's response to history (no name or UserId needed for assistant role)
-                AddMessageToHistory(uid, component, "assistant", response.TextResponse); // AddMessageToHistory no longer trims
+                _sawmill.Debug($"NPC {ToPrettyString(npcUid)} received text response for Player {playerCKey}: {response.TextResponse}");
+                TryChat(npcUid, response.TextResponse);
+                // Trim the specific player's history *before* adding the assistant message
+                // Trim the specific player's history *before* adding the assistant message
+                TrimHistory(npcUid, playerCKey, component, 1); // Error CS0103 fixed by re-adding TrimHistory below
+                // Add assistant's response to the specific player's history
+                // Fixed CS1503: Correct arguments for AddMessageToHistory
+                AddMessageToHistory(npcUid, playerCKey, component, "assistant", response.TextResponse, null, null);
             }
             else if (response.ToolCallRequests != null && response.ToolCallRequests.Count > 0) // Check for multiple tool calls
             {
-                 _sawmill.Debug($"NPC {ToPrettyString(uid)} received {response.ToolCallRequests.Count} tool call requests.");
+                 _sawmill.Debug($"NPC {ToPrettyString(npcUid)} received {response.ToolCallRequests.Count} tool call requests for Player {playerCKey}.");
 
                 // 1. Prepare new messages (without adding yet)
                 var assistantToolCalls = response.ToolCallRequests.Select(tc => new OpenRouterToolCall
@@ -208,18 +229,27 @@ namespace Content.Server._Stalker.AI
                     Type = "function",
                     Function = new OpenRouterToolFunction { Name = tc.ToolName, Arguments = tc.Arguments.ToJsonString() } // Convert args back to string for history
                 }).ToList();
-                AddMessageToHistory(uid, component, "assistant", null, toolCalls: assistantToolCalls);
+                // Add assistant's tool call decision to the specific player's history
+                // Add assistant's tool call decision to the specific player's history
+                // Fixed CS1503: Correct arguments for AddMessageToHistory
+                AddMessageToHistory(npcUid, playerCKey, component, "assistant", null, null, null, assistantToolCalls);
 
-                // 2. Execute each tool call sequentially and add its result to history
+                // 2. Execute each tool call sequentially and add its result to the player's history
                 foreach (var toolCall in response.ToolCallRequests)
                 {
-                    _sawmill.Debug($"Executing tool call: {toolCall.ToolName} (ID: {toolCall.ToolCallId})");
-                    var (success, resultMessage) = ExecuteToolCall(uid, component, toolCall); // Execute the tool
+                    _sawmill.Debug($"Executing tool call: {toolCall.ToolName} (ID: {toolCall.ToolCallId}) for Player {playerCKey}");
+                    // Pass playerCKey to ExecuteToolCall if needed by tools (e.g., for context/validation)
+                    // Currently, tools get targetPlayer CKey from arguments, so maybe not needed here yet.
+                    var (success, resultMessage) = ExecuteToolCall(npcUid, component, toolCall); // Execute the tool
 
-                    // Add the result of this specific tool call to the history
-                    AddMessageToHistory(uid, component, "tool", resultMessage, toolCallId: toolCall.ToolCallId);
+                    // Trim the specific player's history *before* adding the tool result
+                    // Trim the specific player's history *before* adding the tool result
+                    TrimHistory(npcUid, playerCKey, component, 1); // Error CS0103 fixed by re-adding TrimHistory below
+                    // Add the result of this specific tool call to the specific player's history
+                    // Fixed CS1503: Correct arguments for AddMessageToHistory
+                    AddMessageToHistory(npcUid, playerCKey, component, "tool", resultMessage, null, null, null, toolCall.ToolCallId);
 
-                    _sawmill.Info($"Tool '{toolCall.ToolName}' (ID: {toolCall.ToolCallId}) executed for {ToPrettyString(uid)}. Success: {success}. Result: {resultMessage}");
+                    _sawmill.Info($"Tool '{toolCall.ToolName}' (ID: {toolCall.ToolCallId}) executed for NPC {ToPrettyString(npcUid)} (Player: {playerCKey}). Success: {success}. Result: {resultMessage}");
 
                     // TODO: Consider if we need to immediately re-query the AI after *each* tool result,
                     // or only after all requested tools in a batch are executed.
@@ -228,7 +258,7 @@ namespace Content.Server._Stalker.AI
             }
             else
             {
-                 _sawmill.Warning($"AI response for NPC {ToPrettyString(uid)} was successful but contained neither text nor tool call.");
+                 _sawmill.Warning($"AI response for NPC {ToPrettyString(npcUid)} (Player: {playerCKey}) was successful but contained neither text nor tool call.");
             }
         }
 
@@ -341,16 +371,26 @@ namespace Content.Server._Stalker.AI
 
 
         /// <summary>
-        /// Gets the conversation history list for a specific NPC, creating it if it doesn't exist.
+        /// Gets the conversation history list for a specific NPC and Player CKey,
+        /// creating the necessary dictionaries and list if they don't exist.
         /// </summary>
-        private List<OpenRouterMessage> GetHistoryForNpc(EntityUid npcUid)
+        private List<OpenRouterMessage> GetHistoryForNpcAndPlayer(EntityUid npcUid, string playerCKey)
         {
-            if (!_conversationHistories.TryGetValue(npcUid, out var history))
+            // Get or create the outer dictionary for the NPC
+            if (!_conversationHistories.TryGetValue(npcUid, out var npcHistories))
             {
-                history = new List<OpenRouterMessage>();
-                _conversationHistories[npcUid] = history;
+                npcHistories = new Dictionary<string, List<OpenRouterMessage>>();
+                _conversationHistories[npcUid] = npcHistories;
             }
-            return history;
+
+            // Get or create the inner list for the specific player
+            if (!npcHistories.TryGetValue(playerCKey, out var playerHistory))
+            {
+                playerHistory = new List<OpenRouterMessage>();
+                npcHistories[playerCKey] = playerHistory;
+            }
+
+            return playerHistory;
         }
 
         // Helper to safely extract int arguments from JsonObject
@@ -374,27 +414,34 @@ namespace Content.Server._Stalker.AI
 
 
         /// <summary>
-        /// Adds a message to the NPC's conversation history, managed by this system.
+        /// Adds a message to the specific player's conversation history for the given NPC.
+        /// Does NOT handle trimming. Corrected signature.
         /// </summary>
-        private void AddMessageToHistory(EntityUid npcUid, AiNpcComponent component, string role, string? content, string? speakerName = null, string? speakerCKey = null, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null) // Renamed parameter
+        private void AddMessageToHistory(EntityUid npcUid, string playerCKey, AiNpcComponent component, string role, string? content, string? speakerName = null, string? speakerCKey = null, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null)
         {
-            var history = GetHistoryForNpc(npcUid);
+            // Get the specific history list for this NPC and Player
+            var history = GetHistoryForNpcAndPlayer(npcUid, playerCKey); // Fixed CS0103 (GetHistoryForNpc doesn't exist)
 
-            // Basic history addition, include speaker name and CKey if provided (typically for 'user' role)
-            history.Add(new OpenRouterMessage { Role = role, Content = content, Name = speakerName, CKey = speakerCKey, ToolCalls = toolCalls, ToolCallId = toolCallId }); // Use CKey field
+            // Basic history addition
+            history.Add(new OpenRouterMessage { Role = role, Content = content, Name = speakerName, CKey = speakerCKey, ToolCalls = toolCalls, ToolCallId = toolCallId });
 
-            // REMOVED trimming logic from here. Trimming is now done proactively before adding.
+            // Trimming is handled by TrimHistory calls before this method.
+            // Removed incorrect while loop here.
         }
 
+
         /// <summary>
-        /// Trims the history list for an NPC if it exceeds the max limit,
+        /// Trims the history list for a specific NPC and Player if it exceeds the max limit,
         /// making space for a specified number of new messages.
         /// Removes messages from the beginning (oldest).
+        /// Fixed CS1061: Uses MaxHistoryPerPlayer.
         /// </summary>
-        private void TrimHistory(EntityUid npcUid, AiNpcComponent component, int spaceNeeded)
+        private void TrimHistory(EntityUid npcUid, string playerCKey, AiNpcComponent component, int spaceNeeded)
         {
-            var history = GetHistoryForNpc(npcUid);
-            int maxAllowed = component.MaxHistory;
+            // Get the specific history list for this NPC and Player
+            var history = GetHistoryForNpcAndPlayer(npcUid, playerCKey);
+            int maxAllowed = component.MaxHistoryPerPlayer; // Use the new field
+
             // Calculate how many messages *currently* exceed the limit if we add the new ones
             int removeCount = (history.Count + spaceNeeded) - maxAllowed;
 
@@ -405,7 +452,7 @@ namespace Content.Server._Stalker.AI
                 if (actualRemoveCount > 0)
                 {
                     history.RemoveRange(0, actualRemoveCount);
-                    _sawmill.Debug($"Trimmed {actualRemoveCount} messages from history for {ToPrettyString(npcUid)} to make space for {spaceNeeded}. New count: {history.Count}");
+                    _sawmill.Debug($"Trimmed {actualRemoveCount} messages from history for NPC {ToPrettyString(npcUid)}, Player {playerCKey}. New count: {history.Count}");
                 }
             }
         }
@@ -420,7 +467,9 @@ namespace Content.Server._Stalker.AI
 
         private void OnComponentRemoved(EntityUid uid, AiNpcComponent component, ComponentShutdown args)
         {
+            // Remove the entire entry for the NPC, which includes all player histories within it.
             _conversationHistories.Remove(uid);
+
             // Cancel and remove any ongoing request for this NPC
             if (_ongoingRequests.Remove(uid, out var cts))
             {
@@ -779,7 +828,7 @@ namespace Content.Server._Stalker.AI
                  return false;
             }
 
-            // --- 4. Perform Transfer (Reverted to original drop + move logic) ---
+            // --- 4. Perform Transfer (Original drop + move logic) ---
             // Player drops the item at their feet first.
             // A real implementation might need a more robust interaction system (e.g., trade window).
             if (_hands.TryDrop(targetPlayer.Value, itemToTake.Value, checkActionBlocker: false)) // Player drops the item
