@@ -472,7 +472,7 @@ namespace Content.Server.Ghost
             var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
             // stalker-changes-start
 
-            if (!TryComp<GhostComponent>(ghost, out var ghostComponent) && mind.Comp?.Session != null)
+            if (!TryComp<GhostComponent>(ghost, out var ghostComponent) && mind.Comp.Session != null)
             {
                 _gameTicker.Respawn(mind.Comp.Session);
                 return null;
@@ -493,7 +493,10 @@ namespace Content.Server.Ghost
                 SetTimeOfDeath(ghost, mind.Comp.TimeOfDeath!.Value, ghostComponent);
             }
 
-            SetCanReturnToBody(ghostComponent, canReturn);
+            if (ghostComponent != null)
+            {
+                SetCanReturnToBody(ghostComponent, canReturn);
+            }
 
             if (canReturn)
                 _minds.Visit(mind.Owner, ghost, mind.Comp);

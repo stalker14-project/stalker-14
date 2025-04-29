@@ -25,6 +25,6 @@ ent-SetMerc2BuyableCrate = Mercenary Armor Set
 ent-SetMercBanditBuyableCrate = "Valet" Mercenary Armor Set
     .desc = Includes an armored jumpsuit, a gauze mask, and a belt pouch with a holster.
     .suffix = Stalker, T3
-ent-SetZaryaStalkerBuyableCrate = 'Zarya' set
+ent-SetZaryaStalkerBuyableCrate = 'Sunrie' set
     .desc = The set includes a jumpsuit, gas mask, backpack, and a waist bag with holster.
     .suffix = ST, T2, Cache
