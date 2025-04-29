@@ -234,11 +234,24 @@ namespace Content.Server._Stalker.AI
 
         /// <summary>
         /// Executes the requested tool call and returns success status and a result message.
+        /// Handles the optional npcResponse parameter for simultaneous chat.
         /// </summary>
         private (bool Success, string ResultMessage) ExecuteToolCall(EntityUid uid, AiNpcComponent component, AIToolCall toolCall)
         {
             bool success = false;
             string resultMessage = "Unknown tool name."; // Default failure message
+
+            // --- Handle npcResponse first ---
+            string? npcResponse = null;
+            if (TryGetStringArgument(toolCall.Arguments, "npcResponse", out var responseMsg) && !string.IsNullOrWhiteSpace(responseMsg))
+            {
+                npcResponse = responseMsg;
+                // We call TryChat here, but the *success* of the overall tool call
+                // depends on the primary action, not just the chat.
+                TryChat(uid, npcResponse); // Fire and forget the chat part for now
+                _sawmill.Debug($"NPC {ToPrettyString(uid)} saying via npcResponse: '{npcResponse}' while executing {toolCall.ToolName}");
+            }
+            // --- ---
 
             try
             {
@@ -247,16 +260,11 @@ namespace Content.Server._Stalker.AI
                     case nameof(TryChat): // Use nameof for safety
                         if (TryGetStringArgument(toolCall.Arguments, "message", out var message))
                         {
-                            success = TryChat(uid, message);
-                            if (success)
-                            {
-                                // History is now added in HandleAIResponse for tool results.
-                                resultMessage = "Chat action performed.";
-                            }
-                            else
-                            {
-                                resultMessage = "Chat action failed.";
-                            }
+                            // If npcResponse was already handled, this might be redundant,
+                            // but TryChat itself is idempotent if called twice with the same message quickly.
+                            // Or, the LLM might use *only* the message param here.
+                            success = TryChat(uid, message, npcResponse); // Pass npcResponse to avoid double chat if logic changes
+                            resultMessage = success ? "Chat action performed." : "Chat action failed.";
                         }
                         else resultMessage = "Missing or invalid 'message' argument for TryChat.";
                         break;
@@ -265,33 +273,41 @@ namespace Content.Server._Stalker.AI
                         if (TryGetStringArgument(toolCall.Arguments, "targetPlayer", out var targetPlayer) &&
                             TryGetStringArgument(toolCall.Arguments, "itemPrototypeId", out var itemPrototypeId))
                         {
-                            // Ensure quantity is positive
                             TryGetIntArgument(toolCall.Arguments, "quantity", out var quantity);
                             quantity = Math.Max(1, quantity);
-                            success = TryGiveItem(uid, targetPlayer, itemPrototypeId, quantity); // Pass new args
+                            success = TryGiveItem(uid, targetPlayer, itemPrototypeId, quantity, npcResponse); // Pass npcResponse
                             resultMessage = success ? "Give item action performed." : "Give item action failed.";
                         }
-                        else resultMessage = "Missing or invalid arguments for TryGiveItem (expected targetPlayer, itemPrototypeId, quantity).";
+                        else resultMessage = "Missing or invalid arguments for TryGiveItem (expected targetPlayer, itemPrototypeId).";
                         break;
 
                     case nameof(TryTakeItem): // Use nameof
                          if (TryGetStringArgument(toolCall.Arguments, "targetPlayer", out targetPlayer) &&
                             TryGetStringArgument(toolCall.Arguments, "requestedItemName", out var requestedItemName))
                         {
-                            success = TryTakeItem(uid, targetPlayer, requestedItemName);
+                            success = TryTakeItem(uid, targetPlayer, requestedItemName, npcResponse); // Pass npcResponse
                             resultMessage = success ? "Take item action performed." : "Take item action failed.";
                         }
-                        else resultMessage = "Missing or invalid arguments for TryTakeItem.";
+                        else resultMessage = "Missing or invalid arguments for TryTakeItem (expected targetPlayer, requestedItemName).";
                         break;
 
                     case nameof(TryPunishPlayer): // Added case for the new tool
                         if (TryGetStringArgument(toolCall.Arguments, "targetPlayer", out targetPlayer) &&
                             TryGetStringArgument(toolCall.Arguments, "reason", out var reason)) // Added reason argument
                         {
-                            success = TryPunishPlayer(uid, component, targetPlayer, reason); // Pass component and reason
+                            success = TryPunishPlayer(uid, component, targetPlayer, reason, npcResponse); // Pass npcResponse
                             resultMessage = success ? "Punish player action performed." : "Punish player action failed.";
                         }
                         else resultMessage = "Missing or invalid arguments for TryPunishPlayer (expected targetPlayer, reason).";
+                        break;
+
+                    case nameof(TryOfferQuest): // Added case for the new quest tool
+                        if (TryGetStringArgument(toolCall.Arguments, "targetPlayer", out targetPlayer))
+                        {
+                            success = TryOfferQuest(uid, component, targetPlayer, npcResponse); // Pass npcResponse
+                            resultMessage = success ? "Offer quest action performed." : "Offer quest action failed.";
+                        }
+                        else resultMessage = "Missing or invalid 'targetPlayer' argument for TryOfferQuest.";
                         break;
 
                     default:
@@ -418,34 +434,34 @@ namespace Content.Server._Stalker.AI
         private List<string> GetAvailableToolDescriptions(EntityUid uid, AiNpcComponent component)
         {
             var descriptions = new List<string>();
-            descriptions.Add(GetChatToolDescription(component));
+            descriptions.Add(GetChatToolDescription()); // No longer needs component
+
             // Only add GiveItem tool if the NPC actually has givable items defined
-            if (component.GivableItems.Count > 0) // Use GivableItems
+            if (component.GivableItems.Count > 0)
             {
-                descriptions.Add(GetGiveItemToolDescription(component)); // Pass component data
+                descriptions.Add(GetGiveItemToolDescription(component)); // Still needs component for item list
             }
+
+            // Only add OfferQuest tool if the NPC actually has quest items defined
+            if (component.QuestItems.Count > 0)
+            {
+                descriptions.Add(GetOfferQuestToolDescription(component)); // Needs component for item list
+            }
+
             descriptions.Add(GetTakeItemToolDescription());
-            // Add the new punish tool description if the component allows it (e.g., has damage defined)
+
+            // Add the punish tool description if the component allows it
             if (component.PunishmentDamage != null || component.PunishmentSound != null)
             {
-                descriptions.Add(GetPunishPlayerToolDescription(component));
+                descriptions.Add(GetPunishPlayerToolDescription()); // No longer needs component
             }
             return descriptions;
         }
 
-        private string GetChatToolDescription(AiNpcComponent component)
+        private string GetChatToolDescription() // Removed component parameter
         {
-            // Build the list of allowed items for the description from GivableItems
-            var allowedItemsList = component.QuestItems // Use GivableItems
-                .Select(item => $"- {item.ProtoId} (Max Quantity: {item.MaxQuantity}, Rarity: {item.Rarity})")
-                .ToList();
-            var allowedItemsString = allowedItemsList.Count > 0
-                ? string.Join("\n", allowedItemsList)
-                : "None";
-            // OpenAI/OpenRouter tool format requires parameters as a JSON schema object
-
-            var description = $@"Respond verbally to a user or initiate conversation.
-                Allowed Quest Items: {allowedItemsString}";
+            // Simplified description
+            var description = "Respond verbally to a user or initiate conversation.";
 
             return $@"{{
                 ""name"": ""TryChat"",
@@ -455,7 +471,11 @@ namespace Content.Server._Stalker.AI
                     ""properties"": {{
                         ""message"": {{
                             ""type"": ""string"",
-                            ""description"": ""The message the NPC should say.""
+                            ""description"": ""The primary message the NPC should say.""
+                        }},
+                        ""npcResponse"": {{
+                            ""type"": ""string"",
+                            ""description"": ""Optional alternative message the NPC says. If provided, this is spoken instead of 'message'.""
                         }}
                     }},
                     ""required"": [""message""]
@@ -467,17 +487,16 @@ namespace Content.Server._Stalker.AI
         private string GetGiveItemToolDescription(AiNpcComponent component)
         {
             // Build the list of allowed items for the description from GivableItems
-            var allowedItemsList = component.GivableItems // Use GivableItems
-                .Select(item => $"- {item.ProtoId} (Max Quantity: {item.MaxQuantity}, Rarity: {item.Rarity})")
+            var allowedItemsList = component.GivableItems
+                .Select(item => $"- {item.ProtoId} (Max: {item.MaxQuantity}, Rarity: {item.Rarity})")
                 .ToList();
             var allowedItemsString = allowedItemsList.Count > 0
                 ? string.Join("\n", allowedItemsList)
                 : "None";
 
-            // Dynamically generate the description including allowed items
-            // Use System.Text.Json for safe encoding within the JSON string
-            var description = $@"Spawn and give a specified quantity of an item (by prototype ID) to a target player.
-                Allowed Reward Items: {allowedItemsString}";
+            // Simplified description, emphasizing it's for rewards/gifts
+            var description = $@"Give a specified item (as a reward or gift) to a player. You can only give items from this list:
+                {allowedItemsString}";
 
              return $@"{{
                 ""name"": ""TryGiveItem"",
@@ -487,16 +506,20 @@ namespace Content.Server._Stalker.AI
                     ""properties"": {{
                          ""targetPlayer"": {{
                             ""type"": ""string"",
-                            ""description"": ""The unique CKey of the player who should receive the item(s). Use the speaker's CKey if they ask for themselves.""
+                            ""description"": ""The CKey (username) of the player to give the item to.""
                         }},
                         ""itemPrototypeId"": {{
                             ""type"": ""string"",
-                            ""description"": ""The exact, case-sensitive prototype ID string of the item to spawn and give from the allowed list.""
+                            ""description"": ""The exact prototype ID of the item from the allowed list.""
                         }},
                         ""quantity"": {{
                             ""type"": ""integer"",
-                            ""description"": ""The number of items to give (must not exceed the Max Quantity for the item)."",
+                            ""description"": ""Number of items to give (defaults to 1, respects max quantity)."",
                             ""default"": 1
+                        }},
+                        ""npcResponse"": {{
+                            ""type"": ""string"",
+                            ""description"": ""Optional message the NPC says while giving the item (e.g., 'Here's your reward.').""
                         }}
                     }},
                     ""required"": [""targetPlayer"", ""itemPrototypeId""]
@@ -504,34 +527,73 @@ namespace Content.Server._Stalker.AI
             }}";
         }
 
+        private string GetOfferQuestToolDescription(AiNpcComponent component)
+        {
+            // Build the list of possible quest items
+            var questItemsList = component.QuestItems
+                .Select(item => $"- {item.ProtoId} (Rarity: {item.Rarity})")
+                .ToList();
+            var questItemsString = questItemsList.Count > 0
+                ? string.Join("\n", questItemsList)
+                : "None";
+
+            // Description for the new quest tool
+            var description = $@"Offer a quest to a player to retrieve ONE specific item. Checks if the player already has an active quest from you. Possible items to request:
+                {questItemsString}";
+
+            return $@"{{
+                ""name"": ""TryOfferQuest"",
+                ""description"": ""{JsonEncodedText.Encode(description)}"",
+                ""parameters"": {{
+                    ""type"": ""object"",
+                    ""properties"": {{
+                         ""targetPlayer"": {{
+                            ""type"": ""string"",
+                            ""description"": ""The CKey (username) of the player to offer the quest to.""
+                        }},
+                        ""npcResponse"": {{
+                            ""type"": ""string"",
+                            ""description"": ""REQUIRED message the NPC says when offering the quest (e.g., 'Hey stalker, bring me a BoarHoof and I'll pay you.').""
+                        }}
+                    }},
+                    ""required"": [""targetPlayer"", ""npcResponse""]
+                }}
+            }}";
+        }
+
 
         private string GetTakeItemToolDescription()
         {
-             return @"{
+            // Simplified description, emphasizing it's for quest items/specific requests
+             var description = "Request a specific item (e.g., a quest item) from a player and attempt to take it if they hold it out.";
+             return $@"{{
                 ""name"": ""TryTakeItem"",
-                ""description"": ""Request an item from a target player and take it if offered. IMPORTANT: When using this tool, ALSO use the 'TryChat' tool in the same response to inform the player what you are taking from them "",
-                ""parameters"": {
+                ""description"": ""{JsonEncodedText.Encode(description)}"",
+                ""parameters"": {{
                     ""type"": ""object"",
-                    ""properties"": {
-                         ""targetPlayer"": {
+                    ""properties"": {{
+                         ""targetPlayer"": {{
                             ""type"": ""string"",
-                            ""description"": ""The unique CKey (username) to request the item from.""
-                        },
-                        ""requestedItemName"": {
+                            ""description"": ""The CKey (username) of the player to request the item from.""
+                        }},
+                        ""requestedItemName"": {{
                             ""type"": ""string"",
-                            ""description"": ""The exact name of the item the NPC wants to receive (e.g., 'CombatKnife', 'Medkit').""
-                        }
-                    },
-                    ""required"": [""targetPlayer"", ""requestedItemName""]
-                }
-            }";
+                            ""description"": ""The exact prototype ID of the item the NPC wants to receive (e.g., 'MutantPartBoarHoof').""
+                        }},
+                        ""npcResponse"": {{
+                            ""type"": ""string"",
+                            ""description"": ""REQUIRED message the NPC says while requesting/taking the item (e.g., 'Alright, let's see that BoarHoof. Hold it out.').""
+                        }}
+                    }},
+                    ""required"": [""targetPlayer"", ""requestedItemName"", ""npcResponse""]
+                }}
+            }}";
         }
 
-        private string GetPunishPlayerToolDescription(AiNpcComponent component)
+        private string GetPunishPlayerToolDescription() // Removed component parameter
         {
-            // Use System.Text.Json for safe encoding within the JSON string
             // Simplified description
-            var description = $@"Punish a player perceived as rude, lying, or hostile by attacking them. Requires a reason.";
+            var description = "Punish a player perceived as rude, lying, or hostile by attacking them. Use sparingly.";
 
             return $@"{{
                 ""name"": ""TryPunishPlayer"",
@@ -541,11 +603,15 @@ namespace Content.Server._Stalker.AI
                     ""properties"": {{
                          ""targetPlayer"": {{
                             ""type"": ""string"",
-                            ""description"": ""The unique CKey (username) of the player to punish.""
+                            ""description"": ""The CKey (username) of the player to punish.""
                         }},
                         ""reason"": {{
                             ""type"": ""string"",
-                            ""description"": ""A brief explanation why the player is being punished""
+                            ""description"": ""A brief reason for the punishment (e.g., 'Insults', 'Attempted scam').""
+                        }},
+                        ""npcResponse"": {{
+                            ""type"": ""string"",
+                            ""description"": ""Optional message the NPC shouts while punishing (e.g., 'You asked for it!').""
                         }}
                     }},
                     ""required"": [""targetPlayer"", ""reason""]
@@ -555,28 +621,38 @@ namespace Content.Server._Stalker.AI
 
 
         // Actual tool methods, invoked locally after AI response parsing
-        public bool TryChat(EntityUid npc, string message)
+
+        /// <summary>
+        /// Makes the NPC speak. Handles the npcResponse parameter to avoid double-speaking if called from ExecuteToolCall.
+        /// </summary>
+        public bool TryChat(EntityUid npc, string message, string? npcResponse = null)
         {
-            if (string.IsNullOrWhiteSpace(message))
+            // Prioritize npcResponse if provided, otherwise use message.
+            var messageToSpeak = !string.IsNullOrWhiteSpace(npcResponse) ? npcResponse : message;
+
+            if (string.IsNullOrWhiteSpace(messageToSpeak))
                 return false;
 
-            _sawmill.Debug($"NPC {ToPrettyString(npc)} executing chat: {message}");
-            // This is called from HandleAIResponse, which is already on the main thread via QueueEntityEvent
-            _chatSystem.TrySendInGameICMessage(npc, message, InGameICChatType.Speak, hideChat: false); // Ensure hideChat is false
+            // Avoid logging the same message twice if npcResponse was handled in ExecuteToolCall
+            if (messageToSpeak != npcResponse)
+                 _sawmill.Debug($"NPC {ToPrettyString(npc)} executing chat: {messageToSpeak}");
+
+            _chatSystem.TrySendInGameICMessage(npc, messageToSpeak, InGameICChatType.Speak, hideChat: false);
             return true;
         }
 
 
-        // Updated TryGiveItem to spawn based on prototype ID and quantity
-        public bool TryGiveItem(EntityUid npc, string targetPlayerIdentifier, string itemPrototypeId, int quantity)
+        // Updated TryGiveItem to include npcResponse
+        public bool TryGiveItem(EntityUid npc, string targetPlayerIdentifier, string itemPrototypeId, int quantity, string? npcResponse = null)
         {
+             // npcResponse is handled by ExecuteToolCall before this method is run.
              _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting give item: Proto='{itemPrototypeId}', Qty={quantity}, Target='{targetPlayerIdentifier}'");
 
             // --- 0. Get NPC Component ---
             if (!TryComp<AiNpcComponent>(npc, out var aiComp))
             {
                 _sawmill.Error($"NPC {ToPrettyString(npc)} is missing AiNpcComponent in TryGiveItem.");
-                return false; // Should not happen if called correctly
+                return false;
             }
 
             // --- 1. Find Target Player ---
@@ -584,42 +660,45 @@ namespace Content.Server._Stalker.AI
             if (targetPlayer == null || !targetPlayer.Value.Valid)
             {
                 _sawmill.Warning($"Could not find target player '{targetPlayerIdentifier}' for TryGiveItem.");
+                // Maybe chat failure? TryChat(npc, $"Who is {targetPlayerIdentifier}?");
                 return false;
             }
 
             // --- 2. Validate Item Against Givable List & Quantity ---
-            var givableItemInfo = aiComp.GivableItems.FirstOrDefault(item => item.ProtoId.Id.Equals(itemPrototypeId, StringComparison.OrdinalIgnoreCase)); // Use GivableItems
+            var givableItemInfo = aiComp.GivableItems.FirstOrDefault(item => item.ProtoId.Id.Equals(itemPrototypeId, StringComparison.OrdinalIgnoreCase));
 
-            if (givableItemInfo == null) // Check givableItemInfo
+            if (givableItemInfo == null)
             {
                 _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give non-givable item '{itemPrototypeId}'. Denying.");
-                // Optionally provide feedback to AI? "I cannot give that item."
+                // TryChat(npc, $"I can't give you one of those."); // Feedback
                 return false;
             }
 
             if (quantity <= 0)
             {
                 _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give zero or negative quantity ({quantity}) of '{itemPrototypeId}'. Setting to 1.");
-                quantity = 1; // Default to 1 if invalid quantity requested
+                quantity = 1;
             }
 
-            if (quantity > givableItemInfo.MaxQuantity) // Use givableItemInfo
+            if (quantity > givableItemInfo.MaxQuantity)
             {
                 _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give {quantity} of '{itemPrototypeId}', but max allowed is {givableItemInfo.MaxQuantity}. Clamping quantity.");
-                quantity = givableItemInfo.MaxQuantity; // Clamp to max allowed using givableItemInfo
+                quantity = givableItemInfo.MaxQuantity;
+                // TryChat(npc, $"Whoa there, I can only give you {quantity} of those."); // Feedback
             }
 
-            // --- 3. Validate Prototype ID (Redundant check, but safe) ---
+            // --- 3. Validate Prototype ID ---
             if (!_proto.HasIndex<EntityPrototype>(itemPrototypeId))
             {
-                 _sawmill.Warning($"Invalid prototype ID '{itemPrototypeId}' requested by NPC {ToPrettyString(npc)} for TryGiveItem (passed managed check somehow?).");
+                 _sawmill.Warning($"Invalid prototype ID '{itemPrototypeId}' requested by NPC {ToPrettyString(npc)} for TryGiveItem.");
                  return false;
             }
 
             // --- 4. Check Range & Interaction ---
-            if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > 2.0f) // Example range
+            if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > 2.0f)
             {
                  _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far for NPC {ToPrettyString(npc)} to give item.");
+                 // TryChat(npc, $"Get closer if you want this."); // Feedback
                  return false;
             }
 
@@ -632,14 +711,15 @@ namespace Content.Server._Stalker.AI
             }
 
             int givenCount = 0;
-            for (int i = 0; i < quantity; i++) // Use the potentially clamped quantity
+            for (int i = 0; i < quantity; i++)
             {
                 var spawnedItem = Spawn(itemPrototypeId, npcCoords);
-                if (!_hands.TryPickupAnyHand(targetPlayer.Value, spawnedItem, checkActionBlocker: false)) // Attempt to put directly into player's hand
+                if (!_hands.TryPickupAnyHand(targetPlayer.Value, spawnedItem, checkActionBlocker: false))
                 {
-                    // If pickup fails, try dropping it near the player as a fallback
                     _sawmill.Warning($"Failed direct pickup for item {i+1}/{quantity} ({ToPrettyString(spawnedItem)}) by {ToPrettyString(targetPlayer.Value)}. Dropping near NPC.");
                     Transform(spawnedItem).Coordinates = npcCoords;
+                    // If dropping near, maybe don't count as "given"? Or maybe do? Let's count it for now.
+                    givenCount++; // Count even if dropped nearby
                 }
                 else
                 {
@@ -652,42 +732,54 @@ namespace Content.Server._Stalker.AI
             else
                  _sawmill.Warning($"NPC {ToPrettyString(npc)} failed to give any '{itemPrototypeId}' to {ToPrettyString(targetPlayer.Value)} (pickup/drop failed).");
 
-            return givenCount > 0; // Return true if at least one item was successfully given
+            return givenCount > 0;
         }
 
-
-        public bool TryTakeItem(EntityUid npc, string targetPlayerIdentifier, string requestedItemName)
+        /// <summary>
+        /// Attempts to take a specified item from a player's hands.
+        /// </summary>
+        public bool TryTakeItem(EntityUid npc, string targetPlayerIdentifier, string requestedItemName, string? npcResponse = null)
         {
+            // npcResponse is handled by ExecuteToolCall.
              _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting take item: ItemName='{requestedItemName}', Target='{targetPlayerIdentifier}'");
 
             // --- 1. Find Target Player ---
-            // TODO: Implement robust player lookup
             EntityUid? targetPlayer = FindPlayerByIdentifier(targetPlayerIdentifier);
             if (targetPlayer == null || !targetPlayer.Value.Valid)
             {
                 _sawmill.Warning($"Could not find target player '{targetPlayerIdentifier}' for TryTakeItem.");
+                // TryChat(npc, $"Who's {targetPlayerIdentifier}?");
                 return false;
             }
 
-            // --- 2. Find Item in Player's Inventory/Hands ---
-            // TODO: Implement robust item lookup in Player inventory (hands primarily?)
-            // Placeholder: Check only hands for now.
-            EntityUid? itemToTake = FindItemInHands(targetPlayer.Value, requestedItemName);
+            // --- 2. Find Item in Player's Active Hand ---
+            // We only check the *active* hand for simplicity now.
+            EntityUid? itemToTake = null;
+            if (_hands.TryGetActiveItem(targetPlayer.Value, out var activeItem))
+            {
+                var proto = Prototype(activeItem.Value);
+                if (proto != null && string.Equals(proto.ID, requestedItemName, StringComparison.OrdinalIgnoreCase))
+                {
+                    itemToTake = activeItem;
+                }
+            }
+
              if (itemToTake == null || !itemToTake.Value.Valid)
             {
-                 _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} could not find item '{requestedItemName}' in hands for TryTakeItem.");
+                 _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} does not have '{requestedItemName}' in active hand for TryTakeItem.");
+                 // TryChat(npc, $"You don't seem to be holding a {requestedItemName}. Hold it out."); // Feedback
                  return false;
             }
 
             // --- 3. Check Range & Interaction ---
-            // TODO: Add range checks and CanInteract checks
-             if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > 2.0f) // Example range
+             if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > 2.0f)
             {
                  _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far for NPC {ToPrettyString(npc)} to take item.");
+                 // TryChat(npc, $"Bring that {requestedItemName} closer."); // Feedback
                  return false;
             }
 
-            // --- 4. Perform Transfer (Simplified - Assumes Consent) ---
+            // --- 4. Perform Transfer (Reverted to original drop + move logic) ---
             // Player drops the item at their feet first.
             // A real implementation might need a more robust interaction system (e.g., trade window).
             if (_hands.TryDrop(targetPlayer.Value, itemToTake.Value, checkActionBlocker: false)) // Player drops the item
@@ -703,6 +795,7 @@ namespace Content.Server._Stalker.AI
             else
             {
                  _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} failed to drop item {ToPrettyString(itemToTake.Value)} for NPC {ToPrettyString(npc)}.");
+                 // TryChat(npc, $"Looks like you couldn't drop that {requestedItemName}. Try again?"); // Feedback
                  return false;
             }
         }
@@ -710,8 +803,9 @@ namespace Content.Server._Stalker.AI
         /// <summary>
         /// Attempts to punish a player by applying damage.
         /// </summary>
-        public bool TryPunishPlayer(EntityUid npc, AiNpcComponent aiComp, string targetPlayerIdentifier, string reason)
+        public bool TryPunishPlayer(EntityUid npc, AiNpcComponent aiComp, string targetPlayerIdentifier, string reason, string? npcResponse = null)
         {
+            // npcResponse is handled by ExecuteToolCall.
             _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting to punish player: Target='{targetPlayerIdentifier}', Reason='{reason}'");
 
             // --- 1. Find Target Player ---
@@ -727,16 +821,16 @@ namespace Content.Server._Stalker.AI
             if (aiComp.PunishmentWhitelist != null && _whitelistSystem.IsWhitelistPass(aiComp.PunishmentWhitelist, targetPlayer.Value))
             {
                 _sawmill.Info($"Target player {ToPrettyString(targetPlayer.Value)} is whitelisted. Punishment aborted.");
+                // TryChat(npc, $"I can't touch {Name(targetPlayer.Value)}."); // Feedback
                 return false;
             }
 
             // --- 3. Check Range ---
-            // Use a slightly longer range for punishment than giving items?
             const float punishRange = 5.0f;
             if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > punishRange)
             {
                 _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far ({distance}m) for NPC {ToPrettyString(npc)} to punish.");
-                // Optionally, make the NPC say something like "Get back here!"?
+                // TryChat(npc, $"Get back here, coward!"); // Feedback
                 return false;
             }
 
@@ -744,9 +838,8 @@ namespace Content.Server._Stalker.AI
             bool damageApplied = false;
             if (aiComp.PunishmentDamage != null)
             {
-                var damageResult = _damageable.TryChangeDamage(targetPlayer.Value, aiComp.PunishmentDamage, ignoreResistances: true); // Apply damage, ignore resistance for punishment?
-                damageApplied = damageResult != null;
-                _sawmill.Info($"NPC {ToPrettyString(npc)} applied damage to {ToPrettyString(targetPlayer.Value)}. Success. Reason: {reason}");
+                var damageResult = _damageable.TryChangeDamage(targetPlayer.Value, aiComp.PunishmentDamage, ignoreResistances: true);
+                damageApplied = damageResult != null; // Don't fucking touch it. There is no Total damage!
             }
             else
             {
@@ -759,10 +852,69 @@ namespace Content.Server._Stalker.AI
                 _audio.PlayPvs(aiComp.PunishmentSound, Transform(npc).Coordinates);
             }
 
-            // Optionally, make the NPC say something aggressive based on the reason?
-            // TryChat(npc, $"You dare insult me?! ({reason})"); // Example
+            return damageApplied;
+        }
 
-            return damageApplied; // Return true if damage was successfully applied
+        /// <summary>
+        /// Offers a quest to the player if they don't already have one.
+        /// TODO: Implement actual quest tracking.
+        /// </summary>
+        public bool TryOfferQuest(EntityUid npc, AiNpcComponent aiComp, string targetPlayerIdentifier, string? npcResponse = null)
+        {
+            // npcResponse is handled by ExecuteToolCall. It should contain the quest offer text.
+            _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting to offer quest to: Target='{targetPlayerIdentifier}'");
+
+            // --- 1. Find Target Player ---
+            EntityUid? targetPlayer = FindPlayerByIdentifier(targetPlayerIdentifier);
+            if (targetPlayer == null || !targetPlayer.Value.Valid)
+            {
+                _sawmill.Warning($"Could not find target player '{targetPlayerIdentifier}' for TryOfferQuest.");
+                // TryChat(npc, $"Who are you talking about?");
+                return false;
+            }
+
+            // --- 2. Check if Player Already Has Quest (Placeholder) ---
+            // TODO: Implement a real quest tracking system. This is just a placeholder.
+            // For now, we'll pretend they never have a quest and always offer one.
+            bool playerHasActiveQuest = false; // Replace with actual check
+            if (playerHasActiveQuest)
+            {
+                _sawmill.Info($"Player {ToPrettyString(targetPlayer.Value)} already has an active quest from {ToPrettyString(npc)}. Cannot offer another.");
+                // TryChat(npc, $"Finish the job I already gave you first!"); // Feedback
+                return false;
+            }
+
+            // --- 3. Check if NPC has Quest Items Defined ---
+            if (aiComp.QuestItems == null || aiComp.QuestItems.Count == 0)
+            {
+                 _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to offer quest, but has no QuestItems defined.");
+                 // TryChat(npc, $"I don't have any work for you right now."); // Feedback
+                 return false;
+            }
+
+            // --- 4. Select a Quest Item (Simple Random for now) ---
+            // TODO: Implement better quest selection logic (e.g., based on rarity, player level, etc.)
+            var random = new Random();
+            var questItemInfo = aiComp.QuestItems[random.Next(aiComp.QuestItems.Count)];
+            var questItemId = questItemInfo.ProtoId;
+
+            // --- 5. Record the Quest (Placeholder) ---
+            // TODO: Record that targetPlayer now has a quest for questItemId from npc.
+            _sawmill.Info($"NPC {ToPrettyString(npc)} offered quest for '{questItemId}' to {ToPrettyString(targetPlayer.Value)}. (Quest tracking not implemented)");
+
+            // --- 6. Communicate Offer ---
+            // The actual quest offer text (e.g., "Bring me a DogTail") should be in the npcResponse parameter,
+            // which was already spoken by ExecuteToolCall. We don't need to chat again here unless
+            // the npcResponse was missing (which the tool description requires).
+            if (string.IsNullOrWhiteSpace(npcResponse))
+            {
+                 _sawmill.Warning($"TryOfferQuest called without npcResponse for {ToPrettyString(npc)}. Tool description requires it.");
+                 // Fallback chat if npcResponse was missing
+                 TryChat(npc, $"Hey {Name(targetPlayer.Value)}, I need someone to fetch me a {questItemId}. Interested?");
+            }
+
+
+            return true; // Success means the offer was made (even if tracking failed)
         }
 
 

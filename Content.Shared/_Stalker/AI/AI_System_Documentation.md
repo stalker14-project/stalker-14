@@ -66,8 +66,8 @@ The system is primarily composed of three parts: a server-side manager for API c
 11. `AIManager` parses the response, determining if it's text or a tool call, and creates an `AIResponse` record.
 12. The background task queues a `ProcessAIResponseEvent` containing the `AIResponse` back to the main game thread, targeting the specific NPC.
 13. `AINPCSystem.HandleAIResponse` receives the event on the main thread.
-14. If the `AIResponse` contains text, `AINPCSystem` calls `TryChat` -> `ChatSystem.TrySendInGameICMessage` to make the NPC speak, and updates the history with the assistant's message.
-15. If the `AIResponse` contains a tool call request, `AINPCSystem` calls `ExecuteToolCall`, which parses arguments and invokes the appropriate local method (`TryGiveItem`, `TryTakeItem`, etc.). The result of the tool execution is logged. The assistant's attempt (the tool call itself) should ideally be added to history.
+14. If the `AIResponse` contains text, `AINPCSystem` calls `TryChat` to make the NPC speak, and updates the history with the assistant's message.
+15. If the `AIResponse` contains one or more tool call requests, `AINPCSystem` calls `ExecuteToolCall` for each. `ExecuteToolCall` first checks for an `npcResponse` argument and makes the NPC speak that message immediately. Then, it parses the remaining arguments and invokes the appropriate local method (`TryOfferQuest`, `TryGiveItem`, `TryTakeItem`, etc.). The result of the tool execution is logged, and both the assistant's tool call attempt and the tool's result message are added to the history.
 
 ## 4. Configuration
 
@@ -104,24 +104,27 @@ The system is primarily composed of three parts: a server-side manager for API c
 ## 5. Tools
 
 -   Tools represent actions the AI can request the NPC to perform.
--   They are defined as public methods within `AINPCSystem` (e.g., `TryChat`, `TryGiveItem`, `TryTakeItem`, `TryPunishPlayer`).
--   Each tool has a corresponding JSON description method (`GetChatToolDescription`, etc.) that returns a schema matching the OpenAI function/tool definition format. The description for `TryGiveItem` dynamically includes the list of items the specific NPC is allowed to give, based on its `GivableItems` component data. The description for `TryPunishPlayer` includes the configured damage. These descriptions are sent to the LLM.
+-   They are defined as public methods within `AINPCSystem` (e.g., `TryChat`, `TryOfferQuest`, `TryGiveItem`, `TryTakeItem`, `TryPunishPlayer`).
+-   Each tool has a corresponding JSON description method (`GetChatToolDescription`, `GetOfferQuestToolDescription`, etc.) that returns a schema matching the OpenAI function/tool definition format. Descriptions for tools involving items (`TryGiveItem`, `TryOfferQuest`) dynamically include the relevant item lists (`GivableItems`, `QuestItems`) from the NPC's component data. These descriptions are sent to the LLM.
+-   All tool descriptions now include an optional `npcResponse` string parameter. If the LLM provides this parameter in a tool call, `ExecuteToolCall` will make the NPC speak the `npcResponse` text *before* executing the tool's primary action. This allows the AI to comment on its actions without needing a separate `TryChat` call.
 -   When the LLM decides to use a tool, `AIManager` parses the requested tool name and arguments.
--   `AINPCSystem` receives the parsed tool request and calls the corresponding C# method via `ExecuteToolCall`. The `TryGiveItem` method includes validation logic based on `GivableItems`. The `TryPunishPlayer` method applies damage and sound effects based on `PunishmentDamage` and `PunishmentSound` in the `AiNpcComponent`, after checking faction and range.
+-   `AINPCSystem` receives the parsed tool request and calls the corresponding C# method via `ExecuteToolCall`. Validation logic (e.g., checking `GivableItems` for `TryGiveItem`, checking range/whitelist for `TryPunishPlayer`, checking for existing quests in `TryOfferQuest` [placeholder]) is performed within the respective tool methods.
 
 ### 5.1. Available Tools
 
--   **`TryChat`**: Makes the NPC speak a given message.
--   **`TryGiveItem`**: Spawns and attempts to give an item (from the NPC's `GivableItems` list) to a player.
--   **`TryTakeItem`**: Attempts to take a specified item from a player's hands (requires player cooperation/interaction).
--   **`TryPunishPlayer`**: Applies damage (defined in `AiNpcComponent.PunishmentDamage`) and plays a sound (defined in `AiNpcComponent.PunishmentSound`) to a target player within range. Intended for use when the AI determines a player is being excessively rude, hostile, or deceitful, according to its prompt instructions. Requires `targetPlayer` and `reason` arguments.
+-   **`TryChat`**: Makes the NPC speak a given message. Primarily for standard conversation turns where no other action is taken. Can use `npcResponse` as an alternative message.
+-   **`TryOfferQuest`**: Offers a quest to retrieve one item from the NPC's `QuestItems` list. Checks for existing quests (placeholder). Requires `targetPlayer` and `npcResponse` (containing the quest offer text).
+-   **`TryGiveItem`**: Spawns and attempts to give an item (from the NPC's `GivableItems` list) to a player, typically as a quest reward. Requires `targetPlayer` and `itemPrototypeId`. Can use `npcResponse` for commentary (e.g., "Here's your reward.").
+-   **`TryTakeItem`**: Attempts to take a specified item (by prototype ID) from a player's active hand, typically a requested quest item. Requires `targetPlayer`, `requestedItemName`, and `npcResponse` (containing the request/instruction, e.g., "Let me see that item. Hold it out.").
+-   **`TryPunishPlayer`**: Applies damage and plays a sound (if configured in `AiNpcComponent`) to a target player within range. Requires `targetPlayer` and `reason`. Can use `npcResponse` for a threat or comment during the attack.
 
 ## 6. Current Limitations / Future Improvements
 
--   **Entity Lookup:** Identifying players and items based on string names/identifiers provided by the AI is currently very basic (placeholder `FindPlayerByIdentifier`, `FindItemInHands`). A more robust lookup system (using CKey/UserId, EntityUid parsing, or better inventory searching) is needed.
--   **`TryTakeItem` Interaction:** The current implementation assumes player consent and simulates the item transfer. A proper implementation requires a player interaction flow (dialogue prompt, UI confirmation, etc.).
--   **Tool Result Feedback:** The system currently executes tools but doesn't report the success/failure result back to the LLM in a subsequent API call. Implementing this feedback loop would allow the AI to react to the outcome of its requested actions (e.g., confirming an item was given or explaining why it failed).
--   **Multiple Tool Calls:** The system now supports processing multiple tool calls returned by the AI in a single response.
--   **Error Handling:** More nuanced error handling and potential fallback responses for the NPC could be added.
--   **Contextual Awareness:** The context provided to the AI is currently limited to conversation history. Adding information about the NPC's inventory, surroundings, or current game state could enable more complex behaviors.
--   **Punishment Nuance:** The `TryPunishPlayer` tool is a blunt instrument. Future improvements could involve more nuanced responses to negative interactions (e.g., refusing service, reporting to security, changing disposition).
+-   **Quest Tracking:** The `TryOfferQuest` tool currently uses placeholder logic. A proper system is needed to track active quests per player to prevent multiple simultaneous quests from the same NPC.
+-   **Entity/Item Lookup:** Identifying players (by CKey/name) and items (by prototype ID in hand) remains basic. More robust lookups are needed.
+-   **`TryTakeItem` Interaction:** The current implementation only checks the active hand and simulates the take (no actual transfer/deletion yet). A proper interaction flow is required.
+-   **Tool Result Feedback:** The system reports tool success/failure back to the LLM via "tool" role messages in the history, allowing the AI to potentially react to outcomes. Further refinement might be needed.
+-   **Multiple Tool Calls:** The system supports processing multiple tool calls returned by the AI in a single response.
+-   **Error Handling:** More nuanced error handling and potential fallback responses for the NPC could be added (e.g., specific chat messages on tool failure).
+-   **Contextual Awareness:** Context remains limited to conversation history. Adding NPC inventory, game state, etc., could enable more complex behaviors.
+-   **Punishment Nuance:** `TryPunishPlayer` is still basic. More varied negative responses could be implemented.
