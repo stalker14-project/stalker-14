@@ -1,19 +1,19 @@
 - type: htnCompound
-  id: STBlindDogCompound
+  id: STBlindDogWhiteCompound
   branches:
     - tasks:
       - !type:HTNCompoundTask
-        task: STBlindDogMeleeCombatCompound
+        task: STBlindDogWhiteMeleeCombatCompound
     
     - tasks:
       - !type:HTNCompoundTask
-        task: STBlindDogRoarRestoreCompound
+        task: STBlindDogWhiteRoarRestoreCompound
 
       - !type:HTNCompoundTask
         task: IdleCompound
 
 - type: htnCompound
-  id: STBlindDogMeleeCombatCompound
+  id: STBlindDogWhiteMeleeCombatCompound
   branches:
     # Move to melee range and hit them
     - tasks:
@@ -22,13 +22,13 @@
           proto: NearbyMeleeTargets
 
       - !type:HTNCompoundTask
-        task: STBlindDogRoarCompound
+        task: STBlindDogWhiteRoarCompound
    
       - !type:HTNCompoundTask
-        task: STBlindDogMeleeAttackTargetCompound
+        task: STBlindDogWhiteMeleeAttackTargetCompound
 
 - type: htnCompound
-  id: STBlindDogRoarRestoreCompound
+  id: STBlindDogWhiteRoarRestoreCompound
   preconditions:
     - !type:KeyBoolEqualsPrecondition
       key: Roared
@@ -41,7 +41,7 @@
           value: false
 
 - type: htnCompound
-  id: STBlindDogRoarCompound
+  id: STBlindDogWhiteRoarCompound
   preconditions:
     - !type:KeyExistsPrecondition
       key: Target
@@ -52,7 +52,10 @@
     - tasks:
       - !type:HTNPrimitiveTask
         operator: !type:PlaySoundOperator
-          sound: /Audio/_Stalker/Mutants/blinddog_roar.ogg
+          sound:
+            collection: STBlindDogBark
+            params:
+                pitch: 0.6
 
       - !type:HTNPrimitiveTask
          operator: !type:MoveToOperator
@@ -210,7 +213,7 @@
           value: true
 
 - type: htnCompound
-  id: STBlindDogMeleeAttackTargetCompound
+  id: STBlindDogWhiteMeleeAttackTargetCompound
   preconditions:
     - !type:KeyExistsPrecondition
       key: Target

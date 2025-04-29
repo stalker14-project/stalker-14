@@ -9,6 +9,9 @@
     self: 1
   - type: Storage
     maxItemSize: Normal
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 2
     grid:
       - 0,2,0,3
       - 1,-0,1,-0
@@ -68,8 +71,6 @@
       maxItemSize: Normal
       grid:
         - 0,0,7,7
-      quickInsert: true
-      areaInsert: true
       whitelist:
         tags:
           - CartridgeAmmo
