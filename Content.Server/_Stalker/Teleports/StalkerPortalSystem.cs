@@ -17,6 +17,8 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server._Stalker.Trash;
+using Content.Shared.Buckle.Components;
+using Content.Shared.Ghost;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 
@@ -119,7 +121,12 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
             while (enumerator.MoveNext(out var ent))
             {
-                if (TryComp<MindContainerComponent>(ent, out var mind) && mind.HasMind)
+                if (TryComp<MindContainerComponent>(ent, out var mind) && !TryComp<GhostComponent>(ent, out var ghost))
+                {
+                    hasMind = true;
+                    break;
+                }
+                if (TryComp<StrapComponent>(ent, out var strap) && strap.BuckledEntities.Count >= 1)
                 {
                     hasMind = true;
                     break;
