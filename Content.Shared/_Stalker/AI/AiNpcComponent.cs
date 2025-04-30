@@ -37,6 +37,7 @@ namespace Content.Shared._Stalker.AI
     [RegisterComponent, NetworkedComponent, Access(typeof(SharedAiNpcSystem))]
     public sealed partial class AiNpcComponent : Component
     {
+
         /// <summary>
         /// Base personality prompt or instructions for the AI model.
         /// </summary>
@@ -44,10 +45,34 @@ namespace Content.Shared._Stalker.AI
         public string BasePrompt { get; private set; } = "You are a helpful NPC in a space station environment.";
 
         /// <summary>
+        /// Whether the NPC can use the TryChat tool.
+        /// </summary>
+        [DataField("enabled"), ViewVariables(VVAccess.ReadWrite)]
+        public bool Enabled { get; private set; } = false;
+
+        /// <summary>
+        /// Whether the NPC can use the TryChat tool.
+        /// </summary>
+        [DataField("canChat"), ViewVariables(VVAccess.ReadWrite)]
+        public bool CanChat { get; private set; } = true;
+
+        /// <summary>
         /// Maximum number of messages (user + assistant + tool) to keep in history *per player*.
         /// </summary>
         [DataField("maxHistoryPerPlayer"), ViewVariables(VVAccess.ReadWrite)]
         public int MaxHistoryPerPlayer { get; private set; } = 20; // Increased default slightly
+
+        /// <summary>
+        /// Range on which NPC will "hear" and communicate with the player
+        /// </summary>
+        [DataField("interactionRange"), ViewVariables(VVAccess.ReadWrite)]
+        public float InteractionRange { get; private set; } = 2;
+
+        /// <summary>
+        /// Whether the NPC can use the TryGiveItem tool. Requires GivableItems to be populated.
+        /// </summary>
+        [DataField("canGiveItems"), ViewVariables(VVAccess.ReadWrite)]
+        public bool CanGiveItems { get; private set; } = false;
 
         /// <summary>
         /// A list defining items this NPC can potentially give out (e.g., as rewards, trade).
@@ -58,6 +83,12 @@ namespace Content.Shared._Stalker.AI
         public List<ManagedItemInfo> GivableItems { get; private set; } = new();
 
         /// <summary>
+        /// Whether the NPC can use the TryOfferQuest tool. Requires QuestItems to be populated.
+        /// </summary>
+        [DataField("canOfferQuests"), ViewVariables(VVAccess.ReadWrite)]
+        public bool CanOfferQuests { get; private set; } = false;
+
+        /// <summary>
         /// A list defining items relevant to quests this NPC might offer or be involved in
         /// (e.g., items the player needs to find, items the NPC needs).
         /// </summary>
@@ -66,12 +97,24 @@ namespace Content.Shared._Stalker.AI
         public List<ManagedItemInfo> QuestItems { get; private set; } = new();
 
         /// <summary>
+        /// Whether the NPC can use the TryTakeItem tool.
+        /// </summary>
+        [DataField("canTakeItems"), ViewVariables(VVAccess.ReadWrite)]
+        public bool CanTakeItems { get; private set; } = false;
+
+        /// <summary>
         /// Damage specifier applied when the TryPunishPlayer tool is used.
         /// If null, no damage is applied.
         /// </summary>
         [DataField("punishmentDamage")]
         [ViewVariables(VVAccess.ReadWrite)]
         public Shared.Damage.DamageSpecifier? PunishmentDamage { get; private set; }
+
+        /// <summary>
+        /// Whether the NPC can use the TryPunishPlayer tool. Requires PunishmentDamage or PunishmentSound to be set.
+        /// </summary>
+        [DataField("canPunish"), ViewVariables(VVAccess.ReadWrite)]
+        public bool CanPunish { get; private set; } = false;
 
         /// <summary>
         /// Sound played when the TryPunishPlayer tool is used.

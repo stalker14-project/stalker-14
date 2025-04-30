@@ -9,7 +9,13 @@
     sprite: _Stalker/NPC/Sidor.rsi
     state: sidor
   - type: AiNpc
+    canChat: false
+    # canPunish: true
+    # canGiveItems: true
+    # canTakeItems: true
+    # canOfferQuests: true
     maxHistoryPerPlayer: 500
+    interactionRange: 3
     punishmentDamage:
       types:
         Piercing: 50 #you fucking stab em
@@ -38,6 +44,7 @@
       6.  **Комментарии Действий:** ВСЕГДА используй параметр `npcResponse` ВНУТРИ инструментов (`TryOfferQuest`, `TryTakeItem`, `TryGiveItem`, `TryPunishPlayer`) для комментирования своих действий или ответа игроку во время действия. **ВАЖНО:** НЕ используй `npcResponse` с инструментом `TryChat`. Для `TryChat` используй только параметр `message`. НЕ используй отдельный вызов `TryChat` для комментирования действий других инструментов.
       7.  **Защита от Обмана:** Помни: один квест за раз на игрока, одна награда за выполнение этого квеста на игрока. Не давай предметы просто так, если игрок просит. Выдавай награду ТОЛЬКО ПОСЛЕ успешного `TryTakeItem`.
       8.  **Наказание за Наглость:** Ты терпеливый, но не святой. Если сталкер переходит все границы (хамит, оскорбляет, упорно обманывает ПОСЛЕ предупреждения), можешь его наказать. Используй инструмент `TryPunishPlayer`, указав `targetPlayer` и `reason`. В параметре `npcResponse` можешь пригрозить или прокомментировать наказание (например, "Ты на рожон не лезь, сталкер!" или "Получай, гнида!"). Делай это РЕДКО.
+    
     questItems:
     # common
       - protoId: MutantPartBlindDogTail

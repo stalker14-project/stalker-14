@@ -1,23 +1,22 @@
-// Content.Server/_Stalker/AI/AIManager.cs
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Net.Http.Json; // For ReadFromJsonAsync, PostAsJsonAsync
-using System.Text; // For Encoding
+using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
-using System.Text.Json.Nodes; // For JsonNode, JsonObject
-using System.Text.Json.Serialization; // For JsonNode, JsonObject
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared._Stalker.CCCCVars; // Assuming CVars might be shared
+using Content.Shared._Stalker.CCCCVars;
 using Robust.Shared.Configuration;
-using Robust.Shared.GameObjects; // For EntityUid
+using Robust.Shared.GameObjects;
 using Robust.Shared.IoC;
-using Robust.Shared.Log; // Added for ISawmill
-using Robust.Shared.Reflection; // For ReflectionManager if needed later
-using Robust.Shared.Timing; // For IGameTiming if needed later
+using Robust.Shared.Log;
+using Robust.Shared.Reflection;
+using Robust.Shared.Timing;
 using Content.Server._Stalker.AI;
 using Content.Shared._Stalker.AI;
 
@@ -28,17 +27,12 @@ namespace Content.Server._Stalker.AI
         [Dependency] private readonly IConfigurationManager _cfg = default!;
 
         private ISawmill _sawmill = default!;
-        private readonly HttpClient _httpClient = new();
-
-        // Configuration
-        private string _openRouterApiKey = string.Empty;
+        private readonly HttpClient _httpClient = new();        private string _openRouterApiKey = string.Empty;
         private string _openRouterModel = string.Empty;
-        private string _openRouterUrl = string.Empty; // Base URL from CVar
-
-        // Constants/Headers
+        private string _openRouterUrl = string.Empty;
         private const string ChatCompletionsEndpoint = "/chat/completions";
-        private const string OpenRouterReferer = "https://github.com/Stalker14"; // Replace with your actual project URL
-        private const string OpenRouterTitle = "Stalker14 SS14"; // Replace with your actual project Title
+        private const string OpenRouterReferer = "https://github.com/Stalker14";
+        private const string OpenRouterTitle = "Stalker14 SS14";
 
         public void PostInject()
         {
@@ -48,12 +42,10 @@ namespace Content.Server._Stalker.AI
 
         public void Initialize()
         {
-            // Subscribe to CVar changes and update HttpClient accordingly
             _cfg.OnValueChanged(CCCCVars.OpenRouterApiKey, OnApiKeyChanged, true);
             _cfg.OnValueChanged(CCCCVars.OpenRouterModel, v => _openRouterModel = v, true);
-            _cfg.OnValueChanged(CCCCVars.OpenRouterUrl, OnApiUrlChanged, true); // Use specific handler for URL
+            _cfg.OnValueChanged(CCCCVars.OpenRouterUrl, OnApiUrlChanged, true);
 
-            // Set default headers recommended by OpenRouter
             _httpClient.DefaultRequestHeaders.Add("HTTP-Referer", OpenRouterReferer);
             _httpClient.DefaultRequestHeaders.Add("X-Title", OpenRouterTitle);
 
@@ -73,12 +65,10 @@ namespace Content.Server._Stalker.AI
                 _httpClient.DefaultRequestHeaders.Authorization = null;
                 _sawmill.Warning("OpenRouter API key cleared or not set.");
             }
-        }
-
+        }        
         private void OnApiUrlChanged(string url)
         {
-            // Store the base URL provided by the CVar
-            _openRouterUrl = url.TrimEnd('/'); // Remove trailing slash if present
+            _openRouterUrl = url.TrimEnd('/');
             if (string.IsNullOrWhiteSpace(_openRouterUrl))
             {
                 _sawmill.Warning("OpenRouter URL CVar is empty. AI requests will fail.");
@@ -111,42 +101,30 @@ namespace Content.Server._Stalker.AI
             {
                 _sawmill.Warning($"AI request failed for {npcUid}: OpenRouter configuration missing (URL: {_openRouterUrl}, Model: {_openRouterModel}, Key set: {!string.IsNullOrEmpty(_openRouterApiKey)})");
                 return AIResponse.Failure("OpenRouter configuration is incomplete.");
-            }
-
-            var messages = new List<OpenRouterMessage>
+            }            var messages = new List<OpenRouterMessage>
             {
                 new() { Role = "system", Content = npcPrompt }
             };
-            // The conversationHistory list already contains the latest user message with the speaker name,
-            // added by AINPCSystem. Do not add currentUserMessage separately here.
             messages.AddRange(conversationHistory);
-            // messages.Add(new OpenRouterMessage { Role = "user", Content = currentUserMessage }); // REMOVED redundant message add
 
             var tools = ParseToolDescriptions(toolDescriptionsJson);
             if (tools == null)
             {
                 return AIResponse.Failure("Failed to parse tool descriptions.");
-            }
-
-            var requestPayload = new OpenRouterChatRequest
+            }            var requestPayload = new OpenRouterChatRequest
             {
                 Model = _openRouterModel,
                 Messages = messages,
-                Tools = tools.Count > 0 ? tools : null, // Only include tools if there are any
-                ToolChoice = tools.Count > 0 ? "auto" : null // Let the model decide whether to use tools if any are provided
+                Tools = tools.Count > 0 ? tools : null,
+                ToolChoice = tools.Count > 0 ? "auto" : null
             };
 
-            _sawmill.Debug($"Sending AI request for model {_openRouterModel} (NPC: {npcUid})");
-
-            // Construct the full URL
-            var requestUrl = _openRouterUrl + ChatCompletionsEndpoint;
+            _sawmill.Debug($"Sending AI request for model {_openRouterModel} (NPC: {npcUid})");            var requestUrl = _openRouterUrl + ChatCompletionsEndpoint;
             _sawmill.Debug($"Request URL: {requestUrl}");
 
 
             try
-            {
-                // Log the request payload before sending
-                try
+            {                try
                 {
                     var payloadJson = JsonSerializer.Serialize(requestPayload, new JsonSerializerOptions { WriteIndented = true });
                     _sawmill.Debug($"OpenRouter Request Payload for {npcUid}:\n{payloadJson}");
@@ -156,12 +134,8 @@ namespace Content.Server._Stalker.AI
                     _sawmill.Error($"Failed to serialize request payload for logging: {jsonEx.Message}");
                 }
 
-                var response = await _httpClient.PostAsJsonAsync(requestUrl, requestPayload, cancel);
-
-                // Log raw response content regardless of status code for debugging
-                string rawResponseContent = await response.Content.ReadAsStringAsync(cancel);
+                var response = await _httpClient.PostAsJsonAsync(requestUrl, requestPayload, cancel);string rawResponseContent = await response.Content.ReadAsStringAsync(cancel);
                 _sawmill.Debug($"OpenRouter Raw Response for {npcUid} (Status: {response.StatusCode}):\n{rawResponseContent}");
-
 
                 if (!response.IsSuccessStatusCode)
                 {
@@ -170,11 +144,7 @@ namespace Content.Server._Stalker.AI
                     return AIResponse.Failure($"Error communicating with AI service: {response.ReasonPhrase} ({response.StatusCode})");
                 }
 
-                // Attempt to deserialize the logged raw response
-                var responseData = JsonSerializer.Deserialize<OpenRouterChatResponse>(rawResponseContent);
-
-                // Original checks remain
-                if (responseData == null || responseData.Choices == null || responseData.Choices.Count == 0)
+                var responseData = JsonSerializer.Deserialize<OpenRouterChatResponse>(rawResponseContent);                if (responseData == null || responseData.Choices == null || responseData.Choices.Count == 0)
                 {
                     _sawmill.Warning($"Received empty or invalid response from OpenRouter for {npcUid}. URL: {requestUrl}");
                     return AIResponse.Failure("Received empty response from AI service.");
@@ -183,36 +153,28 @@ namespace Content.Server._Stalker.AI
                 var choice = responseData.Choices[0];
                 var message = choice.Message;
 
-                // Check for tool calls first
                 if (message?.ToolCalls != null && message.ToolCalls.Count > 0)
                 {
-                    var toolCallRequests = new List<AIToolCall>();
-                    _sawmill.Debug($"AI returned {message.ToolCalls.Count} tool calls for {npcUid}.");
+                    var toolCallRequests = new List<AIToolCall>();                    _sawmill.Debug($"AI returned {message.ToolCalls.Count} tool calls for {npcUid}.");
 
                     foreach (var toolCall in message.ToolCalls)
                     {
                         if (toolCall.Function == null || string.IsNullOrWhiteSpace(toolCall.Function.Name) || string.IsNullOrWhiteSpace(toolCall.Function.Arguments))
                         {
                             _sawmill.Warning($"Received invalid tool call structure in multi-call response from OpenRouter for {npcUid}: {JsonSerializer.Serialize(toolCall)}");
-                            // Skip this invalid tool call and continue with others
                             continue;
                         }
-
                         _sawmill.Debug($"Processing tool call: {toolCall.Function.Name} with args: {toolCall.Function.Arguments}");
                         try
                         {
-                            // Attempt to parse arguments string into a JsonObject
                             var argumentsNode = JsonNode.Parse(toolCall.Function.Arguments);
                             if (argumentsNode is JsonObject argumentsObject)
                             {
-                                // Add the valid tool call request to the list, including the ID
                                 toolCallRequests.Add(new AIToolCall(toolCall.Id, toolCall.Function.Name, argumentsObject));
                             }
                             else
                             {
                                 _sawmill.Warning($"Could not parse tool call arguments as JSON object for {npcUid} (Tool: {toolCall.Function.Name}): {toolCall.Function.Arguments}");
-                                // Optionally, return a failure for the entire request if one tool call is bad?
-                                // For now, just skip this specific tool call.
                             }
                         }
                         catch (JsonException jsonEx)
@@ -295,13 +257,11 @@ namespace Content.Server._Stalker.AI
 
                     // Ensure parameters are represented as JsonObject if present
                     if (function.ParametersRaw != null)
-                    {
-                        _sawmill.Debug($"Function '{function.Name}' has ParametersRaw: {function.ParametersRaw.ToJsonString()}");
+                    {                    _sawmill.Debug($"Function '{function.Name}' has ParametersRaw: {function.ParametersRaw.ToJsonString()}");
                         function.Parameters = function.ParametersRaw as JsonObject;
                         if (function.Parameters == null)
                         {
                             _sawmill.Warning($"Tool description parameters for '{function.Name}' could not be parsed as a JSON object: {function.ParametersRaw.ToJsonString()}");
-                            // Decide if this is a fatal error or if the tool can be added without parameters. Let's add it without for now.
                         }
                         else
                         {
@@ -324,37 +284,32 @@ namespace Content.Server._Stalker.AI
             }
             _sawmill.Debug($"Finished parsing tool descriptions. Total tools parsed: {tools.Count}");
             return tools;
-        }
+        }    }
 
-
-        // --- Helper Classes for JSON Serialization (OpenAI/OpenRouter Compatible) ---
-    }
-
-    
-    public record OpenRouterMessage // Made public for AINPCSystem to potentially use
+    public record OpenRouterMessage
     {
         [JsonPropertyName("role")]
-        public string Role { get; set; } = string.Empty; // "system", "user", "assistant", "tool"
+        public string Role { get; set; } = string.Empty;
 
         [JsonPropertyName("content")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] // Content is null for tool calls
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Content { get; set; }
 
-        [JsonPropertyName("name")] // Added field for speaker name (OpenAI compatible)
+        [JsonPropertyName("name")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? Name { get; set; } // Character Name
+        public string? Name { get; set; }
 
-        [JsonPropertyName("ckey")] // Changed field name to reflect CKey/Username usage
+        [JsonPropertyName("ckey")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CKey { get; set; }
 
         [JsonPropertyName("tool_calls")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<OpenRouterToolCall>? ToolCalls { get; set; } // Only for assistant messages with tool calls
+        public List<OpenRouterToolCall>? ToolCalls { get; set; }
 
         [JsonPropertyName("tool_call_id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? ToolCallId { get; set; } // Only for tool role messages (response to a tool call)
+        public string? ToolCallId { get; set; }
     }
     public record OpenRouterChatRequest
     {
@@ -370,24 +325,17 @@ namespace Content.Server._Stalker.AI
 
         [JsonPropertyName("tool_choice")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public object? ToolChoice { get; set; } // Can be "auto", "none", or {"type": "function", "function": {"name": "my_function"}}
-
-        // Add other parameters like temperature, max_tokens etc. if needed
-        // [JsonPropertyName("temperature")]
-        // public float? Temperature { get; set; }
+        public object? ToolChoice { get; set; }
     }
-
 
     public record OpenRouterTool
     {
         [JsonPropertyName("type")]
-        public string Type { get; set; } = "function"; // Currently only "function" is supported
+        public string Type { get; set; } = "function";
 
         [JsonPropertyName("function")]
         public OpenRouterFunction Function { get; set; } = new();
-    }
-
-    public record OpenRouterFunction
+    }    public record OpenRouterFunction
     {
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
@@ -396,12 +344,9 @@ namespace Content.Server._Stalker.AI
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
-        // We deserialize the raw parameters description first
         [JsonPropertyName("parameters")]
-        // [JsonIgnore(Condition = JsonIgnoreCondition.Always)] // REMOVED: This might interfere with deserialization.
         public JsonNode? ParametersRaw { get; set; }
     
-        // We expose the parsed JsonObject for use, but don't serialize it directly
         [JsonIgnore]
         public JsonObject? Parameters { get; set; }
     }
