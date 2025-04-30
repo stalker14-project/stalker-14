@@ -118,7 +118,7 @@
       self: 5
     - type: MovementSpeedModifier
       baseWalkSpeed: 2
-      baseSprintSpeed: 5
+      baseSprintSpeed: 4.5
     - type: MeleeWeapon
       wideAnimation: WeaponArcClaw
       damage:
@@ -175,7 +175,7 @@
       self: 15
     - type: MovementSpeedModifier
       baseWalkSpeed: 2
-      baseSprintSpeed: 5.5
+      baseSprintSpeed: 5
     - type: MeleeWeapon
       wideAnimation: WeaponArcClaw
       damage:
@@ -230,7 +230,7 @@
       self: 25
     - type: MovementSpeedModifier
       baseWalkSpeed: 2
-      baseSprintSpeed: 4
+      baseSprintSpeed: 3.5
       soundHit:
         path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
         params:
@@ -265,7 +265,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 300
+            damage: 200
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -280,7 +280,7 @@
       self: 85
     - type: MovementSpeedModifier
       baseWalkSpeed: 2
-      baseSprintSpeed: 4
+      baseSprintSpeed: 3.5
     - type: MeleeWeapon
       wideAnimation: WeaponArcClaw
       damage:
