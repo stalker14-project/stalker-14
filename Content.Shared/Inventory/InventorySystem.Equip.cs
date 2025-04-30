@@ -305,6 +305,23 @@ public abstract partial class InventorySystem
             {
                 return false;
             }
+		
+        }
+		if (slot == "gloves" && TryGetSlotEntity(target, "outerClothing", out var outerGlovesItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockGloves") && _tagSystem.HasTag(outerGlovesItem.Value, "BlockGloves"))
+            {
+                return false;
+            }
+        }
+
+        if (slot == "outerClothing" && TryGetSlotEntity(target, "gloves", out var glovesItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockGloves") && _tagSystem.HasTag(glovesItem.Value, "BlockGloves"))
+            {
+                return false;
+            }
+		
         }// Stalker-Changes-End
 		
         if (slotDefinition == null && !TryGetSlot(target, slot, out slotDefinition, inventory: inventory))

@@ -20,7 +20,7 @@ public sealed class StatusIconOverlay : Overlay
     private readonly StatusIconSystem _statusIcon;
     private readonly ShaderInstance _unshadedShader;
 
-    public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
+    public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities; // stalker14-status-icon-changes
 
     internal StatusIconOverlay()
     {

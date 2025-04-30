@@ -11,6 +11,7 @@ shop-category-medicine = Медицина
 shop-category-modules = Модули
 shop-category-customization = Кастомизация
 shop-category-entertainment = Развлечения
+shop-category-blueprints = Чертежи
 shop-category-metal-detectors = Металлоискатели
 shop-category-other = Другое
 shop-category-grenades = Гранаты

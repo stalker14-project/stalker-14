@@ -144,7 +144,6 @@
         ClothingHeadHelmetInfantry: 800 # T2 - uni
         STClothingHeadHelmetMakeshiftTacticalT3: 1350 # T2 - uni
           # OuterClothing #
-        SetJacketNoviceBrezentBuyableCrate: 500 # T1 - uni
         SetJacketNoviceWhiteBuyableCrate: 500 # T1 - uni
         STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
         SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
@@ -152,6 +151,7 @@
         ClothingOuterArmor6B2: 1750
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
+        SetZaryaStalkerBuyableCrate: 3300
 
     - name: shop-category-storage-and-containers
       priority: 5
@@ -320,6 +320,24 @@
         # Instruments
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
+    - name: shop-category-blueprints
+      priority: 13
+      items: 
+        STDetectorAD1Blueprint: 2000
+        STZoneArtifactDetectorPulseBlueprint: 2000
+        TrashDetectorTier2Blueprint: 4000
+        ClothingOuterCoatPahanBlueprint: 2000
+        ClothingOuterCoatPoiskBlueprint: 2000
+        STCraftLinenFabricT1Blueprint: 2000
+        STClothingHeadTinfoilBlueprint: 2000
+        STClothingOuterJacketStalkerUpgradeBlueprint: 2000
+        ClothingOuterAnomalyStalkerJacketBlueprint: 2000
+        STShotgunBulletUnlethalBoxCinkBlueprint: 5000
+        ST7mmBuckshotBoxCinkBluePrint: 5000
+        ST918PGJBoxCinkBlueprint: 5000
+        ST919PSOGJBoxCinkBlueprint: 5000
+        ST725PBoxCinkBlueprint: 5000
+
   sponsorCategories:
     1:
       - name: sponsor
@@ -332,3 +350,5 @@
       items:
         STWeaponShotgunMP153Raven: 550
         WeaponPistolStalkerAPSHugo: 250
+
+

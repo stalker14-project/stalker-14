@@ -35,6 +35,25 @@
     sprite: _Stalker/Objects/Clothing/mask/gasmask_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/mask/gasmask_stalker.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    hideOnToggle: true
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasZaryaMono
+  name: монолинзовый противогаз сталкера
+  description: Дешёвый и эффективный.  Защищает от радиации. Отличается монолинзой.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_stalker_mono.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_stalker_mono.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    hideOnToggle: true
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base

@@ -470,7 +470,15 @@ namespace Content.Server.Ghost
             }
 
             var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
-            var ghostComponent = Comp<GhostComponent>(ghost);
+            // stalker-changes-start
+
+            if (!TryComp<GhostComponent>(ghost, out var ghostComponent))
+            {
+                if (mind.Comp?.Session != null)  _gameTicker.Respawn(mind.Comp.Session);
+                return null;
+            }
+
+            // stalker-changes-end
 
             // Try setting the ghost entity name to either the character name or the player name.
             // If all else fails, it'll default to the default entity prototype name, "observer".

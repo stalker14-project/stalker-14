@@ -9,6 +9,9 @@
     self: 1
   - type: Storage
     maxItemSize: Normal
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 2
     grid:
       - 0,2,0,3
       - 1,-0,1,-0
@@ -68,8 +71,6 @@
       maxItemSize: Normal
       grid:
         - 0,0,7,7
-      quickInsert: true
-      areaInsert: true
       whitelist:
         tags:
           - CartridgeAmmo
@@ -154,6 +155,47 @@
       state: icon
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/belt/belt_officer.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterStalkerZarya
+  name: поясная сумка с кобурой «Заря»
+  description: Поясной сумка из комплекта «Заря» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingDoubleStalkerZaryaSmall
+  name: двойная поясная сумка «Заря»
+  description: Поясной сумка из комплекта «Заря» со второй маленькой сумкой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 4,0,9,3
+        - 0,0,2,3
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_double_small.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_double_small.rsi
 
 - type: entity
   parent: ClothingBeltTarzanBlack

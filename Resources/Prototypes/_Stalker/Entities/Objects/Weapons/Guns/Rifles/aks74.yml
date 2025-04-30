@@ -17,7 +17,6 @@
     minAngle: 50
     maxAngle: 95
     angleIncrease: 1.5
-    angleDecay: 20
     fireRate: 6
   - type: ItemSlots
     slots:
@@ -67,7 +66,6 @@
     fireRate: 7
     minAngle: 50
     maxAngle: 90
-    angleDecay: 25
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
   - type: Item
@@ -95,7 +93,6 @@
     minAngle: 50
     maxAngle: 95
     angleIncrease: 1
-    angleDecay: 15
     fireRate: 3
     selectedMode: SemiAuto
     availableModes:
@@ -122,7 +119,6 @@
     minAngle: 45
     maxAngle: 90
     angleIncrease: 0.8
-    angleDecay: 30
     fireRate: 9
   - type: STWeaponAccuracy
     accuracyMultiplier: 1.5
@@ -159,13 +155,12 @@
       path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
     minAngle: 45
     maxAngle: 75
-    angleDecay: 15
     fireRate: 5
     angleIncrease: 1.75
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 1.2
+    falloffMultiplier: 1.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 0.9
+    accuracyMultiplier: 0.99
 
 - type: entity
   parent: STBaseWeaponRifleAKS74U

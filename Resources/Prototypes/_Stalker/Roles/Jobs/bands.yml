@@ -53,7 +53,7 @@
       species:
       - Human
       - Dwarf
-  startingGear: BandGear
+  startingGear: BandHeadGear
   supervisors: job-bandit-supervisor
   canBeAntag: false
   special:
@@ -82,13 +82,25 @@
   id: BandGear
   equipment:
     id: BandPDA
-    neck: ClothingBandageStalkerPetuh
-    belt: ClothingBeltStorageWaistbag
+    belt: ClothingBeltBandolierStalker
     shoes: ClothingShoesBootsCombat
     legs: ClothingLegsJeansBlue
     torso: ClothingTorsoJacketAdidas
     pocket1: RadioBandPlayer
-    
+    outerClothing: ClothingOuterJacketBandit
+    mask: ClothingMaskGasMarlya
+    back: ClothingBackpackTownWhiteStalker
+
+- type: startingGear
+  id: BandHeadGear
+  equipment:
+    id: BandPDA
+    shoes: ClothingShoesBootsCombat
+    legs: ClothingLegsJeansBlue
+    torso: ClothingTorsoJacketAdidas
+    pocket1: RadioBandPlayer
+    outerClothing: ClothingOuterCoatBanditBlack
+
 - type: stBand
   id: STBanditsBand
   name: Bandits

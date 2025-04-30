@@ -3,11 +3,11 @@
 #Брезентовая
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetJacketNoviceBrezentBuyableCrate
   name: комплект куртки новичка
   description: В комплекте куртка новичка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
-  suffix: Stalker, т1
+  suffix: ST, T1, Cache
   components:
     - type: STWeight
       self: 10
@@ -29,11 +29,11 @@
 #Белая
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetJacketNoviceWhiteBuyableCrate
   name: комплект белой куртки новичка
   description: В комплекте белая куртка новичка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
-  suffix: Stalker, т1
+  suffix: ST, T1, Cache
   components:
     - type: STWeight
       self: 10
@@ -55,11 +55,11 @@
 #Бандитская
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetJacketBanditBuyableCrate
   name: комплект кожаной куртки бандита
   description: В комплекте куртка бандита, марлевая повязка, белый городской рюкзак и набор подсумков новичка.
-  suffix: Stalker, т1
+  suffix: ST, T1, Cache
   components:
     - type: STWeight
       self: 10
@@ -83,11 +83,11 @@
 #Брезентовая
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetArmourJacketNoviceBrezentBuyableCrate
   name: комплект кольчужной куртки сталкера
   description: В комплекте кольчужная куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
-  suffix: Stalker, т2
+  suffix: ST, T2, Cache
   components:
     - type: STWeight
       self: 10
@@ -109,11 +109,11 @@
 #Белая
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetArmourJacketNoviceWhiteBuyableCrate
   name: комплект кольчужной куртки сталкера
   description: В комплекте белая кольчужная куртка, марлевая повязка, чёрный городской рюкзак и набор подсумков новичка.
-  suffix: Stalker, т2
+  suffix: ST, T2, Cache
   components:
     - type: STWeight
       self: 10
@@ -135,11 +135,11 @@
 #Бандитская
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetArmoutJacketBanditBuyableCrate
   name: комплект кольчужной куртки бандита
   description: В комплекте кольчужная куртка бандита, марлевая повязка, белый городской рюкзак и набор подсумков новичка.
-  suffix: Stalker, т2
+  suffix: ST, T2, Cache
   components:
     - type: STWeight
       self: 10
@@ -158,16 +158,44 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
+################# Заря
+
+#Сталкерская 1
+
+- type: entity
+  parent: STBaseItem
+  id: SetZaryaStalkerBuyableCrate
+  name: комплект «Заря»
+  description: В комплекте комбинезон, противогаз, рюкзак и поясная сумка с кобурой.
+  suffix: ST, T2, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/zarya.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorZaryaStalker
+        - id: ClothingMaskGasZarya
+        - id: ClothingBackpackStalkerZaryaGreen
+        - id: ClothingBeltWebbingHolsterStalkerZarya
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
 #Комбинезон Наёмника
 
 #Наёмник
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetMercBuyableCrate
   name: комплект бронекомбеза наёмника
   description: В комплекте бронекомбенизон, противогаз и поясная сумка с кобурой.
-  suffix: Stalker, т3
+  suffix: ST, T3, Cache
   components:
     - type: STWeight
       self: 10
@@ -186,11 +214,11 @@
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetMerc2BuyableCrate
   name: комплект бронекомбеза наёмника
   description: В комплекте бронекомбенизон, марлевая повязка и поясная сумка с кобурой.
-  suffix: Stalker, т3
+  suffix: ST, T3, Cache
   components:
     - type: STWeight
       self: 10
@@ -209,11 +237,11 @@
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  parent: BaseItem
+  parent: STBaseItem
   id: SetMercBanditBuyableCrate
   name: комплект бронекомбеза «Валет»
   description: В комплекте бронекомбенизон, марлевая повязка и поясная сумка с кобурой.
-  suffix: Stalker, т3
+  suffix: ST, T3, Cache
   components:
     - type: STWeight
       self: 10

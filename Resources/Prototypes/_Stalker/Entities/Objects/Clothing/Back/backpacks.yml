@@ -128,6 +128,36 @@
 
 - type: entity
   parent: STClothingBackBase
+  id: ClothingBackpackStalkerZaryaGreen
+  name: сталкерский рюкзак «Заря»
+  description: Вместительный сталкерский рюкзак оливового цвета из комплекта «Заря», частенько используется в качестве заначки.
+  suffix: ST
+  components:
+  - type: Storage #40 клеток 42 будет лучше
+    grid:
+    - 0,0,7,4
+    quickInsert: true
+    areaInsert: true
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/stalker.rsi
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackStalkerZaryaBlack
+  name: сталкерский рюкзак «Заря»
+  description: Вместительный сталкерский рюкзак чёрного цвета из комплекта «Заря», частенько используется в качестве заначки.
+  suffix: ST
+  components:
+  - type: Storage #40 клеток 42 будет лучше
+    grid:
+    - 0,0,7,4
+    quickInsert: true
+    areaInsert: true
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/stalker_black.rsi
+
+- type: entity
+  parent: STClothingBackBase
   id: ClothingBackpackMercStalker
   name: походный рюкзак
   description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
