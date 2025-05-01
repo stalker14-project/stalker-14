@@ -34,13 +34,11 @@ namespace Content.Server._Stalker.AI
         [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly IPrototypeManager _proto = default!;
         [Dependency] private readonly DamageableSystem _damageable = default!;
-        [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
         private ISawmill _sawmill = default!;
-
-        private static readonly ProtoId<NpcFactionPrototype> PlayerFaction = "Stalker"; public override void Initialize()
+        public override void Initialize()
         {
             base.Initialize();
             _sawmill = Logger.GetSawmill("ai.npc.system");

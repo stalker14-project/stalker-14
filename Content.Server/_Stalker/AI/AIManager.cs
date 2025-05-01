@@ -111,7 +111,8 @@ namespace Content.Server._Stalker.AI
             if (tools == null)
             {
                 return AIResponse.Failure("Failed to parse tool descriptions.");
-            }            var requestPayload = new OpenRouterChatRequest
+            }
+            var requestPayload = new OpenRouterChatRequest
             {
                 Model = _openRouterModel,
                 Messages = messages,
@@ -119,12 +120,14 @@ namespace Content.Server._Stalker.AI
                 ToolChoice = tools.Count > 0 ? "auto" : null
             };
 
-            _sawmill.Debug($"Sending AI request for model {_openRouterModel} (NPC: {npcUid})");            var requestUrl = _openRouterUrl + ChatCompletionsEndpoint;
+            _sawmill.Debug($"Sending AI request for model {_openRouterModel} (NPC: {npcUid})");
+            var requestUrl = _openRouterUrl + ChatCompletionsEndpoint;
             _sawmill.Debug($"Request URL: {requestUrl}");
 
 
             try
-            {                try
+            {
+                try
                 {
                     var payloadJson = JsonSerializer.Serialize(requestPayload, new JsonSerializerOptions { WriteIndented = true });
                     _sawmill.Debug($"OpenRouter Request Payload for {npcUid}:\n{payloadJson}");
@@ -155,7 +158,8 @@ namespace Content.Server._Stalker.AI
 
                 if (message?.ToolCalls != null && message.ToolCalls.Count > 0)
                 {
-                    var toolCallRequests = new List<AIToolCall>();                    _sawmill.Debug($"AI returned {message.ToolCalls.Count} tool calls for {npcUid}.");
+                    var toolCallRequests = new List<AIToolCall>();
+                    _sawmill.Debug($"AI returned {message.ToolCalls.Count} tool calls for {npcUid}.");
 
                     foreach (var toolCall in message.ToolCalls)
                     {
@@ -257,7 +261,8 @@ namespace Content.Server._Stalker.AI
 
                     // Ensure parameters are represented as JsonObject if present
                     if (function.ParametersRaw != null)
-                    {                    _sawmill.Debug($"Function '{function.Name}' has ParametersRaw: {function.ParametersRaw.ToJsonString()}");
+                    {
+                        _sawmill.Debug($"Function '{function.Name}' has ParametersRaw: {function.ParametersRaw.ToJsonString()}");
                         function.Parameters = function.ParametersRaw as JsonObject;
                         if (function.Parameters == null)
                         {
@@ -284,7 +289,8 @@ namespace Content.Server._Stalker.AI
             }
             _sawmill.Debug($"Finished parsing tool descriptions. Total tools parsed: {tools.Count}");
             return tools;
-        }    }
+        }
+    }
 
     public record OpenRouterMessage
     {
@@ -335,7 +341,8 @@ namespace Content.Server._Stalker.AI
 
         [JsonPropertyName("function")]
         public OpenRouterFunction Function { get; set; } = new();
-    }    public record OpenRouterFunction
+    }
+    public record OpenRouterFunction
     {
         [JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
@@ -346,7 +353,7 @@ namespace Content.Server._Stalker.AI
 
         [JsonPropertyName("parameters")]
         public JsonNode? ParametersRaw { get; set; }
-    
+
         [JsonIgnore]
         public JsonObject? Parameters { get; set; }
     }
