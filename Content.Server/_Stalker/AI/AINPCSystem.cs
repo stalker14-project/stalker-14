@@ -384,13 +384,34 @@ namespace Content.Server._Stalker.AI
         private void AddMessageToHistory(EntityUid npcUid, string playerCKey, AiNpcComponent component, string role, string? content, string? speakerName = null, string? speakerCKey = null, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null)
         {
             // Get the specific history list for this NPC and Player
-            var history = GetHistoryForNpcAndPlayer(npcUid, playerCKey); // Fixed CS0103 (GetHistoryForNpc doesn't exist)
+            var history = GetHistoryForNpcAndPlayer(npcUid, playerCKey);
 
-            // Basic history addition
-            history.Add(new OpenRouterMessage { Role = role, Content = content, Name = speakerName, CKey = speakerCKey, ToolCalls = toolCalls, ToolCallId = toolCallId });
+            // Sanitize speaker name for the API if it's provided
+            string? sanitizedName = null;
+            if (!string.IsNullOrEmpty(speakerName))
+            {
+                sanitizedName = SanitizeNameForApi(speakerName);
+                // If sanitization results in an empty string, set it to null or a default placeholder
+                if (string.IsNullOrWhiteSpace(sanitizedName))
+                {
+                    sanitizedName = "UnknownSpeaker"; // Or null, depending on API requirements
+                }
+            }
+
+            // Basic history addition using the sanitized name
+            history.Add(new OpenRouterMessage { Role = role, Content = content, Name = sanitizedName, CKey = speakerCKey, ToolCalls = toolCalls, ToolCallId = toolCallId });
 
             // Trimming is handled by TrimHistory calls before this method.
-            // Removed incorrect while loop here.
+        }
+
+        /// <summary>
+        /// Removes characters from a name that are not letters (including Cyrillic) to comply with API requirements.
+        /// </summary>
+        private string SanitizeNameForApi(string name)
+        {
+            // Keep only Unicode letters (covers Latin, Cyrillic, etc.)
+            // Remove spaces, brackets, symbols, numbers.
+            return System.Text.RegularExpressions.Regex.Replace(name, @"[^\p{L}]", "");
         }
 
 
@@ -939,25 +960,20 @@ namespace Content.Server._Stalker.AI
 
         // --- Placeholder Helper Methods ---
 
-        // TODO: Replace with robust entity lookup system (by CKey first, then maybe name)
-        private EntityUid? FindPlayerByIdentifier(string identifier)
+        // Finds a player entity based *only* on their CKey (username).
+        private EntityUid? FindPlayerByIdentifier(string ckeyIdentifier)
         {
-            // Extremely basic placeholder - iterates all players and checks CKey then name. VERY INEFFICIENT.
-            var query = EntityQueryEnumerator<MetaDataComponent, ActorComponent>(); // Assuming players have ActorComponent
-            while (query.MoveNext(out var uid, out var meta, out var actor))
+            // Iterates all players and checks CKey.
+            var query = EntityQueryEnumerator<ActorComponent>(); // Only need ActorComponent for the session/CKey
+            while (query.MoveNext(out var uid, out var actor))
             {
-                // Check CKey first
-                if (actor.PlayerSession.Name.Equals(identifier, StringComparison.OrdinalIgnoreCase))
+                // Check CKey
+                if (actor.PlayerSession.Name.Equals(ckeyIdentifier, StringComparison.OrdinalIgnoreCase))
                 {
                     return uid;
                 }
-                // Fallback to checking character name
-                if (meta.EntityName.Equals(identifier, StringComparison.OrdinalIgnoreCase))
-                {
-                    return uid;
-                }
-                // Could also try parsing identifier as EntityUid or NetEntity here
             }
+            _sawmill.Warning($"Could not find player with CKey: {ckeyIdentifier}");
             return null;
         }
 
