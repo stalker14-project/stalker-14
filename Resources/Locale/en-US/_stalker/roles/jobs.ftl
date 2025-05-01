@@ -58,7 +58,7 @@ job-military-officer = Military Commander
 job-military-officer-desc = Hold the Zone to prevent the looting of hazardous radioactive materials and to prevent unauthorized entry by any person.
 job-military-supervisor = You report to your superiors.
 
-job-monolith = Drifter
+job-monolith = Monolith
 job-monolith-desc = Symbol of a quiet but intimidating presence.
 job-monolith-supervisor = serve His voice
 

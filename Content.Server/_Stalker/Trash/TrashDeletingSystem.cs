@@ -66,7 +66,7 @@ public sealed class TrashDeletingSystem : EntitySystem
             return;
 
         _chat.DispatchServerAnnouncement("There was a cleaning of garbage and empty caches, some items on the floor are gone!");
-        //RaiseLocalEvent(new RequestClearArenaGridsEvent());
+        RaiseLocalEvent(new RequestClearArenaGridsEvent());
 
         var trashEnts = EntityQueryEnumerator<TrashComponent>();
         while (trashEnts.MoveNext(out var uid, out var comp))
