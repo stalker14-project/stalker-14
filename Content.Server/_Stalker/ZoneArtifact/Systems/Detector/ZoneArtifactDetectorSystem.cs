@@ -1,6 +1,7 @@
 ﻿using Content.Server._Stalker.ZoneArtifact.Components;
 using Content.Server._Stalker.ZoneArtifact.Components.Detector;
 using Content.Server._Stalker.ZoneArtifact.Components.Spawner;
+using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneArtifact;
 using Content.Shared._Stalker.ZoneArtifact.Components;
 using Content.Shared._Stalker.ZoneArtifact.Events;
@@ -110,7 +111,7 @@ public sealed class ZoneArtifactDetectorSystem : EntitySystem
 
     private void OnGotUnequippedHand(Entity<ZoneArtifactDetectorComponent> detector, ref GotUnequippedHandEvent args)
     {
-        if (!detector.Comp.Enabled)
+        if (!detector.Comp.Enabled || TryComp<ZoneAnomalyDetectorComponent>(detector, out var anomaly))
             return;
 
         Toggle(detector);

@@ -1,0 +1,13 @@
+- type: entity
+  parent: ZoneArtifactDetectorBarracuda
+  id: ZoneArtifactDetectorUpgradedBarracuda
+  name: Upgraded Barracuda Detector
+  description: A Barracuda Detector combined with an AD3, a match made in heaven.
+  suffix: Stalker, Detector
+  components:
+  - type: ZoneAnomalyDetector
+    level: 4
+    beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
+    distance: 12
+    maxBeepInterval: 0.9
+    minBeepInterval: 0.05

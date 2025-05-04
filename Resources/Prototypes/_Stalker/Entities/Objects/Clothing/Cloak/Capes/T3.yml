@@ -310,39 +310,6 @@
 
 - type: entity
   parent: ClothingOuterCoatLoyalist
-  id: ClothingOuterCoatKevlarMercenaries
-  name: Mercenary Kevlar Coat
-  description: Kevlar coat of the mercenaries.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/cloak/coat_merc.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/cloak/coat_merc.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetKevlarMercenaries
-    requiredSlot:
-    - cloak
-    slot: head
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-
-- type: entity
-  parent: ClothingHeadHelmetLoyalistCoat
-  id: ClothingHeadHelmetKevlarMercenaries
-  name: Mercenary Kevlar Hood
-  description: Sadly to small to fit over your helmet.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/coat_hat_mercs.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/coat_hat_mercs.rsi
-  - type: HideLayerClothing
-    slots:
-    - Hair
-
-- type: entity
-  parent: ClothingOuterCoatLoyalist
   id: ClothingOuterCoatRenegat
   name: кевларовый плащ Ренегата
   description: Плащ, модифицированный под нужды группировки Ренегаты, окрашенный в "родные" цвета.
