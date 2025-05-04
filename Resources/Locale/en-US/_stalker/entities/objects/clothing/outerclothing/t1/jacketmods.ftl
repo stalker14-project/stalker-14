@@ -13,4 +13,9 @@ ent-ClothingOuterArmourJacketStalker = Stalker Chainmail Jacket
 ent-ClothingOuterArmourJacketStalkerWhite = { ent-ClothingOuterArmourJacketStalker }
     .desc = A white-colored stalker jacket with chainmail sewn into the lining. Just about anyone can make one, but not everyone has the patience.
     .suffix = { ent-ClothingOuterArmourJacketBandit.suffix }
-
+ent-ClothingOuterJacketStalkerUpgradeWhite = Improved Stalker Jacket
+    .desc = The white stalker jacket has gained some additional protection against both physical damage and anomalies. Unfortunately, the fabric doesn't look particularly durable.
+    .suffix = ST, T1, Universal
+ent-ClothingOuterAnomalyStalkerJacketWhite = Anomalous Stalker Jacket
+    .desc = A regular outfit for a novice stalker in white. It won’t protect the wearer from bullets or anomalies, but it’s comfortable to wear.
+    .suffix = ST, T1, Anomalous
