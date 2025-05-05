@@ -10,9 +10,9 @@
       task: STMonolith
     blackboard:
       VisionRadius: !type:Single
-        15
+        25
       AggroVisionRadius: !type:Single
-        10
+        15
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.2
     baseSprintSpeed: 1.4
@@ -23,12 +23,12 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
-      sprite: /Textures/_Stalker/Mobs/Guards/Stalker.rsi
+      sprite: /Textures/_Stalker/Mobs/Guards/AgressiveWeak.rsi
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 2
   - type: ProjectileBatteryAmmoProvider
-    proto: Bullet919PST
+    proto: Bullet545FMJ
     fireCost: 5
   - type: Gun
     soundGunshot:
@@ -36,10 +36,10 @@
     fireRate: 3
     useKey: false
     selectedMode: FullAuto
-    minAngle: 15
+    minAngle: 5
     maxAngle: 65
-    angleIncrease: 3
-    angleDecay: 20
+    angleIncrease: 1
+    angleDecay: 5
     availableModes:
     - FullAuto
   - type: MobThresholds

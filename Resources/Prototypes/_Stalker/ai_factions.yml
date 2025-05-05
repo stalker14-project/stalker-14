@@ -8,6 +8,8 @@
     - Military
     - Bandit
     - Hostile
+    - Duty
+    - Freedom
 
 - type: npcFaction
   id: Mutated
@@ -20,6 +22,8 @@
     - Bandit
     - Hostile
     - Sci
+    - Duty
+    - Freedom
 
 - type: npcFaction
   id: Hostile
@@ -32,6 +36,8 @@
   - Military
   - Bandit
   - Sci
+  - Duty
+  - Freedom
 
 - type: npcFaction
   id: Stalker
@@ -58,6 +64,8 @@
   - Passive
   - Bandit
   - Hostile
+  - Freedom
+  - Duty
 
 - type: npcFaction
   id: Bandit
@@ -67,3 +75,25 @@
   - Military
   - Milita
   - Hostile
+  - Duty
+  - Freedom
+
+- type: npcFaction
+  id: Freedom
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Bandit
+  - Hostile
+  - Military
+  - Duty
+
+- type: npcFaction
+  id: Duty
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Bandit
+  - Hostile
+  - Military
+  - Freedom
