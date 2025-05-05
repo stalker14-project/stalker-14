@@ -38,7 +38,7 @@ namespace Content.Server._Stalker.AI
         [Dependency] private readonly DamageableSystem _damageable = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-        [Dependency] private readonly SponsorsManager _sponsors = default!;
+        [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
 
         private ISawmill _sawmill = default!;
         public override void Initialize()
@@ -91,7 +91,20 @@ namespace Content.Server._Stalker.AI
                 if (!npcTransform.Coordinates.TryDistance(EntityManager, sourceTransform.Coordinates, out var distance) || distance > interactionRange)
                     continue;
 
-                // Prevent spamming requests for the same NPC
+                if (aiComp.SponsorOnly)
+                {
+                    if (actor != null && !_sponsorsManager.HavePriorityJoin(actor.PlayerSession.UserId))
+                    {
+                        _sawmill.Debug($"NPC {ToPrettyString(npcUid)} (SponsorOnly) ignored non-sponsor {ToPrettyString(args.Source)} ({speakerCKey}).");
+
+                        var replyMessage = Loc.GetString("st-ai-npc-sponsor-only-reply");
+
+                        TryChat(npcUid, replyMessage);
+                        continue;
+                    }
+                    _sawmill.Debug($"NPC {ToPrettyString(npcUid)} (SponsorOnly) processing sponsor {ToPrettyString(args.Source)} ({speakerCKey}).");
+                }
+
                 if (_ongoingRequests.ContainsKey(npcUid))
                 {
                     _sawmill.Debug($"AI request already in progress for NPC {ToPrettyString(npcUid)}. Ignoring speech from {ToPrettyString(args.Source)}.");

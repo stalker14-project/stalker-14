@@ -49,6 +49,11 @@ namespace Content.Shared._Stalker.AI
         /// </summary>
         [DataField("enabled"), ViewVariables(VVAccess.ReadWrite)]
         public bool Enabled { get; private set; } = false;
+        /// <summary>
+        /// If true, this NPC will only process interactions from players with sponsor status (priority join).
+        /// </summary>
+        [DataField("sponsorOnly"), ViewVariables(VVAccess.ReadWrite)]
+        public bool SponsorOnly { get; private set; } = true;
 
         /// <summary>
         /// Whether the NPC can use the TryChat tool.
