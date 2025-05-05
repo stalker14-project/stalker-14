@@ -23,6 +23,7 @@ using Content.Shared.NPC.Systems;
 using Content.Shared.Whitelist;
 using Robust.Server.Audio;
 using Content.Shared.NPC.Prototypes;
+using Content.Server._Stalker.Sponsors;
 
 namespace Content.Server._Stalker.AI
 {
@@ -37,6 +38,7 @@ namespace Content.Server._Stalker.AI
         [Dependency] private readonly DamageableSystem _damageable = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+        [Dependency] private readonly SponsorsManager _sponsors = default!;
 
         private ISawmill _sawmill = default!;
         public override void Initialize()
@@ -100,45 +102,31 @@ namespace Content.Server._Stalker.AI
                 TrimHistory(npcUid, speakerCKey, aiComp, 1);
                 AddMessageToHistory(npcUid, speakerCKey, aiComp, "user", args.Message, speakerName, speakerCKey);
 
-                // Prepare data for AI Manager
                 var tools = GetAvailableToolDescriptions(npcUid, aiComp);
-                // Get the specific player's history from our internal dictionary
                 var history = GetHistoryForNpcAndPlayer(npcUid, speakerCKey);
                 var prompt = aiComp.BasePrompt;
-                // Note: userMessage is already part of the history list passed to AIManager
-                // var userMessage = args.Message; // We don't need to pass this separately anymore
 
-                // Create a cancellation token for this request
-                var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30)); // Added 30s timeout
+                var cts = new CancellationTokenSource(TimeSpan.FromSeconds(30));
                 _ongoingRequests[npcUid] = cts;
 
-                // Call AIManager asynchronously
                 Task.Run(async () =>
                 {
                     try
                     {
-                        // Pass the specific player's history to the AI Manager
-                        // Fixed CS1503: Re-adding placeholder for potentially expected userMessage argument
-                        var response = await _aiManager.GetActionAsync(npcUid, prompt, history, string.Empty, tools, cts.Token); // Added string.Empty placeholder
+                        var response = await _aiManager.GetActionAsync(npcUid, prompt, history, string.Empty, tools, cts.Token);
 
-                        // Queue the response processing back to the main game thread, including the player CKey
                         QueueLocalEvent(new ProcessAIResponseEvent(npcUid, speakerCKey, response));
                     }
                     catch (OperationCanceledException)
                     {
                         _sawmill.Debug($"AI request for NPC {ToPrettyString(npcUid)} timed out or was cancelled.");
-                        // Queue a failure response to ensure state is cleaned up
-                        // Fixed CS7036: Add missing 'response' argument
                         QueueLocalEvent(new ProcessAIResponseEvent(npcUid, speakerCKey, AIResponse.Failure("Request timed out or cancelled.")));
                     }
                     catch (Exception e)
                     {
                         _sawmill.Error($"Unhandled exception during async AI request for {ToPrettyString(npcUid)}: {e}");
-                        // Fixed CS7036: Add missing 'response' argument
                         QueueLocalEvent(new ProcessAIResponseEvent(npcUid, speakerCKey, AIResponse.Failure($"Internal error: {e.Message}")));
                     }
-                    // No finally block needed here for removal, HandleAIResponse will do it.
-                    // Dispose CTS on the main thread in HandleAIResponse.
                 }, cts.Token);
             }
         }
@@ -175,14 +163,12 @@ namespace Content.Server._Stalker.AI
             {
                 _sawmill.Debug($"NPC {ToPrettyString(npcUid)} received text response for Player {playerCKey}: {response.TextResponse}");
                 TryChat(npcUid, response.TextResponse);
-                // Trim the specific player's history *before* adding the assistant message
-                // Trim the specific player's history *before* adding the assistant message
-                TrimHistory(npcUid, playerCKey, component, 1); // Error CS0103 fixed by re-adding TrimHistory below
-                // Add assistant's response to the specific player's history
-                // Fixed CS1503: Correct arguments for AddMessageToHistory
+
+                TrimHistory(npcUid, playerCKey, component, 1);
+
                 AddMessageToHistory(npcUid, playerCKey, component, "assistant", response.TextResponse, null, null);
             }
-            else if (response.ToolCallRequests != null && response.ToolCallRequests.Count > 0) // Check for multiple tool calls
+            else if (response.ToolCallRequests != null && response.ToolCallRequests.Count > 0)
             {
                 _sawmill.Debug($"NPC {ToPrettyString(npcUid)} received {response.ToolCallRequests.Count} tool call requests for Player {playerCKey}."); var assistantToolCalls = response.ToolCallRequests.Select(tc => new OpenRouterToolCall
                 {
@@ -200,9 +186,6 @@ namespace Content.Server._Stalker.AI
 
                     _sawmill.Info($"Tool '{toolCall.ToolName}' (ID: {toolCall.ToolCallId}) executed for NPC {ToPrettyString(npcUid)} (Player: {playerCKey}). Success: {success}. Result: {resultMessage}");
 
-                    // TODO: Consider if we need to immediately re-query the AI after *each* tool result,
-                    // or only after all requested tools in a batch are executed.
-                    // Current implementation executes all requested tools before potentially re-querying (if implemented).
                 }
             }
             else
@@ -306,8 +289,7 @@ namespace Content.Server._Stalker.AI
                         else resultMessage = "Missing or invalid 'targetPlayer' argument for TryOfferQuest.";
                         break;
 
-                    case nameof(TryCompleteQuest): // <-- New Case
-                        // Check if NPC can both take and give items (required for quest completion)
+                    case nameof(TryCompleteQuest):
                         if (!component.CanOfferQuests)
                         {
                             resultMessage = "TryCompleteQuest tool requires canOfferQuests to be enabled.";
@@ -318,7 +300,7 @@ namespace Content.Server._Stalker.AI
                             TryGetStringArgument(toolCall.Arguments, "rewardItemId", out var rewardItemId))
                         {
                             TryGetIntArgument(toolCall.Arguments, "rewardQuantity", out var rewardQuantity);
-                            rewardQuantity = Math.Max(1, rewardQuantity); // Ensure at least 1 reward
+                            rewardQuantity = Math.Max(1, rewardQuantity);
                             success = TryCompleteQuest(uid, component, targetPlayer, questItemId, rewardItemId, rewardQuantity, npcResponse);
                             resultMessage = success ? "Complete quest action performed." : "Complete quest action failed.";
                         }
@@ -327,7 +309,6 @@ namespace Content.Server._Stalker.AI
 
                     default:
                         _sawmill.Warning($"NPC {ToPrettyString(uid)} received request for unknown tool: {toolCall.ToolName}");
-                        // resultMessage remains "Unknown tool name."
                         break;
                 }
             }
@@ -341,7 +322,9 @@ namespace Content.Server._Stalker.AI
             return (success, resultMessage);
         }
 
-        // Helper to safely extract string arguments from JsonObject
+        /// <summary>
+        /// Helper to safely extract string arguments from JsonObject
+        /// </summary>
         private bool TryGetStringArgument(JsonObject args, string key, out string value)
         {
             value = string.Empty;
@@ -407,15 +390,13 @@ namespace Content.Server._Stalker.AI
             // Get the specific history list for this NPC and Player
             var history = GetHistoryForNpcAndPlayer(npcUid, playerCKey);
 
-            // Sanitize speaker name for the API if it's provided
             string? sanitizedName = null;
             if (!string.IsNullOrEmpty(speakerName))
             {
                 sanitizedName = SanitizeNameForApi(speakerName);
-                // If sanitization results in an empty string, set it to null or a default placeholder
                 if (string.IsNullOrWhiteSpace(sanitizedName))
                 {
-                    sanitizedName = "UnknownSpeaker"; // Or null, depending on API requirements
+                    sanitizedName = "UnknownSpeaker";
                 }
             }
 
@@ -427,12 +408,8 @@ namespace Content.Server._Stalker.AI
                 _sawmill.Debug($"Prepended CKey to user message for {speakerCKey}. New content preview: {finalContent.Substring(0, Math.Min(finalContent.Length, 50))}...");
             }
 
-            // Basic history addition using the sanitized name and potentially modified content
-            // Note: We still pass speakerCKey to the CKey property for potential internal use or future API changes,
-            // even though the current OpenRouter API might ignore it. The primary mechanism is now the content.
             history.Add(new OpenRouterMessage { Role = role, Content = finalContent, Name = sanitizedName, ToolCalls = toolCalls, ToolCallId = toolCallId });
 
-            // Trimming is handled by TrimHistory calls before this method.
         }
 
         /// <summary>
@@ -456,14 +433,12 @@ namespace Content.Server._Stalker.AI
         {
             // Get the specific history list for this NPC and Player
             var history = GetHistoryForNpcAndPlayer(npcUid, playerCKey);
-            int maxAllowed = component.MaxHistoryPerPlayer; // Use the new field
+            int maxAllowed = component.MaxHistoryPerPlayer;
 
-            // Calculate how many messages *currently* exceed the limit if we add the new ones
             int removeCount = (history.Count + spaceNeeded) - maxAllowed;
 
             if (removeCount > 0)
             {
-                // Ensure we don't try to remove more messages than exist
                 int actualRemoveCount = Math.Min(removeCount, history.Count);
                 if (actualRemoveCount > 0)
                 {
@@ -478,7 +453,7 @@ namespace Content.Server._Stalker.AI
         {
             base.Shutdown();
             _conversationHistories.Clear();
-            _ongoingRequests.Clear(); // Also clear ongoing requests
+            _ongoingRequests.Clear();
         }
 
         private void OnComponentRemoved(EntityUid uid, AiNpcComponent component, ComponentShutdown args)
@@ -495,7 +470,9 @@ namespace Content.Server._Stalker.AI
         }
 
 
-        // Tool description methods
+        /// <summary>
+        /// Tool description methods
+        /// </summary>
         private List<string> GetAvailableToolDescriptions(EntityUid uid, AiNpcComponent component)
         {
             var descriptions = new List<string>();
@@ -503,49 +480,41 @@ namespace Content.Server._Stalker.AI
             if (component.CanChat)
                 descriptions.Add(GetChatToolDescription());
 
-            // Only add GiveItem tool if the NPC actually has givable items defined
-            // AND the tool is enabled
             if (component.CanGiveItems && component.GivableItems.Count > 0)
             {
-                descriptions.Add(GetGiveItemToolDescription(component)); // Still needs component for item list
+                descriptions.Add(GetGiveItemToolDescription(component));
             }
 
-            // Only add OfferQuest tool if the NPC actually has quest items defined
-            // AND the tool is enabled
             if (component.CanOfferQuests && component.QuestItems.Count > 0)
             {
-                descriptions.Add(GetOfferQuestToolDescription(component)); // Needs component for item list
+                descriptions.Add(GetOfferQuestToolDescription(component));
             }
 
             if (component.CanTakeItems)
                 descriptions.Add(GetTakeItemToolDescription());
 
-            // Add CompleteQuest tool if NPC can both take and give items
-            // AND has both quest items and givable items defined (as rewards)
             if (component.CanOfferQuests && component.QuestItems.Count > 0 && component.GivableItems.Count > 0)
             {
-                descriptions.Add(GetCompleteQuestToolDescription(component)); // Needs component for item lists
+                descriptions.Add(GetCompleteQuestToolDescription(component));
             }
 
-            // Add the punish tool description if the component allows it
-            // AND the tool is enabled
             if (component.CanPunish && (component.PunishmentDamage != null || component.PunishmentSound != null))
             {
-                descriptions.Add(GetPunishPlayerToolDescription()); // No longer needs component
+                descriptions.Add(GetPunishPlayerToolDescription());
             }
             return descriptions;
         }
 
         // --- Placeholder Helper Methods ---
 
-        // Finds a player entity based *only* on their CKey (username).
+        /// <summary>
+        /// Finds a player entity based *only* on their CKey (username).
+        /// </summary>
         private EntityUid? FindPlayerByIdentifier(string ckeyIdentifier)
         {
-            // Iterates all players and checks CKey.
-            var query = EntityQueryEnumerator<ActorComponent>(); // Only need ActorComponent for the session/CKey
+            var query = EntityQueryEnumerator<ActorComponent>();
             while (query.MoveNext(out var uid, out var actor))
             {
-                // Check CKey
                 if (actor.PlayerSession.Name.Equals(ckeyIdentifier, StringComparison.OrdinalIgnoreCase))
                 {
                     return uid;
