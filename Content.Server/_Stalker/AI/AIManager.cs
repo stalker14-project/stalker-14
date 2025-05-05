@@ -65,7 +65,7 @@ namespace Content.Server._Stalker.AI
                 _httpClient.DefaultRequestHeaders.Authorization = null;
                 _sawmill.Warning("OpenRouter API key cleared or not set.");
             }
-        }        
+        }
         private void OnApiUrlChanged(string url)
         {
             _openRouterUrl = url.TrimEnd('/');
@@ -101,7 +101,8 @@ namespace Content.Server._Stalker.AI
             {
                 _sawmill.Warning($"AI request failed for {npcUid}: OpenRouter configuration missing (URL: {_openRouterUrl}, Model: {_openRouterModel}, Key set: {!string.IsNullOrEmpty(_openRouterApiKey)})");
                 return AIResponse.Failure("OpenRouter configuration is incomplete.");
-            }            var messages = new List<OpenRouterMessage>
+            }
+            var messages = new List<OpenRouterMessage>
             {
                 new() { Role = "system", Content = npcPrompt }
             };
@@ -137,7 +138,8 @@ namespace Content.Server._Stalker.AI
                     _sawmill.Error($"Failed to serialize request payload for logging: {jsonEx.Message}");
                 }
 
-                var response = await _httpClient.PostAsJsonAsync(requestUrl, requestPayload, cancel);string rawResponseContent = await response.Content.ReadAsStringAsync(cancel);
+                var response = await _httpClient.PostAsJsonAsync(requestUrl, requestPayload, cancel);
+                string rawResponseContent = await response.Content.ReadAsStringAsync(cancel);
                 _sawmill.Debug($"OpenRouter Raw Response for {npcUid} (Status: {response.StatusCode}):\n{rawResponseContent}");
 
                 if (!response.IsSuccessStatusCode)
@@ -147,7 +149,8 @@ namespace Content.Server._Stalker.AI
                     return AIResponse.Failure($"Error communicating with AI service: {response.ReasonPhrase} ({response.StatusCode})");
                 }
 
-                var responseData = JsonSerializer.Deserialize<OpenRouterChatResponse>(rawResponseContent);                if (responseData == null || responseData.Choices == null || responseData.Choices.Count == 0)
+                var responseData = JsonSerializer.Deserialize<OpenRouterChatResponse>(rawResponseContent);
+                if (responseData == null || responseData.Choices == null || responseData.Choices.Count == 0)
                 {
                     _sawmill.Warning($"Received empty or invalid response from OpenRouter for {npcUid}. URL: {requestUrl}");
                     return AIResponse.Failure("Received empty response from AI service.");
@@ -302,12 +305,8 @@ namespace Content.Server._Stalker.AI
         public string? Content { get; set; }
 
         [JsonPropertyName("name")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonIgnore]
         public string? Name { get; set; }
-
-        [JsonPropertyName("ckey")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? CKey { get; set; }
 
         [JsonPropertyName("tool_calls")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
