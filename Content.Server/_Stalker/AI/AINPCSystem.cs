@@ -48,7 +48,7 @@ namespace Content.Server._Stalker.AI
 
             SubscribeLocalEvent<EntitySpokeEvent>(OnEntitySpoke);
             SubscribeLocalEvent<ProcessAIResponseEvent>(HandleAIResponse);
-            SubscribeLocalEvent<AiNpcComponent, ComponentShutdown>(OnComponentRemoved); // Added subscription
+            SubscribeLocalEvent<AiNpcComponent, ComponentShutdown>(OnComponentRemoved);
 
             _sawmill.Info("AI NPC System Initialized");
         }
@@ -69,7 +69,6 @@ namespace Content.Server._Stalker.AI
                 speakerCKey = actor.PlayerSession.Name;
             }
 
-            // If we couldn't get a CKey for the speaker, we cannot track history per player.
             if (speakerCKey == null)
             {
                 _sawmill.Warning($"Could not get CKey for speaker {ToPrettyString(args.Source)}. Cannot process AI interaction.");
@@ -357,14 +356,12 @@ namespace Content.Server._Stalker.AI
         /// </summary>
         private List<OpenRouterMessage> GetHistoryForNpcAndPlayer(EntityUid npcUid, string playerCKey)
         {
-            // Get or create the outer dictionary for the NPC
             if (!_conversationHistories.TryGetValue(npcUid, out var npcHistories))
             {
                 npcHistories = new Dictionary<string, List<OpenRouterMessage>>();
                 _conversationHistories[npcUid] = npcHistories;
             }
 
-            // Get or create the inner list for the specific player
             if (!npcHistories.TryGetValue(playerCKey, out var playerHistory))
             {
                 playerHistory = new List<OpenRouterMessage>();
@@ -374,7 +371,9 @@ namespace Content.Server._Stalker.AI
             return playerHistory;
         }
 
-        // Helper to safely extract int arguments from JsonObject
+        /// <summary>
+        /// Helper to safely extract int arguments from JsonObject
+        /// </summary>
         private bool TryGetIntArgument(JsonObject args, string key, out int value)
         {
             value = 0;
@@ -400,7 +399,6 @@ namespace Content.Server._Stalker.AI
         /// </summary>
         private void AddMessageToHistory(EntityUid npcUid, string playerCKey, AiNpcComponent component, string role, string? content, string? speakerName = null, string? speakerCKey = null, List<OpenRouterToolCall>? toolCalls = null, string? toolCallId = null)
         {
-            // Get the specific history list for this NPC and Player
             var history = GetHistoryForNpcAndPlayer(npcUid, playerCKey);
 
             string? sanitizedName = null;
@@ -461,7 +459,9 @@ namespace Content.Server._Stalker.AI
             }
         }
 
-        // Cleanup history when component is removed
+        /// <summary>
+        /// Cleanup history when component is removed
+        /// </summary>
         public override void Shutdown()
         {
             base.Shutdown();
@@ -517,8 +517,6 @@ namespace Content.Server._Stalker.AI
             }
             return descriptions;
         }
-
-        // --- Placeholder Helper Methods ---
 
         /// <summary>
         /// Finds a player entity based *only* on their CKey (username).

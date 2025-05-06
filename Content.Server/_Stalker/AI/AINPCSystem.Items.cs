@@ -30,7 +30,6 @@ namespace Content.Server._Stalker.AI
         
         private string GetGiveItemToolDescription(AiNpcComponent component)
         {
-            // Build the list of allowed items for the description from GivableItems
             var allowedItemsList = component.GivableItems
                 .Select(item => $"- {item.ProtoId} (Max: {item.MaxQuantity}, Rarity: {item.Rarity})")
                 .ToList();
@@ -38,7 +37,6 @@ namespace Content.Server._Stalker.AI
                 ? string.Join("\n", allowedItemsList)
                 : "None";
 
-            // Simplified description, emphasizing it's for rewards/gifts
             var description = $@"Give a specified item (as a reward or gift) to a player. You can only give items from this list:
                 {allowedItemsString}";
 
@@ -76,29 +74,24 @@ namespace Content.Server._Stalker.AI
             // npcResponse is handled by ExecuteToolCall before this method is run.
             _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting give item: Proto='{itemPrototypeId}', Qty={quantity}, Target='{targetPlayerIdentifier}'");
 
-            // --- 0. Get NPC Component ---
             if (!TryComp<AiNpcComponent>(npc, out var aiComp))
             {
                 _sawmill.Error($"NPC {ToPrettyString(npc)} is missing AiNpcComponent in TryGiveItem.");
                 return false;
             }
 
-            // --- 1. Find Target Player ---
             EntityUid? targetPlayer = FindPlayerByIdentifier(targetPlayerIdentifier);
             if (targetPlayer == null || !targetPlayer.Value.Valid)
             {
                 _sawmill.Warning($"Could not find target player '{targetPlayerIdentifier}' for TryGiveItem.");
-                // Maybe chat failure? TryChat(npc, $"Who is {targetPlayerIdentifier}?");
                 return false;
             }
 
-            // --- 2. Validate Item Against Givable List & Quantity ---
             var givableItemInfo = aiComp.GivableItems.FirstOrDefault(item => item.ProtoId.Id.Equals(itemPrototypeId, StringComparison.OrdinalIgnoreCase));
 
             if (givableItemInfo == null)
             {
                 _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give non-givable item '{itemPrototypeId}'. Denying.");
-                // TryChat(npc, $"I can't give you one of those."); // Feedback
                 return false;
             }
 
@@ -112,25 +105,19 @@ namespace Content.Server._Stalker.AI
             {
                 _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to give {quantity} of '{itemPrototypeId}', but max allowed is {givableItemInfo.MaxQuantity}. Clamping quantity.");
                 quantity = givableItemInfo.MaxQuantity;
-                // TryChat(npc, $"Whoa there, I can only give you {quantity} of those."); // Feedback
             }
 
-            // --- 3. Validate Prototype ID ---
             if (!_proto.HasIndex<EntityPrototype>(itemPrototypeId))
             {
                 _sawmill.Warning($"Invalid prototype ID '{itemPrototypeId}' requested by NPC {ToPrettyString(npc)} for TryGiveItem.");
                 return false;
             }
-
-            // --- 4. Check Range & Interaction ---
             if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > 2.0f)
             {
                 _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far for NPC {ToPrettyString(npc)} to give item.");
-                // TryChat(npc, $"Get closer if you want this."); // Feedback
                 return false;
             }
 
-            // --- 5. Spawn and Give Items ---
             var npcCoords = Transform(npc).Coordinates;
             if (!npcCoords.IsValid(EntityManager))
             {
@@ -146,8 +133,7 @@ namespace Content.Server._Stalker.AI
                 {
                     _sawmill.Warning($"Failed direct pickup for item {i + 1}/{quantity} ({ToPrettyString(spawnedItem)}) by {ToPrettyString(targetPlayer.Value)}. Dropping near NPC.");
                     Transform(spawnedItem).Coordinates = npcCoords;
-                    // If dropping near, maybe don't count as "given"? Or maybe do? Let's count it for now.
-                    givenCount++; // Count even if dropped nearby
+                    givenCount++;
                 }
                 else
                 {
@@ -166,7 +152,6 @@ namespace Content.Server._Stalker.AI
 
         private string GetTakeItemToolDescription()
         {
-            // Simplified description, emphasizing it's for quest items/specific requests
             var description = "Request a specific item (e.g., a quest item) from a player and attempt to take it if they hold it out.";
             return $@"{{
                 ""name"": ""TryTakeItem"",
@@ -197,19 +182,15 @@ namespace Content.Server._Stalker.AI
         /// </summary>
         public bool TryTakeItem(EntityUid npc, string targetPlayerIdentifier, string requestedItemName, string? npcResponse = null)
         {
-            // npcResponse is handled by ExecuteToolCall.
             _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting take item: ItemName='{requestedItemName}', Target='{targetPlayerIdentifier}'");
 
-            // --- 1. Find Target Player ---
             EntityUid? targetPlayer = FindPlayerByIdentifier(targetPlayerIdentifier);
             if (targetPlayer == null || !targetPlayer.Value.Valid)
             {
                 _sawmill.Warning($"Could not find target player '{targetPlayerIdentifier}' for TryTakeItem.");
-                // TryChat(npc, $"Who's {targetPlayerIdentifier}?");
                 return false;
             }
 
-            // --- 2. Find Item in Player's Active Hand ---
             // We only check the *active* hand for simplicity now.
             EntityUid? itemToTake = null;
             if (_hands.TryGetActiveItem(targetPlayer.Value, out var activeItem))
@@ -224,22 +205,17 @@ namespace Content.Server._Stalker.AI
             if (itemToTake == null || !itemToTake.Value.Valid)
             {
                 _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} does not have '{requestedItemName}' in active hand for TryTakeItem.");
-                // TryChat(npc, $"You don't seem to be holding a {requestedItemName}. Hold it out."); // Feedback
                 return false;
             }
 
-            // --- 3. Check Range & Interaction ---
             if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > 2.0f)
             {
                 _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far for NPC {ToPrettyString(npc)} to take item.");
-                // TryChat(npc, $"Bring that {requestedItemName} closer."); // Feedback
                 return false;
             }
 
-            // --- 4. Perform Transfer (Original drop + move logic) ---
             // Player drops the item at their feet first.
-            // A real implementation might need a more robust interaction system (e.g., trade window).
-            if (_hands.TryDrop(targetPlayer.Value, itemToTake.Value, checkActionBlocker: false)) // Player drops the item
+            if (_hands.TryDrop(targetPlayer.Value, itemToTake.Value, checkActionBlocker: false))
             {
                 // Now move the dropped item to the NPC's location
                 var npcTransform = Transform(npc);
@@ -247,12 +223,11 @@ namespace Content.Server._Stalker.AI
                 itemTransform.Coordinates = npcTransform.Coordinates; // Move item to NPC's feet
 
                 _sawmill.Info($"NPC {ToPrettyString(npc)} successfully received item {ToPrettyString(itemToTake.Value)} from {ToPrettyString(targetPlayer.Value)} (dropped at NPC location).");
-                return true; // Success is player dropping the item near the NPC
+                return true;
             }
             else
             {
                 _sawmill.Warning($"Player {ToPrettyString(targetPlayer.Value)} failed to drop item {ToPrettyString(itemToTake.Value)} for NPC {ToPrettyString(npc)}.");
-                // TryChat(npc, $"Looks like you couldn't drop that {requestedItemName}. Try again?"); // Feedback
                 return false;
             }
         }
@@ -260,14 +235,11 @@ namespace Content.Server._Stalker.AI
         // TODO: Replace with robust inventory search
         private EntityUid? FindItemInHands(EntityUid holder, string itemName)
         {
-            // Use TryComp to get the HandsComponent
             if (!TryComp<HandsComponent>(holder, out var handsComp))
                 return null;
 
-            // Now enumerate hands using the component
             foreach (var hand in _hands.EnumerateHands(holder, handsComp))
             {
-                // Check if the hand is holding an entity
                 if (hand.HeldEntity is { } heldEntityValue)
                 {
                     var proto = Prototype(heldEntityValue);

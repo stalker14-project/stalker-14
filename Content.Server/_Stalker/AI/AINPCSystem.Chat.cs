@@ -27,9 +27,8 @@ namespace Content.Server._Stalker.AI
 {
     public sealed partial class AINPCSystem : SharedAiNpcSystem
     {
-        private string GetChatToolDescription() // Removed component parameter
+        private string GetChatToolDescription()
         {
-            // Simplified description
             var description = "Respond verbally to a user or initiate conversation.";
 
             return $@"{{
@@ -53,20 +52,16 @@ namespace Content.Server._Stalker.AI
         }
 
 
-        // Actual tool methods, invoked locally after AI response parsing
-
         /// <summary>
         /// Makes the NPC speak. Handles the npcResponse parameter to avoid double-speaking if called from ExecuteToolCall.
         /// </summary>
         public bool TryChat(EntityUid npc, string message, string? npcResponse = null)
         {
-            // Prioritize npcResponse if provided, otherwise use message.
             var messageToSpeak = !string.IsNullOrWhiteSpace(npcResponse) ? npcResponse : message;
 
             if (string.IsNullOrWhiteSpace(messageToSpeak))
                 return false;
 
-            // Avoid logging the same message twice if npcResponse was handled in ExecuteToolCall
             if (messageToSpeak != npcResponse)
                 _sawmill.Debug($"NPC {ToPrettyString(npc)} executing chat: {messageToSpeak}");
 

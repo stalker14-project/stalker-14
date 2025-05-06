@@ -27,9 +27,8 @@ namespace Content.Server._Stalker.AI
 {
     public sealed partial class AINPCSystem : SharedAiNpcSystem
     {
-        private string GetPunishPlayerToolDescription() // Removed component parameter
+        private string GetPunishPlayerToolDescription()
         {
-            // Simplified description
             var description = "Punish a player perceived as rude, lying, or hostile by attacking them. Use sparingly.";
 
             return $@"{{
@@ -61,10 +60,8 @@ namespace Content.Server._Stalker.AI
         /// </summary>
         public bool TryPunishPlayer(EntityUid npc, AiNpcComponent aiComp, string targetPlayerIdentifier, string reason, string? npcResponse = null)
         {
-            // npcResponse is handled by ExecuteToolCall.
             _sawmill.Debug($"NPC {ToPrettyString(npc)} attempting to punish player: Target='{targetPlayerIdentifier}', Reason='{reason}'");
 
-            // --- 1. Find Target Player ---
             EntityUid? targetPlayer = FindPlayerByIdentifier(targetPlayerIdentifier);
             if (targetPlayer == null || !targetPlayer.Value.Valid)
             {
@@ -73,36 +70,30 @@ namespace Content.Server._Stalker.AI
             }
 
 
-            // Check if the target is whitelisted from punishment by this NPC
             if (aiComp.PunishmentWhitelist != null && _whitelistSystem.IsWhitelistPass(aiComp.PunishmentWhitelist, targetPlayer.Value))
             {
                 _sawmill.Info($"Target player {ToPrettyString(targetPlayer.Value)} is whitelisted. Punishment aborted.");
-                // TryChat(npc, $"I can't touch {Name(targetPlayer.Value)}."); // Feedback
                 return false;
             }
 
-            // --- 3. Check Range ---
             const float punishRange = 5.0f;
             if (!Transform(npc).Coordinates.TryDistance(EntityManager, Transform(targetPlayer.Value).Coordinates, out var distance) || distance > punishRange)
             {
                 _sawmill.Warning($"Target player {ToPrettyString(targetPlayer.Value)} too far ({distance}m) for NPC {ToPrettyString(npc)} to punish.");
-                // TryChat(npc, $"Get back here, coward!"); // Feedback
                 return false;
             }
 
-            // --- 4. Apply Punishment ---
             bool damageApplied = false;
             if (aiComp.PunishmentDamage != null)
             {
                 var damageResult = _damageable.TryChangeDamage(targetPlayer.Value, aiComp.PunishmentDamage, ignoreResistances: true);
-                damageApplied = damageResult != null; // Don't fucking touch it. There is no Total damage!
+                damageApplied = damageResult != null;
             }
             else
             {
                 _sawmill.Warning($"NPC {ToPrettyString(npc)} tried to punish, but no PunishmentDamage is defined in its AiNpcComponent.");
             }
 
-            // Play sound effect if defined
             if (aiComp.PunishmentSound != null)
             {
                 _audio.PlayPvs(aiComp.PunishmentSound, Transform(npc).Coordinates);
