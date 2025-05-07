@@ -18,6 +18,7 @@ shop-category-paperwork = Paperwork
 shop-category-what = Copter
 shop-category-tools = Tools
 
+shop-category-blueprints = Blueprints
 shop-category-blueprints-research-equipment = Blueprints - Anomaly and Artifact Detectors
 shop-category-blueprints-metal-detectors = Blueprints - Metal detectors
 shop-category-blueprints-raincoats = Blueprints - Raincoats

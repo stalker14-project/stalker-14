@@ -25,7 +25,7 @@
           prob: 0.05
           maxAmount: 1
     - type: NPCBloodsucker
-      stunTime: 2
+      stunTime: 0
       damageOnSuck:
         types:
           Bloodloss: 17
@@ -80,7 +80,7 @@
       footstepSoundCollection:
         path: /Audio/_Stalker/Mutants/bloodsucker_breath2.ogg
         params:
-          volume: -999999
+          volume: -5
     - type: MobThresholds
       thresholds:
         0: Alive
