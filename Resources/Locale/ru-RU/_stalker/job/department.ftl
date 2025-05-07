@@ -4,3 +4,4 @@ department-StalkerBrigands = Разбойники
 department-StalkerOfficials = Оффициалы
 department-StalkerReligius = Фанатики
 department-Evolver = Разумные мутанты
+department-StalkerAnomalists = Техники
