@@ -1,7 +1,5 @@
 using System.Linq;
-using System.Threading.Tasks;
 using Content.Server._Stalker.Discord.DiscordAuth;
-using Content.Server._Stalker.Sponsors;
 using Content.Server.Connection;
 using Content.Shared._Stalker.CCCCVars;
 using Content.Shared._Stalker.JoinQueue;
@@ -43,7 +41,6 @@ public sealed class JoinQueueManager
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IServerNetManager _netManager = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
-    [Dependency] private readonly SponsorsManager _sponsors = default!;
     private ISawmill _sawmill = default!;
 
     /// <summary>

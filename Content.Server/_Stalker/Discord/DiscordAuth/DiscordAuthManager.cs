@@ -16,7 +16,7 @@ using Robust.Shared.Player;
 
 namespace Content.Server._Stalker.Discord.DiscordAuth;
 
-public sealed class DiscordAuthManager : IPostInjectInit
+public sealed partial class DiscordAuthManager : IPostInjectInit
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IPlayerManager _playerMgr = default!;
@@ -78,7 +78,7 @@ public sealed class DiscordAuthManager : IPostInjectInit
 
 
         var data = await IsVerified(args.Session.UserId);
-        if (data.Status)
+        if (data.Status && data.UserData is not null)
         {
             PlayerVerified?.Invoke(this, args.Session);
             return;
@@ -105,28 +105,28 @@ public sealed class DiscordAuthManager : IPostInjectInit
         {
             var response = await _httpClient.SendAsync(request, cancel);
             if (!response.IsSuccessStatusCode)
-                return new DiscordData(false, null, "You are not authorized!");
+                return UnauthorizedErrorData();
 
             var discordUuid = await response.Content.ReadFromJsonAsync<DiscordUuidResponse>(cancel);
 
             var isInGuild = await CheckGuild(userId, cancel);
             if (!isInGuild)
-                return new DiscordData(false, null, "You are not in our guild!");
+                return NotInGuildErrorData();
 
             if (discordUuid is null)
-                return new DiscordData(false, null, "Response from authorization is empty!");
+                return EmptyResponseErrorData();
 
             return new DiscordData(true, new DiscordUserData(userId, discordUuid.DiscordId));
         }
         catch (HttpRequestException)
         {
             _sawmill.Error("Remote auth service is unreachable. Check if its online!");
-            return new DiscordData(false, null, "Remote auth service is unreachable.");
+            return ServiceUnreachableErrorData();
         }
         catch (Exception e)
         {
             _sawmill.Error($"Unexpected error verifying user via auth service. Error: {e.Message}. Stack: \n{e.StackTrace}");
-            return new DiscordData(false, null, "Unexpected error verifying user via auth service.");
+            return UnexpectedErrorData();
         }
     }
 
@@ -171,30 +171,4 @@ public sealed class DiscordAuthManager : IPostInjectInit
             return null;
         }
     }
-
-    private sealed class DiscordUuidResponse
-    {
-        [JsonPropertyName("uuid")]
-        public string Uuid { get; set; } = null!;
-
-        [JsonPropertyName("discord_id")]
-        public string DiscordId { get; set; } = null!;
-    }
-
-    private sealed class DiscordGuildsResponse
-    {
-        [JsonPropertyName("guilds")]
-        public DiscordGuild[] Guilds { get; set; } = [];
-    }
-
-    private sealed class DiscordGuild
-    {
-        [JsonPropertyName("id")]
-        public string Id { get; set; } = null!;
-    }
-}
-
-public sealed class DiscordLinkResponse()
-{
-    public string Link { get; set; } = default!;
 }

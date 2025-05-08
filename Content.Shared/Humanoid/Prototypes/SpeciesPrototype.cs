@@ -1,5 +1,4 @@
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Humanoid.Prototypes;
 
@@ -120,6 +119,11 @@ public sealed partial class SpeciesPrototype : IPrototype
     /// </summary>
     [DataField]
     public int MaxAge = 120;
+
+    // Stalker-Changes-Start | Sponsors
+    [DataField] 
+    public bool IsSponsor = false;
+    // Stalker-Changes-End | Sponsors
 }
 
 public enum SpeciesNaming : byte

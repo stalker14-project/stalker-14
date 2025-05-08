@@ -1,115 +1,42 @@
+# Sponsor definitions
 - type: sponsor
-  id: trueNiggaGettoSponsors
-  repositoryWeight:
-    1: 200.0
-    2: 350.0
-    3: 600.0
-    4: 1000.0
-  contribItems:
+  id: SponsorBread
+  repositoryWeight: 200.0
+  repositoryItems:
+    - DonatestandartCrate
+  hasPriorityJoin: false
+  discordRoleId: "1172510785415684136"
+  sponsorPriority: 1
+  
+- type: sponsor
+  id: SponsorBacker
+  repositoryWeight: 350.0
+  repositoryItems:
+    - DonateStalkerCrate
+  hasPriorityJoin: true
+  discordRoleId: "1158896573569318933"
+  sponsorPriority: 2
+  
+- type: sponsor
+  id: SponsorOMind
+  repositoryWeight: 600.0
+  repositoryItems:
+    - DonateIskatelCrate
+  hasPriorityJoin: true
+  discordRoleId: "1233831223118266398"
+  sponsorPriority: 3
+  
+- type: sponsor
+  id: SponsorPseudogiant
+  repositoryWeight: 1000.0
+  hasPriorityJoin: true
+  discordRoleId: "1233831339682172979"
+  sponsorPriority: 4
+
+# Contributor Definition # README: Prototype of this type should be unique, no other prototypes should have this type
+- type: contributor
+  id: SponsorContributor
+  repositoryWeight: 250.0
+  hasPriorityJoin: true
+  contributorItems:
     - DonateContributorCrate
-  repositorySponsorItems:
-    1:
-      - DonatestandartCrate
-    2:
-      - DonateStalkerCrate
-    3:
-      - DonateIskatelCrate
-  personalShopCategories:
-    LordVladimer:
-    - name: Лулрд
-      items:
-        STWeaponRifleAKS74UWhite: 50
-        STWeaponRifleASVAL: 800
-        STWeaponShotgunSawedOfAnomaly: 50
-        8mmBuckshotBox: 5
-        939BPBox: 50
-        939Mag30: 50
-        919RIPBox: 20
-        MedkitScience: 50
-        SciSteampack: 50
-        ClothingOuterArmorReingerElite: 5000
-        PP91Mag: 10
-        STWeaponSMGPP91Anomaly: 450
-        ClothingBeltWebbingOfficerStalker: 25
-        ClothingBackpackDuffelHikingVSRFAnomaly: 250
-    TornadoTech:
-    - name: Договорняк
-      items:
-        STWeaponSniperVSSOracle: 12000
-        STModuleSniperSightT2: 1200
-        Base939Mag10: 100
-        939Mag20: 120
-        939Mag30: 450
-        939SP5Box: 250
-        939SP6Box: 625
-    nazoltof:
-    - name: Персональная категория
-      items:
-        STWeaponSniperSVDSGrass: 15000
-    KLeymi:
-    - name: Персональная категория
-      items:
-        STWeaponRifleAK103Kamo: 10000
-    QEWAEWA2:
-    - name: Персональная категория
-      items:
-        STClothingOuterCoatNovember: 500
-        STWeaponRifleHK416: 3500
-        ClothingOuterArmorKeeper: 2500
-        STWeaponRifleA545: 3500
-        STWeaponRifleARX160: 7000
-        ClothingHeadHelmetKeeper: 2000
-    Deliko:
-    - name: Персональная категория
-      items:
-        ClothingJaketGray: 50
-        STClothingHeadPeakCap: 50
-    PodpivAss_Lex:
-    - name: Персональная категория
-      items:
-        ClothingMaskGP5Green: 50
-        ClothingTorsoTurtlenecksCamouflage: 50
-        BookStalkerSeraphimFAQ: 20
-        ClothingOuterArmorZaryaSeraRuined: 1000
-    farforik:
-    - name: Персональная категория
-      items:
-        STWeaponSniperVeprGrass: 8000
-    Ret4:
-    - name: Персональная категория
-      items:
-        ClothingOuterCoatRet: 1754
-        STweaponShotgunPRETecta: 2900
-        CasseteFiftyEightDonateRadio: 500
-        CasseteFiftyNineDonateRadio: 500
-        CasseteSixtyDonateRadio: 500
-    Resads:
-    - name: Персональная категория
-      items:
-        STWeaponRifleSIG739: 10000
-    Neko_Gecko:
-    - name: Персональная категория
-      items:
-        STWeaponSMGVector9Forest: 4000
-        MP5Mag50: 500
-    onlyweed:
-    - name: Персональная категория
-      items:
-        STWeaponRifleAK203: 15000
-    Desayler:
-    - name: Персональная категория
-      items:
-        ClothingNeckExoSpeed: 10000
-        STWeaponRifleStalkerRPK16Camo: 8000
-    Fomaa:
-    - name: Персональная категория
-      items:
-        STClothingMaskFoma: 800
-        STClothingHeadHatFoma: 100
-        ClothingCloakFoma: 1000
-        STClothingHandsGlovesFoma: 150
-        ClothingEyesGlassesFoma: 250
-    Samura1:
-    - name: Персональная категория
-      items:
-        STWeaponRifleAUG: 4000

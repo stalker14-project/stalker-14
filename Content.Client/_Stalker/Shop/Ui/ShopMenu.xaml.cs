@@ -144,13 +144,8 @@ public sealed partial class ShopMenu : DefaultWindow
         }
 
         var listingInStock = ListingInStock(listing);
-        if (listingInStock != GetListingPriceString(listing))
-        {
-            listingName += " (Out of stock)";
-            canBuy = false;
-        }
 
-        var newListing = new ShopListingControl(listingName, listingDesc, listingInStock, canBuy, sell, texture, listingCount);
+        var newListing = new ShopListingControl(listingName, listingDesc, listingInStock, canBuy, sell, texture);
         newListing.ShopItemButton.OnButtonDown += (args) =>
         {
             if (!sell)

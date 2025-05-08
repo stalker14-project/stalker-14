@@ -28,7 +28,7 @@ namespace Content.Server._Stalker.Shop;
 /// <summary>
 /// Server system to control Stalkers' shops
 /// </summary>
-public sealed class ShopSystem : SharedShopSystem
+public sealed partial class ShopSystem : SharedShopSystem
 {
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -37,13 +37,10 @@ public sealed class ShopSystem : SharedShopSystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly PricingSystem _pricing = default!;
-    [Dependency] private readonly SponsorsManager _sponsors = default!;
     [Dependency] private readonly EntityManager _entity = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     private ISawmill _sawmill = default!;
     private PriceCache _priceCache = new();
-
-
 
     public override void Initialize()
     {
@@ -63,6 +60,8 @@ public sealed class ShopSystem : SharedShopSystem
         SubscribeLocalEvent<StorageAfterInsertItemIntoLocationEvent>(OnAfterInsert);
 
         _sawmill = Logger.GetSawmill("shops");
+        
+        InitializeSponsors();
     }
 
     #region UI updates
@@ -104,19 +103,6 @@ public sealed class ShopSystem : SharedShopSystem
         }
 
         component.ShopCategories.AddRange(GenerateListingData(prototype.Categories, component));
-        component.ShopSponsorCategories = GenerateListingData(prototype.SponsorCategories, component);
-        component.ContributorCategories.AddRange(GenerateListingData(prototype.ContributorCategories, component));
-
-        // personal categories, filtered by ckey
-        foreach (var proto in _proto.EnumeratePrototypes<SponsorPrototype>())
-        {
-            foreach (var kvp in proto.PersonalShopCategories)
-            {
-                component.PersonalCategories.TryAdd(kvp.Key, new List<CategoryInfo>());
-                component.PersonalCategories[kvp.Key]= GenerateListingData(kvp.Value, component);
-            }
-        }
-
     }
     private void OnSelected(EntityUid uid, CurrencyComponent component, HandSelectedEvent args)
     {
@@ -193,14 +179,15 @@ public sealed class ShopSystem : SharedShopSystem
         var categories = component.ShopCategories;
 
         #region Sponsors-Stuff
-
-        List<CategoryInfo>? sponsorCategory = null;
-        List<CategoryInfo>? contribCategories = null;
-
+        
         if (!TryComp<ActorComponent>(user, out var actor))
             return;
-        _sponsors.FillSponsorCategories(actor.PlayerSession, ref sponsorCategory, ref contribCategories, component);
-        component.PersonalCategories.TryGetValue(actor.PlayerSession.Name, out var personalCategories);
+        
+        // TODO: GetSponsorCategories/GetContributorCategories/GetPersonalCategories results is not being cached like
+        // component.ShopCategories, due this little shit, idk how fast it'd work. But im sure this should be rewrited. Im too lazy now...
+        var sponsorCategory = GetSponsorCategories(actor.PlayerSession.UserId, component);
+        var contribCategories = GetContributorCategories(actor.PlayerSession.UserId, component);
+        var personalCategories = GetPersonalCategories(actor.PlayerSession.Name, component);
         #endregion
 
         var userItems = GetContainerItemsWithoutMoney(user.Value, component);
@@ -362,51 +349,7 @@ public sealed class ShopSystem : SharedShopSystem
 
         return result;
     }
-
-    /// <summary>
-    /// WARNING!! + TODO: This shit is spoiling prototypes, so we need to rewrite it as <see cref="GenerateListingData(System.Collections.Generic.List{Content.Shared._Stalker.Shop.Prototypes.CategoryInfo},Content.Shared._Stalker.Shop.ShopComponent)"/>.
-    /// Before using this in a loop with prototypes' instances make sure to clear them from ref shit
-    /// </summary>
-    /// <param name="items">Items to generate listings for</param>
-    /// <param name="component">Shop component for which we are generating, necessary due to money ID</param>
-    /// <returns>Generated listing data</returns>
-    private Dictionary<int, List<CategoryInfo>> GenerateListingData(Dictionary<int, List<CategoryInfo>> items, ShopComponent component)
-    {
-        var result = new Dictionary<int, List<CategoryInfo>>(items);
-        foreach (var kvp in result)
-        {
-            foreach (var category in kvp.Value)
-            {
-                foreach (var item in category.Items)
-                {
-                    var proto = _proto.Index<EntityPrototype>(item.Key);
-                    if (!proto.TryGetComponent(out CurrencyComponent? currency) && currency == null)
-                        continue;
-
-                    var listing = new ListingData
-                    {
-                        Categories = new HashSet<ProtoId<StoreCategoryPrototype>>(),
-                        Conditions = new List<ListingCondition>(),
-                        OriginalCost = new Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2>()
-                        {
-                            [component.MoneyId] = item.Value
-                        },
-                        Description = proto.Description,
-                        Icon = null,
-                        Name = proto.Name,
-                        Priority = 0,
-                        ProductAction = null,
-                        ProductEntity = item.Key,
-                    };
-                    if (category.ListingItems.Contains(listing))
-                        continue;
-                    category.ListingItems.Add(listing);
-                }
-            }
-        }
-
-        return result;
-    }
+    
     private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems)
     {
         var result = new List<ListingData>();

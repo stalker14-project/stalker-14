@@ -10,7 +10,7 @@ public sealed class SponsorWhitelistPrototype : IPrototype
     public string ID { get; private set; } = default!;
     
     [DataField]
-    public Enum Level = default!;
+    public ProtoId<SponsorPrototype> SponsorId = default!;
     
     [DataField]
     public List<ProtoId<JobPrototype>> Jobs = new();

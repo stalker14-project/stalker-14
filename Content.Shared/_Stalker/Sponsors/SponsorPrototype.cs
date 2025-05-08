@@ -1,4 +1,4 @@
-﻿using Content.Shared._Stalker.Shop.Prototypes;
+﻿using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stalker.Sponsors;
@@ -8,17 +8,52 @@ public sealed class SponsorPrototype : IPrototype
 {
     [ViewVariables]
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; private set; } = null!;
+
+    [DataField(serverOnly: true)] 
+    public float RepositoryWeight;
 
     [DataField(serverOnly: true)]
-    public Dictionary<int, float> RepositoryWeight = new();
+    public HashSet<ProtoId<EntityPrototype>> RepositoryItems = new();
 
     [DataField(serverOnly: true)]
-    public Dictionary<int, List<EntProtoId>> RepositorySponsorItems = new();
+    public bool HasPriorityJoin;
 
+    [DataField(serverOnly: true)] 
+    public string DiscordRoleId = null!;
+    
     [DataField(serverOnly: true)]
-    public Dictionary<string, List<CategoryInfo>> PersonalShopCategories = new();
+    public int SponsorPriority;
+}
 
+[Prototype("sponsorSpecies"), Serializable]
+public sealed class SponsorSpeciesPrototype : IPrototype
+{
+    [ViewVariables]
+    [IdDataField]
+    public string ID { get; private set; } = null!;
+
+    [DataField] 
+    public ProtoId<SpeciesPrototype> SpeciesId;
+    
     [DataField]
-    public List<EntProtoId> ContribItems = new();
+    public HashSet<ProtoId<SponsorPrototype>> SponsorIds = new();
+}
+
+[Prototype("contributor"), Serializable]
+public sealed class ContributorPrototype : IPrototype
+{
+    [ViewVariables]
+    [IdDataField]
+    public string ID { get; private set; } = null!;
+    
+    public string DiscordRoleId = null!;
+    
+    [DataField(serverOnly: true)] 
+    public float RepositoryWeight;
+    
+    [DataField(serverOnly: true)]
+    public bool HasPriorityJoin;
+    
+    public HashSet<ProtoId<EntityPrototype>> ContributorItems = new();
 }

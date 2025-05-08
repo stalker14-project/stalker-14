@@ -9,7 +9,7 @@ namespace Content.Client._Stalker.Shop.Ui;
 public sealed partial class ShopListingControl : Control
 {
     public ShopListingControl(string itemName, string itemDescription,
-        string price, bool canBuy, bool sell, Texture? texture = null, int? count = null)
+        string price, bool canBuy, bool sell, Texture? texture = null)
     {
         RobustXamlLoader.Load(this);
 
@@ -17,16 +17,9 @@ public sealed partial class ShopListingControl : Control
         ShopItemName.Text = itemName;
         ShopItemDescription.SetMessage(itemDescription);
         ShopItemPrice.Text = price;
-        ShopItemCount.Text = count switch
-        {
-            null => null,
-            1 => null,
-            _ => $"{count} шт."
-        };
 
         // Buttons
         ShopItemButton.Text = !sell ? Loc.GetString("shop-listing-buy") : Loc.GetString("shop-listing-sell");
-        ShopItemButton.Disabled = !canBuy;
 
         // Texture
         ShopItemTexture.Texture = texture;
