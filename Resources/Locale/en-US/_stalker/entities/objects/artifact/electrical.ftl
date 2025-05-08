@@ -1,6 +1,6 @@
 ent-ZoneArtifactSparkler = { ent-BaseArtifact }
     .suffix = Stalker, Sparkler
-ent-ZoneArtifactBattery = { ent-BaseArtifact }
+ent-ZoneArtifactBattery = Battery
     .suffix = Stalker, Battery
 ent-ZoneArtifactFlash = { ent-BaseArtifact }
     .suffix = Stalker, Flash

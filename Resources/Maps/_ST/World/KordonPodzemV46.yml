@@ -40531,13 +40531,6 @@ entities:
     - type: Transform
       pos: 7.5,6.5
       parent: 1
-- proto: Bed
-  entities:
-  - uid: 10042
-    components:
-    - type: Transform
-      pos: 52.5,-5.5
-      parent: 1
 - proto: BedsheetBlack
   entities:
   - uid: 44
@@ -55442,7 +55435,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: Door
-      secondsUntilStateChange: -5964.905
+      secondsUntilStateChange: -5999.9067
       state: Denying
     - type: Airtight
       airBlocked: False
@@ -55556,7 +55549,7 @@ entities:
       pos: -0.5,-59.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -99901.336
+      secondsUntilStateChange: -99936.336
       state: Opening
   - uid: 2657
     components:
@@ -55576,7 +55569,7 @@ entities:
       pos: 66.5,-86.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -98506.24
+      secondsUntilStateChange: -98541.24
       state: Opening
   - uid: 2660
     components:
@@ -55601,7 +55594,7 @@ entities:
       pos: 111.5,-26.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -99688.14
+      secondsUntilStateChange: -99723.14
       state: Opening
   - uid: 2664
     components:
@@ -55619,7 +55612,7 @@ entities:
       pos: 39.5,-90.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -117918.234
+      secondsUntilStateChange: -117953.234
       state: Opening
   - uid: 2667
     components:
@@ -55711,7 +55704,7 @@ entities:
       pos: 120.5,-62.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -63814.543
+      secondsUntilStateChange: -63849.543
       state: Opening
   - uid: 2683
     components:
@@ -55854,7 +55847,7 @@ entities:
       pos: 39.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -110094.086
+      secondsUntilStateChange: -110129.086
       state: Opening
   - uid: 2705
     components:
@@ -55863,7 +55856,7 @@ entities:
       pos: 40.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -110093.836
+      secondsUntilStateChange: -110128.836
       state: Opening
   - uid: 2706
     components:
@@ -55872,7 +55865,7 @@ entities:
       pos: 41.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -110093.586
+      secondsUntilStateChange: -110128.586
       state: Opening
   - uid: 2707
     components:
@@ -55881,7 +55874,7 @@ entities:
       pos: 39.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -110095.26
+      secondsUntilStateChange: -110130.26
       state: Opening
   - uid: 2708
     components:
@@ -55890,7 +55883,7 @@ entities:
       pos: 40.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -110094.99
+      secondsUntilStateChange: -110129.99
       state: Opening
   - uid: 2709
     components:
@@ -55899,7 +55892,7 @@ entities:
       pos: 41.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -110094.7
+      secondsUntilStateChange: -110129.7
       state: Opening
 - proto: HospitalCurtainsOpen
   entities:
@@ -56768,18 +56761,6 @@ entities:
     - type: Transform
       pos: 40.5,160.5
       parent: 1
-- proto: MedicalBed
-  entities:
-  - uid: 17406
-    components:
-    - type: Transform
-      pos: 31.5,-27.5
-      parent: 1
-  - uid: 17407
-    components:
-    - type: Transform
-      pos: 31.5,-30.5
-      parent: 1
 - proto: MetalAltDoorFallout
   entities:
   - uid: 2817
@@ -56962,8 +56943,14 @@ entities:
       pos: 24.5,-31.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -1340.8323
+      secondsUntilStateChange: -1375.8341
       state: Denying
+    - type: Physics
+      canCollide: False
+    - type: Airtight
+      airBlocked: False
+    - type: Occluder
+      enabled: False
   - uid: 4144
     components:
     - type: MetaData
@@ -57213,7 +57200,7 @@ entities:
       pos: 136.5,-75.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -95328.21
+      secondsUntilStateChange: -95363.21
       state: Opening
 - proto: MetalWindowDoorFalloutMercClosed
   entities:
@@ -57248,7 +57235,7 @@ entities:
       pos: 148.5,48.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -124383.84
+      secondsUntilStateChange: -124418.84
       state: Opening
   - uid: 2888
     components:
@@ -57294,7 +57281,7 @@ entities:
       pos: -39.5,5.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -80850.75
+      secondsUntilStateChange: -80885.75
       state: Opening
 - proto: Mirror
   entities:
@@ -57509,6 +57496,8 @@ entities:
           occludes: False
         back: !type:ContainerSlot
           occludes: False
+    missingComponents:
+    - AiNpc
   - uid: 146
     components:
     - type: Transform
@@ -57547,6 +57536,8 @@ entities:
           occludes: False
         back: !type:ContainerSlot
           occludes: False
+    missingComponents:
+    - AiNpc
   - uid: 147
     components:
     - type: Transform
@@ -57585,6 +57576,8 @@ entities:
           occludes: False
         back: !type:ContainerSlot
           occludes: False
+    missingComponents:
+    - AiNpc
   - uid: 2901
     components:
     - type: Transform
@@ -81994,7 +81987,7 @@ entities:
       pos: -30.5,5.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -80663.72
+      secondsUntilStateChange: -80698.72
       state: Denying
     - type: Physics
       canCollide: False
@@ -82171,6 +82164,11 @@ entities:
     - type: Transform
       pos: -36.5,6.5
       parent: 1
+  - uid: 10042
+    components:
+    - type: Transform
+      pos: 52.5,-5.5
+      parent: 1
 - proto: STOldMedicalBed
   entities:
   - uid: 139
@@ -82197,6 +82195,16 @@ entities:
     components:
     - type: Transform
       pos: 21.5,6.5
+      parent: 1
+  - uid: 17406
+    components:
+    - type: Transform
+      pos: 31.5,-27.5
+      parent: 1
+  - uid: 17407
+    components:
+    - type: Transform
+      pos: 31.5,-30.5
       parent: 1
 - proto: StoolBar
   entities:
