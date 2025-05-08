@@ -19,5 +19,5 @@ namespace Content.Server._Stalker.BiomesSpawner;
 public sealed partial class STBiomeSpawnerComponent : Component
 {
     [DataField]
-    public ProtoId<BiomeTemplatePrototype> Biome = "Grasslands";
+    public ProtoId<BiomeTemplatePrototype> Biome = "STGrasslands";
 }

@@ -1,0 +1,1 @@
+st-ai-npc-sponsor-only-reply=I work only with sponsors, stalker

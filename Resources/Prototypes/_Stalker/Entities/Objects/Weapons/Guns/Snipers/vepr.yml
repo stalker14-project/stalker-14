@@ -6,11 +6,11 @@
   - type: STWeight
     self: 3.2
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/vepr.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/base.rsi
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/vepr.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/base.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/vepr.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/base.rsi
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/svd.ogg
@@ -55,9 +55,6 @@
       gun_module_muzzle: !type:ContainerSlot
       gun_module_scope: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: Scope
-    zoom: 1.2
-    offset: 8
 
 - type: entity
   parent: STVBaseWeaponSniperVepr
@@ -72,11 +69,11 @@
   description: Custom tactical VPO-129 variant with distinctive Seraphim faction markings and modifications. The white finish provides both visibility and intimidation factor in Zone operations.
   components:
     - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/seraphim.rsi
     - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/seraphim.rsi
     - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr_seraphim.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/seraphim.rsi
 
 - type: entity
   parent: STVBaseWeaponSniperVepr
@@ -85,8 +82,8 @@
   description: A bushman's dream - this Vepr variant features custom camouflage netting and vegetation attachments for maximum concealment in the Zone's wilderness.
   components:
     - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/trava.rsi
     - type: Item
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/trava.rsi
     - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/vepr-trava.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/VEPR/trava.rsi

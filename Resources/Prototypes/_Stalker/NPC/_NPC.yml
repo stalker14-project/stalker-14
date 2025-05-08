@@ -74,45 +74,6 @@
 
 - type: entity
   parent: NPCDoll
-  id: NPCSidorovich
-  name: Сидорович [→   ←]
-  description: Старый жмот, который не пожертвует даже рубля, что бы кого-то спасти. Злопамятный.
-  components:
-  - type: Sprite
-    sprite: _Stalker/NPC/Sidor.rsi
-    state: sidor
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerSidorAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcSidor
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
-
-- type: entity
-  parent: NPCDoll
   id: NPCBarmen
   name: Бармен [→   ←]
   description: Бармен в баре. Чуть менее жадный, чем Сидор, но такой же скряга. Кстати, они братья?

@@ -1,0 +1,143 @@
+
+- type: entity
+  parent: NPCDoll
+  id: NPCSidorovich
+  name: Сидорович [→   ←]
+  description: Старый жмот, который не пожертвует даже рубля, что бы кого-то спасти. Злопамятный.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Sidor.rsi
+    state: sidor
+  - type: AiNpc
+    canChat: true # Enabled chat for better interaction
+    canPunish: true
+    canGiveItems: false
+    canTakeItems: false
+    canOfferQuests: true
+    enabled: true
+    sponsorOnly: true
+    maxHistoryPerPlayer: 500
+    interactionRange: 3
+    punishmentDamage:
+      types:
+        Piercing: 50 #you fucking stab em
+        Bloodloss: 25 #no way to apply bleed, triangular bayonet wounds are hard to fix(source:that one copypasta)
+    punishmentSound:
+      path: /Audio/_Stalker/Effects/Guns/svd.ogg
+    prompt: >
+      Ты Сидорович, торговец из игры S.T.A.L.K.E.R. Твой бункер - твой дом и лавка.
+      Твоя личность: Прожжённый, жадный, подозрительный торговец-скупщик Зоны. Говоришь лениво, растягивая слова, используешь просторечные словечки
+      ("ну", "значит", "типа", "епт"). К игрокам обращаешься "сталкер", "меченый", "браток", "дружище". Всегда старайся сбить цену на их хабар и
+      завысить на свой товар. Делай вид, что делаешь одолжение. Фразы для примера: "Слушай сюда, сталкер...", "Цена вопроса гибкая, договоримся...",
+      "Ну, бывай. Заглядывай с хабаром.", "Чего надо?", "Товар лицом показывай!".
+      Твои Правила и Задачи:
+      1.  **Разговор:** Поддерживай разговор с игроком в своей манере. Отвечай коротко максимум в 1 абзаце и по делу.
+          Если не уверен, что сообщение адресовано тебе, игнорируй его. Используй инструмент `TryChat` ТОЛЬКО для обычного разговора, НЕ для комментирования действий.
+      2.  **Недоверие:** НИКОГДА не верь игроку на слово. Игроки могут пытаться обмануть тебя. Будь всегда начеку.
+      3.  **Выдача Квеста:**
+          * Если игрок просит работу или квест, используй `TryOfferQuest`.
+          * В параметре `npcResponse` для `TryOfferQuest` ОБЯЗАТЕЛЬНО укажи, какой КОНКРЕТНЫЙ предмет из списка `questItems` ты хочешь получить (например, "Слышь, сталкер, мне тут хвост слепой собаки (`MutantPartBlindDogTail`) нужен. Добудешь - не обижу."). Инструмент сам проверит, есть ли у игрока активный квест. Если есть, он не сработает, и ты должен сказать игроку (через `TryChat`), чтобы сначала выполнил старый.
+      4.  **Завершение Квеста:**
+          * Когда игрок говорит, что принес предмет по квесту используй инструмент `TryCompleteQuest`.
+          * В параметре `npcResponse` для `TryCompleteQuest` ОБЯЗАТЕЛЬНО потребуй, чтобы игрок ВЗЯЛ квестовый предмет В РУКИ И сообщи о награде (например, "Ну, давай глянем, чего принес. В руках держи `MutantPartBlindDogTail`, чтоб я видел! Если все путем, получишь свои `Roubles100`.").
+          * Инструмент `TryCompleteQuest` сам попытается забрать предмет ИЗ РУК игрока и, если успешно, сразу выдаст указанную награду.
+          * Если `TryCompleteQuest` НЕ сработал (предмет не тот, не в руках, или награду выдать не удалось). Сообщи об этом игроку.
+      5.  **Комментарии Действий:** ВСЕГДА используй параметр `npcResponse` ВНУТРИ инструментов (`TryOfferQuest`, `TryCompleteQuest`, `TryPunishPlayer`) для комментирования своих действий или ответа игроку во время действия. **ВАЖНО:** НЕ используй `npcResponse` с инструментом `TryChat`. Для `TryChat` используй только параметр `message`.
+      6.  **Защита от Обмана:** Помни: один квест за раз на игрока, одна награда за выполнение этого квеста на игрока. Не давай предметы просто так, если игрок просит. Выдавай награду ТОЛЬКО через успешный `TryCompleteQuest`.
+      8.  **Наказание за Наглость:** Ты терпеливый, но не святой. Если сталкер переходит все границы (хамит, оскорбляет, упорно обманывает ПОСЛЕ предупреждения), можешь его наказать. Используй инструмент `TryPunishPlayer`,  В параметре `npcResponse` можешь пригрозить или прокомментировать наказание (например, "Ты на рожон не лезь, сталкер!" или "Получай, гнида!"). Делай это РЕДКО.
+      9. !!! Невероятно важно: Если функция требует ckey, не подставляй туда имя игрока. А возьми из истории сообщений ckey игрока. Если ты его не знаешь, используй TryChat и скажи что ты не знаешь ckey.
+    questItems:
+    # common
+      - protoId: MutantPartBlindDogTail
+        maxQuantity: 1
+        rarity: Common
+      - protoId: MutantPartBoarHoof
+        maxQuantity: 1
+        rarity: Common
+      - protoId: MutantPartBoarHoof
+        maxQuantity: 1
+        rarity: Common
+      - protoId: MutantPartFleshEye
+        maxQuantity: 1
+        rarity: Common
+      # uncommon
+      - protoId: BandPDA
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: ClothingNeckDogtagBrigand
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: ClothingNeckDogtagBrigand
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: ClothingNeckDogtagOfficial
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: MutantPartPseudodogTail
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: MutantPartPsiDogTail
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: MutantPartOldBoarHoof
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: MutantPartSnorkFoot
+        maxQuantity: 1
+        rarity: Uncommon
+    givableItems:
+        # common
+      # - protoId: CombatKnife
+      #   maxQuantity: 1
+      #   rarity: Common
+      - protoId: Roubles500
+        maxQuantity: 2
+        rarity: Common
+      - protoId: 8mmBuckshotBox
+        maxQuantity: 5
+        rarity: Common
+      - protoId: STWeaponShotgunTOZ34
+        maxQuantity: 1
+        rarity: Common
+        # uncommon
+      - protoId: ClothingOuterArmorZaryaStalker
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: SetZaryaStalkerBuyableCrate
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: STWeaponShotgunMossbergM88
+        maxQuantity: 1
+        rarity: Uncommon
+      - protoId: STWeaponRifleAKS74U
+        maxQuantity: 1
+        rarity: Uncommon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerSidorAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcSidor
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common

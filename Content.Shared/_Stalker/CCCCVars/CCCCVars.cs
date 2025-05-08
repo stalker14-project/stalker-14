@@ -6,7 +6,7 @@ namespace Content.Shared._Stalker.CCCCVars;
 /// </summary>
 [CVarDefs]
 // ReSharper disable once InconsistentNaming
-public sealed class CCCCVars
+public sealed partial class CCCCVars
 {
     /*
      * Bans
@@ -65,24 +65,21 @@ public sealed class CCCCVars
         CVarDef.Create("stalker.queue_enabled", false, CVar.SERVERONLY);
 
     /*
-     * Stalker Sponsors
-     */
-    public static readonly CVarDef<string> SponsorsApiUrl =
-        CVarDef.Create("sponsors.api_url", "http://127.0.0.1:2424/api", CVar.SERVERONLY | CVar.CONFIDENTIAL);
-
-    public static readonly CVarDef<string> SponsorsApiKey =
-        CVarDef.Create("sponsors.api_key", "key", CVar.SERVERONLY | CVar.CONFIDENTIAL);
-
-    public static readonly CVarDef<int> PriorityJoinTier =
-        CVarDef.Create("sponsors.priorityJoinTier", 2, CVar.SERVERONLY | CVar.CONFIDENTIAL);
-
-    public static readonly CVarDef<string> SponsorsGuildId =
-        CVarDef.Create("sponsors.guild_id", "1148992175347089468", CVar.SERVERONLY | CVar.CONFIDENTIAL);
-
-    /*
     * Stalker PDA Messenger
     */
 
     public static readonly CVarDef<string> DiscordPdaMessageWebhook =
         CVarDef.Create("discord.round_pda_message_webhook", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    /*
+    * Stalker OpenRouter KEY
+    */ 
+    public static readonly CVarDef<string> OpenRouterApiKey =
+        CVarDef.Create("openrouter.apikey", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    public static readonly CVarDef<string> OpenRouterModel =
+        CVarDef.Create("openrouter.model", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
+
+    public static readonly CVarDef<string> OpenRouterUrl =
+        CVarDef.Create("openrouter.url", string.Empty, CVar.SERVERONLY | CVar.CONFIDENTIAL);
 }
