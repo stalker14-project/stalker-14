@@ -49,6 +49,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
     }
     private void OnPostGameMapLoad(PostGameMapLoad args)
     {
+#if !DEBUG
         var prototypes = _protoMan.EnumeratePrototypes<MapLoaderPrototype>();
         foreach (var prototype in prototypes)
         {
@@ -57,6 +58,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
                 LoadMap(path);
             }
         }
+#endif
 
         var ev = new MapsLoadedEvent();
         RaiseLocalEvent(ref ev);

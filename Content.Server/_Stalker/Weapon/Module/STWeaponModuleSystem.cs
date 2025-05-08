@@ -76,7 +76,7 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
         // Hotfix how to handle super silent silencers happening because volume additions
         // pile up. We need to find something else, because a user in the future might have
         // not only one volume reducing module
-        audioParams.Volume = effect.SoundGunshotVolumeAddition;
+        audioParams.Volume += effect.SoundGunshotVolumeAddition;
         args.SoundGunshot!.Params = audioParams;
     }
 

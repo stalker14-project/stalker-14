@@ -5,14 +5,6 @@
   description: job-anomalist-desc
   playTimeTracker: JobStalkerAnomalist
   whitelisted: true
-  requirements:
-    # - !type:RoleTimeRequirement
-    #   role: JobStalkerAnomalist
-    #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: AnomalistGear
   supervisors: job-anomalist-supervisor
   canBeAntag: false
@@ -26,25 +18,13 @@
       band: Stalker
       bandIcon: tec
       bandProto: STAnomalistsBand
-      bandRankId: 2
+      bandRankId: 1
     - type: BlockTackingHolyItems
     - type: TeethPull
       teethProto: ToothStalker
       pullingItemTag: PliersStalker
       teethCount: 3
       initialTeeth: 3
-
-- type: startingGear
-  id: AnomalistGear
-  equipment:
-    id: AnomalistPDA
-    head: ClothingHeadHatBeaniehat
-    legs: ClothingLegsAnomalistTechnician
-    torso: ClothingTorsoAnomalistTechnician
-    shoes: ClothingShoesBootsCombatFilled
-    gloves: ClothingHandsGlovesFingerless
-    back: ClothingBackpackDuffelHikingVSRF
-    neck: ClothingNeckDogtagStalker
 
 - type: job
   id: StalkerAnomalistGuardian
@@ -53,20 +33,18 @@
   description: job-anomalist-guardian-desc
   playTimeTracker: StalkerAnomalistGuardian
   whitelisted: true
-  requirements:
-    # - !type:RoleTimeRequirement
-    #   role: StalkerAnomalistGuardian
-    #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: AnomalistGear
   supervisors: Вы работаете сами на себя
   canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
+    - type: Psyonics
+      psy: 75
+    - type: PsyonicsActionMeditation
+    - type: PsyonicsActionLight
+    - type: PsyonicsActionRift
+    - type: PsyonicsActionSpringboard
     - type: Access
       groups:
         - Anomalist
@@ -76,12 +54,19 @@
       bandIcon: tec
       bandProto: STAnomalistsBand
       bandRankId: 2
-    - type: BlockTackingHolyItems
-    - type: TeethPull
-      teethProto: ToothStalker
-      pullingItemTag: PliersStalker
-      teethCount: 3
-      initialTeeth: 3
+
+- type: startingGear
+  id: AnomalistGear
+  equipment:
+    id: AnomalistPDA
+    belt: ClothingBeltBandolierStalker
+    torso: ClothingTorsoSweaterStalkerGreen
+    legs: ClothingLegsJeansBlue
+    shoes: ClothingShoesNovice
+    back: ClothingBackpackTownBlackStalker
+    outerClothing: ClothingOuterJacketStalker
+    mask: ClothingMaskGasMarlya
+
 - type: stBand
   id: STAnomalistsBand
   name: Anomalists
