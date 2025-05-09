@@ -15,6 +15,11 @@
   - type: ToggleableClothing
     clothingPrototype: STClothingHeadHardsuitSevaHelmBase
     slot: head
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - 0,0,5,3
+      - 7,0,12,3
   - type: Craftable
   - type: STWeight
     self: 10
@@ -42,9 +47,14 @@
         Compression: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.90
+  - type: Tag
+    tags:
+    - BlockCloak
+    - BlockBack
+    - BlockBelt
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: ClothingHeadHardsuitBase
   id: STClothingHeadHardsuitSevaHelmBase
   name: шлем севы #base
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
@@ -54,8 +64,6 @@
     sprite: _Stalker/Objects/Clothing/hats/seva_helm.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/seva_helm.rsi
-  - type: PointLight
-    color: orange
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
@@ -193,29 +201,11 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHardsuitSevaHelmMonolith
     slot: head
-  - type: UserInterface
-    interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
-  - type: Storage
-    maxItemSize: Normal
-    grid:
-      - 0,2,0,3
-      - 1,-0,1,-0
-      - 2,2,2,3
-      - 3,-0,3,-0
-      - 4,2,4,3
-      - 5,-0,5,-0
-      - 6,2,6,3
-      - 7,-0,7,-0
-      - 8,2,8,3
-      - 9,-0,9,-0
-      - 10,2,10,3
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase
   id: ClothingHeadHardsuitSevaHelmMonolith
-  name: шлем севы
+  name: шлем севы монолита
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
   noSpawn: true
   components:
@@ -285,7 +275,7 @@
     clothingPrototype: ClothingHeadHardsuitSevaHelmPoisk
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: ClothingHeadHardsuitBase
   id: ClothingHeadHardsuitSevaHelmPoisk
   name: шлем севы поиска
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
@@ -297,8 +287,6 @@
     sprite: _Stalker/Objects/Clothing/Head/Seva/poisk.rsi
   - type: IdentityBlocker
   - type: IngestionBlocker
-  - type: PointLight
-    color: white
 
 # Neutral
 
@@ -372,8 +360,8 @@
       sprite: _Stalker/Objects/Clothing/Head/Sera_/seva_helm.rsi
     - type: IdentityBlocker
     - type: IngestionBlocker
-    - type: PointLight
-      color: orange
+
+# Dolg
 
 - type: entity
   parent: STClothingOuterArmorSevaBase
@@ -382,9 +370,53 @@
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_dolg.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_dolg.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHardsuitSevaHelmDolgRed
+      slot: head
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmDolgRed
+  name: шлем севы долга
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_dolg.rsi
+
+# Freedom
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaFreedom
+  name: костюм "Сева" 'Свободы'
+  description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_freedom.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/outerClothing/seva_freedom.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHardsuitSevaHelmFreedom
+      slot: head
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmFreedom
+  name: шлем севы свободы
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_freedom.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_freedom.rsi
+
 
   # Renegaty
 
@@ -417,5 +449,3 @@
       sprite: _Stalker/Objects/Clothing/Head/seva_helmrenegat.rsi
     - type: IdentityBlocker
     - type: IngestionBlocker
-    - type: PointLight
-      color: orange

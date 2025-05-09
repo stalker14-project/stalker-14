@@ -1,0 +1,52 @@
+- type: entity
+  parent: BaseAmmoCinkBoxStalker
+  id: 939SP5BoxCink
+  name: ящик патронов (9x39) СП-5
+  description: Для автоматов и специальных снайперских виннтовок, в коробке 300 штук. Обеспечивает пробитие 2 класса брони.
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      capacity: 300
+      proto: STCartridge9x39SP5
+      whitelist:
+        tags:
+          - STCartridge939
+    - type: Sprite
+      layers:
+        - state: cink
+          map: ["enum.GunVisualLayers.Base"]
+        - state: cink
+          map: ["enum.GunVisualLayers.Mag"]
+
+
+- type: entity
+  parent: 939SP5BoxCink
+  id: 939BPBoxCink
+  name: ящик патронов (9x39) ПАБ-9
+  description: Для автоматов и специальных снайперских виннтовок, в коробке 300 штук. Обеспечивает пробитие 3 класса брони.
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      proto: STCartridge9x39PAB9
+    - type: Sprite
+      layers:
+        - state: cink
+          map: ["enum.GunVisualLayers.Base"]
+        - state: cink
+          map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 939SP5BoxCink
+  id: 939SP6BoxCink
+  name: ящик патронов (9x39) СП-6
+  description: Для автоматов и специальных снайперских виннтовок, в коробке 300 штук. Обеспечивает пробитие 4 класса брони.
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      proto: STCartridge9x39SP6
+    - type: Sprite
+      layers:
+        - state: cink
+          map: ["enum.GunVisualLayers.Base"]
+        - state: cink
+          map: ["enum.GunVisualLayers.Mag"]

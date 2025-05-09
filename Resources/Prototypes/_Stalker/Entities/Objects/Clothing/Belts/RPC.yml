@@ -190,7 +190,7 @@
   suffix: ST
   components:
     - type: STWeight
-      self: 3
+      self: 5
     - type: Storage
       maxItemsize: Large
       grid:
@@ -210,7 +210,7 @@
   suffix: ST
   components:
     - type: STWeight
-      self: 3
+      self: 4
     - type: Storage
       maxItemsize: Large
       grid:
@@ -288,3 +288,86 @@
       state: icon
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/belt/belt_merc_bandit.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterDolgPS5M
+  name: поясная сумка с кобурой ПС5-М «Универсальная защита»
+  description: Поясной сумка из комплекта ПС5-М «Универсальная защита» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_dolg_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_dolg_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterFreedomDefender
+  name: поясная сумка с кобурой «Страж свободы»
+  description: Поясной сумка из комплекта «Страж свободы» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_freedom_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_freedom_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingDoubleFreedomVeterSmall
+  name: двойная поясная сумка «Ветер свободы»
+  description: Поясной сумка из комплекта «Ветер свободы» со второй маленькой сумкой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 5
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 4,0,9,3
+        - 0,0,2,3
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_veter_double_small.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_veter_double_small.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMonolith
+  name: поясная сумка с кобурой «Монолита»
+  description: Поясной сумка из комплекта «Монолита» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_monolith_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_monolith_holster.rsi

@@ -1,0 +1,24 @@
+- type: entity
+  id: STStatueLenin
+  parent: STBaseStructure
+  name: Статуя Ленина
+  suffix: ST, mapping  
+  components:
+  - type: SpriteFade
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/lenin.rsi
+    state: lenin
+    drawdepth: Mobs
+    offset: "0.0, 2.5"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1,-1,1,1"
+        density: 55
+        mask:
+        - Impassable
+        layer:
+        - Impassable

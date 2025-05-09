@@ -1,0 +1,14 @@
+- type: entity
+  id: STashtray
+  parent: STBaseStructure
+  name: Ashtray
+  suffix: ST, Mapping
+  description: A tabletop ashtray. Apparently, someone has been smoking here recently.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/ashtray.rsi
+    state: ashtray
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: false

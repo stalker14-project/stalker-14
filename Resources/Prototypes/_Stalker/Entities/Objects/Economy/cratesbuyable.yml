@@ -194,7 +194,7 @@
   parent: STBaseItem
   id: SetMercBuyableCrate
   name: комплект бронекомбеза наёмника
-  description: В комплекте бронекомбенизон, противогаз и поясная сумка с кобурой.
+  description: В комплекте бронекомбинезон, противогаз и поясная сумка с кобурой.
   suffix: ST, T3, Cache
   components:
     - type: STWeight
@@ -217,7 +217,7 @@
   parent: STBaseItem
   id: SetMerc2BuyableCrate
   name: комплект бронекомбеза наёмника
-  description: В комплекте бронекомбенизон, марлевая повязка и поясная сумка с кобурой.
+  description: В комплекте бронекомбинезон, марлевая повязка и поясная сумка с кобурой.
   suffix: ST, T3, Cache
   components:
     - type: STWeight
@@ -236,11 +236,13 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
+# Бандит
+
 - type: entity
   parent: STBaseItem
   id: SetMercBanditBuyableCrate
-  name: комплект бронекомбеза «Валет»
-  description: В комплекте бронекомбенизон, марлевая повязка и поясная сумка с кобурой.
+  name: комплект бандитского комбинезона
+  description: В комплекте бронекомбинезон, марлевая повязка и поясная сумка с кобурой.
   suffix: ST, T3, Cache
   components:
     - type: STWeight
@@ -258,3 +260,192 @@
         - id: ClothingBeltWebbingHolsterMercBandit
       sound:
         path: /Audio/Effects/unwrap.ogg
+
+############## Сталкерские комбинезоны +
+
+# Долг
+
+# ПС-5М
+
+- type: entity
+  parent: STBaseItem
+  id: SetPS5MDolgBuyableCrate
+  name: комплект ПС5-М «Универсальная защита»
+  description: В комплекте бронекомбинезон, противогаз и поясная сумка с кобурой.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/ps5m.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorDolgPS5M
+        - id: ClothingMaskGasDolg1
+        - id: ClothingBeltWebbingHolsterDolgPS5M
+        - id: ClothingBackpackStalkerZaryaBlack
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+# Свобода
+
+# Страж Свободы
+
+- type: entity
+  parent: STBaseItem
+  id: SetFreedomDefenderBuyableCrate
+  name: комплект «Страж свободы»
+  description: В комплекте бронекомбинезон, противогаз и поясная сумка с кобурой.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/strazh.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorFreedomDefender
+        - id: ClothingMaskGasFreedom
+        - id: ClothingBeltWebbingHolsterFreedomDefender
+        - id: ClothingBackpackStalkerZaryaGreen
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+# Ветер Свободы
+
+- type: entity
+  parent: STBaseItem
+  id: SetFreedomVeterBuyableCrate
+  name: комплект «Ветер свободы»
+  description: В комплекте бронекомбинезон, противогаз и поясная сумка с кобурой.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/veter.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorFreedomWind
+        - id: ClothingMaskGasZaryaMono
+        - id: ClothingBeltWebbingDoubleFreedomVeterSmall
+        - id: ClothingBackpackStalkerZaryaGreen
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+# Монолит
+
+- type: entity
+  parent: STBaseItem
+  id: SetMonolithMarlyaBuyableCrate
+  name: комплект «Монолита»
+  description: В комплекте бронекомбинезон, марлевая повязка, рюкзак и поясная сумка с кобурой.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/monolith-marlya.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorMonolith
+        - id: ClothingMaskGasMarlyaRuined
+        - id: ClothingBeltWebbingHolsterMonolith
+        - id: ClothingBackpackStalkerZaryaGreen
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: STBaseItem
+  id: SetMonolithBalaklavaBuyableCrate
+  name: комплект «Монолита»
+  description: В комплекте бронекомбинезон, балаклава, рюкзак и поясная сумка с кобурой.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/monolith-balaklava.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorMonolith
+        - id: ClothingMaskNeckBalaklava1
+        - id: ClothingBeltWebbingHolsterMonolith
+        - id: ClothingBackpackStalkerZaryaBlack
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: STBaseItem
+  id: SetMonolithGasBuyableCrate
+  name: комплект «Монолита»
+  description: В комплекте бронекомбинезон, противогаз, рюкзак и поясная сумка с кобурой.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/monolith-gas.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorMonolith
+        - id: ClothingMaskGasZarya
+        - id: ClothingBeltWebbingHolsterMonolith
+        - id: ClothingBackpackStalkerZaryaGreen
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: STBaseItem
+  id: SetMonolithOldBuyableCrate
+  name: комплект «Монолита»
+  description: В комплекте бронекомбинезон, противогаз, баллоны и две поясные сумки разных размеров.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/monolith-old.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorMonolithOld
+        - id: ClothingMaskGasMono
+        - id: ClothingBeltWebbingDoubleFreedomVeterSmall
+        - id: STOxygenTanksFractionalMonolith
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+
+
+
+
+
+

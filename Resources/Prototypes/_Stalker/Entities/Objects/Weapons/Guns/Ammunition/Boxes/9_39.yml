@@ -1,0 +1,129 @@
+- type: entity
+  parent:
+  - BaseAmmoBoxStalker
+  - STBaseEntity
+  id: STBaseBox9x39
+  abstract: true
+  components:
+  - type: MagazineVisuals
+    magState: aa-open
+    steps: 2
+    zeroVisible: false
+  - type: BallisticAmmoProvider
+    capacity: 30
+    proto: Cartridge939SP5
+    whitelist:
+      tags:
+      - STCartridge939
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Boxes/9_39/base.rsi
+    layers:
+    - state: aa
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: aa-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]
+  - type: STIcon
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Boxes/9_39/world.rsi
+    layers: ["base", "mag"]
+
+# T1 Expansive
+- type: entity
+  parent: STBaseBox9x39
+  id: STBox9x39PSO
+  name: коробка патронов 9x39 ПСО
+  components:
+  - type: MagazineVisuals
+    magState: pso-open
+  - type: BallisticAmmoProvider
+    proto: STCartridge9x39PSO
+  - type: Sprite
+    layers:
+    - state: pso
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: pso-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]
+
+# T1 Training
+- type: entity
+  parent: STBaseBox9x39
+  id: STBox9x39SP6Uch
+  name: коробка патронов 9x39 СП-6УЧ
+  components:
+  - type: MagazineVisuals
+    magState: sp6-uch-open
+  - type: BallisticAmmoProvider
+    proto: STCartridge9x39SP6Uch
+  - type: Sprite
+    layers:
+    - state: sp6-uch
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: sp6-uch-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]
+
+# T2
+- type: entity
+  parent: STBaseBox9x39
+  id: STBox9x39SP5
+  name: коробка патронов 9x39 СП-5
+  components:
+  - type: MagazineVisuals
+    magState: sp5-open
+  - type: BallisticAmmoProvider
+    proto: STCartridge9x39SP5
+  - type: Sprite
+    layers:
+    - state: sp5
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: sp5-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]
+
+# T3
+- type: entity
+  parent: STBaseBox9x39
+  id: STBox9x39PAB9
+  name: коробка патронов 9x39 ПАБ-9
+  components:
+  - type: MagazineVisuals
+    magState: pab9-open
+  - type: BallisticAmmoProvider
+    proto: STCartridge9x39PAB9
+  - type: Sprite
+    layers:
+    - state: pab9
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: pab9-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]
+
+# T4
+- type: entity
+  parent: STBaseBox9x39
+  id: STBox9x39SP6
+  name: коробка патронов 9x39 СП-6
+  components:
+  - type: MagazineVisuals
+    magState: sp6-open
+  - type: BallisticAmmoProvider
+    proto: STCartridge9x39SP6
+  - type: Sprite
+    layers:
+    - state: sp6
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: sp6-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]
+
+# T5
+- type: entity
+  parent: STBaseBox9x39
+  id: STBox9x39AA
+  name: коробка патронов 9x39 ББ
+  components:
+  - type: MagazineVisuals
+    magState: aa-open
+  - type: BallisticAmmoProvider
+    proto: Cartridge939SP5
+  - type: Sprite
+    layers:
+    - state: aa
+      map: ["enum.GunVisualLayers.Base", "base"]
+    - state: aa-open-1
+      map: ["enum.GunVisualLayers.Mag", "mag"]

@@ -438,3 +438,41 @@
               collection: MetalBreak
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
+
+- type: entity
+  id: STbrdm2
+  parent: kraz
+  name: БРДМ-2
+  suffix: ST, Mapping
+  description: An armored reconnaissance and patrol vehicle on wheels, armed with two machine guns.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Transport/brdm.rsi
+    scale: 0.9, 0.9
+    state: brdm
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1,-1.4,1.2,1.4"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 700
+        behaviors:
+          - !type:PlaySoundBehavior
+            sound:
+              collection: MetalBreak
+          - !type:DoActsBehavior
+            acts: [ "Destruction" ]

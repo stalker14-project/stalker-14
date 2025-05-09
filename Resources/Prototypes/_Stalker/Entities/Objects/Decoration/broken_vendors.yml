@@ -1,0 +1,35 @@
+- type: entity
+  id: STbrokenvendorRed
+  parent: BaseStructureStalkerDynamic
+  suffix: ST, Mapping
+  name: Сломанный торгомат
+  description: It used to be used for supply deliveries, but now it's just junk.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/brokenvendor.rsi
+    state: broken_red
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.45,0.25,0.45"
+        mask:
+        - MachineMask
+        layer:
+        - MachineLayer
+        density: 200
+
+- type: entity
+  id: STbrokenvendorBlue
+  parent: STbrokenvendorRed
+  suffix: ST, Mapping
+  name: Сломанный торгомат
+  description: It used to be used for supply deliveries, but now it's just junk.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/brokenvendor.rsi
+    state: broken_blue

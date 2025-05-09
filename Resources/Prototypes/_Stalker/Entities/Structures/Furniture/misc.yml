@@ -100,6 +100,21 @@
     canCollide: false
 
 - type: entity
+  id: STComputer
+  parent: STBaseStructure
+  name: Computer
+  suffix: ST, Mapping
+  description: An old computer for office work.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/computer.rsi
+    state: computer
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+
+- type: entity
   parent: BaseStructure
   id: ComputerTablePack
   name: computer desk

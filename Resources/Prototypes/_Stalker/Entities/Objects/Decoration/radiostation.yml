@@ -1,0 +1,14 @@
+- type: entity
+  id: STRadiostation
+  parent: STBaseStructure
+  name: Radio station
+  suffix: ST, Mapping
+  description: A device for transmitting information via radio waves.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/radiostation.rsi
+    state: radiostation
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: false

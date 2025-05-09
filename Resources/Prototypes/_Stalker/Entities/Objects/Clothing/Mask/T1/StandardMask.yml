@@ -202,3 +202,18 @@
     modifiers:
       coefficients:
         Radiation: 0.95
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasMarlyaRuined
+  name: запыленная марлевая повязка
+  description: Запыленная марлевая повязка, приобрёвшая серый цвет из-за огромного количества радиоактивной пыли, прошедшей через неё. Уж лучше ничего, чем это.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/marlya_ruined.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/marlya_ruined.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 1.1

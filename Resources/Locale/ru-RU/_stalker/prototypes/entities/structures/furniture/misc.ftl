@@ -13,3 +13,6 @@ ent-STKeyboard = клавиатура
 ent-ComputerTablePack = компьютерный стол
     .desc = Старый компьютерный стол с лампой и древним компьютером. Оно тебе надо?
     .suffix = Stalker, Mapping
+ent-STComputer = Компьютер 
+    .desc = Старый компьютер для оффисной работы.
+    .suffix = Stalker, Mapping

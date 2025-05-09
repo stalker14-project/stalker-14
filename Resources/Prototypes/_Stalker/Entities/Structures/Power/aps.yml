@@ -141,3 +141,20 @@
   - type: Battery
     maxCharge: 200000
     startingCharge: 200000
+
+- type: entity
+  id: STCRustyElectroShieldOff
+  parent: STBaseStructure
+  name: A rusty electrical panel
+  suffix: ST, Mapping
+  description: A rusty electrical panel. It is unlikely that it will be able to power something.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Wallmounts/electronic_shield.rsi
+    state: rusty-electric_brusher
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+
+
