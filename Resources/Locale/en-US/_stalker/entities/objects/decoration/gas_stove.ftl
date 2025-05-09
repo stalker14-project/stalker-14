@@ -13,3 +13,6 @@ ent-GasStoveS4 = { ent-GasStoveS1 }
 ent-GasStoveS5 = { ent-GasStoveS1 }
     .desc = { ent-GasStoveS1.desc }
     .suffix = { ent-GasStoveS1.suffix }
+ent-GasStoveS6 = { ent-GasStoveS1 }
+    .desc = { ent-GasStoveS1.desc }
+    .suffix = { ent-GasStoveS1.suffix }

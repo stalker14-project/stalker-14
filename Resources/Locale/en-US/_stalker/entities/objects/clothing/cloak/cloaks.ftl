@@ -31,3 +31,6 @@ ent-ClothingCloakNavy = Navy Cloak
 ent-ClothingCloakFoma = Black cloak
     .desc = Black cloak
     .suffix = Stalker, Cloak, Sponsor
+ent-STClothingNeckExoskeletonSci = Cargo-Type Exoskeleton
+    .desc = Developed by research institute scientists, this exoskeleton was designed for efficiently transporting large cargo loads without vehicles. Offers no protection against anomalies, mutants, or bullets.
+    .suffix = Stalker

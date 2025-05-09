@@ -51,3 +51,6 @@ ent-icarus = ikarus-280
 ent-STtank = Tank
     .desc = An armored combat vehicle, on a tracked track, with cannon and additional machine-gun armament mounted in a rotating full-turn turret.
     .suffix = ST, Mapping
+ent-STbrdm2 = BRDM-2
+    .desc = An armored reconnaissance and patrol vehicle on wheels, armed with two machine guns.
+    .suffix = ST, Mapping

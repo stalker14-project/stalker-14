@@ -1,0 +1,10 @@
+ent-STOxygenTanksZarya = Sunrise Set Oxygen Tanks
+    .desc = Oxygen tanks from the "Sunrise" set — containers holding various gases or liquids under pressure. Used with the "Sunrise" armored suit.
+ent-STOxygenTanksFractionalDuty = PS5-M "Universal Protection" Set Oxygen Tanks
+    .desc = Oxygen tanks from the "PS" set — containers holding various gases or liquids under pressure. Used with suits like "Freedom Defender" and PS5-M "Universal Protection".
+ent-STOxygenTanksFractionalFreedom = "Freedom Defender" Set Oxygen Tanks
+    .desc = Oxygen tanks from the "Freedom Defender" set — containers holding various gases or liquids under pressure. Used with the "Freedom Defender" armored suit.
+ent-STOxygenTanksFractionalFreedom2 = "Wind of Freedom" Set Oxygen Tanks
+    .desc = Oxygen tanks from the "Wind of Freedom" set — containers holding various gases or liquids under pressure. Used with the "Wind of Freedom" armored suit.
+ent-STOxygenTanksFractionalMonolith = Rusty "Monolith" Set Oxygen Tanks
+    .desc = Rusty oxygen tanks from the "Monolith" set — containers holding various gases or liquids under pressure. Time has heavily worn off the paint. Used with the "Monolith" armored suit.

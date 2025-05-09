@@ -24,3 +24,5 @@ ent-ClothingMaskGasMercStalker = Standard Mercenary Gas Mask
     .desc = Hides the eyes and evil intentions. Protects against radiation.
 ent-ClothingMaskGasZaryaMono = Monolens stalker gas mask
     .desc = Cheap and effective. Protects against radiation. Features a monolens.
+ent-ClothingMaskGasMarlyaRuined = Dusty Gauze Mask
+    .desc = A dusty gauze mask turned gray from the massive amount of radioactive dust it's filtered. Honestly, nothing would be better than this.

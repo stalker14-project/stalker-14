@@ -12,3 +12,6 @@ ent-STKeyboard = keyboard
     .suffix = { ent-Pit.suffix }
 ent-ComputerTablePack = computer desk
     .desc = An old computer desk with a lamp and an ancient computer. Do you need it?
+ent-STComputer = Computer
+    .desc = An old computer for office work.
+    .suffix = ST, Mapping

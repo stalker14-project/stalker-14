@@ -9,3 +9,6 @@ ent-ElectroShieldSuper = { ent-BaseElectroShieldStalker }
     .desc = { ent-BaseElectroShieldStalker.desc }
 ent-ElectroShieldHyper = { ent-BaseElectroShieldStalker }
     .desc = { ent-BaseElectroShieldStalker.desc }
+ent-STCRustyElectroShieldOff = A rusty electrical panel
+    .desc = A rusty electrical panel. It is unlikely that it will be able to power something.
+    .suffix = ST, Mapping
