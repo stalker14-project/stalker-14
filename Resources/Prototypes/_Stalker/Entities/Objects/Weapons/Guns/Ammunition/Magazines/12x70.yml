@@ -155,3 +155,78 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: Base1270Mag
+  id: DrumAutoAssSmall
+  name: Магазин AA-12 (9)
+  description: AA 12x70 magazine for shotguns.
+  suffix: Stalker
+  components:
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/aa12/9.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: STWeight
+    self: 0.9
+  - type: Tag
+    tags:
+    - DrumAutoAss
+  - type: BallisticAmmoProvider
+    capacity: 9
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+
+- type: entity
+  parent: DrumAutoAssSmall
+  id: DrumAutoAssBig
+  name: Барабан AA-12 (20)
+  description: AA 12x70 magazine for shotguns.
+  suffix: Stalker
+  components:
+  - type: Sprite
+    scale: 1, 1
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/aa12/20.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: STWeight
+    self: 2
+  - type: BallisticAmmoProvider
+    capacity: 20
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+
+- type: entity
+  parent: DrumAutoAssSmall
+  id: DrumAutoAssVeryBig
+  name: Барабан AA-12 (32)
+  description: AA 12x70 magazine for shotguns.
+  suffix: Stalker
+  components:
+  - type: Sprite
+    scale: 1, 1
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/1270/aa12/20.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: STWeight
+    self: 3.2
+  - type: BallisticAmmoProvider
+    capacity: 32
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,2
