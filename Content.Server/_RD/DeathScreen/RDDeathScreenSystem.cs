@@ -30,6 +30,6 @@ public sealed class RDDeathScreenSystem : RDEntitySystem
         if (player is null)
             return;
 
-        RaiseNetworkEvent(new RDDeathScreenShowEvent("свинтус придет", audioPath: "/Audio/_RD/DeathScreen/svintus_coming.ogg"), player.Channel);
+        RaiseNetworkEvent(new RDDeathScreenShowEvent("lost to the Zone", audioPath: "/Audio/_RD/DeathScreen/controller.ogg"), player.Channel);
     }
 }
