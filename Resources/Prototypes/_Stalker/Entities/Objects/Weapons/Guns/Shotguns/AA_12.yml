@@ -1,0 +1,54 @@
+- type: entity
+  parent: STBaseWeaponShotgunUSAS
+  id: STWeaponShotgunAA
+  name: AA-12
+  description: Automatic Shotgun.
+  suffix: ST, Shotgun
+  components:
+    - type: STWeight
+      self: 5
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/aa12/aa12.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/aa12/aa12.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/aa12/aa12.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/saiga_shoot.ogg
+      projectileSpeed: 35
+      minAngle: 60
+      maxAngle: 120
+      angleIncrease: 10
+      angleDecay: 35
+      fireRate: 4
+      selectedMode: FullAuto
+      availableModes:
+        - SemiAuto
+        - FullAuto
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: DrumAutoAssSmall
+          insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+          ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+          priority: 3
+          whitelist:
+            tags:
+              - DrumAutoAss
+
+#
+- type: entity
+  parent: STWeaponShotgunAA
+  id: STWeaponShotgunAArchangel
+  name: АА-12 'Архангел'
+  description: Изготовленное по спецзаказу автоматическое ружье-дробовик, которым вооружены Архангелы - лучшие войны Братства Серафимов. Является редким оружием не только у фанатиков, но и во всей Зоне. Крайне грозный аргумент не только в охоте на крупную дичь, но и на человека!
+  suffix: ST, Скин, Covenant
+  components:
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/aa12/aaSera.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/aa12/aaSera.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/aa12/aaSera.rsi
