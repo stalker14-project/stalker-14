@@ -1,4 +1,4 @@
-#12x70
+# 12x70
 - type: entity
   abstract: True
   id: STBasePellet
@@ -12,6 +12,7 @@
     damage: 0.1
   - type: TimedDespawn
     lifetime: 1
+
 # 7mm
 - type: entity
   id: STPellet7mm
@@ -22,6 +23,7 @@
     damage:
       types:
         Piercing: 10
+        Mutant: 10
 
 - type: entity
   id: Bullet7mmBuckshot
@@ -35,7 +37,6 @@
     spread: 15
 
 # 6.5mm
-
 - type: entity
   id: STPellet65mm
   name: pellet 6.5mm
@@ -46,6 +47,7 @@
     damage:
       types:
         Piercing: 16
+        Mutant: 16
 
 - type: entity
   id: Bullet6mmBuckshot
@@ -59,7 +61,6 @@
     spread: 12
 
 # 8.5 mm
-
 - type: entity
   id: STPellet85mm
   name: pellet 8.5mm
@@ -70,6 +71,7 @@
     damage:
       types:
         Piercing: 17
+        Mutant: 17
 
 - type: entity
   id: Bullet8mmBuckshot
@@ -82,8 +84,7 @@
     count: 8
     spread: 12
 
-# flechette
-
+# Flechette
 - type: entity
   id: STPelletFlechetta
   name: pellet flechetta
@@ -94,6 +95,7 @@
     damage:
       types:
         Piercing: 8
+        Mutant: 8
 
 - type: entity
   id: BulletShotgunFlechette
@@ -106,8 +108,7 @@
     count: 8
     spread: 12
 
-# bullets
-
+# Bullets
 - type: entity
   id: BulletShotgunBullet
   name: bullet (Bullet)
@@ -119,9 +120,9 @@
     damage:
       types:
         Piercing: 40
+        Mutant: 40
   - type: StaminaDamageOnCollide
     damage: 20
-
 
 - type: entity
   id: BulletShotgunRIP
@@ -136,6 +137,7 @@
         Blunt: 20
         Slash: 20
         Piercing: 40
+        Mutant: 40
   - type: StaminaDamageOnCollide
     damage: 20
 
@@ -150,6 +152,7 @@
     damage:
       types:
         Piercing: 35
+        Mutant: 35
   - type: StaminaDamageOnCollide
     damage: 20
 
@@ -166,5 +169,6 @@
       damage:
         types:
           Blunt: 10
+          Mutant: 10
     - type: StaminaDamageOnCollide
       damage: 80 # 3 hits to stun
