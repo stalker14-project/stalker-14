@@ -12,6 +12,7 @@
     - Freedom
     - BandsUnion
     - Seraphims
+    - Meat
 
 - type: npcFaction
   id: Mutated
@@ -28,6 +29,7 @@
     - Freedom
     - BandsUnion
     - Seraphims
+    - Meat
 
 - type: npcFaction
   id: Hostile
@@ -125,3 +127,20 @@
   - Military
   - Hostile
   - Duty
+
+- type: npcFaction
+  id: Meat
+  hostile:
+  - Mutated
+  - Passive
+  - Stalker
+  - MutatedHunter
+  - NanoTrasen
+  - Military
+  - Bandit
+  - Hostile
+  - Sci
+  - Duty
+  - Freedom
+  - BandsUnion
+  - Seraphims
