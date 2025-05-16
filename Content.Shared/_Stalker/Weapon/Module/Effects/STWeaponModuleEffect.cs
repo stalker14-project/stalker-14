@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Weapons.Ranged.Components;
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker.Weapon.Module.Effects;
@@ -28,6 +29,9 @@ public partial struct STWeaponModuleEffect()
     public int SoundGunshotVolumeAddition = 0;
 
     [DataField, ViewVariables]
+    public float FarshotSoundDecrease = 1f;
+
+    [DataField, ViewVariables]
     public SelectiveFire AdditionalAvailableModes = SelectiveFire.Invalid;
 
     public static STWeaponModuleEffect Merge(STWeaponModuleEffect effectA, STWeaponModuleEffect effectB)
@@ -41,6 +45,7 @@ public partial struct STWeaponModuleEffect()
             MinAngleModifier = effectA.MinAngleModifier * effectB.MinAngleModifier,
             ProjectileSpeedModifier = effectA.ProjectileSpeedModifier * effectB.ProjectileSpeedModifier,
             SoundGunshotVolumeAddition = effectA.SoundGunshotVolumeAddition + effectB.SoundGunshotVolumeAddition,
+            FarshotSoundDecrease = effectA.FarshotSoundDecrease + effectB.FarshotSoundDecrease,
             AdditionalAvailableModes = effectA.AdditionalAvailableModes | effectB.AdditionalAvailableModes,
         };
     }

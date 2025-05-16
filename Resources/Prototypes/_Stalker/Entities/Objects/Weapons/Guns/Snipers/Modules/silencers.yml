@@ -15,7 +15,7 @@
 - type: entity
   parent: STBaseModuleSilencerSniper
   id: STModuleSilencerSniperT1
-  name: makeshift sniper rifle silencer RU
+  name: makeshift sniper rifle silencer
   suffix: ST, silencer, T1
   components:
   - type: Tag
@@ -24,6 +24,7 @@
   - type: STWeaponModule
     effect:
       soundGunshotVolumeAddition: -7
+      farshotSoundDecrease: 0.4
   - type: Sprite
     state: sniper_silencer_T1
   - type: Icon
@@ -41,6 +42,7 @@
   - type: STWeaponModule
     effect:
       soundGunshotVolumeAddition: -14
+      farshotSoundDecrease: 0.2
   - type: Sprite
     state: sniper_silencer_T2
   - type: Icon
