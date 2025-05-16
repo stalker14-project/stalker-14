@@ -22,6 +22,34 @@
     sprite: _Stalker/Objects/Clothing/shoes/boots_novice.rsi
 
 - type: entity
+  parent: [ClothingShoesMilitaryBase, BaseRestrictedContraband]
+  id: STClothingShoesBootsCombat
+  name: ent-STClothingShoesBootsCombat
+  suffix: ST
+  description: .desc
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi
+
+- type: entity
+  parent: STClothingShoesBootsCombat
+  id: STClothingShoesBootsCombatFilled
+  name: ent-STClothingShoesBootsCombatFilled
+  suffix: ST, Filled
+  description: .desc
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi
+  - type: ContainerFill
+    containers:
+      item:
+      - CombatKnife
+
+- type: entity
   parent: ClothingShoesBase
   id: ClothingShoesPVH
   name: сапоги ПВХ

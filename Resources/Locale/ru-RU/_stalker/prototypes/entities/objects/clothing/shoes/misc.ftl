@@ -1,7 +1,12 @@
 ent-ClothingShoesPortyanki = портянки
     .desc = Куски ткани для обматывания ног перед их надеванием в сапоги или в ботинки. Предназначены для защиты ног от натирания внутренними частями обуви.
-ent-ClothingShoesPortyanki = ботинки новичка
+ent-ClothingShoesNovice = ботинки новичка
     .desc = Обычные кожаные ботинки сделанные из обрезков кожи.
+ent-STClothingShoesBootsCombat = армейские ботинки
+    .desc = Надёжные армейские ботинки, для боевых операций или боевых действий. Борьба - всё, борьба - всегда.
+ent-STClothingShoesBootsCombatFilled = { ent-STClothingShoesBootsCombat }
+    .suffix = ST, Заполненный
+    .desc = { ent-STClothingShoesBootsCombat.desc }
 ent-ClothingShoesPVH = сапоги ПВХ
     .desc = Надежная защита от влаги, грязи, токсичных отдоходов и в самых неприятных погодных условиях. Изготовленные из прочного и гибкого поливинилхлорида не дающий реагентам проникнуть внутрь ваших ног.
 ent-ClothingShoesBootsLeather = кожанные сапоги

@@ -1,6 +1,6 @@
 # Base
 - type: entity
-  parent: STClothingOuterBaseLarge
+  parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorSSP99Base
   name: ССП-99 # base
   abstract: true
@@ -8,6 +8,8 @@
   components:
   - type: STWeight
     self: 7
+  - type: PullDoAfter
+    pullTime: 6
   - type: Craftable
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ssp99.rsi
@@ -15,6 +17,11 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/ssp99.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetSSP99
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - 0,0,5,3
+      - 7,0,12,3
   - type: Armor
     armorClass: 2
     modifiers:
@@ -42,7 +49,11 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
-
+  - type: Tag
+    tags:
+    - BlockCloak
+    - BlockBack
+    - BlockBelt
 
 - type: entity
   parent: ClothingHeadHardsuitBase

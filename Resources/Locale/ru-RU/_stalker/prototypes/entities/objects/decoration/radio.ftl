@@ -515,7 +515,7 @@ ent-CassetevietnamContributorRadio = кассета "Fortunate Son"
     .desc = { ent-CasseteArstotzkaOneContributorRadio.desc }
     .suffix = Stalker, кассета, (Fortunate Son)
 
-ent-CassetevietnamContributorRadio = кассета "Herz"
+ent-CasseteHerzContributorRadio = кассета "Herz"
     .desc = { ent-CasseteHerzContributorRadio.desc }
     .suffix = Stalker, кассета, (Herz)
 ent-CasseteJewishTailorContributorRadio = кассета "Еврейский Портной"

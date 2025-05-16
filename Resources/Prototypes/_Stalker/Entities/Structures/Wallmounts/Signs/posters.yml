@@ -728,3 +728,63 @@
   components:
   - type: Sprite
     state: poster64_pawnshop
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterZavetContraband
+  name: "Уверуй!"
+  description: "Уверуй в силу завета! Вступай в завет!"
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: poster65_zavet
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterPortalParadise
+  name: "Портал в рай"
+  description: "Картина захвачена тайнами, смотри в оба, вдруг затянет!"
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: poster66_sh2
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterShtormMore
+  name: "Шторм"
+  description: "Бушующее море опасно, и в правду, лучше тишины?"
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: poster67_sh3
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterInWomb
+  name: "В утробе"
+  description: "Уютное местечко, всегда тепло, сытый и довольный!"
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: poster68_sh4
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterinSingularity
+  name: "Черная дыра"
+  description: "Большой сгусток энергии, крайне опасный и непредсказуем, всунешь руку?"
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: poster69_sh5
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterKarta
+  name: "Старая карта"
+  description: "Потрёпанная временем карта местности. Большая часть пометок выцвела, а некоторые участки и вовсе истёрлись. Однако кое-где ещё можно разглядеть схематичные изображения аномальных зон и опасных территорий."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: karta

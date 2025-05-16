@@ -1,0 +1,17 @@
+- type: entity
+  name: AN-94 «Абакан»
+  suffix: ST
+  parent: STWeaponRifleAK74M
+  id: STWeaponRifleStalkerAbakan
+  description: Оружие элитных войск советской армии. Был разработан в качестве замены устаревшему АКС. В «Абакане» подвижны не только внутренние механизмы, но и вся ствольная коробка вместе со стволом, что позволяет снизить отдачу, тем самым значительно повысив точность боя.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/abakan.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/abakan.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/abakan.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_abakan_shot.ogg
+    fireRate: 8.5
