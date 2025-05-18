@@ -47,3 +47,24 @@
     equipDelay: 2
   - type: BallisticAmmoProvider
     capacity: 4
+
+- type: entity
+  parent: STBaseWeaponShotgunTOZ34
+  id: STWeaponShotgunShizoToz34
+  name: Wierd TOZ
+  description: Wierd TOZ, modified by someone really mad.
+  suffix: ST, Weapon, Shotgun, Sponsor
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz_shiza.rsi.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz_shiza.rsi.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz_shiza.rsi.rsi
+  - type: BallisticAmmoProvider
+    capacity: 3
+  - type: Scope
+    zoom: 1.4
+    offset: 10

@@ -30,7 +30,6 @@
             - MobMask
           layer:
             - MobLayer
-    
 
 - type: entity
   parent: STBaseBolt
@@ -42,6 +41,7 @@
       state: icon
     - type: Stack
       stackType: STBolt
+      throwIndividually: true
       count: 1
       maxCount: 3
 
@@ -63,6 +63,7 @@
       state: icon_golden
     - type: Stack
       stackType: STBoltGolden
+      throwIndividually: true
       count: 1
       maxCount: 3
 
@@ -73,5 +74,3 @@
   spawn: STBoltGolden
   maxCount: 3
   itemSize: 1
-
-
