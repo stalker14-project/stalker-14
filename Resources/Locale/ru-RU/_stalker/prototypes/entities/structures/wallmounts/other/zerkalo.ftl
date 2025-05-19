@@ -1,3 +1,3 @@
-ent-Zerkalo = Зеркало
+ent-Zerkalo = зеркало
     .desc = Вы видите отражение себя, а вы стильный сталкер...
     .suffix = ST, Mapping

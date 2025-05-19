@@ -1,14 +1,15 @@
 - type: entity
   id: STcone
-  parent: STBaseStructure
-  name: Дорожный конус
+  name: дорожный конус
   description: Just an ordinary traffic cone.
   suffix: ST, Mapping
+  placement:
+    mode: PlaceFree
   components:
+  - type: Clickable
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/cone.rsi
     state: cone
-  - type: InteractionOutline
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -18,6 +19,6 @@
           bounds: "-0.2,-0.2,0.2,0.2"
         density: 155
         mask:
-        - MachineMask
+        - TableMask
         layer:
-        - WallLayer
+        - TableLayer

@@ -1,0 +1,16 @@
+- type: constructionGraph
+  id: BonfireCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bonfireend
+      steps:
+      - tag: LogStalker
+        icon:
+          sprite: Objects/Specific/Hydroponics/towercap.rsi
+          state: produce
+        doAfter: 15
+        name: бревно
+  - node: bonfireend
+    entity: BonfireOff

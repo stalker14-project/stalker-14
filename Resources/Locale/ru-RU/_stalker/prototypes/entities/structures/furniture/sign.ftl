@@ -19,3 +19,6 @@ ent-StalkerRadSign2 = { ent-StalkerRadSign1 }
 ent-StalkerRadSign3 = { ent-StalkerRadSign1 }
     .desc = { ent-StalkerRadSign1.desc }
     .suffix = { ent-signnew.suffix }
+ent-signnewwords = TEST big wooden sign
+    .desc = TEST a big wooden sign
+    .suffix = ST, Mapping

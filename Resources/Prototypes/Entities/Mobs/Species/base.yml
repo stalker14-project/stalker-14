@@ -25,8 +25,8 @@
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: ["jumpsuit"]
-    - map: [ "torso" ] # stalker-changes
     - map: [ "legs" ] # stalker-changes
+    - map: [ "torso" ] # stalker-changes
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
@@ -349,15 +349,12 @@
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: ["jumpsuit"]
+    - map: [ "legs" ] # stalker-changes
+    - map: [ "torso" ] # stalker-changes
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
@@ -365,6 +362,7 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
+    - map: [ "cloak" ] # stalker-changes
     - map: [ "neck" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -376,6 +374,11 @@
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
   - type: Appearance
   - type: HumanoidAppearance
     species: Human

@@ -1,7 +1,7 @@
 - type: entity
   id: STBonfire
   parent: Bonfire
-  name: Костёр
+  name: костёр
   description: Что может быть лучше чем сидеть под костёр под песни?
   components:
   - type: Craftable
@@ -9,8 +9,9 @@
 - type: entity
   id: BonfireOff
   parent: BaseStructure
-  name: основа костра
-  description: Основа для костра.
+  name: основа для костра
+  description: Она должно светиться?
+  suffix: TimeDesp 600
   components:
   - type: Transform
     anchored: true
@@ -23,8 +24,8 @@
   - type: TimedDespawn
     lifetime: 600
   - type: Construction
-    graph: BonfireOff
-    node: bonfireoff
+    graph: BonfireCraft
+    node: bonfireend
   - type: Destructible
     thresholds:
       - trigger:
@@ -40,6 +41,7 @@
   parent: STBonfire
   name: костёр
   description: Что может быть лучше позднего вечера под открытым небом с гитарой и друзьями.
+  suffix: TimeDesp 300
   components:
   - type: Sprite
     noRot: true
@@ -63,16 +65,16 @@
     prototype: Ash
   - type: Craftable
 
-################ Крафт
+# bonfire crafting
 
 - type: construction
   id: BonfireCraft
-  name: основа костра
-  description: Основа для костра.
-  graph: BonfireOff
+  name: основа для костра
+  description: Она должна светиться?
+  graph: BonfireCraft
   startNode: start
-  targetNode: bonfireoff
-  category: construction-category-storage
+  targetNode: bonfireend
+  category: construction-category-structures
   icon:
     sprite: Structures/Decoration/bonfire.rsi
     state: bonfire
@@ -82,20 +84,3 @@
   hide: false
   conditions:
     - !type:TileNotBlocked
-
-- type: constructionGraph
-  id: BonfireOff
-  start: start
-  graph:
-    - node: start
-      edges:
-        - to: bonfireoff
-          steps:
-            - tag: LogStalker
-              name: бревно
-              icon:
-                sprite: Objects/Specific/Hydroponics/towercap.rsi
-                state: produce
-              doAfter: 15
-    - node: bonfireoff
-      entity: BonfireOff

@@ -20,6 +20,53 @@
     sprite: _Stalker/Structures/Furniture/sign.rsi
     state: sign
     noRot: true
+    
+- type: entity
+  name: TEST big wooden sign
+  id: signnewwords
+  parent: BaseStructureStalkerDynamic
+  description: TEST a big wooden sign
+  suffix: ST, DONT Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/sign.rsi
+    layers:
+    - state: sign
+    - state: sign_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: sign_words
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+    scale: 0.7, 0.7
+    noRot: true
+  - type: InteractionOutline
+  - type: Tag
+    tags:
+    - Document
+    - Paper
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/_Stalker/Interface/Paper/Sign/sign_background_default.svg.96dpi.png"
+  - type: Paper
+  - type: Appearance
+  - type: FaxableObject
+  - type: PaperLabelType
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        hard: false
+        layer:
+          - LowImpassable
 
 # ПРЕДУПРЕЖДАЮЩИЕ ЗНАКИ
 
