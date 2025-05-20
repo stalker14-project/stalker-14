@@ -18,4 +18,16 @@ public sealed partial class STNPCSniperComponent : Component
 
     [DataField]
     public HashSet<LocId> MessageShoot = new();
+
+    /// <summary>
+    /// should system read NPCFactionMember comp
+    /// </summary>
+    [DataField]
+    public bool Reader = false;
+
+    /// <summary>
+    /// the target faction which will be ignored as friendly
+    /// </summary>
+    [DataField]
+    public string Faction;
 }

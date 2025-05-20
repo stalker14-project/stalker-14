@@ -23,13 +23,10 @@ public sealed class StalkerPacifiedZoneSystem : EntitySystem
     private void OnCollideStalkerPacifiedZone(EntityUid uid, StalkerPacifiedZoneComponent component, ref StartCollideEvent args)
     {
         var target = args.OtherEntity;
-        var self = args.OurEntity;
 
         if (target == EntityUid.Invalid
-            || self ==  EntityUid.Invalid
             || component.Reader
             && TryComp(target, out NpcFactionMemberComponent? targetMember)
-            && TryComp(self, out NpcFactionMemberComponent? selfMember)
             && _npc.IsMember(target, component.Faction))
             return;
 

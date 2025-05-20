@@ -10,11 +10,14 @@ public sealed partial class StalkerPacifiedZoneComponent : Component
     public bool Pacified;
 
     /// <summary>
-    /// should system use the Access Reader comp
+    /// should system read NPCFactionMember comp
     /// </summary>
     [DataField]
     public bool Reader = false;
 
+    /// <summary>
+    /// the target faction which will be ignored as friendly
+    /// </summary>
     [DataField]
     public string Faction;
 }
