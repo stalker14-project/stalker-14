@@ -28,11 +28,10 @@
   name: stalker pacified entrance
   suffix: ST, Stalker
   components:
-  - type: AccessReader
-    access: [["Stalker"]]
   - type: StalkerPacifiedZone
     pacified: true
     reader: true
+    faction: Stalker
 
 - type: entity
   id: STStalkerPacifiedOut
@@ -40,11 +39,10 @@
   name: stalker pacified exit
   suffix: ST, Stalker
   components:
-    - type: AccessReader
-      access: [ [ "Stalker" ] ]
     - type: StalkerPacifiedZone
       pacified: false
       reader: true
+      faction: Stalker
     - type: Sprite
       layers:
       - state: red
@@ -56,11 +54,10 @@
   name: bandit pacified entrance
   suffix: ST, Bandit
   components:
-  - type: AccessReader
-    access: [["Bandit"]]
   - type: StalkerPacifiedZone
     pacified: true
     reader: true
+    faction: Bandit
 
 - type: entity
   id: STBanditPacifiedOut
@@ -68,11 +65,10 @@
   name: bandit pacified exit
   suffix: ST, Bandit
   components:
-    - type: AccessReader
-      access: [ [ "Bandit" ] ]
     - type: StalkerPacifiedZone
       pacified: false
       reader: true
+      faction: Bandit
     - type: Sprite
       layers:
       - state: red

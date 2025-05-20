@@ -14,4 +14,7 @@ public sealed partial class StalkerPacifiedZoneComponent : Component
     /// </summary>
     [DataField]
     public bool Reader = false;
+
+    [DataField]
+    public string Faction;
 }
