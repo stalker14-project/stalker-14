@@ -1,0 +1,49 @@
+- type: entity
+  id: StalkerExplSafezoneTriggerIn
+  parent: StalkerSafezoneTriggerBase
+  name: emission entrance
+  description: Transports you to a linked destination!
+  suffix: Stalker
+  components:
+  - type: AddOrDelOnCollideSafeZone
+    MustAdd: true
+
+- type: entity
+  id: StalkerSafezoneTriggerIn
+  parent: StalkerPacifiedZoneBase
+  name: safezone entrance
+  description: Transports you to a linked destination!
+  suffix: Stalker
+  components:
+  - type: AddOrDelOnCollideSafeZone
+    MustAdd: true
+  - type: StalkerPacifiedZone
+    pacified: true
+
+- type: entity
+  id: StalkerExplSafezoneTriggerOut
+  parent: StalkerSafezoneTriggerBase
+  name: emission exit
+  description: Transports you to a linked destination!
+  suffix: Stalker
+  components:
+  - type: AddOrDelOnCollideSafeZone
+    MustAdd: false
+  - type: Sprite
+    layers:
+    - state: red
+
+- type: entity
+  id: StalkerSafezoneTriggerOut
+  parent: StalkerSafezoneTriggerBase
+  name: safezone exit
+  description: Transports you to a linked destination!
+  suffix: Stalker
+  components:
+  - type: AddOrDelOnCollideSafeZone
+    MustAdd: false
+  - type: StalkerPacifiedZone
+    pacified: false
+  - type: Sprite
+    layers:
+    - state: red
