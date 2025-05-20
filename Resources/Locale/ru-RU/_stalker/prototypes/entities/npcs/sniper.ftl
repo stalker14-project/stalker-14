@@ -6,6 +6,6 @@ ent-STNPCStalkerSniper = защитник деревни
     .desc = Самый суровый парень на кордоне, охраняет деревню с самого её появления.
     .suffix = ST, Sniper, Stalker
 
-ent-STNPCSniper = защитник бандитов
+ent-STNPCBanditSniper = защитник бандитов
     .desc = Стильный пацанчик с тяжелым вооружением на перевес, самый чёткий среди братвы.
     .suffix = ST, Sniper, Bandit
