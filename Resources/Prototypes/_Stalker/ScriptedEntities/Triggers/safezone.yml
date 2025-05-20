@@ -34,20 +34,20 @@
     pacified: true
     reader: true
 
-  - type: entity
-    id: STStalkerPacifiedOut
-    parent: StalkerPacifiedZoneBase
-    name: stalker pacified exit
-    suffix: ST, Stalker
-    components:
+- type: entity
+  id: STStalkerPacifiedOut
+  parent: StalkerPacifiedZoneBase
+  name: stalker pacified exit
+  suffix: ST, Stalker
+  components:
     - type: AccessReader
       access: [ [ "Stalker" ] ]
     - type: StalkerPacifiedZone
       pacified: false
       reader: true
-  - type: Sprite
-    layers:
-    - state: red
+    - type: Sprite
+      layers:
+      - state: red
 
 # [ Bandit ]
 - type: entity
@@ -62,17 +62,17 @@
     pacified: true
     reader: true
 
-  - type: entity
-    id: STBanditPacifiedOut
-    parent: StalkerPacifiedZoneBase
-    name: bandit pacified exit
-    suffix: ST, Bandit
-    components:
+- type: entity
+  id: STBanditPacifiedOut
+  parent: StalkerPacifiedZoneBase
+  name: bandit pacified exit
+  suffix: ST, Bandit
+  components:
     - type: AccessReader
       access: [ [ "Bandit" ] ]
     - type: StalkerPacifiedZone
       pacified: false
       reader: true
-  - type: Sprite
-    layers:
-    - state: red
+    - type: Sprite
+      layers:
+      - state: red
