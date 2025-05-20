@@ -12,8 +12,9 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/NPCs/sniper.rsi
-  - type: AccessReader
-    access: [["Stalker"]]
+  - type: STNPCSniper
+    reader: true
+    faction: Stalker
 
 - type: entity
   parent: STBaseSniper
@@ -23,5 +24,6 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/NPCs/sniper.rsi
-  - type: AccessReader
-    access: [["Bandit"]]
+  - type: STNPCSniper
+    reader: true
+    faction: Bandit
