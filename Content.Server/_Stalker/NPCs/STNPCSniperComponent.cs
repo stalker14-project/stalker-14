@@ -18,7 +18,4 @@ public sealed partial class STNPCSniperComponent : Component
 
     [DataField]
     public HashSet<LocId> MessageShoot = new();
-
-    [DataField]
-    public EntityWhitelist? AttackerWhitelist;
 }

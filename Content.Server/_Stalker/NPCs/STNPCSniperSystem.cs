@@ -2,6 +2,8 @@ using System.Collections.Frozen;
 using Content.Server.Chat.Systems;
 using Content.Server.Interaction;
 using Content.Server.Popups;
+using Content.Shared.Access.Components;
+using Content.Shared.Access.Systems;
 using Content.Shared.Damage;
 using Content.Shared.GameTicking;
 using Content.Shared.Interaction.Events;
@@ -35,6 +37,8 @@ public sealed partial class STNPCSniperSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly AccessReaderSystem _access = default!;
+
 
     private FrozenDictionary<MapCoordinates, Entity<STNPCSniperComponent>> _hashedCoords = new Dictionary<MapCoordinates, Entity<STNPCSniperComponent>>().ToFrozenDictionary();
 
@@ -98,7 +102,9 @@ public sealed partial class STNPCSniperSystem : EntitySystem
 
         if (!_hashedCoords.TryGetValue(coords, out var entity))
             return false;
-        if(_whitelistSystem.IsWhitelistPass(entity.Comp.AttackerWhitelist, attackerUid))
+
+        if(TryComp(entity, out AccessReaderComponent? access)
+           && _access.IsAllowed(attackerUid, entity))
             return false;
 
         if (entity.Comp.SoundGunshot is not null)
