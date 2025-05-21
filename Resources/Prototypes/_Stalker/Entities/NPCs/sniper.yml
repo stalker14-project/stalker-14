@@ -1,18 +1,29 @@
 - type: entity
-  parent: STBaseNPC
+  parent: STBaseSniper
   id: STNPCSniper
   name: sniper
+  suffix: ST, Sniper
+
+- type: entity
+  parent: STBaseSniper
+  id: STNPCStalkerSniper
+  name: stalker sniper
+  suffix: ST, Sniper, Stalker
   components:
-    - type: Sprite
-      sprite: _Stalker/Objects/NPCs/sniper.rsi
-    - type: STNPCSniper
-      range: 16
-      damage:
-        types:
-          Piercing: 75
-      messageShoot:
-        - st-npc-sniper-shoot-1
-        - st-npc-sniper-shoot-2
-        - st-npc-sniper-shoot-3
-      soundGunshot:
-        path: /Audio/_Stalker/Effects/Guns/svd.ogg
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/sniper.rsi
+  - type: STNPCSniper
+    reader: true
+    faction: Stalker
+
+- type: entity
+  parent: STBaseSniper
+  id: STNPCBanditSniper
+  name: bandit sniper
+  suffix: ST, Sniper, Bandit
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/sniper.rsi
+  - type: STNPCSniper
+    reader: true
+    faction: Bandit

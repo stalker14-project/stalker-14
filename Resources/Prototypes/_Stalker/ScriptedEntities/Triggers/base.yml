@@ -1,0 +1,33 @@
+- type: entity
+  id: StalkerSafezoneTriggerBase
+  parent: MarkerBase
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.48,0.25,0.48"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
+  - type: Sprite
+    layers:
+    - state: blue
+
+- type: entity
+  id: StalkerPacifiedZoneBase
+  parent: StalkerSafezoneTriggerBase
+  abstract: true
+  components:
+  - type: STAnomalyGeneratorSpawnBlocker
+    size: 10

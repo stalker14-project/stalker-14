@@ -1,12 +1,18 @@
-﻿using Content.Shared.CombatMode.Pacification;
-using Robust.Server.GameObjects;
+﻿using Content.Server.NPC.HTN;
+using Content.Shared.CombatMode.Pacification;
 using Robust.Shared.Physics.Events;
-using Robust.Shared.Player;
+using Content.Shared.Access.Systems;
+using Content.Shared.Buckle.Components;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Systems;
 
 namespace Content.Server._Stalker.PacifiedZone;
 
 public sealed class StalkerPacifiedZoneSystem : EntitySystem
 {
+
+    [Dependency] private readonly NpcFactionSystem _npc = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -16,19 +22,33 @@ public sealed class StalkerPacifiedZoneSystem : EntitySystem
 
     private void OnCollideStalkerPacifiedZone(EntityUid uid, StalkerPacifiedZoneComponent component, ref StartCollideEvent args)
     {
-        if (!TryComp(args.OtherEntity, out ActorComponent? actor))
+        var target = args.OtherEntity;
+
+        if (target == EntityUid.Invalid
+            || component.Reader
+            && TryComp(target, out NpcFactionMemberComponent? targetMember)
+            && _npc.IsMember(target, component.Faction))
             return;
 
-        if (actor.PlayerSession.AttachedEntity == null)
+        if (TryComp(target, out StrapComponent? strap))
+        {
+            RemComp<StrapComponent>(target);
             return;
+        }
+
+        if (TryComp(target, out HTNComponent? htn))
+        {
+            QueueDel(target);
+            return;
+        }
 
         if (component.Pacified)
         {
-            EnsureComp<PacifiedComponent>(actor.PlayerSession.AttachedEntity.Value);
+            EnsureComp<PacifiedComponent>(target);
         }
         else
         {
-            RemComp<PacifiedComponent>(actor.PlayerSession.AttachedEntity.Value);
+            RemComp<PacifiedComponent>(target);
         }
 
     }

@@ -19,3 +19,24 @@
             - GlassLayer
     - type: Speech
       speechVerb: Default
+
+- type: entity
+  parent: STBaseNPC
+  id: STBaseSniper
+  name: sniper
+  abstract: true
+  components:
+  - type: Physics
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/sniper.rsi
+  - type: STNPCSniper
+    range: 23
+    damage:
+      types:
+        Piercing: 35
+    messageShoot:
+    - st-npc-sniper-shoot-1
+    - st-npc-sniper-shoot-2
+    - st-npc-sniper-shoot-3
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/svd.ogg

@@ -1,0 +1,74 @@
+- type: entity
+  id: StalkerPaciTriggerIn
+  parent: StalkerPacifiedZoneBase
+  name: pacified entrance
+  description: Transports you to a linked destination!
+  suffix: Stalker
+  components:
+  - type: StalkerPacifiedZone
+    pacified: true
+
+- type: entity
+  id: StalkerPaciTriggerOut
+  parent: StalkerSafezoneTriggerBase
+  name: pacified exit
+  description: Transports you to a linked destination!
+  suffix: Stalker
+  components:
+  - type: StalkerPacifiedZone
+    pacified: false
+  - type: Sprite
+    layers:
+    - state: red
+
+# [ Stalker ]
+- type: entity
+  id: STStalkerPacifiedIn
+  parent: StalkerPacifiedZoneBase
+  name: stalker pacified entrance
+  suffix: ST, Stalker
+  components:
+  - type: StalkerPacifiedZone
+    pacified: true
+    reader: true
+    faction: Stalker
+
+- type: entity
+  id: STStalkerPacifiedOut
+  parent: StalkerPacifiedZoneBase
+  name: stalker pacified exit
+  suffix: ST, Stalker
+  components:
+    - type: StalkerPacifiedZone
+      pacified: false
+      reader: true
+      faction: Stalker
+    - type: Sprite
+      layers:
+      - state: red
+
+# [ Bandit ]
+- type: entity
+  id: STBanditPacifiedIn
+  parent: StalkerPacifiedZoneBase
+  name: bandit pacified entrance
+  suffix: ST, Bandit
+  components:
+  - type: StalkerPacifiedZone
+    pacified: true
+    reader: true
+    faction: Bandit
+
+- type: entity
+  id: STBanditPacifiedOut
+  parent: StalkerPacifiedZoneBase
+  name: bandit pacified exit
+  suffix: ST, Bandit
+  components:
+    - type: StalkerPacifiedZone
+      pacified: false
+      reader: true
+      faction: Bandit
+    - type: Sprite
+      layers:
+      - state: red

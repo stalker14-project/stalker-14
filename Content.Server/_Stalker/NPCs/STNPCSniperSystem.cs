@@ -2,9 +2,12 @@ using System.Collections.Frozen;
 using Content.Server.Chat.Systems;
 using Content.Server.Interaction;
 using Content.Server.Popups;
+using Content.Shared.Access.Components;
+using Content.Shared.Access.Systems;
 using Content.Shared.Damage;
 using Content.Shared.GameTicking;
 using Content.Shared.Interaction.Events;
+using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Physics;
@@ -35,6 +38,8 @@ public sealed partial class STNPCSniperSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly NpcFactionSystem _npc = default!;
+
 
     private FrozenDictionary<MapCoordinates, Entity<STNPCSniperComponent>> _hashedCoords = new Dictionary<MapCoordinates, Entity<STNPCSniperComponent>>().ToFrozenDictionary();
 
@@ -98,7 +103,10 @@ public sealed partial class STNPCSniperSystem : EntitySystem
 
         if (!_hashedCoords.TryGetValue(coords, out var entity))
             return false;
-        if(_whitelistSystem.IsWhitelistPass(entity.Comp.AttackerWhitelist, attackerUid))
+
+        if (entity.Comp.Reader
+            && TryComp(attackerUid, out NpcFactionMemberComponent? targetMember)
+            && _npc.IsMember(attackerUid, entity.Comp.Faction))
             return false;
 
         if (entity.Comp.SoundGunshot is not null)
