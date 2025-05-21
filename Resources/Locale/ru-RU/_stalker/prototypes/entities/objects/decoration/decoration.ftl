@@ -37,3 +37,6 @@ ent-GasStationstalkernew = бензоколонка
 ent-GasStationstalkernewtwo = бензоколонка
     .desc = Старая бензоколонка, врядли она работает.
     .suffix = { ent-GasStationstalker.suffix }
+ent-WoodenKomod = старый советский комод
+    .desc = Громоздкий комод советской эпохи с характерными геометрическими узорами и металлическими накладками. Несмотря на неуклюжий вид, его прочность вызывает уважение — такая мебель переживёт любые перемены.
+    .suffix = { ent-WoodenBoxWithLoot.suffix }

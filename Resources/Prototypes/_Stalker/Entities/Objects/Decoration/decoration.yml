@@ -48,7 +48,7 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Effects/metal_break1.ogg
-          
+
 - type: entity
   id: GasStationstalkertwo
   parent: GasStationstalker
@@ -61,7 +61,7 @@
   - type: Sprite
     sprite: _Stalker/Structures/Machines/gasstation.rsi
     state: gasstationtwo
-   
+
 - type: entity
   id: GasStationstalkernew
   parent: GasStationstalker
@@ -74,7 +74,7 @@
   - type: Sprite
     sprite: _Stalker/Structures/Machines/gasstation.rsi
     state: gasstationnew
-    
+
 - type: entity
   id: GasStationstalkernewtwo
   parent: GasStationstalker
@@ -264,3 +264,14 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/mapping.rsi
     state: gen
+
+- type: entity
+  id: WoodenKomod
+  name: старый советский комод
+  suffix: ST, Mapping
+  description: Громоздкий комод советской эпохи с характерными геометрическими узорами и металлическими накладками. Несмотря на неуклюжий вид, его прочность вызывает уважение — такая мебель переживёт любые перемены.
+  parent: WoodenYaschik1
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/yashik.rsi
+    state: komod
