@@ -12,6 +12,7 @@
     - Freedom
     - BandsUnion
     - Seraphims
+    - MilitaryStalker
 
 - type: npcFaction
   id: Mutated
@@ -28,6 +29,7 @@
     - Freedom
     - BandsUnion
     - Seraphims
+    - MilitaryStalker
 
 - type: npcFaction
   id: Hostile
@@ -44,6 +46,7 @@
   - Freedom
   - BandsUnion
   - Seraphims
+  - MilitaryStalker
 
 - type: npcFaction
   id: Stalker
@@ -84,6 +87,7 @@
   - Milita
   - Hostile
   - Duty
+  - MilitaryStalker
 
 - type: npcFaction
   id: Seraphims
@@ -94,6 +98,7 @@
   - Milita
   - Hostile
   - Duty
+  - MilitaryStalker
 
 - type: npcFaction
   id: Freedom
@@ -103,6 +108,7 @@
   - Hostile
   - Military
   - Duty
+  - MilitaryStalker
 
 - type: npcFaction
   id: Duty
@@ -115,7 +121,7 @@
   - Freedom
   - BandsUnion
   - Seraphims
-
+  - MilitaryStalker
 
 - type: npcFaction
   id: BandsUnion
@@ -125,3 +131,19 @@
   - Military
   - Hostile
   - Duty
+  - MilitaryStalker
+
+- type: npcFaction
+  id: MilitaryStalker
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Stalker
+  - NanoTrasen
+  - Passive
+  - Bandit
+  - Hostile
+  - Freedom
+  - Duty
+  - BandsUnion
+  - Seraphims
