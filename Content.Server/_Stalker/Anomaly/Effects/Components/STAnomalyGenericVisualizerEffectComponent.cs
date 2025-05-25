@@ -1,4 +1,4 @@
-﻿namespace Content.Server._Stalker.Anomaly.Effects.GenericVisualizer;
+﻿namespace Content.Server._Stalker.Anomaly.Effects.Components;
 
 [RegisterComponent]
 public sealed partial class STAnomalyGenericVisualizerEffectComponent : Component

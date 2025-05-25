@@ -1,7 +1,7 @@
 ﻿using Content.Shared._Stalker.Anomaly.Triggers.Events;
 using Content.Shared.Damage;
 
-namespace Content.Server._Stalker.Anomaly.Effects.Damage;
+namespace Content.Server._Stalker.Anomaly.Effects.Systems;
 
 public sealed class STAnomalyDamageEffectSystem : EntitySystem
 {
@@ -12,10 +12,10 @@ public sealed class STAnomalyDamageEffectSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<STAnomalyDamageEffectComponent, STAnomalyTriggerEvent>(OnTriggered);
+        SubscribeLocalEvent<Components.STAnomalyDamageEffectComponent, STAnomalyTriggerEvent>(OnTriggered);
     }
 
-    private void OnTriggered(Entity<STAnomalyDamageEffectComponent> effect, ref STAnomalyTriggerEvent args)
+    private void OnTriggered(Entity<Components.STAnomalyDamageEffectComponent> effect, ref STAnomalyTriggerEvent args)
     {
         foreach (var group in args.Groups)
         {

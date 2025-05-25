@@ -4,32 +4,33 @@
   suffix: ST
   abstract: true
   components:
-    - type: STWeight
-      self: 0.1
-    - type: Tag
-      tags:
-        - STBolt
-    - type: Sprite
-      sprite: _Stalker/Objects/Misc/bolts.rsi
-    - type: Item
-      sprite: _Stalker/Objects/Misc/bolts.rsi
-      size: Tiny
-    - type: Currency
-      price:
-        Roubles: 0
-    - type: ZoneAnomalyActivator
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeCircle
-            radius: 0.25
-          density: 1
-          restitution: 0.0
-          mask:
-            - MobMask
-          layer:
-            - MobLayer
+  - type: STWeight
+    self: 0.1
+  - type: Tag
+    tags:
+    - STBolt
+    - STMaterialMetal
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/bolts.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Misc/bolts.rsi
+    size: Tiny
+  - type: Currency
+    price:
+      Roubles: 0
+  - type: ZoneAnomalyActivator
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 1
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   parent: STBaseBolt

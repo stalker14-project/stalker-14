@@ -1,6 +1,6 @@
 ﻿using Robust.Shared.Audio;
 
-namespace Content.Server._Stalker.Anomaly.Effects.Sound;
+namespace Content.Server._Stalker.Anomaly.Effects.Components;
 
 [RegisterComponent]
 public sealed partial class STAnomalySoundEffectComponent : Component

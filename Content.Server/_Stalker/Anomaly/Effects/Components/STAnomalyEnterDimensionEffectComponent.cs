@@ -2,7 +2,7 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Stalker.Anomaly.Effects.Dimension;
+namespace Content.Server._Stalker.Anomaly.Effects.Components;
 
 [RegisterComponent]
 public sealed partial class STAnomalyEnterDimensionEffectComponent : Component

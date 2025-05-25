@@ -1,4 +1,4 @@
-﻿namespace Content.Server._Stalker.Anomaly.Effects.Throw;
+﻿namespace Content.Server._Stalker.Anomaly.Effects.Components;
 
 [RegisterComponent]
 public sealed partial class STAnomalyEffectThrowComponent : Component

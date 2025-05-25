@@ -1,9 +1,10 @@
+using Content.Server._Stalker.Anomaly.Effects.Components;
 using Content.Server._Stalker.Dimension;
 using Content.Server._Stalker.Utils;
 using Content.Shared._Stalker.Anomaly.Triggers.Events;
 using Content.Shared.Whitelist;
 
-namespace Content.Server._Stalker.Anomaly.Effects.Dimension;
+namespace Content.Server._Stalker.Anomaly.Effects.Systems;
 
 public sealed class STAnomalyEnterDimensionEffectSystem : EntitySystem
 {

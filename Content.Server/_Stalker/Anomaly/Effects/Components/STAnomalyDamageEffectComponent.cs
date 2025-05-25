@@ -1,6 +1,6 @@
 ﻿using Content.Shared.Damage;
 
-namespace Content.Server._Stalker.Anomaly.Effects.Damage;
+namespace Content.Server._Stalker.Anomaly.Effects.Components;
 
 [RegisterComponent]
 public sealed partial class STAnomalyDamageEffectComponent : Component

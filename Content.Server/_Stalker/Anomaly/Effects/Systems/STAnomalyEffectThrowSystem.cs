@@ -1,11 +1,12 @@
 ﻿using System.Numerics;
+using Content.Server._Stalker.Anomaly.Effects.Components;
 using Content.Shared._Stalker.Anomaly.Triggers.Events;
 using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Random;
 
-namespace Content.Server._Stalker.Anomaly.Effects.Throw;
+namespace Content.Server._Stalker.Anomaly.Effects.Systems;
 
 public sealed class STAnomalyEffectThrowSystem : EntitySystem
 {

@@ -1,7 +1,8 @@
-﻿using Content.Shared._Stalker.Anomaly.Triggers.Events;
+﻿using Content.Server._Stalker.Anomaly.Effects.Components;
+using Content.Shared._Stalker.Anomaly.Triggers.Events;
 using Robust.Server.Audio;
 
-namespace Content.Server._Stalker.Anomaly.Effects.Sound;
+namespace Content.Server._Stalker.Anomaly.Effects.Systems;
 
 public sealed class STAnomalySoundEffectSystem : EntitySystem
 {

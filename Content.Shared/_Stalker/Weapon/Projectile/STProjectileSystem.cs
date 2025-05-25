@@ -74,8 +74,7 @@ public sealed class STProjectileSystem : EntitySystem
         if (args.Cancelled || ent.Comp.ForceHit || ent.Comp.StartCoordinates is null)
             return;
 
-        var evasion = _evasion.GetEvasion(args.OtherEntity);
-        if (evasion == 0)
+        if (!HasComp<STEvasionComponent>(args.OtherEntity))
             return;
 
         var accuracy = ent.Comp.Accuracy;
