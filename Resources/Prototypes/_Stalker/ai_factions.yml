@@ -11,6 +11,8 @@
     - Sci
     - Duty
     - Freedom
+    - MilitaryStalker
+    - Seraphims
 
 - type: npcFaction
   id: Mutated
@@ -25,6 +27,8 @@
     - Sci
     - Duty
     - Freedom
+    - MilitaryStalker
+    - Seraphims
 
 - type: npcFaction
   id: Hostile
@@ -39,6 +43,8 @@
   - Sci
   - Duty
   - Freedom
+  - MilitaryStalker
+  - Seraphims
 
 - type: npcFaction
   id: Stalker
@@ -66,6 +72,7 @@
   - Hostile
   - Freedom
   - Duty
+  - Seraphims
 
 - type: npcFaction
   id: Bandit
@@ -73,10 +80,25 @@
   - Mutated
   - MutatedHunter
   - Military
-  - Hostile
   - Sci
-  - Duty
   - Freedom
+  - Hostile
+  - Duty
+  - MilitaryStalker
+  - Seraphims
+
+- type: npcFaction
+  id: Seraphims
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Military
+  - Hostile
+  - Duty
+  - Bandit
+  - MilitaryStalker
+  - Freedom
+  - Sci
 
 - type: npcFaction
   id: Freedom
