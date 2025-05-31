@@ -56,6 +56,9 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
     state: equipped-HELMET
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # KKK
 - type: entity
@@ -262,3 +265,44 @@
     sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
+
+- type: entity
+  parent: STClothingCapeT1Base
+  id: ClothingOuterCoatClearSky
+  name: дождевик чистого неба
+  suffix: ST, T1
+  description: плотный плащ с защищающий вас от дождя и некоторых химикатов.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_clear_sky.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_clear_sky.rsi
+  - type: Storage
+    maxItemSize: Large
+    grid:
+      - 0,0,1,1
+  - type: Armor
+    armorClass: 1
+    modifiers:
+      flatReductions:
+        Caustic: 1.5
+  - type: ToggleableClothing
+    slot: head
+    requiredSlot: CLOAK
+    clothingPrototype: ClothingHeadHelmetClearSkyCoat
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetClearSkyCoat
+  name: капюшон дождевика
+  description: Покрывает вашу голову
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_clear_sky.rsi
+    state: icon-HELM
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_clear_sky.rsi
+    state: equipped-HELMET
+  - type: HideLayerClothing
+    slots:
+    - Hair
