@@ -1,4 +1,5 @@
 using System.Collections.Frozen;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server._Stalker.Anomaly.Generation.Components;
@@ -91,14 +92,16 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
 
         for (var i = 0; i < Options.TotalCount; i++)
         {
-            var anomaly = _random.Pick(Options.AnomalyEntries);
+            var anomaly = GetRandomAnomalyEntry(Options, _random);
+            if (anomaly is null)
+                continue;
 
             for (var j = 0; j < 100; j++)
             {
                 await MakeOperation();
 
                 var (coords, tile) = _random.Pick(_tileCoordinatesSpawn);
-                var entity = await TrySpawn(anomaly, coords);
+                var entity = await TrySpawn(anomaly.Value, coords);
 
                 if (entity == EntityUid.Invalid)
                     continue;
@@ -108,7 +111,7 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
                 _tileCoordinates.Remove(coords);
 
                 // Anomaly don't spawn in anomalies
-                foreach (var takenCoord in GetAnomalyTiles(anomaly, coords))
+                foreach (var takenCoord in GetAnomalyTiles(anomaly.Value, coords))
                 {
                     if (!_tileCoordinatesSpawn.ContainsKey(takenCoord))
                         continue;
@@ -177,5 +180,26 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
     {
         return tile.GetContentTileDefinition().Sturdy &&
                !IsTileBlocked(tile, CollisionGroup.LowImpassable, predicate: predicate);
+    }
+
+    private static STAnomalyGeneratorAnomalyEntry? GetRandomAnomalyEntry(STAnomalyGenerationOptions options, IRobustRandom random)
+    {
+        var sumRation = 0f;
+        foreach (var entry in options.AnomalyEntries)
+        {
+            sumRation += entry.Weight;
+        }
+
+        var roll = random.NextFloat(0, sumRation);
+
+        sumRation = 0f;
+        foreach (var entry in options.AnomalyEntries)
+        {
+            sumRation += entry.Weight;
+            if (roll <= sumRation)
+                return entry;
+        }
+
+        return options.AnomalyEntries.LastOrDefault();
     }
 }

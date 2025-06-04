@@ -2,7 +2,7 @@
   parent: STClothingOuterArmorStorageBasic
   id: STClothingOuterArmorIOTVBase
   name: бронежилет IOTV #base
-  suffix: ST, T4, PvE
+  suffix: ST, T4, PvP
   abstract: true
   components:
   - type: STWeight
@@ -23,14 +23,13 @@
     armorClass: 4
     modifiers:
       flatReductions:
-        Blunt: 8
-        Slash: 8
+        Blunt: 5
+        Slash: 5
         Piercing: 6
       coefficients:
         Blunt: 0.45
         Slash: 0.45
-        Piercing: 0.7
-        Heat: 0.9
+        Piercing: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: Craftable

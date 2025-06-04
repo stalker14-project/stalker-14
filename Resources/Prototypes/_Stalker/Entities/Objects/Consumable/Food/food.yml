@@ -60,6 +60,70 @@
           types:
             Radiation: -1
 
+- type: entity
+  name: сырое сало
+  parent: FoodMeatBase
+  id: STFoodMeatSalo
+  description: Кусок сырого сала кабана.
+  suffix: Stalker, еда
+  components:
+  - type: STWeight
+    self: 1.0
+  - type: Sprite
+    state: goliath
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 9
+        - ReagentId: Fat
+          Quantity: 9
+        - ReagentId: MToxin
+          Quantity: 10
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: steak boar
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+
+- type: entity
+  name: приготовленное сало
+  parent: FoodMeatBase
+  id: STFoodMeatSaloCooked
+  description: Приготовленное сало кабана.
+  suffix: Stalker, еда
+  components:
+  - type: STWeight
+    self: 0.8
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+    - Steak
+  - type: Sprite
+    layers:
+    - state: goliath-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: MRadin
+          Quantity: 10
+  - type: Construction
+    graph: MeatSteakBoar
+    node: steak boar
+
 ###############Хлеб
 
 - type: entity

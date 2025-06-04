@@ -3,79 +3,139 @@
   options:
     totalCount: 350
     anomalyEntries:
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyElectra
-# Кордон XXX
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalyJarka
+    - protoId: ZoneAnomalyElectra
+
+# Кордон
 - type: stAnomalyGenerationOptions
   id: STKordonGenerationOptions
   options:
-    totalCount: 300
+    totalCount: 450
     anomalyEntries:
-      - protoId: ZoneAnomalyKissel
-      - protoId: ZoneAnomalySmoke
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
+    # Electrical
+    - protoId: ZoneAnomalyElectra
+    # Gravity
+    - protoId: ZoneAnomalyBurden
+      weight: 0.95
+    - protoId: ZoneAnomalyGravi
+      weight: 4
+    - protoId: ZoneAnomalySpringboard
+      weight: 5
+    # Thermal
+    - protoId: ZoneAnomalyJarka
+    # Psy
+    - protoId: ZoneAnomalyLamp
+      weight: 0.1
 
-# Свалка XXX
+# Свалка
 - type: stAnomalyGenerationOptions
   id: STSvalkaGenerationOptions
   options:
-    totalCount: 350
+    totalCount: 400
     anomalyEntries:
-      - protoId: ZoneAnomalySmoke
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyGazirovka
-      - protoId: ZoneAnomalyGarland
-      - protoId: ZoneAnomalyBarabashka
+    # Electrical
+    - protoId: ZoneAnomalyElectra
+    - protoId: ZoneAnomalyGarland
+      weight: 3
+    # Gravity
+    - protoId: ZoneAnomalyBurden
+      weight: 0.4
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalySpringboard
+      weight: 0.1
+    # Thermal
+    - protoId: ZoneAnomalyJarkaStrong
+      weight: 7
+    - protoId: ZoneAnomalyJarka
+      weight: 5
+    # Psy
+    - protoId: ZoneAnomalyLamp
+    - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
 
-# Болота XXX
+# Болота
 - type: stAnomalyGenerationOptions
   id: STBolotaGenerationOptions
   options:
-    totalCount: 120
+    totalCount: 300
     anomalyEntries:
-      - protoId: ZoneAnomalyKissel
-      - protoId: ZoneAnomalyNoGravity
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyGazirovka
-      - protoId: ZoneAnomalyBarabashka
+    # Chemical
+    - protoId: ZoneAnomalySmoke
+      weight: 2
+    - protoId: ZoneAnomalyGazirovka
+      weight: 5
+    - protoId: ZoneAnomalyKissel
+      weight: 3
+    # Gravity
+    - protoId: ZoneAnomalyBurden
+      weight: 0.95
+    - protoId: ZoneAnomalyNoGravity
+    - protoId: ZoneAnomalyGravi
+      weight: 2
+    # Thermal
+    - protoId: ZoneAnomalySteam
+      weight: 2
+    # Psy
+    - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
 
 # Агропром
 - type: stAnomalyGenerationOptions
   id: STAgropromGenerationOptions
   options:
-    totalCount: 250
+    totalCount: 350
     anomalyEntries:
+    # Electrical
+    - protoId: ZoneAnomalySource
+      weight: 4
+    - protoId: ZoneAnomalyElectra
+      weight: 5
+    - protoId: ZoneAnomalyGarland
+      weight: 7
+    # Chemical
+    - protoId: ZoneAnomalySmoke
+      weight: 2
     - protoId: ZoneAnomalyGazirovka
+      weight: 5
+    - protoId: ZoneAnomalyKissel
+      weight: 2
+    # Gravity
+    - protoId: ZoneAnomalyBurden
+      weight: 0.95
+    - protoId: ZoneAnomalyNoGravity
+      weight: 0.95
+    - protoId: ZoneAnomalyGravi
+    # Thermal
+    - protoId: ZoneAnomalyJarkaStrong
+    - protoId: ZoneAnomalyJarka
+    - protoId: ZoneAnomalySteam
+    - protoId: ZoneAnomalyWitchesCircle
+      weight: 1.5
+    # Psy
+    - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
+    - protoId: ZoneAnomalyRift
+      weight: 0.1
 
-# Тёмная лощина XXX
+# Тёмная лощина
 - type: stAnomalyGenerationOptions
   id: STTemnajLohinaGenerationOptions
   options:
-    totalCount: 100
+    totalCount: 150
     anomalyEntries:
-      - protoId: ZoneAnomalyKissel
-      - protoId: ZoneAnomalyNoGravity
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyGazirovka
-      - protoId: ZoneAnomalyBarabashka
+    # Gravity
+    - protoId: ZoneAnomalyGrabber
+      weight: 5
+    - protoId: ZoneAnomalyGravi
+      weight: 3.5
+    - protoId: ZoneAnomalySpringboard
+      weight: 2
+    - protoId: ZoneAnomalyNoGravity
+      weight: 0.3
+    - protoId: ZoneAnomalyBurden
+      weight: 0.4
 
 # Тёмная долина
 - type: stAnomalyGenerationOptions
@@ -83,93 +143,135 @@
   options:
     totalCount: 400
     anomalyEntries:
-      - protoId: ZoneAnomalySmoke
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyGazirovka
-      - protoId: ZoneAnomalyGarland
-      - protoId: ZoneAnomalyBarabashka
+    # Electrical
+    - protoId: ZoneAnomalySource
+    - protoId: ZoneAnomalyElectra
+    - protoId: ZoneAnomalyGarland
+    # Gravity
+    - protoId: ZoneAnomalyNoGravity
+      weight: 0.95
+    - protoId: ZoneAnomalyBurden
+      weight: 0.95
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyGrabber
+      weight: 3
+    # Thermal
+    - protoId: ZoneAnomalyJarkaStrong
+    - protoId: ZoneAnomalyJarka
+    - protoId: ZoneAnomalyFreezer
+      weight: 1.5
+    - protoId: ZoneAnomalyWitchesCircle
+      weight: 1.5
+    # Psy
+    - protoId: ZoneAnomalyBarabashka
+    - protoId: ZoneAnomalyRift
+      weight: 3
 
-# Топи XXX
+# Топи
 - type: stAnomalyGenerationOptions
   id: STTopiGenerationOptions
   options:
-    totalCount: 350
+    totalCount: 450
     anomalyEntries:
-      - protoId: ZoneAnomalySmoke
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyGazirovka
-      - protoId: ZoneAnomalyGarland
-      - protoId: ZoneAnomalyBarabashka
-
+    # Electrical
+    - protoId: ZoneAnomalySource
+      weight: 2
+    - protoId: ZoneAnomalyGarland
+      weight: 5
+    # Chemical
+    - protoId: ZoneAnomalySmoke
+      weight: 2
+    - protoId: ZoneAnomalyGazirovka
+      weight: 5
+    - protoId: ZoneAnomalyKissel
+      weight: 3
+    # Gravity
+    - protoId: ZoneAnomalyNoGravity
+      weight: 0.95
+    - protoId: ZoneAnomalyBurden
+      weight: 0.95
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyPulse
+    - protoId: ZoneAnomalyGrabber
+      weight: 3
+    # Thermal
+    - protoId: ZoneAnomalyWitchesCircle
+    - protoId: ZoneAnomalySteam
+      weight: 2
+    # Psy
+    - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
 
 # Рыжий лес XXX
 - type: stAnomalyGenerationOptions
   id: STRedForestGenerationOptions
   options:
-    totalCount: 240
+    totalCount: 500
     anomalyEntries:
-      - protoId: ZoneAnomalyKissel
-      - protoId: ZoneAnomalyNoGravity
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyGazirovka
-      - protoId: ZoneAnomalyBarabashka
-      - protoId: ZoneAnomalySmoke
-      - protoId: ZoneAnomalySource
-      - protoId: ZoneAnomalyGrabber
-      - protoId: ZoneAnomalyWitchesCircle
-      - protoId: ZoneAnomalyFreezer
-      - protoId: ZoneAnomalySteam
+    - protoId: ZoneAnomalyKissel
+    - protoId: ZoneAnomalyNoGravity
+    - protoId: ZoneAnomalyElectra
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyLamp
+    - protoId: ZoneAnomalyJarka
+    - protoId: ZoneAnomalyGazirovka
+    - protoId: ZoneAnomalyBarabashka
+    - protoId: ZoneAnomalySmoke
+    - protoId: ZoneAnomalySource
+    - protoId: ZoneAnomalyGrabber
+    - protoId: ZoneAnomalyWitchesCircle
+    - protoId: ZoneAnomalyFreezer
+    - protoId: ZoneAnomalySteam
+    - protoId: ZoneAnomalySol
+    - protoId: STAnomalyHush
+      weight: 0.09
+    - protoId: ZoneAnomalyRift
+      weight: 2
 
-# Барьер XXX
-- type: stAnomalyGenerationOptions
-  id: STBarrierGenerationOptions
-  options:
-    totalCount: 170
-    anomalyEntries:
-      - protoId: ZoneAnomalyKissel
-      - protoId: ZoneAnomalyPulse
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalySteam
-      - protoId: ZoneAnomalyBarabashka
-      - protoId: ZoneAnomalyFreezer
-      - protoId: STAnomalyHush
-
-# Росток XXX
 - type: stAnomalyGenerationOptions
   id: STRostokAndWildsGenerationOptions
   options:
-    totalCount: 150
+    totalCount: 500
     anomalyEntries:
-      - protoId: ZoneAnomalyKissel
-      - protoId: ZoneAnomalyNoGravity
-      - protoId: ZoneAnomalyElectra
-      - protoId: ZoneAnomalyGravi
-      - protoId: ZoneAnomalySpringboard
-      - protoId: ZoneAnomalyLamp
-      - protoId: ZoneAnomalyJarka
-      - protoId: ZoneAnomalyGazirovka
-      - protoId: ZoneAnomalyBarabashka
-      - protoId: ZoneAnomalySmoke
-      - protoId: ZoneAnomalyGrabber
-      - protoId: ZoneAnomalySteam
-
+    # Electrical
+    - protoId: ZoneAnomalySource
+      weight: 2
+    - protoId: ZoneAnomalyGarland
+      weight: 5
+    # Chemical
+    - protoId: ZoneAnomalySmoke
+      weight: 2
+    - protoId: ZoneAnomalyGazirovka
+      weight: 5
+    - protoId: ZoneAnomalyKissel
+      weight: 3
+    # Gravity
+    - protoId: ZoneAnomalyNoGravity
+      weight: 0.95
+    - protoId: ZoneAnomalyBurden
+      weight: 0.95
+    - protoId: ZoneAnomalyGravi
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyPulse
+    - protoId: ZoneAnomalyGrabber
+      weight: 3
+    # Thermal
+    - protoId: ZoneAnomalyWitchesCircle
+    - protoId: ZoneAnomalySteam
+      weight: 2
+    # Psy
+    - protoId: ZoneAnomalyBarabashka
+      weight: 0.5
 
 # Оазис XXX
 - type: stAnomalyGenerationOptions
   id: STOazisGenerationOptions
   options:
-    totalCount: 0
+    totalCount: 300
     anomalyEntries:
-      - protoId: ZoneAnomalyGrabber
+    - protoId: ZoneAnomalySource
+    - protoId: ZoneAnomalyGrabber
+    - protoId: STAnomalyHush

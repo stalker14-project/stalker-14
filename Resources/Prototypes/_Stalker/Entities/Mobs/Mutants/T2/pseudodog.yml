@@ -31,7 +31,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 250
+            damage: 200
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -58,7 +58,7 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Slash: 32
+          Slash: 26
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 4

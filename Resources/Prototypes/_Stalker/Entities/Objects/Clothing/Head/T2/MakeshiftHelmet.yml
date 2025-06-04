@@ -3,7 +3,7 @@
   id: STClothingHeadHelmetMakeshiftTacticalT3
   name: Шлем «Циклоп»
   description: шлем, сделанный вручную из качественных материалов, может не самый привлекательный внешне, но защищает хорошо.
-  suffix: ST, T3, Tactical
+  suffix: ST, T2, Tactical
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/Head/makeshift_helmet.rsi
@@ -18,12 +18,15 @@
   - type: Armor
     armorClass: 2
     modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 2
       coefficients:
-        Piercing: 0.82
-        Slash: 0.86
-        Blunt: 0.86
+        Blunt: 0.80
+        Slash: 0.80
   - type: ExplosionResistance
-    damageCoefficient: 0.9
+    damageCoefficient: 0.95
   - type: Reflect
     reflectProb: 0.08
     spread: 360

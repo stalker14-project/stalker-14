@@ -15,7 +15,7 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHelmetSpark
     - type: Armor
-      armorClass: 1
+      armorClass: 2
       modifiers:
         flatReductions:
             Blunt: 2
@@ -25,13 +25,10 @@
         coefficients:
             Blunt: 0.8
             Slash: 0.8
-            Piercing: 0.8
-            Caustic: 0.85
+            Heat: 0.7
+            Piercing: 0.9
+            Caustic: 0.8
             Shock: 0.65
-            Psy: 0.85
-            Compression: 0.8
-    - type: ExplosionResistance
-      damageCoefficient: 0.90
     - type: ClothingSpeedModifier
       walkModifier: 1
       sprintModifier: 1

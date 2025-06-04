@@ -3,7 +3,7 @@
   id: STClothingOuterArmorHeavyM
   name: бронированный комбинезон
   description: Создан на основе обыкновенного комбинезона, бронированный потому что повышена защита броневыми пластинами от большинства физических повреждений. Так-же увеличивает вес, но предоставленая отличная защита от снарядов для таких комбенизонов как этот.
-  suffix: ST, T3, PvE
+  suffix: ST, T3, PvP
   components:
   - type: STWeight
     self: 6.5
@@ -15,18 +15,13 @@
     armorClass: 3
     modifiers:
       flatReductions:
-        Blunt: 6
-        Slash: 6
-        Piercing: 4
+        Blunt: 3
+        Slash: 3
+        Piercing: 5
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
+        Blunt: 0.2
+        Slash: 0.2
         Piercing: 0.7
-        Heat: 0.9
-        Radiation: 0.9
-        Caustic: 0.9
-        Shock: 0.9
-        Compression: 0.75
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: ToggleableClothing

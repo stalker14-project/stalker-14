@@ -1,0 +1,62 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantMeatBoard
+  name: Агресивный сгусток плоти
+  suffix: ST, T2
+  description: Flesh - pigs mutated beyond recognition, one of the most harmless mutants in the Zone.
+  components:
+    - type: Damageable
+      damageModifierSet: STMutantT2DamageModifierSet
+    - type: Butcherable
+      spawned:
+        - id: FoodMeatWheat
+          amount: 3
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.45
+          density: 1000
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        200: Dead
+    - type: NpcFactionMember
+      factions:
+      - Meat
+    - type: MeleeWeapon
+      attackRate: 0.4
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.5
+      soundHit:
+        path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Blunt: 12
+          Slash: 13
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.4
+      baseSprintSpeed: 3.0
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          sprite: _Stalker/Mobs/Mutants/meat.rsi
+          state: meat_t2
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        300: 0.7
+    - type: StaminaDamageOnHit
+      damage: 10
+    - type: STWeight
+      self: 120

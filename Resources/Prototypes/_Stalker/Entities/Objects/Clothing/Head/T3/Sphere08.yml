@@ -9,17 +9,20 @@
   - type: STWeight
     self: 2.1
   - type: Armor
-    armorClass: 2
+    armorClass: 3
     modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
       coefficients:
-        Piercing: 0.80
-        Heat: 0.95
-        Shock: 0.95
-        Radiation: 0.95
+        Blunt: 0.80
+        Slash: 0.80
+        Psy:   0.80
   - type: ExplosionResistance
-    damageCoefficient: 0.85
+    damageCoefficient: 0.90
   - type: Reflect
-    reflectProb: 0.05
+    reflectProb: 0.10
     spread: 360
     reflects:
       - NonEnergy

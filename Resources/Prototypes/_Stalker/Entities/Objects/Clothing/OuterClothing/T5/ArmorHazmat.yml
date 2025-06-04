@@ -15,30 +15,28 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHazmat
     - type: Armor
-      armorClass: 4
+      armorClass: 3
       modifiers:
         flatReductions:
-          Blunt: 9
-          Slash: 9
-          Piercing: 9
-          Radiation: 10
-          Caustic: 10
+          Blunt: 5
+          Slash: 5
+          Piercing: 4
+          Radiation: 6
+          Caustic: 6
         coefficients:
-          Blunt: 0.65
-          Slash: 0.65
-          Piercing: 0.4
-          Heat: 0.55
-          Caustic: 0.55
-          Shock: 0.55
-          Compression: 0.25
-    - type: ExplosionResistance
-      damageCoefficient: 0.95
+          Blunt: 0.7
+          Slash: 0.7
+          Piercing: 0.7
+          Heat: 0.5
+          Caustic: 0.5
+          Shock: 0.5
+          Compression: 0.5
 
 - type: entity
   parent: STClothingHeadHatBase
   id: ClothingHeadHazmat
   name: шлем ХАЗМАТа
-  description: Встроенный шлем ХАЗМАТа с усиленной зашитой.
+  description: Капюшончик))
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
@@ -53,16 +51,14 @@
         - BlockMask
         - HidesNose
     - type: Armor
-      armorClass: 2
+      armorClass: 1
       modifiers:
         flatReductions:
-          Heat: 5
-          Radiation: 10
+          Heat: 2
+          Radiation: 1
         coefficients:
-          Heat: 0.3
-          Shock: 0.3
-          Radiation: 0.45
-          Psy: 0.5
+          Heat: 0.9
+          Radiation: 0.8
     - type: HideLayerClothing
       slots:
       - Hair

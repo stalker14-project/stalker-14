@@ -6,44 +6,331 @@
   name: ящик
   description: Довольно таки старый ящик. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
   components:
+    - type: InteractionOutline
     - type: StorageFill
       contents:
-        - id: STCraftNanoChipT5
-          prob: 0.05
-        - id: STCraftHighStrengthKitT5
-          prob: 0.05
-        - id: STCraftCompositeMaterialT5
-          prob: 0.05
-        - id: STCraftAluminumOxideT5
-          prob: 0.05
-        - id: STCraftRedWoodPlankT5
-          prob: 0.05
-        - id: STCraftPlasticFittingT5
-          prob: 0.05
-        - id: STCraftSheetSteelT5
-          prob: 0.05
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftSheetIronT2
+          prob: 0.1
+        - id: STCraftSheetIronT2
+          prob: 0.1
+        - id: STCraftSheetIronT2
+          prob: 0.1
+        - id: STCraftSheetIronT2
+          prob: 0.1
+        - id: STCraftBirchPlankT2
+          prob: 0.1
+        - id: STCraftBirchPlankT2
+          prob: 0.1
+        - id: STCraftBirchPlankT2
+          prob: 0.1
+        - id: STCraftBirchPlankT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT2
+          prob: 0.1
+        - id: STCraftGlassT2
+          prob: 0.1
+        - id: STCraftGlassT2
+          prob: 0.1
+        - id: STCraftGlassT2
+          prob: 0.1
+        - id: STCraftGlassT2
+          prob: 0.1
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftTapeKitT2
+          prob: 0.1
+        - id: STCraftTapeKitT2
+          prob: 0.1
+        - id: STCraftTapeKitT2
+          prob: 0.1
+        - id: STCraftTapeKitT2
+          prob: 0.1
+        - id: STCraftMultilayerPCBT3
+          prob: 0.1
+        - id: STCraftMultilayerPCBT3
+          prob: 0.1
+        - id: STCraftMultilayerPCBT3
+          prob: 0.1
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftSheetBrassT3
+          prob: 0.1
+        - id: STCraftOakPlankT3
+          prob: 0.1
+        - id: STCraftOakPlankT3
+          prob: 0.1
+        - id: STCraftOakPlankT3
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.1
+        - id: STCraftPlasticFittingT3
+          prob: 0.1
+        - id: STCraftQuartzCrystalT3
+          prob: 0.1
+        - id: STCraftQuartzCrystalT3
+          prob: 0.1
+        - id: STCraftQuartzCrystalT3
+          prob: 0.1
+        - id: STCraftSturdyHideT3
+          prob: 0.1
+        - id: STCraftSturdyHideT3
+          prob: 0.1
+        - id: STCraftSturdyHideT3
+          prob: 0.1
+        - id: STCraftGlueKitT3
+          prob: 0.1
+        - id: STCraftGlueKitT3
+          prob: 0.1
+        - id: STCraftGlueKitT3
+          prob: 0.1
         - id: STCraftHighPerformanceChipT4
           prob: 0.1
-        - id: STCraftIndustrialThreadStaplesKitT4
+        - id: STCraftHighPerformanceChipT4
           prob: 0.1
-        - id: STCraftPolymerFabricT4
+        - id: STCraftSheetAluminumT4
           prob: 0.1
-        - id: STCraftSapphireCrystalT4
+        - id: STCraftSheetAluminumT4
+          prob: 0.1
+        - id: STCraftYewPlankT4
           prob: 0.1
         - id: STCraftYewPlankT4
           prob: 0.1
         - id: STCraftPlasticFittingT4
           prob: 0.1
-        - id: STCraftSheetAluminumT4
+        - id: STCraftPlasticFittingT4
           prob: 0.1
+        - id: STCraftSapphireCrystalT4
+          prob: 0.1
+        - id: STCraftSapphireCrystalT4
+          prob: 0.1
+        - id: STCraftPolymerFabricT4
+          prob: 0.1
+        - id: STCraftPolymerFabricT4
+          prob: 0.1
+        - id: STCraftIndustrialThreadStaplesKitT4
+          prob: 0.1
+        - id: STCraftIndustrialThreadStaplesKitT4
+          prob: 0.1
+        - id: STCraftNanoChipT5
+          prob: 0.1
+        - id: STCraftSheetSteelT5
+          prob: 0.1
+        - id: STCraftRedWoodPlankT5
+          prob: 0.1
+        - id: STCraftPlasticFittingT5
+          prob: 0.1
+        - id: STCraftAluminumOxideT5
+          prob: 0.1
+        - id: STCraftCompositeMaterialT5
+          prob: 0.1
+        - id: STCraftHighStrengthKitT5
+          prob: 0.1
+        - id: STBrutepack
+          prob: 0.4
+        - id: STBrutepack
+          prob: 0.4
+        - id: STBrutepack
+          prob: 0.4
+        - id: STGauze
+          prob: 0.4
+        - id: STGauze
+          prob: 0.4
+        - id: STGauze
+          prob: 0.4
+        - id: STOintment
+          prob: 0.4
+        - id: STOintment
+          prob: 0.4
+        - id: STOintment
+          prob: 0.4
+        - id: Tourniquet
+          prob: 0.15
+        - id: antiradpill
+          prob: 0.15
+        - id: radioprotectpill
+          prob: 0.15
+        - id: psyblock
+          prob: 0.15
+        - id: MedkitAI2
+          prob: 0.25
+        - id: MedkitMilitary
+          prob: 0.1
+        - id: MedkitScience
+          prob: 0.025
+        - id: GeigerCounter
+          prob: 0.075
+        - id: BaseRadio
+          prob: 0.075
+        - id: HandheldGPSBasic
+          prob: 0.075
+        - id: BoxArtcont
+          prob: 0.05
+        - id: STFlashlightSeclite
+          prob: 0.075
+        - id: STHeadLight
+          prob: 0.075
+        - id: PowerCellHyper
+          prob: 0.15
+        - id: CheapLighter
+          prob: 0.1
+        - id: Matchbox
+          prob: 0.1
+        - id: CigPackMarlboro
+          prob: 0.05
+        - id: CigPackSuka
+          prob: 0.05
+        - id: CigPackKosmos
+          prob: 0.05
+        - id: IngotGold1
+          prob: 0.1
+        - id: IngotGold1
+          prob: 0.1
+        - id: IngotSilver1
+          prob: 0.1
+        - id: IngotSilver1
+          prob: 0.1
+        - id: MaterialDiamond1
+          prob: 0.1
+        - id: MaterialDiamond1
+          prob: 0.1
+        - id: DrinkGoldenCup
+          prob: 0.1
+        - id: DrinkGoldenCup
+          prob: 0.1
+        - id: CraftMaterialGunpowder
+          prob: 0.1
+        - id: CraftLeatherbox
+          prob: 0.004
+        - id: ToolkitTearOne
+          prob: 0.003
+        - id: ToolkitTearTwo
+          prob: 0.002
+        - id: ToolkitTearThree
+          prob: 0.001
 
 - type: entity
-  parent: [STCacheStorageFillT5, STBaseCache]
-  id: STCacheT5
+  parent: [ STCacheStorageFillT5, STBaseCache]
+  id: STCache1T5
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
       state: icon
     - type: SpawnOnDespawn
-      prototype: STCacheT5
+      prototype: STCache1T5
+
+- type: entity
+  parent: [ STCacheStorageFillT5, STBaseCache]
+  id: STCache2T5
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/blue_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache2T5
+
+- type: entity
+  parent: [ STCacheStorageFillT5, STBaseCache]
+  id: STCache3T5
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache3T5

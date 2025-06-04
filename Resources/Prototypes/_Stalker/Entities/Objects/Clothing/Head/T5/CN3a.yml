@@ -19,15 +19,19 @@
     - type: Armor
       armorClass: 4
       modifiers:
-        coefficients:
-          Piercing: 0.75
-          Heat: 0.90
-          Shock: 0.9
-          Radiation: 0.90
+        flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 3
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.80
+        Psy:   0.50
+        Radiation: 0.60
     - type: ExplosionResistance
       damageCoefficient: 0.75
     - type: Reflect
-      reflectProb: 0.12
+      reflectProb: 0.10
       spread: 360
       reflects:
         - NonEnergy

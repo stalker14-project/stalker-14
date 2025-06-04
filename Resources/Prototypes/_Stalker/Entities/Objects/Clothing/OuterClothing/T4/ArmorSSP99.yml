@@ -23,29 +23,22 @@
       - 0,0,5,3
       - 7,0,12,3
   - type: Armor
-    armorClass: 2
+    armorClass: 1
     modifiers:
       flatReductions:
-        Blunt: 2
-        Slash: 2
-        Piercing: 2
-        Heat: 3
-        Caustic: 1
-        Radiation: 3
-        Shock: 1
-        Psy: 1
+        Heat: 4
+        Caustic: 4
+        Radiation: 4
+        Shock: 3
       coefficients:
-        Blunt: 0.90
-        Slash: 0.90
-        Piercing: 0.90
-        Heat: 0.60
-        Caustic: 0.70
-        Shock: 0.60
-        Psy: 0.80
-        Radiation: 0.80
-        Compression: 0.80
-  - type: ExplosionResistance
-    damageCoefficient: 0.90
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.50
+        Caustic: 0.40
+        Shock: 0.70
+        Radiation: 0.60
+        Compression: 0.60
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
@@ -59,7 +52,7 @@
   parent: ClothingHeadHardsuitBase
   id: STClothingHeadHelmetSSP99Base
   name: шлем зелёного «Эколога»
-  description: Защитит от аномалий и радиации, но точно не от пуль.
+  description: Лёгкий шлем с герметичным забралом, предназначенный для защиты лица от некоторых аномальных воздействий.
   categories: [ HideSpawnMenu ]
   abstract: true
   components:
@@ -67,14 +60,21 @@
     armorClass: 1
     modifiers:
       flatReductions:
-        Radiation: 1
-        Caustic: 1
+        Blunt: 3
+        Slash: 4
+        Piercing: 2
+        Heat: 4
+        Caustic: 4
+        Radiation: 3
+        Shock: 2
       coefficients:
-        Heat: 0.6
-        Radiation: 0.5
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.7
+        Radiation: 0.8
         Caustic: 0.6
-        Shock: 0.6
-        Psy: 0.85
+        Shock: 0.9
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/ssp99_helm.rsi
   - type: Clothing
@@ -89,12 +89,14 @@
 - type: entity
   parent: STClothingOuterArmorSSP99Base
   id: ClothingOuterArmorSSP99
-  name: Зеленый ССП-99 «Эколог»
-  description: Научный костюм серого цвета. Не дорогой, и не сложный в изготовлении костюм защиты. Похожими пользуются в специальных лабораториях или пожарные.
+  name: ССП-99М 
+  description: Высококачественный модифицированный комбинезон ССП-99. Добавлена защита торса от пулевого и осколочного повреждения. Опять же устарел, как и его младший собрат.
   components:
   - type: Armor
     armorLevels:
-      radiation: 3
+      Blunt: 10
+      Slash: 10
+      Piercing: 10
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ssp99.rsi
   - type: Clothing
@@ -105,8 +107,8 @@
 - type: entity
   parent: STClothingHeadHelmetSSP99Base
   id: ClothingHeadHelmetSSP99
-  name: шлем зелёного «Эколога»
-  description: Защитит от аномалий и радиации, но точно не от пуль.
+  name: Шлем «Заслон»
+  description: Лёгкий шлем с герметичным забралом, предназначенный для защиты лица от некоторых аномальных воздействий.
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -146,12 +148,9 @@
 - type: entity
   parent: STClothingOuterArmorSSP99Base
   id: ClothingOuterArmorSSP99Amber
-  name: Оранжевый ССП-99 «Янтарь»
-  description: Костюм представляет собой базовую вариацию костюма эколога SSP-99.
+  name: ССП-99 «Эколог»
+  description: Созданный для работы в условиях Зоны защитный костюм. Уже давно устарел, но всё так же используется учёными за неимением нормального финансирования.
   components:
-  - type: Armor
-    armorLevels:
-      heat: 3
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ssp99red.rsi
   - type: Clothing
@@ -162,8 +161,8 @@
 - type: entity
   parent: STClothingHeadHelmetSSP99Base
   id: ClothingHeadHelmetSSP99Amber
-  name: шлем оранжевого «Янтаря»
-  description: Защитит от аномалий и радиации, но точно не от пуль.
+  name: Шлем «Заслон»
+  description: Лёгкий шлем с герметичным забралом, предназначенный для защиты лица от некоторых аномальных воздействий.
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite

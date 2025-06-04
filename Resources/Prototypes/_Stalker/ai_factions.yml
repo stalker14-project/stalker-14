@@ -13,6 +13,8 @@
     - Freedom
     - MilitaryStalker
     - Seraphims
+    - MilitaryStalker
+    - Meat
 
 - type: npcFaction
   id: Mutated
@@ -29,6 +31,7 @@
     - Freedom
     - MilitaryStalker
     - Seraphims
+    - Meat
 
 - type: npcFaction
   id: Hostile
@@ -45,6 +48,7 @@
   - Freedom
   - MilitaryStalker
   - Seraphims
+  - Meat
 
 - type: npcFaction
   id: Stalker
@@ -52,6 +56,7 @@
     - Mutated
     - MutatedHunter
     - Hostile
+    - Meat
 
 - type: npcFaction
   id: Sci
@@ -59,6 +64,7 @@
   - Mutated
   - MutatedHunter
   - Hostile
+  - Meat
 
 - type: npcFaction
   id: Military
@@ -73,6 +79,7 @@
   - Freedom
   - Duty
   - Seraphims
+  - Meat
 
 - type: npcFaction
   id: Bandit
@@ -85,6 +92,7 @@
   - Hostile
   - Duty
   - MilitaryStalker
+  - Meat
   - Seraphims
 
 - type: npcFaction
@@ -99,6 +107,7 @@
   - MilitaryStalker
   - Freedom
   - Sci
+  - Meat
 
 - type: npcFaction
   id: Freedom
@@ -107,6 +116,7 @@
   - MutatedHunter
   - Bandit
   - Hostile
+  - Meat
 
 - type: npcFaction
   id: Duty
@@ -115,3 +125,34 @@
   - MutatedHunter
   - Bandit
   - Hostile
+  - Meat
+
+- type: npcFaction
+  id: Meat
+  hostile:
+  - Mutated
+  - Passive
+  - Stalker
+  - MutatedHunter
+  - NanoTrasen
+  - Military
+  - Bandit
+  - Hostile
+  - Sci
+  - Duty
+  - Freedom
+  - Seraphims
+  - MilitaryStalker
+
+- type: npcFaction
+  id: MilitaryStalker
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Stalker
+  - NanoTrasen
+  - Passive
+  - Bandit
+  - Hostile
+  - Seraphims
+  - Meat

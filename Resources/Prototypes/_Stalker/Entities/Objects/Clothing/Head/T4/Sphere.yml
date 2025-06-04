@@ -13,19 +13,23 @@
       - BlockMask
       - HidesNose
   - type: STWeight
-    self: 3
+    self: 4
   - type: Armor
-    armorClass: 3
+    armorClass: 4
     modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 5
       coefficients:
-        Piercing: 0.75
-        Heat: 0.85
-        Shock: 0.85
-        Radiation: 0.85
+        Blunt: 0.85
+        Slash: 0.80
+        Psy:   0.60
+        Radiation: 0.70
   - type: ExplosionResistance
     damageCoefficient: 0.70
   - type: Reflect
-    reflectProb: 0.08
+    reflectProb: 0.10
     spread: 360
     reflects:
       - NonEnergy

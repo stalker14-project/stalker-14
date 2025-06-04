@@ -58,7 +58,7 @@
           tier: 1
           ratio: 15
         - id: ZoneArtifactEye
-          tier: 1
+          tier: 2
           ratio: 10
         - id: ZoneArtifactFlame
           tier: 3
@@ -88,7 +88,7 @@
           tier: 1
           ratio: 25
         - id: ZoneArtifactEye
-          tier: 1
+          tier: 2
           ratio: 15
         - id: ZoneArtifactFlame
           tier: 3
@@ -152,7 +152,7 @@
           tier: 1
           ratio: 15
         - id: ZoneArtifactEye
-          tier: 1
+          tier: 2
           ratio: 10
         - id: ZoneArtifactFlame
           tier: 3
@@ -187,7 +187,7 @@
           tier: 1
           ratio: 40
         - id: ZoneArtifactEye
-          tier: 1
+          tier: 2
           ratio: 20
         - id: ZoneArtifactFlame
           tier: 3
@@ -262,66 +262,98 @@
   id: ZoneAnomalyWitchesCircle
   suffix: Stalker, Witches circle, Anomaly
   components:
-    - type: ZoneAnomalyTriggerStartCollide
-    - type: ZoneAnomalyEffectDamage
-      fireStacks: 20
-    - type: ZoneAnomalyEffectPointLight
-    - type: ZoneAnomaly
-      detectedLevel: 1
-      preparingDelay: 0
-      activationDelay: 1
-      chargingDelay: 5
-    - type: PointLight
-      radius: 20
-      energy: 30
-      color: "#ff5900"
-      enabled: false
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeCircle
-            radius: 2.5
-          hard: false
-          mask:
-            - MobMask
-          layer:
-            - MobLayer
-            - LowImpassable
+  - type: ZoneAnomalyTriggerStartCollide
+  - type: ZoneAnomalyEffectDamage
+    fireStacks: 20
+  - type: ZoneAnomalyEffectPointLight
+  - type: ZoneAnomaly
+    detectedLevel: 1
+    preparingDelay: 0
+    activationDelay: 1
+    chargingDelay: 5
+  - type: PointLight
+    radius: 20
+    energy: 30
+    color: "#ff5900"
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 2.5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+  - type: ZoneArtifactSpawner
+    artifacts:
+      - id: null
+        ratio: 400
+      - id: ZoneArtifactFireball
+        tier: 1
+        ratio: 25
+      - id: ZoneArtifactEye
+        tier: 2
+        ratio: 15
+      - id: ZoneArtifactFlame
+        tier: 3
+        ratio: 10
+      - id: ZoneArtifactCristall
+        tier: 4
+        ratio: 5
 
 - type: entity
   parent: ZoneAnomalyBaseThermal
   id: ZoneAnomalyFreezer
   suffix: Stalker, Freezer, Anomaly
   components:
-    - type: ZoneAnomalyUpdateTriggerCollide
-    - type: ZoneAnomalyEffectHeat
-      heat: -20
-      update: true
-      ignoreResistance: true
-    - type: ZoneAnomalyEffectPointLight
-    - type: ZoneAnomaly
-      detectedLevel: 1
-      preparingDelay: 0.5
-      activationDelay: 15
-      chargingDelay: 5
-    - type: PointLight
-      radius: 7
-      energy: 10
-      color: "#ffffff"
-      enabled: false
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeCircle
-            radius: 2.5
-          hard: false
-          mask:
-            - MobMask
-          layer:
-            - MobLayer
-            - LowImpassable
+  - type: ZoneAnomalyUpdateTriggerCollide
+  - type: ZoneAnomalyEffectHeat
+    heat: -20
+    update: true
+    ignoreResistance: true
+  - type: ZoneAnomalyEffectPointLight
+  - type: ZoneAnomaly
+    detectedLevel: 1
+    preparingDelay: 0.5
+    activationDelay: 15
+    chargingDelay: 5
+  - type: PointLight
+    radius: 7
+    energy: 10
+    color: "#ffffff"
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 2.5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+  - type: ZoneArtifactSpawner
+    artifacts:
+      - id: null
+        ratio: 400
+      - id: ZoneArtifactFireball
+        tier: 1
+        ratio: 25
+      - id: ZoneArtifactEye
+        tier: 2
+        ratio: 15
+      - id: ZoneArtifactFlame
+        tier: 3
+        ratio: 10
+      - id: ZoneArtifactCristall
+        tier: 4
+        ratio: 5
 
 - type: entity
   parent: ZoneAnomalyBaseThermal

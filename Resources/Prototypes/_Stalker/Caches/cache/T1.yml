@@ -11,109 +11,114 @@
       contents:
         - id: STCraftBasicPCBT1
           prob: 0.1
-        - id: STCraftBasicThreadKitT1
-          prob: 0.1
-        - id: STCraftCottonFabricT1
-          prob: 0.1
-        - id: STCraftGlassT1
+        - id: STCraftSheetCopperT1
           prob: 0.1
         - id: STCraftPinePlankT1
           prob: 0.1
         - id: STCraftPlasticFittingT1
           prob: 0.1
-        - id: STCraftSheetCopperT1
+        - id: STCraftGlassT1
           prob: 0.1
-        - id: WeaponPistolStalkerPM
-          prob: 0.005
-        - id: WeaponPistolStalkerTT
-          prob: 0.005
-        - id: STWeaponRevolverTaurusJudge
-          prob: 0.005
-        - id: STWeaponRevolverTaurusTracker455
-          prob: 0.005
-        - id: STWeaponShotgunMossbergM88
-          prob: 0.005
-        - id: STWeaponShotgunMP133
-          prob: 0.005
-        - id: STWeaponRifleSaiga545
-          prob: 0.005
-        - id: BoxArtcont
-          prob: 0.01
-        - id: GeigerCounter
-          prob: 0.01
-        - id: BaseRadio
-          prob: 0.01
-        - id: HandheldGPSBasic
-          prob: 0.01
-        - id: Defibrillator
-          prob: 0.005
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STBrutepack
+          prob: 0.2
+        - id: STBrutepack
+          prob: 0.2
+        - id: STBrutepack
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: Tourniquet
+          prob: 0.03
+        - id: antiradpill
+          prob: 0.03
+        - id: radioprotectpill
+          prob: 0.03
+        - id: psyblock
+          prob: 0.03
         - id: MedkitAI2
-          prob: 0.07
+          prob: 0.05
         - id: MedkitMilitary
           prob: 0.02
         - id: MedkitScience
           prob: 0.005
-        - id: psyblock
-          prob: 0.05
-        - id: antiradpill
-          prob: 0.05
-        - id: AntiRadMedipen
+        - id: GeigerCounter
+          prob: 0.015
+        - id: BaseRadio
+          prob: 0.015
+        - id: HandheldGPSBasic
+          prob: 0.015
+        - id: BoxArtcont
           prob: 0.01
-        - id: radioprotectpill
-          prob: 0.05
-        - id: STBrutepack
-          prob: 0.1
-        - id: STGauze
-          prob: 0.1
-        - id: STOintment
-          prob: 0.1
-        - id: ZoneArtifactPellicle
+        - id: STFlashlightSeclite
+          prob: 0.015
+        - id: STHeadLight
+          prob: 0.015
+        - id: PowerCellHyper
+          prob: 0.03
+        - id: CheapLighter
+          prob: 0.02
+        - id: Matchbox
+          prob: 0.02
+        - id: CigPackMarlboro
           prob: 0.01
-        - id: ZoneArtifactSparkler
+        - id: CigPackSuka
           prob: 0.01
-        - id: ArtMedusa
+        - id: CigPackKosmos
           prob: 0.01
-        - id: ZoneArtifactFireball
-          prob: 0.01
-        - id: 45ACPLFMJBox
-          prob: 0.01
-        - id: 725PBox
-          prob: 0.01
-        - id: 919PSOGJBox
-          prob: 0.01
-        - id: 918PGJBox
-          prob: 0.01
-        - id: 45ACPLFMJBox
-          prob: 0.01
-        - id: 725PBox
-          prob: 0.01
-        - id: 919PSOGJBox
-          prob: 0.01
-        - id: 918PGJBox
-          prob: 0.01
-        - id: ToolkitTearOne
-          prob: 0.0001
         - id: IngotGold1
-          prob: 0.05
+          prob: 0.02
         - id: IngotSilver1
-          prob: 0.05
+          prob: 0.02
         - id: MaterialDiamond1
-          prob: 0.05
+          prob: 0.02
         - id: DrinkGoldenCup
-          prob: 0.05
+          prob: 0.02
         - id: CraftMaterialGunpowder
-          prob: 0.005
-        - id: CraftCardboardTube
-          prob: 0.005
-        - id: CraftFitil
-          prob: 0.005
+          prob: 0.02
+
 - type: entity
   parent: [ STCacheStorageFillT1, STBaseCache]
-  id: STCacheT1
+  id: STCache1T1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache1T1
+
+- type: entity
+  parent: [ STCacheStorageFillT1, STBaseCache]
+  id: STCache2T1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/blue_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache2T1
+
+- type: entity
+  parent: [ STCacheStorageFillT1, STBaseCache]
+  id: STCache3T1
   categories: [ HideSpawnMenu ]
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
       state: icon
     - type: SpawnOnDespawn
-      prototype: STCacheT1
+      prototype: STCache3T1
