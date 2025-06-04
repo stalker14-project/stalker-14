@@ -1,0 +1,3 @@
+ent-MobMutantMeatSpider = Aggressive Flesh Spider
+    .desc = A spider consumed by distorted flesh...
+    .suffix = ST, T3
