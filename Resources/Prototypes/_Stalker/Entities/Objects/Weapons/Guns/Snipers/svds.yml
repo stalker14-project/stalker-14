@@ -115,3 +115,52 @@
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVU/seraphim.rsi
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVU/seraphim.rsi
+
+- type: entity
+  parent: STBaseWeaponRifleSVDS
+  id: STWeaponRifleSVDSWood
+  name: Homemade chatter
+  description: A homemade rifle for an SVD magazine. Oblique, but wildly lethal.
+  components:
+    - type: STWeight
+      self: 4.8
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVDS/wood.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVDS/wood.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Snipers/SVDS/wood.rsi
+    - type: Gun
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/svd.ogg
+      minAngle: 50
+      maxAngle: 120
+      angleDecay: 40
+      angleIncrease: 8
+      fireRate: 0.6
+    - type: ChamberMagazineAmmoProvider
+      soundRack:
+        path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: 754Mag10
+          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - Magazine754
+        gun_chamber:
+          name: Chamber
+          priority: 1
+          whitelist:
+            tags:
+              - STCartridge754
+    - type: ContainerContainer
+      containers:
+        gun_magazine: !type:ContainerSlot
+        gun_chamber: !type:ContainerSlot
+    - type: STWeaponDamageFalloff
+      falloffMultiplier: 1.1
