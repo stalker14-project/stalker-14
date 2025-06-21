@@ -1,7 +1,10 @@
-﻿using Content.Shared._Stalker.Weapon.Projectile;
+﻿using Content.Shared._RD.StatusEffect.Systems;
+using Content.Shared._Stalker.Weapon.Projectile;
 using Content.Shared.Examine;
+using Content.Shared.Inventory;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Weapons.Ranged.Systems;
 using Content.Shared.Wieldable.Components;
 
 namespace Content.Shared._Stalker.Weapon;
@@ -10,11 +13,17 @@ public sealed class STWeaponSystem : EntitySystem
 {
     private const string AccuracyExamineColour = "yellow";
 
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly STProjectileSystem _projectile = default!;
+    [Dependency] private readonly RDStatusEffectSystem _statusEffect = default!;
 
     public override void Initialize()
     {
         base.Initialize();
+
+        SubscribeLocalEvent<STDeaferGunfireComponent, GunShotEvent>(OnGunShoot);
 
         SubscribeLocalEvent<STWeaponDamageFalloffComponent, AmmoShotEvent>(OnWeaponDamageFalloffShot);
         SubscribeLocalEvent<STWeaponDamageFalloffComponent, GunRefreshModifiersEvent>(OnWeaponDamageFalloffRefreshModifiers);
@@ -22,6 +31,18 @@ public sealed class STWeaponSystem : EntitySystem
         SubscribeLocalEvent<STWeaponAccuracyComponent, ExaminedEvent>(OnWeaponAccuracyExamined);
         SubscribeLocalEvent<STWeaponAccuracyComponent, GunRefreshModifiersEvent>(OnWeaponAccuracyRefreshModifiers);
         SubscribeLocalEvent<STWeaponAccuracyComponent, AmmoShotEvent>(OnWeaponAccuracyShot);
+    }
+
+    private void OnGunShoot(Entity<STDeaferGunfireComponent> entity, ref GunShotEvent args)
+    {
+        var entities = _entityLookup.GetEntitiesInRange<STDeafedGunfireComponent>(_transform.GetMapCoordinates(args.User), 2.5f);
+        foreach (var entityUid in entities)
+        {
+            if (_inventory.TryGetSlotEntity(entityUid, "head", out var head) && HasComp<STDeafedGunfireProtectionComponent>(head))
+                continue;
+
+            _statusEffect.TryAddStatusEffect(entityUid, entity.Comp.Effect, entity.Comp.Duration, true);
+        }
     }
 
     private void OnWeaponDamageFalloffShot(Entity<STWeaponDamageFalloffComponent> weapon, ref AmmoShotEvent args)
