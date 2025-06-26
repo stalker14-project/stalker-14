@@ -33,17 +33,19 @@
 - type: entity
   parent: [STBaseHealingItem, Brutepack]
   id: STBrutepack
-  suffix: ST
+  suffix: ST, T1
   name: набор от ушибов
-  description: Компактный комплект для лечения травм, содержащий охлаждающий пакет и противовоспалительные средства. Помогает снять боль, уменьшить отеки и ускорить заживление ушибов. Полезен после стычек с мутантами или неудачного падения.
+  description: Полиэтиленовый пакет с пластырями, ватой и антисептиком, поможет залечить незначительные травмы.
   components:
   - type: Healing
     damageContainers:
       - Biological
     damage:
-      groups:
-        Brute: -8
-    bloodlossModifier: -5 # a suture should stop ongoing bleeding
+      types:
+        Piercing: -7
+        Blunt: -4
+        Slash: -7
+    delay: 8
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
@@ -68,9 +70,30 @@
   maxCount: 10
 
 - type: entity
+  parent: STBaseHealingItem
+  id: STTourniquet
+  name: жгут
+  description: Сильно давит на конечность, перекрывая кровоток, если накладывать неумеючи может содрать кожу и оставить синяки.
+  components:
+    - type: Sprite
+      sprite: _Stalker\Objects\Specific\Medical\Other
+      state: esmarch
+      scale: 0.6, 0.6
+    - type: Healing
+      damageContainers:
+        - Biological
+      damage:
+      bloodlossModifier: -20
+      delay: 0.5
+      healingBeginSound:
+        path: "/Audio/Items/Medical/brutepack_begin.ogg"
+      healingEndSound:
+        path: "/Audio/Items/Medical/brutepack_end.ogg"
+
+- type: entity
   parent: STBrutepack
   id: STBrutepackSera
-  suffix: ST, Скин
+  suffix: ST, Скин, T1
   name: баночка с мазью
   description: Плохо пахнущая мазь, сделаная из молотого корня Живокуста и давленного глаза Плоти, прекрасно лечит ушибы.
   components:
@@ -96,10 +119,19 @@
 - type: entity
   parent: [STBaseHealingItem, Ointment]
   id: STOintment
-  suffix: ST
+  suffix: ST, T1
   name: мазь
-  description: Универсальное средство для обработки мелких ран, ожогов и раздражений. Ускоряет регенерацию тканей и защищает от инфекций. Наносится тонким слоем, расходуется экономно. Имеет слабый, но специфический запах, характерный для аптечных препаратов.
+  description: Дешёвая мазь от непонятного производителя, охлаждает место нанесения и делает ожоги более терпимыми.
   components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Heat: -8
+        Caustic: -4
+        Shock: -4
+    delay: 8
   - type: Stack
     stackType: STOintment
     count: 10
@@ -120,9 +152,41 @@
   maxCount: 10
 
 - type: entity
+  parent: [STBaseHealingItem, Ointment]
+  id: STOintmentGood
+  suffix: ST, T3
+  name: мазь с антибиотиком
+  description: Дорогая мазь от известного производителя, в составе есть антибиотик, обезболивает, обеззараживает и эффективно помогает заживлять ожоги любых видов.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Medicine/GoodOinment.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/GoodOinment.rsi
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Heat: -20
+        Caustic: -10
+        Shock: -10
+    delay: 8
+  - type: Stack
+    stackType: STOintmentGoodstack
+    count: 4
+
+- type: stack
+  id: STOintmentGoodstack
+  name: мазь с антибиотиком
+  icon:
+    sprite: _Stalker/Objects/Medicine/GoodOinment.rsi
+  spawn: STOintmentGood
+  maxCount: 4
+
+- type: entity
   parent: STOintment
   id: STOintmentSera
-  suffix: ST, Скин
+  suffix: ST, Скин, T1
   name: горькая мазь
   description: Отвратительная вязкая жижа с ужасным запахом, сделаная из выжимки печени Кабана, тем не менее она на удивление хорошо заживляет химические и радиационные ожоги. Применяется серафимами в том числе как средство борьбы с раком кожи.
   components:
@@ -148,18 +212,19 @@
 - type: entity
   parent: [STBaseHealingItem, Gauze]
   id: STGauze
-  suffix: ST
+  suffix: ST, T1
   name: бинт
-  description: Используется для остановки кровотечений и перевязки ран. Эффективно снижает риск заражения, если применен вовремя. Обязательный предмет в выживании, занимает мало места, но может спасти жизнь в экстремальных условиях.
+  description: Используется для остановки кровотечений и перевязки ран. Эффективно снижает риск заражения, если применен вовремя. Обязательный предмет для выживания, занимает мало места, но может спасти жизнь в экстремальных условиях.
   components:
   - type: Healing
     damageContainers:
       - Biological
     damage:
       types:
-        Slash: -5
-        Piercing: -5
+        Slash: -0
+        Piercing: -0
     bloodlossModifier: -10
+    delay: 6
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
@@ -186,7 +251,7 @@
 - type: entity
   parent: STGauze
   id: STGauzeSera
-  suffix: ST, Скин
+  suffix: ST, Скин, T1
   name: кусок тряпки
   description: Будь то прокипяченая ткань или же найденый в развалинах старый бинт, в любом случае живущие в зоне Серафимы используют это целях бинтования ран.
   components:
@@ -213,8 +278,8 @@
   parent: BaseMedkit
   id: MedkitAI2
   name: аптечка АИ-2
-  suffix: ST
-  description: Обычная универсальная аптечка военного назначения. При помощи неё можно справиться с такими травмами как порезы, ожоги, пулевые и осколочные ранения, отравления и другими. Включает в себя стандартный набор медикаментов. Проста в использовании.
+  suffix: ST, T2
+  description: Обычная универсальная аптечка военного назначения. Поможет с пулевыми, резаными и прочими физическими ранениями, имеет пару ампул с антирадиационным препаратом.
   components:
   - type: RepositoryItem
     categoryName: Медицина
@@ -230,14 +295,12 @@
       - state: inhand-right
   - type: Healing
     damage:
-      groups:
-        Brute: -60
-        Burn: -70
-        Airloss: -25
       types:
-        Compression: -10
-    ModifyBloodLevel: 15
-    bloodlossModifier: -3
+        Piercing: -10
+        Blunt: -5
+        Slash: -10
+        Radiation: -10
+    delay: 6
   - type: Stack
     stackType: MedkitAI2
     count: 4
@@ -254,7 +317,7 @@
 - type: entity
   parent: MedkitAI2
   id: MedkitAI2Sera
-  suffix: ST, Скин
+  suffix: ST, Скин, T2
   name: набор кустарных медикаментов
   description: Замотаный в ткань набор разных банок, склянок и порошков, а также старых хирургических инструментов. Используется серафимами для основательного лечения как глубоких укусов мутантов, так и пулевых и осколочных ранений. В сравнении с современной медициной крайне не практичный способ оказания раненому медпомощи, и тем не менее им пользуются его создатели не имея иной альтернативы.
   components:
@@ -280,9 +343,9 @@
 - type: entity
   parent: BaseMedkit
   id: MedkitMilitary
-  suffix: ST
+  suffix: ST, T3
   name: армейская аптечка
-  description: Медицинский набор, разработанный специально для армейских подразделений. Более эффективный вариант по сравнению с аптечкой АИ-2.
+  description: Медицинский набор, разработанный специально для армейских подразделений. Более эффективный вариант по сравнению с аптечкой АИ-2, но не содержит антирадина.
   components:
   - type: STWeight
     self: 0.4
@@ -300,14 +363,11 @@
       - state: inhand-right
   - type: Healing
     damage:
-      groups:
-        Brute: -120
-        Burn: -120
-        Airloss: -30
       types:
-        Compression: -55
-    ModifyBloodLevel: 25
-    bloodlossModifier: -4
+        Piercing: -20
+        Blunt: -10
+        Slash: -20
+    delay: 8
   - type: Stack
     stackType: MedkitMilitary
     count: 4
@@ -324,7 +384,7 @@
 - type: entity
   parent: BaseMedkit
   id: MedkitScience
-  suffix: ST
+  suffix: ST, T3
   name: научная аптечка
   description: Медицинский набор, разработанный специально для работы в условиях Зоны. Состав набора подобран как для борьбы с ранениями, так и для вывода радионуклидов из организма. Препятствует развитию лучевой болезни, а также снижает дозу накопленной радиации.
   components:
@@ -344,16 +404,12 @@
       - state: inhand-right
   - type: Healing
     damage:
-      groups:
-        Brute: -150
-        Burn: -245
-        Airloss: -90
-        Toxin: -300
       types:
-        Compression: -100
-        Psy: -80
-    ModifyBloodLevel: 35
-    bloodlossModifier: -8
+        Heat: -15
+        Caustic: -15
+        Shock: -15
+        Radiation: -20
+    delay: 9
   - type: Stack
     stackType: MedkitScience
     count: 4
@@ -368,11 +424,11 @@
   maxCount: 4
 
 - type: entity
-  name: элитная аптечка
-  description: Элитный медицинский набор, разработанный специально для работы в тяжёлых условиях Зоны. Состав набора подобран как для борьбы с ранениями, так и для вывода радионуклидов из организма и лечения сложных ожогов. Препятствует развитию лучевой болезни, а также снижает дозу накопленной радиации.
+  name: продвинутая аптечка
+  description: Продвинутый медицинский набор, разработанный исключительно для выведения токсинов из организма.
   parent: BaseHealingItem
   id: MedkitElite
-  suffix: ST
+  suffix: ST, T4
   components:
   - type: STWeight
     self: 1
@@ -395,16 +451,10 @@
     damageContainers:
       - Biological
     damage:
-      groups:
-        Brute: -300
-        Burn: -500
-        Airloss: -200
-        Toxin: -500
       types:
-        Compression: -300
-        Psy: -200
-    ModifyBloodLevel: 30
-    bloodlossModifier: -20
+        Poison: -30
+        Radiation: -40
+    delay: 9
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
@@ -415,7 +465,7 @@
 
 - type: stack
   id: MedkitElite
-  name: Элитная Аптечка
+  name: Продвинутая Аптечка
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai4.rsi"
     state: medkit-4
@@ -424,10 +474,10 @@
 
 - type: entity
   name: аптечка «LAR»
-  description: "Благодаря высокотехнологичным разработкам учёных, достигнут прогресс в создании медицинского комплекта «LAR». Этот набор представляет собой усовершенствованный научный продукт, который покорил мир. На данный момент состав набора составлен лишь из экспериментальных реагентов, которые ещё не прошли тестирование на людях."
+  description: Совершенный медицинский набор «LAR», разработанный специально для работы в тяжёлых условиях Зоны. Выводит большинство известных заражений, но не радиационное. Учёные посчитали, что если он будет выводить ещё и радиацию, это будет вредно для баланса вселенной.
   parent: BaseHealingItem
   id: MedkitLAR
-  suffix: ST, Events
+  suffix: ST, T4
   components:
   - type: STWeight
     self: 3
@@ -450,13 +500,13 @@
     damageContainers:
       - Biological
     damage:
-      groups:
-        Brute: -500
-        Burn: -800
-        Airloss: -300
-        Toxin: 5
-    ModifyBloodLevel: 50
-    bloodlossModifier: -50
+      types:
+        Poison: -15
+        Compression: -15
+        Heat: -25
+        Caustic: -25
+        Shock: -25
+    delay: 9
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
@@ -473,3 +523,88 @@
     state: medkit-5
   spawn: MedkitLAR
   maxCount: 4
+
+- type: entity
+  id: STpillboxbase
+  parent: BaseStorageItem
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+  - type: Storage
+    grid:
+    - 0,0,4,1
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 1
+    storageInsertSound: /Audio/Effects/pill_insert.ogg
+    storageRemoveSound: /Audio/Effects/pill_remove.ogg
+    whitelist: 
+      tags:
+      - Pill
+  - type: Dumpable
+  - type: Sprite
+    layers:
+      - map: [ base ]
+        state: icon
+  - type: Tag
+    tags:
+    - PillCanister
+  - type: GenericVisualizer
+    visuals:
+      enum.StorageVisuals.Open:
+        base:
+          True: { state: icon-open }
+          False: { state: icon }
+  - type: Appearance
+
+- type: entity
+  name: упаковка йодорадина
+  description: Упаковка таблеток йодорадина, каждая таблетка весит 10 грамм. Поможет вывести радионуклиды из организма. Принимать до 30 грамм за раз!
+  parent: STpillboxbase
+  id: STPillboxAntirad
+  suffix: ST, T1
+  components:
+  - type: StorageFill
+    contents:
+    - id: antiradpill
+      amount: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Medicine/pillboxes/antirad.rsi
+    state: icon
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/pillboxes/antirad.rsi
+
+- type: entity
+  name: упаковка пробудофилина
+  description: Упаковка таблеток пробудофилина, каждая таблетка весит 10 грамм. Поможет возобновить кровообращение и дыхание. Принимать до 20 грамм за раз!
+  parent: STpillboxbase
+  id: STPillboxProbud
+  suffix: ST, T2
+  components:
+  - type: StorageFill
+    contents:
+    - id: wakeuppill
+      amount: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Medicine/pillboxes/probud.rsi
+    state: icon
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/pillboxes/probud.rsi
+
+- type: entity
+  name: упаковка фуфломицина
+  description: Упаковка таблеток фуфломицина, каждая таблетка весит 10 грамм. Поможет уверить себя в своей неуязвимости для пси-волн. Принимать до 10 грамм за раз!
+  parent: STpillboxbase
+  id: STPillboxShiza
+  suffix: ST, T5
+  components:
+  - type: StorageFill
+    contents:
+    - id: shizopill
+      amount: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi
+    state: icon
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi

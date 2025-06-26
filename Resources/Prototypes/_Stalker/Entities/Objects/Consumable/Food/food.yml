@@ -258,27 +258,58 @@
     tags:
     - Cooked
 
+- type: entity
+  name: колбаса «Зыряновская»
+  parent: FoodMeatBase
+  id: STFoodMeatMeatbat
+  description: Колбаса, сделанная в посёлке Зыряновка, отличается тем, что очень много весит, вследствие чего ей можно очень больно ударить.
+  suffix: Stalker, еда
+  components:
+  - type: STWeight
+    self: 20
+  - type: Sprite
+    sprite: Objects/Consumable/Food/salami.rsi
+    state: salami
+  - type: SliceableFood
+    slice: STFoodMeatSalamiSlice
+  - type: MeleeWeapon
+    wideAnimationRotation: 110
+    damage:
+      types:
+        Blunt: 10
+  - type: Wieldable
+  - type: Craftable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 40
+  - type: Tag
+    tags:
+    - Cooked
+
 ##### Кабан
 
 - type: entity
   name: сырое мясо кабана
   parent: FoodMeatRawBase
   id: FoodMeatBoar
-  description: Кусок сырого мяса кабана.
+  description: Кусок сырого мяса кабана, лучше не думать, чем питался его бывший владелец.
   suffix: Stalker, еда
   components:
   - type: STWeight
     self: 1.0
   - type: Sprite
-    state: goliath
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: boarraw
+    scale: 0.9, 0.9
   - type: SolutionContainerManager
     solutions:
       food:
         reagents:
         - ReagentId: UncookedAnimalProteins
-          Quantity: 9
+          Quantity: 13
         - ReagentId: Fat
-          Quantity: 9
+          Quantity: 5
         - ReagentId: MToxin
           Quantity: 10
   - type: InternalTemperature
@@ -293,10 +324,10 @@
   - type: Craftable
 
 - type: entity
-  name: стейк из мяса кабана
+  name: шашлык из мяса кабана
   parent: FoodMeatBase
   id: FoodMeatBoarCooked
-  description: Приготовленное мясо кабана.
+  description: Приготовленное мясо кабана, покрытое золотистой хрустящей корочкой, выглядит аппетитно.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -308,18 +339,19 @@
     - Meat
     - Steak
   - type: Sprite
-    layers:
-    - state: goliath-cooked
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: boarcook
+    scale: 0.9, 0.9
   - type: SolutionContainerManager
     solutions:
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 7
         - ReagentId: Protein
+          Quantity: 13
+        - ReagentId: MToxin
           Quantity: 5
-        - ReagentId: MRadin
-          Quantity: 10
   - type: Construction
     graph: MeatSteakBoar
     node: steak boar
@@ -347,23 +379,25 @@
   name: сырое мясо пса
   parent: FoodMeatRawBase
   id: FoodMeatDog
-  description: Кусок сырого мяса пса.
+  description: Кусок сырого мяса мутировавшей собаки, содержит опасный для человеческого организма токсин, но если ты голодал последние несколько дней, токсины не кажутся такими уж смертельными.
   suffix: Stalker, еда
   components:
   - type: STWeight
     self: 0.8
   - type: Sprite
-    state: cutlet
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: dograw
+    scale: 0.7, 0.7
   - type: SolutionContainerManager
     solutions:
       food:
         reagents:
         - ReagentId: UncookedAnimalProteins
-          Quantity: 9
+          Quantity: 6
         - ReagentId: Fat
-          Quantity: 9
+          Quantity: 4
         - ReagentId: MToxin
-          Quantity: 5
+          Quantity: 13
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
@@ -379,7 +413,7 @@
   name: стейк из мяса пса
   parent: FoodMeatBase
   id: FoodMeatDogCooked
-  description: Приготовленное мясо пса.
+  description: Приготовленное мясо собаки, шутки про корейскую еду приветствуются.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -391,18 +425,19 @@
     - Meat
     - Steak
   - type: Sprite
-    layers:
-    - state: cutlet-cooked
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: dogcook
+    scale: 0.7, 0.7
   - type: SolutionContainerManager
     solutions:
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 4
         - ReagentId: Protein
-          Quantity: 5
-        - ReagentId: MRadin
-          Quantity: 5
+          Quantity: 6
+        - ReagentId: MToxin
+          Quantity: 7
   - type: Construction
     graph: MeatSteakDog
     node: steak dog

@@ -127,9 +127,9 @@
 
 - type: reagent
   id: antirad
-  name: противорадиационный препарат
+  name: йодорадин
   group: Medicine
-  desc: Таблетка содеращая смесь препаратов для нейтрализации и вывода радионуклидов.
+  desc: Смесь препаратов для нейтрализации и вывода радионуклидов.
   physicalDesc: "как спасение"
   flavor: bottledlightning
   color: "#AE0101"
@@ -141,20 +141,32 @@
       - !type:HealthChange
         damage:
           types:
-            Radiation: -10
+            Radiation: -0.75
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 31
+        damage:
+          types:
+            Asphyxiation: 0.75
+            Poison: 1.5
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 31
 
 ####################################
 
 - type: entity
   id: antiradpill
   parent: BaseItem
-  name:  противорадиационные препараты
+  name:  таблетка
   suffix: Stalker
-  description: Набор таблеток с активными веществами, способствующими выведению радионуклидов из организма. Не способны защитить организм от наведённой радиации, но снижают уже полученную человеком дозу.
+  description: спобна вас вылечить... или убить, как повезёт.
   components:
   - type: Tag
     tags:
-      - Brutepack
+      - Pill
   - type: Item
     size: Tiny
     sprite: _Stalker/Objects/medicine.rsi
@@ -163,6 +175,7 @@
     categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
+    scale: 0.6, 0.6
     state: antirad
   - type: Food
     forceFeedDelay: 1
@@ -201,6 +214,259 @@
 ####################################
 
 - type: entity
+  name: шприц йодорадина
+  parent: ChemicalMedipen
+  id: AntiRadMedipen
+  description: Шприц с ампулой йодорадина, содержит оптимальный объём вещества.
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: antiradpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
+    scale: 0.7, 0.7
+    size: Normal
+  - type: SolutionContainerVisuals
+    scale: 0.7, 0.7
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: antiradpen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 30
+        reagents:
+        - ReagentId: antirad
+          Quantity: 30
+  - type: Tag
+    tags: []
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 30
+    onlyAffectsMobs: false
+    injectOnly: true
+
+####################################
+
+- type: reagent
+  id: wakeupper
+  name: пробудофилин
+  group: Medicine
+  desc: Смесь препаратов для восстановления кровообращения и дыхания.
+  physicalDesc: "как боль"
+  flavor: bottledlightning
+  color: "#ff718d"
+  boilingPoint: 212.0
+  meltingPoint: 170.0
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Asphyxiation: -2
+            Bloodloss: -3
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 21
+        damage:
+          types:
+            Poison: 2
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+
+####################################
+
+- type: entity
+  id: wakeuppill
+  parent: BaseItem
+  name:  таблетка
+  suffix: Stalker
+  description: спобна вас вылечить... или убить, как повезёт.
+  components:
+  - type: Tag
+    tags:
+      - Pill
+  - type: Item
+    size: Tiny
+    sprite: _Stalker/Objects/medicine.rsi
+    state: probud
+  - type: RepositoryItem
+    categoryName: Медицина
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    scale: 0.6, 0.6
+    state: probud
+  - type: Food
+    forceFeedDelay: 1
+    transferAmount: null
+    eatMessage: food-swallow
+    useSound: /Audio/Items/pill.ogg
+  - type: BadFood
+  - type: FlavorProfile
+    ignoreReagents: []
+  - type: SolutionSpiker
+    sourceSolution: food
+  - type: DeleteOnTrigger
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:SpillBehavior
+        solution: food
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: wakeupper
+          Quantity: 10
+
+####################################
+
+- type: entity
+  name: шприц пробудофилина
+  parent: ChemicalMedipen
+  id: WakeUpMedipen
+  description: Шприц с ампулой пробудофилина, содержит оптимальный объём вещества.
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Medicine/steampack/probud.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: probudpen
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Item
+    sprite: _Stalker/Objects/Medicine/steampack/probud.rsi
+    scale: 0.7, 0.7
+    size: Normal
+  - type: SolutionContainerVisuals
+    scale: 0.7, 0.7
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: probudpen_empty
+  - type: SolutionContainerManager
+    solutions:
+      pen:
+        maxVol: 20
+        reagents:
+        - ReagentId: wakeupper
+          Quantity: 20
+  - type: Tag
+    tags: []
+  - type: Hypospray
+    solutionName: pen
+    transferAmount: 20
+    onlyAffectsMobs: false
+    injectOnly: true
+
+####################################
+
+- type: reagent
+  id: antishiz
+  name: фуфломицин
+  group: Medicine
+  desc: Смесь препаратов для того, чтобы уверять мозг, что ему всё равно на пси-излучение.
+  physicalDesc: "как безопасность"
+  flavor: bottledlightning
+  color: "#AE0101"
+  boilingPoint: 212.0
+  meltingPoint: 170.0
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Psy: -3
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentThreshold
+          min: 11
+        damage:
+          types:
+            Asphyxiation: 5
+      - !type:Jitter
+        conditions:
+        - !type:ReagentThreshold
+          min: 1
+
+####################################
+
+- type: entity
+  id: shizopill
+  parent: BaseItem
+  name:  таблетка
+  suffix: Stalker
+  description: спобна вас вылечить... или убить, как повезёт.
+  components:
+  - type: Tag
+    tags:
+      - Pill
+  - type: Item
+    size: Tiny
+    sprite: _Stalker/Objects/medicine.rsi
+    state: shiza
+  - type: RepositoryItem
+    categoryName: Медицина
+  - type: Sprite
+    sprite: _Stalker/Objects/medicine.rsi
+    scale: 0.6, 0.6
+    state: shiza
+  - type: Food
+    forceFeedDelay: 1
+    transferAmount: null
+    eatMessage: food-swallow
+    useSound: /Audio/Items/pill.ogg
+  - type: BadFood
+  - type: FlavorProfile
+    ignoreReagents: []
+  - type: SolutionSpiker
+    sourceSolution: food
+  - type: DeleteOnTrigger
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Damageable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:SpillBehavior
+        solution: food
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: antishiz
+          Quantity: 10
+
+####################################
+
+- type: entity
   name: стимулятор монолита
   parent: Stimpack
   id: BattleMedipenStalker
@@ -219,7 +485,7 @@
     onlyAffectsMobs: false
     transferAmount: 200
 
-####################################
+#######################################
 
 - type: reagent
   id: ExperimentalStimulantsStalker
@@ -299,31 +565,6 @@
           amount: -1
 
 ####################################
-
-- type: entity
-  name: инъекционный антирад
-  parent: ChemicalMedipen
-  id: AntiRadMedipen
-  description: Инъекция антирада в виде специального шприца с ампулами. Такой вид антирада будет действовать быстрее чем в виде таблеток.
-  suffix: Stalker
-  components:
-  - type: Sprite
-    sprite: Objects/Specific/Medical/medipen.rsi
-    layers:
-    - state: penacid
-      map: ["enum.SolutionContainerLayers.Fill"]
-  - type: SolutionContainerManager
-    solutions:
-      pen:
-        maxVol: 15
-        reagents:
-        - ReagentId: antirad
-          Quantity: 15
-  - type: Tag
-    tags: []
-
-
-#######################################
 
 - type: entity
   id: regenpill
