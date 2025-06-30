@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -9,41 +8,39 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Content.Server._Stalker.Discord.DiscordAuth;
 using Content.Shared._Stalker.CCCCVars;
-using Content.Shared._Stalker.Shop;
-using Content.Shared._Stalker.Shop.Prototypes;
-using Content.Shared._Stalker.Sponsors;
+using Content.Shared._Stalker.Sponsors.Messages;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 
-namespace Content.Server._Stalker.Sponsors;
+namespace Content.Server._Stalker.Sponsors.SponsorManager;
 
-public sealed class SponsorsManager
+public sealed partial class SponsorsManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
     [Dependency] private readonly INetManager _netMgr = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
     private readonly HttpClient _httpClient = new();
     private readonly Dictionary<NetUserId, SponsorData> _cachedSponsors = new();
-
-    public event Action<NetUserId>? SponsorPlayerCached;
 
     private string _apiUrl = string.Empty;
     private string _apiKey = string.Empty;
     private bool _enabled;
-    private int _priorityTier = 3;
     private string _guildId = null!;
     private ISawmill _sawmill = null!;
+
+    public event Action<NetUserId>? SponsorPlayerCached;
+
+    public Dictionary<NetUserId, SponsorData> Sponsors => _cachedSponsors;
 
     public void Initialize()
     {
         _sawmill = Logger.GetSawmill("sponsors");
+        _netMgr.RegisterNetMessage<MsgSponsorVerified>();
+
         _cfg.OnValueChanged(CCCCVars.DiscordAuthEnabled, val => { _enabled = val; }, true);
         _cfg.OnValueChanged(CCCCVars.SponsorsApiUrl, val => { _apiUrl = val; }, true);
         _cfg.OnValueChanged(CCCCVars.SponsorsApiKey, val => { _apiKey = val; }, true);
-        _cfg.OnValueChanged(CCCCVars.PriorityJoinTier, val => { _priorityTier = val; }, true);
         _cfg.OnValueChanged(CCCCVars.SponsorsGuildId, val => { _guildId = val; }, true);
 
         _discordAuthManager.PlayerVerified += OnPlayerVerified;
@@ -51,6 +48,9 @@ public sealed class SponsorsManager
 
         _httpClient.DefaultRequestHeaders.Authorization =
             new AuthenticationHeaderValue("Bearer", _apiKey);
+
+        InitializeHelpers();
+        InitializeSpecies();
     }
 
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
@@ -61,11 +61,6 @@ public sealed class SponsorsManager
     public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out SponsorData? sponsorInfo)
     {
         return _cachedSponsors.TryGetValue(userId, out sponsorInfo);
-    }
-
-    public Dictionary<NetUserId, SponsorData> GetSponsors()
-    {
-        return _cachedSponsors;
     }
 
     private async Task<bool> IsGiven(NetUserId userId)
@@ -124,65 +119,6 @@ public sealed class SponsorsManager
         }
     }
 
-    public bool HavePriorityJoin(NetUserId userId)
-    {
-        if (!TryGetInfo(userId, out var sponsorInfo))
-            return false;
-        return (int) sponsorInfo.Level >= _priorityTier || sponsorInfo.Contributor;
-    }
-
-    public void RepositoryMaxWeight(ref float maxWeight, NetUserId userId)
-    {
-        if (!TryGetInfo(userId, out var sponsorData))
-            return;
-
-        if (sponsorData.Contributor)
-            maxWeight += 250f;
-
-        var prototypes = _prototype.EnumeratePrototypes<SponsorPrototype>().ToList();
-
-        foreach (var prototype in prototypes)
-        {
-            if (!prototype.RepositoryWeight.ContainsKey((int) sponsorData.Level))
-                continue;
-
-            maxWeight = 0;
-            maxWeight = prototype.RepositoryWeight[(int) sponsorData.Level];
-            if (sponsorData.Contributor)
-                maxWeight += 250f;
-
-            return;
-        }
-    }
-
-    public void FillSponsorCategories(
-        ICommonSession session,
-        ref List<CategoryInfo>? sponsorCategories,
-        ref List<CategoryInfo>? contribCategories,
-        ShopComponent comp)
-    {
-        sponsorCategories ??= [];
-        contribCategories ??= [];
-
-        var sponsorDict = comp.ShopSponsorCategories;
-        var contribList = comp.ContributorCategories;
-
-        if (!TryGetInfo(session.UserId, out var info))
-        {
-            sponsorCategories = null;
-            contribCategories = null;
-            return;
-        }
-
-        var found = sponsorDict
-            .Where(kv => kv.Key <= (int) info.Level)
-            .SelectMany(kv => kv.Value)
-            .ToList();
-
-        sponsorCategories = found.Count == 0 ? null : found;
-        contribCategories = !info.Contributor ? null : contribList;
-    }
-
     private async void OnPlayerVerified(object? sender, ICommonSession e)
     {
         if (!_enabled)
@@ -194,38 +130,24 @@ public sealed class SponsorsManager
 
         var isGiven = await IsGiven(e.UserId);
 
-        var level = SponsorData.ParseRoles(roles);
-        var contrib = SponsorData.ParseContrib(roles);
-        if (level is SponsorLevel.None && !contrib)
+        var sponsorPrototype = TryGetSponsorPrototype(roles);
+        var contributorPrototype = TryGetContributorPrototype(roles);
+        if (sponsorPrototype is null &&
+            contributorPrototype is null)
             return;
 
-        var data = new SponsorData(level, e.UserId, isGiven, contrib);
+        var data = new SponsorData(
+            sponsorPrototype?.ID,
+            e.UserId,
+            isGiven,
+            contributorPrototype is null
+        );
+
         _cachedSponsors.Add(e.UserId, data);
         SponsorPlayerCached?.Invoke(e.UserId);
+        _netMgr.ServerSendMessage(new MsgSponsorVerified(), e.Channel);
 
-        _sawmill.Debug($"{e.UserId} is sponsor now. UserId: {e.UserId}. Level: {Enum.GetName(data.Level)}:{(int)data.Level}");
-    }
-
-    private async Task<List<string>?> GetRoles(NetUserId userId)
-    {
-        var requestUrl = $"{_apiUrl}/roles?method=uid&id={userId}&guildId={_guildId}";
-        var response = await _httpClient.GetAsync(requestUrl);
-
-        if (!response.IsSuccessStatusCode)
-        {
-            _sawmill.Error($"Failed to retrieve roles for user {userId}: {response.StatusCode}");
-            return null;
-        }
-
-        var responseContent = await response.Content.ReadFromJsonAsync<RolesResponse>();
-
-        if (responseContent is not null)
-        {
-            return responseContent.Roles.ToList();
-        }
-
-        _sawmill.Error($"Roles not found in response for user {userId}");
-        return null;
+        _sawmill.Debug($"{e.UserId} is sponsor now. PrototypeID: {data.SponsorProtoId}");
     }
 
     private sealed class RolesResponse

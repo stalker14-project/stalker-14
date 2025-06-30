@@ -1,4 +1,5 @@
-﻿using Content.Shared.Store;
+﻿using Content.Shared._Stalker.Sponsors;
+using Content.Shared.Store;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -18,7 +19,7 @@ public sealed class ShopPresetPrototype : IPrototype
     public List<CategoryInfo> Categories = new();
 
     [DataField]
-    public Dictionary<int, List<CategoryInfo>> SponsorCategories = new();
+    public Dictionary<ProtoId<SponsorPrototype>, List<CategoryInfo>> SponsorCategories = new();
 
     [DataField]
     public List<CategoryInfo> ContributorCategories = new();

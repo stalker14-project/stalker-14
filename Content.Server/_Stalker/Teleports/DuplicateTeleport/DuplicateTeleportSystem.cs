@@ -15,6 +15,7 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using SponsorSystem = Content.Server._Stalker.Sponsors.System.SponsorSystem;
 
 namespace Content.Server._Stalker.Teleports.DuplicateTeleport;
 
@@ -29,7 +30,8 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
     [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
     [Dependency] private readonly StalkerPortalSystem _stalkerPortals = default!;
     [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
-    [Dependency] private readonly SponsorsManager _sponsors = default!;
+    [Dependency] private readonly SponsorSystem _sponsorSystem = default!;
+    
     private const string MoneyId = "Roubles";
     private ISawmill _sawmill = default!;
     private Dictionary<string, EntityUid> ArenaMap { get; } = new();
@@ -125,9 +127,10 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
                 {
                     stalkerRepositoryComponent.MaxWeight = component.MaxWeight;
                 }
+                
                 // Sponsors
-                // Giving max weight by-ref, to modify it inside method
-                _sponsors.RepositoryMaxWeight(ref stalkerRepositoryComponent.MaxWeight, userId);
+                stalkerRepositoryComponent.MaxWeight =
+                    _sponsorSystem.GetRepositoryWeight(userId, stalkerRepositoryComponent.MaxWeight);
 
                 // remove first stack of money that appears on new records added
                 var deleted = _repositorySystem.RemoveItems((entity, stalkerRepositoryComponent), MoneyId, concatenated);

@@ -1,7 +1,6 @@
 using Content.Server._Stalker.AI;
 using Content.Server._Stalker.Discord.DiscordAuth;
 using Content.Server._Stalker.JoinQueue;
-using Content.Server._Stalker.Sponsors;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -27,7 +26,6 @@ using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
 using Content.Server.Voting.Managers;
-using Content.Shared._Stalker.CCCCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Kitchen;
 using Content.Shared.Localizations;
@@ -38,6 +36,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server._Stalker.Sponsors.SponsorManager;
 
 namespace Content.Server.Entry
 {
@@ -114,9 +113,6 @@ namespace Content.Server.Entry
 
                 // Stalker-Changes-Start
                 IoCManager.Resolve<AIManager>().Initialize(); // Stalker-Changes
-                IoCManager.Resolve<DiscordAuthManager>().Initialize(); // Stalker-Changes-Auth
-                IoCManager.Resolve<JoinQueueManager>().Initialize(); // Stalker-Changes - Corvax Queue Adaptation
-                IoCManager.Resolve<SponsorsManager>().Initialize(); // Stalker-Changes-Sponsors
                 IoCManager.Resolve<_Stalker.ServerAdministration.ServerApi>().Initialize(); // Stalker-Changes - Stalker Server API
                 // Stalker-Changes-End
 
@@ -150,6 +146,12 @@ namespace Content.Server.Entry
             }
             else
             {
+                // Stalker-Changes-Start
+                IoCManager.Resolve<DiscordAuthManager>().Initialize(); // Stalker-Changes-Auth
+                IoCManager.Resolve<JoinQueueManager>().Initialize(); // Stalker-Changes - Corvax Queue Adaptation
+                IoCManager.Resolve<SponsorsManager>().Initialize(); // Stalker-Changes-Sponsors
+                // Stalker-Changes-End
+
                 IoCManager.Resolve<RecipeManager>().Initialize();
                 IoCManager.Resolve<IAdminManager>().Initialize();
                 IoCManager.Resolve<IAfkManager>().Initialize();

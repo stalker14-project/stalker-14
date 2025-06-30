@@ -1,12 +1,10 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Content.Server._Stalker.Sponsors;
 using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.Storage;
 using Content.Server._Stalker.Teleports;
 using Content.Server.Administration.Logs;
 using Content.Server.Mind;
-using Content.Shared._Stalker.Sponsors;
 using Content.Shared._Stalker.StalkerRepository;
 using Content.Shared._Stalker.Storage;
 using Content.Shared._Stalker.Weight;
@@ -27,18 +25,17 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Storage;
 using Content.Shared.Tag;
 using Content.Shared.UserInterface;
-using Content.Shared.VendingMachines;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Whitelist;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
-using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
+using Content.Server._Stalker.Sponsors.SponsorManager;
 
 namespace Content.Server._Stalker.StalkerRepository;
 public sealed class StalkerRepositorySystem : EntitySystem
@@ -101,36 +98,23 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (!_playerManager.TryGetSessionByUsername(args.Admin, out var session))
             return;
 
-        if (!_sponsors.TryGetInfo(session.UserId, out var sponsorData))
+        if (!_sponsors.TryGetInfo(session.UserId, out var sponsorData) ||
+            sponsorData.SponsorProtoId is null)
             return;
 
         // already gave
         if (sponsorData.IsGiven)
             return;
 
-        var items = new List<EntProtoId>();
-        var sponsorPrototypes = _prototypeMan.EnumeratePrototypes<SponsorPrototype>();
-        foreach (var proto in sponsorPrototypes)
-        {
-            foreach (var kvp in proto.RepositorySponsorItems)
-            {
-                if (kvp.Key <= (int)sponsorData.Level)
-                {
-                    items.AddRange(kvp.Value);
-                }
-            }
-
-            if (sponsorData.Contributor)
-            {
-                items.AddRange(proto.ContribItems);
-            }
-        }
+        var index = _prototypeMan.Index(sponsorData.SponsorProtoId.Value);
+        var items = index.RepositoryItems;
 
         foreach (var item in items)
         {
             var info = GenerateItemInfoByPrototype(item);
             InsertToRepo((uid, component), info);
         }
+        
         Task.Run(() => _sponsors.SetGiven(session.UserId, true));
         _stalkerStorageSystem.SaveStorage(component);
     }

@@ -2,6 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Content.Server._Stalker.Sponsors.SponsorManager;
 using Content.Server._Stalker.StalkerRepository;
 using Content.Server.Administration;
 using Content.Shared._Stalker.Sponsors;
@@ -13,7 +14,7 @@ using Robust.Server.Player;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Stalker.Sponsors;
+namespace Content.Server._Stalker.Sponsors.System;
 
 public sealed partial class SponsorSystem : EntitySystem
 {
@@ -34,8 +35,9 @@ public sealed partial class SponsorSystem : EntitySystem
 
         // debug
         _consoleHost.RegisterCommand("st_list_sponsors", ListSponsors);
-        
+
         InitializeJobs();
+        InitializeSpecies();
     }
 
     #region GiveLoadout
@@ -55,28 +57,28 @@ public sealed partial class SponsorSystem : EntitySystem
             return;
         }
 
-        var level = 0;
+        string? sponsorProtoId = null;
         var useLevelSpecified = args.Length == 3;
         if (useLevelSpecified)
-        {
-            if (!int.TryParse(args[2], out level))
-            {
-                shell.WriteError("Unable to parse third argument to integer");
-                return;
-            }
-        }
+            sponsorProtoId = args[2];
 
-
-        // get sponsor info
-        if (!_sponsors.TryGetInfo(session.UserId, out var sponsorInfo))
+        if (!_sponsors.TryGetInfo(session.UserId, out var sponsorInfo) ||
+            sponsorInfo.SponsorProtoId is null)
         {
             shell.WriteError($"User with ckey {ckey} is not sponsor");
             return;
         }
 
-        if (level > (int) sponsorInfo.Level)
+        SponsorPrototype? userSpecifiedSponsorPrototype = null;
+        if (useLevelSpecified && sponsorProtoId is not null)
+            userSpecifiedSponsorPrototype = _prototype.Index<SponsorPrototype>(sponsorProtoId);
+
+        var sponsorPrototypeIndex = _prototype.Index(sponsorInfo.SponsorProtoId.Value);
+
+        if (userSpecifiedSponsorPrototype is not null &&
+            userSpecifiedSponsorPrototype.SponsorPriority > sponsorPrototypeIndex.SponsorPriority)
         {
-            shell.WriteError($"User with ckey {ckey} have {(int) sponsorInfo.Level} level but you tried to give {level}");
+            shell.WriteError($"User with login {ckey} have {sponsorPrototypeIndex.SponsorPriority} priority but you tried to give {userSpecifiedSponsorPrototype.SponsorPriority}");
             return;
         }
 
@@ -89,21 +91,19 @@ public sealed partial class SponsorSystem : EntitySystem
         List<EntProtoId> items;
         if (!useLevelSpecified)
         {
-            items = _prototype.EnumeratePrototypes<SponsorPrototype>()
-                .SelectMany(p => p.RepositorySponsorItems)
-                .Where(kv => kv.Key <= (int) sponsorInfo.Level)
-                .SelectMany(kv => kv.Value)
-                .ToList();
+            var rawItems = sponsorPrototypeIndex.RepositoryItems.ToList();
+            items = rawItems.ConvertAll(a => new EntProtoId(a));
+        }
+        else if (useLevelSpecified && userSpecifiedSponsorPrototype is not null)
+        {
+            var rawItems = userSpecifiedSponsorPrototype.RepositoryItems.ToList();
+            items = rawItems.ConvertAll(a => new EntProtoId(a));
         }
         else
         {
-            items = _prototype.EnumeratePrototypes<SponsorPrototype>()
-                .SelectMany(p => p.RepositorySponsorItems)
-                .Where(kv => kv.Key == level)
-                .SelectMany(kv => kv.Value)
-                .ToList();
+            shell.WriteError("Unable to find items to give");
+            return;
         }
-
 
         switch (mode)
         {
@@ -215,6 +215,12 @@ public sealed partial class SponsorSystem : EntitySystem
         var strMode = args[0];
         var ckey = args[1];
 
+        if (_sponsors.ContributorPrototype is null)
+        {
+            shell.WriteError("There are no contributor prototype defined...");
+            return;
+        }
+
         if (!_playerManager.TryGetSessionByUsername(ckey, out var session))
             return;
 
@@ -229,15 +235,25 @@ public sealed partial class SponsorSystem : EntitySystem
             return;
         }
 
+        if (!sponsorInfo.Contributor)
+        {
+            shell.WriteError("User is not contributor");
+            return;
+        }
+
         if (!Enum.TryParse<LoadoutGiveMode>(strMode, out var mode))
         {
             shell.WriteError("Unable to parse first argument");
             return;
         }
 
-        var items = _prototype.EnumeratePrototypes<SponsorPrototype>()
-            .SelectMany(p => p.ContribItems)
+
+        var rawItems = _sponsors
+            .ContributorPrototype
+            .ContributorItems
             .ToList();
+
+        var items = rawItems.ConvertAll(a => new EntProtoId(a));
 
         switch (mode)
         {
@@ -347,7 +363,7 @@ public sealed partial class SponsorSystem : EntitySystem
     [AdminCommand(AdminFlags.Debug)]
     public void ListSponsors(IConsoleShell shell, string argStr, string[] argv)
     {
-        var sponsors = _sponsors.GetSponsors();
+        var sponsors = _sponsors.Sponsors;
 
         var builder = new StringBuilder();
 
@@ -355,7 +371,7 @@ public sealed partial class SponsorSystem : EntitySystem
         {
             var playerData = _playerManager.GetPlayerData(userId);
             builder.Append(
-                $"Name: {playerData.UserName} | UserId: {userId} | Data: {Enum.GetName(sponsorData.Level)}:{(int)sponsorData.Level}, Contrib: {sponsorData.Contributor}\n");
+                $"Name: {playerData.UserName} | UserId: {userId} | Data: {sponsorData.SponsorProtoId ?? "NONE"}, IsContributor: {sponsorData.Contributor}\n");
         }
 
         shell.WriteLine(builder.ToString());

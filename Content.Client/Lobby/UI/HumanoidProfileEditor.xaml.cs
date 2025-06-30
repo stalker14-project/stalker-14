@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
+using Content.Client._Stalker.Sponsors;
 using Content.Client.Humanoid;
 using Content.Client.Lobby.UI.Loadouts;
 using Content.Client.Lobby.UI.Roles;
@@ -49,6 +50,7 @@ namespace Content.Client.Lobby.UI
         private readonly MarkingManager _markingManager;
         private readonly JobRequirementsManager _requirements;
         private readonly LobbyUIController _controller;
+        private readonly SponsorsManager _sponsors; // Stalker-Changes | Sponsors
 
         private FlavorText.FlavorText? _flavorText;
         private TextEdit? _flavorTextEdit;
@@ -113,7 +115,8 @@ namespace Content.Client.Lobby.UI
             IPrototypeManager prototypeManager,
             IResourceManager resManager,
             JobRequirementsManager requirements,
-            MarkingManager markings)
+            MarkingManager markings,
+            SponsorsManager sponsors) // Stalker-Changes | Sponsors
         {
             RobustXamlLoader.Load(this);
             _sawmill = logManager.GetSawmill("profile.editor");
@@ -127,6 +130,9 @@ namespace Content.Client.Lobby.UI
             _resManager = resManager;
             _requirements = requirements;
             _controller = UserInterfaceManager.GetUIController<LobbyUIController>();
+            _sponsors = sponsors; // Stalker-Changes-Sponsors
+
+            _sponsors.SponsorSpeciesUpdated += RefreshSpecies;
 
             ImportButton.OnPressed += args =>
             {
@@ -597,7 +603,16 @@ namespace Content.Client.Lobby.UI
             SpeciesButton.Clear();
             _species.Clear();
 
-            _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
+            // Stalker-Changes-Start | Sponsors
+            _species.AddRange(
+                _prototypeManager.EnumeratePrototypes<SpeciesPrototype>()
+                    .Where(o =>
+                        (!o.IsSponsor ||
+                        _sponsors.AllowedSpecies?.Contains(o.ID) == true) &&
+                        o.RoundStart
+                    ));
+            // Stalker-Changes-End | Sponsors
+
             var speciesIds = _species.Select(o => o.ID).ToList();
 
             for (var i = 0; i < _species.Count; i++)

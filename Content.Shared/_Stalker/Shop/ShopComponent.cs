@@ -1,4 +1,5 @@
 using Content.Shared._Stalker.Shop.Prototypes;
+using Content.Shared._Stalker.Sponsors;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stalker.Shop;
@@ -24,7 +25,7 @@ public sealed partial class ShopComponent : Component
     /// </summary>
     public List<CategoryInfo> ShopCategories = new();
 
-    public Dictionary<int, List<CategoryInfo>> ShopSponsorCategories = new();
+    public Dictionary<ProtoId<SponsorPrototype>, List<CategoryInfo>> ShopSponsorCategories = new();
 
     public List<CategoryInfo> ContributorCategories = new();
 
