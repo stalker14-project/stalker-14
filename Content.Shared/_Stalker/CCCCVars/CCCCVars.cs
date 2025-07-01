@@ -50,7 +50,7 @@ public sealed partial class CCCCVars
      * Discord Auth
      */
     public static readonly CVarDef<bool> DiscordAuthEnabled =
-        CVarDef.Create("stalker.discord_auth_enabled", true, CVar.SERVERONLY);
+        CVarDef.Create("stalker.discord_auth_enabled", false, CVar.SERVERONLY);
 
     public static readonly CVarDef<string> DiscordAuthUrl =
         CVarDef.Create("stalker.discord_auth_url", "http://127.0.0.1:2424/api", CVar.SERVERONLY | CVar.CONFIDENTIAL);
