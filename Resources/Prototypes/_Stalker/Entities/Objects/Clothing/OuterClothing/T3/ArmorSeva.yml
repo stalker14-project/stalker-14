@@ -359,16 +359,61 @@
     - type: PointLight
       color: orange
 
+# Dolg
+
 - type: entity
   parent: STClothingOuterArmorSevaBase
   id: ClothingOuterArmorSevaDolgRed
   name: костюм "Сева" 'Долга'
   description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
   components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
-    - type: Clothing
-      sprite: _Stalker/Objects/Clothing/outerClothing/seva_red.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_dolg.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmDolgRed
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmDolgRed
+  name: шлем севы долга
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_dolg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_dolg.rsi
+
+# Freedom
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaFreedom
+  name: костюм "Сева" 'Свободы'
+  description: "Разработанный Киевским НИИ костюм замкнутого цикла, предназначенный специально для работы в условиях Зоны."
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_freedom.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_freedom.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmFreedom
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmFreedom
+  name: шлем севы свободы
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_freedom.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_freedom.rsi
 
   # Renegaty
 
