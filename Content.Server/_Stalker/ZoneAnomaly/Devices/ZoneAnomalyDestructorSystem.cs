@@ -1,4 +1,4 @@
-using Content.Server.DoAfter;
+﻿using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Server._Stalker.ZoneAnomaly.Devices;
 using Content.Shared.DoAfter;
@@ -100,8 +100,12 @@ public sealed class ZoneAnomalyDestructorSystem : EntitySystem
             deletedAny = true;
         }
 
-        if (deletedAny)
+        if(deletedAny)
+        {
             _popup.PopupEntity("Anomaly neutralized.", uid);
+            // Might hate me for this but uh I don't want scientists going around destroying the whole map
+            QueueDel(uid);
+        }
         else
             _popup.PopupEntity("No anomalies nearby.", uid);
 
