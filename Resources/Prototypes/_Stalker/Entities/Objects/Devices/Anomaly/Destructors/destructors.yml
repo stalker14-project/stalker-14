@@ -2,7 +2,7 @@
   parent: [ BaseItem, BaseFoldable ]
   id: BaseMachineAnomalyDestructor
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его.
+  description: Настолько сложный механизм, что только ученые могут использовать его. for gravs
   suffix: Stalker
   components:
     - type: Tag
@@ -10,6 +10,8 @@
         - Structure
     - type: STWeight
       self: 7.5
+    - type: ZoneAnomalyDestructor
+      targetPrototype: ZoneAnomalyBaseGravity
     - type: Item
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad.rsi
       size: Huge
@@ -44,6 +46,7 @@
       radius: 1.5
       softness: 5
 
+
 - type: entity   
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructorFolded
@@ -53,10 +56,10 @@
       folded: true
 
 - type: entity
-  parent: BaseMachineAnomalyDestructor
+  parent: BaseMachineAnomalyDestructor 
   id: BaseMachineAnomalyDestructor1
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его.
+  description: Настолько сложный механизм, что только ученые могут использовать его. 2 for chemical 
   suffix: Stalker
   components: 
     - type: Item
@@ -65,6 +68,8 @@
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad1.rsi
+    - type: ZoneAnomalyDestructor
+      targetPrototype: ZoneAnomalyBaseChemical 
 
 
 - type: entity   
@@ -79,7 +84,7 @@
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructor2
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его.
+  description: Настолько сложный механизм, что только ученые могут использовать его. 3 for thermal
   suffix: Stalker
   components: 
     - type: Item
@@ -88,6 +93,8 @@
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad2.rsi
+    - type: ZoneAnomalyDestructor
+      targetPrototype: ZoneAnomalyBaseThermal
 
 
 - type: entity   
@@ -102,7 +109,7 @@
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructor3
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его.
+  description: Настолько сложный механизм, что только ученые могут использовать его. 4 for electric
   suffix: Stalker
   components: 
     - type: Item
@@ -111,6 +118,8 @@
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad3.rsi
+    - type: ZoneAnomalyDestructor
+      targetPrototype: ZoneAnomalyBaseElectrical
 
 
 - type: entity   
@@ -125,7 +134,7 @@
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructor4
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его.
+  description: Настолько сложный механизм, что только ученые могут использовать его. 5 for psy so correct ish
   suffix: Stalker
   components: 
     - type: Item
@@ -134,6 +143,8 @@
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad4.rsi
+    - type: ZoneAnomalyDestructor
+      targetPrototype: ZoneAnomalyBase
 
 
 - type: entity   
