@@ -2,7 +2,7 @@
   parent: [ BaseItem, BaseFoldable ]
   id: BaseMachineAnomalyDestructor
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его. for gravs
+  description: Настолько сложный механизм, что только ученые могут использовать его.
   suffix: Stalker
   components:
     - type: Tag
@@ -10,11 +10,9 @@
         - Structure
     - type: STWeight
       self: 7.5
-    - type: ZoneAnomalyDestructor
-      targetPrototype: ZoneAnomalyBaseGravity
     - type: Item
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad.rsi
-      size: Normal
+      size: Huge
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad.rsi
@@ -46,8 +44,7 @@
       radius: 1.5
       softness: 5
 
-
-- type: entity
+- type: entity   
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructorFolded
   suffix: Stalker, Folded
@@ -59,20 +56,18 @@
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructor1
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его. 2 for chemical
+  description: Настолько сложный механизм, что только ученые могут использовать его.
   suffix: Stalker
-  components:
+  components: 
     - type: Item
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad1.rsi
       size: Huge
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad1.rsi
-    - type: ZoneAnomalyDestructor
-      targetPrototype: ZoneAnomalyBaseChemical
 
 
-- type: entity
+- type: entity   
   parent: BaseMachineAnomalyDestructor1
   id: BaseMachineAnomalyDestructorFolded1
   suffix: Stalker, Folded
@@ -84,20 +79,18 @@
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructor2
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его. 3 for thermal
+  description: Настолько сложный механизм, что только ученые могут использовать его.
   suffix: Stalker
-  components:
+  components: 
     - type: Item
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad2.rsi
       size: Huge
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad2.rsi
-    - type: ZoneAnomalyDestructor
-      targetPrototype: ZoneAnomalyBaseThermal
 
 
-- type: entity
+- type: entity   
   parent: BaseMachineAnomalyDestructor2
   id: BaseMachineAnomalyDestructorFolded2
   suffix: Stalker, Folded
@@ -109,20 +102,18 @@
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructor3
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его. 4 for electric
+  description: Настолько сложный механизм, что только ученые могут использовать его.
   suffix: Stalker
-  components:
+  components: 
     - type: Item
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad3.rsi
       size: Huge
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad3.rsi
-    - type: ZoneAnomalyDestructor
-      targetPrototype: ZoneAnomalyBaseElectrical
 
 
-- type: entity
+- type: entity   
   parent: BaseMachineAnomalyDestructor3
   id: BaseMachineAnomalyDestructorFolded3
   suffix: Stalker, Folded
@@ -134,20 +125,18 @@
   parent: BaseMachineAnomalyDestructor
   id: BaseMachineAnomalyDestructor4
   name: Научное оборудорвание
-  description: Настолько сложный механизм, что только ученые могут использовать его. 5 for psy so correct ish
+  description: Настолько сложный механизм, что только ученые могут использовать его.
   suffix: Stalker
-  components:
+  components: 
     - type: Item
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad4.rsi
       size: Huge
     - type: Sprite
       noRot: true
       sprite: _Stalker/Objects/Devices/Anomaly/Destructors/pad4.rsi
-    - type: ZoneAnomalyDestructor
-      targetPrototype: ZoneAnomalyBase
 
 
-- type: entity
+- type: entity   
   parent: BaseMachineAnomalyDestructor4
   id: BaseMachineAnomalyDestructorFolded4
   suffix: Stalker, Folded
