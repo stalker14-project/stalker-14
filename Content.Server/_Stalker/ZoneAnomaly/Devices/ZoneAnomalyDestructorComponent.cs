@@ -1,6 +1,18 @@
-﻿namespace Content.Server._Stalker.ZoneAnomaly.Devices;
+using Robust.Shared.GameStates;
+using Robust.Shared.Serialization;
 
-public sealed partial class ZoneAnomalyDestructorComponent : Component
+
+namespace Content.Server._Stalker.ZoneAnomaly.Devices
+
+
 {
-    
+    [RegisterComponent, NetworkedComponent]
+    public sealed partial class ZoneAnomalyDestructorComponent : Component
+    {
+        [DataField]
+        public float Delay = 20f;
+
+        [DataField]
+        public string TargetPrototype = "ZoneAnomalyBase"; // change to match your actual anomaly prototype ID
+    }
 }
