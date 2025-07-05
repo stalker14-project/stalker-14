@@ -1,4 +1,4 @@
-# Пораждаемая Электрой, Герляндой
+# Пораждаемая Электрой, Гирляндой
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactSparkler
@@ -27,7 +27,7 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Shock: 0.75
+        Shock: 0.85
 
 - type: entity
   parent: BaseArtifact
@@ -57,7 +57,7 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Shock: 0.6
+        Shock: 0.75
 
 - type: entity
   parent: BaseArtifact
@@ -87,8 +87,8 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Shock: 0.4
-        Psy: 0.4
+        Shock: 0.6
+        Psy: 0.65
 
 # Пораждаемая Источником
 - type: entity
@@ -111,8 +111,8 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: -2
-        Cold: -0.25
+        Radiation: -1.5
+        Cold: -0.2
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -120,7 +120,7 @@
     modifiers:
       coefficients:
         Psy: 0.9
-        Compression: 0.8
+        Compression: 0.85
   - type: ClothingSpeedModifier
     walkModifier: 1.01
     sprintModifier: 1.01
@@ -145,16 +145,16 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: -4
-        Cold: -0.5
+        Radiation: -3
+        Cold: -0.4
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Psy: 0.7
-        Compression: 0.7
+        Psy: 0.8
+        Compression: 0.75
   - type: ClothingSpeedModifier
     walkModifier: 1.01
     sprintModifier: 1.01
@@ -179,16 +179,16 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: -6
-        Cold: -1
+        Radiation: -4.5
+        Cold: -0.7
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Psy: 0.6
-        Compression: 0.5
+        Psy: 0.7
+        Compression: 0.65
   - type: ClothingSpeedModifier
     walkModifier: 1.01
     sprintModifier: 1.01

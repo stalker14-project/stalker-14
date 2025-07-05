@@ -20,8 +20,8 @@
         types:
           Cellular: -0.5
           Psy: -0.5
-          Radiation: 0.4
-          Asphyxiation: -3
+          Radiation: 1
+          Asphyxiation: -1
       interval: 1
     - type: Armor
       hiddenExamine: true
@@ -29,7 +29,7 @@
       modifiers:
         coefficients:
           Psy: 0.8
-          Shock: 1.2
+          Shock: 1.35
           Radiation : 1.2
           Asphyxiation: 0.8
     - type: ClothingSpeedModifier
@@ -120,7 +120,7 @@
       energy: 10
       color: "#3ca6e9"
     - type: PersonalDamage
-      staminaDamage: -5
+      staminaDamage: -3
       damage:
         types:
           Compression: 1

@@ -61,9 +61,9 @@
     damage:
       types:
         Heat: -0.15
-        Shock: -0.25
-        Cold: -0.25
-        Caustic: -0.25
+        Shock: -0.15
+        Cold: -0.15
+        Caustic: -0.15
         Blunt: -0.1
         Slash: -0.1
         Asphyxiation: -0.1
@@ -77,7 +77,7 @@
         Blunt: -1
         Slash: -1
       coefficients:
-        Compression: 1.2
+        Compression: 1.25
 
 - type: entity
   name: Ночная звезда
@@ -100,25 +100,25 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -0.75
-        Shock: -0.75
-        Cold: -0.75
-        Caustic: -0.75
+        Heat: -0.5
+        Shock: -0.5
+        Cold: -0.5
+        Caustic: -0.5
         Blunt: -0.3
         Slash: -0.3
         Asphyxiation: -0.15
-        Compression: -0.75
-        Radiation: 0.8
+        Compression: -0.5
+        Radiation: 1
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: -1
-        Slash: -1
+        Blunt: -2
+        Slash: -2
       coefficients:
-        Compression: 1.05
+        Compression: 1.35
 
 # Пораждаемая эпицентром, каруселью
 - type: entity
@@ -142,14 +142,14 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: 0.2
+        Radiation: 0.25
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 1.1
+        Compression: 1.15
   - type: STWeight
     self: -10
 
@@ -173,13 +173,13 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: 0.8
+        Radiation: 0.85
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 1.2
+        Compression: 1.25
     interval: 1
   - type: STWeight
     self: -25
@@ -210,7 +210,7 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 1.4
+        Compression: 1.45
     interval: 1
   - type: STWeight
     self: -50
@@ -238,13 +238,13 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: 0.01
+        Radiation: 2
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 1.05
+        Compression: 1.55
     interval: 1
   - type: STWeight
     self: -75
@@ -270,7 +270,7 @@
     color: "#f89b08"
     castShadows: false
   - type: PersonalDamage
-    staminaDamage: -2.5
+    staminaDamage: -2
     damage:
       types:
         Heat: 0.08
@@ -281,7 +281,7 @@
       flatReductions:
         Blunt: -3
       coefficients:
-        Compression: 0.4
+        Compression: 0.5
   - type: ClothingSpeedModifier
     walkModifier: 1.1
     sprintModifier: 1.1
@@ -304,6 +304,10 @@
     energy: 4.5
     color: "#ffffff"
     castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 1
   - type: Armor
     hiddenExamine: false
     armorClass: 2
@@ -342,6 +346,10 @@
     energy: 5.5
     color: "#ffffff"
     castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 1.5
   - type: Armor
     hiddenExamine: false
     armorClass: 3
@@ -380,6 +388,10 @@
     energy: 6.5
     color: "#ffffff"
     castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 2
   - type: Armor
     hiddenExamine: false
     armorClass: 4
