@@ -284,3 +284,33 @@
     sound: /Audio/_Stalker/da_da.ogg
     maxInterval: 1.5
     minInterval: 0.2
+
+- type: entity
+  parent: ZoneArtifactBaseDetector
+  id: ZoneArtifactDetectorBush
+  name: detector response
+  description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 1
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/ArtifactDetectors/bush.rsi
+    layers:
+      - state: base
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneArtifactDetectorVisuals.Layer:
+        base:
+          Disabled: { state: base }
+          Enabled: { state: icon }
+          Detected: { state: active }
+  - type: ZoneArtifactDetector
+    level: 1
+    detectionDistance: 8
+    activationDistance: 2
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
+  - type: ZoneArtifactDetectorAngleIndicator

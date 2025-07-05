@@ -92,13 +92,21 @@ public sealed class STBlueprintSystem : EntitySystem
             stringBuilder.AppendLine(Loc.GetString("st-blueprint-ingridients"));
             foreach (var (id, details) in blueprint.Items)
             {
-                if (!_proto.TryIndex(id, out var prototype))
+                var name = id;
+
+                if (!details.Tag)
                 {
-                    _sawmill.Error($"There is a recipe {blueprint.ID} with an ingridient {id}. But the ingridient prototype is missing");
-                    stringBuilder.AppendLine(Loc.GetString("st-blueprint-not-found"));
-                    continue;
+                    if (!_proto.TryIndex(id, out var prototype))
+                    {
+                        _sawmill.Error($"There is a recipe {blueprint.ID} with an ingredient {id}, but the ingredient prototype is missing.");
+                        stringBuilder.AppendLine(Loc.GetString("st-blueprint-not-found"));
+                        continue;
+                    }
+
+                    name = prototype.Name;
                 }
-                stringBuilder.AppendLine($"\t{prototype.Name} {details.Amount} {GetCatalistIcon(details.Catalyzer)}");
+
+                stringBuilder.AppendLine($"\t{name} {details.Amount} {GetCatalistIcon(details.Catalyzer)}");
             }
             stringBuilder.AppendLine(Loc.GetString("st-blueprint-result"));
             string? resultName = null;
