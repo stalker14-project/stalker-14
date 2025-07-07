@@ -43,3 +43,5 @@ ent-STClothingHeadHatFoma = Old Ushanka
 ent-STClothingHeadBeretDolg = Duty's beret
     .desc = This is the Red Beret of the officers of the Duty.
     .suffix = Stalker
+ent-ClothingHeadHatSerahat = green headband
+    .desc = Green headband with Seraphim patch.

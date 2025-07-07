@@ -76,13 +76,20 @@
   description: Сильно давит на конечность, перекрывая кровоток, если накладывать неумеючи может содрать кожу и оставить синяки.
   components:
     - type: Sprite
-      sprite: _Stalker\Objects\Specific\Medical\Other
+      sprite: _Stalker\Objects\Specific\Medical\Other.rsi
+      state: esmarch
+      scale: 0.6, 0.6
+    - type: Item
+      sprite: _Stalker\Objects\Specific\Medical\Other.rsi
       state: esmarch
       scale: 0.6, 0.6
     - type: Healing
       damageContainers:
         - Biological
       damage:
+        types:
+          Slash: -0
+          Piercing: -0
       bloodlossModifier: -20
       delay: 0.5
       healingBeginSound:
@@ -172,14 +179,15 @@
         Shock: -10
     delay: 8
   - type: Stack
-    stackType: STOintmentGoodstack
+    stackType: STOintmentGood
     count: 4
 
 - type: stack
-  id: STOintmentGoodstack
+  id: STOintmentGood
   name: мазь с антибиотиком
   icon:
     sprite: _Stalker/Objects/Medicine/GoodOinment.rsi
+    state: ointment
   spawn: STOintmentGood
   maxCount: 4
 
@@ -539,7 +547,7 @@
     areaInsertRadius: 1
     storageInsertSound: /Audio/Effects/pill_insert.ogg
     storageRemoveSound: /Audio/Effects/pill_remove.ogg
-    whitelist: 
+    whitelist:
       tags:
       - Pill
   - type: Dumpable

@@ -1,0 +1,16 @@
+ent-ClothingBackpackDuffelCommonStalkerBlueprint = army duffel backpack (T3) recipe
+ent-ClothingBackpackDuffelMilitaryOliveBlueprint = dark green army duffel backpack (T4) recipe
+ent-ClothingBackpackDuffelBlackMilitaryTacticStalkerBlueprint = black tactical duffel backpack (T4) recipe
+ent-ClothingBackpackDuffelMilitaryBlueBlueprint = blue army duffel backpack (T4) recipe
+ent-ClothingBackpackDuffelHikingVSRFBlueprint = hiking duffel backpack (T4) recipe
+ent-ClothingBackpackDuffelOliveTacticStalkerBlueprint = olive tactical duffel backpack (T4) recipe
+ent-ClothingBackpackDuffelBlackTacticStalkerBlueprint = black tactical duffel backpack (T4) recipe
+ent-ClothingBackpackDuffelSuperStalkerGrayBlueprint = professional gray duffel backpack (T5) recipe
+    .desc = Any (T4) backpack – 1, Tier 2 hide – 5, basic thread set T1 – 2, kifter artifact – 3.
+    .suffix = ST, craft
+ent-ClothingBackpackDuffelSuperStalkerBlueprint = professional green duffel backpack (T5) recipe
+    .desc = { ent-ClothingBackpackDuffelSuperStalkerGrayBlueprint.desc }
+    .suffix = { ent-ClothingBackpackDuffelSuperStalkerGrayBlueprint.suffix }
+ent-ClothingBackpackDuffelRareStalkerBlueprint = professional backpack (T6) recipe
+    .desc = Any (T5) backpack – 1, sturdy hide T3 – 1, basic thread set T1 – 2, Amoeba artifact – 2.
+    .suffix = { ent-ClothingBackpackDuffelSuperStalkerGrayBlueprint.suffix }

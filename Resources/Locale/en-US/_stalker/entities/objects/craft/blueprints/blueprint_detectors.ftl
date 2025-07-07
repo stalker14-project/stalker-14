@@ -8,3 +8,4 @@ ent-STZoneArtifactDetectorSpruceBlueprint = Needle Artifact Detector Recipe
 ent-STZoneArtifactDetectorBarracudaBlueprint = Barracuda Artifact Detector Recipe
 ent-STZoneArtifactDetectorBearBlueprint = Bear Artifact Detector Recipe
 ent-STZoneArtifactDetectorWolfhoundBlueprint = Wolfhound Artifact Detector Recipe
+ent-STZoneArtifactDetectorBushBlueprint = Bush Artifact Detector Recipe

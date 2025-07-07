@@ -15,3 +15,6 @@ ent-STClothingOuterArmorLightPlateVestBasePSZ7rene = PSZ-7 'Fang'
 ent-STClothingOuterArmorSeraphimStrash = "Guardian" Armor Suit
     .desc = An old, battle-worn Bulat suit from the Monolith arsenal, marked by the passage of time and fierce battles. Despite its age, it remains a reliable shield protecting its wearer from the dangers of the Zone. The Seraphim camouflage gives it a unique appearance, while the numerous prayer symbols and sacred charms carefully applied to it make it not just armor, but a true talisman of faith and strength.
     .suffix = ST, T3, PVP, Skin
+ent-STClothingOuterArmorLimaSeraphimStrash = armored suit “Guardian”
+    .desc = An old, battle-worn bulat suit from Monolith’s arsenal, marked by time and fierce battles. Despite its age, it remains a reliable shield protecting its wearer from the dangers of the Zone. The Seraphim camouflage gives it a unique appearance, and numerous prayer signs and sacred charms lovingly applied make it not just armor, but a true talisman of faith and strength... Now in gray!
+    .suffix = ST, T3, PvP

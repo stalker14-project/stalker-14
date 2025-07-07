@@ -9,3 +9,5 @@ ent-STClothingOuterArmorLightPlateVestBaseANAUN = ANA Tactical 'UN'
     .desc = Reliable armor load of armor class 3, accommodating magazines of any size.
 ent-STClothingOuterArmorLightPlateVestBaseANAPilgrim = ANA Tactical 'Pilgrim'
     .desc = Reliable armor load of armor class 3, accommodating magazines of any size, or a bible and censer.
+ent-STClothingOuterArmorLightPlateVestSera = ANA Tactical "Defender"
+    .desc = Reliable 3rd class body armor, a full analog of the "Steppe-4", the only difference is the presence of a chest guard.

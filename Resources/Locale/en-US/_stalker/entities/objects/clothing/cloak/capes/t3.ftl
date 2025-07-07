@@ -48,3 +48,10 @@ ent-ClothingOuterCoatKevlarMercenaries = Mercenary Kevlar Coat
     .desc = Kevlar coat of the mercenaries.
 ent-ClothingHeadHelmetKevlarMercenaries = Mercenary Kevlar Hood
     .desc = Sadly to small to fit over your helmet.
+ent-ClothingOuterCoatLimaSeraphim = Seraphim kevlar coat
+    .desc = A cloak modified for the needs of the Seraphim faction, painted gray.
+    .suffix = ST, T3, Skin
+ent-ClothingHeadHelmetLoyalistCoatLimaSeraphim = Seraphim kevlar hood
+    .desc = It’s kevlar only in name.
+    .suffix = ST, Skin
+

@@ -21,3 +21,6 @@ ent-ClothingMaskNeckFacemaskDS = mask
 ent-STClothingMaskKufei = Seraphim kufei
     .desc = A lightweight fabric designed to be worn on the head and to cover the face in which it is easy to breathe and move actively.
     .suffix = ST, Skin
+ent-STClothingMaskLimaKufei = Seraphim kufiyeh
+    .desc = Lightweight gray cloth for covering the head and face, breathable and suited for active movement.
+    .suffix = ST, Skin

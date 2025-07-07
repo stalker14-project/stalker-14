@@ -14,3 +14,7 @@ ent-ClothingHeadAssaultHelmetDolg = Duty Zenith Helmet
     .desc = Zenith combat helmet of the third class of protection.
 ent-ClothingHeadAssaultHelmetMerc = Mercenary Zenith helmet
     .desc = Zenith combat helmet of the third class of protection.
+ent-ClothingHeadAssaultHelmetSeraZastup = helmet “Zastupnik”
+    .desc = combat helmet “Zenit,” third-class protection, with painted stripes.
+ent-ClothingHeadAssaultHelmetLimaSeraZastup = { ent-ClothingHeadAssaultHelmetSeraZastup }
+    .desc = gray combat helmet “Zenit,” third-class protection, with painted stripes.

@@ -31,3 +31,5 @@ ent-STClothingHeadHelmetHimera = Camouflage Hood
 ent-STClothingCapeT2SerafimPrestige = Seraphim Prestige Cloak
     .desc = Dark green with metal accents
     .suffix = ST, T2, Skin
+ent-STClothingHeadHelmetprestiege = camouflage hood
+    .desc = Covers your head and hides your face… just a bit…

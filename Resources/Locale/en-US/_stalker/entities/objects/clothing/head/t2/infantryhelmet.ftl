@@ -19,3 +19,7 @@ ent-ClothingHeadHelmetKeeper = Guardian Helmet
 ent-ClothingHeadHelmetInfantryMerc = Mercenary "Bastion" helmet
     .desc = "Bastion" helmet of the second class of protection, manufacturer unknown.
     .suffix = ST, T2, Skin
+ent-ClothingHeadHelmetInfantrySera = “Vostok” infantry helmet (Seraphim)
+    .desc = “Vostok” infantry helmet with painted stripes.
+ent-ClothingHeadHelmetInfantrySerasera = { ent-ClothingHeadHelmetInfantrySera }
+    .desc = Gray “Vostok” infantry helmet with painted stripes.
