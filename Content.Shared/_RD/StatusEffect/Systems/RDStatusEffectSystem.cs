@@ -79,7 +79,7 @@ public sealed partial class RDStatusEffectSystem : RDEntitySystem
 
         if (effectComp.Alert is not null)
         {
-            effectComp.EndEffectTime += delta;
+            effectComp.EndEffectTime = (effectComp.EndEffectTime ?? TimeSpan.Zero) + delta;
             _alerts.ShowAlert(
                 effectComp.AppliedTo.Value,
                 effectComp.Alert.Value,

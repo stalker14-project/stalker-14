@@ -2,7 +2,7 @@
   parent: BaseArtifact
   name: Огненный шар
   id: ZoneArtifactFireball
-  suffix: Stalker, Огненый шар
+  suffix: Stalker, Огненный шар
   components:
   - type: Sprite
     state: fireball
@@ -52,7 +52,7 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -1
+        Heat: -0.3
         Cold: -1
     interval: 1
   - type: Armor
@@ -61,7 +61,7 @@
     modifiers:
       coefficients:
         Shock: 1.4
-        Cold: 0.65
+        Cold: 0.7
         Radiation: 1.6
   - type: ClothingSpeedModifier
     walkModifier: 0.95
@@ -88,8 +88,8 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -1.5
-        Cold: -3
+        Heat: -0.8
+        Cold: -2
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -123,7 +123,7 @@
   - type: PersonalDamage
     damage:
       types:
-        Piercing: 0.02
+        Piercing: 0.04
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -152,16 +152,16 @@
     color: "#ff0000"
     castShadows: false
   - type: PersonalDamage
-    staminaDamage: -10
+    staminaDamage: -6
     damage:
       types:
-        Asphyxiation: -5
-        Cold: -3
-        Heat: -3
-        Radiation: -1.5
-        Blunt: -0.08
-        Slash: -0.08
-        Piercing: -0.08
+        Asphyxiation: -2
+        Cold: -2
+        Heat: -1
+        Radiation: -1
+        Blunt: -0.04
+        Slash: -0.04
+        Piercing: -0.04
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -171,7 +171,7 @@
         Compression: 0.5
         Cold: 0.6
         Heat: 0.6
-        Psy: 1.9
+        Psy: 2
   - type: ClothingSpeedModifier
     walkModifier: 1.1
     sprintModifier: 1.1

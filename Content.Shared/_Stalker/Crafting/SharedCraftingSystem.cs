@@ -287,7 +287,6 @@ public sealed class SharedCraftingSystem : EntitySystem
         }
 
         // If all items in dict1 have matching items in dict2, excluding ResultProtos
-        _sawmill.Debug($"Returned {dict1.Keys.Count == dict2.Keys.Except(proto.ResultProtos).Count()}");
         return dict1.Keys.Count == dict2.Keys.Except(proto.ResultProtos).Count();
     }
 
@@ -451,7 +450,7 @@ public sealed class SharedCraftingSystem : EntitySystem
                 if (requiredAmount.Catalyzer)
                     continue;
 
-                RemoveRequiredAmount(container, itemId, requiredAmount.Amount);
+                RemoveRequiredAmount(container, itemId, requiredAmount.Amount, requiredAmount.Tag);
             }
 
             // Spawn and insert result items
@@ -469,14 +468,18 @@ public sealed class SharedCraftingSystem : EntitySystem
     }
 
 
-    private void RemoveRequiredAmount(BaseContainer container, string itemId, int requiredAmount)
+    private void RemoveRequiredAmount(BaseContainer container, string itemId, int requiredAmount, bool tag)
     {
         var remainingToRemove = requiredAmount;
         var entitiesToRemove = new List<(EntityUid Entity, int AmountToRemove)>();
 
         foreach (var entity in container.ContainedEntities)
         {
-            if (GetItemProtoID(entity) != itemId)
+            var shouldSkip = tag
+                ? !_tag.HasTag(entity, itemId)
+                : GetItemProtoID(entity) != itemId;
+
+            if (shouldSkip)
                 continue;
 
             if (TryComp<Stacks.StackComponent>(entity, out var stack))

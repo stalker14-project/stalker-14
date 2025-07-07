@@ -182,3 +182,24 @@
   - type: HideLayerClothing
     slots:
     - Hair
+
+- type: entity
+  parent: ClothingMaskBase
+  id: STClothingMaskLimaKufei
+  name: куфей Серафимов
+  suffix: ST, Скин
+  description: Легкая ткань серого цвета, предназначенная для ношения на голове и для закрытия лица в которой легко дышать и активно двигаться.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/kufei_limasera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/kufei_limasera.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair
+

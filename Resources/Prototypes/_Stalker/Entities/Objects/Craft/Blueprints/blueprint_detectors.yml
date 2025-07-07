@@ -24,19 +24,11 @@
 
 - type: entity
   parent: STBaseBlueprint
-  id: STZoneArtifactDetectorPulseBlueprint
-  name: Рецепт Детектора артефактов "Пульс"
+  id: STZoneArtifactDetectorBushBlueprint
+  name: Рецепт Детектора артефактов "Куст"
   components:
     - type: STBlueprint
-      blueprint: recipeZoneArtifactDetectorPulse
-
-- type: entity
-  parent: STBaseBlueprint
-  id: STZoneArtifactDetectorHunterBlueprint
-  name: Рецепт Детектора артефактов "Охотник"
-  components:
-    - type: STBlueprint
-      blueprint: recipeZoneArtifactDetectorHunter
+      blueprint: recipeZoneArtifactDetectorBush
 
 - type: entity
   parent: STBaseBlueprint
@@ -77,3 +69,4 @@
   components:
     - type: STBlueprint
       blueprint: recipeZoneArtifactDetectorWolfhound
+

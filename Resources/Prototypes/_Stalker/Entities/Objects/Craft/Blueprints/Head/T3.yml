@@ -1,6 +1,6 @@
 - type: entity
   parent: STBaseBlueprint
-  id:   ClothingHeadAssaultHelmetBlueprint
+  id: ClothingHeadAssaultHelmetBlueprint
   name: Рецепт штурмового шлема
   components:
     - type: STBlueprint
@@ -13,3 +13,28 @@
   components:
     - type: STBlueprint
       blueprint: newrecipeSTClothingHeadHelmetMakeshiftTacticalT3
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingHeadHelmetVityaz1CBlueprint
+  name: Рецепт шлема "Витязь 1С"
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingHeadHelmetVityaz1C
+
+- type: entity
+  parent: STBaseBlueprint
+  id: STClothingHeadHelmetSeraphimAltinBlueprint
+  name: Рецепт бронешлема «Страж»
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeSTClothingHeadHelmetSeraphimAltin
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingHeadAssaultHelmetDeserterBlueprint
+  name: Рецепт бронешлема «Страж»
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingHeadAssaultHelmetDeserter
+

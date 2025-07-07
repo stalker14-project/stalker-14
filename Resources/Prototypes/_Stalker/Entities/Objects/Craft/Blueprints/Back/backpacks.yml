@@ -1,0 +1,101 @@
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackDuffelCommonStalkerBlueprint
+  name: Рецепт армейского рюкзака (Т3)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingBackpackDuffelCommonStalker
+
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackDuffelMilitaryOliveBlueprint
+  name: Рецепт темно-зеленного армейского рюкзака (Т4)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingBackpackDuffelMilitaryOlive
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackDuffelBlackMilitaryTacticStalkerBlueprint
+  name: Рецепт черного армейского рюкзака (Т4)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingBackpackDuffelBlackMilitaryTacticStalker
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackDuffelMilitaryBlueBlueprint
+  name: Рецепт синего армейского рюкзака (Т4)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingBackpackDuffelMilitaryBlue
+
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackDuffelHikingVSRFBlueprint
+  name: Рецепт походного рюкзака (Т4)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingBackpackDuffelHikingVSRF
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackDuffelOliveTacticStalkerBlueprint
+  name: Рецепт оливкового армейского тактического рюкзака (Т4)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingBackpackDuffelOliveTacticStalker
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingBackpackDuffelBlackTacticStalkerBlueprint
+  name: Рецепт черного армейского тактического рюкзака (Т4)
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingBackpackDuffelBlackTacticStalker
+
+# Псевдо чертеж. Короче, чтобы не делать для каждый крафт для одно предмета, в котором используеться один и тот же объект но с разным рескином нужно, использовать теги. Но увы, в ванили такой хуйни, это поэтому такие уостыли.
+
+- type: entity
+  parent: BaseItem
+  name: Рецепт проффесионаольного серого рюкзака (Т5)
+  description: Любой рюкзак (т4) - 1шт, шкура Т2 - 5шт, набор базовых ниток T1 - 2шт, артефакт выверт - 3шт.
+  id: ClothingBackpackDuffelSuperStalkerGrayBlueprint
+  suffix: ST, крафт
+  components:
+    - type: Sprite
+      state: blueprint
+      sprite: _Stalker/Objects/Craft/blueprint.rsi
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+
+- type: entity
+  parent: BaseItem
+  name: Рецепт проффесионаольного зеленого рюкзака (Т5)
+  description: Любой рюкзак (т4) - 1шт, шкура Т2 - 5шт, набор базовых ниток T1 - 2шт, артефакт выверт - 3шт.
+  id: ClothingBackpackDuffelSuperStalkerBlueprint
+  suffix: ST, крафт
+  components:
+    - type: Sprite
+      state: blueprint
+      sprite: _Stalker/Objects/Craft/blueprint.rsi
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+
+- type: entity
+  parent: BaseItem
+  name: Рецепт проффесионального рюкзака (Т6)
+  description: Любой рюкзак (т5) - 1шт, крепкая шкура T3 - 1шт, набор базовых ниток T1 - 2шт, артефакт Амёба - 2шт.
+  id: ClothingBackpackDuffelRareStalkerBlueprint
+  suffix: ST, крафт
+  components:
+    - type: Sprite
+      state: blueprint
+      sprite: _Stalker/Objects/Craft/blueprint.rsi
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты

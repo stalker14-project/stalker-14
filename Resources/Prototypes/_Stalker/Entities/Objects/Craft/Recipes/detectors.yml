@@ -13,9 +13,14 @@
       catalyzer: true
     STCraftBasicPCBT1:
       amount: 1
-    STCraftPlasticFittingT1:
+    STCraftPlasticFittingT2:
+      amount: 2
+    STCraftCapacitor:
+      amount: 2
+    STCraftGlassT2:
       amount: 1
-
+    STCraftBattery:
+      amount: 1
 
 - type: craftRecipe
   id: newrecipeDetectorAD2
@@ -28,9 +33,13 @@
       catalyzer: true
     STCraftStandardPCBT2:
       amount: 1
-    STCraftPlasticFittingT1:
-      amount: 1
+    STCraftPlasticFittingT2:
+      amount: 2
     ZoneAnomalyDetectorAD1:
+      amount: 1
+    STCraftGlassT2:
+      amount: 1
+    STCraftCoil:
       amount: 1
 
 - type: craftRecipe
@@ -43,41 +52,32 @@
       amount: 1
       catalyzer: true
     STCraftStandardPCBT2:
-      amount: 2
-    STCraftPlasticFittingT3:
       amount: 1
     ZoneAnomalyDetectorAD2:
       amount: 1
     ZoneArtifactBattery:
       amount: 1
+    STCraftTransformer:
+      amount: 1
 
 # Детекторы Артефактов
-
 - type: craftRecipe
-  id: recipeZoneArtifactDetectorPulse
+  id: recipeZoneArtifactDetectorBush
   resultProtos:
-    - ZoneArtifactDetectorPulse
+    - ZoneArtifactDetectorBush
   craftTime: 0.3
   items:
-    STZoneArtifactDetectorPulseBlueprint:
+    STZoneArtifactDetectorBushBlueprint:
       amount: 1
       catalyzer: true
-    STCraftBasicPCBT1:
+    STCraftBattery:
       amount: 1
-    STCraftSheetCopperT1:
+    STCraftCapacitor:
+      amount: 2
+    STCraftGlassT2:
       amount: 1
-
-- type: craftRecipe
-  id: recipeZoneArtifactDetectorHunter
-  resultProtos:
-    - ZoneArtifactDetectorHunter
-  craftTime: 1
-  items:
-    STZoneArtifactDetectorHunterBlueprint:
-      amount: 1
-      catalyzer: true
-    ZoneArtifactDetectorPulse:
-      amount: 1
+    STCraftPlasticFittingT2:
+      amount: 4
     STCraftBasicPCBT1:
       amount: 1
 
@@ -90,11 +90,13 @@
     STZoneArtifactDetectorResponseBlueprint:
       amount: 1
       catalyzer: true
-    ZoneArtifactDetectorHunter:
+    ZoneArtifactDetectorBush:
       amount: 1
-    STCraftPlasticFittingT1:
+    STCraftPlasticFittingT2:
+      amount: 2
+    STCraftCoil:
       amount: 1
-    STCraftStandardPCBT2:
+    STCraftBasicPCBT1:
       amount: 1
 
 - type: craftRecipe
@@ -108,11 +110,11 @@
       catalyzer: true
     ZoneArtifactDetectorResponse:
       amount: 1
-    STCraftSheetBrassT3:
-      amount: 1
+    STCraftSheetIronT2:
+      amount: 2
     STCraftTapeKitT2:
       amount: 1
-    STCraftBasicPCBT1:
+    STCraftStandardPCBT2:
       amount: 1
 
 - type: craftRecipe
@@ -126,13 +128,13 @@
       catalyzer: true
     ZoneArtifactDetectorSpruce:
       amount: 1
-    STCraftSheetBrassT3:
-      amount: 1
-    STCraftMultilayerPCBT3:
-      amount: 1
     STCraftGlassT2:
       amount: 1
     STCraftPlasticFittingT2:
+      amount: 2
+    STCraftCoil:
+      amount: 1
+    ZoneArtifactBattery:
       amount: 1
 
 - type: craftRecipe
@@ -154,12 +156,12 @@
       amount: 1
     STCraftGlueKitT3:
       amount: 1
-    STCraftStandardPCBT2:
-      amount: 1
-    STCraftGlassT2:
+    STCraftQuartzCrystalT3:
       amount: 2
     STCraftPlasticFittingT2:
-      amount: 1
+      amount: 2
+    STCraftCapacitor:
+      amount: 2
 
 - type: craftRecipe
   id: recipeZoneArtifactDetectorWolfhound
@@ -180,6 +182,10 @@
       amount: 1
     ZoneArtifactNightStar:
       amount: 1
+    STCraftTransformer:
+      amount: 1
+    STCraftQuartzCrystalT3:
+      amount: 1
 
 # Металлоискатели
 
@@ -198,6 +204,8 @@
       amount: 1
     STCraftBasicPCBT1:
       amount: 1
+    STCraftCapacitor:
+      amount: 2
 
 - type: craftRecipe
   id: recipeTrashDetectorTier3
@@ -207,16 +215,15 @@
   items:
     TrashDetectorTier3Blueprint:
       amount: 1
-
       catalyzer: true
     TrashDetectorTier2:
-      amount: 1
-    STCraftPlasticFittingT1:
       amount: 1
     STCraftPlasticFittingT2:
       amount: 1
     STCraftStandardPCBT2:
       amount: 1
+    STCraftCapacitor:
+      amount: 2
 
 - type: craftRecipe
   id: recipeTrashDetectorTier4
@@ -230,14 +237,16 @@
     TrashDetectorTier3:
       amount: 1
     STCraftPlasticFittingT2:
-      amount: 1
-    STCraftPlasticFittingT3:
-      amount: 1
+      amount: 2
     STCraftMultilayerPCBT3:
       amount: 1
-    STCraftBasicThreadKitT1:
-      amount: 1
+    STCraftTapeKitT2:
+      amount: 2
     ZoneArtifactVyvert:
+      amount: 1
+    STCraftSheetCopperT1:
+      amount: 2
+    STCraftCoil:
       amount: 1
 
 - type: craftRecipe
@@ -251,10 +260,14 @@
       catalyzer: true
     TrashDetectorTier4:
       amount: 1
-    STCraftPlasticFittingT4:
-      amount: 1
+    STCraftPlasticFittingT2:
+      amount: 5
     STCraftHighPerformanceChipT4:
       amount: 1
-    ZoneArtifactVyvert:
-      amount: 3
+    ZoneArtifactAmoeba:
+      amount: 1
+    STCraftSheetIronT2:
+      amount: 1
+    STCraftTransformer:
+      amount: 1
 

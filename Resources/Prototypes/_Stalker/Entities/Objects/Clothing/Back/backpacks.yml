@@ -190,6 +190,15 @@
 # Tier - 4
 
 - type: entity
+  parent: ClothingBackpackTacticBase
+  id: STClothingBackpackT4
+  name: Тегавая хуйня НЕ СПАВНИТЬ
+  description: Тегавая хуйня НЕ СПАВНИТЬ
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/backpacks/Hiking/hiking_neutral.rsi
+
+- type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelMilitaryBlue
   name: Синий армейский рюкзак
@@ -201,8 +210,9 @@
   - type: Storage #55 клеток 56
     grid:
     - 0,0,7,6
-
-
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
 
 - type: entity
   parent: STClothingBackBase
@@ -216,7 +226,9 @@
   - type: Storage #55 клеток 56
     grid:
     - 0,0,7,6
-
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
 
 - type: entity
   parent: STClothingBackBase
@@ -230,8 +242,9 @@
   - type: Storage #55 клеток 56
     grid:
     - 0,0,7,6
-
-
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
 
 - type: entity
   parent: STClothingBackBase
@@ -245,6 +258,9 @@
   - type: Storage #54 клеток 56 бы
     grid:
     - 0,0,7,6
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
 
 - type: entity
   parent: ClothingBackpackDuffelHikingVSRF
@@ -255,8 +271,6 @@
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Hiking/common.rsi
-
-
 
 - type: entity
   parent: STClothingBackBase
@@ -270,6 +284,9 @@
   - type: Storage #56 клеток
     grid:
     - 0,0,7,6
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
 
 - type: entity
   parent: STClothingBackBase
@@ -283,8 +300,25 @@
   - type: Storage #56 клеток
     grid:
     - 0,0,7,6
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
 
-# Tier - 4.5
+# Tier - 5
+
+- type: entity
+  parent: STClothingBackBase
+  id: STClothingBackpackT5
+  name: Тегавая хуйня НЕ СПАВНИТЬ
+  description: Тегавая хуйня НЕ СПАВНИТЬ
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/backpack-green.rsi
+  - type: Storage
+    grid:
+    - 0,0,7,7 #66 клеток 64 смог
+
 
 - type: entity
   parent: STClothingBackBase
@@ -298,6 +332,9 @@
   - type: Storage
     grid:
     - 0,0,7,7 #66 клеток 64 смог
+  - type: Tag
+    tags:
+    - STClothingBackpackT5
 
 - type: entity
   parent: STClothingBackBase
@@ -311,8 +348,11 @@
   - type: Storage
     grid:
     - 0,0,7,7 #66 клеток 64 смог
+  - type: Tag
+    tags:
+    - STClothingBackpackT5
 
-# Tier - 5
+# Tier - 6
 
 - type: entity
   parent: STClothingBackBase

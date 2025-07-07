@@ -8,7 +8,7 @@
 
 - type: entity
   parent: STBaseBlueprint
-  id:   ClothingOuterArmorAborigineStalkerBlueprint
+  id: ClothingOuterArmorAborigineStalkerBlueprint
   name: Рецепт бронекостюма Туземец
   components:
     - type: STBlueprint
@@ -16,8 +16,40 @@
 
 - type: entity
   parent: STBaseBlueprint
-  id:   STClothingOuterArmorLightPlateVestBasePSZ7Blueprint
+  id: STClothingOuterArmorLightPlateVestBasePSZ7Blueprint
   name: Рецепт ПСЗ-7
   components:
     - type: STBlueprint
       blueprint: newrecipeSTClothingOuterArmorLightPlateVestBasePSZ7
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingOuterArmorSevaStalkerBlueprint
+  name: Рецепт костюма "Сева"
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingOuterArmorSevaStalker
+
+- type: entity
+  parent: STBaseBlueprint
+  id: STClothingOuterArmorLightPlateVestBaseANAgrayBlueprint
+  name: Рецепт бронеразгрузки «Степь-4»
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeSTClothingOuterArmorLightPlateVestBaseANAgray
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingOuterArmorStalkerBlueprint
+  name: Рецепт бронеразгрузки «Барсук»
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingOuterArmorStalker
+
+- type: entity
+  parent: STBaseBlueprint
+  id: STClothingOuterArmorSeraphimStrashBlueprint
+  name: Рецепт бронекостюма «Страж»
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeSTClothingOuterArmorSeraphimStrash

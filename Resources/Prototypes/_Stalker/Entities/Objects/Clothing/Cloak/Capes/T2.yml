@@ -239,6 +239,19 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/Sera_/cape_serafim_prestige.rsi
   - type: ToggleableClothing
-    clothingPrototype: STClothingHeadHelmetSerafim
+    clothingPrototype: STClothingHeadHelmetprestiege
 
-
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadHelmetprestiege
+  name: камуфляжный капюшон
+  noSpawn: true
+  description: Покрывает вашу голову и скрывает лицо... чуть-чуть...
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_prestiege.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_prestiege.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
