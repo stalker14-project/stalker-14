@@ -303,12 +303,14 @@
       - state: inhand-right
   - type: Healing
     damage:
+      groups:
+        Brute: -60
+        Burn: -70
+        Airloss: -25
       types:
-        Piercing: -10
-        Blunt: -5
-        Slash: -10
-        Radiation: -10
-    delay: 6
+        Compression: -10
+    ModifyBloodLevel: 15
+    bloodlossModifier: -3
   - type: Stack
     stackType: MedkitAI2
     count: 4
@@ -371,11 +373,14 @@
       - state: inhand-right
   - type: Healing
     damage:
+      groups:
+        Brute: -120
+        Burn: -120
+        Airloss: -30
       types:
-        Piercing: -20
-        Blunt: -10
-        Slash: -20
-    delay: 8
+        Compression: -55
+    ModifyBloodLevel: 25
+    bloodlossModifier: -4
   - type: Stack
     stackType: MedkitMilitary
     count: 4
@@ -412,12 +417,16 @@
       - state: inhand-right
   - type: Healing
     damage:
+      groups:
+        Brute: -150
+        Burn: -245
+        Airloss: -90
+        Toxin: -300
       types:
-        Heat: -15
-        Caustic: -15
-        Shock: -15
-        Radiation: -20
-    delay: 9
+        Compression: -100
+        Psy: -80
+    ModifyBloodLevel: 35
+    bloodlossModifier: -8
   - type: Stack
     stackType: MedkitScience
     count: 4
@@ -459,10 +468,16 @@
     damageContainers:
       - Biological
     damage:
+      groups:
+        Brute: -300
+        Burn: -500
+        Airloss: -200
+        Toxin: -500
       types:
-        Poison: -30
-        Radiation: -40
-    delay: 9
+        Compression: -300
+        Psy: -200
+    ModifyBloodLevel: 30
+    bloodlossModifier: -20
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
@@ -508,13 +523,13 @@
     damageContainers:
       - Biological
     damage:
-      types:
-        Poison: -15
-        Compression: -15
-        Heat: -25
-        Caustic: -25
-        Shock: -25
-    delay: 9
+      groups:
+        Brute: -500
+        Burn: -800
+        Airloss: -300
+        Toxin: 5
+    ModifyBloodLevel: 50
+    bloodlossModifier: -50
     healingBeginSound:
       path: "/Audio/Items/Medical/brutepack_begin.ogg"
     healingEndSound:
