@@ -44028,13 +44028,6 @@ entities:
     - type: Transform
       pos: -17.396051,-107.148094
       parent: 1
-- proto: BlinddogPackTrigger100
-  entities:
-  - uid: 9062
-    components:
-    - type: Transform
-      pos: -20.5,-17.5
-      parent: 1
 - proto: boatStalker2
   entities:
   - uid: 63
@@ -45583,60 +45576,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -99.5,-92.5
-      parent: 1
-- proto: FireFlyGreenTrigger
-  entities:
-  - uid: 291
-    components:
-    - type: Transform
-      pos: -46.5,-99.5
-      parent: 1
-  - uid: 292
-    components:
-    - type: Transform
-      pos: -107.5,-71.5
-      parent: 1
-  - uid: 293
-    components:
-    - type: Transform
-      pos: -63.5,-29.5
-      parent: 1
-  - uid: 294
-    components:
-    - type: Transform
-      pos: -41.5,-42.5
-      parent: 1
-  - uid: 295
-    components:
-    - type: Transform
-      pos: -19.5,-35.5
-      parent: 1
-  - uid: 296
-    components:
-    - type: Transform
-      pos: -11.5,-57.5
-      parent: 1
-  - uid: 297
-    components:
-    - type: Transform
-      pos: -28.5,-78.5
-      parent: 1
-  - uid: 298
-    components:
-    - type: Transform
-      pos: -87.5,-36.5
-      parent: 1
-- proto: FireFlyYellowTrigger
-  entities:
-  - uid: 299
-    components:
-    - type: Transform
-      pos: -54.5,-110.5
-      parent: 1
-  - uid: 300
-    components:
-    - type: Transform
-      pos: -44.5,-104.5
       parent: 1
 - proto: FloorWaterEntityStalker2
   entities:
@@ -79326,13 +79265,6 @@ entities:
       parent: 1
     missingComponents:
     - Item
-- proto: Kover3
-  entities:
-  - uid: 6872
-    components:
-    - type: Transform
-      pos: -21.5,-22.5
-      parent: 1
 - proto: kuvshinki
   entities:
   - uid: 197
@@ -82347,8 +82279,10 @@ entities:
     - type: Transform
       pos: -81.5,-89.5
       parent: 1
-    missingComponents:
-    - Fixtures
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
 - proto: StalkerCargoHead2
   entities:
   - uid: 7514
@@ -84492,78 +84426,109 @@ entities:
     - type: Transform
       pos: -19.5,-74.5
       parent: 1
+- proto: STCarpetSmall3
+  entities:
+  - uid: 6872
+    components:
+    - type: Transform
+      pos: -21.5,-22.5
+      parent: 1
 - proto: STChairWood
   entities:
   - uid: 156
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -85.71697,-97.42738
+      pos: -85.5,-97.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 179
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -123.7363,-112.3319
+      pos: -123.5,-112.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 7017
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -76.259224,-84.48525
+      pos: -76.5,-84.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 7508
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -75.32154,-85.29304
+      pos: -75.5,-85.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 7539
     components:
     - type: Transform
-      pos: -91.42697,-84.29814
+      pos: -91.5,-84.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 8447
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -121.68504,-105.07894
+      pos: -121.5,-105.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 8915
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: -87.62695,-131.43185
+      pos: -87.5,-131.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 9141
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -89.35848,-130.50412
+      pos: -89.5,-130.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 9146
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -87.72694,-128.44315
+      pos: -87.5,-128.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 9249
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -77.5,-130.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 9270
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -83.48919,-126.22275
+      pos: -83.5,-126.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 9273
     components:
     - type: Transform
-      pos: -77.46766,-126.53547
+      pos: -77.5,-126.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: STClockworkGrille
   entities:
   - uid: 9160
@@ -86436,183 +86401,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -74.5,-84.5
       parent: 1
-- proto: STHiddenCacheT1Spawner
-  entities:
-  - uid: 7429
-    components:
-    - type: Transform
-      pos: -88.5,-39.5
-      parent: 1
-  - uid: 7430
-    components:
-    - type: Transform
-      pos: -93.5,-55.5
-      parent: 1
-  - uid: 7431
-    components:
-    - type: Transform
-      pos: -99.5,-65.5
-      parent: 1
-  - uid: 7433
-    components:
-    - type: Transform
-      pos: -111.5,-86.5
-      parent: 1
-  - uid: 7434
-    components:
-    - type: Transform
-      pos: -131.5,-86.5
-      parent: 1
-  - uid: 7436
-    components:
-    - type: Transform
-      pos: -66.5,-109.5
-      parent: 1
-  - uid: 7437
-    components:
-    - type: Transform
-      pos: 9.5,-101.5
-      parent: 1
-  - uid: 7438
-    components:
-    - type: Transform
-      pos: 5.5,-110.5
-      parent: 1
-  - uid: 7439
-    components:
-    - type: Transform
-      pos: -10.5,-101.5
-      parent: 1
-  - uid: 7440
-    components:
-    - type: Transform
-      pos: -15.5,-108.5
-      parent: 1
-  - uid: 7441
-    components:
-    - type: Transform
-      pos: -43.5,-106.5
-      parent: 1
-  - uid: 7442
-    components:
-    - type: Transform
-      pos: -51.5,-104.5
-      parent: 1
-  - uid: 7443
-    components:
-    - type: Transform
-      pos: -51.5,-107.5
-      parent: 1
-  - uid: 7444
-    components:
-    - type: Transform
-      pos: -40.5,-64.5
-      parent: 1
-  - uid: 7445
-    components:
-    - type: Transform
-      pos: -72.5,-61.5
-      parent: 1
-  - uid: 7446
-    components:
-    - type: Transform
-      pos: -85.5,-36.5
-      parent: 1
-  - uid: 7447
-    components:
-    - type: Transform
-      pos: -78.5,-27.5
-      parent: 1
-  - uid: 7448
-    components:
-    - type: Transform
-      pos: -77.5,-6.5
-      parent: 1
-  - uid: 7449
-    components:
-    - type: Transform
-      pos: -67.5,-4.5
-      parent: 1
-  - uid: 7450
-    components:
-    - type: Transform
-      pos: -61.5,-7.5
-      parent: 1
-  - uid: 7451
-    components:
-    - type: Transform
-      pos: -47.5,-17.5
-      parent: 1
-  - uid: 7452
-    components:
-    - type: Transform
-      pos: -36.5,-19.5
-      parent: 1
-  - uid: 7453
-    components:
-    - type: Transform
-      pos: -30.5,-20.5
-      parent: 1
-  - uid: 7454
-    components:
-    - type: Transform
-      pos: -33.5,-28.5
-      parent: 1
-  - uid: 7455
-    components:
-    - type: Transform
-      pos: -27.5,-31.5
-      parent: 1
-  - uid: 7456
-    components:
-    - type: Transform
-      pos: -28.5,-38.5
-      parent: 1
-  - uid: 7457
-    components:
-    - type: Transform
-      pos: -36.5,-39.5
-      parent: 1
-  - uid: 7458
-    components:
-    - type: Transform
-      pos: -38.5,-45.5
-      parent: 1
-  - uid: 7459
-    components:
-    - type: Transform
-      pos: -27.5,-49.5
-      parent: 1
-  - uid: 7460
-    components:
-    - type: Transform
-      pos: -27.5,-55.5
-      parent: 1
-  - uid: 7461
-    components:
-    - type: Transform
-      pos: -17.5,-53.5
-      parent: 1
-  - uid: 7462
-    components:
-    - type: Transform
-      pos: -17.5,-41.5
-      parent: 1
-  - uid: 7463
-    components:
-    - type: Transform
-      pos: -7.5,-51.5
-      parent: 1
-  - uid: 7464
-    components:
-    - type: Transform
-      pos: -4.5,-38.5
-      parent: 1
-  - uid: 7465
-    components:
-    - type: Transform
-      pos: -12.5,-32.5
-      parent: 1
 - proto: STMatrassBedBase
   entities:
   - uid: 7019
@@ -86739,310 +86527,6 @@ entities:
     components:
     - type: Transform
       pos: 19.004585,-104.74046
-      parent: 1
-- proto: STTrashT1CacheSpawner
-  entities:
-  - uid: 65
-    components:
-    - type: Transform
-      pos: -35.5,-40.5
-      parent: 1
-  - uid: 66
-    components:
-    - type: Transform
-      pos: -34.5,-40.5
-      parent: 1
-  - uid: 67
-    components:
-    - type: Transform
-      pos: -42.5,-28.5
-      parent: 1
-  - uid: 68
-    components:
-    - type: Transform
-      pos: -55.5,-43.5
-      parent: 1
-  - uid: 69
-    components:
-    - type: Transform
-      pos: -53.5,-39.5
-      parent: 1
-  - uid: 70
-    components:
-    - type: Transform
-      pos: -78.5,-36.5
-      parent: 1
-  - uid: 71
-    components:
-    - type: Transform
-      pos: -90.5,-55.5
-      parent: 1
-  - uid: 72
-    components:
-    - type: Transform
-      pos: -87.5,-68.5
-      parent: 1
-  - uid: 73
-    components:
-    - type: Transform
-      pos: -85.5,-62.5
-      parent: 1
-  - uid: 74
-    components:
-    - type: Transform
-      pos: -41.5,-89.5
-      parent: 1
-  - uid: 75
-    components:
-    - type: Transform
-      pos: -26.5,-101.5
-      parent: 1
-  - uid: 79
-    components:
-    - type: Transform
-      pos: -32.5,-40.5
-      parent: 1
-  - uid: 148
-    components:
-    - type: Transform
-      pos: -17.5,-34.5
-      parent: 1
-  - uid: 149
-    components:
-    - type: Transform
-      pos: -16.5,-37.5
-      parent: 1
-  - uid: 150
-    components:
-    - type: Transform
-      pos: -25.5,-23.5
-      parent: 1
-  - uid: 7405
-    components:
-    - type: Transform
-      pos: -22.5,-22.5
-      parent: 1
-  - uid: 7406
-    components:
-    - type: Transform
-      pos: -21.5,-24.5
-      parent: 1
-  - uid: 7407
-    components:
-    - type: Transform
-      pos: -38.5,-10.5
-      parent: 1
-  - uid: 7419
-    components:
-    - type: Transform
-      pos: -41.5,-83.5
-      parent: 1
-  - uid: 9060
-    components:
-    - type: Transform
-      pos: -99.5,-112.5
-      parent: 1
-  - uid: 9061
-    components:
-    - type: Transform
-      pos: -46.5,-93.5
-      parent: 1
-- proto: STTriggerBlindDog1210
-  entities:
-  - uid: 9072
-    components:
-    - type: Transform
-      pos: -30.5,-89.5
-      parent: 1
-  - uid: 9073
-    components:
-    - type: Transform
-      pos: -52.5,-60.5
-      parent: 1
-  - uid: 9074
-    components:
-    - type: Transform
-      pos: -78.5,-58.5
-      parent: 1
-- proto: STTriggerBlindDog1420
-  entities:
-  - uid: 9075
-    components:
-    - type: Transform
-      pos: -43.5,-12.5
-      parent: 1
-- proto: STTriggerBoar1420
-  entities:
-  - uid: 9085
-    components:
-    - type: Transform
-      pos: -19.5,-49.5
-      parent: 1
-  - uid: 9086
-    components:
-    - type: Transform
-      pos: -7.5,-46.5
-      parent: 1
-  - uid: 9087
-    components:
-    - type: Transform
-      pos: -8.5,-40.5
-      parent: 1
-  - uid: 9088
-    components:
-    - type: Transform
-      pos: -14.5,-27.5
-      parent: 1
-  - uid: 9089
-    components:
-    - type: Transform
-      pos: -9.5,-56.5
-      parent: 1
-  - uid: 9090
-    components:
-    - type: Transform
-      pos: -15.5,-66.5
-      parent: 1
-  - uid: 9091
-    components:
-    - type: Transform
-      pos: -40.5,-59.5
-      parent: 1
-  - uid: 9092
-    components:
-    - type: Transform
-      pos: -27.5,-51.5
-      parent: 1
-  - uid: 9093
-    components:
-    - type: Transform
-      pos: -36.5,-45.5
-      parent: 1
-  - uid: 9094
-    components:
-    - type: Transform
-      pos: -26.5,-40.5
-      parent: 1
-- proto: STTriggerFlesh1210
-  entities:
-  - uid: 9095
-    components:
-    - type: Transform
-      pos: -36.5,-3.5
-      parent: 1
-  - uid: 9096
-    components:
-    - type: Transform
-      pos: -23.5,-4.5
-      parent: 1
-  - uid: 9098
-    components:
-    - type: Transform
-      pos: -79.5,-112.5
-      parent: 1
-- proto: STTriggerFlesh12100
-  entities:
-  - uid: 9097
-    components:
-    - type: Transform
-      pos: -6.5,2.5
-      parent: 1
-  - uid: 9099
-    components:
-    - type: Transform
-      pos: -116.5,-111.5
-      parent: 1
-- proto: STTriggerFlesh14100
-  entities:
-  - uid: 9100
-    components:
-    - type: Transform
-      pos: -47.5,-29.5
-      parent: 1
-- proto: STTriggerFlesh1420
-  entities:
-  - uid: 9077
-    components:
-    - type: Transform
-      pos: -105.5,-93.5
-      parent: 1
-  - uid: 9078
-    components:
-    - type: Transform
-      pos: -47.5,-107.5
-      parent: 1
-  - uid: 9079
-    components:
-    - type: Transform
-      pos: -10.5,-99.5
-      parent: 1
-  - uid: 9080
-    components:
-    - type: Transform
-      pos: -28.5,-74.5
-      parent: 1
-  - uid: 9081
-    components:
-    - type: Transform
-      pos: -61.5,-45.5
-      parent: 1
-  - uid: 9082
-    components:
-    - type: Transform
-      pos: -76.5,-26.5
-      parent: 1
-  - uid: 9083
-    components:
-    - type: Transform
-      pos: -73.5,-3.5
-      parent: 1
-  - uid: 9084
-    components:
-    - type: Transform
-      pos: -35.5,-31.5
-      parent: 1
-- proto: STTriggerFleshNeutral12100
-  entities:
-  - uid: 9076
-    components:
-    - type: Transform
-      pos: -60.5,-84.5
-      parent: 1
-- proto: STTriggerRat12100
-  entities:
-  - uid: 9063
-    components:
-    - type: Transform
-      pos: -10.5,-85.5
-      parent: 1
-  - uid: 9064
-    components:
-    - type: Transform
-      pos: -42.5,-87.5
-      parent: 1
-  - uid: 9066
-    components:
-    - type: Transform
-      pos: -59.5,-21.5
-      parent: 1
-- proto: STTriggerRat14100
-  entities:
-  - uid: 9065
-    components:
-    - type: Transform
-      pos: -38.5,-38.5
-      parent: 1
-- proto: STTriggerRat1420
-  entities:
-  - uid: 9067
-    components:
-    - type: Transform
-      pos: -92.5,-14.5
-      parent: 1
-  - uid: 9068
-    components:
-    - type: Transform
-      pos: -82.5,-62.5
       parent: 1
 - proto: STWallRockBasalt
   entities:
@@ -87290,6 +86774,61 @@ entities:
     components:
     - type: Transform
       pos: -62.5,-110.5
+      parent: 1
+  - uid: 9315
+    components:
+    - type: Transform
+      pos: -97.5,-122.5
+      parent: 1
+  - uid: 9317
+    components:
+    - type: Transform
+      pos: -97.5,-123.5
+      parent: 1
+  - uid: 9321
+    components:
+    - type: Transform
+      pos: -96.5,-120.5
+      parent: 1
+  - uid: 9322
+    components:
+    - type: Transform
+      pos: -95.5,-120.5
+      parent: 1
+  - uid: 9328
+    components:
+    - type: Transform
+      pos: -88.5,-120.5
+      parent: 1
+  - uid: 9329
+    components:
+    - type: Transform
+      pos: -87.5,-120.5
+      parent: 1
+  - uid: 9330
+    components:
+    - type: Transform
+      pos: -86.5,-120.5
+      parent: 1
+  - uid: 9334
+    components:
+    - type: Transform
+      pos: -85.5,-123.5
+      parent: 1
+  - uid: 9335
+    components:
+    - type: Transform
+      pos: -85.5,-124.5
+      parent: 1
+  - uid: 9336
+    components:
+    - type: Transform
+      pos: -85.5,-122.5
+      parent: 1
+  - uid: 9338
+    components:
+    - type: Transform
+      pos: -85.5,-126.5
       parent: 1
 - proto: STWindow
   entities:
@@ -88448,63 +87987,6 @@ entities:
     components:
     - type: Transform
       pos: -136.5,-93.5
-      parent: 1
-- proto: WallRockBasalt
-  entities:
-  - uid: 9315
-    components:
-    - type: Transform
-      pos: -97.5,-122.5
-      parent: 1
-  - uid: 9317
-    components:
-    - type: Transform
-      pos: -97.5,-123.5
-      parent: 1
-  - uid: 9321
-    components:
-    - type: Transform
-      pos: -96.5,-120.5
-      parent: 1
-  - uid: 9322
-    components:
-    - type: Transform
-      pos: -95.5,-120.5
-      parent: 1
-  - uid: 9328
-    components:
-    - type: Transform
-      pos: -88.5,-120.5
-      parent: 1
-  - uid: 9329
-    components:
-    - type: Transform
-      pos: -87.5,-120.5
-      parent: 1
-  - uid: 9330
-    components:
-    - type: Transform
-      pos: -86.5,-120.5
-      parent: 1
-  - uid: 9334
-    components:
-    - type: Transform
-      pos: -85.5,-123.5
-      parent: 1
-  - uid: 9335
-    components:
-    - type: Transform
-      pos: -85.5,-124.5
-      parent: 1
-  - uid: 9336
-    components:
-    - type: Transform
-      pos: -85.5,-122.5
-      parent: 1
-  - uid: 9338
-    components:
-    - type: Transform
-      pos: -85.5,-126.5
       parent: 1
 - proto: WallRockBasaltDestructible
   entities:
