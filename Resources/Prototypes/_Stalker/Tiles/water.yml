@@ -21,7 +21,7 @@
   - type: SolutionContainerManager
     solutions:
       pool:
-        maxVol: 200 #.inf seems to break the whole yaml file, but would definitely be preferable. 
+        maxVol: 200 #.inf seems to break the whole yaml file, but would definitely be preferable.
         reagents:
         - ReagentId: STToxicWater
           Quantity: 200
@@ -44,6 +44,19 @@
           - ItemMask
         density: 1000
         hard: false
+      # Goobstation - fishing
+      fishing:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        - ItemMask
+        density: 1000
+        hard: false
+      # Goobstation - fishing
   - type: FootstepModifier
     footstepSoundCollection:
       collection: STFootstepWater
@@ -58,6 +71,13 @@
   - type: TileEntityEffect
     effects:
     - !type:ExtinguishReaction
+    # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTable
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 
 - type: entity
   parent: STFloorWaterEntity
