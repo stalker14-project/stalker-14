@@ -121,6 +121,19 @@
     - id: ZoneArtifactBattery
 
 - type: entityTable
+  id: StalkerMutant
+  table: !type:GroupSelector
+    children:
+    - id: MobMutantBoar
+      weight: 0.20
+    - id: MobMutantOraclesBrown
+      weight: 0.05
+    - id: MobMutantFleshNeutral
+      weight: 0.50
+    - id: MobMutantFleshAgressive
+      weight: 0.25
+
+- type: entityTable
   id: StalkerMedical
   table: !type:GroupSelector
     children:
@@ -146,15 +159,15 @@
       children:
       - !type:NestedSelector
         tableId: Tier1Scrap
-        weight: 70
+        weight: 75
       - !type:NestedSelector
         tableId: Tier2Scrap
-        weight: 25
+        weight: 20
       - !type:NestedSelector
         tableId: Tier3Scrap
         weight: 5
     - !type:GroupSelector
-      weight: 10
+      weight: 9
       children:
       - !type:NestedSelector
         tableId: Tier1Artifact
@@ -165,6 +178,9 @@
     - !type:NestedSelector
       tableId: StalkerMedical
       weight: 20
+    - !type:NestedSelector
+      tableId: StalkerMutant
+      weight: 1
 
 
 # Items from Water
