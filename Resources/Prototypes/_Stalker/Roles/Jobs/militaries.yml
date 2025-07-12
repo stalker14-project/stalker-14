@@ -27,12 +27,14 @@
         canChange: true
         band: Stalker
         bandIcon: voen
+      - type: Damageable
+        damageModifierSet: STPlayerVoenstalModifierSet
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
         pullingItemTag: PliersStalker
         teethCount: 3
-        initialTeeth: 3 
+        initialTeeth: 3
       - type: NpcFactionMember
         factions:
         - MilitaryStalker
