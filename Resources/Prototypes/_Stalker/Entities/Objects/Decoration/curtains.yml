@@ -1,0 +1,134 @@
+- type: entity
+  id: TulleCurtains
+  parent: BaseCurtains
+  suffix: ST, Mapping
+  name: шторы
+  description: Старые советские шторы.
+  components:
+  - type: Occluder
+    boundingBox: "-0.5,-0.3,0.5,0.6"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+  - type: Sprite
+    snapCardinals: true
+    sprite: _Stalker/Objects/Decoration/tulle_curtain.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: Curtains
+
+- type: entity
+  id: TulleCurtainsOpen
+  parent: TulleCurtains
+  suffix: Open
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: CommunalCurtains
+  parent: BaseCurtains
+  suffix: ST, Mapping
+  name: шторы
+  description: Старые советские шторы.
+  components:
+  - type: Occluder
+    boundingBox: "-0.5,-0.3,0.5,0.6"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+  - type: Sprite
+    snapCardinals: true
+    sprite: _Stalker/Objects/Decoration/communal_curtain.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: Curtains
+
+- type: entity
+  id: CommunalCurtainsOpen
+  parent: CommunalCurtains
+  suffix: Open
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsOpen
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: BushCurtains
+  parent: BaseCurtains
+  suffix: ST, Mapping
+  name: шторы
+  description: Старые советские шторы.
+  components:
+  - type: Occluder
+    boundingBox: "-0.5,-0.3,0.5,0.6"
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.49,-0.49,0.49,0.49"
+        density: 100
+        mask:
+        - FullTileMask
+        layer:
+        - Opaque
+  - type: Sprite
+    snapCardinals: true
+    sprite: _Stalker/Objects/Decoration/bush_curtain.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: Curtains
+
+- type: entity
+  id: BushCurtainsOpen
+  parent: BushCurtains
+  suffix: Open
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsOpen
+  - type: Physics
+    canCollide: false

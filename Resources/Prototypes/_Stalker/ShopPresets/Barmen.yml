@@ -73,7 +73,8 @@
         STWeaponRevolverSWModel325: 1000
         STWeaponRevolverSWModel625: 1450
         STWeaponShotgunMP153: 1650
-        STWeaponRifleAKS74: 4500
+        STWeaponRifleAKS74U: 3000
+        STWeaponRifleAKS74: 5500
         STWeaponRifleM16: 3250
         STWeaponRifleSIG550: 5500
         STWeaponRifleAKM: 6700
@@ -85,20 +86,20 @@
       priority: 1
       items:
         BasePMMag: 80
+        Base939Mag10: 400
         TTMag: 120
         BaseGlockMag10: 135
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
         STSpeedLoader45ACPEmpty: 120
-        545Mag20: 200
-        556Mag20: 300
-        751Mag20: 1250
+        545Mag20: 500
+        556Mag20: 600
+        751Mag20: 1850
         Base754Mag5: 580
-        BizonMag: 675
+        BizonMag: 1675
         BaseMP5Mag: 275
         Base1270Mag: 350
         BasePPSHMag: 350
-        739FMJBox: 1350
     - name: shop-category-ammunition
       priority: 2
       items:
@@ -106,28 +107,28 @@
         7mmBuckshotBox: 65
         # .45
         45ACPLFMJBox: 130
-        45ACPMFMJBox: 325
+        45ACPMFMJBox: 525
         # 7.25
         725PBox: 130
-        725PTBox: 325
+        725PTBox: 525
         # 9.19
         919PSOGJBox: 105
-        919PSTBox: 260
+        919PSTBox: 560
         # 9.18
         918PGJBox: 105
-        918PSTBox: 260
+        918PSTBox: 500
         # 5.45
-        545FMJBox: 260
+        545FMJBox: 660
         545HPBox: 975
         # 5.56
-        556FMJBox: 455
+        556FMJBox: 690
         # 7.39
-        739FMJBox: 975
+        739FMJBox: 1350
         # 7.51
-        751M80Box: 1075
+        751M80Box: 1575
         751UNBox: 1615
         # 7.54
-        754FMJBox: 975
+        754FMJBox: 675
         754HPBox: 1465
     - name: shop-category-armor
       priority: 3
@@ -135,17 +136,16 @@
         # body
         SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
         SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
-        STClothingOuterArmorLightPlateVestBaseANAgray: 2900
-        STClothingOuterArmorLightPlateVestBaseANAgreen: 2900
-        ClothingOuterArmorStalker: 3100
-        ClothingOuterArmorSevaStalker: 3600
+        STClothingOuterArmorLightPlateVestBaseANAgreenOld: 2000
+        STClothingOuterArmorLightPlateVestBaseANAgrayOld: 2000
+        ClothingOuterArmorSevaStalker: 3000
         # mask
         ClothingMaskGP7: 165
         ClothingMaskGasZarya: 125
         ClothingMaskGasZaryaMono: 150
         ClothingMaskXoma: 95
         # helmet
-        ClothingHeadHelmetVityaz1C: 3500 # T3 uni
+        ClothingHeadHelmetVityaz1C: 4500
         # cape
         ClothingOuterCoatLoyalist: 1754
         ClothingOuterCoatLoyalistLight: 1050
@@ -155,8 +155,8 @@
         ##-------------------------------------------
         ClothingBackpackTacticOliveStalker: 557 # T2
         ClothingBackpackTacticBeigeStalker: 568 # T2
-        ##-------------------------------------------  
-        ClothingBackpackStalkerZaryaGreen: 1059 # T3 |pvp backpack   
+        ##-------------------------------------------
+        ClothingBackpackStalkerZaryaGreen: 1059 # T3 |pvp backpack
         ##-------------------------------------------
         # belt
         ClothingBeltBandolierStalker: 75
@@ -223,28 +223,21 @@
     - name: shop-category-medicine
       priority: 7
       items:
-        STPillboxAntirad: 350
-        STGauze: 100
-        STOintment: 85
-        STBrutepack: 65
-        Bloodpack: 550
-        MedkitAI2: 350
-        Defibrillator: 1000
-    - name: shop-category-medicine
-      priority: 10
-      items:
-        STPillboxAntirad: 300
-        STGauze: 90
-        STOintment: 65
-        STBrutepack: 55
-        Bloodpack: 350
-        MedkitAI2: 250
-        STTourniquet: 200
-        MedkitCMSStalker: 800
-        MedkitGrizzlyStalker: 1100
-        Defibrillator: 900
-        AntiRadMedipen: 500 #лечит 45 рад. (содержит аналог трёх таблеток antiradpill)
-        STPillboxProbud: 750 #содержит 10 таблеток wakeuppill (10 унций Bloodloss: -3 Asphyxiation: -2)
+        STPillboxAntirad: 250
+        STGauze: 85
+        STOintment: 95
+        STBrutepack: 85
+        Bloodpack: 950
+        MedkitAI2: 320
+        Defibrillator: 1800
+        AntiRadMedipen: 200
+        STPillboxProbud: 400
+        MedkitMilitary: 450
+        MedkitScience: 350
+        MedkitElite: 650
+        MedkitLAR: 720
+        STOintmentGood: 400
+        STPillboxShiza: 10000
     - name: shop-category-customization
       priority: 8
       items:

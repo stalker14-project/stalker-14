@@ -52,6 +52,51 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Gray.rsi
   - type: Craftable
 
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBaseANAgreen
+  id: STClothingOuterArmorLightPlateVestBaseANAgreenOld
+  name: Бронеразгрузка «Степь-4»
+  suffix: ST, T3, PvP, Старое
+  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины в модном болотно-зелёном цвете. Этот вариант - очень потрёпанный, защитные свойства явно пострадали.
+  components:
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 3
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBaseANAgray
+  id: STClothingOuterArmorLightPlateVestBaseANAgrayOld
+  name: Бронеразгрузка «Степь-4»
+  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины, в стильном чёрном цвете. Этот вариант - очень потрёпанный, защитные свойства явно пострадали.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Gray.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Gray.rsi
+  - type: Craftable
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 3
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
 # Clear Sky - 1 +
 
 - type: entity

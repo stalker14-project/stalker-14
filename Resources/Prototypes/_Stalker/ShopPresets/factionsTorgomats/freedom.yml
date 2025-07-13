@@ -17,7 +17,6 @@
     ZoneArtifactIce: 7200
     # Gravity group - 1
     ArtMedusa: 600
-    ZoneArtifactWhirlwind: 800
     ZoneArtifactFlower: 900
     ZoneArtifactNightStar: 3600
     # Gravity group - 2
@@ -53,7 +52,6 @@
 
     #T2 -------- Health * 1.8
     MutantPartLeshiyRoot: 385
-    MutantPartPsiDogTail: 295
     MutantPartPseudodogTail: 210
     MutantPartSnorkFoot: 350
 
@@ -67,50 +65,40 @@
       priority: 1
       items:
             # Guns
-          # 7mm
+          # 12mm
         STWeaponShotgunMP155T: 45 #T0.5
         STWeaponShotgunTOZ34: 225 # T2
         STWeaponShotgunMP133: 385 # T1.5
-        STWeaponShotgunMossbergM88: 630 # T2
-        STWeaponShotgunProtecta: 2610
+        STWeaponShotgunMossbergM88: 530 # T2
           # Nato
-        STWeaponRifleFAL: 1500
-        STWeaponRifleG36: 4250
-        STWeaponRifleM4: 3200
+        STWeaponRifleM4: 5000
+        STWeaponRifleM16: 3570
         STWeaponRifleSIG550: 3700
-        STWeaponRifleSCARH: 3250
-        STWeaponRifleL85: 1900
+        STWeaponRifleL85: 4000
           # Smg
         STWeaponSMGMP5: 1800
           # Other
-        STWeaponSniperVSS: 12000
         STWeaponRevolverRugerRedhawk: 400
         STWeaponRevolverSWPC325TR: 850
-        WeaponPistolStalkerGlock: 200
-        STWeaponSniperMosin: 1000
+        WeaponPistolStalkerGlock: 400
+        STWeaponSniperMosin: 1200
     - name: shop-category-magazines
       priority: 2
       items:
-        Base939Mag10: 70
-        939Mag20: 120
-        939Mag30: 450
-          # 7mm
         Base1270Mag: 100 #T1
           # 7,62x51 and 56
         Base556Mag10: 80
         556Mag20: 220
-        556Mag45: 400
-        Base751Mag10: 200
-        751Mag20: 350
-        Base739Mag10: 100
+        Base751Mag10: 900
+        Base739Mag10: 150
           # Smg
         BaseMP5Mag: 260
           # Other
-        556Mag30: 330
+        556Mag30: 1000
         BaseTEC9Mag: 120
         BaseGlockMag10: 100
-        GlockMag24: 280
-        GlockMag33: 440
+        GlockMag24: 350
+        GlockMag33: 950
         STSpeedLoader45ACPEmpty: 98
     - name: shop-category-ammunition
       priority: 3
@@ -119,27 +107,20 @@
         7mmBuckshotBox: 45
         # 9.19
         919PSOGJBox: 75
-        919PSTBox: 180
-        919PBMBox: 450
+        919PSTBox: 780
+        919PBMBox: 1500
         # 5.56
-        556FMJBox: 300
-        556WarmagBox: 1115
-        556M855Box: 745
+        556FMJBox: 500
+        556WarmagBox: 650
+        556M855Box: 3000
         # 7.51
-        751M80Box: 700
-        751UNBox: 1050
+        751M80Box: 1500
+        751UNBox: 1450
         # 7.54
-        754FMJBox: 675
-        754HPBox: 1015
+        754FMJBox: 1200
         # .45
         45ACPLFMJBox: 100
-        45ACPMFMJBox: 250
-        45ACPAPBox: 625
-        # 9x39 boxes
-        STBox9x39PSO: 250
-        STBox9x39SP6Uch: 50
-        STBox9x39SP5: 250
-        STBox9x39PAB9: 625
+        45ACPMFMJBox: 550
     - name: shop-category-armor
       priority: 4
       items:
@@ -147,10 +128,9 @@
         ClothingHeadHelmetSH68: 250 # T1 - PVP
         ClothingHeadHelmetInfantry: 875 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
-        ClothingHeadAssaultHelmetFreedom: 1600 # T3 - PVP
+        ClothingHeadAssaultHelmet: 9500 # T3 - PVP
           # OuterClothing #
-        STClothingOuterArmorLightPlateVestBaseANAgray: 2500
-        STClothingOuterArmorLightPlateVestBaseANAgreen: 2500
+        STClothingOuterArmorLightPlateVestBaseANAgreenOld: 1200
         ClothingOuterJacketFreedom: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseFreedom: 1100 # T2 - PvP
         ClothingOuterArmor6B2: 1500 # T2 - PvP
@@ -158,8 +138,8 @@
         ClothingOuterArmorZN1: 2100 # T2 - universal
         ClothingOuterArmorAborigineFreedom: 4350 # T3
         ClothingOuterArmorYegerFreedom: 2325 # т2
-        SetFreedomVeterBuyableCrate: 5000 # T3 - ENV
-        SetFreedomDefenderBuyableCrate: 5000 # T3
+        SetFreedomVeterBuyableCrate: 12000 # T3 - ENV
+        SetFreedomDefenderBuyableCrate: 20000 # T3
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -167,10 +147,10 @@
         ClothingBackpackTownWhiteStalker: 100 # T1
         ##-------------------------------------------
         ClothingBackpackTacticGreenStalker: 400 # T2
-        ##-------------------------------------------  
+        ##-------------------------------------------
         ClothingBackpackMercStalker: 799 # T3 |pve backpack
-        ClothingBackpackStalkerZaryaGreen: 899 # T3 |pvp backpack   
-        ##-------------------------------------------  
+        ClothingBackpackStalkerZaryaGreen: 899 # T3 |pvp backpack
+        ##-------------------------------------------
         ClothingBackpackDuffelHikingCommon: 1300  #t3
         ClothingBackpackDuffelMilitaryOlive: 1600 #t4
           # Belts
@@ -248,20 +228,20 @@
     - name: shop-category-medicine
       priority: 10
       items:
-          # Cheap
-        PillDexalin: 10
-        PillDexalinPlusStalker: 25
-        STOintment: 10
-        STGauze: 15
-        STBrutepack: 10
-          # Expensive
-        antiradpill: 50
-        radioprotectpill: 70
-        Bloodpack: 90
-        psyblock: 200
-        MedkitAI2: 200
-        MedkitMilitary: 400
-        Defibrillator: 700
+        STPillboxAntirad: 150
+        STGauze: 95
+        STOintment: 85
+        STOintmentGood: 200
+        STBrutepack: 95
+        Bloodpack: 750
+        MedkitAI2: 175
+        Defibrillator: 900
+        AntiRadMedipen: 150
+        STPillboxProbud: 500
+        MedkitMilitary: 450
+        MedkitScience: 400
+        MedkitElite: 550
+        MedkitLAR: 600
     - name: shop-category-modules
       priority: 11
       items:
@@ -317,6 +297,7 @@
         ClothingLegsJeansBereza: 20
         ClothingLegsJeansGorka6: 20
         ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 67
         # new shit
         ClothingLegsBattlePantsBlack: 50
         ClothingLegsVeryBlueJenas: 50
