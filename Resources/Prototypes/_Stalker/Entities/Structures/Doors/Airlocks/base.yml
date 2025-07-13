@@ -752,3 +752,75 @@
   - type: AccessReader
     access: [["MilitiaAccess"]]
 
+#Монолиту
+- type: entity
+  id: WoodDoorFalloutMonolith
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, Monolith
+  components:
+  - type: AccessReader
+    access: [["Monolith"]]
+
+- type: entity
+  id: MetalDoorFalloutMonolithClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Monolith
+  components:
+  - type: AccessReader
+    access: [["Monolith"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutMonolithClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Monolith
+  components:
+  - type: AccessReader
+    access: [["Monolith"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutMonolithClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Monolith
+  components:
+  - type: AccessReader
+    access: [["Monolith"]]
+
+- type: entity
+  parent: HermoDverTypeOne
+  id: HermoDverTypeOneMonolithClosed
+  suffix: ST, Mapping, Monolith
+  components:
+  - type: AccessReader
+    access: [["Monolith"]]
+
+- type: entity
+  parent: MetalAltDoorFallout
+  id: MetalAltDoorFalloutMonolithClosed
+  suffix: ST, Mapping, Monolith
+  components:
+    - type: AccessReader
+      access: [["Monolith"]]
+
+- type: entity
+  parent: StalkerGate
+  id: StalkerGateLeftMonolithClosed
+  suffix: ST, Mapping, Monolith, Left
+  components:
+    - type: AccessReader
+      access: [["Monolith"]]
+
+- type: entity
+  parent: StalkerGater
+  id: StalkerGateRightMonolithClosed
+  suffix: ST, Mapping, Monolith, Right
+  components:
+    - type: AccessReader
+      access: [["Monolith"]]

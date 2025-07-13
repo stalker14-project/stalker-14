@@ -91,10 +91,10 @@
       falloff: 0.1
   - type: STProjectileDamageFalloff
     thresholds:
-    - range: 2
-      falloff: 0.05
-    - range: 8
-      falloff: 0.2
+    - range: 1
+      falloff: 0.1
+    - range: 4
+      falloff: 0.9
 
 - type: entity
   abstract: true
@@ -160,7 +160,7 @@
   - type: STProjectileDamageFalloff
     thresholds:
     - range: 4
-      falloff: 0.01
+      falloff: 0.02
     - range: 30
       falloff: 0.2
 

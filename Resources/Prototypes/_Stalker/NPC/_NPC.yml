@@ -1335,3 +1335,40 @@
     - Binary
     - Common
 
+- type: entity
+  parent: NPCDoll
+  id: NPCHidenTrader
+  name: Неизвестный [→   ←]
+  description:
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Merc.rsi
+    state: merc
+  - type: Physics
+    bodyType: Static
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: HidenZoneTrader
+  - type: TimedDespawn
+    lifetime: 1800
+
+- type: entity
+  name: триггер Скрытого Торговца
+  id: STTriggerHidenTrader
+  parent: STBaseTrigger125
+  suffix: ST, Dollar, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - NPCHidenTrader
+    restricted:
+    - NPCHidenTrader
+  - type: STAnomalyGeneratorSpawnBlocker
+    size: 5

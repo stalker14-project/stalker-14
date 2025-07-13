@@ -144,3 +144,68 @@
         layer:
         - MobLayer
         - LowImpassable
+
+- type: entity
+  parent: STAnomalyBase
+  id: STAnomalyBubble
+  suffix: ST, Anomaly, Bubble
+  components:
+  - type: STAnomalyTriggerGroupsStateTransition
+  - type: STAnomalyTriggerStartCollide
+    whitelist:
+      components:
+      - DNA
+  - type: STAnomaly
+    state: Idle
+    states:
+      Idle: []
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        maps: [Kordon, Boloto]
+        range: 1
+  - type: STAnomalySoundEffect
+    options:
+      StartCollide:
+        sound: /Audio/_Stalker/Effects/hush.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 1
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+  - type: Sprite
+    sprite: _Stalker/Objects/Anomalies/bubble2.rsi
+    state: idle
+
+- type: entity
+  id: STAnomalyBubbleExit
+  suffix: ST, Anomaly, Bubble exit
+  components:
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        range: 0
+        type: Exit
+  - type: Physics
+    bodyType: Static
+    fixedRotation: true
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable

@@ -50,35 +50,6 @@
       portalName: _PortalBandFreedomRepository
       repositoryWeight: 1000
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandFreedomRepositoryTrainStation
-  suffix: 500
-  name: Band-Freedom-Repository
-  description: Band-Freedom-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Freedom"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandFreedomRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandFreedomRepositoryPortal
-  suffix: Вокзал - Склад свободы
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["Freedom"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandFreedomRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
-
-# Repository for FreedomBand - End
 
 # Repository for Serafim - Start
 
@@ -112,34 +83,6 @@
       portalName: _PortalBandDebtRepository
       repositoryWeight: 1000
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandDebtRepositoryTrainStation
-  suffix: 500
-  name: Band-Debt-Repository
-  description: Band-Debt-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Dolg"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandDebtRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandDolgRepositoryPortal
-  suffix: Вокзал - Склад Авангарда
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["Dolg"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandDolgRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
-
 # Repository for DebtBand - End
 
 # Repository for RenegadesBand - Start
@@ -157,33 +100,6 @@
       portalName: _PortalBandRenegadesRepository
       repositoryWeight: 1000
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandRenegadesRepositoryTrainStation
-  suffix: 500
-  name: Band-Renegades-Repository
-  description: Band-Renegades-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Renegat"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandRenegadesRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandRenegatRepositoryPortal
-  suffix: Вокзал - Склад ренегатов
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["Renegat"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandRenegatRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
 
 # Repository for RenegadesBand - End
 
@@ -201,17 +117,6 @@
     - type: StalkerBandTeleport
       portalName: _PortalBandMilitaryRepository
       repositoryWeight: 1000
-
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandMilitaryRepositoryTrainStation
-  suffix: 500
-  name: Band-Military-Repository
-  description: Band-Military-Repository-desc
-  components:
-    - type: StalkerBandTeleport
-      portalName: _PortalBandMilitaryRepositoryTrainStation
-      repositoryWeight: 500
 
 # Repository for Military - End
 
@@ -265,19 +170,6 @@
       portalName: _PortalBandResearchInstitutesRepository
       repositoryWeight: 500
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandResearchInstitutesRepositoryTrainStation
-  suffix: 500
-  name: Band-ResearchInstitutes-Repository
-  description: Band-ResearchInstitutes-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["SciBase"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandResearchInstitutesRepositoryTrainStation
-      repositoryWeight: 500
-
 # Repository for Research Institutes - End
 
 # Repository for Covenant - Start
@@ -294,34 +186,6 @@
     - type: StalkerBandTeleport
       portalName: _PortalBandCovenantRepository
       repositoryWeight: 1000
-
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandCovenantRepositoryTrainStation
-  suffix: 500
-  name: Band-Covenant-Repository
-  description: Band-Covenant-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Covenant"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandCovenantRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandCovenantRepositoryPortal
-  suffix: Вокзал - Склад завета
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["Covenant"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandCovenantRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
 
 # Repository for Covenant - End
 
@@ -340,34 +204,6 @@
       portalName: _PortalBandBanditsRepository
       repositoryWeight: 1000
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandBanditsRepositoryTrainStation
-  suffix: 500
-  name: Band-Bandits-Repository
-  description: Band-Bandits-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Bandit"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandBanditsRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandBanditsRepositoryPortal
-  suffix: Вокзал - Склад бандитов
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["Bandit"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandBanditsRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
-
 # Repository for Bandits - End
 
 # Repository for Sin - Start
@@ -384,19 +220,6 @@
     - type: StalkerBandTeleport
       portalName: _PortalBandSinRepository
       repositoryWeight: 1000
-
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandSinRepositoryTrainStation
-  suffix: 500
-  name: Band-Sin-Repository
-  description: Band-Sin-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Greh"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandSinRepositoryTrainStation
-      repositoryWeight: 500
 
 # Repository for Sin - End
 
@@ -415,34 +238,6 @@
       portalName: _PortalBandClearskyRepository
       repositoryWeight: 1000
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandClearskyRepositoryTrainStation
-  suffix: 500
-  name: Band-Clearsky-Repository
-  description: Band-Clearsky-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["CN"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandClearskyRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandClearskyRepositoryPortal
-  suffix: Вокзал - Склад ЧН
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["CN"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandClearskyRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
-
 # Repository for Clearsky - End
 
 # Repository for Mercenaries - Start
@@ -459,34 +254,6 @@
     - type: StalkerBandTeleport
       portalName: _PortalBandMercenariesRepository
       repositoryWeight: 1000
-
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandMercenariesRepositoryTrainStation
-  suffix: 500
-  name: Band-Mercenaries-Repository
-  description: Band-Mercenaries-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Merc"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandMercenariesRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandMercRepositoryPortal
-  suffix: Вокзал - Склад аномалистов
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["Merc"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandMercRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
 
 # Repository for Mercenaries - End
 
@@ -505,19 +272,6 @@
       portalName: _PortalBandUNRepository
       repositoryWeight: 1000
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandUNRepositoryTrainStation
-  suffix: 500
-  name: Band-UN-Repository
-  description: Band-UN-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Military"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandUNRepositoryTrainStation
-      repositoryWeight: 500
-
 # Repository for UN - End
 
 # Repository for Anomalist - Start
@@ -534,34 +288,6 @@
     - type: StalkerBandTeleport
       portalName: _PortalBandAnomalistRepository
       repositoryWeight: 1000
-
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandAnomalistRepositoryTrainStation
-  suffix: 500
-  name: Band-Anomalist-Repository
-  description: Band-Anomalist-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["Anomalist"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandAnomalistRepositoryTrainStation
-      repositoryWeight: 500
-
-- type: entity
-  parent: MapTeleportBase
-  id: PortalBandAnomalistRepositoryPortal
-  suffix: Вокзал - Склад аномалистов
-  name: TrainStation-Cordon
-  components:
-    - type: AccessReader
-      access: [["Anomalist"]]
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: _PortalBandAnomalistRepositoryPortal
-      cooldownEnabled: false
-      cooldownTime: 0
-      godmodeCooldown: 0
 
 # Repository for Anomalist - End
 
@@ -580,25 +306,13 @@
       portalName: _PortalBandMilitaryStalkerRepository
       repositoryWeight: 1000
 
-- type: entity
-  parent: BandRepositoryBase
-  id: PortalBandMilitaryStalkerRepositoryTrainStation
-  suffix: 500
-  name: Band-MilitaryStalker-Repository
-  description: Band-MilitaryStalker-Repository-desc
-  components:
-    - type: AccessReader
-      access: [["MilitaryStalker"]]
-    - type: StalkerBandTeleport
-      portalName: _PortalBandMilitaryStalkerRepositoryTrainStation
-      repositoryWeight: 500
 # Repository for MilitaryStalker - End
 
 # Repository for Neutrals - Start
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandNeutralsRepository
-  suffix: 2500
+  suffix: 1000
   name: Band-Neutrals-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -606,14 +320,14 @@
     access: [["Neutral"]]
   - type: StalkerBandTeleport
     portalName: _PortalBandNeutralsRepository
-    repositoryWeight: 2500
+    repositoryWeight: 1000
 # Repository for Neutrals - End
 
 # Repository for Poisk - Start
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandPoiskRepository
-  suffix: 2500
+  suffix: 1000
   name: Band-Poisk-Repository
   description: Band-MilitaryStalker-Repository-desc
   components:
@@ -621,14 +335,14 @@
     access: [["Poisk"]]
   - type: StalkerBandTeleport
     portalName: _PortalBandPoiskRepository
-    repositoryWeight: 2500
+    repositoryWeight: 1000
 # Repository for Poisk - End
 
 # Repository for Monolith - Start
 - type: entity
   parent: BandRepositoryBase
   id: PortalBandMonolithRepository
-  suffix: 2500
+  suffix: 150
   noSpawn: false
   name: Band-Monolith-Repository
   description: Band-MilitaryStalker-Repository-desc
@@ -637,61 +351,40 @@
     access: [["Monolith"]]
   - type: StalkerBandTeleport
     portalName: _PortalBandMonolithRepository
-    repositoryWeight: 2500
-# Repository for Monolith - End 
+    repositoryWeight: 500
+# Repository for Monolith - End
 
 # BandPrototype
 - type: bandLoader
   id: BandLoaderBase
   bandTeleports:
     - "_PortalBandMilitaryStalkerRepository"
-    - "_PortalBandMilitaryStalkerRepositoryTrainStation"
 
-    - "_PortalBandAnomalistRepositoryPortal"
-    - "_PortalBandAnomalistRepositoryTrainStation"
     - "_PortalBandAnomalistRepository"
 
     - "_PortalBandUNRepository"
-    - "_PortalBandUNRepositoryTrainStation"
 
-    - "_PortalBandMercRepositoryPortal"
-    - "_PortalBandMercenariesRepositoryTrainStation"
     - "_PortalBandMercenariesRepository"
 
-    - "_PortalBandClearskyRepositoryPortal"
-    - "_PortalBandClearskyRepositoryTrainStation"
     - "_PortalBandClearskyRepository"
 
-    - "_PortalBandSinRepositoryTrainStation"
     - "_PortalBandSinRepository"
 
-    - "_PortalBandBanditsRepositoryPortal"
     - "_PortalBandBanditsRepository"
-    - "_PortalBandBanditsRepositoryTrainStation"
 
-    - "_PortalBandCovenantRepositoryTrainStation"
-    - "_PortalBandCovenantRepositoryPortal"
     - "_PortalBandCovenantRepository"
 
-    - "_PortalBandResearchInstitutesRepositoryTrainStation"
     - "_PortalBandResearchInstitutesRepository"
 
-    - "_PortalBandMilitaryRepositoryTrainStation"
     - "_PortalBandMilitaryRepository"
 
     - "_PortalBandDesertersRepository"
 
-    - "_PortalBandRenegatRepositoryPortal"
     - "_PortalBandRenegadesRepository"
-    - "_PortalBandRenegadesRepositoryTrainStation"
 
-    - "_PortalBandDolgRepositoryPortal"
-    - "_PortalBandDebtRepositoryTrainStation"
     - "_PortalBandDebtRepository"
 
-    - "_PortalBandFreedomRepositoryPortal"
     - "_PortalBandFreedomRepository"
-    - "_PortalBandFreedomRepositoryTrainStation"
 
     - "_PortalBandNeutralsRepository"
     - "_PortalBandPoiskRepository"

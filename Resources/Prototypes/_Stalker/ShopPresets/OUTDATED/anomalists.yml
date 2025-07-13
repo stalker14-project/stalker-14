@@ -1,0 +1,43 @@
+- type: shopPreset
+  id: Anomalists
+  itemsForSale:
+    FoodTinMRETrash: 5
+    FoodTinPeachesTrash: 5
+    FoodTinBeansTrash: 5
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+        STCombatKnife: 10
+    - name: shop-category-magazines
+      priority: 2
+      items:
+        # Revolvers
+        SpeedLoaderRemingtonMagnumEmpty: 15
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        # Revolvers
+        MagazineBoxRemingtonMagnum: 120
+        MagazineBoxRemingtonMagnumAP: 420
+    - name: shop-category-armor
+      priority: 4
+      items:
+        STSkinsKitAnomalist: 500
+        ClothingOuterJacketStalker: 20
+        ClothingMaskGasAnomalists: 98
+        # Belts
+        ClothingBeltHolster: 10
+    - name: shop-category-research-equipment
+      priority: 6
+      items:
+        STBoltBagFilled: 65
+        ZoneArtifactDetectorPulse: 25
+
+- type: shopPreset
+  id: DollarAnomalists
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+        WeaponRevolverJoker: 50

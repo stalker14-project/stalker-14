@@ -119,8 +119,8 @@
 - type: entity
   parent: STBaseWeaponRifleSVDS
   id: STWeaponRifleSVDSWood
-  name: Homemade chatter
-  description: A homemade rifle for an SVD magazine. Oblique, but wildly lethal.
+  name: Selfmade chatter
+  description: A selfmade rifle for an SVD magazine. Oblique, but wildly lethal.
   components:
     - type: STWeight
       self: 4.8
@@ -135,7 +135,7 @@
         path: /Audio/_Stalker/Effects/Guns/svd.ogg
       minAngle: 50
       maxAngle: 120
-      angleDecay: 40
+      angleDecay: 25
       angleIncrease: 8
       fireRate: 0.6
     - type: ChamberMagazineAmmoProvider
@@ -163,4 +163,4 @@
         gun_magazine: !type:ContainerSlot
         gun_chamber: !type:ContainerSlot
     - type: STWeaponDamageFalloff
-      falloffMultiplier: 1.1
+      falloffMultiplier: 1.2

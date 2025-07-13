@@ -36,6 +36,25 @@
       netsync: false
 
 - type: entity
+  id: GroupedTeleportUncollideBase
+  abstract: true
+  components:
+  - type: STAnomalyGeneratorSpawnBlocker
+    size: 5
+  - type: Marker
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Sprite # I think you'll need to add an invisibility here
+    layers:
+    - state: portal-red
+    sprite: /Textures/Effects/portal.rsi
+  - type: GroupTeleport
+
+- type: entity
   parent: GroupedTeleportBase
   id: TestGroup1-TestGroup2
   name: TestGroup1-TestGroup2

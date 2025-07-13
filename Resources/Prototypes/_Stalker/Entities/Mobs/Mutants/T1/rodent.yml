@@ -1,7 +1,7 @@
 - type: entity
   name: rodent
   id: MobMutantRodent
-  suffix: ST, T1
+  suffix: ST, T0
   parent: BaseMobMutant
   description: A small rodent that is ready to gnaw right through your flesh.
   components:
@@ -29,7 +29,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.45
+          radius: 0.35
         density: 1000
         mask:
         - SmallMobMask
@@ -41,7 +41,7 @@
       0: Alive
       25: Dead
   - type: StaminaDamageOnHit
-    damage: 5
+    damage: 0.1
   - type: Stamina
     critThreshold: 60
   - type: MeleeWeapon
@@ -51,8 +51,8 @@
     animation: WeaponArcClaw
     damage:
       types:
-        Slash: 7
-        Blunt: 5
+        Slash: 5
+        Blunt: 2
   - type: DamageStateVisuals
     states:
       Alive:

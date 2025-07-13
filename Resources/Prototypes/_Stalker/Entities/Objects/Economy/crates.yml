@@ -1473,3 +1473,161 @@
         - id: 545PCBox
       sound:
         path: /Audio/Effects/unwrap.ogg
+
+### МОНОЛИТ
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrateBasicTools
+  name: ящик с базовыми инструментами «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: STBoltBagFilled
+        - id: STBoltBagFilled
+        - id: PowerCellHyper
+        - id: PowerCellHyper
+        - id: STCombatKnife
+        - id: Binocularus1
+        - id: BaseRadio
+        - id: FlashlightSeclite
+        - id: ZoneAnomalyDetectorBMT12
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrateMedkit
+  name: ящик медицины «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: STTourniquet
+        - id: STTourniquet
+        - id: STTourniquet
+        - id: STGauze
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate545Mag30
+  name: ящик обойм 5.45 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate545PC
+  name: ящик ПС патронов 5.45х39 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate754Mag10
+  name: ящик обойм 7.62х54 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 754Mag10
+        - id: 754Mag10
+        - id: 754Mag10
+        - id: 754Mag10
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate754FMJ
+  name: ящик FMJ патронов 7.62х54 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 754FMJBox
+        - id: 754FMJBox
+        - id: 754FMJBox
+        - id: 754FMJBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg

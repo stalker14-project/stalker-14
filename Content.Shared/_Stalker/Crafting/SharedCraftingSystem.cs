@@ -39,9 +39,24 @@ public sealed class SharedCraftingSystem : EntitySystem
         SubscribeAllEvent<DisassembleStartedEvent>(OnDisassembleStarted);
         SubscribeLocalEvent<StorageComponent, CraftDoAfterEvent>(HandleDoAfter);
         SubscribeLocalEvent<StorageComponent, DisassembleDoAfterEvent>(HandleDoAfterDisassemble);
-        _lightPrototypes = _proto.EnumeratePrototypes<LightCraftingPrototype>().ToList();
 
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+
+        RenewPrototypesCache();
         _sawmill = Logger.GetSawmill("crafts");
+    }
+
+    private void RenewPrototypesCache()
+    {
+        _lightPrototypes = _proto.EnumeratePrototypes<LightCraftingPrototype>().ToList();
+    }
+
+    private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
+    {
+        if(args.WasModified<LightCraftingPrototype>())
+        {
+            RenewPrototypesCache();
+        }
     }
 
     private bool IsEqualOrHasParent(string targetId, EntProtoId ingredient, bool applyExactMatch)

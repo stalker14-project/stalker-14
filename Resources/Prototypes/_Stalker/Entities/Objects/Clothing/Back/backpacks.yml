@@ -1,4 +1,4 @@
-# Tier 1
+# Tier 0,5 - бесплатные
 
 - type: entity
   parent: STClothingBackBase
@@ -10,27 +10,23 @@
       self: 1.7
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Duffels/duffel.rsi
-    - type: Storage #16 клеток
+    - type: Storage # 6 клеток подряд + доп 1 клетка отдельно (всего 7)
       grid:
-        - 0,0,3,3
+        - 0,0,2,1
+        - 3,0,3,0
       quickInsert: true
       areaInsert: true
 
 - type: entity
-  parent: STClothingBackBase
+  parent: ClothingBackpackDuffelGreenStalker
   id: ClothingBackpackDuffelBlackStalker
   name: чёрный вещмешок
   description: Крайне неудобный и невместительный вещмешок за копейки.
   components:
-    - type: STWeight
-      self: 1.7
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Duffels/duffel_gray.rsi
-    - type: Storage #16 клеток
-      grid:
-        - 0,0,3,3
-      quickInsert: true
-      areaInsert: true
+
+# Tier - 1
 
 - type: entity
   parent: STClothingBackBase
@@ -40,25 +36,23 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/town_black.rsi
-  - type: Storage #16 + 4 + 4 клеток
+  - type: Storage #14 клеток
     grid:
-    - 0,0,1,1
-    - 3,-2,6,1
-    - 8,0,9,1
+        - 0,0,1,0
+        - 0,1,0,1
+        - 3,0,4,0
+        - 4,1,4,1
+        - 0,3,4,3
+        - 1,2,3,2
 
 - type: entity
-  parent: STClothingBackBase
+  parent: ClothingBackpackTownBlackStalker
   id: ClothingBackpackTownWhiteStalker
   name: белый городской рюкзак
   description: Удобный, однако невместительный рюкзак за копейки.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/town_white.rsi
-  - type: Storage #16 + 4 + 4 клеток
-    grid:
-    - 0,0,1,1
-    - 3,-2,6,1
-    - 8,0,9,1
 
 # Tier - 2
 
@@ -72,7 +66,12 @@
   - type: Craftable
   - type: Storage
     grid:
-    - 0,0,5,5 #36 клеток
+    - 0,0,3,0 #26 клеток (появляется возможность носить внутри ппшку)
+    - 0,2,3,2
+    - 1,3,2,5
+    - 0,6,3,7
+    - 0,2,0,2
+    - 3,2,3,2
 
 - type: entity
   parent: ClothingBackpackTacticBase
@@ -122,13 +121,15 @@
 - type: entity
   parent: ClothingBackpackTacticBase
   id: STClothingBackpackDuffelHikingNeutral
-  name: походный рюкзак
+  name: рюкзак "бочёнок" #skin
   description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
   components:
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Hiking/hiking_neutral.rsi
 
 # Tier - 3
+
+#pvp рюкзаки (можно носить оружия внутри, но неудобен для частей мутантов)
 
 - type: entity
   parent: STClothingBackBase
@@ -137,43 +138,24 @@
   description: Вместительный сталкерский рюкзак оливового цвета из комплекта «Заря», частенько используется в качестве заначки.
   suffix: ST
   components:
-  - type: Storage #40 клеток 42 будет лучше
+  - type: Storage #41 клеток (1 ппшка или 14 стоп внутрь)
     grid:
-    - 0,0,7,4
+    - 0,0,5,4
+    - 0,5,1,7
     quickInsert: true
     areaInsert: true
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/stalker.rsi
 
 - type: entity
-  parent: STClothingBackBase
+  parent: ClothingBackpackStalkerZaryaGreen
   id: ClothingBackpackStalkerZaryaBlack
   name: сталкерский рюкзак «Заря»
   description: Вместительный сталкерский рюкзак чёрного цвета из комплекта «Заря», частенько используется в качестве заначки.
   suffix: ST
   components:
-  - type: Storage #40 клеток 42 будет лучше
-    grid:
-    - 0,0,7,4
-    quickInsert: true
-    areaInsert: true
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/stalker_black.rsi
-
-- type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackMercStalker
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
-  suffix: ST
-  components:
-  - type: Storage #40 клеток 42 будет лучше
-    grid:
-    - 0,0,7,4
-    quickInsert: true
-    areaInsert: true
-  - type: Sprite
-    sprite: Clothing/Back/Backpacks/merc.rsi
 
 - type: entity
   parent: STClothingBackBase
@@ -184,9 +166,37 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Other/backpack1.rsi
-  - type: Storage #44 клеток 48 лучше будет тут
+  - type: Storage #40  клеток (способен носить 2 втомата внутри, доступен только гп)
     grid:
-    - 0,0,7,5
+    - 0,0,4,7
+
+##-------------------------------------------
+
+#pve рюкзаки (можно носить побольше частей с тем же кол-вом клеток)
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackMercStalker
+  name: походный рюкзак
+  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  suffix: ST
+  components:
+  - type: Storage #34 (возможность взять автомат + ппшку внутрь. Или способен унести 11 стоп кабанов. доступен сталкерам)
+    grid:
+    - 0,0,5,0
+    - 4,8,5,8
+    - 2,6,3,7
+    - 5,2,5,7
+    - 2,1,3,3
+    - 0,2,0,7
+    - 1,1,1,6
+    - 4,1,4,6
+    - 0,8,1,8
+    quickInsert: true
+    areaInsert: true
+  - type: Sprite
+    sprite: Clothing/Back/Backpacks/merc.rsi
+
 # Tier - 4
 
 - type: entity
@@ -198,6 +208,11 @@
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/backpacks/Hiking/hiking_neutral.rsi
 
+
+##-------------------------------------------
+
+#pve рюкзаки (можно носить побольше частей с тем же кол-вом клеток)
+
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelMilitaryBlue
@@ -207,12 +222,56 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/backpacks/Other/backpackblue.rsi
-  - type: Storage #55 клеток 56
+  - type: Storage #40 клеток преимущественно мелкими квадратами под ношение артов
     grid:
-    - 0,0,7,6
+    - 0,0,6,0
+    - 5,6,6,6
+    - 6,1,6,5
+    - 5,1,5,4
+    - 0,1,0,4
+    - 4,3,4,3
+    - 3,4,3,4
   - type: Tag
     tags:
     - STClothingBackpackT4
+
+- type: entity
+  parent: STClothingBackBase
+  id: ClothingBackpackDuffelHikingVSRF
+  name: походный рюкзак
+  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Hiking/VS_RF.rsi
+  - type: Storage #54 клеток 56 бы
+    grid:
+    - 0,0,6,1
+    - 0,7,4,7
+    - 0,6,6,6
+    - 0,2,0,5
+    - 3,2,3,5
+    - 5,2,6,5
+    - 1,3,2,3
+    - 1,5,2,5
+    - 4,3,4,3
+    - 4,5,4,5
+  - type: Tag
+    tags:
+    - STClothingBackpackT4
+
+- type: entity
+  parent: ClothingBackpackDuffelHikingVSRF
+  id: ClothingBackpackDuffelHikingCommon
+  name: походный рюкзак
+  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
+  suffix: ST
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/backpacks/Hiking/common.rsi
+
+
+#универсал рюкзаки (квадраты. по идеи самые дорогие и +20% к стоимости внутри тира)
 
 - type: entity
   parent: STClothingBackBase
@@ -245,32 +304,6 @@
   - type: Tag
     tags:
     - STClothingBackpackT4
-
-- type: entity
-  parent: STClothingBackBase
-  id: ClothingBackpackDuffelHikingVSRF
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
-  suffix: ST
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/backpacks/Hiking/VS_RF.rsi
-  - type: Storage #54 клеток 56 бы
-    grid:
-    - 0,0,7,6
-  - type: Tag
-    tags:
-    - STClothingBackpackT4
-
-- type: entity
-  parent: ClothingBackpackDuffelHikingVSRF
-  id: ClothingBackpackDuffelHikingCommon
-  name: походный рюкзак
-  description: Вместительный рюкзак, обычно берут в походы, но в зоне самый раз!
-  suffix: ST
-  components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Clothing/backpacks/Hiking/common.rsi
 
 - type: entity
   parent: STClothingBackBase
@@ -320,6 +353,8 @@
     - 0,0,7,7 #66 клеток 64 смог
 
 
+
+# универсал рюкзаки (квадраты. по идеи самые дорогие и +20% к стоимости внутри тира)
 - type: entity
   parent: STClothingBackBase
   id: ClothingBackpackDuffelSuperStalker

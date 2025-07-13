@@ -354,6 +354,31 @@
       prototypes: [ StalkerGear ]
 
 - type: entity
+  name: кукла Монолита (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMonolith
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: monolith
+    - type: Access
+      tags:
+        - Monolith
+    - type: Loadout
+      prototypes: [ MonolithGear ]
+    - type: NpcFactionMember
+      factions:
+        - Mutated
+    - type: Hunger
+      baseDecayRate: 0
+    - type: Thirst
+      baseDecayRate: 0
+    - type: PersonalDamageBlock
+    - type: Damageable
+      damageModifierSet: STPlayerMonolithModifierSet
+
+- type: entity
   name: кукла СБУ (переименуй меня)
   suffix: Stalker, пешка с нашивкой
   parent: MobHuman

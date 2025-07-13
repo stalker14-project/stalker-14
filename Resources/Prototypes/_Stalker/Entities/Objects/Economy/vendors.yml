@@ -467,3 +467,61 @@
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/olive_bag.rsi
       state: icon
+
+############################################################################# МОНОЛИТ
+
+- type: entity
+  parent: VendingMachineBoxesPSZMilitary
+  id: VendingMachineBoxesMonolith
+  name: склад ящиков «Монолита»
+  description: Склад снаряжения группировки «Монолит».
+  suffix: ST
+  components:
+    - type: AccessReader
+      access: [["Monolith"]]
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MonolithInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+
+- type: vendingMachineInventory
+  id: MonolithInventory
+  startingInventory:
+    SetMonolithMarlyaBuyableCrate: 10
+    SetMonolithBalaklavaBuyableCrate: 10
+    SetMonolithGasBuyableCrate: 10
+    SetMonolithOldBuyableCrate: 10
+    ClothingOuterArmorSevaMonolith: 10
+    MonolithCrateBasicTools: 10
+    MonolithCrateMedkit: 10
+    STWeaponRifleStalkerAbakan: 10
+    STWeaponRifleAKS74Green: 10
+    MonolithCrate545Mag30: 10
+    MonolithCrate545PC: 10
+    STModuleSniperSightT2: 2
+    STWeaponSniperSVDS: 2
+    MonolithCrate754Mag10: 10
+    MonolithCrate754FMJ: 10
+    MonolithInventoryRestock: 1
+    Screwdriver: 1
+
+- type: entity
+  parent: BaseItem
+  id: MonolithInventoryRestock
+  name: пополнительный ящик «Монолита»
+  description: Класть на склад.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MonolithInventory
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon

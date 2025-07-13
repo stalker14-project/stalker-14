@@ -86,6 +86,10 @@
     - Snout
     - FacialHair
     hideOnToggle: true
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 9
 
 - type: entity
   parent: STClothingMaskGasStandardT1Base
@@ -217,3 +221,7 @@
     modifiers:
       coefficients:
         Radiation: 1.1
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 9

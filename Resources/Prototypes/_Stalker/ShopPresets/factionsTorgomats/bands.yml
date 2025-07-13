@@ -258,10 +258,15 @@
       priority: 5
       items:
           # BackPacks
-        ClothingBackpackDuffelBlackStalker: 30 # T1
-        ClothingBackpackTacticBlackStalker: 450 # T2
-        ClothingBackpackMercStalker: 850 # T3
-        ClothingBackpackDuffelCommonStalker: 900 #T3
+        ClothingBackpackTownBlackStalker: 50 # T1
+        ClothingBackpackTownWhiteStalker: 50 # T1
+        ##-------------------------------------------
+        ClothingBackpackTacticBlackStalker: 300 # T2
+        ##-------------------------------------------
+        ClothingBackpackMercStalker: 799 # T3 |pve backpack
+        ClothingBackpackStalkerZaryaBlack: 999 # T3 |pvp backpack
+        ClothingBackpackDuffelCommonStalker: 1100  # T3 |pvp backpack
+        ##-------------------------------------------
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
@@ -353,14 +358,8 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 400
-    - name: Металлоискатели
-      priority: 12
-      items:
-        TrashDetectorTier2: 500
-        TrashDetectorTier3: 2000
-        TrashDetectorTier4: 3999
     - name: shop-category-customization
-      priority: 12
+      priority: 13
       items:
         ClothingTorsoJacketAdidasBlue: 5
         ClothingTorsoJacketAdidasRed: 5

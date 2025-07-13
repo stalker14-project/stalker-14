@@ -486,3 +486,26 @@
       portalName: Lobby-Agro-MilBase-SciBase
     - type: AccessReader
       access: [["Military"], ["SciBase"]]
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-RedForest-VoenBase
+  name: Lobby-RedForest-VoenBase (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-RedForest-VoenBase
+    - type: AccessReader
+      access: [["MilitaryStalker"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-RedForest-VoenBase-Uncollide
+  name: Lobby-RedForest-VoenBase-Uncollide (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-RedForest-VoenBase
+    - type: AccessReader
+      access: [["MilitaryStalker"]]
+      
