@@ -124,3 +124,7 @@ ent-DarkHollow-PodzemkaProject = Dark Hollow - Project Underground
 ent-UndergrundBar-UndergrundSvalka = Bar Underground – Garbage Underground
 ent-UndergrundSvalka-Bar1 = Garbage Underground - Bar1
 ent-UndergrundSvalka-Bar2 = Garbage Underground - Bar2
+ent-EnterOnTopi = Entrance to Swamps
+ent-EnterOnTopiUncollide = Entrance to Swamps Uncollide
+ent-Topi-RedForestOneside = Swamps - Red Forest
+ent-Topi-RedForestOnesideUncollide = Swamps - Red Forest Uncollide

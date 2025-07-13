@@ -111,8 +111,8 @@ public sealed class BoomboxSystem : EntitySystem
         ActivationVerb verb = new()
         {
             Text = ent.Comp.RepeatOn
-                ? Loc.GetString("Повтор \u2717")
-                : Loc.GetString("Повтор \u2713"),
+                ? Loc.GetString("Repeat \u2717")
+                : Loc.GetString("Repeat \u2713"),
 
             Icon = ent.Comp.RepeatOn
                 ? new SpriteSpecifier.Texture(new("/Textures/_Stalker/Interface/VerbIcons/refresh-slased.svg.192dpi.png"))

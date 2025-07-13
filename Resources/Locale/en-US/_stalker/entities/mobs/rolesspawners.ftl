@@ -40,3 +40,5 @@ ent-MobStalkerMilitiaCommander = Militia Commander doll (rename me)
     .suffix = { ent-MobStalkerMilitia.suffix }
 ent-MobStalkerToad = Toad doll (rename me)
     .suffix = { ent-MobStalkerMilitia.suffix }
+ent-MobStalkerMonolith = Monolith Dummy (rename me)
+    .suffix = Stalker, faction patch

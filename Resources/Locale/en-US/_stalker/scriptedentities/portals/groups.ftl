@@ -42,3 +42,5 @@ ent-Lobby-Clear-Sky = Lobby-Clear-Sky
 ent-Lobby-Clear-SkyUncollide = Lobby-Clear-SkyUncollide
 ent-Lobby-Agro-MilBase-SciBase = Lobby-Agro-MilBase-SciBase (spawn)
 ent-Lobby-Agro-MilBase-SciBase-Uncollide = Lobby-Agro-MilBase-SciBase-Uncollide (spawn)
+ent-Lobby-RedForest-VoenBase = Lobby-RedForest-VoenBase (spawn)
+ent-Lobby-RedForest-VoenBase-Uncollide = Lobby-RedForest-VoenBase-Uncollide (spawn)
