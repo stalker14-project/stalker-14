@@ -1,0 +1,9 @@
+ent-TulleCurtains = Curtains
+    .desc = Old Soviet curtains.
+    .suffix = ST, Mapping
+ent-CommunalCurtains = { ent-TulleCurtains }
+    .desc = { ent-TulleCurtains.desc }
+    .suffix = { ent-TulleCurtains.suffix }
+ent-BushCurtains = { ent-TulleCurtains }
+    .desc = { ent-TulleCurtains.desc }
+    .suffix = { ent-TulleCurtains.suffix }
