@@ -148,7 +148,7 @@
 - type: entity
   parent: STAnomalyBase
   id: STAnomalyBubble
-  suffix: ST, Anomaly, Bubble
+  suffix: ST, Anomaly, Bubble, Outdise
   components:
   - type: STAnomalyTriggerGroupsStateTransition
   - type: STAnomalyTriggerStartCollide
@@ -182,11 +182,12 @@
         - LowImpassable
   - type: Sprite
     sprite: _Stalker/Objects/Anomalies/bubble2.rsi
-    state: idle
+    layers:
+      - state: idle
 
 - type: entity
   id: STAnomalyBubbleExit
-  suffix: ST, Anomaly, Bubble exit
+  suffix: ST, Anomaly, Bubble exit outside
   components:
   - type: STAnomalyEffectTunnel
     options:
@@ -209,3 +210,25 @@
         layer:
         - MobLayer
         - LowImpassable
+
+- type: entity
+  parent: STAnomalyBubble
+  id: STAnomalyBubbleLima
+  suffix: ST, Anomaly, Bubble, To RF
+  components:
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        maps: [RedForest]
+        range: 1
+
+- type: entity
+  parent: STAnomalyBubbleExit
+  id: STAnomalyBubbleLimaExit
+  suffix: ST, Anomaly, Bubble, RF
+  components:
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        range: 0
+        type: Exit
