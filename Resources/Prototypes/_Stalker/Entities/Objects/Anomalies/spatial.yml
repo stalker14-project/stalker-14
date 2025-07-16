@@ -8,29 +8,33 @@
   id: ZoneAnomalyBarabashka
   suffix: Stalker, Barabashka, Anomaly
   components:
-    - type: ZoneAnomalyTriggerStartCollide
-    - type: ZoneAnomalyEffectDestroy
-      whitelist:
-        tags:
-          - STBolt
-    - type: ZoneAnomalyEffectRemoveItem
-      count: 1
-    - type: ZoneAnomaly
-      detectedLevel: 4
-      preparingDelay: 0
-      activationDelay: 1
-      chargingDelay: 4
-    - type: Sprite
-      sprite: _Stalker/Objects/Anomalies/barabashka.rsi
-      layers:
-        - state: idle
-          map: ["base"]
-    - type: GenericVisualizer
-      visuals:
-        enum.ZoneAnomalyVisuals.Layer:
-          base:
-            Activated: { state: active }
-            Idle: { state: idle }
+  - type: ZoneAnomalyTriggerStartCollide
+  - type: ZoneAnomalyEffectDestroy
+    whitelist:
+      tags:
+        - STBolt
+  - type: ZoneAnomalyEffectRemoveItem
+    count: 1
+  - type: ZoneAnomaly
+    detectedLevel: 4
+    preparingDelay: 0
+    activationDelay: 1
+    chargingDelay: 4
+  - type: Sprite
+    sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+    layers:
+      - state: idle
+        map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneAnomalyVisuals.Layer:
+        base:
+          Activated: { state: active }
+          Idle: { state: idle }
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: unknown
 
 - type: entity
   parent: ZoneAnomalyBaseSpatial
@@ -50,3 +54,7 @@
     preparingDelay: 0
     activationDelay: 0
     chargingDelay: 5
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: unknown

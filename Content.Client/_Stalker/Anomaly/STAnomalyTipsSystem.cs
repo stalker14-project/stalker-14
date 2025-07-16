@@ -12,16 +12,16 @@ public sealed class STAnomalyTipsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<STAnomalyTipsViewingComponent, LocalPlayerAttachedEvent>(OnAttached);
-        SubscribeLocalEvent<STAnomalyTipsViewingComponent, LocalPlayerDetachedEvent>(OnDetached);
+        SubscribeLocalEvent<STAnomalyTipsViewingComponent, PlayerAttachedEvent>(OnAttached);
+        SubscribeLocalEvent<STAnomalyTipsViewingComponent, PlayerDetachedEvent>(OnDetached);
     }
 
-    private void OnAttached(Entity<STAnomalyTipsViewingComponent> viewing, ref LocalPlayerAttachedEvent args)
+    private void OnAttached(Entity<STAnomalyTipsViewingComponent> viewing, ref PlayerAttachedEvent args)
     {
         _overlay.AddOverlay(new STAnomalyTipsOverlay());
     }
 
-    private void OnDetached(Entity<STAnomalyTipsViewingComponent> viewing, ref LocalPlayerDetachedEvent args)
+    private void OnDetached(Entity<STAnomalyTipsViewingComponent> viewing, ref PlayerDetachedEvent args)
     {
         _overlay.RemoveOverlay(new STAnomalyTipsOverlay());
     }
