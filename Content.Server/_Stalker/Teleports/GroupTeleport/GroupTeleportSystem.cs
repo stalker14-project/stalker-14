@@ -76,7 +76,7 @@ public sealed partial class GroupTeleportSystem : SharedTeleportSystem
 
         if (link.LinkedEntities.Count <= 0)
         {
-            _popup.PopupEntity("Кажется проход здесь появится позже...", entity, subject, PopupType.Medium);
+            _popup.PopupEntity("It seems the passage will appear here later...", entity, subject, PopupType.Medium);
             return;
         }
 
