@@ -60,6 +60,26 @@
       portalName: Cordon-LesBase
     - type: AccessReader
       access: [["Monolith"]]
+- type: entity
+  parent: MapTeleportBase
+  id: LimaBase-RedForest
+  name: LimaBase-RedForest
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: LimaBase-RedForest
+  - type: AccessReader
+    access: [["Monolith"]]
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-LimaBase
+  name: RedForest-LimaBase
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: LimaBase-RedForest
+  - type: AccessReader
+    access: [["Monolith"]]
 
 ####################################Бандиты
 
@@ -510,4 +530,4 @@
       portalName: Lobby-RedForest-VoenBase
     - type: AccessReader
       access: [["MilitaryStalker"]]
-      
+
