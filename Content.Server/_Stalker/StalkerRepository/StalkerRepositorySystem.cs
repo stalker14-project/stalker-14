@@ -106,15 +106,15 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (sponsorData.IsGiven)
             return;
 
-        var index = _prototypeMan.Index(sponsorData.SponsorProtoId.Value);
-        var items = index.RepositoryItems;
+        if (!_sponsors.TryGetSponsorRepositoryItems(sponsorData, out var items))
+            return;
 
         foreach (var item in items)
         {
             var info = GenerateItemInfoByPrototype(item);
             InsertToRepo((uid, component), info);
         }
-        
+
         Task.Run(() => _sponsors.SetGiven(session.UserId, true));
         _stalkerStorageSystem.SaveStorage(component);
     }

@@ -129,3 +129,17 @@
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: dizzy
       event: !type:PsyonicsActionDizzyEvent
+
+- type: entity
+  id: STActionPsyonicsStealth
+  name: dizzy
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: InstantAction
+      itemIconStyle: NoItem
+      icon:
+        sprite: _Stalker/Interface/Actions/psyonics.rsi
+        state: dizzy
+      useDelay: 1
+      checkCanAccess: false
+      event: !type:STPsyonicsStealthActionEvent

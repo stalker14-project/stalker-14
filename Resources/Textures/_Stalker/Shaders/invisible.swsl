@@ -1,0 +1,20 @@
+light_mode unshaded;
+
+uniform highp float visibility;
+
+void fragment() {
+    highp vec4 sprite = zTexture(UV);
+    if (sprite.a == 0.0) {
+        discard;
+    }
+
+    lowp float alpha;
+    if (visibility > 0.0) {
+        alpha = sprite.a * visibility;
+    } else {
+        alpha = 0.0;
+    }
+
+    COLOR.xyz = sprite.xyz;
+    COLOR.a = alpha;
+}
