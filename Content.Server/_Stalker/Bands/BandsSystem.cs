@@ -308,7 +308,7 @@ namespace Content.Server._Stalker.Bands
             if (component is { AltBand: not null, CanChange: true })
                 _actions.AddAction(uid, ref component.ActionChangeEntity, component.ActionChange, uid);
 
-            _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
+            //_actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
         }
 
         private void OnRemove(EntityUid uid, BandsComponent component, ComponentRemove args)

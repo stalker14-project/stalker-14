@@ -18,7 +18,7 @@
     - protoId: ZoneAnomalyElectra
     # Gravity
     - protoId: ZoneAnomalyBurden
-      weight: 0.95
+      weight: 0.7
     - protoId: STAnomalyBubbleExit
     - protoId: ZoneAnomalyGravi
       weight: 2
@@ -28,7 +28,9 @@
     - protoId: ZoneAnomalyJarka
     # Psy
     - protoId: ZoneAnomalyLamp
-      weight: 0.5
+      weight: 0.75
+    - protoId: ZoneAnomalyKissel
+      weight: 1.25
 
 # Свалка
 - type: stAnomalyGenerationOptions
@@ -175,6 +177,8 @@
   options:
     totalCount: 900
     anomalyEntries:
+    - protoId: STAnomalyBubble
+      weight: 0.6
     # Electrical
     - protoId: ZoneAnomalySource
       weight: 2
@@ -295,7 +299,7 @@
     - protoId: ZoneAnomalyNoGravity
       weight: 0.3
     - protoId: STAnomalyBubbleLima
-      weight: 1.15
+      weight: 1.5
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGravi
     - protoId: ZoneAnomalySpringboard
