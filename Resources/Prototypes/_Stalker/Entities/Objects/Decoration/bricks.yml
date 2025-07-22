@@ -1,9 +1,8 @@
 - type: entity
   id: Bricks
-  parent: BaseStructureDynamic
-  name: Кирпичи
+  name: bricks
   suffix: ST, Mapping
-  description: Глиняннные кирпичи сложенные странной формой.
+  description: Clay bricks stacked in strange shapes.
   placement:
     mode: PlaceFree
   components:
@@ -12,6 +11,7 @@
     state: p1
   - type: Physics
     bodyType: Static
+  - type: Clickable
   - type: Climbable
   - type: Fixtures
     fixtures:
