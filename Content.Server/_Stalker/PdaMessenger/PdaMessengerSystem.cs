@@ -12,7 +12,6 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server.Mind;
-using Robust.Server.Audio;
 
 namespace Content.Server._Stalker.PdaMessenger;
 
@@ -26,7 +25,6 @@ public sealed class PdaMessengerSystem : EntitySystem
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly RingerSystem _ringer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
 
     private readonly List<PdaChat> _chats = new() { new PdaChat("General") };
     private WebhookIdentifier? _webhookIdentifier;
@@ -121,7 +119,7 @@ public sealed class PdaMessengerSystem : EntitySystem
         }
 
         if (TryComp<RingerComponent>(GetEntity(args.LoaderUid), out var ringer))
-            _audio.PlayPvs(messenger.Comp.PDASound, GetEntity(args.LoaderUid));
+           _ringer.RingerPlayRingtone((GetEntity(args.LoaderUid), ringer));
 
         UpdateUiState(messenger, GetEntity(args.LoaderUid), messenger.Comp);
     }
@@ -149,10 +147,10 @@ public sealed class PdaMessengerSystem : EntitySystem
         var query = EntityQueryEnumerator<CartridgeLoaderComponent, RingerComponent, ContainerManagerComponent>();
         while (query.MoveNext(out var uid, out var comp, out var ringer, out var cont))
         {
-            if (!_cartridgeLoader.TryGetProgram<PdaMessengerComponent>(uid, out _, out var pda, false, comp, cont))
+            if (!_cartridgeLoader.TryGetProgram<PdaMessengerComponent>(uid, out _, out _, false, comp, cont))
                 continue;
 
-            _audio.PlayPvs(pda.PDASound, uid);
+            _ringer.RingerPlayRingtone((uid, ringer));
         }
     }
 

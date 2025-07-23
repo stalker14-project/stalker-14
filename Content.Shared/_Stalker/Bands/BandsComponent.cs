@@ -29,8 +29,8 @@ public sealed partial class BandsComponent : Component
 
     [DataField] public EntityUid? ActionChangeEntity;
 
-    //[DataField("action"), ViewVariables(VVAccess.ReadOnly)]
-    //public string Action = "ActionToggleBands";
+    [DataField("action"), ViewVariables(VVAccess.ReadOnly)]
+    public string Action = "ActionToggleBands";
 
     [DataField] public EntityUid? ActionEntity;
 
