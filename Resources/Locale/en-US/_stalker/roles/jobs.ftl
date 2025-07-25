@@ -18,7 +18,7 @@ job-covenant = Covenant
 job-covenant-desc = This is a small army of extremely dangerous fanatics.
 job-covenant-supervisor = Explore the Zone and keep its secrets safe from prying eyes.
 
-job-deserter = Renegade
+job-deserter = Deserter
 job-deserter-desc = Deserter from government structures.
 job-deserter-supervisor = Disobey dictators' orders! Defend the honor and dignity of the zone!
 
@@ -122,6 +122,10 @@ job-jaba = Toad
 job-jaba-desc = Interest group.
 job-jaba-supervisor = Greed is a way of life, curiosity is not a vice.
 
+job-jaba-ace = Ace of Toads
+job-jaba-ace-desc = Interest group.
+job-jaba-ace-supervisor = No gods, no masters. You obey no one.
+
 job-trader = Trader
 job-trader-desc = Grouping of traders and hucksters of the entire Zone
 job-trader-supervisor = You work for yourself.
@@ -141,3 +145,23 @@ job-militia-supervisor = You are subordinate to the militia commanders.
 job-militia-commander = Militia Commander
 job-militia-commander-desc = Stalker militia. There can be many commanders.
 job-militia-commander-supervisor = You consult with other militia commanders.
+
+job-evolver = Evolved Mutant
+job-evolver-desc = Adapt and survive, mutate and thrive.
+job-evolver-supervisor = You answer to the zone and to other mutants.
+
+job-evolver-fang = Pack Fang
+job-evolver-fang-desc = A fierce warrior who fights for the pack to the last breath. Protect the pack and expand your territory!
+job-evolver-fang-supervisor = You answer to the zone and to the Alpha.
+
+job-evolver-alpha = Pack Alpha
+job-evolver-alpha-desc = The leader of the pack. Protect what's yours and command with confidence.
+job-evolver-alpha-supervisor = You answer only to the zone.
+
+job-evolver-medium = Symbiote Psion
+job-evolver-medium-desc = Through your powerful psionic abilities you protect the zone and evolve further. Learn and evolve.
+job-evolver-medium-supervisor = Study and protect the zone, obey your Archon and Alpha.
+
+job-evolver-archon = Symbiote Archon
+job-evolver-archon-desc = Exert control over the psyfield and the Psions, you are the peak of psionic evolution.
+job-evolver-archon-supervisor = Protect the zone and preserve the psyfield.

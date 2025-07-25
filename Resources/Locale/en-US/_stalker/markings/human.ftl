@@ -15,7 +15,7 @@ marking-HumanHairBluntbangsAlt = Blunt Bangs (Alt)
 marking-HumanHairBobcutAlt = Bob (Alt)
 marking-HumanHairBunhead4 = Bunhead
 marking-HumanHairCombed = Combed
-marking-HumanHairCombedBob = Bob (Combed)
+marking-HumanHairCombedbob = Bob (Combed)
 marking-HumanHairCotton = Cotton
 marking-HumanHairCurly = Curly Hair
 marking-HumanHairDave = Dave
@@ -73,6 +73,10 @@ marking-HumanHairViper = Viper
 marking-HumanHairWife = Someone's Wife
 marking-HumanHairZiegler = Ziegler
 
+# FACIAL HAIR
+marking-HumanFacialHairHandlebar = Moustache (Handlebars)
+marking-HumanFacialHairHandlebarAlt = Moustache (Handlebars Alt)
+
 # HEAD
 marking-EyebrowsThick = Eyebrows
 marking-EyebrowsThick-eyebrowsthick = Eyebrows
@@ -87,6 +91,23 @@ marking-ScarHeadTwistingAlt = Scar (Twisting Alt)
 marking-VitiligoHeadJaw = Vitiligo (Jaw)
 marking-VitiligoHeadLeft = Vitiligo (Left Eye)
 marking-VitiligoHeadRight = Vitiligo (Right Eye)
+
+# do we have catgirls in the zone is that canon
+marking-CatEarsStubby = Cat Ears (Stubby)
+marking-CatEarsStubby-ears_stubby_outer = Outer
+marking-CatEarsStubby-ears_stubby_inner = Inner
+marking-CatEarsCurled = Cat Ears (Curled)
+marking-CatEarsCurled-ears_curled_outer = Outer
+marking-CatEarsCurled-ears_curled_inner = Inner
+marking-CatEarsTorn = Cat Ears (Torn)
+marking-CatEarsTorn-ears_torn_outer = Outer
+marking-CatEarsTorn-ears_torn_inner = Inner
+marking-CatTailStripes = Cat Tail (Stripes)
+marking-CatTailStripes-tail_cat_wag_stripes_prime = Tail
+marking-CatTailStripes-tail_cat_wag_stripes_second = Stripes
+marking-FoxEars = Fox Ears
+marking-FoxEars-ears_fox_outer = Outer
+marking-FoxEars-ears_fox_inner = Inner
 
 # CHEST
 marking-TattooAnchor = Tattoo (Anchor)
