@@ -638,6 +638,9 @@ public abstract class SharedStrippableSystem : EntitySystem
         if (!HasComp<StrippingComponent>(user))
             return false;
 
+        var popup = Loc.GetString("someone-examine-your-equipment", ("name", Identity.Name(user, EntityManager)));
+
+        _popupSystem.PopupClient(popup, user, target.Owner, PopupType.Medium);
         _ui.OpenUi(target.Owner, StrippingUiKey.Key, user);
         return true;
     }

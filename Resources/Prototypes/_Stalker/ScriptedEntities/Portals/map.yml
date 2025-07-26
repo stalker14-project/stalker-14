@@ -1211,3 +1211,25 @@
     cooldownTime: 5
     godmodeCooldown: 5
     time: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Bar-Topi
+  name: Bar-Topi
+  components:
+    - type: NewMapTeleport
+      portalName: Topi-Bar
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Topi-Bar
+  name: Topi-Bar
+  components:
+    - type: NewMapTeleport
+      portalName: Topi-Bar
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5

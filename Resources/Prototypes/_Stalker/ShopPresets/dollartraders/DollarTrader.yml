@@ -3,10 +3,15 @@
   id: HidenZoneTrader
   itemsForSale:
     # ---GRAVITY---
+    #Т2
+    ZoneArtifactBattery: 5
+    ZoneArtifactAmoeba: 5
+    ZoneArtifactBlood: 5
+    ZoneArtifactEye: 3
     #T3
     ZoneArtifactFlower: 20
     #T4
-    ZoneArtifactGravi: 40
+    ZoneArtifactGravi: 60
     ZoneArtifactNightStar: 60
     #T5
     ZoneArtifactDistorter: 100
@@ -16,15 +21,15 @@
     ZoneArtifactStuntman: 80
     # ---THERMAL---
     #T3
-    ZoneArtifactFlame: 40
+    ZoneArtifactFlame: 25
     #T4
     ZoneArtifactCristall: 60
     #T5
     ZoneArtifactLithosphere: 100
     # ---ELECTRICAL---
     #T3
-    ArtMoon: 60
-    ZoneArtifactFlash: 40
+    ArtMoon: 40
+    ZoneArtifactFlash: 20
     #T5
     ZoneArtifactIce: 100
     ZoneArtifactTesla: 80
@@ -33,14 +38,14 @@
     ZoneArtifactSoul: 80
     # ---ACIDIC---
     #T3
-    ZoneArtifactMeat: 60
+    ZoneArtifactMeat: 40
     #T4
-    ZoneArtifactBaloon: 80
-    ZoneArtifactKolobok: 80
+    ZoneArtifactBaloon: 65
+    ZoneArtifactKolobok: 55
     # Mutant parts
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 35
-    MutantPartOraculeEye: 80
+    MutantPartBloodsuckerTentacles: 45
+    MutantPartOraculeEye: 60
     MutantPartPseudogiantHeart: 100
     MutantPartZombieHand: 10
 
@@ -49,16 +54,13 @@
   - name: shop-category-weapons
     priority: 1
     items:
-      STWeaponShotgunProtecta: 35
-      STWeaponRifleGalil: 25
-      STWeaponRifleM4: 40
-      STWeaponSMGThompson: 45
-      STWeaponRifleM14: 60
-      STWeaponSMGPP19: 30
-      STWeaponSniperSVDS: 85
-      STWeaponSniperVepr: 65
+      STWeaponShotgunProtecta: 25
+      STWeaponSMGThompson: 35
+      STWeaponRifleM14: 125
+      STWeaponSniperSVDS: 250
+      STWeaponSniperVepr: 150
       STWeaponShotgunSaiga12: 25
-      STWeaponRifleAK103: 100
+      STWeaponSniperVSS: 600
   - name: shop-category-magazines
     priority: 2
     items:
@@ -67,61 +69,80 @@
       Saiga1270Mag10: 5
       Base1270Mag: 2
       Saiga1270Drum: 35
-      PPSHDrum: 35
       Base751Mag10: 3
-      BizonMag: 9
       754Mag20: 10
-      939Mag20: 7
-      545Mag30: 5
-      545Mag45: 8
-      556Mag30: 6
-      556Mag45: 10
+      Base939Mag10: 10
   - name: shop-category-ammunition
     priority: 3
     items:
       918PBMBoxCink: 20
-      918PSTBoxCink: 5
       939SP5BoxCink: 30
       939SP6BoxCink: 55
       556M855BoxCink: 30
+      751M80BoxCink: 35
       545PCBoxCink: 25
       725PSTBoxCink: 20
-      725PTBoxCink: 5
-      8mmBuckshotBoxCink: 10
+      8mmBuckshotBoxCink: 40
       754PCBox: 5
+      STBox9x39PSO: 15
+      ShotgunBulletBoxRIP: 5
   - name: shop-category-armor
     priority: 4
     items:
-      ClothingOuterArmorStalker: 25
-      ClothingHeadHelmetVityaz1C: 15
       ClothingHeadHelmetBerill5MMilitary: 20
-      STClothingOuterArmorIOTVBlack: 150
       ClothingHeadHelmetUlach: 75
-      ClothingOuterArmor6B13: 120
-      ClothingOuterArmorUzk5: 145
+      ClothingOuterArmorAborigineStalker: 75
+      ClothingOuterArmorStalkerCombat: 200
+      STClothingOuterArmorVeryHeavy: 350
+      ClothingOuterArmorHazmatRf: 500
   - name: shop-category-storage-and-containers
     priority: 5
     items:
-      ClothingBackpackDuffelBlackTacticStalker: 10
+      ClothingBackpackDuffelBlackTacticStalker: 20
+      ClothingBackpackDuffelOliveTacticStalker: 20
+      ClothingBackpackDuffelSuperStalker: 50
+      ClothingBackpackDuffelSuperStalkerGray: 50
       ClothingBeltWebbingDoubleStalkerZaryaSmall: 5
   - name: shop-category-research-equipment
     priority: 7
     items:
-      ZoneAnomalyDetectorAD1: 5 # T1
-      ZoneArtifactDetectorHunter: 25 # T2
-      ZoneArtifactDetectorResponse: 25 # T2
-      STZoneArtifactDetectorBearBlueprint: 150
-      STPsyHelm1: 10
+      ZoneAnomalyDetectorAD3: 20
+      ZoneArtifactDetectorSpruce: 25
+      ZoneArtifactDetectorBear: 350
+      ZoneArtifactDetectorWolfhound: 1000
+      STPsyHelm2: 20
+      BoxArtcont1: 20
+      BoxArtcont: 5
+      STBoltBagOliveGrayFilledGolden: 300
+      TrashDetectorTier4: 100
+      TrashDetectorTier5: 200
   - name: shop-category-medicine
     priority: 10
     items:
       BoxMRE: 5
-      AntiradCrate: 8
       Defibrillator: 10
       STOintmentGood: 2 #лечит 40 терм. урона (Heat: -20 Caustic: -10 Shock: -10 delay: 8)
       MedkitMilitary: 2 #лечит 50 физ. урона (Piercing: -20 Blunt: -10 Slash: -20 delay: 8)
       MedkitScience: 5 #лечит 45 терм. урона и 20 рад. (Heat: -15 Caustic: -15 Shock: -15 Radiation: -20 delay: 9)
       WakeUpMedipen: 5 #содержит аналог 2 таблеток wakeuppill (20 унций Bloodloss: -3 Asphyxiation: -2 за унцию)
+      MedkitAI2: 1
+      AntiRadMedipen: 5
+      psyblock: 5
+      STPillboxShiza: 100
+      ThermoOintment: 4
+      OintmentDressing: 2
+      MedkitElite: 10
+      MedkitLAR: 25
+  - name: shop-category-modules
+    priority: 11
+    items:
+      STModuleAutoSear: 50
+      STModuleSMGGripT2: 60
+      STModuleSniperSightT2: 30
+      STModuleScopeRiflesT2Nato: 50
+      STModuleScopeRiflesT2Ru: 50
+
+
 
 
 

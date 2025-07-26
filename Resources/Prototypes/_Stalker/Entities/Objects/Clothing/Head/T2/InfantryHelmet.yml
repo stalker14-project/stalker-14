@@ -37,9 +37,9 @@
   description: Пехотный шлем марки «Восток» второго класса защиты, производитель неизвестен.
   components:
     - type: Sprite
-      sprite: Clothing/Head/Helmets/merc_helmet.rsi
+      sprite: _Stalker/objects/Clothing/hats/pehhelm_stal.rsi
     - type: Clothing
-      sprite: Clothing/Head/Helmets/merc_helmet.rsi
+      sprite: _Stalker/objects/Clothing/hats/pehhelm_stal.rsi
 
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
@@ -143,3 +143,14 @@
       sprite: _Stalker/Objects/Clothing/hats/pehhelm_serasera.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/pehhelm_serasera.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetCombatT2Base
+  id: ClothingHeadHelmetInfantryDolg
+  name: шлем «Восток» долга
+  description: Пехотный шлем марки «Восток» второго класса защиты, производитель неизвестен.
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/pehhelm_dolg.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/pehhelm_dolg.rsi

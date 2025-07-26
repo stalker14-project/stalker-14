@@ -1,0 +1,157 @@
+- type: shopPreset
+  id: BandsDollarShopPreset
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 0
+    ZoneArtifactEye: 0
+    ZoneArtifactFlame: 0
+    # Thermal group - 2
+    ZoneArtifactCristall: 0
+    ZoneArtifactLithosphere: 0
+    # Electrical group - 1
+    ZoneArtifactSparkler: 0
+    ZoneArtifactBattery: 0
+    ZoneArtifactFlash: 0
+    ArtMoon: 0
+    ZoneArtifactTesla: 0
+    ZoneArtifactIce: 0
+    # Gravity group - 1
+    ArtMedusa: 0
+    ZoneArtifactFlower: 0
+    ZoneArtifactNightStar: 0
+    # Gravity group - 2
+    ZoneArtifactVyvert: 0
+    ZoneArtifactAmoeba: 0
+    ZoneArtifactFloodlight: 0
+    ZoneArtifactGravi: 0
+    ZoneArtifactGoldfish: 0
+    ZoneArtifactSpring: 0
+    ZoneArtifactFocus: 0
+    ZoneArtifactStuntman: 0
+    ZoneArtifactDistorter: 0
+    ZoneArtifactSoul: 0
+    # Acidic group - 1
+    ZoneArtifactBlood: 0
+    ZoneArtifactMeat: 0
+    ZoneArtifactKolobok: 0
+    # Acidic group - 2
+    ZoneArtifactPellicle: 0
+    ZoneArtifactBaloon: 0
+
+     # Mutant parts
+
+  #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 0 # T1
+    MutantPartSeasonedBoarHoof: 0 # T2
+    MutantPartOldBoarHoof: 0 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 0
+    MutantPartFleshEye: 0
+    FoodMeatSpiderLeg: 0
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 20
+    MutantPartPseudodogTail: 5
+    MutantPartSnorkFoot: 5
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 40
+    MutantPartOraculeEye: 50
+    MutantPartPseudogiantHeart: 80
+    MutantPartZombieHand: 2
+
+        #values
+    ClothingNeckBronzeheart: 0
+    ClothingNeckCargomedal: 0
+    ClothingNeckEngineermedal: 0
+    Wristwatch: 2
+    SilverRing: 0
+    GoldRing: 0
+    TreasureCoinIron: 0
+    TreasureCoinGold: 0
+    TreasureCoinSilver: 0
+    ClothingStalkerNeckToken: 0
+    SilverRingDiamond: 5
+    GoldRingDiamond: 5
+    MaterialDiamond1: 10
+    DrinkGoldenCup: 5
+    SilverRingGem: 7
+    GoldRingGem: 10
+    ClothingNeckGoldmedal: 4
+    IngotSilver1: 10
+    IngotGold1: 10
+    WristwatchGold: 20
+    ClothingNeckBling: 15
+    TreasureCoinAdamantine: 0
+
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+            # Guns
+          # 7mm
+        STWeaponShotgunSaiga12: 40
+          # 5,45x39
+        STWeaponRifleAK74M: 140
+        STWeaponRifleGalil: 200
+        STWeaponRifleASVAL: 500
+        STWeaponRifleAK103: 300
+        STWeaponRifleOC14: 150
+        StielhandgranateM24: 4
+        DG05SmokeGrenade: 2
+        HydrocyanicGrenadeStalker: 7
+        StielhandgranateM24Bundle: 10
+        TrashDetectorTier4: 100
+    - name: shop-category-magazines
+      priority: 2
+      items:
+          # 5,45x39
+        545Mag45: 30 #T3
+        556M856BoxCink: 30
+        739Mag45: 30
+        939Mag20: 30
+          # Other
+        Saiga1270Drum: 30
+        Saiga1270Mag10: 10
+        Base1270Mag: 5
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        8mmBuckshotBoxCink: 35
+        545BPBoxCink: 80
+        739PCBoxCink: 120
+        939BPBoxCink: 150
+
+    - name: shop-category-armor
+      priority: 4
+      items:
+        ClothingOuterArmorBandits: 20
+        STClothingOuterArmorVeryHeavy: 300
+        ClothingHeadHelmetBerill5MMilitary: 30
+        ClothingHeadAssaultHelmetBandit: 45
+        ClothingHeadHelmetUlach: 80
+        STPsyHelm2: 20
+
+    - name: shop-category-storage-and-containers
+      priority: 5
+      items:
+        ClothingBackpackDuffelBlackTacticStalker: 40
+        ClothingBackpackDuffelBlackMilitaryTacticStalker: 40
+        ClothingBeltWebbingHolsterMercBandit: 10
+
+    - name: shop-category-raincoats-and-gasmasks
+      priority: 6
+      items:
+          # Gasmasks
+        ClothingMaskunix5000: 40
+        ClothingMaskRCBZ2: 30
+
+    - name: shop-category-modules
+      priority: 7
+      items:
+        STModuleAutoSear: 50
+        STModuleSMGGripT2: 60
+        STModuleSniperSightT2: 30
+        STModuleScopeRiflesT2Nato: 50
+        STModuleScopeRiflesT2Ru: 50

@@ -51,7 +51,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/stalker_barsuk.rsi
   - type: Tag
     tags:
-    - BlockBack
+    - BlockCloak
   - type: Storage
     maxItemsize: Large
     grid:
@@ -265,7 +265,7 @@
       sprite: _Stalker/Objects/Clothing/hats/hood_strazh.rsi
 
 - type: entity
-  parent: STClothingOuterArmorBase
+  parent: STClothingOuterArmorZaryaBase
   id: ClothingOuterArmorFreedomWind
   name: комбинезон «Ветер свободы»
   description: Производимый ремесленниками группировки «Свобода» облегчённый комбинезон сталкера. Лёгкий армейский бронежилет второго класса защиты плюс накладные усиливающие кевларовые пластины. Способен защитить от слабого оружия. Ткань комбинезона обработана специальным составом, повышающим сопротивление аномальной активности.
@@ -288,9 +288,6 @@
       - 6,3,6,4
   - type: Armor
     armorClass: 2
-# bonus
-  - type: STWeight
-    self: -3.5
 
 - type: entity
   parent: STClothingHeadHatBase
