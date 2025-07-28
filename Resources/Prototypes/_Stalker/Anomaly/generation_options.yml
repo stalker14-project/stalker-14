@@ -127,19 +127,24 @@
 - type: stAnomalyGenerationOptions
   id: STTemnajLohinaGenerationOptions
   options:
-    totalCount: 150
+    totalCount: 100
     anomalyEntries:
     # Gravity
     - protoId: ZoneAnomalyGrabber
-      weight: 5
+      weight: 0.5
     - protoId: ZoneAnomalyGravi
-      weight: 3.5
+      weight: 1.5
     - protoId: ZoneAnomalySpringboard
-      weight: 2
     - protoId: ZoneAnomalyNoGravity
       weight: 0.3
     - protoId: ZoneAnomalyBurden
       weight: 0.4
+    # Thermal
+    - protoId: ZoneAnomalyJarka
+      weight: 2
+    # Electrical
+    - protoId: ZoneAnomalyElectra
+      weight: 2
 
 # Тёмная долина
 - type: stAnomalyGenerationOptions

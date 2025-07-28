@@ -1,56 +1,11 @@
 - type: entity
-  parent: STClothingOuterArmorStorageBasic
+  parent: ClothingOuterArmorPSZ9D
   id: STClothingOuterArmorHeavyM
-  name: бронированный комбинезон
-  description: Создан на основе обыкновенного комбинезона, бронированный потому что повышена защита броневыми пластинами от большинства физических повреждений. Так-же увеличивает вес, но предоставленая отличная защита от снарядов для таких комбенизонов как этот.
-  suffix: ST, T3, PvP
-  components:
-  - type: STWeight
-    self: 6.5
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor.rsi
-  - type: Armor
-    armorClass: 3
-    modifiers:
-      flatReductions:
-        Blunt: 3
-        Slash: 3
-        Piercing: 6
-      coefficients:
-        Blunt: 0.2
-        Slash: 0.2
-        Piercing: 0.7
-  - type: ExplosionResistance
-    damageCoefficient: 0.65
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodMerc
-    slot: head
-  - type: Tag
-    tags:
-    - BlockBack
-    - BlockCloak
-
-- type: entity
-  parent: STClothingOuterArmorHeavyM
-  id: STClothingOuterArmorHeavyDolg
-  name: бронированный комбинезон 'Долга'
-  description: Создан на основе обыкновенного комбинезона, бронированный потому что повышена защита броневыми пластинами от большинства физических повреждений. Так-же увеличивает вес, но предоставленая отличная защита от снарядов для таких комбенизонов как этот.
+  name: бронекостюм "Туз"
+  suffix: ST, T4, PvP
+  description: Ну очень блатной комбез
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/armored_dolg_armor.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_2.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/armored_dolg_armor.rsi
-  - type: Storage
-    maxItemsize: Large
-    grid:
-      - 0,2,0,3
-      - 0,-2,0,0
-      - 2,2,2,3
-      - 2,-1,3,-0
-      - 4,2,4,3
-      - 5,-1,6,-0
-      - 6,2,6,3
-      - 8,2,8,3
-      - 8,-2,8,0
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_2.rsi

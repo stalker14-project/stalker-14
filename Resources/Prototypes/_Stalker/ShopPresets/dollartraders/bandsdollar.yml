@@ -4,39 +4,39 @@
     # Thermal group - 1
     ZoneArtifactFireball: 0
     ZoneArtifactEye: 0
-    ZoneArtifactFlame: 0
+    ZoneArtifactFlame: 25
     # Thermal group - 2
-    ZoneArtifactCristall: 0
-    ZoneArtifactLithosphere: 0
+    ZoneArtifactCristall: 60
+    ZoneArtifactLithosphere: 165
     # Electrical group - 1
     ZoneArtifactSparkler: 0
-    ZoneArtifactBattery: 0
-    ZoneArtifactFlash: 0
-    ArtMoon: 0
-    ZoneArtifactTesla: 0
-    ZoneArtifactIce: 0
+    ZoneArtifactBattery: 10
+    ZoneArtifactFlash: 30
+    ArtMoon: 30
+    ZoneArtifactTesla: 165
+    ZoneArtifactIce: 165
     # Gravity group - 1
     ArtMedusa: 0
-    ZoneArtifactFlower: 0
-    ZoneArtifactNightStar: 0
+    ZoneArtifactFlower: 15
+    ZoneArtifactNightStar: 30
     # Gravity group - 2
     ZoneArtifactVyvert: 0
-    ZoneArtifactAmoeba: 0
+    ZoneArtifactAmoeba: 5
     ZoneArtifactFloodlight: 0
-    ZoneArtifactGravi: 0
-    ZoneArtifactGoldfish: 0
-    ZoneArtifactSpring: 0
-    ZoneArtifactFocus: 0
-    ZoneArtifactStuntman: 0
-    ZoneArtifactDistorter: 0
-    ZoneArtifactSoul: 0
+    ZoneArtifactGravi: 50
+    ZoneArtifactGoldfish: 165
+    ZoneArtifactSpring: 165
+    ZoneArtifactFocus: 165
+    ZoneArtifactStuntman: 165
+    ZoneArtifactDistorter: 165
+    ZoneArtifactSoul: 165
     # Acidic group - 1
-    ZoneArtifactBlood: 0
-    ZoneArtifactMeat: 0
-    ZoneArtifactKolobok: 0
+    ZoneArtifactBlood: 5
+    ZoneArtifactMeat: 30
+    ZoneArtifactKolobok: 50
     # Acidic group - 2
     ZoneArtifactPellicle: 0
-    ZoneArtifactBaloon: 0
+    ZoneArtifactBaloon: 50
 
      # Mutant parts
 
@@ -51,38 +51,38 @@
     FoodMeatSpiderLeg: 0
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 20
-    MutantPartPseudodogTail: 5
-    MutantPartSnorkFoot: 5
+    MutantPartLeshiyRoot: 15
+    MutantPartPseudodogTail: 4
+    MutantPartSnorkFoot: 4
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 40
-    MutantPartOraculeEye: 50
-    MutantPartPseudogiantHeart: 80
+    MutantPartBloodsuckerTentacles: 30
+    MutantPartOraculeEye: 40
+    MutantPartPseudogiantHeart: 65
     MutantPartZombieHand: 2
 
-        #values
+    #values
     ClothingNeckBronzeheart: 0
     ClothingNeckCargomedal: 0
     ClothingNeckEngineermedal: 0
-    Wristwatch: 2
+    Wristwatch: 0
     SilverRing: 0
     GoldRing: 0
     TreasureCoinIron: 0
     TreasureCoinGold: 0
     TreasureCoinSilver: 0
     ClothingStalkerNeckToken: 0
-    SilverRingDiamond: 5
-    GoldRingDiamond: 5
-    MaterialDiamond1: 10
-    DrinkGoldenCup: 5
-    SilverRingGem: 7
-    GoldRingGem: 10
-    ClothingNeckGoldmedal: 4
-    IngotSilver1: 10
-    IngotGold1: 10
-    WristwatchGold: 20
-    ClothingNeckBling: 15
+    SilverRingDiamond: 0
+    GoldRingDiamond: 0
+    MaterialDiamond1: 0
+    DrinkGoldenCup: 0
+    SilverRingGem: 0
+    GoldRingGem: 0
+    ClothingNeckGoldmedal: 0
+    IngotSilver1: 0
+    IngotGold1: 0
+    WristwatchGold: 0
+    ClothingNeckBling: 0
     TreasureCoinAdamantine: 0
 
   categories:
@@ -108,7 +108,6 @@
       items:
           # 5,45x39
         545Mag45: 30 #T3
-        556M856BoxCink: 30
         739Mag45: 30
         939Mag20: 30
           # Other
@@ -118,16 +117,18 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        8mmBuckshotBoxCink: 35
+        ShotgunFlechetteCink: 35
         545BPBoxCink: 80
+        556M856BoxCink: 80
         739PCBoxCink: 120
         939BPBoxCink: 150
+        751M61BoxCink: 120
 
     - name: shop-category-armor
       priority: 4
       items:
         ClothingOuterArmorBandits: 20
-        STClothingOuterArmorVeryHeavy: 300
+        STClothingOuterArmorHeavyM: 300
         ClothingHeadHelmetBerill5MMilitary: 30
         ClothingHeadAssaultHelmetBandit: 45
         ClothingHeadHelmetUlach: 80
