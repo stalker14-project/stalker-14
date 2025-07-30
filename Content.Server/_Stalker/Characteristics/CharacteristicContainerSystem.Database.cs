@@ -5,6 +5,7 @@ using Content.Server.GameTicking;
 using Content.Shared._Stalker.Characteristics;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
+using Robust.Shared.Asynchronous;
 using Robust.Shared.IoC;
 using Robust.Shared.Player;
 
@@ -13,6 +14,7 @@ namespace Content.Server._Stalker.Characteristics;
 public sealed partial class CharacteristicContainerSystem : SharedCharacteristicContainerSystem
 {
     [Dependency] private readonly IServerDbManager _dbManager = default!;
+    [Dependency] private readonly ITaskManager _taskManager = default!;
 
     private readonly Dictionary<(string, CharacteristicType), DateTime?> _lastTrainedByCharacteristic = [];
 
@@ -21,9 +23,14 @@ public sealed partial class CharacteristicContainerSystem : SharedCharacteristic
         SubscribeLocalEvent<PlayerAttachedEvent>(OnPlayerBeforeSpawn);
     }
 
-    private async void OnPlayerBeforeSpawn(PlayerAttachedEvent args)
+    private void OnPlayerBeforeSpawn(PlayerAttachedEvent args)
     {
-        await LoadCharacteristicsAsync(args.Player);
+        // TODO: Workaround for db issue demonstration
+        var task = Task.Run(async () =>
+        {
+            await LoadCharacteristicsAsync(args.Player);
+        });
+        _taskManager.BlockWaitOnTask(task);
     }
 
     private async Task LoadCharacteristicsAsync(ICommonSession player)

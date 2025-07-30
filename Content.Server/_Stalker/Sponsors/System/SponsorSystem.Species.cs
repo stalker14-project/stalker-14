@@ -7,7 +7,7 @@ namespace Content.Server._Stalker.Sponsors.System;
 public sealed partial class SponsorSystem
 {
     private ISawmill _sawmill = default!;
-    
+
     private void InitializeSpecies()
     {
         SubscribeLocalEvent<PlayerBeforeSpawnEvent>(OnBeforeSpawn);
@@ -22,10 +22,10 @@ public sealed partial class SponsorSystem
 
         if (!speciesIndex.IsSponsor)
             return;
-        
+
         if (!_sponsors.TryGetInfo(player, out var info) || info.SponsorProtoId is null)
         {
-            _sawmill.Error($"Player tried to join as {ev.Profile.Species}, but he is not sponsor");
+            _sawmill.Warning($"Player tried to join as {ev.Profile.Species}, but he is not sponsor");
             ev.Profile.Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
             return;
         }
@@ -35,10 +35,10 @@ public sealed partial class SponsorSystem
             .Select(p => p.SpeciesId)
             .ToList();
 
-        if (allowed.Contains(species)) 
+        if (allowed.Contains(species))
             return;
-        
-        _sawmill.Error($"Player tried to join as {ev.Profile.Species}, but its not in his allowed species");
+
+        _sawmill.Warning($"Player tried to join as {ev.Profile.Species}, but its not in his allowed species");
         ev.Profile.Species = SharedHumanoidAppearanceSystem.DefaultSpecies;
     }
 }
