@@ -134,6 +134,7 @@ ent-kamysh = камыш
     .suffix = { ent-BirchTreeNew01.suffix }
 ent-FloraTreeRed01 = Дерево
     .suffix = { ent-BirchTreeNew01.suffix }
+    .desc = Дерево
 ent-FloraTreeRed02 = { ent-FloraTreeRed01 }
 ent-FloraTreeRed03 = { ent-FloraTreeRed01 }
 ent-FloraTreeRed04 = { ent-FloraTreeRed01 }

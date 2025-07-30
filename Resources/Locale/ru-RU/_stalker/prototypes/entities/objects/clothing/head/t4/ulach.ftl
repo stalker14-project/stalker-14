@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetTacticalT4Base = база тактического шлема T4
     .suffix = ST, T4, Tactical
+    .desc = база тактического шлема T4
 ent-ClothingHeadHelmetUlach = улач
     .desc = Это шлем, специально разработанный для защиты от колющих атак.
 ent-ClothingHeadHelmetUlachUN = улач ООН

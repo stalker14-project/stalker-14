@@ -24,3 +24,4 @@ ent-BookStalkerSeraphimFAQ = Дневник
     .suffix = Stalker, книга, PodpivAss_Lex
 ent-STPilgrimBible = Завет
     .suffix = Stalker, книга, Паломники
+    .desc = Завет

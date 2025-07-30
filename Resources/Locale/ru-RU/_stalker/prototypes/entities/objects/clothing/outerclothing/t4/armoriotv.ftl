@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorIOTVBase = бронежилет IOTV
     .suffix = ST, T4, PvE
+    .desc = бронежилет IOTV
 ent-STClothingOuterArmorIOTVBlack = бронежилет IOTV чёрный
     .desc = Бронежилет четвёртого класса защиты в стильном Чёрном цвете, выглядит внушительно.
 ent-STClothingOuterArmorIOTVGreen = бронежилет IOTV зелёный

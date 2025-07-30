@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorBase = базовый бронекомбез
     .suffix = ST, T3, PvE
+    .desc = базовый бронекомбез
 ent-ClothingOuterArmorStalker = бронекостюм «Барсук»
     .desc = Бронекостюм третьего класса защиты производста ООО «Подвал Бара».
 ent-ClothingOuterArmorRenegate = бронекостюм 'Ил'
