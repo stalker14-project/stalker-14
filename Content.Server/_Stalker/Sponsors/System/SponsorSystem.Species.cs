@@ -16,6 +16,9 @@ public sealed partial class SponsorSystem
 
     private void OnBeforeSpawn(PlayerBeforeSpawnEvent ev)
     {
+        if (!_sponsorsEnabled)
+            return;
+
         var player = ev.Player.UserId;
         var species = ev.Profile.Species;
         var speciesIndex = _prototype.Index(species);
