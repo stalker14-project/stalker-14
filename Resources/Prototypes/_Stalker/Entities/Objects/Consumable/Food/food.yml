@@ -61,16 +61,17 @@
             Radiation: -1
 
 - type: entity
-  name: сырое сало
+  name: raw lard
   parent: FoodMeatBase
   id: STFoodMeatSalo
-  description: Кусок сырого сала кабана.
-  suffix: Stalker, еда
+  description: Raw wild boar fat, can it be cooked?
+  suffix: Stalker, food
   components:
   - type: STWeight
     self: 1.0
   - type: Sprite
-    state: goliath
+    sprite: _Stalker/Objects/Counsumable/Food/lard.rsi
+    state: raw
   - type: SolutionContainerManager
     solutions:
       food:
@@ -84,20 +85,22 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSalo
     node: start
-    defaultTarget: steak boar
+    defaultTarget: meat salo
   - type: Tag
     tags:
     - Meat
   - type: Craftable
 
+########## НЕ отображается в меню спавна
+
 - type: entity
-  name: приготовленное сало
+  name: cooked lard
   parent: FoodMeatBase
   id: STFoodMeatSaloCooked
-  description: Приготовленное сало кабана.
-  suffix: Stalker, еда
+  description: Cooked wild boar fat, what does it taste like?
+  suffix: Stalker, food
   components:
   - type: STWeight
     self: 0.8
@@ -109,7 +112,8 @@
     - Steak
   - type: Sprite
     layers:
-    - state: goliath-cooked
+    sprite: _Stalker/Objects/Counsumable/Food/lard.rsi
+    state: cooked
   - type: SolutionContainerManager
     solutions:
       food:
@@ -121,8 +125,27 @@
         - ReagentId: MRadin
           Quantity: 10
   - type: Construction
-    graph: MeatSteakBoar
-    node: steak boar
+    graph: MeatBoarSalo
+    node: meat salo
+
+########## НЕ отображается в меню спавна
+
+- type: constructionGraph
+  id: MeatBoarSalo
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: meat salo
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: meat salo
+    entity: STFoodMeatSaloCooked
 
 ###############Хлеб
 

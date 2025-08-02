@@ -1,5 +1,9 @@
-ent-PlasticWaste0 = Мусор
-ent-PlasticWaste1 = { ent-PlasticWaste0 }
-ent-PlasticWaste2 = { ent-PlasticWaste0 }
-ent-PlasticWaste3 = { ent-PlasticWaste0 }
-ent-PlasticWasteSpawner = Мусорный пластиковый спавнер
+ent-PlasticWaste0 = небольшая кучка мусора
+    .desc = Просто обычная куча мусора, ничего интересного.
+ent-PlasticWaste1 = небольшая кучка мусора
+    .desc = Просто обычная куча мусора, ничего интересного.
+ent-PlasticWaste2 = небольшая кучка мусора
+    .desc = Просто обычная куча мусора, ничего интересного.
+ent-PlasticWaste3 = небольшая кучка мусора
+    .desc = Просто обычная куча мусора, ничего интересного.
+ent-PlasticWasteSpawner = спавнер пластикового мусора
