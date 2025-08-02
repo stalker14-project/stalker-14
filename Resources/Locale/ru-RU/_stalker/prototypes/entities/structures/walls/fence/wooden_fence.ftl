@@ -5,3 +5,4 @@ ent-FenceWoodenBroken = сломанный деревянный забор
     .suffix = ST, Mapping
 ent-FenceMetalStraightConst = сетка-рабица
     .suffix = ST, Mapping, разбираемый
+    .desc = сетка-рабица

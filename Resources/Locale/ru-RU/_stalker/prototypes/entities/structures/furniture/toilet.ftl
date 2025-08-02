@@ -4,4 +4,5 @@ ent-ToiletOld = грязный унитаз
 
 ent-ToiletOldfilthy = ToiletOldfilthy
     .suffix = ST, Mapping, Dirty
+    .desc = { ent-ToiletOld.desc }
 

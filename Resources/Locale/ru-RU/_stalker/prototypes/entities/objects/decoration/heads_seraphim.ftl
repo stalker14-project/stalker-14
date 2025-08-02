@@ -1,8 +1,12 @@
 ent-HeadSeraphimStalker1 = штык с головой
     .suffix = ST, Mapping
+    .desc = штык с головой
 ent-HeadSeraphimStalker2 = { ent-HeadSeraphimStalker1 }
     .suffix = { ent-HeadSeraphimStalker1.suffix }
+    .desc = { ent-HeadSeraphimStalker1.desc }
 ent-HeadSeraphimStalker3 = { ent-HeadSeraphimStalker1 }
     .suffix = { ent-HeadSeraphimStalker1.suffix }
+    .desc = { ent-HeadSeraphimStalker1.desc }
 ent-HeadSeraphimStalker4 = { ent-HeadSeraphimStalker1 }
     .suffix = { ent-HeadSeraphimStalker1.suffix }
+    .desc = { ent-HeadSeraphimStalker1.desc }
