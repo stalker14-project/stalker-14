@@ -26,5 +26,17 @@ namespace Content.Server.Bed.Components
         public TimeSpan NextHealTime = TimeSpan.Zero; //Next heal
 
         [DataField] public EntityUid? SleepAction;
+
+        /// <summary>
+        /// How much blood to replenish per HealTime.
+        /// </summary>
+        [DataField]
+        public float ReplenishBloodAmount = 1f;
+
+        /// <summary>
+        /// How much bleeding to remove per HealTime.
+        /// </summary>
+        [DataField]
+        public float BleedingAmount = -0.1f;
     }
 }

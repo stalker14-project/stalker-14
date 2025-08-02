@@ -1,7 +1,7 @@
 using Content.Server.Actions;
 using Content.Server.Bed.Components;
+using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared.Bed;
 using Content.Shared.Bed.Sleep;
@@ -24,6 +24,7 @@ namespace Content.Server.Bed
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
+        [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
 
         public override void Initialize()
         {
@@ -38,7 +39,6 @@ namespace Content.Server.Bed
 
         private void OnStrapped(Entity<HealOnBuckleComponent> bed, ref StrappedEvent args)
         {
-            EnsureComp<HealOnBuckleHealingComponent>(bed);
             bed.Comp.NextHealTime = _timing.CurTime + TimeSpan.FromSeconds(bed.Comp.HealTime);
             _actionsSystem.AddAction(args.Buckle, ref bed.Comp.SleepAction, SleepingSystem.SleepActionId, bed);
 
@@ -50,15 +50,14 @@ namespace Content.Server.Bed
         {
             _actionsSystem.RemoveAction(args.Buckle, bed.Comp.SleepAction);
             _sleepingSystem.TryWaking(args.Buckle.Owner);
-            RemComp<HealOnBuckleHealingComponent>(bed);
         }
 
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
 
-            var query = EntityQueryEnumerator<HealOnBuckleHealingComponent, HealOnBuckleComponent, StrapComponent>();
-            while (query.MoveNext(out var uid, out _, out var bedComponent, out var strapComponent))
+            var query = EntityQueryEnumerator<HealOnBuckleComponent, StrapComponent>();
+            while (query.MoveNext(out var uid, out var bedComponent, out var strapComponent))
             {
                 if (_timing.CurTime < bedComponent.NextHealTime)
                     continue;
@@ -73,12 +72,31 @@ namespace Content.Server.Bed
                     if (_mobStateSystem.IsDead(healedEntity))
                         continue;
 
+                    // copies of actual values, so changes won't affect the component
                     var damage = bedComponent.Damage;
+                    var replenishBloodAmount = bedComponent.ReplenishBloodAmount;
+                    var bleedingAmount = bedComponent.BleedingAmount;
 
                     if (HasComp<SleepingComponent>(healedEntity))
+                    {
                         damage *= bedComponent.SleepMultiplier;
+                        replenishBloodAmount *= bedComponent.SleepMultiplier;
+                        bleedingAmount *= bedComponent.SleepMultiplier;
+                    }
 
                     _damageableSystem.TryChangeDamage(healedEntity, damage, true, origin: uid);
+
+                    if (_bloodstreamSystem.GetBloodLevelPercentage(healedEntity) < 1f)
+                    {
+                        _bloodstreamSystem.TryModifyBloodLevel(healedEntity, replenishBloodAmount);
+                    }
+
+                    EnsureComp<BloodstreamComponent>(healedEntity, out var bloodstream);
+
+                    if (bloodstream.BleedAmount != 0)
+                    {
+                        _bloodstreamSystem.TryModifyBleedAmount(healedEntity, bleedingAmount);
+                    }
                 }
             }
         }
