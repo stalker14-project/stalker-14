@@ -45,3 +45,58 @@
     - MobHostileGuardPatrool
     restricted:
     - MobHostileGuardPatrool
+
+- type: entity
+  name: триггер спавна монолитовцев (2) (100%)
+  id: STGuardSpawnerMonolith2100
+  parent: STGuardSpawnerStalker
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/AKS-74/Armed/marlya.rsi
+      state: alive
+    - state: ai
+  - type: SpawnOnApproach
+    cooldown: 1800
+    chance: 1
+    minAmount: 2
+    maxAmount: 2
+    maxOffset: 2
+    minOffset: 3
+    prototypes:
+    - MobMonolithGuardPatroolMarlyaAKS
+    - MobMonolithGuardPatroolGas1L85
+    restricted:
+    - MobMonolithGuardPatroolMarlyaAKS
+    - MobMonolithGuardPatroolGas1L85
+
+
+- type: entity
+  name: триггер спавна монолитовцев (3-5) (50%)
+  id: STGuardSpawnerMonolith3550
+  parent: STGuardSpawnerStalker
+  components:
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/L85/Armed/gas1.rsi
+      state: alive
+    - state: ai
+  - type: SpawnOnApproach
+    cooldown: 6000
+    chance: 0.5
+    minAmount: 3
+    maxAmount: 5
+    maxOffset: 3
+    minOffset: 5
+    prototypes:
+    - MobMonolithGuardPatroolMarlyaAKS
+    - MobMonolithGuardPatroolGas1L85
+    - MobMonolithGuardPatroolBalaLR300
+    - MobMonolithGuardPatroolSevaAbakan
+    restricted:
+    - MobMonolithGuardPatroolMarlyaAKS
+    - MobMonolithGuardPatroolGas1L85
+    - MobMonolithGuardPatroolBalaLR300
+    - MobMonolithGuardPatroolSevaAbakan
