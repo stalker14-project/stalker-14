@@ -1,0 +1,182 @@
+- type: shopPreset
+  id: SerafimShopPresetCustom
+  itemsForSale:
+    # Mutant parts 1.5x Sidorovich
+
+    #Boars -------- Health * T *
+    MutantPartBoarHoof: 205 # T1
+    MutantPartSeasonedBoarHoof: 405 # T2
+    MutantPartOldBoarHoof: 610 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 135
+    MutantPartFleshEye: 300
+    FoodMeatSpiderLeg: 75
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 825
+    MutantPartPseudodogTail: 450
+    MutantPartSnorkFoot: 750
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 1125
+    MutantPartOraculeEye: 2400
+    MutantPartPseudogiantHeart: 6000
+    MutantPartZombieHand: 900
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+          # 7mm
+        STWeaponShotgunTOZ34: 200
+        STWeaponShotgunBenelliM4Super90Seraphim: 800
+          # 5,45x39
+        arbaletserih: 1000
+        STWeaponRifleAKS74USERAPH: 500
+        STWeaponRifleAKS74: 4000
+        STWeaponRifleAKM: 6000
+          # Smg
+        STWeaponSMGStalkerCP2VereskSera: 2000
+          # Other
+        WeaponPistolStalkerAPS: 500 #T2
+        WeaponPistolStalkerTT: 250
+        STThrowingknifeYellow: 300
+    - name: shop-category-magazines
+      priority: 2
+      items:
+        # 5,45x39
+        Base545Mag10: 50 #T1
+        545Mag20: 220 #T2
+        545Mag30: 400 #T3
+        # 7,62x54 and 39
+        Base739Mag10: 200
+        739Mag30: 500
+        # Smg
+        VityazMag: 210
+        # Other
+        TTMag: 100
+        BaseAPSMag: 150
+        Arrowboltrust: 150
+        ArrowAnomalybolt: 250
+        Arrowboltpiercing: 350
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        6mmBuckshotBox: 100
+        7mmBuckshotBox: 40
+        8mmBuckshotBox: 170
+        # 7.25
+        725PBox: 90
+        725LRNPCBox: 100
+        # 9.19
+        919PSOGJBox: 80
+        919PSTBox: 500
+        919PBMBox: 1000
+        919RIPBox: 200
+        # 5.45
+        545FMJBox: 500
+        545HPBox: 100
+        545PCBox: 2000
+        # 7.39
+        739FMJBox: 1540
+        739HPBox: 400
+
+    - name: shop-category-armor
+      priority: 4
+      items:
+          # Helmets #
+        ClothingHeadHatSerahat: 200
+        ClothingHeadHelmetSH68: 200 # T1 - PVE
+        ClothingHeadHelmetInfantrySera: 650 # T2 - PVP
+        ClothingHeadHelmetInfantrySerasera: 650
+        ClothingHeadHelmetVityaz1C: 2000
+          # OuterClothing #
+        ClothingOuterJacketSera: 60 # T1 - PVE
+        STClothingOuterArmorLightPlateVestBaseSera: 1000 # T2 - PvP
+        ClothingOuterArmorRCBZSera: 1700 # T2 - ENV
+        STClothingOuterArmorRassvetSera: 2000 # T2 - universal
+        ClothingOuterArmorSevasera: 7000 # T3 - ENV
+    - name: shop-category-storage-and-containers
+      priority: 5
+      items:
+        ClothingBackpackTacticGreenStalker: 400 # T2
+        ##-------------------------------------------
+        ClothingBackpackMercStalker: 500 # T3 |pve backpack
+        ClothingBackpackStalkerZaryaGreen: 300 # T3 |pvp backpack
+        ClothingBeltQuiver: 500
+        STClothingBeltThrowingKnifes: 200
+          # Belts
+        ClothingBeltBandolierStalker: 20 # T1 - PVE
+        ClothingBeltGreenWebbingStalker: 700 # t3 belt
+    - name: shop-category-raincoats-and-gasmasks
+      priority: 6
+      items:
+          # Gasmasks
+        ClothingMaskGasSera: 100
+        STClothingOuterCoatHimera: 300
+        STClothingCapeT2SerafimPrestige: 1000
+        STClothingCapeT1Serafim: 300
+        ClothingOuterCoatLimaSeraphim: 500
+        ClothingOuterCoatSeraphim: 500
+    - name: shop-category-research-equipment
+      priority: 7
+      items:
+        STBoltBagFilled: 50
+        BoxArtcont: 750
+        ZoneAnomalyDetectorAD1: 450 # T1
+        ZoneAnomalyDetectorAD2: 1000 # T2
+        STPsyHelm1: 2500
+    - name: shop-category-utilities
+      priority: 8
+      items:
+        STCombatKnife: 25
+        STSeraKnife: 30
+        BoxZiptie: 50
+        BoxSafebox: 300
+        CheapLighter: 5
+        GeigerCounter: 50
+        BaseRadio: 50
+        STFlashlightSeclite: 50
+        PowerCellHyper: 50
+        HandheldGPSBasic: 50
+        Paper: 2
+        Pen: 5
+        Binocularus1: 1000
+        BoxFlare: 60
+        ClothingBackpackDuffelGreenStalkerHydroponic: 500
+        Beaker: 40
+        Syringe: 20
+        ClothingGoPro: 250
+        ExtendedEmergencyOxygenTankFilledStalker: 50
+        TrashDetectorTier1: 200
+        Matchbox: 10
+        HatchetStalker: 150
+    - name: shop-category-provisions
+      priority: 9
+      items:
+        FoodMeatDogCooked: 35
+        FoodMeatBoarCooked: 50
+        DrinkWaterBottleFull: 10
+    - name: shop-category-medicine
+      priority: 10
+      items:
+        AntiRadMedipen: 100
+        STOintmentSera: 10
+        STBrutepackSera: 15
+        STGauzeSera: 5
+        MedkitAI2Sera: 100
+    - name: shop-category-modules
+      priority: 11
+      items:
+        STModuleScopeRiflesT1Ru: 600
+        STModuleScopeRiflesT1Nato: 600
+        STModuleShotgunChokeT1: 200
+        STModuleSniperSightT1: 600
+        STModuleSilencerSniperT1: 600
+        STModuleSMGGripT1: 600
+    - name: shop-category-customization
+      priority: 12
+      items:
+        STClothingMaskLimaKufei: 10
+        STClothingMaskKufei: 10
+        STClothingHandsGlovesSera: 10
