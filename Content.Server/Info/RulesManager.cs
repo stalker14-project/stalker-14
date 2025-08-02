@@ -13,7 +13,7 @@ public sealed class RulesManager
     [Dependency] private readonly INetManager _netManager = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-    private static DateTime LastValidReadTime => DateTime.UtcNow - TimeSpan.FromDays(60);
+    private static DateTime LastValidReadTime => DateTime.UtcNow - TimeSpan.FromDays(15);
 
     public void Initialize()
     {
