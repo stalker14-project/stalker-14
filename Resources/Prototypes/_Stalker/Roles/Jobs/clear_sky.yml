@@ -26,13 +26,49 @@
         band: Stalker
         bandIcon: cn
         bandProto: STClearSkyBand
-        bandRankId: 2
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+
+- type: job
+  id: StalkerHeadClearSky
+  name: Clear Sky Commander
+  icon: cn
+  description: Discover the secrets of the Zone. Reach the center of the Zone no matter what.
+  playTimeTracker: JobHeadClearSky
+  whitelisted: true
+  requirements:
+  # - !type:RoleTimeRequirement
+  #   role: JobClearSky
+  #   time: 1
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
+  startingGear: StalkerClearSkyGear
+  supervisors: I think you're in charge?
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Access
+      tags:
+      - CN
+    - type: Bands
+      band: Stalker
+      bandIcon: cn
+      bandProto: STClearSkyBand
+      bandRankId: 2
+    - type: BlockTackingHolyItems
+    - type: TeethPull
+      teethProto: ToothStalker
+      pullingItemTag: PliersStalker
+      teethCount: 3
+      initialTeeth: 3
 
 - type: startingGear
   id: StalkerClearSkyGear
@@ -52,4 +88,5 @@
   managingRankId: 2
   hierarchy:
     1: StalkerClearSky
+    2: StalkerHeadClearSky
 
