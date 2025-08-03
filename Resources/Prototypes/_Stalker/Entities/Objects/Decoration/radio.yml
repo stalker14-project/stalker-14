@@ -1581,6 +1581,24 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c7
 
+- type: entity
+  parent: BaseItem
+  id: CasseteFiftyEightRadio
+  suffix: Stalker, кассета (SHAMAN - Я русский)
+  name: кассета "SHAMAN - Я русский"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для sandmita
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/yarusski.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c7
+
 # Donate Premium
 
 - type: entity

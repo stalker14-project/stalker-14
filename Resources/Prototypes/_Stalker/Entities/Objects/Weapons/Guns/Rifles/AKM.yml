@@ -61,3 +61,20 @@
   id: STWeaponRifleAKM
   name: AKM "Zone Legend"
   description: Improved modernization of Kalashnikov rifle chambered in 7.62x39mm. Found everywhere in the Zone - from rookies to veterans. Symbol of reliability in toughest conditions.
+
+- type: entity
+  parent: STBaseWeaponRifleAKM
+  id: STWeaponRifleAKMC
+  name: AKMC
+  description: Improved modernization of Kalashnikov rifle chambered in 7.62x39mm. Found everywhere in the Zone - from rookies to veterans. Symbol of reliability in toughest conditions.
+  components:
+  - type: STWeight
+    self: 2.7
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/akms.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/akms.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/akms.rsi
+    minAngle: 57
+    maxAngle: 130

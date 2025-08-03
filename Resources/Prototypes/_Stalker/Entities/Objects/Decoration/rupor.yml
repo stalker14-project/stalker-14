@@ -1,0 +1,15 @@
+﻿- type: entity
+  parent: RadioBaseStalker
+  id: STRuporDolg
+  suffix: ST, Долг
+  name: Рупор Долга
+  description: Труба в форме усечённого конуса, предназначенная для направленной передачи звука.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/rupor.rsi
+    state: base
+  - type: AmbientSound
+    volume: 1
+    enabled: true
+    sound:
+      path: /Audio/_Stalker/Music/Radio/rupor.ogg

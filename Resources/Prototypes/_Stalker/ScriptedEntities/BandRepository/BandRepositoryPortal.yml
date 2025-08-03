@@ -352,6 +352,21 @@
     repositoryWeight: 500
 # Repository for Monolith - End
 
+# Repository for Project - Start
+- type: entity
+  parent: BandRepositoryBase
+  id: PortalBandProjectRepository
+  suffix: 2000
+  name: Band-Project-Repository
+  description: Band-MilitaryStalker-Repository-desc
+  components:
+  - type: AccessReader
+    access: [["Project"]]
+  - type: StalkerBandTeleport
+    portalName: _PortalBandProjectRepository
+    repositoryWeight: 2000
+# Repository for Project - End
+
 # BandPrototype
 - type: bandLoader
   id: BandLoaderBase
