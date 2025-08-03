@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetEnvironmentT4Base = база шлема защиты от окружения T4
     .suffix = ST, T4, Env
+    .desc = база шлема защиты от окружения T4
 ent-ClothingHeadHelmetBulatMercenary = шлем «Сфера-12» наёмников
     .desc = Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.
 ent-ClothingHeadHelmetBulatMonolith = шлем «Сфера-12» монолита

@@ -351,8 +351,7 @@
   - type: NewMapTeleport
     allowAll: false
     portalName: Cordon-TemnajaLoshina
-  - type: AccessReader
-    access: [["ProjectPawn"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-TemnajaLoshinaUncollide
@@ -362,8 +361,6 @@
   - type: NewMapTeleport
     allowAll: false
     portalName: Cordon-TemnajaLoshina
-  - type: AccessReader
-    access: [["ProjectPawn"]]
 
 - type: entity
   parent: MapTeleportBase
@@ -373,8 +370,6 @@
   - type: NewMapTeleport
     allowAll: false
     portalName: Cordon-Project
-  - type: AccessReader
-    access: [["Project"]]
 
 - type: entity
   parent: MapTeleportBaseUncollide
@@ -384,8 +379,6 @@
   - type: NewMapTeleport
     allowAll: false
     portalName: Cordon-Project
-  - type: AccessReader
-    access: [["Project"]]
 
 ####################################Отступники
 
@@ -397,8 +390,6 @@
     - type: NewMapTeleport
       allowAll: false
       portalName: Cordon-Otstupniki
-    - type: AccessReader
-      access: [["Deserter"]]
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-OtstupnikiUncollide
@@ -407,8 +398,6 @@
     - type: NewMapTeleport
       allowAll: false
       portalName: Cordon-Otstupniki
-    - type: AccessReader
-      access: [["Deserter"]]
 
 ####################################Наёмники
 

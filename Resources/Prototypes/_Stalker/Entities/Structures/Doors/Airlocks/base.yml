@@ -194,9 +194,6 @@
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
   suffix: ST, mapping, Отступники
-  components:
-    - type: AccessReader
-      access: [["Deserter"]]
 
 - type: entity
   id: HermoDverTypeOneMercClosed
@@ -737,9 +734,6 @@
   parent: WoodDoorFallout
   description: Обычная деревянная дверь.
   suffix: ST, mapping, Pilgrim
-  components:
-  - type: AccessReader
-    access: [["Pilgrim"]]
 
 #Ополчению
 - type: entity
@@ -831,9 +825,6 @@
   parent: MetalWindowDoorFallout
   description: Крепкая стальная дверь, с окном и надёжным замком.
   suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
 
 - type: entity
   id: STMetalBarDoorFalloutProjectClosed
@@ -841,9 +832,6 @@
   parent: MetalBarDoorFallout
   description: Решётчатая дверь с надёжным замком.
   suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
 
 - type: entity
   id: STHermoDverTypeTwoProjectClosed
@@ -851,9 +839,6 @@
   parent: HermoDverTypeTwo
   description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
   suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
 
 - type: entity
   id: STMetalAltDoorFalloutProjectClosed
@@ -861,9 +846,6 @@
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
   suffix: ST, mapping, Проект
-  components:
-  - type: AccessReader
-    access: [["Project"]]
 
 - type: entity
   id: STMetalDoorFalloutProjectOrchestratorClosed
@@ -871,6 +853,3 @@
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
   suffix: ST, mapping, Оркестратор Проекта
-  components:
-  - type: AccessReader
-    access: [["ProjectOrchestrator"]]

@@ -1,6 +1,9 @@
 ent-MobStalkerMilitaryGuard = постовой СОП
+    .desc = постовой СОП
     .suffix = Stalker, Т5, немощный
 ent-MobStalkerMilitaryVovaVist = Вова Вист
+    .desc = Вова Вист
     .suffix = Stalker, Т6, мега-мощный
 ent-MobStalkerMilitarySniper = Рядовой Оковчук
+    .desc = Рядовой Оковчук
     .suffix = Stalker, Т5, мощный

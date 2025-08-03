@@ -147,8 +147,6 @@
           shader: unshaded
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - type: AccessReader
-      access: [["PoliceOfficer"]]
 
 - type: vendingMachineInventory
   id: PoliceInventory
@@ -295,12 +293,19 @@
       pack: LaborerInventory
       dispenseOnHitChance: 0.0
       dispenseOnHitThreshold: 2
-      offState: off
+      offState: 1
       brokenState: 1
       normalState: 1
     - type: Sprite
       sprite: _Stalker/Objects/Decoration/LotOfBoxes.rsi
-      state: 1
+      state: "1"
+      drawdepth: SmallObjects
+      layers:
+        - state: "1"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: "1"
+          map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+          shader: unshaded
 
 - type: vendingMachineInventory
   id: LaborerInventory

@@ -144,5 +144,7 @@ ent-StalkerBarriesStructureYatrishnik = { ent-StalkerBarriesStructureVoronec }
     .suffix = { ent-StalkerBarriesStructureBarbaris.suffix }
 ent-StalkerTimedSpawner30 = Периодический спавнер растений
     .suffix = Stalker, раз в 30 минут
+    .desc = Периодический спавнер растений
 ent-RandomSpawnerBarriesStalker = Trash Spawner
     .suffix = Stalker
+    .desc = Trash Spawner

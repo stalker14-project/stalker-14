@@ -417,45 +417,46 @@
 
 # Serafims - 9
 
-- type: entity
-  parent: NPCDoll
-  id: NPCSabbatSerafim
-  name: Саббат [→   ←]
-  suffix: ST, Serafim
-  description: Саббат, паладин, ветеран битв с Ложным Идолом сразивший множество рабов Идола, сейчас он помогает в поставках снаряжения и отправляет поставки провизии и медикаментов в северные ковены.
-  components:
-  - type: Sprite
-    sprite: _Stalker/NPC/Sabbat.rsi
-    state: sabbat
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Fangs
-    shopPresetId: SeraphimeShopPresetHeavy1
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
+# There are no SeraphimeShopPresetHeavy1, do smth with that
+#- type: entity
+#  parent: NPCDoll
+#  id: NPCSabbatSerafim
+#  name: Саббат [→   ←]
+#  suffix: ST, Serafim
+#  description: Саббат, паладин, ветеран битв с Ложным Идолом сразивший множество рабов Идола, сейчас он помогает в поставках снаряжения и отправляет поставки провизии и медикаментов в северные ковены.
+#  components:
+#  - type: Sprite
+#    sprite: _Stalker/NPC/Sabbat.rsi
+#    state: sabbat
+#  - type: Physics
+#    bodyType: Static
+#  - type: Advertise
+#    pack: NPCStalkerTraderAds
+#  - type: ActivatableUI
+#    key: enum.ShopUiKey.Key
+#    singleUser: true
+#  - type: UserInterface
+#    interfaces:
+#      enum.ShopUiKey.Key:
+#        type: ShopBoundUserInterface
+#  - type: Shop
+#    moneyId: Fangs
+#    shopPresetId: SeraphimeShopPresetHeavy1
+#  - type: TypingIndicator
+#    proto: robot
+#  - type: TTS # Corvax-TTS
+#    voice: TrainingRobot
+#  - type: Speech
+#    speechVerb: Robotic
+#    speechSounds: Alto
+#  - type: IntrinsicRadioReceiver
+#  - type: IntrinsicRadioTransmitter
+#    channels:
+#    - Binary
+#  - type: ActiveRadio
+#    channels:
+#    - Binary
+#    - Common
 
 - type: entity
   parent: NPCDoll

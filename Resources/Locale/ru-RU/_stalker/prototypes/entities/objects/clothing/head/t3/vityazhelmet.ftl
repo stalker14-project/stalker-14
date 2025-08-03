@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetTacticalT3Base = база тактического шлема T3
     .suffix = ST, T3, Tactical
+    .desc = база тактического шлема T3
 ent-ClothingHeadHelmetVityaz1C = шлем "Витязь 1С"
     .desc = Противоударный шлем "Витязь-С" изготавливался в НИИ Стали. Разработки над шлемом начались в конце 1980-ых годов. Шлем получил забралу, хоть и получился массивным.
 ent-ClothingHeadHelmetVityaz1T = шлем "Витязь 1Т"

@@ -3,6 +3,7 @@ ent-ClothingBackpackDuffelGreenStalkerHydroponic = ботанический на
     .suffix = Stalker
 ent-SoilStalker = почва
     .suffix = { ent-ClothingBackpackDuffelGreenStalkerHydroponic.suffix }
+    .desc = почва
 ent-ManureStalker = навоз
     .desc = Органическое удобрение, используемое для улучшения плодородия почвы и стимулирования роста растений, в особом случае используется сразу для создания хорошей почвы.
     .suffix = { ent-ClothingBackpackDuffelGreenStalkerHydroponic.suffix }
