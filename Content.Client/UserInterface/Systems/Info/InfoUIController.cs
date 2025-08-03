@@ -22,7 +22,7 @@ public sealed class InfoUIController : UIController, IOnStateExited<GameplayStat
     private ISawmill _sawmill = default!;
 
     [ValidatePrototypeId<GuideEntryPrototype>]
-    private const string DefaultRuleset = "STRuleset";
+    private const string DefaultRuleset = "DefaultRuleset";
 
     public ProtoId<GuideEntryPrototype> RulesEntryId = DefaultRuleset;
 
