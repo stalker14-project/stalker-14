@@ -43,12 +43,6 @@
         whitelist:
           tags:
           - STWeaponModuleRifleSilencerNato
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeNato
       gun_chamber:
         name: Chamber
         startingItem:
@@ -61,7 +55,11 @@
   parent: STBaseWeaponRifleL85
   id: STWeaponRifleL85
   name: L85
-  description: British bullpup assault rifle with unique layout. Extremely rare in the Zone, usually brought by UN military observers. Notable for exceptional accuracy but finicky maintenance.
+  description: После того, как в армии Соединённого Королевства эта винтовка была заменена на более современную, она в большом количестве всплыла на чёрном рынке, а затем и в Зоне. Главными достоинствами данного оружия являются штатный 4-кратный оптический прицел и высокая точность первого выстрела. При стрельбе очередями точность боя резко падает, а основные механизмы демонстрируют недостаточную надёжность.
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_l85_shot.ogg
 
 - type: entity
   parent: STBaseWeaponRifleL85
