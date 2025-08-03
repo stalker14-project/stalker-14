@@ -137,23 +137,21 @@
 
 # Repository for Jabs - End
 
-# Repository for Deserters - Start
+# Repository for s - Start
 
 
 - type: entity
   parent: BandRepositoryBase
-  id: PortalBandDesertersRepository
+  id: PortalBandsRepository
   suffix: 1000
-  name: Band-Deserters-Repository
-  description: Band-Deserters-Repository-desc
+  name: Band-s-Repository
+  description: Band-s-Repository-desc
   components:
-    - type: AccessReader
-      access: [["Deserter"]]
     - type: StalkerBandTeleport
-      portalName: _PortalBandDesertersRepository
+      portalName: _PortalBandsRepository
       repositoryWeight: 1000
 
-# Repository for Deserters - End
+# Repository for s - End
 
 # Repository for Research Institutes - Start
 
@@ -378,7 +376,7 @@
 
     - "_PortalBandMilitaryRepository"
 
-    - "_PortalBandDesertersRepository"
+    - "_PortalBandsRepository"
 
     - "_PortalBandRenegadesRepository"
 

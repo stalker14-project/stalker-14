@@ -90,14 +90,17 @@ public sealed class SuicideCommandTests
 
         // Check that running the suicide command kills the player
         // and properly ghosts them without them being able to return to their body
+
+        // Stalker-Changes. Only admins can execute `suicide`.
         await server.WaitAssertion(() =>
         {
             consoleHost.GetSessionShell(playerMan.Sessions.First()).ExecuteCommand("suicide");
             Assert.Multiple(() =>
             {
-                Assert.That(mobStateSystem.IsDead(player, mobStateComp));
+                Assert.That(mobStateSystem.IsDead(player, mobStateComp), Is.False);
                 Assert.That(entManager.TryGetComponent<GhostComponent>(mindComponent.CurrentEntity, out var ghostComp) &&
-                            !ghostComp.CanReturnToBody);
+                            !ghostComp.CanReturnToBody,
+                    Is.False);
             });
         });
 
@@ -158,10 +161,12 @@ public sealed class SuicideCommandTests
 
             Assert.Multiple(() =>
             {
-                Assert.That(mobStateSystem.IsDead(player, mobStateComp));
+                // Stalker-Changes-Start. Suicide is only for admins
+                Assert.That(mobStateSystem.IsDead(player, mobStateComp), Is.False);
                 Assert.That(entManager.TryGetComponent<GhostComponent>(mindComponent.CurrentEntity, out var ghostComp) &&
-                            !ghostComp.CanReturnToBody);
-                Assert.That(damageableComp.Damage.GetTotal(), Is.EqualTo(lethalDamageThreshold));
+                            !ghostComp.CanReturnToBody,
+                    Is.False);
+                // Stalker-Changes-End. Suicide is only for admins
             });
         });
 
@@ -212,7 +217,8 @@ public sealed class SuicideCommandTests
             {
                 Assert.That(mobStateSystem.IsAlive(player, mobStateComp));
                 Assert.That(entManager.TryGetComponent<GhostComponent>(mindComponent.CurrentEntity, out var ghostComp) &&
-                            !ghostComp.CanReturnToBody);
+                            !ghostComp.CanReturnToBody,
+                    Is.False);
             });
         });
 
@@ -284,10 +290,13 @@ public sealed class SuicideCommandTests
 
             Assert.Multiple(() =>
             {
-                Assert.That(mobStateSystem.IsDead(player, mobStateComp));
+                // Stalker-Changes-Start. Suicide is for admins
+                Assert.That(mobStateSystem.IsDead(player, mobStateComp), Is.False);
                 Assert.That(entManager.TryGetComponent<GhostComponent>(mindComponent.CurrentEntity, out var ghostComp) &&
-                            !ghostComp.CanReturnToBody);
-                Assert.That(damageableComp.Damage.DamageDict["Slash"], Is.EqualTo(lethalDamageThreshold));
+                            !ghostComp.CanReturnToBody,
+                    Is.False);
+                Assert.That(damageableComp.Damage.DamageDict["Slash"], Is.EqualTo(FixedPoint2.Zero));
+                // Stalker-Changes-End. Suicide is for admins
             });
         });
 
@@ -359,10 +368,13 @@ public sealed class SuicideCommandTests
 
             Assert.Multiple(() =>
             {
-                Assert.That(mobStateSystem.IsDead(player, mobStateComp));
+                // Stalker-Changes-Start. Suicide is for admins
+                Assert.That(mobStateSystem.IsDead(player, mobStateComp), Is.False);
                 Assert.That(entManager.TryGetComponent<GhostComponent>(mindComponent.CurrentEntity, out var ghostComp) &&
-                            !ghostComp.CanReturnToBody);
-                Assert.That(damageableComp.Damage.DamageDict["Slash"], Is.EqualTo(lethalDamageThreshold / 2));
+                            !ghostComp.CanReturnToBody,
+                    Is.False);
+                Assert.That(damageableComp.Damage.DamageDict["Slash"], Is.EqualTo(FixedPoint2.Zero));
+                // Stalker-Changes-End. Suicide is for admins
             });
         });
 
