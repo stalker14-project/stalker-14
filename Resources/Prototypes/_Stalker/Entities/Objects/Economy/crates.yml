@@ -1667,5 +1667,81 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
-### СЕРАФИМЫ
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate45FMJ
+  name: ящик FMJ патронов 45acp «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 45ACPMFMJBox
+        - id: 45ACPMFMJBox
+        - id: 45ACPMFMJBox
+        - id: 45ACPMFMJBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
 
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate918PBM
+  name: ящик ПС патронов 9x18х39 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 918PBMBox
+        - id: 918PBMBox
+        - id: 918PBMBox
+        - id: 918PBMBox
+        - id: 918PBMBox
+        - id: 918PBMBox
+        - id: 918PBMBox
+        - id: 918PBMBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate919PBM
+  name: ящик ПС патронов 9x19 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+### СЕРАФИМЫ
