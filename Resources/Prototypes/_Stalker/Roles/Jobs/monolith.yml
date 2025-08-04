@@ -22,10 +22,12 @@
         tags:
           - Monolith
       - type: Bands
+        altBand: stalker
+        canChange: true
         band: Stalker
         bandIcon: monolith
         bandProto: STMonolithBand
-        bandRankId: 2
+        bandRankId: 1
       - type: NpcFactionMember
         factions:
           - Mutated
@@ -35,7 +37,7 @@
         baseDecayRate: 0
       - type: PersonalDamageBlock
       - type: Damageable
-        damageModifierSet: STPlayerMonolithModifierSet
+        damageContainer: Monolith
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -69,6 +71,8 @@
       - Monolith
     - type: Bands
       band: Stalker
+      altBand: stalker
+      canChange: true
       bandIcon: monolith
       bandProto: STMonolithBand
       bandRankId: 2
@@ -81,7 +85,7 @@
       baseDecayRate: 0
     - type: PersonalDamageBlock
     - type: Damageable
-      damageModifierSet: STPlayerMonolithModifierSet
+      damageContainer: Monolith
     - type: BlockTackingHolyItems
     - type: TeethPull
       teethProto: ToothStalker
