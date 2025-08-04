@@ -7,3 +7,6 @@ ent-STClothingCapeFreedomChain = Freedom's Chainmail Cloak
 ent-ClothingHatChainFreedom = hood
     .desc = Freedom Chainmail hood
     .suffix = ST
+ent-STClothingCapeDolgArmor = Duty Armored Cloak
+    .desc = A menacing red and black armored cape used by members of Duty
+    .suffix = ST, T4
