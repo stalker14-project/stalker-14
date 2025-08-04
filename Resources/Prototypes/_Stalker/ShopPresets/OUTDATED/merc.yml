@@ -70,13 +70,20 @@
         STCombatKnife: 10
           # shotgun
         STWeaponShotgunMossbergM88: 630
+        STWeaponShotgunBenelliM4Super90: 1200
         STWeaponShotgunSPAS: 1300
         STWeaponShotgunProtecta: 2550
+        STWeaponShotgunUSAS: 8500
           # prostogun
         WeaponPistolStalkerGlock: 180
         STWeaponSMGMP5: 1700
+        STWeaponSMGFNP90: 3500
+        STWeaponSMGVector9: 3500
         STWeaponRifleFAL: 1250
+        STWeaponRifleSIG739: 2000
+        STWeaponRifleM14: 1500
         STWeaponRifleG36: 4250
+        STWeaponRifleHK416: 4500
         STWeaponRevolverSWPC325TR: 800
         STWeaponRifleM4: 2900
         STWeaponRifleM16: 3000
@@ -87,6 +94,8 @@
         STWeaponRifleGalil: 6750
         STWeaponRifleGalatz: 6250
         STWeaponRifleL85: 1900
+        STWeaponRifleF2000: 10000
+        
     - name: shop-category-magazines
       priority: 2
       items:
@@ -99,27 +108,36 @@
         BaseMP5Mag: 260
         BaseTEC9Mag: 120
         BaseGlockMag10: 100
-        GlockMag24: 280
-        GlockMag33: 440
+        GlockMag24: 200
+        GlockMag33: 300
         Base751Mag10: 200
         751Mag20: 400
         STSpeedLoader45ACPEmpty: 90
+        739Mag30: 300
+        P90Mag: 400
+        Magazine10USAS12x70: 300
+        Magazine20USAS12x70: 400
+        
     - name: shop-category-ammunition
       priority: 3
       items:
+        8mmBuckshotBoxL: 225
         6mmBuckshotBox: 115
         7mmBuckshotBox: 45
         919PSOGJBox: 65
         919PSTBox: 160
         919PBMBox: 400
-        751M80Box: 700
-        751UNBox: 1050
+        751M80Box: 600
+        751UNBox: 400
         45ACPLFMJBox: 100
         45ACPMFMJBox: 250
-        45ACPAPBox: 625
+        45ACPAPBox: 600
         556FMJBox: 280
-        556M855Box: 700
-        556WarmagBox: 1050
+        556M855Box: 600
+        556WarmagBox: 400
+        739FMJBox: 600
+        739HPBox: 400
+        
     - name: shop-category-armor
       priority: 4
       items:
@@ -132,6 +150,7 @@
         ClothingHeadAssaultHelmetMerc: 1600
         ClothingHeadHelmetInfantryMerc: 600
         ClothingHeadHelmetVityaz1Merc: 2200
+        
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -143,6 +162,7 @@
         ClothingBeltTarzanOrange: 200
         MedkitCMSStalker: 450
         MedkitGrizzlyStalker: 850
+        
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
@@ -151,6 +171,7 @@
         ClothingMaskGasZarya: 100
         ClothingMaskGasM40: 250
         ClothingMaskGP7: 900
+        
     - name: shop-category-utilities
       priority: 7
       items:
@@ -160,6 +181,8 @@
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
+        ClothingHeatBagStalker: 100
+        
     - name: shop-category-research-equipment
       priority: 8
       items:
@@ -180,6 +203,7 @@
         HatchetStalker: 150
         STBoltBagFilled: 50
         ZoneAnomalyDetectorAD1: 550
+        
     - name: shop-category-provisions
       priority: 9
       items:
@@ -194,6 +218,7 @@
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
         STFoodMeatSalami: 350
+        
     - name: shop-category-medicine
       priority: 10
       items:
@@ -211,6 +236,7 @@
         MedkitAI2: 200
         MedkitMilitary: 400
         Defibrillator: 1000
+        
     - name: shop-category-modules
       priority: 11
       items:
@@ -220,6 +246,7 @@
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
+        
     - name: shop-category-entertainment
       priority: 12
       items:
@@ -235,6 +262,7 @@
         # Instruments
         AcousticGuitarInstrument: 300
         AccordionInstrument: 500
+        
     - name: shop-category-customization
       priority: 13
       items:
