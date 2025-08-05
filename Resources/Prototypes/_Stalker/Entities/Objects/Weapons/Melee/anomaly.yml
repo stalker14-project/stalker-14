@@ -47,3 +47,28 @@
           Blunt: 5
           Structural: 5
 
+- type: entity
+  parent: StalkerBaseBallBat
+  id: StalkerAnomalyKnockbackBallBatSUPER
+  name: СУПЕР-аномальная бейсбольная бита
+  description: Искривляет гравитацию вокруг себя.
+  suffix: ST
+  components:
+    - type: Sprite
+      sprite: Objects/Weapons/Melee/baseball_bat.rsi
+    - type: StaminaDamageOnHit
+      damage: 10
+    - type: MeleeWeapon
+      wideAnimationRotation: -135
+      damage:
+        types:
+          Blunt: 5
+          Structural: 5
+    - type: IncreaseDamageOnWield
+      damage:
+        types:
+          Blunt: 5
+          Structural: 5
+    - type: MeleeThrowOnHit
+      speed: 100
+      lifetime: 0.9
