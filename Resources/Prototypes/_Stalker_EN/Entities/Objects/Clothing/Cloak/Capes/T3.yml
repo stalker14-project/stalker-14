@@ -42,3 +42,26 @@
     sprite: _Stalker/Objects/Clothing/cloak/coat_militia.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/coat_militia.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetKevlarMilitia
+    requiredSlot:
+    - cloak
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+
+- type: entity
+  parent: ClothingHeadHelmetLoyalistCoat
+  id: ClothingHeadHelmetKevlarMilitia
+  name: Militia Kevlar Hood
+  description: Sadly to small to fit over your helmet.
+  noSpawn: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_militia.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_hat_militia.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
