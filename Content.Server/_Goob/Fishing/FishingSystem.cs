@@ -10,6 +10,10 @@ using System.Linq;
 using System.Numerics;
 using Content.Goobstation.Shared.Fishing.Components;
 using Content.Goobstation.Shared.Fishing.Systems;
+using Content.Server._Stalker.ZoneArtifact.Components.Spawner;
+using Content.Shared.EntityList;
+using Content.Shared.EntityTable;
+using Content.Shared.EntityTable.EntitySelectors;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Item;
 using Content.Shared.Movement.Pulling.Components;
@@ -27,6 +31,7 @@ public sealed class FishingSystem : SharedFishingSystem
 {
     // Here we calculate the start of fishing, because apparently StartCollideEvent
     // works janky on clientside so we can't predict when fishing starts.
+    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
@@ -38,9 +43,37 @@ public sealed class FishingSystem : SharedFishingSystem
 
         SubscribeLocalEvent<FishingLureComponent, StartCollideEvent>(OnFloatCollide);
         SubscribeLocalEvent<FishingRodComponent, UseInHandEvent>(OnFishingInteract);
+        SubscribeLocalEvent<FishingSpotComponent, MapInitEvent>(MapInit);
     }
 
     #region Event handling
+
+    private void MapInit(EntityUid uid, FishingSpotComponent component, MapInitEvent args)
+    {
+        var map = _mapManager.GetMapEntityId(Transform(uid).MapID);
+
+        if (!TryComp<ZoneArtifactSpawnerMapTierComponent>(map, out var mapTier))
+            return;
+
+        if (mapTier.MaxTier >= 3)
+        {
+            var fishTableId = $"StalkerFishingTier3";
+            component.FishList = new NestedSelector
+            {
+                TableId = fishTableId
+            };
+            Dirty(uid, component);
+        }
+        else
+        {
+            var fishTableId = $"StalkerFishingTier{mapTier.MaxTier}";
+            component.FishList = new NestedSelector
+            {
+                TableId = fishTableId
+            };
+            Dirty(uid, component);
+        }
+    }
 
     private void OnFloatCollide(Entity<FishingLureComponent> ent, ref StartCollideEvent args)
     {
