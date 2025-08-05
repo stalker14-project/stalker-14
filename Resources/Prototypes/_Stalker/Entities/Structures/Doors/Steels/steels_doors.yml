@@ -158,3 +158,28 @@
         - FullTileMask
         layer:
         - AirlockLayer
+
+- type: entity
+  id: MilitaryDoorDolg
+  name: военные ворота Долга
+  parent: STBaseMaterialDoor
+  description: Проезд в стене или ограде, запираемый створами.
+  suffix: ST, mapping
+  components:
+  - type: AccessReader
+    access: [ [ "Dolg" ] ]
+  - type: Occluder
+    boundingBox: "-1.5,-0.5,1.5,0.5"
+  - type: Sprite
+    sprite: _Stalker/Structures/Doors/Steels/military_door.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.4,-0.5,1.4,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer

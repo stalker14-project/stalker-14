@@ -1,0 +1,181 @@
+- type: entity
+  name: Неизвестный монолитовец
+  suffix: Stalker, NPC
+  parent: MobStalkerBaseGuard
+  id: MobMonolithGuardPatroolBase
+  abstract: true
+  components:
+  - type: HTN
+    rootTask:
+      task: STMonolith
+    blackboard:
+      VisionRadius: !type:Single
+        25
+      AggroVisionRadius: !type:Single
+        15
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 2.5
+  - type: Bands
+    band: Stalker
+    bandIcon: monolith
+    bandProto: STMonolithBand
+    bandRankId: 2
+  - type: NpcFactionMember
+    factions:
+    - Mutated
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/AKS-74/Armed/marlya.rsi
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: Gun
+    minAngle: 1
+    maxAngle: 10
+    angleIncrease: 2
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      30: Critical
+      31: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Psy: -100
+        Radiation: -100
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 500
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  name: Неизвестный монолитовец
+  suffix: Stalker, NPC, T3
+  parent: MobMonolithGuardPatroolBase
+  id: MobMonolithGuardPatroolMarlyaAKS
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/AKS-74/Armed/marlya.rsi
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 3.3
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/ak.ogg
+    fireRate: 6
+    minAngle: 7
+    maxAngle: 52
+    angleIncrease: 1.53
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1
+
+- type: entity
+  name: Неизвестный монолитовец
+  suffix: Stalker, NPC, T3
+  parent: MobMonolithGuardPatroolBase
+  id: MobMonolithGuardPatroolGas1L85
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/L85/Armed/gas1.rsi
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet556M855
+    fireCost: 3.3
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_l85_shot.ogg
+    fireRate: 6
+    minAngle: 0
+    maxAngle: 32
+    angleIncrease: 1
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1
+
+- type: entity
+  name: Неизвестный монолитовец
+  suffix: Stalker, NPC, T3
+  parent: MobMonolithGuardPatroolBase
+  id: MobMonolithGuardPatroolBalaLR300
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/NPC/Random/Monolith/Suit/LR-300/Armed/balaklava.rsi
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet556M855
+    fireCost: 3.3
+  - type: Gun
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/t_lr300_shot.ogg
+    minAngle: 9
+    maxAngle: 62
+    angleIncrease: 1.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.1
+
+- type: entity
+  name: Неизвестный монолитовец
+  suffix: Stalker, NPC, T4
+  parent: MobMonolithGuardPatroolBase
+  id: MobMonolithGuardPatroolSevaAbakan
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/NPC/Random/Monolith/Seva/Abakan/Armed/standard.rsi
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      20: Critical
+      21: Dead
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 3.3
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_abakan_shot.ogg
+    minAngle: 7
+    maxAngle: 47
+    angleIncrease: 1
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    fireRate: 8.5
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2

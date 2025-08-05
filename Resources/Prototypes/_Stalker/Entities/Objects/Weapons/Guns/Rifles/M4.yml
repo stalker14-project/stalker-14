@@ -98,3 +98,35 @@
     falloffMultiplier: 0.9
   - type: STWeaponAccuracy
     accuracyMultiplier: 1.1
+
+- type: entity
+  parent: STBaseWeaponRifleM4
+  id: STWeaponRifleLR300v1
+  name: LR-300
+  description: Лёгкая винтовка с дальностью эффективного огня до 300 метров. Благодаря исключительно ровному спуску, высокой эргономике и небольшому весу данное оружие отличается высокой точностью боя, хотя высокая чувствительность к загрязнению делает её не всегда пригодной для использования в сложных полевых условиях.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/lr-300.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/lr-300.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/lr-300.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/t_lr300_shot.ogg
+
+- type: entity
+  parent: STBaseWeaponRifleM4
+  id: STWeaponRifleLR300v2
+  name: LR-300
+  description: Новая ступень в развитии семейства знаменитой М-16. Благодаря исключительно ровному спуску, высокой эргономике и небольшому весу данное оружие отличается высокой точностью боя, хотя высокая чувствительность к загрязнению делает его малопригодным для использования в сложных условиях.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/lr-300-alt.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/lr-300-alt.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/lr-300-alt.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_lr300_shot.ogg

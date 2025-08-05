@@ -26,8 +26,39 @@
           band: Stalker
           bandIcon: rene
           bandProto: STRenegatsBand
-          bandRankId: 2
+          bandRankId: 1
         - type: BlockTackingHolyItems
+
+- type: job
+  id: StalkerHeadRene
+  name: Renegade Leader
+  icon: rene
+  description: Protect Flesh. Take Teeth.
+  playTimeTracker: JobHeadRenegat
+  whitelisted: true
+  requirements:
+  # - !type:RoleTimeRequirement
+  #   role: JobRenegat
+  #   time: 1
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
+  startingGear: ReneGear
+  supervisors: you're the boss.
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Access
+      tags:
+      - Renegat
+    - type: Bands
+      band: Stalker
+      bandIcon: rene
+      bandProto: STRenegatsBand
+      bandRankId: 2
+    - type: BlockTackingHolyItems
 
 - type: startingGear
   id: ReneGear
@@ -44,7 +75,7 @@
   name: Renegades
   factionId: Renegades
   maxMembers: 12
-  managingRankId: 3
+  managingRankId: 2
   hierarchy:
     1: StalkerRene
-
+    2: StalkerHeadRene
