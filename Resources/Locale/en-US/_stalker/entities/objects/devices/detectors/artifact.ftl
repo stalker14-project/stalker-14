@@ -28,8 +28,11 @@ ent-ZoneArtifactDetectorWolfhound = Wolfhound detector
 ent-ZoneArtifactDetectorDaDa = detector "Yes yes?"
     .desc = Yes yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes? Yes, yes?
     .suffix = stalker, detector, admemes
-ent-ZoneArtifactDetectorResponseCvoboda = Bush detector
+ent-ZoneArtifactDetectorResponseCvoboda = Freedom detector
     .desc = A detector capable of detecting artifacts of the first type, at a short distance
+    .suffix = Stalker, Detector
+ent-ZoneArtifactDetectorBush = Bush detector
+    .desc = The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
     .suffix = Stalker, Detector
 
 distance-indicator-component-disabled = Disabled
