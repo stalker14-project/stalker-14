@@ -108,6 +108,7 @@
     - id: ZoneArtifactVyvert
     - id: ZoneArtifactSparkler
     - id: ArtMedusa
+    - id: ZoneArtifactFloodlight
 
 - type: entityTable
   id: Tier2Artifact
@@ -119,6 +120,14 @@
     - id: ZoneArtifactBlood
     - id: ZoneArtifactEye
     - id: ZoneArtifactBattery
+
+- type: entityTable
+  id: Tier3Artifact
+  table: !type:GroupSelector
+    children:
+    - id: ZoneArtifactFlash
+    - id: ZoneArtifactMeat
+    - id: ZoneArtifactFlame
 
 - type: entityTable
   id: StalkerMutant
@@ -149,6 +158,48 @@
       weight: 0.04
     - id: MedkitScience
       weight: 0.02
+
+- type: entityTable
+  id: StalkerFishingTier1
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: Tier1Scrap
+      weight: 65
+    - !type:NestedSelector
+      tableId: Tier1Artifact
+      weight: 15
+    - !type:NestedSelector
+      tableId: StalkerMedical
+      weight: 20
+
+- type: entityTable
+  id: StalkerFishingTier2
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: Tier2Scrap
+      weight: 20
+    - !type:NestedSelector
+      tableId: Tier2Artifact
+      weight: 10
+    - !type:NestedSelector
+      tableId: StalkerFishingTier1
+      weight: 70
+
+- type: entityTable
+  id: StalkerFishingTier3
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: Tier3Scrap
+      weight: 10
+    - !type:NestedSelector
+      tableId: Tier3Artifact
+      weight: 5
+    - !type:NestedSelector
+      tableId: StalkerFishingTier2
+      weight: 85
 
 - type: entityTable
   id: StalkerFishingTable
