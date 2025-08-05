@@ -129,6 +129,27 @@
 
 - type: entity
   parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleA545Dolg
+  name: A-545 "Pledge"
+  description: A rare assault rifle modified and carried by the elites of the Duty faction.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/A545Dolg.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/A545Dolg.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/A545Dolg.rsi
+    scale: 0.75, 0.75
+  - type: Gun
+    minAngle: 45
+    maxAngle: 90
+    angleIncrease: 0.8
+    fireRate: 8.5
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.6
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74
   id: STWeaponRifleAKS74Green
   name: AKS-74 (Forest)
   description: Variant with green polymer furniture. Ideal for operations in northern forest areas of the Zone.
