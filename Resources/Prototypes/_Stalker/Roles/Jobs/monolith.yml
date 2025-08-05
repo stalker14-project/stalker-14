@@ -22,10 +22,12 @@
         tags:
           - Monolith
       - type: Bands
+        altBand: stalker
+        canChange: true
         band: Stalker
         bandIcon: monolith
         bandProto: STMonolithBand
-        bandRankId: 2
+        bandRankId: 1
       - type: NpcFactionMember
         factions:
           - Mutated
@@ -35,7 +37,7 @@
         baseDecayRate: 0
       - type: PersonalDamageBlock
       - type: Damageable
-        damageModifierSet: STPlayerMonolithModifierSet
+        damageContainer: Monolith
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -43,6 +45,54 @@
         teethCount: 3
         initialTeeth: 3
       - type: STAnomalyTipsViewing
+
+- type: job
+  id: StalkerHeadMonolith
+  name: Monolith Preacher
+  icon: monolith
+  description: Lead the Monolith on a Crusade across the Zone. Follow the order of the Monolith.
+  playTimeTracker: JobHeadMonolith
+  whitelisted: true
+  requirements:
+  # - !type:RoleTimeRequirement
+  #   role: JobMonolith
+  #   time: 1
+  - !type:SpeciesRequirement
+    species:
+    - Human
+  startingGear: MonolithGear
+  supervisors: follow the wishes of the glorious Monolith
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Access
+      tags:
+      - Monolith
+    - type: Bands
+      band: Stalker
+      altBand: stalker
+      canChange: true
+      bandIcon: monolith
+      bandProto: STMonolithBand
+      bandRankId: 2
+    - type: NpcFactionMember
+      factions:
+      - Mutated
+    - type: Hunger
+      baseDecayRate: 0
+    - type: Thirst
+      baseDecayRate: 0
+    - type: PersonalDamageBlock
+    - type: Damageable
+      damageContainer: Monolith
+    - type: BlockTackingHolyItems
+    - type: TeethPull
+      teethProto: ToothStalker
+      pullingItemTag: PliersStalker
+      teethCount: 3
+      initialTeeth: 3
+    - type: STAnomalyTipsViewing
 
 - type: startingGear
   id: MonolithGear
@@ -57,7 +107,7 @@
   name: Monolith
   factionId: Monolith
   maxMembers: 15
-  managingRankId: 3
+  managingRankId: 2
   hierarchy:
     1: StalkerMonolith
-
+    2: StalkerHeadMonolith

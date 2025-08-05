@@ -46,7 +46,8 @@ namespace Content.Server._Stalker.Bands
             SubscribeLocalEvent<BandsManagingComponent, ComponentStartup>(SubscribeUpdateUiState);
             SubscribeLocalEvent<BandsManagingComponent, BandsManagingAddMemberMessage>(OnAddMember);
             SubscribeLocalEvent<BandsManagingComponent, BandsManagingRemoveMemberMessage>(OnRemoveMember);
-            SubscribeLocalEvent<BandsComponent, ToggleBandsEvent>(OnToggle);
+            //SubscribeLocalEvent<BandsComponent, ToggleBandsEvent>(OnToggle);
+            SubscribeLocalEvent<BandsComponent, ChangeBandEvent>(OnChange);
 
             SubscribeLocalEvent<BandsComponent, ComponentInit>(OnInit);
 
@@ -309,7 +310,7 @@ namespace Content.Server._Stalker.Bands
             if (component is { AltBand: not null, CanChange: true })
                 _actions.AddAction(uid, ref component.ActionChangeEntity, component.ActionChange, uid);
 
-            _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
+            //_actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
         }
 
         private void OnRemove(EntityUid uid, BandsComponent component, ComponentRemove args)

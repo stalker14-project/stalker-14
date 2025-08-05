@@ -336,21 +336,24 @@
   name: BaseProject-RandomLocationProject
   components:
     - type: GroupTeleport
-      group: "BaseProjectGroup"
-      targetGroup: "RandomLocationProjectGroup"
+      group: "BaseProject"
+      targetGroup: "RandomLocationProject"
       allowAll: true
+      cooldownEnabled: true
+      cooldownTime: 5
+      godmodeCooldown: 5
+      time: 5
 
 - type: entity
-  parent: GroupedTeleportBase
+  parent: GroupedTeleportUncollideBase
   id: RandomLocationProject-BaseProject
   name: RandomLocationProject-BaseProject
   components:
     - type: GroupTeleport
-      group: "RandomLocationProjectGroup"
-      targetGroup: "BaseProjectGroup"
-      allowAll: true
-    - type: PointLight
-      color: Yellow
-      radius: 0
-      energy: 0
-      netsync: false
+      group: "RandomLocationProject"
+      targetGroup: "BaseProject"
+      allowAll: false
+      cooldownEnabled: true
+      cooldownTime: 5
+      godmodeCooldown: 5
+      time: 5

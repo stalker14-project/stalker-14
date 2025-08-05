@@ -27,6 +27,8 @@
         canChange: true
         band: Stalker
         bandIcon: voen
+        bandProto: STMilitaryStalkerBand
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -37,6 +39,48 @@
         factions:
         - MilitaryStalker
       - type: STAnomalyTipsViewing
+
+- type: job
+  id: HeadMilitaryStalker
+  name: Military Stalker Commander
+  icon: voen
+  description: job-military-stalker-desc
+  playTimeTracker: JobHeadMilitaryStalker
+  whitelisted: true
+  requirements:
+  # - !type:RoleTimeRequirement
+  #   role: JobMilitaryStalker
+  #   time: 1
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
+  startingGear: MilitarySpecGear
+  supervisors: you
+  canBeAntag: false
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Access
+      groups:
+      - MilitaryStalker
+    - type: Bands
+      altBand: stalker
+      canChange: true
+      band: Stalker
+      bandIcon: voen
+      bandProto: STMilitaryStalkerBand
+      bandRankId: 2
+    - type: BlockTackingHolyItems
+    - type: TeethPull
+      teethProto: ToothStalker
+      pullingItemTag: PliersStalker
+      teethCount: 3
+      initialTeeth: 3
+    - type: NpcFactionMember
+      factions:
+      - MilitaryStalker
+    - type: STAnomalyTipsViewing
 
 - type: job
   id: Military
@@ -149,6 +193,11 @@
           bandProto: STMilitaryBand
           bandRankId: 2
         - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
         - type: NpcFactionMember
           factions:
           - Military
@@ -205,7 +254,7 @@
   name: Military
   factionId: Military
   maxMembers: 16
-  managingRankId: 3
+  managingRankId: 2
   hierarchy:
     1: Military
     2: MilitaryOfficer
@@ -219,3 +268,4 @@
   managingRankId: 1
   hierarchy:
     1: MilitaryStalker
+    2: HeadMilitaryStalker
