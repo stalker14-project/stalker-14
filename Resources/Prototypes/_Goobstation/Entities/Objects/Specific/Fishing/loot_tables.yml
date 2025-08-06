@@ -86,6 +86,7 @@
     - id: STCraftPlasticFittingT2
     - id: STCraftSheetIronT2
     - id: STCraftBasicPCBT2
+    - id: CraftMaterialGunpowder
 
 - type: entityTable
   id: Tier3Scrap
@@ -165,10 +166,10 @@
     children:
     - !type:NestedSelector
       tableId: Tier1Scrap
-      weight: 65
+      weight: 70
     - !type:NestedSelector
       tableId: Tier1Artifact
-      weight: 15
+      weight: 10
     - !type:NestedSelector
       tableId: StalkerMedical
       weight: 20
@@ -179,10 +180,10 @@
     children:
     - !type:NestedSelector
       tableId: Tier2Scrap
-      weight: 20
+      weight: 25
     - !type:NestedSelector
       tableId: Tier2Artifact
-      weight: 10
+      weight: 5
     - !type:NestedSelector
       tableId: StalkerFishingTier1
       weight: 69

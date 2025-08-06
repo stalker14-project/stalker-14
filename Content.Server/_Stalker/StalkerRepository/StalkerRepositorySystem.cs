@@ -36,6 +36,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
 using Content.Server._Stalker.Sponsors.SponsorManager;
+using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.StalkerRepository;
 public sealed class StalkerRepositorySystem : EntitySystem
@@ -80,6 +81,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         SubscribeLocalEvent<ItemComponent, HandDeselectedEvent>(OnDeselected);
         SubscribeLocalEvent<StorageAfterRemoveItemEvent>(OnAfterRemove);
         SubscribeLocalEvent<StorageAfterInsertItemIntoLocationEvent>(OnAfterInsert);
+
 
         _sawmill = Logger.GetSawmill("repository");
     }

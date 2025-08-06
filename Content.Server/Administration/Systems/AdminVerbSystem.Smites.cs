@@ -1,4 +1,5 @@
 using System.Threading;
+using Content.Server._Stalker.Storage;
 using Content.Server.Administration.Commands;
 using Content.Server.Administration.Components;
 using Content.Server.Atmos.Components;
@@ -80,6 +81,7 @@ public sealed partial class AdminVerbSystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SuperBonkSystem _superBonkSystem = default!;
     [Dependency] private readonly SlipperySystem _slipperySystem = default!;
+    [Dependency] private readonly StalkerStorageSystem _stalkerStorageSystem = default!;
 
     // All smite verbs have names so invokeverb works.
     private void AddSmiteVerbs(GetVerbsEvent<Verb> args)
@@ -95,6 +97,26 @@ public sealed partial class AdminVerbSystem
         // 1984.
         if (HasComp<MapComponent>(args.Target) || HasComp<MapGridComponent>(args.Target))
             return;
+
+        var hasActor = TryComp<ActorComponent>(args.Target, out var comp);
+
+        var ckey = comp?.PlayerSession.Name;
+
+        var clearStashName = Loc.GetString("admin-player-actions-clear-stash").ToLowerInvariant();
+        Verb clearStash = new()
+        {
+            Text = clearStashName,
+            Category = VerbCategory.Smite,
+            Act = () =>
+            {
+                _stalkerStorageSystem.ClearStorages(ckey);
+            },
+            Impact = LogImpact.Extreme,
+            Message = string.Join(": ", clearStashName, Loc.GetString("admin-player-actions-clear-stash-description"))
+        };
+
+        if(hasActor)
+            args.Verbs.Add(clearStash);
 
         var explodeName = Loc.GetString("admin-smite-explode-name").ToLowerInvariant();
         Verb explode = new()
