@@ -61,6 +61,11 @@ public sealed class StalkerDbSystem : EntitySystem
         _dbManager.SetLoginItems(login, inputInventoryJson);
     }
 
+    public void ClearAllRepositories(string login)
+    {
+        _dbManager.SetAllLoginItems(login, DefaultStalkerItems);
+    }
+
     public void ClearInventoryJson(string login)
     {
        _dbManager.SetLoginItems(login, DefaultStalkerItems);
