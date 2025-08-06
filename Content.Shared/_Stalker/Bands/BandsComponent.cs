@@ -1,8 +1,5 @@
-using Content.Shared.StatusIcon;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared._Stalker.Bands;
 
@@ -29,18 +26,9 @@ public sealed partial class BandsComponent : Component
 
     [DataField] public EntityUid? ActionChangeEntity;
 
-    [DataField("action"), ViewVariables(VVAccess.ReadOnly)]
-    public string Action = "ActionToggleBands";
-
-    [DataField] public EntityUid? ActionEntity;
-
-    [AutoNetworkedField]
-    public bool Enabled = true;
-
     [DataField("bandProto"), ViewVariables(VVAccess.ReadWrite)]
     public ProtoId<STBandPrototype> BandProto;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public int BandRankId = 1;
-
 }
