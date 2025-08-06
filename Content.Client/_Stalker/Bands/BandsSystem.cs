@@ -1,10 +1,7 @@
 using Content.Shared._Stalker.Bands;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
-using Robust.Client.Player;
 using Robust.Shared.Prototypes;
-using Content.Shared._Stalker.Bands;
-using Robust.Client.Graphics;
 
 namespace Content.Client._Stalker.Bands;
 /// <summary>

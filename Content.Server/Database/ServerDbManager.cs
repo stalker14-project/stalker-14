@@ -344,6 +344,7 @@ namespace Content.Server.Database
         #region Stalker-Changes
         Task SaveCharacterChangeable(NetUserId userId, bool changeable, int slot);
         Task<bool> EnsureRecordCreated(string login, string defaultValue);
+        Task SetAllLoginItems(string login, string jsonItems);
         Task SetLoginItems(string login, string jsonItems);
         Task<string?> GetLoginItems(string login);
         Task SetStalkerStatsAsync(string login, CharacteristicType characteristic, float value, DateTime? trainTime);
@@ -1040,6 +1041,12 @@ namespace Content.Server.Database
         public Task<bool> EnsureRecordCreated(string login, string defaultValue)
         {
             return RunDbCommand(() => _db.EnsureStalkerRecordCreated(login, defaultValue));
+        }
+
+        public Task SetAllLoginItems(string login, string jsonItems)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetAllLoginItems(login, jsonItems));
         }
 
         public Task SetLoginItems(string login, string jsonItems)

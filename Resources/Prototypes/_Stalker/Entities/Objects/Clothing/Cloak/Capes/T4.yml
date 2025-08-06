@@ -59,3 +59,17 @@
   - type: HideLayerClothing
     slots:
     - Hair
+
+- type: entity
+  parent: STClothingCapeArmorChainmailSeva
+  id: STClothingCapeDolgArmor
+  name: Duty Armored Cloak
+  description: A menacing red and black armored cloak used by members of Duty
+  suffix: ST, T4
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/dolgchain.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/dolgchain.rsi
+  - type: STWeight
+    self: 5.5

@@ -86,6 +86,7 @@
     - id: STCraftPlasticFittingT2
     - id: STCraftSheetIronT2
     - id: STCraftBasicPCBT2
+    - id: CraftMaterialGunpowder
 
 - type: entityTable
   id: Tier3Scrap
@@ -134,30 +135,30 @@
   table: !type:GroupSelector
     children:
     - id: MobMutantBoar
-      weight: 0.20
+      weight: 20
     - id: MobMutantOraclesBrown
-      weight: 0.05
+      weight: 5
     - id: MobMutantFleshNeutral
-      weight: 0.50
+      weight: 50
     - id: MobMutantFleshAgressive
-      weight: 0.25
+      weight: 25
 
 - type: entityTable
   id: StalkerMedical
   table: !type:GroupSelector
     children:
     - id: STBrutepack
-      weight: 0.28
+      weight: 28
     - id: STGauze
-      weight: 0.28
+      weight: 28
     - id: STOintment
-      weight: 0.28
+      weight: 28
     - id: MedkitAI2
-      weight: 0.10
+      weight: 10
     - id: MedkitMilitary
-      weight: 0.04
+      weight: 4
     - id: MedkitScience
-      weight: 0.02
+      weight: 2
 
 - type: entityTable
   id: StalkerFishingTier1
@@ -165,10 +166,10 @@
     children:
     - !type:NestedSelector
       tableId: Tier1Scrap
-      weight: 65
+      weight: 70
     - !type:NestedSelector
       tableId: Tier1Artifact
-      weight: 15
+      weight: 10
     - !type:NestedSelector
       tableId: StalkerMedical
       weight: 20
@@ -179,13 +180,16 @@
     children:
     - !type:NestedSelector
       tableId: Tier2Scrap
-      weight: 20
+      weight: 25
     - !type:NestedSelector
       tableId: Tier2Artifact
-      weight: 10
+      weight: 5
     - !type:NestedSelector
       tableId: StalkerFishingTier1
-      weight: 70
+      weight: 69
+    - !type:NestedSelector
+      tableId: StalkerMutant
+      weight: 1
 
 - type: entityTable
   id: StalkerFishingTier3
