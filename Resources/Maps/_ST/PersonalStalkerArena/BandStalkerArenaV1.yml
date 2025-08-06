@@ -3,12 +3,12 @@ meta:
   postmapinit: false
 tilemap:
   0: Space
+  136: FloorWhiteMono
+  145: Plating
   31: STFloorConcreteMono
   56: STFloorGrayConcrete
   77: STFloorOldConcrete
   79: STFloorOldConcreteSmooth
-  136: FloorWhiteMono
-  145: Plating
 entities:
 - proto: ""
   entities:
@@ -325,6 +325,14 @@ entities:
     - type: Transform
       pos: -2.5,2.5
       parent: 104
+- proto: ChairFolding
+  entities:
+  - uid: 77
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,2.5
+      parent: 104
 - proto: DebugAPC
   entities:
   - uid: 195
@@ -367,14 +375,6 @@ entities:
       parent: 104
     missingComponents:
     - Strap
-- proto: FoodPlateSmallTrash
-  entities:
-  - uid: 90
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -4.4190855,-1.5298367
-      parent: 104
 - proto: GasMinerOxygenStation
   entities:
   - uid: 46
@@ -401,12 +401,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -2.5,9.5
-      parent: 104
-  - uid: 185
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,9.5
       parent: 104
 - proto: GasPipeBend
   entities:
@@ -450,12 +444,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -1.5,7.5
-      parent: 104
-  - uid: 156
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,9.5
       parent: 104
   - uid: 157
     components:
@@ -679,13 +667,6 @@ entities:
       parent: 104
     - type: ApcPowerReceiver
       needsPower: False
-  - uid: 77
-    components:
-    - type: Transform
-      pos: 0.5,0.5
-      parent: 104
-    - type: ApcPowerReceiver
-      needsPower: False
   - uid: 87
     components:
     - type: Transform
@@ -703,29 +684,6 @@ entities:
       parent: 104
     - type: ApcPowerReceiver
       needsPower: False
-- proto: Kover1
-  entities:
-  - uid: 259
-    components:
-    - type: Transform
-      pos: 4.0864024,-4.462059
-      parent: 104
-- proto: Kover2
-  entities:
-  - uid: 258
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.542388,-5.417951
-      parent: 104
-- proto: Kover7
-  entities:
-  - uid: 255
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 0.51663554,2.0289042
-      parent: 104
 - proto: LockerBig
   entities:
   - uid: 246
@@ -733,6 +691,8 @@ entities:
     - type: Transform
       pos: 3.5,2.5
       parent: 104
+    - type: Physics
+      bodyType: Static
 - proto: LockerFreezerStalker
   entities:
   - uid: 122
@@ -777,22 +737,6 @@ entities:
         suitstorage: !type:ContainerSlot
           occludes: False
         body_root_part: !type:ContainerSlot {}
-- proto: OldWoodChairStalker
-  entities:
-  - uid: 241
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,1.5
-      parent: 104
-- proto: OldWoodChairStalker2
-  entities:
-  - uid: 242
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,1.5
-      parent: 104
 - proto: OldWoodChairStalker3
   entities:
   - uid: 92
@@ -953,6 +897,29 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-3.5
+      parent: 104
+- proto: STCarpetLarge1
+  entities:
+  - uid: 255
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 0.51663554,2.0289042
+      parent: 104
+- proto: STCarpetSmall1
+  entities:
+  - uid: 259
+    components:
+    - type: Transform
+      pos: 4.0864024,-4.462059
+      parent: 104
+- proto: STCarpetSmall2
+  entities:
+  - uid: 258
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -2.542388,-5.417951
       parent: 104
 - proto: STMatrassBed3
   entities:
@@ -1779,34 +1746,12 @@ entities:
     - type: Transform
       pos: -4.5,-3.5
       parent: 104
-  - uid: 224
-    components:
-    - type: Transform
-      pos: 3.5,-3.5
-      parent: 104
 - proto: WoodenSupportBeam
   entities:
-  - uid: 223
-    components:
-    - type: Transform
-      pos: -0.5,0.5
-      parent: 104
   - uid: 247
     components:
     - type: Transform
       pos: -2.5,0.5
-      parent: 104
-- proto: WoodenSupportWall
-  entities:
-  - uid: 143
-    components:
-    - type: Transform
-      pos: 0.5,0.5
-      parent: 104
-  - uid: 184
-    components:
-    - type: Transform
-      pos: 1.5,0.5
       parent: 104
 - proto: WoodenYaschik1
   entities:
