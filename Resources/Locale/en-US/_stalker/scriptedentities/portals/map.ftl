@@ -128,3 +128,7 @@ ent-EnterOnTopi = Entrance to Swamps
 ent-EnterOnTopiUncollide = Entrance to Swamps Uncollide
 ent-Topi-RedForestOneside = Swamps - Red Forest
 ent-Topi-RedForestOnesideUncollide = Swamps - Red Forest Uncollide
+ent-RedForest-LimaOneside = Red Forest – Lima
+ent-RedForest-LimaOnesideUncollide = Red Forest – Lima Uncollide
+ent-Bar-Topi = Bar‑Topi
+ent-Topi-Bar = Topi‑Bar

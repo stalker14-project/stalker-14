@@ -4,3 +4,6 @@ ent-StalkerAnomalyKnockbackBallBat = Abnormal Baseball Bat
 ent-StalkerAnomalyStunBallBat = { ent-StalkerAnomalyKnockbackBallBat }
     .desc = It exudes electrical energy.
     .suffix = { ent-StalkerAnomalyKnockbackBallBat.suffix }
+ent-StalkerAnomalyKnockbackBallBatSUPER = SUPER Anomalous Baseball Bat
+    .desc = Warps gravity around itself.
+    .suffix = ST

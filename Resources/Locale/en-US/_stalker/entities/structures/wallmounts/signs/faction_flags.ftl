@@ -39,3 +39,7 @@ ent-Banner18 = Flag of Ukraine with the coat of arms
     .suffix = ST, Mapping, Banner
 ent-Banner19 = Flag of the Perimeter Guard Forces
     .suffix = { ent-Banner18.suffix }
+ent-Banner20 = Project Flag
+    .suffix = ST, Mapping, Banner
+ent-Banner21 = USSR Flag
+    .suffix = { ent-Banner20.suffix }

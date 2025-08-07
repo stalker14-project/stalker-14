@@ -29,3 +29,5 @@ ent-STClothingOuterArmorLightPlateVestBasePilgrim = Pilgrim's Shield-2 body armo
     .desc = Light body armor of the second class of protection, the basis of the basics.
 ent-STClothingOuterArmorLightPlateVestBaseClearSky = Clear Sky Shield-2 body armor
     .desc = Light body armor of the second class of protection, the basis of the basics.
+ent-STClothingOuterArmorLightPlateVestBaseProject = Project Shield-2 body armor
+    .desc = A lightweight Class 2 protective vest, the foundation of protection.

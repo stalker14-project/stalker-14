@@ -1,0 +1,15 @@
+ent-STCacheStorageProect = Project Crate
+    .desc = A fairly old crate. Might be worth searching.
+    .suffix = Project
+ent-ProectPVE = Project Hunting Kit
+    .desc = Standard Project equipment supply kit.
+    .suffix = Stalker, T3, Project
+ent-ProectENV = Project Artifact Kit
+    .desc = { ent-ProectPVE.desc }
+    .suffix = { ent-ProectPVE.suffix }
+ent-ProectPVP = Project PvP Kit
+    .desc = { ent-ProectPVE.desc }
+    .suffix = Stalker, T2, Project
+ent-ProectPVP2 = Advanced Project PvP Kit
+    .desc = An advanced Project equipment supply kit.
+    .suffix = { ent-ProectPVE.suffix }

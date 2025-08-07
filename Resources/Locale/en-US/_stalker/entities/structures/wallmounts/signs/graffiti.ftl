@@ -64,3 +64,6 @@ ent-Graffiti21 = { ent-Graffiti1 }
 ent-Graffiti22 = { ent-Graffiti1 }
     .desc = { ent-Graffiti1.desc }
     .suffix = { ent-Graffiti1.suffix }
+ent-Graffiti23 = Graffiti
+    .desc = Graffiti left behind by someone.
+    .suffix = ST, Mapping

@@ -1,3 +1,5 @@
 ent-STGuardSpawnerStalker = Stalker Militiaman Spawner (1) (100%)
 ent-STGuardSpawnerMilitary = Military Guard Spawner (1) (100%)
 ent-STGuardSpawnerHostile = Sewer Bandit Spawner (1) (50%)
+ent-STGuardSpawnerMonolith2100 = Monolith Guard Spawner Trigger (2) (100%)
+ent-STGuardSpawnerMonolith3550 = Monolith Guard Spawner Trigger (3–5) (50%)

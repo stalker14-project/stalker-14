@@ -16,3 +16,5 @@ ent-STClothingOuterArmorLightPlateVestBaseANAgreenOld = ANA Tactical "Steppe-4"
     .suffix = ST, T3, PvP, Old
 ent-STClothingOuterArmorLightPlateVestBaseANAgrayOld = { ent-STClothingOuterArmorLightPlateVestBaseANAgreenOld }
     .desc = Reliable class 3 plate carrier that fits any magazine size, in a stylish black color. This version is heavily worn, with noticeably degraded protective capabilities.
+ent-STClothingOuterArmorLightPlateVestBaseANAproject = ANA Tactical 'Project'
+    .desc = A reliable Class 3 carrier accommodating magazines of any size.

@@ -97,3 +97,6 @@ ent-MonolithCrate918PBM = Monolith 9x18 PBM gzh Ammo Crate
     .suffix = { ent-MonolithCrateBasicTools.suffix }
 ent-MonolithCrate919PBM = Monolith 9x19 PBM gzh Ammo Crate
     .suffix = { ent-MonolithCrateBasicTools.suffix }
+ent-TradeBoxSera = Seraphim Supply Crate
+    .desc = A supply crate from the Seraphim, addressed to the northern Limansk coven from the southern one.
+    .suffix = Stalker, Economy, Contraband

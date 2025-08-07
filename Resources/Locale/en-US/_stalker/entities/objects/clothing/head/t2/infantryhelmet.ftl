@@ -23,3 +23,5 @@ ent-ClothingHeadHelmetInfantrySera = “Vostok” infantry helmet (Seraphim)
     .desc = “Vostok” infantry helmet with painted stripes.
 ent-ClothingHeadHelmetInfantrySerasera = { ent-ClothingHeadHelmetInfantrySera }
     .desc = Gray “Vostok” infantry helmet with painted stripes.
+ent-ClothingHeadHelmetInfantryDolg = “Vostok” Duty Helmet
+    .desc = Infantry helmet model “Vostok”, Class 2 protection. Manufacturer unknown.
