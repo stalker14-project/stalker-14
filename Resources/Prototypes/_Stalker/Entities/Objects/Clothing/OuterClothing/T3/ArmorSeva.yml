@@ -302,7 +302,23 @@
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_neutral.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/seva_neutral.rsi
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHardsuitSevaHelmNeutral
 
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmNeutral
+  name: шлем севы Нейтралов
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker\Objects\Clothing\hats\seva_helm_neitral.rsi
+    - type: Clothing
+      sprite: _Stalker\Objects\Clothing\hats\seva_helm_neitral.rsi
+    - type: IdentityBlocker
+    - type: IngestionBlocker
+      
 # Covenant
 
 - type: entity
