@@ -859,6 +859,24 @@
 
 - type: entity
   parent: BaseItem
+  id: CasseteSixty0neDonateRadio
+  suffix: Stalker, кассета (The Rolling Stones - Mother's Little Helper)
+  name: кассета "The Rolling Stones - Mother's Little Helper"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/TRS-MLH.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
   id: CasseteThirtyDonateRadio
   suffix: Stalker, кассета (2nd Warning)
   name: кассета "2nd Warning"

@@ -1,6 +1,8 @@
-﻿namespace Content.Shared._Stalker.Anomaly;
+﻿using Robust.Shared.GameStates;
 
-[RegisterComponent]
+namespace Content.Shared._Stalker.Anomaly;
+
+[RegisterComponent, NetworkedComponent]
 public sealed partial class STAnomalyTipsViewingComponent : Component
 {
 

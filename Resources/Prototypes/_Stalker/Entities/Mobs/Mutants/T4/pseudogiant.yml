@@ -21,7 +21,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 2000
+            damage: 5000
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -30,16 +30,16 @@
       attackRadius: 7
       damageRadius: 3
       staminaDamage: 200
-      reloadTime: 10
+      reloadTime: 999999
       chargeDamage:
         types:
           Blunt: 50
       jumpPower: 60
-      updateCooldown: 1
+      updateCooldown: 999999
     - type: MobThresholds
       thresholds:
         0: Alive
-        2000: Dead
+        5000: Dead
     - type: MeleeWeapon
       attackRate: 0.5
       heavyWindupModifier: 1.5
@@ -58,11 +58,11 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Blunt: 40
-          Slash: 30
+          Blunt: 50
+          Slash: 50
     - type: MovementSpeedModifier
-      baseWalkSpeed: 1.5
-      baseSprintSpeed: 2.5
+      baseWalkSpeed: 3
+      baseSprintSpeed: 6
     - type: Sprite
       sprite: _Stalker/Mobs/Mutants/pseudogiant.rsi
       layers:
