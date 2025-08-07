@@ -1,14 +1,18 @@
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
+using Content.Server.Inventory;
 using Content.Server.Temperature.Components;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Damage;
+using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Polymorph;
 using Robust.Server.Containers;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Timing;
 using Robust.Server.Player;
 using Robust.Shared.Console;
+using Robust.Shared.Containers;
 
 namespace Content.Server.Atmos.Rotting;
 
@@ -16,6 +20,8 @@ public sealed class RottingSystem : SharedRottingSystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
+    [Dependency] private readonly ServerInventorySystem _inventory = default!;
+    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly IPlayerManager _players = default!; // Stalker-Changes
@@ -127,6 +133,13 @@ public sealed class RottingSystem : SharedRottingSystem
             if (RotStage(uid, rotting, perishable) >= 3) // Stalker-Changes-Start
             {
                 Respawn(uid);
+                if (TryComp<ContainerManagerComponent>(uid, out var containerManager))
+                {
+                    foreach (var container in containerManager.Containers)
+                    {
+                        _inventory.TryUnequip(uid, container.Value.ID, true, true);
+                    }
+                }
                 QueueDel(uid);
                 continue;
             } // Stalker-Changes-End
