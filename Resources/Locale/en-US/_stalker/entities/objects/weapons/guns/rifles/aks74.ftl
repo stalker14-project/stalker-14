@@ -11,3 +11,7 @@ ent-STWeaponRifleAKS74Green = AKS-74 (Forest)
 ent-STWeaponRifleAKS74U = AKS-74U
 ent-STWeaponRifleAKS74UWhite = AKS-74U (Winter)
 ent-STWeaponRifleAKS74UBlack = AKS-74U (Night)
+ent-STWeaponRifleA545Dolg = A-545 "Pledge"
+    .desc = A rare assault rifle modified and carried by the elites of the Duty faction.
+ent-STWeaponRifleAKS74USERAPH = Martyr
+    .desc = AKs and AKSs beyond repair bring new life through Seraphim Brotherhood technicians, turning into Martyr weapons. Unreliable, inaccurate, inefficient—but still used by Suicide Seraphim in their final battle for their God.

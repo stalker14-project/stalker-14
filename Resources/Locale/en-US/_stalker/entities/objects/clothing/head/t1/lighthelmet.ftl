@@ -8,3 +8,5 @@ ent-ClothingHeadMercLight = Sieve Mercenary Helmet
     .desc = A lightweight helmet, which is the thinnest piece of metal that can protect your skull from buckshot.
 ent-ClothingHeadHelmetLightDeserters = Renegade Sieve Helmet
     .desc = A lightweight helmet, which is the thinnest piece of metal that can protect your skull from buckshot and excessive attention from the state.
+ent-ClothingHeadHelmetLightProject = Project Sieve Helmet
+    .desc = An ultra-thin metal helmet capable of protecting your skull from buckshot and excessive government attention.

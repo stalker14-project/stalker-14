@@ -22,3 +22,6 @@ ent-StalkerGaterFixed = { ent-StalkerGate }
 ent-MilitaryDoor2 = military gate
     .desc = Passage in a wall or fence that is locked by gates.
     .suffix = { ent-HermoDverTypeOne.suffix }
+ent-MilitaryDoorDolg = Duty Military Gate
+    .desc = An entryway through a wall or barrier, secured with locking gates.
+    .suffix = ST, Mapping

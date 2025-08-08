@@ -1,0 +1,15 @@
+ent-Puh1 = Burning Fluff
+    .desc = Best not to code this.
+    .suffix = ST, Mapping
+ent-Puh2 = { ent-Puh1 }
+    .desc = { ent-Puh1.desc }
+    .suffix = { ent-Puh1.suffix }
+ent-Puh3 = { ent-Puh1 }
+    .desc = { ent-Puh1.desc }
+    .suffix = { ent-Puh1.suffix }
+ent-Puh4 = { ent-Puh1 }
+    .desc = { ent-Puh1.desc }
+    .suffix = { ent-Puh1.suffix }
+ent-Puh5 = { ent-Puh1 }
+    .desc = { ent-Puh1.desc }
+    .suffix = { ent-Puh1.suffix }

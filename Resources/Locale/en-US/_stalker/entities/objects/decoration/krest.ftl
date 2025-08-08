@@ -1,0 +1,12 @@
+ent-Krest1 = Grave Cross
+    .desc = A grim monument to the dead.
+    .suffix = ST, Mapping
+ent-Krest2 = { ent-Krest1 }
+    .desc = { ent-Krest1.desc }
+    .suffix = { ent-Krest1.suffix }
+ent-Krest3 = Tombstone
+    .desc = { ent-Krest1.desc }
+    .suffix = { ent-Krest1.suffix }
+ent-Krest4 = { ent-Krest1 }
+    .desc = { ent-Krest1.desc }
+    .suffix = { ent-Krest1.suffix }

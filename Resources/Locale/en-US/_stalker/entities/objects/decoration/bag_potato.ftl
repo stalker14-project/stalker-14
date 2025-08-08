@@ -1,0 +1,12 @@
+ent-BagPotato1 = Sack of Potatoes
+    .desc = A full sack of potatoes.
+    .suffix = ST, Mapping
+ent-BagPotato2 = { ent-BagPotato1 }
+    .desc = { ent-BagPotato1.desc }
+    .suffix = { ent-BagPotato1.suffix }
+ent-BagPotato3 = { ent-BagPotato1 }
+    .desc = { ent-BagPotato1.desc }
+    .suffix = { ent-BagPotato1.suffix }
+ent-BagPotato4 = { ent-BagPotato1 }
+    .desc = { ent-BagPotato1.desc }
+    .suffix = { ent-BagPotato1.suffix }

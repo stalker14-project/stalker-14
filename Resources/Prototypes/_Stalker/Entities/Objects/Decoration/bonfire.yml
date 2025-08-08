@@ -11,3 +11,15 @@
     layers:
       - state: Monolit
       - state: MonolitFire
+
+- type: entity
+  id: StalkerBarrelBonFire
+  parent: Bonfire
+  name: костёр
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/barrel_bonfire.rsi
+    layers:
+      - state: bonfire
+      - state: fire

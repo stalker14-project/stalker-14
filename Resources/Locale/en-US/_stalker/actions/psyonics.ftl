@@ -7,3 +7,4 @@ ent-ActionPsyonicsShield = shield
 ent-ActionPsyonicsMeditation = meditation
 ent-ActionPsyonicsLight = light
 ent-ActionPsyonicsDizzy = dizzy
+ent-STActionPsyonicsStealth = dizzy

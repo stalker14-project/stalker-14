@@ -19,8 +19,9 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -0.1
-        Cold: -0.5
+        Blunt: -0.1
+        Slash: -0.1
+        Bloodloss: -0.5
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -30,6 +31,7 @@
         Radiation: 1.5
         Shock: 1.1
         Cold: 0.8
+        Piercing: 1.05
 
 - type: entity
   parent: BaseArtifact
@@ -52,8 +54,9 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -0.3
-        Cold: -1
+        Blunt: -0.2
+        Slash: -0.2
+        Bloodloss: -1
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -63,9 +66,7 @@
         Shock: 1.4
         Cold: 0.7
         Radiation: 1.6
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+        Piercing: 1.1
 
 - type: entity
   parent: BaseArtifact
@@ -88,8 +89,9 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -0.8
-        Cold: -2
+        Blunt: -0.4
+        Slash: -0.4
+        Bloodloss: -2
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -99,9 +101,7 @@
         Heat: 1.8
         Shock: 1.8
         Radiation: 1.8
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+        Piercing: 1.15
 
 - type: entity
   parent: BaseArtifact
@@ -120,19 +120,15 @@
     energy: 4
     color: "#ff0000"
     castShadows: false
-  - type: PersonalDamage
-    damage:
-      types:
-        Piercing: 0.04
-    interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.7
-        Heat: 0.6
+        Compression: 0.5
+        Heat: 0.3
         Psy: 0.1
+        Piercing: 1.15
 
 - type: entity
   parent: BaseArtifact
@@ -152,26 +148,14 @@
     color: "#ff0000"
     castShadows: false
   - type: PersonalDamage
-    staminaDamage: -6
+    staminaDamage: -10
     damage:
       types:
-        Asphyxiation: -2
-        Cold: -2
-        Heat: -1
-        Radiation: -1
-        Blunt: -0.04
-        Slash: -0.04
-        Piercing: -0.04
+        Bloodloss: -6
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.5
-        Cold: 0.6
-        Heat: 0.6
-        Psy: 2
-  - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
+       Bloodloss: 0.5

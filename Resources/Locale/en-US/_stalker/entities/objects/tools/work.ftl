@@ -27,3 +27,6 @@ ent-STBrockenWorkbench = Broken Lathe Table
 ent-Coupon = Coupon
     .desc = Workbench rental coupon. Allows you to use the rented workbench for 10 minutes. The owner is not responsible for items lost due to the end of the rental.
     .suffix = Stalker
+ent-STBrockenSteel = Broken Workbench
+    .desc = A broken workbench, dusty and stained with oil—silent as a witness to production halted in time.
+    .suffix = ST, Mapping

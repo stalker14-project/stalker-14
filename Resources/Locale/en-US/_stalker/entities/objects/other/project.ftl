@@ -1,0 +1,14 @@
+ent-ClothingHeadsetProject = A.A.A.
+    .desc = Algorithm Active. Cannot deactivate. Obey the Algorithm.
+ent-EncryptionKeyPROJECT = A.A.A. Chip
+    .desc = Algorithm inactive. Reactivation impossible. Do not obey the Algorithm.
+ent-PROJECTIDCard = Algorithm Keycard
+    .desc = The Algorithm is eternal!
+ent-ProjectPDA = PDA &#@*$!^
+    .desc = &#@*$!^ Error Screen... STOP: 0x0000008E... Refer to user manual or support website.
+ent-ClothingShoesBootsProject = Project Reinforced Boots
+    .desc = The Algorithm won’t die. The Algorithm is eternal. The Algorithm fears nothing!
+ent-ClothingBeltHolsterProject = Project Shoulder Holster
+    .desc = A holster for carrying a pistol and ammo.
+ent-ClothingEyesHudProject = Project Visor
+    .desc = Through it, you see the entire Algorithm... Only works with the chip installed in your head.

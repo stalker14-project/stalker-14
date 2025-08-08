@@ -1,0 +1,1 @@
+ent-STlatticefenceBase = Lattice Fence

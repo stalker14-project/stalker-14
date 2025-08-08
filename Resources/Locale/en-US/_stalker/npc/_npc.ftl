@@ -79,3 +79,6 @@ ent-NPCSecurityZhorik = Zhorik
     .desc = Move along, don't linger!
 ent-NPCSecurityGarrik = Garrik
     .desc = You're not allowed here!
+ent-NPCHidenTrader = Unknown [→ ←]
+ent-STTriggerHidenTrader = Hidden Trader Trigger
+    .suffix = ST, Dollar, Trigger
