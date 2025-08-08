@@ -178,6 +178,19 @@
 
 - type: entity
   parent: BaseStructure
+  id: STBrockenSteel
+  name: сломанный верстак
+  description: Сломанный верстак, покрытый пылью и масляными пятнами, застыл в тишине, как молчаливый свидетель остановленного производства.
+  suffix: ST, Mapping
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/steel_workbench.rsi
+      state: icon_stel
+    - type: Transform
+      noRot: true
+
+- type: entity
+  parent: BaseStructure
   id: STBrockenWorkbench
   name: сломанный токарный стол
   description: Сломанный токарный стол, покрытый пылью и масляными пятнами, застыл в тишине, как молчаливый свидетель остановленного производства.

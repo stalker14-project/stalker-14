@@ -1,0 +1,111 @@
+- type: entity
+  id: BagPotato1
+  parent: BaseStructureDynamic
+  name: мешок картошки
+  suffix: ST, Mapping
+  description: Полный мешок картошки.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/bag_potato.rsi
+    state: Bag_potato1
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
+
+- type: entity
+  id: BagPotato2
+  parent: BaseStructureDynamic
+  name: мешок картошки
+  suffix: ST, Mapping
+  description: Полный мешок картошки.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/bag_potato.rsi
+    state: Bag_potato2
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
+
+- type: entity
+  id: BagPotato3
+  parent: BaseStructureDynamic
+  name: мешок картошки
+  suffix: ST, Mapping
+  description: Полный мешок картошки.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/bag_potato.rsi
+    state: Bag_potato3
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
+
+- type: entity
+  id: BagPotato4
+  parent: BaseStructureDynamic
+  name: мешок картошки
+  suffix: ST, Mapping
+  description: Полный мешок картошки.
+  placement:
+    mode: PlaceFree
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/bag_potato.rsi
+    state: Bag_potato4
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Climbable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
