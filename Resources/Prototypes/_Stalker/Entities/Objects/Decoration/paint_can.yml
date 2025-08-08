@@ -1,6 +1,5 @@
 - type: entity
   id: PaintCan
-  parent: BaseStructureDynamic
   name: банка краски
   suffix: ST, Mapping
   description: Стальная банка с краской которой уже пользовались.
@@ -10,7 +9,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/paint_can.rsi
     state: base
-  - type: InteractionOutline
   - type: Physics
     bodyType: Static
   - type: Climbable
