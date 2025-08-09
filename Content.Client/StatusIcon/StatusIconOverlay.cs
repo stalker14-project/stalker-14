@@ -30,6 +30,9 @@ public sealed class StatusIconOverlay : Overlay
         _transform = _entity.System<TransformSystem>();
         _statusIcon = _entity.System<StatusIconSystem>();
         _unshadedShader = _prototype.Index<ShaderPrototype>("unshaded").Instance();
+
+        // ZIndex is 6 so players won't be able to hide it behind other players.
+        ZIndex = 6; // stalker14-status-icon-changes
     }
 
     protected override void Draw(in OverlayDrawArgs args)

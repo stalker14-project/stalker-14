@@ -1,0 +1,18 @@
+- type: entity
+  name: растяжка
+  parent: BaseLandMine
+  suffix: Stalker
+  description: Одна нога здесь, другая там.
+  id: RastuashkaStalker
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 6.7
+    intensitySlope: 4
+    totalIntensity: 60 # about a ~4 tile radius
+    canCreateVacuum: false
+  - type: DeleteOnTrigger
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/rastuashka.rsi
+    state: Rastuashka

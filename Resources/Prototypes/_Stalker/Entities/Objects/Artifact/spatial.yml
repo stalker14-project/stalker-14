@@ -18,23 +18,19 @@
     - type: PersonalDamage
       damage:
         types:
-          Cellular: -0.5
-          Psy: -0.5
-          Radiation: 1
-          Asphyxiation: -1
+          Radiation: -10
+          Asphyxiation: -2
       interval: 1
     - type: Armor
       hiddenExamine: true
       armorClass: 2
       modifiers:
         coefficients:
-          Psy: 0.8
-          Shock: 1.35
-          Radiation : 1.2
-          Asphyxiation: 0.8
-    - type: ClothingSpeedModifier
-      walkModifier: 1.2
-      sprintModifier: 1.1
+          Psy: 0.5
+          Heat: 0.5
+          Shock: 0.5
+          Cold: 0.5
+          Piercing: 1.1
 
 - type: entity
   parent: BaseArtifact

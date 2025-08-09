@@ -17,7 +17,7 @@
       spawned:
         - id: MutantPartBloodsuckerTentacles
           maxAmount: 1
-          prob: 0.9
+          prob: 1
         - id: CraftHideBloodSucker
           maxAmount: 1
           prob: 0.30
@@ -49,7 +49,7 @@
       thresholds:
         - trigger:
             !type:DamageTrigger
-            damage: 300
+            damage: 700
           behaviors:
             - !type:PlaySoundBehavior
               sound:
@@ -84,7 +84,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        300: Dead
+        700: Dead
     - type: MeleeWeapon
       attackRate: 0.4
       heavyWindupModifier: 1
@@ -104,10 +104,9 @@
       damage:
         types:
           Blunt: 35
-          Slash: 15
-          Bloodloss: 7
+          Slash: 25
     - type: MovementSpeedModifier
-      baseWalkSpeed: 2.3
+      baseWalkSpeed: 2.5
       baseSprintSpeed: 5.6
     - type: SlowOnDamage
       speedModifierThresholds:
