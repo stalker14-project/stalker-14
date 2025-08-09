@@ -66,3 +66,12 @@
       - !type:TriggerBehavior
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: StalkerSoundAndTextTrigger
+    sound:
+      collection: CollideCrazy
+    haveText: false
+    text: "Допустим сработает"
+    cooldownTime: 5
+    chance: 0.2
+    soundExit:
+      collection: CollideCrazy
