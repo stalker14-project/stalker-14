@@ -159,6 +159,19 @@
 
 - type: entity
   parent: BandRepositoryBase
+  id: PortalBandResearchInstitutesRepository-Kordon
+  suffix: Кордон
+  name: Band-ResearchInstitutes-Repository
+  description: Band-ResearchInstitutes-Repository-desc
+  components:
+    - type: AccessReader
+      access: [["SciBase"]]
+    - type: StalkerBandTeleport
+      portalName: _PortalBandResearchInstitutesRepository-Kordon
+      repositoryWeight: 500
+
+- type: entity
+  parent: BandRepositoryBase
   id: PortalBandResearchInstitutesRepository
   suffix: 500
   name: Band-ResearchInstitutes-Repository
