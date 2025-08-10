@@ -576,3 +576,24 @@
     - type: AccessReader
       access: [["MilitaryStalker"]]
 
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Kordon-SciBase
+  name: Lobby-Kordon-SciBase (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Kordon-SciBase
+    - type: AccessReader
+      access: [["SciBase"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-Kordon-SciBase-Uncollide
+  name: Lobby-Kordon-SciBase-Uncollide (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Kordon-SciBase
+    - type: AccessReader
+      access: [["SciBase"]]
