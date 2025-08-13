@@ -847,6 +847,74 @@
 
 - type: entity
   parent: UNstandartCrate
+  id: BulkEliteCrate
+  name: набор полевого врача
+  description: Расширенная версия медицинского набора.
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,5,5
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitGrizzlyStalker
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+        - id: MedkitElite
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: UNstandartCrate
+  id: BulkLARCrate
+  name: набор полевого врача
+  description: Расширенная версия медицинского набора.
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,5,5
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitGrizzlyStalker
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+        - id: MedkitLAR
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: UNstandartCrate
   id: ResearcherCrate
   name: набор исследователя
   description: Набор для поиска аномальных образований зоны.
