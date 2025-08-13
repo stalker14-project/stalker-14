@@ -159,6 +159,19 @@
 
 - type: entity
   parent: BandRepositoryBase
+  id: PortalBandResearchInstitutesRepository-Kordon
+  suffix: Кордон
+  name: Band-ResearchInstitutes-Repository
+  description: Band-ResearchInstitutes-Repository-desc
+  components:
+    - type: AccessReader
+      access: [["SciBase"]]
+    - type: StalkerBandTeleport
+      portalName: _PortalBandResearchInstitutesRepository-Kordon
+      repositoryWeight: 500
+
+- type: entity
+  parent: BandRepositoryBase
   id: PortalBandResearchInstitutesRepository
   suffix: 500
   name: Band-ResearchInstitutes-Repository
@@ -353,6 +366,21 @@
     portalName: _PortalBandMonolithRepository
     repositoryWeight: 500
 # Repository for Monolith - End
+
+# Repository for Project - Start
+- type: entity
+  parent: BandRepositoryBase
+  id: PortalBandProjectRepository
+  suffix: 2000
+  name: Band-Project-Repository
+  description: Band-MilitaryStalker-Repository-desc
+  components:
+  - type: AccessReader
+    access: [["Project"]]
+  - type: StalkerBandTeleport
+    portalName: _PortalBandProjectRepository
+    repositoryWeight: 2000
+# Repository for Project - End
 
 # BandPrototype
 - type: bandLoader

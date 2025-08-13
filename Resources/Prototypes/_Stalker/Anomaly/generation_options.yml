@@ -125,19 +125,24 @@
 - type: stAnomalyGenerationOptions
   id: STTemnajLohinaGenerationOptions
   options:
-    totalCount: 350
+    totalCount: 100
     anomalyEntries:
     # Gravity
     - protoId: ZoneAnomalyGrabber
-      weight: 5
+      weight: 0.5
     - protoId: ZoneAnomalyGravi
-      weight: 3.5
+      weight: 1.5
     - protoId: ZoneAnomalySpringboard
-      weight: 2
     - protoId: ZoneAnomalyNoGravity
       weight: 0.3
     - protoId: ZoneAnomalyBurden
       weight: 0.4
+    # Thermal
+    - protoId: ZoneAnomalyJarka
+      weight: 2
+    # Electrical
+    - protoId: ZoneAnomalyElectra
+      weight: 2
 
 # Тёмная долина
 - type: stAnomalyGenerationOptions
@@ -147,24 +152,24 @@
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalySource
+      weight: 0.75
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGarland
+      weight: 0.55
     # Gravity
     - protoId: ZoneAnomalyNoGravity
-      weight: 0.95
+      weight: 0.55
     - protoId: ZoneAnomalyBurden
-      weight: 0.95
+      weight: 0.35
     - protoId: ZoneAnomalyGravi
+      weight: 1.7
     - protoId: ZoneAnomalySpringboard
     - protoId: ZoneAnomalyGrabber
-      weight: 3
+      weight: 0.35
     # Thermal
     - protoId: ZoneAnomalyJarkaStrong
+      weight: 1.5
     - protoId: ZoneAnomalyJarka
-    - protoId: ZoneAnomalyFreezer
-      weight: 1.5
-    - protoId: ZoneAnomalyWitchesCircle
-      weight: 1.5
     # Psy
     - protoId: ZoneAnomalyBarabashka
     - protoId: ZoneAnomalyRift
@@ -209,11 +214,12 @@
 - type: stAnomalyGenerationOptions
   id: STRedForestGenerationOptions
   options:
-    totalCount: 400
+    totalCount: 350
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
+      weight: 1.5
     - protoId: STAnomalyBubble
-      weight: 0.3
+      weight: 0.9
     - protoId: ZoneAnomalyNoGravity
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGravi
@@ -227,15 +233,17 @@
       weight: 0.5
     - protoId: ZoneAnomalyGrabber
     - protoId: ZoneAnomalyWitchesCircle
+      weight: 0.5
     - protoId: ZoneAnomalyFreezer
+      weight: 0.5
     - protoId: ZoneAnomalySteam
     - protoId: ZoneAnomalySol
+      weight: 0.5
     - protoId: STAnomalyHush
       weight: 0.09
     - protoId: ZoneAnomalyRift
       weight: 0.5
     - protoId: STAnomalyBubbleLimaExit
-      weight: 0.65
 
 - type: stAnomalyGenerationOptions
   id: STRostokAndWildsGenerationOptions
@@ -280,9 +288,9 @@
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
     - protoId: ZoneAnomalyNoGravity
-      weight: 0.2
+      weight: 0.3
     - protoId: STAnomalyBubbleLima
-      weight: 0.35
+      weight: 1.15
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGravi
     - protoId: ZoneAnomalySpringboard
@@ -294,10 +302,11 @@
     - protoId: ZoneAnomalySource
     - protoId: ZoneAnomalyGrabber
     - protoId: ZoneAnomalyWitchesCircle
+      weight: 0.4
     - protoId: ZoneAnomalyFreezer
+      weight: 0.25
     - protoId: ZoneAnomalySteam
     - protoId: ZoneAnomalySol
     - protoId: STAnomalyHush
       weight: 0.09
     - protoId: ZoneAnomalyRift
-    - protoId: STAnomalyBubbleLima

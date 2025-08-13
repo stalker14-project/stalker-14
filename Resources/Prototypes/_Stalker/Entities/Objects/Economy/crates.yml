@@ -930,6 +930,27 @@
       state: closed
 
 - type: entity
+  parent: BaseItem
+  id: TradeBoxSera
+  name: брикет припасов серафимов
+  description: Коробка припасов серафимов, адресованная северному ковену Лиманска от Южного ковена
+  suffix: Stalker, Economy, Contraband
+  components:
+    - type: STWeight
+      self: 15
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,4,2
+    - type: Sprite
+      sprite: _Stalker/Sponsors/donat_crates.rsi
+      state: donat_green
+    - type: Icon
+      sprite: _Stalker/Sponsors/donat_crates.rsi
+      state: donat_green
+    - type: MultiHandedItem
+
+- type: entity
   parent: UNstandartCrate
   id: PoliceAKCrate
   name: комплект АКСУ полицейский
@@ -1519,11 +1540,9 @@
       items:
         - id: MedkitMilitary
         - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: STTourniquet
-        - id: STTourniquet
+        - id: MedkitScience
+        - id: MedkitAI2
+        - id: STOintmentGood
         - id: STTourniquet
         - id: STGauze
       sound:
@@ -1628,3 +1647,6 @@
         - id: 754FMJBox
       sound:
         path: /Audio/Effects/unwrap.ogg
+
+### СЕРАФИМЫ
+

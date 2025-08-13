@@ -1190,8 +1190,8 @@
   name: Рыжий лес - Лима
   components:
   - type: GroupTeleport
-    group: "Red-LimaForestOneside2"
-    targetGroup: "Topi-RedForestOneside1"
+    group: "Red-LimaForestOneside1"
+    targetGroup: "Red-LimaForestOneside2"
     allowAll: true
     cooldownEnabled: true
     cooldownTime: 5
@@ -1203,11 +1203,52 @@
   id: RedForest-LimaOnesideUncollide
   name: Рыжий лес - Лима Uncollide
   components:
-  - type: GroupTeleport
-    group: "Topi-RedForestOneside1"
-    targetGroup: "Topi-RedForestOneside2"
-    allowAll: false
-    cooldownEnabled: true
-    cooldownTime: 5
-    godmodeCooldown: 5
-    time: 5
+   - type: GroupTeleport
+     group: "Red-LimaForestOneside2"
+     targetGroup: "Red-LimaForestOneside1"
+     allowAll: false
+     cooldownEnabled: true
+     cooldownTime: 5
+     godmodeCooldown: 5
+     time: 5
+
+
+- type: entity
+  parent: MapTeleportBase
+  id: Bar-Topi
+  name: Bar-Topi
+  components:
+    - type: NewMapTeleport
+      portalName: Topi-Bar
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Topi-Bar
+  name: Topi-Bar
+  components:
+    - type: NewMapTeleport
+      portalName: Topi-Bar
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+################################################### Вход в бункер учёных на кордоне
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Bunker
+  name: Kordon-Bunker
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Bunker
+
+- type: entity
+  parent: MapTeleportBase
+  id: Bunker-Kordon
+  name: Bunker-Kordon
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Bunker

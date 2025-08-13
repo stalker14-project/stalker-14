@@ -10,7 +10,7 @@ public sealed class SponsorPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = null!;
 
-    [DataField(serverOnly: true)] 
+    [DataField(serverOnly: true)]
     public float RepositoryWeight;
 
     [DataField(serverOnly: true)]
@@ -19,9 +19,9 @@ public sealed class SponsorPrototype : IPrototype
     [DataField(serverOnly: true)]
     public bool HasPriorityJoin;
 
-    [DataField(serverOnly: true)] 
+    [DataField(serverOnly: true)]
     public string DiscordRoleId = null!;
-    
+
     [DataField(serverOnly: true)]
     public int SponsorPriority;
 }
@@ -33,9 +33,9 @@ public sealed class SponsorSpeciesPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = null!;
 
-    [DataField] 
+    [DataField]
     public ProtoId<SpeciesPrototype> SpeciesId;
-    
+
     [DataField]
     public HashSet<ProtoId<SponsorPrototype>> SponsorIds = new();
 }
@@ -46,14 +46,15 @@ public sealed class ContributorPrototype : IPrototype
     [ViewVariables]
     [IdDataField]
     public string ID { get; private set; } = null!;
-    
+
     public string DiscordRoleId = null!;
-    
-    [DataField(serverOnly: true)] 
+
+    [DataField(serverOnly: true)]
     public float RepositoryWeight;
-    
+
     [DataField(serverOnly: true)]
     public bool HasPriorityJoin;
-    
+
+    [DataField(serverOnly: true)]
     public HashSet<ProtoId<EntityPrototype>> ContributorItems = new();
 }

@@ -1,0 +1,127 @@
+- type: shopPreset
+  id: FreedomDollarShopPreset
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 0
+    ZoneArtifactEye: 0
+    ZoneArtifactFlame: 30
+    # Thermal group - 2
+    ZoneArtifactCristall: 80
+    ZoneArtifactLithosphere: 200
+    # Electrical group - 1
+    ZoneArtifactSparkler: 0
+    ZoneArtifactBattery: 10
+    ZoneArtifactFlash: 30
+    ArtMoon: 40
+    ZoneArtifactTesla: 200
+    ZoneArtifactIce: 200
+    # Gravity group - 1
+    ArtMedusa: 0
+    ZoneArtifactFlower: 20
+    ZoneArtifactNightStar: 40
+    # Gravity group - 2
+    ZoneArtifactVyvert: 0
+    ZoneArtifactAmoeba: 5
+    ZoneArtifactFloodlight: 0
+    ZoneArtifactGravi: 60
+    ZoneArtifactGoldfish: 200
+    ZoneArtifactSpring: 200
+    ZoneArtifactFocus: 200
+    ZoneArtifactStuntman: 200
+    ZoneArtifactDistorter: 200
+    ZoneArtifactSoul: 200
+    # Acidic group - 1
+    ZoneArtifactBlood: 5
+    ZoneArtifactMeat: 40
+    ZoneArtifactKolobok: 60
+    # Acidic group - 2
+    ZoneArtifactPellicle: 0
+    ZoneArtifactBaloon: 60
+
+     # Mutant parts
+
+  #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 0 # T1
+    MutantPartSeasonedBoarHoof: 0 # T2
+    MutantPartOldBoarHoof: 0 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 0
+    MutantPartFleshEye: 0
+    FoodMeatSpiderLeg: 0
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 0
+    MutantPartPseudodogTail: 0
+    MutantPartSnorkFoot: 0
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 0
+    MutantPartOraculeEye: 0
+    MutantPartPseudogiantHeart: 0
+    MutantPartZombieHand: 0
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+            # Guns
+          # 7mm
+        STWeaponShotgunBenelliM4Super90: 10
+        STWeaponShotgunProtecta: 25
+          # 5,45x39
+        STWeaponRifleG36: 140
+        STWeaponRifleM4: 200
+        STWeaponRifleASVAL: 500
+        STWeaponRifleAK103: 300
+        STWeaponRifleSIG550: 150
+        KhattabkaGrenade: 1
+        TearGasGrenadeStalker: 7
+        RGD5Grenade: 10
+    - name: shop-category-magazines
+      priority: 2
+      items:
+          # 5,45x39
+        556Mag45: 30 #T3
+        739Mag45: 30
+        939Mag20: 30
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        ShotgunFlechetteCink: 35
+        556M856BoxCink: 80
+        739PCBoxCink: 120
+        939BPBoxCink: 150
+        751M61BoxCink: 120
+        BluntRainbow: 1
+    - name: shop-category-armor
+      priority: 4
+      items:
+        ClothingOuterArmorFreedomDefender: 20
+        STClothingOuterArmorVolchankaFreedom: 300
+        ClothingHeadAssaultHelmetMilitary: 30
+        ClothingHeadHelmetAborigine: 45
+        ClothingHeadHelmetUlach: 80
+        STPsyHelm2: 20
+
+    - name: shop-category-storage-and-containers
+      priority: 5
+      items:
+        ClothingBackpackDuffelOliveTacticStalker: 40
+        ClothingBackpackDuffelMilitaryOlive: 40
+        ClothingBeltWebbingDoubleFreedomVeterSmall: 10
+
+    - name: shop-category-raincoats-and-gasmasks
+      priority: 6
+      items:
+          # Gasmasks
+        ClothingMaskunix5000: 40
+        ClothingMaskRCBZ2: 30
+
+    - name: shop-category-modules
+      priority: 7
+      items:
+        STModuleAutoSear: 50
+        STModuleSMGGripT2: 60
+        STModuleSniperSightT2: 30
+        STModuleScopeRiflesT2Nato: 50
+        STModuleScopeRiflesT2Ru: 50

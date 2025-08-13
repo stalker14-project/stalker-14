@@ -47,7 +47,7 @@
         distance: 10
         force: 20
         type: FromAnomaly
-  - type: STAnomalyDamageEffect
+  - type: STAnomalyEffectDamage
     options:
       StateActiveSmall:
         range: 0.5
@@ -59,7 +59,7 @@
         damage:
           types:
             Compression: 20
-  - type: STAnomalySoundEffect
+  - type: STAnomalyEffectSound
     options:
       StateActiveSmall:
         sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
@@ -98,11 +98,11 @@
       - group: WeightNormal
         state: ActiveNormal
     ActiveNormal:
-      - group: TimeDelayActive
-        state: Idle
+    - group: TimeDelayActive
+      state: Idle
     ActiveSmall:
-      - group: TimeDelayActive
-        state: Idle
+    - group: TimeDelayActive
+      state: Idle
   - type: STAnomalyEffectThrow
     options:
       StateActiveSmall:
@@ -110,14 +110,14 @@
         distance: 10
         force: 20
         type: ToAnomaly
-  - type: STAnomalyDamageEffect
+  - type: STAnomalyEffectDamage
     options:
       StateActiveSmall:
         range: 1.45
         damage:
           types:
             Compression: 200
-  - type: STAnomalyEnterDimensionEffect
+  - type: STAnomalyEffectEnterDimension
     options:
       StateActiveNormal:
         dimension: Hush
@@ -126,7 +126,7 @@
           components:
           - MobState
           - Item
-  - type: STAnomalySoundEffect
+  - type: STAnomalyEffectSound
     options:
       StateActiveSmall:
         sound: /Audio/_Stalker/Effects/hush.ogg
@@ -135,8 +135,7 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape:
-          !type:PhysShapeCircle
+        shape: !type:PhysShapeCircle
           radius: 1.45
         hard: false
         mask:
@@ -152,9 +151,9 @@
   components:
   - type: STAnomalyTriggerGroupsStateTransition
   - type: STAnomalyTriggerStartCollide
-    whitelist:
+    blacklist:
       components:
-      - DNA
+      - Projectile
   - type: STAnomaly
     state: Idle
     states:
@@ -162,17 +161,21 @@
   - type: STAnomalyEffectTunnel
     options:
       StartCollide:
-        maps: [Kordon, Boloto]
+        maps:
+        - Kordon
+        - Boloto
         range: 1
-  - type: STAnomalySoundEffect
+        whitelist:
+          components:
+          - Dna
+  - type: STAnomalyEffectSound
     options:
       StartCollide:
         sound: /Audio/_Stalker/Effects/hush.ogg
   - type: Fixtures
     fixtures:
       fix1:
-        shape:
-          !type:PhysShapeCircle
+        shape: !type:PhysShapeCircle
           radius: 1
         hard: false
         mask:
@@ -183,7 +186,7 @@
   - type: Sprite
     sprite: _Stalker/Objects/Anomalies/bubble2.rsi
     layers:
-      - state: idle
+    - state: idle
 
 - type: entity
   id: STAnomalyBubbleExit
@@ -201,8 +204,7 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape:
-          !type:PhysShapeCircle
+        shape: !type:PhysShapeCircle
           radius: 0.45
         hard: false
         mask:
@@ -219,8 +221,11 @@
   - type: STAnomalyEffectTunnel
     options:
       StartCollide:
-        maps: [RedForest]
+        maps: [ RedForest ]
         range: 1
+        whitelist:
+          components:
+          - Dna
 
 - type: entity
   parent: STAnomalyBubbleExit

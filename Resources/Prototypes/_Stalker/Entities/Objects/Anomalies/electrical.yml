@@ -2,6 +2,11 @@
   parent: ZoneAnomalyBase
   id: ZoneAnomalyBaseElectrical
   abstract: true
+  components:
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: electric
 
 - type: entity
   parent: ZoneAnomalyBase

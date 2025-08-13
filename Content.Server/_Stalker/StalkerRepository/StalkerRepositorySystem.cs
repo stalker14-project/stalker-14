@@ -36,6 +36,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
 using Content.Server._Stalker.Sponsors.SponsorManager;
+using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.StalkerRepository;
 public sealed class StalkerRepositorySystem : EntitySystem
@@ -81,6 +82,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         SubscribeLocalEvent<StorageAfterRemoveItemEvent>(OnAfterRemove);
         SubscribeLocalEvent<StorageAfterInsertItemIntoLocationEvent>(OnAfterInsert);
 
+
         _sawmill = Logger.GetSawmill("repository");
     }
 
@@ -106,15 +108,15 @@ public sealed class StalkerRepositorySystem : EntitySystem
         if (sponsorData.IsGiven)
             return;
 
-        var index = _prototypeMan.Index(sponsorData.SponsorProtoId.Value);
-        var items = index.RepositoryItems;
+        if (!_sponsors.TryGetSponsorRepositoryItems(sponsorData, out var items))
+            return;
 
         foreach (var item in items)
         {
             var info = GenerateItemInfoByPrototype(item);
             InsertToRepo((uid, component), info);
         }
-        
+
         Task.Run(() => _sponsors.SetGiven(session.UserId, true));
         _stalkerStorageSystem.SaveStorage(component);
     }

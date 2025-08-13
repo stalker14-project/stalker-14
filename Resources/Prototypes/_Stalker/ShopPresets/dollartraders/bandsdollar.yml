@@ -1,0 +1,162 @@
+- type: shopPreset
+  id: BandsDollarShopPreset
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 0
+    ZoneArtifactEye: 0
+    ZoneArtifactFlame: 25
+    # Thermal group - 2
+    ZoneArtifactCristall: 60
+    ZoneArtifactLithosphere: 250
+    # Electrical group - 1
+    ZoneArtifactSparkler: 0
+    ZoneArtifactBattery: 10
+    ZoneArtifactFlash: 45
+    ArtMoon: 45
+    ZoneArtifactTesla: 250
+    ZoneArtifactIce: 250
+    # Gravity group - 1
+    ArtMedusa: 0
+    ZoneArtifactFlower: 0
+    ZoneArtifactNightStar: 70
+    # Gravity group - 2
+    ZoneArtifactVyvert: 0
+    ZoneArtifactAmoeba: 0
+    ZoneArtifactFloodlight: 0
+    ZoneArtifactGravi: 90
+    ZoneArtifactGoldfish: 250
+    ZoneArtifactSpring: 250
+    ZoneArtifactFocus: 250
+    ZoneArtifactStuntman: 250
+    ZoneArtifactDistorter: 250
+    ZoneArtifactSoul: 250
+    # Acidic group - 1
+    ZoneArtifactBlood: 0
+    ZoneArtifactMeat: 45
+    ZoneArtifactKolobok: 75
+    # Acidic group - 2
+    ZoneArtifactPellicle: 0
+    ZoneArtifactBaloon: 75
+
+     # Mutant parts
+
+  #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 0 # T1
+    MutantPartSeasonedBoarHoof: 0 # T2
+    MutantPartOldBoarHoof: 0 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 0
+    MutantPartFleshEye: 0
+    FoodMeatSpiderLeg: 0
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 0
+    MutantPartPseudodogTail: 7
+    MutantPartSnorkFoot: 7
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 45
+    MutantPartOraculeEye: 45
+    MutantPartPseudogiantHeart: 300
+    MutantPartZombieHand: 5
+    MutantPartBloodsuckerHead: 150
+    MutantPartPsiDogTail: 15
+
+    #values
+    ClothingNeckBronzeheart: 0
+    ClothingNeckCargomedal: 0
+    ClothingNeckEngineermedal: 0
+    Wristwatch: 0
+    SilverRing: 0
+    GoldRing: 0
+    TreasureCoinIron: 0
+    TreasureCoinGold: 0
+    TreasureCoinSilver: 0
+    ClothingStalkerNeckToken: 0
+    SilverRingDiamond: 0
+    GoldRingDiamond: 0
+    MaterialDiamond1: 0
+    DrinkGoldenCup: 0
+    SilverRingGem: 0
+    GoldRingGem: 0
+    ClothingNeckGoldmedal: 0
+    IngotSilver1: 0
+    IngotGold1: 0
+    WristwatchGold: 0
+    ClothingNeckBling: 0
+    TreasureCoinAdamantine: 0
+
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+            # Guns
+          # 7mm
+        STWeaponShotgunSaiga12: 40
+          # 5,45x39
+        STWeaponRifleAK74M: 140
+        STWeaponRifleGalil: 200
+        STWeaponRifleASVAL: 500
+        STWeaponRifleAK103: 300
+        STWeaponRifleOC14: 150
+        StielhandgranateM24: 4
+        DG05SmokeGrenade: 2
+        HydrocyanicGrenadeStalker: 7
+        StielhandgranateM24Bundle: 10
+        PhosphorusGrenadeStalker: 20
+        TrashDetectorTier4: 100
+    - name: shop-category-magazines
+      priority: 2
+      items:
+          # 5,45x39
+        545Mag45: 30 #T3
+        739Mag45: 30
+        939Mag20: 30
+        556Mag45: 30
+          # Other
+        Saiga1270Drum: 30
+        Saiga1270Mag10: 10
+        Base1270Mag: 5
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        ShotgunFlechetteCink: 35
+        545BPBoxCink: 80
+        556M856BoxCink: 80
+        739PCBoxCink: 120
+        939BPBoxCink: 150
+        751M61BoxCink: 120
+
+    - name: shop-category-armor
+      priority: 4
+      items:
+        ClothingOuterArmorBandits: 20
+        STClothingOuterArmorHeavyM: 300
+        ClothingHeadHelmetBerill5MMilitary: 30
+        ClothingHeadAssaultHelmetBandit: 45
+        ClothingHeadHelmetUlach: 80
+        STPsyHelm2: 20
+
+    - name: shop-category-storage-and-containers
+      priority: 5
+      items:
+        ClothingBackpackDuffelBlackTacticStalker: 40
+        ClothingBackpackDuffelBlackMilitaryTacticStalker: 40
+        ClothingBeltWebbingHolsterMercBandit: 10
+
+    - name: shop-category-raincoats-and-gasmasks
+      priority: 6
+      items:
+          # Gasmasks
+        ClothingMaskunix5000: 40
+        ClothingMaskRCBZ2: 30
+
+    - name: shop-category-modules
+      priority: 7
+      items:
+        STModuleAutoSear: 50
+        STModuleSMGGripT2: 60
+        STModuleSniperSightT2: 30
+        STModuleScopeRiflesT2Nato: 50
+        STModuleScopeRiflesT2Ru: 50

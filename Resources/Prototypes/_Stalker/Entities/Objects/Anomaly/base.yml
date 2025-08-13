@@ -4,21 +4,20 @@
   suffix: ST, Anomaly
   abstract: true
   components:
-    - type: Physics
-      bodyType: Static
-      fixedRotation: true
-    - type: Appearance
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeCircle
-            radius: 0.45
-          hard: false
-          mask:
-            - MobMask
-          layer:
-            - MobLayer
-            - LowImpassable
-    - type: STAnomaly
-    - type: STAnomalyTips
+  - type: Physics
+    bodyType: Static
+    fixedRotation: true
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.45
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+  - type: STAnomaly
+  - type: STAnomalyTips

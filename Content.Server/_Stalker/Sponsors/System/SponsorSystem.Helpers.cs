@@ -7,7 +7,7 @@ public sealed partial class SponsorSystem
     public float GetRepositoryWeight(NetUserId userId, float defaultWeight)
     {
         var totalWeight = defaultWeight;
-        
+
         if (!_sponsors.TryGetInfo(userId, out var info))
             return totalWeight;
 
@@ -21,7 +21,7 @@ public sealed partial class SponsorSystem
         {
             totalWeight += _sponsors.ContributorPrototype.RepositoryWeight;
         }
-        
+
         return totalWeight;
     }
 }
