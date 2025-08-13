@@ -154,24 +154,24 @@
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalySource
+      weight: 0.75
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGarland
+      weight: 0.55
     # Gravity
     - protoId: ZoneAnomalyNoGravity
-      weight: 0.95
+      weight: 0.55
     - protoId: ZoneAnomalyBurden
-      weight: 0.95
+      weight: 0.35
     - protoId: ZoneAnomalyGravi
+      weight: 1.7
     - protoId: ZoneAnomalySpringboard
     - protoId: ZoneAnomalyGrabber
-      weight: 3
+      weight: 0.35
     # Thermal
     - protoId: ZoneAnomalyJarkaStrong
+      weight: 1.5
     - protoId: ZoneAnomalyJarka
-    - protoId: ZoneAnomalyFreezer
-      weight: 1.5
-    - protoId: ZoneAnomalyWitchesCircle
-      weight: 1.5
     # Psy
     - protoId: ZoneAnomalyBarabashka
     - protoId: ZoneAnomalyRift

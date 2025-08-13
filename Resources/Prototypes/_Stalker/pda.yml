@@ -896,6 +896,7 @@
   name: КПК бойца «Монолита»
   description: Объединены общей сетью и позволяют обмениваться информацией.
   components:
+  - type: Unremoveable
   - type: PdaBorderColor
     borderColor: "#797B80"
   - type: Icon
@@ -968,6 +969,12 @@
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Radiation: 200
+        Psy: 200
 
 - type: entity
   parent: BaseStalkerPDA
