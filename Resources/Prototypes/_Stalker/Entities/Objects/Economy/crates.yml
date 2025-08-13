@@ -800,6 +800,53 @@
 
 - type: entity
   parent: UNstandartCrate
+  id: BulkScienceCrate
+  name: набор полевого врача
+  description: Расширенная версия медицинского набора.
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,5,5
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitGrizzlyStalker
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: UNstandartCrate
   id: ResearcherCrate
   name: набор исследователя
   description: Набор для поиска аномальных образований зоны.
