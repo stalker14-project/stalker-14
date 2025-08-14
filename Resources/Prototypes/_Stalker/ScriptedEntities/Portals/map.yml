@@ -1234,3 +1234,21 @@
       cooldownEnabled: true
       cooldownTime: 30
       godmodeCooldown: 5
+
+################################################### Вход в бункер учёных на кордоне
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Bunker
+  name: Kordon-Bunker
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Bunker
+
+- type: entity
+  parent: MapTeleportBase
+  id: Bunker-Kordon
+  name: Bunker-Kordon
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Bunker
