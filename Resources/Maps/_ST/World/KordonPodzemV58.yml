@@ -40253,6 +40253,16 @@ entities:
     - type: Transform
       pos: 32.5,90.5
       parent: 1
+- proto: APCBasic
+  entities:
+  - uid: 15620
+    components:
+    - type: Transform
+      pos: 50.5,22.5
+      parent: 1
+    - type: BatterySelfRecharger
+      autoRechargeRate: 50000
+      autoRecharge: True
 - proto: BackgammonBoard
   entities:
   - uid: 3
@@ -54708,7 +54718,7 @@ entities:
       pos: -0.5,-59.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -96602.1
+      secondsUntilStateChange: -96943.945
       state: Opening
   - uid: 2611
     components:
@@ -54728,7 +54738,7 @@ entities:
       pos: 66.5,-86.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -95207.01
+      secondsUntilStateChange: -95548.85
       state: Opening
   - uid: 2614
     components:
@@ -54753,7 +54763,7 @@ entities:
       pos: 111.5,-26.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -96388.91
+      secondsUntilStateChange: -96730.75
       state: Opening
   - uid: 2618
     components:
@@ -54771,7 +54781,7 @@ entities:
       pos: 39.5,-90.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -114619
+      secondsUntilStateChange: -114960.84
       state: Opening
   - uid: 2621
     components:
@@ -54863,7 +54873,7 @@ entities:
       pos: 120.5,-62.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -60515.305
+      secondsUntilStateChange: -60857.152
       state: Opening
   - uid: 2637
     components:
@@ -55006,7 +55016,7 @@ entities:
       pos: 39.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -106794.85
+      secondsUntilStateChange: -107136.695
       state: Opening
   - uid: 2659
     components:
@@ -55015,7 +55025,7 @@ entities:
       pos: 40.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -106794.6
+      secondsUntilStateChange: -107136.445
       state: Opening
   - uid: 2660
     components:
@@ -55024,7 +55034,7 @@ entities:
       pos: 41.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -106794.35
+      secondsUntilStateChange: -107136.195
       state: Opening
   - uid: 2661
     components:
@@ -55033,7 +55043,7 @@ entities:
       pos: 39.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -106796.02
+      secondsUntilStateChange: -107137.87
       state: Opening
   - uid: 2662
     components:
@@ -55042,7 +55052,7 @@ entities:
       pos: 40.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -106795.76
+      secondsUntilStateChange: -107137.6
       state: Opening
   - uid: 2663
     components:
@@ -55051,7 +55061,7 @@ entities:
       pos: 41.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -106795.47
+      secondsUntilStateChange: -107137.31
       state: Opening
 - proto: HotelCard
   entities:
@@ -55145,13 +55155,6 @@ entities:
     components:
     - type: Transform
       pos: -45.5,3.5
-      parent: 1
-    - type: LocalTeleport
-      portalName: NB1
-  - uid: 15619
-    components:
-    - type: Transform
-      pos: 27.5,14.5
       parent: 1
     - type: LocalTeleport
       portalName: NB1
@@ -55920,7 +55923,7 @@ entities:
       pos: 136.5,-75.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -92028.98
+      secondsUntilStateChange: -92370.82
       state: Opening
 - proto: MetalWindowDoorFalloutMercClosed
   entities:
@@ -55955,7 +55958,7 @@ entities:
       pos: 148.5,48.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -121084.61
+      secondsUntilStateChange: -121426.45
       state: Opening
   - uid: 2803
     components:
@@ -56001,7 +56004,7 @@ entities:
       pos: -39.5,5.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -77551.516
+      secondsUntilStateChange: -77893.36
       state: Opening
 - proto: Mirror
   entities:
@@ -58354,6 +58357,13 @@ entities:
     components:
     - type: Transform
       pos: 45.5,152.5
+      parent: 1
+- proto: RadioStandStalkerRUS2Distand
+  entities:
+  - uid: 15705
+    components:
+    - type: Transform
+      pos: 49.5,21.5
       parent: 1
 - proto: Railing
   entities:
@@ -78875,7 +78885,7 @@ entities:
       pos: -30.5,5.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -77364.484
+      secondsUntilStateChange: -77706.33
       state: Denying
     - type: Physics
       canCollide: False
@@ -78887,16 +78897,6 @@ entities:
     components:
     - type: Transform
       pos: -33.5,1.5
-      parent: 1
-  - uid: 9628
-    components:
-    - type: Transform
-      pos: 27.5,10.5
-      parent: 1
-  - uid: 15620
-    components:
-    - type: Transform
-      pos: 27.5,12.5
       parent: 1
 - proto: STMetalBarDoorFalloutNeutralsClosed
   entities:
@@ -119722,8 +119722,7 @@ entities:
   - uid: 14510
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 28.5,12.5
+      pos: 27.5,10.5
       parent: 1
   - uid: 14511
     components:
@@ -119915,12 +119914,6 @@ entities:
     components:
     - type: Transform
       pos: 15.5,20.5
-      parent: 1
-  - uid: 14548
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 26.5,12.5
       parent: 1
   - uid: 14549
     components:
@@ -125077,6 +125070,20 @@ entities:
       parent: 1
 - proto: WarpPoint
   entities:
+  - uid: 9628
+    components:
+    - type: MetaData
+      name: Militia Base
+    - type: Transform
+      pos: 46.5,18.5
+      parent: 1
+  - uid: 14548
+    components:
+    - type: MetaData
+      name: Cordon Sewers - North
+    - type: Transform
+      pos: 46.5,144.5
+      parent: 1
   - uid: 15484
     components:
     - type: MetaData
@@ -125092,6 +125099,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 40.5,12.5
+      parent: 1
+  - uid: 15619
+    components:
+    - type: MetaData
+      name: Cordon Sewers - South
+    - type: Transform
+      pos: 64.5,-57.5
       parent: 1
 - proto: WoodBlueDoorFallout
   entities:
