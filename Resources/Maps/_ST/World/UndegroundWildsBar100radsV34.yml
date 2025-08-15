@@ -11249,6 +11249,28 @@ entities:
     - type: Transform
       pos: 61.5,-82.5
       parent: 1
+- proto: Paper
+  entities:
+  - uid: 7755
+    components:
+    - type: Transform
+      pos: 4.9940586,8.324203
+      parent: 1
+    - type: Paper
+      stampState: paper_stamp-greytide
+      stampedBy:
+      - stampedColor: '#323232FF'
+        stampedName: Barman
+      content: >+
+        You like hopping tables don't ya.... Let this be a lesson to not to slip over tables.
+
+    missingComponents:
+    - Item
+    - Flammable
+    - Destructible
+    - Food
+    - BadFood
+    - Pullable
 - proto: PaperBin
   entities:
   - uid: 564
@@ -12687,6 +12709,83 @@ entities:
     - type: Transform
       pos: 5.5,8.5
       parent: 1
+- proto: SpawnerZoneAnomalyBarabashkaChance100
+  entities:
+  - uid: 800
+    components:
+    - type: Transform
+      pos: 2.5,7.5
+      parent: 1
+  - uid: 801
+    components:
+    - type: Transform
+      pos: 2.5,6.5
+      parent: 1
+  - uid: 802
+    components:
+    - type: Transform
+      pos: 3.5,6.5
+      parent: 1
+  - uid: 803
+    components:
+    - type: Transform
+      pos: 4.5,6.5
+      parent: 1
+  - uid: 804
+    components:
+    - type: Transform
+      pos: 5.5,6.5
+      parent: 1
+  - uid: 811
+    components:
+    - type: Transform
+      pos: 2.5,8.5
+      parent: 1
+  - uid: 959
+    components:
+    - type: Transform
+      pos: 5.5,6.5
+      parent: 1
+  - uid: 6148
+    components:
+    - type: Transform
+      pos: 4.5,6.5
+      parent: 1
+  - uid: 6149
+    components:
+    - type: Transform
+      pos: 3.5,6.5
+      parent: 1
+  - uid: 7749
+    components:
+    - type: Transform
+      pos: 2.5,6.5
+      parent: 1
+  - uid: 7750
+    components:
+    - type: Transform
+      pos: 2.5,7.5
+      parent: 1
+  - uid: 7751
+    components:
+    - type: Transform
+      pos: 2.5,8.5
+      parent: 1
+  - uid: 7752
+    components:
+    - type: Transform
+      pos: 3.5,7.5
+      parent: 1
+  - uid: 7753
+    components:
+    - type: Transform
+      pos: 4.5,7.5
+      parent: 1
+  - uid: 7754
+    components:
+    - type: Transform
+      pos: 5.5,7.5
+      parent: 1
 - proto: SpawnerZoneAnomalyKisselChance10
   entities:
   - uid: 805
@@ -12911,6 +13010,60 @@ entities:
     components:
     - type: Transform
       pos: 13.5,14.5
+      parent: 1
+- proto: StalkerExplSafezoneTriggerIn
+  entities:
+  - uid: 7759
+    components:
+    - type: Transform
+      pos: 62.5,-108.5
+      parent: 1
+  - uid: 7761
+    components:
+    - type: Transform
+      pos: 63.5,-108.5
+      parent: 1
+  - uid: 7762
+    components:
+    - type: Transform
+      pos: 64.5,-108.5
+      parent: 1
+  - uid: 7764
+    components:
+    - type: Transform
+      pos: -9.5,-60.5
+      parent: 1
+  - uid: 7765
+    components:
+    - type: Transform
+      pos: -9.5,-59.5
+      parent: 1
+- proto: StalkerExplSafezoneTriggerOut
+  entities:
+  - uid: 7756
+    components:
+    - type: Transform
+      pos: 63.5,-110.5
+      parent: 1
+  - uid: 7757
+    components:
+    - type: Transform
+      pos: 63.5,-109.5
+      parent: 1
+  - uid: 7758
+    components:
+    - type: Transform
+      pos: 64.5,-109.5
+      parent: 1
+  - uid: 7760
+    components:
+    - type: Transform
+      pos: -8.5,-60.5
+      parent: 1
+  - uid: 7763
+    components:
+    - type: Transform
+      pos: -8.5,-59.5
       parent: 1
 - proto: StalkerFenceMetalBroken
   entities:
@@ -13606,6 +13759,16 @@ entities:
       parent: 1
 - proto: STCarpetMedium2
   entities:
+  - uid: 796
+    components:
+    - type: Transform
+      pos: 3,7
+      parent: 1
+  - uid: 798
+    components:
+    - type: Transform
+      pos: 5,7
+      parent: 1
   - uid: 958
     components:
     - type: Transform
@@ -13613,11 +13776,10 @@ entities:
       parent: 1
 - proto: STCarpetSmall2
   entities:
-  - uid: 959
+  - uid: 799
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 3.5,7.5
+      pos: 2.9937878,8.498217
       parent: 1
 - proto: STCarpetSmall3
   entities:
@@ -46404,6 +46566,15 @@ entities:
     components:
     - type: Transform
       pos: 32.5,-6.5
+      parent: 1
+- proto: WarpPoint
+  entities:
+  - uid: 797
+    components:
+    - type: MetaData
+      name: Barman
+    - type: Transform
+      pos: 3.5,2.5
       parent: 1
 - proto: WaterCooler
   entities:
