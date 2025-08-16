@@ -1,0 +1,776 @@
+# Маркеры воспроизведения текста со звуком
+
+- type: entity
+  id: STSoundPillar
+  parent: STBaseTreeLarge
+  name: Столб с громофоном
+  suffix: ST, Mapping
+  description: Один из компонентов электрической сети, система энергетического оборудования, предназначенная для передачи электроэнергии посредством электрического тока.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/powerlines.rsi
+    state: soundpillar
+
+- type: entity
+  id: StalkerSoundTrigger # Пример Звука без текста
+  parent: MarkerBase
+  name: Пример звука
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 2
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: PointLight
+      enabled: true
+      radius: 4
+      color: Cyan
+      energy: 1
+    - type: AccessReader
+      access: [["Bandit"]]
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound: 
+        path: /Audio/_Stalker/SoundTriggers/Megafon_1.ogg
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.5
+
+- type: entity
+  id: StalkerTextTrigger # Пример Текста
+  parent: MarkerBase
+  name: Пример Текста
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 2
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: PointLight
+      enabled: true
+      radius: 4
+      color: Cyan
+      energy: 1
+    - type: StalkerSoundAndTextTrigger
+      sound: 
+        path: /Audio/Items/Toys/mousesqueek.ogg
+      haveText: true
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.6
+
+- type: entity
+  id: StalkerTrainingTrigger
+  parent: MarkerBase
+  name: Обучение 1
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,-0.48,0.25,0.48"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STAnomalyGeneratorSpawnBlocker
+      size: 10
+    - type: PointLight
+      enabled: true
+      radius: 4
+      color: Cyan
+      energy: 1
+    - type: StalkerSoundAndTextTrigger
+      sound: 
+        path: /Audio/Items/Toys/mousesqueek.ogg
+      haveText: true
+      text: "Допустим сработает"
+      limitedNumberOfUses: true
+      repeatActivations: 2
+      cooldownTime: 5
+
+# npc
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideSidor
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Start/Trader_script1a_3.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Start/Trader_script1a_5.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Start/Trader_script1a_4.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Start/Trader_script1a_2.ogg
+
+- type: soundCollection
+  id: EndCollideSidor
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Exit/Trader_script1c_4.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Exit/Trader_script1c_5.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Exit/Trader_script1c_9.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sidor/Exit/Trader3c.ogg
+
+- type: entity
+  id: StalkerSidorTrigger
+  parent: MarkerBase
+  name: Сидорович Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-6,-1.5,0.25,1.5"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideSidor
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideSidor
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideBarmen
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Barmen/Bar_barman_hello_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Barmen/Bar_barman_hello_5.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Barmen/Bar_barman_hello_4.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Barmen/Bar_barman_hello_3.ogg
+
+- type: entity
+  id: StalkerBarmenTrigger
+  parent: MarkerBase
+  name: Бармен Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "1.25,-3,-1.5,0.5"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideBarmen
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.2
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideDolg
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Dolg_Mityai/Enter/Agr_duty_trader_meet_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Dolg_Mityai/Enter/Agr_duty_trader_meet_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Dolg_Mityai/Enter/Agr_duty_trader_meet_3.ogg
+
+- type: soundCollection
+  id: EndCollideDolg
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Dolg_Mityai/Exit/Agr_duty_trader_meet_bye_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Dolg_Mityai/Exit/Agr_duty_trader_meet_bye_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Dolg_Mityai/Exit/Agr_duty_trader_meet_bye_3.ogg
+
+- type: entity
+  id: StalkerDolgTrigger
+  parent: MarkerBase
+  name: Долг Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-2.5,1.5,2.5,-4"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideDolg
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideDolg
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideSvoboda
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Svoboda_Ashot/Enter/Val_freedom_trader_meet_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Svoboda_Ashot/Enter/Val_freedom_trader_meet_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Svoboda_Ashot/Enter/Val_freedom_trader_meet_3.ogg
+
+- type: soundCollection
+  id: EndCollideSvoboda
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Svoboda_Ashot/Exit/Val_freedom_trader_meet_bye_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Svoboda_Ashot/Exit/Val_freedom_trader_meet_bye_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Svoboda_Ashot/Exit/Val_freedom_trader_meet_bye_3.ogg
+
+- type: entity
+  id: StalkerSvobodaTrigger
+  parent: MarkerBase
+  name: Свобода Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-1.5,-0.5,1.5,3"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideSvoboda
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideSvoboda
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideBandit
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Bandit_Zyb/Enter/Gar_bandit_trader_meet_greet_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Bandit_Zyb/Enter/Gar_bandit_trader_meet_greet_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Bandit_Zyb/Enter/Gar_bandit_trader_meet_greet_3.ogg
+
+- type: soundCollection
+  id: EndCollideBandit
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Bandit_Zyb/Exit/Gar_bandit_trader_meet_bye_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Bandit_Zyb/Exit/Gar_bandit_trader_meet_bye_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Bandit_Zyb/Exit/Gar_bandit_trader_meet_bye_3.ogg
+
+- type: entity
+  id: StalkerBanditTrigger
+  parent: MarkerBase
+  name: Бандиты Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "0.5,-1.5,-4.5,1.5,"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideBandit
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideBandit
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideSci
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Sci/Enter/Mar_csky_doctor_meet_greet_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sci/Enter/Mar_csky_doctor_meet_greet_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sci/Enter/Mar_csky_doctor_meet_greet_3.ogg
+
+- type: soundCollection
+  id: EndCollideSci
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Sci/Exit/Mar_csky_doctor_meet_bye_1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sci/Exit/Mar_csky_doctor_meet_bye_2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Sci/Exit/Mar_csky_doctor_meet_bye_3.ogg
+
+- type: entity
+  id: StalkerSciTrigger
+  parent: MarkerBase
+  name: Учёные Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 3 # Радиус зоны захвата. Выйти за зону и захват прекратиться
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideSci
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideSci
+
+# Propoganda
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideDolgPropoganda
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_1.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_2.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_3.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_4.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_5.ogg
+
+- type: entity
+  id: StalkerDolgPropogandaTrigger
+  parent: MarkerBase
+  name: Долг Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideDolgPropoganda
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 60
+      chance: 0.5
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideBarPropoganda
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/bar/Megaphone_barman_1.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/bar/Megaphone_barman_2.ogg
+
+- type: entity
+  id: StalkerBarPropogandaTrigger
+  parent: MarkerBase
+  name: Бар Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideBarPropoganda
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 60
+      chance: 0.5
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideOksopPropoganda
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Oksop/Megafon_3.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Oksop/Megafon_4.ogg
+
+- type: entity
+  id: StalkerOksopPropogandaTrigger
+  parent: MarkerBase
+  name: ОКСОП Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideOksopPropoganda
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 60
+      chance: 0.5
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideSvobodaPropoganda
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_1.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_2.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_3.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_4.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_5.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_6.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_7.ogg
+
+- type: entity
+  id: StalkerSvobodaPropogandaTrigger
+  parent: MarkerBase
+  name: Свобода Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: StalkerSoundAndTextTrigger
+      sound:
+        collection: StartCollideSvobodaPropoganda
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 60
+      chance: 0.5
+
+# Detection
+####-----------------------------------------------------------###
+
+- type: entity
+  id: StalkerDolgDetectionStalkerTrigger
+  parent: MarkerBase
+  name: Долг Детекшн Сталкеров
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 4 # Радиус зоны захвата. Выйти за зону и захват прекратиться
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Duty_warning1.ogg
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Stalker"], ["Neutral"]]
+
+- type: entity
+  id: StalkerDolgDetectionEnemyTrigger
+  parent: MarkerBase
+  name: Долг Детекшн Врагов
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 7 # Радиус зоны захвата. Выйти за зону и захват прекратиться
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Megaphone_duty_alarm.ogg
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Monolith"], ["Freedom"], ["Renegat"], ["Military"], ["MilitaryStalker"], ["Bandit"]]
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideSciDetectStalker
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Sci/Jup_b41_bunker_megaphone_1.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Sci/Jup_b41_bunker_megaphone_2.ogg
+
+- type: entity
+  id: StalkerSciDetectStalkerTrigger
+  parent: MarkerBase
+  name: Учёные Детекшн Сталкеров
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 3 # Радиус зоны захвата. Выйти за зону и захват прекратиться
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        collection: StartCollideSciDetectStalker
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Stalker"], ["Neutral"]]
+
+- type: soundCollection
+  id: CollideCrazy
+  files:
+  - /Audio/_Stalker/SoundTriggers/npc/Attacker/Mil_crazy1.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Attacker/Mil_crazy2.ogg
+  - /Audio/_Stalker/SoundTriggers/npc/Attacker/Mil_crazy3.ogg
+
+####-----------------------------------------------------------###
+
+- type: soundCollection
+  id: StartCollideOksopDetection
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Oksop/Megafon_1.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Oksop/Megafon_2.ogg
+
+- type: entity
+  id: StalkerOKSOPDetectionEnemyTrigger
+  parent: MarkerBase
+  name: ОКСОП Детекшн Врагов
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 7 # Радиус зоны захвата. Выйти за зону и захват прекратиться
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        collection: StartCollideOksopDetection
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+      # chance: 0.1
+    - type: AccessReader
+      access: [["Freedom"], ["Renegat"], ["Stalker"], ["Neutral"], ["Bandit"], ["Dolg"]]
