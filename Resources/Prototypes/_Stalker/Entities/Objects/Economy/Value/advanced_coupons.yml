@@ -3,8 +3,8 @@
 - type: entity
   parent: BaseItem
   id: PremiumSupplyTalons
-  name: премиальные талоны снабжения
-  description: Талоны снабжения Института.
+  name: Premium Supply Coupons
+  description: Institute supply coupons.
   suffix: ST, НЕ СПАВНИТЬ
   components:
     - type: Stack
@@ -38,14 +38,14 @@
 
 - type: currency
   id: PremiumSupplyTalons
-  displayName: премиальные талоны
+  displayName: Premium Supply Coupons
   cash:
     1: PremiumSupplyTalons
   canWithdraw: true
 
 - type: stack
   id: PremiumSupplyTalons
-  name: премиальный талон
+  name: Premium Supply Coupons
   icon: { sprite: /Textures/_Stalker/Objects/Economy/vex.rsi, state: green }
   spawn: PremiumSupplyTalons
   itemSize: 1
