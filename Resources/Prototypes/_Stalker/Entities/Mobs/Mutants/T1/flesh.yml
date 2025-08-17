@@ -76,6 +76,13 @@
       damage: 7.5
     - type: STWeight
       self: 120
+    - type: InteractionPopup
+      successChance: 0.9
+      interactSuccessString: petting-success-flesh
+      interactFailureString: petting-failure-flesh
+      interactSuccessSpawn: EffectHearts
+      interactSuccessSound:
+        path: /Audio/Animals/pig_oink.ogg
 
 - type: entity
   parent: BaseMobMutant
@@ -153,3 +160,10 @@
       damage: 5
     - type: STWeight
       self: 120
+    - type: InteractionPopup
+      successChance: 0.6
+      interactSuccessString: petting-success-flesh
+      interactFailureString: petting-failure-flesh
+      interactSuccessSpawn: EffectHearts
+      interactSuccessSound:
+        path: /Audio/Animals/pig_oink.ogg
