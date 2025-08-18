@@ -1,0 +1,42 @@
+- type: entity
+  parent: BaseFoldable
+  id: STPortalRift
+  name: Портал разлома
+  description: Настолько сложный механизм, что только ученые могут использовать его.
+  suffix: Stalker
+  components:
+    - type: Tag
+      tags:
+        - Structure
+    - type: STWeight
+      self: 100
+    - type: Sprite
+      noRot: true
+      sprite: _Stalker/Structures/Decoration/portla_rift.rsi
+      layers:
+        - state: base
+          map: ["unfoldedLayer"]
+        - state: screen
+          map: ["screenUnfoldedLayer"]
+          shader: unshaded
+        - state: icon
+          map: ["foldedLayer"]
+          visible: false
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.FoldedVisuals.State:
+          foldedLayer:
+            True: {visible: true}
+            False: {visible: false}
+          unfoldedLayer:
+            True: {visible: false}
+            False: {visible: true}
+          screenUnfoldedLayer:
+            True: {visible: false}
+            False: {visible: true}
+    - type: PointLight
+      color: "#33b41f"
+      enabled: true
+      radius: 1.5
+      softness: 5

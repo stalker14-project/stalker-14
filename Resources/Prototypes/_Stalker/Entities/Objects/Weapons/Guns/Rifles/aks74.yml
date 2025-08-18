@@ -161,6 +161,55 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
 
+- type: entity
+  parent: STBaseWeaponRifleAKM
+  id: STWeaponRifleSquall
+  name: Squall
+  description: An experimental high-rate machine gun in a bullpup configuration.
+  components:
+  - type: STWeight
+    self: 3.4
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/ak.ogg
+    fireRate: 8
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base545Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine545
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge545
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+
+
 # AKS 74u
 - type: entity
   abstract: true

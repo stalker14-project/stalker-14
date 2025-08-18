@@ -152,6 +152,47 @@ public abstract partial class SharedProjectileSystem : EntitySystem
         Dirty(id, component);
     }
 
+    /// <summary>
+    /// Imp port : Unembeds all child entities on a given entity.
+    /// </summary>
+    public void RemoveEmbeddedChildren(EntityUid uid)
+    {
+        var enumerator = Transform(uid).ChildEnumerator;
+
+        while (enumerator.MoveNext(out var child))
+        {
+            if (TryComp<EmbeddableProjectileComponent>(child, out var embed))
+                EmbedDetach(child, embed);
+        }
+    }
+
+    /// <summary>
+    /// Imp port : Similar to OnEmbedRemove but without an user doing the action
+    /// </summary>
+    public void EmbedDetach(EntityUid uid, EmbeddableProjectileComponent? component)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        if (component.DeleteOnRemove && _netManager.IsServer)
+        {
+            QueueDel(uid);
+            return;
+        }
+
+        var xform = Transform(uid);
+        TryComp<PhysicsComponent>(uid, out var physics);
+        _physics.SetBodyType(uid, BodyType.Dynamic, body: physics, xform: xform);
+        _transform.AttachToGridOrMap(uid, xform);
+        component.EmbeddedIntoUid = null;
+        Dirty(uid, component);
+
+        // Land it just coz uhhh yeah
+        var landEv = new LandEvent(null, true);
+        RaiseLocalEvent(uid, ref landEv);
+        _physics.WakeBody(uid, body: physics);
+    }
+
     [Serializable, NetSerializable]
     private sealed partial class RemoveEmbeddedProjectileEvent : DoAfterEvent
     {
