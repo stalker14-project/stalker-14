@@ -1,0 +1,27 @@
+- type: entity
+  parent: BoxBase
+  id: ClothingBeltPocketPouch
+  name: Pocket pouch
+  description: A pouch that attaches to your pocket
+  suffix: ST
+  components:
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - pocket
+  - type: STWeight
+    self: 0.2
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/belt/pocket_pouch.rsi
+    state: closed
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,0,1
+    - 2,0,2,1
+    - 4,0,4,1
+    - 6,0,6,1
+  - type: Item
+    size: Large
+    shape:
+      - 0,0,1,2
