@@ -44,6 +44,7 @@
   - type: RepositoryItem
     categoryName: repository-money-category
 
+
 - type: currency
   id: Dollar
   displayName: долларов
@@ -57,6 +58,7 @@
   maxCount: 5000
   icon: { sprite: /Textures/_Stalker/Objects/Economy/dollar.rsi, state: cash }
   spawn: Dollar
+
 - type: entity
   parent: Dollar
   id: Dollar20
@@ -67,6 +69,7 @@
     state: cash_20
   - type: Stack
     count: 20
+
 - type: entity
   parent: Dollar
   id: Dollar100
@@ -77,6 +80,7 @@
     state: cash_100
   - type: Stack
     count: 100
+
 - type: entity
   parent: Dollar
   id: Dollar1000
@@ -87,6 +91,7 @@
     state: cash_1000
   - type: Stack
     count: 1000
+
 - type: entity
   parent: Dollar
   id: Dollar5000

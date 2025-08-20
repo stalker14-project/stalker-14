@@ -48,12 +48,14 @@
     - Roubles
   - type: RepositoryItem
     categoryName: repository-money-category
+
 - type: currency
   id: Roubles
   displayName: Roubles
   cash:
     1: Roubles
   canWithdraw: true
+
 - type: stack
   id: Roubles
   name: shop-currency-name
@@ -61,6 +63,7 @@
   spawn: Roubles
   itemSize: 1
   splitAmounts: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000, 30000, 40000, 50000, 100000]
+
 - type: entity
   parent: Roubles
   id: Roubles10
@@ -71,6 +74,8 @@
     state: cash_10
   - type: Stack
     count: 10
+
+
 - type: entity
   parent: Roubles
   id: Roubles50
@@ -81,6 +86,7 @@
     state: cash_50
   - type: Stack
     count: 50
+
 - type: entity
   parent: Roubles
   id: Roubles100
@@ -91,6 +97,7 @@
     state: cash_100
   - type: Stack
     count: 100
+
 - type: entity
   parent: Roubles
   id: Roubles500
@@ -101,6 +108,7 @@
     state: cash_100
   - type: Stack
     count: 500
+
 - type: entity
   parent: Roubles
   id: Roubles1000
@@ -111,6 +119,7 @@
     state: cash_1000
   - type: Stack
     count: 1000
+
 - type: entity
   parent: Roubles
   id: Roubles2000
@@ -121,6 +130,8 @@
     state: cash_2000
   - type: Stack
     count: 2000
+
+
 - type: entity
   parent: Roubles
   id: Roubles5000
