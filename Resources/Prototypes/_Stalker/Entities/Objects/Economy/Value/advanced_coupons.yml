@@ -1,100 +1,49 @@
-﻿- type: Tag
-  id: PremiumSupplyTalons
-- type: entity
+﻿- type: entity
   parent: BaseItem
   id: PremiumSupplyTalons
-  name: Premium Supply Coupons
-  description: Institute supply coupons.
+  name: премиальные талоны снабжения
+  description: Талоны снабжения Института.
   suffix: ST, НЕ СПАВНИТЬ
   components:
-    - type: Stack
-      stackType: PremiumSupplyTalons
-      count: 1
-      baseLayer: base
-    - type: Sprite
-      sprite: _Stalker/Objects/Economy/vex.rsi
-      state: green
-      layers:
-      - state: green
-        map: ["base"]
-    - type: Item
-      sprite: _Stalker/Objects/Economy/vex.rsi
-      size: Small
-    - type: Physics
-      bodyType: Dynamic
-    - type: Fixtures
-      fixtures:
-        fix1:
-          density: 30
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.35,-0.2,0.25,0.1"
-          mask:
-            - ItemMask
-    - type: Appearance
-    - type: Tag
-      tags:
-        - PremiumSupplyTalons
+  - type: Stack
+    stackType: PremiumSupplyTalons
+    count: 1
+    baseLayer: base
+  - type: Sprite
+    sprite: _Stalker/Objects/Economy/vex.rsi
+    state: green
+    layers:
+    - state: green
+      map: ["base"]
+  - type: Item
+    sprite: _Stalker/Objects/Economy/vex.rsi
+    size: Small
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: Tag
+    tags:
+    - PremiumSupplyTalons
 
 - type: currency
   id: PremiumSupplyTalons
-  displayName: Premium Supply Coupons
+  displayName: премиальные талоны
   cash:
     1: PremiumSupplyTalons
   canWithdraw: true
 
 - type: stack
   id: PremiumSupplyTalons
-  name: Premium Supply Coupons
+  name: премиальный талон
   icon: { sprite: /Textures/_Stalker/Objects/Economy/vex.rsi, state: green }
   spawn: PremiumSupplyTalons
   itemSize: 1
-
-- type: entity
-  parent: PremiumSupplyTalons
-  id: PremiumSupplyTalons10
-  suffix: Stalker, 10
-  components:
-    - type: Stack
-      count: 10
-
-- type: entity
-  parent: PremiumSupplyTalons
-  id: PremiumSupplyTalons50
-  suffix: Stalker, НЕ СПАВНИТЬ, 50
-  components:
-    - type: Stack
-      count: 50
-
-- type: entity
-  parent: PremiumSupplyTalons
-  id: PremiumSupplyTalons100
-  suffix: Stalker, НЕ СПАВНИТЬ, 100
-  components:
-    - type: Stack
-      count: 100
-
-- type: entity
-  parent: PremiumSupplyTalons
-  id: PremiumSupplyTalons500
-  suffix: Stalker, НЕ СПАВНИТЬ, 500
-  components:
-    - type: Stack
-      count: 500
-
-- type: entity
-  parent: PremiumSupplyTalons
-  id: PremiumSupplyTalons1000
-  suffix: Stalker, НЕ СПАВНИТЬ, 1000
-  components:
-    - type: Stack
-      count: 1000
-
-
-- type: entity
-  parent: PremiumSupplyTalons
-  id: PremiumSupplyTalons5000
-  suffix: Stalker, НЕ СПАВНИТЬ, 5000
-  components:
-    - type: Stack
-      count: 5000

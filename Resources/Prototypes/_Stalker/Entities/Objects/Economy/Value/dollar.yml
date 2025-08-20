@@ -3,8 +3,8 @@
 - type: entity
   parent: BaseItem
   id: Dollar
-  name: Dollars
-  description: The monetary unit of the United States, one of the main reserve currencies of the world.
+  name: доллар
+  description: Денежная единица США, одна из основных резервных валют мира.
   suffix: Stalker
   components:
   - type: PhysicalComposition
@@ -44,21 +44,19 @@
   - type: RepositoryItem
     categoryName: repository-money-category
 
-
 - type: currency
   id: Dollar
-  displayName: Dollars
+  displayName: долларов
   cash:
     1: Dollar
   canWithdraw: true
 
 - type: stack
   id: Dollar
-  name: Dollars
+  name: доллар
   maxCount: 5000
   icon: { sprite: /Textures/_Stalker/Objects/Economy/dollar.rsi, state: cash }
   spawn: Dollar
-
 - type: entity
   parent: Dollar
   id: Dollar20
@@ -69,7 +67,6 @@
     state: cash_20
   - type: Stack
     count: 20
-
 - type: entity
   parent: Dollar
   id: Dollar100
@@ -80,7 +77,6 @@
     state: cash_100
   - type: Stack
     count: 100
-
 - type: entity
   parent: Dollar
   id: Dollar1000
@@ -91,7 +87,6 @@
     state: cash_1000
   - type: Stack
     count: 1000
-
 - type: entity
   parent: Dollar
   id: Dollar5000

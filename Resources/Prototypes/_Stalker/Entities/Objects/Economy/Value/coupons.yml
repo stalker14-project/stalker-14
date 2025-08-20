@@ -1,100 +1,28 @@
-﻿- type: Tag
-  id: SupplyTalons
-- type: entity
+﻿- type: entity
   parent: BaseItem
   id: SupplyTalons
-  name: Supply Coupons
-  description: Institute supply coupons.
+  name: талоны снабжения
+  description: Талоны снабжения Института.
   suffix: Stalker
   components:
-    - type: Stack
-      stackType: SupplyTalons
-      count: 1
-      baseLayer: base
-    - type: Sprite
-      sprite: _Stalker/Objects/Economy/vex.rsi
-      state: red
-      layers:
-      - state: red
-        map: ["base"]
-    - type: Item
-      sprite: _Stalker/Objects/Economy/vex.rsi
-      size: Small
-    - type: Physics
-      bodyType: Dynamic
-    - type: Fixtures
-      fixtures:
-        fix1:
-          density: 30
-          shape:
-            !type:PhysShapeAabb
-            bounds: "-0.35,-0.2,0.25,0.1"
-          mask:
-            - ItemMask
-    - type: Appearance
-    - type: Tag
-      tags:
-        - SupplyTalons
-
-- type: currency
-  id: SupplyTalons
-  displayName: талоны
-  cash:
-    1: SupplyTalons
-  canWithdraw: true
-
-- type: stack
-  id: SupplyTalons
-  name: талон
-  icon: { sprite: /Textures/_Stalker/Objects/Economy/vex.rsi, state: red }
-  spawn: SupplyTalons
-  itemSize: 1
-
-- type: entity
-  parent: SupplyTalons
-  id: SupplyTalons10
-  suffix: Stalker, 10
-  components:
-    - type: Stack
-      count: 10
-
-- type: entity
-  parent: SupplyTalons
-  id: SupplyTalons50
-  suffix: Stalker, 50
-  components:
-    - type: Stack
-      count: 50
-
-- type: entity
-  parent: SupplyTalons
-  id: SupplyTalons100
-  suffix: Stalker, 100
-  components:
-    - type: Stack
-      count: 100
-
-- type: entity
-  parent: SupplyTalons
-  id: SupplyTalons500
-  suffix: Stalker, 500
-  components:
-    - type: Stack
-      count: 500
-
-- type: entity
-  parent: SupplyTalons
-  id: SupplyTalons1000
-  suffix: Stalker, 1000
-  components:
-    - type: Stack
-      count: 1000
-
-
-- type: entity
-  parent: SupplyTalons
-  id: SupplyTalons5000
-  suffix: Stalker, 5000
-  components:
-    - type: Stack
-      count: 5000
+  - type: Stack
+    stackType: SupplyTalons
+    count: 1
+    baseLayer: base
+  - type: Sprite
+    sprite: _Stalker/Objects/Economy/vex.rsi
+    state: red
+    layers:
+    - state: red
+      map: ["base"]
+  - type: Item
+    sprite: _Stalker/Objects/Economy/vex.rsi
+    size: Small
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
