@@ -99,3 +99,43 @@
       tags:
         - STCartridge725
     capacity: 71
+
+- type: entity
+  id: BasePPSMag
+  name: магазин ППС (35)
+  description: Магазин для ППС-43. Вместимость пуль 35. Продают пустым.
+  parent: BaseItem
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 0.3
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/725/ppsh_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+      - MagazinePPS
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - STCartridge725
+    capacity: 35
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,0,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance

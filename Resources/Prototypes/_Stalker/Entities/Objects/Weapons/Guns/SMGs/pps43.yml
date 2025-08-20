@@ -1,0 +1,54 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSMG
+  id: STBaseWeaponSMGPPS43
+  components:
+  - type: STWeight
+    SelfWeight: 3.2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/pps43.rsi
+    shape:
+      - 0,0,6,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/pps43.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/pps43.rsi
+    equipDelay: 1
+  - type: Gun
+    minAngle: 52
+    maxAngle: 80
+    angleIncrease: 3
+    angleDecay: 5
+    fireRate: 9
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/pps43.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MP40Mag
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - BasePPSMag
+      gun_module_underbarrel:
+        name: Underbarrel
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSMGGrip
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge725
+
+- type: entity
+  parent: STBaseWeaponSMGPPS43
+  id: STWeaponSMGPPS43
+  name: PPS-43 Submachine Gun
+  description: The iconic Soviet PPS-43 submachine gun chambered in 7.62x25mm Tokarev. Known for its legendary reliability and high rate of fire, it remains surprisingly effective in Zone conditions despite its age.
