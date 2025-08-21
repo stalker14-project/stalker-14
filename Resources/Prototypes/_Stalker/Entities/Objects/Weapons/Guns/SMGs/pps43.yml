@@ -4,7 +4,7 @@
   id: STBaseWeaponSMGPPS43
   components:
   - type: STWeight
-    SelfWeight: 3.2
+    self: 3.2
   - type: Item
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/pps43.rsi
     shape:
@@ -26,13 +26,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MP40Mag
+        startingItem: BasePPSMag
         insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
         ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
         priority: 4
         whitelist:
           tags:
-          - BasePPSMag
+          - MagazinePPS
       gun_module_underbarrel:
         name: Underbarrel
         priority: 2
