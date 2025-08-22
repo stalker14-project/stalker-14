@@ -1859,4 +1859,117 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
-### СЕРАФИМЫ
+### СТАЛКЕРСКИЕ НАБОРЫ
+
+- type: entity
+  parent: BaseItem
+  id: StalkerHunterCrate
+  name: набор для охоты
+  description: Набор базового снаряжения для охоты.
+  suffix: Stalker
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,6,6
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: SpawnItemsOnUse
+    items:
+    - id: ClothingOuterArmorZaryaStalker
+    - id: ClothingBeltBandolierStalker
+    - id: STWeaponShotgunTOZ34
+    - id: 7mmBuckshotBox
+    - id: 7mmBuckshotBox
+    - id: 7mmBuckshotBox
+    - id: 7mmBuckshotBox
+    - id: WeaponPistolStalkerTT
+    - id: TTMag
+    - id: TTMag
+    - id: TTMag
+    - id: TTMag
+    - id: TTMag
+    - id: 725LRNPCBox
+    - id: 725LRNPCBox
+    - id: 725LRNPCBox
+    - id: ClothingBackpackTacticBlackStalker
+    - id: STGauze
+    - id: STGauze
+    - id: STBrutepack
+    - id: STBrutepack
+    - id: STCombatKnife
+
+
+- type: entity
+  parent: BaseItem
+  id: StalkerArtefactHunterCrate
+  name: набор артхантера
+  description: Набор базового снаряжения для поиска артефактов.
+  suffix: Stalker
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,6,6
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterArmorRCBZ
+    - id: ZoneArtifactDetectorResponse
+    - id: WeaponPistolStalkerTT
+    - id: TTMag
+    - id: TTMag
+    - id: TTMag
+    - id: 725LRNPCBox
+    - id: 725LRNPCBox
+    - id: ClothingBackpackTacticBlackStalker
+    - id: STGauze
+    - id: MedkitAI2
+    - id: STCombatKnife
+    - id: BoxArtcont
+    - id: BoxArtcont
+    - id: BoxArtcont
+
+
+- type: entity
+  parent: BaseItem
+  id: StalkerBasedCrate
+  name: базовый набор снаряжения
+  description: Набор базового снаряжения.
+  suffix: Stalker
+  components:
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,6,6
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: SpawnItemsOnUse
+    items:
+    - id: ClothingOuterArmourJacketStalkerWhite
+    - id: STWeaponRifleSaiga545
+    - id: 545Mag20
+    - id: 545Mag20
+    - id: 545Mag20
+    - id: 545Mag20
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: MedkitAI2
+    - id: STCombatKnife
+    - id: ClothingHeadHelmetLight
+    - id: STGauze
+    - id: STGauze
