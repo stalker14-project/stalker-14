@@ -15,7 +15,7 @@
   - type: Gun
     fireRate: 7
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/g36_shoot.ogg
+      path: /Audio/_Stalker/Effects/Guns/n_g36_shot.ogg
       params:
         volume: -2
     minAngle: 50
@@ -39,18 +39,6 @@
         whitelist:
           tags:
           - Magazine556
-      gun_module_muzzle:
-        name: Muzzle
-        priority: 3
-        whitelist:
-          tags:
-          - STWeaponModuleRifleSilencerNato
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeNato
       gun_chamber:
         name: Chamber
         startingItem:
@@ -73,8 +61,21 @@
 - type: entity
   parent: STBaseWeaponRifleG36
   id: STWeaponRifleG36
-  name: HK G-36 "Outlander"
-  description: German assault rifle with composite frame. Appears in the Zone with western mercs and smuggler stalkers. Reliable but ammunition-sensitive.
+  name: HK G-36
+  description: The embodiment of new trends in Western-made automatic weapons: the principle of operation of the automatic system is based not on a semi-free bolt, but on a short stroke of the gas piston. It must be said that the changes have clearly been beneficial: this assault rifle is a first-class example of a modern weapon - light, reliable and ergonomic.
+
+- type: entity
+  parent: STBaseWeaponRifleG36
+  id: STWeaponRifleG36Alt
+  name: HK G-36
+  description: An assault rifle of German manufacture, which is a first-class example of a modern weapon - light, reliable and ergonomic.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/g36-alt.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/g36-alt.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/g36-alt.rsi
 
 - type: entity
   parent: STBaseWeaponRifleG36
