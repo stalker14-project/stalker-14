@@ -328,7 +328,7 @@
   parent: VendingMachine
   id: VendingMachineBoxesPSZMilitary
   name: склад комплектов СОП
-  description: Склад армейских припасов с комплектами ПСЗ внутри.
+  description: Склад армейских припасов с комплектами внутри.
   suffix: Stalker
   components:
     - type: VendingMachine
@@ -370,11 +370,9 @@
 - type: vendingMachineInventory
   id: MilitaryPSZInventory
   startingInventory:
-    ArmyAK2Crate: 4
-    ArmyAK1Crate: 2
-    ArmyAKC1Crate: 1
-    ArmyAKC2Crate: 1
-    ArmyProvisionCrate: 3
+    ArmyAKCUCrate: 10
+    ArmyAKCCrate: 5
+    ArmyProvisionCrate: 5
     ArmyMedkitMilitaryCrate: 5
     Army545Mag30Crate: 5
     Army545Crate: 5
@@ -446,7 +444,9 @@
 - type: vendingMachineInventory
   id: MilitaryPSZInventoryOfficer
   startingInventory:
-    ArmyAKCOfficerCrate: 3
+    ArmyAKMOfficerCrate: 2
+    Army739Crate: 3
+    Army739Mag30Crate: 3
     MilitaryPSZInventoryRestock: 6
     Screwdriver: 1
 

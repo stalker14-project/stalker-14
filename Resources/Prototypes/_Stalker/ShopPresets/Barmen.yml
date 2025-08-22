@@ -62,73 +62,89 @@
     MutantPartZombieHand: 420
     # Smuggling
     TradeBox: 4000
+    STFoodMeatSalo: 70
+    FoodMeatBoar: 40
+    FoodMeatDog: 20
+    FoodMeatBoarCooked: 60
+    FoodMeatDogCooked: 50
 
   categories:
     - name: shop-category-weapons
       priority: 0
       items:
         WeaponPistolStalkerAPS: 800
+        WeaponPistolStalkerTT: 120
+        WeaponPistolStalkerGlock: 300
         STWeaponRevolverSWModel325: 1000
         STWeaponRevolverSWModel625: 1450
-        STWeaponShotgunMP153: 1650
+        STWeaponShotgunMossbergM88: 600
+        STWeaponShotgunSPAS: 2000
         STWeaponRifleAKS74U: 3000
         STWeaponRifleAKS74: 5500
-        STWeaponRifleM16: 3250
-        STWeaponRifleSIG550: 5500
+        STWeaponRifleL85: 2250
         STWeaponRifleAKM: 6700
-        STWeaponSniperMosin: 1300
         STWeaponSMGMP5: 2600
         STWeaponSMGPP19: 3300
-        STWeaponSMGPPSh41: 2400
+        STWeaponSMGPP1901: 2000
+        STWeaponRifleFAL: 3000
+        STThrowingknifeYellow: 500
+        WeaponPistolGSH18: 500
     - name: shop-category-magazines
       priority: 1
       items:
-        BasePMMag: 80
-        Base939Mag10: 400
         TTMag: 120
         BaseGlockMag10: 135
         BaseGSH-18Mag10: 135
         BaseAPSMag: 225
         STSpeedLoader45ACPEmpty: 120
-        545Mag20: 500
-        556Mag20: 600
-        751Mag20: 1850
-        Base754Mag5: 580
+        545Mag20: 250
+        545Mag30: 500
+        556Mag20: 250
+        556Mag30: 500
         BizonMag: 1675
         BaseMP5Mag: 275
-        Base1270Mag: 350
-        BasePPSHMag: 350
+        739Mag30: 350
         Base739Mag10: 200
+        VityazMag: 240
     - name: shop-category-ammunition
       priority: 2
       items:
         6mmBuckshotBox: 200
         7mmBuckshotBox: 65
+        8mmBuckshotBox: 300
         # .45
-        45ACPLFMJBox: 130
-        45ACPMFMJBox: 525
+        45ACPLFMJBox: 100
+        45ACPMFMJBox: 350
+        45ACPRIPBox: 200
+        45ACPAPBox: 1000
         # 7.25
         725PBox: 130
         725PTBox: 525
+        725LRNPCBox: 100
+        725PSTBox: 1000
         # 9.19
-        919PSOGJBox: 105
+        919PSOGJBox: 80
         919PSTBox: 560
+        919RIPBox: 250
+        919PBMBox: 1000
         # 9.18
-        918PGJBox: 105
-        918PSTBox: 500
+        918PGJBox: 80
+        918PSTBox: 560
+        918PBMBox: 1000
+        918SP7Box: 250
         # 5.45
-        545FMJBox: 660
-        545HPBox: 975
+        545FMJBox: 500
+        545HPBox: 300
+        545PCBox: 1250
+
         # 5.56
-        556FMJBox: 690
+        556FMJBox: 500
+        556M855Box: 1250
+        556WarmagBox: 300
+
         # 7.39
         739FMJBox: 1350
-        # 7.51
-        751M80Box: 1575
-        751UNBox: 1615
-        # 7.54
-        754FMJBox: 675
-        754HPBox: 1465
+        739HPBox: 500
     - name: shop-category-armor
       priority: 3
       items:
@@ -137,26 +153,16 @@
         SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
         STClothingOuterArmorLightPlateVestBaseANAgreenOld: 2000
         STClothingOuterArmorLightPlateVestBaseANAgrayOld: 2000
-        ClothingOuterArmorSevaStalker: 3000
-        # mask
-        ClothingMaskGP7: 165
-        ClothingMaskGasZarya: 125
-        ClothingMaskGasZaryaMono: 150
-        ClothingMaskXoma: 95
+        ClothingOuterArmorSevaStalker: 7000
+        SetZaryaStalkerBuyableCrate: 2250
+        ClothingOuterArmorStalker: 15000
+        ClothingOuterArmorAborigineStalker: 10000
+        ClothingOuterArmor6B2: 2250
         # helmet
-        ClothingHeadHelmetVityaz1C: 4500
-        # cape
-        ClothingOuterCoatLoyalist: 1754
-        ClothingOuterCoatLoyalistLight: 1050
-          # BackPacks
-        ClothingBackpackTownBlackStalker: 185 # T1
-        ClothingBackpackTownWhiteStalker: 190 # T1
-        ##-------------------------------------------
-        ClothingBackpackTacticOliveStalker: 557 # T2
-        ClothingBackpackTacticBeigeStalker: 568 # T2
-        ##-------------------------------------------
-        ClothingBackpackStalkerZaryaGreen: 1059 # T3 |pvp backpack
-        ##-------------------------------------------
+        ClothingHeadHelmetVityaz1C: 3500
+        ClothingHeadHelmetInfantry: 500
+        STClothingHeadHelmetMakeshiftTacticalT3: 1000
+        STPsyHelm1: 2500
         # belt
         ClothingBeltBandolierStalker: 75
         ClothingBeltTarzanOrange: 200
@@ -184,41 +190,39 @@
         Matchbox: 10
         STHeadLight: 350
         HatchetStalker: 150
-        STCraftGlueKitT3: 1000
-        STCraftPlasticFittingT3: 1000
     - name: shop-category-research-equipment
       priority: 5
       items:
         # Bolt bags
         STBoltBagFilled: 50
         STBoltBagOliveGrayFilled: 50
-        STBoltBagFilledGolden: 5000
-        STBoltBagOliveGrayFilledGolden: 5000
         # Artifact containers
         BoxArtcont: 500
         longrangemetaldetector: 3000
         # Anomaly detectors
         ZoneAnomalyDetectorAD1: 450
-        ZoneAnomalyDetectorAD2: 2050
+        ZoneAnomalyDetectorAD2: 1050
         # Artifact detectors
         ZoneArtifactDetectorPulse: 200
         ZoneArtifactDetectorHunter: 700
         ZoneArtifactDetectorResponse: 2100
-        ZoneArtifactDetectorSpruce: 5600
+        ZoneArtifactDetectorSpruce: 12000
+        TrashDetectorTier1: 200
+        TrashDetectorTier2: 400
     - name: shop-category-provisions
       priority: 6
       items:
-        STEnergyDrink: 200
+        STEnergyDrink: 100
         STEnergyDrinkMonster: 200
         STEnergyDrinkRevo: 150
-        STDrinkBeerCanBaltic: 90
+        STDrinkBeerCanBaltic: 50
         DrinkVodkaBottleFull: 75
-        STFoodBreadPlain: 50
+        STFoodBreadPlain: 20
         DrinkFlaskOld: 30
         DrinkWaterBottleFull: 50
-        FoodTinMRE: 120
+        FoodTinMRE: 100
         DrinkLemonadehBottleFull: 75
-        STFoodMeatSalami: 175
+        STFoodMeatSalami: 125
     - name: shop-category-medicine
       priority: 7
       items:
@@ -311,34 +315,41 @@
         SandBattlemap: 60
         GrassBattlemap: 60
         # Instruments
-        AcousticGuitarInstrument: 300
+        AcousticGuitarInstrument: 500
         AccordionInstrument: 500
+        HarmonicaInstrument: 500
         CardBin: 100
         PokerCardBin: 150
-    - name: shop-category-blueprints-research-equipment
+    - name: shop-category-storage-and-containers
       priority: 10
       items:
-        STDetectorAD1Blueprint: 2000
-        STDetectorAD2Blueprint: 4000
-        STDetectorAD3Blueprint: 6000
-        STZoneArtifactDetectorBushBlueprint: 2000
-        STZoneArtifactDetectorResponseBlueprint: 4500
-        STZoneArtifactDetectorSpruceBlueprint: 6750
-        STZoneArtifactDetectorBarracudaBlueprint: 10125
-    - name: shop-category-blueprints-metal-detectors
+        ClothingBackpackTacticOliveStalker: 557
+        ClothingBackpackTacticBeigeStalker: 568
+        ClothingBackpackStalkerZaryaGreen: 1059
+        ClothingBackpackTownBlackStalker: 185
+        ClothingBackpackTownWhiteStalker: 190
+        STClothingBeltThrowingKnifes: 200
+    - name: shop-category-modules
       priority: 11
       items:
-        TrashDetectorTier2Blueprint: 4000
-        TrashDetectorTier3Blueprint: 6000
-        TrashDetectorTier4Blueprint: 28000
-    - name: shop-category-blueprints-raincoats
+        STModuleScopeRiflesT1Ru: 600
+        STModuleScopeRiflesT1Nato: 600
+        STModuleSilencerRiflesT1Ru: 400
+        STModuleSilencerRiflesT1Nato: 400
+        STModuleShotgunChokeT1: 200
+        STModuleSMGGripT1: 600
+        STModuleSilencerSMGT1: 600
+        STModuleSniperSightT1: 600
+        STModuleSilencerSniperT1: 400
+    - name: shop-category-raincoats-and-gasmasks
       priority: 12
       items:
-        ClothingOuterCoatPahanBlueprint: 2000
-        ClothingOuterCoatPoiskBlueprint: 2000
-        ClothingOuterCoatBolotniyBlueprint: 3000
-        ClothingOuterCoatKolchygaBlueprint: 3000
-        STClothingCapeCoatReinforcedBlueprint: 4000
+        ClothingMaskGP7: 165
+        ClothingMaskGasZarya: 125
+        ClothingMaskGasZaryaMono: 150
+        ClothingMaskXoma: 95
+        ClothingCloakStalker: 100
+        STClothingCapeArmorChainmailSeva: 2000
     - name: shop-category-tools
       priority: 13
       items:
@@ -346,34 +357,12 @@
         ToolkitTearOne: 5000
         ToolkitTearTwo: 10000
         ToolkitTearThree: 15000
-        CraftGunpowderBank: 100
-    - name: shop-category-blueprints-gasmasks
-      priority: 14
-      items:
-        STGasMaskM50Blueprint: 8000
-        STGasMaskGP21lueprint: 28000
-    - name: shop-category-blueprints-helmets
-      priority: 15
-      items:
-        STClothingHeadTinfoilBlueprint: 20000
-        ClothingHeadAssaultHelmetBlueprint: 20000
-        STClothingHeadHelmetMakeshiftTacticalT3Blueprint: 20000
-    - name: shop-category-blueprints-outerwear
-      priority: 16
-      items:
-        STClothingOuterJacketStalkerUpgradeBlueprint: 500
-        ClothingOuterAnomalyStalkerJacketBlueprint: 500
-        ClothingOuterArmorZaryaHunterBlueprint: 3000
-        ClothingOuterArmorZaryaStalkerModifedType1Blueprint: 3000
-        ClothingOuterArmorZaryaStalkerModifedType2Blueprint: 3000
-        ClothingOuterArmorSparkBlueprint: 3000
-        STClothingOuterArmorLightPlateVestBasePSZ7Blueprint: 8000
-        ClothingOuterArmorAborigineStalkerBlueprint: 10000
   sponsorCategories:
           SponsorBacker:
             - name: sponsor
               items:
                 STWeaponRifleAKS74UWhite: 650
+                STWeaponRifleAKMC: 5000
           SponsorOMind:
             - name: О-сознание
               items:

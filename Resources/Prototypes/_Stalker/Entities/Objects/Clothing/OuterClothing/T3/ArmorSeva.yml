@@ -363,6 +363,35 @@
     - type: IdentityBlocker
     - type: IngestionBlocker
 
+
+# Project
+
+- type: entity
+  parent: STClothingOuterArmorSevaBase
+  id: ClothingOuterArmorSevaProjectGROM9
+  name: костюм «Сева GROM-9»
+  description: "Модифицированный костюм Сева версии «GROM-9» был разработан «Проектом» как надежный бронекостюм, обеспечивающий отличную защиту от пси-излучений и электрических разрядов."
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_project.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seva_project.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmProjectGROM9
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHardsuitSevaHelmBase
+  id: ClothingHeadHardsuitSevaHelmProjectGROM9
+  name: шлем севы «GROM-9»
+  description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_project.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/seva_helm_project.rsi
+
 # Dolg
 
 - type: entity

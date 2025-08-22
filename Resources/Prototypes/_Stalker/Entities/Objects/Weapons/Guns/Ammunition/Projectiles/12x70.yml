@@ -93,7 +93,8 @@
     projectileClass: 3
     damage:
       types:
-        Piercing: 8
+        Piercing: 3
+        Mutant: 18
 
 - type: entity
   id: BulletShotgunFlechette
@@ -133,9 +134,9 @@
     projectileClass: 0
     damage:
       types:
-        Blunt: 20
-        Slash: 20
-        Piercing: 40
+        Blunt: 10
+        Slash: 10
+        Mutant: 100
   - type: StaminaDamageOnCollide
     damage: 20
 

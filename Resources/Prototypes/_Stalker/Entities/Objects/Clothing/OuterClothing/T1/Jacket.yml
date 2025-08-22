@@ -454,10 +454,27 @@
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketSera
-  name: куртка 'Последователя'
-  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет какой-то пыльцой...
+  name: Куртка Охотника
+  description: Самая обычная черная куртка, частично окрашена в Оливковый.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterJacketSeraHatHood
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingOuterJacketSeraHatHood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sera.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair

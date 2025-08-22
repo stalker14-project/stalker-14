@@ -81,25 +81,29 @@
       priority: 1
       items:
             # Melee
-        StalkerBallBat: 370
+        StalkerBallBat: 50
+        STThrowingknifeBlue: 250
             # Guns
           # 7mm
-        STWeaponShotgunMP155T: 50 #T1
         STWeaponShotgunTOZ34: 250 # T1
         STWeaponShotgunMP133: 500 # T2
-        STWeaponShotgunMossbergM88: 700 # T2
+        STWeaponShotgunMP153: 1700 # T2
          # 9x18
         WeaponPistolStalkerPM: 50 #T1
          # 7,62x25
         WeaponPistolStalkerTT: 50 #T1
           # 5,45x39
         STWeaponRifleSaiga545: 1750 # T3
+        STWeaponRifleAKS74U: 2000
+        STWeaponRevolverSWModel325: 500
+        STWeaponRevolverSWPC325TR: 1000
           # Other
-        STWeaponSMGMP5: 2300
+        STWeaponSMGMP40: 1000
         WeaponPistolStalkerAPS: 900 #T2
         STWeaponSniperSKS: 1850 # T2
         STWeaponSniperMosin: 1500
         STWeaponSMGPPSh41: 2750
+        STWeaponSMGPP91: 4000
           # Nato
     - name: shop-category-magazines
       priority: 2
@@ -108,48 +112,57 @@
         Base739Mag10: 350 #T1
           # 5,45x39
         Base545Mag10: 150 #T1
-          # 5,56x39
-        Base556Mag10: 175 #T1
           # Other
         BasePMMag: 12
         BasePPSHMag: 350
         TTMag: 15
         BaseAPSMag: 300
-        BaseMP5Mag: 150
+        MP40Mag: 150
+        STSpeedLoader45ACPEmpty: 100
+        PP91Mag: 200
     - name: shop-category-ammunition
       priority: 3
       items:
         7mmBuckshotBox: 50
+        6mmBuckshotBox: 150
         # 5.45
-        545FMJBox: 1000
-        # 5.56
-        556FMJBox: 1450
+        545FMJBox: 700
+        545HPBox: 250
         # 7.39
-        739FMJBox: 2350
+        739HPBox: 400
         # 7.54
-        754FMJBox: 2550
+        754HPBox: 500
         # 9.18
-        918PGJBox: 50
+        918PGJBox: 80
+        918SP7Box: 200
         # 9.19
-        919PSOGJBox: 50
+        919PSOGJBox: 100
+        919RIPBox: 400
         # 7.25
-        725PBox: 35
+        725PBox: 100
+        725LRNPCBox: 50
         725PTBox: 465
+        #45
+        45ACPRIPBox: 450
+        45ACPLFMJBox: 250
     - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
         ClothingHeadHelmetLight: 300 # T1 - uni
         ClothingHeadHelmetInfantry: 800 # T2 - uni
+        ClothingHeadHelmetSH68: 250 # T1 - PVP:
           # OuterClothing #
-        SetJacketNoviceWhiteBuyableCrate: 500 # T1 - uni
+        SetJacketNoviceWhiteBuyableCrate: 100 # T1 - uni
         STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
         SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
         SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
-        ClothingOuterArmor6B2: 1050
+        ClothingOuterArmor6B2: 2000
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
         SetZaryaStalkerBuyableCrate: 3300
+        ClothingOuterArmorSevaStalker: 15000
+        STPsyHelm1: 5000
 
     - name: shop-category-storage-and-containers
       priority: 5
@@ -170,6 +183,7 @@
           # Containers
         MedkitCMSStalker: 250 # T1
         MedkitGrizzlyStalker: 850 # T2
+        STClothingBeltThrowingKnifes: 350
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
@@ -218,8 +232,6 @@
       priority: 9
       items:
         STEnergyDrink: 250
-        STEnergyDrinkMonster: 250
-        STEnergyDrinkRevo: 300
         STDrinkBeerCanBaltic: 90
         DrinkVodkaBottleFull: 55
         STFoodBreadPlain: 35
@@ -319,13 +331,15 @@
         SandBattlemap: 60
         GrassBattlemap: 60
         # Instruments
-        AcousticGuitarInstrument: 300
+        AcousticGuitarInstrument: 500
         AccordionInstrument: 500
+        HarmonicaInstrument: 500
 
   sponsorCategories:
     SponsorBread:
       - name: sponsor
         items:
+          STWeaponRifleAKMC: 4300
           STWeaponRifleAKS74UWhite: 1350
           STHatchetSponsor: 150
           STSpanishKnife: 100

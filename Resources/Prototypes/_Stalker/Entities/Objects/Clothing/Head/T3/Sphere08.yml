@@ -12,8 +12,8 @@
     armorClass: 3
     modifiers:
       flatReductions:
-        Blunt: 4
-        Slash: 4
+        Blunt: 5
+        Slash: 5
         Piercing: 4
       coefficients:
         Blunt: 0.80
@@ -22,7 +22,7 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: Reflect
-    reflectProb: 0.10
+    reflectProb: 0.08
     spread: 360
     reflects:
       - NonEnergy
@@ -120,3 +120,14 @@
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_dolg.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_dolg.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetEnvironmentT3Base
+  id: ClothingHeadHelmetAborigine
+  name: Шлем "Туземец"
+  description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Свобода. Обеспечивает защиту 3 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/aborigine_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/aborigine_stalker.rsi

@@ -34,7 +34,10 @@ using Robust.Shared.Timing;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Server._Stalker.StalkerRepository;
+using Content.Server._Stalker.Storage;
 using Content.Server.Silicons.Laws;
+using Content.Shared._Stalker.StalkerRepository;
 using Content.Shared.Movement.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Robust.Server.Player;
@@ -73,6 +76,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly AdminFrozenSystem _freeze = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
+        [Dependency] private readonly StalkerStorageSystem _stalkerStorage = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -108,6 +112,23 @@ namespace Content.Server.Administration.Systems
                 mark.Act = () => _toolshed.InvokeCommand(player, "=> $marked", Enumerable.Repeat(args.Target, 1), out _);
                 mark.Impact = LogImpact.Low;
                 args.Verbs.Add(mark);
+
+                // Clear Storage
+                if (TryComp<StalkerRepositoryComponent>(args.Target, out var repo))
+                {
+                    Verb clearStorageVerb = new();
+
+                    clearStorageVerb.Text = Loc.GetString("clear-storage-verb-text");
+                    clearStorageVerb.Category = VerbCategory.Admin;
+                    clearStorageVerb.Act = () =>
+                    {
+                        _stalkerStorageSystem.ClearStorage(args.Target);
+                    };
+                    clearStorageVerb.Impact = LogImpact.Extreme;
+
+                    args.Verbs.Add(clearStorageVerb);
+                }
+
 
                 if (TryComp(args.Target, out ActorComponent? targetActor))
                 {

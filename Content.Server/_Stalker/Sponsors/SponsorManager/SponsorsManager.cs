@@ -140,7 +140,7 @@ public sealed partial class SponsorsManager
             sponsorPrototype?.ID,
             e.UserId,
             isGiven,
-            contributorPrototype is null
+            contributorPrototype is not null
         );
 
         _cachedSponsors.Add(e.UserId, data);

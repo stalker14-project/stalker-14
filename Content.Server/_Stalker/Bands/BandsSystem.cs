@@ -14,7 +14,6 @@ using Content.Shared.StatusIcon.Components;
 using Content.Server.Players.JobWhitelist;
 using Content.Shared._Stalker.Bands.Components;
 using Content.Server._Stalker.WarZone;
-using Content.Shared.Interaction;
 using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Server._Stalker.Bands
@@ -51,6 +50,8 @@ namespace Content.Server._Stalker.Bands
 
             // Subscribe to the new buy message
             SubscribeLocalEvent<BandsManagingComponent, BandsManagingBuyItemMessage>(OnBuyItem);
+
+            SubscribeLocalEvent<BandsComponent, ChangeBandEvent>(OnChange);
         }
 
         private void SubscribeUpdateUiState<T>(Entity<BandsManagingComponent> ent, ref T ev) where T : notnull
@@ -307,26 +308,6 @@ namespace Content.Server._Stalker.Bands
 
             if (component is { AltBand: not null, CanChange: true })
                 _actions.AddAction(uid, ref component.ActionChangeEntity, component.ActionChange, uid);
-
-            _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
-        }
-
-        private void OnRemove(EntityUid uid, BandsComponent component, ComponentRemove args)
-        {
-            _actions.RemoveAction(uid, component.ActionEntity);
-            if (component.ActionChangeEntity != null)
-                _actions.RemoveAction(uid, component.ActionChangeEntity);
-        }
-
-        private void OnToggle(EntityUid uid, BandsComponent component, ToggleBandsEvent args)
-        {
-            if (args.Handled || !_mobState.IsAlive(uid)) // Check Handled flag
-                return;
-
-            component.Enabled = !component.Enabled;
-            Dirty(uid, component);
-
-            args.Handled = true;
         }
 
         private void OnChange(Entity<BandsComponent> entity, ref ChangeBandEvent args)
@@ -338,6 +319,7 @@ namespace Content.Server._Stalker.Bands
             if (comp.AltBand == null || !comp.CanChange)
                 return;
 
+            // Swap the band status icon and alt band name
             (comp.BandStatusIcon, comp.AltBand) = (comp.AltBand, comp.BandStatusIcon);
             Dirty(entity);
             args.Handled = true;

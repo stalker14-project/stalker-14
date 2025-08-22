@@ -131,9 +131,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  # - type: Shop  #Commented, shop-preset wiped
-    # moneyId: Roubles
-    # shopPresetId: NpcBuyer  #If you uncomment it - CHANGE SHOP PRESET
+  - type: Shop  #Commented, shop-preset wiped
+    moneyId: Roubles
+    shopPresetId: KekeshaShopPreset  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -1195,7 +1195,7 @@
         type: ShopBoundUserInterface
   - type: Shop
     moneyId: Roubles
-    shopPresetId: SeraphimeShopPresetLight
+    shopPresetId: SerafimShopPresetCustom
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS

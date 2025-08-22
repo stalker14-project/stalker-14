@@ -37,109 +37,86 @@
     # Acidic group - 2
     ZoneArtifactPellicle: 600
     ZoneArtifactBaloon: 5400
-
-     # Mutant parts
-
-  #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 95 # T1
-    MutantPartSeasonedBoarHoof: 190 # T2
-    MutantPartOldBoarHoof: 285 # T3
-
-    #T1 -------- Health * 1
-    MutantPartBlindDogTail: 65
-    MutantPartFleshEye: 140
-    FoodMeatSpiderLeg: 35
-
-    #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 385
-    MutantPartPseudodogTail: 210
-    MutantPartSnorkFoot: 350
-
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 525
-    MutantPartOraculeEye: 1120
-    MutantPartPseudogiantHeart: 2800
-    MutantPartZombieHand: 420
+    #meat
+    STFoodMeatSalo: 100
+    FoodMeatBoar: 50
+    FoodMeatDog: 25
+    FoodMeatBoarCooked: 100
+    FoodMeatDogCooked: 70
   categories:
     - name: shop-category-weapons
       priority: 1
       items:
             # Guns
           # 12mm
-        STWeaponShotgunMP155T: 45 #T0.5
         STWeaponShotgunTOZ34: 225 # T2
-        STWeaponShotgunMP133: 385 # T1.5
-        STWeaponShotgunMossbergM88: 530 # T2
+        STWeaponShotgunMossbergM88: 500 # T2
+        STWeaponShotgunSPAS: 2000
           # Nato
-        STWeaponRifleM4: 5000
-        STWeaponRifleM16: 3570
-        STWeaponRifleSIG550: 3700
-        STWeaponRifleL85: 4000
-          # Smg
+        STWeaponRifleL85: 2000
+        STWeaponRifleSCARH: 6000
+        STWeaponRifleM16: 4000
+                  # Smg
         STWeaponSMGMP5: 1800
           # Other
         STWeaponRevolverRugerRedhawk: 400
         STWeaponRevolverSWPC325TR: 850
         WeaponPistolStalkerGlock: 400
-        STWeaponSniperMosin: 1200
     - name: shop-category-magazines
       priority: 2
       items:
-        Base1270Mag: 100 #T1
           # 7,62x51 and 56
         Base556Mag10: 80
         556Mag20: 220
-        Base751Mag10: 900
-        Base739Mag10: 150
-          # Smg
+        556Mag30: 400
         BaseMP5Mag: 260
-          # Other
-        556Mag30: 1000
-        BaseTEC9Mag: 120
         BaseGlockMag10: 100
         GlockMag24: 350
         GlockMag33: 950
-        STSpeedLoader45ACPEmpty: 98
+        STSpeedLoader45ACPEmpty: 100
+        Base751Mag10: 200
+        751Mag30: 500
     - name: shop-category-ammunition
       priority: 3
       items:
         6mmBuckshotBox: 115
         7mmBuckshotBox: 45
+        8mmBuckshotBox: 300
         # 9.19
         919PSOGJBox: 75
-        919PSTBox: 780
-        919PBMBox: 1500
+        919PSTBox: 250
+        919PBMBox: 500
+        919RIPBox: 300
+        918PGJBox: 80
+        918PSTBox: 250
+        918PBMBox: 500
+        918SP7Box: 200
         # 5.56
         556FMJBox: 500
-        556WarmagBox: 650
-        556M855Box: 3000
+        556WarmagBox: 250
+        556M855Box: 2000
         # 7.51
         751M80Box: 1500
-        751UNBox: 1450
+        751UNBox: 500
         # 7.54
         754FMJBox: 1200
         # .45
         45ACPLFMJBox: 100
         45ACPMFMJBox: 550
+        45ACPAPBox: 1000
+        45ACPRIPBox: 400
     - name: shop-category-armor
       priority: 4
       items:
           # Helmets #
-        ClothingHeadHelmetSH68: 250 # T1 - PVP
-        ClothingHeadHelmetInfantry: 875 # T2 - PVP
+        ClothingHeadHelmetInfantry: 600 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
-        ClothingHeadAssaultHelmet: 9500 # T3 - PVP
           # OuterClothing #
-        STClothingOuterArmorLightPlateVestBaseANAgreenOld: 1200
         ClothingOuterJacketFreedom: 60 # T1 - PVE
-        STClothingOuterArmorLightPlateVestBaseFreedom: 1100 # T2 - PvP
-        ClothingOuterArmor6B2: 1500 # T2 - PvP
+        STClothingOuterArmorLightPlateVestBaseFreedom: 1000 # T2 - PvP
         ClothingOuterArmorRCBZFreedom: 1700 # T2 - ENV
-        ClothingOuterArmorZN1: 2100 # T2 - universal
-        ClothingOuterArmorAborigineFreedom: 4350 # T3
-        ClothingOuterArmorYegerFreedom: 2325 # т2
-        SetFreedomVeterBuyableCrate: 12000 # T3 - ENV
-        SetFreedomDefenderBuyableCrate: 20000 # T3
+        ClothingOuterArmorFreedomWind: 2000
+        ClothingOuterArmorSevaFreedom: 5000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -148,28 +125,19 @@
         ##-------------------------------------------
         ClothingBackpackTacticGreenStalker: 400 # T2
         ##-------------------------------------------
-        ClothingBackpackMercStalker: 799 # T3 |pve backpack
-        ClothingBackpackStalkerZaryaGreen: 899 # T3 |pvp backpack
-        ##-------------------------------------------
-        ClothingBackpackDuffelHikingCommon: 1300  #t3
-        ClothingBackpackDuffelMilitaryOlive: 1600 #t4
+        ClothingBackpackMercStalker: 500 # T3 |pve backpack
+        ClothingBackpackStalkerZaryaGreen: 300 # T3 |pvp backpack
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
-        ClothingBeltTarzanBlack: 200 # T1 - PVP
-        ClothingBeltTarzanGreen: 200 # T1 - PVP
-        ClothingBeltTarzanOrange: 200 # T1 - PVP
-          # Containers
-        MedkitCMSStalker: 150 # T1
-        MedkitGrizzlyStalker: 850 # T2
+        ClothingBeltWebbingHolsterFreedomDefender: 600
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
-        ClothingOuterCoatDoshdevik: 60 # T1
-        ClothingOuterCoatLoyalistLight: 350 # T2
         STClothingCapeFreedomChain: 2500 # T4
           # Gasmasks
         ClothingMaskGasFreedom: 100 # T1
+        ClothingMaskGasZaryaMono: 100
         ClothingMaskGasM40: 200 # T2
         ClothingMaskGP21: 1000 # T3
     - name: shop-category-research-equipment
@@ -182,8 +150,9 @@
           # Detectors
         ZoneArtifactDetectorPulse: 50 # T1
         ZoneArtifactDetectorResponseCvoboda: 100 # T2
-        ZoneArtifactDetectorResponse: 1200 # T2
-        ZoneArtifactDetectorSpruce: 3200 # T2 
+        STPsyHelm1: 2500
+        ZoneArtifactDetectorResponse: 1000 # T2
+        Blunt: 100
     - name: shop-category-utilities
       priority: 8
       items:
@@ -205,8 +174,7 @@
         Beaker: 40
         Syringe: 20
         ClothingGoPro: 250
-        ExtendedEmergencyOxygenTankFilledStalker: 50
-        TrashDetectorTier1: 200
+        STOxygenTanksFractionalFreedom2: 500
         Matchbox: 10
         HatchetStalker: 150
     - name: shop-category-provisions
@@ -240,6 +208,8 @@
         MedkitScience: 400
         MedkitElite: 550
         MedkitLAR: 600
+        MedkitCMSStalker: 150 # T1
+        MedkitGrizzlyStalker: 850 # T2
     - name: shop-category-modules
       priority: 11
       items:

@@ -640,6 +640,47 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         _stalkerDbSystem.SetInventoryJson(_stalkerRepositoryComponent.StorageOwner, json);
     }
 
+    public void ClearStorage(EntityUid uid)
+    {
+        if (!TryComp<StalkerRepositoryComponent>(uid, out var comp))
+            return;
+
+        comp.ContainedItems.Clear();
+        comp.CurrentWeight = 0f;
+
+        comp.LoadedDbJson = StalkerDbSystem.DefaultStalkerItems;
+        LoadStalkerItemsByEntityUid(uid);
+
+        _stalkerDbSystem.ClearInventoryJson(comp.StorageOwner);
+    }
+
+    public void ClearStorages(string? login)
+    {
+        if (login == null)
+            return;
+
+        var query = EntityQueryEnumerator<StalkerRepositoryComponent>();
+
+        while (query.MoveNext(out var uid, out var stalkerRepositoryComponent))
+        {
+            if (stalkerRepositoryComponent.StorageOwner.EndsWith(login))
+            {
+                // Clear the repository
+                stalkerRepositoryComponent.ContainedItems.Clear();
+
+                // just in case, reset the current weight
+                stalkerRepositoryComponent.CurrentWeight = 0;
+
+                // Reset the loaded DB JSON to default items (2k roubles)
+                stalkerRepositoryComponent.LoadedDbJson = StalkerDbSystem.DefaultStalkerItems;
+                LoadStalkerItemsByEntityUid(uid);
+            }
+        }
+
+        // Clear the repositories in db
+        _stalkerDbSystem.ClearAllRepositories(login);
+    }
+
     public static string InventoryToJson(AllStorageInventory inputAllStorageInventory)
     {
         return JsonSerializer.Serialize(inputAllStorageInventory);
