@@ -84187,6 +84187,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -76.5,-90.5
       parent: 1
+- proto: STAnomalyGeneratorBlocker5
+  entities:
+  - uid: 9379
+    components:
+    - type: Transform
+      pos: 18.5,-105.5
+      parent: 1
 - proto: STBonfire
   entities:
   - uid: 7829
@@ -90232,12 +90239,11 @@ entities:
       location: Болота - База Ренегатов
   - uid: 8952
     components:
+    - type: MetaData
+      name: Renegade Base
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -118.5,-90.5
+      pos: -90.5,-130.5
       parent: 1
-    - type: WarpPoint
-      location: Болота -> Брошенная Деревня
   - uid: 9378
     components:
     - type: MetaData
