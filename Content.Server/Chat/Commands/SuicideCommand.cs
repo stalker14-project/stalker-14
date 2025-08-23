@@ -1,5 +1,6 @@
 using Content.Server.Administration;
 using Content.Server.GameTicking;
+using Content.Server.Mobs;
 using Content.Server.Popups;
 using Content.Shared.Administration;
 using Content.Shared.Chat;
@@ -9,7 +10,7 @@ using Robust.Shared.Enums;
 
 namespace Content.Server.Chat.Commands
 {
-    [AdminCommand(AdminFlags.Admin)]
+    [AnyCommand]
     internal sealed class SuicideCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _e = default!;
@@ -52,10 +53,15 @@ namespace Content.Server.Chat.Commands
                 return;
             }
 
+            if (!_e.HasComponent<AllowedSuicideComponent>(victim))
+                return;
+
             if (suicideSystem.Suicide(victim))
                 return;
 
             shell.WriteLine(Loc.GetString("ghost-command-denied"));
+
+            _e.RemoveComponentDeferred<AllowedSuicideComponent>(victim);
         }
     }
 }
