@@ -25,11 +25,6 @@
       - !type:PlaySoundBehavior
         sound:
           collection: WoodDestroy
-      - !type:SpawnEntitiesBehavior
-        spawn:
-          MaterialWoodPlankStalker:
-            min: 2
-            max: 3
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Tag

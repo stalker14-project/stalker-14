@@ -191,7 +191,7 @@ public abstract partial class InteractionTest
         await Pair.CreateTestMap();
 
         PlayerCoords = SEntMan.GetNetCoordinates(Transform.WithEntityId(MapData.GridCoords.Offset(new Vector2(0.5f, 0.5f)), MapData.MapUid));
-        TargetCoords = SEntMan.GetNetCoordinates(Transform.WithEntityId(MapData.GridCoords.Offset(new Vector2(0.9f, 0.5f)), MapData.MapUid)); // Stalker-Changes. Interaction Range is 1f now. So we should spawn target more close
+        TargetCoords = SEntMan.GetNetCoordinates(Transform.WithEntityId(MapData.GridCoords.Offset(new Vector2(1.5f, 0.5f)), MapData.MapUid)); // Stalker-Changes. Interaction Range is 1f now. So we should spawn target more close
         await SetTile(Plating, grid: MapData.Grid);
 
         // Get player data
