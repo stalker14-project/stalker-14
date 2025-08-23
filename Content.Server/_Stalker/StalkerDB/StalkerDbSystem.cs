@@ -14,7 +14,34 @@ public sealed class StalkerDbSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
 
-    public const string DefaultStalkerItems = "{\"AllItems\":[{\"ClassType\":\"StackItemStalker\",\"PrototypeName\":\"Roubles\",\"StackCount\":2000,\"CountVendingMachine\":1}]}";
+    public const string DefaultStalkerItems =
+"""
+{
+  "AllItems": [
+    {
+      "ClassType": "StackItemStalker",
+      "PrototypeName": "Roubles",
+      "StackCount": 3000,
+      "CountVendingMachine": 1
+    },
+    {
+      "ClassType": "SimpleItemStalker",
+      "PrototypeName": "StalkerHunterCrate",
+      "CountVendingMachine": 1
+    },
+    {
+      "ClassType": "SimpleItemStalker",
+      "PrototypeName": "StalkerArtefactHunterCrate",
+      "CountVendingMachine": 1
+    },
+    {
+      "ClassType": "SimpleItemStalker",
+      "PrototypeName": "StalkerBasedCrate",
+      "CountVendingMachine": 1
+    }
+  ]
+}
+""";
 
     // login - json
     public ConcurrentDictionary<string, string> Stalkers = new();
@@ -59,6 +86,11 @@ public sealed class StalkerDbSystem : EntitySystem
     {
         Stalkers[login] = inputInventoryJson;
         _dbManager.SetLoginItems(login, inputInventoryJson);
+    }
+
+    public void ClearAllRepositories(string login)
+    {
+        _dbManager.SetAllLoginItems(login, DefaultStalkerItems);
     }
 
     public void ClearInventoryJson(string login)

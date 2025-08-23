@@ -14,7 +14,7 @@
   - type: Gun
     fireRate: 6
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/scar.ogg
+      path: /Audio/_Stalker/Effects/Guns/n_sig550_shot.ogg
       params:
         volume: -2
     minAngle: 40
@@ -61,9 +61,26 @@
 - type: entity
   parent: STBaseWeaponRifleSIG
   id: STWeaponRifleSIG550
-  name: SIG-550
-  description: Swiss rifle with impeccable reputation. Appears in the Zone with western mercenaries and scientists. Famous for tight groupings and reliable mechanics but demands quality ammunition.
+  name: SIG SG 550
+  description: A representative of a relatively new family of assault rifles. Due to its high reliability, accuracy in combat and ease of use, it is one of the best examples of weapons of this class. It is rarely encountered in the Zone and costs a lot of money. Usually, it is specially ordered for themselves by experienced stalkers.
 
+- type: entity
+  parent: STBaseWeaponRifleSIG
+  id: STWeaponRifleSIG550Black
+  name: SIG SG 550
+  description: One of the relatively new Swiss assault rifles chambered for 5.56 x 45 mm. The accuracy, soft recoil and high reliability of this weapon quickly won it the widest popularity.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sig-550-black.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sig-550-black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sig-550-black.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/t_sig550_shot.ogg
+  
+  
 - type: entity
   parent: STBaseWeaponRifleSIG
   id: STWeaponRifleSIG739

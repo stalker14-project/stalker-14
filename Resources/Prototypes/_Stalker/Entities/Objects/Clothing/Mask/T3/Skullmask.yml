@@ -1,0 +1,54 @@
+- type: entity
+  parent: STClothingMaskGas
+  id: STClothingMaskSeraphimSkull
+  name: стальная маска в виде черепа
+  description: Маска всегда служила вещью, за которой можно было спрятать лицо, защититься от ядовитых газов или пуль. Но у этой маски цель устрашать. За ней прячется лишь гнев и ненависть к тому, кто осмелился на неё взглянуть.
+  suffix: ST, T3, Custom
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/skullmasksera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/skullmasksera.rsi
+  - type: Tag
+    tags:
+      - BlockMask
+  - type: STWeight
+    self: 2.5
+  - type: ToggleableClothing
+    slot: head
+    requiredSlot: mask
+    clothingPrototype: STClothingHeadHelmetSerafimSkull
+
+- type: entity
+  parent: STClothingHeadHelmetSerafim
+  id: STClothingHeadHelmetSerafimSkull
+  components:
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 4
+        Piercing: 5
+        Psy: 1
+      coefficients:
+        Slash: 0.8
+        Blunt: 0.8
+        Psy: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+  - type: Reflect
+    reflectProb: 0.12
+    spread: 360
+    reflects:
+      - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: PersonalDamage
+    interval: 1
+    damage:
+      types:
+        Psy: -0.25
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_skull.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_skull.rsi

@@ -14,13 +14,13 @@ public sealed class STAnomalyTipsSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<STAnomalyTipsViewingComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<STAnomalyTipsViewingComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<STAnomalyTipsViewingComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<STAnomalyTipsViewingComponent, PlayerAttachedEvent>(OnAttached);
         SubscribeLocalEvent<STAnomalyTipsViewingComponent, PlayerDetachedEvent>(OnDetached);
     }
 
-    private void OnStartup(Entity<STAnomalyTipsViewingComponent> entity, ref ComponentStartup args)
+    private void OnInit(Entity<STAnomalyTipsViewingComponent> entity, ref ComponentInit args)
     {
         if (_player.LocalEntity is null)
             return;

@@ -168,6 +168,8 @@
     - type: AccessReader
       access: [["Freedom"]]
 
+# Чистому небу
+
 - type: entity
   id: HermoDverTypeOneCNClosed
   name: гермодверь
@@ -177,6 +179,68 @@
   components:
     - type: AccessReader
       access: [["CN"]]
+
+- type: entity
+  id: WoodRedDoorCNClosed
+  name: красная деревянная дверь
+  parent: WoodRedDoorFallout
+  description: Деревянная дверь, окрашена в красный цвет. Открывается быстрее обычной двери, с надёжным замком.
+  suffix: ST, mapping, ЧН
+  components:
+  - type: AccessReader
+    access: [["CN"]]
+
+- type: entity
+  id: MetalRedDoorFalloutCNClosed
+  name: красная стальная дверь
+  parent: MetalRedDoorFallout
+  description: Стальная дверь с надёжным замком. Окрашена в красный цвет.
+  suffix: ST, mapping, ЧН
+  components:
+  - type: AccessReader
+    access: [["CN"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutCNClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, ЧН
+  components:
+  - type: AccessReader
+    access: [["CN"]]
+
+- type: entity
+  id: WoodDoorFalloutCN
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, ЧН
+  components:
+  - type: AccessReader
+    access: [["CN"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutCNClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, ЧН
+  components:
+  - type: AccessReader
+    access: [["CN"]]
+
+- type: entity
+  id: MetalAltDoorFalloutCNClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, ЧН
+  components:
+    - type: AccessReader
+      access: [["CN"]]
+
+# Ренегату
 
 - type: entity
   id: MetalAltDoorFalloutReneClosed
