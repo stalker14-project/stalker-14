@@ -15,3 +15,5 @@ ent-STWeaponRifleA545Dolg = A-545 "Pledge"
     .desc = A rare assault rifle modified and carried by the elites of the Duty faction.
 ent-STWeaponRifleAKS74USERAPH = Martyr
     .desc = AKs and AKSs beyond repair bring new life through Seraphim Brotherhood technicians, turning into Martyr weapons. Unreliable, inaccurate, inefficient—but still used by Suicide Seraphim in their final battle for their God.
+ent-STWeaponRifleSquall = Squall
+    .desc = An experimental high-rate machine gun in a bullpup configuration.

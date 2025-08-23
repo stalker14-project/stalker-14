@@ -48,3 +48,5 @@ ent-ClothingOuterJacketSera = 'Follower' Jacket
 ent-ClothingOuterJacketStalkerWhite = White Stalker Jacket
     .desc = Normal clothing of a novice stalker. It does not save the wearer from either a bullet or anomalies, but it is comfortable to wear.
 ent-ClothingHeadHatHoodJacketStalkerWhite = hood
+ent-ClothingJacketSci = jacket
+ent-ClothingOuterJacketSeraHatHood = { ent-ClothingJacketSci }

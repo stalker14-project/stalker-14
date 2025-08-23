@@ -34,3 +34,5 @@ ent-P90Mag = P90 9x19 magazine (50)
     .desc = 9x19mm magazine for the P90. Bullet capacity 50. They sell empty.
 ent-MP5Mag50 = MP-5 Magazine (50)
     .desc = MP-5 9x19 magazine. Bullet capacity 50. They sell empty.
+ent-LP08Drum = Luger drum (32)
+    .desc = A drum magazine for the Luger. Capacity: 32 rounds. Sold empty.

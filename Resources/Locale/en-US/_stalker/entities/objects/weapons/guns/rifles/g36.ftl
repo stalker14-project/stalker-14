@@ -4,3 +4,5 @@ ent-STWeaponRifleG36Covenant = HK G-36 "Prophet"
     .desc = Custom G-36 with Covenant markings. Distinctive rifle of Zone fanatics, repainted in ominous colors. Rumored to be loaded with "blessed" ammunition.
 ent-STWeaponRifleAUG = AUG
     .desc = Australian assault rifle with integrated scope.
+ent-STWeaponRifleG36Alt = HK G-36
+    .desc = An assault rifle of German manufacture, which is a first-class example of a modern weapon - light, reliable and ergonomic.
