@@ -17,7 +17,7 @@
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/VSS/base.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/vss_shot.ogg
+      path: /Audio/_Stalker/Effects/Guns/n_vintorez_shot.ogg
       volume: -10
     minAngle: 50
     maxAngle: 85
@@ -38,12 +38,6 @@
         whitelist:
           tags:
           - Magazine939
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleSniperSight
       gun_chamber:
         name: Chamber
         startingItem:
@@ -58,12 +52,15 @@
       gun_module_scope: !type:ContainerSlot
   - type: PullDoAfter
     pullTime: 1.5
+  - type: Scope
+    zoom: 1.2
+    offset: 6
 
 - type: entity
   parent: STBaseWeaponSniperVSS
   id: STWeaponSniperVSS
   name: VSS Vintorez
-  description: Special Sniper Rifle chambered in the rare but devastating 9x39mm caliber. Comes equipped with medium-range optics and integrated suppressor.
+  description: «Special Sniper Rifle» is designed for silent and flameless sniper shooting during special operations when it is necessary to keep the shooter's position secret. Its ammunition provides high armor-piercing and stopping effects; in addition, this weapon is equipped with an integrated silencer and optics. Despite the small-capacity magazine, it is highly valued by stalkers.
 
 - type: entity
   parent: STBaseWeaponSniperVSS
