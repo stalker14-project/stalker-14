@@ -6,11 +6,11 @@
   - type: STWeight
     self: 4
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/fn-f2000.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/fn-f2000.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/f2000.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/fn-f2000.rsi
   - type: Gun
     fireRate: 12
     soundGunshot:
@@ -31,18 +31,6 @@
         whitelist:
           tags:
           - Magazine556
-      gun_module_muzzle:
-        name: Muzzle
-        priority: 3
-        whitelist:
-          tags:
-          - STWeaponModuleRifleSilencerNato
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeNato
       gun_chamber:
         name: Chamber
         startingItem:
@@ -50,9 +38,12 @@
         whitelist:
           tags:
           - STCartridge556
+  - type: Scope
+    zoom: 1.2
+    offset: 6
 
 - type: entity
   parent: STBaseWeaponRifleF2000
   id: STWeaponRifleF2000
-  name:  FN F2000 "Tourist"
-  description: Belgian bullpup with integrated optic sight. A rare sight in the Zone - usually brought by western mercs or scientists. High-maintenance but lethal.
+  name:  FN-F2000
+  description: This futuristic-looking weapon is a serially produced automatic grenade launcher system of modular design. It is equipped with a 40-mm grenade launcher and a computerized sight-fire control module. Despite its external bulkiness, it is highly ergonomic, easy to fire in all modes and highly reliable.

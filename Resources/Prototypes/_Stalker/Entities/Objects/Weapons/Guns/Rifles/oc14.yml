@@ -14,7 +14,7 @@
   - type: Gun
     fireRate: 6
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/groza_shot.ogg
+      path: /Audio/_Stalker/Effects/Guns/n_groza_shot.ogg
       params:
           volume: -2
     minAngle: 40
@@ -38,18 +38,6 @@
         whitelist:
           tags:
           - Magazine545
-      gun_module_muzzle:
-        name: Muzzle
-        priority: 3
-        whitelist:
-          tags:
-          - STWeaponModuleRifleSilencerRu
-      gun_module_scope:
-        name: Scope
-        priority: 2
-        whitelist:
-          tags:
-          - STWeaponModuleRifleScopeRu
       gun_chamber:
         name: Chamber
         startingItem: STCartridge545FMJ
@@ -63,5 +51,21 @@
 - type: entity
   parent: STBaseWeaponRifleOC14
   id: STWeaponRifleOC14
-  name: OC-14 "Groza"
-  description: Russian bullpup assault rifle chambered in 5.45x39mm. Valued in the Zone for compactness and firepower. Primary weapon of many veteran stalkers.
+  name: OC-14 «Groza»
+  description: The automatic grenade launcher system is a very successful variant of an assault rifle in the Zone - compact, reliable, and at the same time universal and powerful. Military stalkers really like the «Groza».
+
+- type: entity
+  parent: STBaseWeaponRifleOC14
+  id: STWeaponRifleOC14Alt
+  name: OC-14 «Groza»
+  description: An assault rifle-grenade launcher system, 70% unified with AK-type assault rifles (the main differences are the 9 x 39 mm caliber, the bullpup layout, and greater opportunities for modernization). Designed to arm rapid response units. Highly valued by the military and stalkers for its ability to reliably hit an enemy protected by a bulletproof vest or located in cover.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/groza-alt.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/groza-alt.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/groza-alt.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/groza_shoot.ogg
