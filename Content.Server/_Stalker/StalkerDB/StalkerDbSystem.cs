@@ -33,11 +33,6 @@ public sealed class StalkerDbSystem : EntitySystem
       "ClassType": "SimpleItemStalker",
       "PrototypeName": "StalkerArtefactHunterCrate",
       "CountVendingMachine": 1
-    },
-    {
-      "ClassType": "SimpleItemStalker",
-      "PrototypeName": "StalkerBasedCrate",
-      "CountVendingMachine": 1
     }
   ]
 }
