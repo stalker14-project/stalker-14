@@ -4,3 +4,5 @@ ent-BasePPSHMag = PPSh magazine (35)
     .desc = PPSh-41 magazine. Bullet capacity 35. They sell empty.
 ent-PPSHDrum = PPSH drum (71)
     .desc = Drum for PPSh-41. Bullet capacity 71. They sell empty.
+ent-BasePPSMag = PPS-43 magazine (35)
+    .desc = PPS-43 magazine. Bullet capacity 35. They sell empty.
