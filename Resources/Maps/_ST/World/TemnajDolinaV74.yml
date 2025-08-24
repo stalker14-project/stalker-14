@@ -64693,7 +64693,7 @@ entities:
       pos: -6.5,41.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -92497.625
+      secondsUntilStateChange: -92656.664
       state: Opening
   - uid: 4566
     components:
@@ -64708,7 +64708,7 @@ entities:
       pos: 28.5,134.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -92439.41
+      secondsUntilStateChange: -92598.445
       state: Opening
 - proto: MilitaryDoor2
   entities:
@@ -87103,19 +87103,26 @@ entities:
       parent: 1
 - proto: WarpPoint
   entities:
-  - uid: 8849
+  - uid: 7160
     components:
+    - type: MetaData
+      name: Dark Valley - Central
     - type: Transform
       pos: -0.5,-0.5
       parent: 1
-    - type: WarpPoint
-      location: Темная долина
-  - uid: 8850
+  - uid: 7161
     components:
     - type: MetaData
-      name: Тёмная долина -> Свиноферма
+      name: Dark Valley - Factory
     - type: Transform
-      pos: -23.5,-34.5
+      pos: -12.5,74.5
+      parent: 1
+  - uid: 7162
+    components:
+    - type: MetaData
+      name: Dark Valley - Gas Station
+    - type: Transform
+      pos: 32.5,74.5
       parent: 1
   - uid: 8851
     components:
@@ -87123,20 +87130,6 @@ entities:
       name: Freedom Base
     - type: Transform
       pos: 31.5,19.5
-      parent: 1
-  - uid: 8852
-    components:
-    - type: MetaData
-      name: Тёмная долина -> Завод
-    - type: Transform
-      pos: -12.5,74.5
-      parent: 1
-  - uid: 8853
-    components:
-    - type: MetaData
-      name: Тёмная долина -> Заправка
-    - type: Transform
-      pos: 32.5,74.5
       parent: 1
 - proto: WaterCooler
   entities:
@@ -87165,7 +87158,7 @@ entities:
       pos: 41.5,22.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -16099.767
+      secondsUntilStateChange: -16258.805
       state: Opening
   - uid: 8858
     components:
@@ -88993,7 +88986,7 @@ entities:
       pos: 44.5,11.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -14894.301
+      secondsUntilStateChange: -15053.339
       state: Opening
   - uid: 9188
     components:
