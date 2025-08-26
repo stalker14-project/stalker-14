@@ -52,3 +52,131 @@
   components:
     - type: BallisticAmmoProvider
       proto: null
+
+
+- type: entity
+  id: BaseTommyGunMag
+  name: магазин ПП Томпсона (40)
+  description: Магазин для "Томми гана". Вместимость пуль 40. Продают пустым.
+  parent: BaseItem
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 0.6
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/vityaz.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+      - MagazineTommyGun
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    capacity: 40
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,0,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: TommyGunDrum
+  name: барабан ПП Томпсона (60)
+  description: Барабан для "Томми гана". Вместимость пуль 60. Продают пустым.
+  parent: BaseTommyGunMag
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/tommygun_drum.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    capacity: 60
+
+- type: entity
+  id: TommyGunDrum2
+  name: барабан ПП Томпсона оригинальной конструкции (60)
+  description: Барабан для "Томми гана". Вместимость пуль 60. Продают пустым.
+  parent: BaseTommyGunMag
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/tommygun_drum2.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    capacity: 60
+
+- type: entity
+  id: TommyGunBigDrum
+  name: барабан ПП Томпсона (100)
+  description: Огромный и редкий Барабан для "Томми гана". Вместимость пуль 100. Продают пустым.
+  parent: BaseTommyGunMag
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/tommygun_big_drum.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    capacity: 100
