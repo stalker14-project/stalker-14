@@ -23,8 +23,6 @@ public sealed partial class PuddleSystem
     [ValidatePrototypeId<ReagentPrototype>]
     private const string Cognac = "Cognac";
     [ValidatePrototypeId<ReagentPrototype>]
-    private const string Cola = "Cola";
-    [ValidatePrototypeId<ReagentPrototype>]
     private const string Grenadine = "Grenadine";
     [ValidatePrototypeId<ReagentPrototype>]
     private const string Gin = "Gin";
@@ -116,7 +114,7 @@ public sealed partial class PuddleSystem
     private const string STNavoz = "STNavoz";
 
 
-    private static string[] evaporationReagents = new[] {Absinthe, BlueCuracao, Champagne, Cognac, Cola,
+    private static string[] evaporationReagents = new[] {Absinthe, BlueCuracao, Champagne, Cognac,
                                                         Grenadine, Gin, Gildlager, CoffeeLiqueur, MelonLiquor,
                                                         Patron, PoisonWine, Rum, SpaceMountainWind, SpaceUp, Tequila,
                                                         Vermouth, Vodka, Whiskey, Wine, Beer, Ale,
