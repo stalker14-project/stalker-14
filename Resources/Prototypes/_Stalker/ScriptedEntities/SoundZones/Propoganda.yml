@@ -1,12 +1,3 @@
-- type: soundCollection
-  id: StartCollideDolgPropoganda
-  files:
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_1.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_2.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_3.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_4.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Dolg/Mega_duty_propaganda_5.ogg
-
 - type: entity
   id: StalkerDolgPropogandaTrigger
   parent: MarkerBase
@@ -37,17 +28,8 @@
     - type: StalkerSoundAndTextTrigger
       sound:
         collection: StartCollideDolgPropoganda
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 60
       chance: 0.5
-
-
-- type: soundCollection
-  id: StartCollideBarPropoganda
-  files:
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/bar/Megaphone_barman_1.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/bar/Megaphone_barman_2.ogg
 
 - type: entity
   id: StalkerBarPropogandaTrigger
@@ -70,17 +52,8 @@
     - type: StalkerSoundAndTextTrigger
       sound:
         collection: StartCollideBarPropoganda
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 60
       chance: 0.5
-
-
-- type: soundCollection
-  id: StartCollideOksopPropoganda
-  files:
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Oksop/Megafon_3.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Oksop/Megafon_4.ogg
 
 - type: entity
   id: StalkerOksopPropogandaTrigger
@@ -103,22 +76,8 @@
     - type: StalkerSoundAndTextTrigger
       sound:
         collection: StartCollideOksopPropoganda
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 60
       chance: 0.5
-
-
-- type: soundCollection
-  id: StartCollideSvobodaPropoganda
-  files:
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_1.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_2.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_3.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_4.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_5.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_6.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Propoganda/Svoboda/Val_freedom_megafon_7.ogg
 
 - type: entity
   id: StalkerSvobodaPropogandaTrigger
@@ -141,7 +100,5 @@
     - type: StalkerSoundAndTextTrigger
       sound:
         collection: StartCollideSvobodaPropoganda
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 60
       chance: 0.5

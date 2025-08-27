@@ -55,7 +55,7 @@ public sealed class StalkerSoundAndTextTriggerSystem : EntitySystem
 
         _audioSystem.PlayPvs(component.Sound, uid);
 
-        if (component.HaveText == true)
+        if (component.Text != null)
         {
             var message = component.Text;
             var mapCoords = _transformSystem.GetMapCoordinates(uid);

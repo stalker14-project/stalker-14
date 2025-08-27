@@ -6,31 +6,24 @@ namespace Content.Server._Stalker.SoundAndTextTrigger;
 [RegisterComponent]
 public sealed partial class StalkerSoundAndTextTriggerComponent : Component
 {
-    public static readonly AudioParams DefaultParams = AudioParams.Default.WithVolume(-2f);
 
     [DataField]
     public bool AllowAll = true;
 
-    [AutoNetworkedField]
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier? Sound;
 
-    [DataField]
-    public bool HaveText = false;
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField]
-    public string Text;
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public string? Text = null;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan CooldownTime = TimeSpan.FromSeconds(0);
 
     public TimeSpan LastUsed = new TimeSpan();
 
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float Chance = 1;
 
-    [DataField, AutoNetworkedField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public SoundSpecifier? SoundExit;
 }

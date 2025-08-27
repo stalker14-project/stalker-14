@@ -26,8 +26,6 @@
       allowAll: false
       sound:
         path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Duty_warning1.ogg
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 180
     - type: AccessReader
       access: [["Stalker"], ["Neutral"]]
@@ -54,17 +52,9 @@
       allowAll: false
       sound:
         path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Megaphone_duty_alarm.ogg
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 180
     - type: AccessReader
       access: [["Monolith"], ["Freedom"], ["Renegat"], ["Military"], ["MilitaryStalker"], ["Bandit"]]
-
-- type: soundCollection
-  id: StartCollideSciDetectStalker
-  files:
-  - /Audio/_Stalker/SoundTriggers/bands/Detect/Sci/Jup_b41_bunker_megaphone_1.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Detect/Sci/Jup_b41_bunker_megaphone_2.ogg
 
 - type: entity
   id: StalkerSciDetectStalkerTrigger
@@ -88,17 +78,9 @@
       allowAll: false
       sound:
         collection: StartCollideSciDetectStalker
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 180
     - type: AccessReader
       access: [["Stalker"], ["Neutral"]]
-
-- type: soundCollection
-  id: StartCollideOksopDetection
-  files:
-  - /Audio/_Stalker/SoundTriggers/bands/Detect/Oksop/Megafon_1.ogg
-  - /Audio/_Stalker/SoundTriggers/bands/Detect/Oksop/Megafon_2.ogg
 
 - type: entity
   id: StalkerOKSOPDetectionEnemyTrigger
@@ -122,8 +104,6 @@
       allowAll: false
       sound:
         collection: StartCollideOksopDetection
-      haveText: false
-      text: "Допустим сработает"
       cooldownTime: 180
     - type: AccessReader
       access: [["Freedom"], ["Renegat"], ["Stalker"], ["Neutral"], ["Bandit"], ["Dolg"]]
