@@ -525,3 +525,47 @@
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
       state: icon
+
+########## СЕРАФИМЫ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSeraphim
+  name: раздатчик серафимов
+  description: Содержит базовое снаряжение для выживания в условиях севера Зоны.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: SeraphimInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+      normalState: normal-unshaded
+    - type: Sprite
+      sprite: Structures/Machines/VendingMachines/secdrobe.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+          shader: unshaded
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["MilitaryOfficer"]]
+
+- type: vendingMachineInventory
+  id: SeraphimInventory
+  startingInventory:
+    STWeaponRifleAKS74USERAPH: 3
+    545Mag30: 18
+    MedkitAI2: 6
+    MedkitMilitary: 3
+    ClothingBackpackTacticSera: 3
+    ClothingHeadHelmetInfantrySera: 3
+    ClothingOuterArmorZaryaSeraRuined: 3
+    STGauze: 6
+    545PCBox: 9
+    545HPBox: 9
