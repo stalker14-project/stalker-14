@@ -1738,6 +1738,21 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
+        public async Task SetAllLoginItems(string login, string jsonItems)
+        {
+            await using var db = await GetDb();
+
+            // getting ALL repositories of a player
+            var records = db.DbContext.Stalkers.Where(s => s.Login!.EndsWith(login));
+
+            foreach (var record in records)
+            {
+                record.Storage = jsonItems;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
         public async Task<string?> GetLoginItems(string login)
         {
             await using var db = await GetDb();

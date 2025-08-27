@@ -230,8 +230,28 @@
     - type: Bands
       band: Stalker
       bandIcon: cn
+      altBand: stalker
     - type: Loadout
       prototypes: [ StalkerClearSkyGear ]
+
+- type: entity
+  name: кукла член проекта (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerProject
+  components:
+  - type: Access
+    tags:
+    - Project
+    - ProjectPawn
+    - Stalker
+  - type: Bands
+    band: Stalker
+    bandIcon: project-1
+    altBand: stalker
+    canChange: true
+  - type: Loadout
+    prototypes: [ ProjectPawnGear ]
 
 - type: entity
   name: кукла циркач (переименуй меня)
@@ -260,6 +280,7 @@
     - type: Bands
       band: Stalker
       bandIcon: merc
+      altBand: stalker
     - type: Loadout
       prototypes: [ StalkerMercenaryGear ]
 
