@@ -1,0 +1,129 @@
+- type: entity
+  id: StalkerDolgDetectionStalkerTrigger
+  parent: MarkerBase
+  name: Долг Детекшн Сталкеров
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 4
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Duty_warning1.ogg
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Stalker"], ["Neutral"]]
+
+- type: entity
+  id: StalkerDolgDetectionEnemyTrigger
+  parent: StalkerDolgDetectionStalkerTrigger
+  name: Долг Детекшн Врагов
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 7
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Megaphone_duty_alarm.ogg
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Monolith"], ["Freedom"], ["Renegat"], ["Military"], ["MilitaryStalker"], ["Bandit"]]
+
+- type: soundCollection
+  id: StartCollideSciDetectStalker
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Sci/Jup_b41_bunker_megaphone_1.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Sci/Jup_b41_bunker_megaphone_2.ogg
+
+- type: entity
+  id: StalkerSciDetectStalkerTrigger
+  parent: StalkerDolgDetectionStalkerTrigger
+  name: Учёные Детекшн Сталкеров
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 3
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        collection: StartCollideSciDetectStalker
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Stalker"], ["Neutral"]]
+
+- type: soundCollection
+  id: StartCollideOksopDetection
+  files:
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Oksop/Megafon_1.ogg
+  - /Audio/_Stalker/SoundTriggers/bands/Detect/Oksop/Megafon_2.ogg
+
+- type: entity
+  id: StalkerOKSOPDetectionEnemyTrigger
+  parent: StalkerDolgDetectionStalkerTrigger
+  name: ОКСОП Детекшн Врагов
+  description: Make a Sound and Text.
+  suffix: Stalker
+  components:
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 7
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: StalkerSoundAndTextTrigger
+      allowAll: false
+      sound:
+        collection: StartCollideOksopDetection
+      haveText: false
+      text: "Допустим сработает"
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Freedom"], ["Renegat"], ["Stalker"], ["Neutral"], ["Bandit"], ["Dolg"]]

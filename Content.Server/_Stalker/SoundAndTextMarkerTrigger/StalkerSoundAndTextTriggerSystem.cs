@@ -26,7 +26,7 @@ public sealed class StalkerSoundAndTextTriggerSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
-    [Robust.Shared.IoC.Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
 
     public override void Initialize()
@@ -44,7 +44,7 @@ public sealed class StalkerSoundAndTextTriggerSystem : EntitySystem
                 return;
         }
 
-        if (_timing.CurTime < TimeSpan.FromSeconds(component.CooldownTime) + component.LastUsed)
+        if (_timing.CurTime < component.CooldownTime + component.LastUsed)
             return;
 
         if (!_random.Prob(Math.Clamp(component.Chance, 0f, 1f)))
@@ -60,7 +60,15 @@ public sealed class StalkerSoundAndTextTriggerSystem : EntitySystem
             var message = component.Text;
             var mapCoords = _transformSystem.GetMapCoordinates(uid);
             var filter = Filter.Empty().AddInRange(mapCoords, ChatSystem.VoiceRange);
-            _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, message, message, uid, false, true, colorOverride: Color.Gold);
+            _chatManager.ChatMessageToManyFiltered(
+                filter,
+                ChatChannel.Emotes,
+                message,
+                message,
+                uid,
+                false,
+                true,
+                colorOverride: Color.Gold);
         }
         component.LastUsed = _timing.CurTime;
     }
@@ -73,11 +81,11 @@ public sealed class StalkerSoundAndTextTriggerSystem : EntitySystem
                 return;
         }
 
-        if (_timing.CurTime < TimeSpan.FromSeconds(component.CooldownTime) + component.LastUsed)
+        if (_timing.CurTime < component.CooldownTime + component.LastUsed)
             return;
 
-        if (!_random.Prob(Math.Clamp(component.Chance, 0f, 1f)))
-            return;
+            if (!_random.Prob(Math.Clamp(component.Chance, 0f, 1f)))
+                return;
 
         if (component.SoundExit == null)
             return;

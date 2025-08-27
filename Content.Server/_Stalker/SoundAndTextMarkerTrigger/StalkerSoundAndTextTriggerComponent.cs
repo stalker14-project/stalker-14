@@ -13,7 +13,7 @@ public sealed partial class StalkerSoundAndTextTriggerComponent : Component
 
     [AutoNetworkedField]
     [ViewVariables(VVAccess.ReadWrite)]
-    [DataField(required: true)]
+    [DataField]
     public SoundSpecifier? Sound;
 
     [DataField]
@@ -23,8 +23,8 @@ public sealed partial class StalkerSoundAndTextTriggerComponent : Component
     [DataField]
     public string Text;
 
-    [DataField]
-    public float CooldownTime;
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan CooldownTime = TimeSpan.FromSeconds(0);
 
     public TimeSpan LastUsed = new TimeSpan();
 
