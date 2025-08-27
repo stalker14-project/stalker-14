@@ -3571,6 +3571,7 @@
     sound:
       path: /Audio/_Stalker/Music/Radio/stalker_combat_theme2.ogg
 
+
 #DONATE SPONSOR RADIO
 
 - type: entity
@@ -3596,3 +3597,43 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/serafim_embient.ogg
+
+
+- type: entity
+  id: RadioStalkerJukebox
+  parent: BaseStructure
+  name: радио
+  suffix: Stalker, переключаемое
+  description: Первая беспроводная связь. Носителем сигнала являются радиоволны, распространяющиеся в пространстве.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/radio.rsi
+    state: base
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.08,-0.08,0.08,0.08"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        density: 200
+  - type: Anchorable
+  - type: Appearance
+  - type: Jukebox
+    onState: base
+    offState: base
+    selectState: base
+  - type: ActivatableUI
+    key: enum.JukeboxUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.JukeboxUiKey.Key:
+        type: JukeboxBoundUserInterface
