@@ -1237,7 +1237,7 @@
 
 - type: entity
   parent: MapTeleportBase
-  id: RedForest-Limansk1
+  id: RedForest-Limansk
   name: Рыжий Лес - Лиманск
   components:
   - type: NewMapTeleport
@@ -1249,8 +1249,32 @@
 
 - type: entity
   parent: MapTeleportBase
+  id: Limansk-RedForest
+  name: Лиманск - Рыжий Лес
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk1
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
   id: RedForest-Limansk2
-  name: Рыжий Лес - Лиманск 2
+  name: Рыжий Лес - Лиманск
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk2
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Limansk-RedForest2
+  name: Лиманск - Рыжий Лес 2
   components:
   - type: NewMapTeleport
     portalName: RedForest-Limansk2
