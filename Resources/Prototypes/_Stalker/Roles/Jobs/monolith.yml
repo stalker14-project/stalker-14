@@ -34,9 +34,6 @@
       - type: Thirst
         baseDecayRate: 0
       - type: PersonalDamageBlock
-      - type: Damageable
-        damageContainer: Biological
-        damageModifierSet: STPlayerMonolithModifierSet
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -48,11 +45,11 @@
 - type: startingGear
   id: MonolithGear
   equipment:
+    ears: STClothingChip
     id: MonolithPDA
     torso: ClothingTorsoSweaterStalkerGreen
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesNovice
-    back: ClothingBackpackDuffelBlackStalker
 - type: stBand
   id: STMonolithBand
   name: Monolith
