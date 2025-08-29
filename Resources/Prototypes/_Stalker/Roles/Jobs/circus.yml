@@ -1,0 +1,49 @@
+- type: job
+  id: StalkerClown
+  name: Циркач
+  icon: clowns
+  description: Защитник хорошего настроения.
+  playTimeTracker: JobStalkerClown
+  whitelisted: true
+  requirements:
+  # - !type:RoleTimeRequirement
+  #   role: JobStalkerClown
+  #   time: 1
+  - !type:SpeciesRequirement
+    species:
+    - Human
+    - Dwarf
+  startingGear: StalkerClownGear
+  supervisors: " Смех продлевает жизнь. Буквально."
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Access
+      tags:
+      - Stalker
+      - Circus
+    - type: Bands
+      band: Stalker
+      bandIcon: clowns
+    - type: BlockTackingHolyItems
+    - type: TeethPull
+      teethProto: ToothStalker
+      pullingItemTag: PliersStalker
+      teethCount: 3
+      initialTeeth: 3
+    - type: ClownScream
+      slot: mask
+      sound: /Audio/_Stalker/Effects/CircusMask.ogg
+      texture:
+        sprite: /Textures/_Stalker/Objects/Clothing/mask/clown_unmask.rsi
+        state: void_head
+
+- type: startingGear
+  id: StalkerClownGear
+  equipment:
+    id: StalkerPDA
+    belt: ClothingBeltStorageWaistbag
+    mask: ClothingMaskClown
+    torso: ClothingTorsoSweaterStalkerGreen
+    legs: ClothingLegsJeansBlue
+    shoes: ClothingShoesBootsWork
