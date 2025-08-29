@@ -11,7 +11,7 @@ public sealed class TrashDeletingSystem : EntitySystem
     [Dependency] private readonly IChatManager _chat = default!;
 
     private TimeSpan _nextTimeUpdate = TimeSpan.Zero;
-    private readonly int _updateTime = 15;
+    private readonly int _updateTime = 5;
 
     public override void Initialize()
     {
@@ -58,14 +58,14 @@ public sealed class TrashDeletingSystem : EntitySystem
 
         if (!_warningIssued && _timing.CurTime >= _nextTimeUpdate - TimeSpan.FromSeconds(30))
         {
-            _chat.DispatchServerAnnouncement("Очистка мусора и пустых схронов произойдет через 30 секунд, предметы на полу могут пропасть!");
+            //_chat.DispatchServerAnnouncement("Очистка мусора и пустых схронов произойдет через 30 секунд, предметы на полу могут пропасть!");
             _warningIssued = true;
         }
 
         if (_timing.CurTime <= _nextTimeUpdate)
             return;
 
-        _chat.DispatchServerAnnouncement("Произошла очистка мусора и пустых схронов, некоторые предметы на полу пропали!");
+        //_chat.DispatchServerAnnouncement("Произошла очистка мусора и пустых схронов, некоторые предметы на полу пропали!");
         RaiseLocalEvent(new RequestClearArenaGridsEvent());
 
         var trashEnts = EntityQueryEnumerator<TrashComponent>();

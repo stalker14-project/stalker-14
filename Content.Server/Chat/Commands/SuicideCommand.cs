@@ -9,7 +9,7 @@ using Robust.Shared.Enums;
 
 namespace Content.Server.Chat.Commands
 {
-    [AdminCommand(AdminFlags.Admin)] // stalker-changes
+    [AnyCommand] // arena-changes
     internal sealed class SuicideCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _e = default!;

@@ -163,7 +163,7 @@ namespace Content.Client.Lobby.UI
             {
                 if (Profile != null && !Profile.Changeable)
                     return;
-                SetChangeable(false); // stalker-changes
+                SetChangeable(true); // stalker-changes
                 Save?.Invoke();
             };
 

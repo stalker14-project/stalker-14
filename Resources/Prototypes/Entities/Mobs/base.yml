@@ -59,14 +59,19 @@
   components:
   - type: Damageable
     damageContainer: Biological
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
   - type: Destructible
     thresholds:
     - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 400
+        !type:DamageTrigger # arena-changes-start
+        damage: 100
       behaviors:
-      - !type:GibBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Stalker/ArenaKillSound.ogg # arena-changes-end
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
@@ -85,11 +90,6 @@
   - type: RadiationReceiver
   - type: Stamina
   - type: MobState
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      100: Critical
-      200: Dead
   - type: MobStateActions
     actions:
       Critical:

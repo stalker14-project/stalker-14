@@ -307,7 +307,7 @@ namespace Content.Shared.Preferences
         // stalker-changes-start
         public HumanoidCharacterProfile WithCharacterChangeable(bool changeable)
         {
-            return new(this) { Changeable = changeable };
+            return new(this) { Changeable = true }; // arena-changes
         }
         // stalker-changes-end
         public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)
