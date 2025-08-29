@@ -1,0 +1,22 @@
+- type: entity
+  parent: STClothingMaskGas
+  id: STClothingMaskGasPPM88
+  name: Противогаз ППM88
+  description: Противогаз состоит из лицевой части с панорамным стеклом, фильтрующе-поглощающей коробки и соединительной трубки, разработан в Российской Федерации
+  suffix: ST, Rad
+  components:
+  - type: Tag
+    tags:
+      - BlockMask
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/ppm_88.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/ppm_88.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.85
+        Caustic: 0.82
+  - type: HideLayerClothing
+    slots:
+    - Hair

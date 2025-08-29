@@ -1,0 +1,39 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun # Не знаю зачем вы заменили базу в прошлый раз, но это ломает отображение спрайтов. 
+  id: STBaseWeaponShotgunCompact
+  components:
+  - type: STWeight
+    self: 1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/pistol_shotgun.rsi
+    scale: 0.7, 0.7
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Gun
+    minAngle: 50
+    maxAngle: 100
+    angleIncrease: 20
+    angleDecay: 100
+    fireRate: 2
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: BallisticAmmoProvider
+    capacity: 1
+    whitelist:
+      tags:
+      - ShellShotgun
+      - CartridgeShotgunBullet
+      - CartridgeShotgunBulletRIP
+  - type: PullDoAfter
+    pullTime: 0.5
+
+- type: entity
+  parent: STBaseWeaponShotgunCompact
+  id: STWeaponShotgunCompact
+  name: Zipgun 'Stalker's Friend'
+  description: Crudely crafted single-shot shotgun assembled from scrap parts. Primitive but potentially life-saving in skilled hands. Valued in the Zone for its compact size and simplicity.

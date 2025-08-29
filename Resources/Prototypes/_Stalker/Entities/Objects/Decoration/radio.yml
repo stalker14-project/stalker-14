@@ -32,6 +32,17 @@
     sound:
       path: /Audio/_Stalker/Music/Radio/wolf_hunt.ogg
 
+- type: entity
+  parent: RadioStalkerPlayer
+  id: RadioBandPlayer
+  name: кассетный плеер Бандитов
+  suffix: ST, переносной
+  description: Кассетный плеер, представленный в 1983 году и выполненный в ультракомпактном корпусе, который по габаритам меньше даже самой аудиокассеты. Это стало возможным за счёт раздвижной конструкции, что и позволяло установить внутрь кассету.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/mp3playerband.rsi
+    state: base
+
 # КАССЕТЫ
 
 - type: entity
@@ -271,8 +282,8 @@
 - type: entity
   parent: BaseItem
   id: CasseteFourteenRadio
-  suffix: Stalker, кассета (Белая ночь)
-  name: кассета №14 "Белая ночь"
+  suffix: Stalker, кассета (Белые розы)
+  name: кассета №14 "Белые розы"
   description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись.
   components:
   - type: STWeight
@@ -848,6 +859,24 @@
 
 - type: entity
   parent: BaseItem
+  id: CasseteSixty0neDonateRadio
+  suffix: Stalker, кассета (The Rolling Stones - Mother's Little Helper)
+  name: кассета "The Rolling Stones - Mother's Little Helper"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для dikay_sove
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/TRS-MLH.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
   id: CasseteThirtyDonateRadio
   suffix: Stalker, кассета (2nd Warning)
   name: кассета "2nd Warning"
@@ -1332,6 +1361,60 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c5
 
+- type: entity
+  parent: BaseItem
+  id: CasseteFiftyEightDonateRadio
+  suffix: Stalker, кассета, (nx chvxs - KharmaGuess)
+  name: кассета "nx chvxs - KharmaGuess"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Ret4.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/NXCHVXS.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CasseteFiftyNineDonateRadio
+  suffix: Stalker, кассета, (Aramis - Futuro)
+  name: кассета "Aramis - Futuro"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Ret4.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/FuturoAramis.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CasseteSixtyDonateRadio
+  suffix: Stalker, кассета, (дурной вкус - пластинки)
+  name: кассета "дурной вкус - пластинки"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Ret4.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/Plastinki.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
 # Groups Donate Cassets
 
 # Bandits
@@ -1512,6 +1595,24 @@
   - type: Tag
     tags:
       - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c7
+
+- type: entity
+  parent: BaseItem
+  id: CasseteFiftyEightRadio
+  suffix: Stalker, кассета (SHAMAN - Я русский)
+  name: кассета "SHAMAN - Я русский"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для sandmita
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/yarusski.ogg
+  - type: Tag
+    tags:
+    - Cassete
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c7
@@ -1914,6 +2015,60 @@
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c5
 
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyThreeRadio
+  suffix: Stalker, кассета (Силуэты)
+  name: кассета "Силуэты"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/SadSvit-silueti.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyFourRadio
+  suffix: Stalker, кассета (Запомню)
+  name: кассета "Запомню"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/ulica-vostok-zapomnyu.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CassetePremiumTwentyFiveRadio
+  suffix: Stalker, кассета (Low Roar - "I'll Keep Coming")
+  name: кассета "Low Roar - I'll Keep Coming"
+  description: Старая потрёпанная кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется неразборчивая надпись. Сделано на заказ для Neko-Gekko.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Donate/Low-Roar-I_ll-Keep-Coming.ogg
+  - type: Tag
+    tags:
+      - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
 # Contributor
 - type: entity
   parent: BaseItem
@@ -1961,9 +2116,6 @@
         - id: CasseteAction1ContributorRadio
         - id: CasseteAfterDarkContributorRadio
         - id: CasseteAlliWantIsYouContributorRadio
-        - id: CasseteArstotzkaOneContributorRadio
-        - id: CasseteArstotzkaThreeContributorRadio
-        - id: CasseteArstotzkaTwoContributorRadio
         - id: CasseteJusttheTwoofUsAICoverContributorRadio
         - id: CasseteBattotaiContributorRadio
         - id: CasseteCPViolationContributorRadio
@@ -1972,7 +2124,6 @@
         - id: CasseteChinaContributorRadio
         - id: CasseteCounterStrikeContributorRadio
         - id: CasseteEcstacyContributorRadio
-        - id: CasseteErikaContributorRadio
         - id: CasseteFDJContributorRadio
         - id: CasseteFUNKESTRANHOContributorRadio
         - id: CasseteFluxxwaveContributorRadio
@@ -2016,61 +2167,6 @@
         - id: CasseteitaggiahContributorRadio
         - id: CassetevietnamContributorRadio
 
-
-- type: entity
-  parent: BaseItem
-  id: CasseteArstotzkaOneContributorRadio
-  suffix: Stalker, кассета, (Glory to Arstotzka)
-  name: кассета "Glory to Arstotzka"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_1.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteArstotzkaTwoContributorRadio
-  suffix: Stalker, кассета, (Arstotzka Bad Ending)
-  name: кассета "Arstotzka Bad Ending"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_3.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
-- type: entity
-  parent: BaseItem
-  id: CasseteArstotzkaThreeContributorRadio
-  suffix: Stalker, кассета, (Arstotzka Good Ending)
-  name: кассета "Arstotzka Good Ending"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_2.ogg
-  - type: Tag
-    tags:
-      - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteChinaContributorRadio
@@ -2088,7 +2184,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteUSSRContributorRadio
@@ -2106,7 +2201,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteAction1ContributorRadio
@@ -2124,7 +2218,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteGeneralReleaseContributorRadio
@@ -2142,7 +2235,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteGrooveDealersContributorRadio
@@ -2160,7 +2252,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteInTheHouseInAHeartbeatContributorRadio
@@ -2178,7 +2269,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteGambit
@@ -2196,7 +2286,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteAtomicHeartKomarovoContributorRadio
@@ -2214,7 +2303,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteLinkinParkIntheEndContributorRadio
@@ -2268,7 +2356,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteFDJContributorRadio
@@ -2322,7 +2409,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteGimnUSSRContributorRadio
@@ -2484,7 +2570,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteS1keContributorRadio
@@ -2560,8 +2645,8 @@
 - type: entity
   parent: BaseItem
   id: CasseteLoseMyMindInHysteriaContributorRadio
-  suffix: Stalker, кассета, (Funked Up)
-  name: кассета "Funked Up"
+  suffix: Stalker, кассета, (Lose My Mind In Hysteria)
+  name: кассета "Lose My Mind In Hysteria"
   description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
   components:
   - type: STWeight
@@ -2664,7 +2749,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CassetePogasliSvechiContributorRadio
@@ -2682,7 +2766,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteMamaPriyezzhayIMenyaZaberiContributorRadio
@@ -2700,7 +2783,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteGSN1ContributorRadio
@@ -2718,7 +2800,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteGSN2ContributorRadio
@@ -2736,7 +2817,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CasseteGeranContributorRadio
@@ -3060,7 +3140,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
-
 - type: entity
   parent: BaseItem
   id: CassetevietnamContributorRadio
@@ -3078,6 +3157,41 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c6
+- type: entity
+  parent: BaseItem
+  id: CasseteHerzContributorRadio
+  suffix: Stalker, кассета, (Herz)
+  name: кассета "Herz"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+    - type: STWeight
+      self: 0.15
+    - type: Cassete
+      sound: /Audio/_Stalker/Music/Radio/Contributor/Herz.ogg
+    - type: Tag
+      tags:
+        - Cassete
+    - type: Sprite
+      sprite: _Stalker/Objects/Misc/casete.rsi
+      state: c6
+- type: entity
+  parent: BaseItem
+  id: CasseteJewishTailorContributorRadio
+  suffix: Stalker, кассета, (Еврейский портной)
+  name: кассета "Еврейский портной"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+    - type: STWeight
+      self: 0.15
+    - type: Cassete
+      sound: /Audio/_Stalker/Music/Radio/Contributor/JewishTailor.ogg
+    - type: Tag
+      tags:
+        - Cassete
+    - type: Sprite
+      sprite: _Stalker/Objects/Misc/casete.rsi
+      state: c6
+
 # СТАТИЧЕСКОЕ РАДИО
 
 - type: entity
@@ -3456,6 +3570,8 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/Music/Radio/stalker_combat_theme2.ogg
+
+
 #DONATE SPONSOR RADIO
 
 - type: entity
@@ -3481,3 +3597,43 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/serafim_embient.ogg
+
+
+- type: entity
+  id: RadioStalkerJukebox
+  parent: BaseStructure
+  name: радио
+  suffix: Stalker, переключаемое
+  description: Первая беспроводная связь. Носителем сигнала являются радиоволны, распространяющиеся в пространстве.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/radio.rsi
+    state: base
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.08,-0.08,0.08,0.08"
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+        density: 200
+  - type: Anchorable
+  - type: Appearance
+  - type: Jukebox
+    onState: base
+    offState: base
+    selectState: base
+  - type: ActivatableUI
+    key: enum.JukeboxUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.JukeboxUiKey.Key:
+        type: JukeboxBoundUserInterface

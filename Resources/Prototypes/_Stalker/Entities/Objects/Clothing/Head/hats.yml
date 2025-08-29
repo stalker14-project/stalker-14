@@ -3,12 +3,12 @@
   id: ClothingHeadWildHat
   name: wild hat
   description: A hat for true adventure lovers.
-  suffix: Stalker
+  suffix: ST
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/Hats/wild_hat.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/wild_hat.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/Hats/wild_hat.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/wild_hat.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -18,12 +18,12 @@
   id: ClothingHeadWildHatAnomalist
   name: anomalist wild hat
   description: A anomalists hat to jump through gravi.
-  suffix: Stalker, Anomalists
+  suffix: ST
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/Hats/wild_hat_anomalist.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/wild_hat_anomalist.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/Hats/wild_hat_anomalist.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/wild_hat_anomalist.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -32,13 +32,57 @@
   parent: ClothingHeadBase
   id: ClothingHeadPilgrimDoctor
   name: маска с клювом
-  description: необычно выглядящяя шапка паломника
-  suffix: Stalker, Паломники
+  description: Необычно выглядящяя шапка паломника.
+  suffix: ST
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/Hats/pilgrim_hat.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/pilgrim_hat.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/Hats/pilgrim_hat.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/pilgrim_hat.rsi
   - type: Tag
     tags:
     - ClothMade
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadPsyHelm
+  name: psy helmet
+  description: A customized prototype developed by scientists to protect against psi radiation.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/psyhelm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/psyhelm.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Psy: 5
+
+- type: entity
+  parent: ClothingHeadBase
+  id: STClothingHeadTankHelm
+  name: tank helmet
+  description: Just an worn tank helmet. Nothing more.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/tank_helmet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/tank_helmet.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: STClothingHeadUshanka
+  name: ushanka hat
+  description: Just an worn ushanka hat. Nothing more.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/ushanka.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/ushanka.rsi

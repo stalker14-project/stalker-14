@@ -1,0 +1,143 @@
+- type: entity
+  parent: STBaseTrashCache
+  id: STTrashStorageFillT1
+  name: мусор
+  abstract: true
+  suffix: ST, Cache, T1
+  components:
+    - type: InteractionOutline
+    - type: StorageFill
+      contents:
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STBrutepack
+          prob: 0.2
+        - id: STBrutepack
+          prob: 0.2
+        - id: STBrutepack
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: Tourniquet
+          prob: 0.02
+        - id: antiradpill
+          prob: 0.02
+        - id: radioprotectpill
+          prob: 0.02
+        - id: psyblock
+          prob: 0.02
+        - id: MedkitAI2
+          prob: 0.03
+        - id: MedkitMilitary
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.01
+        - id: BaseRadio
+          prob: 0.01
+        - id: HandheldGPSBasic
+          prob: 0.01
+        - id: BoxArtcont
+          prob: 0.005
+        - id: STFlashlightSeclite
+          prob: 0.01
+        - id: STHeadLight
+          prob: 0.01
+        - id: PowerCellHyper
+          prob: 0.02
+        - id: CheapLighter
+          prob: 0.01
+        - id: Matchbox
+          prob: 0.01
+        - id: CigPackMarlboro
+          prob: 0.005
+        - id: CigPackSuka
+          prob: 0.005
+        - id: CigPackKosmos
+          prob: 0.005
+        - id: IngotGold1
+          prob: 0.01
+        - id: IngotSilver1
+          prob: 0.01
+        - id: MaterialDiamond1
+          prob: 0.01
+        - id: DrinkGoldenCup
+          prob: 0.01
+        - id: CraftMaterialGunpowder
+          prob: 0.01
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash1CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 1
+    - type: SpawnOnDespawn
+      prototype: STTrash1CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash2CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 2
+    - type: SpawnOnDespawn
+      prototype: STTrash2CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash3CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 3
+    - type: SpawnOnDespawn
+      prototype: STTrash3CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash4CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 4
+    - type: SpawnOnDespawn
+      prototype: STTrash4CacheT1
+
+- type: entity
+  parent: [STBaseTrashCache, STTrashStorageFillT1]
+  id: STTrash5CacheT1
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/trash.yml
+      state: 5
+    - type: SpawnOnDespawn
+      prototype: STTrash5CacheT1

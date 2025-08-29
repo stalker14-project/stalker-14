@@ -1,0 +1,62 @@
+- type: entity
+  parent: STCartridge
+  id: STCartridge9x39
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - STCartridge939
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+
+- type: entity
+  parent: STCartridge9x39
+  id: STCartridge9x39PSO
+  name: патрон 9x39 ПСО
+  components:
+  - type: CartridgeAmmo
+    proto: STBullet9x39PSO
+
+- type: entity
+  parent: STCartridge9x39
+  id: STCartridge9x39SP6Uch
+  name: патрон 9x39 СП-6УЧ
+  components:
+  - type: CartridgeAmmo
+    proto: STBullet9x39SP6Uch
+
+- type: entity
+  parent: STCartridge9x39
+  id: STCartridge9x39SP5
+  name: патрон 9x39 СП-5
+  components:
+  - type: CartridgeAmmo
+    proto: STBullet9x39SP5
+
+- type: entity
+  parent: STCartridge9x39
+  id: STCartridge9x39PAB9
+  name: патрон 9x39 ПАБ-9
+  components:
+  - type: CartridgeAmmo
+    proto: STBullet9x39PAB9
+
+- type: entity
+  parent: STCartridge9x39
+  id: STCartridge9x39SP6
+  name: патрон 9x39 СП-6
+  components:
+  - type: CartridgeAmmo
+    proto: STBullet9x39SP6
+
+- type: entity
+  parent: STCartridge9x39
+  id: STCartridge9x39AA
+  name: патрон 9x39 БП
+  components:
+  - type: CartridgeAmmo
+    proto: STBullet9x39AA

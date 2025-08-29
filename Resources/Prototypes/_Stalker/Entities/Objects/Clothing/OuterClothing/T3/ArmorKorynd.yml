@@ -1,0 +1,26 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterKorynd
+  name: Бронежилет "Корунд"
+  description: Бронежилет 3 класса защиты.
+  suffix: ST, T3, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/Korynd.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/Korynd.rsi
+  - type: STWeight
+    self: 8.5
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 6
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80

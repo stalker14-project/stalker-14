@@ -1,0 +1,105 @@
+- type: entity
+  parent: BaseArrow
+  id: Arrowboltrust
+  name: Ржавый болт
+  description: На скорую руку сделаный из из ржавого гвоздя и изоленты болт. Дешевое, но не очень эффективное решение когда нужно убить небольшого мутанта. 
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    layers:
+    - state: tail
+      color: white
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: green
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Piercing: 10
+        Mutant: 50
+  - type: Construction
+    graph: ImprovisedArrowUranium
+    node: ImprovisedArrowUranium
+
+- type: entity
+  parent: BaseArrow
+  id: Arrowboltpiercing
+  name: Бронебойный болт
+  description: Особенный болт серафимов, созданный из осколка радиоактивного артефакта и других сподручных материалов. Бронебойный. Возможно.
+  components:
+  - type: Sprite
+    layers:
+    - state: tail
+      color: red
+    - state: rod
+      color: brown
+    - state: tip
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 50
+        Radiation: 20
+
+- type: entity
+  parent: BaseArrow
+  id: ArrowAnomalybolt
+  name: Аномальный болт
+  description: Особенный болт, наконечник которого создан из осколка гравитационного артефакта.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    layers:
+    - state: tail
+      color: white
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: lightblue
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Piercing: 10
+        Mutant: 150
+  - type: Construction
+    graph: ImprovisedArrow
+    node: ImprovisedArrow
+
+- type: entity
+  parent: BaseArrow
+  id: Arrowadmin
+  name: СУПЕР-БОЛТ
+  description: Особенный...
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/arrows.rsi
+    layers:
+    - state: tail
+      color: white
+    - state: rod
+      color: darkgray
+    - state: tip
+      color: purple
+    - state: solution1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visible: false
+  - type: Projectile
+    projectileClass: 5
+    damage:
+      types:
+        Piercing: 1000
+  - type: Construction
+    graph: ImprovisedArrowPlasma
+    node: ImprovisedArrowPlasma

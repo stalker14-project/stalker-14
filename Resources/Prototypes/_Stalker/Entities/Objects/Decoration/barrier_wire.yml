@@ -1,0 +1,72 @@
+- type: entity
+  id: WarBarrierWireEnd
+  name: колючая проволка
+  description: Вам, кажется, не стоит в неё наступать.
+  suffix: ST, Mapping, End
+  components:
+  - type: SpriteFade
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/barrier_wire.rsi
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: Sprite-0002
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.35,0.35,0.35"
+        density: 1000
+        layer:
+        - WallLayer
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 15
+      behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+        - !type:SpawnEntitiesBehavior
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.30
+    sprintSpeedModifier: 0.20
+  - type: DamageContacts
+    damage:
+      types:
+        Slash: 1.5
+        Piercing: 1.5
+  - type: TriggerOnCollide
+    fixtureID: fix1
+  - type: EmitSoundOnTrigger
+    sound:
+      path: "/Audio/Effects/fence_rattle1.ogg"
+  - type: Slippery
+    slipSound:
+      path: /Audio/Effects/fence_rattle1.ogg
+    launchForwardsMultiplier: 0
+    paralyzeTime: 0
+
+- type: entity
+  parent: WarBarrierWireEnd
+  id: WarBarrierWire
+  name: колючая проволка
+  description: Вам, кажется, не стоит в неё наступать.
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/barrier_wire.rsi
+    drawdepth: Mobs
+    offset: 0,0.3
+    layers:
+      - state: Sprite-0001

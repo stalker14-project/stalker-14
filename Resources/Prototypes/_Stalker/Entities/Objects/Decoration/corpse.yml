@@ -1,0 +1,68 @@
+- type: entity
+  id: Corpse1Stalker
+  name: corpse
+  suffix: ST, Mapping
+  description: a dead human body in which postmortem changes develop, including lack of breathing and palpitation, drying and deformation of the cornea, the appearance of cadaverous spots and rigor mortis, as well as signs of decomposition.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse1
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+
+- type: entity
+  id: Corpse2Stalker
+  parent: Corpse1Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse2
+
+- type: entity
+  id: Corpse3Stalker
+  parent: Corpse1Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse3
+
+- type: entity
+  id: Corpse4Stalker
+  parent: Corpse1Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse4
+
+- type: entity
+  id: Corpse5Stalker
+  parent: Corpse1Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse5
+
+- type: entity
+  id: Corpse6Stalker
+  parent: Corpse1Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse6
+
+- type: entity
+  id: Corpse7Stalker
+  parent: Corpse1Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse7
+
+- type: entity
+  id: Corpse8Stalker
+  parent: Corpse1Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/corpse.rsi
+    state: corpse8

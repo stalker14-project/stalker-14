@@ -10,6 +10,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Interaction.Components;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.VirtualItem;
@@ -294,7 +295,7 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         if (!stealth)
         {
-            if (slotDef.StripHidden)
+            if (IsStripHidden(slotDef, user))
                 _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-hidden", ("slot", slot)), target, target, PopupType.Large);
             else
                 _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner", ("user", Identity.Entity(user, EntityManager)), ("item", item)), target, target, PopupType.Large);
@@ -637,6 +638,10 @@ public abstract class SharedStrippableSystem : EntitySystem
         if (!HasComp<StrippingComponent>(user))
             return false;
 
+        var popup = Loc.GetString("someone-examine-your-equipment", ("name", Identity.Name(user, EntityManager)));
+
+        _popupSystem.PopupEntity(popup, user, target.Owner, PopupType.Medium);
+
         _ui.OpenUi(target.Owner, StrippingUiKey.Key, user);
         return true;
     }
@@ -659,5 +664,16 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         if (args.CanDrop)
             args.Handled = true;
+    }
+
+    public bool IsStripHidden(SlotDefinition definition, EntityUid? viewer)
+    {
+        if (!definition.StripHidden)
+            return false;
+
+        if (viewer == null)
+            return true;
+
+        return !HasComp<BypassInteractionChecksComponent>(viewer);
     }
 }

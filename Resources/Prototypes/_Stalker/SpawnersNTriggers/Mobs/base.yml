@@ -1,0 +1,775 @@
+- type: entity
+  id: FlexibleMarkerTrigger
+  abstract: true
+  components:
+  - type: ApproachTrigger
+  - type: Marker
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Anchorable
+  - type: Pullable
+  - type: MovedByPressure
+  - type: Physics
+    bodyType: Static
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+          - LowImpassable
+  - type: Sprite
+    drawdepth: Overdoors
+    sprite: Markers/cross.rsi
+    layers:
+      - state: pink
+    requiredTriggeredSpeed: 0.0
+    blacklist:
+      components:
+      - HTN
+- type: entity
+  id: FlexibleMarkerTrigger50
+  parent: FlexibleMarkerTrigger
+  abstract: true
+  suffix: ST, КД 40 МИНУТ
+  components:
+  - type: ApproachTrigger
+
+- type: entity
+  name: базовый триггер (1-4) (20%)
+  abstract: true
+  id: STBaseTrigger1420
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 1800
+      chance: 0.2
+
+- type: entity
+  name: базовый триггер (1-4) (20%) 20м
+  abstract: true
+  id: STBaseTrigger142010
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 1200
+      chance: 0.2
+
+- type: entity
+  name: базовый триггер (1-4) (20%) 30м
+  abstract: true
+  id: STBaseTrigger142030
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 1800
+      chance: 0.2
+
+- type: entity
+  name: базовый триггер (1-4) (10%) 20м
+  abstract: true
+  id: STBaseTrigger141010
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.1
+
+- type: entity
+  name: базовый триггер (1-4) (10%) 30м
+  abstract: true
+  id: STBaseTrigger141030
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.1
+
+- type: entity
+  name: базовый триггер (1-4) (25%) 20м
+  abstract: true
+  id: STBaseTrigger142510
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.25
+
+- type: entity
+  name: базовый триггер (1-4) (25%) 30м
+  abstract: true
+  id: STBaseTrigger142530
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.25
+
+- type: entity
+  name: базовый триггер (1-4) (50%) 20м
+  abstract: true
+  id: STBaseTrigger145010
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.5
+
+- type: entity
+  name: базовый триггер (1-4) (50%) 30м
+  abstract: true
+  id: STBaseTrigger145030
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 1800
+      chance: 0.5
+
+- type: entity
+  name: базовый триггер (1-4) (75%) 20м
+  abstract: true
+  id: STBaseTrigger147510
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.75
+
+- type: entity
+  name: базовый триггер (1-4) (75%) 30м
+  abstract: true
+  id: STBaseTrigger147530
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.75
+
+- type: entity
+  name: базовый триггер (1-4) (100%) 20м
+  abstract: true
+  id: STBaseTrigger1410010
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 1
+
+- type: entity
+  name: базовый триггер (1-4) (100%) 30м
+  abstract: true
+  id: STBaseTrigger1410030
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 4
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 1
+
+- type: entity
+  name: базовый триггер (1-2) (10%) 20м
+  id: STBaseTrigger121010
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 1200
+      chance: 0.10
+
+- type: entity
+  name: базовый триггер (1-2) (10%) 30м
+  id: STBaseTrigger121030
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.10
+
+- type: entity
+  name: базовый триггер (1-2) (25%) 20м
+  id: STBaseTrigger122510
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.25
+
+- type: entity
+  name: базовый триггер (1-2) (25%) 30м
+  id: STBaseTrigger122530
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.25
+
+- type: entity
+  name: базовый триггер (1-2) (50%) 20м
+  id: STBaseTrigger125010
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.50
+
+- type: entity
+  name: базовый триггер (1-2) (50%) 30м
+  id: STBaseTrigger125030
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.50
+
+- type: entity
+  name: базовый триггер (1-2) (75%) 20м
+  id: STBaseTrigger127510
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.75
+
+- type: entity
+  name: базовый триггер (1-2) (75%) 30м
+  id: STBaseTrigger127530
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.75
+
+- type: entity
+  name: базовый триггер (1-2) (100%) 20м
+  id: STBaseTrigger1210010
+  abstract: true
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 1200
+      chance: 0.5
+
+- type: entity
+  name: базовый триггер (1-2) (100%) 30м
+  id: STBaseTrigger1210030
+  abstract: true
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 2
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 1
+
+- type: entity
+  name: базовый триггер (1-1) (10%) 20м
+  id: STBaseTrigger111010
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.10
+
+- type: entity
+  name: базовый триггер (1-1) (10%) 30м
+  id: STBaseTrigger111030
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.10
+
+- type: entity
+  name: базовый триггер (1-1) (25%) 20м
+  id: STBaseTrigger112510
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.25
+
+- type: entity
+  name: базовый триггер (1-1) (25%) 30м
+  id: STBaseTrigger112530
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.25
+
+- type: entity
+  name: базовый триггер (1-1) (50%) 20м
+  id: STBaseTrigger115010
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.5
+
+- type: entity
+  name: базовый триггер (1-1) (50%) 30м
+  id: STBaseTrigger115030
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.5
+
+- type: entity
+  name: базовый триггер (1-1) (75%) 20м
+  id: STBaseTrigger117510
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 0.75
+
+- type: entity
+  name: базовый триггер (1-1) (75%) 30м
+  id: STBaseTrigger117530
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 0.75
+
+- type: entity
+  name: базовый триггер (1-1) (100%) 20м
+  id: STBaseTrigger1110010
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1200
+      chance: 1
+
+- type: entity
+  name: базовый триггер (1-1) (100%) 30м
+  id: STBaseTrigger1110030
+  parent: MarkerBase
+  abstract: true
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 8
+      minOffset: 7
+      cooldown: 1800
+      chance: 1
+
+
+- type: entity
+  name: триггер редкий моб (1) (25%)
+  id: STBaseTrigger125
+  abstract: true
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 1800
+      chance: 0.25
+
+- type: entity
+  name: триггер босс (1) (100%)
+  id: STBaseTriggerBoss
+  abstract: true
+  parent: MarkerBase
+  components:
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+    - type: SpawnOnApproach
+      minAmount: 1
+      maxAmount: 1
+      maxOffset: 1
+      minOffset: 0
+      cooldown: 3600
+      chance: 1

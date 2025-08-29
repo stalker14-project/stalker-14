@@ -1,0 +1,55 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgunCompact
+  id: STBaseWeaponShotgunSawedOf
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
+  - type: Item
+    sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
+    size: Small
+    heldPrefix: sawn
+  - type: STWeight
+    self: 2.0
+  - type: Gun
+    minAngle: 30
+    maxAngle: 80
+    fireRate: 2
+    angleIncrease: 15
+    angleDecay: 75
+  - type: BallisticAmmoProvider
+    capacity: 2
+
+- type: entity
+  parent: STBaseWeaponShotgunSawedOf
+  id: STWeaponShotgunSawedOf
+  name: Sawed-off Shotgun
+  description: Crudely shortened double-barreled shotgun. The weapon of choice for rookie stalkers - cheap, angry and fits under a trenchcoat. Only effective point-blank.
+
+- type: entity
+  parent: STBaseWeaponShotgunSawedOf
+  id: STWeaponShotgunSawedOfAnomaly
+  name: Anomalous Sawed-off
+  description: Anomaly-tainted sawed-off shotgun. Barrels glow faintly and capacity defies physics. 'The Zone loves to distort even simple weapons'.
+  components:
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,3,1
+  - type: BallisticAmmoProvider
+    capacity: 4
+    proto: Cartridge7mmBuckshot
+    whitelist:
+      tags:
+      - ShellShotgun
+  - type: Gun
+    minAngle: 30
+    maxAngle: 80
+    fireRate: 7
+    angleIncrease: 15
+    angleDecay: 75
+

@@ -1,0 +1,88 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgunAuto
+  id: STBaseWeaponShotgunSaiga12
+  components:
+  - type: STWeight
+    self: 3.6
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga.rsi
+    shape:
+    - 0,0,6,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/saiga_shoot.ogg
+    minAngle: 60
+    maxAngle: 80
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base1270Mag
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - MagazineSaiga
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 3
+        whitelist:
+          tags:
+          - ShellShotgun
+      gun_auto_sear:
+        name: Insides
+        priority: 2
+        whitelist:
+          tags:
+          - STModuleAutoSear
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 1
+        whitelist:
+          tags:
+          - STWeaponModuleShotgunChoke
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+
+- type: entity
+  parent: STBaseWeaponShotgunSaiga12
+  id: STWeaponShotgunSaiga12
+  name: Saiga-12
+  description: Semi-automatic AK-based shotgun, favored by stalkers for its reliability and firepower. Chambered in 12 gauge, perfect for close-quarters mutant encounters.
+
+- type: entity
+  parent: STWeaponShotgunSaiga12
+  id: STWeaponShotgunSaiga12Seraphim
+  name: Saiga-12 "Seraphim"
+  description: Lightweight Saiga-12 variant with Seraphim faction camouflage. Retains all original advantages while offering improved ergonomics.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga-sera.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga-sera.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/saiga/saiga-sera.rsi

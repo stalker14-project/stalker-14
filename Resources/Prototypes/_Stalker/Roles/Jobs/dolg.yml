@@ -1,8 +1,8 @@
 - type: job
   id: StalkerDolg
-  name: Боец Долга
+  name: job-dolg
   icon: Dolg
-  description: Уничтожитель зоны.
+  description: job-dolg-desc
   playTimeTracker: JobDolg
   whitelisted: true
   requirements:
@@ -14,16 +14,22 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: job-dolg-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
+        - type: NpcFactionMember
+          factions:
+          - Duty
         - type: Access
           tags:
             - Dolg
         - type: Bands
           band: Stalker
           bandIcon: Dolg
+          bandProto: STDolgBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -33,9 +39,9 @@
 
 - type: job
   id: StalkerHeadDolg
-  name: Лидер Долга
+  name: job-head-dolg
   icon: Dolg
-  description: Уничтожитель зоны.
+  description: job-head-dolg-desc
   playTimeTracker: JobHeadDolg
   whitelisted: true
   requirements:
@@ -47,17 +53,24 @@
       - Human
       - Dwarf
   startingGear: DolgGear
-  supervisors: Вы командуете другими бойцами Долга.
+  supervisors: job-head-dolg-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
+        - type: NpcFactionMember
+          factions:
+          - Duty
         - type: Access
           tags:
             - Dolg
             - DolgHead
+            - Stalker
         - type: Bands
           band: Stalker
           bandIcon: Dolg
+          bandProto: STDolgBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -69,8 +82,18 @@
   id: DolgGear
   equipment:
     id: DolgPDA
-    belt: ClothingBeltStorageWaistbag
     legs: ClothingLegsJeansDolgCamouflage
-    shoes: ClothingShoesBootsWork
+    shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoTurtlenecksDolgCamouflage
     cloak: ClothingNeckCloakDolg
+    back: ClothingBackpackDuffelBlackStalker
+- type: stBand
+  id: STDolgBand
+  name: Dolg
+  factionId: Dolg
+  maxMembers: 35
+  managingRankId: 2
+  hierarchy:
+    1: StalkerDolg
+    2: StalkerHeadDolg
+

@@ -1,0 +1,59 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponGun
+  id: STBaseWeaponShotgunAuto
+  suffix: Weapon, Shotgun
+  components:
+  - type: FarGunshot
+    range: 250
+    sound: /Audio/_DZ/Effects/FarGunshots/shotgun1.ogg
+  - type: Sprite
+    layers:
+    # No mug by default
+    - state: icon
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
+  - type: Gun
+    minAngle: 50
+    maxAngle: 100
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/chipper_shot.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+    capacity: 1
+    proto:
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+      gun_module_muzzle: !type:ContainerSlot
+  - type: PullDoAfter
+    pullTime: 2
+  - type: ItemSlots
+    slots:
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 1
+        whitelist:
+          tags:
+          - STWeaponModuleShotgunChoke
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.15
+
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgunAuto
+  id: STBaseWeaponShotgun
+  components:
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - ShellShotgun
+      - CartridgeShotgunBullet
+      - CartridgeShotgunBulletRIP

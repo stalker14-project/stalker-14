@@ -30,29 +30,6 @@
           !type:DamageTrigger
           damage: 500
         behaviors:
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              CraftSheetSteel:
-                min: 0
-                max: 1
-              CraftSheetIron:
-                min: 0
-                max: 1
-              CraftSheetAluminum:
-                min: 0
-                max: 1
-              CraftScrap:
-                min: 0
-                max: 1
-              CraftRubber:
-                min: 0
-                max: 1
-              CraftMetalParts:
-                min: 0
-                max: 1
-              PartRodMetalStalker:
-                min: 0
-                max: 1
           - !type:PlaySoundBehavior
             sound:
               collection: MetalBreak

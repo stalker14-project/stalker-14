@@ -1,0 +1,80 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantRat
+  name: крыса
+  suffix: ST, T1
+  description: Злая, голодная, большая крыса.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 30 #Bulky by mouse standards...
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: rat-moving
+    noMovementLayers:
+      movement:
+        state: rat
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rat
+        BaseUnshaded: eyes
+      Critical:
+        Base: dead
+      Dead:
+        Base: splat
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Stalker/Mutants/bdog_die_0.ogg
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      25: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 8
+        Caustic: 2
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.2
+    baseSprintSpeed: 4
+  - type: Damageable
+    damageModifierSet: STMutantT1DamageModifierSet
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      30: 0.9
+  - type: STWeight
+    self: 15
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _Stalker/Mobs/Mutants/rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: rat
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
+      state: eyes
+      shader: unshaded
+  - type: PointLight
+    radius: 1
+    energy: 0.1
+    color: "#00ff1a"

@@ -94,7 +94,7 @@
 - type: entity
   parent: StalkerBallBat
   id: STBatMolitoslov
-  name: молитослов
+  name: сидур серафимов
   description: Cборник молитв или молитвенных песнопений, текстов, с помощью которых люди обращаются к Богу.
   suffix: ST
   components:
@@ -109,7 +109,7 @@
         - back
         - belt
     - type: Paper
-      contentSize: 2800
+      contentSize: 20000
     - type: ActivatableUI
       key: enum.PaperUiKey.Key
       requiresComplex: false
@@ -117,3 +117,7 @@
       interfaces:
         enum.PaperUiKey.Key:
           type: PaperBoundUserInterface
+    - type: PaperVisuals
+      backgroundImagePath: "/Textures/Interface/Paper/paper_background_book.svg.96dpi.png"
+      backgroundPatchMargin: 23.0, 16.0, 14.0, 15.0
+      contentMargin: 20.0, 20.0, 20.0, 20.0

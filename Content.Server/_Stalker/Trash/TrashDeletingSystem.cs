@@ -50,20 +50,27 @@ public sealed class TrashDeletingSystem : EntitySystem
         comp.DeletingTime = null;
     }
 
+    private bool _warningIssued = false;
+
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        if (_timing.CurTime + TimeSpan.FromSeconds(30) == _nextTimeUpdate)
-            _chat.DispatchServerAnnouncement("Вступайте в дискорд, выскажите своё важное мнение - discord.gg/Pv7vpH4kSH");
+        if (!_warningIssued && _timing.CurTime >= _nextTimeUpdate - TimeSpan.FromSeconds(30))
+        {
+            //_chat.DispatchServerAnnouncement("Очистка мусора и пустых схронов произойдет через 30 секунд, предметы на полу могут пропасть!");
+            _warningIssued = true;
+        }
 
         if (_timing.CurTime <= _nextTimeUpdate)
             return;
 
+        //_chat.DispatchServerAnnouncement("Произошла очистка мусора и пустых схронов, некоторые предметы на полу пропали!");
+        RaiseLocalEvent(new RequestClearArenaGridsEvent());
+
         var trashEnts = EntityQueryEnumerator<TrashComponent>();
         while (trashEnts.MoveNext(out var uid, out var comp))
         {
-
             if (comp.DeletingTime == null)
                 continue;
             var parentUid = Transform(uid).ParentUid;
@@ -76,6 +83,10 @@ public sealed class TrashDeletingSystem : EntitySystem
             if (comp.DeletingTime <= _timing.CurTime)
                 QueueDel(uid);
         }
+
+        _warningIssued = false;
         _nextTimeUpdate = _timing.CurTime + TimeSpan.FromMinutes(_updateTime);
     }
+
+
 }

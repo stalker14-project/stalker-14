@@ -1,0 +1,99 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantBoar
+  name: кабан
+  suffix: ST, T1
+  description: A large and aggressive mutant beast, mutated from a wild boar. A beast weighing three hundred kilos is not your toy!
+  components:
+    - type: Damageable
+      damageModifierSet: STMutantBoarDamageModifierSet
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBoarHoof
+        - id: FoodMeatBoar
+        - id: STFoodMeatSalo
+        - id: CraftHide
+          maxAmount: 1
+          prob: 0.25
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: boar
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 300
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/boar_death_0.ogg
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.45
+          density: 1000
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/_Stalker/Mutants/step_hoof_asphalt5.ogg
+        params:
+          volume: 0
+          variation: 0.3
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        300: Dead
+    - type: MeleeWeapon
+      attackRate: 0.4
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.5
+      soundHit:
+        path: /Audio/_Stalker/Mutants/boar_attack_1.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/boar_aggressive_3.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Blunt: 26
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 3.2
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: boar
+          sprite: /Textures/_Stalker/Mobs/Mutants/boar.rsi
+          scale: 1, 1
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        300: 0.7
+    - type: StaminaDamageOnHit
+      damage: 10
+    - type: STWeight
+      self: 140
+    - type: Jumpscare
+      chargeDamage:
+        types:
+          Blunt: 25
+      jumpPower: 2
+      jumpDistance: 4
+      updateCooldown: 0.25
+      totalSteps: 6
+      stepInterval: 0.001

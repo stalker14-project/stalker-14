@@ -1,7 +1,7 @@
+using Content.Server._Stalker.AI;
 using Content.Server._Stalker.Discord;
 using Content.Server._Stalker.Discord.DiscordAuth;
 using Content.Server._Stalker.JoinQueue;
-using Content.Server._Stalker.Sponsors;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -33,6 +33,7 @@ using Content.Shared.Chat;
 using Content.Shared.Kitchen;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Server._Stalker.Sponsors.SponsorManager;
 
 namespace Content.Server.IoC
 {
@@ -77,6 +78,7 @@ namespace Content.Server.IoC
             IoCManager.Register<PlayerRateLimitManager>();
             IoCManager.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             IoCManager.Register<MappingManager>();
+            IoCManager.Register<AIManager>(); // stalker-changes-auth
             IoCManager.Register<DiscordAuthManager>(); // stalker-changes-auth
             IoCManager.Register<JoinQueueManager>(); // stalker-changes - Corvax Queue Adaptation
             IoCManager.Register<SponsorsManager>(); // stalker-changes-sponsors

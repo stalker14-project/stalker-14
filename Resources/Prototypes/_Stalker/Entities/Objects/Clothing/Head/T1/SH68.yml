@@ -11,11 +11,12 @@
     armorClass: 1
     modifiers:
       flatReductions:
-        Slash: 3
-        Blunt: 3
-        Piercing: 6
+        Blunt: 1
+        Slash: 1
+        Piercing: 2
       coefficients:
-        Piercing: 0.90
+        Blunt: 0.95
+        Slash: 0.95
   - type: ExplosionResistance
     damageCoefficient: 0.95
   - type: Craftable
@@ -24,6 +25,8 @@
     spread: 360
     reflects:
       - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+
 
 - type: entity
   parent: STClothingHeadHelmetCombatT1Base
@@ -35,6 +38,9 @@
     sprite: _Stalker/Objects/Clothing/hats/sh68.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/sh68.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetCombatT1Base
@@ -48,6 +54,9 @@
     sprite: _Stalker/Objects/Clothing/hats/band_sh68.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/band_sh68.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetCombatT1Base
@@ -59,5 +68,7 @@
     sprite: _Stalker/Objects/Clothing/hats/sh68_rene.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/sh68_rene.rsi
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
 

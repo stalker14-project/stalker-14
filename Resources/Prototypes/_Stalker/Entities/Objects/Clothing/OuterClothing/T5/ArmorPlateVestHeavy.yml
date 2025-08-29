@@ -9,23 +9,19 @@
   components:
   - type: STWeight
     self: 19
-  - type: Tag
-    tags:
-      - BlockBelt
   - type: Armor
     armorClass: 5
     modifiers:
       flatReductions:
-        Blunt: 8
-        Slash: 10
-        Piercing: 10
+        Blunt: 5
+        Slash: 5
+        Piercing: 7
       coefficients:
-        Blunt: 0.70
-        Slash: 0.70
-        Piercing: 0.22
-        Heat: 0.9
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.6
   - type: ExplosionResistance
-    damageCoefficient: 0.65
+    damageCoefficient: 0.5
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_military.rsi
   - type: Clothing
@@ -39,8 +35,8 @@
 - type: entity
   parent: STClothingOuterArmorHeavyPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseHeavyMilitary
-  name: тяжёлый бронежилет военных
-  description: Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: Военный Бронежилет «Цитадель»
+  description: Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_military.rsi
@@ -52,8 +48,8 @@
 - type: entity
   parent: STClothingOuterArmorHeavyPlateVestBase
   id: STClothingOuterArmorLightPlateVestBaseHeavyMonolith
-  name: тяжёлый бронежилет монолита
-  description: Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: Бронежилет «Цитадель» монолита
+  description: Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_monolit.rsi
@@ -61,10 +57,10 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_monolit.rsi
 
 - type: entity
-  parent: STClothingOuterArmorHeavyPlateVestBase
+  parent: STClothingOuterArmorVeryHeavy
   id: STClothingOuterArmorLightPlateVestBaseHeavyBandit
-  name: тяжёлый бронежилет бандитов
-  description: Стыренный и перекрашенный мусорской тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: Бандитский Бронежилет «Цитадель»
+  description: Стыренный и перекрашенный мусорской тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_bandit.rsi
@@ -75,7 +71,7 @@
 - type: entity
   parent: STClothingOuterArmorHeavyPlateVestBase
   id: ClothingOuterArmorHeavyJaba
-  name: тяжёлый бронежилет жаб
+  name: Бронежилет «Цитадель» жаб
   description: Тяжёлый бронежилет IV типа, обеспечивающий достаточную защиту от физического урона.
   components:
   - type: Sprite
@@ -88,8 +84,8 @@
 - type: entity
   parent: STClothingOuterArmorHeavyPlateVestBase
   id: ClothingOuterArmorHeavyUNTAR
-  name: тяжёлый бронежилет UNTAR
-  description: Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений
+  name: Бронежилет UNTAR-H
+  description: Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_unstar.rsi
@@ -101,8 +97,8 @@
 - type: entity
   parent: STClothingOuterArmorHeavyPlateVestBase
   id: ClothingOuterArmorHeavyDebt
-  name: тяжёлый бронежилет долга
-  description: тяжёлый бронежилет V типа, улучшенный умельцами долга, специально для тяжёлых стычек между группировками.
+  name: Бронежилет «Цитадель» Долга
+  description: тяжёлый бронежилет V типа, улучшенный умельцами Долга, специально для тяжёлых стычек между группировками.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_duty_armor.rsi

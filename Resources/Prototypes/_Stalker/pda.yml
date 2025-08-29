@@ -167,7 +167,7 @@
     stealGroup: LAMP
 
 - type: entity
-  parent: [ BaseStalkerPDA, GeigerCounter ]
+  parent: [ BaseStalkerPDA, GeigerCounter]
   id: STSeraphimPDA
   name: КПК Серафима
   suffix: ST, Serafim
@@ -555,9 +555,8 @@
             - ClothingNeckDogtagStalker
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 3
+    radius: 5
+    energy: 2.5
     netsync: false
   - type: Appearance
   - type: StealTarget
@@ -565,9 +564,9 @@
 
 - type: entity
   parent: BaseStalkerPDA
-  id: SvobodaPDA
-  name: КПК Свободы
-  description: Объединены общей сетью и позволяют обмениваться информацией.
+  id: FreedomPDA
+  name: КПК «Воля»
+  description: Объединены общей сетью и позволяют обмениваться информацией. КПК пропитан запахом дешевого протвейна и канабиса.
   components:
   - type: PdaBorderColor
     borderColor: "#2d7019"
@@ -653,6 +652,10 @@
     state: cn_off
   - type: Pda
     state: cn_on
+  - type: HealthAnalyzer
+    scanDelay: 0.5
+    scanningEndSound:
+      path: "/Audio/Items/Medical/healthscanner.ogg"
   - type: HandheldGPS
   - type: Tag
     tags:
@@ -717,6 +720,18 @@
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
+  - type: UserInterface
+    interfaces:
+      enum.PdaUiKey.Key:
+        type: PdaBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.RingerUiKey.Key:
+        type: RingerBoundUserInterface
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+      enum.HealthAnalyzerUiKey.Key:
+        type: HealthAnalyzerBoundUserInterface
 
 
 - type: entity
@@ -725,6 +740,7 @@
   name: КПК Военного
   description: Этот КПК пережевёт и ядерный взрыв. По крайней мере это закладывать в тендере.
   components:
+  - type: Unremoveable
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: svo_off
@@ -787,13 +803,18 @@
             - ClothingNeckDogtagOfficial
   - type: PointLight
     enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 3
+    radius: 5
+    energy: 2.5
     netsync: false
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Radiation: 2
+        Psy: 2
 
 
 - type: entity
@@ -873,7 +894,7 @@
   parent: BaseStalkerPDA
   id: MonolithPDA
   name: КПК бойца «Монолита»
-  description: В КПК много записей, не имеющих явного смысла, но одно всё же привлекает внимание - «Монолит обратился к внимающим ему, и приказал собрать излишки снаряжения и поместить их в скрытые от неверных места, места же отметить его знаком. Настанут трудные времена и те, кто слышит великий Монолит, воспользуются его мудростью… Я передал волю Монолита своим братьям, и указал, где поместить припасы…»
+  description: Объединены общей сетью и позволяют обмениваться информацией.
   components:
   - type: PdaBorderColor
     borderColor: "#797B80"
@@ -947,3 +968,86 @@
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
+
+- type: entity
+  parent: BaseStalkerPDA
+  id: JabaPDA
+  name: КПК Жаб
+  description: Объединены общей сетью и позволяют обмениваться информацией.
+  components:
+  - type: PdaBorderColor
+    borderColor: "#010101"
+  - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
+    state: band_off
+  - type: Pda
+    state: band_on
+  - type: ItemSlots
+    slots:
+      cassette_slot:
+        name: Cassete
+        whitelist:
+          tags:
+            - Cassete
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+      dogtag_slot:
+        name: Dogtag
+        startingItem: ClothingNeckDogtagBrigand
+        whitelist:
+          tags:
+            - ClothingNeckDogtagBrigand
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
+  - type: Scope
+    zoom: 1.25
+    delay: 1
+    offset: 14
+    useInHand: true

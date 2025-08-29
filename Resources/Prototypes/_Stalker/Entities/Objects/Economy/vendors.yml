@@ -42,7 +42,6 @@
     ClothingHeadBandana2Military: 15
     RazorWire: 200
     545Mag30: 30
-    545Mag45: 2
     739Mag30: 5
     Base754Mag5: 10
     VityazMag: 5
@@ -81,8 +80,8 @@
     HandheldGPSBasic: 50
     # Наборы
     #ArmyAKSUCrate: 15
-    ArmyCrateNewOfficer: 5
-    ArmyCrateNewStandart: 15
+    ArmyCrateNewOfficer: 2
+    ArmyCrateNewStandart: 10
 
 - type: entity
   parent: BaseVendingMachineRestock
@@ -214,11 +213,8 @@
   startingInventory:
     BoxFlare: 50
     BoxZiptie: 5
-    UNstandartCrate: 2
     UNstandartCrateT3: 10
-    UNstandartCrateT3P90: 5
-    STWeaponSMGMp5: 10
-    STWeaponSMGStalkerP90: 5
+    STWeaponSMGMP5: 10
     PillDexalin: 50
     radioprotectpill: 5
     psyblock: 5
@@ -239,12 +235,14 @@
     FlashlightSeclite: 50
     PowerCellHyper: 100
     HandheldGPSBasic: 50
-    STWeaponRifleSig550: 4
-    STWeaponRifleStalkerL85: 4
+    STWeaponRifleSIG550: 4
+    STWeaponRifleL85: 4
     STWeaponRifleM4: 6
+    STWeaponShotgunSPAS: 6
+    7mmBuckshotBox: 20
+    556Mag30: 30
     556FMJBox: 50
     556M855Box: 10
-    556M856Box: 5
 
 - type: entity
   parent: BaseVendingMachineRestock
@@ -323,3 +321,253 @@
         - state: base
         - state: green_bit
           shader: unshaded
+
+############################################################################# СОП ПСЗ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitary
+  name: склад комплектов СОП
+  description: Склад армейских припасов с комплектами внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MilitaryPSZInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_lot_of_boxes.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-1.05,-0.15,1,0.65"
+          mask:
+          - MachineMask
+          layer:
+          - MachineLayer
+          density: 200
+    - type: AccessReader
+      access: [["Military"]]
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventory
+  startingInventory:
+    ArmyAKCUCrate: 10
+    ArmyAKCCrate: 5
+    ArmyProvisionCrate: 5
+    ArmyMedkitMilitaryCrate: 5
+    Army545Mag30Crate: 5
+    Army545Crate: 5
+
+- type: entity
+  parent: BaseItem
+  id: MilitaryPSZInventoryRestock
+  name: комплект ПСЗ пополнительный
+  description: Класть на склад.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MilitaryPSZInventory
+        - MilitaryPSZInventoryOfficer
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+
+############################################################################# СОП ОФЦ ПСЗ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesPSZMilitaryOfficer
+  name: ящик с офицерскими комплектами СОП
+  description: Ящик, содержащий офицерские комплекты ПСЗ внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MilitaryPSZInventoryOfficer
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AccessReader
+      access: [["MilitaryOfficer"]]
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: MilitaryPSZInventoryOfficer
+  startingInventory:
+    ArmyAKMOfficerCrate: 2
+    Army739Crate: 3
+    Army739Mag30Crate: 3
+    MilitaryPSZInventoryRestock: 6
+    Screwdriver: 1
+    ClothingBandageStalkerSopOne: 20
+    ClothingBandageStalkerSopTwo: 20
+
+- type: entity
+  parent: BaseItem
+  id: MilitaryPSZInventoryRestockOfficer
+  name: комплект ПСЗ офицерский пополнительный
+  description: Класть в офицерский ящик.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MilitaryPSZInventoryOfficer
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+
+############################################################################# МОНОЛИТ
+
+- type: entity
+  parent: VendingMachineBoxesPSZMilitary
+  id: VendingMachineBoxesMonolith
+  name: склад ящиков «Монолита»
+  description: Склад снаряжения группировки «Монолит».
+  suffix: ST
+  components:
+    - type: AccessReader
+      access: [["Monolith"]]
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: MonolithInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+
+- type: vendingMachineInventory
+  id: MonolithInventory
+  startingInventory:
+    SetMonolithMarlyaBuyableCrate: 10
+    SetMonolithBalaklavaBuyableCrate: 10
+    SetMonolithGasBuyableCrate: 10
+    SetMonolithOldBuyableCrate: 10
+    ClothingOuterArmorSevaMonolith: 10
+    MonolithCrateBasicTools: 10
+    MonolithCrateMedkit: 10
+    STWeaponRifleStalkerAbakan: 10
+    STWeaponRifleAKS74Green: 10
+    MonolithCrate545Mag30: 10
+    MonolithCrate545PC: 10
+    STModuleSniperSightT2: 2
+    STWeaponSniperSVDS: 2
+    MonolithCrate754Mag10: 10
+    MonolithCrate754FMJ: 10
+    MonolithInventoryRestock: 1
+    Screwdriver: 1
+
+- type: entity
+  parent: BaseItem
+  id: MonolithInventoryRestock
+  name: пополнительный ящик «Монолита»
+  description: Класть на склад.
+  components:
+    - type: VendingMachineRestock
+      canRestock:
+        - MonolithInventory
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+
+########## СЕРАФИМЫ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSeraphim
+  name: раздатчик серафимов
+  description: Содержит базовое снаряжение для выживания в условиях севера Зоны.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: SeraphimInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+      normalState: normal-unshaded
+    - type: Sprite
+      sprite: Structures/Machines/VendingMachines/secdrobe.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+          shader: unshaded
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Seraphims"]]
+
+- type: vendingMachineInventory
+  id: SeraphimInventory
+  startingInventory:
+    STWeaponRifleAKS74USERAPH: 3
+    545Mag30: 18
+    MedkitAI2: 6
+    MedkitMilitary: 3
+    ClothingBackpackTacticSera: 3
+    ClothingHeadHelmetInfantrySera: 3
+    STClothingOuterArmorRassvetSera: 3
+    STGauze: 6
+    545PCBox: 9
+    545HPBox: 9

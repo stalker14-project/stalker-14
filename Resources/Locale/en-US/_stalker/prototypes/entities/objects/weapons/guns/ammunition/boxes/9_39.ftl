@@ -1,0 +1,12 @@
+ent-STBox9x39PSO = box of 9x39PSO cartridges (30 pieces)
+    .desc = Expansive rounds with high stopping power. Effective against targets without armor at close range. [AP 0]
+ent-STBox9x39SP6Uch = box of 9x39 SP-6Uch rounds (30 pieces)
+    .desc = Training ammunition. Reduced penetration, used for training and weapon testing. [AP 1]
+ent-STBox9x39SP5 = box of 9x39 SP-5 ammo (30 pieces)
+    .desc = Highly accurate subsonic ammunition. Good for firing silenced weapons. [AP 2]
+ent-STBox9x39PAB9 = box of 9x39 PAB-9 rounds (30 pieces)
+    .desc = Armor-piercing cartridges of the experimental type. Increased damage on protected targets. [AP 3]
+ent-STBox9x39SP6 = box of 9x39 SP-6 ammo (30 pieces)
+    .desc = Subsonic armor-piercing ammunition. A reliable choice for stealthy combat against armored targets. [AP 4]
+ent-STBox9x39AA = box of 9x39 AA ammo (30 pieces)
+    .desc = Prototype ammunition with extreme penetration. Dangerous even for heavy armor. [AP 5]

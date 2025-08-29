@@ -14,19 +14,18 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
-    projectileSpeed: 30
-    minAngle: 55
-    maxAngle: 95
-    angleIncrease: 6
-    angleDecay: 25
-    fireRate: 4
+    minAngle: 50
+    maxAngle: 100
+    angleIncrease: 1.8
+    angleDecay: 8
+    fireRate: 7
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
         startingItem: Base739Mag10
-        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
         priority: 4
         whitelist:
           tags:
@@ -48,4 +47,8 @@
         priority: 1
         whitelist:
           tags:
-            - Cartridge739
+            - STCartridge739
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 1.2
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 0.9

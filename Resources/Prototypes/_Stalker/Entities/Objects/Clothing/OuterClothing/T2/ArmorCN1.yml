@@ -1,24 +1,25 @@
-
 - type: entity
   parent: STClothingOuterArmorStorageBasic
-  id: ClothingOuterArmorCN1
-  name: бронежилет с комбезинозом «СН-1».
+  id: ClothingOuterArmorZN1
+  name: бронежилет с комбезинозом «ЗН-1».
   description: Данный бронежилет разрабатывался для проведения поисковых операций в областях с низкой аномальной активностью. Использование довольно качественных материалов повысило устойчивость к износу.
   suffix: ST, T2, Universal
   components:
   - type: STWeight
     self: 5
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/cn1.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/zn1.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/cn1.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/zn1.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetZN1
   - type: Armor
     armorClass: 2
     modifiers:
       flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 7
+        Blunt: 3
+        Slash: 3
+        Piercing: 6
         Radiation: 1.5
       coefficients:
         Blunt: 0.8
@@ -45,19 +46,17 @@
 
 - type: entity
   parent: STClothingHeadHatBase
-  id: ClothingHeadHelmetCN1
-  name: капюшон «СН-1»
+  id: ClothingHeadHelmetZN1
+  name: капюшон «ЗН-1»
   categories: [ HideSpawnMenu ] 
   components:
     - type: Sprite
-      sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
+      sprite: _Stalker/Objects/Clothing/hats/zn1_helm.rsi
     - type: Clothing
-      sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
+      sprite: _Stalker/Objects/Clothing/hats/zn1_helm.rsi
     - type: Armor
       armorClass: 1
       modifiers:
-        flatReductions:
-          Piercing: 8
         coefficients:
           Piercing: 0.85
           Heat: 0.98
@@ -70,3 +69,35 @@
       spread: 360
       reflects:
         - NonEnergy
+    - type: HideLayerClothing
+      slots:
+      - Hair
+
+# Clear sky - 1
+
+- type: entity
+  parent: ClothingOuterArmorZN1
+  id: ClothingOuterArmorCN1
+  name: бронежилет с комбезинозом «СН-1».
+  suffix: ST, T2, Universal
+  description: Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/cn1.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/cn1.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCN1
+
+- type: entity
+  parent: ClothingHeadHelmetZN1
+  id: ClothingHeadHelmetCN1
+  suffix: ST, T2, Universal
+  name: капюшон «СН-1»
+  categories: [ HideSpawnMenu ] 
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/cn1_helm.rsi
+

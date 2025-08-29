@@ -1,9 +1,9 @@
 
 - type: job
   id: StalkerPoisk
-  name: Поиск
+  name: job-poisk
   icon: poisk
-  description: Поиск
+  description: job-poisk-desc
   playTimeTracker: JobPoisk
   whitelisted: true
   requirements:
@@ -15,7 +15,8 @@
       - Human
       - Dwarf
   startingGear: PoiskGear
-  supervisors: Вы подчиняетесь своему лидеру
+  supervisors: job-poisk-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -26,6 +27,8 @@
         - type: Bands
           band: Stalker
           bandIcon: poisk
+          bandProto: STPoiskBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
@@ -37,7 +40,15 @@
   id: PoiskGear
   equipment:
     id: StalkerPDA
-    belt: ClothingBeltStorageWaistbag
     torso: ClothingTorsoSweaterStalkerGreen
     legs: ClothingLegsJeansBlue
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: STClothingShoesBootsCombatFilled
+- type: stBand
+  id: STPoiskBand
+  name: Poisk
+  factionId: Poisk
+  maxMembers: 10
+  managingRankId: 3
+  hierarchy:
+    1: StalkerPoisk
+

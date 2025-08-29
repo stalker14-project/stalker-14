@@ -1,3 +1,9 @@
+- type: radioChannel
+  id: StalkerRawFrequencyChannel
+  name: channel-name-stalker-raw
+  frequency: 0 # Placeholder, not used directly
+  color: White
+  longRange: true
 
 - type: radioChannel
   id: Merc
@@ -5,4 +11,11 @@
   keycode: '3'
   frequency: 7897
   color: "#4682B4"
+  longRange: true
+
+- type: radioChannel
+  id: StalkerInternal
+  name: channel-name-stalker-internal
+  frequency: 1 # Needs a unique frequency, but value doesn't really matter here
+  color: White
   longRange: true

@@ -11,16 +11,14 @@
       armorClass: 3
       modifiers:
         flatReductions:
-          Blunt: 8
-          Slash: 8
-          Piercing: 9
+          Blunt: 3
+          Slash: 3
+          Piercing: 6
         coefficients:
-          Blunt: 0.65
-          Slash: 0.65
-          Piercing: 0.4
+          Blunt: 0.80
+          Slash: 0.80
+          Piercing: 0.6
           Heat: 0.9
-          Caustic: 0.9
-          Compression: 0.75
     - type: ExplosionResistance
       damageCoefficient: 0.65
     - type: Sprite
@@ -62,3 +60,17 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/deserter_psz7.rsi
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBasePSZ7
+  id: STClothingOuterArmorLightPlateVestBasePSZ7rene
+  name: ПСЗ-7 'Клык'
+  suffix: ST, T3, PvP
+  description: Бывший военный "ПСЗ-7", а теперь - ходячий кошмар. Коричневый комбинезон, костяные шипы, торчащие во все стороны, и череп на поясе, как напоминание. Ты - добыча. Ренегаты превратили эту броню в воплощение своего безумия.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz7-palionka.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz7-palionka.rsi
+  - type: STWeight
+    self: 6

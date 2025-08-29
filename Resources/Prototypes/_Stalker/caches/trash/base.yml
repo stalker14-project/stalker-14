@@ -1,0 +1,23 @@
+- type: entity
+  parent: BaseStructureStalkerDynamic
+  id: STBaseTrashCache
+  abstract: true
+  name: мусор
+  description: Куча мусора, возможно стоит поискать в ней что-то ещё пригодное к использованию.
+  components:
+    - type: TimedDespawn
+      lifetime: 1800
+    - type: Transform
+      noRot: true
+    - type: Storage
+      maxItemSize: Ginormous
+      grid:
+        - 0,0,8,8
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+    - type: Clickable

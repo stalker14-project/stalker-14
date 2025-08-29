@@ -14,19 +14,15 @@
     armorClass: 5
     modifiers:
       flatReductions:
-        Blunt: 12
-        Slash: 12
-        Piercing: 10
-        Radiation: 1
+        Blunt: 7
+        Slash: 7
+        Piercing: 7
+        Radiation: 4
       coefficients:
         Blunt: 0.65
         Slash: 0.65
-        Piercing: 0.3
-        Heat: 0.85
-        Caustic: 0.95
-        Shock: 0.85
-        Psy: 0.90
-        Radiation: 0.9
+        Piercing: 0.6
+        Radiation: 0.7
         Compression: 0.50
   - type: ExplosionResistance
     damageCoefficient: 0.6
@@ -40,9 +36,9 @@
   description: Булат V типа, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
     - type: Sprite
-      sprite: _Stalker/Clothing/OuterClothing/Bulat/covenant.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Bulat/covenant.rsi
     - type: Clothing
-      sprite: _Stalker/Clothing/OuterClothing/Bulat/covenant.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Bulat/covenant.rsi
 
 # Merc
 
@@ -50,7 +46,7 @@
   parent: STClothingOuterArmorBulatBase
   id: ClothingOuterArmorBulatMercenary
   name: булат наёмников
-  description: Булат IV типа, обеспечивающий достойную защиту от большинства видов повреждений
+  description: Булат V типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/bulat_mercenary.rsi
@@ -76,7 +72,7 @@
   parent: STClothingOuterArmorBulatBase
   id: ClothingOuterArmorBulatMilitary
   name: булат военных
-  description: Булат IV типа, обеспечивающий достойную защиту от большинства видов повреждений
+  description: Булат V типа, обеспечивающий достойную защиту от большинства видов повреждений
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/bulat_military.rsi

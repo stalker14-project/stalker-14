@@ -1,7 +1,7 @@
 - type: entity
   id: Base754Mag5
   name: магазин 7,62x54 (5)
-  description: Магазин 7,62x54 для Автоматов. Вместимость пуль 5. Продают пустым.
+  description: Магазин 7,62x54 для винтовок. Вместимость пуль 5. Продают пустым.
   parent: Base545Mag10
   tag: Stalker
   components:
@@ -15,7 +15,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge754
+          - STCartridge754
       capacity: 5
     - type: Item
       size: Small
@@ -40,7 +40,7 @@
 - type: entity
   id: 754Mag10
   name: магазин 7,62x54 (10)
-  description: Магазин 7,62x54 для Автоматов. Вместимость пуль 10. Продают пустым.
+  description: Магазин 7,62x54 для винтовок. Вместимость пуль 10. Продают пустым.
   parent: Base754Mag5
   tag: Stalker
   components:
@@ -63,7 +63,7 @@
 - type: entity
   id: 754Mag20
   name: магазин 7,62x54 (20)
-  description: Магазин 7,62x54 для Автоматов. Вместимость пуль 20. Продают пустым.
+  description: Магазин 7,62x54 для винтовок. Вместимость пуль 20. Продают пустым.
   parent: Base754Mag5
   tag: Stalker
   components:

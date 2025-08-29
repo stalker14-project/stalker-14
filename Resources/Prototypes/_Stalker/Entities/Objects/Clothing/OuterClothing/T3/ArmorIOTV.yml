@@ -1,0 +1,36 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterIOTV
+  name: Бронежилет IOTV
+  description: Бронежилет 3 класса защиты.
+  suffix: ST, T3, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/IOTV.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/IOTV.rsi
+  - type: STWeight
+    self: 8.5
+  - type: Storage
+    maxItemsize: Large
+    grid:
+    - 0,2,0,4
+    - 2,2,2,3
+    - 2,-1,3,-0
+    - 4,2,4,3
+    - 5,-1,6,-0
+    - 6,2,6,3
+    - 8,2,8,4
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 6
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80

@@ -1,0 +1,297 @@
+- type: entity
+  parent: STBaseMobMutant
+  id: BaseMobMutantBlindDog
+  name: база слепого пса
+  abstract: true
+  components:
+    - type: Damageable
+      damageModifierSet: STMutantT1DamageModifierSet
+    - type: HTN
+      rootTask:
+        task: STBlindDogRedCompound
+      blackboard:
+        VisionRadius: !type:Single
+          20
+        AggroVisionRadius: !type:Single
+          10
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBlindDogTail
+          amount: 1
+          prob: 0.7
+        - id: FoodMeatDog
+          maxAmount: 1
+          prob: 0.7
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 90
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: STBlindDogDeath
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        90: Dead
+    - type: MeleeWeapon
+      attackRate: 1
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.1
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+            variation: 0.125
+            pitch: 0
+      soundSwing:
+        collection: STBlindDogAttack
+        params:
+            variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 16
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 4
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/Blind_Dogs/red.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+    - type: SlowOnDamage
+    - type: StaminaDamageOnHit
+      damage: 5
+    - type: STWeight
+      self: 35
+
+- type: entity
+  parent: BaseMobMutantBlindDog
+  id: MobMutantBlindDogSmall
+  name: слепой пёс
+  description: Мелкий слепой пёс, примесь бультерьера с радиацией.
+  components:
+    - type: HTN
+      rootTask:
+        task: STBlindDogSmallCompound
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBlindDogTail
+          amount: 1
+          prob: 0.9
+        - id: FoodMeatDog
+          maxAmount: 1
+          prob: 0.7
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/Blind_Dogs/small.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: STBlindDogDeath
+                params:
+                    pitch: 1.5
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        50: Dead
+    - type: STWeight
+      self: 5
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 5
+    - type: MeleeWeapon
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 12
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+            variation: 0.125
+            pitch: 0.5
+      soundSwing:
+        collection: STBlindDogAttack
+        params:
+            pitch: 1.5
+
+- type: entity
+  parent: BaseMobMutantBlindDog
+  id: MobMutantBlindDogTall
+  name: слепой пёс
+  description: Худощавый, высокий слепой пёс с длинными лапами, которые позволяют ему разгоняться до больших скоростей.
+  components:
+    - type: HTN
+      rootTask:
+        task: STBlindDogTallCompound
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBlindDogTail
+          amount: 1
+          prob: 0.9
+        - id: FoodMeatDog
+          maxAmount: 2
+          prob: 0.7
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/Blind_Dogs/tall.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 75
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: STBlindDogDeath
+                params:
+                    pitch: 1.3
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        75: Dead
+    - type: STWeight
+      self: 15
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 5.5
+    - type: MeleeWeapon
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 14
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+            variation: 0.125
+            pitch: 0.5
+      soundSwing:
+        collection: STBlindDogAttack
+        params:
+            pitch: 1.3
+
+- type: entity
+  parent: BaseMobMutantBlindDog
+  id: MobMutantBlindDogRed
+  name: слепой пёс
+  description: Слепой пёс средних габаритов, 80% кожи отсутствует на теле.
+  components:
+    - type: HTN
+      rootTask:
+        task: STBlindDogRedCompound
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBlindDogTail
+          amount: 1
+          prob: 0.9
+        - id: FoodMeatDog
+          maxAmount: 3
+          prob: 0.7
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/Blind_Dogs/red.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 100
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: STBlindDogDeath
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Dead
+    - type: STWeight
+      self: 25
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 4
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+            variation: 0.125
+            pitch: 0
+      soundSwing:
+        collection: STBlindDogAttack
+
+- type: entity
+  parent: BaseMobMutantBlindDog
+  id: MobMutantBlindDogWhitePackHead
+  name: глава стаи слепой пёс
+  description: Белый, огромный слепой пёс, походящий на примесь собаки и белого медведя, — вожак стаи.
+  components:
+    - type: HTN
+      rootTask:
+        task: STBlindDogWhiteCompound
+    - type: Butcherable
+      spawned:
+        - id: MutantPartBlindDogTail
+          amount: 1
+          prob: 0.9
+        - id: FoodMeatDog
+          maxAmount: 10
+          prob: 0.7
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/Blind_Dogs/white.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 300
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                collection: STBlindDogDeath
+                params:
+                    pitch: 0.6
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        300: Dead
+    - type: STWeight
+      self: 85
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 4
+    - type: MeleeWeapon
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 32
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+            variation: 0.125
+            pitch: 0.6
+      soundSwing:
+        collection: STBlindDogAttack
+        params:
+            pitch: 0.6

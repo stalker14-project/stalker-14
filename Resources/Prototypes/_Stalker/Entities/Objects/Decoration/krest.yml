@@ -1,0 +1,99 @@
+- type: entity
+  id: Krest1
+  parent: BaseStructureDynamic
+  name: надгробный крест
+  suffix: ST, Mapping
+  description: Мрачный памятник умершим.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/krest.rsi
+    state: krest
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.3,0.3,0.5"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
+
+- type: entity
+  id: Krest2
+  parent: BaseStructureDynamic
+  name: надгробный крест
+  suffix: ST, Mapping
+  description: Мрачный памятник умершим.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/krest.rsi
+    state: krest4
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.3,0.3,0.2"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
+
+- type: entity
+  id: Krest3
+  parent: BaseStructureDynamic
+  name: надгробный камень
+  suffix: ST, Mapping
+  description: Мрачный памятник умершим.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/krest32x64.rsi
+    state: epitafiya_statue
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.3,0.3,0.8"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer
+
+- type: entity
+  id: Krest4
+  parent: BaseStructureDynamic
+  name: надгробный крест
+  suffix: ST, Mapping
+  description: Мрачный памятник умершим.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/krest32x64.rsi
+    state: krest_statue
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.3,0.3,0.8"
+        density: 155
+        mask:
+        - MachineMask
+        layer:
+        - HalfWallLayer

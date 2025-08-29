@@ -1,0 +1,65 @@
+- type: entity
+  abstract: true
+  parent: Clothing
+  id: STClothingPsyHelm
+  suffix: ST
+  components:
+  - type: Sprite
+    state: icon
+  - type: Item
+    size: Small
+  - type: Clothing
+    slots:
+    - ears
+    sprite: Clothing/Ears/Headsets/base.rsi
+
+- type: entity
+  parent: STClothingPsyHelm
+  id: STPsyHelm1
+  name: пси-шлем
+  description: Кустарный прототип устройства защиты от пси-излучения. Внешне выглядит как большие наушники.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Ears/psy-helm-1.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Ears/psy-helm-1.rsi
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Psy: 2
+
+- type: entity
+  parent: STClothingPsyHelm
+  id: STPsyHelm2
+  name: пси-шлем
+  description: Ненастроенный прототип, разработанный учёными для защиты от пси-излучения. Внешне выглядит как большие наушники с несколькими электродами, касающимися лба и затылка.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Ears/psy-helm-2.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Ears/psy-helm-2.rsi
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Psy: 4
+
+- type: entity
+  parent: STClothingPsyHelm
+  id: STPsyHelm3
+  name: пси-шлем
+  description: Настроенный прототип, разработанный учёными для защиты от пси-излучения. Внешне выглядит как большие наушники с несколькими электродами, касающимися лба, висков и затылка.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Ears/psy-helm-3.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Ears/psy-helm-3.rsi
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Psy: 6

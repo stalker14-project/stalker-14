@@ -1,4 +1,5 @@
 ﻿using Content.Server._Stalker.StalkerDB;
+using Content.Server._Stalker.Storage;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
@@ -11,7 +12,7 @@ public sealed class ClearStash : IConsoleCommand
     [Dependency] private readonly IEntityManager _entity = default!;
 
     public string Command => "clear_stash";
-    public string Description => "clears the stalker's personal stash";
+    public string Description => "clears the stalker's personal stashes (ALL OF THEM)";
     public string Help => $"Usage: {Command} <username>";
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)
@@ -22,11 +23,11 @@ public sealed class ClearStash : IConsoleCommand
             return;
         }
 
-        var stalkerDb = _entity.System<StalkerDbSystem>();
+        var stalkerDb = _entity.System<StalkerStorageSystem>();
 
         try
         {
-            stalkerDb.ClearInventoryJson(args[0]);
+            stalkerDb.ClearStorages(args[0]);
             shell.WriteError(Loc.GetString("clear-stash-command-process"));
         }
         catch (Exception exception)

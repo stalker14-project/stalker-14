@@ -4,15 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using Content.Server._Stalker.WarZone;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
+using Content.Shared._Stalker.Bands;
 using Content.Shared._Stalker.Characteristics;
+using Content.Shared._Stalker.WarZone;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
@@ -390,12 +394,14 @@ namespace Content.Server.Database
         /// </summary>
         /// <param name="address">The ip address of the user.</param>
         /// <param name="userId">The id of the user.</param>
-        /// <param name="hwId">The HWId of the user.</param>
+        /// <param name="hwId">The legacy HWId of the user.</param>
+        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
         /// <returns>The user's latest received un-pardoned ban, or null if none exist.</returns>
         public abstract Task<ServerBanDef?> GetServerBanAsync(
             IPAddress? address,
             NetUserId? userId,
-            ImmutableArray<byte>? hwId);
+            ImmutableArray<byte>? hwId,
+            ImmutableArray<ImmutableArray<byte>>? modernHWIds);
 
         public abstract Task<ServerBanDef?> GetLastServerBanAsync(); // stalker-changes
 
@@ -406,13 +412,15 @@ namespace Content.Server.Database
         /// </summary>
         /// <param name="address">The ip address of the user.</param>
         /// <param name="userId">The id of the user.</param>
-        /// <param name="hwId">The HWId of the user.</param>
+        /// <param name="hwId">The legacy HWId of the user.</param>
+        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
         /// <param name="includeUnbanned">Include pardoned and expired bans.</param>
         /// <returns>The user's ban history.</returns>
         public abstract Task<List<ServerBanDef>> GetServerBansAsync(
             IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
+            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             bool includeUnbanned);
 
         public abstract Task AddServerBanAsync(ServerBanDef serverBan);
@@ -503,11 +511,13 @@ namespace Content.Server.Database
         /// <param name="address">The IP address of the user.</param>
         /// <param name="userId">The NetUserId of the user.</param>
         /// <param name="hwId">The Hardware Id of the user.</param>
+        /// <param name="modernHWIds">The modern HWIDs of the user.</param>
         /// <param name="includeUnbanned">Whether expired and pardoned bans are included.</param>
         /// <returns>The user's role ban history.</returns>
         public abstract Task<List<ServerRoleBanDef>> GetServerRoleBansAsync(IPAddress? address,
             NetUserId? userId,
             ImmutableArray<byte>? hwId,
+            ImmutableArray<ImmutableArray<byte>>? modernHWIds,
             bool includeUnbanned);
 
         public abstract Task<ServerRoleBanDef> AddServerRoleBanAsync(ServerRoleBanDef serverRoleBan);
@@ -516,16 +526,23 @@ namespace Content.Server.Database
         public async Task EditServerRoleBan(int id, string reason, NoteSeverity severity, DateTimeOffset? expiration, Guid editedBy, DateTimeOffset editedAt)
         {
             await using var db = await GetDb();
+            var roleBanDetails = await db.DbContext.RoleBan
+                .Where(b => b.Id == id)
+                .Select(b => new { b.BanTime, b.PlayerUserId })
+                .SingleOrDefaultAsync();
 
-            var ban = await db.DbContext.RoleBan.SingleOrDefaultAsync(b => b.Id == id);
-            if (ban is null)
+            if (roleBanDetails == default)
                 return;
-            ban.Severity = severity;
-            ban.Reason = reason;
-            ban.ExpirationTime = expiration?.UtcDateTime;
-            ban.LastEditedById = editedBy;
-            ban.LastEditedAt = editedAt.UtcDateTime;
-            await db.DbContext.SaveChangesAsync();
+
+            await db.DbContext.RoleBan
+                .Where(b => b.BanTime == roleBanDetails.BanTime && b.PlayerUserId == roleBanDetails.PlayerUserId)
+                .ExecuteUpdateAsync(setters => setters
+                    .SetProperty(b => b.Severity, severity)
+                    .SetProperty(b => b.Reason, reason)
+                    .SetProperty(b => b.ExpirationTime, expiration.HasValue ? expiration.Value.UtcDateTime : (DateTime?)null)
+                    .SetProperty(b => b.LastEditedById, editedBy)
+                    .SetProperty(b => b.LastEditedAt, editedAt.UtcDateTime)
+                );
         }
         #endregion
 
@@ -590,7 +607,7 @@ namespace Content.Server.Database
             NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableArray<byte> hwId)
+            ImmutableTypedHwid? hwId)
         {
             await using var db = await GetDb();
 
@@ -607,7 +624,7 @@ namespace Content.Server.Database
             record.LastSeenTime = DateTime.UtcNow;
             record.LastSeenAddress = address;
             record.LastSeenUserName = userName;
-            record.LastSeenHWId = hwId.ToArray();
+            record.LastSeenHWId = hwId;
 
             await db.DbContext.SaveChangesAsync();
         }
@@ -653,7 +670,7 @@ namespace Content.Server.Database
                 player.LastSeenUserName,
                 new DateTimeOffset(NormalizeDatabaseTime(player.LastSeenTime)),
                 player.LastSeenAddress,
-                player.LastSeenHWId?.ToImmutableArray());
+                player.LastSeenHWId);
         }
 
         #endregion
@@ -662,11 +679,11 @@ namespace Content.Server.Database
         /*
          * CONNECTION LOG
          */
-        public abstract Task<int> AddConnectionLogAsync(
-            NetUserId userId,
+        public abstract Task<int> AddConnectionLogAsync(NetUserId userId,
             string userName,
             IPAddress address,
-            ImmutableArray<byte> hwId,
+            ImmutableTypedHwid? hwId,
+            float trust,
             ConnectionDenyReason? denied,
             int serverId);
 
@@ -1653,6 +1670,33 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
         #endregion
         #region Stalker-Changes
 
+        /// <summary>
+        /// Gets all Player records for users who have at least one of the specified role IDs whitelisted.
+        /// </summary>
+        /// <remarks>
+        /// This is a virtual base implementation. Specific database providers might override it.
+        /// </remarks>
+        public virtual async Task<List<Player>> GetPlayersWithRoleWhitelistAsync(IEnumerable<string> roleIds, CancellationToken cancel = default)
+        {
+            await using var db = await GetDb(cancel);
+
+            var roleIdSet = roleIds.ToHashSet(); // Use HashSet for potentially better performance if roleIds is large
+
+            // Get PlayerUserIds that have any of the specified roles
+            var playerIds = await db.DbContext.RoleWhitelists
+                .Where(rw => roleIdSet.Contains(rw.RoleId))
+                .Select(rw => rw.PlayerUserId)
+                .Distinct()
+                .ToListAsync(cancel);
+
+            // Fetch the full Player records for those UserIds
+            var players = await db.DbContext.Player
+                .Where(p => playerIds.Contains(p.UserId))
+                .ToListAsync(cancel);
+
+            return players;
+        }
+
         public async Task SaveCharacterChangeable(NetUserId userId, bool changeable, int slot)
         {
             await using var db = await GetDb();
@@ -1691,6 +1735,21 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             }
 
             record.Storage = jsonItems;
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task SetAllLoginItems(string login, string jsonItems)
+        {
+            await using var db = await GetDb();
+
+            // getting ALL repositories of a player
+            var records = db.DbContext.Stalkers.Where(s => s.Login!.EndsWith(login));
+
+            foreach (var record in records)
+            {
+                record.Storage = jsonItems;
+            }
+
             await db.DbContext.SaveChangesAsync();
         }
 
@@ -1740,6 +1799,163 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return record;
         }
 
+        public async Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerBands.FirstOrDefaultAsync(s => s.BandProtoId == band.Id);
+            if (record is null)
+            {
+                var newBand = new StalkerBand()
+                {
+                    BandProtoId = band.Id,
+                    RewardPoints = rewardPoints
+                };
+                db.DbContext.StalkerBands.Add(newBand);
+            }
+            else
+            {
+                record.RewardPoints = rewardPoints;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<StalkerBand?> GetStalkerBandAsync(ProtoId<STBandPrototype> band)
+        {
+            await using var db = await GetDb();
+            var record = await db.DbContext.StalkerBands
+                .Include(b => b.ZoneOwnerships)
+                .FirstOrDefaultAsync(s => s.BandProtoId == band.Id);
+
+            return record;
+        }
+
+        public async Task SetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction, float rewardPoints)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerFactions.FirstOrDefaultAsync(s => s.FactionProtoId == faction.Id);
+            if (record is null)
+            {
+                var newBand = new StalkerFaction()
+                {
+                    FactionProtoId = faction.Id,
+                    RewardPoints = rewardPoints
+                };
+                db.DbContext.StalkerFactions.Add(newBand);
+            }
+            else
+            {
+                record.RewardPoints = rewardPoints;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+        public async Task<StalkerFaction?> GetStalkerFactionAsync(ProtoId<NpcFactionPrototype> faction)
+        {
+            await using var db = await GetDb();
+            var record = await db.DbContext.StalkerFactions
+                .Include(b => b.ZoneOwnerships)
+                .FirstOrDefaultAsync(s => s.FactionProtoId == faction.Id);
+
+            return record;
+        }
+
+        public async Task SetStalkerZoneOwnershipAsync(
+            ProtoId<STWarZonePrototype> warZone,
+            ProtoId<STBandPrototype>? capturingBand = null,
+            ProtoId<NpcFactionPrototype>? capturingFaction = null)
+        {
+            if (capturingBand is null && capturingFaction is null)
+                throw new ArgumentNullException("No band or faction was provided for zone capture");
+
+            if (capturingBand is not null && capturingFaction is not null)
+                throw new ArgumentException("A zone can't be simultaneously captured by both band and faction");
+
+            await using var db = await GetDb();
+
+            int? bandId = null;
+            int? factionId = null;
+
+            if (capturingBand is not null)
+            {
+                var bandRecord = await GetStalkerBandAsync(capturingBand.Value);
+                if (bandRecord == null)
+                {
+                    await SetStalkerBandAsync(capturingBand.Value, 0);
+                    bandRecord = await GetStalkerBandAsync(capturingBand.Value);
+                }
+                bandId = bandRecord!.Id;
+            }
+            else if (capturingFaction is not null)
+            {
+                var factionRecord = await GetStalkerFactionAsync(capturingFaction.Value);
+                if (factionRecord == null)
+                {
+                    await SetStalkerFactionAsync(capturingFaction.Value, 0);
+                    factionRecord = await GetStalkerFactionAsync(capturingFaction.Value);
+                }
+                factionId = factionRecord!.Id;
+            }
+
+            var record = await db.DbContext.StalkerZoneOwnerships
+                .FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+
+            if (record is null)
+            {
+                var newZone = new StalkerZoneOwnership
+                {
+                    ZoneProtoId = warZone.Id,
+                    BandId = bandId,
+                    FactionId = factionId,
+                    LastCapturedByCurrentOwnerAt = DateTime.UtcNow
+                };
+                db.DbContext.StalkerZoneOwnerships.Add(newZone);
+            }
+            else
+            {
+                record.BandId = bandId;
+                record.FactionId = factionId;
+                record.LastCapturedByCurrentOwnerAt = DateTime.UtcNow;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
+
+        public async Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
+        {
+            await using var db = await GetDb();
+            var record = await db.DbContext.StalkerZoneOwnerships
+                .Include(o => o.Band)
+                .Include(o => o.Faction)
+                .FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+
+            return record;
+        }
+
+        /// <summary>
+        /// Clears ownership of the specified warzone (sets both band and faction to null).
+        /// </summary>
+        /// <param name="warZone">The warzone prototype ID.</param>
+        public async Task ClearStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone)
+        {
+            await using var db = await GetDb();
+
+            var record = await db.DbContext.StalkerZoneOwnerships
+                .FirstOrDefaultAsync(s => s.ZoneProtoId == warZone.Id);
+
+            if (record is null)
+                return;
+
+            record.BandId = null;
+            record.FactionId = null;
+            record.LastCapturedByCurrentOwnerAt = DateTime.UnixEpoch;
+
+            await db.DbContext.SaveChangesAsync();
+        }
         #endregion
         #region Job Whitelists
 

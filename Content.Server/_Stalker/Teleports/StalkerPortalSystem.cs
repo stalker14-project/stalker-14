@@ -3,12 +3,9 @@ using System.Numerics;
 using Content.Server._Stalker.Sponsors;
 using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.Storage;
-using Content.Shared._Stalker.CCCCVars;
 using Content.Shared._Stalker.StalkerRepository;
 using Content.Shared._Stalker.Teleport;
 using Content.Shared.Access.Systems;
-using Content.Shared.Interaction;
-using Content.Shared.Interaction.Events;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
@@ -19,6 +16,12 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
+using Content.Server._Stalker.Trash;
+using Content.Shared.Buckle.Components;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
+using SponsorSystem = Content.Server._Stalker.Sponsors.System.SponsorSystem;
+
 
 namespace Content.Server._Stalker.Teleports;
 
@@ -30,10 +33,13 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
     [Dependency] private readonly MetaDataSystem _metaDataSystem = default!;
     [Dependency] private readonly StalkerDbSystem _stalkerDbSystem = default!;
     [Dependency] private readonly StalkerStorageSystem _stalkerStorageSystem = default!;
-    [Dependency] private readonly SponsorsManager _sponsors = default!;
     [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly IEntityManager _ent = default!;
+    [Dependency] private readonly SponsorSystem _sponsorSystem = default!;
+    private ISawmill _sawmill = default!;
+
 
     //Путь к карте сталкер арены
     public const string ArenaMapPath = "/Maps/_StalkerMaps/PersonalStalkerArena/StalkerMap.yml";
@@ -52,6 +58,9 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
         SubscribeLocalEvent<StalkerPortalComponent, GetVerbsEvent<InteractionVerb>>(OnInteractStalkerPortal);
         SubscribeLocalEvent<StalkerPortalPersonalComponent, GetVerbsEvent<InteractionVerb>>(OnInteractStalkerPortalPersonal);
+
+        SubscribeLocalEvent<RequestClearArenaGridsEvent>(OnClearArenaGrids);
+        _sawmill = Logger.GetSawmill("repository");
     }
 
     private void OnInteractStalkerPortal(EntityUid uid, StalkerPortalComponent component, GetVerbsEvent<InteractionVerb> args)
@@ -94,6 +103,53 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         });
     }
 
+    private void OnClearArenaGrids(RequestClearArenaGridsEvent args)
+    {
+        for (var i = StalkerArenaDataList.Count - 1; i >= 0; i--)
+        {
+            var data = StalkerArenaDataList[i];
+            var gridIdNet = NetEntity.Parse(data.GridId.ToString());
+
+            if (!_ent.TryGetEntity(gridIdNet, out var gridId) || !_ent.HasComponent<MapGridComponent>(gridId))
+                continue;
+
+            if (!TryComp<TransformComponent>(gridId, out var transform))
+                continue;
+
+            if (GridHasActiveMind(transform))
+                continue;
+
+            _ent.QueueDeleteEntity(gridId);
+            StalkerArenaDataList.RemoveAt(i);
+        }
+    }
+
+    private bool GridHasActiveMind(TransformComponent transform)
+    {
+        var enumerator = transform.ChildEnumerator;
+
+        while (enumerator.MoveNext(out var child))
+        {
+            // checking if the entity has a mind
+            if (TryComp<MindContainerComponent>(child, out var mind) && mind.HasMind)
+                return true;
+
+            // checking objects buckled to the entity on the grid
+            if (TryComp<StrapComponent>(child, out var strap))
+            {
+                foreach (var buckledEntity in strap.BuckledEntities)
+                {
+                    if (TryComp<MindContainerComponent>(buckledEntity, out var mindBuckle) && mindBuckle.HasMind)
+                        return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+
+
     // При столкновении с телепортом в сталкер арене происходит телепортация в тот телепорт из которого был выполнен вход в сталкер арену
     private void OnCollideStalkerPortalPersonal(EntityUid uid, StalkerPortalPersonalComponent component, ref StartCollideEvent args)
     {
@@ -102,7 +158,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
     private void HandleStalkerPortalPersonal(EntityUid uid, StalkerPortalPersonalComponent component, EntityUid otherEntity, EntityUid ourEntity)
     {
-        if (!TryComp<ActorComponent>(otherEntity, out _))
+        if (!TryComp<ActorComponent>(otherEntity, out var actor))
             return;
 
         if (TryComp<PortalTimeoutComponent>(otherEntity, out var timeout) &&
@@ -168,13 +224,13 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
                 RaiseLocalEvent(entity, ev);
 
                 // Sponsors
-                // Giving max weight by-ref, to modify it inside method
-                _sponsors.RepositoryMaxWeight(ref stalkerRepositoryComponent.MaxWeight, admin.UserId);
+                stalkerRepositoryComponent.MaxWeight =
+                    _sponsorSystem.GetRepositoryWeight(admin.UserId, stalkerRepositoryComponent.MaxWeight);
                 break;
             }
         }
 
-        StalkerArenaDataList.Add(new StalkerArenaData(admin.Name,ArenaMap[admin.UserId],ArenaGrid[admin.UserId]));
+        StalkerArenaDataList.Add(new StalkerArenaData(admin.Name, ArenaMap[admin.UserId], ArenaGrid[admin.UserId]));
 
         SetReturnPortal(ArenaGrid[admin.UserId],teleportName,returnTeleportEntityUid);
 
@@ -231,6 +287,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
         }
         return null!;
     }
+
 
     //Данные о сталкер арене
     public sealed class StalkerArenaData

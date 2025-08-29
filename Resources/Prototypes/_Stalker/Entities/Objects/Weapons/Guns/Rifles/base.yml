@@ -1,0 +1,37 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponGun
+  id: STBaseWeaponRifle
+  name: A rifle
+  components:
+  - type: FarGunshot
+    range: 260
+    sound: /Audio/_DZ/Effects/FarGunshots/rifle1.ogg
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - map: ["enum.GunVisualLayers.Mag"]
+    - map: ["scope"]
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
+  - type: PullDoAfter
+    pullTime: 2.5
+  - type: Gun
+    projectileSpeed: 60
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    angleDecay: 5
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+      gun_module_scope: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot

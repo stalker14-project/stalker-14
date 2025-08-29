@@ -1,0 +1,50 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterSlickBlack
+  name: Чёрный бронежилет "Слик"
+  description: Чёрный бронежилет 3 класса защиты.
+  suffix: ST, T3, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/Slick/Black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/Slick/Black.rsi
+  - type: STWeight
+    self: 8.5
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 6
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+
+- type: entity
+  parent: STClothingOuterSlickBlack
+  id: STClothingOuterSlickGreen
+  name: Зелёный бронежилет "Слик"
+  description: Зелёный бронежилет 3 класса защиты.
+  suffix: ST, T3, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/Slick/Green.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/Slick/Green.rsi
+
+- type: entity
+  parent: STClothingOuterSlickBlack
+  id: STClothingOuterSlickHaki
+  name: Бронежилет "Слик"
+  description: Бронежилет 3 класса защиты в расцветке хаки.
+  suffix: ST, T3, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/Slick/Haki.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/Slick/Haki.rsi

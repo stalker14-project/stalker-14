@@ -11,3 +11,17 @@
     - state: bloody_paper
   - type: PaperVisuals
     backgroundImagePath: "/Textures/_Stalker/Interface/Paper/paper_background_default.svg.96dpi.png"
+
+- type: entity
+  name: старая бумага
+  parent: Paper
+  id: OldPaper
+  description: Потрёпанная бумага, вот-вот развалится.
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/paper.rsi
+    layers:
+    - state: paper
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/_Stalker/Interface/Paper/paper_background.svg.96dpi.png"

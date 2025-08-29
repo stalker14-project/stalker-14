@@ -1,0 +1,67 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifle
+  id: STBaseWeaponRifleFAL
+  components:
+  - type: STWeight
+    self: 4.5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/fal.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/fal.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/fal.rsi
+    equipDelay: 3
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/fal.ogg
+      params:
+        volume: -2
+    minAngle: 50
+    maxAngle: 120
+    angleIncrease: 5.5
+    angleDecay: 27.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base751Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine751
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge751
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
+
+- type: entity
+  parent: STBaseWeaponRifleFAL
+  id: STWeaponRifleFAL
+  name: FN FAL
+  description:  Legendary Belgian battle rifle chambered in powerful 7.62x51mm NATO. Appears in the Zone via mercenaries and smugglers. Each shot hits like a sledgehammer, but semi-auto only. "A gentleman's weapon", as veterans say.

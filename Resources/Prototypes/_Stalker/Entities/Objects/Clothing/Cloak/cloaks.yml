@@ -35,7 +35,7 @@
 - type: entity
   parent: STClothingCapeBase
   id: ClothingNeckAnomalistLurker
-  name: плащ «Скрытень» аномалистов 
+  name: плащ «Скрытень» аномалистов
   description: Тебя не пристрелят, если не найдут.
   suffix: Stalker, Плащ, Аномалисты
   components:
@@ -55,3 +55,119 @@
     sprite: _Stalker/Objects/Clothing/cloak/short_cover_black.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/short_cover_black.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCloakBeige
+  name: Бежевый плащ
+  description: Он сделанл либо из кожи мутанта, либо из кожи, человека.
+  suffix: Stalker, Плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/beige.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/beige.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCloakBlack
+  name: Черный плащ
+  description: Я Бэтмэн!
+  suffix: Stalker, Плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/black.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCloakBrown
+  name: Коричневый плащ
+  description: Его, носят более опытные Сталкеры, в нем же хоронят!
+  suffix: Stalker, Плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/brown.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/blrown.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCloakGreen
+  name: Зеленый плащ
+  description: Для фанатов "Болотного доктора"
+  suffix: Stalker, Плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/green.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/green.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCloakNavy
+  name: Темно-синий плащ
+  description: Я не придумал, "смешное" описание для это плаща...
+  suffix: Stalker, Плащ
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/navy.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/navy.rsi
+
+- type: entity
+  parent: STClothingCapeBase
+  id: ClothingCloakFoma
+  name: Black cloak
+  description: Black cloak
+  suffix: Stalker, Cloak, Sponsor
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/foma.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/foma.rsi
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,2,0,3
+    - 0,-2,0,0
+    - 2,2,2,3
+    - 2,-1,3,-0
+    - 4,2,4,3
+    - 5,-1,6,-0
+    - 6,2,6,3
+    - 8,2,8,3
+    - 8,-2,8,0
+
+- type: entity
+  parent: STClothingCapeBase
+  id: STClothingNeckExoskeletonSci
+  suffix: Stalker
+  name: ent-STClothingNeckExoskeletonSci
+  description: .desc
+  components:
+  - type: STWeight
+    self: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/exoskelet_science.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/exoskelet_science.rsi
+  - type: STPoweredExoskeleton
+    overloadChange: 150
+    maximumChange: 200
+    toggleAction: ActionToggleExoskeleton
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: PowerCellDraw
+    drawRate: 0.4
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: Tag
+    tags: []

@@ -1,0 +1,15 @@
+ent-STBaseModuleScopeRifles = Самодельный винтовочный прицел
+    .desc = Самодельный винтовочный прицел, не отличается особой точностью. Для оружия стран ОВД.
+    .suffix = ST, scope, T1, RU
+ent-STModuleScopeRiflesT1Ru = самодельный винтовочный прицел
+    .desc = Самодельный винтовочный прицел, не отличается особой точностью. Для оружия стран ОВД.
+    .suffix = { ent-STBaseModuleScopeRifles.suffix }
+ent-STModuleScopeRiflesT1Nato = самодельный винтовочный прицел
+    .desc = Самодельный винтовочный прицел, не отличается особой точностью. Для оружия стран НАТО.
+    .suffix = ST, scope, T1, NATO
+ent-STModuleScopeRiflesT2Ru = ПСО-2
+    .desc = Винтовочный прицел, фабричное производство. Для оружия стран ОВД.
+    .suffix = ST, scope, T2, RU
+ent-STModuleScopeRiflesT2Nato = AGOG
+    .desc = Винтовочный прицел, фабричное производство. Для оружия стран НАТО.
+    .suffix = ST, scope, T2, NATO

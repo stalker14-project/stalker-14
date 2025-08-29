@@ -16,10 +16,6 @@
   - type: Armor
     armorClass: 2
     modifiers:
-      flatReductions:
-        Blunt: 2
-        Slash: 3
-        Piercing: 5
       coefficients:
         Blunt: 0.85
         Slash: 0.85
@@ -41,14 +37,6 @@
     sprite: _Stalker/Objects/Clothing/cloak/hunterskiy.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/hunterskiy.rsi
-  - type: Armor
-    armorClass: 2
-    modifiers:
-      flatReductions:
-        Blunt: 2
-        Slash: 2
-        Piercing: 2
-        Heat: 2
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -88,7 +76,9 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_hunter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_hunter.rsi
-
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Кевларовый Плащ
 
@@ -113,11 +103,6 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
-      flatReductions:
-        Blunt: 4
-        Slash: 4
-        Piercing: 4
-        Heat: 4
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -157,7 +142,10 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_kevlar.rsi
-    
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
 # настойщий Плащ Греха
 - type: entity
   parent: STClothingCapeBase
@@ -281,6 +269,9 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_greh.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_greh.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 ##Skins
 
@@ -313,6 +304,9 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_head_kevlar_monolith.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_head_kevlar_monolith.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingOuterCoatLoyalist
@@ -342,6 +336,9 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_renegat.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_renegat.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingOuterCoatLoyalist
@@ -351,9 +348,9 @@
   suffix: ST, T3, Скин
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
+    sprite: _Stalker/Objects/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
+    sprite: _Stalker/Objects/Clothing/cloak/Sera_/seraphim_kevlar_cape.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetLoyalistCoatSeraphim
     requiredSlot:
@@ -364,10 +361,74 @@
   parent: STClothingHeadHatBase
   id: ClothingHeadHelmetLoyalistCoatSeraphim
   name: кевларовый капюшон серафимов
-  description: От кевлара в нем не только название.
+  description: От кевлара в нем только название.
   suffix: ST, Скин
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_kevlar_seraphim.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatLimaSeraphim
+  name: кевларовый плащ серафимов
+  description: Плащ, модифицированный под нужды группировки Серафимов, окрашенный в серый цвет.
+  suffix: ST, T3, Скин
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/Sera_/limaphim_kevlar_cape.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/Sera_/limaphim_kevlar_cape.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetLoyalistCoatLimaSeraphim
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetLoyalistCoatLimaSeraphim
+  name: кевларовый капюшон серафимов
+  description: От кевлара в нем только название.
+  suffix: ST, Скин
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_kevlar_limaphim.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_kevlar_limaphim.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatRet
+  name: утеплённый кевларовый плащ
+  description: Плащ, сделанный в условиях зоны, на удивление качественная работа, сделан из качественной кожи и прошит кевларом,кое-где вставлены бронепластины, окрашен в коричневый с пришитым воротником.
+  suffix: ST, T3, Renegat
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/coat_Ret.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/coat_Ret.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterCoatRetHat
+    requiredSlot:
+    - cloak
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingOuterCoatRetHat
+  name: Воротник
+  description: просто Воротник.
+  suffix: ST, Скин
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Head/Hats/Ret4hat.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Head/Hats/Ret4hat.rsi

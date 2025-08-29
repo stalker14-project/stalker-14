@@ -4,7 +4,6 @@ using Robust.Shared.Timing;
 using ZoneArtifactDetectorComponent = Content.Shared._Stalker.ZoneArtifact.Components.ZoneArtifactDetectorComponent;
 
 namespace Content.Server._Stalker.ZoneArtifact.Systems.Detector;
-
 public sealed class ZoneArtifactDetectorSoundIndicatorSystem : EntitySystem
 {
     [Dependency] private readonly AudioSystem _audio = default!;
@@ -15,27 +14,40 @@ public sealed class ZoneArtifactDetectorSoundIndicatorSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        var curTime = _timing.CurTime;
         var query = EntityQueryEnumerator<ZoneArtifactDetectorSoundIndicatorComponent, ZoneArtifactDetectorComponent>();
+
         while (query.MoveNext(out var uid, out var indicator, out var detector))
         {
-            if (!_artifactDetector.Enabled((uid, detector)))
+            if (!_artifactDetector.Enabled((uid, detector)) || curTime < indicator.NextTime)
                 continue;
 
-            if (_timing.CurTime < indicator.NextTime)
+            if (detector.ClosestEntity == null)
                 continue;
 
-            if (detector.ClosestEntity is null || detector.ClosestDistance is not { } distance)
-                return;
+            if (!detector.ClosestDistance.HasValue)
+                continue;
+            var distance = detector.ClosestDistance.Value;
 
             _audio.PlayPvs(indicator.Sound, uid);
 
-            var scalingFactor = distance / detector.DetectionDistance;
-            var interval = (indicator.MaxInterval - indicator.MinInterval) * scalingFactor + indicator.MinInterval;
+            var detectionDistance = detector.DetectionDistance;
+            if (detectionDistance <= 0)
+                continue;
 
-            indicator.NextTime += interval;
+            var scalingFactor = distance / detectionDistance;
+            if (scalingFactor < 0f)
+                scalingFactor = 0f;
+            if (scalingFactor > 1f)
+                scalingFactor = 1f;
 
-            if (indicator.NextTime < _timing.CurTime)
-                indicator.NextTime = _timing.CurTime + interval;
+            var intervalRange = indicator.MaxInterval - indicator.MinInterval;
+            var interval = intervalRange * scalingFactor + indicator.MinInterval;
+
+            var nextTime = indicator.NextTime + interval;
+            if (nextTime < curTime + interval)
+                nextTime = curTime + interval;
+            indicator.NextTime = nextTime;
         }
     }
 }

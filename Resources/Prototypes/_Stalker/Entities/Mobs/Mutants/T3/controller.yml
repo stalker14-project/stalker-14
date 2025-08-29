@@ -1,0 +1,77 @@
+- type: entity
+  id: STMutantController
+  parent: BaseMobMutant
+  name: контроллёр
+  suffix: ST, T3
+  description: C какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
+  components:
+  - type: Damageable
+    damageModifierSet: STMutantT3DamageModifierSet
+  - type: Sprite
+    sprite: _Stalker/Mobs/Mutants/controller.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: controller
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: controller
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+    angle: 0
+    attackRate: 0.75
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Psy: 10
+        Slash: 10
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        15
+  - type: NPCUseAction
+    actionId: ActionPsyonicsDizzyMutant
+  - type: Psyonics
+    psy: 1000000
+  - type: PsyonicsActionDizzy
+    cost: 0
+    duration: 5
+    actionId: ActionPsyonicsDizzyMutant
+    damage:
+      types:
+        Psy: 50
+  - type: PsyonicsShieldVisuals
+    sprite: _Stalker/Effects/psyonic_shield.rsi
+    state: Standing
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.5
+  - type: BasicEntityAmmoProvider
+    proto: STBulletPsy
+    capacity: 1
+    count: 1
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/_Stalker/Mutants/controller_shot.ogg
+  - type: Butcherable
+    spawned:
+    - id: Roubles500
+      amount: 3
+      prob: 1
+    - id: Roubles1000
+      amount: 1
+      prob: 0.5

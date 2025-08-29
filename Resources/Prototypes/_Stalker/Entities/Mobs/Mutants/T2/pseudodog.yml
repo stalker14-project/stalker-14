@@ -1,0 +1,76 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantPseudodog
+  name: pseudodog
+  suffix: ST, T2
+  description: A mutated wolf that can cause a lot of trouble to an unprepared stalker.
+  components:
+    - type: Damageable
+      damageModifierSet: STMutantT2DamageModifierSet
+    - type: HTN
+      rootTask:
+        task: STBlindDogRedCompound
+      blackboard:
+        VisionRadius: !type:Single
+          20
+        AggroVisionRadius: !type:Single
+          13
+    - type: Butcherable
+      spawned:
+        - id: MutantPartPseudodogTail
+          amount: 1
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: pseudodog
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 200
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/bdog_die_0.ogg
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        200: Dead
+    - type: MeleeWeapon
+      attackRate: 1
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.4
+      soundHit:
+        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/bdog_attack_2.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 26
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.5
+      baseSprintSpeed: 5
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/pseudodog.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: pseudodog
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        200: 0.8
+    - type: StaminaDamageOnHit
+      damage: 5
+    - type: STWeight
+      self: 55

@@ -13,6 +13,7 @@
   id: BaseMobSpecies
   abstract: true
   components:
+  - type: RDDeathScreen # stalker-changes
   - type: Sprite
     layers:
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
@@ -24,8 +25,8 @@
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: ["jumpsuit"]
-    - map: [ "torso" ] # stalker-changes
     - map: [ "legs" ] # stalker-changes
+    - map: [ "torso" ] # stalker-changes
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
@@ -199,14 +200,15 @@
   - type: Speech
     speechSounds: Alto
   - type: DamageForceSay
-  - type: Vocal
-    sounds:
-      Male: MaleHuman
-      Female: FemaleHuman
-      Unsexed: MaleHuman
+  - type: STVocal # STODO: Make custom doll and specs
+  # - type: Vocal stalker14-no-screams
+  #   sounds:
+  #     Male: MaleHuman
+  #     Female: FemaleHuman
+  #     Unsexed: MaleHuman
   - type: Emoting
   - type: BodyEmotes
-    soundsId: GeneralBodyEmotes
+    soundsId: STBodyEmotes # stalker14-no-vanila-emotes
   - type: Grammar
     attributes:
       proper: true
@@ -215,10 +217,8 @@
     deathPenalty: 0.01 # However they really ought to be living and intact, otherwise they're worth 100x less.
   - type: Tag
     tags:
-    - CanPilot
     - FootstepSound
-    - DoorBumpOpener
-    - AnomalyHost
+    - STMaterialOrganic # Stalker
 
 - type: entity
   save: false
@@ -290,7 +290,7 @@
     alternateState: Standing
     # stalker-changes-start
   - type: Inventory
-    templateId: stalkerhuman
+    templateId: STMain
   - type: PsyonicsShieldVisuals
     sprite: _Stalker/Effects/psyonic_shield.rsi
     state: Standing
@@ -313,9 +313,12 @@
   - type: STLay
   - type: RespawnOnDeath
   - type: ApproachEmitter
-    range: 20
-    minRange: 15
+    range: 30
+    minRange: 20
     useMinRange: true
+  - type: BlowoutTarget
+  - type: STEvasion
+    evasion: 0.01
     # stalker-changes-end
 
 - type: entity
@@ -344,15 +347,12 @@
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: ["jumpsuit"]
+    - map: [ "legs" ] # stalker-changes
+    - map: [ "torso" ] # stalker-changes
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
     - map: ["enum.HumanoidVisualLayers.LHand"]
     - map: ["enum.HumanoidVisualLayers.RHand"]
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
-      color: "#ffffff"
-      sprite: Objects/Misc/handcuffs.rsi
-      state: body-overlay-2
-      visible: false
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
@@ -360,6 +360,7 @@
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
+    - map: [ "cloak" ] # stalker-changes
     - map: [ "neck" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -371,6 +372,11 @@
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
   - type: Appearance
   - type: HumanoidAppearance
     species: Human

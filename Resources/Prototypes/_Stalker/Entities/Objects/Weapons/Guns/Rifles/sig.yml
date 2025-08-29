@@ -1,0 +1,144 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifle
+  id: STBaseWeaponRifleSIG
+  components:
+  - type: STWeight
+    self: 3.5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/sig-550.rsi
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_sig550_shot.ogg
+      params:
+        volume: -2
+    minAngle: 40
+    maxAngle: 75
+    angleIncrease: 0.7
+    shotsPerBurst: 3
+    ShotsPerBurstModified: 3
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    - SemiAuto
+    - FullAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base556Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine556
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge556
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
+
+- type: entity
+  parent: STBaseWeaponRifleSIG
+  id: STWeaponRifleSIG550
+  name: SIG SG 550
+  description: A representative of a relatively new family of assault rifles. Due to its high reliability, accuracy in combat and ease of use, it is one of the best examples of weapons of this class. It is rarely encountered in the Zone and costs a lot of money. Usually, it is specially ordered for themselves by experienced stalkers.
+
+- type: entity
+  parent: STBaseWeaponRifleSIG
+  id: STWeaponRifleSIG550Black
+  name: SIG SG 550
+  description: One of the relatively new Swiss assault rifles chambered for 5.56 x 45 mm. The accuracy, soft recoil and high reliability of this weapon quickly won it the widest popularity.
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sig-550-black.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sig-550-black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sig-550-black.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/t_sig550_shot.ogg
+
+
+- type: entity
+  parent: STBaseWeaponRifleSIG
+  id: STWeaponRifleSIG739
+  name: SIG-739 "Precision"
+  description: Custom sniper variant chambered in Soviet 7.62x39mm. Integrated scope and modified barrel make it perfect for long-range engagements in the Zone. Rare and expensive.
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sigsniper.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sigsniper.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/sigsniper.rsi
+  - type: Gun
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/sks_shoot.ogg
+      params:
+        volume: 0
+    minAngle: 40
+    maxAngle: 100
+    angleIncrease: 2
+    angleDecay: 45
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base739Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine739
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge739
+  - type: Scope
+    zoom: 1.4
+    offset: 12
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.2
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 3

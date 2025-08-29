@@ -40,3 +40,107 @@
           factor: 2
         - !type:SatiateThirst
           factor: 2
+
+- type: reagent
+  id: NocturneSerum
+  name: Nocturne Serum
+  group: Narcotics
+  desc: Made-in-Zone serum that force anyone to sleep instantly.
+  physicalDesc: reagent-physical-desc-powdery
+  color: "#128e80"
+  boilingPoint: 444.0
+  meltingPoint: 128.0
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.1
+      effects:
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: NocturneSerum
+          min: 0.1
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add
+
+- type: reagent
+  id: AirlossSerum
+  name: Airloss Serum
+  group: Toxins
+  desc: Made-in-Zone serum that force anyone to suffer terrible airloss.
+  physicalDesc: reagent-physical-desc-pungent
+  color: "#6b0007"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Airloss: 25
+
+- type: reagent
+  id: STStimulants
+  name: reagent-name-stimulants
+  group: Narcotics
+  desc: reagent-desc-stimulants
+  physicalDesc: reagent-physical-desc-energizing
+  flavor: sharp
+  color: "#9A040E"
+  boilingPoint: 212.0
+  meltingPoint: 170.0
+  metabolisms:
+    Narcotic:
+      metabolismRate: 0.5
+      effects:
+      - !type:MovespeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1
+      - !type:GenericStatusEffect
+        key: Stun
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: KnockedDown
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        key: StaminaModifier
+        component: StaminaModifier
+        time: 3
+        type: Add
+      - !type:GenericStatusEffect
+        key: ForcedSleep
+        time: 3
+        type: Remove
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentThreshold
+          reagent: Haloperidol
+          max: 0.01
+        key: Drowsiness
+        time: 10
+        type: Remove
+    Medicine:
+      metabolismRate: 0.5
+      effects:
+      - !type:ModifyBloodLevel
+        amount: 25
+      - !type:ResetNarcolepsy
+      - !type:SatiateHunger
+        factor: 20
+      - !type:SatiateThirst
+        factor: 20
+      - !type:HealthChange
+        conditions:
+        - !type:TotalDamage
+        damage:
+          groups:
+            Burn: -20
+            Brute: -5
+            Airloss: -20
+            Toxin: -20
+            Genetic: -20
+          types:
+            Compression: -20
+            Psy: -20

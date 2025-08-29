@@ -1,0 +1,366 @@
+- type: entity
+  id: longrangemetaldetector
+  parent: BaseItem
+  name: Металлодетектор дальнего действия
+  description: Аномальный ручной металлодетектор, был узконаправленно модифицирован для поиска тайников.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/longrangemetaldetector.rsi
+    layers:
+      - state: icon
+      - state: screen
+        shader: unshaded
+        visible: false
+        map: ["enum.ToggleVisuals.Layer"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemToggle
+  - type: ProximityBeeper
+  - type: ProximityDetector
+    range: 30
+    criteria:
+      components:
+      - Rangedetector # reacts to AI eye, intentional
+  - type: Beeper
+    isMuted: true
+    minBeepInterval: 0.15
+    maxBeepInterval: 2
+    beepSound:
+      path: "/Audio/Items/locator_beep.ogg"
+      params:
+        maxDistance: 1
+        volume: -8
+  - type: Craftable
+
+- type: entity
+  parent: BaseItem
+  id: longrangemetaldetectorBox
+  name: Коробка из тайника
+  description: Ящик из тайника
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: WeaponPistolStalkerPM
+          prob: 0.005
+        - id: WeaponPistolStalkerTT
+          prob: 0.005
+        - id: STWeaponRevolverTaurusJudge
+          prob: 0.005
+        - id: STWeaponRevolverTaurusTracker455
+          prob: 0.005
+        - id: STWeaponShotgunMossbergM88
+          prob: 0.005
+        - id: STWeaponShotgunMP133
+          prob: 0.005
+        - id: STWeaponRifleSaiga545
+          prob: 0.005
+        - id: BoxArtcont
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.01
+        - id: BaseRadio
+          prob: 0.01
+        - id: HandheldGPSBasic
+          prob: 0.01
+        - id: Defibrillator
+          prob: 0.005
+        - id: MedkitAI2
+          prob: 0.07
+        - id: MedkitMilitary
+          prob: 0.02
+        - id: MedkitScience
+          prob: 0.005
+        - id: psyblock
+          prob: 0.05
+        - id: antiradpill
+          prob: 0.05
+        - id: AntiRadMedipen
+          prob: 0.01
+        - id: radioprotectpill
+          prob: 0.05
+        - id: STBrutepack
+          prob: 0.1
+        - id: STGauze
+          prob: 0.1
+        - id: STOintment
+          prob: 0.1
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: ZoneArtifactPellicle
+          prob: 0.005
+        - id: ZoneArtifactSparkler
+          prob: 0.005
+        - id: ArtMedusa
+          prob: 0.005
+        - id: ZoneArtifactFireball
+          prob: 0.005
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: 45ACPLFMJBox
+          prob: 0.01
+        - id: 725PBox
+          prob: 0.01
+        - id: 919PSOGJBox
+          prob: 0.01
+        - id: 918PGJBox
+          prob: 0.01
+        - id: ClothingOuterCoatPahanBlueprint
+          prob: 0.01
+        - id: ClothingOuterCoatPoiskBlueprint
+          prob: 0.1
+        - id: STClothingOuterJacketStalkerUpgradeBlueprint
+          prob: 0.1
+        - id: ClothingOuterAnomalyStalkerJacketBlueprint
+          prob: 0.1
+        - id: ST7mmBuckshotBoxCinkBluePrint
+          prob: 0.1
+        - id: ST918PGJBoxCinkBlueprint
+          prob: 0.1
+        - id: ST919PSOGJBoxCinkBlueprint
+          prob: 0.3
+        - id: ST725PBoxCinkBlueprint
+          prob: 0.1
+        - id: STZoneArtifactDetectorHunterBlueprint
+          prob: 0.1
+        - id: STZoneArtifactDetectorPulseBlueprint
+          prob: 0.1
+        - id: STDetectorAD1Blueprint
+          prob: 0.1
+        - id: ToolkitTearOne
+          prob: 0.1
+        - id: IngotGold1
+          prob: 0.1
+        - id: IngotSilver1
+          prob: 0.1
+        - id: MaterialDiamond1
+          prob: 0.1
+        - id: DrinkGoldenCup
+          prob: 0.1
+        - id: CraftMaterialGunpowder
+          prob: 0.1
+        - id: CraftCardboardTube
+          prob: 0.1
+        - id: CraftFitil
+          prob: 0.1
+        - id: CraftCardboardTube
+          prob: 0.1
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: lightCraftingRecipe
+  id: Tainik
+  results:
+  - longrangemetaldetectorBox
+  steps:
+    firstIngredient: longrangemetaldetectorCrate
+    secondIngredient: AAAAStalkerLopata
+    keepSecond: true
+    exactSecond: false
+    time: 20
+
+- type: lightCraftingRecipe
+  id: Tainikgrass
+  results:
+  - longrangemetaldetectorBox
+  steps:
+    firstIngredient: longrangemetaldetectorCrategrass
+    secondIngredient: AAAAStalkerLopata
+    keepSecond: true
+    exactSecond: false
+    time: 20
+
+- type: entity
+  id: longrangemetaldetectorCrate
+  parent: BaseStructure
+  name: Тайник (Невидимый)
+  description: Закопанный Тайник
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/invisible.rsi
+    layers:
+      - state: invisible
+  - type: Craftable
+  - type: Rangedetector
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - SubfloorMask
+  - type: Stealth
+  - type: Tag
+    tags:
+      - HideContextMenu
+
+- type: entity
+  name: тайник спавнер невидимый (10 %)
+  id: longrangemetaldetectorCrateSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
+    - type: RandomSpawner
+      prototypes:
+        - longrangemetaldetectorCrate
+      chance: 0.1
+
+- type: entity
+  name: тайник спавнер невидимый (5 %)
+  id: longrangemetaldetectorCrateSpawner05
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
+    - type: RandomSpawner
+      prototypes:
+        - longrangemetaldetectorCrate
+      chance: 0.05
+
+- type: entity
+  name: тайник спавнер невидимый (1 %)
+  id: longrangemetaldetectorCrateSpawner01
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
+    - type: RandomSpawner
+      prototypes:
+        - longrangemetaldetectorCrate
+      chance: 0.01
+
+- type: entity
+  id: longrangemetaldetectorCrategrass
+  parent: BaseStructure
+  name: Тайник (спрайт травы)
+  description: Закопанный Тайник, Трава
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+    sprite: _Stalker/Decals/greengraseONEST.rsi
+    layers:
+      - state: grass
+  - type: SyncSprite
+  - type: RequiresTile
+  - type: Craftable
+  - type: Rangedetector
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - SubfloorMask
+  - type: Tag
+    tags:
+      - HideContextMenu
+
+- type: entity
+  name: тайник спавнер трава (10 %)
+  id: longrangemetaldetectorCrategrassSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
+    - type: RandomSpawner
+      prototypes:
+        - longrangemetaldetectorCrategrass
+      chance: 0.1
+
+- type: entity
+  name: тайник спавнер трава (5 %)
+  id: longrangemetaldetectorCrategrassSpawner05
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
+    - type: RandomSpawner
+      prototypes:
+        - longrangemetaldetectorCrategrass
+      chance: 0.05
+
+- type: entity
+  name: тайник спавнер трава (1 %)
+  id: longrangemetaldetectorCrategrassSpawner01
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
+    - type: RandomSpawner
+      prototypes:
+        - longrangemetaldetectorCrategrass
+      chance: 0.01

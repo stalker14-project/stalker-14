@@ -1,0 +1,28 @@
+- type: entity
+  parent: STBaseBullet
+  id: STBulletCar
+  components:
+  - type: STProjectileMobHit
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Transport/old_cars.rsi
+    layers:
+    - state: car_green_us
+      shader: unshaded
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False

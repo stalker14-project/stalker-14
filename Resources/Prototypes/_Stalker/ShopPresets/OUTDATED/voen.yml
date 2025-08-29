@@ -1,0 +1,162 @@
+- type: shopPreset
+  id: VoenShopPreset
+  itemsForSale:
+    MutantPartBoarHoof: 5
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+            # Guns
+          # 7mm
+        STWeaponShotgunMP153: 1100 # T2
+        STWeaponShotgunSaiga12: 3200 # T4
+          # 5,45x39
+        STWeaponRifleAKS74: 3200
+        STWeaponRifleOC14: 3150
+        STWeaponRifleAK74M: 3500
+          # Smg
+        STWeaponSMGPP1901: 2500
+          # Other
+        STWeaponSniperMosin: 1300
+    - name: shop-category-magazines
+      priority: 2
+      items:
+          # 7mm
+        Base1270Mag: 200 #T1
+        Saiga1270Mag10: 400
+          # 5,45x39
+        545Mag30: 250 #T3
+        545Mag45: 550
+          # 7,62x54 and 39
+        739Mag30: 300
+        754Mag10: 420
+          # Smg
+        VityazMag: 250
+
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        6mmBuckshotBox: 150
+        7mmBuckshotBox: 60
+        # 9.19
+        919PSTBox: 250
+        919PBMBox: 650
+        # 5.45
+        545FMJBox: 250
+        545PCBox: 350
+        # 7.39
+        739FMJBox: 750
+        # 7.54
+        754FMJBox: 780
+    - name: shop-category-armor
+      priority: 4
+      items:
+          # Helmets #
+        ClothingHeadHelmetBerill5MMilitary: 850
+        ClothingHeadAssaultHelmetMilitary: 1500
+        ClothingHeadHelmetBulatMilitary: 1800
+          # OuterClothing #
+        STClothingOuterArmorLightPlateVestBaseMilitary: 1200 # T2 - PVP
+        STClothingOuterArmorLightPlateVestBasePSZ7: 2350 # T3 - PVP
+        ClothingOuterArmorZaryaMilitary: 2100 # T2 - universal
+        STClothingOuterArmorLightPlateVestBaseANAgray: 3250 # T3 - PVP
+        ClothingOuterArmorSevaMilitary: 3300 # T3 - ENV
+    - name: shop-category-storage-and-containers
+      priority: 5
+      items:
+          # BackPacks
+        ClothingBackpackDuffelBlackStalker: 50 # T1
+        ClothingBackpackMercStalker: 800 # T3
+        ClothingBackpackDuffelBlackMilitaryTacticStalker: 1250 # T4
+        ClothingBackpackDuffelBlackTacticStalker: 1200 # T4
+          # Belts
+        ClothingBeltBandolierStalker: 40 # T1 - PVE
+        ClothingBeltTarzanBlack: 350 # T1 - PVP
+        ClothingBeltWebbingOfficerStalker: 750 # T3 - PVP
+          # Containers
+        MedkitCMSStalker: 600 # T1
+        MedkitGrizzlyStalker: 1000 # T2
+    - name: shop-category-raincoats-and-gasmasks
+      priority: 6
+      items:
+          # Cloaks
+        ClothingOuterCoatKolchyga: 850 # T1
+        ClothingOuterCoatLoyalist: 1100 # T2
+          # Gasmasks
+        ClothingMaskGP21: 800 # T3
+    - name: shop-category-research-equipment
+      priority: 7
+      items:
+        STBoltBagFilled: 50
+        BoxArtcont: 500
+        ZoneAnomalyDetectorAD1: 450 # T1
+        ZoneAnomalyDetectorAD2: 1000 # T2
+    - name: shop-category-utilities
+      priority: 8
+      items:
+        STSkinsKitMilitary: 500
+        BoxZiptie: 50
+        BoxSafebox: 300
+        CheapLighter: 5
+        GeigerCounter: 50
+        BaseRadio: 50
+        STFlashlightSeclite: 50
+        PowerCellHyper: 50
+        HandheldGPSBasic: 50
+        Paper: 2
+        Pen: 5
+        Binocularus1: 1250
+        BoxFlare: 60
+        Matchbox: 10
+    - name: shop-category-provisions
+      priority: 9
+      items:
+        STEnergyDrink: 150
+        STEnergyDrinkMonster: 150
+        STEnergyDrinkRevo: 150
+        STDrinkBeerCanBaltic: 80
+        DrinkVodkaBottleFull: 50
+        STFoodBreadPlain: 25
+        DrinkWaterBottleFull: 35
+        FoodTinMRE: 80
+        DrinkLemonadehBottleFull: 50
+        STFoodMeatSalami: 250
+    - name: shop-category-medicine
+      priority: 10
+      items:
+          # Cheap
+        PillDexalin: 10
+        PillDexalinPlusStalker: 25
+        STOintment: 10
+        STGauze: 15
+        STBrutepack: 10
+          # Expensive
+        antiradpill: 50
+        radioprotectpill: 70
+        Bloodpack: 80
+        psyblock: 100
+        MedkitAI2: 150
+        MedkitMilitary: 600
+        Defibrillator: 850
+    - name: shop-category-modules
+      priority: 11
+      items:
+        STModuleScopeRiflesT1Ru: 750
+        STModuleScopeRiflesT1Nato: 750
+        STModuleShotgunChokeT1: 300
+        STModuleAutoSear: 3500
+        STModuleSniperSightT1: 800
+        STModuleSMGGripT1: 800
+    - name: shop-category-customization
+      priority: 12
+      items:
+        ClothingBandageStalkerRus: 25
+        ClothingMaskNeckBalaklava1: 10
+        ClothingMaskNeckBalaklava2: 10
+        ClothingMaskNeckBalaklava3: 10
+        ClothingCloakStalker: 30
+        ClothingLegsJeansRussianPixel: 20
+        ClothingLegsJeansGorka: 20
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 60

@@ -5,6 +5,7 @@
   components:
     - type: Sprite
       state: soul
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget
@@ -17,24 +18,50 @@
     - type: PersonalDamage
       damage:
         types:
-          Cellular: -0.5
-          Psy: -0.5
-          Radiation: 0.4
-          Asphyxiation: -3
+          Radiation: -10
+          Asphyxiation: -2
       interval: 1
     - type: Armor
       hiddenExamine: true
       armorClass: 2
       modifiers:
         coefficients:
-          Psy: 0.8
-          Shock: 1.2
-          Radiation : 1.2
-          Asphyxiation: 0.8
-    - type: ClothingSpeedModifier
-      walkModifier: 1.2
-      sprintModifier: 1.1
+          Psy: 0.5
+          Heat: 0.5
+          Shock: 0.5
+          Cold: 0.5
 
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactFloodlight
+  suffix: Stalker, Артефакт-фонарь
+  components:
+    - type: Sprite
+      state: artifactFloodlight
+      scale: 0.5, 0.5
+    - type: ZoneArtifact
+      anomaly: ZoneAnomalyLamp
+    - type: ZoneArtifactDetectorTarget
+      detectedLevel: 1
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,1,1
+    - type: Clothing
+      quickEquip: true
+      slots:
+        - ARTIFACT
+        - pocket
+    - type: PointLight
+      radius: 20
+      energy: 8
+      color: "#c2a41f"
+      netsync: false
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: 0.1
+      interval: 1
 #
 - type: entity
   parent: BaseArtifactStorage
@@ -43,6 +70,7 @@
   components:
     - type: Sprite
       state: magnetic_flower
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget
@@ -77,6 +105,7 @@
   components:
     - type: Sprite
       state: atom
+      scale: 0.5, 0.5
     - type: ZoneArtifact
       anomaly: ZoneAnomalyRift
     - type: ZoneArtifactDetectorTarget
@@ -86,7 +115,7 @@
       energy: 10
       color: "#3ca6e9"
     - type: PersonalDamage
-      staminaDamage: -5
+      staminaDamage: -3
       damage:
         types:
           Compression: 1

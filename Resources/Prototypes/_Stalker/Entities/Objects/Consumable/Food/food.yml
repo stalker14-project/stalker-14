@@ -17,6 +17,33 @@
           types:
             Poison: 0.3
 
+- type: entity
+  name: rotten meat
+  parent: FoodMeatBase
+  id: FoodMeatRotten
+  description: Halfway to becoming fertilizer for your garden.
+  components:
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+    - Trash
+    - Recyclable
+  - type: Sprite
+    state: rotten
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: GastroToxin
+          Quantity: 4
+        - ReagentId: Fat
+          Quantity: 4
+  - type: Trash
+    time: 300
+
 - type: reagent
   id: MRadin
   name: MRadin
@@ -33,13 +60,11 @@
           types:
             Radiation: -1
 
-##### Кабан
-
 - type: entity
-  name: сырое мясо кабана
-  parent: FoodMeatRawBase
-  id: FoodMeatBoar
-  description: Кусок сырого мяса кабана.
+  name: сырое сало
+  parent: FoodMeatBase
+  id: STFoodMeatSalo
+  description: Кусок сырого сала кабана.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -68,10 +93,10 @@
   - type: Craftable
 
 - type: entity
-  name: стейк из мяса кабана
+  name: приготовленное сало
   parent: FoodMeatBase
-  id: FoodMeatBoarCooked
-  description: Приготовленное мясо кабана.
+  id: STFoodMeatSaloCooked
+  description: Приготовленное сало кабана.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -99,6 +124,238 @@
     graph: MeatSteakBoar
     node: steak boar
 
+###############Хлеб
+
+- type: entity
+  parent: FoodInjectableBase
+  id: STFoodBreadBase
+  abstract: true
+  components:
+  - type: FlavorProfile
+    flavors:
+      - bread
+  - type: Food
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+  - type: RepositoryItem
+    categoryName: Припасы
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 26
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+
+- type: entity
+  parent: STFoodBreadBase
+  id: STFoodBreadSliceBase
+  suffix: Stalker, еда
+  abstract: true
+  components:
+  - type: Item
+    size: Tiny
+  - type: FlavorProfile
+    flavors:
+      - bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  name: буханка хлеба
+  parent: STFoodBreadBase
+  id: STFoodBreadPlain
+  description: Неизвестно, кто умудряется печь батоны на территории Зоны, или каким образом их протаскивают через периметр. Однако этот хлеб не заражён, не радиоактивен, достаточно свеж и вполне съедобен. Во всяком случае, никто из сталкеров пока не жаловался.
+  suffix: Stalker, еда
+  components:
+  - type: Food
+  - type: Sprite
+    layers:
+    - state: plain
+  - type: SliceableFood
+    slice: STFoodBreadPlainSlice
+  - type: Tag
+    tags:
+    - Cooked
+
+- type: entity
+  name: кусок хлеба
+  suffix: Stalker, еда
+  parent: STFoodBreadBase
+  id: STFoodBreadPlainSlice
+  description: Кусок хлеба. На первый взгляд достаточно свеж и вполне съедобен.
+  components:
+  - type: Food
+  - type: Sprite
+    layers:
+    - state: plain-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Craftable
+
+
+
+#############  Cалями
+
+- type: entity
+  name: кусок колбасы
+  parent: FoodMeatBase
+  id: STFoodMeatSalamiSlice
+  description:  Если присмотреться достаточно внимательно, можно заметить, что кусок колбасы состоит из мяса не самого высокого качества.
+  suffix: Stalker, еда
+  components:
+  - type: STWeight
+    self: 0.2
+  - type: Sprite
+    state: salami-slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+  - type: Craftable
+
+
+- type: entity
+  name: колбаса «Практическая»
+  parent: FoodMeatBase
+  id: STFoodMeatSalami
+  description: Часто за неимением лучшего, эта колбаса — смесь курятины и соевого заменителя — становится завтраком, обедом и ужином сталкера. Из-за большого количества консервантов довольно долго не портится
+  suffix: Stalker, еда
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/salami.rsi
+    state: salami
+  - type: SliceableFood
+    slice: STFoodMeatSalamiSlice
+  - type: MeleeWeapon
+    wideAnimationRotation: 100
+    damage:
+      types:
+        Blunt: 6
+  - type: Wieldable
+  - type: Craftable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+  - type: Tag
+    tags:
+    - Cooked
+
+- type: entity
+  name: колбаса «Зыряновская»
+  parent: FoodMeatBase
+  id: STFoodMeatMeatbat
+  description: Колбаса, сделанная в посёлке Зыряновка, отличается тем, что очень много весит, вследствие чего ей можно очень больно ударить.
+  suffix: Stalker, еда
+  components:
+  - type: STWeight
+    self: 20
+  - type: Sprite
+    sprite: Objects/Consumable/Food/salami.rsi
+    state: salami
+  - type: SliceableFood
+    slice: STFoodMeatSalamiSlice
+  - type: MeleeWeapon
+    wideAnimationRotation: 110
+    damage:
+      types:
+        Blunt: 10
+  - type: Wieldable
+  - type: Craftable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 40
+  - type: Tag
+    tags:
+    - Cooked
+
+##### Кабан
+
+- type: entity
+  name: сырое мясо кабана
+  parent: FoodMeatRawBase
+  id: FoodMeatBoar
+  description: Кусок сырого мяса кабана, лучше не думать, чем питался его бывший владелец.
+  suffix: Stalker, еда
+  components:
+  - type: STWeight
+    self: 1.0
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: boarraw
+    scale: 0.9, 0.9
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 13
+        - ReagentId: Fat
+          Quantity: 5
+        - ReagentId: MToxin
+          Quantity: 10
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: steak boar
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+
+- type: entity
+  name: шашлык из мяса кабана
+  parent: FoodMeatBase
+  id: FoodMeatBoarCooked
+  description: Приготовленное мясо кабана, покрытое золотистой хрустящей корочкой, выглядит аппетитно.
+  suffix: Stalker, еда
+  components:
+  - type: STWeight
+    self: 0.8
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+    - Steak
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: boarcook
+    scale: 0.9, 0.9
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Protein
+          Quantity: 13
+        - ReagentId: MToxin
+          Quantity: 5
+  - type: Construction
+    graph: MeatSteakBoar
+    node: steak boar
+
 - type: constructionGraph
   id: MeatSteakBoar
   start: start
@@ -122,23 +379,25 @@
   name: сырое мясо пса
   parent: FoodMeatRawBase
   id: FoodMeatDog
-  description: Кусок сырого мяса пса.
+  description: Кусок сырого мяса мутировавшей собаки, содержит опасный для человеческого организма токсин, но если ты голодал последние несколько дней, токсины не кажутся такими уж смертельными.
   suffix: Stalker, еда
   components:
   - type: STWeight
     self: 0.8
   - type: Sprite
-    state: cutlet
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: dograw
+    scale: 0.7, 0.7
   - type: SolutionContainerManager
     solutions:
       food:
         reagents:
         - ReagentId: UncookedAnimalProteins
-          Quantity: 9
+          Quantity: 6
         - ReagentId: Fat
-          Quantity: 9
+          Quantity: 4
         - ReagentId: MToxin
-          Quantity: 5
+          Quantity: 13
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
@@ -154,7 +413,7 @@
   name: стейк из мяса пса
   parent: FoodMeatBase
   id: FoodMeatDogCooked
-  description: Приготовленное мясо пса.
+  description: Приготовленное мясо собаки, шутки про корейскую еду приветствуются.
   suffix: Stalker, еда
   components:
   - type: STWeight
@@ -166,18 +425,19 @@
     - Meat
     - Steak
   - type: Sprite
-    layers:
-    - state: cutlet-cooked
+    sprite: _Stalker/Objects/Counsumable/Food/meat
+    state: dogcook
+    scale: 0.7, 0.7
   - type: SolutionContainerManager
     solutions:
       food:
         reagents:
         - ReagentId: Nutriment
-          Quantity: 10
+          Quantity: 4
         - ReagentId: Protein
-          Quantity: 5
-        - ReagentId: MRadin
-          Quantity: 5
+          Quantity: 6
+        - ReagentId: MToxin
+          Quantity: 7
   - type: Construction
     graph: MeatSteakDog
     node: steak dog
@@ -256,6 +516,7 @@
         - ReagentId: Ipecac
           Quantity: 2
 
+
 ###################################
 #             НАПИТКИ             #
 ###################################
@@ -282,79 +543,10 @@
     sprite: _Stalker/Objects/Counsumable/Drinks/lemonade.rsi
   - type: Sealable
 
-# Прочая лабудень
 
-- type: entity
-  name: бургер из мяса слепого пса
-  parent: FoodBurgerBase
-  id: FoodBurgerDog
-  description: Бургер из собачатины с чесноком, перцем и салатом. Дешёвая альтернатива более популярному бургеру из кабана.
-  suffix: Stalker, еда
-  components:
-  - type: Sprite
-    state: chicken
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 3
-        - ReagentId: Protein
-          Quantity: 7
-        - ReagentId: Vitamin
-          Quantity: 1
-  - type: Tag
-    tags:
-    - Meat
 
-- type: entity
-  name: бургер из мяса кабана
-  parent: FoodBurgerBase
-  id: FoodBurgerBoar
-  description: Бургер из кабана с чесноком, перцем и салатом. Более питательный, чем бургер из слепого пса.
-  suffix: Stalker, еда
-  components:
-  - type: Sprite
-    state: chicken
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Protein
-          Quantity: 8
-        - ReagentId: Vitamin
-          Quantity: 2
-  - type: Tag
-    tags:
-    - Meat
 
-- type: entity
-  name: бургер из мяса паука
-  parent: FoodBurgerBase
-  id: FoodBurgerSpider
-  description: Бургер из паука с чесноком, перцем и салатом. Эта гадость не только отвратительна, но ещё и мало-питательна
-  suffix: Stalker, еда
-  components:
-  - type: Sprite
-    state: soylent
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 10
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 2
-        - ReagentId: Protein
-          Quantity: 4
-        - ReagentId: Vitamin
-          Quantity: 1
-  - type: Tag
-    tags:
-    - Meat
+# Stalker
 
 - type: entity
   name: печёный картофель
@@ -392,38 +584,6 @@
     - Potato
     - Vegetable
 
-- type: entity
-  name: чищенный картофель
-  parent: FoodProduceBase
-  id: FoodPotatoCleaned
-  description: Чищенныё картофель, который может быть как простым, так и праздничным, изысканным блюдом.
-  suffix: Stalker, еда
-  components:
-  - type: STWeight
-    self: 0.39
-  - type: Craftable
-  - type: FlavorProfile
-    flavors:
-      - potatoes
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 13
-        reagents:
-        - ReagentId: Nutriment
-          Quantity: 11
-        - ReagentId: Vitamin
-          Quantity: 2
-  - type: Sprite
-    sprite: Objects/Weapons/Bombs/hot_potato.rsi
-    state: icon
-  - type: Item
-    sprite: Objects/Specific/Hydroponics/potato.rsi
-    size: Small
-  - type: Tag
-    tags:
-    - Potato
-    - Vegetable
 
 - type: entity
   name: картофельные очистки
@@ -456,26 +616,25 @@
     - Potato
     - Vegetable
 
-# Stalker
-
 - type: entity
-  name: бутерброд
-  parent: FoodMeatBase
-  id: FoodMeatButerbrod
+  name: бутерброд c колбасой
+  parent: STFoodBreadSliceBase
+  id: STFoodMeatButerbrod
   suffix: Stalker, Еда
-  description: Ломтик хлеба или булки с намазанной или уложенной сверху начинкой из какого-либо продукта, готового к употреблению
+  description: Ломтик хлеба или булки с намазанной или уложенной сверху начинкой из какого-либо продукта, готового к употреблению.
   components:
   - type: STWeight
     self: 0.34
   - type: Craftable
-  - type: Tag
-    tags:
-    - Raw
-    - Cutlet
-    - Meat
-    - meaty
-    - bread
   - type: SolutionContainerManager
+  - type: Sprite
+    sprite: _Stalker/Objects/Counsumable/Food/meat_buterbread.rsi
+    state: icon
+    size: Small
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - bread
     solutions:
       food:
         reagents:
@@ -485,3 +644,8 @@
           Quantity: 6
         - ReagentId: Vitamin
           Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+    - Bread
+    - Slice

@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponGun
+  id: STBaseWeaponSMG
+  name: smg
+  description: A rooty tooty point and shooty.
+  suffix: Weapon, SMG
+  components:
+  - type: FarGunshot
+    range: 190
+    sound: /Audio/_DZ/Effects/FarGunshots/smg1.ogg
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/SMGs/atreides.rsi
+  - type: Item
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -40
+    maxAngle: -40
+  - type: PullDoAfter
+    pullTime: 1.5
+  - type: Gun
+    projectileSpeed: 50
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/smg.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_module_underbarrel: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.42

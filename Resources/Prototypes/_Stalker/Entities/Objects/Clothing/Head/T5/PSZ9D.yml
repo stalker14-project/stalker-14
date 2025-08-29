@@ -13,20 +13,23 @@
     armorClass: 5
     modifiers:
       flatReductions:
-        Piercing: 10
-        Blunt: 20
-        Slash: 20
+        Blunt: 6
+        Slash: 6
+        Piercing: 6
       coefficients:
-        Piercing: 0.6
-        Blunt: 0.5
-        Slash: 0.5
+        Blunt: 0.80
+        Slash: 0.80
   - type: ExplosionResistance
-    damageCoefficient: 0.70
+    damageCoefficient: 0.90
   - type: Reflect
-    reflectProb: 0.15
+    reflectProb: 0.10
     spread: 360
     reflects:
       - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT5Base
@@ -40,7 +43,7 @@
     sprite: _Stalker/Objects/Clothing/hats/psz9d_helm.rsi
 
 - type: entity
-  parent: STClothingHeadHelmetTacticalT5Base
+  parent: STClothingHeadHelmetTacticalT4Base
   id: ClothingHeadHelmet1SHBandit
   name: шлем «ПСЗ-9д» бандитов
   description: Крутой шлем для крутых пацанов.

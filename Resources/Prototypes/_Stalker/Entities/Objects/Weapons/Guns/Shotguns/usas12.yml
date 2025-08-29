@@ -1,0 +1,90 @@
+# Эта штука просто пиздец. Если в игре есть дробь пробивающая броню, то эта штука будет выносить всё живое и неживое
+# Надо как-то это балансить. Отдачей там или ещё чем я хз.
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgunAuto
+  id: STBaseWeaponShotgunUSAS
+  components:
+  - type: STWeight
+    self: 3.6
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/usas.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/usas.rsi
+    shape:
+    - 0,0,6,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/usas.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -20
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/saiga_shoot.ogg
+    minAngle: 60
+    maxAngle: 80
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 4
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Magazine10USAS12x70
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 3
+        whitelist:
+          tags:
+          - MagazineUSAS
+      gun_auto_sear:
+        name: Insides
+        priority: 2
+        whitelist:
+          tags:
+          - STModuleAutoSear
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - ShellShotgun
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.3
+
+- type: entity
+  parent: STBaseWeaponShotgunUSAS
+  id: STWeaponShotgunUSAS
+  name: USAS-12 Auto Shotgun
+  description: Military-grade automatic shotgun with terrifying firepower. Considered overkill in the Zone - can literally 'erase' targets. Only used by experienced stalkers.
+
+- type: entity
+  parent: STBaseWeaponShotgunUSAS
+  id: STWeaponShotgunUSASCovenant
+  name: USAS-12 "Covenant"
+  description: Exclusive USAS-12 variant with unique camouflage used by Covenant faction. Retains all devastating power of original.
+  components:
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/covenant_usas.rsi
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/covenant_usas.rsi
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/usas/covenant_usas.rsi

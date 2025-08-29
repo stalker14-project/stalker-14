@@ -1,0 +1,100 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantOraclesBrown
+  name: оракл
+  suffix: ST, T3
+  description: Огромных размеров жаба, в животе которой поместиться не один кабан.
+  components:
+    - type: Butcherable
+      spawned:
+        - id: MutantPartOraculeEye
+    - type: Damageable
+      damageModifierSet: STMutantT3DamageModifierSet
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Jumpscare
+      damageRadius: 1
+      reloadTime: 3
+      attackRadius: 12
+      chargeDamage:
+        types:
+          Radiation: 20
+          Poison: 40
+          Slash: 40
+      jumpPower: 90
+      updateCooldown: 1
+    - type: Sprite
+      layers:
+      - map: ["enum.DamageStateVisualLayers.Base"]
+        state: alive
+        sprite: _Stalker/Mobs/Mutants/Oracle/brown.rsi
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.45
+          density: 1600
+          mask:
+          - MobMask
+          layer:
+          - MobLayer
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        800: Dead
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        600: 0.6
+        700: 0.7
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 1
+      baseSprintSpeed: 2
+    - type: MeleeWeapon
+      attackRate: 0.2
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.25
+      angle: 60
+      range: 1.25
+      soundHit:
+        path: /Audio/_Stalker/Mutants/oracles_attack.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/oracles_aggressive.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Radiation: 5
+          Poison: 10
+          Slash: 15
+    - type: StaminaDamageOnHit
+      damage: 10
+    - type: PersonalDamage
+      damage:
+        types:
+          Psy: -0.1
+          Compression: -0.1
+          Cellular: -0.1
+          Poison: -0.1
+          Radiation: -0.1
+          Asphyxiation: -0.1
+          Bloodloss: -0.1
+          Heat: -0.1
+          Shock: -0.1
+          Cold: -0.1
+          Caustic: -0.1
+          Blunt: -0.1
+          Slash: -0.1
+          Piercing: -0.1
+    - type: STWeight
+      self: 100

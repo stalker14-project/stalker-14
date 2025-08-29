@@ -1,0 +1,32 @@
+- type: entity
+  abstract: true
+  parent: STBaseCarpet
+  id: STBaseCarpetLarge
+  name: soviet carpet
+  description: Having such a carpet in the house indicated a good standard of living. For a modern person, such a woolen carpet is considered a relic of the past.
+  suffix:  Carpet, Large
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/FloorMounted/Carpets/large.rsi
+
+- type: entity
+  parent: STBaseCarpetLarge
+  id: STCarpetLarge1
+  components:
+  - type: Sprite
+    state: carpet1
+
+- type: entity
+  parent: STBaseCarpetLarge
+  id: STCarpetLarge2
+  components:
+  - type: Sprite
+    state: carpet2
+
+- type: entity
+  parent: STBaseCarpetLarge
+  id: STCarpetLarge3
+  suffix: Carpet, Large
+  components:
+  - type: Sprite
+    state: carpet3

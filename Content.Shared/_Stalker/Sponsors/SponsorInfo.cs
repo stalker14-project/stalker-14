@@ -6,6 +6,7 @@ using System.IO;
 using System.Text.Json.Serialization;
 using Lidgren.Network;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -14,19 +15,16 @@ namespace Content.Shared._Stalker.Sponsors;
 [Serializable, NetSerializable]
 public sealed class SponsorInfo
 {
-    public string Login { get; set; } = string.Empty;
-    public SponsorLevel Tier { get; set; } = SponsorLevel.None;
-    public bool Contributor { get; set; } = false;
-}
+    public string Login { get; }
+    public ProtoId<SponsorPrototype> Tier { get; }
+    public bool Contributor { get; }
 
-[Serializable, NetSerializable]
-public enum SponsorLevel : byte
-{
-    None = 0,
-    Bread = 1,
-    Backer = 2,
-    OMind = 3,
-    Pseudogiant = 4
+    public SponsorInfo(string login, ProtoId<SponsorPrototype> prototype, bool contributor = false)
+    {
+        Login = login;
+        Tier = prototype;
+        Contributor = contributor;        
+    }
 }
 
 public sealed class MsgSponsorInfo : NetMessage

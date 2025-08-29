@@ -1,0 +1,97 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantPseudogiant
+  name: псевдогигант
+  suffix: ST, T4
+  description: A massive, terrifying mutant that towers over other creatures in the Zone.
+  components:
+    - type: Butcherable
+      spawned:
+        - id: MutantPartPseudogiantHeart
+          amount: 1
+        - id: CraftHide
+          amount: 3
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 10000
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/pseudogiant_die.ogg
+    - type: Jumpscare
+      attackRadius: 7
+      damageRadius: 3
+      staminaDamage: 200
+      reloadTime: 999999
+      chargeDamage:
+        types:
+          Blunt: 50
+      jumpPower: 60
+      updateCooldown: 999999
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        10000: Dead
+    - type: MeleeWeapon
+      attackRate: 0.5
+      heavyWindupModifier: 1.5
+      heavyDamageModifier: 2
+      angle: 45
+      range: 2.5
+      soundHit:
+        path: /Audio/_Stalker/Mutants/pseudogiant_attack.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/pseudogiant_aggro.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Blunt: 100
+          Slash: 50
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 6
+    - type: Sprite
+      sprite: _Stalker/Mobs/Mutants/pseudogiant.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+          scale: 2, 2
+    - type: Physics
+      bodyType: KinematicController
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.9
+          density: 10000
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: Damageable
+      damageModifierSet: STMutantT4DamageModifierSet
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        9500: 0.8
+    - type: STWeight
+      self: 50
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/_Stalker/Mutants/pseudogiant_step.ogg
+        params:
+          volume: 5
+          variation: 0.2

@@ -1,0 +1,55 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSMG
+  id: STBaseWeaponSMGViper
+  components:
+  - type: STWeight
+    self: 2.4
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vz61.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/vz61.rsi
+  - type: Gun
+    minAngle: 45
+    maxAngle: 90
+    angleIncrease: 2
+    angleDecay: 25
+    fireRate: 10
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/919.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Vz61Mag
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineVz61
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleSMGSilencer
+      gun_module_underbarrel:
+        name: Underbarrel
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSMGGrip
+      gun_chamber:
+        name: Chamber
+        startingItem: STCartridge918PGJ
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge918
+
+- type: entity
+  parent: STBaseWeaponSMGViper
+  id: STWeaponSMGVZ61

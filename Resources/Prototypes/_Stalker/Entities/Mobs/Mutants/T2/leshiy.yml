@@ -1,0 +1,71 @@
+- type: entity
+  name: Леший
+  parent: BaseMobMutant
+  id: MobMutantLeshiy
+  suffix: ST, T2
+  components:
+  - type: Damageable
+    damageModifierSet: STMutantT2DamageModifierSet
+  - type: Bloodstream
+    bloodReagent: Water
+    bloodMaxVolume: 650
+  - type: Butcherable
+    spawned:
+      - id: STCraftBirchPlankT2
+        amount: 1
+        prob: 0.4
+      - id: MutantPartLeshiyRoot
+        maxAmount: 1
+        prob: 0.5
+  - type: Sprite
+    sprite: _Stalker/Mobs/Mutants/leshiy.rsi
+    layers:
+      - map: ["enum.DamageStateVisualLayers.Base"]
+        state: leshiy
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: leshiy
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      250: 0.7
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+      blackboard:
+        VisionRadius: !type:Single
+          20
+        AggroVisionRadius: !type:Single
+          15
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 3
+  - type: BasicEntityAmmoProvider
+    proto: STBulletAcid
+    capacity: 3
+    count: 3
+  - type: Gun
+    fireRate: 2
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/Weapons/Xeno/alien_spitacid.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 235
+        mask:
+        - MobMask
+        layer:
+        - MobLayer

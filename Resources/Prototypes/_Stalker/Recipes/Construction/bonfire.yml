@@ -1,0 +1,86 @@
+- type: entity
+  id: STBonfire
+  parent: Bonfire
+  name: костёр
+  description: Что может быть лучше чем сидеть под костёр под песни?
+  components:
+  - type: Craftable
+
+- type: entity
+  id: BonfireOff
+  parent: BaseStructure
+  name: основа для костра
+  description: Она должно светиться?
+  suffix: TimeDesp 600
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+  - type: TimedDespawn
+    lifetime: 600
+  - type: Construction
+    graph: BonfireCraft
+    node: bonfireend
+  - type: Destructible
+    thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 50
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: Craftable
+
+- type: entity
+  id: BonfireOn
+  parent: STBonfire
+  name: костёр
+  description: Что может быть лучше позднего вечера под открытым небом с гитарой и друзьями.
+  suffix: TimeDesp 300
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/bonfire.rsi
+    layers:
+      - state: bonfire
+      - state: burning
+  - type: PointLight
+    radius: 5
+    energy: 3
+    color: "#FFC90C"
+  - type: AmbientSound
+    volume: -5
+    range: 5
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: AlwaysHot
+  - type: TimedDespawn
+    lifetime: 300
+  - type: SpawnOnDespawn
+    prototype: Ash
+  - type: Craftable
+
+# bonfire crafting
+
+- type: construction
+  id: BonfireCraft
+  name: основа для костра
+  description: Она должна светиться?
+  graph: BonfireCraft
+  startNode: start
+  targetNode: bonfireend
+  category: construction-category-structures
+  icon:
+    sprite: Structures/Decoration/bonfire.rsi
+    state: bonfire
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  conditions:
+    - !type:TileNotBlocked

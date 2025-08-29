@@ -3,7 +3,7 @@
   abstract: True
   id: STBasePellet
   categories: [ HideSpawnMenu ]
-  parent: BaseBullet
+  parent: STBaseBean
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
@@ -12,7 +12,6 @@
     damage: 0.1
   - type: TimedDespawn
     lifetime: 1
-
 # 7mm
 - type: entity
   id: STPellet7mm
@@ -22,7 +21,8 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 12
+        Piercing: 9
+        Mutant: 4
 
 - type: entity
   id: Bullet7mmBuckshot
@@ -46,7 +46,8 @@
     projectileClass: 1
     damage:
       types:
-        Piercing: 16
+        Piercing: 14
+        Mutant: 8
 
 - type: entity
   id: Bullet6mmBuckshot
@@ -67,10 +68,11 @@
   parent: STBasePellet
   components:
   - type: Projectile
-    projectileClass: 2
+    projectileClass: 1
     damage:
       types:
-        Piercing: 17
+        Piercing: 20
+        Mutant: 11
 
 - type: entity
   id: Bullet8mmBuckshot
@@ -80,6 +82,31 @@
   components:
   - type: ProjectileSpread
     proto: STPellet85mm
+    count: 8
+    spread: 8
+
+# flechette
+
+- type: entity
+  id: STPelletFlechetta
+  name: pellet flechetta
+  parent: STBasePellet
+  components:
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 3
+        Mutant: 18
+
+- type: entity
+  id: BulletShotgunFlechette
+  name: bullet (Flechette)
+  parent: STPelletFlechetta
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: STPelletFlechetta
     count: 8
     spread: 12
 
@@ -112,7 +139,7 @@
 - type: entity
   id: BulletShotgunBullet
   name: bullet (Bullet)
-  parent: STBasePellet
+  parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -127,23 +154,23 @@
 - type: entity
   id: BulletShotgunRIP
   name: bullet (Bullet)
-  parent: STBasePellet
+  parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     projectileClass: 0
     damage:
       types:
-        Blunt: 20
-        Slash: 20
-        Piercing: 40
+        Blunt: 10
+        Slash: 10
+        Mutant: 100
   - type: StaminaDamageOnCollide
     damage: 20
 
 - type: entity
   id: BulletShotgunDart
   name: bullet (Dart)
-  parent: STBasePellet
+  parent: STBaseSPBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -158,7 +185,7 @@
   id: PelletShotgunBeanbagStalker
   name: beanbag (.50)
   categories: [ HideSpawnMenu ]
-  parent: BaseBullet
+  parent: STBaseSPBullet
   components:
     - type: Sprite
       sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi

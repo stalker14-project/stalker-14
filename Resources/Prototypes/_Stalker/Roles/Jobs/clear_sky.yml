@@ -1,8 +1,8 @@
 - type: job
   id: StalkerClearSky
-  name: Боец Чистого Неба
+  name: job-clearsky
   icon: cn
-  description: Ищет способ сосуществования с Зоной.
+  description: job-clearsky-desc
   playTimeTracker: JobClearSky
   whitelisted: true
   requirements:
@@ -14,7 +14,8 @@
       - Human
       - Dwarf
   startingGear: StalkerClearSkyGear
-  supervisors: Исследуй Зону и оберегай её секреты от посторонних глаз.
+  supervisors: job-clearsky-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -23,9 +24,9 @@
           - CN
       - type: Bands
         band: Stalker
-        altBand: stalker
-        canChange: true
         bandIcon: cn
+        bandProto: STClearSkyBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -42,3 +43,13 @@
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsWork
     outerClothing: ClothingOuterCoatBomber
+    back: ClothingBackpackDuffelBlackStalker
+- type: stBand
+  id: STClearSkyBand
+  name: Clear Sky
+  factionId: ClearSky
+  maxMembers: 10
+  managingRankId: 2
+  hierarchy:
+    1: StalkerClearSky
+

@@ -1,0 +1,11 @@
+- type: entity
+  name: триггер гоша (1) (25%)
+  id: STTriggerGosha125
+  parent: STBaseTrigger125
+  suffix: ST, T4, Trigger
+  components:
+    - type: SpawnOnApproach
+      prototypes:
+        - STMobMutatedGosha
+      restricted:
+        - STMobMutatedGosha

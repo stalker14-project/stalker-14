@@ -1,20 +1,13 @@
 - type: job
   id: StalkerAnomalist
-  name: Аномалист
+  name: job-anomalist
   icon: tec
-  description: Изучение и сохранение зоны. Активное использование аномалий и артефактов. Создание новых аномалий и артефактов. Создание аппаратуры на основе аномалий/артефактов или для работы с аномалиями.
+  description: job-anomalist-desc
   playTimeTracker: JobStalkerAnomalist
   whitelisted: true
-  requirements:
-    # - !type:RoleTimeRequirement
-    #   role: JobStalkerAnomalist
-    #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: AnomalistGear
-  supervisors: Вы работаете сами на себя
+  supervisors: job-anomalist-supervisor
+  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
@@ -24,45 +17,39 @@
     - type: Bands
       band: Stalker
       bandIcon: tec
+      bandProto: STAnomalistsBand
+      bandRankId: 1
     - type: BlockTackingHolyItems
     - type: TeethPull
       teethProto: ToothStalker
       pullingItemTag: PliersStalker
       teethCount: 3
       initialTeeth: 3
-
-- type: startingGear
-  id: AnomalistGear
-  equipment:
-    id: AnomalistPDA
-    head: ClothingHeadHatBeaniehat
-    legs: ClothingLegsAnomalistTechnician
-    torso: ClothingTorsoAnomalistTechnician
-    shoes: ClothingShoesBootsCombatFilled
-    gloves: ClothingHandsGlovesFingerless
-    back: ClothingBackpackDuffelHikingVSRF
-    neck: ClothingNeckDogtagStalker
+    - type: Psyonics
+      psy: 75
+    - type: PsyonicsActionMeditation
+    - type: PsyonicsActionLight
 
 - type: job
   id: StalkerAnomalistGuardian
-  name: Хранитель
+  name: job-anomalist-guardian
   icon: tec
-  description: Изучение и сохранение зоны. Активное использование аномалий и артефактов. Создание новых аномалий и артефактов. Создание аппаратуры на основе аномалий/артефактов или для работы с аномалиями.
+  description: job-anomalist-guardian-desc
   playTimeTracker: StalkerAnomalistGuardian
   whitelisted: true
-  requirements:
-    # - !type:RoleTimeRequirement
-    #   role: StalkerAnomalistGuardian
-    #   time: 1
-    - !type:SpeciesRequirement
-      species:
-      - Human
-      - Dwarf
   startingGear: AnomalistGear
   supervisors: Вы работаете сами на себя
+  canBeAntag: false
   special:
   - !type:AddComponentSpecial
     components:
+    - type: Psyonics
+      psy: 75
+    - type: PsyonicsActionMeditation
+    - type: PsyonicsActionLight
+    - type: PsyonicsActionRift
+    - type: PsyonicsActionSpringboard
+    - type: STPsyonicsStealth
     - type: Access
       groups:
         - Anomalist
@@ -70,9 +57,30 @@
     - type: Bands
       band: Stalker
       bandIcon: tec
-    - type: BlockTackingHolyItems
-    - type: TeethPull
-      teethProto: ToothStalker
-      pullingItemTag: PliersStalker
-      teethCount: 3
-      initialTeeth: 3
+      bandProto: STAnomalistsBand
+      bandRankId: 2
+
+- type: startingGear
+  id: AnomalistGear
+  equipment:
+    id: AnomalistPDA
+    belt: ClothingBeltBandolierStalker
+    torso: ClothingTorsoAnomalistTechnician
+    eyes: ClothingEyesGogglesAnomalist
+    legs: ClothingLegsAnomalistTechnician
+    shoes: ClothingShoesBootsCombat
+    back: ClothingBackpackDuffelBlackStalker
+    outerClothing: ClothingOuterCoatIvyAnomalist
+    mask: ClothingMaskGasAnomalists
+    head: ClothingHeadWildHatAnomalist
+
+- type: stBand
+  id: STAnomalistsBand
+  name: Anomalists
+  factionId: Stalker
+  maxMembers: 10
+  managingRankId: 2
+  hierarchy:
+    1: StalkerAnomalist
+    2: StalkerAnomalistGuardian
+

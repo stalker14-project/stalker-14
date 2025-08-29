@@ -1,0 +1,56 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponGun
+  id: STBaseWeaponSniper
+  name: sniper
+  description: A rooty tooty point and shooty.
+  suffix: Weapon, Sniper
+  components:
+  - type: FarGunshot
+    range: 350
+    sound: /Audio/_DZ/Effects/FarGunshots/sniper1.ogg
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - map: ["enum.GunVisualLayers.Mag"]
+    - map: ["scope"]
+  - type: Wieldable
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -50
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+  - type: AmmoCounter
+  - type: Gun
+    projectileSpeed: 75
+    fireRate: 0.75
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+      gun_module_scope: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+  - type: PullDoAfter
+    pullTime: 3.5
+  - type: STWeaponModuleContainer
+  - type: ItemSlots
+    slots:
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSight
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 1
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSilencer
+

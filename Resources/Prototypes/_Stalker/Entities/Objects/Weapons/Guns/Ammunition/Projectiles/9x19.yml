@@ -3,7 +3,7 @@
 - type: entity
   id: Bullet919PSOGJ
   name: bullet (9х19 auto)
-  parent: BaseBullet
+  parent: STBasePistolBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
@@ -38,9 +38,10 @@
     projectileClass: 0
     damage:
       types:
+        Mutant: 40
+        Piercing: 5
         Blunt: 5
         Slash: 5
-        Piercing: 35
 
 - type: entity
   id: Bullet919PBM

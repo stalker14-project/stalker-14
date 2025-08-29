@@ -11,6 +11,8 @@
         - state: screen_off
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
+    - type: RepositoryItem
+      categoryName: Детекторы
     - type: Appearance
     - type: GenericVisualizer
       visuals:
@@ -31,6 +33,8 @@
   description: A hand-held scanner built to collect information on various anomalous objects.
   suffix: Stalker, Detector
   components:
+    - type: STWeight
+      self: 0.5
     - type: Sprite
       sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_1.rsi
       layers:
@@ -53,6 +57,8 @@
   description: Ручной сканер который был модифицирован, уменьшена дистанция и предназначенный для реагирования аномалий на близком расстоянии
   suffix: Stalker, Детектор
   components:
+    - type: STWeight
+      self: 0.8
     - type: Sprite
       sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_1.rsi
       layers:
@@ -74,6 +80,8 @@
   description: A hand-held scanner built to collect information on various anomalous objects.
   suffix: Stalker, Detector
   components:
+    - type: STWeight
+      self: 1
     - type: Sprite
       sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_2.rsi
       layers:
@@ -96,6 +104,8 @@
   description: Ручной сканер который был модифицирован, стал более точным но уменьшена дистанция и предназначенный для реагирования аномалий на близком расстоянии
   suffix: Stalker, Детектор
   components:
+    - type: STWeight
+      self: 1.2
     - type: Sprite
       sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_2.rsi
       layers:
@@ -117,6 +127,8 @@
   description:  Волновой Модуль Терешкова, разработанное после повторного появления Зоны в Институте устройство для обнаружения аномалий, использующее совершенно иные принципы детекции аномалий.
   suffix: Stalker, Детектор
   components:
+    - type: STWeight
+      self: 0.8
     - type: Sprite
       sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_3.rsi
       layers:
@@ -126,7 +138,7 @@
           shader: unshaded
     - type: ZoneAnomalyDetector
       level: 2
-      beepSound: /Audio/Items/Detectors/Anomaly/da_beep3.ogg
+      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
       distance: 5
       maxBeepInterval: 0.5
       minBeepInterval: 0.001
@@ -159,6 +171,8 @@
   description: A hand-held scanner built to collect information on various anomalous objects.
   suffix: Stalker, Detector
   components:
+    - type: STWeight
+      self: 1.5
     - type: Sprite
       sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/uad_14a.rsi
       layers:
@@ -181,6 +195,8 @@
   description: A hand-held scanner built to collect information on various anomalous objects.
   suffix: Stalker, Detector
   components:
+    - type: STWeight
+      self: 1.8
     - type: Sprite
       sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/uaal_7b.rsi
       layers:
@@ -199,3 +215,27 @@
       enabled: true
     - type: ZoneAnomalyDetectorArtifactActivator
       level: 5
+
+- type: entity
+  parent: ZoneAnomalyBaseDetector
+  id: ZoneAnomalyDetectorAD3
+  name: Детектор аномалий 3-й модели (ДА-3)
+  description: Модифицированная версия ДА-2, разработонная сотрудниками НИИ, может обнаруживать аномалии 4 уровня, благодоря новым датчикам обнаружения аномалий. В центральной части устройства находится артефакт "Батарейка".
+  suffix: Stalker, Detector
+  components:
+    - type: STWeight
+      self: 2.8
+    - type: Sprite
+      sprite: _Stalker/Objects/Devices/ZoneAnomalyDetectors/ad_2m.rsi
+      layers:
+        - state: base
+        - state: screen_off
+          map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
+          shader: unshaded
+    - type: ZoneAnomalyDetector
+      level: 4
+      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
+      distance: 12
+      maxBeepInterval: 0.9
+      minBeepInterval: 0.05
+

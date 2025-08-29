@@ -1,0 +1,206 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageProect
+  suffix: Project
+  name: ящик проекта
+  description: Довольно старый ящик. Возможно, стоит его обыскать.
+  components:
+    - type: StorageFill
+      contents:
+        - id: ProectPVP
+          prob: 0.3
+        - id: ProectPVP2
+          prob: 0.3
+        - id: ProectPVE
+          prob: 0.4
+        - id: ProectENV
+          prob: 0.3
+    - type: TimedDespawn
+      lifetime: 9999999
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
+      state: icon
+
+- type: entity
+  parent: BaseItem
+  id: ProectPVE
+  name: набор Проекта для охоты
+  description: Набор стандартный поставки экипировки Проекта
+  suffix: Stalker, т3, Project
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,3,3
+    - type: STWeight
+      self: 25
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorZaryaStalker
+        - id: STWeaponShotgunMossbergM88
+        - id: MedkitMilitary
+        - id: MedkitScience
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: STGauze
+        - id: ClothingMaskNeckFacemask
+        - id: ClothingShoesBootsCombat
+        - id: STCombatKnife
+        - id: ClothingBeltBandolierStalker
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: 6mmBuckshotBox
+        - id: ClothingHeadHelmetLight
+        - id: ClothingBackpackDuffelMilitaryOlive
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ProectENV
+  name: набор Проекта для артефактов
+  description: Набор стандартный поставки экипировки Проекта
+  suffix: Stalker, т3, Project
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,3,3
+    - type: STWeight
+      self: 25
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorSevaStalker
+        - id: STWeaponRevolverChiappaRhino60DS
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitAI2
+        - id: MedkitLAR
+        - id: STGauze
+        - id: ClothingMaskNeckFacemask
+        - id: ClothingShoesBootsCombat
+        - id: STCombatKnife
+        - id: 45ACPMFMJBox
+        - id: 45ACPMFMJBox
+        - id: 45ACPMFMJBox
+        - id: STSpeedLoader45ACPEmpty
+        - id: STSpeedLoader45ACPEmpty
+        - id: STBoltBagFilled
+        - id: GeigerCounter
+        - id: ZoneArtifactDetectorResponse
+        - id: STSkinsKitProject
+        - id: ClothingBackpackDuffelMilitaryOlive
+        - id: BoxArtcont
+        - id: BoxArtcont
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ProectPVP
+  name: набор Проекта для охоты на двух ногую дичь
+  description: Набор стандартный поставки экипировки Проекта
+  suffix: Stalker, т2, Project
+  components:
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,3,3
+    - type: STWeight
+      self: 25
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: STClothingOuterArmorLightPlateVestBaseStalker
+        - id: ClothingHeadHelmetLight
+        - id: STWeaponSMGMP5
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: STGauze
+        - id: STBrutepack
+        - id: ClothingMaskNeckFacemask
+        - id: ClothingShoesBootsCombat
+        - id: STCombatKnife
+        - id: STModuleSMGGripT1
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: BaseMP5Mag
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: 919PBMBox
+        - id: GeigerCounter
+        - id: STSkinsKitProject
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ProectPVP2
+  name: продвинутый набор Проекта для охоты на двух ногую дичь
+  description: Набор продвинутый поставки экипировки Проекта
+  suffix: Stalker, т3, Project
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,3,3
+  - type: STWeight
+    self: 25
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: Icon
+    sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    state: kb2
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterArmorLightPlateVestBaseANAgreen
+    - id: ClothingHeadHelmetLight
+    - id: STWeaponRifleL85
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitAI2
+    - id: MedkitAI2
+    - id: MedkitScience
+    - id: STGauze
+    - id: STBrutepack
+    - id: ClothingMaskNeckFacemask
+    - id: ClothingShoesBootsCombat
+    - id: STCombatKnife
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556M855Box
+    - id: 556M855Box
+    - id: 556M855Box
+    - id: 556M855Box
+    - id: 556M856Box
+    - id: GeigerCounter
+    - id: STSkinsKitProject
+    sound:
+      path: /Audio/Effects/unwrap.ogg

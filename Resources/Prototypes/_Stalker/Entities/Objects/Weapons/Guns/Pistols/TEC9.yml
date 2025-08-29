@@ -16,12 +16,12 @@
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
-    projectileSpeed: 20
+    projectileSpeed: 35
     minAngle: 5
     maxAngle: 40
-    angleIncrease: 3
-    angleDecay: 15
-    fireRate: 3
+    angleIncrease: 1
+    angleDecay: 5
+    fireRate: 6
     availableModes:
     - SemiAuto
   - type: ItemSlots
@@ -43,16 +43,13 @@
             - STModuleAutoSear
       gun_chamber:
         name: Chamber
-        startingItem: Cartridge919PSOGJ
+        startingItem: STCartridge919PSOGJ
         priority: 1
         whitelist:
           tags:
-            - Cartridge919
+            - STCartridge919
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
-  - type: GunWieldBonus
-    minAngle: -5
-    maxAngle: -25
 

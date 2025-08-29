@@ -1,0 +1,106 @@
+- type: entity
+  parent: ClothingOuterStorageToggleableBase
+  id: STClothingOuterCoatBase
+  name: Базовый плащ
+  description: Базовое описание плаща.
+  suffix: ST, T1, Universal
+  abstract: true
+  components:
+  - type: Item
+    size: Ginormous
+    shape:
+    - 0,0,9,3
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadHatHoodBase
+    slot: head
+  - type: STWeight
+    self: 3.5
+  - type: Armor
+    armorClass: 1
+    modifiers:
+      flatReductions:
+        Blunt: 1
+        Slash: 3
+        Piercing: 1
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.65
+        Piercing: 0.95
+        Heat: 0.95
+        Radiation: 0.9
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,9,1
+    - 0,3,9,4
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+  - type: Craftable
+  - type: Tag
+    tags:
+    - BlockBack
+    - BlockBelt
+    - BlockCloak
+    - BlockGloves
+
+# Brown
+
+- type: entity
+  parent: STClothingOuterCoatBase
+  id: ClothingOuterCoatBanditBrown
+  name: кожаный плащ бандитов
+  description: Обычный плащ из коричневой кожи. Заметной защиты носителю не обеспечивает. Разве что не даст замёрзнуть ночью и смягчит укус слепого пса. Довольно неудобен в условиях Зоны, но, тем не менее, часто используется бандитами — возможно, исключительно из-за внешнего вида.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_brown.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_brown.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatBanditBrown
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodCoatBanditBrown
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_bandit_hat_brown.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_bandit_hat_brown.rsi
+
+# Black
+
+- type: entity
+  parent: STClothingOuterCoatBase
+  id: ClothingOuterCoatBanditBlack
+  name: кожаный плащ бандитов
+  description: Обычный плащ из чёрной кожи. Заметной защиты носителю не обеспечивает. Разве что не даст замёрзнуть ночью и смягчит укус слепого пса. Довольно неудобен в условиях Зоны, но, тем не менее, часто используется бандитами — возможно, исключительно из-за внешнего вида.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/coat_bandit_black.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatBanditBlack
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodCoatBanditBlack
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/coat_bandit_hat_black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/coat_bandit_hat_black.rsi

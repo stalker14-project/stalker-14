@@ -15,7 +15,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 35
   - type: Item
     size: Small
@@ -41,6 +41,30 @@
     categoryName: Магазины
 
 - type: entity
+  id: MP5Mag50
+  name: магазин магазин МП-5 (50)
+  description: Магазин на MP-5 9x19. Вместимость пуль 50. Продают пустым.
+  parent: BaseMP5Mag
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 0.5
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+      - STCartridge919
+    capacity: 50
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/glock/33.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
   id: BaseGlockMag10
   name: магазин Glock 9x19 (10)
   description: Магазин на Glock 9x19. Вместимость пуль 10. Продают пустым.
@@ -57,7 +81,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 10
     - type: Item
       size: Small
@@ -94,7 +118,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 17
     - type: Item
       size: Small
@@ -123,7 +147,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 24
     - type: Item
       size: Small
@@ -151,7 +175,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 33
     - type: Sprite
       scale: 0.8, 0.8
@@ -179,7 +203,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 10
     - type: Item
       size: Small
@@ -216,7 +240,7 @@
       mayTransfer: true
       whitelist:
         tags:
-          - Cartridge919
+          - STCartridge919
       capacity: 18
     - type: Item
       size: Small
@@ -253,7 +277,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 30
   - type: Item
     size: Small
@@ -293,7 +317,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 64
   - type: Item
     size: Normal
@@ -344,133 +368,6 @@
       - MagazineTEC
 
 - type: entity
-  id: BaseTommyGunMag
-  name: магазин ПП Томпсона (40)
-  description: Магазин для "Томми гана". Вместимость пуль 40. Продают пустым.
-  parent: BaseItem
-  tag: Stalker
-  components:
-  - type: STWeight
-    self: 0.6
-  - type: Sprite
-    scale: 0.8, 0.8
-    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/vityaz.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: Tag
-    tags:
-      - MagazineTommyGun
-  - type: BallisticAmmoProvider
-    proto:
-    mayTransfer: true
-    whitelist:
-      tags:
-        - Cartridge919
-    capacity: 40
-  - type: Item
-    size: Small
-    shape:
-      - 0,0,0,1
-  - type: ContainerContainer
-    containers:
-      ballistic-ammo: !type:Container
-  - type: MagazineVisuals
-    magState: mag
-    steps: 2
-    zeroVisible: false
-  - type: Appearance
-
-- type: entity
-  id: TommyGunDrum
-  name: барабан ПП Томпсона (60)
-  description: Барабан для "Томми гана". Вместимость пуль 60. Продают пустым.
-  parent: BaseTommyGunMag
-  tag: Stalker
-  components:
-  - type: STWeight
-    self: 2
-  - type: Item
-    size: Normal
-    shape:
-      - 0,0,2,2
-  - type: Sprite
-    scale: 0.7, 0.7
-    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/tommygun_drum.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: BallisticAmmoProvider
-    proto:
-    mayTransfer: true
-    whitelist:
-      tags:
-        - Cartridge919
-    capacity: 60
-
-- type: entity
-  id: TommyGunDrum2
-  name: барабан ПП Томпсона оригинальной конструкции (60)
-  description: Барабан для "Томми гана". Вместимость пуль 60. Продают пустым.
-  parent: BaseTommyGunMag
-  tag: Stalker
-  components:
-  - type: STWeight
-    self: 2
-  - type: Item
-    size: Normal
-    shape:
-      - 0,0,2,2
-  - type: Sprite
-    scale: 0.7, 0.7
-    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/tommygun_drum2.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: BallisticAmmoProvider
-    proto:
-    mayTransfer: true
-    whitelist:
-      tags:
-        - Cartridge919
-    capacity: 60
-
-- type: entity
-  id: TommyGunBigDrum
-  name: барабан ПП Томпсона (100)
-  description: Огромный и редкий Барабан для "Томми гана". Вместимость пуль 100. Продают пустым.
-  parent: BaseTommyGunMag
-  tag: Stalker
-  components:
-  - type: STWeight
-    self: 5
-  - type: Item
-    size: Normal
-    shape:
-      - 0,0,3,3
-  - type: Sprite
-    scale: 0.7, 0.7
-    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/tommygun_big_drum.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: BallisticAmmoProvider
-    proto:
-    mayTransfer: true
-    whitelist:
-      tags:
-        - Cartridge919
-    capacity: 100
-
-- type: entity
   id: MP40Mag
   name: магазин MP-40 9x19 (30)
   description: Магазин 9x19 мм для MP-40. Вместимость пуль 30. Продают пустым.
@@ -487,7 +384,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 30
   - type: Item
     size: Small
@@ -527,7 +424,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 30
   - type: Item
     size: Small
@@ -567,7 +464,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - Cartridge919
+        - STCartridge919
     capacity: 50
   - type: Item
     size: Small
@@ -589,3 +486,35 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+
+- type: entity
+  id: LP08Drum
+  name: барабан Люгера (32)
+  description: Барабан для Люгера. Вместимость пуль 32. Продают пустым.
+  parent: BasePPSHMag
+  tag: Stalker
+  components:
+  - type: STWeight
+    self: 0.85
+  - type: Item
+    size: Normal
+    shape:
+      - 0,0,1,1
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/luger_drum.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - STCartridge919
+    capacity: 32
+  - type: Tag
+    tags:
+      - LugerMagazin

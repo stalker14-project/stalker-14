@@ -14,7 +14,7 @@ using Serilog;
 
 namespace Content.Server.Players.JobWhitelist;
 
-public sealed class JobWhitelistManager : IPostInjectInit
+public sealed partial class JobWhitelistManager : IPostInjectInit // Stalker-Changes | Make partial clone for sponsors
 {
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IServerDbManager _db = default!;

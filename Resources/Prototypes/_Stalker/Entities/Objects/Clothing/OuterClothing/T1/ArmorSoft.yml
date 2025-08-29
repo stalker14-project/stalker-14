@@ -1,0 +1,26 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterSoftPlate
+  name: Мягкий бронежилет
+  description: Мягкий бронежилет
+  suffix: ST, T1, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/Soft.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/Soft.rsi
+  - type: STWeight
+    self: 3
+  - type: Armor
+    armorClass: 1
+    modifiers:
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 2
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.80
+  - type: ExplosionResistance
+    damageCoefficient: 0.85

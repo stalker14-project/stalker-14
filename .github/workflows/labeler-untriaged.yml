@@ -1,7 +1,14 @@
-﻿name: "Labels: Untriaged"
+﻿permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+name: "Labels: Untriaged"
 
 on:
   issues:
+    types: [opened]
+  pull_request_target:
     types: [opened]
 
 jobs:
@@ -11,4 +18,4 @@ jobs:
     - uses: actions-ecosystem/action-add-labels@v1
       if: join(github.event.issue.labels) == ''
       with:
-        labels: "Status: Untriaged"
+        labels: "S: Untriaged"

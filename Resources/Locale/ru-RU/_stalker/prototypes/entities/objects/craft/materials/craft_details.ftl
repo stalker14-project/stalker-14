@@ -1,0 +1,12 @@
+ent-STCraftBattery = аккумулятор
+    .desc = Аккумулятор.
+    .suffix = Stalker, крафт
+ent-STCraftCoil = катушка
+    .desc = Катушка.
+    .suffix = Stalker, крафт
+ent-STCraftCapacitor = конденсатор
+    .desc = Конденсатор.
+    .suffix = Stalker, крафт
+ent-STCraftTransformer = трансформатор
+    .desc = Трансформатор.
+    .suffix = Stalker, крафт, 

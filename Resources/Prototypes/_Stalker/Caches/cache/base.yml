@@ -1,0 +1,22 @@
+- type: entity
+  parent: BaseStructureStalkerDynamic
+  id: STBaseCache
+  name: cache base
+  abstract: true
+  components:
+    - type: TimedDespawn
+      lifetime: 3610
+    - type: Transform
+      noRot: true
+    - type: Storage
+      maxItemSize: Ginormous
+      grid:
+        - 0,0,10,10
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+    - type: Clickable

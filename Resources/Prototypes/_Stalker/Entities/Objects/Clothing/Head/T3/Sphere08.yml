@@ -9,22 +9,27 @@
   - type: STWeight
     self: 2.1
   - type: Armor
-    armorClass: 2
+    armorClass: 3
     modifiers:
       flatReductions:
-        Piercing: 8
+        Blunt: 5
+        Slash: 5
+        Piercing: 4
       coefficients:
-        Piercing: 0.80
-        Heat: 0.95
-        Shock: 0.95
-        Radiation: 0.95
+        Blunt: 0.80
+        Slash: 0.80
+        Psy:   0.80
   - type: ExplosionResistance
-    damageCoefficient: 0.85
+    damageCoefficient: 0.90
   - type: Reflect
-    reflectProb: 0.05
+    reflectProb: 0.08
     spread: 360
     reflects:
       - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT3Base
@@ -34,14 +39,71 @@
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_military.rsi
+    layers:
+    - state: icon
+    - state: light-icon
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_military.rsi
+    equippedPrefix: off
+  - type: Item
+    heldPrefix: off
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 8
+    netsync: false
+  - type: Appearance
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        interpolate: Linear
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+      right:
+      - state: on-inhand-right
+    clothingVisuals:
+      head:
+      - state: on-equipped-HELMET
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHyper
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
 
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT3Base
   id: ClothingHeadHelmetBerill5MMonolith
   name: шлем «Сфера-08» монолита
-  description: Шлем тех самых фанатиков, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М». Класс брони - 2.
+  description: Шлем тех самых фанатиков, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М». Класс брони - 3.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_monolith.rsi
@@ -51,10 +113,21 @@
 - type: entity
   parent: STClothingHeadHelmetEnvironmentT3Base
   id: ClothingHeadHelmetBerill5MDolg
-  name: Сфера 08 Долга aka Каланча
-  description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Долг. Обеспечивает защиту 2 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
+  name: шлем «Каланча»
+  description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Долг. Обеспечивает защиту 3 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_dolg.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/berill5m_helm_dolg.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetEnvironmentT3Base
+  id: ClothingHeadHelmetAborigine
+  name: Шлем "Туземец"
+  description: Эта модель является модификацией армейского шлема Сфера-08, для группировки Свобода. Обеспечивает защиту 3 класса, позволяя выдерживать тупые удары, осколки и в какой-то мере пули 1 и 2 класса пробития. Надёжный шлем, по достойной цене.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/aborigine_stalker.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/aborigine_stalker.rsi

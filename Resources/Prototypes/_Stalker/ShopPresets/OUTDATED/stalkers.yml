@@ -1,0 +1,315 @@
+- type: shopPreset
+  id: StalkerShopPreset
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 338
+    ZoneArtifactEye: 562
+    ZoneArtifactFlame: 1125
+    # Thermal group - 2
+    ZoneArtifactCristall: 1406
+    ZoneArtifactLithosphere: 2250
+    # Electrical group - 1
+    ZoneArtifactSparkler: 338
+    ZoneArtifactBattery: 675
+    ZoneArtifactFlash: 1350
+    ArtMoon: 1687
+    ZoneArtifactTesla: 2531
+    ZoneArtifactIce: 2812
+    # Gravity group - 1
+    ArtMedusa: 281
+    ZoneArtifactFlower: 562
+    ZoneArtifactNightStar: 1406
+    # Gravity group - 2
+    ZoneArtifactVyvert: 338
+    ZoneArtifactAmoeba: 562
+    ZoneArtifactGravi: 1687
+    ZoneArtifactGoldfish: 2250
+    ZoneArtifactSpring: 2812
+    ZoneArtifactFocus: 1125
+    ZoneArtifactStuntman: 2250
+    ZoneArtifactDistorter: 3375
+    ZoneArtifactSoul: 2812
+    # Acidic group - 1
+    ZoneArtifactBlood: 450
+    ZoneArtifactMeat: 843
+    ZoneArtifactKolobok: 1125
+    # Acidic group - 2
+    ZoneArtifactPellicle: 562
+    ZoneArtifactBaloon: 1968
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 88 # T1
+    MutantPartSeasonedBoarHoof: 162 # T2
+    MutantPartOldBoarHoof: 304 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 65
+    MutantPartFleshEye: 100
+    FoodMeatSpiderLeg: 25
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 450
+    MutantPartPseudodogTail: 225
+    MutantPartSnorkFoot: 225
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 450
+    MutantPartOraculeEye: 1200
+    MutantPartPseudogiantHeart: 3000
+    MutantPartZombieHand: 225
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+            # Melee
+        STCombatKnife: 10
+        StalkerBallBat: 370
+            # Guns
+          # 7mm
+        STWeaponShotgunMP155T: 50 #T0.5
+        STWeaponShotgunTOZ34: 350 # T2
+        STWeaponShotgunMP133: 315 # T1.5
+        STWeaponShotgunMossbergM88: 680 # T2
+        STWeaponShotgunMP153: 1230 # T3
+          # 5,45x39
+        STWeaponRifleSaiga545: 1030
+        STWeaponRifleAKS74U: 2530
+          # Other
+        WeaponPistolStalkerTT: 750
+        WeaponStalkerPistolTec9: 500
+        WeaponPistolStalkerGlock: 500
+        STWeaponSniperMosin: 1400
+        STWeaponSMGMP40: 1700
+        STWeaponSMGVZ61: 3200
+          # Nato
+        STWeaponRifleL85: 4730
+        STWeaponRifleFAL: 2800
+    - name: shop-category-magazines
+      priority: 2
+      items:
+          # 7mm
+        Base1270Mag: 200 #T1
+          # 5,45x39
+        Base545Mag10: 50 #T1
+        545Mag20: 250 #T2
+          # 5,56x39
+        Base556Mag10: 70 #T1
+        556Mag20: 270 #T2
+          # 7,62x51
+        751Mag30: 500 #T3
+          # Other
+        MP40Mag: 80
+        BaseTEC9Mag: 120
+        BaseGlockMag10: 100
+        TTMag: 98
+        STSpeedLoader45ACPEmpty: 98
+        Vz61Mag: 360
+        BaseAPSMag: 150
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        6mmBuckshotBox: 450
+        7mmBuckshotBox: 40
+        # 7.25
+        725PBox: 130
+        725PTBox: 540
+        725LRNPCBox: 338
+        725PSTBox: 1200
+        # 9.19
+        919PSOGJBox: 230
+        919PSTBox: 540
+        919RIPBox: 338
+        919PBMBox: 1500
+        # 5.45
+        545FMJBox: 220
+        545HPBox: 125
+        545PCBox: 1800
+        # 5.56
+        556FMJBox: 280
+        556WarmagBox: 280
+        556M855Box: 1900
+        # 7.39
+        739FMJBox: 1000
+        739HPBox: 500
+        # 7.51
+        751M80Box: 1000
+        751UNBox: 500
+        # 7.54
+        754FMJBox: 800
+        754HPBox: 430
+        754PCBox: 2000
+    - name: shop-category-armor
+      priority: 4
+      items:
+          # Helmets #
+        ClothingHeadHelmetSH68: 700 # T1 - PVP
+        ClothingHeadHelmetLight: 300 # T1 - PVE
+        ClothingHeadHelmetInfantry: 1400 # T2 - PVP
+        ClothingHeadHelmetVityaz1C: 1250 # T2 - PVE
+        STClothingHeadHelmetMakeshiftTacticalT3: 3500 # T3 - PVE
+          # OuterClothing #
+        ClothingOuterJacketStalker: 39 # T1 - PVE
+        STClothingOuterArmorLightPlateVestBaseStalker: 1850 # T2 - PvP
+        STClothingOuterArmorRCBZ: 1750 # T2 - ENV
+        ClothingOuterArmorZaryaStalker: 1500 # T2 - PVE
+        ClothingOuterArmorZaryaTourist: 1700 # T2 - PVE
+        ClothingOuterArmorZN1: 1900 # T2 - Universall
+        STClothingOuterArmorLightPlateVestBaseANAgreen: 3800 # T3 - PVP
+        ClothingOuterArmorStalker: 3200 # T3 - PVE
+    - name: shop-category-storage-and-containers
+      priority: 5
+      items:
+          # BackPacks
+        ClothingBackpackDuffelGreenStalker: 30 # T1
+        ClothingBackpackTacticOliveStalker: 450 # T2
+        ClothingBackpackMercStalker: 1550 # T3
+          # Belts
+        ClothingBeltBandolierStalker: 20 # T1 - PVE
+        ClothingBeltTarzanBlack: 200 # T1 - PVP
+        ClothingBeltTarzanGreen: 200 # T1 - PVP
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
+          # Containers
+        BoxArtcont: 450 # T1
+        MedkitCMSStalker: 450 # T1
+        MedkitGrizzlyStalker: 850 # T2
+    - name: shop-category-raincoats-and-gasmasks
+      priority: 6
+      items:
+          # Cloaks
+        ClothingOuterCoatDoshdevik: 100 # T1
+        ClothingOuterCoatLoyalistLight: 1550 # T3
+          # Gasmasks
+        ClothingMaskGasZarya: 100 # T1
+        ClothingMaskGP5: 200 # T2
+        ClothingMaskGP7: 1200 # T3
+    - name: shop-category-research-equipment
+      priority: 7
+      items:
+        STBoltBagFilled: 50
+        BoxArtcont: 450 # T1
+        ZoneAnomalyDetectorAD1: 550 # T1
+          # Detectors
+        ZoneArtifactDetectorPulse: 100 # T1
+        ZoneArtifactDetectorHunter: 400 # T2
+        ZoneArtifactDetectorResponse: 1200 # T2
+    - name: shop-category-utilities
+      priority: 8
+      items:
+        STCombatKnife: 25
+        BoxZiptie: 50
+        BoxSafebox: 300
+        CheapLighter: 5
+        GeigerCounter: 50
+        BaseRadio: 50
+        STFlashlightSeclite: 50
+        PowerCellHyper: 50
+        HandheldGPSBasic: 50
+        Paper: 2
+        Pen: 5
+        Binocularus1: 2500
+        BoxFlare: 60
+        ClothingBackpackDuffelGreenStalkerHydroponic: 500
+        Beaker: 40
+        Syringe: 20
+        ClothingGoPro: 250
+        ExtendedEmergencyOxygenTankFilledStalker: 50
+        TrashDetectorTier1: 200
+        Matchbox: 10
+        HatchetStalker: 150
+    - name: shop-category-provisions
+      priority: 9
+      items:
+        STEnergyDrink: 500
+        STEnergyDrinkMonster: 500
+        STEnergyDrinkRevo: 450
+        STDrinkBeerCanBaltic: 90
+        DrinkVodkaBottleFull: 55
+        STFoodBreadPlain: 35
+        DrinkFlaskOld: 30
+        DrinkWaterBottleFull: 45
+        FoodTinMRE: 120
+        DrinkLemonadehBottleFull: 50
+        STFoodMeatSalami: 350
+    - name: shop-category-medicine
+      priority: 10
+      items:
+          # Cheap
+        PillDexalin: 20
+        PillDexalinPlusStalker: 45
+        STOintment: 20
+        STGauze: 25
+        STBrutepack: 20
+          # Expensive
+        antiradpill: 100
+        radioprotectpill: 150
+        Bloodpack: 250
+        psyblock: 350
+        MedkitAI2: 550
+        MedkitMilitary: 950
+        Defibrillator: 1000
+    - name: shop-category-customization
+      priority: 11
+      items:
+        ClothingBandageStalkerJid: 50
+        ClothingBandageStalkerBelarus: 50
+        ClothingHeadHatBeaniehat: 10
+        ClothingMaskNeckFacemask: 10
+        ClothingMaskNeckBalaklava1: 10
+        ClothingUniformJumpsuitTacticool: 10
+        ClothingMaskNeckBalaklava2: 10
+        ClothingMaskNeckBalaklava3: 10
+        ClothingHeadBandMerc: 30
+        ClothingHeadBandSkull: 30
+        ClothingHeadHatUshanka: 30
+        ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesMercFingerless: 60
+        ClothingShoesColorBlack: 30
+        ClothingShoesBootsWork: 30
+        ClothingShoesLeather: 30
+        ClothingShoesBootsMerc: 30
+        ClothingShoesSwat: 35
+        ClothingHeadHatBlacksoft: 10
+        ClothingHeadHatGreysoft: 10
+        ClothingHeadHatSovietUshankaStalker: 40
+        ClothingTshirtBlue: 10
+        ClothingTshirtOrange: 10
+        ClothingCloakStalker: 30
+        ClothingLegsJeansBlue: 10
+        ClothingLegsJeansStalker: 10
+        ClothingLegsJeansGreenCargo: 10
+        ClothingLegsJeansGreyCargo: 10
+        ClothingLegsJeansBlackCargo: 10
+        ClothingLegsJeansBrownCargo: 10
+        ClothingLegsJeansSandCargo: 10
+        ClothingLegsJeansRussianPixel: 20
+        ClothingLegsJeansBlackNew: 20
+        ClothingLegsJeansGorka: 20
+        ClothingShoesBootsCombat: 30
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksGorka: 90
+        ClothingTorsoTurtlenecksGorka6: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingLegsJeansBereza: 20
+        ClothingLegsJeansGorka6: 20
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 67
+        # new shit
+        ClothingLegsBattlePantsBlack: 50
+        ClothingLegsVeryBlueJenas: 50
+        ClothingLegsCombatForest: 50
+        ClothingLegsGorka5: 50
+        ClothingLegsGorka6b: 50
+        ClothingLegsNavyPants: 50
+        ClothingLegsRussianNumber: 50
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksGorka5: 50
+        ClothingTorsoTurtlenecksGorka6B: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50

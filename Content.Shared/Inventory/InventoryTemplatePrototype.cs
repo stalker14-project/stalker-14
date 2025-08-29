@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared.Strip;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -39,7 +40,11 @@ public sealed partial class SlotDefinition
     [DataField("displayName", required: true)]
     public string DisplayName { get; private set; } = string.Empty;
 
-    [DataField("stripHidden")] public bool StripHidden { get; set; } // stalker-changes
+    /// <summary>
+    ///     Whether or not this slot will have its item hidden in the strip menu, and block interactions.
+    ///     <seealso cref="SharedStrippableSystem.IsStripHidden"/>
+    /// </summary>
+    [DataField("stripHidden")] public bool StripHidden { get; set; } // Stalker-Changes | Remove private setter for InventorySystem.EquipAndHide.cs
 
     /// <summary>
     ///     Offset for the clothing sprites.

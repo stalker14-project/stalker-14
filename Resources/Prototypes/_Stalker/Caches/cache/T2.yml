@@ -1,0 +1,156 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageFillT2
+  abstract: true
+  suffix: ST, Cache, T2
+  name: ящик
+  description: Довольно таки старый ящик. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  components:
+    - type: InteractionOutline
+    - type: StorageFill
+      contents:
+        - id: STCraftBasicPCBT1
+          prob: 0.01
+        - id: STCraftBasicPCBT1
+          prob: 0.01
+        - id: STCraftSheetCopperT1
+          prob: 0.01
+        - id: STCraftSheetCopperT1
+          prob: 0.01
+        - id: STCraftPinePlankT1
+          prob: 0.01
+        - id: STCraftPinePlankT1
+          prob: 0.01
+        - id: STCraftCottonFabricT1
+          prob: 0.01
+        - id: STCraftCottonFabricT1
+          prob: 0.01
+        - id: STCraftBasicThreadKitT1
+          prob: 0.01
+        - id: STCraftBasicThreadKitT1
+          prob: 0.01
+        - id: STCraftStandardPCBT2
+          prob: 0.1
+        - id: STCraftSheetIronT2
+          prob: 0.3
+        - id: STCraftBirchPlankT2
+          prob: 0.1
+        - id: STCraftPlasticFittingT2
+          prob: 0.2
+        - id: STCraftGlassT2
+          prob: 0.2
+        - id: STCraftHideT2
+          prob: 0.1
+        - id: STCraftTapeKitT2
+          prob: 0.1
+        - id: STBrutepack
+          prob: 0.25
+        - id: STBrutepack
+          prob: 0.25
+        - id: STBrutepack
+          prob: 0.25
+        - id: STGauze
+          prob: 0.25
+        - id: STGauze
+          prob: 0.25
+        - id: STGauze
+          prob: 0.25
+        - id: STOintment
+          prob: 0.25
+        - id: STOintment
+          prob: 0.25
+        - id: STOintment
+          prob: 0.25
+        - id: Tourniquet
+          prob: 0.06
+        - id: antiradpill
+          prob: 0.06
+        - id: radioprotectpill
+          prob: 0.06
+        - id: psyblock
+          prob: 0.06
+        - id: MedkitAI2
+          prob: 0.1
+        - id: MedkitMilitary
+          prob: 0.04
+        - id: MedkitScience
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.03
+        - id: BaseRadio
+          prob: 0.03
+        - id: HandheldGPSBasic
+          prob: 0.03
+        - id: BoxArtcont
+          prob: 0.02
+        - id: STFlashlightSeclite
+          prob: 0.03
+        - id: STHeadLight
+          prob: 0.03
+        - id: PowerCellHyper
+          prob: 0.06
+        - id: CheapLighter
+          prob: 0.04
+        - id: Matchbox
+          prob: 0.04
+        - id: CigPackMarlboro
+          prob: 0.02
+        - id: CigPackSuka
+          prob: 0.02
+        - id: CigPackKosmos
+          prob: 0.02
+        - id: IngotGold1
+          prob: 0.04
+        - id: IngotSilver1
+          prob: 0.04
+        - id: MaterialDiamond1
+          prob: 0.04
+        - id: DrinkGoldenCup
+          prob: 0.04
+        - id: CraftMaterialGunpowder
+          prob: 0.04
+        - id: CraftLeatherbox
+          prob: 0.001
+        - id: STCraftBattery
+          prob: 0.2
+        - id: STCraftCoil
+          prob: 0.2
+        - id: STCraftCapacitor
+          prob: 0.2
+        - id: STCraftTransformer
+          prob: 0.2
+        - id: RGD5Grenade
+          prob: 0.05
+
+- type: entity
+  parent: [ STCacheStorageFillT2, STBaseCache]
+  id: STCache1T2
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache1T2
+
+- type: entity
+  parent: [ STCacheStorageFillT2, STBaseCache]
+  id: STCache2T2
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/blue_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache2T2
+
+- type: entity
+  parent: [ STCacheStorageFillT2, STBaseCache]
+  id: STCache3T2
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache3T2

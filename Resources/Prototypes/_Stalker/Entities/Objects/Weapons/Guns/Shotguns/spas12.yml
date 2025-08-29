@@ -1,0 +1,29 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunSPAS
+  components:
+  - type: STWeight
+    self: 4.4
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/spas.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/spas.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/spas.rsi
+  - type: BallisticAmmoProvider
+    capacity: 8
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/spas_shoot.ogg
+    minAngle: 60
+    maxAngle: 80
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 2
+
+- type: entity
+  parent: STBaseWeaponShotgunSPAS
+  id: STWeaponShotgunSPAS
+  name: SPAS-12 Combat Shotgun
+  description: Italian combat shotgun with dual pump-action/semi-auto firing modes. Highly valued in the Zone for its stopping power against mutants and reliability in harsh conditions.

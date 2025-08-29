@@ -1,0 +1,36 @@
+- type: entity
+  name: старая лампа
+  id: OldLampa
+  parent: BaseLamp
+  suffix: ST, Mapping
+  description: Старая, чудом работающая лампа.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/old_lamp.rsi
+    layers:
+      - state: lampa
+        map: [ "base" ]
+      - state: lampa_on
+        shader: unshaded
+        visible: false
+        map: [ "light" ]
+  - type: PointLight
+    radius: 1.5
+    energy: 3.0
+    color: "#fad082"
+    castShadows: false
+
+- type: entity
+  id: BrokenOldLampa
+  parent: STBaseStructure
+  name: старая сломанная лампа
+  suffix: ST, Mapping
+  description: Старая лампа, давно не работает.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/old_lamp.rsi
+    state: lampa
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+    canCollide: false

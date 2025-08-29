@@ -8,6 +8,9 @@
     sprite: _Stalker/Objects/Clothing/hats/beaniehat.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/beaniehat.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadBase
@@ -46,6 +49,34 @@
     sprite: _Stalker/Objects/Clothing/hats/soviet_ushanka.rsi
   - type: AddAccentClothing
     accent: RussianAccent
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: [ClothingHeadBase, BaseFoldable]
+  id: STClothingHeadHatFoma
+  name: старая ушанка
+  description: Серая советская ушанка – практичный зимний головной убор из плотного сукна с меховыми отворотами. Надежно защищает от мороза, универсален и лаконичен. Классика советской эпохи.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/foma.rsi
+  - type: Appearance
+  - type: AddAccentClothing
+    accent: RussianAccent
+  - type: Foldable
+    canFoldInsideContainer: true
+  - type: FoldableClothing
+    foldedEquippedPrefix: up
+    foldedHeldPrefix: up
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/foma.rsi
+    layers:
+    - state: icon
+      map: [ "unfoldedLayer" ]
+    - state: icon-up
+      map: ["foldedLayer"]
+      visible: false
 
 - type: entity
   parent: ClothingHeadBase
@@ -60,6 +91,10 @@
     sprite: _Stalker/Objects/Clothing/hats/bag.rsi
   - type: Blindfold
   - type: FlashImmunity
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadBase
@@ -124,17 +159,6 @@
 
 - type: entity
   parent: STClothingHeadBase
-  id: ClothingHeadHatBeaniehatMilitary
-  name: шапка
-  description: Чёрная шапка. Не даст замёрзнуть голове.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/hats/beaniehat-military.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/hats/beaniehat-military.rsi
-
-- type: entity
-  parent: STClothingHeadBase
   id: ClothingHeadHatPoliceHat
   name: полицейская фуражка
   description: Для важных шишек.
@@ -164,6 +188,41 @@
   suffix: ST, Deliko
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Head/Hats/peak_cap.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/peak_cap.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Head/Hats/peak_cap.rsi
+    sprite: _Stalker/Objects/Clothing/Head/Hats/peak_cap.rsi
+
+- type: entity
+  parent: STClothingHeadBase
+  id: ClothingHeadCapMerc
+  name: merc's cap
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/merc_cap.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/merc_cap.rsi
+
+- type: entity
+  parent: STClothingHeadBase
+  id: STClothingHeadBeretDolg
+  name: Duty's beret
+  description: This is the Red Beret of the officers of the Duty.
+  suffix: Stalker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/betet-dolg.rsi
+    scale: 0.8, 0.8
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/betet-dolg.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetTacticalT1Base
+  id: ClothingHeadHatSerahat
+  name: зелёная повязка
+  description: Зелёная повязка на голову с нашивкой серафимов на ней.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/serahat.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/serahat.rsi

@@ -13,6 +13,8 @@
       - state: screen_off
         map: ["base"]
         shader: unshaded
+  - type: RepositoryItem
+    categoryName: Детекторы
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -22,7 +24,6 @@
           Disabled: { state: screen_off }
           Detected: { state: screen_detected }
   - type: ZoneArtifactDetector
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -31,6 +32,8 @@
   description: A simplified hunter model that can only influence anomalies, which allows you to obtain some artifacts. A burnt copy of the hunter made from stolen drawings.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 0.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/pulse.rsi
     layers:
@@ -43,9 +46,8 @@
         base:
           Enabled: { state: screen_on }
           Disabled: { state: screen_off }
-          Detected: { state: screen_on }
+          Detected: { state: screen_detected }
   - type: ZoneArtifactDetector
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
     level: 1
     detectionDistance: 3
     activationDistance: 2
@@ -57,13 +59,14 @@
   description: The simplest detector, which does not even know how to determine distance, but only the presence of artifacts. Despite this, he is still able to find the most common and widespread artifacts.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/hunter.rsi
   - type: ZoneArtifactDetector
     level: 1
     detectionDistance: 7
     activationDistance: 2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
 
 - type: entity
   parent: ZoneArtifactDetectorHunter
@@ -78,7 +81,6 @@
     level: 2
     detectionDistance: 6
     activationDistance: 2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -87,26 +89,28 @@
   description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/response.rsi
     layers:
       - state: base
-        map: ["base"]
   - type: GenericVisualizer
     visuals:
       enum.ZoneArtifactDetectorVisuals.Layer:
         base:
-          Enabled: { state: active }
           Disabled: { state: base }
+          Enabled: { state: icon }
           Detected: { state: active }
   - type: ZoneArtifactDetector
     level: 2
     detectionDistance: 12
     activationDistance: 2
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
+  - type: ZoneArtifactDetectorAngleIndicator
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -115,15 +119,16 @@
   description: It is a strong directional antenna combined with a “Response” detector filling. This allows him to accurately determine the distance in order to display it on the screen.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/spruce.rsi
   - type: ZoneArtifactDetector
     level: 3
     detectionDistance: 16
     activationDistance: 2
-    updateInterval: 2
+    updateInterval: 1
   - type: ZoneArtifactDetectorDistanceIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -132,6 +137,8 @@
   description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 2.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/barracuda.rsi
   - type: ZoneArtifactDetector
@@ -139,11 +146,33 @@
     detectionDistance: 18
     activationDistance: 2
     updateInterval: 0.2
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
   - type: ZoneArtifactDetectorDistanceIndicator
+
+- type: entity
+  parent: ZoneArtifactBaseDetector
+  id: ZoneArtifactDetectorSeaDevil
+  name: detector SeaDevil
+  description: An improved version of the "Barracuda" detector. Retaining all the advantages of its predecessor, the "Sea Devil" is capable of detecting artifacts that previously remained undetectable.
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 2.5
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/ArtifactDetectors/barracuda.rsi
+  - type: ZoneArtifactDetector
+    level: 4
+    detectionDistance: 18
+    activationDistance: 2
+    updateInterval: 0.2
     beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
+  - type: ZoneArtifactDetectorDistanceIndicator
 
 - type: entity
   parent: ZoneArtifactBaseDetector
@@ -152,6 +181,8 @@
   description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 1.5
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/bear.rsi
     layers:
@@ -177,8 +208,11 @@
     level: 4
     detectionDistance: 14
     activationDistance: 2
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
   - type: ZoneArtifactDetectorAngleIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
 
 - type: entity
   parent: ZoneArtifactDetectorBear
@@ -187,14 +221,49 @@
   description: A version of the detector based on the special properties of the gravitation artifact. But due to its small scale, this artifact greatly reduces all indicators of the detector, except for its power to influence anomalies. Because of this, he can receive most artifacts from the zone.
   suffix: Stalker, Detector
   components:
+  - type: STWeight
+    self: 3
   - type: Sprite
     sprite: _Stalker/Objects/Devices/ArtifactDetectors/wolfhound.rsi
   - type: ZoneArtifactDetector
     level: 5
     detectionDistance: 10
     activationDistance: 2
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
   - type: ZoneArtifactDetectorAngleIndicator
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
+
+- type: entity
+  parent: ZoneArtifactBaseDetector
+  id: ZoneArtifactDetectorResponseCvoboda
+  name: Детектор "Куст"
+  description: Детектор, способный обнаруживать артефакты первого типа, на небольшем дистанции
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 1
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/ArtifactDetectors/response_cvoboda.rsi
+    layers:
+      - state: base
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneArtifactDetectorVisuals.Layer:
+        base:
+          Disabled: { state: base }
+          Enabled: { state: icon }
+          Detected: { state: active }
+  - type: ZoneArtifactDetector
+    level: 1
+    detectionDistance: 10
+    activationDistance: 2
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
+  - type: ZoneArtifactDetectorAngleIndicator
 
 # Пиздец
 - type: entity
@@ -215,3 +284,33 @@
     sound: /Audio/_Stalker/da_da.ogg
     maxInterval: 1.5
     minInterval: 0.2
+
+- type: entity
+  parent: ZoneArtifactBaseDetector
+  id: ZoneArtifactDetectorBush
+  name: detector response
+  description: The detector was assembled on the basis of data received from the "Hunter". Able to display distances on your screen, which are much more effective than what was before. It got its name because its device was invented while fishing.
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 1
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/ArtifactDetectors/bush.rsi
+    layers:
+      - state: base
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneArtifactDetectorVisuals.Layer:
+        base:
+          Disabled: { state: base }
+          Enabled: { state: icon }
+          Detected: { state: active }
+  - type: ZoneArtifactDetector
+    level: 1
+    detectionDistance: 8
+    activationDistance: 2
+    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
+  - type: ZoneArtifactDetectorSoundIndicator
+    maxInterval: 2
+    minInterval: 0.01
+  - type: ZoneArtifactDetectorAngleIndicator

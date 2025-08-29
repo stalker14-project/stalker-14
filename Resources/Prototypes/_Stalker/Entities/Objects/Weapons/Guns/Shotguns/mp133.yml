@@ -1,0 +1,27 @@
+
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunMP133
+  components:
+  - type: STWeight
+    self: 3.45
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp-133.rsi
+    scale: 0.7, 0.7
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp-133.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp-133.rsi
+  - type: BallisticAmmoProvider
+    capacity: 6
+  - type: Gun
+    angleIncrease: 15
+    angleDecay: 75
+    fireRate: 0.8
+
+- type: entity
+  parent: STBaseWeaponShotgunMP133
+  id: STWeaponShotgunMP133
+  name: MP-133 Pump-action
+  description: Reliable Russian pump-action shotgun. Popular among rookie stalkers for its simplicity and low cost. 6-round capacity but slow reload.

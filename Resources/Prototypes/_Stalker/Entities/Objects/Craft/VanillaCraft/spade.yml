@@ -1,0 +1,26 @@
+- type: entity
+  name: cаперская лопатка
+  suffix: ST, Stalker, ботаника, craft
+  parent: BaseItem
+  id: STspade
+  description: Компактный и прочный инструмент с металлическим лезвием, предназначенный для копания, рыхления и перемещения грунта в условиях полевых работ.
+  components:
+  - type: Tag
+    tags:
+    - BotanyShovel
+  - type: Sprite
+    sprite: Objects/Tools/Hydroponics/spade.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 45
+    damage:
+      types:
+        Blunt: 8
+        Piercing: 2 # I guess you can stab it into them?
+    soundHit:
+      collection: MetalThud
+  - type: Item
+    sprite: Objects/Tools/Hydroponics/spade.rsi
+  - type: Shovel
+    speedModifier: 0.75 # slower at digging than a full-sized shovel
+  - type: Craftable

@@ -1,4 +1,4 @@
-﻿using Robust.Shared.Serialization;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Stalker.RadioStalker;
 
@@ -11,13 +11,15 @@ public enum RadioStalkerUiKey
 [Serializable, NetSerializable]
 public sealed class RadioStalkerBoundUIState : BoundUserInterfaceState
 {
-    public bool MicEnabled;
-    public bool SpeakerEnabled;
+    public readonly bool MicEnabled;
+    public readonly bool SpeakerEnabled;
+    public readonly string? CurrentFrequency;
 
-    public RadioStalkerBoundUIState(bool micEnabled, bool speakerEnabled)
+    public RadioStalkerBoundUIState(bool micEnabled, bool speakerEnabled, string? currentFrequency)
     {
         MicEnabled = micEnabled;
         SpeakerEnabled = speakerEnabled;
+        CurrentFrequency = currentFrequency;
     }
 }
 

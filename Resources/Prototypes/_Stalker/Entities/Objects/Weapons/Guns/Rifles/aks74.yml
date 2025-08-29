@@ -1,0 +1,266 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifle
+  id: STBaseWeaponRifleAKS74
+  components:
+  - type: STWeight
+    self: 3.7
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/ak.ogg
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 1.53
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    fireRate: 6
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base545Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine545
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge545
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleAKS74
+  name: AKS-74
+  description: classical folding assault rifle chambered in 5.45x39mm. Main weapon of military and stalkers in the Zone. Reliable as hammer but requires skill for accurate fire
+
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleAK74M
+  name: AK-74M "Modern"
+  description: Modern modification with polymer furniture and optics rail. Valued in the Zone for versatility and improved ergonomics.
+  components:
+  - type: Gun
+    angleIncrease: 1
+    fireRate: 7
+    minAngle: 50
+    maxAngle: 90
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleSaiga545
+  name: saiga 5.45 "Hunter"
+  description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ak74m.rsi
+  - type: Gun
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 1
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleA545
+  name: A-545 "Balalaika"
+  description: Assault rifle with balanced recoil system. Rare in the Zone, usually comes with military expeditions. Nicknamed 'Balalaika' for distinctive sound.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/A-545.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/A-545.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/A-545.rsi
+    scale: 0.75, 0.75
+  - type: Gun
+    minAngle: 45
+    maxAngle: 90
+    angleIncrease: 0.8
+    fireRate: 9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleAKS74Green
+  name: AKS-74 (Forest)
+  description: Variant with green polymer furniture. Ideal for operations in northern forest areas of the Zone.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
+
+- type: entity
+  parent: STBaseWeaponRifleAKM
+  id: STWeaponRifleSquall
+  name: Squall
+  description: An experimental high-rate machine gun in a bullpup configuration.
+  components:
+  - type: STWeight
+    self: 3.4
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/ak.ogg
+    fireRate: 8
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base545Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine545
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge545
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
+
+# AKS 74u
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifleAKS74
+  id: STBaseWeaponRifleAKS74U
+  components:
+  - type: STWeight
+    self: 3.2
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/aks74u.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    minAngle: 45
+    maxAngle: 75
+    fireRate: 6
+    angleIncrease: 1.75
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 1.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.4
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74U
+  id: STWeaponRifleAKS74U
+  name: AKS-74U
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74U
+  id: STWeaponRifleAKS74UWhite
+  name: AKS-74U (Winter)
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aksuWhite.rsi
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74U
+  id: STWeaponRifleAKS74UBlack
+  name: AKS-74U (Night)
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-black.rsi
+
+- type: entity
+  parent: STBaseWeaponRifleAKS74U
+  id: STWeaponRifleAKS74USERAPH
+  name: Мученик
+  description: Неподлежащие ремонту АК и АКСу обретают новую жизнь, проходя через руки техников Братства Серафимов, превращаясь в оружие Мучеников Братства. Ненадежное, не точное и не эффективное, но все же его используют Серафимы-Смертники дабы вступить в последнюю схватку во имя своего Бога.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-seraph.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-seraph.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74u-seraph.rsi
+

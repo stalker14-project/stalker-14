@@ -1,0 +1,11 @@
+- type: entity
+  name: триггер пси-пёс (1) (25%)
+  id: STTriggerPsidog125
+  parent: STBaseTrigger125
+  suffix: ST, T2, Trigger
+  components:
+    - type: SpawnOnApproach
+      prototypes:
+        - MutantPsidog
+      restricted:
+        - MutantPsidog

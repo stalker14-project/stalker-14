@@ -1,0 +1,119 @@
+# Base
+
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: STOxygenTanksBase
+  suffix: ST, Filled
+  components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,8,6
+  - type: STWeight
+    self: 1
+  - type: Sprite
+    sprite: Objects/Tanks/generic.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - GasTank
+    - BlockBack
+  - type: Clothing
+    quickEquip: false
+    sprite: Objects/Tanks/generic.rsi
+    slots:
+    - Back
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 20
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 185
+  - type: StaticPrice
+    price: 30
+  - type: Tool
+    qualities:
+    - Rolling
+    speedModifier: 0.6
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      # 31 minutes
+      volume: 5
+      moles:
+        - 2.051379050 # oxygen
+      temperature: 293.15
+
+# Zarya
+
+- type: entity
+  parent: STOxygenTanksBase
+  id: STOxygenTanksZarya
+  name: кислородные баллоны из комплекта «Заря»
+  description: Кислородные баллоны из комплекта «Заря» - это ёмкости содержащие различные газы или жидкости под давлением. Используются с бронекомбинезоном «Заря».
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/zarya.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/zarya.rsi
+
+# Duty
+
+- type: entity
+  parent: STOxygenTanksBase
+  id: STOxygenTanksFractionalDuty
+  name: кислородные баллоны из комплекта ПС5-М «Универсальная защита»
+  description: Кислородные баллоны из комплекта «ПС» - это ёмкости содержащие различные газы или жидкости под давлением. Используются с такими бронекомбинезонами как «Страж свободы» и ПС5-М «Универсальная защита».
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/duty.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/duty.rsi
+
+# Freedom
+
+- type: entity
+  parent: STOxygenTanksBase
+  id: STOxygenTanksFractionalFreedom
+  name: кислородные баллоны из комплекта «Страж свободы»
+  description: Кислородные баллоны из комплекта «Страж свободы» - это ёмкости содержащие различные газы или жидкости под давлением. Используются с бронекомбинезоном «Страж свободы».
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/freedom.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/freedom.rsi
+
+- type: entity
+  parent: STOxygenTanksBase
+  id: STOxygenTanksFractionalFreedom2
+  name: кислородные баллоны из комплекта «Ветер свободы»
+  description: Кислородные баллоны из комплекта «Ветер свободы» - это ёмкости содержащие различные газы или жидкости под давлением. Используются с бронекомбинезоном «Ветер свободы».
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/freedom_2.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/freedom_2.rsi
+
+# Monolith
+
+- type: entity
+  parent: STOxygenTanksBase
+  id: STOxygenTanksFractionalMonolith
+  name: ржавые кислородные баллоны из комплекта «Монолита»
+  description: Ржавые кислородные баллоны из комплекта «Монолита» - это ёмкости содержащие различные газы или жидкости под давлением. Время исчадно потрепало краску. Используются с бронекомбинезоном «Монолита».
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/monolith.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/backpacks/Tanks/monolith.rsi
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 2.25

@@ -1,0 +1,136 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantRogonosets
+  name: Рогоносец
+  suffix: ST, Boss
+  description: Гиганский мутировавший олень
+  components:
+    - type: Butcherable
+      spawned:
+        - id: CraftHide
+          amount: 30
+        - id: STCraftRedWoodPlankT5
+          amount: 2
+          prob: 0.5
+        - id: STCraftPlasticFittingT5
+          amount: 2
+          prob: 0.5
+        - id: STCraftSheetSteelT5
+          amount: 2
+          prob: 0.5
+        - id: STCraftAluminumOxideT5
+          amount: 2
+          prob: 0.5
+        - id: STCraftCompositeMaterialT5
+          amount: 2
+          prob: 0.5
+        - id: STCraftHighStrengthKitT5
+          amount: 2
+          prob: 0.5
+        - id: STCraftNanoChipT5
+          amount: 2
+          prob: 0.5
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: rogonosets
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 20000
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/pseudogiant_die.ogg
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        20000: Dead
+    - type: MeleeWeapon
+      attackRate: 0.5
+      heavyWindupModifier: 1.5
+      heavyDamageModifier: 2
+      angle: 60
+      range: 4
+      soundHit:
+        path: /Audio/_Stalker/Mutants/pseudogiant_attack.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/pseudogiant_aggro.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Blunt: 80
+          Piercing: 40
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 1.5
+      baseSprintSpeed: 2.5
+    - type: Sprite
+      sprite: _Stalker/Mobs/Mutants/rogonosets.rsi
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: rogonosets
+    - type: Physics
+      bodyType: KinematicController
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 2
+          density: 3000
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: Damageable
+      damageModifierSet: PseudogiantMutant
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        5000: 0.8
+    - type: StaminaDamageOnHit
+      damage: 200
+    - type: STWeight
+      self: 50
+    - type: HTN
+      rootTask:
+        task: SimpleRangedHostileCompound
+    - type: RechargeBasicEntityAmmo
+      rechargeCooldown: 5
+    - type: Gun
+      fireRate: 1
+      useKey: false
+      selectedMode: FullAuto
+      projectileSpeed: 7
+      availableModes:
+        - FullAuto
+    - type: BasicEntityAmmoProvider
+      proto: STBulletMeteor
+      capacity: 1
+      count: 1
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/_Stalker/Mutants/pseudogiant_step.ogg
+        params:
+          volume: 5
+          variation: 0.2
+    - type: Temperature
+      heatDamageThreshold: 3600
+      coldDamageThreshold: 100
+      currentTemperature: 310.15
+      specificHeat: 4200
+      coldDamage:
+        types:
+          Cold : 0.1 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat : 0.001 #per second, scales with temperature & other constants

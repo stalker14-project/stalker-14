@@ -42,24 +42,44 @@
 
 - type: entity
   parent: MapTeleportBase
-  id: Cordon-BarierBase
-  name: Cordon-BarierBase
+  id: Cordon-LesBase
+  name: Cordon-LesBase
   components:
     - type: NewMapTeleport
       allowAll: false
-      portalName: Cordon-BarierBase
+      portalName: Cordon-LesBase
     - type: AccessReader
       access: [["Monolith"]]
 - type: entity
   parent: MapTeleportBaseUncollide
-  id: Cordon-BarierBaseUncollide
-  name: Cordon-BarierBaseUncollide
+  id: Cordon-LesBaseUncollide
+  name: Cordon-LesBaseUncollide
   components:
     - type: NewMapTeleport
       allowAll: false
-      portalName: Cordon-BarierBase
+      portalName: Cordon-LesBase
     - type: AccessReader
       access: [["Monolith"]]
+- type: entity
+  parent: MapTeleportBase
+  id: LimaBase-RedForest
+  name: LimaBase-RedForest
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: LimaBase-RedForest
+  - type: AccessReader
+    access: [["Monolith"]]
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-LimaBase
+  name: RedForest-LimaBase
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: LimaBase-RedForest
+  - type: AccessReader
+    access: [["Monolith"]]
 
 ####################################Бандиты
 
@@ -83,7 +103,7 @@
       portalName: Cordon-SvalkaBand
     - type: AccessReader
       access: [["Bandit"]]
-####################################Военные
+####################################Военные (старый, удалить когда поставят новый)
 - type: entity
   parent: MapTeleportBase
   id: Cordon-MilBase
@@ -295,7 +315,7 @@
     - type: NewMapTeleport
       portalName: RedForest-Oazis
 
-###################################### Чистое небо
+###################################### Чистое небо (старый, удалить когда поставят новый)
 
 - type: entity
   parent: MapTeleportBase
@@ -328,22 +348,44 @@
   # categories: [ HideSpawnMenu ]
   name: Cordon-TemnajaLoshina
   components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-TemnajaLoshina
-    - type: AccessReader
-      access: [["ProjectPawn"]]
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Cordon-TemnajaLoshina
+  - type: AccessReader
+    access: [["ProjectPawn"]]
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-TemnajaLoshinaUncollide
   # categories: [ HideSpawnMenu ]
   name: Cordon-TemnajaLoshinaUncollide
   components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-TemnajaLoshina
-    - type: AccessReader
-      access: [["ProjectPawn"]]
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Cordon-TemnajaLoshina
+  - type: AccessReader
+    access: [["ProjectPawn"]]
+
+- type: entity
+  parent: MapTeleportBase
+  id: Cordon-Project
+  name: Cordon-Project
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Cordon-Project
+  - type: AccessReader
+    access: [["Project"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Cordon-ProjectUncollide
+  name: Cordon-ProjectUncollide
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: Cordon-Project
+  - type: AccessReader
+    access: [["Project"]]
 
 ####################################Отступники
 
@@ -368,18 +410,6 @@
     - type: AccessReader
       access: [["Deserter"]]
 
-## Циркачи
-- type: entity
-  parent: MapTeleportBase
-  id: Cordon-Circusbase
-  name: Cordon-Circusbase
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-Circusbase
-    - type: AccessReader
-      access: [["Circus"]]
-
 ####################################Наёмники
 
 - type: entity
@@ -403,31 +433,6 @@
     - type: AccessReader
       access: [["Merc"]]
 
-####################################Механики
-
-- type: entity
-  parent: MapTeleportBase
-  id: Lobby-Mechanic
-  noSpawn: false
-  name: Lobby-Mechanic
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Lobby-Mechanic
-    - type: AccessReader
-      access: [["Mechanic"]]
-- type: entity
-  parent: MapTeleportBaseUncollide
-  id: Lobby-MechanicBandUncollide
-  noSpawn: false
-  name: Lobby-MechanicBandUncollide
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Lobby-Mechanic
-    - type: AccessReader
-      access: [["Mechanic"]]
-
 ###################################Поиск
 
 - type: entity
@@ -450,29 +455,6 @@
       portalName: Cordon-Poisk
     - type: AccessReader
       access: [["Poisk"]]
-
-###################################Проект
-
-- type: entity
-  parent: MapTeleportBase
-  id: Cordon-Project
-  name: Cordon-Project
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-Project
-    - type: AccessReader
-      access: [["Project"]]
-- type: entity
-  parent: MapTeleportBaseUncollide
-  id: Cordon-ProjectUncollide
-  name: Cordon-ProjectUncollide
-  components:
-    - type: NewMapTeleport
-      allowAll: false
-      portalName: Cordon-Project
-    - type: AccessReader
-      access: [["Project"]]
 
 ###################################Нейтралы
 
@@ -523,3 +505,97 @@
       portalName: Lobby-Jaba
     - type: AccessReader
       access: [["Jaba"]]
+
+####################################Чистое Небо
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Clear-Sky
+  noSpawn: false
+  name: Lobby-Clear-Sky
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Clear-Sky
+    - type: AccessReader
+      access: [["CN"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-Clear-SkyUncollide
+  noSpawn: false
+  name: Lobby-Clear-SkyUncollide
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Clear-Sky
+    - type: AccessReader
+      access: [["CN"]]
+
+####################################Военные и ученые
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Agro-MilBase-SciBase
+  name: Lobby-Agro-MilBase-SciBase (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Agro-MilBase-SciBase
+    - type: AccessReader
+      access: [["Military"], ["SciBase"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-Agro-MilBase-SciBase-Uncollide
+  name: Lobby-Agro-MilBase-SciBase-Uncollide (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Agro-MilBase-SciBase
+    - type: AccessReader
+      access: [["Military"], ["SciBase"]]
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-RedForest-VoenBase
+  name: Lobby-RedForest-VoenBase (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-RedForest-VoenBase
+    - type: AccessReader
+      access: [["MilitaryStalker"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-RedForest-VoenBase-Uncollide
+  name: Lobby-RedForest-VoenBase-Uncollide (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-RedForest-VoenBase
+    - type: AccessReader
+      access: [["MilitaryStalker"]]
+
+- type: entity
+  parent: MapTeleportBase
+  id: Lobby-Kordon-SciBase
+  name: Lobby-Kordon-SciBase (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Kordon-SciBase
+    - type: AccessReader
+      access: [["SciBase"]]
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Lobby-Kordon-SciBase-Uncollide
+  name: Lobby-Kordon-SciBase-Uncollide (spawn)
+  components:
+    - type: NewMapTeleport
+      allowAll: false
+      portalName: Lobby-Kordon-SciBase
+    - type: AccessReader
+      access: [["SciBase"]]

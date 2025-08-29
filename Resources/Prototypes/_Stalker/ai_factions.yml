@@ -4,7 +4,16 @@
     - Passive
     - Stalker
     - Mutated
-
+    - NanoTrasen
+    - Military
+    - Bandit
+    - Hostile
+    - Duty
+    - Freedom
+    - BandsUnion
+    - Seraphims
+    - MilitaryStalker
+    - Meat
 - type: npcFaction
   id: Mutated
   hostile:
@@ -12,8 +21,156 @@
     - Stalker
     - MutatedHunter
     - NanoTrasen
+    - Military
+    - Bandit
+    - Hostile
+    - Sci
+    - Duty
+    - Freedom
+    - BandsUnion
+    - Seraphims
+    - MilitaryStalker
+    - Meat
+
+- type: npcFaction
+  id: Hostile
+  hostile:
+  - Passive
+  - Stalker
+  - MutatedHunter
+  - Mutated
+  - NanoTrasen
+  - Military
+  - Bandit
+  - Sci
+  - Duty
+  - Freedom
+  - BandsUnion
+  - Seraphims
+  - MilitaryStalker
 
 - type: npcFaction
   id: Stalker
   hostile:
     - Mutated
+    - Military
+    - MutatedHunter
+    - Hostile
+    - Meat
+
+- type: npcFaction
+  id: Sci
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Hostile
+  - Meat
+
+- type: npcFaction
+  id: Military
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Stalker
+  - NanoTrasen
+  - Passive
+  - Bandit
+  - Hostile
+  - Freedom
+  - Duty
+  - BandsUnion
+  - Seraphims
+  - Meat
+
+- type: npcFaction
+  id: Bandit
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Military
+  - Milita
+  - Hostile
+  - Duty
+  - MilitaryStalker
+  - Meat
+
+- type: npcFaction
+  id: Seraphims
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Military
+  - Milita
+  - Hostile
+  - Duty
+  - MilitaryStalker
+  - Meat
+
+- type: npcFaction
+  id: Freedom
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Hostile
+  - Military
+  - Duty
+  - MilitaryStalker
+  - Meat
+
+- type: npcFaction
+  id: Duty
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Bandit
+  - Hostile
+  - Military
+  - Freedom
+  - BandsUnion
+  - Seraphims
+  - MilitaryStalker
+  - Meat
+
+- type: npcFaction
+  id: BandsUnion
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Military
+  - Hostile
+  - Duty
+  - Meat
+
+- type: npcFaction
+  id: Meat
+  hostile:
+  - Mutated
+  - Passive
+  - Stalker
+  - MutatedHunter
+  - NanoTrasen
+  - Military
+  - Bandit
+  - Hostile
+  - Sci
+  - Duty
+  - Freedom
+  - BandsUnion
+  - Seraphims
+  - MilitaryStalker
+
+- type: npcFaction
+  id: MilitaryStalker
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Stalker
+  - NanoTrasen
+  - Passive
+  - Bandit
+  - Hostile
+  - Freedom
+  - Duty
+  - BandsUnion
+  - Seraphims
+  - Meat

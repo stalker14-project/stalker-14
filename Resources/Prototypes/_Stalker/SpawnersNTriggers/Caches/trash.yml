@@ -1,0 +1,104 @@
+- type: entity
+  id: STTrashT1CacheSpawner
+  name: trash trigger T1 (25%)
+  suffix: ST, T1, Trigger, Cache
+  parent: FlexibleMarker
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Stalker/Objects/Decoration/trash.yml
+          state: 1
+    - type: RandomSpawner
+      prototypes:
+        - STTrash1CacheT1
+        - STTrash2CacheT1
+        - STTrash3CacheT1
+        - STTrash4CacheT1
+        - STTrash5CacheT1
+      chance: 0.25
+      offset: 0.0
+
+- type: entity
+  id: STTrashT2CacheSpawner
+  name: trash trigger T2 (25%)
+  suffix: ST, T2, Trigger, Cache
+  parent: FlexibleMarker
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Stalker/Objects/Decoration/trash.yml
+          state: 1
+    - type: RandomSpawner
+      prototypes:
+        - STTrash1CacheT2
+        - STTrash2CacheT2
+        - STTrash3CacheT2
+        - STTrash4CacheT2
+        - STTrash5CacheT2
+      chance: 0.25
+      offset: 0.0
+
+- type: entity
+  id: STTrashT3CacheSpawner
+  name: trash trigger T3 (25%)
+  suffix: ST, T3, Trigger, Cache
+  parent: FlexibleMarker
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Stalker/Objects/Decoration/trash.yml
+          state: 1
+    - type: RandomSpawner
+      prototypes:
+        - STTrash1CacheT3
+        - STTrash2CacheT3
+        - STTrash3CacheT3
+        - STTrash4CacheT3
+        - STTrash5CacheT3
+      chance: 0.25
+      offset: 0.0
+
+- type: entity
+  id: STTrashT4CacheSpawner
+  name: trash trigger T4 (25%)
+  suffix: ST, T4, Trigger, Cache
+  parent: FlexibleMarker
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Stalker/Objects/Decoration/trash.yml
+          state: 1
+    - type: RandomSpawner
+      prototypes:
+        - STTrash1CacheT4
+        - STTrash2CacheT4
+        - STTrash3CacheT4
+        - STTrash4CacheT4
+        - STTrash5CacheT4
+      chance: 0.25
+      offset: 0.0
+
+- type: entity
+  id: STTrashT5CacheSpawner
+  name: trash trigger T5 (25%)
+  suffix: ST, T5, Trigger, Cache
+  parent: FlexibleMarker
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: _Stalker/Objects/Decoration/trash.yml
+          state: 1
+    - type: RandomSpawner
+      prototypes:
+        - STTrash1CacheT5
+        - STTrash2CacheT5
+        - STTrash3CacheT5
+        - STTrash4CacheT5
+        - STTrash5CacheT5
+      chance: 0.25
+      offset: 0.0

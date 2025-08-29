@@ -1,0 +1,76 @@
+- type: entity
+  id: STMutantByurer
+  parent: BaseMobMutant
+  name: бюрер
+  suffix: ST, T3
+  description: C какой-то стороны удачный эксперимент учёных по добавлению пси способностей монстрам
+  components:
+  - type: Sprite
+    sprite: _Stalker/Mobs/Mutants/byurer.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: byurger
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: byurger
+      Dead:
+        Base: dead
+  - type: Damageable
+    damageModifierSet: STMutantT3DamageModifierSet
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Dead
+  - type: MeleeWeapon
+    soundHit:
+      path: "/Audio/Weapons/smash.ogg"
+    angle: 0
+    attackRate: 0.75
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Slash: 15
+        Blunt: 5
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        15
+  - type: NPCUseAction
+    actionId: ActionPsyonicsShieldMutant
+  - type: Psyonics
+    psy: 1000000
+  - type: PsyonicsActionShield
+    cost: 0
+    periodSeconds: 5
+    health: 200
+    actionId: ActionPsyonicsShieldMutant
+  - type: PsyonicsShieldVisuals
+    sprite: _Stalker/Effects/psyonic_shield.rsi
+    state: Standing
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.5
+  - type: BasicEntityAmmoProvider
+    proto: STBulletBox
+    capacity: 1
+    count: 1
+  - type: Gun
+    fireRate: 0.5
+    useKey: false
+    projectileSpeed: 15
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+    soundGunshot: /Audio/_Stalker/Mutants/truba_upala_burer.ogg
+  - type: Butcherable
+    spawned:
+    - id: Roubles500
+      amount: 1
+      prob: 1
+    - id: Dollar100
+      amount: 1
+      prob: 1

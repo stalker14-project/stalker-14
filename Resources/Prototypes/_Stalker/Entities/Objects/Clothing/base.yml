@@ -3,6 +3,12 @@
   id: BlockMask
 - type: Tag
   id: BlockBelt
+- type: Tag
+  id: BlockBack
+- type: Tag
+  id: BlockCloak
+- type: Tag
+  id: BlockGloves
 
 ###============------------------------------------============###
 ###============------------[New Одежда]------------============###
@@ -21,9 +27,24 @@
   - type: Trash
     time: 60
   - type: RepositoryItem
-    categoryName: Броня
+    categoryName: Экипировка
   - type: PullDoAfter
     pullTime: 6
+
+- type: entity
+  parent: ClothingMaskGas
+  id: STClothingMaskGas
+  suffix: ST
+  abstract: true
+  components:
+  - type: RepositoryItem
+    categoryName: Экипировка
+  - type: PullDoAfter
+    pullTime: 2
+  - type: HideLayerClothing
+    slots:
+    - Snout
+    - FacialHair
 
 - type: entity
   parent: ClothingOuterBaseLarge
@@ -56,8 +77,9 @@
     time: 60
   - type: Tag
     tags:
-      - BlockBelt
       - Folder
+  - type: RepositoryItem
+    categoryName: Экипировка
   - type: Storage
     maxItemSize: Normal
     grid:
@@ -102,6 +124,8 @@
     tags:
       - BlockBelt
       - Folder
+  - type: RepositoryItem
+    categoryName: Экипировка
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodWinterDefault
     slot: head
@@ -147,6 +171,8 @@
   - type: Clothing
     slots:
     - HEAD
+  - type: RepositoryItem
+    categoryName: Экипировка
   - type: Sprite
     state: icon
   - type: Tag
@@ -227,10 +253,15 @@
     maxItemsize: Large
     grid:
     - 0,0,7,1
+    blacklist:
+      tags:
+      - STArtifact
     quickInsert: true
     areaInsert: true
   - type: Item
     size: Ginormous
+  - type: RepositoryItem
+    categoryName: Снаряжение
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -242,7 +273,8 @@
   - type: Dumpable
   - type: Tag
     tags:
-      - Folder
+    - Folder
+    - BlockBelt
 
 - type: entity
   abstract: true
@@ -267,10 +299,15 @@
     equipDelay: 2
     slots:
     - CLOAK
+  - type: RepositoryItem
+    categoryName: Экипировка
   - type: Item
     size: Large
     shape:
       - 0,0,3,2
+  - type: Tag
+    tags:
+    - BlockCloak
 
 - type: entity
   parent: ClothingBackpackDuffel
@@ -288,14 +325,18 @@
     - type: Storage
       grid:
         - 0,0,4,4
+      blacklist:
+        tags:
+        - STArtifact
       quickInsert: true
       areaInsert: true
     - type: RepositoryItem
-      categoryName: Рюкзаки
+      categoryName: Снаряжение
     - type: Dumpable
     - type: Tag
       tags:
       - Folder
+      - BlockBack
     - type: Craftable
 
 - type: entity

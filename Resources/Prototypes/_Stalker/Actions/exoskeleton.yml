@@ -1,0 +1,9 @@
+- type: entity
+  id: ActionToggleExoskeleton
+  name: включить/выключить экзоскелет
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InstantAction
+    useDelay: 60
+    icon: _Stalker/Interface/Actions/patch.rsi/r_patch.png
+    event: !type:STTogglePoweredExoskeletonEvent

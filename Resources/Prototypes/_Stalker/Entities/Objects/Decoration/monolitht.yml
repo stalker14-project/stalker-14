@@ -1,0 +1,27 @@
+- type: entity
+  id: StalkerMonolith
+  parent: BaseStructure
+  name: монолит
+  suffix: ST, Mapping
+  description: Услышь Его зов.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/monolitht.rsi
+    state: monolith
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.8,-1.4,1.1,1.8"
+        density: 5000
+        mask:
+        - MachineMask
+        layer:
+        - WallLayer
+  - type: PointLight
+    radius: 2.5
+    energy: 3.5
+    color: "#3762c1"
+    castShadows: true

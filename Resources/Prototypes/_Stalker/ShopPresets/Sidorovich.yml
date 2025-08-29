@@ -2,135 +2,221 @@
   id: NpcSidor # 0.7x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 315
-    ZoneArtifactEye: 525
-    ZoneArtifactFlame: 1050
+    ZoneArtifactFireball: 540
+    ZoneArtifactEye: 810
+    ZoneArtifactFlame: 1620
     # Thermal group - 2
-    ZoneArtifactCristall: 1312
-    ZoneArtifactLithosphere: 2100
+    ZoneArtifactCristall: 3240
+    ZoneArtifactLithosphere: 6480
     # Electrical group - 1
-    ZoneArtifactSparkler: 315
-    ZoneArtifactBattery: 630
-    ZoneArtifactFlash: 1260
-    ArtMoon: 1575
-    ZoneArtifactTesla: 2362
-    ZoneArtifactIce: 2625
+    ZoneArtifactSparkler: 540
+    ZoneArtifactBattery: 810
+    ZoneArtifactFlash: 1620
+    ArtMoon: 3240
+    ZoneArtifactTesla: 4860
+    ZoneArtifactIce: 6480
     # Gravity group - 1
-    ArtMedusa: 262
-    ZoneArtifactFlower: 525
-    ZoneArtifactNightStar: 1312
+    ArtMedusa: 540
+    ZoneArtifactFlower: 810
+    ZoneArtifactNightStar: 3240
     # Gravity group - 2
-    ZoneArtifactVyvert: 315
-    ZoneArtifactAmoeba: 525
-    ZoneArtifactGravi: 1575
-    ZoneArtifactGoldfish: 2100
-    ZoneArtifactSpring: 2625
-    ZoneArtifactFocus: 1050
-    ZoneArtifactStuntman: 2100
-    ZoneArtifactDistorter: 3150
-    ZoneArtifactSoul: 2625
-    # Acidic group - 1
-    ZoneArtifactBlood: 420
-    ZoneArtifactMeat: 787
-    ZoneArtifactKolobok: 1050
-    # Acidic group - 2
-    ZoneArtifactPellicle: 525
-    ZoneArtifactBaloon: 1837
-    #############################Части Мутантов
-    FoodMeatSpiderLeg: 52
-    MutantPartBlindDogTail: 94
-    MutantPartZombieHand: 441
-    MutantPartFleshEye: 252
-    MutantPartBoarHoof: 252
-    MutantPartPseudodogTail: 315
-    MutantPartSnorkFoot: 378
-    MutantPartLeshiyRoot: 525
-    MutantPartBloodsuckerTentacles: 630
-    MutantPartPseudogiantHeart: 2625
-    MutantPartOraculeEye: 3150
+    ZoneArtifactVyvert: 540
+    ZoneArtifactAmoeba: 810
+    ZoneArtifactFloodlight: 810
+    ZoneArtifactGravi: 1620
+    ZoneArtifactGoldfish: 6480
+    ZoneArtifactSpring: 3600
+    ZoneArtifactFocus: 4860
+    ZoneArtifactStuntman: 6480
+    ZoneArtifactDistorter: 6480
+    ZoneArtifactSoul: 4860
+    # Food
+    FoodMeatDogCooked: 70
+    STFoodMeatSpiderCooked: 35
+    FoodMeatBoarCooked: 110
 
-    # Smuggling
-    TradeBox: 1650  
+    # Acidic group - 1
+    ZoneArtifactBlood: 1600
+    ZoneArtifactMeat: 3200
+    ZoneArtifactKolobok: 4800
+    # Acidic group - 2
+    ZoneArtifactPellicle: 535
+    ZoneArtifactBaloon: 4800
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 180 # T1
+    MutantPartSeasonedBoarHoof: 365 # T2
+    MutantPartOldBoarHoof: 545 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 120
+    MutantPartFleshEye: 270
+    FoodMeatSpiderLeg: 70
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 745
+    MutantPartPseudodogTail: 405
+    MutantPartSnorkFoot: 675
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 1015
+    MutantPartOraculeEye: 2160
+    MutantPartPseudogiantHeart: 5400
+    MutantPartZombieHand: 810
+
+    # Values
+    Dollar: 50
+    Goldcoins: 4725
+
   categories:
-    - name: Оружие
+    - name: Контрабанда
+      priority: 0
+      items:
+        TradeBox: 2000
+        CannabisSeedsStalker: 200
+    - name: shop-category-weapons
       priority: 1
       items:
-        STWeaponRifleStalkerSaiga545: 2000
-        STWeaponRifleStalkerFAL: 2500
-        WeaponPistolStalkerAPS: 750
-        STWeaponShotgunStalkerSPAS: 4000
-        STWeaponRifleStalkerL85: 2500
-        STWeaponShotgunToz34: 350
-        STWeaponRifleStalkerAK74: 2800
-        STWeaponRifleSig550: 2500
-        STWeaponRifleSCARH: 6500
-
-    - name: Магазины
+            # Melee
+        StalkerBallBat: 50
+        STThrowingknifeBlue: 250
+            # Guns
+          # 7mm
+        STWeaponShotgunTOZ34: 250 # T1
+        STWeaponShotgunMP133: 500 # T2
+        STWeaponShotgunMP153: 1700 # T2
+         # 9x18
+        WeaponPistolStalkerPM: 50 #T1
+         # 7,62x25
+        WeaponPistolStalkerTT: 50 #T1
+          # 5,45x39
+        STWeaponRifleSaiga545: 1750 # T3
+        STWeaponRifleAKS74U: 2000
+        STWeaponRevolverSWModel325: 500
+        STWeaponRevolverSWPC325TR: 1000
+          # Other
+        STWeaponSMGMP40: 1000
+        WeaponPistolStalkerAPS: 900 #T2
+        STWeaponSniperSKS: 1850 # T2
+        STWeaponSniperMosin: 1500
+        STWeaponSMGPPSh41: 2750
+        STWeaponSMGPP91: 4000
+          # Nato
+    - name: shop-category-magazines
       priority: 2
       items:
-        545Mag20: 150
-        545Mag30: 250
-        Base751Mag10: 300
-        751Mag20: 450
+          # 7,62x39
+        Base739Mag10: 350 #T1
+          # 5,45x39
+        Base545Mag10: 150 #T1
+          # Other
+        BasePMMag: 12
+        BasePPSHMag: 350
+        TTMag: 15
         BaseAPSMag: 300
-        GlockMag24: 300
-
-    - name: Боеприпасы
+        MP40Mag: 150
+        STSpeedLoader45ACPEmpty: 100
+        PP91Mag: 200
+    - name: shop-category-ammunition
       priority: 3
       items:
-        6mmBuckshotBox: 400
-        7mmBuckshotBox: 75
+        7mmBuckshotBox: 50
+        6mmBuckshotBox: 150
+        # 5.45
+        545FMJBox: 700
+        545HPBox: 250
+        # 7.39
+        739HPBox: 400
+        # 7.54
+        754HPBox: 500
+        # 9.18
+        918PGJBox: 80
+        918SP7Box: 200
+        # 9.19
+        919PSOGJBox: 100
         919RIPBox: 400
-        919PSTBox: 300
-        918SP7Box: 300
-        545FMJBox: 500
-        545PCBox: 700
-        556FMJBox: 550
-        556M855Box: 900
-        751UNBox: 600
-        751M80Box: 1000
-    - name: Броня и снаряжение
+        # 7.25
+        725PBox: 100
+        725LRNPCBox: 50
+        725PTBox: 465
+        #45
+        45ACPRIPBox: 450
+        45ACPLFMJBox: 250
+    - name: shop-category-armor
       priority: 4
       items:
-        ClothingOuterJacketStalker: 39
-        STClothingOuterArmorLightPlateVestBaseStalker: 1909
-        STClothingOuterArmorRCBZ: 1350
-        ClothingOuterArmorZaryaStalker: 1947
-        # плащи
-        ClothingOuterCoatStalker: 349
-        # маски
-        ClothingMaskGasM40: 133
-        ClothingMaskGP5: 122
-        # шлемы
-        ClothingHeadHelmetInfantry: 1752
-        ClothingHeadHelmetVityaz1C: 2209
-        # рюкзаки
-        ClothingBackpackTacticBlackStalker: 600
-    - name: Рюкзаки
+          # Helmets #
+        ClothingHeadHelmetLight: 300 # T1 - uni
+        ClothingHeadHelmetInfantry: 800 # T2 - uni
+        ClothingHeadHelmetSH68: 250 # T1 - PVP:
+          # OuterClothing #
+        SetJacketNoviceWhiteBuyableCrate: 100 # T1 - uni
+        STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
+        SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
+        SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
+        ClothingOuterArmor6B2: 2000
+        STClothingOuterArmorRCBZ: 1800 # T2 - ENV
+        ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
+        SetZaryaStalkerBuyableCrate: 3300
+        ClothingOuterArmorSevaStalker: 15000
+        STPsyHelm1: 5000
+
+    - name: shop-category-storage-and-containers
       priority: 5
       items:
-        ClothingBackpackDuffelGreenStalker: 65 # 4,4
-        ClothingBackpackDuffelBlackStalker: 65 # 4,4
-        ClothingBackpackTacticBeigeStalker: 350  # 6,5
-        ClothingBackpackTacticOliveStalker: 350
-    - name: Утилиты
+          # BackPacks
+        ClothingBackpackTownBlackStalker: 155 # T1
+        ClothingBackpackTownWhiteStalker: 150 # T1
+        ##-------------------------------------------
+        ClothingBackpackTacticOliveStalker: 497 # T2
+        ClothingBackpackTacticBeigeStalker: 498 # T2
+        ##-------------------------------------------
+        ClothingBackpackMercStalker: 899 # T3 |pve backpack
+        ##-------------------------------------------
+          # Belts
+        ClothingBeltBandolierStalker: 20 # T1 - PVE
+        ClothingBeltTarzanGreen: 200 # T1 - PVP
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
+          # Containers
+        MedkitCMSStalker: 250 # T1
+        MedkitGrizzlyStalker: 850 # T2
+        STClothingBeltThrowingKnifes: 350
+    - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
-        ClothingBeltBandolierStalker: 35
+          # Cloaks
+        ClothingOuterCoatDoshdevik: 1000 # T1
+          # Gasmasks
+        ClothingMaskGasZarya: 90 # T1
+        ClothingMaskGP5: 350 # T2
+        ClothingMaskGP7: 900  # T3
+    - name: shop-category-research-equipment
+      priority: 7
+      items:
+        STBoltBagFilled: 50
+        BoxArtcont: 400 # T1
+        ZoneAnomalyDetectorAD1: 50 # T1
+          # Detectors
+        ZoneArtifactDetectorPulse: 100 # T1
+        ZoneArtifactDetectorHunter: 500 # T2
+        ZoneArtifactDetectorResponse: 1500 # T2
+    - name: shop-category-utilities
+      priority: 8
+      items:
         STCombatKnife: 25
-        TrashBag: 30
         BoxZiptie: 50
-        BoxSafebox: 50
+        BoxSafebox: 300
         CheapLighter: 5
         GeigerCounter: 50
         BaseRadio: 50
-        FlashlightSeclite: 70
-        PowerCellHyper: 35
-        Defibrillator: 1000
+        STFlashlightSeclite: 50
+        PowerCellHyper: 50
         HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
-        Binocularus1: 1000
+        Binocularus1: 800
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
@@ -138,60 +224,46 @@
         ClothingGoPro: 250
         ExtendedEmergencyOxygenTankFilledStalker: 50
         TrashDetectorTier1: 200
-        Matchbox: 20
+        Matchbox: 10
         HatchetStalker: 150
-        STCraftPlasticFittingT2: 400
-    - name: Аномалии
-      priority: 7
+        HotelCard: 25
+    - name: shop-category-provisions
+      priority: 9
       items:
-        # Bolt bags
-        STBoltBagFilled: 50
-        STBoltBagOliveGrayFilled: 50
-        STBoltBagFilledGolden: 5000
-        STBoltBagOliveGrayFilledGolden: 5000
-        # Artifact containers
-        BoxArtcont: 450
-        # Anomaly detectors
-        ZoneAnomalyDetectorAD1: 450
-        ZoneAnomalyDetectorAD2: 1050
-        # Artifact detectors
-        ZoneArtifactDetectorPulse: 200
-        ZoneArtifactDetectorHunter: 900
-    - name: Провизия
-      priority: 8
-      items:
-        STEnergyDrink: 200
+        STEnergyDrink: 250
+        STDrinkBeerCanBaltic: 90
         DrinkVodkaBottleFull: 55
-        FoodBreadPlain: 35
+        STFoodBreadPlain: 35
         DrinkFlaskOld: 30
         DrinkWaterBottleFull: 45
         FoodTinMRE: 120
         DrinkLemonadehBottleFull: 50
-        FoodMeatSalami: 350
-    - name: Медицина
-      priority: 9
-      items:
-        PillDexalin: 10
-        PillDexalinPlusStalker: 30
-        radioprotectpill: 250
-        psyblock: 550
-        MedkitAI2: 250
-        STOintment: 15
-        STGauze: 20
-        STBrutepack: 50
-        Tourniquet: 80
-        Bloodpack: 300
-        MedkitMilitary: 450
-        antiradpill: 150
-        MedkitCMSStalker: 750
-        MedkitGrizzlyStalker: 1050
-    - name: Кастомизация
+        STFoodMeatSalami: 350
+    - name: shop-category-medicine
       priority: 10
       items:
+        STPillboxAntirad: 350
+        STGauze: 65
+        STOintment: 75
+        STBrutepack: 65
+        Bloodpack: 550
+        MedkitAI2: 135
+        Defibrillator: 1000
+        AntiRadMedipen: 300
+        STPillboxProbud: 500
+        MedkitMilitary: 400
+        MedkitScience: 450
+        MedkitElite: 1500
+        MedkitLAR: 3200
+        STPillboxShiza: 10000
+    - name: shop-category-customization
+      priority: 11
+      items:
+        ClothingBandageStalkerJid: 50
+        ClothingBandageStalkerBelarus: 50
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10
-        ClothingUniformJumpsuitTacticool: 10
         ClothingMaskNeckBalaklava2: 10
         ClothingMaskNeckBalaklava3: 10
         ClothingHeadBandMerc: 30
@@ -207,12 +279,46 @@
         ClothingHeadHatBlacksoft: 10
         ClothingHeadHatGreysoft: 10
         ClothingHeadHatSovietUshankaStalker: 40
-        ClothingTshirtBlue: 10
-        ClothingTshirtOrange: 10
-        # Cloaks
         ClothingCloakStalker: 30
-    - name: Развлечения
-      priority: 11
+        ClothingLegsJeansBlue: 10
+        ClothingLegsJeansStalker: 10
+        ClothingLegsJeansGreenCargo: 10
+        ClothingLegsJeansGreyCargo: 10
+        ClothingLegsJeansBlackCargo: 10
+        ClothingLegsJeansBrownCargo: 10
+        ClothingLegsJeansSandCargo: 10
+        ClothingLegsJeansRussianPixel: 20
+        ClothingLegsJeansBlackNew: 20
+        ClothingLegsJeansGorka: 20
+        ClothingShoesBootsCombat: 30
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksGorka: 90
+        ClothingTorsoTurtlenecksGorka6: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingLegsJeansBereza: 20
+        ClothingLegsJeansGorka6: 20
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 67
+        # new shit
+        ClothingLegsBattlePantsBlack: 50
+        ClothingLegsVeryBlueJenas: 50
+        ClothingLegsCombatForest: 50
+        ClothingLegsGorka5: 50
+        ClothingLegsGorka6b: 50
+        ClothingLegsNavyPants: 50
+        ClothingLegsRussianNumber: 50
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksGorka5: 50
+        ClothingTorsoTurtlenecksGorka6B: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50
+    - name: shop-category-entertainment
+      priority: 12
       items:
         # Dices
         DiceBag: 20
@@ -224,11 +330,27 @@
         SandBattlemap: 60
         GrassBattlemap: 60
         # Instruments
-        AcousticGuitarInstrument: 300
+        AcousticGuitarInstrument: 500
         AccordionInstrument: 500
-    - name: Гранаты
-      priority: 12
+        HarmonicaInstrument: 500
+
+  sponsorCategories:
+    SponsorBread:
+      - name: sponsor
+        items:
+          STWeaponRifleAKMC: 4300
+          STWeaponRifleAKS74UWhite: 1350
+          STHatchetSponsor: 150
+          STSpanishKnife: 100
+    SponsorOMind:
+      - name: О-сознание
+        items:
+          STWeaponRifleSVDSWood: 800
+          Base754Mag5: 400
+  contributorCategories:
+    - name: contributor
       items:
-        RGD5Grenade: 890
-        DG05SmokeGrenade: 900
-        GL1Grenade: 300
+        STWeaponShotgunMP153Raven: 550
+        WeaponPistolStalkerAPSHugo: 450
+
+

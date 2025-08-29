@@ -1,0 +1,25 @@
+- type: entity
+  name: Балон для огнемёта
+  description: Небольшой балон с топливом для огнемёта
+  id: STFlamethrowerTank
+  suffix: ST, Full
+  parent: BaseItem
+  components:
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/FlamethrowerTank.rsi
+    size: Small
+    shape:
+      - 0,0,3,2
+  - type: PowerCell
+  - type: Sprite
+    state: icon
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/FlamethrowerTank.rsi
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: Tag
+    tags:
+      - FlamethrowerTank
+  - type: ProjectileBatteryAmmoProvider
+    proto: Flame
+    fireCost: 1

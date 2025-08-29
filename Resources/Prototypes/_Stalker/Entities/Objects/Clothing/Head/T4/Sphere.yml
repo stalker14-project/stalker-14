@@ -13,26 +13,30 @@
       - BlockMask
       - HidesNose
   - type: STWeight
-    self: 3
+    self: 4
   - type: Armor
-    armorClass: 3
+    armorClass: 4
     modifiers:
       flatReductions:
-        Piercing: 10
-        Blunt: 2
-        Slash: 2
+        Blunt: 4
+        Slash: 4
+        Piercing: 5
       coefficients:
-        Piercing: 0.75
-        Heat: 0.85
-        Shock: 0.85
-        Radiation: 0.85
+        Blunt: 0.85
+        Slash: 0.80
+        Psy:   0.60
+        Radiation: 0.70
   - type: ExplosionResistance
     damageCoefficient: 0.70
   - type: Reflect
-    reflectProb: 0.08
+    reflectProb: 0.10
     spread: 360
     reflects:
       - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 
 - type: entity
@@ -80,6 +84,29 @@
   suffix: Stalker, Завет
   components:
     - type: Sprite
-      sprite: _Stalker/Clothing/Head/Bulat/covenant.rsi
+      sprite: _Stalker/Objects/Clothing/Head/Bulat/covenant.rsi
     - type: Clothing
-      sprite: _Stalker/Clothing/Head/Bulat/covenant.rsi
+      sprite: _Stalker/Objects/Clothing/Head/Bulat/covenant.rsi
+
+# Clear Sky - 1 +
+
+- type: entity
+  parent: STClothingHeadHelmetEnvironmentT4Base
+  id: ClothingHeadHelmetBerill5MCN
+  name: шлем «Сфера-12» 'Чистого Неба'
+  description: Это шлем, специально разработанный для защиты от колющих атак. Есть устойчивость к другим видам повреждений.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/bulat_helm_cn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/bulat_helm_cn.rsi
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      coefficients:
+        Piercing: 0.75
+        Heat: 0.8
+        Shock: 0.80
+        Radiation: 0.80
+  - type: ExplosionResistance
+    damageCoefficient: 0.70

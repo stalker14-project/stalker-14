@@ -2,7 +2,7 @@
 - type: entity
   id: Bullet45ACPLFMJ
   name: bullet (.45 ACP Lasermatch FMJ magnum)
-  parent: BaseBullet
+  parent: STBasePistolBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
@@ -39,7 +39,9 @@
     projectileClass: 1
     damage:
       types:
-        Piercing: 50
+        Blunt: 10
+        Slash: 10
+        Piercing: 40
   - type: StaminaDamageOnCollide
     damage: 15
 
@@ -53,7 +55,10 @@
     projectileClass: 0
     damage:
       types:
-        Piercing: 80
+        Mutant: 80
+        Piercing: 10
+        Blunt: 10
+        Slash: 10
   - type: StaminaDamageOnCollide
     damage: 30
 

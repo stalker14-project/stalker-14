@@ -11,6 +11,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
 using Content.Shared.Tag;
 using Content.Shared.Whitelist;
@@ -34,6 +35,7 @@ public abstract partial class InventorySystem
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly SharedStrippableSystem _strippable = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!; // Stalker-Changes
 
     [ValidatePrototypeId<ItemSizePrototype>]
@@ -166,7 +168,7 @@ public abstract partial class InventorySystem
             clothing.EquipDelay > TimeSpan.Zero &&
             (clothing.Slots & slotDefinition.SlotFlags) != 0 &&
             _containerSystem.CanInsert(itemUid, slotContainer))
-        { // stalker-changes-start 
+        { // stalker-changes-start
             var args = new DoAfterArgs(
                 EntityManager,
                 actor,
@@ -271,7 +273,57 @@ public abstract partial class InventorySystem
             {
                 return false;
             }
-        } // Stalker-Changes-End
+        } 
+		
+		if (slot == "cloak" && TryGetSlotEntity(target, "outerClothing", out var outerCloakItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockCloak") && _tagSystem.HasTag(outerCloakItem.Value, "BlockCloak"))
+            {
+                return false;
+            }
+        }
+
+        if (slot == "outerClothing" && TryGetSlotEntity(target, "cloak", out var cloakItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockCloak") && _tagSystem.HasTag(cloakItem.Value, "BlockCloak"))
+            {
+                return false;
+            }
+        }
+		
+		if (slot == "back" && TryGetSlotEntity(target, "outerClothing", out var outerBackItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockBack") && _tagSystem.HasTag(outerBackItem.Value, "BlockBack"))
+            {
+                return false;
+            }
+        }
+
+        if (slot == "outerClothing" && TryGetSlotEntity(target, "back", out var backItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockBack") && _tagSystem.HasTag(backItem.Value, "BlockBack"))
+            {
+                return false;
+            }
+		
+        }
+		if (slot == "gloves" && TryGetSlotEntity(target, "outerClothing", out var outerGlovesItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockGloves") && _tagSystem.HasTag(outerGlovesItem.Value, "BlockGloves"))
+            {
+                return false;
+            }
+        }
+
+        if (slot == "outerClothing" && TryGetSlotEntity(target, "gloves", out var glovesItem, inventory))
+        {
+            if (_tagSystem.HasTag(itemUid, "BlockGloves") && _tagSystem.HasTag(glovesItem.Value, "BlockGloves"))
+            {
+                return false;
+            }
+		
+        }// Stalker-Changes-End
+		
         if (slotDefinition == null && !TryGetSlot(target, slot, out slotDefinition, inventory: inventory))
             return false;
 

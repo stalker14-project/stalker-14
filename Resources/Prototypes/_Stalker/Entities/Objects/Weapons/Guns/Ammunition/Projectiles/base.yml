@@ -1,0 +1,182 @@
+- type: entity
+  abstract: true
+  parent: STBaseEntity
+  id: STBaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+  - type: FlyBySound
+  - type: Clickable
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+    - state: bullet
+      shader: unshaded
+  - type: Physics
+    bodyType: Dynamic
+    linearDamping: 0
+    angularDamping: 0
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.1,0.1"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+      fly-by: &flybyfixture
+        shape: !type:PhysShapeCircle
+          radius: 1.5
+        layer:
+        - Impassable
+        - MidImpassable
+        - HighImpassable
+        - LowImpassable
+        hard: False
+  - type: Projectile
+    impactEffect: BulletImpactEffect
+    damage:
+      types:
+        Piercing: 14
+    soundHit:
+      path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg
+  - type: TimedDespawn
+    lifetime: 10
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.03
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.03
+    - range: 20
+      falloff: 0.2
+
+- type: entity
+  parent: STBaseBullet
+  id: STBaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TriggerOnCollide
+    fixtureID: projectile
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 7
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.15,-0.45,0.15,0.15"
+        hard: false
+        mask:
+        - Impassable
+        - BulletImpassable
+      fly-by: *flybyfixture
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseBean #Low range, almost melee
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.1
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 1
+      falloff: 0.1
+    - range: 4
+      falloff: 0.9
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBasePistolBullet #Low range
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.1
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 2
+      falloff: 0.05
+    - range: 8
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseLRBullet #Medium range, light rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.05
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.05
+    - range: 15
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseMRBullet #Medium to high range, medium rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.03
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.03
+    - range: 20
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseHRBullet #High range, heavy rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.01
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 4
+      falloff: 0.02
+    - range: 30
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
+  id: STBaseSPBullet #Spacial ammo like 9x39 or .300 blackout
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 2
+      falloff: 0.08
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 2
+      falloff: 0.07
+    - range: 15
+      falloff: 0.2

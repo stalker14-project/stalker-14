@@ -1,0 +1,120 @@
+- type: species
+  id: HumanFat
+  name: species-name-fat-human
+  roundStart: true
+  prototype: MobHumanFat
+  sprites: MobHumanFatSprites
+  markingLimits: MobHumanMarkingLimits
+  dollPrototype: MobHumanFatDummy
+  skinColoration: HumanToned
+  isSponsor: true
+
+# The lack of a layer means that
+# this person cannot have round-start anything
+# applied to that layer. It has to instead
+# be defined as a 'custom base layer'
+# in either the mob's starting marking prototype,
+# or it has to be added in C#.
+- type: speciesBaseSprites
+  id: MobHumanFatSprites
+  sprites:
+    Special: MobHumanoidAnyMarking
+    Head: MobHumanFatHead
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    Chest: MobHumanFatTorso
+    Eyes: MobHumanoidEyes
+    HeadTop: MobHumanoidAnyMarking
+    LArm: MobHumanFatLArm
+    RArm: MobHumanFatRArm
+    LHand: MobHumanFatLHand
+    RHand: MobHumanFatRHand
+    LLeg: MobHumanFatLLeg
+    RLeg: MobHumanFatRLeg
+    LFoot: MobHumanFatLFoot
+    RFoot: MobHumanFatRFoot
+
+- type: humanoidBaseSprite
+  id: MobHumanFatHead
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobHumanFatHeadMale
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobHumanFatHeadFemale
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: head
+
+- type: humanoidBaseSprite
+  id: MobHumanFatTorso
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobHumanFatTorsoMale
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobHumanFatTorsoFemale
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: torso
+
+- type: humanoidBaseSprite
+  id: MobHumanFatLLeg
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobHumanFatLArm
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobHumanFatLHand
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobHumanFatLFoot
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: l_foot
+
+- type: humanoidBaseSprite
+  id: MobHumanFatRLeg
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobHumanFatRArm
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobHumanFatRHand
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobHumanFatRFoot
+  baseSprite:
+    sprite: _Stalker/Mobs/Species/Fat/parts.rsi
+    state: r_foot

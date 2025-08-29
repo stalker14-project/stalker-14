@@ -1,0 +1,49 @@
+- type: entity
+  name: топор
+  parent: HatchetStalker
+  id: STHatchetSponsor
+  description: Топор, можно срубать деревья.
+  suffix: ST, спонсор
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Tools/hatchet.rsi
+    state: icon
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 12
+        Piercing: 8
+  - type: Item
+    sprite: _Stalker/Objects/Tools/hatchet.rsi
+  - type: Craftable
+  - type: RepositoryItem
+    categoryName: Инструменты
+ 
+- type: entity
+  parent: BaseKnife
+  id: STSpanishKnife
+  name: испанский армейский нож
+  description: Нож и резак для проволки в одном
+  suffix: Stalker, Инструменты
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/debug.rsi
+      state: icon
+    - type: Item
+      sprite: Objects/Tools/debug.rsi
+      size: Small
+      SelfWeight: 0.5
+      shape:
+        - 0,0,0,0
+    - type: Tool
+      qualities:
+      - Biting
+      useSound:
+        path: /Audio/Items/ratchet.ogg
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Инструменты
+    - type: Tag
+      tags:
+      - STCombatKnife
+      - Knife

@@ -5,9 +5,14 @@
 # а куда ты делась в мастере? Нипон
   suffix: Stalker, Медуза
   components:
+  - type: Butcherable
+    spawned:
+      - id: ArtMedusaActive1
+        amount: 1
   - type: Craftable
   - type: Sprite
     state: medusa
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalySpringboard
   - type: ZoneArtifactDetectorTarget
@@ -20,20 +25,16 @@
   - type: PersonalDamage
     damage:
       types:
-        Blunt: -0.02
-        Slash: -0.02
-        Asphyxiation: -0.02
-        Radiation: 0.2
+        Radiation: 0.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
-      flatReductions:
-        Blunt: -0.5
-        Slash: -0.5
       coefficients:
-        Compression: 1.1
+        Compression: 1.2
+        Blunt: 0.95
+        Slash: 0.95
 
 - type: entity
   parent: BaseArtifact
@@ -42,6 +43,7 @@
   components:
   - type: Sprite
     state: flower
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyPulse
   - type: ZoneArtifactDetectorTarget
@@ -54,24 +56,16 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -0.15
-        Shock: -0.25
-        Cold: -0.25
-        Caustic: -0.25
-        Blunt: -0.1
-        Slash: -0.1
-        Asphyxiation: -0.1
-        Radiation: 0.4
+        Radiation: 1
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
-      flatReductions:
-        Blunt: -1
-        Slash: -1
       coefficients:
-        Compression: 1.2
+        Compression: 1.4
+        Blunt: 0.90
+        Slash: 0.90
 
 - type: entity
   name: Ночная звезда
@@ -81,6 +75,7 @@
   components:
   - type: Sprite
     state: night_star
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyNoGravity
   - type: ZoneArtifactDetectorTarget
@@ -93,25 +88,18 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -0.75
-        Shock: -0.75
-        Cold: -0.75
-        Caustic: -0.75
-        Blunt: -0.3
-        Slash: -0.3
-        Asphyxiation: -0.15
-        Compression: -0.75
-        Radiation: 0.8
+        Radiation: 2
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
-      flatReductions:
-        Blunt: -1
-        Slash: -1
       coefficients:
-        Compression: 1.05
+        Compression: 1.6
+        Blunt: 0.85
+        Slash: 0.85
+  - type: STWeight
+    self: -33
 
 # Пораждаемая эпицентром, каруселью
 - type: entity
@@ -122,6 +110,7 @@
   components:
   - type: Sprite
     state: vyvert
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -134,7 +123,7 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: 0.2
+        Radiation: -0.25
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -151,7 +140,8 @@
   suffix: Stalker, Амеба
   components:
   - type: Sprite
-    state: amoeba # Сам рисовал xd
+    state: amoeba
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -164,16 +154,16 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: 0.8
+        Radiation: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 1.2
+        Compression: 1.3
     interval: 1
   - type: STWeight
-    self: -25
+    self: -30
 
 - type: entity
   parent: BaseArtifact
@@ -182,6 +172,7 @@
   components:
   - type: Sprite
     state: gravi
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -194,19 +185,16 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: 1.6
+        Radiation: -2
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 1.4
+        Compression: 1.5
     interval: 1
   - type: STWeight
-    self: -50
-  - type: ClothingSpeedModifier
-    walkModifier: 1.05
-    sprintModifier: 1.05
+    self: -75
 
 - type: entity
   parent: BaseArtifact
@@ -215,6 +203,7 @@
   components:
   - type: Sprite
     state: goldfish
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -227,19 +216,16 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: 0.01
+        Radiation: -2
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 1.05
+        Compression: 1.8
     interval: 1
   - type: STWeight
-    self: -75
-  - type: ClothingSpeedModifier
-    walkModifier: 1.05
-    sprintModifier: 1.05
+    self: -100
 
 - type: entity
   parent: BaseArtifact
@@ -248,6 +234,7 @@
   components:
   - type: Sprite
     state: spring
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -258,21 +245,14 @@
     color: "#f89b08"
     castShadows: false
   - type: PersonalDamage
-    staminaDamage: -2.5
-    damage:
-      types:
-        Heat: 0.08
+    staminaDamage: -6
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
-      flatReductions:
-        Blunt: -3
       coefficients:
-        Compression: 0.4
-  - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
+        Compression: 0.2
+        Heat: 1.5
 
 # Пораждаемая инверсией
 - type: entity
@@ -282,6 +262,7 @@
   components:
   - type: Sprite
     state: focus
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyInversion
   - type: ZoneArtifactDetectorTarget
@@ -291,6 +272,10 @@
     energy: 4.5
     color: "#ffffff"
     castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 1
   - type: Armor
     hiddenExamine: false
     armorClass: 2
@@ -319,6 +304,7 @@
   components:
   - type: Sprite
     state: stuntman
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyInversion
   - type: ZoneArtifactDetectorTarget
@@ -328,6 +314,10 @@
     energy: 5.5
     color: "#ffffff"
     castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 1.5
   - type: Armor
     hiddenExamine: false
     armorClass: 3
@@ -356,6 +346,7 @@
   components:
   - type: Sprite
     state: distorter
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyInversion
   - type: ZoneArtifactDetectorTarget
@@ -365,6 +356,10 @@
     energy: 6.5
     color: "#ffffff"
     castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 2
   - type: Armor
     hiddenExamine: false
     armorClass: 4

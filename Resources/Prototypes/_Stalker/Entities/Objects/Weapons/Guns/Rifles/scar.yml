@@ -1,0 +1,158 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifle
+  id: STBaseWeaponRifleSCARH
+  components:
+  - type: STWeight
+    self: 3.5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/scar.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/scar.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/scar.rsi
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/scar.ogg
+      params:
+        volume: -2
+    minAngle: 50
+    maxAngle: 125
+    angleIncrease: 5.5
+    shotsPerBurst: 3
+    ShotsPerBurstModified: 3
+    selectedMode: FullAuto
+    availableModes:
+    - Burst
+    - SemiAuto
+    - FullAuto
+    angleDecay: 27.5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base751Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine751
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerNato
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeNato
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge751
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
+
+- type: entity
+  parent: STBaseWeaponRifleSCARH
+  id: STWeaponRifleSCARH
+  name: FN SCAR-H
+  description: Belgian battle rifle chambered in 7.62x51mm NATO. Rare in the Zone, mostly used by western mercenaries. Powerful but maintenance-heavy weapon.
+
+- type: entity
+  parent: STBaseWeaponRifleSCARH
+  id: STWeaponRifleSCARHShort
+  name: FN SCAR-H CQC
+  description: Short-barreled SCAR-H variant for close quarters combat. Gained mobility but lost accuracy in Zone conditions.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_short.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_short.rsi
+    shape:
+    - 0,0,4,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_short.rsi
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 5
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.5
+
+- type: entity
+  parent: STBaseWeaponRifleSCARH
+  id: STWeaponRifleARX160
+  name: beretta ARX-160
+  description: Italian assault rifle from 'Soldier of the Future' program. Appeared in the Zone via private military companies. Lighter but less powerful than SCAR.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ARX160.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ARX160.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ARX160.rsi
+    scale: 0.75, 0.75
+  - type: Gun
+    angleIncrease: 5
+    angleDecay: 29
+
+- type: entity
+  name: АК-308
+  parent: STWeaponRifleStalkerAK12
+  id: STWeaponRifleStalkerAK308
+  description: This model is the pinnacle of the AK system's development and differs from previous generations in its well-thought-out ergonomics, adaptability to all-day use, and increased accuracy and consistency of fire.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak308.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak308.rsi
+    scale: 0.8, 0.8
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak308.rsi
+  - type: Gun
+    fireRate: 7
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/fal.ogg
+      params:
+        volume: -2
+    minAngle: 48
+    maxAngle: 93
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base751Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine751
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRU
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge751

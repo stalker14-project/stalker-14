@@ -3,7 +3,7 @@
 - type: entity
   id: Bullet739FMJ
   name: bullet (7.62х39 rifle)
-  parent: BaseBullet
+  parent: STBaseMRBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: TimedDespawn
@@ -26,9 +26,10 @@
     projectileClass: 0
     damage:
       types:
+        Mutant: 85
+        Piercing: 10
         Blunt: 10
         Slash: 10
-        Piercing: 30
 
 - type: entity
   id: Bullet739PC

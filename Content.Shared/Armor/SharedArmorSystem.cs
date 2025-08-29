@@ -4,6 +4,7 @@ using Content.Shared.Inventory;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
+using System.Linq;
 
 namespace Content.Shared.Armor;
 
@@ -27,21 +28,51 @@ public abstract partial class SharedArmorSystem : EntitySystem
 
     private void OnDamageModify(EntityUid uid, ArmorComponent component, InventoryRelayedEvent<DamageModifyEvent> args)
     {
-        // stalker-changes
+        // stalker-changes-start
         if (args.Args.IgnoreResistors.Contains(uid))
+        {
+            var modifiedModifiers = new DamageModifierSet
+            {
+                Coefficients = new Dictionary<string, float>(component.Modifiers.Coefficients),
+                FlatReduction = component.Modifiers.FlatReduction
+            };
+
+            foreach (var key in modifiedModifiers.Coefficients.Keys.ToList())
+            {
+                modifiedModifiers.Coefficients[key] = 1f;
+            }
+
+            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modifiedModifiers);
             return;
-        // stalker-changes-ends
+        }
+
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
+        // stalker-changes-end
     }
 
     private void OnBorgDamageModify(EntityUid uid, ArmorComponent component,
         ref BorgModuleRelayedEvent<DamageModifyEvent> args)
     {
-        // stalker-changes
+        // stalker-changes-start
         if (args.Args.IgnoreResistors.Contains(uid))
+        {
+            var modifiedModifiers = new DamageModifierSet
+            {
+                Coefficients = new Dictionary<string, float>(component.Modifiers.Coefficients),
+                FlatReduction = component.Modifiers.FlatReduction
+            };
+
+            foreach (var key in modifiedModifiers.Coefficients.Keys.ToList())
+            {
+                modifiedModifiers.Coefficients[key] = 1f;
+            }
+
+            args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modifiedModifiers);
             return;
-        // stalker-changes-ends
+        }
+
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
+        // stalker-changes-end
     }
 
     private void OnArmorVerbExamine(EntityUid uid, ArmorComponent component, GetVerbsEvent<ExamineVerb> args)

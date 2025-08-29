@@ -1,0 +1,189 @@
+### PROJECT ###
+
+
+- type: entity
+  parent: ClothingHeadsetGrey
+  id: ClothingHeadsetProject
+  name: "А.А.А."
+  description: Алгоритм активен, отключить Алгоритм невозможно, подчиняйтесь Алгоритму.
+  components:
+    - type: ContainerContainer
+      containers:
+        key_slots: !type:Container
+    - type: ContainerFill
+      containers:
+        key_slots:
+        - EncryptionKeyPROJECT
+    - type: Headset
+    - type: EncryptionKeyHolder
+      keySlots: 1
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+    - type: Item
+      size: Small
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+      slots:
+      - ears
+    - type: Armor
+      armorClass: 0
+      modifiers:
+        flatReductions:
+          Psy: 5
+    - type: Unremoveable
+
+- type: entity
+  parent: BaseItem
+  id: EncryptionKeyPROJECT
+  name: "чип А.А.А."
+  description: Алгоритм не активен, повторное включение Алгоритма невозможно, не подчиняйтесь Алгоритму.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Project
+    - Project1
+    - Project2
+    - Project3
+    defaultChannel: Project
+  - type: Sprite
+    sprite: _Stalker/Objects/Other/crypt_project.rsi
+    state: icon
+
+- type: radioChannel
+  id: Project3
+  name: "Идентификация Угроз"
+  keycode: '4'
+  frequency: 56573
+  color: "#ff0000"
+  longRange: true
+
+- type: radioChannel
+  id: Project2
+  name: "Идентификация Нежелаемых"
+  keycode: '5'
+  frequency: 75923
+  color: "#ffff00"
+  longRange: true
+
+- type: radioChannel
+  id: Project1
+  name: "Идентификация Зелёных"
+  keycode: '6'
+  frequency: 25858
+  color: "#04ff00"
+  longRange: true
+
+- type: radioChannel
+  id: Project
+  name: "Общий Проект"
+  keycode: '7'
+  frequency: 94384
+  color: "#00e1d7"
+  longRange: true
+
+- type: entity
+  parent: IDCardStandard
+  id: PROJECTIDCard
+  name: ключ-карта Алгоритма
+  description: Алгоритм вечен!
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/id_cards.rsi
+    layers:
+    - state: project
+  - type: Access
+    tags:
+    - Project
+
+- type: entity
+  parent: BaseItem
+  id: ProjectPDA
+  name: "КПК &#@*$!^"
+  description: "&#@*$!^ Error Screen, A problem has been detected and &#@*$!^ has been shut down to prevent damage to your device. Technical Information: STOP: 0x0000008E (0xC0000005, 0x804E3B58, 0xBA4C7B28, 0x00000000) KERNEL_STACK_INPAGE_ERROR. Refer to your &#@*$!^ user manual or visit www.&#@*$!^.com/support for more information."
+  components:
+  - type: Trash
+    time: 600
+  - type: Unremoveable
+  - type: Appearance
+  - type: Sprite
+    sprite: _Stalker/Objects/Devices/pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
+    state: stalker_off
+  - type: Pda
+    id: PROJECTIDCard
+    state: project_death
+    paiSlot:
+      priority: -2
+      whitelist:
+        components:
+          - PAI
+    penSlot:
+      priority: -1
+      whitelist:
+        tags:
+          - Write
+    idSlot:
+      name: ключ-карта Алгоритма
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Machines/id_insert.ogg
+      whitelist:
+        components:
+          - IdCard
+  - type: Item
+    size: Small
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - idcard
+    - Belt
+
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsProject
+  name: подкованные сапоги проекта
+  description: Алгоритм не умрёт, Алгоритм вечен, Алгоритм ничего не боится!
+  components:
+  - type: Sprite
+    sprite: Corvax/Clothing/Shoes/Boots/jackboots_project.rsi
+  - type: Clothing
+    sprite: Corvax/Clothing/Shoes/Boots/jackboots_project.rsi
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltHolsterProject
+  name: плечевая кобура проекта
+  description: Кобура для ношения пистолета и боеприпасов.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/belt/holster_project.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/belt/holster_project.rsi
+  - type: Storage
+    grid:
+    - 0,0,3,1
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesHudProject
+  name: визор проекта
+  description: Смотря в него, вы видите весь алгоритм которому следуете..., но работает лишь если у вас в голове встроен сам-же чип.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/eyes/project_hud.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/eyes/project_hud.rsi
+  - type: Scope
+    zoom: 1.25
+    offset: 8
+    useInHand: false

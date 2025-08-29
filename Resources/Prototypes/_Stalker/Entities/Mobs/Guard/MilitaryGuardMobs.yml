@@ -1,0 +1,89 @@
+- type: entity
+  name: постовой СОП
+  suffix: Stalker, Т5, немощный, NPC
+  parent: MobStalkerBaseGuard
+  id: MobStalkerMilitaryGuard
+
+- type: entity
+  name: Вова Вист
+  suffix: Stalker, Т6, мега-мощный, NPC
+  parent: MobStalkerBaseGuard
+  id: MobStalkerMilitaryVovaVist
+  description: Вова Вист обладает превосходными навыками ведения стрельбы из пулемёта, в совокупности с аномальной мощью его пулемёта, этого достаточно, чтобы сделать военного одним из самых опасных людей в Зоне. Даже такой легендарный сталкер, как Шрам, продемонстрировал нечеловеческие возможности и все свои навыки, выложившись на полную и получив огромную порцию пятиточечной боли, чтобы прорваться в Деревню Новичков, избегая зоркого глаза, доведённого до предела мастерства и смертельных пуль Вовы Виста.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/Mobs/Military/Vist.rsi
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 50
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet918PGJ
+    fireCost: 1
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/pkm_shot.ogg
+    fireRate: 10
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 20
+    angleIncrease: 1
+    angleDecay: 30
+    availableModes:
+    - FullAuto
+
+- type: entity
+  name: Рядовой Оковчук
+  suffix: Stalker, Т5, мощный, NPC
+  parent: MobStalkerBaseGuard
+  id: MobStalkerMilitarySniper
+  description:
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: /Textures/_Stalker/Mobs/Military/Sniper.rsi
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: HTN
+    rootTask:
+      task: STMonolith
+    blackboard:
+      VisionRadius: !type:Single
+        30
+      AggroVisionRadius: !type:Single
+        25
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 25
+  - type: Battery
+    maxCharge: 100
+    startingCharge: 100
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet754FMJ
+    fireCost: 80
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 1
+    maxAngle: 1
+    angleIncrease: 1
+    angleDecay: 1
+    availableModes:
+    - FullAuto

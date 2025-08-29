@@ -1,0 +1,17 @@
+- type: entity
+  parent: StalkerShop
+  id: StalkerShopVoen
+  name: Торгомат, Военсталы
+  description: Как торговец туда поместился?
+  suffix: ST, Mapping, Военсталы
+  components:
+    - type: Sprite
+      drawdepth: Objects
+      sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_blue.rsi
+      layers:
+        - state: torgomat_blue
+          map: [ "enum.ConstructionVisuals.Layer" ]
+        - state: normal-unshaded
+    - type: Shop
+      moneyId: Dollar
+      shopPresetId: Voensalo

@@ -1,8 +1,8 @@
 - type: job
   id: MilitaryStalker
-  name: Военстал
+  name: job-military-stalker
   icon: voen
-  description: Солдаты, прошедшие после опыта службы в Зоне специальную подготовку, или сталкеры, подписавшие контракт с армией.
+  description: job-military-stalker-desc
   playTimeTracker: JobMilitaryStalker
   whitelisted: true
   requirements:
@@ -14,7 +14,8 @@
       - Human
       - Dwarf
   startingGear: MilitarySpecGear
-  supervisors: Ты будешь терпеть и страдать, Victoria cruenta
+  supervisors: job-military-stalker-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -32,12 +33,16 @@
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - MilitaryStalker
+      - type: STAnomalyTipsViewing
 
 - type: job
   id: Military
-  name: Военный
+  name: job-military
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: job-military-desc
   playTimeTracker: JobMilitary
   whitelisted: true
   requirements:
@@ -49,7 +54,8 @@
       - Human
       - Dwarf
   startingGear: MilitaryGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  supervisors: job-military-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -59,19 +65,24 @@
       - type: Bands
         band: Stalker
         bandIcon: army
+        bandProto: STMilitaryBand
+        bandRankId: 1
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - Military
 
 
 - type: job
   id: MilitaryHead
-  name: Глава Военных
+  name: job-military-head
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: job-military-head-desc
   playTimeTracker: JobHeadMilitary
   whitelisted: true
   requirements:
@@ -82,8 +93,9 @@
       species:
       - Human
       - Dwarf
-  startingGear: MilitaryGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  startingGear: MilitaryGearHead
+  supervisors: job-military-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -93,18 +105,25 @@
         - type: Bands
           band: Stalker
           bandIcon: army
+          bandProto: STMilitaryBand
+          bandRankId: 3
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
-
+        - type: NpcFactionMember
+          factions:
+          - Military
+        - type: GuardFactionController
+          toggleOffAction: GuardFactionControllerOffAction
+          toggleOnAction: GuardFactionControllerOnAction
 - type: job
   id: MilitaryOfficer
-  name: Офицер Военных
+  name: job-military-officer
   icon: army
-  description: Удерживают Зону для предотвращения разграбления опасных радиоактивных материалов и предотвращения несанкционированного проникновения любых лиц.
+  description: job-military-officer-desc
   playTimeTracker: JobOfficerMilitary
   whitelisted: true
   requirements:
@@ -115,8 +134,9 @@
       species:
       - Human
       - Dwarf
-  startingGear: MilitaryGear
-  supervisors: Вы подчиняетесь старшим по званию.
+  startingGear: MilitaryGearOfficer
+  supervisors: job-military-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -126,37 +146,41 @@
         - type: Bands
           band: Stalker
           bandIcon: army
+          bandProto: STMilitaryBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
+        - type: NpcFactionMember
+          factions:
+          - Military
 
 - type: startingGear
   id: MilitaryGear
   equipment:
-    id: MilitaryPDA
-    belt: ClothingBeltStorageWaistbag
     legs: ClothingLegsJeansGreenCargo
     torso: ClothingTorsoTurtlenecksMilitary
-    shoes: ClothingShoesPortyanki
-    head: STClothingHeadTinfoil
+    shoes: STClothingShoesBootsCombatFilled
+
+- type: startingGear
+  id: MilitaryGearOfficer
+  equipment:
+    legs: ClothingLegsJeansGreenCargo
+    torso: ClothingTorsoTurtlenecksMilitary
+    shoes: STClothingShoesBootsCombatFilled
 
 - type: startingGear
   id: MilitaryGearHead
   equipment:
-    id: MilitaryPDA
-    belt: ClothingBeltAssault
     legs: ClothingLegsJeansGreenCargo
     torso: ClothingTorsoTurtlenecksMilitary
-    shoes: ClothingShoesPortyanki
-    head: STClothingHeadTinfoil
-    pocket1: STJobMilitaryIDCard
+    shoes: STClothingShoesBootsCombatFilled
 
 - type: startingGear
   id: MilitarySpecGear
   equipment:
     id: MilitaryPDA
-    belt: ClothingBeltStorageWaistbag
     legs: ClothingLegsJeansGreenCargo
     torso: ClothingTorsoTurtlenecksMilitary
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: STClothingShoesBootsCombatFilled
 
 - type: startingGear
   id: OksopSpecOps
@@ -171,4 +195,24 @@
     outerarmor: STClothingOuterArmorLightPlateVestBaseHeavyMilitary
     pocket1: 739Mag75
     pocket2: 739Mag75
-    suitstorage: STWeaponRifleStalkerAK103
+    suitstorage: STWeaponRifleAK103
+
+- type: stBand
+  id: STMilitaryBand
+  name: Military
+  factionId: Military
+  maxMembers: 16
+  managingRankId: 3
+  hierarchy:
+    1: Military
+    2: MilitaryOfficer
+    3: MilitaryHead
+
+- type: stBand
+  id: STMilitaryStalkerBand
+  name: MilitaryStalker
+  factionId: MilitaryStalker
+  maxMembers: 10
+  managingRankId: 1
+  hierarchy:
+    1: MilitaryStalker

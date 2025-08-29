@@ -179,7 +179,7 @@
   - type: DeleteOnTrigger
 
 - type: entity
-  name: граната GL-1
+  name: зелёная граната GL-1
   parent: BaseItem
   id: GL1Grenade
   description: Химическая осветительная граната. Предназначена для освещения участков местности во время ночного боя.
@@ -243,6 +243,29 @@
           startValue: 5.0
           endValue: 1.5
 
+- type: entity
+  name: голубая граната GL-1
+  parent: GL1Grenade
+  id: GL2Grenade
+  description: Химическая осветительная граната. Предназначена для освещения участков местности во время ночного боя.
+  components:
+    - type: ExpendableLight
+      glowColorLit: "#00bfff"    
+    - type: PointLight
+      enabled: false
+      color: "#00bfff"
+
+- type: entity
+  name: оранжевая граната GL-1
+  parent: GL1Grenade
+  id: GL3Grenade
+  description: Химическая осветительная граната. Предназначена для освещения участков местности во время ночного боя.
+  components:
+    - type: ExpendableLight
+      glowColorLit: "#ff4f00"    
+    - type: PointLight
+      enabled: false
+      color: "#ff4f00"
 ##############################
 #          REAGENTS          #
 ##############################

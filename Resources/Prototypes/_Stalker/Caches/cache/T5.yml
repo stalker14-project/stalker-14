@@ -1,0 +1,166 @@
+- type: entity
+  parent: STBaseCache
+  id: STCacheStorageFillT5
+  abstract: true
+  suffix: ST, Cache, T5
+  name: ящик
+  description: Довольно таки старый ящик. Возможно, стоит его обыскать. Может, можно найти что-то полезное в нём.
+  components:
+    - type: InteractionOutline
+    - type: StorageFill
+      contents:
+        - id: STCraftHighPerformanceChipT4
+          prob: 0.01
+        - id: STCraftHighPerformanceChipT4
+          prob: 0.01
+        - id: STCraftSheetAluminumT4
+          prob: 0.05
+        - id: STCraftSheetAluminumT4
+          prob: 0.05
+        - id: STCraftPlasticFittingT4
+          prob: 0.05
+        - id: STCraftPlasticFittingT4
+          prob: 0.05
+        - id: STCraftPolymerFabricT4
+          prob: 0.01
+        - id: STCraftPolymerFabricT4
+          prob: 0.01
+        - id: STCraftIndustrialThreadStaplesKitT4
+          prob: 0.01
+        - id: STCraftIndustrialThreadStaplesKitT4
+          prob: 0.01
+        - id: STCraftNanoChipT5
+          prob: 0.1
+        - id: STCraftSheetSteelT5
+          prob: 0.1
+        - id: STCraftRedWoodPlankT5
+          prob: 0.1
+        - id: STCraftAluminumOxideT5
+          prob: 0.1
+        - id: STCraftCompositeMaterialT5
+          prob: 0.1
+        - id: STCraftHighStrengthKitT5
+          prob: 0.1
+        - id: STBrutepack
+          prob: 0.4
+        - id: STBrutepack
+          prob: 0.4
+        - id: STBrutepack
+          prob: 0.4
+        - id: STGauze
+          prob: 0.4
+        - id: STGauze
+          prob: 0.4
+        - id: STGauze
+          prob: 0.4
+        - id: STOintment
+          prob: 0.4
+        - id: STOintment
+          prob: 0.4
+        - id: STOintment
+          prob: 0.4
+        - id: Tourniquet
+          prob: 0.15
+        - id: antiradpill
+          prob: 0.15
+        - id: radioprotectpill
+          prob: 0.15
+        - id: psyblock
+          prob: 0.15
+        - id: MedkitAI2
+          prob: 0.25
+        - id: MedkitMilitary
+          prob: 0.1
+        - id: MedkitScience
+          prob: 0.025
+        - id: GeigerCounter
+          prob: 0.075
+        - id: BaseRadio
+          prob: 0.075
+        - id: HandheldGPSBasic
+          prob: 0.075
+        - id: BoxArtcont
+          prob: 0.05
+        - id: STFlashlightSeclite
+          prob: 0.075
+        - id: STHeadLight
+          prob: 0.075
+        - id: PowerCellHyper
+          prob: 0.15
+        - id: CheapLighter
+          prob: 0.1
+        - id: Matchbox
+          prob: 0.1
+        - id: CigPackMarlboro
+          prob: 0.05
+        - id: CigPackSuka
+          prob: 0.05
+        - id: CigPackKosmos
+          prob: 0.05
+        - id: IngotGold1
+          prob: 0.1
+        - id: IngotGold1
+          prob: 0.1
+        - id: IngotSilver1
+          prob: 0.1
+        - id: IngotSilver1
+          prob: 0.1
+        - id: MaterialDiamond1
+          prob: 0.1
+        - id: MaterialDiamond1
+          prob: 0.1
+        - id: DrinkGoldenCup
+          prob: 0.1
+        - id: DrinkGoldenCup
+          prob: 0.1
+        - id: CraftMaterialGunpowder
+          prob: 0.1
+        - id: CraftLeatherbox
+          prob: 0.004
+        - id: ToolkitTearOne
+          prob: 0.003
+        - id: ToolkitTearTwo
+          prob: 0.002
+        - id: ToolkitTearThree
+          prob: 0.001
+        - id: RGD5Grenade
+          prob: 0.1
+        - id: RGD5Grenade
+          prob: 0.1
+        - id: RGD5Grenade
+          prob: 0.1
+        - id: RGD5Grenade
+          prob: 0.1
+
+- type: entity
+  parent: [ STCacheStorageFillT5, STBaseCache]
+  id: STCache1T5
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache1T5
+
+- type: entity
+  parent: [ STCacheStorageFillT5, STBaseCache]
+  id: STCache2T5
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/blue_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache2T5
+
+- type: entity
+  parent: [ STCacheStorageFillT5, STBaseCache]
+  id: STCache3T5
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
+      state: icon
+    - type: SpawnOnDespawn
+      prototype: STCache3T5

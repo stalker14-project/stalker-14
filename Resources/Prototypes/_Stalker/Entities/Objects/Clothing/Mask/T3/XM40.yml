@@ -1,0 +1,33 @@
+- type: entity
+  parent: STClothingMaskGas
+  id: ClothingMaskGasXM40
+  suffix: ST, T3, Rad
+  name: противогаз XM40
+  description: Противогаз комплекта 'Берилл-5М'.
+  components:
+  - type: Tag
+    tags:
+      - BlockMask
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.85
+        Caustic: 0.9
+
+## Скины
+#- type: entity
+#  parent: ClothingMaskGasXM40
+#  id: ClothingMaskGasXM40Military
+#  name: противогаз XМ40 в раскраске военных
+#  description: Чувствуется запах дешёвой краски.
+#  components:
+#  - type: Sprite
+#    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi
+#  - type: Clothing
+#    sprite: _Stalker/Objects/Clothing/mask/xm40military.rsi

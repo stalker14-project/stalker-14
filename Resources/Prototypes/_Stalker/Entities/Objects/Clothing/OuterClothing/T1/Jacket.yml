@@ -3,7 +3,7 @@
   id: STClothingOuterJacketBase
   name: Базовая куртка
   description: Базовое описание куртки.
-  suffix: ST, T1, Universal
+  suffix: ST, T0, Universal
   abstract: true
   components:
   - type: Trash
@@ -17,9 +17,9 @@
     armorClass: 1
     modifiers:
       flatReductions:
-        Blunt: 3
-        Slash: 3
-        Piercing: 5
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
       coefficients:
         Blunt: 0.95
         Slash: 0.95
@@ -45,6 +45,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.95
   - type: Craftable
+  - type: Tag
+    tags:
+    - BlockCloak
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -56,6 +59,9 @@
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Bandit
 
@@ -119,13 +125,41 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker.rsi
 
+# Stalker White
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketStalkerWhite
+  name: белая куртка сталкера
+  description: Обычная одежда начинающего сталкера. Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_stalker_white.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_stalker_white.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodJacketStalkerWhite
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatHoodBase
+  id: ClothingHeadHatHoodJacketStalkerWhite
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker_white.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_stalker_white.rsi
+
+
 # Freedom
 
 - type: entity
   parent: STClothingOuterJacketBase
   id: ClothingOuterJacketFreedom
-  name: куртка свободы
-  description: Камуфлированная куртка группировки «Свобода», используется по большей части новенькими в группировке для ношения в безопасных местах.
+  name: куртка группировки «Воля»
+  description: Камуфлированная куртка группировки «Воля», используется по большей части новенькими в группировке для ношения в безопасных местах.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_svoboda.rsi
@@ -279,9 +313,9 @@
   description: anomalist jacket
   components:
     - type: Sprite
-      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Coats/ivy_anomalist.rsi
     - type: Clothing
-      sprite: _Stalker/Clothing/OuterClothing/Coats/ivy_anomalist.rsi
+      sprite: _Stalker/Objects/Clothing/outerClothing/Coats/ivy_anomalist.rsi
     - type: PersonalDamage
       interval: 1
       damage:
@@ -347,7 +381,6 @@
   id: ClothingJaketRealHuman
   name: белая куртка
   description: Белая куртка с рисунком скорпиона на спине. В ней ты почувствуешь себя настоящим человеком.
-  suffix: ST, T1
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_realhuman.rsi
@@ -359,7 +392,6 @@
   id: ClothingJaketGeneral
   name: генеральская форма
   description: На раз, два расчитайсь!
-  suffix: ST, T1
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/jacket_general.rsi
@@ -371,9 +403,80 @@
   id: ClothingJaketGray
   name: бушлат
   description: двубортное пальто на тёплой подкладке с отложным воротником
-  suffix: ST, T1, Deliko
+  suffix: ST, T0, Deliko
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_gray.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/OuterClothing/jacket_gray.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_gray.rsi
+
+# Sci - 7
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketSCI
+  name: куртка 'НИИЧАЗ'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Пахнет хим чисткой...
+  components:
+  - type: ToggleableClothing
+    clothingPrototype: ClothingJacketSci
+    slot: head
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_sci.rsi
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingJacketSci
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sci.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sci.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+# Jabs - 9
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketJaba
+  name: куртка 'Жаб'
+  description: Не спасает носителя ни от пули, ни от аномалий, но удобна в ношении. Сделано из натуральной кожи.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_jabs.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket_jabs.rsi
+
+- type: entity
+  parent: STClothingOuterJacketBase
+  id: ClothingOuterJacketSera
+  name: Куртка Охотника
+  description: Самая обычная черная куртка, частично окрашена в Оливковый.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/jacket-serafim.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterJacketSeraHatHood
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingOuterJacketSeraHatHood
+  categories: [ HideSpawnMenu ]
+  name: капюшон
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/jacket_hat_sera.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair

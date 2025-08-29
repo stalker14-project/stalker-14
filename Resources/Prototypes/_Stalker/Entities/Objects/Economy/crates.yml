@@ -68,8 +68,8 @@
     - type: SpawnItemsOnUse
       items:
         - id: ClothingBeltTarzanGreen
-        - id: STClothingOuterArmorLightPlateVestBaseUN
-        - id: ClothingHeadAssaultHelmetUN
+        - id: STClothingOuterArmorLightPlateVestBaseANAUN
+        - id: ClothingHeadInfantryHelmetUN
         - id: ClothingBackpackDuffelCommonStalker
         - id: BaseRadio
         - id: Brutepack
@@ -96,62 +96,63 @@
 #############################################################
 
 - type: entity
-  parent: UNstandartCrate
+  parent: BaseItem
   id: ArmyAK1Crate
-  name: старый комплект АКСУ ПСЗ-7
-  description: Набор базовой АКСУ ПСЗ-7 первой версии.
+  name: старый комплект ПСЗ-7 АКСУ
+  description: Базовый армейский комплект ПСЗ предназначенный для солдат С.О.П. первой версии.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ1
+        - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
+        - id: Zipties
+        - id: ClothingHeatBagStalker
+        - id: PowerCellHyper
+        - id: Binocularus1
         - id: ClothingHeadBandana2Military
-        - id: STWeaponGunAKS74U
+        - id: STWeaponRifleAKS74U
         - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
-        - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
-        - id: BaseRadio
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: Zipties
+        - id: Zipties
         - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: STFoodBreadPlain
+        - id: STFoodBreadPlain
+        - id: FlashlightSeclite
+        - id: BaseRadio
       sound:
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
   parent: UNstandartCrate
   id: DuryAK2Crate
-  name: комплект АКСУ и куртка долга
+  name: комплект АКСУ и куртка авангарда
   description: Набор для тех, кто совсем на мели.
   components:
     - type: Item
@@ -167,7 +168,7 @@
     - type: SpawnItemsOnUse
       items:
         - id: ClothingOuterJacketDolg
-        - id: STWeaponGunAKS74U
+        - id: STWeaponRifleAKS74U
         - id: 545Mag30
         - id: Base545Mag10
         - id: Base545Mag10
@@ -185,214 +186,184 @@
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  parent: UNstandartCrate
-  id: ArmyAK2Crate
-  name: комплект АКСУ ПСЗ-7
-  description: Набор базовой АКСУ ПСЗ-7 второй версии.
+  parent: BaseItem
+  id: ArmyAKCUCrate
+  name: рядовой комплект СОП
+  description: Базовый армейский комплект предназначенный для солдат С.О.П. переделанный под ЧЗО.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ2
-        - id: ClothingHeadBandana1Military
-        - id: STWeaponGunAKS74U
+        - id: ClothingOuterArmorZaryaMilitary
+        - id: Zipties
+        - id: Zipties
+        - id: PowerCellHyper
+        - id: ClothingHeadHatMilitary
+        - id: STWeaponRifleAKS74U
         - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
-        - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
-        - id: BaseRadio
+        - id: ClothingBackpackTacticOliveStalker
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: FoodTinMRE
+        - id: FoodTinMRE
+        - id: RGD5Grenade
+        - id: STFoodBreadPlain
         - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitScience
+        - id: STOintment
+        - id: STGauze
+        - id: STGauze
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: STFlashlightSeclite
+        - id: BaseRadio
       sound:
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
   parent: UNstandartCrate
-  id: ArmyAKC1Crate
-  name: старый комплект АКС ПСЗ-7
-  description: Набор базовой АКС ПСЗ-7 первой версии.
+  id: ArmyAKCCrate
+  name: сержантский комплект СОП
+  description: Сержантский армейский комплект предназначенный для солдат С.О.П. переделанный под ЧЗО.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ1
-        - id: ClothingHeadBandana2Military
-        - id: STWeaponRifleStalkerAK74
+        - id: ClothingOuterArmorZaryaMilitary
+        - id: Zipties
+        - id: Zipties
+        - id: PowerCellHyper
+        - id: ClothingHeadHatMilitary
+        - id: STWeaponRifleAKS74
         - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
-        - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
-        - id: BaseRadio
+        - id: ClothingBackpackTacticOliveStalker
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: FoodTinMRE
+        - id: FoodTinMRE
+        - id: RGD5Grenade
+        - id: RGD5Grenade
+        - id: STFoodBreadPlain
         - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitScience
+        - id: STTourniquet
+        - id: STOintmentGood
+        - id: STGauze
+        - id: STGauze
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: STFlashlightSeclite
+        - id: BaseRadio
+        - id: Binocularus1
       sound:
         path: /Audio/Effects/unwrap.ogg
 
 - type: entity
-  parent: UNstandartCrate
-  id: ArmyAKC2Crate
-  name: комплект АКС ПСЗ-7
-  description: Набор базовой АКС ПСЗ-7 второй версии.
+  parent: BaseItem
+  id: ArmyAKMOfficerCrate
+  name: офицерский комплект СОП
+  description: Офицерский комплект ПСЗ предназначенный для офицеров С.О.П.
+  suffix: Stalker, т3
   components:
+    - type: STWeight
+      self: 87.2
     - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
+      size: Ginormous
+    - type: MultiHandedItem
     - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: SpawnItemsOnUse
-      items:
-        - id: STClothingOuterArmorLightPlateVestBasePSZ2
-        - id: ClothingHeadBandana1Military
-        - id: STWeaponRifleStalkerAK74
-        - id: ClothingBeltGreenWebbingStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
-        - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
-        - id: BaseRadio
-        - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
-      sound:
-        path: /Audio/Effects/unwrap.ogg
-
-- type: entity
-  parent: UNstandartCrate
-  id: ArmyAKCOfficerCrate
-  name: комплект ПСЗ-7 офицерский
-  description: Офицерский набор ПСЗ-7.
-  components:
-    - type: Item
-      size: Large
-      shape:
-        - 0,0,5,5
-    - type: Sprite
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
-    - type: Icon
-      sprite: _Stalker/Structures/Furniture/carton_box.rsi
-      state: kb3
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
     - type: SpawnItemsOnUse
       items:
         - id: STClothingOuterArmorLightPlateVestBasePSZ7
+        - id: Zipties
+        - id: Zipties
+        - id: PowerCellHyper
         - id: ClothingHeadBeretMilitary
-        - id: STWeaponGunAKS74U
+        - id: STWeaponRifleAKM
         - id: ClothingBeltWebbingOfficerStalker
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: 545BPBox
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: MedkitMilitary
-        - id: Gauze
-        - id: Gauze
-        - id: FlashlightSeclite
-        - id: PowerCellHyper
-        - id: PowerCellHyper
-        - id: BaseRadio
+        - id: ClothingBackpackTacticOliveStalker
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: FoodTinMRE
+        - id: FoodTinMRE
+        - id: RGD5Grenade
+        - id: RGD5Grenade
+        - id: RGD5Grenade
+        - id: STFoodBreadPlain
         - id: STCombatKnife
-        - id: DrinkFlaskOld
-        - id: DrinkFlaskOld
-        - id: FoodTinMRE
-        - id: FoodTinMRE
+        - id: WeaponPistolStalkerPM
+        - id: BasePMMag
+        - id: BasePMMag
+        - id: 918PBMBox
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: STTourniquet
+        - id: STOintmentGood
+        - id: STGauze
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739Mag30
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: 739FMJBox
+        - id: STFlashlightSeclite
+        - id: BaseRadio
+        - id: Binocularus1
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -424,7 +395,7 @@
         - id: VityazMag
         - id: BoxMRE
         - id: BoxMRE
-        - id: STWeaponSubMachineGunVityaz
+        - id: STWeaponSMGPP1901
         - id: ClothingBackpackDuffelCommonStalker
         - id: 919PSTBox
         - id: 919PSTBox
@@ -469,7 +440,7 @@
         - id: 545Mag30
         - id: BoxMRE
         - id: BoxMRE
-        - id: STWeaponGunAKS74U
+        - id: STWeaponRifleAKS74U
         - id: ClothingBackpackDuffelCommonStalker
         - id: 545PCBox
         - id: 545PCBox
@@ -515,7 +486,7 @@
         - id: 545Mag30
         - id: 545Mag30
         - id: 545Mag30
-        - id: STWeaponRifleStalkerAK74
+        - id: STWeaponRifleAKS74
         - id: ClothingBackpackDuffelMilitaryOlive
         - id: 545PCBox
         - id: 545PCBox
@@ -563,7 +534,7 @@
         - id: 739Mag30
         - id: 739Mag30
         - id: 739Mag30
-        - id: STWeaponRifleStalkerAK103
+        - id: STWeaponRifleAK103
         - id: ClothingHeadsetStalker
         - id: ClothingBackpackDuffelMilitaryOlive
         - id: 739BPBox
@@ -849,9 +820,30 @@
     - type: STWeight
       self: 20
     - type: Item
-      size: Large
+      size: Ginormous
       shape:
-        - 0,0,5,5
+        - 0,0,7,8
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: MultiHandedItem
+
+- type: entity
+  parent: BaseItem
+  id: TradeBox2
+  name: брикет запасов и документов сидоровичу
+  description: Тщательно замаскированная под обычную коробку, контрабанда.
+  suffix: Stalker, Economy, For Clear Sky
+  components:
+    - type: STWeight
+      self: 40
+    - type: Item
+      size: Ginormous
+      shape:
+        - 0,0,7,8
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/carton_box.rsi
       state: kb2
@@ -904,6 +896,27 @@
       state: closed
 
 - type: entity
+  parent: BaseItem
+  id: TradeBoxSera
+  name: брикет припасов серафимов
+  description: Коробка припасов серафимов, адресованная северному ковену Лиманска от Южного ковена
+  suffix: Stalker, Economy, Contraband
+  components:
+    - type: STWeight
+      self: 15
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,4,2
+    - type: Sprite
+      sprite: _Stalker/Sponsors/donat_crates.rsi
+      state: donat_green
+    - type: Icon
+      sprite: _Stalker/Sponsors/donat_crates.rsi
+      state: donat_green
+    - type: MultiHandedItem
+
+- type: entity
   parent: UNstandartCrate
   id: PoliceAKCrate
   name: комплект АКСУ полицейский
@@ -923,7 +936,7 @@
       items:
         - id: STClothingOuterArmorLightPlateVestBasePolice
         - id: ClothingHeadHatPoliceHat
-        - id: STWeaponGunAKS74U
+        - id: STWeaponRifleAKS74U
         - id: ClothingBeltWebbingOfficerStalker
         - id: 545Mag30
         - id: 545Mag30
@@ -1034,7 +1047,7 @@
       items:
         - id: ClothingOuterArmor6B13Police
         - id: ClothingHeadHelmetUlach
-        - id: STWeaponRifleStalkerAK103
+        - id: STWeaponRifleAK103
         - id: ClothingBeltWebbingOfficerStalker
         - id: 739Mag30
         - id: 739Mag30
@@ -1105,15 +1118,7 @@
       - Gun
       - BallisticAmmoProvider
 
-- type: entity
-  parent: SeedBase
-  name: пакетик травы
-  description: Только не попадитесь с ней ментам.
-  id: CannabisSeedsStalker
-  suffixx: Stalker
-  components:
-    - type: Sprite
-      sprite: Objects/Specific/Hydroponics/cannabis.rsi
+
 
 - type: entity
   parent: BaseItem
@@ -1188,7 +1193,7 @@
         - id: DrinkWaterBottleFull
         - id: STGauze
         - id: STGauze
-        - id: ClothingShoesBootsCombatFilled
+        - id: STClothingShoesBootsCombatFilled
         - id: STClothingOuterArmorLightPlateVestBasePSZ7v3
         - id: ClothingMaskGP7
         - id: 545Mag30
@@ -1197,7 +1202,7 @@
         - id: 545Mag30
         - id: 545Mag30
         - id: 545Mag30
-        - id: STWeaponGunAKS74U
+        - id: STWeaponRifleAKS74U
         - id: WeaponPistolStalkerPM
         - id: 918PSTBox
         - id: BasePMMag
@@ -1249,7 +1254,7 @@
         - id: DrinkWaterBottleFull
         - id: STGauze
         - id: STGauze
-        - id: ClothingShoesBootsCombatFilled
+        - id: STClothingShoesBootsCombatFilled
         - id: STClothingOuterArmorLightPlateVestBasePSZ7
         - id: ClothingMaskGP21
         - id: 739Mag30
@@ -1258,7 +1263,7 @@
         - id: 739Mag30
         - id: 739Mag30
         - id: 739Mag30
-        - id: STWeaponRifleStalkerAKM
+        - id: STWeaponRifleAKM
         - id: WeaponPistolStalkerPM
         - id: 918PSTBox
         - id: BasePMMag
@@ -1314,7 +1319,7 @@
         - id: DrinkWaterBottleFull
         - id: STGauze
         - id: STGauze
-        - id: ClothingShoesBootsCombatFilled
+        - id: STClothingShoesBootsCombatFilled
         - id: ClothingOuterArmorIssgSpark
         - id: BaseMP5Mag
         - id: BaseMP5Mag
@@ -1322,7 +1327,7 @@
         - id: BaseMP5Mag
         - id: BaseMP5Mag
         - id: BaseMP5Mag
-        - id: STWeaponSMGMp5
+        - id: STWeaponSMGMP5
         - id: WeaponPistolStalkerPM
         - id: 918PSTBox
         - id: BasePMMag
@@ -1345,3 +1350,433 @@
         - id: MedkitMilitary
       sound:
         path: /Audio/Effects/unwrap.ogg
+
+### ПРОВИЗИЯ СОП
+
+- type: entity
+  parent: BaseItem
+  id: ArmyProvisionCrate
+  name: армейский комплект провизии
+  description: Базовый армейский комплект, содержащий продовольственные запасы, предназначенный для солдат С.О.П.
+  suffix: Stalker
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: DrinkMREFlask
+        - id: STFoodBreadPlain
+        - id: STFoodBreadPlain
+        - id: STFoodBreadPlain
+        - id: STFoodBreadPlain
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ArmyMedkitMilitaryCrate
+  name: армейский комплект аптечек
+  description: Базовый армейский комплект, содержащий армейские аптечки, предназначенный для солдат С.О.П.
+  suffix: Stalker
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: Army545Mag30Crate
+  name: армейский комплект обойм 5.45
+  description: Базовый армейский комплект, содержащий обоймы на 30 патрон под калибр 5.45 х 39, предназначенный для солдат С.О.П.
+  suffix: Stalker
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: Army545Crate
+  name: армейский комплект ПС патронов 5.45
+  description: Базовый армейский комплект, содержащий ПС патроны калибра 5.45 х 39, предназначенный для солдат С.О.П.
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 87.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: Army739Crate
+  name: армейский комплект ПС патронов 7.62
+  description: Базовый армейский комплект, содержащий ПС патроны калибра 7.62 х 39, предназначенный для солдат С.О.П.
+  suffix: Stalker, T3
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: 739FMJBox
+    - id: 739FMJBox
+    - id: 739FMJBox
+    - id: 739FMJBox
+    - id: 739FMJBox
+    - id: 739FMJBox
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: Army739Mag30Crate
+  name: армейский комплект обойм 7.62
+  description: Базовый армейский комплект, содержащий обоймы на 30 патрон под калибр 7.62 х 39, предназначенный для солдат С.О.П.
+  suffix: Stalker, T3
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: 739Mag30
+    - id: 739Mag30
+    - id: 739Mag30
+    - id: 739Mag30
+    - id: 739Mag30
+    - id: 739Mag30
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+### МОНОЛИТ
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrateBasicTools
+  name: ящик с базовыми инструментами «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: STBoltBagFilled
+        - id: STBoltBagFilled
+        - id: PowerCellHyper
+        - id: PowerCellHyper
+        - id: STCombatKnife
+        - id: Binocularus1
+        - id: BaseRadio
+        - id: FlashlightSeclite
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrateMedkit
+  name: ящик медицины «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitScience
+        - id: MedkitAI2
+        - id: STOintmentGood
+        - id: STTourniquet
+        - id: STGauze
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate545Mag30
+  name: ящик обойм 5.45 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: 545Mag30
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate545PC
+  name: ящик ПС патронов 5.45х39 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+        - id: 545PCBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate754Mag10
+  name: ящик обойм 7.62х54 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 754Mag10
+        - id: 754Mag10
+        - id: 754Mag10
+        - id: 754Mag10
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate754FMJ
+  name: ящик FMJ патронов 7.62х54 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 754FMJBox
+        - id: 754FMJBox
+        - id: 754FMJBox
+        - id: 754FMJBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+### СТАЛКЕРСКИЕ НАБОРЫ
+
+- type: entity
+  parent: BaseItem
+  id: StalkerHunterCrate
+  name: набор для охоты
+  description: Набор базового снаряжения для охоты.
+  suffix: Stalker
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorZaryaStalker
+        - id: ClothingBeltBandolierStalker
+        - id: STWeaponShotgunTOZ34
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: 7mmBuckshotBox
+        - id: WeaponPistolStalkerTT
+        - id: TTMag
+        - id: TTMag
+        - id: TTMag
+        - id: TTMag
+        - id: TTMag
+        - id: 725LRNPCBox
+        - id: 725LRNPCBox
+        - id: 725LRNPCBox
+        - id: ClothingBackpackTacticBlackStalker
+        - id: STGauze
+        - id: STGauze
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: STCombatKnife
+
+
+- type: entity
+  parent: BaseItem
+  id: StalkerArtefactHunterCrate
+  name: набор артхантера
+  description: Набор базового снаряжения для поиска артефактов.
+  suffix: Stalker
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: STClothingOuterArmorRCBZ
+        - id: ZoneArtifactDetectorResponse
+        - id: WeaponPistolStalkerTT
+        - id: TTMag
+        - id: TTMag
+        - id: TTMag
+        - id: 725LRNPCBox
+        - id: 725LRNPCBox
+        - id: ClothingBackpackTacticBlackStalker
+        - id: STGauze
+        - id: MedkitAI2
+        - id: STCombatKnife
+        - id: BoxArtcont
+        - id: BoxArtcont
+        - id: BoxArtcont
+
+
+- type: entity
+  parent: BaseItem
+  id: StalkerBasedCrate
+  name: базовый набор снаряжения
+  description: Набор базового снаряжения.
+  suffix: Stalker
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmourJacketStalkerWhite
+        - id: STWeaponRifleSaiga545
+        - id: 545Mag20
+        - id: 545Mag20
+        - id: 545Mag20
+        - id: 545Mag20
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: MedkitAI2
+        - id: STCombatKnife
+        - id: ClothingHeadHelmetLight
+        - id: STGauze
+        - id: STGauze

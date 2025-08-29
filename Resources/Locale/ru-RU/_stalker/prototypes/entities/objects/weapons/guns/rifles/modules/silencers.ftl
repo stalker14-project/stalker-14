@@ -1,0 +1,15 @@
+ent-STBaseModuleSilencerRifles = самодельный ружейный глушитель
+    .desc = Самодельный глушитель для оружия стран ОВД.
+    .suffix = ST, silencer, T1, RU
+ent-STModuleSilencerRiflesT1Ru = самодельный ружейный глушитель
+    .desc = Самодельный глушитель для оружия стран ОВД.
+    .suffix = { ent-STBaseModuleSilencerRifles.suffix }
+ent-STModuleSilencerRiflesT1Nato = самодельный ружейный глушитель
+    .desc = Самодельный глушитель для оружия стран НАТО.
+    .suffix = ST, silencer, T1, NATO
+ent-STModuleSilencerRiflesT2Ru = ружейный глушитель
+    .desc = Фабричный глушитель для оружия стран ОВД.
+    .suffix = ST, silencer, T2, RU
+ent-STModuleSilencerRiflesT2Nato = ружейный глушитель
+    .desc = Фабричный глушитель для оружия стран НАТО.
+    .suffix = ST, silencer, T2, NATO

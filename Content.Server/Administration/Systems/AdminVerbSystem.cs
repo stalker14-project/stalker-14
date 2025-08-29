@@ -34,9 +34,14 @@ using Robust.Shared.Timing;
 using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
+using Content.Server._Stalker.StalkerRepository;
+using Content.Server._Stalker.Storage;
 using Content.Server.Silicons.Laws;
+using Content.Shared._Stalker.StalkerRepository;
+using Content.Shared.Movement.Components;
 using Content.Shared.Silicons.Laws.Components;
 using Robust.Server.Player;
+using Content.Shared.Silicons.StationAi;
 using Robust.Shared.Physics.Components;
 using static Content.Shared.Configurable.ConfigurationComponent;
 
@@ -71,6 +76,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly AdminFrozenSystem _freeze = default!;
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
+        [Dependency] private readonly StalkerStorageSystem _stalkerStorage = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -106,6 +112,23 @@ namespace Content.Server.Administration.Systems
                 mark.Act = () => _toolshed.InvokeCommand(player, "=> $marked", Enumerable.Repeat(args.Target, 1), out _);
                 mark.Impact = LogImpact.Low;
                 args.Verbs.Add(mark);
+
+                // Clear Storage
+                if (TryComp<StalkerRepositoryComponent>(args.Target, out var repo))
+                {
+                    Verb clearStorageVerb = new();
+
+                    clearStorageVerb.Text = Loc.GetString("clear-storage-verb-text");
+                    clearStorageVerb.Category = VerbCategory.Admin;
+                    clearStorageVerb.Act = () =>
+                    {
+                        _stalkerStorageSystem.ClearStorage(args.Target);
+                    };
+                    clearStorageVerb.Impact = LogImpact.Extreme;
+
+                    args.Verbs.Add(clearStorageVerb);
+                }
+
 
                 if (TryComp(args.Target, out ActorComponent? targetActor))
                 {
@@ -345,7 +368,30 @@ namespace Content.Server.Administration.Systems
                     Impact = LogImpact.Low
                 });
 
-                if (TryComp<SiliconLawBoundComponent>(args.Target, out var lawBoundComponent))
+                // This logic is needed to be able to modify the AI's laws through its core and eye.
+                EntityUid? target = null;
+                SiliconLawBoundComponent? lawBoundComponent = null;
+
+                if (TryComp(args.Target, out lawBoundComponent))
+                {
+                    target = args.Target;
+                }
+                // When inspecting the core we can find the entity with its laws by looking at the  AiHolderComponent.
+                else if (TryComp<StationAiHolderComponent>(args.Target, out var holder) && holder.Slot.Item != null
+                         && TryComp(holder.Slot.Item, out lawBoundComponent))
+                {
+                    target = holder.Slot.Item.Value;
+                    // For the eye we can find the entity with its laws as the source of the movement relay since the eye
+                    // is just a proxy for it to move around and look around the station.
+                }
+                else if (TryComp<MovementRelayTargetComponent>(args.Target, out var relay)
+                         && TryComp(relay.Source, out lawBoundComponent))
+                {
+                    target = relay.Source;
+
+                }
+
+                if (lawBoundComponent != null && target != null)
                 {
                     args.Verbs.Add(new Verb()
                     {
@@ -359,7 +405,7 @@ namespace Content.Server.Administration.Systems
                                 return;
                             }
                             _euiManager.OpenEui(ui, session);
-                            ui.UpdateLaws(lawBoundComponent, args.Target);
+                            ui.UpdateLaws(lawBoundComponent, target.Value);
                         },
                         Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Interface/Actions/actions_borg.rsi"), "state-laws"),
                     });

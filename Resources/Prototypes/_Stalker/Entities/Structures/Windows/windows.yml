@@ -1,0 +1,263 @@
+- type: entity
+  parent: BaseStructure
+  id: WindowsBrick
+  suffix: ST, Mapping, windows
+  name: кирпичное окно
+  description: Окно
+  components:
+  - type: WallMount
+    arc: 360 # interact despite grilles
+  - type: SpriteFade
+  - type: Airtight
+  - type: Tag
+    tags:
+      - Window
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: Icon
+    sprite: _Stalker/Structures/Windows/WindowsBrick.rsi
+    state: icon
+  - type: Sprite
+    sprite: _Stalker/Structures/Windows/WindowsBrick.rsi
+    layers:
+    - state: windows
+    drawdepth: Mobs
+  - type: BlockWeather
+  - type: InteractionPopup
+    interactSuccessString: comp-window-knock
+    messagePerceivedByOthers: comp-window-knock
+    interactSuccessSound:
+      path: /Audio/Effects/glass_knock.ogg
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsBunker
+  suffix: ST, Mapping, windows
+  name: окно бункера
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsBunker.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsBunker.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsConcrete
+  suffix: ST, Mapping, windows
+  name: бетонное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsConcrete.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsConcrete.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsDoor
+  suffix: ST, Mapping, windows
+  name: деревянное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsDoor.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsDoor.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsDungeon
+  suffix: ST, Mapping, windows
+  name: укрепленное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsDungeon.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsDungeon.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsMetal
+  suffix: ST, Mapping, windows
+  name: стальное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsMetal.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsMetal.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsPrison
+  suffix: ST, Mapping, windows
+  name: тюремное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsPrison.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsPrison.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsRmetal
+  suffix: ST, Mapping, windows
+  name: бронированное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsRmetal.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsRmetal.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsRock
+  suffix: ST, Mapping, windows
+  name: каменное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsRock.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsRock.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsRrmetal
+  suffix: ST, Mapping, windows
+  name: ржавое бронированное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsRrmetal.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsRrmetal.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsRustmetal
+  suffix: ST, Mapping, windows
+  name: ржавое окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsRustmetal.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsRustmetal.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsScrap
+  suffix: ST, Mapping, windows
+  name: профнастиловое окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsScrap.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsScrap.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsSewer
+  suffix: ST, Mapping, windows
+  name: канализационное окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsSewer.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsSewer.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsSiding
+  suffix: ST, Mapping, windows
+  name: пфх окно
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsSiding.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsSiding.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs
+
+- type: entity
+  parent: WindowsBrick
+  id: WindowsVault
+  suffix: ST, Mapping, windows
+  name: окно убежища
+  description: Окно
+  components:
+    - type: Icon
+      sprite: _Stalker/Structures/Windows/WindowsVault.rsi
+      state: icon
+    - type: Sprite
+      sprite: _Stalker/Structures/Windows/WindowsVault.rsi
+      layers:
+       - state: windows
+      drawdepth: Mobs

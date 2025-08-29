@@ -3,6 +3,7 @@ hostname = "☢️ S.T.A.L.K.E.R. Release."
 desc = "Server at S.T.A.L.K.E.R. setting.\nIn devlopment."
 #map = "STWorld" # st-changes-dev-map
 map_pool = "STDefaultMapPool"  # st-changes-map-pool
+defaultpreset = "STGamePreset"
 maxplayers = 80
 soft_max_players = 60
 map_rotation = false
@@ -12,6 +13,10 @@ peaceful_end = false
 contraband_examine = false
 role_whitelist = true
 maxcharacterslots = 1
+
+[server]
+default_guide = "STNewPlayer"
+rules_file = "STRuleset"
 
 [rules]
 time = 10.0
@@ -37,20 +42,9 @@ enabled = false
 discord = "https://discord.gg/pu6DEPGjsN"
 patreon = "https://boosty.to/stalkerss14"
 
-[net]
-sendbuffersize = 393213
-receivebuffersize = 393213
-
-[physics]
-maxlinvelocity = 60.0
-
 [hub]
 advertise = false
 tags = "lang:ru,lang:en,rp:high,region:eu_e"
-
-[events]
-# Annoying
-enabled = false
 
 #[worldgen]
 #enabled = false
@@ -59,3 +53,9 @@ enabled = false
 
 [crewmanifest]
 no_entity = false
+
+[openrouter]
+# Almost zero credits avaiable on this
+apikey = "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"
+model = "openai/gpt-4.1"
+url = "https://openrouter.ai/api/v1"

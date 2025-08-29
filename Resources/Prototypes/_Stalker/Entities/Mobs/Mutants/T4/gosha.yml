@@ -1,0 +1,89 @@
+- type: entity
+  parent: BaseMobMutant
+  id: STMobMutatedGosha
+  name: gosha
+  description: One of the most mysterious and dangerous mutants inhabiting the Zone. Gosha is not only physically dangerous. In his presence, there is a strange, overwhelming sense of anxiety, as if the Zone itself is reacting to his appearance.
+  suffix: ST, T4
+  components:
+    # AI
+    - type: HTN
+      rootTask:
+        task: STGoshaCompound
+      blackboard:
+        VisionRadius: !type:Single
+          15.0
+    - type: NpcFactionMember
+      factions:
+        - MutatedHunter
+    # Weight
+    - type: STWeight
+      self: 240
+      maximum: 580
+    # Other
+    - type: Damageable
+      damageModifierSet: STMutantT4DamageModifierSet
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Critical:
+          Base: critical
+        Dead:
+          Base: dead
+    - type: Sprite
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: alive
+          sprite: _Stalker/Mobs/Mutants/gosha.rsi
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.4
+          density: 1600
+          mask:
+            - MobMask
+          layer:
+            - MobLayer
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        1350: Critical
+        1400: Dead
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        1200: 0.9
+        1300: 0.8
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 4
+      baseSprintSpeed: 8
+    - type: MeleeWeapon
+      attackRate: 1
+      angle: 120
+      range: 1.25
+      soundHit:
+        path: /Audio/_Stalker/Mutated/Gosha/gosha_beat.ogg
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutated/Gosha/gosha_beat.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        groups:
+          Brute: 60
+    - type: PassiveDamage
+      allowedStates:
+        - Alive
+        - Critical
+      damageCap: 1400
+      damage:
+        groups:
+          Burn: -0.75
+          Brute: -0.75
+    - type: StaminaDamageOnHit
+      damage: 50
+

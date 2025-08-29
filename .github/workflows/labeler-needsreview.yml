@@ -1,4 +1,9 @@
-﻿name: "Labels: Review"
+﻿permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+name: "Labels: Review"
 
 on:
   pull_request_target:
@@ -10,7 +15,7 @@ jobs:
     steps:
     - uses: actions-ecosystem/action-add-labels@v1
       with:
-        labels: "Status: Needs Review"
+        labels: "S: Needs Review"
     - uses: actions-ecosystem/action-remove-labels@v1
       with:
-        labels: "Status: Awaiting Changes"
+        labels: "S: Awaiting Changes"

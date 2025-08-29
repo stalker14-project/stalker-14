@@ -1,0 +1,72 @@
+
+
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunTOZ34
+  components:
+  - type: STWeight
+    self: 3.2
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz-34.rsi
+    shape:
+    - 0,0,7,1
+  - type: BallisticAmmoProvider
+    capacity: 2
+  - type: Gun
+    minAngle: 60
+    maxAngle: 70
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 7
+
+- type: entity
+  parent: STBaseWeaponShotgunTOZ34
+  id: STWeaponShotgunTOZ34
+  name: TOZ-34
+  description: Soviet double-barreled shotgun with vertical barrel arrangement. Prized in the Zone for its reliability and powerful stopping effect against mutants.
+
+- type: entity
+  parent: STBaseWeaponShotgunTOZ34
+  id: STWeaponShotgunAnomalyToz34
+  name: Anomalous TOZ-34
+  description: Anomaly-modified shotgun with increased capacity and enhanced characteristics. The Zone's strange energy made this weapon lighter and more deadly.
+  components:
+  - type: STWeight
+    self: 2.8
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
+    scale: 0.8
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/anomaly_toz_34.rsi
+    equipDelay: 2
+  - type: BallisticAmmoProvider
+    capacity: 4
+
+- type: entity
+  parent: STBaseWeaponShotgunTOZ34
+  id: STWeaponShotgunShizoToz34
+  name: Wierd TOZ
+  description: Wierd TOZ, modified by someone really mad.
+  suffix: ST, Weapon, Shotgun, Sponsor
+  components:
+  - type: STWeight
+    self: 5
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz_shiza.rsi
+    scale: 0.8
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz_shiza.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/toz/toz_shiza.rsi
+  - type: BallisticAmmoProvider
+    capacity: 3
+  - type: Scope
+    zoom: 1.4
+    offset: 10

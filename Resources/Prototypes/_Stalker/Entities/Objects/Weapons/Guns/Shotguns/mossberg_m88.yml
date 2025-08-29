@@ -1,0 +1,28 @@
+
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunMossbergM88
+  components:
+  - type: STWeight
+    self: 2.3
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mossberg.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mossberg.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mossberg.rsi
+  - type: BallisticAmmoProvider
+    capacity: 6
+  - type: Gun
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 1
+
+- type: entity
+  parent: STBaseWeaponShotgunMossbergM88
+  id: STWeaponShotgunMossbergM88
+  name: Mossberg M88 Cruiser
+  description: Compact pump-action shotgun with exceptional ergonomics. Perfect for CQB in Zone conditions, especially in tight spaces. Can be effectively operated one-handed.

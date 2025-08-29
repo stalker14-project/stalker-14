@@ -1,0 +1,26 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterKirasa
+  name: Бронежилет "Кираса"
+  description: Бронежилет II типа, обеспечивающий неплохую защиту от некоторых видов повреждений.
+  suffix: ST, T2, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/Kirasa.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/Kirasa.rsi
+  - type: STWeight
+    self: 4.5
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 6
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.90

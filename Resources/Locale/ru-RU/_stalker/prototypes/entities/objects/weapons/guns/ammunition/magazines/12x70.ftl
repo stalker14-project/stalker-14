@@ -1,0 +1,15 @@
+ent-Base1270Mag = магазин Сайги 12х70 (5)
+    .desc = Магазин Сайги 12х70 для дробовиков АК. Вместимость дробей 5. Продают пустым.
+ent-Saiga1270Mag10 = магазин Сайги 12х70 (10)
+    .desc = Магазин Сайги 12х70 для дробовиков АК. Вместимость дробей 10. Продают пустым.
+ent-Saiga1270Drum = барабан Сайги 12х70 (20)
+    .desc = Барабан Сайги 12х70 для дробовиков АК. Вместимость дробей 20. Продают пустым.
+ent-BaseMagazineUSAS12x70 = magazine USAS 12x70 (10)
+    .desc = USAS 12x70 magazine for AK shotguns. Capacity of fractions is 10. Sold empty.
+    .suffix = Stalker
+ent-Magazine10USAS12x70 = { ent-BaseMagazineUSAS12x70 }
+    .desc = { ent-BaseMagazineUSAS12x70.desc }
+    .suffix = { ent-BaseMagazineUSAS12x70.suffix }
+ent-Magazine20USAS12x70 = drum USAS 12x70 (10)
+    .desc = USAS 12x70 drum for AK shotguns. Capacity of fractions is 20. Sold empty.
+    .suffix = { ent-BaseMagazineUSAS12x70.suffix }

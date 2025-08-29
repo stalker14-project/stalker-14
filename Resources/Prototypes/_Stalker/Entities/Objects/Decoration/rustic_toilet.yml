@@ -1,0 +1,21 @@
+- type: entity
+  name: Деревенский туалет
+  id: STrustictoilet
+  parent: ClosetStalkerBase
+  suffix: ST, Mapping
+  components:
+  - type: Transform
+    anchored: true 
+  - type: Appearance
+  - type: EntityStorageVisuals
+    stateBaseClosed: rustictoilet
+    stateDoorOpen: rustictoilet_open
+    stateDoorClosed: rustictoilet_door
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/rustic_toilet.rsi
+    layers:
+    - state: rustictoilet
+      map: ["enum.StorageVisualLayers.Base"]
+    - state: rustictoilet_door
+      map: ["enum.StorageVisualLayers.Door"]

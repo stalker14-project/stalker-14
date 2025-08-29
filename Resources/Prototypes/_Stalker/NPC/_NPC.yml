@@ -63,53 +63,14 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcAlexBaronShopPreset
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcAlexBaronShopPreset  #If you uncomment it - CHANGE SHOP PRESET
   - type: Physics
     bodyType: Static
 #NPC Train Station - End
 
 #NPC For trading - Start
-
-- type: entity
-  parent: NPCDoll
-  id: NPCSidorovich
-  name: Сидорович [→   ←]
-  description: Старый жмот, который не пожертвует даже рубля, что бы кого-то спасти. Злопамятный.
-  components:
-  - type: Sprite
-    sprite: _Stalker/NPC/Sidor.rsi
-    state: sidor
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerSidorAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcSidor
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
 
 - type: entity
   parent: NPCDoll
@@ -170,9 +131,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
+  - type: Shop  #Commented, shop-preset wiped
     moneyId: Roubles
-    shopPresetId: NpcBuyer
+    shopPresetId: KekeshaShopPreset  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -209,9 +170,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcTourist
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcTourist  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -248,10 +209,10 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    permitId: hunterLicense
-    shopPresetId: NpcGunmith
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # permitId: hunterLicense
+    # shopPresetId: NpcGunmith  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -288,49 +249,10 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    permitId: militaryLicense
-    shopPresetId: GunsmithAdvanced
-  - type: TypingIndicator
-    proto: robot
-  - type: TTS # Corvax-TTS
-    voice: TrainingRobot
-  - type: Speech
-    speechVerb: Robotic
-    speechSounds: Alto
-  - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
-  - type: ActiveRadio
-    channels:
-    - Binary
-    - Common
-
-- type: entity
-  parent: NPCDoll
-  id: NPCResearchInstitutes
-  name: Проф. Круглый [→   ←]
-  description: Говорят, что у профессора есть диплом об окончании МГУ. Стоит ли верить слухам?
-  components:
-  - type: Sprite
-    sprite: _Stalker/NPC/Scientist.rsi
-    state: scientist
-  - type: Physics
-    bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
-  - type: ActivatableUI
-    key: enum.ShopUiKey.Key
-    singleUser: true
-  - type: UserInterface
-    interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcResearchInstitut
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # permitId: militaryLicense
+    # shopPresetId: GunsmithAdvanced  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -360,13 +282,15 @@
     bodyType: Static
   - type: Advertise
     pack: NPCStalkerTraderAds
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
   - type: ActivatableUI
-    key: enum.ShopUiKey.Key
+    key: enum.BandsUiKey.Key
     singleUser: true
   - type: UserInterface
     interfaces:
-      enum.ShopUiKey.Key:
-        type: ShopBoundUserInterface
+      enum.BandsUiKey.Key:
+        type: BandsManagingUserInterface
   - type: Shop
     moneyId: Dollar
     shopPresetId: IgorIvanovichShopPreset
@@ -406,9 +330,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcGrocer
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcGrocer  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -445,9 +369,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcClothingSalesMan
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcClothingSalesMan  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -485,9 +409,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcPharmacist
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcPharmacist  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -603,6 +527,64 @@
 
 - type: entity
   parent: NPCDoll
+  id: NPCSecurityZhorik
+  name: Жорик
+  description: Проходи, не задерживайся!
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Security.rsi
+    state: zhorik
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerSecurityAds
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCSecurityGarrik
+  name: Гаррик
+  description: Тебе сюда нельзя!
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Security.rsi
+    state: garrik
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerSecurityAds
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
   id: NPCPetrAlkash
   name: Петруха [→   ←]
   description: Заядлый алкаш и курильщик. Продаёт водку и сигареты. Покупает окурки и пустые бутылки из-под водки по достаточно хорошей цене. Основатель и CEO Б.О.М.Ж.
@@ -621,9 +603,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcPetrAlkash
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcPetrAlkash  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -670,9 +652,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcCeremoniemeester
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcCeremoniemeester  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -748,9 +730,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcPovarGena
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcPovarGena  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -787,9 +769,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: TechnickVitya
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: TechnickVitya  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -826,9 +808,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: SalesmanViktor
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: SalesmanViktor  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -865,9 +847,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcBotanikMaks
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcBotanikMaks  #Commented, shop-preset wiped
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -904,9 +886,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcFarmerSerega
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcFarmerSerega  #If you uncomment it - CHANGE SHOP PRESET
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -1064,9 +1046,9 @@
     sprite: _Stalker/Objects/NPCs/bluprint_computer.rsi
     state: base
   - type: Physics
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NPCBlueprintSeller
+#  - type: Shop  #Commented, shop-preset wiped
+#    moneyId: Roubles
+#    shopPresetId: NPCBlueprintSeller  #If you uncomment it - CHANGE SHOP PRESET
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1088,9 +1070,9 @@
     sprite: _Stalker/Objects/NPCs/alina_morozova.rsi
     state: base
   - type: Physics
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcAlinaMorozova
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcAlinaMorozova  #If you uncomment it - CHANGE SHOP PRESET
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1178,9 +1160,9 @@
     sprite: _Stalker/Objects/NPCs/maksimka.rsi
     state: base
   - type: Physics
-  - type: Shop
-    moneyId: Roubles
-    shopPresetId: NpcMaksimka
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcMaksimka  #If you uncomment it - CHANGE SHOP PRESET
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1193,7 +1175,6 @@
 - type: entity
   parent: NPCDoll
   id: NPCGabrielSerafim
-  noSpawn: false
   name: Габриэль [→   ←]
   suffix: ST, Serafim
   description: Старый серафим вот уже 10 лет служил Сыну Звёзды, к сожалению он стал слишком стар для войны и охоты, сейчас он помогает в поставках снаряжения для южного ковена.
@@ -1213,8 +1194,50 @@
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
   - type: Shop
-    moneyId: Fangs
-    shopPresetId: SerafimShopPresetLight
+    moneyId: Roubles
+    shopPresetId: SerafimShopPresetCustom
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# sera-end
+
+- type: entity
+  parent: NPCDoll
+  id: NPCAlekseiFilippov
+  name: Алексей Филиппов[→   ←]
+  suffix: ST, Gruppirovki
+  description: Продает хорошее снаряжение для охоты и припасы очень важные для выживания в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Merc.rsi
+    state: merc
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcAlekseiFilipp
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -1233,15 +1256,14 @@
 
 - type: entity
   parent: NPCDoll
-  id: NPCSabbatSerafim
-  noSpawn: false
-  name: Саббат [→   ←]
-  suffix: ST, Serafim, bar
-  description: Саббат, паладин, ветеран битв с Ложным Идолом сразивший множество рабов Идола, сейчас он помогает в поставках снаряжения и отправляет поставки провизии и медикаментов в северные ковены.
+  id: NPCFil
+  name: Фил[→   ←]
+  suffix: ST, bar
+  description: Продавец патронов множества калибров малого и среднего пробития.
   components:
   - type: Sprite
-    sprite: _Stalker/NPC/Sabbat.rsi
-    state: sabbat
+    sprite: _Stalker/NPC/Merc.rsi
+    state: merc
   - type: Physics
     bodyType: Static
   - type: Advertise
@@ -1254,8 +1276,8 @@
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
   - type: Shop
-    moneyId: Fangs
-    shopPresetId: SerafimShopPresetHeavy
+    moneyId: Roubles
+    shopPresetId: NpcFilAmunition
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -1272,4 +1294,80 @@
     - Binary
     - Common
 
-# sera-end
+- type: entity
+  parent: NPCDoll
+  id: NPCRasputin
+  name: Распутин[→   ←]
+  suffix: ST, bar
+  description: Продавец патронов множества калибров высокого броневого пробития.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/BarahloSimp.rsi
+    state: barahlosimple
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Dollar
+    # shopPresetId: NpcRasput  #If you uncomment it - CHANGE SHOP PRESET
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCHidenTrader
+  name: Неизвестный [→   ←]
+  description:
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Merc.rsi
+    state: merc
+  - type: Physics
+    bodyType: Static
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: HidenZoneTrader
+  - type: TimedDespawn
+    lifetime: 1800
+
+- type: entity
+  name: триггер Скрытого Торговца
+  id: STTriggerHidenTrader
+  parent: STBaseTrigger125
+  suffix: ST, Dollar, Trigger
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - NPCHidenTrader
+    restricted:
+    - NPCHidenTrader
+  - type: STAnomalyGeneratorSpawnBlocker
+    size: 5

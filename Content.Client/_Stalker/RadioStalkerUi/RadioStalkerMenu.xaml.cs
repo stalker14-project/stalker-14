@@ -36,5 +36,6 @@ public sealed partial class RadioStalkerMenu : FancyWindow
     {
         MicButton.Pressed = state.MicEnabled;
         SpeakerButton.Pressed = state.SpeakerEnabled;
+        ChannelInput.Text = state.CurrentFrequency ?? string.Empty;
     }
 }

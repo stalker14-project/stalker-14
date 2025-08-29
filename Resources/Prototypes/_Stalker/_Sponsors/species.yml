@@ -1,0 +1,26 @@
+- type: sponsorSpecies
+  id: SponsorDwarf # Should be unique
+  speciesId: Dwarf # Prototype ID of the species prototype (- type: species)
+  sponsorIds: # A list of prototype IDs of sponsors (- type: sponsor)
+  - SponsorBacker
+  - SponsorOMind
+  - SponsorPseudogiant
+
+- type: sponsorSpecies
+  id: SponsorVulpkanin # Should be unique
+  speciesId: Vulpkanin # Prototype ID of the species prototype (- type: species)
+  sponsorIds: # A list of prototype IDs of sponsors (- type: sponsor)
+  - SponsorOMind
+  - SponsorPseudogiant
+
+- type: sponsorSpecies
+  id: SponsorHumanFat # Should be unique
+  speciesId: HumanFat # Prototype ID of the species prototype (- type: species)
+  sponsorIds: # A list of prototype IDs of sponsors (- type: sponsor)
+    - SponsorPseudogiant
+
+- type: sponsorSpecies
+  id: SponsorReptilian # Should be unique
+  speciesId: Reptilian # Prototype ID of the species prototype (- type: species)
+  sponsorIds: # A list of prototype IDs of sponsors (- type: sponsor)
+  - SponsorPseudogiant

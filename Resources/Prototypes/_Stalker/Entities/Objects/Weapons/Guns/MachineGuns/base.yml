@@ -1,0 +1,45 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponGun
+  id: STBaseWeaponMachineGun
+  suffix: Weapon, Machine Gun
+  components:
+  - type: STWeight
+    self: 7.4
+  - type: Item
+    shape:
+    - 0,0,8,1
+  - type: Wieldable
+  - type: GunRequiresWield
+  - type: FarGunshot
+    range: 300
+    sound: /Audio/_DZ/Effects/FarGunshots/rifle2.ogg
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/l85.ogg
+      params:
+        volume: -2
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+  - type: GunWieldBonus
+    minAngle: -100
+    maxAngle: -100
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: null
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+      gun_chamber:
+        name: Chamber
+        startingItem: null
+        priority: 1
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot

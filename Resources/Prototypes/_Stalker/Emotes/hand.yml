@@ -1,0 +1,92 @@
+- type: emote
+  id: STClap
+  name: chat-emote-name-clap
+  category: Hands
+  icon: Interface/Emotes/clap.png
+  whitelist:
+    components:
+    - Hands
+  chatMessages: ["chat-emote-msg-clap"]
+  chatTriggers:
+  # EN
+  - clap
+  - claps
+  - clapping
+  - clapped
+  # RU
+  - хлоп
+  - хлоп-хлоп
+  - хлопает
+
+- type: emote
+  id: STSnap
+  name: chat-emote-name-snap
+  category: Hands
+  icon: Interface/Emotes/snap.png
+  whitelist:
+    components:
+    - Hands
+  chatMessages: ["chat-emote-msg-snap"] # snaps <{THEIR($ent)}> fingers?
+  chatTriggers:
+  # EN
+  - snap
+  - snaps
+  - snapping
+  - snapped
+  - snap fingers
+  - snaps fingers
+  - snaps their fingers
+  - snapping fingers
+  - snapped fingers
+  # RU
+  - щёлк
+  - щелк
+  - щелкает
+  - щёлкает
+
+- type: emote
+  id: STSalute
+  name: chat-emote-name-salute
+  category: Hands
+  icon: Interface/Emotes/salute.png
+  whitelist:
+    components:
+    - Hands
+  chatMessages: ["chat-emote-msg-salute"]
+  chatTriggers:
+  # EN
+  - salute
+  - salutes
+  # RU
+  - салютует
+  - отдает честь
+
+- type: emote
+  id: STGasp
+  name: chat-emote-name-gasp
+  whitelist:
+    components:
+    - Respirator
+  chatMessages: ["chat-emote-msg-gasp"]
+  chatTriggers:
+  # EN
+  - gasp
+  - gasps
+  - gasped
+  # RU
+  - задыхается
+
+- type: emote
+  id: STDefaultDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  whitelist:
+    components:
+    - MobState
+  chatMessages: ["chat-emote-msg-deathgasp"]
+  chatTriggers:
+  # EN
+  - deathgasp
+  # RU
+  - предсмертный вздох
+  - предсмертный хрип

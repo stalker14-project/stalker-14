@@ -5,6 +5,8 @@
   description: Эксперементальная броня с сервоприводами, позволяющая переносить на своём хребте кучу вещей, но значительно замедляющее движения.
   suffix: ST, T5, UNIVERSAL
   components:
+  - type: STWeight
+    self: -50
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/exoskelet_stalker.rsi
     state: icon
@@ -14,18 +16,18 @@
     clothingPrototype: ClothingHeadHelmetExoskelet
   - type: ClothingSpeedModifier
     walkModifier: 0.6
-    sprintModifier: 0.6
+    sprintModifier: 0.5
   - type: Armor
     armorClass: 5
     modifiers:
       coefficients:
-        Blunt: 0.40
-        Slash: 0.40
-        Piercing: 0.20
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.4
         Heat: 0.35
         Radiation: 0.65
   - type: ExplosionResistance
-    damageCoefficient: 0.30
+    damageCoefficient: 0.25
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -36,7 +38,7 @@
   categories: [ HideSpawnMenu ]
   suffix: ST, T5
   name: шлем экзоскелета
-  description: В отличие от самого экзача, можно сказать вполне обычный шлем.
+  description: В отличие от самого экзача, можно сказать вполне обычный шлем, 5й класс.
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/exoskelet_helm_stalker.rsi
@@ -45,6 +47,24 @@
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
+  - type: Armor
+    armorClass: 5
+    modifiers:
+      coefficients:
+        Piercing: 0.7
+        Blunt: 0.6
+        Slash: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 360
+    reflects:
+    - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: ClothingOuterArmorExoskelet
@@ -101,7 +121,6 @@
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/zavet_ekzo/helmet.rsi
 
-
 # Project
 
 - type: entity
@@ -113,10 +132,10 @@
   - type: STWeight
     self: 22
   - type: Sprite
-    sprite: _Stalker/Groups/Project/exoseva/exoseva_project.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoseva_project.rsi
     state: icon
   - type: Clothing
-    sprite: _Stalker/Groups/Project/exoseva/exoseva_project.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/exoseva_project.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetExoSevaProject
 
@@ -130,9 +149,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: Sprite
-    sprite: _Stalker/Groups/Project/exoseva/exoseva_helm_project.rsi
+    sprite: _Stalker/Objects/Clothing/hats/exoseva_helm_project.rsi
   - type: Clothing
-    sprite: _Stalker/Groups/Project/exoseva/exoseva_helm_project.rsi
+    sprite: _Stalker/Objects/Clothing/hats/exoseva_helm_project.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000

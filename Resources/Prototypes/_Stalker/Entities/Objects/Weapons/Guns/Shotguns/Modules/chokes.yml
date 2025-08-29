@@ -4,12 +4,12 @@
   id: STBaseModuleMuzzleShortgun
   name: choke
   components:
-    - type: Sprite
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/Modules/choke.rsi
-      scale: 0.6, 0.6
-    - type: Icon
-      sprite: _Stalker/Objects/Weapons/Guns/Shotguns/Modules/choke.rsi
-      scale: 0.6, 0.6
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/Modules/choke.rsi
+    scale: 0.6, 0.6
+  - type: Icon
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/Modules/choke.rsi
+    scale: 0.6, 0.6
 
 - type: entity
   parent: STBaseModuleMuzzleShortgun
@@ -17,16 +17,16 @@
   name: makeshift shotgun choke
   suffix: ST, choke, T1
   components:
-    - type: Tag
-      tags:
-        - STWeaponModuleShotgunChoke
-    - type: STWeaponModule
-      effect:
-        minAngleModifier: 0.7
-    - type: Sprite
-      state: choke_T1
-    - type: Icon
-      state: choke_T1
+  - type: Tag
+    tags:
+    - STWeaponModuleShotgunChoke
+  - type: STWeaponModule
+    effect:
+      minAngleModifier: 0.7
+  - type: Sprite
+    state: choke_T1
+  - type: Icon
+    state: choke_T1
 
 - type: entity
   parent: STBaseModuleMuzzleShortgun
@@ -34,13 +34,13 @@
   name: legal shotgun choke
   suffix: ST, choke, T2
   components:
-    - type: Tag
-      tags:
-        - STWeaponModuleShotgunChoke
-    - type: STWeaponModule
-      effect:
-        minAngleModifier: 0.5
-    - type: Sprite
-      state: choke_T2
-    - type: Icon
-      state: choke_T2
+  - type: Tag
+    tags:
+    - STWeaponModuleShotgunChoke
+  - type: STWeaponModule
+    effect:
+      minAngleModifier: 0.5
+  - type: Sprite
+    state: choke_T2
+  - type: Icon
+    state: choke_T2

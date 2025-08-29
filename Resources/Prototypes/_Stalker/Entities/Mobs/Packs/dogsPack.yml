@@ -1,8 +1,10 @@
 - type: stPack
   id: STBlindDogPack
-  head: MobMutantBlindDogPackHead
+  head: MobMutantBlindDogWhitePackHead
   members:
-    - MobMutantBlindDog
+    - MobMutantBlindDogSmall
+    - MobMutantBlindDogTall
+    - MobMutantBlindDogRed
   minMemberCount: 2
   maxMemberCount: 4
 
@@ -10,6 +12,8 @@
   id: STControllerBlindDogPack
   head: STMutantController
   members:
-    - MobMutantBlindDog
+    - MobMutantBlindDogSmall
+    - MobMutantBlindDogTall
+    - MobMutantBlindDogRed
   minMemberCount: 3
   maxMemberCount: 5

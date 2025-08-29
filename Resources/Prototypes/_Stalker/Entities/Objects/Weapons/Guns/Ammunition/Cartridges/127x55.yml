@@ -1,37 +1,40 @@
 # 12.7x55
 
 - type: entity
-  id: Cartridge1255PS12A
+  id: STCartridge1255PS12A
   name: Патрон (12,7x55) ПС12А
   parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
     proto: Bullet1255PS12A
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
   - type: Tag
     tags:
     - Cartridge
-    - Cartridge1255
+    - STCartridge1255
+
 
 - type: entity
-  id: Cartridge1255TP
+  id: STCartridge1255TP
   name: Патрон (12,7x55) ТП
-  parent: BaseCartridgeCaselessRifle
+  parent: STCartridge1255PS12A
   components:
   - type: CartridgeAmmo
     proto: Bullet1255TP
-  - type: Tag
-    tags:
-    - Cartridge
-    - Cartridge1255
+
 
 - type: entity
-  id: Cartridge1255BP
+  id: STCartridge1255BP
   name: Патрон (12,7x55) БП
-  parent: BaseCartridgeCaselessRifle
+  parent: STCartridge1255PS12A
   components:
   - type: CartridgeAmmo
     proto: Bullet1255BP
-  - type: Tag
-    tags:
-    - Cartridge
-    - Cartridge1255
+
+

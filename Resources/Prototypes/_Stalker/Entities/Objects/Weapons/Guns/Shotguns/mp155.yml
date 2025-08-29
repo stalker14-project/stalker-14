@@ -1,0 +1,32 @@
+
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunMP155T
+  components:
+  - type: STWeight
+    self: 3.3
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp155t.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp155t.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp155t.rsi
+    shape:
+    - 0,0,6,1
+  - type: BallisticAmmoProvider
+    capacity: 1
+  - type: Gun
+    minAngle: 50
+    maxAngle: 100
+    angleIncrease: 20
+    angleDecay: 100
+    fireRate: 1
+  - type: Trash
+    time: 300
+
+- type: entity
+  parent: STBaseWeaponShotgunMP155T
+  id: STWeaponShotgunMP155T
+  name: MP-155T
+  description: It's an extremely shortened, single-shot shotgun. “When you don't have money and you need to defend yourself.”

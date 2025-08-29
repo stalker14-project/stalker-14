@@ -1,0 +1,163 @@
+- type: lightCraftingRecipe
+  id: UndergroundStorage
+  results:
+  - UndergroundStorageOpen
+  steps:
+    firstIngredient: UndergroundStorageClose
+    secondIngredient: AAAAStalkerLopata
+    keepSecond: true
+    exactSecond: false
+    time: 20
+
+- type: entity
+  id: UndergroundStorageClose
+  parent: BaseStructure
+  name: прикоп
+  description: Закопанный Тайник
+  components:
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/underground_storage.rsi
+    layers:
+      - state: prikop_closed
+  - type: Craftable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - SubfloorMask
+  - type: Tag
+    tags:
+      - HideContextMenu
+
+- type: entity
+  id: UndergroundStorageOpen
+  parent: BaseStructure
+  name: прикоп
+  description: Закопанный Тайник
+  components:
+  - type: Storage
+    maxItemSize: Ginormous
+    grid:
+      - 0,0,8,8
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+  - type: StorageFill
+    contents:
+        - id: STCraftBasicPCBT1
+          prob: 0.1
+        - id: STCraftSheetCopperT1
+          prob: 0.1
+        - id: STCraftPinePlankT1
+          prob: 0.1
+        - id: STCraftPlasticFittingT1
+          prob: 0.1
+        - id: STCraftGlassT1
+          prob: 0.1
+        - id: STCraftCottonFabricT1
+          prob: 0.1
+        - id: STCraftBasicThreadKitT1
+          prob: 0.1
+        - id: STBrutepack
+          prob: 0.2
+        - id: STBrutepack
+          prob: 0.2
+        - id: STBrutepack
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STGauze
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: STOintment
+          prob: 0.2
+        - id: Tourniquet
+          prob: 0.02
+        - id: antiradpill
+          prob: 0.02
+        - id: radioprotectpill
+          prob: 0.02
+        - id: psyblock
+          prob: 0.02
+        - id: MedkitAI2
+          prob: 0.03
+        - id: MedkitMilitary
+          prob: 0.01
+        - id: GeigerCounter
+          prob: 0.01
+        - id: BaseRadio
+          prob: 0.01
+        - id: HandheldGPSBasic
+          prob: 0.01
+        - id: BoxArtcont
+          prob: 0.005
+        - id: STFlashlightSeclite
+          prob: 0.01
+        - id: STHeadLight
+          prob: 0.01
+        - id: PowerCellHyper
+          prob: 0.02
+        - id: CheapLighter
+          prob: 0.01
+        - id: Matchbox
+          prob: 0.01
+        - id: CigPackMarlboro
+          prob: 0.005
+        - id: CigPackSuka
+          prob: 0.005
+        - id: CigPackKosmos
+          prob: 0.005
+        - id: IngotGold1
+          prob: 0.01
+        - id: IngotSilver1
+          prob: 0.01
+        - id: MaterialDiamond1
+          prob: 0.01
+        - id: DrinkGoldenCup
+          prob: 0.01
+        - id: CraftMaterialGunpowder
+          prob: 0.01
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Sprite
+    noRot: true
+    sprite: _Stalker/Objects/Decoration/underground_storage.rsi
+    layers:
+      - state: prikop_open
+        map: ["random"]
+  - type: RandomSprite
+    available:
+    - random:
+        prikop_open: ""
+        prikops_open: ""
+  - type: Craftable
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50
+        mask:
+        - SubfloorMask
+  - type: Tag
+    tags:
+      - HideContextMenu

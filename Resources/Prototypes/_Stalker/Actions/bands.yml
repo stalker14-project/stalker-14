@@ -1,18 +1,7 @@
 - type: entity
-  id: ActionToggleBands
-  name: снять / надеть нашивку
-  description: Переключает видимость нашивки вашей группировки.
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    checkCanInteract: false
-    icon: _Stalker/Interface/Actions/patch.rsi/r_patch.png
-    event: !type:ToggleBandsEvent
-
-- type: entity
   id: ActionChangeBand
   name: сменить нашивку
-  description: Меняет нашивку
+  description: Позволяет менять нашивку (значок или шеврон) на своем персонаже. Вы можете выбрать разные нашивки, чтобы подчеркнуть стиль или добиться желаемого внешнего вида своего героя.
   categories: [ HideSpawnMenu ]
   components:
     - type: InstantAction

@@ -1,59 +1,44 @@
+# Sponsor definitions
 - type: sponsor
-  id: trueNiggaGettoSponsors
-  repositoryWeight:
-    1: 150.0
-    2: 350.0
-    3: 600.0
-    4: 1000.0
-  contribItems:
+  id: SponsorBread
+  repositoryWeight: 400.0
+  repositoryItems:
+    - DonatestandartCrate
+  hasPriorityJoin: false
+  discordRoleId: "1172510785415684136"
+  sponsorPriority: 1
+
+- type: sponsor
+  id: SponsorBacker
+  repositoryWeight: 550.0
+  repositoryItems:
+    - DonateStalkerCrate
+  hasPriorityJoin: true
+  discordRoleId: "1158896573569318933"
+  sponsorPriority: 2
+
+- type: sponsor
+  id: SponsorOMind
+  repositoryWeight: 700.0
+  repositoryItems:
+    - DonateIskatelCrate
+  hasPriorityJoin: true
+  discordRoleId: "1233831223118266398"
+  sponsorPriority: 3
+
+- type: sponsor
+  id: SponsorPseudogiant
+  repositoryWeight: 1200.0
+  hasPriorityJoin: true
+  discordRoleId: "1233831339682172979"
+  sponsorPriority: 4
+
+# Contributor Definition
+# README: Prototype of this type should be unique, no other prototypes should have this type
+- type: contributor
+  id: SponsorContributor
+  repositoryWeight: 250.0
+  hasPriorityJoin: true
+  discordRoleId: "1173624167053140108"
+  contributorItems:
     - DonateContributorCrate
-  repositorySponsorItems:
-    1:
-      - DonatestandartCrate
-    2:
-      - DonateStalkerCrate
-    3:
-      - DonateIskatelCrate
-  personalShopCategories:
-    LordVladimer:
-    - name: Лулрд
-      items:
-        STWeaponGunAKS74UWhite: 50
-        STWeaponRifleStalkerVAL: 800
-        WeaponShotgunAnomalySawedOff: 50
-        8mmBuckshotBox: 5
-        939BPBox: 50
-        939Mag30: 50
-        919RIPBox: 20
-        MedkitScience: 50
-        SciSteampack: 50
-        ClothingOuterArmorReingerElite: 5000
-        PP91Mag: 10
-        STWeaponSMGPP91Anomaly: 450
-        ClothingBeltWebbingOfficerStalker: 25
-        ClothingBackpackDuffelHikingVSRFAnomaly: 250
-    nazoltof:
-    - name: Персональная категория
-      items:
-        STWeaponRifleSVDSGrass: 14000
-    KLeymi:
-    - name: Персональная категория
-      items:
-        STWeaponRifleAK103kamo: 10000
-    QEWAEWA2:
-    - name: Персональная категория
-      items:
-        STClothingOuterCoatNovember: 500
-        STWeaponRifleHK416: 3500
-    Deliko:
-    - name: Персональная категория
-      items:
-        ClothingJaketGray: 50
-        STClothingHeadPeakCap: 50
-    PodpivAss_Lex:
-    - name: Персональная категория
-      items:
-        ClothingMaskGP5Green: 50
-        ClothingTorsoTurtlenecksCamouflage: 50
-        BookStalkerSeraphimFAQ: 20
-        ClothingOuterArmorZaryaSeraRuined: 1000

@@ -5,13 +5,13 @@
   description: Очень полезная чёрная РПС для переноски любых вещей, от рации до магазинов. Пользуется особой популярностью среди сталкерского сообщества.
   suffix: ST
   components:
-  - type: Tag
-    tags:
-      - BlockBelt
   - type: STWeight
     self: 1
   - type: Storage
     maxItemSize: Normal
+    quickInsert: true
+    areaInsert: true
+    areaInsertRadius: 2
     grid:
       - 0,2,0,3
       - 1,-0,1,-0
@@ -56,31 +56,25 @@
 - type: entity
   parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltBandolierStalker
-  name: патронташ
-  description: Патронташ для патронов любого калибра.
+  name: набор подсумков новичка
+  description: Подсумки для патронов любого калибра.
   components:
     - type: STWeight
       self: 0.5
     - type: Sprite
-      sprite: Clothing/Belt/bandolier.rsi
+      sprite: _Stalker/Objects/Clothing/belt/belt_novice.rsi
     - type: Clothing
-      sprite: Clothing/Belt/bandolier.rsi
+      sprite: _Stalker/Objects/Clothing/belt/belt_novice.rsi
     - type: Item
       size: Huge
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemSize: Normal
       grid:
         - 0,0,7,7
-      quickInsert: true
-      areaInsert: true
       whitelist:
         tags:
           - CartridgeAmmo
           - Cartridge
-
 
 - type: entity
   parent: ClothingBeltStorageStalkerBase
@@ -91,14 +85,11 @@
     - type: STWeight
       self: 0.5
     - type: Sprite
-      sprite: _Stalker/Clothing/Belts/knife_belt.rsi
+      sprite: _Stalker/Objects/Clothing/Belts/knife_belt.rsi
     - type: Clothing
-      sprite: _Stalker/Clothing/Belts/knife_belt.rsi
+      sprite: _Stalker/Objects/Clothing/Belts/knife_belt.rsi
     - type: Item
       size: Huge
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemSize: Normal
       grid:
@@ -114,66 +105,13 @@
           whitelist:
             tags:
               - Knife
-      sprite: _Stalker/Clothing/Belts/knife_belt_overlay.rsi
+      sprite: _Stalker/Objects/Clothing/Belts/knife_belt_overlay.rsi
       spriteLayers:
       - knife
     - type: Appearance
 
 - type: entity
-  parent: ClothingBeltMercWebbing
-  id: ClothingBeltMercWebbingStalker
-  name: Тактическая разгрузка
-  description: Крайне вместительный разгруз с двумя большими подсумками на боках.
-  suffix: ST
-  components:
-    - type: STWeight
-      self: 1
-    - type: Storage
-      maxItemsize: Large
-      grid:
-        - 0,2,0,3
-        - 0,-1,0,0
-        - 2,2,2,3
-        - 2,-2,3,-0
-        - 4,2,4,3
-        - 5,-2,6,-0
-        - 6,2,6,3
-        - 8,2,8,3
-        - 8,-1,8,0
-    - type: Tag
-      tags:
-        - BlockBelt
-
-- type: entity
   parent: ClothingBeltStorageStalkerBase
-  id: ClothingBeltZavet
-  name: РПС "Завет"
-  description: стандартный RPC, используемый группировкой «Завет».
-  suffix: ST
-  components:
-  - type: STWeight
-    self: 1
-  - type: Storage
-    maxItemSize: Normal
-    grid:
-      - 0,2,0,3
-      - 1,-0,1,-0
-      - 2,2,2,3
-      - 3,-0,3,-0
-      - 4,2,4,3
-      - 5,-0,5,-0
-      - 6,2,6,3
-      - 7,-0,7,-0
-      - 8,2,8,3
-      - 9,-0,9,-0
-      - 10,2,10,3
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/belt/zavet.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/belt/zavet.rsi
-
-- type: entity
-  parent: ClothingBeltTarzanBlack
   id: ClothingBeltGreenWebbingStalker
   name: поясная сумка ПСЗ
   description: Набор подсумков и поясная сумка старого зелёного варианта комплекта персональной системы защиты, не предназаченного для местности ЧЗО.
@@ -181,9 +119,6 @@
   components:
     - type: STWeight
       self: 3
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemsize: Large
       grid:
@@ -198,7 +133,7 @@
       sprite: _Stalker/Objects/Clothing/belt/belt_green.rsi
 
 - type: entity
-  parent: ClothingBeltTarzanBlack
+  parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltWebbingOfficerStalker
   name: поясная сумка с кобурой ПСЗ
   description: Набор подсумков и поясная сумка офицерского комплекта персональной системы защиты в раскраске вудланд, имеющий пистолетную кобуру.
@@ -206,9 +141,6 @@
   components:
     - type: STWeight
       self: 3
-    - type: Tag
-      tags:
-        - Folder
     - type: Storage
       maxItemsize: Large
       grid:
@@ -223,3 +155,218 @@
       state: icon
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/belt/belt_officer.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterStalkerZarya
+  name: поясная сумка с кобурой «Заря»
+  description: Поясной сумка из комплекта «Заря» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingDoubleStalkerZaryaSmall
+  name: двойная поясная сумка «Заря»
+  description: Поясной сумка из комплекта «Заря» со второй маленькой сумкой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 5
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 4,0,9,3
+        - 0,0,2,3
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_double_small.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_zarya_double_small.rsi
+
+- type: entity
+  parent: ClothingBeltTarzanBlack
+  id: ClothingBeltWebbingBerill
+  name: поясная сумка с кобурой 'Берилл-5М'
+  description: Набор подсумков и поясная сумка комплекта 'Берилл-5М' в раскраске вудланд, имеющий пистолетную кобуру.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 4
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 4,0,9,3
+        - 0,1,0,1
+        - 0,0,1,0
+        - 0,4,0,2
+        - 1,0,0,2
+        - 2,2,2,2
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_berill.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_berill.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMerc
+  name: поясная сумка с кобурой наёмника
+  description: Поясной сумка из комплекта наёмника с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMerc2
+  name: поясная сумка с кобурой наёмника
+  description: Поясной сумка из комплекта берёзки наёмника с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_2.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_2.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMercBandit
+  name: поясная сумка с кобурой «Валет»
+  description: Поясной сумка из бандитского комплекта «Валет» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_bandit.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_bandit.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterDolgPS5M
+  name: поясная сумка с кобурой ПС5-М «Универсальная защита»
+  description: Поясной сумка из комплекта ПС5-М «Универсальная защита» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_dolg_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_dolg_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterFreedomDefender
+  name: поясная сумка с кобурой «Страж свободы»
+  description: Поясной сумка из комплекта «Страж свободы» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_freedom_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_freedom_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingDoubleFreedomVeterSmall
+  name: двойная поясная сумка «Ветер свободы»
+  description: Поясной сумка из комплекта «Ветер свободы» со второй маленькой сумкой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 5
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 4,0,9,3
+        - 0,0,2,3
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_veter_double_small.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_veter_double_small.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterMonolith
+  name: поясная сумка с кобурой «Монолита»
+  description: Поясной сумка из комплекта «Монолита» с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_monolith_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_monolith_holster.rsi
+    - type: PersonalDamage
+      damage:
+        types:
+          Radiation: 4.5

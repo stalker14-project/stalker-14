@@ -2,10 +2,11 @@
   parent: BaseArtifact
   name: Огненный шар
   id: ZoneArtifactFireball
-  suffix: Stalker, Огненый шар
+  suffix: Stalker, Огненный шар
   components:
   - type: Sprite
     state: fireball
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyJarka
   - type: ZoneArtifactDetectorTarget
@@ -18,17 +19,18 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -0.1
-        Cold: -0.5
+        Blunt: -0.5
+        Slash: -0.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Radiation: 1.5
-        Shock: 1.1
+        Shock: 1.2
         Cold: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
 
 - type: entity
   parent: BaseArtifact
@@ -38,6 +40,7 @@
   components:
   - type: Sprite
     state: glaz
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyJarkaStrong
   - type: ZoneArtifactDetectorTarget
@@ -50,8 +53,8 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -1
-        Cold: -1
+        Blunt: -1
+        Slash: -1
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -59,11 +62,8 @@
     modifiers:
       coefficients:
         Shock: 1.4
-        Cold: 0.65
-        Radiation: 1.6
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
 
 - type: entity
   parent: BaseArtifact
@@ -73,6 +73,7 @@
   components:
   - type: Sprite
     state: flame
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalySol
   - type: ZoneArtifactDetectorTarget
@@ -85,20 +86,17 @@
   - type: PersonalDamage
     damage:
       types:
-        Heat: -1.5
-        Cold: -3
+        Blunt: -2
+        Slash: -2
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Heat: 1.8
-        Shock: 1.8
-        Radiation: 1.8
-  - type: ClothingSpeedModifier
-    walkModifier: 0.95
-    sprintModifier: 0.95
+        Shock: 1.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.60
 
 - type: entity
   parent: BaseArtifact
@@ -107,6 +105,7 @@
   components:
   - type: Sprite
     state: cristall
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalySol
   - type: ZoneArtifactDetectorTarget
@@ -119,15 +118,14 @@
   - type: PersonalDamage
     damage:
       types:
-        Piercing: 0.02
-    interval: 1
+        Compression: -2
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.7
-        Heat: 0.6
+        Compression: 0.8
+        Heat: 0.3
         Psy: 0.1
 
 - type: entity
@@ -137,6 +135,7 @@
   components:
   - type: Sprite
     state: lithosphere
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalySol
   - type: ZoneArtifactDetectorTarget
@@ -150,23 +149,11 @@
     staminaDamage: -10
     damage:
       types:
-        Asphyxiation: -5
-        Cold: -3
-        Heat: -3
-        Radiation: -1.5
-        Blunt: -0.08
-        Slash: -0.08
-        Piercing: -0.08
+        Bloodloss: -6
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.5
-        Cold: 0.6
-        Heat: 0.6
-        Psy: 1.9
-  - type: ClothingSpeedModifier
-    walkModifier: 1.1
-    sprintModifier: 1.1
+       Bloodloss: 0.5

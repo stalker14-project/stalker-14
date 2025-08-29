@@ -10,6 +10,7 @@ public sealed class DiscordAuthManager
     [Dependency] private readonly IStateManager _state = default!;
 
     public string AuthLink = default!;
+    public string ErrorMessage = default!;
     public const string DiscordServerLink = "https://discord.gg/pBFv9pDuqK";
 
     public void Initialize()
@@ -20,6 +21,7 @@ public sealed class DiscordAuthManager
     public void OnDiscordAuthRequired(MsgDiscordAuthRequired args)
     {
         AuthLink = args.Link;
+        ErrorMessage = args.ErrorMessage;
         _state.RequestStateChange<DiscordAuthState>();
     }
 }

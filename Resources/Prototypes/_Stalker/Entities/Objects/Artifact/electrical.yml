@@ -1,4 +1,4 @@
-# Пораждаемая Электрой, Герляндой
+# Пораждаемая Электрой, Гирляндой
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactSparkler
@@ -6,6 +6,7 @@
   components:
   - type: Sprite
     state: sparkler
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyElectra
   - type: ZoneArtifactDetectorTarget
@@ -16,17 +17,17 @@
     color: "#09efff"
     castShadows: false
   - type: PersonalDamage
-    staminaDamage: -1.5
+    staminaDamage: -2
     damage:
       types:
-        Radiation: 0.25
+        Radiation: 0.4
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Shock: 0.75
+        Shock: 0.8
 
 - type: entity
   parent: BaseArtifact
@@ -35,6 +36,7 @@
   components:
   - type: Sprite
     state: battery
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalyGarland
   - type: ZoneArtifactDetectorTarget
@@ -48,7 +50,7 @@
     staminaDamage: -3
     damage:
       types:
-        Radiation: 0.5
+        Radiation: 0.8
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -64,6 +66,7 @@
   components:
   - type: Sprite
     state: flash
+    scale: 0.5, 0.5
   - type: ZoneArtifact
     anomaly: ZoneAnomalySource
   - type: ZoneArtifactDetectorTarget
@@ -77,7 +80,7 @@
     staminaDamage: -6
     damage:
       types:
-        Radiation: 1
+        Radiation: 1.6
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -85,7 +88,7 @@
     modifiers:
       coefficients:
         Shock: 0.4
-        Psy: 0.4
+        Psy: 0.5
 
 # Пораждаемая Источником
 - type: entity
@@ -95,6 +98,7 @@
   components:
   - type: Sprite
     state: moon
+    scale: 0.5, 0.5
   - type: PointLight
     radius: 1.5
     energy: 7.5
@@ -105,21 +109,18 @@
   - type: ZoneArtifactDetectorTarget
     detectedLevel: 3
   - type: PersonalDamage
-    damage:
-      types:
-        Radiation: -2
-        Cold: -0.25
+    staminaDamage: -4
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
+      flatReductions:
+        Psy: 2
       coefficients:
-        Psy: 0.9
-        Compression: 0.8
-  - type: ClothingSpeedModifier
-    walkModifier: 1.01
-    sprintModifier: 1.01
+        Psy: 0.8
+        Compression: 0.7
+      
 
 - type: entity
   parent: BaseArtifact
@@ -128,6 +129,7 @@
   components:
   - type: Sprite
     state: tesla
+    scale: 0.5, 0.5
   - type: PointLight
     radius: 1.5
     energy: 7.5
@@ -140,19 +142,15 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: -4
-        Cold: -0.5
+        Radiation: -3
+        Cold: -0.4
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Psy: 0.7
-        Compression: 0.7
-  - type: ClothingSpeedModifier
-    walkModifier: 1.01
-    sprintModifier: 1.01
+        Shock: 0.2
 
 - type: entity
   parent: BaseArtifact
@@ -161,6 +159,7 @@
   components:
   - type: Sprite
     state: ice
+    scale: 0.5, 0.5
   - type: PointLight
     radius: 2.5
     energy: 9.5
@@ -173,16 +172,13 @@
   - type: PersonalDamage
     damage:
       types:
-        Radiation: -6
-        Cold: -1
+        Radiation: -5
+        Cold: -5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Psy: 0.6
-        Compression: 0.5
-  - type: ClothingSpeedModifier
-    walkModifier: 1.01
-    sprintModifier: 1.01
+        Psy: 0.4
+        Compression: 0.6

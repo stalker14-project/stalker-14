@@ -41,6 +41,7 @@
     unlitIcon: match_unlit
     litIcon: match_lit
     burntIcon: match_burnt
+  - type: Craftable
 
 - type: entity
   parent: Matchstick
@@ -85,6 +86,9 @@
   - type: Storage
     grid:
     - 0,0,2,1
+    blacklist:
+      tags:
+      - Medkit
   - type: StorageFill
     contents:
       - id: Matchstick

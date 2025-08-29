@@ -1,0 +1,105 @@
+- type: job
+  id: StalkerMilitia
+  name: job-militia
+  icon: militia
+  description: job-militia-desc
+  playTimeTracker: JobMilitia
+  whitelisted: true
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: MilitiaGear
+  supervisors: job-militia-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - MilitiaAccess
+            - Stalker
+        - type: Bands
+          band: Stalker
+          bandIcon: militia
+          bandProto: STMilitiaBand
+          bandRankId: 1
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Stalker
+
+- type: job
+  id: StalkerMilitiaCommander
+  name: job-militia-commander
+  icon: militia
+  description: job-militia-commander-desc
+  playTimeTracker: JobMilitiaCommander
+  whitelisted: true
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: MilitiaCommanderGear
+  supervisors: job-militia-commander-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          tags:
+            - MilitiaAccess
+            - Stalker
+        - type: Bands
+          band: Stalker
+          bandIcon: militia
+          bandProto: STMilitiaBand
+          bandRankId: 2
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Stalker
+
+- type: startingGear
+  id: MilitiaGear
+  equipment:
+    id: StalkerPDA
+    torso: ClothingTorsoSweaterStalkerGreen
+    legs: ClothingLegsJeansStalker
+    shoes: ClothingShoesBootsCombat
+    neck: ClothingBandageStalkerWhite
+    back: ClothingBackpackDuffelBlackStalker
+
+- type: startingGear
+  id: MilitiaCommanderGear
+  equipment:
+    id: StalkerPDA
+    torso: ClothingTorsoTurtlenecksBlackTurtleneck
+    legs: ClothingLegsJeansStalker
+    shoes: ClothingShoesBootsMercFilled
+    neck: ClothingBandageStalkerWhite
+    head: ClothingHeadHatBeret
+    back: ClothingBackpackDuffelBlackStalker
+
+- type: stBand
+  id: STMilitiaBand
+  name: militia
+  factionId: Stalker
+  maxMembers: 10
+  managingRankId: 2
+  hierarchy:
+    1: StalkerMilitia
+    2: StalkerMilitiaCommander
+

@@ -1,0 +1,47 @@
+- type: entity
+  name: Триггер стаи слепых псов (100%)
+  id: BlinddogPackTrigger100
+  parent: MarkerBase
+  suffix: ST, T1
+  components:
+    - type: STPackSpawner
+      protoId: STBlindDogPack
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+
+- type: entity
+  name: Триггер стаи пауков Лапачей (100%)
+  id: SpiderLapachPackTrigger100
+  parent: MarkerBase
+  suffix: ST, T1
+  components:
+    - type: STPackSpawner
+      protoId: STSpiderLapachPack
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai
+
+- type: entity
+  name: Триггер контролёра с собаками (100%)
+  id: ControllerBlindDogPackTrigger100
+  parent: MarkerBase
+  suffix: ST, T3
+  components:
+    - type: STPackSpawner
+      protoId: STControllerBlindDogPack
+    - type: ApproachTrigger
+    - type: Sprite
+      layers:
+        - state: blue
+        - sprite: Mobs/Aliens/Xenos/burrower.rsi
+          state: crit
+        - state: ai

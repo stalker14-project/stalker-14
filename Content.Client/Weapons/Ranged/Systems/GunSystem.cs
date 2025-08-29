@@ -82,11 +82,6 @@ public sealed partial class GunSystem : SharedGunSystem
         // Plays animated effects on the client.
         SubscribeNetworkEvent<HitscanEvent>(OnHitscan);
 
-        // stalker
-        InitializeSTMuzzleVisuals();
-        InitializeSTScopeVisuals();
-        InitializeSTUnderbarrelVisuals();
-        // stalker ends
         InitializeMagazineVisuals();
         InitializeSpentAmmo();
     }
@@ -162,7 +157,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
         var useKey = gun.UseKey ? EngineKeyFunctions.Use : EngineKeyFunctions.UseSecondary;
 
-        if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down)
+        if (_inputSystem.CmdStates.GetState(useKey) != BoundKeyState.Down && !gun.BurstActivated)
         {
             if (gun.ShotCounter != 0)
                 EntityManager.RaisePredictiveEvent(new RequestStopShootEvent { Gun = GetNetEntity(gunUid) });

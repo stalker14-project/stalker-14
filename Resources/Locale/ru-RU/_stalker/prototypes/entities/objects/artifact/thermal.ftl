@@ -1,0 +1,15 @@
+ent-ZoneArtifactFireball = Огненный шар
+    .suffix = Stalker, Огненый шар
+    .desc = Артефакт
+ent-ZoneArtifactEye = Глаз
+    .suffix = Stalker, Глаз
+    .desc = Артефакт
+ent-ZoneArtifactFlame = Пламя
+    .suffix = Stalker, Пламя
+    .desc = Артефакт
+ent-ZoneArtifactCristall = { ent-BaseArtifact }
+    .suffix = Stalker, Кристалл
+    .desc = Артефакт
+ent-ZoneArtifactLithosphere = { ent-BaseArtifact }
+    .suffix = Stalker, Литосфера
+    .desc = Артефакт

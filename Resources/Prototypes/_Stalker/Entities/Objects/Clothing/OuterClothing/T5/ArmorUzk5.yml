@@ -1,4 +1,3 @@
-
 - type: entity
   parent: STClothingOuterBaseLarge
   id: ClothingOuterArmorUzk5
@@ -19,21 +18,20 @@
     armorClass: 3
     modifiers:
       flatReductions:
-        Blunt: 8
-        Slash: 8
-        Piercing: 6
-        Caustic: 1
-        Radiation: 3.5
+        Blunt: 6
+        Slash: 6
+        Piercing: 4
+        Caustic: 3
+        Radiation: 2.5
         Heat: 1
-        Bloodloss: 0.40
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
+        Blunt: 0.5  
+        Slash: 0.5
         Piercing: 0.6
-        Heat: 0.8
-        Caustic: 0.8
-        Compression: 0.8
-        Shock: 0.85
+        Heat: 0.7
+        Caustic: 0.75
+        Compression: 0.7
+        Shock: 0.75
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: ClothingSpeedModifier
@@ -66,15 +64,13 @@
       unequipSound: null
     - type: Armor
       armorClass: 2
-      modifiers:
-        flatReductions:
-          Piercing: 7
-          Blunt: 1
-          Slash: 1
-        coefficients:
+      coefficients:
           Piercing: 0.75
     - type: Reflect
       reflectProb: 0.07
       spread: 360
       reflects:
         - NonEnergy
+    - type: HideLayerClothing
+      slots:
+      - Hair

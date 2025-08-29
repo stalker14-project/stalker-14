@@ -1,0 +1,26 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterIOTVGEN4
+  name: IOTV GEN4
+  description: Бронежилет 4 класса защиты.
+  suffix: ST, T4, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/IOTV GEN4.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/IOTV GEN4.rsi
+  - type: STWeight
+    self: 8.7
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 5
+        Slash: 5
+        Piercing: 6
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.60
+        Piercing: 0.60
+  - type: ExplosionResistance
+    damageCoefficient: 0.65

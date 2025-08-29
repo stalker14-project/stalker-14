@@ -6,6 +6,9 @@
   suffix: ST, Revolver, револьвер
   abstract: true
   components:
+  - type: FarGunshot
+    range: 170
+    sound: /Audio/_DZ/Effects/FarGunshots/pistol1.ogg
   - type: Sprite
     state: icon
   - type: Item
@@ -41,7 +44,7 @@
       tags:
         - CartridgeMagnum
         - SpeedLoaderMagnum
-    proto: CartridgeMagnum
+    proto: Null
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
     ammoSlots: [ null, null, null, null, null, null ]
@@ -49,3 +52,5 @@
       path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+  - type: StaticPrice
+    price: 1

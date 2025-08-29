@@ -1,0 +1,14 @@
+- type: entity
+  id: CartridgeRocketRPO
+  name: Выстрел РПО
+  parent: BaseItem
+  description: Военные преступления 
+  components:
+  - type: Item
+    size: Small
+  - type: CartridgeAmmo
+    proto: BulletRocketRPO
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    state: rpg

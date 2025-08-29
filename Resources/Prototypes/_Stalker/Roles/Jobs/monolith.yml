@@ -1,25 +1,20 @@
 - type: job
   id: StalkerMonolith
-  name: Скитальцы
+  name: job-monolith
   icon: monolith
-  description: Символ тихого, но пугающего присутствия.
+  description: job-monolith-desc
   playTimeTracker: JobMonolith
   whitelisted: true
   requirements:
-    # - !type:DepartmentTimeRequirement
-    #   department: StalkerAdvanced
+    # - !type:RoleTimeRequirement
+    #   role: JobMonolith
     #   time: 1
-    #   inverted: true
     - !type:SpeciesRequirement
       species:
       - Human
-      - Dwarf
-    # - !type:DepartmentTimeRequirement
-    #   department: StalkerAnomalists
-    #   time: 1
-    #   inverted: true
   startingGear: MonolithGear
-  supervisors: вы утратили Его Голос, найдите его
+  supervisors: job-monolith-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -29,19 +24,38 @@
       - type: Bands
         band: Stalker
         bandIcon: monolith
+        bandProto: STMonolithBand
+        bandRankId: 2
+      - type: NpcFactionMember
+        factions:
+          - Mutated
+      - type: Hunger
+        baseDecayRate: 0
+      - type: Thirst
+        baseDecayRate: 0
+      - type: PersonalDamageBlock
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
         pullingItemTag: PliersStalker
         teethCount: 3
         initialTeeth: 3
+      - type: STAnomalyTipsViewing
 
 - type: startingGear
   id: MonolithGear
   equipment:
+    ears: STClothingChip
     id: MonolithPDA
-    belt: ClothingBeltStorageWaistbag
-    torso: ClothingTorsoTurtlenecksMonolithCamouflage
-    legs: ClothingLegsJeansMonolithCamouflage
-    shoes: ClothingShoesBootsCombat
-    gloves: ClothingHandsGlovesFingerless
+    torso: ClothingTorsoSweaterStalkerGreen
+    legs: ClothingLegsJeansBlue
+    shoes: ClothingShoesNovice
+- type: stBand
+  id: STMonolithBand
+  name: Monolith
+  factionId: Monolith
+  maxMembers: 15
+  managingRankId: 3
+  hierarchy:
+    1: StalkerMonolith
+

@@ -1,0 +1,40 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterInterceptorOTV
+  name: Бронежилет "Интерцептор"
+  description: Бронежилет II типа, обеспечивающий неплохую защиту от некоторых видов повреждений.
+  suffix: ST, T2, PVP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/Interceptor_OTV.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/Interceptor_OTV.rsi
+  - type: STWeight
+    self: 5
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,2,0,3
+    - 1,-0,1,-0
+    - 2,2,2,3
+    - 3,-0,3,-0
+    - 4,2,4,3
+    - 5,-0,5,-0
+    - 6,2,6,3
+    - 7,-0,7,-0
+    - 8,2,8,3
+    - 9,-0,9,-0
+    - 10,2,10,3
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 3
+        Piercing: 6
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.90

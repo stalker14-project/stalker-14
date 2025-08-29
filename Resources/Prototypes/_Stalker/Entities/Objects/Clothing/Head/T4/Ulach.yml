@@ -11,20 +11,23 @@
     armorClass: 4
     modifiers:
       flatReductions:
-        Piercing: 8
-        Blunt: 16
-        Slash: 16
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
       coefficients:
-        Piercing: 0.7
-        Blunt: 0.6
-        Slash: 0.6
+        Blunt: 0.80
+        Slash: 0.80
   - type: ExplosionResistance
-    damageCoefficient: 0.70
+    damageCoefficient: 0.90
   - type: Reflect
-    reflectProb: 0.12
+    reflectProb: 0.14
     spread: 360
     reflects:
       - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetTacticalT4Base
@@ -83,4 +86,3 @@
     sprite: _Stalker/Objects/Clothing/hats/normal_merc_helm.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/normal_merc_helm.rsi
-

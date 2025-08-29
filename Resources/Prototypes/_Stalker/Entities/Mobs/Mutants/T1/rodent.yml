@@ -1,0 +1,79 @@
+- type: entity
+  name: rodent
+  id: MobMutantRodent
+  suffix: ST, T0
+  parent: BaseMobMutant
+  description: A small rodent that is ready to gnaw right through your flesh.
+  components:
+  - type: Damageable
+    damageModifierSet: STMutantT1DamageModifierSet
+  - type: CombatMode
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 3.5
+    baseSprintSpeed : 4
+  - type: InputMover
+  - type: MobMover
+  - type: NpcFactionMember
+    factions:
+    - Mutated
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: /Textures/_Stalker/Mobs/Mutants/tushkan.rsi
+    layers:
+      - map: ["enum.DamageStateVisualLayers.Base"]
+        state: tushkan
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 1000
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      25: Dead
+  - type: StaminaDamageOnHit
+    damage: 0.1
+  - type: Stamina
+    critThreshold: 60
+  - type: MeleeWeapon
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+    angle: 0
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+        Blunt: 2
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: tushkan
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 1
+  - type: Vocal
+    sounds:
+      Male: Mouse
+      Female: Mouse
+      Unsexed: Mouse
+    wilhelmProbability: 0.001
+  - type: NoSlip
+  - type: MobsterAccent
+    isBoss: false
+  - type: Speech
+    speechVerb: SmallMob
+  - type: Inventory # for polimorph

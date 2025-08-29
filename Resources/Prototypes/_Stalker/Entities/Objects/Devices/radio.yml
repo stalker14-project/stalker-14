@@ -10,10 +10,12 @@
     unobstructedRequired: false
     listenRange: 1
     toggleOnInteract: false
+    broadcastChannel: StalkerInternal # Use our hidden channel
   - type: RadioSpeaker
     toggleOnInteract: false
+    channels: [StalkerInternal] # Listen only to our hidden channel
   - type: RadioStalker
-    requiresPower: false # Power off to use it in hand without power, maybe ill add some battery... hmm...
+    requiresPower: false
   - type: Speech
     speechVerb: Robotic
   - type: ExtensionCableReceiver

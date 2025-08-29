@@ -1,0 +1,348 @@
+- type: entity
+  parent:
+  - MobAnomalyTarget
+  - MobWeight
+  - MobStaminaDamageable
+  - MobLay
+  id: BaseMobMutant
+  save: false
+  abstract: true
+  suffix: Stalker, Mutant
+  components:
+  - type: ZoneAnomalyActivator
+  - type: LagCompensation
+  - type: Tag
+    tags:
+      - CannotSuicide
+      - STMaterialOrganic # Stalker
+      - FootstepSound
+  - type: NoSlip
+  - type: Reactive
+    groups:
+      Flammable: [Touch]
+      Extinguish: [Touch]
+      Acidic: [Touch, Ingestion]
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: STSimpleHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        15
+  - type: NpcFactionMember
+    factions:
+      - Mutated
+  - type: Input
+    context: "human"
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2
+    baseSprintSpeed : 3
+  - type: HealthExaminable
+    examinableTypes:
+      - Blunt
+      - Slash
+      - Piercing
+      - Heat
+      - Shock
+  - type: MovedByPressure
+  - type: DamageOnHighSpeedImpact
+    damage:
+      types:
+        Blunt: 15
+    soundHit:
+      path: /Audio/Effects/hit_kick.ogg
+  - type: Sprite
+    noRot: true
+    netsync: false
+    drawdepth: Mobs
+    layers:
+      - map: ["enum.DamageStateVisualLayers.Base"]
+        state: pig
+        sprite: Mobs/Animals/pig.rsi
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Physics
+    bodyType: KinematicController # Same for all inheritors
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 250
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: SolutionContainerManager
+  - type: Bloodstream
+    bloodMaxVolume: 100
+    bloodlossDamage:
+      types:
+        Bloodloss:
+          1
+    bloodlossHealDamage:
+      types:
+        Bloodloss:
+          -1
+  - type: Damageable
+    damageContainer: Mutant
+    damageModifierSet: STMutantT1DamageModifierSet
+  - type: AtmosExposed
+  - type: Flammable
+    fireSpread: true
+    canResistFire: true
+    damage:
+      types:
+        Heat: 1 #per second, scales with number of fire 'stacks'
+  - type: Temperature
+    heatDamageThreshold: 360
+    coldDamageThreshold: 260
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold : 0.1 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat : 0.1 #per second, scales with temperature & other constants
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      50: Critical
+      100: Dead
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: critical
+      Dead:
+        Base: dead
+  - type: CombatMode
+  - type: Internals
+  - type: StatusEffects
+    allowed:
+      - SlowedDown
+      - Stutter
+      - Electrocution
+      - ForcedSleep
+      - TemporaryBlindness
+  - type: InjectableSolution
+    solution: chemicals
+  - type: Examiner
+  - type: MeleeWeapon
+    altDisarm: false
+    hidden: true
+    angle: 0
+    animation: WeaponArcBite
+    damage:
+      groups:
+        Brute: 5
+  - type: Appearance
+  - type: RotationVisuals
+    defaultRotation: 0
+    horizontalRotation: 0
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Generic_mob_burning
+  - type: Actions
+  - type: DoAfter
+  - type: Climbing
+  - type: Polymorphable
+  - type: Buckle
+  - type: StandingState
+  - type: Alerts
+  - type: NameIdentifier
+    group: GenericNumber
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 1
+      80: 1
+  - type: MobPrice
+    price: 100
+  - type: Perishable
+  - type: FloatingVisuals
+  - type: Puller
+    needsHands: false
+  - type: Hands
+  - type: Trash
+    time: 900
+  - type: STEvasion
+    evasion: 0
+
+# временно так, до перевода всех мобов на новые HTN
+
+- type: entity
+  parent:
+    - MobAnomalyTarget
+    - MobWeight
+    - MobStaminaDamageable
+    - MobLay
+  id: STBaseMobMutant
+  save: false
+  abstract: true
+  suffix: ST
+  components:
+    - type: ZoneAnomalyActivator
+    - type: LagCompensation
+    - type: Tag
+      tags:
+        - CannotSuicide
+        - DoorBumpOpener
+        - FootstepSound
+    - type: NoSlip
+    - type: Reactive
+      groups:
+        Flammable: [Touch]
+        Extinguish: [Touch]
+        Acidic: [Touch, Ingestion]
+    - type: InputMover
+    - type: MobMover
+    - type: NpcFactionMember
+      factions:
+        - Mutated
+    - type: Input
+      context: "human"
+    - type: MovementSpeedModifier
+      baseWalkSpeed : 2
+      baseSprintSpeed : 3
+    - type: HealthExaminable
+      examinableTypes:
+        - Blunt
+        - Slash
+        - Piercing
+        - Heat
+        - Shock
+    - type: MovedByPressure
+    - type: DamageOnHighSpeedImpact
+      damage:
+        types:
+          Blunt: 15
+      soundHit:
+        path: /Audio/Effects/hit_kick.ogg
+    - type: Sprite
+      noRot: true
+      netsync: false
+      drawdepth: Mobs
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: pig
+          sprite: Mobs/Animals/pig.rsi
+    - type: Clickable
+    - type: InteractionOutline
+    - type: Physics
+      bodyType: KinematicController # Same for all inheritors
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.35
+          density: 250
+          mask:
+          - MobMask
+          layer:
+          - MobLayer
+    - type: SolutionContainerManager
+    - type: Bloodstream
+      bloodMaxVolume: 100
+      bloodlossDamage:
+        types:
+          Bloodloss:
+            1
+      bloodlossHealDamage:
+        types:
+          Bloodloss:
+            -1
+    - type: Damageable
+      damageContainer: Mutant
+      damageModifierSet: STMutantT1DamageModifierSet
+    - type: AtmosExposed
+    - type: Flammable
+      fireSpread: true
+      canResistFire: true
+      damage:
+        types:
+          Heat: 1 #per second, scales with number of fire 'stacks'
+    - type: Temperature
+      heatDamageThreshold: 360
+      coldDamageThreshold: 260
+      currentTemperature: 310.15
+      specificHeat: 42
+      coldDamage:
+        types:
+          Cold : 0.1 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat : 0.1 #per second, scales with temperature & other constants
+    - type: MobState
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        50: Critical
+        100: Dead
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Critical:
+          Base: critical
+        Dead:
+          Base: dead
+    - type: CombatMode
+    - type: Internals
+    - type: StatusEffects
+      allowed:
+        - SlowedDown
+        - Stutter
+        - Electrocution
+        - ForcedSleep
+        - TemporaryBlindness
+    - type: InjectableSolution
+      solution: chemicals
+    - type: Examiner
+    - type: MeleeWeapon
+      altDisarm: false
+      hidden: true
+      angle: 0
+      animation: WeaponArcBite
+      damage:
+        groups:
+          Brute: 5
+    - type: Appearance
+    - type: RotationVisuals
+      defaultRotation: 0
+      horizontalRotation: 0
+    - type: FireVisuals
+      sprite: Mobs/Effects/onfire.rsi
+      normalState: Generic_mob_burning
+    - type: Actions
+    - type: DoAfter
+    - type: Climbing
+    - type: Polymorphable
+    - type: Pullable
+    - type: Buckle
+    - type: StandingState
+    - type: Alerts
+    - type: NameIdentifier
+      group: GenericNumber
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        60: 1
+        80: 1
+    - type: MobPrice
+      price: 100
+    - type: Perishable
+    - type: FloatingVisuals
+    - type: Puller
+      needsHands: false
+    - type: Hands
+    - type: Trash
+      time: 900
+    - type: STEvasion
+      evasion: 0.01

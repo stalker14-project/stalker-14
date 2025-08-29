@@ -1,0 +1,53 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSMG
+  id: STBaseWeaponSMGPPSh41
+  components:
+  - type: STWeight
+    self: 3.2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/ppsh41.rsi
+    shape:
+    - 0,0,6,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/ppsh41.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/ppsh41.rsi
+  - type: Gun
+    minAngle: 65
+    maxAngle: 110
+    angleIncrease: 0.5
+    angleDecay: 5
+    fireRate: 14
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/PPSh.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BasePPSHMag
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePPSh
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleSMGSilencer
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge725
+
+- type: entity
+  parent: STBaseWeaponSMGPPSh41
+  id: STWeaponSMGPPSh41
+  name: PPSh-41 Submachine Gun
+  description: The iconic Soviet PPSh-41 submachine gun chambered in 7.62x25mm Tokarev. Known for its legendary reliability and high rate of fire, it remains surprisingly effective in Zone conditions despite its age.

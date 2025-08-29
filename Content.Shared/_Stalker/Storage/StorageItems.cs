@@ -232,13 +232,14 @@ public sealed class AmmoContainerStalker : IItemStalkerStorage
     public string? AmmoPrototypeName { get; set; }
     public int AmmoCount { get; set; }
     public uint CountVendingMachine { get; set; }
-
-    public AmmoContainerStalker(string prototypeName, string? ammoPrototypeName, int ammoCount = 1, uint countVendingMachine = 1)
+    public List<EntProtoId> EntProtoIds { get; set; }
+    public AmmoContainerStalker(string prototypeName, string? ammoPrototypeName, List<EntProtoId> entProtoIds, int ammoCount = 1, uint countVendingMachine = 1)
     {
         PrototypeName = prototypeName;
         AmmoPrototypeName = ammoPrototypeName;
         AmmoCount = ammoCount;
         CountVendingMachine = countVendingMachine;
+        EntProtoIds = entProtoIds;
     }
 
     public string Identifier()

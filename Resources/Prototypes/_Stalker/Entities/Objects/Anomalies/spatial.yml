@@ -1,6 +1,6 @@
 - type: entity
   parent: ZoneAnomalyBase
-  id: ZoneAnomalyBaseSpatial 
+  id: ZoneAnomalyBaseSpatial
   abstract: true
 
 - type: entity
@@ -8,91 +8,53 @@
   id: ZoneAnomalyBarabashka
   suffix: Stalker, Barabashka, Anomaly
   components:
-    - type: ZoneAnomalyTriggerStartCollide
-    - type: ZoneAnomalyEffectDestroy
-      whitelist:
-        tags:
-          - STBolt
-    - type: ZoneAnomalyEffectRemoveItem
-      count: 1
-    - type: ZoneAnomaly
-      detectedLevel: 4
-      preparingDelay: 0
-      activationDelay: 1
-      chargingDelay: 4
-    - type: Sprite
-      sprite: _Stalker/Objects/Anomalies/barabashka.rsi
-      layers:
-        - state: idle
-          map: ["base"]
-    - type: GenericVisualizer
-      visuals:
-        enum.ZoneAnomalyVisuals.Layer:
-          base:
-            Activated: { state: active }
-            Idle: { state: idle }
+  - type: ZoneAnomalyTriggerStartCollide
+  - type: ZoneAnomalyEffectDestroy
+    whitelist:
+      tags:
+        - STBolt
+  - type: ZoneAnomalyEffectRemoveItem
+    count: 1
+  - type: ZoneAnomaly
+    detectedLevel: 4
+    preparingDelay: 0
+    activationDelay: 1
+    chargingDelay: 4
+  - type: Sprite
+    sprite: _Stalker/Objects/Anomalies/barabashka.rsi
+    layers:
+      - state: idle
+        map: ["base"]
+  - type: GenericVisualizer
+    visuals:
+      enum.ZoneAnomalyVisuals.Layer:
+        base:
+          Activated: { state: active }
+          Idle: { state: idle }
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: unknown
 
 - type: entity
   parent: ZoneAnomalyBaseSpatial
   id: ZoneAnomalyPolymorph
   suffix: Stalker, Polymorph, Anomaly
   components:
-    - type: ZoneAnomalyTriggerStartCollide
-    - type: ZoneAnomalyEffectDestroy
-      whitelist:
-        tags:
-          - STBolt
-    - type: ZoneAnomalyEffectPolymorph
-      polymorph:
-        - AnomalyVulpkanin
-        - AnomalyMutantBoar
-    - type: ZoneAnomalyEffectSpawn
-      offset: 0
-      entry:
-      - id: EffectEmpPulse
-    - type: ZoneAnomaly
-      detectedLevel: 4
-      preparingDelay: 0
-      activationDelay: 0
-      chargingDelay: 5
-
-# Откат до оптимизации.
-#- type: entity
-  #parent: ZoneAnomalyBaseSpatial
-  #id: ZoneAnomalyBubble
-  #suffix: Stalker, Bubble, Anomaly
-  #components:
-    #- type: ZoneAnomalyTriggerStartCollide
-    #- type: ZoneAnomalyEffectMapTeleporter
-      #mapPath: /Maps/_StalkerMaps/Anomaly/bubble_small.yml
-    #- type: ZoneAnomaly
-      #detectedLevel: 1
-      #preparingDelay: 1.5
-      #activationDelay: 5
-      #chargingDelay: 20
-    #- type: Sprite
-      #sprite: _Stalker/Objects/Anomalies/bubble.rsi
-      #layers:
-        #- state: idle
-          #map: ["base"]
-    #- type: GenericVisualizer
-      #visuals:
-        #enum.ZoneAnomalyVisuals.Layer:
-          #base:
-            #Activated: { state: active }
-            #Charging: { state: idle }
-            #Idle: { state: idle }
-    #- type: Fixtures
-      #fixtures:
-        #fix1:
-          #shape:
-            #!type:PhysShapeCircle
-            #radius: 1.5
-          #density: 50
-          #hard: false
-          #mask:
-            #- MobMask
-            #- FlyingMobMask
-          #layer:
-            #- MobLayer
-            #- LowImpassable
+  - type: ZoneAnomalyTriggerStartCollide
+  - type: ZoneAnomalyEffectDestroy
+    whitelist:
+      tags:
+        - STBolt
+  - type: ZoneAnomalyEffectPolymorph
+    polymorph:
+    - AnomalyMutantBoar
+  - type: ZoneAnomaly
+    detectedLevel: 4
+    preparingDelay: 0
+    activationDelay: 0
+    chargingDelay: 5
+  - type: STAnomalyTips
+    icon:
+      sprite: /Textures/_Stalker/Interface/Overlays/anomaly_tips.rsi
+      state: unknown

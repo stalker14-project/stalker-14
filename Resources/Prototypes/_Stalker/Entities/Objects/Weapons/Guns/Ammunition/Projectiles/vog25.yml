@@ -1,0 +1,68 @@
+- type: entity
+  id: BulletGrenadeVOG25
+  name: ВОГ-25
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 100
+    intensitySlope: 5
+    maxIntensity: 240
+
+- type: entity
+  id: BulletGrenadeVOG25P
+  name: ВОГ-25П
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 150
+    intensitySlope: 5
+    maxIntensity: 10
+
+- type: entity
+  id: BulletGrenadeVOG25Gvozd
+  name: ВОГ-25 гвоздь
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: SmokeOnTrigger
+    duration: 20
+    spreadAmount: 15
+    solution:
+      reagents:
+      - ReagentId: TearGas
+        Quantity: 100
+
+
+- type: entity
+  id: BulletGrenadeVDG40
+  name: ВДГ-40
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
+    layers:
+      - state: grenade
+  - type: SmokeOnTrigger
+    duration: 23
+    spreadAmount: 15
+
+

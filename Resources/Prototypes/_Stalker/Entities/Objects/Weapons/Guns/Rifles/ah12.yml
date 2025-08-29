@@ -1,0 +1,69 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponRifle
+  id: STBaseWeaponRifleAH12
+  components:
+  - type: STWeight
+    self: 2.2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
+    shape:
+    - 0,0,5,2
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
+    scale: 0.7, 0.7
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/ah12.rsi
+    equipDelay: 1
+  - type: Gun
+    minAngle: 51
+    maxAngle: 75
+    angleIncrease: 2
+    shotsPerBurst: 3
+    ShotsPerBurstModified: 3
+    selectedMode: FullAuto
+    availableModes:
+    - Burst
+    - SemiAuto
+    - FullAuto
+    angleDecay: 5
+    fireRate: 7.5
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/l85.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: AS12Mag
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - MagazineAS12
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        startingItem: STModuleScopeRiflesT1Ru
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        startingItem: STCartridge1255BP
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge1255
+
+- type: entity
+  parent: STBaseWeaponRifleAH12
+  id: STWeaponRifleAH12
+  name: ASH-12 "Mutant Hunter"
+  description: Russian heavy assault rifle chambered in 12.7x55mm. Used in the Zone against heavily armored mutants and protected targets. Distinctive 'pop' sound can be heard hundreds of meters away.

@@ -1,0 +1,18 @@
+- type: entity
+  abstract: true
+  parent: STBaseEntity
+  id: STBaseFloorMounted
+  components:
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Rotatable
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb {}
+  - type: Sprite
+    drawdepth: FloorObjects

@@ -16,72 +16,6 @@
 
 - type: entity
   parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava1
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava1.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava1.rsi
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-   # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava2
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava2.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava2.rsi
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-    # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava3
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava3.rsi
-  - type: IngestionBlocker
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-    # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
-  id: ClothingMaskNeckBalaklava4
-  name: балаклава
-  description: Представляет собой маску с отверстиями для глаз и носа.
-  components:
-  - type: Sprite
-    sprite: _Stalker/Objects/Clothing/mask/balaklava4.rsi
-  - type: Clothing
-    sprite: _Stalker/Objects/Clothing/mask/balaklava4.rsi
-  - type: IngestionBlocker
-  - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - HidesHair
-    # - HidesBeard
-
-- type: entity
-  parent: ClothingMaskBase
   id: ClothingMaskNeckBlackFace
   name: маска
   description: Представляет собой маску с отверстиями для глаз и носа.
@@ -95,6 +29,9 @@
   - type: Tag
     tags:
     - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair
     # - HidesBeard
 
 - type: entity
@@ -112,6 +49,9 @@
   - type: Tag
     tags:
     - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair
     # - HidesBeard
 
 - type: entity
@@ -176,7 +116,6 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/mask/mask_skull.rsi
   - type: BreathMask
-  - type: IngestionBlocker
   - type: IdentityBlocker
   - type: Tag
     tags:
@@ -186,8 +125,8 @@
 - type: entity
   parent: ClothingMaskBase
   id: ClothingMaskRenegate
-  name: укреплённая сварочная маска
-  description: Сварочная маска, с добавленными к ней листами стали для защиты от пуль и ударов. Дело рук шизофреника.
+  name: сварочная маска 'Буйвол'
+  description: Сварочная маска, превращенная в оружие. Металл, рога, оранжевые полосы - все кричит об агрессии. Смотреть в лицо такому противнику - уже наполовину проиграть.
   components:
   - type: STWeight
     self: 3
@@ -198,13 +137,15 @@
   - type: Tag
     tags:
       - HidesNose
+      - BlockMask
   - type: Armor
     armorClass: 3
     modifiers:
-      flatReductions:
-        Piercing: 3
       coefficients:
-        Piercing: 0.95
+        Piercing: 0.80
+        Blunt: 0.80
+        Slash: 0.80
+          
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -238,3 +179,27 @@
   - type: Tag
     tags:
     - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingMaskBase
+  id: STClothingMaskLimaKufei
+  name: куфей Серафимов
+  suffix: ST, Скин
+  description: Легкая ткань серого цвета, предназначенная для ношения на голове и для закрытия лица в которой легко дышать и активно двигаться.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/kufei_limasera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/kufei_limasera.rsi
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
+  - type: HideLayerClothing
+    slots:
+    - Hair
+

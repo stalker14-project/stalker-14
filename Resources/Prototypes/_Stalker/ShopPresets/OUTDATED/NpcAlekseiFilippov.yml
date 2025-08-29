@@ -1,0 +1,163 @@
+- type: shopPreset
+  id: NpcAlekseiFilipp
+  itemsForSale: # Barmen
+    # Thermal group - 1
+    ZoneArtifactFireball: 338
+    ZoneArtifactEye: 562
+    ZoneArtifactFlame: 1125
+    # Thermal group - 2
+    ZoneArtifactCristall: 1406
+    ZoneArtifactLithosphere: 2250
+    # Electrical group - 1
+    ZoneArtifactSparkler: 338
+    ZoneArtifactBattery: 675
+    ZoneArtifactFlash: 1350
+    ArtMoon: 1687
+    ZoneArtifactTesla: 2531
+    ZoneArtifactIce: 2812
+    # Gravity group - 1
+    ArtMedusa: 281
+    ZoneArtifactFlower: 562
+    ZoneArtifactNightStar: 1406
+    # Gravity group - 2
+    ZoneArtifactVyvert: 338
+    ZoneArtifactAmoeba: 562
+    ZoneArtifactGravi: 1687
+    ZoneArtifactGoldfish: 2250
+    ZoneArtifactSpring: 2812
+    ZoneArtifactFocus: 1125
+    ZoneArtifactStuntman: 2250
+    ZoneArtifactDistorter: 3375
+    ZoneArtifactSoul: 2812
+    # Acidic group - 1
+    ZoneArtifactBlood: 450
+    ZoneArtifactMeat: 843
+    ZoneArtifactKolobok: 1125
+    # Acidic group - 2
+    ZoneArtifactPellicle: 562
+    ZoneArtifactBaloon: 1968
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 68 # T1
+    MutantPartSeasonedBoarHoof: 162 # T2
+    MutantPartOldBoarHoof: 304 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 45
+    MutantPartFleshEye: 100
+    FoodMeatSpiderLeg: 25
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 450
+    MutantPartPseudodogTail: 225
+    MutantPartSnorkFoot: 225
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 450
+    MutantPartOraculeEye: 1200
+    MutantPartPseudogiantHeart: 3000
+    MutantPartZombieHand: 225
+
+  categories:
+    - name: Оружие # 1.5
+      priority: 1
+      items:
+        STWeaponShotgunTOZ34: 300
+        WeaponPistolStalkerPM: 338
+        WeaponPistolStalkerTT: 375
+        STWeaponRevolverTaurusJudge: 675
+        STWeaponRevolverTaurusTracker455: 825
+        STWeaponRevolverSWPC325TR: 1087
+        STWeaponShotgunMP133: 825
+        STWeaponShotgunMossbergM88: 900
+        STWeaponShotgunMP153: 1650
+        STWeaponRifleSaiga545: 1650
+        STWeaponRifleFAL: 5475
+        STWeaponSniperMosin: 3675
+    - name: Магазины # 1.5
+      priority: 2
+      items:
+        BasePMMag: 113
+        TTMag: 113
+        STSpeedLoader45ACPEmpty: 113
+        545Mag20: 188
+        556Mag20: 188
+        751Mag20: 368
+        BaseGSH-18Mag10: 85
+        BaseMP5Mag: 125
+    - name: Боеприпасы # 1.5
+      priority: 3
+      items:
+        6mmBuckshotBox: 450
+        8mmBuckshotBox: 1875
+        7mmBuckshotBox: 60
+        # .45
+        45ACPLFMJBox: 150
+        45ACPMFMJBox: 338
+        # 7.25
+        725PBox: 150
+        725PTBox: 338
+        # 9.19
+        919PSOGJBox: 150
+        919PSTBox: 338
+        # 9.19
+        918PGJBox: 150
+        918PSTBox: 338
+        # 5.45
+        545FMJBox: 375
+        545PCBox: 750
+        # 5.56
+        556FMJBox: 450
+        # 7.54
+        754FMJBox : 975
+    - name: Броня и снаряжение # цена сидора * 2
+      priority: 4
+      items:
+        ClothingOuterJacketStalker: 78
+        STClothingOuterArmorLightPlateVestBaseStalker: 3818
+        STClothingOuterArmorRCBZ: 2700
+        ClothingOuterArmorZaryaStalker: 3894
+        ClothingOuterCoatStalker: 698
+        ClothingMaskGasM40: 266
+        ClothingMaskGP5: 244
+    - name: Рюкзаки
+      priority: 5
+      items:
+        ClothingBackpackDuffelGreenStalker: 30
+        ClothingBackpackDuffelBlackStalker: 30
+        ClothingBackpackDuffelMedicalStalker: 150
+    - name: Пояса
+      priority: 6
+      items:
+        ClothingBeltBandolierStalker: 20
+    - name: Аномалии
+      priority: 7
+      items:
+        STBoltBagFilled: 100
+        STBoltBagOliveGrayFilled: 100
+    - name: Провизия
+      priority: 8
+      items:
+        STEnergyDrink: 650
+        DrinkVodkaBottleFull: 55
+        FoodBreadPlain: 35
+        DrinkFlaskOld: 30
+        DrinkWaterBottleFull: 45
+        FoodTinMRE: 120
+        DrinkLemonadehBottleFull: 50
+        STFoodMeatSalami: 350
+    - name: Медицина # цены бара * 1.5
+      priority: 9
+      items:
+        PillDexalin: 15
+        PillDexalinPlusStalker: 45
+        radioprotectpill: 375
+        MedkitAI2: 150
+        STOintment: 45
+        STGauze: 45
+        STBrutepack: 75
+        Tourniquet: 120
+        Bloodpack: 450
+

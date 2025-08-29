@@ -1,0 +1,68 @@
+
+- type: entity
+  parent: STBaseIngridient
+  id: STCraftBattery
+  name: аккумулятор
+  desciption: Аккумулятор.
+  suffix: Stalker, крафт
+  components:
+    - type: Sprite
+      state: battery
+      sprite: _Stalker/Objects/Craft/Materials/details.rsi
+    - type: Stack
+      stackType: STCraftBattery
+      count: 1
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+      
+- type: entity
+  parent: STBaseIngridient
+  id: STCraftCoil
+  name: катушка
+  desciption: Катушка.
+  suffix: Stalker, крафт
+  components:
+    - type: Sprite
+      state: coil
+      sprite: _Stalker/Objects/Craft/Materials/details.rsi
+    - type: Stack
+      stackType: STCraftCoil
+      count: 1
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+      
+- type: entity
+  parent: STBaseIngridient
+  id: STCraftCapacitor
+  name: конденсатор
+  desciption: Конденсатор.
+  suffix: Stalker, крафт
+  components:
+    - type: Sprite
+      state: capacitor
+      sprite: _Stalker/Objects/Craft/Materials/details.rsi
+    - type: Stack
+      stackType: STCraftCapacitor
+      count: 1
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+    
+- type: entity
+  parent: STBaseIngridient
+  id: STCraftTransformer
+  name: трансформатор
+  desciption: Трансформатор.
+  suffix: Stalker, крафт
+  components:
+    - type: Sprite
+      state: transformer
+      sprite: _Stalker/Objects/Craft/Materials/details.rsi
+    - type: Stack
+      stackType: STCraftTransformer
+      count: 1
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты

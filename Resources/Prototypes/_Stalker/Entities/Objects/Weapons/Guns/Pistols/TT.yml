@@ -20,12 +20,12 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/tt.ogg
-    projectileSpeed: 20
+    projectileSpeed: 35
     minAngle: 5
     maxAngle: 40
-    fireRate: 2
-    angleIncrease: 4
-    angleDecay: 30
+    fireRate: 4
+    angleIncrease: 0.5
+    angleDecay: 5
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -48,11 +48,11 @@
             - STModuleAutoSear
       gun_chamber:
         name: Chamber
-        startingItem: Cartridge725PGL
+        startingItem: STCartridge725PGL
         priority: 1
         whitelist:
           tags:
-            - Cartridge918
+            - STCartridge918
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -62,6 +62,3 @@
     steps: 1
     zeroVisible: true
   - type: Craftable
-  - type: GunWieldBonus
-    minAngle: -5
-    maxAngle: -25

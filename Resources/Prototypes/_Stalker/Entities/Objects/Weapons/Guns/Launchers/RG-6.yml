@@ -1,0 +1,38 @@
+- type: entity
+  parent: [BaseWeaponLauncher, BaseGunWieldable]
+  id: STWeaponLauncherRG6
+  name: РГ-6
+  suffix: ST, Event
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rg6.rsi
+    layers:
+      - state: icon
+        map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rg6.rsi
+    slots:
+    - Back
+    - suitStorage
+  - type: PullDoAfter
+    pullTime: 2.0
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 1.5
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/grenade_launcher.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - Vog25grenade
+    capacity: 6
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: GunRequiresWield
+  - type: RepositoryItem
+    categoryName: Оружие
+  - type: STWeight
+    self: 5.6 

@@ -1,0 +1,42 @@
+- type: entity
+  name: РПГ-7
+  parent: BaseWeaponLauncher
+  suffix: ST
+  id: STWeaponLauncherRocket
+  description: Оружие возмездия СОПа
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rpg-7.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Launchers/rpg-7.rsi
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rpgfire.ogg
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRocket
+    proto:
+    capacity: 1
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: STWeight
+    self: 5
+  - type: PullDoAfter
+    pullTime: 2.0
+  - type: RepositoryItem
+    categoryName: Оружие
+  - type: Wieldable
+  - type: GunRequiresWield
+

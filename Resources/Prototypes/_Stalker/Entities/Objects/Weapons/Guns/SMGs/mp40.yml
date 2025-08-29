@@ -1,0 +1,60 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSMG
+  id: STBaseWeaponSMGMP40
+  components:
+  - type: STWeight
+    SelfWeight: 3.2
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp40.rsi
+    shape:
+      - 0,0,6,1
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp40.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp40.rsi
+    equipDelay: 1
+  - type: Gun
+    minAngle: 52
+    maxAngle: 70
+    angleIncrease: 3
+    angleDecay: 5
+    fireRate: 9
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/mp40.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MP40Mag
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - MagazineMP40
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleSMGSilencer
+      gun_module_underbarrel:
+        name: Underbarrel
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSMGGrip
+      gun_chamber:
+        name: Chamber
+        startingItem: STCartridge919PSOGJ
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge919
+
+- type: entity
+  parent: STBaseWeaponSMGMP40
+  id: STWeaponSMGMP40
+  name: MP-40 Submachine Gun
+  description: The iconic German MP-40 submachine gun chambered in 9x19mm Parabellum. While outdated by modern standards, its simple design and reliability make it surprisingly effective in Zone conditions.

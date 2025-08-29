@@ -4,14 +4,13 @@ using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
+using Robust.Shared.Physics;
 
 namespace Content.Client._Stalker.Anomaly;
 
 public sealed class STAnomalyTipsOverlay : Overlay
 {
     [Dependency] private readonly IEntityManager _entity = default!;
-    [Dependency] private readonly IEyeManager _eye = default!;
-    [Dependency] private readonly IPlayerManager _players = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
@@ -41,8 +40,8 @@ public sealed class STAnomalyTipsOverlay : Overlay
         var scaleMatrix = Matrix3x2.CreateScale(new Vector2(scale, scale));
         var rotationMatrix = Matrix3x2.CreateRotation(-(float)rotation.Theta);
 
-        var entities = _entity.EntityQueryEnumerator<STAnomalyTipsComponent, TransformComponent>();
-        while (entities.MoveNext(out var uid, out var tips, out var xform))
+        var entities = _entity.EntityQueryEnumerator<STAnomalyTipsComponent, TransformComponent, FixturesComponent>();
+        while (entities.MoveNext(out _, out var tips, out var xform, out var fixtures))
         {
             if (xform.MapID != eye?.Position.MapId)
                 continue;
@@ -55,8 +54,29 @@ public sealed class STAnomalyTipsOverlay : Overlay
 
             handle.SetTransform(matty);
 
+            var size = fixtures.Fixtures.TryGetValue("fix1", out var fixture)
+                ? (int) MathF.Round(MathF.Max(0, fixture.Shape.Radius - 0.5f))
+                : 0;
+
             var texture = _sprite.GetFrame(tips.Icon, TimeSpan.Zero);
-            handle.DrawTexture(texture, Vector2.Zero);
+            var color = Color.White.WithAlpha(tips.Visibility);
+
+            if (size == 0)
+            {
+                handle.DrawTexture(texture, tips.Offset, color);
+                continue;
+            }
+
+            for (var x = -size; x <= size; x++)
+            {
+                for (var y = -size; y <= size; y++)
+                {
+                    if (!args.WorldAABB.Contains(worldPosition + new Vector2(x, y) + tips.Offset))
+                        continue;
+
+                    handle.DrawTexture(texture, new Vector2(x, y) + tips.Offset, color);
+                }
+            }
         }
 
         handle.SetTransform(Matrix3x2.Identity);

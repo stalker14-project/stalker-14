@@ -1,0 +1,103 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantSpiderLapach
+  suffix: ST, T1
+  name: Паук Лапач
+  components:
+    - type: Damageable
+      damageModifierSet: STMutantT1DamageModifierSet
+    - type: NoSlip
+    - type: Spider
+    - type: IgnoreSpiderWeb
+    - type: Bloodstream
+      bloodReagent: FluorosulfuricAcid
+      bloodMaxVolume: 50
+    - type: Butcherable
+      butcherDelay: 1
+      spawned:
+        - id: FoodMeatSpiderLeg
+          amount: 1
+          prob: 0.25
+        - id: STFoodMeatSpider
+          maxAmount: 1
+          prob: 0.25
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: lapach
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Destructible
+      thresholds:
+        - trigger:
+            !type:DamageTrigger
+            damage: 50
+          behaviors:
+            - !type:PlaySoundBehavior
+              sound:
+                path: /Audio/_Stalker/Mutants/spider_death.ogg
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        50: Dead
+    - type: FootstepModifier
+      footstepSoundCollection:
+        path: /Audio/_Stalker/Mutants/spider_footsteps.ogg
+        params:
+          volume: 0
+          variation: 0.3
+    - type: MeleeWeapon
+      attackRate: 1
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 0.7
+      soundHit:
+        path: /Audio/_Stalker/Mutants/spider_bite.ogg
+        params:
+            variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker/Mutants/spider_swing.ogg
+        params:
+            variation: 0.125
+      animation: WeaponArcClaw
+      wideAnimation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 15
+          Poison: 2
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 3
+      baseSprintSpeed: 7
+    - type: Sprite
+      sprite: /Textures/_Stalker/Mobs/Mutants/spiderlapach.rsi
+      scale: 0.5, 0.5
+      drawdepth: SmallMobs
+      layers:
+        - map: ["enum.DamageStateVisualLayers.Base"]
+          state: lapach
+    - type: SlowOnDamage
+    - type: StaminaDamageOnHit
+      damage: 5
+    - type: EggLayer
+      eggLayCooldownMin: 20
+      eggLayCooldownMax: 60
+      hungerUsage: 0
+      eggLaySound: "/Audio/_Stalker/Mutants/spider_making_web.ogg"
+      eggSpawn:
+      - id: SpiderWeb
+    - type: STWeight
+      self: 10
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeCircle
+            radius: 0.2
+          density: 100
+          mask:
+          - SmallMobMask
+          layer:
+          - SmallMobLayer

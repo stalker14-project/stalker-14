@@ -1,0 +1,27 @@
+
+# Ресурсные
+- type: entity
+  parent: BoxBase
+  id: ClothingBeltCrafterStalker
+  name: сумка ремесленника
+  description: Вместительная сумка, для ремесленников, обычно берут в походы, но в зоне самый раз!
+  suffix: ST, Crafter
+  components:
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - belt
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/belt/crafter_bag.rsi
+    state: icon
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,9,9
+    whitelist:
+      components:
+        - Material
+  - type: Item
+    size: Large
+    # shape:
+    # - 0,0,3,3

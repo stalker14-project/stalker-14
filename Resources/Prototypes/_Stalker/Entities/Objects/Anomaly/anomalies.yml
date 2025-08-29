@@ -3,144 +3,237 @@
   id: STAnomalyBarrier
   suffix: ST, Anomaly, Barrier
   components:
-    - type: STAnomalyTriggerGroupsStateTransition
-    - type: STAnomalyTriggerStartCollide
-      blacklist:
-        components:
-          - Projectile
-    - type: STAnomalyTriggerStartCollideWeight
-      weightTriggerGroup:
-        0: Weightless
-        0.1: WeightSmall
-        10: WeightNormal
-    - type: STAnomalyTriggerTimeDelay
-      options:
-        ActiveSmall:
-          group: TimeDelayActive
-          delay: 3
-        ActiveNormal:
-          group: TimeDelayActive
-          delay: 10
-    - type: STAnomaly
-      state: Idle
-      states:
-        Idle:
-          - group: WeightSmall
-            state: ActiveSmall
-          - group: WeightNormal
-            state: ActiveNormal
-        ActiveNormal:
-          - group: TimeDelayActive
-            state: Idle
-        ActiveSmall:
-          - group: TimeDelayActive
-            state: Idle
-    - type: STAnomalyEffectThrow
-      options:
-        StateActiveSmall:
-          range: 0.5
-          distance: 10
-          force: 20
-          type: FromAnomaly
-        StateActiveNormal:
-          range: 0.5
-          distance: 10
-          force: 20
-          type: FromAnomaly
-    - type: STAnomalyDamageEffect
-      options:
-        StateActiveSmall:
-          range: 0.5
-          damage:
-            types:
-              Compression: 20
-        StateActiveNormal:
-          range: 0.5
-          damage:
-            types:
-              Compression: 20
-    - type: STAnomalySoundEffect
-      options:
-        StateActiveSmall:
-          sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
-        StateActiveNormal:
-          sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
+  - type: STAnomalyTriggerGroupsStateTransition
+  - type: STAnomalyTriggerStartCollide
+    blacklist:
+      components:
+      - Projectile
+  - type: STAnomalyTriggerStartCollideWeight
+    weightTriggerGroup:
+      0: Weightless
+      0.1: WeightSmall
+      10: WeightNormal
+  - type: STAnomalyTriggerTimeDelay
+    options:
+      ActiveSmall:
+        group: TimeDelayActive
+        delay: 3
+      ActiveNormal:
+        group: TimeDelayActive
+        delay: 10
+  - type: STAnomaly
+    state: Idle
+    states:
+      Idle:
+      - group: WeightSmall
+        state: ActiveSmall
+      - group: WeightNormal
+        state: ActiveNormal
+      ActiveNormal:
+      - group: TimeDelayActive
+        state: Idle
+      ActiveSmall:
+      - group: TimeDelayActive
+        state: Idle
+  - type: STAnomalyEffectThrow
+    options:
+      StateActiveSmall:
+        range: 0.5
+        distance: 10
+        force: 20
+        type: FromAnomaly
+      StateActiveNormal:
+        range: 0.5
+        distance: 10
+        force: 20
+        type: FromAnomaly
+  - type: STAnomalyEffectDamage
+    options:
+      StateActiveSmall:
+        range: 0.5
+        damage:
+          types:
+            Compression: 20
+      StateActiveNormal:
+        range: 0.5
+        damage:
+          types:
+            Compression: 20
+  - type: STAnomalyEffectSound
+    options:
+      StateActiveSmall:
+        sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
+      StateActiveNormal:
+        sound: /Audio/_Stalker/Effects/springboard_blowout.ogg
 
 - type: entity
   parent: STAnomalyBase
   id: STAnomalyHush
   suffix: ST, Anomaly, Hush
   components:
-    - type: STAnomalyTriggerGroupsStateTransition
-    - type: STAnomalyTriggerStartCollide
-      blacklist:
-        components:
-          - Projectile
-    - type: STAnomalyTriggerStartCollideWeight
-      weightTriggerGroup:
-        0: Weightless
-        0.1: WeightSmall
-        10: WeightNormal
-    - type: STAnomalyTriggerTimeDelay
-      options:
-        ActiveSmall:
-          group: TimeDelayActive
-          delay: 1
-        ActiveNormal:
-          group: TimeDelayActive
-          delay: 60
-    - type: STAnomaly
+  - type: STAnomalyTriggerGroupsStateTransition
+  - type: STAnomalyTriggerStartCollide
+    blacklist:
+      components:
+      - Projectile
+  - type: STAnomalyTriggerStartCollideWeight
+    weightTriggerGroup:
+      0: Weightless
+      0.1: WeightSmall
+      10: WeightNormal
+  - type: STAnomalyTriggerTimeDelay
+    options:
+      ActiveSmall:
+        group: TimeDelayActive
+        delay: 1
+      ActiveNormal:
+        group: TimeDelayActive
+        delay: 60
+  - type: STAnomaly
+    state: Idle
+    states:
+      Idle:
+      - group: WeightSmall
+        state: ActiveSmall
+      - group: WeightNormal
+        state: ActiveNormal
+    ActiveNormal:
+    - group: TimeDelayActive
       state: Idle
-      states:
-        Idle:
-          - group: WeightSmall
-            state: ActiveSmall
-          - group: WeightNormal
-            state: ActiveNormal
-        ActiveNormal:
-          - group: TimeDelayActive
-            state: Idle
-        ActiveSmall:
-          - group: TimeDelayActive
-            state: Idle
-    - type: STAnomalyEffectThrow
-      options:
-        StateActiveSmall:
-          range: 2
-          distance: 10
-          force: 20
-          type: ToAnomaly
-    - type: STAnomalyDamageEffect
-      options:
-        StateActiveSmall:
-          range: 1.45
-          damage:
-            types:
-              Compression: 200
-    - type: STAnomalyEnterDimensionEffect
-      options:
-        StateActiveNormal:
-          dimension: Hush
-          range: 2
-          whitelist:
-            components:
-              - MobState
-              - Item
-    - type: STAnomalySoundEffect
-      options:
-        StateActiveSmall:
-          sound: /Audio/_Stalker/Effects/hush.ogg
-        StateActiveNormal:
-          sound: /Audio/_Stalker/Effects/hush.ogg
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape:
-            !type:PhysShapeCircle
-            radius: 1.45
-          hard: false
-          mask:
-            - MobMask
-          layer:
-            - MobLayer
-            - LowImpassable
+    ActiveSmall:
+    - group: TimeDelayActive
+      state: Idle
+  - type: STAnomalyEffectThrow
+    options:
+      StateActiveSmall:
+        range: 2
+        distance: 10
+        force: 20
+        type: ToAnomaly
+  - type: STAnomalyEffectDamage
+    options:
+      StateActiveSmall:
+        range: 1.45
+        damage:
+          types:
+            Compression: 200
+  - type: STAnomalyEffectEnterDimension
+    options:
+      StateActiveNormal:
+        dimension: Hush
+        range: 2
+        whitelist:
+          components:
+          - MobState
+          - Item
+  - type: STAnomalyEffectSound
+    options:
+      StateActiveSmall:
+        sound: /Audio/_Stalker/Effects/hush.ogg
+      StateActiveNormal:
+        sound: /Audio/_Stalker/Effects/hush.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 1.45
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+
+- type: entity
+  parent: STAnomalyBase
+  id: STAnomalyBubble
+  suffix: ST, Anomaly, Bubble, Outdise
+  components:
+  - type: STAnomalyTriggerGroupsStateTransition
+  - type: STAnomalyTriggerStartCollide
+    blacklist:
+      components:
+      - Projectile
+  - type: STAnomaly
+    state: Idle
+    states:
+      Idle: []
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        maps:
+        - Kordon
+        - Boloto
+        range: 1
+        whitelist:
+          components:
+          - Dna
+  - type: STAnomalyEffectSound
+    options:
+      StartCollide:
+        sound: /Audio/_Stalker/Effects/hush.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 1
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+  - type: Sprite
+    sprite: _Stalker/Objects/Anomalies/bubble2.rsi
+    layers:
+    - state: idle
+
+- type: entity
+  id: STAnomalyBubbleExit
+  suffix: ST, Anomaly, Bubble exit outside
+  components:
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        range: 0
+        type: Exit
+  - type: Physics
+    bodyType: Static
+    fixedRotation: true
+  - type: Appearance
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.45
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+        - LowImpassable
+
+- type: entity
+  parent: STAnomalyBubble
+  id: STAnomalyBubbleLima
+  suffix: ST, Anomaly, Bubble, To RF
+  components:
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        maps: [ RedForest ]
+        range: 1
+        whitelist:
+          components:
+          - Dna
+
+- type: entity
+  parent: STAnomalyBubbleExit
+  id: STAnomalyBubbleLimaExit
+  suffix: ST, Anomaly, Bubble, RF
+  components:
+  - type: STAnomalyEffectTunnel
+    options:
+      StartCollide:
+        range: 0
+        type: Exit

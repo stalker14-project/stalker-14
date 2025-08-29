@@ -1,6 +1,8 @@
+using System.Linq;
 using Content.Shared._Stalker.Anomaly.Prototypes;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 
 namespace Content.Shared._Stalker.Anomaly.Data;
 

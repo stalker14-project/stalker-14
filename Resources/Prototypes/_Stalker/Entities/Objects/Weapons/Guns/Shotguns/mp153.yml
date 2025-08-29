@@ -1,0 +1,84 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunMP153
+  components:
+  - type: STWeight
+    self: 3.3
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
+    scale: 0.6, 0.6
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153.rsi
+  - type: BallisticAmmoProvider
+    capacity: 5
+  - type: Gun
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 10
+    angleDecay: 50
+    fireRate: 2.3
+
+- type: entity
+  parent: STBaseWeaponShotgunMP153
+  id: STWeaponShotgunMP153
+  name: MP-153
+  description: Semi-automatic shotgun - an affordable alternative to expensive imported analogs. Stalkers love it for its reliability in the Zone.
+
+- type: entity
+  parent: STBaseWeaponShotgunMP153
+  id: STWeaponShotgunMP153Celebra
+  name: MR-153 (Celebra)
+  description: A variant of MP-153 with "Celabra" camouflage. Just as reliable, but with individual style.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153Selebra.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153Selebra.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153Selebra.rsi
+
+- type: entity
+  parent: STBaseWeaponShotgunMP153
+  id: STWeaponShotgunMP153Raven
+  name: MR-153 (Raven)
+  description: Black tactical version of MP-153. Popular among lone stalkers for its intimidating appearance.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/mp153/mp-153-black.rsi
+
+- type: entity
+  parent: STBaseWeaponShotgunMP153
+  id: STWeaponShotgunBenelliM4Super90
+  name: benelli M4 Super 90
+  description: Elite Italian semi-automatic. Rare in the Zone, more often found among professional mutant hunters.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+    scale: 1, 1
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/beneli.rsi
+  - type: STWeight
+    self: 3
+
+- type: entity
+  parent: STBaseWeaponShotgunMP153
+  id: STWeaponShotgunBenelliM4Super90Seraphim
+  name: benelli M4 "Seraphim"
+  description: Ritual weapon of seraphim hunters. Decorated with amulets and marks of victories over anomalies.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi
+    scale: 1, 1
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/benelisera.rsi

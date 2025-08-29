@@ -33,6 +33,17 @@
     - type: STBlueprint
       blueprint: newrecipeClothingOuterArmor6B2
 
+# Щиток-2
+
+- type: entity
+  parent: STBaseBlueprint
+  id: STClothingOuterArmorLightPlateVestBaseStalkerBlueprint
+  name: Рецепт бронежилет "Щиток-2"
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeSTClothingOuterArmorLightPlateVestBaseStalker
+
+
 #СН-1
 - type: entity
   parent: STBaseBlueprint
@@ -50,3 +61,49 @@
   components:
     - type: STBlueprint
       blueprint: newrecipeClothingOuterArmorSpark
+
+# Кольчуга
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingOuterArmourJacketStalkerBlueprint
+  name: Рецепт кольчюжной куртки сталкера
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingOuterArmourJacketStalker
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingOuterArmourJacketBanditBlueprint
+  name: Рецепт кольчюжной куртки бандитов
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingOuterArmourJacketBandit
+
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingOuterArmourCoatBanditBlackBlueprint
+  name: Рецепт черного кольчужного кожаного плаща бандитов
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingOuterArmourCoatBanditBlack
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingOuterArmourCoatBanditBrownBlueprint
+  name: Рецепт коричного кулчужного кожаного плаща бандитов
+  components:
+    - type: STBlueprint
+      blueprint: ClothingOuterArmourCoatBanditBrown
+
+# ZN-1 
+
+- type: entity
+  parent: STBaseBlueprint
+  id: ClothingOuterArmorZN1Blueprint
+  name: Рецепт костюма ЗН-1
+  components:
+    - type: STBlueprint
+      blueprint: newrecipeClothingOuterArmorZN1
+
+  

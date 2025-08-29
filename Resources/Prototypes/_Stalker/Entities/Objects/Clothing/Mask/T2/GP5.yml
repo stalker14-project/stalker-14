@@ -1,6 +1,6 @@
 
 - type: entity
-  parent: ClothingMaskGas
+  parent: STClothingMaskGas
   id: ClothingMaskGP5
   suffix: ST, T2, Caustic
   name: противогаз ГП-5
@@ -18,6 +18,9 @@
       coefficients:
         Caustic: 0.85
         Radiation: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # скины
 - type: entity
@@ -38,3 +41,6 @@
       coefficients:
         Caustic: 0.85
         Radiation: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair

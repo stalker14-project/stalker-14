@@ -66,62 +66,6 @@
     exactSecond: false
     time: 5
 
-# Плохое (Костёр)
-
-- type: lightCraftingRecipe
-  id: MeatBoarCraftBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatBoarCooked
-    secondIngredient: STBonfire
-    keepSecond: true
-    exactSecond: false
-    time: 3
-
-- type: lightCraftingRecipe
-  id: MeatDogCraftBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatDogCooked
-    secondIngredient: STBonfire
-    keepSecond: true
-    exactSecond: false
-    time: 3
-
-- type: lightCraftingRecipe
-  id: MeatSteakCraftBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatCooked
-    secondIngredient: STBonfire
-    keepSecond: true
-    exactSecond: false
-    time: 4
-
-- type: lightCraftingRecipe
-  id: MeatCutletCraftBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatCutletCooked
-    secondIngredient: STBonfire
-    keepSecond: true
-    exactSecond: false
-    time: 2
-
-- type: lightCraftingRecipe
-  id: PotatoCraftBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodPotatoCooked
-    secondIngredient: STBonfire
-    keepSecond: true
-    exactSecond: false
-    time: 3
 
 # Газовая плита
 
@@ -169,77 +113,22 @@
     exactSecond: false
     time: 5
 
-# ПЛОХОЕ (Газовая плита)
 
-- type: lightCraftingRecipe
-  id: MeatBoarCraftGasBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatBoarCooked
-    secondIngredient: GasStoveS1
-    keepSecond: true
-    exactSecond: false
-    time: 3
-
-- type: lightCraftingRecipe
-  id: MeatDogCraftGasBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatDogCooked
-    secondIngredient: GasStoveS1
-    keepSecond: true
-    exactSecond: false
-    time: 3
-
-- type: lightCraftingRecipe
-  id: MeatCutletCraftGasBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatCutletCooked
-    secondIngredient: GasStoveS1
-    keepSecond: true
-    exactSecond: false
-    time: 2
-
-- type: lightCraftingRecipe
-  id: MeatSteakCraftGasBad
-  results:
-    - Ash
-  steps:
-    firstIngredient: FoodMeatCooked
-    secondIngredient: GasStoveS1
-    keepSecond: true
-    exactSecond: false
-    time: 3
 
 # ПРОЧЕЕ
 
-# Починить баг с хлебом!!!
 
 # Бутерброд
-
 - type: lightCraftingRecipe
-  id: sandwichTO
+  id: STFoodMeatButerbrodСraft
   results:
-    - FoodMeatButerbrod
+    - STFoodMeatButerbrod
   steps:
-    firstIngredient: FoodMeatSalamiSlice
-    secondIngredient: FoodBreadPlainSlice
+    firstIngredient: STFoodMeatSalamiSlice
+    secondIngredient: STFoodBreadPlainSlice
     exactSecond: false
-    time: 1
+    time: 2
 
-- type: lightCraftingRecipe
-  id: sandwichTT
-  results:
-    - FoodMeatButerbrod
-  steps:
-    firstIngredient: FoodBreadPlainSlice
-    secondIngredient: FoodMeatSalamiSlice
-    exactSecond: false
-    time: 1
 
 # Чистка картофеля
 

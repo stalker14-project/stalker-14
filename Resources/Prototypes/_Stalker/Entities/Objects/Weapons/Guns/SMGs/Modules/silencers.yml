@@ -1,0 +1,48 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponModule
+  id: STBaseModuleSilencerSMG
+  name: silencer
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/Modules/smg_silencers.rsi
+    scale: 0.5, 0.5
+  - type: Icon
+    sprite: _Stalker/Objects/Weapons/Guns/SMGs/Modules/smg_silencers.rsi
+    scale: 0.5, 0.5
+
+- type: entity
+  parent: STBaseModuleSilencerSMG
+  id: STModuleSilencerSMGT1
+  name: makeshift SMG silencer RU
+  suffix: ST, silencer, T1
+  components:
+  - type: Tag
+    tags:
+    - STWeaponModuleSMGSilencer
+  - type: STWeaponModule
+    effect:
+      soundGunshotVolumeAddition: -8
+      farshotSoundDecrease: 0.4
+  - type: Sprite
+    state: smg_silencer_T1
+  - type: Icon
+    state: smg_silencer_T1
+
+- type: entity
+  parent: STBaseModuleSilencerSMG
+  id: STModuleSilencerSMGT2
+  name: legal SMG silencer
+  suffix: ST, silencer, T2
+  components:
+  - type: Tag
+    tags:
+    - STWeaponModuleSMGSilencer
+  - type: STWeaponModule
+    effect:
+      soundGunshotVolumeAddition: -13
+      farshotSoundDecrease: 0.2
+  - type: Sprite
+    state: smg_silencer_T2
+  - type: Icon
+    state: smg_silencer_T2

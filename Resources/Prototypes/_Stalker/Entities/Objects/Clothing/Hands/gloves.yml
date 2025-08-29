@@ -6,12 +6,15 @@
   suffix: Stalker
   components:
   - type: Sprite
-    sprite: _Stalker/Clothing/Hands/Gloves/mitts.rsi
+    sprite: _Stalker/Objects/Clothing/Hands/Gloves/mitts.rsi
   - type: Clothing
-    sprite: _Stalker/Clothing/Hands/Gloves/mitts.rsi
+    sprite: _Stalker/Objects/Clothing/Hands/Gloves/mitts.rsi
+  - type: Tag
+    tags:
+    - BlockGloves
 
 - type: entity
-  parent: ClothingHandsBase
+  parent: ClothingHandsBaseST
   id: ClothingHandsGlovesJabs
   name: перчатки жаб
   suffix: Stalker
@@ -23,7 +26,7 @@
     sprite: _Stalker/Objects/Clothing/gloves/hands_jaba.rsi
 
 - type: entity
-  parent: ClothingHandsBase
+  parent: ClothingHandsBaseST
   id: STClothingHandsGlovesSera
   name: обмотки серафимов
   suffix: ST, Скин
@@ -44,3 +47,18 @@
     sprite: Clothing/Hands/Gloves/combat.rsi
   - type: Clothing
     sprite: Clothing/Hands/Gloves/combat.rsi
+  - type: Tag
+    tags:
+    - BlockGloves
+
+- type: entity
+  parent: ClothingHandsBaseST
+  id: STClothingHandsGlovesFoma
+  name: тактические перчатки
+  suffix: ST, Скин
+  description: Тактические перчатки – износостойкие, с усиленными ладонями, защитой костяшек и тактильной чувствительностью для оружия и работы.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/gloves/foma.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/gloves/foma.rsi

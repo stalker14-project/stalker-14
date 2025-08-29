@@ -5,12 +5,13 @@ using Content.Server.PDA;
 using Content.Server.PDA.Ringer;
 using Content.Shared._Stalker.PdaMessenger;
 using Content.Shared.CartridgeLoader;
-using Content.Shared.CCVar;
+using Content.Shared._Stalker.CCCCVars;
 using Content.Shared.Database;
 using Content.Shared.PDA;
 using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
+using Content.Server.Mind;
 
 namespace Content.Server._Stalker.PdaMessenger;
 
@@ -21,6 +22,7 @@ public sealed class PdaMessengerSystem : EntitySystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly PdaSystem _pda = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly RingerSystem _ringer = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
@@ -32,7 +34,7 @@ public sealed class PdaMessengerSystem : EntitySystem
         SubscribeLocalEvent<PdaMessengerComponent, CartridgeMessageEvent>(OnUiMessage);
         SubscribeLocalEvent<PdaMessengerComponent, CartridgeUiReadyEvent>(OnUiReady);
 
-        _configurationManager.OnValueChanged(CCVars.DiscordPdaMessageWebhook, value =>
+        _configurationManager.OnValueChanged(CCCCVars.DiscordPdaMessageWebhook, value =>
         {
             if (!string.IsNullOrWhiteSpace(value))
             {
@@ -63,6 +65,11 @@ public sealed class PdaMessengerSystem : EntitySystem
 
         if (!TryComp<PdaComponent>(GetEntity(args.LoaderUid), out var senderPda))
             return;
+
+        if (!_mind.TryGetMind(args.Actor, out _, out var mindComp))
+            return;
+
+        senderPda.OwnerName = mindComp.CharacterName;
 
         if (args is MessengerUiSetLoginEvent messageOwner)
         {

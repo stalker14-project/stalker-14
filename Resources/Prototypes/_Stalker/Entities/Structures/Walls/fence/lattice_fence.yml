@@ -1,0 +1,74 @@
+- type: entity
+  parent: STBaseStructure
+  id: STlatticefenceBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Stalker/Structures/Walls/lattice_fence.rsi
+    drawdepth: WallTops
+  - type: Physics
+    bodyType: Static
+  - type: Transform
+    anchored: true
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: FlimsyMetallic
+  - type: NodeContainer
+    nodes:
+      high:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+      medium:
+        !type:CableDeviceNode
+        nodeGroupID: MVPower
+      low:
+        !type:CableDeviceNode
+        nodeGroupID: Apc
+  - type: Appearance
+  - type: AnimationPlayer
+
+- type: entity
+  parent: STlatticefenceBase
+  id: STlatticefenceStraight
+  suffix: ST, Mapping, straight
+  components:
+  - type: Icon
+    sprite: _Stalker/Structures/Walls/lattice_fence.rsi
+    state: icon_straight
+  - type: Sprite
+    layers:
+    - state: straight
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.5,0.10,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+
+- type: entity
+  parent: STlatticefenceBase
+  id: STlatticefenceStraightRusty
+  suffix: ST, Mapping, straight, rusty
+  components:
+  - type: Icon
+    sprite: _Stalker/Structures/Walls/lattice_fence.rsi
+    state: icon_straight_rust
+  - type: Sprite
+    layers:
+    - state: straight_rust
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.10,-0.5,0.10,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer

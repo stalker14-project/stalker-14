@@ -1,8 +1,8 @@
 - type: job
   id: StalkerBandit
-  name: Бандит
+  name: job-bandit
   icon: band
-  description: Рейдеры и мародеры Зоны, начиная от мелких головорезов и гангстеров и заканчивая организованными преступными синдикатами.
+  description: job-bandit-desc
   playTimeTracker: JobBandit
   whitelisted: true
   requirements:
@@ -14,7 +14,8 @@
       - Human
       - Dwarf
   startingGear: BandGear
-  supervisors: Вы никому не подчиняетесь...
+  supervisors: job-bandit-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -25,19 +26,26 @@
         - type: Bands
           band: Stalker
           bandIcon: band
+          bandProto: STBanditsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - BandsUnion
+          - Bandit
 
 - type: job
   id: StalkerHeadBandit
-  name: Пахан
+  name: job-head-bandit
   icon: band
-  description: Рейдеры и мародеры Зоны, начиная от мелких головорезов и гангстеров и заканчивая организованными преступными синдикатами.
+  description: job-head-bandit-desc
   playTimeTracker: JobHeadBandit
+  whitelisted: true
   requirements:
     # - !type:RoleTimeRequirement
     #   role: JobHeadBandit
@@ -46,8 +54,9 @@
       species:
       - Human
       - Dwarf
-  startingGear: BandGear
-  supervisors: Вы никому не подчиняетесь...
+  startingGear: BandHeadGear
+  supervisors: job-bandit-supervisor
+  canBeAntag: false
   special:
     - !type:AddComponentSpecial
       components:
@@ -58,19 +67,49 @@
         - type: Bands
           band: Stalker
           bandIcon: band
+          bandProto: STBanditsBand
+          bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
           teethProto: ToothStalker
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - BandsUnion
+          - Bandit
 
 - type: startingGear
   id: BandGear
   equipment:
     id: BandPDA
-    neck: ClothingBandageStalkerPetuh
-    belt: ClothingBeltStorageWaistbag
-    shoes: ClothingShoesBootsCombatFilled
+    belt: ClothingBeltBandolierStalker
+    shoes: ClothingShoesBootsCombat
     legs: ClothingLegsJeansBlue
     torso: ClothingTorsoJacketAdidas
+    pocket1: RadioBandPlayer
+    outerClothing: ClothingOuterJacketBandit
+    mask: ClothingMaskGasMarlya
+    back: ClothingBackpackDuffelBlackStalker
+
+- type: startingGear
+  id: BandHeadGear
+  equipment:
+    id: BandPDA
+    shoes: ClothingShoesBootsCombat
+    legs: ClothingLegsJeansBlue
+    torso: ClothingTorsoJacketAdidas
+    pocket1: RadioBandPlayer
+    outerClothing: ClothingOuterCoatBanditBlack
+
+- type: stBand
+  id: STBanditsBand
+  name: Bandits
+  factionId: Bandit
+  maxMembers: 25
+  managingRankId: 2
+  hierarchy:
+    1: StalkerBandit
+    2: StalkerHeadBandit
+

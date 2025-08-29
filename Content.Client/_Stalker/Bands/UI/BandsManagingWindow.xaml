@@ -1,0 +1,133 @@
+<controls:FancyWindow xmlns="https://spacestation14.io"
+                 xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+                 MinSize="400 500"
+                 Title="{Loc 'bands-managing-window-title'}">
+
+    <TabContainer Name="Tabs" Margin="5 5 7 5">
+        <!-- Existing Members Tab -->
+        <BoxContainer Name="MembersTab" Orientation="Vertical" HorizontalExpand="True" Margin="10" SeparationOverride="10" Access="Public">
+            <!-- Tab title removed, will be set in code-behind -->
+
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="{Loc 'bands-managing-window-band-name-label'}" />
+                <Label Name="BandNameLabel" Text="{Loc 'bands-managing-window-band-name-placeholder'}" StyleClasses="LabelSecondaryColor" HorizontalExpand="True" Align="Right" />
+            </BoxContainer>
+
+            <BoxContainer Orientation="Horizontal">
+                <Label Text="{Loc 'bands-managing-window-band-members-label'}" />
+                <Label Name="BandMemberCountLabel" Text="0 / 0" StyleClasses="LabelSecondaryColor" HorizontalExpand="True" Align="Right" />
+            </BoxContainer>
+
+            <Control MinHeight="5" />
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202025" />
+                </PanelContainer.PanelOverride>
+                <Label Text="{Loc 'bands-managing-window-members-list-header'}" Align="Center" />
+            </PanelContainer>
+
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                </PanelContainer.PanelOverride>
+
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="MembersList" Orientation="Vertical" Margin="4" HorizontalExpand="True">
+                        <Label Name="NoMembersLabel" Text="{Loc 'bands-managing-window-no-members-text'}" StyleClasses="LabelSecondaryColor" />
+                    </BoxContainer>
+                </ScrollContainer>
+            </PanelContainer>
+
+            <Control MinHeight="5" />
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202025" />
+                </PanelContainer.PanelOverride>
+                <Label Text="{Loc 'bands-managing-window-add-member-header'}" Align="Center" />
+            </PanelContainer>
+
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <Label Text="{Loc 'bands-managing-window-player-name-label'}" MinWidth="80" />
+                <LineEdit Name="AddMemberLineEdit" PlaceHolder="{Loc 'bands-managing-window-player-name-placeholder'}" HorizontalExpand="True" MinWidth="150"/>
+                <Button Name="AddMemberButton" Text="{Loc 'bands-managing-window-add-button'}" MinWidth="80" Margin="5 0 0 0"/>
+            </BoxContainer>
+
+        </BoxContainer>
+
+        <!-- New War Zone Tab -->
+        <BoxContainer Name="WarZoneTab" Orientation="Vertical" HorizontalExpand="True" Margin="10" SeparationOverride="10" Access="Public">
+             <!-- Tab title removed, will be set in code-behind -->
+
+            <!-- War Zone List Header -->
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202025" />
+                </PanelContainer.PanelOverride>
+                <Label Text="{Loc 'bands-managing-window-warzone-list-header'}" Align="Center" />
+            </PanelContainer>
+
+            <!-- War Zone List -->
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                </PanelContainer.PanelOverride>
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="WarZoneList" Orientation="Vertical" Margin="4" HorizontalExpand="True">
+                        <Label Name="NoWarZonesLabel" Text="{Loc 'bands-managing-window-no-warzones-text'}" StyleClasses="LabelSecondaryColor" />
+                    </BoxContainer>
+                </ScrollContainer>
+            </PanelContainer>
+
+            <Control MinHeight="5" />
+
+            <!-- Band Points Header -->
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202025" />
+                </PanelContainer.PanelOverride>
+                <Label Text="{Loc 'bands-managing-window-band-points-header'}" Align="Center" />
+            </PanelContainer>
+
+            <!-- Band Points List -->
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                </PanelContainer.PanelOverride>
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="BandPointsList" Orientation="Vertical" Margin="4" HorizontalExpand="True">
+                        <Label Name="NoBandPointsLabel" Text="{Loc 'bands-managing-window-no-band-points-text'}" StyleClasses="LabelSecondaryColor" />
+                    </BoxContainer>
+                </ScrollContainer>
+            </PanelContainer>
+
+        </BoxContainer>
+
+        <!-- New Shop Tab -->
+        <BoxContainer Name="ShopTab" Orientation="Vertical" HorizontalExpand="True" Margin="10" SeparationOverride="10" Access="Public">
+            <!-- Tab title will be set in code-behind -->
+
+            <!-- Shop List Header -->
+            <PanelContainer>
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#202025" />
+                </PanelContainer.PanelOverride>
+                <Label Text="{Loc 'bands-managing-window-shop-list-header'}" Align="Center" />
+            </PanelContainer>
+
+            <!-- Shop Item List -->
+            <PanelContainer VerticalExpand="True">
+                <PanelContainer.PanelOverride>
+                    <gfx:StyleBoxFlat BackgroundColor="#1B1B1E" />
+                </PanelContainer.PanelOverride>
+                <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
+                    <BoxContainer Name="ShopItemList" Orientation="Vertical" Margin="4" HorizontalExpand="True">
+                        <Label Name="NoShopItemsLabel" Text="{Loc 'bands-managing-window-no-shop-items-text'}" StyleClasses="LabelSecondaryColor" />
+                    </BoxContainer>
+                </ScrollContainer>
+            </PanelContainer>
+
+        </BoxContainer>
+    </TabContainer>
+</controls:FancyWindow>

@@ -8,7 +8,7 @@
     - type: STWeight
       self: 1.1
     - type: Sprite
-      scale: 0.8, 0.8
+      scale: 0.6, 0.6
       sprite: _Stalker/Objects/Weapons/Guns/Pistols/aps.rsi
       layers:
         - state: base
@@ -20,12 +20,12 @@
     - type: Gun
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/pm-shoot.ogg
-      projectileSpeed: 20
+      projectileSpeed: 35
       minAngle: 10
       maxAngle: 50
-      fireRate: 5
-      angleIncrease: 5
-      angleDecay: 35
+      fireRate: 8
+      angleIncrease: 1.5
+      angleDecay: 5
       selectedMode: FullAuto
       availableModes:
         - FullAuto
@@ -52,7 +52,7 @@
           priority: 1
           whitelist:
             tags:
-              - Cartridge918
+              - STCartridge918
     - type: ContainerContainer
       containers:
         gun_magazine: !type:ContainerSlot
@@ -62,6 +62,17 @@
       steps: 1
       zeroVisible: true
     - type: Craftable
-    - type: GunWieldBonus
-      minAngle: -10
-      maxAngle: -10
+
+- type: entity
+  parent: WeaponPistolStalkerAPS
+  id: WeaponPistolStalkerAPSHugo
+  name: АПС «Хуго»
+  description: Массивный и надежный пистолет с прочной металлической рамой — верный спутник бывалого сталкера. Это оружие последнего шанса, готовое прийти на помощь, когда мирное решение конфликта становится невозможным.
+  suffix: ST, Скин
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Pistols/_Skins/apshugo.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Pistols/_Skins/apshugo.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Pistols/_Skins/apshugo.rsi
