@@ -19,19 +19,18 @@
   - type: PersonalDamage
     damage:
       types:
-        Blunt: -0.1
-        Slash: -0.1
-        Bloodloss: -0.5
+        Blunt: -0.5
+        Slash: -0.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Radiation: 1.5
-        Shock: 1.1
+        Shock: 1.2
         Cold: 0.8
-        Piercing: 1.05
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
 
 - type: entity
   parent: BaseArtifact
@@ -54,9 +53,8 @@
   - type: PersonalDamage
     damage:
       types:
-        Blunt: -0.2
-        Slash: -0.2
-        Bloodloss: -1
+        Blunt: -1
+        Slash: -1
     interval: 1
   - type: Armor
     hiddenExamine: true
@@ -64,9 +62,8 @@
     modifiers:
       coefficients:
         Shock: 1.4
-        Cold: 0.7
-        Radiation: 1.6
-        Piercing: 1.1
+  - type: ExplosionResistance
+    damageCoefficient: 0.70
 
 - type: entity
   parent: BaseArtifact
@@ -89,19 +86,17 @@
   - type: PersonalDamage
     damage:
       types:
-        Blunt: -0.4
-        Slash: -0.4
-        Bloodloss: -2
+        Blunt: -2
+        Slash: -2
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Heat: 1.8
-        Shock: 1.8
-        Radiation: 1.8
-        Piercing: 1.15
+        Shock: 1.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.60
 
 - type: entity
   parent: BaseArtifact
@@ -120,15 +115,18 @@
     energy: 4
     color: "#ff0000"
     castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Compression: -2
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.5
+        Compression: 0.8
         Heat: 0.3
         Psy: 0.1
-        Piercing: 1.15
 
 - type: entity
   parent: BaseArtifact

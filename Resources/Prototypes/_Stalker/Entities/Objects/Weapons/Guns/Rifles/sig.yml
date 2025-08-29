@@ -57,6 +57,10 @@
         whitelist:
           tags:
           - STCartridge556
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
 
 - type: entity
   parent: STBaseWeaponRifleSIG
@@ -79,8 +83,8 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/t_sig550_shot.ogg
-  
-  
+
+
 - type: entity
   parent: STBaseWeaponRifleSIG
   id: STWeaponRifleSIG739

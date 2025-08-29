@@ -3,11 +3,14 @@
   itemsForSale:
     # ---GRAVITY---
     #Т2
+    ZoneArtifactFireball: 0
     ZoneArtifactBattery: 5
     ZoneArtifactAmoeba: 5
     ZoneArtifactBlood: 10
     ZoneArtifactEye: 5
     #T3
+    ArtMedusa: 0
+    ZoneArtifactVyvert: 0
     ZoneArtifactFlower: 20
     #T4
     ZoneArtifactGravi: 60
@@ -42,6 +45,17 @@
     ZoneArtifactBaloon: 65
     ZoneArtifactKolobok: 55
     # Mutant parts
+    MutantPartBoarHoof: 0 # T1
+    MutantPartSeasonedBoarHoof: 0 # T2
+    MutantPartOldBoarHoof: 0 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 0
+    MutantPartFleshEye: 0
+    FoodMeatSpiderLeg: 0
+    MutantPartLeshiyRoot: 0
+    MutantPartPseudodogTail: 0
+    MutantPartSnorkFoot: 0
     #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 45
     MutantPartOraculeEye: 60
@@ -66,6 +80,7 @@
         KhattabkaGrenade: 1
         TearGasGrenadeStalker: 7
         RGD5Grenade: 10
+        STWeaponRifleStalkerRPK16: 1000
     - name: shop-category-magazines
       priority: 2
       items:
@@ -73,14 +88,16 @@
         556Mag45: 30 #T3
         739Mag45: 30
         939Mag20: 30
+        545Mag60: 60
     - name: shop-category-ammunition
       priority: 3
       items:
         ShotgunFlechetteCink: 35
         556M856BoxCink: 80
         739PCBoxCink: 120
-        939BPBoxCink: 150
+        939SP6BoxCink: 150
         751M61BoxCink: 120
+        545BPBoxCink: 100
         BluntRainbow: 1
     - name: shop-category-armor
       priority: 4

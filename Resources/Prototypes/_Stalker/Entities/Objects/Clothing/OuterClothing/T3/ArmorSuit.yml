@@ -434,3 +434,37 @@
         Heat: 0.9
         Caustic: 0.9
         Compression: 0.75
+
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorFirstbornSeraphimes
+  name: Комбинезон Перворожденного
+  description: Старый поношеный комбинезон Монолита. Такие носили первые Серафимы, которые в последствии назвали себя Перворожденными.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seraphime_firstborn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seraphime_firstborn.rsi
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - 4,-0,5,-0
+      - 1,-0,2,-0
+      - 0,3,0,4
+      - 2,2,2,4
+      - 4,2,4,4
+      - 6,3,6,4
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHatFirstbornSeraphimes
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetHatFirstbornSeraphimes
+  name: Капюшон Перворождённого
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/hood_firstbornseraphimes.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/hood_firstbornseraphimes.rsi
