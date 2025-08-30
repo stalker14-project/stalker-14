@@ -1780,3 +1780,54 @@
         - id: ClothingHeadHelmetLight
         - id: STGauze
         - id: STGauze
+
+### НАБОРЫ ЗА ОЧКИ С ТОЧЕК ЗАХВАТА
+
+- type: entity
+  parent: BaseItem
+  id: StalkerMedBandShopCrate
+  name: набор медицины
+  description: Набор содержащий различную медицину.
+  suffix: Stalker
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STPillboxProbud
+        - id: STPillboxAntirad
+        - id: Bloodpack
+        - id: Bloodpack
+        - id: Bloodpack
