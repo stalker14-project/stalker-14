@@ -1,0 +1,32 @@
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterCat1
+  name: "Movie poster"
+  description: "A poster for a movie about a cat going on an adventure."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Structures/Wallmounts/posters.rsi
+    state: poster_cat1
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterCat2
+  name: "Cat photos"
+  description: "Photos of cats. They're all really cute."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Structures/Wallmounts/posters.rsi
+    state: poster_cat2
+
+- type: entity
+  parent: PosterBaseStalker
+  id: PosterCat3
+  name: "Cat drawings"
+  description: "Drawings of cats done in pen. The paper is a little wrinkled but someone clearly cared enough to put them on the wall."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Structures/Wallmounts/posters.rsi
+    state: poster_cat3
