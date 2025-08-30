@@ -4,10 +4,11 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using Content.Shared.EntityTable.EntitySelectors;
+using Robust.Shared.GameStates;
 
 namespace Content.Goobstation.Shared.Fishing.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class FishingSpotComponent : Component
 {
     /// <summary>

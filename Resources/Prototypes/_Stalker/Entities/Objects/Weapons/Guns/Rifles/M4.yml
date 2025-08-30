@@ -64,6 +64,10 @@
         whitelist:
           tags:
           - STCartridge556
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.45
 
 - type: entity
   parent: STBaseWeaponRifleM4
@@ -95,9 +99,9 @@
     maxAngle: 90
     angleIncrease: 1.5
   - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.9
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.1
+    accuracyMultiplier: 1.5
 
 - type: entity
   parent: STBaseWeaponRifleM4

@@ -10,8 +10,20 @@ public sealed class TrashDeletingSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IChatManager _chat = default!;
 
+    /// <summary>
+    /// next time to clean up trash
+    /// </summary>
     private TimeSpan _nextTimeUpdate = TimeSpan.Zero;
+
+    /// <summary>
+    /// time in minutes between trash cleanups
+    /// </summary>
     private readonly int _updateTime = 15;
+
+    /// <summary>
+    /// if a warning has been issued for the next cleanup
+    /// </summary>
+    private bool _warningIssued;
 
     public override void Initialize()
     {
@@ -50,7 +62,14 @@ public sealed class TrashDeletingSystem : EntitySystem
         comp.DeletingTime = null;
     }
 
-    private bool _warningIssued = false;
+    public void SetNextCleanupTime(int seconds)
+    {
+        if (seconds < 0)
+            throw new ArgumentException("time must be at least 1 second");
+
+        _nextTimeUpdate = _timing.CurTime + TimeSpan.FromSeconds(seconds);
+        _warningIssued = false;
+    }
 
     public override void Update(float frameTime)
     {
@@ -58,7 +77,8 @@ public sealed class TrashDeletingSystem : EntitySystem
 
         if (!_warningIssued && _timing.CurTime >= _nextTimeUpdate - TimeSpan.FromSeconds(30))
         {
-            _chat.DispatchServerAnnouncement("Cleaning of garbage and empty caches will occur in 30 seconds, objects on the floor may disappear!");
+            var timeBeforeCleanup = Math.Round((_nextTimeUpdate - _timing.CurTime).TotalSeconds);
+            _chat.DispatchServerAnnouncement($"Cleaning of garbage and empty caches will occur in {timeBeforeCleanup} seconds, objects on the floor may disappear!");
             _warningIssued = true;
         }
 

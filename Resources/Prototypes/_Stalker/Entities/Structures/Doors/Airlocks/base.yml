@@ -938,3 +938,63 @@
   components:
   - type: AccessReader
     access: [["ProjectOrchestrator"]]
+
+- type: entity
+  id: HermoDverTypeOneCircusClosed
+  name: гермодверь
+  parent: HermoDverTypeOne
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: HermoDverTypeTwoCircusClosed
+  name: гермодверь
+  parent: HermoDverTypeTwo
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalDoorFalloutCircusClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutCircusClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutCircusClosed
+  name: укрепленная решетчатая дверь
+  parent: MetalGrateDoorFallout
+  description: Крепкая решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalBarDoorFalloutCircusClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
