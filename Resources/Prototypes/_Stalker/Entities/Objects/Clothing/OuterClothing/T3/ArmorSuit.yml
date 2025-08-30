@@ -42,16 +42,20 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorStalker
-  name: бронекостюм «Барсук»
-  description: Бронекостюм третьего класса защиты производста ООО «Подвал Бара».
+  name: комбинезон наёмного сталкера
+  description: Комбинезон наёмных сталкеров, используемый охранниками бара. За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты серии ПСЗ-7.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/stalker_barsuk.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_loner.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/stalker_barsuk.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_loner.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodMerc2
+    slot: head
   - type: Tag
     tags:
     - BlockCloak
+    - BlockBack
   - type: Storage
     maxItemsize: Large
     grid:
@@ -89,7 +93,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorBandits
-  name: бронекомбез «Валет»
+  name: бандитский комбинезон
   description: Дешёвый и защищающий от мутантов с сталкерами комбез бандитов. Обеспечивает 3 класс защиты.
   components:
   - type: Sprite
@@ -111,7 +115,8 @@
       - 10,2,10,3
   - type: Tag
     tags:
-    - BlockGloves
+    - BlockCloak
+    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -161,7 +166,8 @@
       - 10,2,10,3
   - type: Tag
     tags:
-    - BlockGloves
+    - BlockCloak
+    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -199,7 +205,8 @@
     slot: head
   - type: Tag
     tags:
-    - BlockGloves
+    - BlockCloak
+    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
