@@ -44728,13 +44728,6 @@ entities:
     - type: Transform
       pos: -81.5,-89.5
       parent: 1
-- proto: Cordon-TopUncollide
-  entities:
-  - uid: 9347
-    components:
-    - type: Transform
-      pos: -2.5,18.5
-      parent: 1
 - proto: Crack1Stalker
   entities:
   - uid: 190
@@ -64145,6 +64138,8 @@ entities:
     - type: Transform
       pos: -2.5,14.5
       parent: 1
+    missingComponents:
+    - Door
 - proto: HolmIndestructible
   entities:
   - uid: 4041
@@ -81672,7 +81667,7 @@ entities:
     - type: Transform
       pos: -120.5,-106.5
       parent: 1
-- proto: RadioStandStalkerRenegats
+- proto: RadioStalkerJukebox
   entities:
   - uid: 7462
     components:
@@ -82080,60 +82075,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -80.5,-83.5
-      parent: 1
-  - uid: 9348
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,19.5
-      parent: 1
-  - uid: 9349
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,18.5
-      parent: 1
-  - uid: 9350
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,17.5
-      parent: 1
-  - uid: 9351
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,17.5
-      parent: 1
-  - uid: 9352
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,17.5
-      parent: 1
-  - uid: 9353
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,18.5
-      parent: 1
-  - uid: 9354
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,19.5
-      parent: 1
-  - uid: 9355
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,19.5
-      parent: 1
-  - uid: 9356
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,18.5
       parent: 1
 - proto: StalkerExplSafezoneTriggerOut
   entities:
@@ -82855,62 +82796,6 @@ entities:
     components:
     - type: Transform
       pos: -67.93363,-109.79706
-      parent: 1
-- proto: StalkerPaciTriggerOut
-  entities:
-  - uid: 9357
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,19.5
-      parent: 1
-  - uid: 9358
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,19.5
-      parent: 1
-  - uid: 9359
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,19.5
-      parent: 1
-  - uid: 9360
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,18.5
-      parent: 1
-  - uid: 9361
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,18.5
-      parent: 1
-  - uid: 9362
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,18.5
-      parent: 1
-  - uid: 9363
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,17.5
-      parent: 1
-  - uid: 9364
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,17.5
-      parent: 1
-  - uid: 9365
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -1.5,17.5
       parent: 1
 - proto: StalkerRadSign1
   entities:
@@ -90217,40 +90102,12 @@ entities:
       parent: 1
 - proto: WarpPoint
   entities:
-  - uid: 8950
-    components:
-    - type: MetaData
-      name: Swamp
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -41.5,-49.5
-      parent: 1
-    - type: WarpPoint
-      location: Болота
-  - uid: 8951
-    components:
-    - type: MetaData
-      name: Renegade Base
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -78.5,-91.5
-      parent: 1
-    - type: WarpPoint
-      location: Болота - База Ренегатов
   - uid: 8952
     components:
     - type: MetaData
       name: Renegade Base
     - type: Transform
       pos: -90.5,-130.5
-      parent: 1
-  - uid: 9378
-    components:
-    - type: MetaData
-      name: Clear Sky Base
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,18.5
       parent: 1
 - proto: WoodDoorFallout
   entities:
