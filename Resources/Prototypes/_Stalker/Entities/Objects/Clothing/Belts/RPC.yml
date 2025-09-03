@@ -284,6 +284,27 @@
 
 - type: entity
   parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterLoner
+  name: поясная сумка с кобурой наёмного сталкера
+  description: Поясной сумка из комплекта наёмного сталкера с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_loner_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_loner_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltWebbingHolsterDolgPS5M
   name: поясная сумка с кобурой ПС5-М «Универсальная защита»
   description: Поясной сумка из комплекта ПС5-М «Универсальная защита» с пистолетной кобурой.

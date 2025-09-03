@@ -223,3 +223,20 @@
     damage:
       types:
         Radiation: 9
+
+- type: entity
+  parent: STClothingMaskGasStandardT1Base
+  id: ClothingMaskGasSeraFirstborn
+  name: Противогаз Перворожденного
+  description: Старый противогаз, с нарисованной на нем зеленой четырехлучевой звездой- сакральным символом Серафимов.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_firstbornsera.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/mask/gasmask_firstbornsera.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - FacialHair
+    hideOnToggle: true

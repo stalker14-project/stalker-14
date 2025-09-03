@@ -498,3 +498,43 @@
     - Binary
     - Common
 
+#Mercs
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMercHummingbird
+  name: Хамингбёрд [→   ←]
+  description: Массово закупает оружие в Европе и Америке и продаёт в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Merc.rsi
+    state: merc
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: STMercenaryDollarTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common

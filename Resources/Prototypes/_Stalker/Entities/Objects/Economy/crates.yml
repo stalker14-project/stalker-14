@@ -1529,15 +1529,12 @@
       state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: STBoltBagFilled
-        - id: STBoltBagFilled
         - id: PowerCellHyper
         - id: PowerCellHyper
         - id: STCombatKnife
         - id: Binocularus1
         - id: BaseRadio
         - id: FlashlightSeclite
-        - id: ZoneAnomalyDetectorBMT12
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -1560,8 +1557,12 @@
         - id: MedkitMilitary
         - id: MedkitMilitary
         - id: MedkitScience
+        - id: MedkitScience
+        - id: MedkitScience
         - id: MedkitAI2
         - id: STOintmentGood
+        - id: STTourniquet
+        - id: STTourniquet
         - id: STTourniquet
         - id: STGauze
       sound:
@@ -1583,9 +1584,6 @@
       state: icon
     - type: SpawnItemsOnUse
       items:
-        - id: 545Mag30
-        - id: 545Mag30
-        - id: 545Mag30
         - id: 545Mag30
         - id: 545Mag30
         - id: 545Mag30
@@ -1615,9 +1613,54 @@
         - id: 545PCBox
         - id: 545PCBox
         - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
-        - id: 545PCBox
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate556Mag30
+  name: ящик обойм 5.56 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 556Mag30
+        - id: 556Mag30
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: MonolithCrate556M855
+  name: ящик M855 патронов 5.56х45 «Монолита»
+  suffix: Stalker, T3
+  components:
+    - type: STWeight
+      self: 47.2
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: 556M855Box
+        - id: 556M855Box
+        - id: 556M855Box
+        - id: 556M855Box
+        - id: 556M855Box
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -1781,3 +1824,54 @@
         - id: ClothingHeadHelmetLight
         - id: STGauze
         - id: STGauze
+
+### НАБОРЫ ЗА ОЧКИ С ТОЧЕК ЗАХВАТА
+
+- type: entity
+  parent: BaseItem
+  id: StalkerMedBandShopCrate
+  name: набор медицины
+  description: Набор содержащий различную медицину.
+  suffix: Stalker
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitAI2
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: MedkitMilitary
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STGauze
+        - id: STPillboxProbud
+        - id: STPillboxAntirad
+        - id: Bloodpack
+        - id: Bloodpack
+        - id: Bloodpack
