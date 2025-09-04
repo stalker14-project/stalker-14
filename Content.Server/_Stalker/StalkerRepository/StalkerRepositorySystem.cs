@@ -613,6 +613,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
     /// Gets container items recursively, so you'll get all items from all containers that contained containers etc.
     /// </summary>
     /// <param name="uid">Start point, like player entity</param>
+    /// <param name="includeClothing">should include starting clothing (jeans, shirt etc.)</param>
     /// <returns>List of entities' uids found from start point</returns>
     private List<EntityUid> GetRecursiveContainerElements(EntityUid uid,
         ContainerManagerComponent? managerComponent = null,

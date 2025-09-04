@@ -2,7 +2,7 @@
 repository-eject-item = Вытащить
 repository-more-info = Подробнее
 repository-ui-default-title = Хранилище
-repository-ui-search-label = Поиск:
+repository-ui-put-all = Сложить все
 repository-ui-search-clear-button = Очистить
 
 # Categories
