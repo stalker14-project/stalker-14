@@ -29,6 +29,12 @@ public sealed class StalkerRepositoryBoundUserInterface : BoundUserInterface
         {
             SendMessage(new RepositoryInjectFromUserMessage(item, count));
         };
+
+        _menu.RepositoryButtonPutAllPressed += () =>
+        {
+            SendMessage(new RepositoryInjectAllMessage());
+        };
+
         _menu.RepositoryButtonGetPressed += (item, count) =>
         {
             SendMessage(new RepositoryEjectMessage(item, count));

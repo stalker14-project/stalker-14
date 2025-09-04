@@ -63,3 +63,9 @@ public sealed class RepositoryInjectFromUserMessage : BoundUserInterfaceMessage
         Count = count;
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class RepositoryInjectAllMessage : BoundUserInterfaceMessage
+{
+
+}
