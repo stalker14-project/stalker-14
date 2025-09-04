@@ -64,7 +64,8 @@ public sealed class RepositoryInjectFromUserMessage : BoundUserInterfaceMessage
     }
 }
 
-public sealed class RepositoryInjectAllInventoryMessage : BoundUserInterfaceMessage
+[Serializable, NetSerializable]
+public sealed class RepositoryInjectAllMessage : BoundUserInterfaceMessage
 {
 
 }

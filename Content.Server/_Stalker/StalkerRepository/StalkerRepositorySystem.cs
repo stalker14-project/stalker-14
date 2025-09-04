@@ -75,7 +75,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         SubscribeLocalEvent<StalkerRepositoryComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<StalkerRepositoryComponent, RepositoryInjectFromUserMessage>(OnInjectMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, RepositoryEjectMessage>(OnEjectMessage);
-        SubscribeLocalEvent<StalkerRepositoryComponent, RepositoryInjectAllInventoryMessage>(OnInjectAllInventoryMessage);
+        SubscribeLocalEvent<StalkerRepositoryComponent, RepositoryInjectAllMessage>(OnInjectAllInventoryMessage);
 
         // else updating shit, so it won't be hacked by others
         SubscribeLocalEvent<ItemComponent, HandSelectedEvent>(OnSelected);
@@ -277,7 +277,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     private void OnInjectAllInventoryMessage(EntityUid uid,
         StalkerRepositoryComponent component,
-        RepositoryInjectAllInventoryMessage msg)
+        RepositoryInjectAllMessage msg)
     {
         var items = GenerateItemsInfo(GetRecursiveContainerElements(msg.Actor, includeClothing: false));
 

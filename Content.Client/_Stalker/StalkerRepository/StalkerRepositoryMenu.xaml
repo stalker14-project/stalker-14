@@ -6,6 +6,7 @@
     <BoxContainer Orientation="Vertical" HorizontalExpand="True">
         <BoxContainer Orientation="Horizontal" Margin="4,4,4,4" HorizontalExpand="True">
             <OptionButton HorizontalAlignment="Left" Name="CategorySelector" Margin="0 0 5 0"/>
+            <Button Name="PutInsideAllButton" Text="Сложить все"/>
             <Label Text="{Loc 'repository-ui-search-label'}" Margin="0 0 3 0"/>
             <LineEdit Name="SearchLine" HorizontalExpand="True"/>
             <Button Name="SearchClearButton" Text="{Loc 'repository-ui-search-clear-button'}"/>

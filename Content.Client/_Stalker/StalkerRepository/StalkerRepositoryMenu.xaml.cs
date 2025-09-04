@@ -24,6 +24,7 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
 
     public event Action<RepositoryItemInfo, int>? RepositoryButtonPutPressed;
     public event Action<RepositoryItemInfo, int>? RepositoryButtonGetPressed;
+    public event Action? RepositoryButtonPutAllPressed;
 
     private (string, int) _currentCategory;
     private List<RepositoryItemInfo>? _curItems;
@@ -39,11 +40,16 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
         CategorySelector.OnItemSelected += OnItemSelected;
+
+        // Search Line
         SearchClearButton.OnPressed += _ =>
         {
             SearchLine.SetText(string.Empty, true);
         };
         SearchLine.OnTextChanged += OnTextChanged;
+
+        PutInsideAllButton.OnPressed += _ => RepositoryButtonPutAllPressed?.Invoke();
+
         _categories = new List<(string, int)>();
 
         AddUserCategory();
