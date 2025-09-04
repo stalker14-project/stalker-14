@@ -48121,13 +48121,6 @@ entities:
     - type: Transform
       pos: -28.5,146.5
       parent: 1
-- proto: Cordon-TopUncollide
-  entities:
-  - uid: 2745
-    components:
-    - type: Transform
-      pos: -32.5,3.5
-      parent: 1
 - proto: CurtainsBlackOpen
   entities:
   - uid: 270
@@ -61301,7 +61294,7 @@ entities:
       pos: -0.5,-59.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -160173.02
+      secondsUntilStateChange: -160674.45
       state: Opening
   - uid: 2611
     components:
@@ -61321,7 +61314,7 @@ entities:
       pos: 66.5,-86.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -158777.92
+      secondsUntilStateChange: -159279.36
       state: Opening
   - uid: 2614
     components:
@@ -61346,7 +61339,7 @@ entities:
       pos: 111.5,-26.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -159959.81
+      secondsUntilStateChange: -160461.25
       state: Opening
   - uid: 2618
     components:
@@ -61364,7 +61357,7 @@ entities:
       pos: 39.5,-90.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -178189.89
+      secondsUntilStateChange: -178691.33
       state: Opening
   - uid: 2621
     components:
@@ -61456,7 +61449,7 @@ entities:
       pos: 120.5,-62.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -124086.22
+      secondsUntilStateChange: -124587.664
       state: Opening
   - uid: 2637
     components:
@@ -61622,7 +61615,7 @@ entities:
       pos: 39.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -170365.77
+      secondsUntilStateChange: -170867.2
       state: Opening
   - uid: 2659
     components:
@@ -61631,7 +61624,7 @@ entities:
       pos: 40.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -170365.52
+      secondsUntilStateChange: -170866.95
       state: Opening
   - uid: 2660
     components:
@@ -61640,7 +61633,7 @@ entities:
       pos: 41.5,153.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -170365.27
+      secondsUntilStateChange: -170866.7
       state: Opening
   - uid: 2661
     components:
@@ -61649,7 +61642,7 @@ entities:
       pos: 39.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -170366.94
+      secondsUntilStateChange: -170868.38
       state: Opening
   - uid: 2662
     components:
@@ -61658,7 +61651,7 @@ entities:
       pos: 40.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -170366.67
+      secondsUntilStateChange: -170868.11
       state: Opening
   - uid: 2663
     components:
@@ -61667,7 +61660,7 @@ entities:
       pos: 41.5,159.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -170366.38
+      secondsUntilStateChange: -170867.81
       state: Opening
   - uid: 2702
     components:
@@ -61808,23 +61801,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 140.51025,58.727478
       parent: 1
-- proto: LocaleTeleportUsage
-  entities:
-  - uid: 2676
-    components:
-    - type: Transform
-      pos: -23.5,3.5
-      parent: 1
-    - type: LocalTeleport
-      portalName: ClearSky
-  - uid: 15743
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 49.5,17.5
-      parent: 1
-    - type: LocalTeleport
-      portalName: ClearSky
 - proto: LockerBig
   entities:
   - uid: 2678
@@ -62319,6 +62295,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 44.5,17.5
       parent: 1
+    missingComponents:
+    - Door
   - uid: 15752
     components:
     - type: Transform
@@ -62564,7 +62542,7 @@ entities:
       pos: 136.5,-75.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -155599.89
+      secondsUntilStateChange: -156101.33
       state: Opening
 - proto: MetalRedDoorFalloutCNClosed
   entities:
@@ -62609,6 +62587,8 @@ entities:
     - type: Transform
       pos: 43.5,14.5
       parent: 1
+    missingComponents:
+    - Door
 - proto: MetalWindowDoorFalloutMercClosed
   entities:
   - uid: 2797
@@ -62642,7 +62622,7 @@ entities:
       pos: 148.5,48.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -184655.5
+      secondsUntilStateChange: -185156.94
       state: Opening
   - uid: 2803
     components:
@@ -64614,13 +64594,6 @@ entities:
     - type: Transform
       pos: -33.590847,-5.2917957
       parent: 1
-- proto: PortalBandClearskyRepository
-  entities:
-  - uid: 2704
-    components:
-    - type: Transform
-      pos: -34.5,9.5
-      parent: 1
 - proto: PortalBandMilitiaRepository
   entities:
   - uid: 9628
@@ -65273,22 +65246,11 @@ entities:
     - type: StealthOnMove
 - proto: PoweredSmallLight
   entities:
-  - uid: 105
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 45.5,12.5
-      parent: 1
   - uid: 106
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 37.5,4.5
-      parent: 1
-  - uid: 107
-    components:
-    - type: Transform
-      pos: 30.5,9.5
       parent: 1
   - uid: 14501
     components:
@@ -66737,6 +66699,18 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 24.5,12.5
       parent: 1
+  - uid: 105
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 45.5,12.5
+      parent: 1
+  - uid: 107
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 38.5,4.5
+      parent: 1
   - uid: 117
     components:
     - type: Transform
@@ -66762,6 +66736,11 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 16.5,16.5
       parent: 1
+  - uid: 2676
+    components:
+    - type: Transform
+      pos: 36.5,15.5
+      parent: 1
   - uid: 2700
     components:
     - type: Transform
@@ -66776,6 +66755,17 @@ entities:
       parent: 1
     - type: PointLight
       color: '#F9D71CFF'
+  - uid: 2704
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 36.5,4.5
+      parent: 1
+  - uid: 2745
+    components:
+    - type: Transform
+      pos: 31.5,9.5
+      parent: 1
   - uid: 2760
     components:
     - type: Transform
@@ -67190,11 +67180,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 36.5,11.5
-      parent: 1
-  - uid: 3396
-    components:
-    - type: Transform
-      pos: 36.5,15.5
       parent: 1
   - uid: 3397
     components:
@@ -70095,13 +70080,6 @@ entities:
     components:
     - type: Transform
       pos: -21.5,134.5
-      parent: 1
-- proto: StalkerTeleportClearSky
-  entities:
-  - uid: 9735
-    components:
-    - type: Transform
-      pos: -30.5,9.5
       parent: 1
 - proto: StalkerWorkbench
   entities:
@@ -138083,28 +138061,11 @@ entities:
     - type: Transform
       pos: 4.5,83.5
       parent: 1
-  - uid: 16066
-    components:
-    - type: Transform
-      pos: 38.5,12.5
-      parent: 1
-  - uid: 16069
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 33.5,6.5
-      parent: 1
   - uid: 16070
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 14.5,1.5
-      parent: 1
-  - uid: 16071
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 43.5,12.5
       parent: 1
   - uid: 16467
     components:
