@@ -43642,21 +43642,6 @@ entities:
       maxTier: 1
     - type: STMapKey
       value: Boloto
-- proto: Banner14
-  entities:
-  - uid: 2
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,26.5
-      parent: 1
-- proto: Banner8
-  entities:
-  - uid: 3
-    components:
-    - type: Transform
-      pos: -87.5,-127.5
-      parent: 1
 - proto: Barrel1
   entities:
   - uid: 4
@@ -44720,13 +44705,6 @@ entities:
     components:
     - type: Transform
       pos: -61.925003,-95.48145
-      parent: 1
-- proto: Cordon-ReneUncollide1
-  entities:
-  - uid: 189
-    components:
-    - type: Transform
-      pos: -81.5,-89.5
       parent: 1
 - proto: Crack1Stalker
   entities:
@@ -80050,26 +80028,6 @@ entities:
     - type: Transform
       pos: -130.06674,-112.84383
       parent: 1
-- proto: LocaleTeleportUsage
-  entities:
-  - uid: 7191
-    components:
-    - type: MetaData
-      name: ZavetKanava
-    - type: Transform
-      pos: -80.5,-135.5
-      parent: 1
-    - type: LocalTeleport
-      portalName: ZavetKanava
-  - uid: 7192
-    components:
-    - type: MetaData
-      name: ZavetKanava
-    - type: Transform
-      pos: -75.5,-86.5
-      parent: 1
-    - type: LocalTeleport
-      portalName: ZavetKanava
 - proto: LockerFreezerStalker
   entities:
   - uid: 7193
@@ -80096,11 +80054,61 @@ entities:
       parent: 1
 - proto: MetalAltDoorFallout
   entities:
-  - uid: 7197
+  - uid: 3
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -4.5,18.5
+      parent: 1
+  - uid: 183
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -88.5,-97.5
+      parent: 1
+  - uid: 184
+    components:
+    - type: Transform
+      pos: -90.5,-92.5
+      parent: 1
+  - uid: 189
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -84.5,-96.5
+      parent: 1
+  - uid: 7191
+    components:
+    - type: Transform
+      pos: -87.5,-86.5
+      parent: 1
+  - uid: 7192
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -78.5,-86.5
+      parent: 1
+  - uid: 7197
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -89.5,-84.5
+      parent: 1
+  - uid: 7199
+    components:
+    - type: Transform
+      pos: -80.5,-87.5
+      parent: 1
+  - uid: 7200
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,18.5
+      parent: 1
+  - uid: 7201
+    components:
+    - type: Transform
+      pos: -2.5,22.5
       parent: 1
 - proto: MetalAltDoorFalloutReneClosed
   entities:
@@ -80108,29 +80116,6 @@ entities:
     components:
     - type: Transform
       pos: -78.5,-128.5
-      parent: 1
-  - uid: 7199
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -88.5,-97.5
-      parent: 1
-  - uid: 7200
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -84.5,-96.5
-      parent: 1
-  - uid: 7201
-    components:
-    - type: Transform
-      pos: -90.5,-92.5
-      parent: 1
-  - uid: 7202
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -89.5,-84.5
       parent: 1
   - uid: 7203
     components:
@@ -80159,37 +80144,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -84.5,-130.5
       parent: 1
-  - uid: 7208
-    components:
-    - type: Transform
-      pos: -80.5,-87.5
-      parent: 1
-  - uid: 7209
-    components:
-    - type: Transform
-      pos: -87.5,-86.5
-      parent: 1
-  - uid: 7210
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -78.5,-86.5
-      parent: 1
-- proto: MetalDoorFallout
-  entities:
-  - uid: 7211
-    components:
-    - type: Transform
-      pos: -2.5,22.5
-      parent: 1
-- proto: MetalWindowDoorFallout
-  entities:
-  - uid: 7212
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,18.5
-      parent: 1
 - proto: MilitaryDoor1
   entities:
   - uid: 7213
@@ -80207,46 +80161,6 @@ entities:
       parent: 1
     missingComponents:
     - Door
-- proto: NPCclearSky
-  entities:
-  - uid: 7220
-    components:
-    - type: Transform
-      pos: -7.5,20.5
-      parent: 1
-    - type: ContainerContainer
-      containers:
-        body_root_part: !type:ContainerSlot {}
-        shoes: !type:ContainerSlot
-          occludes: False
-        jumpsuit: !type:ContainerSlot
-          occludes: False
-        outerClothing: !type:ContainerSlot
-          occludes: False
-        gloves: !type:ContainerSlot
-          occludes: False
-        neck: !type:ContainerSlot
-          occludes: False
-        mask: !type:ContainerSlot
-          occludes: False
-        eyes: !type:ContainerSlot
-          occludes: False
-        ears: !type:ContainerSlot
-          occludes: False
-        head: !type:ContainerSlot
-          occludes: False
-        pocket1: !type:ContainerSlot
-          occludes: False
-        pocket2: !type:ContainerSlot
-          occludes: False
-        suitstorage: !type:ContainerSlot
-          occludes: False
-        id: !type:ContainerSlot
-          occludes: False
-        belt: !type:ContainerSlot
-          occludes: False
-        back: !type:ContainerSlot
-          occludes: False
 - proto: OakTreeNew02
   entities:
   - uid: 7215
@@ -81572,13 +81486,6 @@ entities:
     - type: Transform
       pos: -126.08015,-108.15477
       parent: 1
-- proto: PortalBandClearskyRepository
-  entities:
-  - uid: 7450
-    components:
-    - type: Transform
-      pos: -4.5,26.5
-      parent: 1
 - proto: PosterContrabandDeadSociety
   entities:
   - uid: 7451
@@ -81666,13 +81573,6 @@ entities:
     components:
     - type: Transform
       pos: -120.5,-106.5
-      parent: 1
-- proto: RadioStalkerJukebox
-  entities:
-  - uid: 7462
-    components:
-    - type: Transform
-      pos: -89.5,-128.5
       parent: 1
 - proto: RandomAnomaly1
   entities:
@@ -82025,11 +81925,6 @@ entities:
       parent: 1
 - proto: StalkerExplSafezoneTriggerIn
   entities:
-  - uid: 183
-    components:
-    - type: Transform
-      pos: -2.5,15.5
-      parent: 1
   - uid: 7525
     components:
     - type: Transform
@@ -82078,11 +81973,6 @@ entities:
       parent: 1
 - proto: StalkerExplSafezoneTriggerOut
   entities:
-  - uid: 184
-    components:
-    - type: Transform
-      pos: -2.5,13.5
-      parent: 1
   - uid: 7533
     components:
     - type: Transform
@@ -83994,27 +83884,6 @@ entities:
     components:
     - type: Transform
       pos: -45.2781,-105.52272
-      parent: 1
-- proto: StalkerShopRenegat
-  entities:
-  - uid: 7816
-    components:
-    - type: Transform
-      pos: -87.5,-128.5
-      parent: 1
-- proto: StalkerTeleportClearSky
-  entities:
-  - uid: 7817
-    components:
-    - type: Transform
-      pos: -2.5,26.5
-      parent: 1
-- proto: StalkerTeleportRenegats
-  entities:
-  - uid: 7818
-    components:
-    - type: Transform
-      pos: -89.5,-124.5
       parent: 1
 - proto: StalkerTimedSpawner30
   entities:
@@ -86686,6 +86555,11 @@ entities:
       parent: 1
 - proto: STWallRockBasalt
   entities:
+  - uid: 2
+    components:
+    - type: Transform
+      pos: -75.5,-86.5
+      parent: 1
   - uid: 8315
     components:
     - type: Transform
@@ -90102,12 +89976,12 @@ entities:
       parent: 1
 - proto: WarpPoint
   entities:
-  - uid: 8952
+  - uid: 7202
     components:
     - type: MetaData
-      name: Renegade Base
+      name: Lesser Swamps
     - type: Transform
-      pos: -90.5,-130.5
+      pos: -47.5,-59.5
       parent: 1
 - proto: WoodDoorFallout
   entities:
