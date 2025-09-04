@@ -1,0 +1,92 @@
+- type: entity
+  name: Desert Eagle
+  parent: STBaseWeaponPistol
+  suffix: ST
+  id: STWeaponPistolDesertEagle
+  description: A hefty magnum pistol produced in America. Using .45 ACP, it's a heavy hitter for its size.
+  components:
+  - type: STWeight
+    self: 2
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Pistols/deserteagle.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    projectileSpeed: 40
+    minAngle: 5
+    maxAngle: 35
+    angleIncrease: 1
+    angleDecay: 5
+    fireRate: 3
+    cameraRecoilScalar: 12 #do you know how hard this component was to find
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/revolver3.ogg
+  - type: FarGunshot
+    range: 225
+    sound: /Audio/_Stalker_EN/Effects/FarGunshots/deagle_distant.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: DEMag8
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineDesertEagle
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge45ACP
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+
+- type: entity
+  name: Golden Desert Eagle
+  parent: STWeaponPistolDesertEagle
+  suffix: ST
+  id: STWeaponPistolDesertEagleGolden
+  description: Wait, why is it gold?
+  components:
+  - type: STWeight
+    self: 6 #gold is heavy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Pistols/_Skins/deserteagle_gold.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem:
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 3
+        whitelist:
+          tags:
+          - MagazineDesertEagle
+          - MagazineDesertEagleMagnum
+      gun_auto_sear:
+        name: Insides
+        priority: 2
+        whitelist:
+          tags:
+          - STModuleAutoSear # go nuts show nuts whatever
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - Cartridge45ACP
+          - CartridgeMagnum
+          - CartridgeRemingtonMagnum

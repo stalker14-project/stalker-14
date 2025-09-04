@@ -1,0 +1,77 @@
+# i think some of this is redundant so if someone else wants to clean it up go ahead
+- type: entity
+  id: BaseDEMag
+  name: Desert Eagle Magazine
+  description: A magazine for .45ACP, fitted for use with desert eagle handguns. They sell empty.
+  parent: BaseItem
+  tag: Stalker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STWeight
+    self: 0.5
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/deserteagle/8.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineDesertEagle
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: RepositoryItem
+    categoryName: repository-magazines-category
+
+- type: entity
+  id: DEMag8
+  name: Desert Eagle Magazine (8)
+  parent: BaseDEMag
+  tag: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    capacity: 8
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/deserteagle/8.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  id: DEMag15
+  name: Desert Eagle Magazine (15)
+  parent: BaseDEMag
+  tag: Stalker
+  components:
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45ACP
+    capacity: 15
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/deserteagle/15.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
