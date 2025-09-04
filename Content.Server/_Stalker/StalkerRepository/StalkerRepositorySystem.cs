@@ -75,6 +75,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
         SubscribeLocalEvent<StalkerRepositoryComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<StalkerRepositoryComponent, RepositoryInjectFromUserMessage>(OnInjectMessage);
         SubscribeLocalEvent<StalkerRepositoryComponent, RepositoryEjectMessage>(OnEjectMessage);
+        SubscribeLocalEvent<StalkerRepositoryComponent, RepositoryInjectAllInventoryMessage>(OnInjectAllInventoryMessage);
 
         // else updating shit, so it won't be hacked by others
         SubscribeLocalEvent<ItemComponent, HandSelectedEvent>(OnSelected);
@@ -267,65 +268,31 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
 
 
-    private void OnInjectMessage(EntityUid uid, StalkerRepositoryComponent component,
+    private void OnInjectMessage(EntityUid uid,
+        StalkerRepositoryComponent component,
         RepositoryInjectFromUserMessage msg)
     {
-        if (msg.Actor == null)
-            return;
-        // Check for weight is valid
-        var sum = component.CurrentWeight + msg.Item.Weight;
-        if (Math.Round(sum, 2) > component.MaxWeight)
+        TryPutItemInRepository(msg.Item, msg.Actor, (uid, component), true);
+    }
+
+    private void OnInjectAllInventoryMessage(EntityUid uid,
+        StalkerRepositoryComponent component,
+        RepositoryInjectAllInventoryMessage msg)
+    {
+        var items = GenerateItemsInfo(GetRecursiveContainerElements(msg.Actor, includeClothing: false));
+
+        foreach (var item in items)
         {
-            _sawmill.Debug($"Could not insert an item due to its weight. {msg.Item.Identifier} | item weight: {msg.Item.Weight} | repo weight: {component.CurrentWeight}");
-            return;
+            TryPutItemInRepository(item, msg.Actor, (uid, component), true);
         }
-        // checks for items is really containing in players inventory, so it won't be hacked by putting one item out :D
-        if (!CheckContaining(msg.Actor, msg.Item, msg.Count))
-            return;
-
-        // inserts selected item and checks for container, so its recursive
-        // this method also returns us a hashset of entities to delete, so we are sure, we are deleting needed entity
-        var toDelete = InsertToRepositoryRecursively(msg.Actor, (uid, component), msg.Item, msg.Count);
-        if (toDelete == null)
-            return;
-
-        // removing items
-        RemoveItems(msg.Actor, toDelete.Value.Item1, toDelete.Value.Item2);
-
-        // logging, saving, ui updating
-        _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(msg.Actor):user} inserted {msg.Count} {msg.Item.Name} into repository");
-        _stalkerStorageSystem.SaveStorage(component);
-        RaiseLocalEvent(msg.Actor, new RepositoryItemInjectedEvent(uid, msg.Item));
-        UpdateUiState(msg.Actor, GetEntity(msg.Entity), component);
     }
 
     private void OnInteractUsing(EntityUid uid, StalkerRepositoryComponent component, InteractUsingEvent args)
     {
         // generate new item info for clicked entity
         var itemInfo = GenerateItemInfo(args.Used, true);
-        // check for valid weight
-        var sum = component.CurrentWeight + itemInfo.Weight;
-        if (Math.Round(sum, 2) > component.MaxWeight)
-        {
-            _sawmill.Debug($"Could not insert an item due to its weight. {itemInfo.Identifier} | item weight: {itemInfo.Weight} | repo weight: {component.CurrentWeight}");
-            return;
-        }
-        // inserts new item and checks for container, so its recursive
-        // this method also returns us a hashset of entities to delete, so we are sure, we are deleting needed entity
-        var toDelete = InsertToRepositoryRecursively(args.User, (uid, component), itemInfo);
 
-        // logging, saving, event raising
-        _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(args.User):user} inserted 1 {Name(args.Used)} into repository");
-        _stalkerStorageSystem.SaveStorage(component);
-        RaiseLocalEvent(args.User, new RepositoryItemInjectedEvent(args.Target, itemInfo));
-
-        // removing by hashset we got from above
-        // i had to move it here because of references
-        if (toDelete == null)
-            return;
-
-        // removing items
-        RemoveItems(args.User, toDelete.Value.Item1, toDelete.Value.Item2);
+        TryPutItemInRepository(itemInfo, args.User, (uid, component));
     }
 
     #endregion
@@ -605,13 +572,51 @@ public sealed class StalkerRepositorySystem : EntitySystem
         }
         return false;
     }
+
+    /// <summary>
+    /// Inserts item into the repository, manages deleting, logging etc.
+    /// </summary>
+    private bool TryPutItemInRepository(RepositoryItemInfo item,
+        EntityUid player,
+        Entity<StalkerRepositoryComponent> repo,
+        bool isInUi = false)
+    {
+        var sum = repo.Comp.CurrentWeight + item.Weight;
+
+        if(Math.Round(sum, 2) > repo.Comp.MaxWeight)
+        {
+            _sawmill.Debug($"Could not insert an item due to its weight. {item.Identifier} | item weight: {item.Weight} | repo weight: {repo.Comp.CurrentWeight}");
+            return false;
+        }
+
+        var toDelete = InsertToRepositoryRecursively(player, repo, item);
+
+        if (toDelete == null)
+            return false;
+
+        RemoveItems(player, toDelete.Value.Item1, toDelete.Value.Item2);
+
+        _adminLogger.Add(LogType.Action, LogImpact.Low, $"Player {Name(player):user} inserted 1 {item.Name} into repository");
+        _stalkerStorageSystem.SaveStorage(repo.Comp);
+        RaiseLocalEvent(player, new RepositoryItemInjectedEvent(repo.Owner, item));
+
+
+        if (isInUi)
+        {
+            UpdateUiState(player, repo.Owner, repo.Comp);
+        }
+        return true;
+    }
+
+
     /// <summary>
     /// Gets container items recursively, so you'll get all items from all containers that contained containers etc.
     /// </summary>
     /// <param name="uid">Start point, like player entity</param>
     /// <returns>List of entities' uids found from start point</returns>
     private List<EntityUid> GetRecursiveContainerElements(EntityUid uid,
-        ContainerManagerComponent? managerComponent = null)
+        ContainerManagerComponent? managerComponent = null,
+        bool includeClothing = true)
     {
         // pretending player won't have 200 items...
         var result = new List<EntityUid>(capacity: 200);
@@ -625,6 +630,15 @@ public sealed class StalkerRepositorySystem : EntitySystem
                 continue;
             foreach (var element in container.Value.ContainedEntities)
             {
+                if (!includeClothing && TryComp<ClothingComponent>(element, out var clothing))
+                {
+                    if (clothing.Slots.HasFlag(SlotFlags.TORSO) ||
+                         clothing.Slots.HasFlag(SlotFlags.LEGS) ||
+                         clothing.Slots.HasFlag(SlotFlags.FEET) ||
+                         clothing.Slots.HasFlag(SlotFlags.IDCARD))
+                        continue;
+                }
+
                 // don't look here, go further, just another shitty blacklist
                 if (HasComp<OrganComponent>(element) ||
                     HasComp<InstantActionComponent>(element) ||

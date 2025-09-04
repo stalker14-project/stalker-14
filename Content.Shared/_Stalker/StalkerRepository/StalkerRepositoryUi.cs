@@ -63,3 +63,8 @@ public sealed class RepositoryInjectFromUserMessage : BoundUserInterfaceMessage
         Count = count;
     }
 }
+
+public sealed class RepositoryInjectAllInventoryMessage : BoundUserInterfaceMessage
+{
+
+}
