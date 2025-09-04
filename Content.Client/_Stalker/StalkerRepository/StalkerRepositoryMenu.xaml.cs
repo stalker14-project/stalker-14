@@ -42,10 +42,6 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
         CategorySelector.OnItemSelected += OnItemSelected;
 
         // Search Line
-        SearchClearButton.OnPressed += _ =>
-        {
-            SearchLine.SetText(string.Empty, true);
-        };
         SearchLine.OnTextChanged += OnTextChanged;
 
         PutInsideAllButton.OnPressed += _ => RepositoryButtonPutAllPressed?.Invoke();
