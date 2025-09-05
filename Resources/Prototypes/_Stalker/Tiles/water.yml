@@ -71,13 +71,6 @@
   - type: TileEntityEffect
     effects:
     - !type:ExtinguishReaction
-    # Goobstation - fishing
-  - type: FishingSpot
-    fishList: !type:NestedSelector
-      tableId: StalkerFishingTier1
-    fishDefaultTimer: 25.0
-    fishTimerVariety: 15.0
-  # Goobstation - fishing
 
 - type: entity
   parent: STFloorWaterEntity
@@ -95,6 +88,13 @@
     drawdepth: BelowFloor
     layers:
       - state: water1
+  # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
   parent: FloorWaterEntityStalker1
   id: FloorWaterEntityStalker2
@@ -108,6 +108,13 @@
     drawdepth: BelowFloor
     layers:
       - state: water2
+  # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
   parent: FloorWaterEntityStalker1
   id: FloorWaterEntityStalker3
@@ -121,6 +128,13 @@
     drawdepth: BelowFloor
     layers:
       - state: water3
+  # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
   parent: FloorWaterEntityStalker1
   id: FloorWaterEntityStalker4
@@ -142,10 +156,18 @@
     energy: 1
     color: "#c7e153"
     castShadows: false
+  # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
-  parent: FloorWaterEntityStalker1
+  parent: STFloorWaterEntity
   name: химические отходы
   description: Яркие химические отходы Зоны.
+  suffix: Stalker
   id: FloorWaterEntityStalker5
   placement:
     mode: SnapgridCenter
