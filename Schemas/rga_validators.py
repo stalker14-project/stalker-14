@@ -15,6 +15,7 @@ class License(Validator):
         "CC0-1.0",
         "MIT",
         "STALKER14-CLA",
+        "CP14",
         "Custom" # implies that the license is described in the copyright field.
         ]
 
