@@ -141,6 +141,9 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
         else if (HasComp<PortalTimeoutComponent>(subject))
             return;
 
+        if (_pulling.IsPulling(subject) || _pulling.IsPulled(subject))
+            return;
+
 
         // If there are no linked entity - link one
         if (!TryComp<LinkedEntityComponent>(uid, out var link))

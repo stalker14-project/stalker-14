@@ -37,13 +37,8 @@ public sealed class LocalTeleportSystem : SharedTeleportSystem
                 return;
         }
 
-        // Asked to remove, testing now
-        // if (TryComp<SharedPullableComponent>(subject, out var pullable) && pullable.BeingPulled)
-        //     _pulling.TryStopPull(pullable);
-        //
-        // if (TryComp<SharedPullerComponent>(subject, out var pulling)
-        //     && pulling.Pulling != null && TryComp<SharedPullableComponent>(pulling.Pulling.Value, out var subjectPulling))
-        //     _pulling.TryStopPull(subjectPulling);
+        if (_pulling.IsPulling(subject) || _pulling.IsPulled(subject))
+            return;
 
         // Remove Timeout from other portal
         if (HasComp<PortalTimeoutComponent>(subject))
