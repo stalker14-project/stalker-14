@@ -3,3 +3,4 @@ ent-ClothingOuterArmorReinger = боевая броня рейнджера
     .suffix = ST, T3, Universal
 ent-ClothingHeadHelmetReinger = шлем рейнджера
     .suffix = ST, T3
+    .desc = шлем рейнджера

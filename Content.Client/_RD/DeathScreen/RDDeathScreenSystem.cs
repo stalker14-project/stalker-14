@@ -9,10 +9,13 @@
  */
 
 using Content.Shared._RD.DeathScreen;
+using Content.Shared.Ghost;
 using Robust.Client.Audio;
+using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.Audio.Sources;
+using Robust.Shared.Player;
 
 namespace Content.Client._RD.DeathScreen;
 
@@ -21,6 +24,7 @@ public sealed class RDDeathScreenSystem : EntitySystem
     [Dependency] private readonly IAudioManager _audio = default!;
     [Dependency] private readonly IUserInterfaceManager _userInterface = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     private RDDeathScreenControl _ui = default!;
     private bool _remove;
@@ -32,6 +36,9 @@ public sealed class RDDeathScreenSystem : EntitySystem
 
         _ui = new RDDeathScreenControl();
         _ui.OnAnimationEnd += OnAnimationEnd;
+
+        _playerManager.LocalPlayerAttached += OnPlayerAttached;
+        _playerManager.LocalPlayerDetached += OnPlayerDetached;
     }
 
     public override void FrameUpdate(float frameTime)
@@ -49,7 +56,7 @@ public sealed class RDDeathScreenSystem : EntitySystem
     {
         _source = null;
 
-        Log.Debug($"Start death screen \"{ev}\"");
+        //Log.Debug($"Start death screen \"{ev}\"");
 
         if (ev.AudioPath != string.Empty)
         {
@@ -65,8 +72,32 @@ public sealed class RDDeathScreenSystem : EntitySystem
         _userInterface.RootControl.AddChild(_ui);
     }
 
+   /*
+   We really want to remove death screen if player got attached to other entity(ghost), or detached at all (lobby)
+   Autho:r Kiriyaga7615
+  */
+    private void OnPlayerAttached(EntityUid uid)
+    {
+          EndDeathScreen();
+    }
+
+    private void OnPlayerDetached(EntityUid uid)
+    {
+        EndDeathScreen();
+    }
+
     private void OnAnimationEnd()
     {
         _remove = true;
+    }
+
+    private void EndDeathScreen()
+    {
+        if (_userInterface.RootControl.Children.Contains(_ui))
+            _userInterface.RootControl.RemoveChild(_ui);
+
+        _source?.StopPlaying();
+        _source = null;
+        _remove = false;
     }
 }

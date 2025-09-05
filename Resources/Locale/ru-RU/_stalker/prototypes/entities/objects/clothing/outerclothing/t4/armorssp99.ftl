@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorSSP99Base = ССП-99
     .suffix = ST, T4, Env
+    .desc = ССП-99
 ent-STClothingHeadHelmetSSP99Base = шлем зелёного «Эколога»
     .desc = Защитит от аномалий и радиации, но точно не от пуль.
 ent-ClothingOuterArmorSSP99 = Зеленый ССП-99 «Эколог»
