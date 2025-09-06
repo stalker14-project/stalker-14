@@ -1,0 +1,43 @@
+# dont even worry about this
+- type: entity
+  id: BaseDEMag44
+  name: Desert Eagle Magazine (.44 Magnum)
+  description: You're gonna kill someone with this.
+  parent: BaseItem
+  tag: Stalker
+  suffix: DO NOT MAP
+  components:
+  - type: STWeight
+    self: 0.5
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/Ammunition/Magazines/45/deserteagle/8.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Tag
+    tags:
+    - MagazineDesertEagleMagnum
+  - type: BallisticAmmoProvider
+    proto:
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeMagnum
+        - CartridgeRemingtonMagnum
+    capacity: 8
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+  - type: RepositoryItem
+    categoryName: repository-magazines-category
