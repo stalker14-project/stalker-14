@@ -11,3 +11,17 @@
     size: Small
     shape:
     - 0,0,0,1
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartCatGland
+  name: gland
+  components:
+  - type: STWeight
+    self: 0.5
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/MutantParts/cat_gland.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
