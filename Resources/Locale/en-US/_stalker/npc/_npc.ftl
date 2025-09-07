@@ -82,3 +82,6 @@ ent-NPCSecurityGarrik = Garrik
 ent-NPCHidenTrader = Unknown [→ ←]
 ent-STTriggerHidenTrader = Hidden Trader Trigger
     .suffix = ST, Dollar, Trigger
+ent-NPCMercHummingbird = Hummingbird [→ ←]
+    .desc = He buys weapons in bulk in Europe and America and sells them in the zone.
+    .suffix = ST, Mercenary, Dollars
