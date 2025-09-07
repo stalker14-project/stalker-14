@@ -1,6 +1,6 @@
 ent-WeaponPistolStalkerPM = PMm
-    .desc = This is a Soviet-made pistol common in the Zone. It is hardly possible to find a more affordable and unpretentious weapon for a novice stalker.
+    .desc = This is a Soviet-made pistol common in the zone. Rookie stalkers won't find a more affordable option anywhere else. It uses 9x18mm ammo.
     .suffix = ST
 ent-WeaponPistolStalkerPMModifed = 9x19 PMm
-    .desc = PMm pistol is now in 9x19 caliber on the Glock-19 magazine, increased usability and increased rate of fire. The recoil and velocity of the bullet suffered slightly.
+    .desc = A PMm modified to use a 9x19mm loaded Glock-17 magazine. The rate of fire has been slightly improved but the recoil suffers for it.
     .suffix = { ent-WeaponPistolStalkerPM.suffix }
