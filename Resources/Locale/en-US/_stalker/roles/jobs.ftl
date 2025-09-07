@@ -37,7 +37,7 @@ job-head-freedom-desc = Zone Defender.
 job-head-freedom-supervisor = no one. Commanders? With the anarchists?
 
 job-journalist = Journalist
-job-journalist-desc = Write bullets and articles, get shot at.
+job-journalist-desc = Write bulletins and articles, get shot at.
 job-journalist-supervisor = the editorial board and the UN...
 
 job-mercenary = Mercenary
