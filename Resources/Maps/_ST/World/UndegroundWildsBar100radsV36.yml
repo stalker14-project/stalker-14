@@ -9900,7 +9900,7 @@ entities:
       pos: -6.5,14.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2498.5505
+      secondsUntilStateChange: -2660.865
       state: Denying
     - type: Physics
       canCollide: False
@@ -10055,6 +10055,46 @@ entities:
     components:
     - type: Transform
       pos: -6.5,8.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        body_root_part: !type:ContainerSlot {}
+        shoes: !type:ContainerSlot
+          occludes: False
+        jumpsuit: !type:ContainerSlot
+          occludes: False
+        outerClothing: !type:ContainerSlot
+          occludes: False
+        gloves: !type:ContainerSlot
+          occludes: False
+        neck: !type:ContainerSlot
+          occludes: False
+        mask: !type:ContainerSlot
+          occludes: False
+        eyes: !type:ContainerSlot
+          occludes: False
+        ears: !type:ContainerSlot
+          occludes: False
+        head: !type:ContainerSlot
+          occludes: False
+        pocket1: !type:ContainerSlot
+          occludes: False
+        pocket2: !type:ContainerSlot
+          occludes: False
+        suitstorage: !type:ContainerSlot
+          occludes: False
+        id: !type:ContainerSlot
+          occludes: False
+        belt: !type:ContainerSlot
+          occludes: False
+        back: !type:ContainerSlot
+          occludes: False
+- proto: NPCMercHummingbird
+  entities:
+  - uid: 970
+    components:
+    - type: Transform
+      pos: -1.5,21.5
       parent: 1
     - type: ContainerContainer
       containers:
@@ -36196,13 +36236,6 @@ entities:
     - type: Transform
       pos: 16.5,7.5
       parent: 1
-- proto: STWoodenGreenBoxMed
-  entities:
-  - uid: 2934
-    components:
-    - type: Transform
-      pos: -6.0325546,21.799175
-      parent: 1
 - proto: TargetHuman
   entities:
   - uid: 376
@@ -47959,6 +47992,11 @@ entities:
     - type: Transform
       pos: -8.5,21.5
       parent: 1
+  - uid: 2934
+    components:
+    - type: Transform
+      pos: -6.853508,21.550074
+      parent: 1
   - uid: 7257
     components:
     - type: Transform
@@ -50256,10 +50294,10 @@ entities:
       parent: 1
 - proto: WoodenGreenBox1Center
   entities:
-  - uid: 971
+  - uid: 5971
     components:
     - type: Transform
-      pos: -1.5,21.5
+      pos: -4.5,21.5
       parent: 1
 - proto: WoodenGreenBox2
   entities:
@@ -50275,6 +50313,11 @@ entities:
       parent: 1
 - proto: WoodenGreenBox3
   entities:
+  - uid: 971
+    components:
+    - type: Transform
+      pos: -5.5,21.5
+      parent: 1
   - uid: 7721
     components:
     - type: Transform
@@ -50324,11 +50367,6 @@ entities:
       parent: 1
 - proto: WoodenGreenBox5
   entities:
-  - uid: 970
-    components:
-    - type: Transform
-      pos: -6.877845,21.892925
-      parent: 1
   - uid: 2646
     components:
     - type: Transform
