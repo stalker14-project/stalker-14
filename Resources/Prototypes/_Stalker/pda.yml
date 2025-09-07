@@ -567,6 +567,11 @@
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Radiation: 2
 
 - type: entity
   parent: BaseStalkerPDA
@@ -975,12 +980,6 @@
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
-  - type: Armor
-    armorClass: 0
-    modifiers:
-      flatReductions:
-        Radiation: 200
-        Psy: 200
 
 - type: entity
   parent: BaseStalkerPDA
