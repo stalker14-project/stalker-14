@@ -40,7 +40,7 @@ namespace Content.Server.Bed
         {
             EnsureComp<HealOnBuckleHealingComponent>(bed);
             bed.Comp.NextHealTime = _timing.CurTime + TimeSpan.FromSeconds(bed.Comp.HealTime);
-            _actionsSystem.AddAction(args.Buckle, ref bed.Comp.SleepAction, SleepingSystem.SleepActionId, bed);
+            //_actionsSystem.AddAction(args.Buckle, ref bed.Comp.SleepAction, SleepingSystem.SleepActionId, bed);
 
             // Single action entity, cannot strap multiple entities to the same bed.
             DebugTools.AssertEqual(args.Strap.Comp.BuckledEntities.Count, 1);
@@ -49,7 +49,7 @@ namespace Content.Server.Bed
         private void OnUnstrapped(Entity<HealOnBuckleComponent> bed, ref UnstrappedEvent args)
         {
             _actionsSystem.RemoveAction(args.Buckle, bed.Comp.SleepAction);
-            _sleepingSystem.TryWaking(args.Buckle.Owner);
+            //_sleepingSystem.TryWaking(args.Buckle.Owner);
             RemComp<HealOnBuckleHealingComponent>(bed);
         }
 
@@ -75,8 +75,7 @@ namespace Content.Server.Bed
 
                     var damage = bedComponent.Damage;
 
-                    if (HasComp<SleepingComponent>(healedEntity))
-                        damage *= bedComponent.SleepMultiplier;
+                    damage *= bedComponent.SleepMultiplier;
 
                     _damageableSystem.TryChangeDamage(healedEntity, damage, true, origin: uid);
                 }
