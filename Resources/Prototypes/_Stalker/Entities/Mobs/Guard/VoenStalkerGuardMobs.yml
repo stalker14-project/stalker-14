@@ -1,20 +1,20 @@
 - type: entity
-  name: Сталкер Ополченец
+  name: Охранник военных сталкеров
   suffix: Stalker, Т6, NPC
   parent: MobStalkerBaseGuard
-  id: MobStalkerGuard
-  description: Ополченец с неплохим снаряжением, стоящий на защите сталкерства.
+  id: MobVoenstalSecurityTop
+  description: Охранник военных сталкеров.
   components:
   - type: NpcFactionMember
     factions:
-    - Stalker
-  - type: Bands
-    bandIcon: stalker
+    - MilitaryStalker
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: alive
-      sprite: _Stalker/NPC/Random/Stalker/Jacket/AKS-74U/armed.rsi
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/VoenStalker/Top.rsi
+  - type: Bands
+    bandIcon: voen
   - type: BatterySelfRecharger
     autoRecharge: true
     autoRechargeRate: 2
@@ -23,7 +23,7 @@
     fireCost: 5
   - type: Gun
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+      path: /Audio/_Stalker/Effects/Guns/ak.ogg
     fireRate: 4
     useKey: false
     selectedMode: FullAuto

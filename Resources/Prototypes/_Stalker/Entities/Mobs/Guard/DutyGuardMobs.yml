@@ -1,0 +1,103 @@
+- type: entity
+  name: Охранник долга
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobDutySecurityLow
+  description: Охранник долга.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Duty
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Duty/Low.rsi
+  - type: Bands
+    bandIcon: Dolg
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/919.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1
+
+- type: entity
+  name: Охранник долга
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobDutySecurityTop
+  description: Охранник долга.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Duty
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Duty/Top.rsi
+  - type: Bands
+    bandIcon: Dolg
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/ak.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1
