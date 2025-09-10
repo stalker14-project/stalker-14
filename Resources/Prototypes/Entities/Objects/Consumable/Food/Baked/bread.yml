@@ -413,6 +413,8 @@
     - state: plain
   - type: SliceableFood
     slice: FoodBreadPlainSlice
+  - type: Extractable
+    grindableSolutionName: food
 
 - type: entity
   name: bread slice
@@ -421,6 +423,8 @@
   description: A slice of home.
   components:
   - type: Food
+  - type: Extractable
+    grindableSolutionName: food
   - type: Sprite
     layers:
     - state: plain-slice

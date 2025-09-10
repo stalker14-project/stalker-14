@@ -1,0 +1,26 @@
+- type: entity
+  parent: BoxBase
+  id: ClothingBeltHerbalistPouch
+  name: Herbalist's Pouch
+  description: A pouch that attaches to your pocket, useful for storing plants.
+  suffix: ST
+  components:
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - pocket
+  - type: STWeight
+    self: 0.2
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/belt/herbalists_pouch.rsi
+    state: closed
+  - type: Storage
+    grid:
+    - 0,0,7,4
+    maxItemSize: Small
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      components:
+        - Produce
+        - Seed
