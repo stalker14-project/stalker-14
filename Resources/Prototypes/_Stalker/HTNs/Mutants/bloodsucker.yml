@@ -37,12 +37,6 @@
 
 - type: htnCompound
   id: STBloodsuckerRoarCompound
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
-    - !type:KeyBoolEqualsPrecondition
-      key: Roared
-      value: false
   branches:
     - tasks:
 
