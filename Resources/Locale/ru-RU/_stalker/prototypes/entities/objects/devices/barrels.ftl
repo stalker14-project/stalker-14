@@ -3,5 +3,7 @@ ent-BaseBarrel = бочка
     .suffix = Stalker
 ent-BarrelExpl = { ent-BaseBarrel }
     .suffix = Stalker, НЕ МАППИТЬ
+    .desc = { ent-BaseBarrel.desc }
 ent-BarrelWooden1 = деревянная бочка
     .suffix = { ent-BaseBarrel.suffix }
+    .desc = { ent-BaseBarrel.desc }

@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorBerill5MBase = бронекостюм «Берилл-5М»
     .suffix = ST, T4, Universal
+    .desc = бронекостюм «Берилл-5М»
 ent-STClothingOuterArmorBerill5M = бронекостюм «Берилл-5М»
     .desc = Модифицированная для работы в условиях Зоны, экипировка армейского спецназа - Берилл-5М.
 ent-ClothingOuterArmorBerill5MMonolith = бронекостюм «Берилл-5М» монолита

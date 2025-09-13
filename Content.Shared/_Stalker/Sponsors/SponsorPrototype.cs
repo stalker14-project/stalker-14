@@ -47,6 +47,7 @@ public sealed class ContributorPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = null!;
 
+    [DataField(serverOnly: true)]
     public string DiscordRoleId = null!;
 
     [DataField(serverOnly: true)]

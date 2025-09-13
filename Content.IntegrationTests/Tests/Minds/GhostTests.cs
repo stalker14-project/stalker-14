@@ -11,7 +11,7 @@ using Robust.UnitTesting;
 
 namespace Content.IntegrationTests.Tests.Minds;
 
-[TestFixture]
+[TestFixture, Ignore("Stalker-Changes: Disabled due to ghosts are turned off in stalker build.")]
 public sealed class GhostTests
 {
     private struct GhostTestData

@@ -1,20 +1,22 @@
 ent-MobStalkerZombieBase = зомбированный
     .suffix = Stalker, T3
+    .desc = Зомбированный
 ent-MobStalkerZombieSosop = зомбированный
     .suffix = Stalker, Т3
-
+    .desc = Зомбированный
 ent-MobStalkerZombieGlod = зомбированный
     .suffix = Stalker, Т3
-
+    .desc = Зомбированный
 ent-MobStalkerZombieISSG = зомбированный
     .suffix = Stalker, Т3
-
+    .desc = Зомбированный
 ent-MobStalkerZombieMerc = зомбированный
     .suffix = Stalker, Т3
-
+    .desc = Зомбированный
 ent-MobStalkerZombieRHBZ = зомбированный
     .suffix = Stalker, Т3
-
+    .desc = Зомбированный
 ent-MobStalkerZombieChN = зомбированный
     .suffix = Stalker, Т3
+    .desc = Зомбированный
 

@@ -9,7 +9,6 @@ namespace Content.Shared._Stalker.Anomaly.Data;
 [DataDefinition, Serializable]
 public partial struct STAnomalyGenerationOptions
 {
-    [DataField]
     public MapId MapId;
 
     [DataField]
@@ -34,7 +33,4 @@ public partial struct STAnomalyGeneratorAnomalyEntry
 
     [DataField]
     public float Weight = 1f;
-
-    [DataField]
-    public ProtoId<STAnomalyNaturePrototype> Nature;
 }

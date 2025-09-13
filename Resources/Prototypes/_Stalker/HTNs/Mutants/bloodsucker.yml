@@ -4,7 +4,7 @@
     - tasks:
       - !type:HTNCompoundTask
         task: STBloodsuckerMeleeCombatCompound
-    
+
     - tasks:
       - !type:HTNCompoundTask
         task: STBloodsuckerRoarRestoreCompound
@@ -22,16 +22,12 @@
 
       - !type:HTNCompoundTask
         task: STBloodsuckerRoarCompound
-   
+
       - !type:HTNCompoundTask
         task: STBloodsuckerMeleeAttackTargetCompound
 
 - type: htnCompound
   id: STBloodsuckerRoarRestoreCompound
-  preconditions:
-    - !type:KeyBoolEqualsPrecondition
-      key: Roared
-      value: true
   branches:
     - tasks:
       - !type:HTNPrimitiveTask
@@ -41,12 +37,6 @@
 
 - type: htnCompound
   id: STBloodsuckerRoarCompound
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
-    - !type:KeyBoolEqualsPrecondition
-      key: Roared
-      value: false
   branches:
     - tasks:
 
