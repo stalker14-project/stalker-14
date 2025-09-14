@@ -73,11 +73,13 @@ public sealed class FactionTeleportSystem : EntitySystem
         foreach (var faction in comp.Factions)
         {
             if (string.Equals(faction, DefaultFaction, StringComparison.OrdinalIgnoreCase))
-                return true;
-        }
+            {
+                if (string.IsNullOrEmpty(bandName) || bandName == "STBanditsBand" || bandName == "STRenegatsBand")
+                    return false;
 
-        if (string.IsNullOrEmpty(bandName))
-            return false;
+                return true;
+            }
+        }
 
         // Otherwise, require a match with the player's band name.
         foreach (var f in comp.Factions)
