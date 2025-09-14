@@ -1,8 +1,12 @@
 ent-MobMonolithGuardPatroolMarlyaAKS = Неизвестный монолитовец
     .suffix = Stalker, NPC, T3
+    .desc = Неизвестный монолитовец
 ent-MobMonolithGuardPatroolGas1L85 = Неизвестный монолитовец
     .suffix = Stalker, NPC, T3
+    .desc = Неизвестный монолитовец
 ent-MobMonolithGuardPatroolBalaLR300 = Неизвестный монолитовец
     .suffix = Stalker, NPC, T3
+    .desc = Неизвестный монолитовец
 ent-MobMonolithGuardPatroolSevaAbakan = Неизвестный монолитовец
     .suffix = Stalker, NPC, T4
+    .desc = Неизвестный монолитовец

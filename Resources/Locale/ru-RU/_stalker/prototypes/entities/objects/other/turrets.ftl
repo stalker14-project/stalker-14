@@ -3,3 +3,4 @@ ent-BaseWeaponRPKTurret = Стационарный РП-74
     .suffix = Stalker, турель [НЕ МАППИТЬ]
 ent-WeaponTurretNanoTrasenDisposableStalker = стационарный одноразовый РП-74
     .suffix = NanoTrasen, одноразовая [НЕ МАППИТЬ]
+    .desc = стационарный одноразовый РП-74

@@ -13,7 +13,7 @@ using Robust.Shared.Map;
 
 namespace Content.IntegrationTests.Tests.Minds;
 
-[TestFixture]
+[TestFixture, Ignore("Stalker-Changes: Disabled due to ghosts are turned off in stalker build.")]
 public sealed class GhostRoleTests
 {
     [TestPrototypes]

@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetCombatT1Base = база боевого шлема T1
     .suffix = ST, T1, Combat
+    .desc = база боевого шлема T1
 ent-ClothingHeadHelmetSH68 = СШ-68
     .desc = Это шлем, специально разработанный для защиты от колющих атак.
 ent-ClothingHeadHelmetSH68Band = СШ-68 адидас

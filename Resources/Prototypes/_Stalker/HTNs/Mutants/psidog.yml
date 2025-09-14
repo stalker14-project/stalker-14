@@ -15,16 +15,13 @@
       - !type:HTNPrimitiveTask
         operator: !type:UtilityOperator
           proto: STMonolithNearbyGunTargets
-   
+
       - !type:HTNCompoundTask
         task: STPsidogMeleeAttackTargetCompound
 
 
 - type: htnCompound
   id: STPsidogMeleeAttackTargetCompound
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
   branches:
     - tasks:
       - !type:HTNPrimitiveTask

@@ -1,5 +1,6 @@
 ent-STClothingCapeT2Base = база плаща T2
     .suffix = ST, T2
+    .desc = база плаща T2
 ent-ClothingOuterCoatBolotniy = плащ "болотный"
     .desc = плотный плащ с нанесённой по верх маскировкой из листьев, травы и палок.
     .suffix = ST, T2

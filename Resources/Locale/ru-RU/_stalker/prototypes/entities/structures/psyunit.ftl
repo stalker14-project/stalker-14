@@ -3,3 +3,4 @@ ent-psyUnit = компактная пси-установка
     .suffix = ST, Mapping
 ent-psyUnitBreakable = Компактная пси-установка
     .suffix = ST, Mapping, Breakable
+    .desc = { ent-psyUnit.desc }
