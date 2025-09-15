@@ -1,6 +1,7 @@
 using Content.Shared._Stalker_EN.FactionTeleport;
 using Content.Shared._Stalker.Bands;
 using Robust.Server.GameObjects;
+using Robust.Shared.GameObjects;
 // Added: EntityQueryEnumerator lives here.
 // Added: TransformComponent lives here.
 // Needed for TransformSystem
@@ -49,9 +50,13 @@ public sealed class FactionTeleportSystem : EntitySystem
             if (string.IsNullOrWhiteSpace(name))
                 name = "Unknown";
 
-            list.Add(new FactionTeleportDestination(GetNetEntity(uid), name));
-        }
+            var netEnt = GetNetEntity(uid);
+            if (netEnt == default)
+                continue;
 
+            // Include the color from the component so the client doesn't have to wait for local replication.
+            list.Add(new FactionTeleportDestination(netEnt, name, comp.NameColor));
+        }
 
         _ui.SetUiState(ent.Owner, FactionTeleportUiKey.Key, new FactionTeleportUiState(list));
     }
@@ -66,22 +71,45 @@ public sealed class FactionTeleportSystem : EntitySystem
 
     private static bool IsAllowed(FactionTeleportComponent comp, string? bandName)
     {
-        // shared default
-        const string DefaultFaction = "STStalkerBand";
+        const string defaultFaction = "STStalkerBand";
 
-        // If the destination lists the default, everyone is allowed.
+        // If explicitly marked as Everyone, allow regardless of band.
         foreach (var faction in comp.Factions)
         {
-            if (string.Equals(faction, DefaultFaction, StringComparison.OrdinalIgnoreCase))
-            {
-                if (string.IsNullOrEmpty(bandName) || bandName == "STBanditsBand" || bandName == "STRenegatsBand")
-                    return false;
-
+            if (string.Equals(faction, "Everyone", StringComparison.OrdinalIgnoreCase))
                 return true;
+        }
+
+        // Check once if the destination includes the default faction.
+        var hasDefault = false;
+        foreach (var faction in comp.Factions)
+        {
+            if (string.Equals(faction, defaultFaction, StringComparison.OrdinalIgnoreCase))
+            {
+                hasDefault = true;
+                break;
             }
         }
 
-        // Otherwise, require a match with the player's band name.
+        if (hasDefault)
+        {
+            // Default: allow all except empty band and two disallowed bands.
+            if (string.IsNullOrEmpty(bandName))
+                return false;
+
+            if (string.Equals(bandName, "STBanditsBand", StringComparison.OrdinalIgnoreCase))
+                return false;
+
+            if (string.Equals(bandName, "STRenegatsBand", StringComparison.OrdinalIgnoreCase))
+                return false;
+
+            return true;
+        }
+
+        // No default: require explicit match with player's band.
+        if (string.IsNullOrEmpty(bandName))
+            return false;
+
         foreach (var f in comp.Factions)
         {
             if (string.Equals(f, bandName, StringComparison.OrdinalIgnoreCase))
@@ -108,6 +136,10 @@ public sealed class FactionTeleportSystem : EntitySystem
             return;
 
         if (!TryComp(dest, out TransformComponent? destXform))
+            return;
+
+        // Ensure the user has a transform before moving them.
+        if (!TryComp(user, out TransformComponent? _))
             return;
 
         _xform.SetCoordinates(user, destXform.Coordinates);
