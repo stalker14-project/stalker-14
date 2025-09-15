@@ -140,6 +140,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
             _ent.QueueDeleteEntity(gridId);
             StalkerArenaDataList.RemoveAt(i);
+            _mapManager.DeleteMap(transform.MapID);
         }
     }
 
