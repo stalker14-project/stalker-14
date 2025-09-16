@@ -90,35 +90,8 @@
 - type: entity
   id: MercenaryBaseWarpPoint
   parent: BaseWarpPoint
-  name: Bar Mercenary Base
+  name: ??? Mercenary Base
   components:
   - type: FactionTeleport
     factions: [ STMercenariesBand ]
     color: "#1D3458"
-
-- type: entity
-  id: EcoCordonWarpPoint
-  parent: BaseWarpPoint
-  name: Cordon Ecologist Base
-  components:
-  - type: FactionTeleport
-    factions: [ STSciBand ]
-    color: "#1D3458"
-
-- type: entity
-  id: MonolithBaseWarpPoint
-  parent: BaseWarpPoint
-  name: Limansk Monolith Base
-  components:
-  - type: FactionTeleport
-    factions: [ STMonolithBand ]
-    color: "#ffffff"
-
-- type: entity
-  id: MilitaryBaseWarpPoint
-  parent: BaseWarpPoint
-  name: Cordon Military Base
-  components:
-  - type: FactionTeleport
-    factions: [ STMilitaryBand, STMilitaryStalkerBand, STSciBand ]
-    color: "#228B22"
