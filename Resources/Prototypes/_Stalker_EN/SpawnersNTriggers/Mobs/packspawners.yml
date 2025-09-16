@@ -1,0 +1,15 @@
+- type: entity
+  name: bear family trigger (100%)
+  id: BearFamilyPackTrigger100
+  parent: MarkerBase
+  suffix: ST, T3
+  components:
+  - type: STPackSpawner
+    protoId: STBearFamilyPack
+  - type: ApproachTrigger
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: crit
+    - state: ai
