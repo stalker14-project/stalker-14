@@ -191,6 +191,63 @@
 
 - type: entity
   parent: BaseItem
+  id: ArmyAKCUCrate
+  name: рядовой комплект СОП
+  description: Базовый армейский комплект предназначенный для солдат С.О.П. переделанный под ЧЗО.
+  suffix: Stalker, т3
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: ClothingOuterArmorZaryaMilitary
+    - id: Zipties
+    - id: Zipties
+    - id: PowerCellHyper
+    - id: ClothingHeadHatMilitary
+    - id: STWeaponRifleAKS74U
+    - id: ClothingBeltGreenWebbingStalker
+    - id: ClothingBackpackTacticOliveStalker
+    - id: DrinkMREFlask
+    - id: DrinkMREFlask
+    - id: FoodTinMRE
+    - id: FoodTinMRE
+    - id: RGD5Grenade
+    - id: STFoodBreadPlain
+    - id: STCombatKnife
+    - id: MedkitAI2
+    - id: MedkitAI2
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitScience
+    - id: STOintment
+    - id: STGauze
+    - id: STGauze
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: STFlashlightSeclite
+    - id: BaseRadio
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
   id: ArmyAK2Crate
   name: комплект ПСЗ-7 АКСУ
   description: Базовый армейский комплект ПСЗ предназначенный для солдат С.О.П. переделанный под ЧЗО.
