@@ -1,0 +1,101 @@
+- type: htnCompound
+  id: STBearT3Compound
+  branches:
+  - tasks:
+    - !type:HTNCompoundTask
+      task: STBearT3MeleeCombatCompound
+  - tasks:
+    - !type:HTNCompoundTask
+      task: STBearT3RoarRestoreCompound
+    - !type:HTNCompoundTask
+      task: IdleCompound
+
+- type: htnCompound
+  id: STBearT3MeleeCombatCompound
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:UtilityOperator
+        proto: NearbyMeleeTargets
+    - !type:HTNCompoundTask
+      task: STBearT3RoarCompound
+    - !type:HTNCompoundTask
+      task: STBearT3MeleeAttackTargetCompound
+
+- type: htnCompound
+  id: STBearT3RoarRestoreCompound
+  preconditions:
+  - !type:KeyBoolEqualsPrecondition
+    key: Roared
+    value: true
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:SetBoolOperator
+        targetKey: Roared
+        value: false
+
+- type: htnCompound
+  id: STBearT3RoarCompound
+  preconditions:
+  - !type:KeyExistsPrecondition
+    key: Target
+  - !type:KeyBoolEqualsPrecondition
+    key: Roared
+    value: false
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:PlaySoundOperator
+        sound:
+          path: /Audio/Animals/bear.ogg
+          params:
+            variation: 0.125
+    - !type:HTNPrimitiveTask
+      operator: !type:SetBoolOperator
+        targetKey: Roared
+        value: true
+
+- type: htnCompound
+  id: STBearT3MeleeAttackTargetCompound
+  preconditions:
+  - !type:KeyExistsPrecondition
+    key: Target
+  branches:
+  - tasks:
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        shutdownState: PlanFinished
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:JukeOperator
+        jukeType: AdjacentTile
+    - !type:HTNPrimitiveTask
+      operator: !type:MoveToOperator
+        shutdownState: PlanFinished
+        pathfindInPlanning: true
+        removeKeyOnFinish: false
+        targetKey: TargetCoordinates
+        pathfindKey: TargetPathfind
+        rangeKey: MeleeRange
+    - !type:HTNPrimitiveTask
+      operator: !type:JukeOperator
+        jukeType: AdjacentTile
+    - !type:HTNPrimitiveTask
+      operator: !type:MeleeOperator
+        targetKey: Target
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:TargetInRangePrecondition
+        targetKey: Target
+        rangeKey: MeleeRange
+      services:
+      - !type:UtilityService
+        id: MeleeService
+        proto: NearbyMeleeTargets
+        key: Target

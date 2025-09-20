@@ -1,0 +1,86 @@
+- type: entity
+  parent: BaseMobMutant
+  id: STMobMutantBearT3
+  name: old bear
+  suffix: ST, T3
+  description: Bears are a normal sight in the wilds, but it's hard to say what effect radiation has had on the ones living in the Zone.
+  components:
+  - type: HTN
+    rootTask:
+      task: STBearT3Compound
+  - type: Damageable
+    damageModifierSet: STMutantT4DamageModifierSet # might be a bit much idk
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker_EN/Mobs/Mutants/bear_t3.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 600
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path : /Audio/Animals/bear.ogg
+          pitch: 0.8
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      600: Dead
+  - type: Butcherable
+    spawned:
+    - id: MutantPartBearClaw
+      maxAmount: 4
+      prob: 0.5
+    - id: MutantPartBearPaw
+      maxAmount: 2
+      prob: 0.5
+    - id: FoodMeatSTBear
+      maxAmount: 3
+    - id: ClothingHeadBear
+      maxAmount: 1
+      prob: 0.05
+  - type: MeleeWeapon
+    attackRate: 0.8
+    heavyWindupModifier: 1
+    heavyDamageModifier: 2.0
+    angle: 30
+    range: 1.2
+    soundHit:
+      path: /Audio/_Stalker_EN/Mutants/bear_hit.ogg # it sucks but i give up
+      params:
+        variation: 0.125
+        pitch: 0.3
+    soundSwing:
+      path: /Audio/Animals/bear.ogg
+      params:
+        variation: 0.125
+    animation: WeaponArcClaw
+    damage: # not that much higher than t2 due to more aggressive htn
+      types:
+        Slash: 35
+        Blunt: 25
+  - type: MeleeThrowOnHit # im not sold on this, willing to kill it if its annoying
+    speed: 5
+    lifetime: 0.3
+  - type: StaminaDamageOnHit
+    damage: 15
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 3.5
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      500: 0.6
+  - type: STWeight
+    self: 100

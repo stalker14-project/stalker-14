@@ -25,3 +25,45 @@
     size: Small
     shape:
     - 0,0,0,1
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartBearClaw
+  name: bear claw
+  components:
+  - type: STWeight
+    self: 0.3
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/MutantParts/bear_claw.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartBearPaw
+  name: bear paw
+  components:
+  - type: STWeight
+    self: 0.5
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/MutantParts/bear_paw.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartBearEye
+  name: bear eye
+  components:
+  - type: STWeight
+    self: 0.3
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/MutantParts/bear_eye.rsi
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
