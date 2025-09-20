@@ -9,5 +9,5 @@ if [[ `uname` == MINGW* || `uname` == CYGWIN* ]]; then
     py -3 git_helper.py --quiet
 else
     # Not Windows, so probably some other Unix thing.
-    python git_helper.py --quiet
+    python3 git_helper.py --quiet
 fi
