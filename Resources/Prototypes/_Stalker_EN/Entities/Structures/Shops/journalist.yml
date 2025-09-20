@@ -1,0 +1,17 @@
+- type: entity
+  parent: StalkerShop
+  id: StalkerShopJournalist
+  name: Torgomat, Journalist
+  description: It sells reporting goods.
+  suffix: ST, Mapping, Journalist
+  components:
+    - type: Sprite
+      drawdepth: Objects
+      sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_gray.rsi
+      layers:
+        - state: torgomat_gray
+          map: [ "enum.ConstructionVisuals.Layer" ]
+        - state: normal-unshaded
+    - type: Shop
+      moneyId: Roubles
+      shopPresetId: JournalistShopPreset

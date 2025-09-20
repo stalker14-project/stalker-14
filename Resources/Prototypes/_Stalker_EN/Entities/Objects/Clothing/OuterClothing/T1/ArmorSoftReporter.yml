@@ -1,0 +1,26 @@
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: STClothingOuterPressVest
+  name: Press Vest
+  description: A padded vest worn by journalists. It offers more protection than just a coat, but that's about it.
+  suffix: ST, T1, Journalist
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/press_vest.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/press_vest.rsi
+  - type: STWeight
+    self: 3
+  - type: Armor
+    armorClass: 1
+    modifiers:
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.90
+        Piercing: 0.90
+  - type: ExplosionResistance
+    damageCoefficient: 0.90

@@ -1,0 +1,30 @@
+- type: entity
+  parent: STClothingOuterArmorBodyBase
+  id: STClothingOuterArmorPressVest
+  name: Armored Press Vest
+  description: A press vest with light reinforced plates built into it. Its bulk and weight make it harder to move around but it can withstand a decent amount of damage.
+  suffix: ST, T2, Journalist
+  components:
+  - type: STWeight
+    self: 10
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/press_vest_armored.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/press_vest_armored.rsi
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 3
+        Slash: 5
+        Piercing: 5
+        Heat: 1
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.80
+        Piercing: 0.65
+  - type: ExplosionResistance
+    damageCoefficient: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.80
+    sprintModifier: 0.80
