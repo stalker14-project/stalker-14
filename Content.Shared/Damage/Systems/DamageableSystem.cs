@@ -125,7 +125,7 @@ namespace Content.Shared.Damage
         /// </returns>
         public DamageSpecifier? TryChangeDamage(EntityUid? uid, DamageSpecifier damage, bool ignoreResistances = false,
             bool interruptsDoAfters = true, DamageableComponent? damageable = null, EntityUid? origin = null,
-            List<EntityUid>? ignoreResistors = null) // Stalker-Changes
+            List<EntityUid>? ignoreResistors = null, EntityUid? tool = null) // Stalker-Changes
         {
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
