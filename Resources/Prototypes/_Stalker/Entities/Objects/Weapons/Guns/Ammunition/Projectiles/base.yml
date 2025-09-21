@@ -27,15 +27,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: &flybyfixture
-        shape: !type:PhysShapeCircle
-          radius: 1.5
-        layer:
-        - Impassable
-        - MidImpassable
-        - HighImpassable
-        - LowImpassable
-        hard: False
   - type: Projectile
     impactEffect: BulletImpactEffect
     damage:
@@ -55,6 +46,7 @@
       falloff: 0.03
     - range: 20
       falloff: 0.2
+  - type: LagCompensation
 
 - type: entity
   parent: STBaseBullet
@@ -77,7 +69,6 @@
         mask:
         - Impassable
         - BulletImpassable
-      fly-by: *flybyfixture
 
 - type: entity
   abstract: true
