@@ -570,10 +570,8 @@ public abstract partial class SharedGunSystem : EntitySystem
 
                     Recoil(user, mapDirection, gun.CameraRecoilScalarModified);
 
-                    if (IsClientSide(ent!.Value))
-                        Del(ent.Value);
-                    else if (_netManager.IsClient)
-                        RemoveShootable(ent.Value);
+                    if (_netManager.IsClient)
+                        RemoveShootable(ent!.Value);
                     MarkPredicted(ent!.Value, 0);
                     break;
                 case HitscanPrototype hitscan:
@@ -737,7 +735,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         long tick = Timing.CurTick.Value;
         tick = tick << 32;
         tick = tick | (uint) GetNetEntity(component.Owner).Id;
-        Logger.Info(Timing.CurTick.ToString());
         var random = new Xoroshiro64S(tick).NextFloat(-0.5f, 0.5f);
         var spread = component.CurrentAngle.Theta * random;
         var angle = new Angle(direction.Theta + component.CurrentAngle.Theta * random);
