@@ -264,14 +264,8 @@ public sealed class GunPredictionSystem : SharedGunPredictionSystem
                     (hit, otherLagComp, otherFixtures, otherPhysics, otherTransform),
                     clientPos))
             {
-                if (_logHits)
-                    Log.Info("missed");
-
                 continue;
             }
-
-            if (_logHits)
-                Log.Info("hit");
 
             _projectile.ProjectileCollide((projectile, projectileComp, projectilePhysics), hit, true);
         }

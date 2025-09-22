@@ -1,14 +1,17 @@
 using System.Numerics;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
 using Content.Shared.Administration.Logs;
+using Content.Shared.Armor;
 using Content.Shared.Camera;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
 using Content.Shared.Effects;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -21,6 +24,7 @@ using Robust.Shared.Physics.Dynamics;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Projectiles;
@@ -40,6 +44,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageableSystem = default!;
     [Dependency] private readonly SharedGunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
+
 
     public override void Initialize()
     {
@@ -90,13 +97,51 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
         var coordinates = Transform(projectile).Coordinates;
         var otherName = ToPrettyString(target);
+        var ignoreResistances = component.IgnoreResistances;
+        List<EntityUid>? ignoreResistors = null;
+
+        if (component.ProjectileClass is { } projClass)
+        {
+            string[] slots =
+            {
+                "outerClothing","head","cloak","eyes","ears","mask","jumpsuit",
+                "neck","back","belt","gloves","shoes","id","legs","torso"
+            };
+
+            foreach (var slot in slots)
+            {
+                if (_inventory.TryGetSlotEntity(target, slot, out var ent))
+                {
+                    // Replace ArmorComponent with your actual type/namespace if different.
+                    if (TryComp<ArmorComponent>(ent, out var armor) && armor.ArmorClass.HasValue)
+                    {
+                        if (projClass >= armor.ArmorClass.Value)
+                        {
+                            ignoreResistors ??= new List<EntityUid>(4);
+                            ignoreResistors.Add(ent.Value);
+                        }
+                    }
+                }
+            }
+
+            if (TryComp(target, out DamageableComponent? dmgComp) && dmgComp.DamageModifierSetId != null)
+            {
+                if (_prototype.TryIndex(dmgComp.DamageModifierSetId, out DamageModifierSetPrototype? setProto) && projClass >= setProto.Class)
+                {
+                    ignoreResistances = true;
+                }
+            }
+        }
+
         var modifiedDamage = _netManager.IsServer
             ? _damageableSystem.TryChangeDamage(target,
                 ev.Damage,
-                component.IgnoreResistances,
+                ignoreResistances,
                 origin: component.Shooter,
+                ignoreResistors: ignoreResistors,
                 tool: uid)
             : new DamageSpecifier(ev.Damage);
+
         var deleted = Deleted(target);
 
         var filter = Filter.Pvs(coordinates, entityMan: EntityManager);
