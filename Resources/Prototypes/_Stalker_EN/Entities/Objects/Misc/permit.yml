@@ -1,0 +1,30 @@
+﻿- type: entity
+  name: Fishing License
+  parent: BookBase
+  suffix: Stalker, Documents
+  id: Fishinglicense
+  description: A sacred document accepted in every corner of the zone. It reeks of bureaucracy.
+  components:
+  - type: STWeight
+    self: 0.2
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Pullable
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/fishingpermit.rsi
+    scale: 0.8, 0.8
+    layers:
+    - state: permit1
+    size: Small
+  - type: Paper
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    closeOnHandDeselect: false
+    requireHands: false
+  - type: Tag
+    tags:
+    - Document
+    - Paper
+    - License
+  - type: Appearance
+  - type: PaperVisuals
