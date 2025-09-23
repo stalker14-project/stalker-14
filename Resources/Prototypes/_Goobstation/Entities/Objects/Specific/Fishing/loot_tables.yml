@@ -166,13 +166,16 @@
     children:
     - !type:NestedSelector
       tableId: Tier1Scrap
-      weight: 77
+      weight: 45
     - !type:NestedSelector
       tableId: Tier1Artifact
       weight: 3
     - !type:NestedSelector
       tableId: StalkerMedical
       weight: 20
+    - !type:NestedSelector
+      tableId: Tier1STFish
+      weight: 32
 
 - type: entityTable
   id: StalkerFishingTier2
@@ -180,16 +183,19 @@
     children:
     - !type:NestedSelector
       tableId: Tier2Scrap
-      weight: 25
+      weight: 20
     - !type:NestedSelector
       tableId: Tier2Artifact
       weight: 2
     - !type:NestedSelector
       tableId: StalkerFishingTier1
-      weight: 72
+      weight: 62
     - !type:NestedSelector
       tableId: StalkerMutant
       weight: 1
+    - !type:NestedSelector
+      tableId: Tier2STFish
+      weight: 15
 
 - type: entityTable
   id: StalkerFishingTier3
@@ -203,7 +209,10 @@
       weight: 1
     - !type:NestedSelector
       tableId: StalkerFishingTier2
-      weight: 89
+      weight: 80
+    - !type:NestedSelector
+      tableId: Tier3STFish
+      weight: 9
 
 - type: entityTable
   id: StalkerFishingTable

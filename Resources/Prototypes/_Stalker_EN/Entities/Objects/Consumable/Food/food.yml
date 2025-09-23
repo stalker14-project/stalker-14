@@ -105,3 +105,329 @@
     keepSecond: true
     exactSecond: false
     time: 20
+
+# FISH
+# this could have been done cleaner but refer to top of file comment
+
+# rotten
+- type: entity
+  name: rotten fish
+  id: FoodMeatSTRottenFish
+  parent: FoodMeatRotten
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: rottenfish
+
+# fillet
+- type: entity
+  name: raw fish fillet
+  parent: FoodMeatRawBase
+  id: FoodMeatSTFishFilletRaw
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.25
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: fillet_raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: MToxin
+          Quantity: 10
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: fillet stfish
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+  - type: RotInto
+    entity: FoodMeatSTRottenFish
+    stage: 1
+
+- type: entity
+  name: cooked fish fillet
+  parent: FoodMeatBase
+  id: FoodMeatSTFishFilletCooked
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.25
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: fillet_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 10
+  - type: Construction
+    graph: MeatFilletSTFish
+    node: fillet stfish
+
+- type: constructionGraph
+  id: MeatFilletSTFish
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: fillet stfish
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: fillet stfish
+    entity: FoodMeatSTFishFilletCooked
+
+- type: lightCraftingRecipe
+  id: MeatFilletSTFishCraft
+  results:
+  - FoodMeatSTFishFilletCooked
+  steps:
+    firstIngredient: FoodMeatSTFishFilletRaw
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 12
+
+- type: lightCraftingRecipe
+  id: MeatFilletSTFishCraftGas
+  results:
+  - FoodMeatSTFishFilletCooked
+  steps:
+    firstIngredient: FoodMeatSTFishFilletRaw
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 12
+
+# steak
+- type: entity
+  name: raw fish steak
+  parent: FoodMeatRawBase
+  id: FoodMeatSTFishSteakRaw
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.45
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: steak_raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: MToxin
+          Quantity: 10
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: steak stfish
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+  - type: RotInto
+    entity: FoodMeatSTRottenFish
+    stage: 1
+
+- type: entity
+  name: cooked fish steak
+  parent: FoodMeatBase
+  id: FoodMeatSTFishSteakCooked
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.40
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: steak_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 10
+  - type: Construction
+    graph: MeatSteakSTFish
+    node: steak stfish
+
+- type: constructionGraph
+  id: MeatSteakSTFish
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: steak stfish
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: steak stfish
+    entity: FoodMeatSTFishSteakCooked
+
+- type: lightCraftingRecipe
+  id: MeatSteakSTFishCraft
+  results:
+  - FoodMeatSTFishSteakCooked
+  steps:
+    firstIngredient: FoodMeatSTFishSteakRaw
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 15
+
+- type: lightCraftingRecipe
+  id: MeatSteakSTFishCraftGas
+  results:
+  - FoodMeatSTFishSteakCooked
+  steps:
+    firstIngredient: FoodMeatSTFishSteakRaw
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 15
+
+# eel
+- type: entity
+  name: raw eel
+  parent: FoodMeatRawBase
+  id: FoodMeatSTEelRaw
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.25
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: eel_raw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: meat steel
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+  - type: RotInto
+    entity: FoodMeatSTRottenFish
+    stage: 1
+
+- type: entity
+  name: cooked eel
+  parent: FoodMeatBase
+  id: FoodMeatSTEelCooked
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.25
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: eel_cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Construction
+    graph: MeatSTEel
+    node: meat steel
+
+- type: constructionGraph
+  id: MeatSTEel
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: meat steel
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: meat steel
+    entity: FoodMeatSTEelCooked
+
+- type: lightCraftingRecipe
+  id: MeatSTEelCraft
+  results:
+  - FoodMeatSTEelCooked
+  steps:
+    firstIngredient: FoodMeatSTEelRaw
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: MeatSTEelCraftGas
+  results:
+  - FoodMeatSTEelCooked
+  steps:
+    firstIngredient: FoodMeatSTEelRaw
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 10

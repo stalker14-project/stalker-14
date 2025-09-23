@@ -1,0 +1,30 @@
+- type: entityTable
+  id: Tier1STFish
+  table: !type:GroupSelector
+    children:
+    - id: STFishBitterling
+    - id: STFishBleak
+    - id: STFishBream
+    - id: STFishCarp
+    - id: STFishPerch
+    - id: STFishPike
+    - id: STFishSunbleak
+    - id: STFishTench
+
+- type: entityTable
+  id: Tier2STFish
+  table: !type:GroupSelector
+    children:
+    - id: STFishEel
+    - id: STFishSturgeon
+    - id: STFishTrout
+    - id: STFishLuminantGudgeon
+    - id: STFishSwiftLurker
+    - id: STFishDenseTench
+
+- type: entityTable
+  id: Tier3STFish
+  table: !type:GroupSelector
+    children:
+    - id: STFishGoldfish
+    - id: STFishCatfish
