@@ -1,0 +1,21 @@
+- type: entity
+  parent: NPCDoll
+  id: NPCUncle
+  name: Uncle [→   ←]
+  description: He smells like weed and beer and he looks like he's ready to get back to the lake.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/NPC/uncle.rsi
+    state: unc
+  - type: Physics
+    bodyType: Static
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: STFishShopPreset
