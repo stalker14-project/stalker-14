@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: Colonel's Rubber Stamp
+  parent: RubberStampBase
+  id: RubberStampColonel
+  suffix: DO NOT MAP, ST
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-colonel
+    stampedColor: "#cc0000"
+    stampState: "paper_stamp-hos"
+  - type: Sprite
+    state: stamp-hos
+
+- type: entity
+  name: Strelok Stamp
+  parent: RubberStampBase
+  id: RubberStampStrelok
+  suffix: DO NOT MAP, ST
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-strelok
+    stampedColor: "#3681bb"
+    stampState: "paper_stamp-cap"
+  - type: Sprite
+    sprite: Objects/Misc/stamps.rsi
+    state: stamp-cap
