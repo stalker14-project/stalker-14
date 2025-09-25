@@ -230,6 +230,8 @@
     sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
     scale: 0.7, 0.7
     size: Normal
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: SolutionContainerVisuals
     scale: 0.7, 0.7
     maxFillLevels: 1
@@ -359,6 +361,8 @@
     sprite: _Stalker/Objects/Medicine/steampack/probud.rsi
     scale: 0.7, 0.7
     size: Normal
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: SolutionContainerVisuals
     scale: 0.7, 0.7
     maxFillLevels: 1
@@ -631,6 +635,8 @@
   parent: Pill
   id: PillDexalinPlusStalker
   components:
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: SolutionContainerManager
     solutions:
       food:
@@ -813,6 +819,8 @@
     pillType: 15
   - type: Sprite
     state: pill16
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Label
     currentLabel: Ephedrine 30
   - type: SolutionContainerManager
@@ -1162,6 +1170,8 @@
   - type: Sprite
     state: ointment
   - type: Item
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Healing
     damageContainers:
       - Biological
@@ -1222,6 +1232,8 @@
     state: regenerative-mesh
   - type: Item
     heldPrefix: regenerative-mesh
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Healing
     damageContainers:
       - Biological
@@ -1270,6 +1282,8 @@
   - type: Item
     heldPrefix: medicated-suture
     storedRotation: -90
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Healing
     damageContainers:
       - Biological
