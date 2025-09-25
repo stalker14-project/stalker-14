@@ -9,6 +9,10 @@
     sprite: _Stalker_EN/Objects/Misc/fish.rsi
   - type: RandomMetadata
     descriptionSegments: [ STFishSize ]
+  - type: Food
+  - type: FlavorProfile
+    flavors:
+    - fishy
   - type: RepositoryItem
     categoryName: repository-misc-category
 
@@ -26,6 +30,14 @@
     size: Tiny
     shape: # shape is probably redundant
     - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 1
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -45,6 +57,14 @@
     size: Tiny
     shape:
     - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 1
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -64,6 +84,14 @@
     size: Small
     shape:
     - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 4
+        - ReagentId: Nutriment
+          Quantity: 3
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -81,6 +109,14 @@
     size: Normal
     shape:
     - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 2
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -99,6 +135,14 @@
     shape:
     - 0,0,2,0
     - 0,1,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 2
   - type: Butcherable
     spawned:
     - id: FoodMeatSTEelRaw
@@ -118,6 +162,14 @@
     size: Tiny
     shape:
     - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Nutriment
+          Quantity: 2
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -136,6 +188,14 @@
     size: Normal
     shape:
     - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 3
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -153,6 +213,14 @@
     size: Normal
     shape:
     - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -170,6 +238,14 @@
     size: Tiny
     shape:
     - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 1
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -188,6 +264,14 @@
     size: Normal
     shape:
     - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 2
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -205,6 +289,14 @@
     size: Normal
     shape:
     - 0,0,0,2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishSteakRaw
@@ -225,6 +317,15 @@
     size: Tiny
     shape:
     - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - metallic
   - type: Butcherable
     spawned:
     - id: IngotGold1
@@ -249,6 +350,14 @@
     size: Normal
     shape:
     - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: MRadin
+          Quantity: 10
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -271,6 +380,14 @@
     size: Normal
     shape:
     - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishSteakRaw
@@ -291,6 +408,14 @@
     size: Normal
     shape:
     - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 25
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishFilletRaw
@@ -313,6 +438,18 @@
     size: Large
     shape:
     - 0,0,4,3
+  - type: MultiHandedItem
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 30
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: MToxin
+          Quantity: 10
   - type: Butcherable
     spawned:
     - id: FoodMeatSTFishSteakRaw
