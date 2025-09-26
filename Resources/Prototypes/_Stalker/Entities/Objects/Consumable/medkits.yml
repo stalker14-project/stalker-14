@@ -61,6 +61,8 @@
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
 
 - type: stack
   id: STBrutepack
@@ -85,6 +87,8 @@
       sprite: _Stalker/Objects/Specific/Medical/Other.rsi
       state: esmarch
       scale: 0.6, 0.6
+    - type: RepositoryItem
+      categoryName: repository-medicine-category
     - type: Healing
       damageContainers:
         - Biological
@@ -109,6 +113,8 @@
   - type: Stack
     stackType: STBrutepackSera
     count: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
@@ -144,6 +150,8 @@
   - type: Stack
     stackType: STOintment
     count: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/medicine.rsi
     state: ointment
@@ -183,6 +191,8 @@
   - type: Stack
     stackType: STOintmentGood
     count: 4
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
 
 - type: stack
   id: STOintmentGood
@@ -203,6 +213,8 @@
   - type: Stack
     stackType: STOintmentSera
     count: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
@@ -242,6 +254,8 @@
   - type: Stack
     stackType: STGauze
     count: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
@@ -268,6 +282,8 @@
   - type: Stack
     stackType: STGauzeSera
     count: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
     state: icon
@@ -336,6 +352,8 @@
   - type: Stack
     stackType: MedkitAI2Sera
     count: 4
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
@@ -554,6 +572,8 @@
   parent: BaseStorageItem
   abstract: true
   components:
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Item
     size: Tiny
   - type: Storage
@@ -594,6 +614,8 @@
     contents:
     - id: antiradpill
       amount: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Sprite
     sprite: _Stalker/Objects/Medicine/pillboxes/antirad.rsi
     state: icon
@@ -611,6 +633,8 @@
     contents:
     - id: wakeuppill
       amount: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Sprite
     sprite: _Stalker/Objects/Medicine/pillboxes/probud.rsi
     state: icon
@@ -628,6 +652,8 @@
     contents:
     - id: shizopill
       amount: 10
+  - type: RepositoryItem
+    categoryName: repository-medicine-category
   - type: Sprite
     sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi
     state: icon

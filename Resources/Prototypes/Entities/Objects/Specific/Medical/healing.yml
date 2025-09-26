@@ -195,7 +195,7 @@
 
 - type: entity
   name: blood pack
-  description: Contains a groundbreaking universal blood replacement created by Nanotrasen's advanced medical science.
+  description: Contains a groundbreaking universal blood replacement created by Ukraine's advanced medical science. #Stalker EN
   parent: BaseHealingItem
   id: Bloodpack
   suffix: Full
@@ -205,6 +205,8 @@
     - Bloodpack
   - type: Sprite
     state: bloodpack
+  - type: RepositoryItem #Stalker EN
+    categoryName: repository-medicine-category
   - type: Healing
     damageContainers:
       - Biological
