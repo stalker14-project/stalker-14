@@ -1,0 +1,161 @@
+﻿### Voenstal Headset ###
+
+
+- type: entity
+  parent: ClothingHeadsetGrey
+  id: ClothingHeadsetMilitary
+  name: "Military Headset"
+  description: An old headset connected to military's communications relay.
+  components:
+  - type: ContainerContainer
+    containers:
+      key_slots: !type:Container
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyVoen
+  - type: Headset
+  - type: EncryptionKeyHolder
+    keySlots: 2
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+  - type: Item
+    size: Small
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Ears/code_project_garniture.rsi
+    slots:
+    - ears
+  - type: Unremoveable
+
+- type: entity
+  parent: BaseItem
+  id: EncryptionKeyVoen
+  name: "Special Forces Communications Key"
+  description: An encryption key that allows access to military special forces communication channels.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Military
+    - Fireteam1
+    - Fireteam2
+    - Command
+    defaultChannel: Military
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Other/Keys/crypt_voen.rsi
+    state: icon
+
+- type: radioChannel
+  id: Military
+  name: "Military"
+  keycode: 'm'
+  frequency: 19841
+  color: "#2cdb2c"
+  longRange: true
+
+- type: radioChannel
+  id: Fireteam1
+  name: "Fireteam 1"
+  keycode: '1'
+  frequency: 19842
+  color: "#ff4242"
+  longRange: true
+
+- type: radioChannel
+  id: Fireteam2
+  name: "Fireteam 2"
+  keycode: '2'
+  frequency: 19843
+  color: "#57b8f0"
+  longRange: true
+
+- type: radioChannel
+  id: Command
+  name: "Command"
+  keycode: 'c'
+  frequency: 19844
+  color: "#fcdf03"
+  longRange: true
+
+### United Nations Headset ###
+
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetNato
+  name: "United Nations over-ear headset"
+  description: State-of-the-art headset that is linked to NATO's communications relay.
+  components:
+  - type: ContainerContainer
+    containers:
+      key_slots: !type:Container
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyNATO
+  - type: Headset
+  - type: EncryptionKeyHolder
+    keySlots: 2
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Item
+    size: Small
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi
+    slots:
+    - ears
+  - type: Unremoveable
+
+- type: entity
+  parent: BaseItem
+  id: EncryptionKeyNATO
+  name: "NATO Encryption Key"
+  description: An encryption key that allows access to NATO's communication channels.
+  components:
+  - type: EncryptionKey
+    channels:
+    - NATO
+    - Sunray
+    defaultChannel: NATO
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Other/Keys/crypt_nato.rsi
+    state: icon
+
+- type: radioChannel
+  id: NATO
+  name: "NATO"
+  keycode: 'n'
+  frequency: 19845
+  color: "#2ed2fd"
+  longRange: true
+
+- type: radioChannel
+  id: Sunray
+  name: "Sunray"
+  keycode: 's'
+  frequency: 19846
+  color: "#f6ce64"
+  longRange: true
+
+  ### Monolith Channels ###
+
+- type: entity
+  parent: BaseItem
+  id: EncryptionKeyMonolith
+  name: "Monolith Mind Uplink"
+  description: An encryption key that allows access to hear the Monolith.
+  components:
+  - type: EncryptionKey
+    channels:
+    - Monolith
+    defaultChannel: Monolith
+  - type: Sprite
+    sprite: _Stalker/Objects/Other/crypt_project.rsi
+    state: icon
+
+- type: radioChannel
+  id: Monolith
+  name: "Telepathic"
+  keycode: 't'
+  frequency: 19846
+  color: "#cd7ccd"
+  longRange: true
