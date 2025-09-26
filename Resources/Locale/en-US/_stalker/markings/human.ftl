@@ -1,6 +1,4 @@
 # HAIR
-# i saw some unattended locale strings so im helping myself
-# all the hair besides messy ponytail is from corvax but it looks like they dont have english locale strings for them so I'm just doing it here
 marking-HumanHairMessyPony = Messy Ponytail
 marking-HumanHairAfricanPigtails = African Pigtails
 marking-HumanHairAfropuffdouble = Afro Puff Double
@@ -72,6 +70,16 @@ marking-HumanHairVictory = Victory
 marking-HumanHairViper = Viper
 marking-HumanHairWife = Someone's Wife
 marking-HumanHairZiegler = Ziegler
+marking-StalkerHumanHairCIA2 = CIA 2
+marking-StalkerHumanHairCIA3 = CIA 3
+marking-StalkerHumanHairCIA5 = CIA 4
+marking-StalkerHumanHairIRS = Tax Collector
+marking-StalkerHumanHairFlatPressed = Pressed Flat
+marking-StalkerHumanHairWaver = Wavy
+marking-StalkerHumanHairElegant = Elegant Bun
+marking-StalkerHumanHairLowBun = Low Bun
+marking-StalkerHumanHairLowPonyTail = Low Ponytail
+marking-StalkerHumanHairLowPonyTailAlt = Low Ponytail Alt
 
 # FACIAL HAIR
 marking-HumanFacialHairHandlebar = Moustache (Handlebars)
