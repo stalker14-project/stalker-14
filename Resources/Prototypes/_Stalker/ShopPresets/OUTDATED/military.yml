@@ -511,27 +511,25 @@
       priority: 3
       items:
         918PBMBox: 25
-        545FMJBox: 25
+        545FMJBox: 75
         545HPBox: 50
-        545PCBox: 50
-        725PSTBox: 50
+        545PCBox: 150
+        725PSTBox: 150
         725LRNPCBox: 50
-        739FMJBox: 50
+        739FMJBox: 150
         739HPBox: 50
         7mmBuckshotBox: 10
         6mmBuckshotBox: 25
         8mmBuckshotBox: 50
         ShotgunFlechette: 50
         754FMJBox: 50
-        754PCBox: 200
+        754PCBox: 150
 
     - name: shop-category-magazines
       priority: 4
       items:
         545Mag30: 150
-        Magazine762x39RPD: 150
         739Mag30: 150
-        754Mag20: 150
         VityazMag: 150
         Saiga1270Drum: 150
         BaseAPSMag: 75
@@ -545,23 +543,22 @@
         STWeaponSniperSKS: 800
         STWeaponRifleAKS74: 900
         STWeaponRifleAKS74Green: 900
-        STWeaponMachineGunRPD: 1000
         STWeaponSMGPP1901: 1200
-        STWeaponRifleAK103: 1200
+        STWeaponRifleAKM: 1200
         STWeaponShotgunSaiga12: 2500
-        STWeaponSniperSVDS: 3000
+        STWeaponSniperMosin: 850
 
     - name: shop-category-armor
       priority: 6
       items:
-          # Helmets #
+        # Helmets #
         ClothingHeadHelmetSH68: 200 # T1 - PVP
         ClothingHeadHelmetInfantry: 300 # T2 - PVP
         ClothingHeadAssaultHelmetMilitary: 1200 # T3 - PVP
         ClothingHeadHelmetBerill5MMilitary: 1200 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 1600 # T3 - PVP
 
-           # OuterClothing #
+        # OuterClothing #
         STClothingOuterArmorLightPlateVestBaseMilitary: 300 # T2 - PvP
         ClothingOuterArmor6B2: 400 # T2 - PvP
         ClothingOuterArmorMilitarySpark: 800 # T2 - ENV
@@ -573,36 +570,33 @@
     - name: shop-category-medicine
       priority: 7
       items:
-         # Cheap
+        # Cheap
         PillDexalin: 10
         PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
-          # Expensive
-        antiradpill: 50
-        radioprotectpill: 70
-        Bloodpack: 90
-        psyblock: 200
-        MedkitMilitary: 210
+        # Expensive
+        radioprotectpill: 20
+        Bloodpack: 20
+        psyblock: 75
         Defibrillator: 700
 
     - name: shop-category-storage-and-containers
       priority: 8
       items:
-           # BackPacks
+        # BackPacks
         ClothingBackpackDuffelBlackStalker: 30 # T1
         ClothingBackpackTacticBlackRadStalker: 450 # T2
         ClothingBackpackMercStalker: 650 # T3
         ClothingBackpackDuffelBlackMilitaryTacticStalker: 1000 # T4
         ClothingBackpackDuffelBlackTacticStalker: 1000 # T4
-          # Belts
+        # Belts
         ClothingBeltGreenWebbingStalker: 250
-        ClothingBeltWebbingOfficerStalker: 300
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanBlack: 200 # T1 - PVP
         ClothingBeltTarzanGreen: 200 # T1 - PVP
-          # Containers
+        # Containers
         MedkitCMSStalker: 450 # T1
         MedkitGrizzlyStalker: 850 # T2
 
@@ -621,14 +615,11 @@
         ExtendedEmergencyOxygenTankFilledStalker: 50
         Matchbox: 10
         ClothingHeatBagStalker: 15
-        CraftBag: 10
-        STspade: 25
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 10
       items:
-          # Cloaks
-          # Gasmasks
+        # Gasmasks
         ClothingMaskGasXM40: 500 # T3
         ClothingMaskGP7: 500 #T3
         ClothingMaskGasM40Military: 400 #T2
@@ -637,11 +628,12 @@
     - name: shop-category-research-equipment
       priority: 11
       items:
+        # Detectors
         STBoltBagFilled: 50
         ZoneAnomalyDetectorAD1: 450 # T1
         ZoneAnomalyDetectorAD2: 1000 # T2
-          # Detectors
-          # Пусто
+
+
 
     - name: shop-category-modules
       priority: 12
@@ -663,9 +655,3 @@
         RGD5Grenade: 50
         TearGasGrenadeStalker: 35
         DG05SmokeGrenade: 25
-
-    - name: shop-category-paperwork
-      priority: 14
-      items:
-        hunterLicense: 5
-        militaryLicense: 5
