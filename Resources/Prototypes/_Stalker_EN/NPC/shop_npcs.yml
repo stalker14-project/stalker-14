@@ -9,6 +9,8 @@
     state: unc
   - type: Physics
     bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerUncleAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -19,3 +21,18 @@
   - type: Shop
     moneyId: Roubles
     shopPresetId: STFishShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common

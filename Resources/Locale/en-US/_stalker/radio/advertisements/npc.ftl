@@ -80,3 +80,14 @@ advertisement-barmen-5 = How are you doing?
 advertisement-barmen-6 = To drink or to bring what?
 advertisement-barmen-7 = Zdarova, stalker.
 advertisement-barmen-8 = Show me what you brought.
+
+# Uncle
+
+advertisement-uncle-1 = Give a man a fish, and you feed him for a day; teach a man to fish, and you feed him for a lifetime
+advertisement-uncle-2 = Stalker, let me tell ya patience catches more fish than any fancy bait.
+advertisement-uncle-3 = Some stalkers hunt artifacts, others chase glory. Me? I’ll take a fat carp on the line over a glowing rock any day.
+advertisement-uncle-4 = Fish don’t lie. Men do. That’s why I trust the water more than people.
+advertisement-uncle-5 = If the Military asks, you’ve got your fishing permit, right? Right…? Good.
+advertisement-uncle-6 = Some men chase artifacts… me? I chase fish. At least fish don’t explode when you touch ‘em.
+advertisement-uncle-7 = Fishing rod, a fire, a little bread, and no mutants sniffin’ about… that’s paradise, stalker. Paradise.
+advertisement-uncle-8 = They say there’s a Bearman out there… bah. Myth or not, I don’t fancy finding out while I’ve got a rod in hand.
