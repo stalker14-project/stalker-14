@@ -17,9 +17,18 @@ ent-STCache4T2 = { ent-STCache1T2 }
     .desc = { ent-STCache1T2.desc }
     .suffix = { ent-STCache1T2.suffix }
 #tier 3
-ent-STCacheT3 = box
+ent-STCache1T3 = box
     .desc = Pretty old box. Perhaps it is worth searching it. Maybe you can find something useful in it.
-    .suffix = ST, Cache, T1
+    .suffix = ST, Cache, T3
+ent-STCache2T3 = { ent-STCache1T3 }
+    .desc = { ent-STCache1T3.desc }
+    .suffix = { ent-STCache1T3.suffix }
+ent-STCache3T3 = { ent-STCache1T3 }
+    .desc = { ent-STCache1T3.desc }
+    .suffix = { ent-STCache1T3.suffix }
+ent-STCache4T3 = { ent-STCache1T3 }
+    .desc = { ent-STCache1T3.desc }
+    .suffix = { ent-STCache1T3.suffix }
 #tier 4
 ent-STCache1T4 = bayonet with head
     .desc = Maybe you can find something useful in it.
