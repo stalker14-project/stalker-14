@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorSSP24Base = ССП-24
     .suffix = ST, T4, Env
+    .desc = ССП-24
 ent-STClothingHeadHelmetSSP24Base = шлем зелёного «Эколога»
     .desc = Защитит от аномалий и радиации, но точно не от пуль.
 ent-ClothingOuterArmorSSP24Ruby = Красный ССП-24 «Рубин»
