@@ -1,8 +1,11 @@
 ent-RubberStampArmy = печать военного
+    .desc = печать военного
     .suffix = DO NOT MAP
 ent-RubberStampScience = печать ученого
+    .desc = печать ученого
     .suffix = { ent-RubberStampArmy.suffix }
 ent-RubberStampUN = печать ООН
+    .desc = печать ООН
     .suffix = { ent-RubberStampArmy.suffix }
 ent-RubberStampHeadMerc = печать полевого Командира
     .desc = Печать полевого командира "Группа Арес"

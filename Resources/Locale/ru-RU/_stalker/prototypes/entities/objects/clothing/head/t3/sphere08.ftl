@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetEnvironmentT3Base = база шлема защиты от окружения T3
     .suffix = ST, T3, Env
+    .desc = база шлема защиты от окружения T3
 ent-ClothingHeadHelmetBerill5MMilitary = шлем «Сфера-08»
     .desc = Шлем удачливых вояк и военсталов, разработанный для защиты от колющих атак. Является шлемом от «Берилл-5М».
 ent-ClothingHeadHelmetBerill5MMonolith = шлем «Сфера-08» монолита

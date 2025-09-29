@@ -160,6 +160,7 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !p.Abstract)
                 .Where(p => !pair.IsTestPrototype(p))
                 .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
+                .Where(p => !p.Components.ContainsKey("STNPCSniper")) // Stalker-Changes
                 .Select(p => p.ID)
                 .ToList();
 
@@ -345,6 +346,9 @@ namespace Content.IntegrationTests.Tests
                 "LoadedChunk", // Worldgen chunk loading malding.
                 "BiomeSelection", // Whaddya know, requires config.
                 "ActivatableUI", // Requires enum key
+
+                // Stalker-Changes-Start
+                "STPackSpawner" // Requires ProtoId to be set
             };
 
             // TODO TESTS

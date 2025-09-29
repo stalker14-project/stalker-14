@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using Content.Server._Stalker.Sponsors.SponsorManager;
 using Content.Server._Stalker.StalkerRepository;
 using Content.Server.Administration;
+using Content.Shared._Stalker.CCCCVars;
 using Content.Shared._Stalker.Sponsors;
 using Content.Shared._Stalker.StalkerRepository;
 using Content.Shared.Administration;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.EntitySystems;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Console;
 using Robust.Shared.Prototypes;
 
@@ -24,7 +26,9 @@ public sealed partial class SponsorSystem : EntitySystem
     [Dependency] private readonly StalkerRepositorySystem _repositorySystem = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+
+    private bool _sponsorsEnabled = false;
 
     public override void Initialize()
     {
@@ -32,6 +36,8 @@ public sealed partial class SponsorSystem : EntitySystem
         _consoleHost.RegisterCommand("st_give_contrib_loadout", GiveContribLoadout, GetContribCompletion);
         _consoleHost.RegisterCommand("st_is_given", IsGiven);
         _consoleHost.RegisterCommand("st_make_wipe", MakeWipe);
+
+        _cfg.OnValueChanged(CCCCVars.DiscordAuthEnabled, val => _sponsorsEnabled = val, true);
 
         // debug
         _consoleHost.RegisterCommand("st_list_sponsors", ListSponsors);
