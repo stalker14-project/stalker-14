@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._DZ.FarGunshot;
 using Content.Shared._RMC14.CCVar;
 using Content.Shared._RMC14.Random;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
@@ -910,6 +911,9 @@ public abstract partial class SharedGunSystem : EntitySystem
         var projectile = EnsureComp<ProjectileComponent>(uid);
         Projectiles.SetShooter(uid, projectile, user ?? gunUid);
         projectile.Weapon = gunUid;
+
+        var farSoundEvent = new FargunshotEvent(gunUid.Id);
+        RaiseLocalEvent(gunUid, farSoundEvent);
 
         TransformSystem.SetWorldRotationNoLerp(uid, direction.ToWorldAngle());
     }
