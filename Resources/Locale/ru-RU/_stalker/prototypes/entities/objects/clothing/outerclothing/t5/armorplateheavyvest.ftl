@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorHeavyPlateVestBase = тяжёлый бронежилет
     .suffix = ST, T5, PvP
+    .desc = тяжёлый бронежилет
 ent-STClothingOuterArmorLightPlateVestBaseHeavyMilitary = Военный Бронежилет «Цитадель»
     .desc = Тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений.
 ent-STClothingOuterArmorLightPlateVestBaseHeavyMonolith = Бронежилет «Цитадель» монолита

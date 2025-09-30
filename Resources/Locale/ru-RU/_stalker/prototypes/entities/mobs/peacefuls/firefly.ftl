@@ -18,5 +18,7 @@ ent-FireflyYellow1 = { ent-FireflyGreen3 }
     .suffix = { ent-FireflyGreen1.suffix }
 ent-FireFlyYellowTrigger = Триггер Светлячков (3-7) (100%)
     .suffix = Stalker, КД 30 минут
+    .desc = Триггер Светлячков (3-7) (100%)
 ent-FireFlyGreenTrigger = { ent-FireFlyYellowTrigger }
     .suffix = { ent-FireFlyYellowTrigger.suffix }
+    .desc = { ent-FireFlyYellowTrigger.desc }

@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Content.Shared.Crafting.Prototypes;
 
 namespace Content.Shared._Stalker.Crafting.Components
 {
@@ -6,6 +7,6 @@ namespace Content.Shared._Stalker.Crafting.Components
     public sealed partial class STBlueprintComponent : Component
     {
         [DataField("blueprint")]
-        public EntProtoId? BlueprintId = null;
+        public ProtoId<CraftingPrototype>? BlueprintId = null;
     }
 }

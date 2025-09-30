@@ -16,9 +16,11 @@ public sealed class BanWebhook
     private string _webhookUrl = string.Empty; // TODO: This shit had to be used in GenerateWebhook()
     private string _footerIconUrl = string.Empty;
     private string _avatarUrl = string.Empty;
+    private bool _enabled = false;
 
     public void Initialize()
     {
+        _config.OnValueChanged(CCCCVars.DiscordBanWebhookEnabled, val => _enabled = val, true);
         _config.OnValueChanged(CCCCVars.DiscordBanWebhook, OnWebhookChanged, true);
         _config.OnValueChanged(CCCCVars.DiscordBanFooterIcon, OnFooterIconChanged, true);
         _config.OnValueChanged(CCCCVars.DiscordBanAvatar, OnAvatarChanged, true);
@@ -43,6 +45,9 @@ public sealed class BanWebhook
 
     public async void GenerateWebhook(string admin, string user, string? banId, string severity, uint? minutes, string reason)
     {
+        if (!_enabled)
+            return;
+
         var payload = GenerateBanPayload(admin, user, banId, severity, minutes, reason);
         var request = await _httpClient.PostAsync($"{_config.GetCVar(CCCCVars.DiscordBanWebhook)}?wait=true", // Idk why, but it doesn't set _webhookUrl xd
             new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));

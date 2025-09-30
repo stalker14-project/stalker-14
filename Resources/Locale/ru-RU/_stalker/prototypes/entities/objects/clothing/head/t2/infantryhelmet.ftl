@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetCombatT2Base = база боевого шлема T2
     .suffix = ST, T2, Combat
+    .desc = база боевого шлема T2
 ent-ClothingHeadHelmetInfantry = шлем «Восток»
     .desc = Пехотный шлем марки «Восток» второго класса защиты, производитель неизвестен.
 ent-ClothingHeadHelmetInfantryBand = бандитский «Восток»

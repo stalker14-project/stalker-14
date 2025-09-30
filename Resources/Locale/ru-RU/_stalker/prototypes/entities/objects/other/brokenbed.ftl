@@ -21,3 +21,4 @@ ent-STBrokenBed10 = сломанная железная кровать
 
 ent-STBrokenBedBase = Сломанная деревянная кровать
     .suffix = ST, Decor
+    .desc = Сломанная деревянная кровать

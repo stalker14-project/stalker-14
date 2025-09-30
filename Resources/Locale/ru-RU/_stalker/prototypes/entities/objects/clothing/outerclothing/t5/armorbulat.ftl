@@ -1,5 +1,6 @@
 ent-STClothingOuterArmorBulatBase = булат
     .suffix = ST, T5, PvE
+    .desc = булат
 ent-ClothingOuterArmorBulatCovenant = булат Завета
     .desc = Булат V типа, обеспечивающий достойную защиту от большинства видов повреждений.
 ent-ClothingOuterArmorBulatMercenary = булат наёмников

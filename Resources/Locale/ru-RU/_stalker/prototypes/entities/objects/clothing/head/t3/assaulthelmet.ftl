@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetCombatT3Base = база боевого шлема T3
     .suffix = ST, T3, Combat
+    .desc = база боевого шлема T3
 ent-ClothingHeadAssaultHelmet = шлем «Зенит»
     .desc = боевой шлем марки «Зенит» третьего класса защиты.
 ent-ClothingHeadAssaultHelmetUN = шлем «Зенит» ООН

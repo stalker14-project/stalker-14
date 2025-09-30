@@ -1,5 +1,6 @@
 ent-STClothingHeadHelmetTacticalT1Base = база тактического шлема T1
     .suffix = ST, T1, Tactical
+    .desc = база тактического шлема T1
 ent-ClothingHeadHelmetLight = шлем «Сито»
     .desc = Лёгкий шлем, представляющий из себя тончайший кусок металла, способный защитить вашу черепушку от картечины.
 ent-ClothingHeadHelmetDolg = шлем «Сито» Авангарда
