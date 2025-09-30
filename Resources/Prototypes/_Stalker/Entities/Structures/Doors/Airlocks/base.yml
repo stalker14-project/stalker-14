@@ -998,3 +998,75 @@
   components:
   - type: AccessReader
     access: [["Circus"]]
+
+# Свобода и наемники
+
+- type: entity
+  id: HermoDverTypeOneMercAndFreedomClosed
+  name: гермодверь
+  parent: HermoDverTypeOne
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Наёмники, Свобода
+  components:
+  - type: AccessReader
+    access: [["Merc"]], [["Freedom"]]
+
+- type: entity
+  id: HermoDverTypeTwoMercAndFreedomClosed
+  name: гермодверь
+  parent: HermoDverTypeTwo
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Наёмники, Свобода
+  components:
+  - type: AccessReader
+    access: [["Merc"]], [["Freedom"]]
+
+- type: entity
+  id: MetalDoorFalloutMercAndFreedomClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Наёмники, Свобода
+  components:
+  - type: AccessReader
+    access: [["Merc"]], [["Freedom"]]
+
+- type: entity
+  id: MetalAltDoorFalloutMercAndFreedomClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Наёмники, Свобода
+  components:
+  - type: AccessReader
+    access: [["Merc"]], [["Freedom"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutMercAndFreedomClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Наёмники, Свобода
+  components:
+  - type: AccessReader
+    access: [["Merc"]], [["Freedom"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutMercAndFreedomClosed
+  name: укрепленная решетчатая дверь
+  parent: MetalGrateDoorFallout
+  description: Крепкая решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Наёмники, Свобода
+  components:
+  - type: AccessReader
+    access: [["Merc"]], [["Freedom"]]
+
+- type: entity
+  id: MetalBarDoorFalloutMercAndFreedomClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Наёмники, Свобода
+  components:
+  - type: AccessReader
+    access: [["Merc"]], [["Freedom"]]
