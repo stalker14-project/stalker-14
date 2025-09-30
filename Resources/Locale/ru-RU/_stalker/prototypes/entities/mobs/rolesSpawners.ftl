@@ -13,7 +13,7 @@ ent-MobStalkerRene = кукла ренегат (переименуй меня)
 ent-MobStalkerFreeadom = кукла свободовец (переименуй меня)
     .suffix = Stalker, пешка с нашивкой
 
-ent-MobStalkerDolg = кукла долговец (переименуй меня)
+ent-MobStalkerDolg = кукла авангардовец (переименуй меня)
     .suffix = Stalker, пешка с нашивкой
 
 ent-MobStalkerSci = кукла учёный (переименуй меня)

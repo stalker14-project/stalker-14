@@ -22,12 +22,12 @@ job-deserter = Отступник
 job-deserter-desc = Дезертир из государственых структур.
 job-deserter-supervisor = Ослушайся приказов диктаторов! Защити честь и достоинство зоны!
 
-job-dolg = Боец Долга
+job-dolg = Боец Авангарда
 job-dolg-desc = Защитник человечества.
 job-dolg-supervisor = Вы подчиняетесь старшим по званию.
-job-head-dolg = Лидер Долга
+job-head-dolg = Лидер Авангарда
 job-head-dolg-desc = Защитник человечества.
-job-head-dolg-supervisor = Вы командуете другими бойцами Долга.
+job-head-dolg-supervisor = Вы командуете другими бойцами Авангарда.
 
 job-freedom = Боец Свободы
 job-freedom-desc = Защитник зоны.
