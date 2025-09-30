@@ -9900,7 +9900,7 @@ entities:
       pos: -6.5,14.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2660.865
+      secondsUntilStateChange: -2732.3408
       state: Denying
     - type: Physics
       canCollide: False
@@ -46949,8 +46949,11 @@ entities:
   - uid: 5095
     components:
     - type: Transform
+      anchored: True
       pos: 2.5,-4.5
       parent: 1
+    - type: Physics
+      bodyType: Static
   - uid: 7140
     components:
     - type: Transform
