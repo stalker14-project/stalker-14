@@ -12,14 +12,14 @@
       count: 1
       baseLayer: base
     - type: Sprite
-      sprite: _Stalker/Icons/Patches/band.rsi
+      sprite: _Stalker/Objects/Economy/monolith.rsi
       state: monolith
-      scale: 1.5, 1.5
+      scale: 0.5, 0.5
       layers:
       - state: monolith
         map: ["base"]
     - type: Item
-      sprite: _Stalker/Icons/Patches/band.rsi
+      sprite: _Stalker/Objects/Economy/monolith.rsi
       size: Small
     - type: Physics
       bodyType: Dynamic
@@ -47,7 +47,7 @@
 - type: stack
   id: ChevronMonolit
   name: шеврон монолита
-  icon: { sprite: /Textures/_Stalker/Icons/Patches/band.rsi, state: monolith }
+  icon: { sprite: /Textures/_Stalker/Objects/Economy/monolith.rsi, state: monolith, scale: 0.5, 0.5 }
   spawn: ChevronMonolit
   itemSize: 1
 
