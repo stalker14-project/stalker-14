@@ -1,8 +1,8 @@
 ent-ClothingNeckCloakZavet = плащ Завета
     .desc = стандартный плащ, используемый группировкой «Завет».
     .suffix = Stalker, Завет
-ent-ClothingNeckCloakDolg = плащ Долга
-    .desc = стандартный плащ, используемый группировкой «Долг».
+ent-ClothingNeckCloakDolg = плащ Авангарда
+    .desc = стандартный плащ, используемый группировкой «Авангард».
     .suffix = Stalker, Долг
 ent-ClothingCloakStalker = плащ сталкера
     .desc = Оторванные куски ткани из мусора, придают вам опыт и загадочность.

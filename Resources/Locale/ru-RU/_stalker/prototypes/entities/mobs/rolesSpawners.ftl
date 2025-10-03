@@ -14,11 +14,11 @@ ent-MobStalkerRene = кукла ренегат (переименуй меня)
     .desc = кукла ренегат (переименуй меня)
     .suffix = Stalker, пешка с нашивкой
 
-ent-MobStalkerFreeadom = кукла свободовец (переименуй меня)
-    .desc = кукла свободовец (переименуй меня)
+ent-MobStalkerFreeadom = кукла PCZI (переименуй меня)
+    .desc = кукла PCZI (переименуй меня)
     .suffix = Stalker, пешка с нашивкой
 
-ent-MobStalkerDolg = кукла долговец (переименуй меня)
+ent-MobStalkerDolg = кукла авангардовец (переименуй меня)
     .desc = кукла долговец (переименуй меня)
     .suffix = Stalker, пешка с нашивкой
 
