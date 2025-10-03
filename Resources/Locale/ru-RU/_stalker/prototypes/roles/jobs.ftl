@@ -29,10 +29,10 @@ job-head-dolg = Лидер Авангарда
 job-head-dolg-desc = Защитник человечества.
 job-head-dolg-supervisor = Вы командуете другими бойцами Авангарда.
 
-job-freedom = Боец Свободы
+job-freedom = Боец PCZI
 job-freedom-desc = Защитник зоны.
 job-freedom-supervisor = Кури, защищай Зону и игнорируй авторитеты.
-job-head-freedom = Атаман
+job-head-freedom = Лидер PCZI
 job-head-freedom-desc = Защитник зоны.
 job-head-freedom-supervisor = Командиры? У анархистов?.
 
