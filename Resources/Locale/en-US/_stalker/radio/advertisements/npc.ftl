@@ -1,18 +1,18 @@
 # SIDOROVICH
 
 advertisement-sidor-1 = You'd better collect some more cans!
-advertisement-sidor-2 = What did he bring?
-advertisement-sidor-3 = Well, if you get some air, come in!
+advertisement-sidor-2 = What did you bring me?
+advertisement-sidor-3 = Well don't just stand around, come in!
 advertisement-sidor-4 = Well, happy hunting, stalker.
-advertisement-sidor-5 = Well, what are you worth? Come, I don't bite.
+advertisement-sidor-5 = Well, what are you worth? Come on, I don't bite.
 advertisement-sidor-6 = Is there anything worthwhile?
 advertisement-sidor-7 = Well, hello!
-advertisement-sidor-8 = Returned?
+advertisement-sidor-8 = Back so soon?
 
 # MERCHANTS
 
-advertisement-trader-1 = Well, show what the zone has rewarded.
-advertisement-trader-2 = If you need something, you say, don't be shy.
+advertisement-trader-1 = Well, show me what you found out there.
+advertisement-trader-2 = If you need something just say so, don't be shy.
 advertisement-trader-3 = We are always happy to welcome customers, ik!
 advertisement-trader-4 = Oh wei, who is so beautiful here?
 advertisement-trader-5 = You, *ik*, what do you need?
@@ -77,7 +77,7 @@ advertisement-barmen-2 = Well, buddy? How is it?
 advertisement-barmen-3 = Still alive? Well, great!
 advertisement-barmen-4 = How is it?
 advertisement-barmen-5 = How are you doing?
-advertisement-barmen-6 = To drink or to bring what?
+advertisement-barmen-6 = Here to drink? Or is it something else?
 advertisement-barmen-7 = Zdarova, stalker.
 advertisement-barmen-8 = Show me what you brought.
 
