@@ -20,7 +20,7 @@ public sealed class TrashDeletingSystem : EntitySystem
     /// <summary>
     /// time in minutes between trash cleanups
     /// </summary>
-    private readonly int _updateTime = 2;
+    private readonly int _updateTime = 15;
 
     /// <summary>
     /// if a warning has been issued for the next cleanup
