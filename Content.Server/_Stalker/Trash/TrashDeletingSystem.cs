@@ -1,4 +1,5 @@
 using Content.Server.Chat.Managers;
+using Robust.Server.Player;
 using Robust.Shared.Map;
 using Robust.Shared.Timing;
 
@@ -9,6 +10,7 @@ public sealed class TrashDeletingSystem : EntitySystem
     [Dependency] private readonly IMapManager _mapMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
 
     /// <summary>
     /// next time to clean up trash
@@ -18,7 +20,7 @@ public sealed class TrashDeletingSystem : EntitySystem
     /// <summary>
     /// time in minutes between trash cleanups
     /// </summary>
-    private readonly int _updateTime = 15;
+    private readonly int _updateTime = 2;
 
     /// <summary>
     /// if a warning has been issued for the next cleanup
@@ -106,6 +108,29 @@ public sealed class TrashDeletingSystem : EntitySystem
 
         _warningIssued = false;
         _nextTimeUpdate = _timing.CurTime + TimeSpan.FromMinutes(_updateTime);
+
+        // --- Pause maps with no players ---
+        foreach (var map in _mapMan.GetAllMapIds())
+        {
+            if (map == MapId.Nullspace || map == new MapId(1)) // Never pause map 1
+                continue;
+            bool hasPlayer = false;
+            foreach (var session in _playerManager.Sessions)
+            {
+                if (session.AttachedEntity is not { Valid: true } ent)
+                    continue;
+                var xform = Transform(ent);
+                if (xform.MapID == map)
+                {
+                    hasPlayer = true;
+                    break;
+                }
+            }
+            if (!hasPlayer && !_mapMan.IsMapPaused(map))
+            {
+                _mapMan.SetMapPaused(map, true);
+            }
+        }
     }
 
 
