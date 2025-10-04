@@ -74,13 +74,7 @@ entities:
             color: '#FFFFFFFF'
             id: Basalt2
           decals:
-            13: -5.2320933,0.12521172
             14: 0.08983946,-6.97387
-        - node:
-            color: '#FFFFFFFF'
-            id: Basalt4
-          decals:
-            9: -1.6383433,-0.32791328
         - node:
             color: '#FFFFFFFF'
             id: Basalt5
@@ -91,7 +85,6 @@ entities:
             id: Basalt7
           decals:
             7: -4.8102183,-2.4216633
-            15: -0.94141054,-6.676995
             16: -3.4257855,-6.03637
         - node:
             color: '#FFFFFFFF'
@@ -103,11 +96,6 @@ entities:
             id: Basalt9
           decals:
             18: -1.2364153,-3.878971
-        - node:
-            color: '#FFFFFFFF'
-            id: Florabranch3
-          decals:
-            11: -3.6695933,0.6252117
         - node:
             color: '#FFFFFFFF'
             id: STGrassa3
@@ -150,6 +138,11 @@ entities:
             21: 0.5768118,4.497285
         - node:
             color: '#FFFFFFFF'
+            id: body
+          decals:
+            26: -0.9701698,-6.594426
+        - node:
+            color: '#FFFFFFFF'
             id: d
           decals:
             19: 0.6080618,5.95041
@@ -160,9 +153,23 @@ entities:
             22: 0.5924368,4.934785
         - node:
             color: '#FFFFFFFF'
+            id: ghost
+          decals:
+            24: -1.9895127,-0.4346727
+            25: -1.001435,-6.063176
+        - node:
+            color: '#FFFFFFFF'
             id: o
           decals:
             20: 0.6080618,5.434785
+        - node:
+            color: '#571212FF'
+            id: splatter
+          decals:
+            27: -4.0945687,0.5581422
+            28: -3.771492,0.45397544
+            29: -3.9278197,0.2248087
+            30: -3.8027573,0.8498088
         - node:
             color: '#FFFFFFFF'
             id: y
@@ -281,6 +288,16 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,1.5
       parent: 104
+- proto: BedsheetCult
+  entities:
+  - uid: 28
+    components:
+    - type: Transform
+      pos: 4.5,1.5
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
 - proto: CableApcExtension
   entities:
   - uid: 10
@@ -502,6 +519,119 @@ entities:
     - type: Transform
       pos: 1.5,4.5
       parent: 104
+- proto: CandleBlackInfinite
+  entities:
+  - uid: 67
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.9371559,-0.5284227
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
+  - uid: 71
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 0.14912945,-3.2975287
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
+  - uid: 77
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.7853587,0.6069939
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
+  - uid: 150
+    components:
+    - type: Transform
+      pos: -0.7976979,2.440781
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
+  - uid: 151
+    components:
+    - type: Transform
+      pos: -1.8503027,1.0657811
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
+- proto: ClothingHeadPilgrimDoctor
+  entities:
+  - uid: 147
+    components:
+    - type: Transform
+      parent: 146
+    - type: Physics
+      canCollide: False
+- proto: ClothingOuterArmorBandits
+  entities:
+  - uid: 149
+    components:
+    - type: Transform
+      parent: 146
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          showEnts: False
+          occludes: True
+          ents: []
+        toggleable-clothing: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
+    - type: Physics
+      canCollide: False
+- proto: Cobweb1
+  entities:
+  - uid: 191
+    components:
+    - type: Transform
+      pos: -1.5,1.5
+      parent: 104
+  - uid: 215
+    components:
+    - type: Transform
+      pos: -4.5,1.5
+      parent: 104
+  - uid: 216
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,-5.5
+      parent: 104
+  - uid: 217
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 1.5,2.5
+      parent: 104
+- proto: Cobweb2
+  entities:
+  - uid: 203
+    components:
+    - type: Transform
+      pos: 4.5,1.5
+      parent: 104
+- proto: Corpse1Stalker
+  entities:
+  - uid: 82
+    components:
+    - type: Transform
+      pos: -3.4857402,1.4194286
+      parent: 104
+    - type: Physics
+      canCollide: False
+    - type: Fixtures
+      fixtures: {}
 - proto: DebugGenerator
   entities:
   - uid: 124
@@ -807,13 +937,77 @@ entities:
     - type: Transform
       pos: -1.5,5.5
       parent: 104
-- proto: MetalRedDoorFallout
+- proto: HeadSkeleton
   entities:
-  - uid: 95
+  - uid: 145
+    components:
+    - type: MetaData
+      desc: A human skull, weathered and bleached by years of exposure to the Zone’s harsh environment.
+      name: Skull
+    - type: Transform
+      pos: -0.3326891,2.562167
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
+- proto: Mannequin
+  entities:
+  - uid: 146
+    components:
+    - type: MetaData
+      desc: You can't control the demon inside of you any more than I could control mine.
+      name: Trinity
+    - type: Transform
+      pos: -3.9887924,1.1975836
+      parent: 104
+    - type: ContainerContainer
+      containers:
+        jumpsuit: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        outerClothing: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: 149
+        neck: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        mask: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        eyes: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        head: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: 147
+        suitstorage: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        back: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+    - type: AmbientSound
+      volume: -4
+      range: 8
+      sound: !type:SoundPathSpecifier
+        path: /Audio/Ambience/anomaly_scary.ogg
+- proto: MetalGrateDoorFallout
+  entities:
+  - uid: 15
     components:
     - type: Transform
       pos: -4.5,-0.5
       parent: 104
+    missingComponents:
+    - Door
 - proto: MetalWindowDoorFallout
   entities:
   - uid: 193
@@ -861,27 +1055,62 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 104
+  - uid: 95
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,2.5
+      parent: 104
+- proto: PlushieOldStalker
+  entities:
+  - uid: 152
+    components:
+    - type: Transform
+      pos: 1.4054853,-3.1087291
+      parent: 104
+    missingComponents:
+    - EmitSoundOnActivate
+    - Item
+    - Pullable
+- proto: PosterBloodyPrint
+  entities:
+  - uid: 222
+    components:
+    - type: Transform
+      pos: -1.5,2.5
+      parent: 104
+- proto: PosterBloodyPrint2
+  entities:
+  - uid: 223
+    components:
+    - type: Transform
+      pos: -3.5,2.5
+      parent: 104
+- proto: PosterContrabandCultGreh1
+  entities:
+  - uid: 58
+    components:
+    - type: Transform
+      pos: 0.5,3.5
+      parent: 104
+- proto: PosterContrabandCultGreh2
+  entities:
+  - uid: 80
+    components:
+    - type: Transform
+      pos: 1.5,3.5
+      parent: 104
+  - uid: 143
+    components:
+    - type: Transform
+      pos: -0.5,3.5
+      parent: 104
 - proto: PosterContrabandKoroliShut
   entities:
   - uid: 197
     components:
     - type: Transform
       pos: 3.5,2.5
-      parent: 104
-- proto: PosterLegitDontShit2
-  entities:
-  - uid: 72
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -4.5,2.5
-      parent: 104
-- proto: PosterLegitLogo
-  entities:
-  - uid: 15
-    components:
-    - type: Transform
-      pos: 0.5,3.5
       parent: 104
 - proto: PosterLegitStalkerUSSR
   entities:
@@ -898,60 +1127,69 @@ entities:
       rot: 3.141592653589793 rad
       pos: 4.5,-2.5
       parent: 104
-- proto: PottedPlantAlt1
+- proto: PoweredDimSmallLight
   entities:
-  - uid: 151
-    components:
-    - type: Transform
-      pos: 1.5,-1.5
-      parent: 104
-- proto: PottedPlantAlt2
-  entities:
-  - uid: 146
-    components:
-    - type: Transform
-      pos: -2.5,-3.5
-      parent: 104
-- proto: PoweredSmallLight
-  entities:
-  - uid: 58
-    components:
-    - type: Transform
-      pos: 0.5,2.5
-      parent: 104
-  - uid: 67
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 4.5,1.5
-      parent: 104
-  - uid: 71
-    components:
-    - type: Transform
-      pos: -1.5,-5.5
-      parent: 104
-  - uid: 77
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 1.5,-0.5
-      parent: 104
-  - uid: 82
-    components:
-    - type: Transform
-      pos: -3.5,1.5
-      parent: 104
-  - uid: 83
-    components:
-    - type: Transform
-      pos: -2.5,-1.5
-      parent: 104
-  - uid: 143
+  - uid: 70
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 0.5,-3.5
+      pos: -3.5,0.5
       parent: 104
+  - uid: 72
+    components:
+    - type: Transform
+      pos: -2.5,-5.5
+      parent: 104
+  - uid: 74
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,0.5
+      parent: 104
+  - uid: 81
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 4.5,0.5
+      parent: 104
+  - uid: 219
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -4.5,-3.5
+      parent: 104
+  - uid: 220
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 3.5,-3.5
+      parent: 104
+- proto: PumpkinLantern
+  entities:
+  - uid: 66
+    components:
+    - type: MetaData
+      desc: A hollowed-out pumpkin with a crude, grinning face carved into it.
+      name: Jack o' lantern
+    - type: Transform
+      pos: 1.5119765,2.7288337
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
+- proto: PumpkinLanternSmall
+  entities:
+  - uid: 221
+    components:
+    - type: MetaData
+      desc: A hollowed-out pumpkin with a crude, grinning face carved into it.
+      name: Jack o' lantern
+    - type: Transform
+      pos: -1.4915106,-6.167343
+      parent: 104
+    missingComponents:
+    - Item
+    - Pullable
 - proto: RadiolaStalker
   entities:
   - uid: 148
@@ -971,14 +1209,6 @@ entities:
     - type: Transform
       pos: 1.5,-0.5
       parent: 104
-- proto: SinkStemless
-  entities:
-  - uid: 28
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,0.5
-      parent: 104
 - proto: STCarpetMedium2
   entities:
   - uid: 32
@@ -986,14 +1216,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,0.5
-      parent: 104
-- proto: STCarpetSmall1
-  entities:
-  - uid: 145
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -2.5,-2.5
       parent: 104
 - proto: STChairWood
   entities:
@@ -1019,19 +1241,15 @@ entities:
     - type: Transform
       pos: 4.5,1.5
       parent: 104
-- proto: STPottedPlant5
+- proto: STPottedPlantRD
   entities:
-  - uid: 149
+  - uid: 83
     components:
+    - type: MetaData
+      desc: Looks like you forgot to water this plant for a while.
+      name: Potted plant
     - type: Transform
-      pos: 4.5,0.5
-      parent: 104
-- proto: STPottedPlantBioluminscent
-  entities:
-  - uid: 147
-    components:
-    - type: Transform
-      pos: -0.5,-5.5
+      pos: -2.5,-1.5
       parent: 104
 - proto: STTeleportReturnPersonal
   entities:
@@ -1047,9 +1265,9 @@ entities:
     - type: Transform
       pos: -0.5,5.5
       parent: 104
-- proto: ToiletDirtyWater
+- proto: ToiletOld
   entities:
-  - uid: 70
+  - uid: 144
     components:
     - type: Transform
       pos: -4.5,1.5
@@ -1411,24 +1629,13 @@ entities:
     - type: Transform
       pos: 2.5,3.5
       parent: 104
-- proto: WoodenBoxWithLoot0
+- proto: weird_sculpture5
   entities:
-  - uid: 80
+  - uid: 218
     components:
     - type: Transform
-      pos: 1.5400758,2.4778326
-      parent: 104
-- proto: WoodenBoxWithLoot2
-  entities:
-  - uid: 66
-    components:
-    - type: Transform
-      pos: -1.5,1.5
-      parent: 104
-  - uid: 152
-    components:
-    - type: Transform
-      pos: 2.438938,-1.312113
+      rot: -1.5707963267948966 rad
+      pos: 2.416389,-3.5162406
       parent: 104
 - proto: WoodenYaschik1
   entities:
