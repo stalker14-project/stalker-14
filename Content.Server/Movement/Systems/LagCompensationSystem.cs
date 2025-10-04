@@ -17,7 +17,7 @@ public sealed class LagCompensationSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-    public TimeSpan BufferTime = TimeSpan.FromMilliseconds(1000);
+    public TimeSpan BufferTime = TimeSpan.FromMilliseconds(1250);
 
     public override void Initialize()
     {
