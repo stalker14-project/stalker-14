@@ -38,4 +38,12 @@ public sealed partial class CCVars
     /// </summary>
     public static readonly CVarDef<bool> AccessibilityColorblindFriendly =
         CVarDef.Create("accessibility.colorblind_friendly", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
+    ///     Buffer time (in milliseconds) for lag compensation position history.
+    ///     Lower values reduce memory/CPU usage but may cause more hitreg issues for high-ping players.
+    /// </summary>
+    public static readonly CVarDef<int> LagCompBufferTimeMs =
+        CVarDef.Create("lagcomp.buffer_time_ms", 1000, CVar.SERVER | CVar.ARCHIVE,
+            "Buffer time (in ms) for lag compensation position history. Lower for better performance, higher for better hitreg for high-ping players.");
 }

@@ -1,5 +1,7 @@
 using Content.Server.Movement.Components;
+using Content.Shared.CCVar;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -13,9 +15,8 @@ namespace Content.Server.Movement.Systems;
 public sealed class LagCompensationSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly IConfigurationManager _config = default!;
 
-    // I figured 500 ping is max, so 1.5 is 750.
-    // Max ping I've had is 350ms from aus to spain.
     public TimeSpan BufferTime = TimeSpan.FromMilliseconds(1000);
 
     public override void Initialize()
@@ -23,6 +24,13 @@ public sealed class LagCompensationSystem : EntitySystem
         base.Initialize();
         Log.Level = LogLevel.Info;
         SubscribeLocalEvent<LagCompensationComponent, MoveEvent>(OnLagMove);
+        Subs.CVar(_config, CCVars.LagCompBufferTimeMs, OnBufferTimeChanged, true);
+    }
+
+    private void OnBufferTimeChanged(int bufferTimeMs)
+    {
+        BufferTime = TimeSpan.FromMilliseconds(bufferTimeMs);
+        Log.Info($"Lag compensation buffer time changed to: {bufferTimeMs} ms");
     }
 
     public override void Update(float frameTime)
@@ -31,13 +39,14 @@ public sealed class LagCompensationSystem : EntitySystem
 
         var curTime = _timing.CurTime;
         var earliestTime = curTime - BufferTime;
+        var maxIdle = BufferTime * 2;
 
-        // Cull any old ones from active updates
-        // Probably fine to include ignored.
+        // Cull any old ones from active updates, but only for recently active entities
         var query = AllEntityQuery<LagCompensationComponent>();
-
         while (query.MoveNext(out var comp))
         {
+            if (curTime - comp.LastMoveTime > maxIdle)
+                continue; // Skip idle entities
             while (comp.Positions.TryPeek(out var pos))
             {
                 if (pos.Item1 < earliestTime)
@@ -45,7 +54,6 @@ public sealed class LagCompensationSystem : EntitySystem
                     comp.Positions.Dequeue();
                     continue;
                 }
-
                 break;
             }
         }
@@ -57,6 +65,7 @@ public sealed class LagCompensationSystem : EntitySystem
             return; // probably being sent to nullspace for deletion.
 
         component.Positions.Enqueue((_timing.CurTime, args.NewPosition, args.NewRotation));
+        component.LastMoveTime = _timing.CurTime;
     }
 
     public (EntityCoordinates Coordinates, Angle Angle) GetCoordinatesAngle(EntityUid uid, ICommonSession? pSession,
@@ -78,20 +87,14 @@ public sealed class LagCompensationSystem : EntitySystem
         {
             coordinates = pos.Item2;
             angle = pos.Item3;
-
             if (pos.Item1 >= sentTime)
                 break;
         }
 
         if (coordinates == default)
         {
-            Log.Debug($"No long comp coords found, using {xform.Coordinates}");
             coordinates = xform.Coordinates;
             angle = xform.LocalRotation;
-        }
-        else
-        {
-            Log.Debug($"Actual coords is {xform.Coordinates} and got {coordinates}");
         }
 
         return (coordinates, angle);
