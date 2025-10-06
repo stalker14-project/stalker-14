@@ -1,0 +1,72 @@
+# a worse floodlight
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactPumpkin
+  name: Artifact
+  suffix: Stalker, Pumpkin, Reward, Halloween
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/artifacts.rsi
+    state: pumpkin
+    scale: 0.5, 0.5
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - ARTIFACT
+    - pocket
+  - type: PointLight
+    radius: 15
+    energy: 4
+    color: "#FF7E1A"
+    netsync: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 0.1
+    interval: 1
+
+# dont choke on it
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactHardcandy
+  name: Artifact
+  suffix: Stalker, Hardcandy, Reward, Halloween
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/artifacts.rsi
+    state: hardcandy
+    scale: 0.5, 0.5
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: PointLight
+    radius: 1.5
+    energy: 4.5
+    color: "#6C3BA1"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Asphyxiation: -0.5
+        Cold: -1
+        Heat: -1
+        Radiation: 1.5
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Cold: 1
+        Heat: 1
+      coefficients:
+        Poison: 0.2

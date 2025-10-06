@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingMaskGasM40
+  id: ClothingMaskGasM40Hunter
+  name: M40 Hunter's Mask
+  description: The wolves are on the hunt.
+  suffix: ST, T2, Rad, Reward, Halloween
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/mask/m40_hunter.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/mask/m40_hunter.rsi
+    clothingVisuals:
+      mask:
+      - state: equipped-MASK
+      - state: unshaded-equipped-MASK
+        shader: unshaded
