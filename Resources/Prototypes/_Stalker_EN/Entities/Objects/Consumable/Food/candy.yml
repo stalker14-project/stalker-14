@@ -1,0 +1,41 @@
+- type: entity
+  name: candy
+  parent: FoodSnackBase
+  id: FoodSnackCandy
+  description: Sugar in a conveniently consumable form.
+  suffix: Stalker, Food, Reward, Halloween
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Sprite
+    layers:
+      - sprite: _Stalker_EN/Objects/Consumable/Food/candy.rsi
+        state: 1
+        map: [ "enum.DamageStateVisualLayers.Base" ]
+  - type: RandomSprite
+    available:
+      - enum.DamageStateVisualLayers.Base:
+          1: ""
+          2: ""
+          3: ""
+          4: ""
+          5: ""
+          6: ""
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Sugar
+          Quantity: 1
+
+- type: entity
+  parent: FoodSnackCandy
+  id: FoodSnackCandyPoison
+  suffix: Stalker, Food, POISONED, Reward, Halloween
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Ipecac
+          Quantity: 5

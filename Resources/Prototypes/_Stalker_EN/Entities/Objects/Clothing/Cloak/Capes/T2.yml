@@ -1,0 +1,46 @@
+- type: entity
+  parent: STClothingCapeT2Base
+  id: ClothingOuterCoatStalkerBloody
+  name: Stalker's Bloody Coat
+  suffix: ST, T2, Reward, Halloween
+  description: A standard leather coat often seen in the zone. The edges are frayed and grime clings to it; fresh blood is spattered across it.
+  components:
+  - type: STWeight
+    self: 1.5
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/cloak/coat_stalker_bloody.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/cloak/coat_stalker_bloody.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatStalker
+
+- type: entity
+  parent: STClothingCapeT2Base
+  id: ClothingOuterCoatStalkerEerie
+  name: Stalker's Eerie Coat
+  suffix: ST, T2, Reward, Halloween
+  description: A standard leather coat often seen in the zone. The black leather is crudely painted with a web-like pattern.
+  components:
+  - type: STWeight
+    self: 1.5
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/cloak/coat_stalker_eerie.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/cloak/coat_stalker_eerie.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCoatStalkerEerie
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHatHoodCoatStalkerEerie
+  categories: [ HideSpawnMenu ]
+  name: Eerie Hood
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/stalker_coat_hat_eerie.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/stalker_coat_hat_eerie.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop

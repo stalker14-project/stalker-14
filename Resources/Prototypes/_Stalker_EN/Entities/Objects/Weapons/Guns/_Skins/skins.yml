@@ -1,0 +1,70 @@
+# PISTOLS
+# tt
+- type: entity
+  name: Tula Tokarev "Trick"
+  description: Trick or treat!
+  parent: WeaponPistolStalkerTT
+  id: WeaponPistolStalkerTTTrick
+  suffix: ST, Reward, Halloween
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/tt_trick.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/tt_trick.rsi
+    scale: 0.8, 0.8
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/tt_trick.rsi
+
+- type: entity
+  name: Tula Tokarev "Treat"
+  description: Trick or treat!
+  parent: WeaponPistolStalkerTT
+  id: WeaponPistolStalkerTTTreat
+  suffix: ST, Reward, Halloween
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/tt_treat.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/tt_treat.rsi
+    scale: 0.8, 0.8
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/tt_treat.rsi
+
+# SHOTGUNS
+# spas
+- type: entity
+  name: SPAS-12 "Candy Apple"
+  description: A standard SPAS-12 type shotgun with a chrome red finish.
+  parent: STWeaponShotgunSPAS
+  id: STWeaponShotgunSPASCandy
+  suffix: ST, Reward, Halloween
+  components:
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/spas_candy.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/spas_candy.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/spas_candy.rsi
+
+# SNIPERS
+# svds
+- type: entity
+  name: SVDS "Spectral"
+  description: The cold frame hangs in the air and wisps of light wrap around it from barrel to stock. A whisper, always just behind the wielder's ear, calling them to the grave.
+  parent: STWeaponSniperSVDS
+  id: STWeaponSniperSVDSSpectral
+  suffix: ST, T4, Reward, Halloween
+  components:
+  - type: STWeight
+    self: -5
+  - type: PersonalDamage
+    damage:
+      types:
+        Cold: 0.05
+    interval: 1
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/svds_spectral.rsi
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/svds_spectral.rsi
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Guns/_Skins/svds_spectral.rsi
