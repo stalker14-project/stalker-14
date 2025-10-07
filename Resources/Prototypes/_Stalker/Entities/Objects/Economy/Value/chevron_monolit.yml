@@ -1,0 +1,76 @@
+﻿- type: Tag
+  id: ChevronMonolit
+- type: entity
+  parent: BaseItem
+  id: ChevronMonolit
+  name: шеврон монолита
+  description: Шеврон сорванный с бойца монолита.
+  suffix: Stalker
+  components:
+    - type: Stack
+      stackType: ChevronMonolit
+      count: 1
+      baseLayer: base
+    - type: Sprite
+      sprite: _Stalker/Objects/Economy/monolith.rsi
+      state: monolith
+      scale: 0.5, 0.5
+      layers:
+      - state: monolith
+        map: ["base"]
+    - type: Item
+      sprite: _Stalker/Objects/Economy/monolith.rsi
+      size: Small
+    - type: Physics
+      bodyType: Dynamic
+    - type: Fixtures
+      fixtures:
+        fix1:
+          density: 30
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.35,-0.2,0.25,0.1"
+          mask:
+            - ItemMask
+    - type: Appearance
+    - type: Tag
+      tags:
+        - ChevronMonolit
+
+- type: currency
+  id: ChevronMonolit
+  displayName: шевроны монолита
+  cash:
+    1: ChevronMonolit
+  canWithdraw: true
+
+- type: stack
+  id: ChevronMonolit
+  name: шеврон монолита
+  icon: { sprite: /Textures/_Stalker/Objects/Economy/monolith.rsi, state: monolith, scale: 0.5, 0.5 }
+  spawn: ChevronMonolit
+  itemSize: 1
+
+- type: entity
+  parent: ChevronMonolit
+  id: ChevronMonolit10
+  suffix: Stalker, 10
+  components:
+    - type: Stack
+      count: 10
+
+- type: entity
+  parent: ChevronMonolit
+  id: ChevronMonolit50
+  suffix: Stalker, 50
+  components:
+    - type: Stack
+      count: 50
+
+- type: entity
+  parent: ChevronMonolit
+  id: ChevronMonolit100
+  suffix: Stalker, 100
+  components:
+    - type: Stack
+      count: 100

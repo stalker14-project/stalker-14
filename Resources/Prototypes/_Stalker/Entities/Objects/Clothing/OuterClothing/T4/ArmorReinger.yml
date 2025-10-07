@@ -1,0 +1,104 @@
+
+- type: entity
+  parent: STClothingOuterArmorStorageBasic
+  id: ClothingOuterArmorReinger
+  name: боевая броня рейнджера
+  suffix: ST, T4, Universal
+  description: Надёжная броня III типа, обеспечивающая хорошую защиту практически от всего, в комплект входит шлем рейнджера который также имеет дополнительную защиту.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STWeight
+    self: -20
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/armor_reinger.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/armor_reinger.rsi
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - 0,2,0,3
+      - 0,-2,0,0
+      - 2,2,2,3
+      - 2,-1,3,-0
+      - 4,2,4,3
+      - 5,-1,6,-0
+      - 6,2,6,3
+      - 8,2,8,3
+      - 8,-2,8,0
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 6
+        Slash: 6
+        Piercing: 6
+        Caustic: 1
+      coefficients:
+        Blunt: 0.60
+        Slash: 0.45
+        Piercing: 0.40
+        Heat: 0.45
+        Caustic: 0.5
+        Shock: 0.35
+        Radiation: 0.5
+        Psy: 0.80
+        Compression: 0.50
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetReinger
+    slot: head
+  - type: ExplosionResistance
+    damageCoefficient: 0.60
+  - type: PersonalDamage
+    staminaDamage: -3
+    interval: 1
+    damage:
+      types:
+        Blunt: -0.1
+        Slash: -0.1
+        Piercing: -0.1
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetReinger
+  name: шлем рейнджера
+  suffix: ST, T3
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/helm_reinger.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/helm_reinger.rsi
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Caustic: 1
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.75
+        Piercing: 0.7
+        Heat: 0.75
+        Radiation: 0.75
+        Caustic: 0.5
+        Shock: 0.6
+        Psy: 0.8
+        Compression: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+      - BlockMask
+      - HidesNose
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Reflect
+    reflectProb: 0.15
+    reflects:
+      - NonEnergy
+  - type: HideLayerClothing
+    slots:
+    - Hair

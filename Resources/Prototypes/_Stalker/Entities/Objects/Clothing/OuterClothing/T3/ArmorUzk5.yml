@@ -1,0 +1,76 @@
+- type: entity
+  parent: STClothingOuterBaseLarge
+  id: ClothingOuterArmorUzk5
+  name: костюм УЗК-5
+  suffix: ST, T5, Env
+  description: Тяжёлый костюм, разработанный специально, для работы наёмных едениц в особо опасных и токсичных условиях Чернобыльской зоны отчуждения. Имеет несколько лёгких броневых пластин и тонкую прорезиненную подложку, что защищает от ожогов и радиации.
+  components:
+  - type: STWeight
+    self: 10
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/uzk5.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/uzk5.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitUzk5Helm
+    slot: head
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      flatReductions:
+        Blunt: 6
+        Slash: 6
+        Piercing: 4
+        Caustic: 3
+        Radiation: 2.5
+        Heat: 1
+      coefficients:
+        Blunt: 0.5  
+        Slash: 0.5
+        Piercing: 0.6
+        Heat: 0.7
+        Caustic: 0.75
+        Compression: 0.7
+        Shock: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.90
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+
+- type: entity  # T3
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadHardsuitUzk5Helm
+  name: шлем "УЗК-5"
+  description: Встроенный шлем УЗК-5 с фонарём.
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: PointLight
+      enabled: false
+      radius: 6
+      energy: 2
+    - type: BreathMask
+    - type: IngestionBlocker
+    - type: IdentityBlocker
+    - type: Tag
+      tags:
+        - BlockMask
+        - HidesNose
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/uzk5_helmet.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/uzk5_helmet.rsi
+      equipSound: null
+      unequipSound: null
+    - type: Armor
+      armorClass: 2
+      coefficients:
+          Piercing: 0.75
+    - type: Reflect
+      reflectProb: 0.07
+      spread: 360
+      reflects:
+        - NonEnergy
+    - type: HideLayerClothing
+      slots:
+      - Hair
