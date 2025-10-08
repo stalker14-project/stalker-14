@@ -100,3 +100,69 @@
     - MobMonolithGuardPatroolGas1L85
     - MobMonolithGuardPatroolBalaLR300
     - MobMonolithGuardPatroolSevaAbakan
+
+- type: entity
+  name: триггер спавна патрульного свободы (1) (100%)
+  id: STGuardSpawnerFreedom
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobFreedomGuardPatrool
+    restricted:
+    - MobFreedomGuardPatrool
+
+- type: entity
+  name: триггер спавна патрульного бандитов (1) (100%)
+  id: STGuardSpawnerBandits
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobBanditsGuard
+    restricted:
+    - MobBanditsGuard
+
+- type: entity
+  name: триггер спавна патрульного авангарда (1) (100%)
+  id: STGuardSpawnerDuty
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobDutyGuard
+    restricted:
+    - MobDutyGuard
+
+- type: entity
+  name: триггер спавна лёгкого патрульного серафимов (1) (100%)
+  id: STGuardSpawnerSeraLite
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobSeraphimsGuardLite
+    restricted:
+    - MobSeraphimsGuardLite
+
+- type: entity
+  name: триггер спавна среднего патрульного серафимов (1) (100%)
+  id: STGuardSpawnerSeraMedium
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobSeraphimsGuardMedium
+    restricted:
+    - MobSeraphimsGuardMedium
+
+- type: entity
+  name: триггер спавна тяжёлого патрульного серафимов (1) (100%)
+  id: STGuardSpawnerSeraHeavy
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobSeraphimsGuardHeavy
+    restricted:
+    - MobSeraphimsGuardHeavy
