@@ -1115,6 +1115,9 @@ entities:
   entities:
   - uid: 223
     components:
+    - type: MetaData
+      desc: A mysterious figure said to haunt the forests near old lakes. Once a hunter, now protector of the bears he once killed. Wears furs, moves like a ghost, and speaks of purity and strength. Stalkers say if you mock his name, you’ll vanish before sunrise.
+      name: Bearman
     - type: Transform
       anchored: True
       pos: 1.5,-2.5
@@ -1157,6 +1160,9 @@ entities:
       bodyType: Static
   - uid: 233
     components:
+    - type: MetaData
+      desc: A stalker twisted by the Zone or cursed by Bloodsuckers themselves. Moves silent, kills quick, leaves bodies pale and dry. Some say he hunts beside the creatures, others say he leads them.
+      name: Veinwalker
     - type: Transform
       anchored: True
       pos: -0.5,-2.5
@@ -1524,6 +1530,33 @@ entities:
     components:
     - type: Transform
       pos: -1.5,-3.5
+      parent: 104
+- proto: STinvisiblewallforevor
+  entities:
+  - uid: 334
+    components:
+    - type: Transform
+      pos: -1.5,-3.5
+      parent: 104
+  - uid: 335
+    components:
+    - type: Transform
+      pos: -1.5,-2.5
+      parent: 104
+  - uid: 336
+    components:
+    - type: Transform
+      pos: -0.5,-1.5
+      parent: 104
+  - uid: 337
+    components:
+    - type: Transform
+      pos: 0.5,-1.5
+      parent: 104
+  - uid: 338
+    components:
+    - type: Transform
+      pos: 1.5,-1.5
       parent: 104
 - proto: STSeraKnife
   entities:
