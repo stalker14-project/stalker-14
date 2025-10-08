@@ -200,15 +200,14 @@
   - type: Speech
     speechSounds: Alto
   - type: DamageForceSay
-  - type: STVocal # STODO: Make custom doll and specs
-  # - type: Vocal stalker14-no-screams
-  #   sounds:
-  #     Male: MaleHuman
-  #     Female: FemaleHuman
-  #     Unsexed: MaleHuman
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: MaleHuman
   - type: Emoting
   - type: BodyEmotes
-    soundsId: STBodyEmotes # stalker14-no-vanila-emotes
+    soundsId: GeneralBodyEmotes # stalker14-no-vanila-emotes
   - type: Grammar
     attributes:
       proper: true
