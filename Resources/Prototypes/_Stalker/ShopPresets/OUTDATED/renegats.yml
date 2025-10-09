@@ -65,7 +65,7 @@
     MutantPartOraculeEye: 1120
     MutantPartPseudogiantHeart: 2800
     MutantPartZombieHand: 420
-    MutantPartChimeraTooth: 5000 # nerf this if they ever git gud
+    MutantPartChimeraTooth: 3300 # nerfed for plans of nerfing the mutant soon
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -81,19 +81,19 @@
         STWeaponShotgunTOZ34: 200 # T1
           # 5,45x39
         STWeaponRifleSaiga545: 800
-        STWeaponRifleAKS74U: 1490
+        STWeaponRifleAKS74U: 1500
         STWeaponRifleAKS74: 3000
         STWeaponSMGPP19: 1700
           # Other
-        STWeaponRevolverRugerRedhawk: 300
+        STWeaponRevolverRugerRedhawk: 400
         WeaponStalkerPistolTec9: 250
         STWeaponSniperMosin: 800
-        STWeaponSMGMP40: 300
+        STWeaponSMGMP40: 500
         STWeaponSMGPPSh41: 2500
-        STWeaponSMGMP5: 1800
+        STWeaponSMGMP5: 2000
         STWeaponSniperSKS: 1700
-        WeaponGameRevolverMateba: 300
-        STWeaponSMGVZ61: 600
+        WeaponGameRevolverMateba: 500
+        STWeaponSMGVZ61: 700
     - name: shop-category-magazines
       priority: 2
       items:
@@ -119,30 +119,30 @@
         6mmBuckshotBox: 115
         7mmBuckshotBox: 45
         # 7.25
-        725PBox: 85
-        725PTBox: 215
-        725PSTBox: 640
+        725PBox: 75
+        725PTBox: 200
+        725PSTBox: 600
         # 9.19
-        919PSOGJBox: 75
-        919PSTBox: 180
-        919PBMBox: 450
+        919PSOGJBox: 80
+        919PSTBox: 190
+        919PBMBox: 550
         # 9.18
         918PGJBox: 75
         918PSTBox: 180
-        918PBMBox: 450
+        918PBMBox: 500
         # 5.45
-        545FMJBox: 180
-        545HPBox: 675
-        545PCBox: 450
+        545FMJBox: 200
+        545HPBox: 600
+        545PCBox: 800
         # 7.39
         739FMJBox: 675
         # 7.54
-        754FMJBox: 640
-        754HPBox: 960
+        754FMJBox: 650
+        754HPBox: 1000
          # .45
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 250
-        45ACPAPBox: 625
+        45ACPLFMJBox: 200
+        45ACPMFMJBox: 540
+        45ACPAPBox: 1200
          # .44
         MagazineBoxRemingtonMagnum: 200
         MagazineBoxRemingtonMagnumAP: 650
@@ -159,11 +159,11 @@
         ClothingJaketRealHuman: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseRenegate: 1000 # T2 - PvP
         ClothingOuterArmorRene6B2: 1350 # T2 - PvP
-        ClothingOuterArmorRCBZRene: 1750 # T2 - ENV
+        ClothingOuterArmorRCBZRene: 2000 # T2 - ENV
         ClothingOuterArmorZaryaRene: 1500 # T2 - PVE
-        ClothingOuterArmorRenegate: 2450 # T3
-        STClothingOuterArmorLightPlateVestBasePSZ7rene: 2900 # T3 - PVP
-        ClothingOuterArmorSevarenegat: 3600 # T3 - PVE
+        ClothingOuterArmorRenegate: 2400 # T3
+        STClothingOuterArmorLightPlateVestBasePSZ7rene: 2700 # T3 - PVP
+        ClothingOuterArmorSevarenegat: 4000 # T3 - PVE
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -171,24 +171,22 @@
         ClothingBackpackDuffelGreenStalker: 30 # T1
         ClothingBackpackTacticBeigeStalker: 450 # T2
         ClothingBackpackMercStalker: 850 # T3
-        ClothingBackpackDuffelMilitaryOlive: 1200
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
         ClothingBeltTarzanOrange: 200 # T1 - PVP
           # Containers
-        MedkitCMSStalker: 450 # T1
-        MedkitGrizzlyStalker: 850 # T2
+        MedkitCMSStalker: 400 # T1
+        MedkitGrizzlyStalker: 1000 # T2
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
           # Cloaks
         ClothingOuterCoatStalker: 350 # T2
-        ClothingOuterCoatRenegat: 1050 # T3
-        ClothingCapeRenegat: 110
+        ClothingOuterCoatRenegat: 1000 # T3
+        ClothingCapeRenegat: 100
           # Gasmasks
         ClothingMaskGasRenegats: 100 # T1
         ClothingMaskGP5: 200 # T2
-        ClothingMaskM50: 600 # T3
     - name: shop-category-research-equipment
       priority: 7
       items:
@@ -199,16 +197,7 @@
     - name: shop-category-grenades
       priority: 8
       items:
-        IpritGrenadeStalker: 400
-        RGD5Grenade: 300
-        DG05SmokeGrenade: 200
-        GL3Grenade: 120
-        KhattabkaGrenade: 150
-        FragGrenade: 800
-        GL1Grenade: 100
         DynamiteOne: 1000
-        DynamiteTwo: 2000
-        DynamiteThree: 3000
     - name: shop-category-utilities
       priority: 9
       items:
@@ -254,8 +243,6 @@
       priority: 11
       items:
           # Cheap
-        PillDexalin: 30
-        PillDexalinPlusStalker: 45
         STOintment: 90
         STGauze: 60
         STBrutepack: 60
@@ -265,23 +252,20 @@
         Bloodpack: 120
         psyblock: 200
         MedkitAI2: 250
+        MedkitMilitary: 400
         Defibrillator: 700
     - name: shop-category-modules
       priority: 12
       items:
         STModuleScopeRiflesT1Ru: 600
-        STModuleScopeRiflesT1Nato: 600
         STModuleSilencerRiflesT1Ru: 400
-        STModuleSilencerRiflesT1Nato: 400
         STModuleShotgunChokeT1: 200
         STModuleSMGGripT1: 600
-        STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
-        STModuleSilencerSniperT1: 600
     - name: shop-category-customization
       priority: 13
       items:
-        ClothingCapeRenegat: 125
+        ClothingCapeRenegat: 100
         ClothingBandageStalkerYellow: 5
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
