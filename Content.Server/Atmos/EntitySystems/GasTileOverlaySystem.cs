@@ -59,6 +59,8 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         private float _updateInterval;
 
+        private bool _update = false;
+
         private int _thresholds;
         private EntityQuery<GasTileOverlayComponent> _query;
 
@@ -293,6 +295,10 @@ namespace Content.Server.Atmos.EntitySystems
         public override void Update(float frameTime)
         {
             base.Update(frameTime);
+
+            if (!_update)
+                return;
+
             AccumulatedFrameTime += frameTime;
 
             if (_doSessionUpdate)
