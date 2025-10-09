@@ -67,3 +67,17 @@
     size: Small
     shape:
     - 0,0,0,1
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartIzlomArm
+  name: izlom's arm
+  components:
+  - type: STWeight
+    self: 4.0
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/MutantParts/izlom_arm.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,2
