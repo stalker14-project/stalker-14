@@ -2,6 +2,7 @@
   parent: NPCDoll
   id: NPCUncle
   name: Uncle [→   ←]
+  suffix: ST, Trader
   description: He smells like weed and beer and he looks like he's ready to get back to the lake.
   components:
   - type: Sprite
@@ -27,6 +28,46 @@
     voice: TrainingRobot
   - type: Speech
     speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMeatman
+  name: ??? [→   ←]
+  suffix: ST, Trader, MANUAL MAP ONLY
+  description: He nervously shifts his weight back and forth. The jingle of coins can be heard from his pockets.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Mobs/Mutants/izlom.rsi
+    state: alive-1
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerMeatAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Hryvnias
+    shopPresetId: STMeatShopPreset
+  - type: TypingIndicator
+    proto: default
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Default
     speechSounds: Alto
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter

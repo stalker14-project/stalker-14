@@ -1,0 +1,42 @@
+- type: shopPreset
+  id: STMeatShopPreset
+  itemsForSale:
+    # cooked meat
+    FoodMeatDogCooked: 1
+    FoodMeatBoarCooked: 1
+    FoodMeatSTBearCooked: 1
+    FoodMeatSTFishFilletCooked: 0 # he doesnt like fish
+    FoodMeatSTFishSteakCooked: 0
+    FoodMeatSTEelCooked: 1
+    # raw meat
+    FoodMeatDog: 1
+    FoodMeatBoar: 2
+    FoodMeatSTBear: 3
+    FoodMeatSTFishFilletRaw: 0
+    FoodMeatSTFishSteakRaw: 1
+    FoodMeatSTEelRaw: 3
+    FoodMeatSpiderLeg: 1
+    # misc
+    MutantPartBearEye: 5
+    MutantPartCatGland: 2
+    MutantPartSnorkFoot: 1
+    MutantPartZombieHand: 1
+    MutantPartPseudogiantHeart: 100 # mmm yummy yummy
+    ZoneArtifactMeat: 10 # idr how common these are, maybe nerf
+
+# feast is fixed inventory, if something is added to feast it shouldnt be removed unless its a balance problem
+# famine is rotating inventory, this should be changed out occasionally
+  categories:
+    - name: FEAST
+      priority: 1
+      items:
+        StalkerFoodKlukva: 5
+        StalkerFoodMalina: 5
+        StalkerFoodKlubnika: 5
+    - name: FAMINE
+      priority: 2
+      items:
+        SeashellInstrument: 100
+        Football: 100
+        FoodSnackCookieFortune: 15
+        LoadedD6Dice: 150
