@@ -349,6 +349,8 @@
   - type: NewMapTeleport
     allowAll: false
     portalName: Cordon-TemnajaLoshina
+  - type: AccessReader
+    access: [["Project"]]
 
 - type: entity
   parent: MapTeleportBaseUncollide
@@ -368,6 +370,8 @@
   - type: NewMapTeleport
     allowAll: false
     portalName: Cordon-Project
+  - type: AccessReader
+    access: [["Project"]]
 
 - type: entity
   parent: MapTeleportBaseUncollide
