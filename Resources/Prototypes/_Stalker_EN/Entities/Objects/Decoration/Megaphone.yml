@@ -1,0 +1,16 @@
+﻿- type: entity
+  parent: RadioBaseStalker
+  id: STOKSOPMegaphone
+  suffix: ST, OKSOP
+  name: OKSOP Megaphone
+  description: A truncated cone-shaped tube designed for directional sound transmission.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/rupor.rsi
+    state: base
+  - type: AmbientSound
+    volume: -6
+    range: 20
+    enabled: true
+    sound:
+      path: /Audio/_Stalker_EN/Music/Radio/OKSOP.ogg
