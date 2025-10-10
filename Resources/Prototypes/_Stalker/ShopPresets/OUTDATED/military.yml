@@ -42,9 +42,8 @@
       priority: 1
       items:
         STWeaponRifleAKMC: 3
-        STWeaponSniperSKS: 3
-        STWeaponSniperVepr: 16
-        STWeaponRifleOC14: 9
+        STWeaponSniperVepr: 14
+        STWeaponRifleOC14: 8
         STWeaponRifleAK103: 18
     - name: shop-category-armor
       priority: 2
@@ -75,20 +74,6 @@
       items:
         STModuleScopeRiflesT1Ru: 1
         STModuleSniperSightT1: 1
-    - name: shop-category-grenades
-      priority: 7
-      items:
-        DG05SmokeGrenade: 1
-        RGD5Grenade: 1
-    - name: shop-category-other
-      priority: 8
-      items:
-        Defibrillator: 1
-    - name: shop-category-paperwork
-      priority: 9
-      items:
-        hunterLicense: 4
-        militaryLicense: 5
 
 - type: shopPreset
   id: MilitaryRoublesShopPreset
@@ -115,8 +100,6 @@
         STClothingTosroTurtlenecksLit: 10
         STClothingTosroTurtlenecksPol: 10
         STClothingTosroTurtlenecksRu: 10
-        ClothingJaketGeneral: 50
-        ClothingHeadHatGeneral: 50
         ClothingUniformJumpsuitMilitary2: 50
         ClothingHeadHatBeaniehat: 50
         ClothingMaskNeckFacemask: 50
@@ -584,7 +567,7 @@
         radioprotectpill: 20
         Bloodpack: 20
         psyblock: 75
-        Defibrillator: 700
+        Defibrillator: 200
 
     - name: shop-category-storage-and-containers
       priority: 8
@@ -660,3 +643,12 @@
         RGD5Grenade: 50
         TearGasGrenadeStalker: 35
         DG05SmokeGrenade: 25
+
+    - name: shop-category-paperwork
+      priority: 13
+      items:
+        militaryLicense: 5
+        Fishinglicense: 5
+        hunterLicense: 5
+        Paper: 5
+        Pen: 5
