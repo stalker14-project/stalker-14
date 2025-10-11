@@ -1,0 +1,92 @@
+# CS ELECTRONICS TOOLS
+- type: entity
+  parent: BaseItem
+  id: ElectronicDetectorT1
+  name: basic electronics toolkit
+  description: A basic kit with the bare minimum of tools to service electronic machines. The specialized tools aren't good for rougher work.
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 4
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Tools/cstool1.rsi
+    state: icon
+  - type: ElectronicsTool
+    searchTime: 15 # faster but worse
+    probability: 0.2
+  - type: RepositoryItem
+    categoryName: repository-tools-category
+
+- type: entity
+  parent: BaseItem
+  id: ElectronicDetectorT2
+  name: advanced electronics multitool
+  description: A compact and intricate tool designed to extract electronic parts. Without instructions it's a little hard for the average person to use it efficiently.
+  suffix: Stalker, Detector
+  components:
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Tools/cstool2.rsi
+    state: icon
+    scale: 0.7, 0.7
+  - type: ElectronicsTool
+    searchTime: 35 # whats the upper limit of how long a cs agent is willing to stand around and look at a doafter
+    probability: 0.8
+  - type: RepositoryItem
+    categoryName: repository-tools-category
+
+- type: entity
+  id: RandomElectronicsToolSpawner
+  name: random electronics spawner (electronics tool)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Other/Boxes/green_crate.rsi
+    state: icon
+  - type: RandomSpawner
+    prototypes:
+    - STJunkHardDriveBroken
+    - STJunkHardDriveBroken
+    - STJunkHardDriveBroken
+    - STJunkHardDriveBroken
+    - STJunkHardDriveBroken
+    # mats
+    - STCraftBasicPCBT1
+    - STCraftBasicPCBT1
+    - STCraftStandardPCBT2
+    - STCraftGlassT1
+    - STCraftGlassT2
+    - STCraftSheetCopperT1
+    - STCraftSheetIronT2
+    - STCraftSheetBrassT3
+    - STCraftBattery
+    - STCraftBattery
+    - STCraftCoil
+    - STCraftCapacitor
+    - STCraftCapacitor
+    - STCraftTransformer
+    - STDrinkBeerCanBaltic # spilled beer on tha computer
+    rarePrototypes:
+    - STJunkHardDrive
+    - STJunkHardDrive
+    - STJunkHardDrive
+    - STJunkHardDrive
+    # mats
+    # kill the t4s maybe idk
+    - STCraftMultilayerPCBT3
+    - STCraftMultilayerPCBT3
+    - STCraftHighPerformanceChipT4
+    - STCraftSheetAluminumT4
+    rareChance: 0.08 # slightly higher than trash rarechance
+    chance: 1
+    offset: 0.5

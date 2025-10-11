@@ -15,6 +15,12 @@
         - id: CraftHide
           maxAmount: 1
           prob: 0.25
+        - id: STJunkTag # EN
+          maxAmount: 1
+          prob: 0.06
+        - id: STJunkTagWhite # EN
+          maxAmount: 1
+          prob: 0.02
     - type: DamageStateVisuals
       states:
         Alive:
@@ -93,7 +99,7 @@
         types:
           Blunt: 25
       jumpPower: 2
-      jumpDistance: 4 
+      jumpDistance: 4
       updateCooldown: 0.25
       totalSteps: 6
       stepInterval: 0.001

@@ -11,6 +11,15 @@
       spawned:
         - id: MutantPartFleshEye
         - id: STFoodMeatSalo
+        - id: STJunkTag # EN
+          maxAmount: 1
+          prob: 0.03
+        - id: STJunkTagWhite # EN
+          maxAmount: 1
+          prob: 0.01
+        - id: STJunkTracker
+          maxAmount: 1
+          prob: 0.05
     - type: Destructible
       thresholds:
         - trigger:
@@ -94,6 +103,12 @@
     - type: Butcherable
       spawned:
         - id: MutantPartFleshEye
+        - id: STJunkTag # EN
+          maxAmount: 1
+          prob: 0.03
+        - id: STJunkTagWhite # EN
+          maxAmount: 1
+          prob: 0.01
     - type: Destructible
       thresholds:
         - trigger:
