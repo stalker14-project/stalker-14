@@ -59,26 +59,35 @@
       weight: 0.5
 
 # Болота
-- type: stAnomalyGenerationOptions
+- type: stAnomalyGenerationOptions #StalkerEN
   id: STBolotaGenerationOptions
   options:
-    totalCount: 200
+    totalCount: 250
     anomalyEntries:
+    # Electrical
+    - protoId: ZoneAnomalySource
+      weight: 2
+    - protoId: ZoneAnomalyGarland
+      weight: 5
     # Chemical
     - protoId: ZoneAnomalySmoke
       weight: 2
     - protoId: ZoneAnomalyGazirovka
       weight: 5
-#    - protoId: STAnomalyBubbleExit
     - protoId: ZoneAnomalyKissel
       weight: 3
     # Gravity
+    - protoId: ZoneAnomalyNoGravity
+      weight: 0.95
     - protoId: ZoneAnomalyBurden
       weight: 0.95
-    - protoId: ZoneAnomalyNoGravity
     - protoId: ZoneAnomalyGravi
-      weight: 2
+    - protoId: ZoneAnomalySpringboard
+    - protoId: ZoneAnomalyPulse
+    - protoId: ZoneAnomalyGrabber
+      weight: 3
     # Thermal
+    - protoId: ZoneAnomalyWitchesCircle
     - protoId: ZoneAnomalySteam
       weight: 2
     # Psy
@@ -177,37 +186,26 @@
     - protoId: ZoneAnomalyRift
 
 # Топи
-- type: stAnomalyGenerationOptions
+- type: stAnomalyGenerationOptions #StalkerEN
   id: STTopiGenerationOptions
   options:
     totalCount: 900
     anomalyEntries:
-#    - protoId: STAnomalyBubble
-#      weight: 0.6
-    # Electrical
-    - protoId: ZoneAnomalySource
-      weight: 2
-    - protoId: ZoneAnomalyGarland
-      weight: 5
     # Chemical
     - protoId: ZoneAnomalySmoke
       weight: 2
     - protoId: ZoneAnomalyGazirovka
       weight: 5
+    #    - protoId: STAnomalyBubbleExit
     - protoId: ZoneAnomalyKissel
       weight: 3
     # Gravity
-    - protoId: ZoneAnomalyNoGravity
-      weight: 0.95
     - protoId: ZoneAnomalyBurden
       weight: 0.95
+    - protoId: ZoneAnomalyNoGravity
     - protoId: ZoneAnomalyGravi
-    - protoId: ZoneAnomalySpringboard
-    - protoId: ZoneAnomalyPulse
-    - protoId: ZoneAnomalyGrabber
-      weight: 3
+      weight: 2
     # Thermal
-    - protoId: ZoneAnomalyWitchesCircle
     - protoId: ZoneAnomalySteam
       weight: 2
     # Psy
