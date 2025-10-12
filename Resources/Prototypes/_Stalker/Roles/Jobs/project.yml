@@ -17,6 +17,10 @@
   supervisors: job-project-pawn-supervisor
   canBeAntag: false
   special:
+    - type: Psyonics
+      psy: 50
+    - type: PsyonicsActionGrab
+    - type: PsyonicsActionSmoke
     - !type:AddComponentSpecial
       components:
         - type: Access
@@ -74,6 +78,8 @@
       components:
         - type: Psyonics
         - type: PsyonicsActionSmoke
+        - type: PsyonicsActionGrab
+        - type: PsyonicsActionRift
         - type: Access
           tags:
             - ProjectPawn
@@ -94,6 +100,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+            - Mutated
 
 - type: startingGear
   id: ProjectOrchestratorGear
