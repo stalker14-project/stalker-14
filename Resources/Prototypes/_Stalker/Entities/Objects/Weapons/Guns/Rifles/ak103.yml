@@ -104,3 +104,39 @@
     falloffMultiplier: 0.85
   - type: STWeaponAccuracy
     accuracyMultiplier: 1.65
+
+- type: entity
+  parent: STWeaponRifleSaiga545
+  id: STWeaponRifleSaiga739
+  name: saiga 7.39
+  description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base739Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine739
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge739
