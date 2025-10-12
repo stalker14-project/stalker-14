@@ -10,3 +10,6 @@ ent-ClothingHeadPilgrimDoctor = маска с клювом
 ent-ClothingHeadPsyHelm = psy helmet
     .desc = A customized prototype developed by scientists to protect against psi radiation.
     .suffix = ST, event
+ent-STClothingHeadCapRenegat = генеральская кепка
+    .desc = Кепка для настоящих львов.
+    .suffix = ST, Ренегаты

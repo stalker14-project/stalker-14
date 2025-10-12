@@ -31,12 +31,22 @@
         - type: NpcFactionMember
           factions:
           - BandsUnion
+        - type: MobThresholds
+          thresholds:
+            0: Alive
+            200: Critical
+            250: Dead
+        - type: Destructible
+          thresholds:
+          - trigger:
+              !type:DamageTrigger
+              damage: 250
 
 - type: startingGear
   id: ReneGear
   equipment:
     id: BandPDA
-    head: ClothingHeadHatGreyFlatcap
+    head: STClothingHeadCapRenegat
     torso: ClothingTorsoTShirtColorBlack
     legs: ClothingLegsJeansBlue
     shoes: ClothingShoesBootsWork
