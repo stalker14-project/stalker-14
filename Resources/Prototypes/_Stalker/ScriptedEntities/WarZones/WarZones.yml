@@ -82,6 +82,92 @@
     color: Cyan
     energy: 1
 
+- type: stWarZone
+  id: SvalkaСemetery
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 300 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 13 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 15   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+- type: entity
+  id: WarZoneEntity_Svalka_Сemetery
+  parent: MarkerBase
+  name: Сemetery War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: SvalkaСemetery
+    portalName: Сemetery
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
+- type: stWarZone
+  id: LimanskLenin
+  rewardPointsPerPeriod: 1
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 350 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 17 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 19   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+- type: entity
+  id: WarZoneEntity_Limansk_Lenin
+  parent: MarkerBase
+  name: Lenin War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: LimanskLenin
+    portalName: Lenin
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
 - type: stBandShopListings
   id: STBandShopListings
   items:
