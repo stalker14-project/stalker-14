@@ -1410,3 +1410,85 @@
     channels:
     - Binary
     - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDeserterMubarack
+  name: Мубарак [→   ←]
+  description: Мубарак, брат Абдула, дезертир из ОКСОП и почётный член банд-формирования "отступники", помогает брату перевозить оружие и броню с большой земли, совсем дурак.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Deserter_mubarack.rsi
+    state: deserter_mubarack
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+  - type: ActivatableUI
+    key: enum.BandsUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.BandsUiKey.Key:
+        type: BandsManagingUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: DeserterMubarackTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDeserterAbdul
+  name: Абдул [→   ←]
+  description: Абдул, брат Мубарака, дезертир из ОКСОП и почётный член банд-формирования "отступники", перевозит контрабанду через границу ЧЗО, умом не блещет.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Deserter_abdul.rsi
+    state: deserter_abdul
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: BandsManaging
+    shopListingsProto: STBandShopListings
+  - type: ActivatableUI
+    key: enum.BandsUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.BandsUiKey.Key:
+        type: BandsManagingUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: DeserterAbdulTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
