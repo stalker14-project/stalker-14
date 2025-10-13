@@ -24,3 +24,42 @@
   - type: Sprite
     sprite: Objects/Misc/stamps.rsi
     state: stamp-cap
+
+- type: entity
+  name: Commanding Officer's Stamp
+  parent: RubberStampBase
+  id: RubberStampCO
+  suffix: DO NOT MAP, ST
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-co
+    stampedColor: "#cc0000"
+    stampState: "paper_stamp-hos"
+  - type: Sprite
+    state: stamp-hos
+
+- type: entity
+  name: Executive Offier's Stamp
+  parent: RubberStampBase
+  id: RubberStampXO
+  suffix: DO NOT MAP, ST
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-xo
+    stampedColor: "#cc0000"
+    stampState: "paper_stamp-hos"
+  - type: Sprite
+    state: stamp-hos
+
+- type: entity
+  name: Duty Stamp
+  parent: RubberStampBase
+  id: RubberStampDolg
+  suffix: DO NOT MAP, ST
+  components:
+  - type: Stamp
+    stampedName: stamp-component-stamped-name-duty
+    stampedColor: "#850000FF"
+    stampState: "paper_stamp-hos"
+  - type: Sprite
+    state: stamp-syndicate
