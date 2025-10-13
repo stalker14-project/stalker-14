@@ -4,7 +4,7 @@ using Robust.Shared.GameStates;
 namespace Content.Server._Stalker.NoticeOnCollide;
 
 /// <summary>
-/// Can use <see cref="AccessReaderComponent"/> for checking who can interract
+/// Can use <see cref="AccessReaderComponent"/> for checking who can interact
 /// </summary>
 [RegisterComponent]
 public sealed partial class STNoticeOnCollideComponent : Component
@@ -22,7 +22,8 @@ public sealed partial class STNoticeOnCollideComponent : Component
     public string? Text = null;
 
     /// <summary>
-    /// Cooldown between uses in seconds at start and end collide at all
+    /// Cooldown in seconds on start and end of collide. Start and end have common timer 
+    /// (e.g. if you trigger start collide, end of collide activate only if coldown already gone).
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan CooldownTime = TimeSpan.FromSeconds(0);
@@ -30,7 +31,7 @@ public sealed partial class STNoticeOnCollideComponent : Component
     public TimeSpan LastUsed = new TimeSpan();
 
     /// <summary>
-    /// Chance of activation
+    /// Chance of activation. Used for both start and end of collision.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float Chance = 1;
