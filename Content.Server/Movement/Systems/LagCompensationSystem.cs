@@ -17,20 +17,13 @@ public sealed class LagCompensationSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-    public TimeSpan BufferTime = TimeSpan.FromMilliseconds(1250);
+    public TimeSpan BufferTime = TimeSpan.FromMilliseconds(1000);
 
     public override void Initialize()
     {
         base.Initialize();
         Log.Level = LogLevel.Info;
         SubscribeLocalEvent<LagCompensationComponent, MoveEvent>(OnLagMove);
-        Subs.CVar(_config, CCVars.LagCompBufferTimeMs, OnBufferTimeChanged, true);
-    }
-
-    private void OnBufferTimeChanged(int bufferTimeMs)
-    {
-        BufferTime = TimeSpan.FromMilliseconds(bufferTimeMs);
-        Log.Info($"Lag compensation buffer time changed to: {bufferTimeMs} ms");
     }
 
     public override void Update(float frameTime)
