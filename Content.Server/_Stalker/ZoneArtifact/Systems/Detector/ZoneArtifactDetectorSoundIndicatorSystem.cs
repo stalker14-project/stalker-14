@@ -1,5 +1,8 @@
 ﻿using Content.Server._Stalker.ZoneArtifact.Components.Detector;
 using Robust.Server.Audio;
+using Robust.Shared.Audio;      // AudioParams
+using Robust.Shared.Player;     // Filter
+using Robust.Shared.GameObjects; // TransformComponent / SharedTransformSystem
 using Robust.Shared.Timing;
 using ZoneArtifactDetectorComponent = Content.Shared._Stalker.ZoneArtifact.Components.ZoneArtifactDetectorComponent;
 
@@ -9,7 +12,7 @@ public sealed class ZoneArtifactDetectorSoundIndicatorSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly ZoneArtifactDetectorSystem _artifactDetector = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-
+    [Dependency] private readonly SharedTransformSystem _xform = default!;
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -29,7 +32,19 @@ public sealed class ZoneArtifactDetectorSoundIndicatorSystem : EntitySystem
                 continue;
             var distance = detector.ClosestDistance.Value;
 
-            _audio.PlayPvs(indicator.Sound, uid);
+            // HARD cutoff radius (only clients within this range receive the sound)
+            const float hearRange = 5f;
+            var mapCoords = _xform.GetMapCoordinates(uid);
+
+            _audio.PlayEntity(
+                indicator.Sound,
+                Filter.Empty().AddInRange(mapCoords, hearRange),
+                uid,
+                true,
+                AudioParams.Default
+                    .WithMaxDistance(hearRange)
+                    .WithReferenceDistance(1f)
+                    .WithRolloffFactor(1f));
 
             var detectionDistance = detector.DetectionDistance;
             if (detectionDistance <= 0)

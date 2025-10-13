@@ -22,7 +22,8 @@
             False: { state: screen_off }
     - type: ZoneAnomalyDetector
       level: 0
-      distance: 7
+      distance: 5
+      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep2.ogg
     - type: Item
       size: Normal
 
@@ -43,11 +44,10 @@
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
     - type: ZoneAnomalyDetector
-      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep2.ogg
-      maxBeepInterval: 4.5
+      maxBeepInterval: 2.5
       minBeepInterval: 0.5
       level: 0
-      distance: 10
+      distance: 7
     - type: Craftable
 
 - type: entity
@@ -67,8 +67,7 @@
           map: ["enum.ZoneAnomalyDetectorVisuals.Layer"]
           shader: unshaded
     - type: ZoneAnomalyDetector
-      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep2.ogg
-      maxBeepInterval: 4.5
+      maxBeepInterval: 2.5
       minBeepInterval: 0.5
       level: 0
       distance: 5
@@ -91,10 +90,9 @@
           shader: unshaded
     - type: ZoneAnomalyDetector
       level: 1
-      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep2.ogg
       maxBeepInterval: 2.5
       minBeepInterval: 0.5
-      distance: 10
+      distance: 7
     - type: Craftable
 
 - type: entity
@@ -115,10 +113,9 @@
           shader: unshaded
     - type: ZoneAnomalyDetector
       level: 1
-      beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep2.ogg
       distance: 5
-      maxBeepInterval: 0.5
-      minBeepInterval: 0.001
+      maxBeepInterval: 1.5
+      minBeepInterval: 0.3
 
 - type: entity
   parent: ZoneAnomalyBaseDetector
@@ -140,8 +137,8 @@
       level: 2
       beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
       distance: 5
-      maxBeepInterval: 0.5
-      minBeepInterval: 0.001
+      maxBeepInterval: 1
+      minBeepInterval: 0.2
 
 #- type: entity
 #  parent: ZoneAnomalyBaseDetector
@@ -182,8 +179,8 @@
           shader: unshaded
     - type: ZoneAnomalyDetector
       level: 3
-      distance: 15
-      maxBeepInterval: 5
+      distance: 5
+      maxBeepInterval: 1
       minBeepInterval: 0.01
     - type: ZoneAnomalyDetectorArtifactActivator
       level: 3
@@ -206,8 +203,8 @@
           shader: unshaded
     - type: ZoneAnomalyDetector
       level: 4
-      distance: 25
-      maxBeepInterval: 5
+      distance: 5
+      maxBeepInterval: 1
       minBeepInterval: 0.01
     - type: ZoneAnomalyActivator
       level: 4
@@ -235,7 +232,7 @@
     - type: ZoneAnomalyDetector
       level: 4
       beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep3.ogg
-      distance: 12
+      distance: 5
       maxBeepInterval: 0.9
-      minBeepInterval: 0.05
+      minBeepInterval: 0.01
 
