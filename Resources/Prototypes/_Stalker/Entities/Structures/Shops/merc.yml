@@ -16,3 +16,21 @@
     - type: Shop
       moneyId: Roubles
       shopPresetId: MercShopPreset
+
+- type: entity
+  parent: StalkerShop
+  id: StalkerShopMercDollar
+  name: Торгомат, Наёмники, Долларовый
+  description: Как торговец туда поместился?
+  suffix: ST, Mapping, Наёмники
+  components:
+    - type: Sprite
+      drawdepth: Objects
+      sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_gray.rsi
+      layers:
+        - state: torgomat_gray
+          map: [ "enum.ConstructionVisuals.Layer" ]
+        - state: normal-unshaded
+    - type: Shop
+      moneyId: Dollar
+      shopPresetId: STMercenaryDollarTrader
