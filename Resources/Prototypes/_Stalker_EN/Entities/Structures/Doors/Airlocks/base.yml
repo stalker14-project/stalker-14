@@ -1,0 +1,69 @@
+﻿#Stalker EN Doors
+
+# Freedom
+- type: entity
+  id: MetalBarDoorFalloutFreedomClosedEN
+  name: Lattice door
+  parent: MetalBarDoorFallout
+  description: Lattice door with a secure lock.
+  suffix: ST, Mapping, Freedom
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutFreedomClosedEN
+  name: Reinforced lattice door
+  parent: MetalGrateDoorFallout
+  description: A strong lattice door with a reliable lock.
+  suffix: ST, Mapping, Freedom
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+# Military Stalkers
+
+- type: entity
+  id: MetalBarDoorFalloutMilitaryStalkerClosedEN
+  name: Lattice door
+  parent: MetalBarDoorFallout
+  description: Lattice door with a secure lock.
+  suffix: ST, Mapping, Voenstal
+  components:
+  - type: AccessReader
+    access: [["Military Stalkers"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutMilitaryStalkerClosedEN
+  name: Reinforced lattice door
+  parent: MetalGrateDoorFallout
+  description: A strong lattice door with a reliable lock.
+  suffix: ST, Mapping, Voenstal
+  components:
+  - type: AccessReader
+    access: [["Military Stalkers"]]
+
+- type: entity
+  id: MilitaryDoorVoenEN
+  name: Military Gate
+  parent: STBaseMaterialDoor
+  description: A passage in a wall or fence that is locked with alignments.
+  suffix: ST, mapping, Voenstal
+  components:
+  - type: Occluder
+    boundingBox: "-1.5,-0.5,1.5,0.5"
+  - type: AccessReader
+    access: [["Military Stalkers"]]
+  - type: Sprite
+    sprite: _Stalker/Structures/Doors/Steels/military_door.rsi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.4,-0.5,1.4,0.5"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - AirlockLayer
