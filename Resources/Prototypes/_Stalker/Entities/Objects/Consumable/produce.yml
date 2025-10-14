@@ -1331,27 +1331,32 @@
   description: The living embodiment of a nightmare lurking in the shadow of the Zone. Meeting Voronets is a bad sign, stalker. Stay away if life is precious. Don't touch, don't taste, don't even breathe in his direction.
   suffix: Stalker, Berries
   components:
-  - type: FlavorProfile
-    flavors:
-      - grass
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
+    - type: FlavorProfile
+      flavors:
+        - grass
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 11
+          reagents:
+          - ReagentId: StalkerToxin2
+            Quantity: 10
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/voronet.rsi # EN
+      state: icon # EN
+    - type: Clothing # EN
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/voronet.rsi
+      slots:
+      - HEAD
+      - NECK
+    - type: Extractable
+      juiceSolution:
         reagents:
         - ReagentId: StalkerToxin2
           Quantity: 10
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodVoronec
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: StalkerToxin2
-        Quantity: 10
-  - type: Tag
-    tags:
-    - Fruit
+    - type: Tag
+      tags:
+      - Fruit
 
 - type: ore
   id: StalkerOreBerries18
@@ -1407,27 +1412,32 @@
   description: Don't be fooled by the gentle look, stalker. In the Zone, even beauty can be deadly. Lily of the Valley is a vivid example of this. Delicate, graceful, with snow-white bells, it seems to remind of a carefree life that was left far behind. But look more closely, and you will see the shadow of death hidden behind this beauty.
   suffix: Stalker, Berries
   components:
-  - type: FlavorProfile
-    flavors:
-      - grass
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
+    - type: FlavorProfile
+      flavors:
+        - grass
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 11
+          reagents:
+          - ReagentId: StalkerToxin3
+            Quantity: 10
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/lily.rsi # EN
+      state: icon # EN
+    - type: Clothing # EN
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/lily.rsi
+      slots:
+      - HEAD
+      - NECK
+    - type: Extractable
+      juiceSolution:
         reagents:
         - ReagentId: StalkerToxin3
           Quantity: 10
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodLandish
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: StalkerToxin3
-        Quantity: 10
-  - type: Tag
-    tags:
-    - Fruit
+    - type: Tag
+      tags:
+      - Fruit
 
 - type: ore
   id: StalkerOreBerries19
@@ -1483,29 +1493,34 @@
   description: Ochanka officinalis is a useful herb that can help you in the conditions of the Zone. But remember that this is not a panacea for all diseases. Be careful, and knowledge will help you survive.
   suffix: Stalker, Berries
   components:
-  - type: FlavorProfile
-    flavors:
-      - grass
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
+    - type: FlavorProfile
+      flavors:
+        - grass
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 11
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 5
+          - ReagentId: Vitamin
+            Quantity: 4
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/eyebright.rsi # EN
+      state: icon # EN
+    - type: Clothing # EN
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/eyebright.rsi
+      slots:
+      - HEAD
+      - NECK
+    - type: Extractable
+      juiceSolution:
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodOchanka
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: StalkerOilGrass1
-        Quantity: 10
-  - type: Tag
-    tags:
-    - Fruit
+        - ReagentId: StalkerOilGrass1
+          Quantity: 10
+    - type: Tag
+      tags:
+      - Fruit
 
 - type: ore
   id: StalkerOreBerries20
@@ -1561,29 +1576,34 @@
   description: The area is inhospitable, and the grass here grows to match it — tough, prickly, surviving against all odds. But even among this dead meat, you can find useful plants if you know what to look for. Remember, stalker, knowledge is your best defense.
   suffix: Stalker, Berries
   components:
-  - type: FlavorProfile
-    flavors:
-      - grass
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
+    - type: FlavorProfile
+      flavors:
+        - grass
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 11
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 5
+          - ReagentId: Vitamin
+            Quantity: 4
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/cinquefoil.rsi # EN
+      state: icon # EN
+    - type: Clothing # EN
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/cinquefoil.rsi
+      slots:
+      - HEAD
+      - NECK
+    - type: Extractable
+      juiceSolution:
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodlapchatka
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: StalkerOilGrass2
-        Quantity: 10
-  - type: Tag
-    tags:
-    - Fruit
+        - ReagentId: StalkerOilGrass2
+          Quantity: 10
+    - type: Tag
+      tags:
+      - Fruit
 
 - type: ore
   id: StalkerOreBerries21
@@ -1639,29 +1659,34 @@
   description: In the Zone, any medicine is worth its weight in gold, and even if it grows right under your nose... ordinary calamus, known to stalkers as the root of health, is just such a treasure. This modest-looking plant has amazing properties.
   suffix: Stalker, Berries
   components:
-  - type: FlavorProfile
-    flavors:
-      - grass
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
+    - type: FlavorProfile
+      flavors:
+        - grass
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 11
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 5
+          - ReagentId: Vitamin
+            Quantity: 4
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/calamus.rsi # EN
+      state: icon # EN
+    - type: Clothing # EN
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/calamus.rsi
+      slots:
+      - HEAD
+      - NECK
+    - type: Extractable
+      juiceSolution:
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodAir
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: StalkerOilGrass3
-        Quantity: 10
-  - type: Tag
-    tags:
-    - Fruit
+        - ReagentId: StalkerOilGrass3
+          Quantity: 10
+    - type: Tag
+      tags:
+      - Fruit
 
 - type: ore
   id: StalkerOreBerries22
@@ -1717,29 +1742,34 @@
   description: Among the ugly mutants and sinister anomalies of the Zone, seeing a blooming lime tree is like meeting a guardian angel. The heart—shaped linden is not just a tree, it is a symbol of hope and peace in this cursed place.
   suffix: Stalker, Berries
   components:
-  - type: FlavorProfile
-    flavors:
-      - grass
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
+    - type: FlavorProfile
+      flavors:
+        - grass
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 11
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 5
+          - ReagentId: Vitamin
+            Quantity: 4
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/linden.rsi # EN
+      state: icon # EN
+    - type: Clothing # EN
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/linden.rsi
+      slots:
+      - HEAD
+      - NECK
+    - type: Extractable
+      juiceSolution:
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodLipa
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: StalkerOilGrass4
-        Quantity: 10
-  - type: Tag
-    tags:
-    - Fruit
+        - ReagentId: StalkerOilGrass4
+          Quantity: 10
+    - type: Tag
+      tags:
+      - Fruit
 
 - type: ore
   id: StalkerOreBerries23
@@ -1795,29 +1825,34 @@
   description: Only the strong survive in the Zone. A rare plant that can give you this power. The Spotted Hawthorn is not conspicuous, but experienced stalkers know that it harbors powerful potential.
   suffix: Stalker, Berries
   components:
-  - type: FlavorProfile
-    flavors:
-      - grass
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 11
+    - type: FlavorProfile
+      flavors:
+        - grass
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 11
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 5
+          - ReagentId: Vitamin
+            Quantity: 4
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/orchid.rsi # EN
+      state: icon # EN
+    - type: Clothing # EN
+      sprite: _Stalker_EN/Objects/Consumable/Food/Flowers/orchid.rsi
+      slots:
+      - HEAD
+      - NECK
+    - type: Extractable
+      juiceSolution:
         reagents:
-        - ReagentId: Nutriment
-          Quantity: 5
-        - ReagentId: Vitamin
-          Quantity: 4
-  - type: Sprite
-    sprite: _Stalker/Objects/Counsumable/Food/Plants.rsi
-    state: StalkerFoodYatrishnik
-  - type: Extractable
-    juiceSolution:
-      reagents:
-      - ReagentId: StalkerOilGrass5
-        Quantity: 10
-  - type: Tag
-    tags:
-    - Fruit
+        - ReagentId: StalkerOilGrass5
+          Quantity: 10
+    - type: Tag
+      tags:
+      - Fruit
 
 - type: ore
   id: StalkerOreBerries24
