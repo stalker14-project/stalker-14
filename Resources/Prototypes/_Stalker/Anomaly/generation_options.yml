@@ -159,7 +159,7 @@
 - type: stAnomalyGenerationOptions
   id: STTemnajDolinaGenerationOptions
   options:
-    totalCount: 200
+    totalCount: 250
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalySource
@@ -184,6 +184,7 @@
     # Psy
     - protoId: ZoneAnomalyBarabashka
     - protoId: ZoneAnomalyRift
+      weight: .05
 
 # Топи
 - type: stAnomalyGenerationOptions #StalkerEN
