@@ -750,13 +750,36 @@ entities:
     - type: Transform
       pos: -2.5,8.5
       parent: 104
+  - uid: 339
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -2.5,6.5
+      parent: 104
 - proto: GasPassiveVent
   entities:
+  - uid: 6
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,-5.5
+      parent: 104
+  - uid: 7
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,2.5
+      parent: 104
   - uid: 16
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 0.5,3.5
+      parent: 104
+  - uid: 23
+    components:
+    - type: Transform
+      pos: -2.5,5.5
       parent: 104
   - uid: 29
     components:
@@ -769,6 +792,17 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -2.5,9.5
+      parent: 104
+  - uid: 87
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -4.5,2.5
+      parent: 104
+  - uid: 250
+    components:
+    - type: Transform
+      pos: 0.5,1.5
       parent: 104
 - proto: GasPipeBend
   entities:
@@ -1010,49 +1044,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,5.5
       parent: 104
+    - type: GasValve
+      open: False
   - uid: 60
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -0.5,6.5
-      parent: 104
-- proto: GasVentPump
-  entities:
-  - uid: 6
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,-5.5
-      parent: 104
-    - type: ApcPowerReceiver
-      needsPower: False
-  - uid: 7
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 4.5,2.5
-      parent: 104
-    - type: ApcPowerReceiver
-      needsPower: False
-  - uid: 23
-    components:
-    - type: Transform
-      pos: -2.5,5.5
-      parent: 104
-    - type: ApcPowerReceiver
-      needsPower: False
-  - uid: 87
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -4.5,2.5
-      parent: 104
-    - type: ApcPowerReceiver
-      needsPower: False
-  - uid: 250
-    components:
-    - type: Transform
-      pos: 0.5,1.5
       parent: 104
 - proto: Graffiti22
   entities:
