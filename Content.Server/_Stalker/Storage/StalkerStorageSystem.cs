@@ -681,6 +681,28 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         _stalkerDbSystem.ClearAllRepositories(login);
     }
 
+    /// <summary>
+    /// Clears every in-world StalkerRepositoryComponent and reloads default items.
+    /// Intended to be used after the database has been globally reset to the default stash JSON.
+    /// </summary>
+    public void ClearAllStorages()
+    {
+        var query = EntityQueryEnumerator<StalkerRepositoryComponent>();
+
+        while (query.MoveNext(out var uid, out var stalkerRepositoryComponent))
+        {
+            // Clear the repository
+            stalkerRepositoryComponent.ContainedItems.Clear();
+
+            // Reset the current weight
+            stalkerRepositoryComponent.CurrentWeight = 0;
+
+            // Reset the loaded DB JSON to default items and reload
+            stalkerRepositoryComponent.LoadedDbJson = StalkerDbSystem.DefaultStalkerItems;
+            LoadStalkerItemsByEntityUid(uid);
+        }
+    }
+
     public static string InventoryToJson(AllStorageInventory inputAllStorageInventory)
     {
         return JsonSerializer.Serialize(inputAllStorageInventory);

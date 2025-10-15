@@ -1753,6 +1753,21 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             await db.DbContext.SaveChangesAsync();
         }
 
+        public async Task SetAllStalkerItems(string jsonItems)
+        {
+            await using var db = await GetDb();
+
+            // Set storage to jsonItems for every stalker record in the database
+            var records = db.DbContext.Stalkers;
+
+            foreach (var record in records)
+            {
+                record.Storage = jsonItems;
+            }
+
+            await db.DbContext.SaveChangesAsync();
+        }
+
         public async Task<string?> GetLoginItems(string login)
         {
             await using var db = await GetDb();

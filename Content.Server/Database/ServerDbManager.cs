@@ -364,6 +364,7 @@ namespace Content.Server.Database
         Task<StalkerZoneOwnership?> GetStalkerWarOwnershipAsync(ProtoId<STWarZonePrototype> warZone);
         Task ClearStalkerZoneOwnershipAsync(ProtoId<STWarZonePrototype> warZone);
         Task<List<Player>> GetPlayersWithRoleWhitelistAsync(IEnumerable<string> roleIds, CancellationToken cancel = default); // Added for BandsSystem
+        Task SetAllStalkerItems(string jsonItems);
         #endregion
     }
     /// <summary>
@@ -1109,6 +1110,12 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.ClearStalkerZoneOwnershipAsync(warZone));
+        }
+
+        public Task SetAllStalkerItems(string jsonItems)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SetAllStalkerItems(jsonItems));
         }
 
         public Task<string?> GetLoginItems(string login)

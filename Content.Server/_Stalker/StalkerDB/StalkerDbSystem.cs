@@ -5,6 +5,8 @@ using Content.Server.Database;
 using Content.Shared.GameTicking;
 using Content.Shared._Stalker.Teleport;
 using Robust.Shared.Prototypes;
+using System.Linq;
+using Content.Server._Stalker.Storage;
 
 namespace Content.Server._Stalker.StalkerDB;
 
@@ -13,6 +15,7 @@ public sealed class StalkerDbSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IServerDbManager _dbManager = default!;
+    [Dependency] private readonly StalkerStorageSystem _stalkerStorageSystem = default!;
 
     public const string DefaultStalkerItems =
 """
@@ -121,6 +124,33 @@ public sealed class StalkerDbSystem : EntitySystem
             var items = await _dbManager.GetLoginItems(concat) ?? DefaultStalkerItems;
 
             Stalkers.TryAdd(concat, items);
+        }
+    }
+
+    /// <summary>
+    /// Reset every stash record in the database to the default starting items and update in-world repositories.
+    /// </summary>
+    public async Task ResetAllStashes()
+    {
+        // 1) Update DB: set every stalker storage row to default JSON
+        await _dbManager.SetAllStalkerItems(DefaultStalkerItems);
+
+        // 2) Update in-memory cache so newly loaded players don't observe stale empty values
+        foreach (var key in Stalkers.Keys.ToList())
+        {
+            Stalkers[key] = DefaultStalkerItems;
+        }
+
+        // 3) Reset all in-world repository components so their contained items and loaded JSON are set to defaults
+        try
+        {
+            _stalkerStorageSystem.ClearAllStorages();
+        }
+        catch (Exception e)
+        {
+            // If something goes wrong clearing storages, log and rethrow so callers see the failure
+            Logger.ErrorS("stalker.db", $"Failed to clear in-world storages during ResetAllStashes: {e}");
+            throw;
         }
     }
 

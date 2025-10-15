@@ -8,6 +8,7 @@ using Robust.Shared.Noise;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
+using System.Collections.Concurrent;
 
 namespace Content.Shared.Parallax.Biomes;
 
@@ -19,6 +20,15 @@ public abstract class SharedBiomeSystem : EntitySystem
     [Dependency] private readonly TileSystem _tile = default!;
 
     protected const byte ChunkSize = 8;
+
+    // Cache noise copies per prototype noise instance + seed to avoid copying per tile.
+    // Use a ConcurrentDictionary so it is safe during parallel generation.
+    protected readonly ConcurrentDictionary<long, FastNoiseLite> _noiseCache = new();
+
+    // When true, the shared biome logic will not generate tiles from layers (noise) and
+    // will return "no biome tile" for positions that only exist due to generated biomes.
+    // Existing authored map tiles (tile refs) are still respected by TryGetBiomeTile.
+    public static bool DisableTileGeneration = true;
 
     private T Pick<T>(List<T> collection, float value)
     {
@@ -103,6 +113,14 @@ public abstract class SharedBiomeSystem : EntitySystem
     /// </summary>
     public bool TryGetTile(Vector2i indices, List<IBiomeLayer> layers, int seed, MapGridComponent? grid, [NotNullWhen(true)] out Tile? tile)
     {
+        // Respect the global disable flag: if generation is disabled then don't compute
+        // biome tiles from layers. This avoids invoking expensive noise and prototype logic.
+        if (DisableTileGeneration)
+        {
+            tile = null;
+            return false;
+        }
+
         for (var i = layers.Count - 1; i >= 0; i--)
         {
             var layer = layers[i];
@@ -331,11 +349,20 @@ public abstract class SharedBiomeSystem : EntitySystem
 
     private FastNoiseLite GetNoise(FastNoiseLite seedNoise, int seed)
     {
+        // Key is based on the prototype noise instance identity and the seed.
+        var protoHash = System.Runtime.CompilerServices.RuntimeHelpers.GetHashCode(seedNoise);
+        long key = ((long)protoHash << 32) ^ (uint)seed;
+
+        if (_noiseCache.TryGetValue(key, out var cached))
+            return cached;
+
         var noiseCopy = new FastNoiseLite();
         _serManager.CopyTo(seedNoise, ref noiseCopy, notNullableOverride: true);
         noiseCopy.SetSeed(noiseCopy.GetSeed() + seed);
         // Ensure re-calculate is run.
         noiseCopy.SetFractalOctaves(noiseCopy.GetFractalOctaves());
+
+        _noiseCache[key] = noiseCopy;
         return noiseCopy;
     }
 }
