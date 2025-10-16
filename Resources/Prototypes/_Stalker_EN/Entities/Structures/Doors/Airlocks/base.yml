@@ -67,3 +67,47 @@
         - FullTileMask
         layer:
         - AirlockLayer
+
+# Duty
+
+- type: entity
+  id: MetalBarDoorFalloutDolgClosedEN
+  name: Lattice door
+  parent: MetalBarDoorFallout
+  description: Lattice door with a secure lock.
+  suffix: ST, Mapping, Duty
+  components:
+  - type: AccessReader
+    access: [["Dolg"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutDolgClosedEN
+  name: Reinforced lattice door
+  parent: MetalGrateDoorFallout
+  description: A strong lattice door with a reliable lock.
+  suffix: ST, Mapping, Duty
+  components:
+  - type: AccessReader
+    access: [["Dolg"]]
+
+# Bandit
+
+- type: entity
+  id: MetalBarDoorFalloutBanditClosedEN
+  name: Lattice door
+  parent: MetalBarDoorFallout
+  description: Lattice door with a secure lock.
+  suffix: ST, Mapping, Bandit
+  components:
+  - type: AccessReader
+    access: [["Bandit"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutBanditClosedEN
+  name: Reinforced lattice door
+  parent: MetalGrateDoorFallout
+  description: A strong lattice door with a reliable lock.
+  suffix: ST, Mapping, Bandit
+  components:
+  - type: AccessReader
+    access: [["Bandit"]]
