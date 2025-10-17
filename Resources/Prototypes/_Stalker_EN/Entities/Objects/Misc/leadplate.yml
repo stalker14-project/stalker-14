@@ -1,0 +1,29 @@
+﻿- type: entity
+  parent: BaseItem
+  id: STLeadPlate
+  name: Lead Plate
+  suffix: ST
+  description: A solid lead plate that can be used as an armor insert.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/lead_plate.rsi
+    state: plate
+    scale: .7, .7
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: STWeight
+    self: 5
+  - type: Clothing
+    quickEquip: true
+    slots:
+    - ARTIFACT
+  - type: Tag
+    tags:
+    - Plate
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Radiation: 2
