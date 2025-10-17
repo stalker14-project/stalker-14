@@ -1,0 +1,25 @@
+- type: entity
+  id: MercBusinessCard
+  name: mercenary business card
+  parent: Paper
+  description: A dark blue card with the logo of a hawk stamped into it.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: merc_card
+    - state: merc_card
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: Paper
+    content: syndicate-business-card-base
+  - type: PaperVisuals
+    headerImagePath: "/Textures/_Stalker_EN/Interface/Paper/mercenary_logo.svg.96dpi.png"
+    headerMargin: 0.0, 0.0, 0.0, 2.0
+    backgroundImagePath: "/Textures/_Stalker_EN/Interface/Paper/paper_background_blue.svg.96dpi.png"
+    backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
+    contentMargin: 4.0, 4.0, 4.0, 4.0
+    maxWritableArea: 400.0, 256.0
