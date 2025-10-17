@@ -179,6 +179,10 @@ namespace Content.Client.Construction
         /// <summary>
         /// Creates a construction ghost at the given location.
         /// </summary>
+        private bool HasActiveGhost()
+        {
+            return _ghosts.Count > 0;
+        }
         public bool TrySpawnGhost(
             ConstructionPrototype prototype,
             EntityCoordinates loc,
@@ -194,6 +198,13 @@ namespace Content.Client.Construction
 
             if (GhostPresent(loc))
                 return false;
+
+            // Prevent spawning multiple ghosts at once
+            if (HasActiveGhost())
+            {
+                _popupSystem.PopupCursor(Loc.GetString("You already have an active construction preview!"));
+                return false;
+            }
 
             var predicate = GetPredicate(prototype.CanBuildInImpassable, _transformSystem.ToMapCoordinates(loc));
             if (!_examineSystem.InRangeUnOccluded(user, loc, 20f, predicate: predicate))
