@@ -111,3 +111,25 @@
   components:
   - type: AccessReader
     access: [["Bandit"]]
+
+# Mercenary
+
+- type: entity
+  id: StalkerGateMercEN
+  name: Gate
+  parent: StalkerGate
+  description: High steel gates through which it is unlikely that you will be able to move.
+  suffix: ST, Mapping, Merc
+  components:
+  - type: AccessReader
+    access: [["Merc"]]
+
+- type: entity
+  id: StalkerGaterMercEN
+  name: Gate
+  parent: StalkerGater
+  description: High steel gates through which it is unlikely that you will be able to move.
+  suffix: ST, Mapping, Merc
+  components:
+  - type: AccessReader
+    access: [["Merc"]]
