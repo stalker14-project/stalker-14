@@ -30,3 +30,5 @@ shop-category-blueprints-ammunition = Blueprints - Ammo
 shop-category-electronics = Electronics
 shop-category-cassettes = Cassettes
 shop-category-donator = Donator Cassettes
+
+shop-category-drinks = Drinks

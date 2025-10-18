@@ -49,3 +49,6 @@ ent-SetMonolithGasBuyableCrate = { ent-SetMonolithMarlyaBuyableCrate }
 ent-SetMonolithOldBuyableCrate = { ent-SetMonolithMarlyaBuyableCrate }
     .desc = Includes an armored suit, gas mask, tanks, and two differently sized belt pouches.
     .suffix = { ent-SetPS5MDolgBuyableCrate.suffix }
+ent-SetMercLonerBuyableCrate = Stalker overalls set
+    .desc = The set includes a jumpsuit, balaclava and a belt bag with a holster.
+

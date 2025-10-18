@@ -71,27 +71,19 @@
           # shotgun
         STWeaponShotgunMossbergM88: 630
         STWeaponShotgunBenelliM4Super90: 1200
-        STWeaponShotgunSPAS: 1300
-        STWeaponShotgunProtecta: 2550
+        STWeaponShotgunSPAS: 1600
           # prostogun
         WeaponPistolStalkerGlock: 180
         STWeaponSMGMP5: 1700
-        STWeaponSMGFNP90: 3500
         STWeaponRifleFAL: 1250
         STWeaponRifleM14: 1500
         STWeaponRifleG36: 4250
-        STWeaponRifleHK416: 4500
         STWeaponRevolverSWPC325TR: 800
-        STWeaponRifleM4: 2900
-        STWeaponRifleM16: 3000
+        STWeaponRifleM4: 3200
+        STWeaponRifleM16: 2500
         STWeaponRifleSIG550: 3550
         STWeaponRifleSCARH: 3150
-        STWeaponRifleAUG: 2675
-        STWeaponRifleARX160: 5000
-        STWeaponRifleGalil: 6750
-        STWeaponRifleGalatz: 6250
         STWeaponRifleL85: 1900
-        STWeaponRifleSIG739: 2500
 
     - name: shop-category-magazines
       priority: 2
@@ -111,7 +103,6 @@
         751Mag20: 400
         STSpeedLoader45ACPEmpty: 90
         739Mag30: 300
-        P90Mag: 400
 
     - name: shop-category-ammunition
       priority: 3
@@ -173,7 +164,8 @@
         ClothingOuterJacketMerc: 50
         STClothingOuterArmorLightPlateVestBaseMerc: 1100
         ClothingOuterArmorSevaMerc: 3600
-        ClothingOuterArmorMerc: 3100
+        SetMerc2BuyableCrate: 3100
+        SetMercBuyableCrate: 3500
         ClothingHeadMercLight: 300
         ClothingHeadAssaultHelmetMerc: 1600
         ClothingHeadHelmetInfantryMerc: 600
@@ -197,6 +189,7 @@
         ClothingOuterCoatDoshdevik: 100
         ClothingOuterCoatKevlarMercenaries: 1350
         ClothingMaskGasZarya: 100
+        ClothingMaskGasMercStalker: 150
         ClothingMaskGasM40: 250
         ClothingMaskGP7: 900
 
@@ -242,8 +235,15 @@
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
 
+    - name: shop-category-paperwork
+      priority: 11
+      items:
+        Paper: 2
+        Pen: 5
+        MercBusinessCard: 10
+
     - name: shop-category-customization
-      priority: 12
+      priority: 13
       items:
         ClothingBandageStalkerGreen: 5
         ClothingHeadHatBeaniehat: 10

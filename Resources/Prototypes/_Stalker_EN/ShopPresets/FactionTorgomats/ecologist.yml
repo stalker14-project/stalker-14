@@ -11,12 +11,12 @@
         STWeaponShotgunTOZ34: 200
         STWeaponShotgunMossbergM88: 650
         STWeaponRevolverRugerRedhawk: 750
-        STWeaponShotgunSPAS: 1350
+        STWeaponShotgunSPAS: 1550
         STWeaponRevolverSWModel625: 1650
-        STWeaponRifleAKS74U: 1750
-        STWeaponSMGPP1901: 2250
-        STWeaponRifleM16: 3000
-        STWeaponRifleAKS74: 3500
+        STWeaponRifleAKS74U: 2050
+        STWeaponSMGPP1901: 2450
+        STWeaponRifleM16: 3200
+        STWeaponRifleAKS74: 3800
 
     - name: shop-category-magazines
       priority: 2
@@ -37,19 +37,19 @@
       items:
         919PSOGJBox: 75
         919PSTBox: 180
-        919RIPBox: 100
+        919RIPBox: 200
         45ACPRIPBox: 150
         45ACPLFMJBox: 100
         45ACPMFMJBox: 250
-        ShotgunFlechette: 250
+        # ShotgunFlechette: 250 Ammo needs rework
         6mmBuckshotBox: 115
         7mmBuckshotBox: 45
-        545HPBox: 200
-        545FMJBox: 170
-        545PCBox: 2000
-        556WarmagBox: 200
+        545HPBox: 300
+        545FMJBox: 270
+        545PCBox: 2500
+        556WarmagBox: 300
         556FMJBox: 300
-        556M855Box: 3000
+        556M855Box: 3500
 
     - name: shop-category-medicine # 70% discount from stalkers
       priority: 4
@@ -66,19 +66,19 @@
         Bloodpack: 90
         psyblock: 200
         MedkitAI2: 20
-        MedkitScience: 150
-        MedkitMilitary: 75
+        MedkitScience: 175
+        MedkitMilitary: 100
         Defibrillator: 700
-        MedkitElite: 400
-        MedkitLAR: 450
+        MedkitElite: 500
+        MedkitLAR: 650
         # Crates
         SanitarCrate: 800
-        SaviorCrate: 1500
-        PolevoyVrachCrate: 1875
-        ArmySciCrate: 3000
-        BulkScienceCrate: 3750
-        BulkEliteCrate: 4800
-        BulkLARCrate: 5400
+        SaviorCrate: 1650
+        PolevoyVrachCrate: 2500
+        ArmySciCrate: 4500
+        BulkScienceCrate: 4375
+        BulkEliteCrate: 6000
+        BulkLARCrate: 7800
 
     - name: shop-category-provisions
       priority: 5
@@ -103,9 +103,13 @@
           # OuterClothing #
         ClothingOuterJacketSCI: 60 # T1 - PVE
         ClothingOuterArmorSSP99Amber: 1500
-        ClothingOuterArmorSevaSciWhite: 1750
-        ClothingOuterArmorSevaSciRed: 1750
-        STClothingNeckExoskeletonSci: 10000
+        ClothingOuterArmorSSP99: 1500
+        ClothingOuterArmorSSP24Topaz: 1500
+        ClothingOuterArmorSSP99White: 2500
+        ClothingOuterArmorSSP24Ruby: 2500
+        ClothingOuterArmorSSP24Sapfire: 2500
+        ClothingOuterArmorSevaSciWhite: 1550
+        ClothingOuterArmorSevaSciRed: 1550
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -145,14 +149,14 @@
         ZoneArtifactDetectorResponse: 700 # T2
         ZoneArtifactDetectorSpruce: 2200 # T2
         ZoneArtifactDetectorBarracuda: 3500 # T3
-        ZoneArtifactDetectorBear: 8000 #T4
+        # ZoneArtifactDetectorBear: 8000 #T4 Disabled for now
 
-          #RP Shit
-        BaseMachineAnomalyDestructorFolded: 1000
-        BaseMachineAnomalyDestructorFolded1: 1000
-        BaseMachineAnomalyDestructorFolded2: 1000
-        BaseMachineAnomalyDestructorFolded3: 1000
-        BaseMachineAnomalyDestructorFolded4: 1000
+        # RP Items / Anomaly Destructors
+        BaseMachineAnomalyDestructorFolded: 1250
+        BaseMachineAnomalyDestructorFolded1: 1250
+        BaseMachineAnomalyDestructorFolded2: 1250
+        BaseMachineAnomalyDestructorFolded3: 1250
+        BaseMachineAnomalyDestructorFolded4: 1250
 
     - name: shop-category-utilities
       priority: 10
@@ -272,7 +276,7 @@
         STZoneArtifactDetectorSpruceBlueprint: 12000
         STZoneArtifactDetectorBarracudaBlueprint: 18000
         STZoneArtifactDetectorBearBlueprint: 25000
-        STZoneArtifactDetectorWolfhoundBlueprint: 40000
+        # STZoneArtifactDetectorWolfhoundBlueprint: 40000 Disabled for now
 
     - name: shop-category-entertainment
       priority: 13
