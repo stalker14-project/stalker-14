@@ -42,7 +42,7 @@
         STWeaponRifleAKS74U: 1500
         STWeaponRifleAKS74: 4000
         STWeaponRifleAKM: 6000
-        STWeaponRifleA545Dolg: 7500
+        # STWeaponRifleA545Dolg: 7500 Removed for start of wipe
           # Smg
         STWeaponSMGPP91: 1200
         STWeaponSMGStalkerCP2Veresk: 2000
@@ -80,7 +80,7 @@
         6mmBuckshotBox: 100
         7mmBuckshotBox: 40
         8mmBuckshotBox: 200
-        ShotgunFlechette: 175
+        # ShotgunFlechette: 175 Ammo needs rework
         # 7.25
         725PBox: 90
         725LRNPCBox: 100
@@ -151,8 +151,7 @@
         ClothingOuterArmorRCBZDolg: 1700 # T2 - ENV
         ClothingOuterArmorZaryaDolg: 2000 # T2 - universal
         ClothingOuterArmorSevaDolgRed: 10000 # T3 - ENV
-        ClothingOuterArmorPSZ9D: 23000 # T4 - ENV/PVE
-        STClothingOuterArmorIOTVBlack: 25000 # T4 - PVP
+        SetPS5MDolgBuyableCrate: 3100
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -177,17 +176,19 @@
         ClothingMaskGP21: 1200 # T3
           # Cloaks
         STClothingCapeDolgArmor: 2500 # T4
+
     - name: shop-category-research-equipment
-      priority: 7
+      priority: 9
       items:
         STBoltBagFilled: 50
         BoxArtcont: 750
         ZoneAnomalyDetectorAD1: 450 # T1
         ZoneAnomalyDetectorAD2: 1000 # T2
         STPsyHelm1: 2500
+        STLeadPlate: 200 # PvE Anti-Rad if abused raise price
 
     - name: shop-category-utilities
-      priority: 9
+      priority: 10
       items:
         STSkinsKitDolg: 500
         STCombatKnife: 25

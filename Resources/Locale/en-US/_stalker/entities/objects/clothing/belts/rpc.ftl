@@ -58,3 +58,5 @@ ent-ClothingBeltWebbingDoubleFreedomVeterSmall = Double Belt Pouch "Wind of Free
 ent-ClothingBeltWebbingHolsterMonolith = "Monolith" Belt Pouch with Holster
     .desc = Belt pouch from the "Monolith" set with pistol holster.
     .suffix = { ent-ClothingBeltWebbingHolsterDolgPS5M.suffix }
+ent-ClothingBeltWebbingHolsterLoner = Stalker's waist bag with holster
+    .desc = Belt bag from the stalker kit with a pistol holster.
