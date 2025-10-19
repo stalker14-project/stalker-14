@@ -7,6 +7,7 @@ using Content.Shared._Stalker.Teleport;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using Content.Server._Stalker.Storage;
+using Content.Server._Stalker.Characteristics;
 
 namespace Content.Server._Stalker.StalkerDB;
 
@@ -134,6 +135,29 @@ public sealed class StalkerDbSystem : EntitySystem
     {
         // 1) Update DB: set every stalker storage row to default JSON
         await _dbManager.SetAllStalkerItems(DefaultStalkerItems);
+
+            // Also clear all stalker stats in the DB so stats are reset to defaults as well.
+            try
+            {
+                await _dbManager.ClearAllStalkerStats();
+            }
+            catch (Exception e)
+            {
+                Logger.ErrorS("stalker.db", $"Failed to clear stalker stats during ResetAllStashes: {e}");
+                throw;
+            }
+
+            // If there's an in-memory cache of stalker stats, clear it as well by calling the characteristic system.
+            try
+            {
+                var charSys = EntityManager.System<CharacteristicContainerSystem>();
+                charSys.ClearAllStatsCache();
+            }
+            catch (Exception e)
+            {
+                // Non-fatal: log but continue. We don't want to abort the reset for this.
+                Logger.WarningS("stalker.db", $"Failed to clear in-memory stalker stat caches: {e}");
+            }
 
         // 2) Update in-memory cache so newly loaded players don't observe stale empty values
         foreach (var key in Stalkers.Keys.ToList())

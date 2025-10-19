@@ -85,4 +85,13 @@ public sealed partial class CharacteristicContainerSystem : SharedCharacteristic
 
         return actor.PlayerSession.Name;
     }
+
+    /// <summary>
+    /// Clears any in-memory caches related to stalker characteristics/stats.
+    /// Called when a global reset of stalker data is performed.
+    /// </summary>
+    public void ClearAllStatsCache()
+    {
+        _lastTrainedByCharacteristic.Clear();
+    }
 }

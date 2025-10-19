@@ -1814,6 +1814,23 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             return record;
         }
 
+        /// <summary>
+        /// Clears all stalker stat records in the database (removes them).
+        /// </summary>
+        public async Task ClearAllStalkerStats()
+        {
+            await using var db = await GetDb();
+
+            // Remove all rows from the StalkerStats table.
+            // Use RemoveRange for compatibility across EF Core versions.
+            var all = db.DbContext.StalkerStats.ToList();
+            if (all.Count > 0)
+            {
+                db.DbContext.StalkerStats.RemoveRange(all);
+                await db.DbContext.SaveChangesAsync();
+            }
+        }
+
         public async Task SetStalkerBandAsync(ProtoId<STBandPrototype> band, float rewardPoints)
         {
             await using var db = await GetDb();
@@ -1834,6 +1851,23 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             }
 
             await db.DbContext.SaveChangesAsync();
+        }
+
+        /// <summary>
+        /// Clears reward points for all stalker bands (sets RewardPoints = 0 for every band).
+        /// </summary>
+        public async Task ClearAllStalkerBandPoints()
+        {
+            await using var db = await GetDb();
+
+            var records = await db.DbContext.StalkerBands.ToListAsync();
+            foreach (var rec in records)
+            {
+                rec.RewardPoints = 0f;
+            }
+
+            if (records.Count > 0)
+                await db.DbContext.SaveChangesAsync();
         }
 
         public async Task<StalkerBand?> GetStalkerBandAsync(ProtoId<STBandPrototype> band)

@@ -3,6 +3,7 @@ using Content.Server._Stalker.Storage;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Robust.Shared.Console;
+using Content.Server._Stalker.WarZone;
 
 namespace Content.Server._Stalker.Commands;
 
@@ -24,10 +25,13 @@ public sealed class ClearStash : IConsoleCommand
         }
 
         var stalkerDb = _entity.System<StalkerStorageSystem>();
+        var warzone = _entity.System<WarZoneSystem>();
 
         try
         {
             stalkerDb.ClearStorages(args[0]);
+            // Also clear all band points when clearing a player's stash as requested.
+            warzone.ClearAllBandPoints();
             shell.WriteError(Loc.GetString("clear-stash-command-process"));
         }
         catch (Exception exception)

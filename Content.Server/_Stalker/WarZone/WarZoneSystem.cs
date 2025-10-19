@@ -101,6 +101,44 @@ public sealed partial class WarZoneSystem : EntitySystem
             yield return (uid, comp);
     }
 
+    /// <summary>
+    /// Clears all band points (sets to 0) in-memory and persists the change to the database.
+    /// Use the synchronous wrapper <see cref="ClearAllBandPoints"/> if you need a fire-and-forget call from synchronous code.
+    /// </summary>
+    public async Task ClearAllBandPointsAsync()
+    {
+        try
+        {
+            foreach (var bandProto in _prototypeManager.EnumeratePrototypes<STBandPrototype>())
+            {
+                _bandPoints[bandProto.ID] = 0f;
+                try
+                {
+                    await _dbManager.SetStalkerBandAsync(bandProto.ID, 0f);
+                }
+                catch (Exception e)
+                {
+                    Logger.ErrorS("warzone", $"Failed to persist cleared points for band {bandProto.ID}: {e}");
+                }
+            }
+
+            Logger.InfoS("warzone", "Cleared all band points and persisted changes to the DB.");
+        }
+        catch (Exception e)
+        {
+            Logger.ErrorS("warzone", $"Unexpected error while clearing all band points: {e}");
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Fire-and-forget wrapper around <see cref="ClearAllBandPointsAsync"/> for synchronous callsites.
+    /// </summary>
+    public void ClearAllBandPoints()
+    {
+        _ = ClearAllBandPointsAsync();
+    }
+
     public override void Initialize()
     {
         base.Initialize();
@@ -777,7 +815,7 @@ public sealed partial class WarZoneSystem : EntitySystem
         {
             if (_prototypeManager.TryIndex<STBandPrototype>(bandProtoId, out var bandProto))
                 return bandProto.Name; // Use LocId if available and localized? For now, just Name.
-        }        
+        }
         else if (!string.IsNullOrEmpty(factionProtoId))
         {
             if (_prototypeManager.TryIndex<NpcFactionPrototype>(factionProtoId, out var factionProto))
