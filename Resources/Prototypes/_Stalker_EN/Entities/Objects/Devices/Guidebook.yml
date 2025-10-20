@@ -1,0 +1,25 @@
+﻿- type: entity
+  parent: BookBase
+  id: BookStalkerEN
+  name: Zone Guide
+  description: All about the zone...
+  suffix: Stalker, Guide
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/books.rsi
+    layers:
+    - state: stalker_book
+  - type: Paper
+    content: book-text-guide-stalker
+    stampState: paper_stamp-strelok
+    stampedBy:
+    - stampedName: Strelok
+      stampedColor: "#3681bb"
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    closeOnHandDeselect: true
+    requireHands: true
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface

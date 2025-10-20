@@ -263,8 +263,6 @@
       STFlashlightSeclite: 50
       PowerCellHyper: 50
       HandheldGPSBasic: 50
-      Paper: 2
-      Pen: 5
       Binocularus1: 800
       BoxFlare: 60
       ClothingBackpackDuffelGreenStalkerHydroponic: 500
@@ -277,8 +275,15 @@
       HatchetStalker: 150
       HotelCard: 25
 
-  - name: shop-category-customization
+  - name: shop-category-paperwork
     priority: 11
+    items:
+      BookStalkerEN: 1
+      Paper: 2
+      Pen: 5
+
+  - name: shop-category-customization
+    priority: 12
     items:
       ClothingBandageStalkerJid: 50
       ClothingBandageStalkerBelarus: 50
@@ -339,7 +344,7 @@
       ClothingTorsoTurtlenecksMatrosska: 50
 
   - name: shop-category-entertainment
-    priority: 12
+    priority: 13
     items:
       # Dices
       DiceBag: 20
