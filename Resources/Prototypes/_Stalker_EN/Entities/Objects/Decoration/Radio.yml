@@ -1,0 +1,55 @@
+﻿# Stalker EN Cassettes
+
+- type: entity
+  parent: BaseItem
+  id: CasseteRapGod
+  suffix: Stalker, Cassette, (Rap God)
+  name: Cassette "Rap God"
+  description: A brand new cassette tape. It's believed to contain a song. On the front of the tape is the encrypted message C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Contributor/RapGod.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c6
+
+- type: entity
+  parent: BaseItem
+  id: CasseteBandit
+  suffix: Stalker, Cassette, (Bandit Radio)
+  name: Cassette "Bandit Radio"
+  description: A brand new cassette tape. It's believed to contain a song.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/bandit_radio.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c7
+
+- type: entity
+  parent: BaseItem
+  id: CasseteDuty
+  suffix: Stalker, Cassette, (Duty Propaganda)
+  name: Cassette "Bandit Radio"
+  description: A brand new cassette tape. It's believed to contain a song.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/rupor.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c7

@@ -3634,20 +3634,3 @@
       enum.JukeboxUiKey.Key:
         type: JukeboxBoundUserInterface
 
-- type: entity
-  parent: BaseItem
-  id: CasseteRapGod
-  suffix: Stalker, кассета, (Rap God)
-  name: Cassette "Rap God"
-  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
-  components:
-  - type: STWeight
-    self: 0.15
-  - type: Cassete
-    sound: /Audio/_Stalker/Music/Radio/Contributor/RapGod.ogg
-  - type: Tag
-    tags:
-    - Cassete
-  - type: Sprite
-    sprite: _Stalker/Objects/Misc/casete.rsi
-    state: c6
