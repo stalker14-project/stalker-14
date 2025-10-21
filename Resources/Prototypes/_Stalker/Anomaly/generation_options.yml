@@ -36,27 +36,23 @@
 - type: stAnomalyGenerationOptions
   id: STSvalkaGenerationOptions
   options:
-    totalCount: 500
+    totalCount: 450
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGarland
-      weight: 3
+      weight: 1.2
     # Gravity
     - protoId: ZoneAnomalyBurden
-      weight: 0.4
+      weight: 0.2
     - protoId: ZoneAnomalyGravi
     - protoId: ZoneAnomalySpringboard
       weight: 0.1
     # Thermal
-    - protoId: ZoneAnomalyJarkaStrong
-      weight: 7
     - protoId: ZoneAnomalyJarka
       weight: 5
     # Psy
     - protoId: ZoneAnomalyLamp
-    - protoId: ZoneAnomalyBarabashka
-      weight: 0.5
 
 # Болота
 - type: stAnomalyGenerationOptions #StalkerEN

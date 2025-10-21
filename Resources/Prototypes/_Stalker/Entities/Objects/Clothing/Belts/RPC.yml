@@ -393,3 +393,39 @@
       damage:
         types:
           Radiation: 18.01
+
+- type: entity
+  parent: ClothingBeltTarzanBlack
+  id: ClothingBeltTarzanDeserter
+  name: РПС "Тарзан" Отступников
+  description: Очень полезная РПС для переноски любых вещей, от рации до магазинов.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/belt/tarzan_deserter.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/belt/tarzan_deserter.rsi
+
+- type: entity
+  parent: ClothingBeltTarzanBlack
+  id: ClothingBeltWebbingDeserter
+  name: поясная сумка с кобурой отступников
+  description: Набор подсумков и поясная сумка с пистолетной кобурой, окрашены в чёрно-серые цвета.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 4
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 4,0,9,3
+        - 0,1,0,1
+        - 0,0,1,0
+        - 0,4,0,2
+        - 1,0,0,2
+        - 2,2,2,2
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_deserter_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_deserter_holster.rsi

@@ -163,62 +163,87 @@
       priority: 1
       items:
             # Melee
-        FoodPieBananaCream: 1000
-        STWeaponSMGMP40ruust: 300
-        DrinkSpaceLube: 1000
-        WeaponMinigun: 30000
-        SnapPopBox: 200
-        STWeaponShotgunCompact: 300
-        ChainsawStalker: 1000
-        GrenadeDummy: 1000
-        STNavozBucket: 1000
-        WhoopieCushion: 1000
-        MobCockroach: 10
-        SledgehammerRenegats: 500
-        MicroBombImplanter: 1
-        StielhandgranateM24: 1000
-        StielhandgranateM24Bundle: 2000
-        IpritGrenadeStalker: 1000
-        StalkerAnomalyKnockbackBallBatSUPER: 100
+         WeaponPistolStalkerTT: 50
+         WeaponPistolStalkerAPS: 500
+         STWeaponRevolverSWPC325TR: 1000
+         STWeaponSMGPPSh41: 2200
+         STWeaponSMGPP19: 3600
+         STWeaponRifleSaiga545: 1550
+         STWeaponRifleAKS74U: 2000
+         STWeaponSniperSKS: 1500
+         STWeaponSniperMosin: 1200
     - name: shop-category-magazines
       priority: 2
       items:
-          # 5,45x39
-        MP40Mag: 100
+        TTMag: 15
+        BaseAPSMag: 300
+        STSpeedLoader45ACPEmpty: 100
+        BasePPSHMag: 350
+        BizonMag: 875
+        Base545Mag10: 150
+        545Mag20: 250
+        545Mag30: 500
     - name: shop-category-ammunition
       priority: 3
       items:
-        7mmBuckshotBox: 35
-        919RIPBox: 200
+        7mmBuckshotBox: 50
+        6mmBuckshotBox: 150
+        8mmBuckshotBox: 450
+        45ACPRIPBox: 450
+        45ACPLFMJBox: 250
+        45ACPAPBox: 1200
+        725PBox: 100
+        725LRNPCBox: 50
+        725PTBox: 465
+        918PGJBox: 80
+        918SP7Box: 200
+        918PBMBox: 1000
+        919PSOGJBox: 100
+        919RIPBox: 400
+        919PBMBox: 1000
+        545FMJBox: 500
+        545PCBox: 1800
+        754HPBox: 500
+        739HPBox: 400
     - name: shop-category-armor
       priority: 4
       items:
-          # Helmets #
+        ClothingHeadInfantryHelmetRenegate: 550
+        ClothingHeadHelmetSH6Renegate: 200
+        ClothingOuterArmorRene6B2: 1300
+        STClothingOuterArmorLightPlateVestBaseStalker: 1000
+        ClothingOuterArmorRCBZRene: 2000
+        ClothingOuterArmorZaryaRene: 2200
+        ClothingOuterArmourJacketBandit: 800
         STSkinsKitRenegate: 1000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
           # BackPacks
-        ClothingBackpackTownBlackStalker: 50 # T1
-        ClothingBackpackTownWhiteStalker: 50 # T1
+        ClothingBackpackTownBlackStalker: 155 # T1
+        ClothingBackpackTownWhiteStalker: 150 # T1
         ##-------------------------------------------
-        ClothingBackpackTacticBlackStalker: 300 # T2
+        ClothingBackpackTacticOliveStalker: 497 # T2
+        ClothingBackpackTacticBeigeStalker: 498 # T2
         ##-------------------------------------------
-        ClothingBackpackMercStalker: 799 # T3 |pve backpack
-        ClothingBackpackStalkerZaryaBlack: 999 # T3 |pvp backpack
-        ClothingBackpackDuffelCommonStalker: 1100  # T3 |pvp backpack
+        ClothingBackpackMercStalker: 899 # T3 |pve backpack
         ##-------------------------------------------
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
-        ClothingBeltTarzanBlack: 200 # T1 - PVP
+        ClothingBeltTarzanGreen: 200 # T1 - PVP
+        ClothingBeltTarzanOrange: 200 # T1 - PVP
           # Containers
-        MedkitCMSStalker: 450 # T1
+        MedkitCMSStalker: 250 # T1
         MedkitGrizzlyStalker: 850 # T2
+        STClothingBeltThrowingKnifes: 35
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
-          # Cloaks
-        ClothingHeadHatHolyWatermelon: 1
+        ClothingOuterCoatDoshdevik: 1000 # T1
+          # Gasmasks
+        ClothingMaskGasZarya: 90 # T1
+        ClothingMaskGP5: 350 # T2
+        ClothingMaskGP7: 900  # T3
     - name: shop-category-research-equipment
       priority: 7
       items:
@@ -226,7 +251,6 @@
     - name: shop-category-utilities
       priority: 8
       items:
-        PliersStalker: 200
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300
@@ -238,15 +262,17 @@
         HandheldGPSBasic: 50
         Paper: 2
         Pen: 5
-        Binocularus1: 1000
+        Binocularus1: 800
         BoxFlare: 60
         ClothingBackpackDuffelGreenStalkerHydroponic: 500
         Beaker: 40
         Syringe: 20
         ClothingGoPro: 250
         ExtendedEmergencyOxygenTankFilledStalker: 50
+        TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
+        HotelCard: 25
     - name: shop-category-provisions
       priority: 9
       items:

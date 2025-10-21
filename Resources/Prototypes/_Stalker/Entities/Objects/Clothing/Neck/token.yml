@@ -21,3 +21,20 @@
     sprite: _Stalker/Objects/Clothing/Neck/tag_seraphim.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/Neck/tag_seraphim.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingStalkerNeckKulonSeraphim
+  name: зелёный кулон
+  description: Кулон серафимов, пренадлежащий кому-то крайне важному... он излучает тусклый цвет, который хоть и не заметен, но всё же что-то таки означает... Может, это что-то помогает общаться с другими ковенами? Или он индицирует артефакты? Однако, кроме его самого это никто не узнает.
+  suffix: Stalker, Повязка
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Neck/kulon_seraphim.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Neck/kulon_seraphim.rsi
+  - type: Unremoveable
+  - type: ZoneArtifactDetector
+    level: 1
+    detectionDistance: 3
+    activationDistance: 2

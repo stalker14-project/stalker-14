@@ -1371,3 +1371,43 @@
     - NPCHidenTrader
   - type: STAnomalyGeneratorSpawnBlocker
     size: 5
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMolitChevron
+  name: Плеяда
+  description: Обменивает шевроны монолита на редкие вещи.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Pleyad.rsi
+    state: pleyad
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: STNPCStalkerBarmenAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: ChevronMonolit
+    shopPresetId: NpcMolithChevron
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+

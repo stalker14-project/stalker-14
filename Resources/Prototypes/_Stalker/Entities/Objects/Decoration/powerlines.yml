@@ -12,6 +12,17 @@
     state: lep1
 
 - type: entity
+  id: STSoundPillar
+  parent: STPowerlines1
+  name: Столб с громофоном
+  suffix: ST, Mapping
+  description: Один из компонентов электрической сети, система энергетического оборудования, предназначенная для передачи электроэнергии посредством электрического тока.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/powerlines.rsi
+    state: soundpillar
+
+- type: entity
   name: ЛЭП
   parent: STPowerlines1
   id: STPowerlines2

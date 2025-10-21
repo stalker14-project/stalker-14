@@ -7,9 +7,9 @@
   playTimeTracker: JobDeserter
   whitelisted: true
   requirements:
-    # - !type:RoleTimeRequirement
-    #   role: JobDeserter
-    #   time: 1
+   #  - !type:RoleTimeRequirement
+   #    role: JobDeserter
+   #    time: 1
     - !type:SpeciesRequirement
       species:
       - Human
@@ -41,10 +41,11 @@
     id: BandPDA
     torso: ClothingTorsoTurtlenecksDeserterCamouflage
     legs: ClothingLegsJeansDeserterCamouflage
-    shoes: ClothingShoesBootsWork
-    outerClothing: ClothingOuterCoatBomber
-    neck: ClothingCapeDeserters
+    shoes: STClothingShoesBootsCombatFilled
+    outerClothing: ClothingOuterJacketDeserter
     back: ClothingBackpackDuffelBlackStalker
+    mask: ClothingMaskNeckBalaklava4
+    gloves: ClothingHandsGlovesMitts
 - type: stBand
   id: STDesertersBand
   name: Deserters

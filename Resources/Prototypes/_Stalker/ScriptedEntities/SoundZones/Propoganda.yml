@@ -1,0 +1,104 @@
+- type: entity
+  id: STDolgPropogandaTrigger
+  parent: MarkerBase
+  name: Долг Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideDolgPropoganda
+      cooldownTime: 60
+      chance: 0.5
+
+- type: entity
+  id: STBarPropogandaTrigger
+  parent: STDolgPropogandaTrigger
+  name: Бар Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideBarPropoganda
+      cooldownTime: 60
+      chance: 0.5
+
+- type: entity
+  id: STOksopPropogandaTrigger
+  parent: STDolgPropogandaTrigger
+  name: ОКСОП Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideOksopPropoganda
+      cooldownTime: 60
+      chance: 0.5
+
+- type: entity
+  id: STSvobodaPropogandaTrigger
+  parent: STDolgPropogandaTrigger
+  name: Свобода Пропоганда
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 5
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideSvobodaPropoganda
+      cooldownTime: 60
+      chance: 0.5
