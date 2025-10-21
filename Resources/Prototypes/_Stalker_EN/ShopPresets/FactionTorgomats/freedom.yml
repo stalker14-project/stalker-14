@@ -57,33 +57,35 @@
     - name: shop-category-weapons
       priority: 1
       items:
-            # Guns
-          # 12mm
+          # Guns
+        # 12mm
         STWeaponShotgunTOZ34: 225 # T2
         STWeaponShotgunMossbergM88: 500 # T2
         STWeaponShotgunSPAS: 2000
-          # Nato
+        # Nato
         STWeaponRifleL85: 2100
         STWeaponRifleSCARH: 6000
         STWeaponRifleM16: 4000
         STWeaponRifleFAL: 4250
-        STWeaponRifleAKM: 5650
         # 5.45
         STWeaponRifleAKS74U: 1500
         STWeaponRifleAKS74: 1750
         STWeaponRifleAKS74Green: 2100
-                  # Smg
+        # 7.62
+        STWeaponSniperMosin: 1200
+        STWeaponRifleAKM: 5650
+        #STWeaponSniperSVDSGrass: 8400 Removed for early wipe
+        # Smg
         STWeaponSMGMP5: 1800
-          # Other
+        # Other
         STWeaponRevolverRugerRedhawk: 400
         STWeaponRevolverSWPC325TR: 850
         WeaponPistolStalkerGlock: 400
-        STWeaponSniperMosin: 1200
+
 
     - name: shop-category-magazines
       priority: 2
       items:
-          # 7,62x51 and 56
         Base556Mag10: 80
         556Mag20: 220
         556Mag30: 400
@@ -113,10 +115,17 @@
         918PSTBox: 250
         918PBMBox: 500
         918SP7Box: 200
+        # 5.45
+        545FMJBox: 500 #T2
+        545HPBox: 250 #Mutant
+        545PCBox: 2000 #T3
         # 5.56
-        556FMJBox: 500
-        556WarmagBox: 250
-        556M855Box: 2000
+        556FMJBox: 500 #T2
+        556WarmagBox: 250 #Mutant
+        556M855Box: 2000 #T3
+        #7.391
+        739FMJBox: 2250 #T3
+        739HPBox: 500 # Mutant
         # 7.51
         751M80Box: 1500
         751UNBox: 500
@@ -168,7 +177,8 @@
       items:
           # Helmets #
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
-        ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
+        ClothingHeadHelmetVityazKushch: 2250 # T3
+        ClothingHeadAssaultHelmetFreedom: 2750 # T3
           # OuterClothing #
         ClothingOuterJacketFreedom: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseFreedom: 1000 # T2 - PvP
