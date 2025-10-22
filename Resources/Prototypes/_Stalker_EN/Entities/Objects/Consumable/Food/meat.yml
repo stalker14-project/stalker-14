@@ -433,3 +433,195 @@
     keepSecond: true
     exactSecond: false
     time: 10
+
+# salo
+- type: entity
+  parent: STFoodMeatSalo
+  id: FoodSaloSlice
+  name: salo chunk
+  description: A chunk of raw fat, perfect for frying.
+  suffix: Stalker, Food
+  components:
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: salochunk
+  - type: Tag
+    tags:
+    - Slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: MToxin
+          Quantity: 3
+        - ReagentId: Fat
+          Quantity: 2
+  - type: Construction
+    graph: MeatSalo
+    node: meat salo
+
+- type: entity
+  name: cvarci
+  parent: FoodMeatBase
+  id: STFoodMeatCvarci
+  description: A bit of fried salo.
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.05
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: cvarci
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Protein
+          Quantity: 2
+        - ReagentId: Nutriment
+          Quantity: 1
+    tags:
+    - Meat
+  - type: Craftable
+
+- type: constructionGraph
+  id: MeatSalo
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: meat salo
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: meat salo
+    entity: FoodMeatCvarci
+
+- type: lightCraftingRecipe
+  id: MeatSaloCraft
+  results:
+  - STFoodMeatCvarci
+  steps:
+    firstIngredient: FoodSaloSlice
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 5
+
+- type: lightCraftingRecipe
+  id: MeatSaloCraftGas
+  results:
+  - STFoodMeatCvarci
+  steps:
+    firstIngredient: FoodSaloSlice
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 5
+
+# rat
+- type: entity
+  name: raw rat meat
+  parent: FoodMeatRawBase
+  id: FoodMeatSTRatRaw
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.01
+  - type: FlavorProfile
+    flavors:
+    - meaty
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: ratraw
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: meat strat
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+  - type: Trash
+    time: 300
+
+- type: entity
+  name: cooked rat meat
+  parent: FoodMeatBase
+  id: FoodMeatSTRatCooked
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.01
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: FlavorProfile
+    flavors:
+    - meaty
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
+    state: ratcooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Protein
+          Quantity: 1
+  - type: Construction
+    graph: MeatSTRat
+    node: meat strat
+
+- type: constructionGraph
+  id: MeatSTRat
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: meat strat
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: meat steel
+    entity: FoodMeatSTRatCooked
+
+- type: lightCraftingRecipe
+  id: MeatSTRatCraft
+  results:
+  - FoodMeatSTRatCooked
+  steps:
+    firstIngredient: FoodMeatSTRatRaw
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 10
+
+- type: lightCraftingRecipe
+  id: MeatSTRatCraftGas
+  results:
+  - FoodMeatSTRatCooked
+  steps:
+    firstIngredient: FoodMeatSTRatRaw
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 10
