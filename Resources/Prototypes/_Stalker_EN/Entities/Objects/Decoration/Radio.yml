@@ -53,3 +53,57 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c7
+
+- type: entity
+  parent: BaseItem
+  id: CasseteArstotzka1984 #1984
+  suffix: Stalker, Cassette, (Glory to Arstotzka)
+  name: Cassette "Glory to Arstotzka"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_1.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CasseteArstotzka1
+  suffix: Stalker, Cassette, (Arstotzka Good)
+  name: Cassette "Arstotzka Good"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_2.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5
+
+- type: entity
+  parent: BaseItem
+  id: CasseteArstotzka2
+  suffix: Stalker, Cassette, (Arstotzka Bad)
+  name: Cassette "Arstotzka Bad"
+  description: Совершенно новая кассета. Предположительно, на неё записана какая-то песня. На передней части кассеты имеется зашифрованная запись C.o.n.t.r.i.b.u.t.o.r.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker/Music/Radio/Contributor/arstotzka_3.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c5

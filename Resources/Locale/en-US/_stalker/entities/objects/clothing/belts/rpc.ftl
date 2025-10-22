@@ -60,3 +60,7 @@ ent-ClothingBeltWebbingHolsterMonolith = "Monolith" Belt Pouch with Holster
     .suffix = { ent-ClothingBeltWebbingHolsterDolgPS5M.suffix }
 ent-ClothingBeltWebbingHolsterLoner = Stalker's waist bag with holster
     .desc = Belt bag from the stalker kit with a pistol holster.
+ent-ClothingBeltTarzanDeserter = RPS "Tarzan" Otstepnikov
+    .desc = A very useful RPS for carrying anything from a radio to magazines.
+ent-ClothingBeltWebbingDeserter = Deserter Belt Bag with Holster
+    .desc = A set of pouches and a belt bag with a pistol holster, painted in black and gray colors.

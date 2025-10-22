@@ -45,3 +45,8 @@ ent-STClothingHeadBeretDolg = Duty's beret
     .suffix = Stalker
 ent-ClothingHeadHatSerahat = green headband
     .desc = Green headband with Seraphim patch.
+ent-ClothingHeadCapDeserter = Deserter Cap
+    .desc = Cap with a black and black pixelated camouflage pattern.
+ent-ClothingHeadCapDeserterRadio = Deserter Headset
+    .desc = A cap in black and black pixelated camouflage, now with a headset.
+
