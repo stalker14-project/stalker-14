@@ -209,7 +209,7 @@
       idle: -1
       activated: 1
     - type: ZoneAnomaly
-      detectedLevel: 5
+      detectedLevel: 4
       activationDelay: 1
       preparingDelay: 0
       chargeTime: 5
@@ -253,7 +253,7 @@
       activationDelay: 0
       preparingDelay: 0
       chargeTime: 0
-      detected: false
+      detectedLevel: 4
     - type: Fixtures
       fixtures:
         fix1:
@@ -289,12 +289,13 @@
   components:
     - type: ZoneAnomalyEffectNoGravity
     - type: ZoneAnomaly
+      detectedLevel: 3
     - type: Fixtures
       fixtures:
         fix1:
           shape:
             !type:PhysShapeCircle
-            radius: 7.5
+            radius: 4.5
           hard: false
           mask:
             - MobMask
@@ -323,6 +324,7 @@
       - type: ZoneAnomalyWeightModifier
         multiply: 2
     - type: ZoneAnomaly
+      detectedLevel: 3
     - type: Fixtures
       fixtures:
         fix1:

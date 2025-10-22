@@ -7,6 +7,8 @@ using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
+using Robust.Shared.Audio;      // AudioParams
+using Robust.Shared.Player;  // Filter
 
 namespace Content.Server._Stalker.ZoneAnomaly.Devices;
 
@@ -116,7 +118,19 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
             return;
 
         if (playBeep)
-            _audio.PlayPvs(detector.Comp.BeepSound, detector);
+        {
+            const float hearRange = 5f; // hardcoded limit
+            var mapCoords = _transform.GetMapCoordinates(xform);
+            _audio.PlayEntity(
+                detector.Comp.BeepSound,
+                Filter.Empty().AddInRange(mapCoords, hearRange),
+                detector,
+                true,
+                AudioParams.Default
+                    .WithMaxDistance(hearRange)
+                    .WithReferenceDistance(1f)
+                    .WithRolloffFactor(1f));
+        }
 
         var scalingFactor = distance / detector.Comp.Distance;
         var interval = (detector.Comp.MaxBeepInterval - detector.Comp.MinBeepInterval) * scalingFactor + detector.Comp.MinBeepInterval;
