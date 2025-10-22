@@ -1,0 +1,12 @@
+﻿ent-ChevronMonolit = Monolith Chevron
+    .desc = Chevron torn from a monolith fighter.
+    .suffix = Stalker
+ent-ChevronMonolit10 = Monolith Chevron
+    .desc = Chevron torn from a monolith fighter.
+    .suffix = Stalker, 10
+ent-ChevronMonolit50 = Monolith Chevron
+    .desc = Chevron torn from a monolith fighter.
+    .suffix = Stalker, 50
+ent-ChevronMonolit100 = Monolith Chevron
+    .desc = Chevron torn from a monolith fighter.
+    .suffix = Stalker, 100
