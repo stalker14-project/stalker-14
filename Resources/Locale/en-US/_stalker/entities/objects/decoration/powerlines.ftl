@@ -22,3 +22,6 @@ ent-STPowerlines7 = { ent-STPowerlines1 }
 ent-STPowerlines8 = { ent-STPowerlines1 }
     .desc = { ent-STPowerlines1.desc }
     .suffix = { ent-STPowerlines1.suffix }
+ent-STSoundPillar = A pole with a loudspeaker
+    .desc = One of the components of an electrical network, this was redesigned to hold speakers to transmit things that need to be heard.
+    .suffix = { ent-STPowerlines1.suffix }

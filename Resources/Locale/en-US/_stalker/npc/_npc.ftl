@@ -85,3 +85,6 @@ ent-STTriggerHidenTrader = Hidden Trader Trigger
 ent-NPCMercHummingbird = Hummingbird [→ ←]
     .desc = He buys weapons in bulk in Europe and America and sells them in the zone.
     .suffix = ST, Mercenary, Dollars
+ent-NPCMolitChevron = Pleiades
+    .desc = Exchanges monolith chevrons for rare items.
+    .suffix ST, Chevron, DO NOT MAP YET
