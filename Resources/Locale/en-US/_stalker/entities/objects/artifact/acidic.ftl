@@ -1,10 +1,15 @@
 ent-ZoneArtifactPellicle = Film
+    .desc = Artifact
     .suffix = Stalker, Film
 ent-ZoneArtifactBlood = Stone Blood
+    .desc = Artifact
     .suffix = Stalker, Blood of the Stone
 ent-ZoneArtifactMeat = Meat Chunk
+    .desc = Artifact
     .suffix = Stalker, Meat Chunk
 ent-ZoneArtifactKolobok = Kolobok
+    .desc = Artifact
     .suffix = Stalker, Kolobok
 ent-ZoneArtifactBaloon = { ent-BaseArtifact }
+    .desc = Artifact
     .suffix = Stalker, Bubble
