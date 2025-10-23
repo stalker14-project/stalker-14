@@ -3,6 +3,9 @@
   suffix: Stalker, Т5, немощный, NPC
   parent: MobStalkerBaseGuard
   id: MobStalkerMilitaryGuard
+  components:
+  - type: Bands
+    bandIcon: army
 
 - type: entity
   name: Вова Вист
@@ -11,6 +14,8 @@
   id: MobStalkerMilitaryVovaVist
   description: Вова Вист обладает превосходными навыками ведения стрельбы из пулемёта, в совокупности с аномальной мощью его пулемёта, этого достаточно, чтобы сделать военного одним из самых опасных людей в Зоне. Даже такой легендарный сталкер, как Шрам, продемонстрировал нечеловеческие возможности и все свои навыки, выложившись на полную и получив огромную порцию пятиточечной боли, чтобы прорваться в Деревню Новичков, избегая зоркого глаза, доведённого до предела мастерства и смертельных пуль Вовы Виста.
   components:
+  - type: Bands
+    bandIcon: army
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
@@ -20,20 +25,20 @@
     autoRecharge: true
     autoRechargeRate: 50
   - type: Battery
-    maxCharge: 100
-    startingCharge: 100
+    maxCharge: 200
+    startingCharge: 200
   - type: ProjectileBatteryAmmoProvider
     proto: Bullet918PGJ
     fireCost: 1
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/pkm_shot.ogg
-    fireRate: 10
+    fireRate: 12
     useKey: false
     selectedMode: FullAuto
     minAngle: 5
-    maxAngle: 20
-    angleIncrease: 1
+    maxAngle: 15
+    angleIncrease: .5
     angleDecay: 30
     availableModes:
     - FullAuto
