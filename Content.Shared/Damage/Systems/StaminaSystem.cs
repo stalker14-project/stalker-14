@@ -120,7 +120,8 @@ public sealed partial class StaminaSystem : EntitySystem
             return;
 
         var damage = args.PushProbability * component.CritThreshold;
-        TakeStaminaDamage(uid, damage, component, source: args.Source);
+        // Suppress automatic visual here; let disarm caller decide visuals or just show one effect.
+        TakeStaminaDamage(uid, damage, component, source: args.Source, visual: false);
 
         args.PopupPrefix = "disarm-action-shove-";
         args.IsStunned = component.Critical;
@@ -168,7 +169,9 @@ public sealed partial class StaminaSystem : EntitySystem
 
         foreach (var (ent, comp) in toHit)
         {
-            TakeStaminaDamage(ent, damage / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound);
+            // Don't show the stamina visual here; let the melee/damage caller decide visuals so the
+            // dominant-color logic can be applied centrally and avoid blue+red flashes.
+            TakeStaminaDamage(ent, damage / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound, visual: false);
         }
     }
 
@@ -182,7 +185,8 @@ public sealed partial class StaminaSystem : EntitySystem
         if (!TryComp<StaminaComponent>(args.Embedded, out var stamina))
             return;
 
-        TakeStaminaDamage(args.Embedded, component.Damage, stamina, source: uid);
+        // Suppress automatic stamina visual; caller (embed/weapon) will decide the flash.
+        TakeStaminaDamage(args.Embedded, component.Damage, stamina, source: uid, visual: false);
     }
 
     private void OnThrowHit(EntityUid uid, StaminaDamageOnCollideComponent component, ThrowDoHitEvent args)
@@ -202,7 +206,9 @@ public sealed partial class StaminaSystem : EntitySystem
         if (ev.Cancelled)
             return;
 
-        TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound);
+        // Don't show the stamina visual here; let the higher-level system choose and suppress the
+        // default aqua flash to avoid double flashes when HP damage also occurs.
+        TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound, visual: false);
     }
 
     private void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null)

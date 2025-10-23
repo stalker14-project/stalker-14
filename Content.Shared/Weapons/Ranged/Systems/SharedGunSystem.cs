@@ -636,39 +636,62 @@ public abstract partial class SharedGunSystem : EntitySystem
                     if (lastHit != null)
                     {
                         var hitEntity = lastHit.Value;
-                        if (hitscan.StaminaDamage > 0f)
-                            _stamina.TakeStaminaDamage(hitEntity, hitscan.StaminaDamage, source: user);
+                        // Apply stamina damage but suppress the default stamina visual here. We'll decide the visual after
+                        // we know how much actual damage the hitscan dealt so we can show only the dominant color.
+                        var stamDamage = hitscan.StaminaDamage;
+                        if (stamDamage > 0f)
+                            _stamina.TakeStaminaDamage(hitEntity, stamDamage, source: user, visual: false);
 
                         var dmg = hitscan.Damage;
 
                         var hitName = ToPrettyString(hitEntity);
+                        DamageSpecifier? result = null;
                         if (dmg != null)
-                            dmg = Damageable.TryChangeDamage(hitEntity, dmg, origin: user, tool: ent);
+                            result = Damageable.TryChangeDamage(hitEntity, dmg, origin: user, tool: ent);
 
-                        // check null again, as TryChangeDamage returns modified damage values
-                        if (dmg != null)
+                        // If we did some actual damage, decide which color to show (stamina vs damage) based on magnitude.
+                        if (result != null)
                         {
                             if (!Deleted(hitEntity))
                             {
-                                if (dmg.AnyPositive())
+                                // If both stamina and actual damage are present, prefer whichever has the greater numeric value.
+                                if (stamDamage > 0f)
                                 {
-                                    _color.RaiseEffect(Color.Red, new List<EntityUid>() { hitEntity }, Filter.Pvs(hitEntity, entityManager: EntityManager));
+                                    var totalDmg = result.GetTotal();
+                                    if (stamDamage > totalDmg)
+                                    {
+                                        // Show stamina color instead of the normal damage color, but still play impact sounds.
+                                        PlayImpactSound(hitEntity, result, hitscan.Sound, hitscan.ForceSound, filter: null, projectile: null, suppressColor: true);
+                                        _color.RaiseEffect(Color.Aqua, new List<EntityUid>() { hitEntity }, Filter.Pvs(hitEntity, entityManager: EntityManager));
+                                    }
+                                    else
+                                    {
+                                        // Prefer damage color (PlayImpactSound will handle raising red)
+                                        PlayImpactSound(hitEntity, result, hitscan.Sound, hitscan.ForceSound);
+                                    }
                                 }
-
-                                // TODO get fallback position for playing hit sound.
-                                PlayImpactSound(hitEntity, dmg, hitscan.Sound, hitscan.ForceSound);
+                                else
+                                {
+                                    // No stamina involved, just use the normal damage visuals/sound.
+                                    PlayImpactSound(hitEntity, result, hitscan.Sound, hitscan.ForceSound);
+                                }
                             }
 
                             if (user != null)
                             {
                                 Logs.Add(LogType.HitScanHit,
-                                    $"{ToPrettyString(user.Value):user} hit {hitName:target} using hitscan and dealt {dmg.GetTotal():damage} damage");
+                                    $"{ToPrettyString(user.Value):user} hit {hitName:target} using hitscan and dealt {result.GetTotal():damage} damage");
                             }
                             else
                             {
                                 Logs.Add(LogType.HitScanHit,
-                                    $"{hitName:target} hit by hitscan dealing {dmg.GetTotal():damage} damage");
+                                    $"{hitName:target} hit by hitscan dealing {result.GetTotal():damage} damage");
                             }
+                        }
+                        else if (stamDamage > 0f)
+                        {
+                            // There was only stamina damage. Show the stamina color.
+                            _color.RaiseEffect(Color.Aqua, new List<EntityUid>() { hitEntity }, Filter.Pvs(hitEntity, entityManager: EntityManager));
                         }
                     }
                     else
@@ -847,45 +870,60 @@ public abstract partial class SharedGunSystem : EntitySystem
         return angles;
     }
 
-    public void PlayImpactSound(EntityUid otherEntity, DamageSpecifier? modifiedDamage, SoundSpecifier? weaponSound, bool forceWeaponSound, Filter? filter = null, EntityUid? projectile = null)
-    {
-        DebugTools.Assert(!Deleted(otherEntity), "Impact sound entity was deleted");
+    public void PlayImpactSound(EntityUid otherEntity, DamageSpecifier? modifiedDamage, SoundSpecifier? weaponSound, bool forceWeaponSound, Filter? filter = null, EntityUid? projectile = null, bool suppressColor = false, Color? explicitColor = null)
+     {
+         DebugTools.Assert(!Deleted(otherEntity), "Impact sound entity was deleted");
 
-        // Like projectiles and melee,
-        // 1. Entity specific sound
-        // 2. Ammo's sound
-        // 3. Nothing
-        if (_netManager.IsClient && HasComp<PredictedProjectileServerComponent>(projectile))
-            return;
+         // Like projectiles and melee,
+         // 1. Entity specific sound
+         // 2. Ammo's sound
+         // 3. Nothing
+         if (_netManager.IsClient && HasComp<PredictedProjectileServerComponent>(projectile))
+             return;
 
-        filter ??= Filter.Pvs(otherEntity);
-        var playedSound = false;
+         filter ??= Filter.Pvs(otherEntity);
+         var playedSound = false;
+
+        // If an explicit color override was provided, raise it and optionally still play sounds below.
+        if (explicitColor != null && !suppressColor)
+        {
+            _color.RaiseEffect(explicitColor.Value, new List<EntityUid>() { otherEntity }, filter);
+        }
 
         if (!forceWeaponSound && modifiedDamage != null && modifiedDamage.GetTotal() > 0 && TryComp<RangedDamageSoundComponent>(otherEntity, out var rangedSound))
-        {
-            var type = SharedMeleeWeaponSystem.GetHighestDamageSound(modifiedDamage, ProtoManager);
+         {
+             var type = SharedMeleeWeaponSystem.GetHighestDamageSound(modifiedDamage, ProtoManager);
 
-            if (type != null &&
-                rangedSound.SoundTypes?.TryGetValue(type, out var damageSoundType) == true &&
-                filter.Count > 0)
-            {
-                Audio.PlayEntity(damageSoundType, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
-                playedSound = true;
-            }
-            else if (type != null &&
-                     rangedSound.SoundGroups?.TryGetValue(type, out var damageSoundGroup) == true &&
-                     filter.Count > 0)
-            {
-                Audio.PlayEntity(damageSoundGroup, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
-                playedSound = true;
-            }
-        }
+             if (type != null &&
+                 rangedSound.SoundTypes?.TryGetValue(type, out var damageSoundType) == true &&
+                 filter.Count > 0)
+             {
+                 Audio.PlayEntity(damageSoundType, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
+                 playedSound = true;
+             }
+             else if (type != null &&
+                      rangedSound.SoundGroups?.TryGetValue(type, out var damageSoundGroup) == true &&
+                      filter.Count > 0)
+             {
+                 Audio.PlayEntity(damageSoundGroup, filter, otherEntity, true, AudioParams.Default.WithVariation(DamagePitchVariation));
+                 playedSound = true;
+             }
+         }
 
         if (!playedSound && weaponSound != null && filter.Count > 0)
+         {
+             Audio.PlayEntity(weaponSound, filter, otherEntity, true);
+         }
+
+        // If there's no explicit color override, and the caller didn't suppress colors, raise the damage color normally.
+        if (!suppressColor && explicitColor == null)
         {
-            Audio.PlayEntity(weaponSound, filter, otherEntity, true);
+            if (modifiedDamage != null && modifiedDamage.GetTotal() > 0)
+            {
+                _color.RaiseEffect(Color.Red, new List<EntityUid>() { otherEntity }, filter);
+            }
         }
-    }
+     }
 
     private void Recoil(EntityUid? user, Vector2 recoil, float recoilScalar)
     {

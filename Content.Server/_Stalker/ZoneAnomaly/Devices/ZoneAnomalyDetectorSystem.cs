@@ -119,7 +119,7 @@ public sealed class ZoneAnomalyDetectorSystem : SharedZoneAnomalyDetectorSystem
 
         if (playBeep)
         {
-            const float hearRange = 5f; // hardcoded limit
+            const float hearRange = 10f; // hardcoded limit
             var mapCoords = _transform.GetMapCoordinates(xform);
             _audio.PlayEntity(
                 detector.Comp.BeepSound,

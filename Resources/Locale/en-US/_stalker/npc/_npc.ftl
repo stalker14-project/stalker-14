@@ -87,4 +87,4 @@ ent-NPCMercHummingbird = Hummingbird [→ ←]
     .suffix = ST, Mercenary, Dollars
 ent-NPCMolitChevron = Pleiades
     .desc = Exchanges monolith chevrons for rare items.
-    .suffix ST, Chevron, DO NOT MAP YET
+    .suffix = ST, Chevron, DO NOT MAP YET

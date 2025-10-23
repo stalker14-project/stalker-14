@@ -33,7 +33,7 @@ public sealed class ZoneArtifactDetectorSoundIndicatorSystem : EntitySystem
             var distance = detector.ClosestDistance.Value;
 
             // HARD cutoff radius (only clients within this range receive the sound)
-            const float hearRange = 5f;
+            const float hearRange = 10f;
             var mapCoords = _xform.GetMapCoordinates(uid);
 
             _audio.PlayEntity(
