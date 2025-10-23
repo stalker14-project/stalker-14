@@ -1,0 +1,581 @@
+# Duty - 1
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDolgEN
+  name: Sergeant Prokopenko[→   ←]
+  suffix: ST, Duty, EN-TRADER
+  description: Sells good hunting gear and supplies that are very important for survival in the zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/Dolg.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: DolgShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Bandits - 2
+
+- type: entity
+  parent: NPCDoll
+  id: NPCBandEN
+  name: Mafaniy 'Junk'[→   ←]
+  suffix: ST, Bandit, EN-TRADER
+  description: Sells good hunting gear and supplies that are very important for survival in the zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/Band.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: BandsShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Ecologist - 3
+
+- type: entity
+  parent: NPCDoll
+  id: NPCResearchInstitutesEN
+  name: Prof. Round [→   ←]
+  description: They say that the professor has a diploma from Moscow State University. Should we believe the rumors?
+  suffix: ST, Ecologist, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Scientist.rsi
+    state: scientist
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcResearchInstituteEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCResearchInstitutesPBEN
+  name: Prof. Heisenberg [→   ←]
+  description: Believes in the magic of friendship, ready to exchange your swag for good cash.
+  suffix: ST, Ecologist, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Scientist.rsi
+    state: scientist
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcSciPBEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+
+# Clear Sky - 4
+
+- type: entity
+  parent: NPCDoll
+  id: NPCclearSkyEN
+  name: Dimka 'Postmaster'[→   ←]
+  suffix: ST, Clear Sky, EN-TRADER
+  description: Sells good hunting gear and supplies that are very important for survival in the zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/CN.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: ClearSkyShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Freedom - 4
+
+- type: entity
+  parent: NPCDoll
+  id: NPCFreedomEN
+  name: Vasyan 'Bilibob'[→   ←]
+  suffix: ST, Freedom, EN-TRADER
+  description: Stepfather of a stalker named 'Kebab'. Sells good hunting equipment and supplies that are very important for survival in the zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/freedom.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: FreedomShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Militaries - 6
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMilitaryVoenstalEN #Voenstal
+  name: Vitaly 'Quartermaster'[→ ←]
+  suffix: ST, Voenstal, EN-TRADER
+  description: He's the Quartermaster sells government property among the soldiers.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/Military.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: VoenstalShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMilitaryPraporEN #OKSOP
+  name: Banner [→   ←]
+  suffix: ST, OKSOP, EN-TRADER
+  description: He sells government property among the soldiers.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/prapor-military.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: OKSOPShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Renegades - 7
+
+- type: entity
+  parent: NPCDoll
+  id: NPCRenegadesEN
+  name: Ahmed 'Gas Drain'[→   ←]
+  suffix: ST, Renegade, EN-TRADER
+  description: He always wears a gas mask like a fool. Sells good hunting equipment and supplies that are very important for survival in the zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/rene.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: RenegadesShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+#Mercs - 8
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMercHummingbirdEN
+  name: Hummingbird [→ ←]
+  suffix: ST, Mercenaries, EN-TRADER
+  description: He buys weapons in bulk in Europe and America and sells them in the zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Merc.rsi
+    state: merc
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: MercShopPresetEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Deserters - 9 NOT USED YET
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDeserterMubarackEN
+  name: Mubarak [→   ←]
+  suffix: ST, Deserter, EN-TRADER
+  description: Mubarak, Abdul's brother, a deserter from the OKSOP and an honorary member of the "renegades" gang, helps his brother transport weapons and armor from the mainland, a complete idiot.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Deserter_mubarack.rsi
+    state: deserter_mubarack
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: DeserterMubarackTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDeserterAbdulEN
+  name: Abdul [→   ←]
+  suffix: ST, Deserter, EN-TRADER
+  description: Abdul, Mubarak's brother, a deserter from the OKSOP and an honorary member of the "renegades" gang, smuggles contraband across the border of the Chernobyl Exclusion Zone, and is not particularly bright.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Deserter_abdul.rsi
+    state: deserter_abdul
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: DeserterAbdulTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Neutrals and Militia
+
+- type: entity
+  parent: NPCDoll
+  id: NPCStalkEN
+  name: Jackal [→   ←]
+  suffix: ST, Neutrals, EN-TRADER
+  description: Sells good hunting gear and supplies that are very important for survival in the zone.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Groups/stalkers.rsi
+    state: icon
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NeutralsShopPresetZoneEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCTouristEN  # Shop comp removed till preset is made
+  name: Tourist [→   ←]
+  suffix: ST, Militia, EN-TRADER
+  description: A kind person, at low prices, literally sells equipment for free. He is also ready to donate the last first aid kit to save his brother - a stalker. # Will change
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Tourist.rsi
+    state: tourist
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+    # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcTourist  #If you uncomment it - CHANGE SHOP PRESET
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
