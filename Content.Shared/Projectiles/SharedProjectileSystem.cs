@@ -5,7 +5,6 @@ using Content.Shared.Armor;
 using Content.Shared.Camera;
 using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
@@ -151,41 +150,12 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
         if (modifiedDamage is not null && (EntityManager.EntityExists(component.Shooter) || EntityManager.EntityExists(component.Weapon)))
         {
-            // Determine if this projectile also deals stamina damage via a StaminaDamageOnCollideComponent
-            // If so, prefer showing the stamina (Aqua) effect when its magnitude is greater than the HP damage.
-            float staminaCandidate = 0f;
-            if (TryComp<StaminaDamageOnCollideComponent>(uid, out var staminaComp))
+            if (modifiedDamage.AnyPositive() && !deleted)
             {
-                staminaCandidate = staminaComp.Damage;
+                _color.RaiseEffect(Color.Red, new List<EntityUid> { target }, filter);
             }
 
             var shooterOrWeapon = EntityManager.EntityExists(component.Shooter) ? component.Shooter!.Value : component.Weapon!.Value;
-
-            // If both exist, decide which color to show by magnitude.
-            if (!deleted)
-            {
-                if (modifiedDamage.AnyPositive())
-                {
-                    var total = modifiedDamage.GetTotal();
-                    if (staminaCandidate > total)
-                    {
-                        // Prefer stamina color but still play impact sounds; suppress red from PlayImpactSound.
-                        _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound, filter, projectile, suppressColor: true);
-                        _color.RaiseEffect(Color.Aqua, new List<EntityUid> { target }, filter);
-                    }
-                    else
-                    {
-                        // Damage is dominant (or equal) — let PlayImpactSound handle the red flash.
-                        _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound, filter, projectile);
-                    }
-                }
-                else if (staminaCandidate > 0f)
-                {
-                    // Only stamina damage
-                    _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound, filter, projectile, suppressColor: true);
-                    _color.RaiseEffect(Color.Aqua, new List<EntityUid> { target }, filter);
-                }
-            }
 
             _adminLogger.Add(LogType.BulletHit,
                 HasComp<ActorComponent>(target) ? LogImpact.Extreme : LogImpact.High,
@@ -194,6 +164,7 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
         if (!deleted)
         {
+            _guns.PlayImpactSound(target, modifiedDamage, component.SoundHit, component.ForceSound, filter, projectile);
 
             if (!ourBody.LinearVelocity.IsLengthZero())
             {

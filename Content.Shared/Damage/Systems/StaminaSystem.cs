@@ -120,8 +120,7 @@ public sealed partial class StaminaSystem : EntitySystem
             return;
 
         var damage = args.PushProbability * component.CritThreshold;
-        // Suppress automatic visual here; let disarm caller decide visuals or just show one effect.
-        TakeStaminaDamage(uid, damage, component, source: args.Source, visual: false);
+        TakeStaminaDamage(uid, damage, component, source: args.Source);
 
         args.PopupPrefix = "disarm-action-shove-";
         args.IsStunned = component.Critical;
@@ -169,9 +168,7 @@ public sealed partial class StaminaSystem : EntitySystem
 
         foreach (var (ent, comp) in toHit)
         {
-            // Don't show the stamina visual here; let the melee/damage caller decide visuals so the
-            // dominant-color logic can be applied centrally and avoid blue+red flashes.
-            TakeStaminaDamage(ent, damage / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound, visual: false);
+            TakeStaminaDamage(ent, damage / toHit.Count, comp, source: args.User, with: args.Weapon, sound: component.Sound);
         }
     }
 
@@ -185,8 +182,7 @@ public sealed partial class StaminaSystem : EntitySystem
         if (!TryComp<StaminaComponent>(args.Embedded, out var stamina))
             return;
 
-        // Suppress automatic stamina visual; caller (embed/weapon) will decide the flash.
-        TakeStaminaDamage(args.Embedded, component.Damage, stamina, source: uid, visual: false);
+        TakeStaminaDamage(args.Embedded, component.Damage, stamina, source: uid);
     }
 
     private void OnThrowHit(EntityUid uid, StaminaDamageOnCollideComponent component, ThrowDoHitEvent args)
@@ -206,9 +202,7 @@ public sealed partial class StaminaSystem : EntitySystem
         if (ev.Cancelled)
             return;
 
-        // Don't show the stamina visual here; let the higher-level system choose and suppress the
-        // default aqua flash to avoid double flashes when HP damage also occurs.
-        TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound, visual: false);
+        TakeStaminaDamage(target, component.Damage, source: uid, sound: component.Sound);
     }
 
     private void SetStaminaAlert(EntityUid uid, StaminaComponent? component = null)
@@ -239,7 +233,7 @@ public sealed partial class StaminaSystem : EntitySystem
     }
 
     public void TakeStaminaDamage(EntityUid uid, float value, StaminaComponent? component = null,
-        EntityUid? source = null, EntityUid? with = null, bool visual = true, SoundSpecifier? sound = null,
+        EntityUid? source = null, EntityUid? with = null, bool visual = false, SoundSpecifier? sound = null,
         bool shouldLog = true) // stalker-changes
     {
         if (!Resolve(uid, ref component, false))
