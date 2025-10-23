@@ -1,0 +1,266 @@
+- type: entity
+  parent: NPCDoll
+  id: NPCRadioPlayerEN
+  name: Radio Amateur [→   ←]
+  description: He is engaged in the design, construction, modification and use of radio engineering and electronic devices. He loves everything related to the Soviet Union. He tries to be secretive.
+  suffix: ST, Music, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/RadioPlayer.rsi
+    state: radioplayer
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcRadioPlayerEN
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCVadikNarikEN # Weed??? Shop Comp Removed till preset is made
+  name: Vadik Goy [→ ? ←]
+  description: An ordinary drug addict who both sells and buys everything related to cannabis.
+  suffix: ST, WEED, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/VadikNarik.rsi
+    state: vadiknarik
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerAlkashAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCBotanikMaksEN # StalkerEN Foods, Shop Comp Removed till preset is made
+  name: Max [→   ←]
+  description: Max is a skilled botanist with a green thumb and a passion for plants. He has a deep knowledge of plants and the ability to grow them in any conditions.
+  suffix: ST, Plants, EN-TRADER, DO NOT MAP
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/BotanikMaks.rsi
+    state: maks
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcBotanikMaks  #Commented, shop-preset wiped
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Donate
+
+- type: entity
+  parent: NPCDoll
+  id: NPCCustomRadioPlayerEN # Maybe convert for Radio guy at Bar??? Shop Comp Removed till preset is made
+  name: Daniil Krutilo [→   ←]
+  description: Almost nothing is known about him. Made to order for Dima.
+  suffix: NPC, DONATE, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/CustomRadioPlayer.rsi
+    state: daniil
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+# Pawn Shops
+
+- type: entity
+  parent: NPCDoll
+  id: NPCAlinaMorozovaEN # Removed for now, Town NPC
+  name: Alina Morozova [→   ←]
+  description: Luxury is not about money, it's about requirements for the best. It is a lack of compromise for the most sophisticated consumers.
+  suffix: ST, Buying at best prices, EN-TRADER, DO NOT MAP
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/alina_morozova.rsi
+    state: base
+  - type: Physics
+  # - type: Shop  #Commented, shop-preset wiped
+    # moneyId: Roubles
+    # shopPresetId: NpcAlinaMorozova  #If you uncomment it - CHANGE SHOP PRESET
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+
+- type: entity
+  parent: NPCDoll
+  id: NPCErjanAlimovEN
+  name: Yerzhan Alimov [→   ←]
+  suffix: ST, Buying the worst price, EN-TRADER
+  description: We buy jewelry at good prices!
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/erjan_alimov.rsi
+    state: base
+  - type: Physics
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcErjanAlimovEN
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+
+- type: entity
+  parent: NPCDoll
+  id: NPCJuryIzvorotinEN
+  name: Yuri Izvorotin [→   ←]
+  description: We buy jewelry. Slippery typical. Someone else would not have survived with such a business.
+  suffix: ST, Buying average prices, EN-TRADER
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/NPCs/jury_izvorotin.rsi
+    state: base
+  - type: Physics
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcJuryIzvorotinEN
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+
+# MonoLIT
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMolitChevron # Not used yet
+  name: Pleiades
+  description: Exchanges monolith chevrons for rare items.
+  suffix: ST, Chevron, EN-TRADER, DO NOT MAP YET
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Pleyad.rsi
+    state: pleyad
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: STNPCStalkerBarmenAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: ChevronMonolit
+    shopPresetId: NpcMolithChevron # Will make EN preset when used
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
