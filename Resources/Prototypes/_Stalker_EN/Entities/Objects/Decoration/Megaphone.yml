@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: RadioBaseStalker
   id: STOKSOPMegaphone
-  suffix: ST, OKSOP
+  suffix: ST, Mapping, OKSOP
   name: OKSOP Megaphone
   description: A truncated cone-shaped tube designed for directional sound transmission.
   components:
@@ -14,3 +14,37 @@
     enabled: true
     sound:
       path: /Audio/_Stalker_EN/Music/Radio/OKSOP.ogg
+
+- type: entity
+  id: STSoundPillarOKSOP
+  parent: STPowerlines1
+  name: A pole with a loudspeaker
+  suffix: ST, Mapping, OKSOP
+  description: One of the components of an electrical network, this was redesigned to hold speakers to transmit things that need to be heard.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/powerlines.rsi
+    state: soundpillar
+  - type: AmbientSound
+    volume: 1
+    range: 20
+    enabled: true
+    sound:
+      path: /Audio/_Stalker_EN/Music/Radio/OKSOP.ogg
+
+- type: entity
+  id: STSoundPillarDuty
+  parent: STPowerlines1
+  name: A pole with a loudspeaker
+  suffix: ST, Mapping, Duty
+  description: One of the components of an electrical network, this was redesigned to hold speakers to transmit things that need to be heard.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/powerlines.rsi
+    state: soundpillar
+  - type: AmbientSound
+    volume: 1
+    range: 20
+    enabled: true
+    sound:
+      path: /Audio/_Stalker/Music/Radio/rupor.ogg
