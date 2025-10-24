@@ -1300,3 +1300,32 @@
   components:
     - type: NewMapTeleport
       portalName: Kordon-Bunker
+
+######################################ЛОЩИНА
+- type: entity
+  parent: GroupedTeleportBase
+  id: EnterLohinaOneside
+  name: Вход на Лощину
+  components:
+  - type: GroupTeleport
+    group: "EnterLohinaOneside1"
+    targetGroup: "EnterLohinaOneside2"
+    allowAll: true
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+    time: 5
+
+- type: entity
+  parent: GroupedTeleportUncollideBase
+  id: EnterLohinaOnesideUncollide
+  name: Выход из Лощины Uncollide
+  components:
+  - type: GroupTeleport
+    group: "EnterLohinaOneside2"
+    targetGroup: "EnterLohinaOneside1"
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+    time: 5
