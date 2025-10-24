@@ -390,6 +390,9 @@
     - type: NewMapTeleport
       allowAll: false
       portalName: Cordon-Otstupniki
+    - type: AccessReader
+      access: [["Deserter"]]
+
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Cordon-OtstupnikiUncollide
@@ -398,6 +401,8 @@
     - type: NewMapTeleport
       allowAll: false
       portalName: Cordon-Otstupniki
+    - type: AccessReader
+      access: [["Deserter"]]
 
 ####################################Наёмники
 
