@@ -3,7 +3,7 @@
 - type: entity
   parent: NPCDoll
   id: NPCDolgEN
-  name: Sergeant Prokopenko[→   ←]
+  name: Sergeant Prokopenko [→   ←]
   suffix: ST, Duty, EN-TRADER
   description: Sells good hunting gear and supplies that are very important for survival in the zone.
   components:
@@ -397,7 +397,7 @@
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
   - type: Shop
-    moneyId: Dollar
+    moneyId: Roubles
     shopPresetId: MercShopPresetEN
   - type: TypingIndicator
     proto: robot
@@ -542,10 +542,10 @@
 
 - type: entity
   parent: NPCDoll
-  id: NPCTouristEN  # Shop comp removed till preset is made
+  id: NPCTouristEN
   name: Tourist [→   ←]
   suffix: ST, Militia, EN-TRADER
-  description: A kind person, at low prices, literally sells equipment for free. He is also ready to donate the last first aid kit to save his brother - a stalker. # Will change
+  description: A kind person. He is also ready to donate the last first aid kit to save his brother - a stalker.
   components:
   - type: Sprite
     sprite: _Stalker/NPC/Tourist.rsi
@@ -561,6 +561,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: MilitiaShopPresetZoneEN
     # - type: Shop  #Commented, shop-preset wiped
     # moneyId: Roubles
     # shopPresetId: NpcTourist  #If you uncomment it - CHANGE SHOP PRESET

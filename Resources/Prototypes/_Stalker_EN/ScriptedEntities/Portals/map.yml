@@ -133,3 +133,67 @@
     cooldownEnabled: true
     cooldownTime: 30
     godmodeCooldown: 5
+
+# Military
+
+- type: entity
+  parent: MapTeleportBase
+  id: MilitaryBase-RedForest #Voenstals
+  name: MilitaryBase-RedForest
+  components:
+  - type: NewMapTeleport
+    portalName: MilitaryBase-RedForest
+    cooldownEnabled: true
+    cooldownTime: 30
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Helicopter-LZ #Event
+  name: Helicopter-LZ
+  components:
+  - type: NewMapTeleport
+    portalName: Helicopter-LZ
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Helicopter-LZUncollide #Event
+  name: Helicopter-LZUncollide
+  components:
+  - type: NewMapTeleport
+    portalName: Helicopter-LZ
+
+# Red Forest / Limansk
+
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-LimanskEN
+  name: RedForest-Limansk
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk
+    cooldownEnabled: true
+    cooldownTime: 30
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-LimanskEN2
+  name: RedForest-Limansk2
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk2
+    cooldownEnabled: true
+    cooldownTime: 30
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-LimanskEN3
+  name: RedForest-Limansk3
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk3
+    cooldownEnabled: true
+    cooldownTime: 30
+    godmodeCooldown: 5
