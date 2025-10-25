@@ -25,8 +25,10 @@
   name: Bar-BarStalker
   components:
     - type: NewMapTeleport
-      allowAll: true
+      allowAll: false
       portalName: Bar-BarStalker
+    - type: AccessReader
+      access: [["Stalker"]]
 - type: entity
   parent: MapTeleportBaseUncollide
   id: Bar-BarStalkerUncollide

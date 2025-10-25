@@ -40,7 +40,7 @@
 
 - type: entity
   parent: NPCDoll
-  id: NPCVadikNarikEN # Weed??? Shop Comp Removed till preset is made
+  id: NPCVadikNarikEN
   name: Vadik Goy [→ ? ←]
   description: An ordinary drug addict who both sells and buys everything related to cannabis.
   suffix: ST, WEED, EN-TRADER
@@ -59,6 +59,9 @@
     interfaces:
       enum.ShopUiKey.Key:
         type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: NpcVadikNarikEN
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS

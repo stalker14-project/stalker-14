@@ -64,7 +64,7 @@
         STWeaponShotgunSPAS: 2000
         # Nato
         STWeaponRifleL85: 2100
-        STWeaponRifleSCARH: 6000
+        STWeaponRifleSCARH: 4750
         STWeaponRifleM16: 4000
         STWeaponRifleFAL: 4250
         # 5.45
@@ -95,7 +95,7 @@
         GlockMag33: 950
         STSpeedLoader45ACPEmpty: 100
         Base751Mag10: 200
-        751Mag30: 500
+        751Mag20: 400
         739Mag30: 500
         545Mag30: 400
         545Mag20: 200
@@ -105,7 +105,7 @@
       items:
         6mmBuckshotBox: 115
         7mmBuckshotBox: 45
-        8mmBuckshotBox: 300
+        8mmBuckshotBox: 400
         # 9.19
         919PSOGJBox: 100 #T1
         919PSTBox: 500 #T2
@@ -124,18 +124,18 @@
         556WarmagBox: 500 #Mutant
         556M855Box: 2250 #T3
         #7.39
-        739FMJBox: 2250 #T3
-        739HPBox: 500 # Mutant
+        739FMJBox: 2500 #T3
+        739HPBox: 700 # Mutant
         # 7.51
-        751M80Box: 2450
-        751UNBox: 500
+        751M80Box: 2500
+        751UNBox: 700
         # 7.54
-        754FMJBox: 2450
+        754FMJBox: 2700
         # .45
         45ACPLFMJBox: 100
         45ACPMFMJBox: 550
         45ACPAPBox: 2000
-        45ACPRIPBox: 500
+        45ACPRIPBox: 650
 
     - name: shop-category-medicine
       priority: 4
@@ -232,6 +232,7 @@
     - name: shop-category-utilities
       priority: 10
       items:
+        LgbtKnife: 30
         STSkinsKitFreedom: 500
         STCombatKnife: 25
         BoxZiptie: 50
@@ -262,6 +263,7 @@
         STModuleSilencerRiflesT1Ru: 400
         STModuleSilencerRiflesT1Nato: 400
         STModuleSMGGripT1: 600
+        STModuleShotgunChokeT1: 200
         STModuleSilencerSMGT1: 600
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
@@ -327,3 +329,10 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
+
+    - name: shop-category-entertainment
+      priority: 13
+      items:
+        AcousticGuitarInstrument: 250
+        AccordionInstrument: 250
+        HarmonicaInstrument: 250
