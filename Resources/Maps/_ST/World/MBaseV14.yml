@@ -24373,6 +24373,11 @@ entities:
       parent: 1
 - proto: CableApcExtension
   entities:
+  - uid: 30
+    components:
+    - type: Transform
+      pos: -34.5,-3.5
+      parent: 1
   - uid: 371
     components:
     - type: Transform
@@ -25933,11 +25938,6 @@ entities:
     - type: Transform
       pos: -25.5,-0.5
       parent: 1
-  - uid: 683
-    components:
-    - type: Transform
-      pos: -35.5,-3.5
-      parent: 1
   - uid: 684
     components:
     - type: Transform
@@ -26443,6 +26443,11 @@ entities:
     - type: Transform
       pos: -24.5,20.5
       parent: 1
+  - uid: 5287
+    components:
+    - type: Transform
+      pos: -34.5,-2.5
+      parent: 1
 - proto: CandleInfinite
   entities:
   - uid: 772
@@ -26818,6 +26823,8 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -27.5,104.5
       parent: 1
+    missingComponents:
+    - Strap
   - uid: 837
     components:
     - type: Transform
@@ -32242,13 +32249,54 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -33.5,97.5
       parent: 1
-- proto: NPCMilitaryPrapor
+- proto: NPCMilitaryPraporEN
   entities:
-  - uid: 30
+  - uid: 683
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -21.5,18.5
+      parent: 1
+    - type: ContainerContainer
+      containers:
+        body_root_part: !type:ContainerSlot {}
+        shoes: !type:ContainerSlot
+          occludes: False
+        jumpsuit: !type:ContainerSlot
+          occludes: False
+        outerClothing: !type:ContainerSlot
+          occludes: False
+        gloves: !type:ContainerSlot
+          occludes: False
+        neck: !type:ContainerSlot
+          occludes: False
+        mask: !type:ContainerSlot
+          occludes: False
+        eyes: !type:ContainerSlot
+          occludes: False
+        ears: !type:ContainerSlot
+          occludes: False
+        head: !type:ContainerSlot
+          occludes: False
+        pocket1: !type:ContainerSlot
+          occludes: False
+        pocket2: !type:ContainerSlot
+          occludes: False
+        suitstorage: !type:ContainerSlot
+          occludes: False
+        id: !type:ContainerSlot
+          occludes: False
+        belt: !type:ContainerSlot
+          occludes: False
+        back: !type:ContainerSlot
+          occludes: False
+- proto: NPCMilitaryVoenstalEN
+  entities:
+  - uid: 4921
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -27.5,104.5
       parent: 1
     - type: ContainerContainer
       containers:
@@ -32730,8 +32778,6 @@ entities:
     - type: Transform
       pos: -22.5,18.5
       parent: 1
-    missingComponents:
-    - Climbable
   - uid: 1926
     components:
     - type: Transform
