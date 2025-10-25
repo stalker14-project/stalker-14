@@ -26,7 +26,7 @@
     sprite: _Stalker/Objects/Decoration/powerlines.rsi
     state: soundpillar
   - type: AmbientSound
-    volume: 1
+    volume: -6
     range: 20
     enabled: true
     sound:
@@ -48,3 +48,20 @@
     enabled: true
     sound:
       path: /Audio/_Stalker/Music/Radio/rupor.ogg
+
+- type: entity
+  parent: RadioBaseStalker
+  id: STFreedomMegaphone
+  suffix: ST, Mapping, Freedom
+  name: Freedom Megaphone
+  description: A truncated cone-shaped tube designed for directional sound transmission.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Decoration/Other/rupor.rsi
+    state: base
+  - type: AmbientSound
+    volume: -6
+    range: 20
+    enabled: true
+    sound:
+      path: /Audio/_Stalker/Music/Radio/radio_Svoboda.ogg

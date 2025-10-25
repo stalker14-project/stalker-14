@@ -13,7 +13,7 @@
 #   color: "#9FED58"
 #   roles:
 #   # - MilitaryStalker
-#   #- PoliceOfficer
+#   # - PoliceOfficer
 #   # - MayorCity
 #   # - Prokuror
 #   # - Magistrate
@@ -25,6 +25,23 @@
 #   # - StalkerUN
 #   # - StalkerSBU
 #   # - StalkerZavet
+#   # - StalkerProjectOrchestrator
+#   # - StalkerProjectPawn
+#   # - StalkerJaba
+#   # - StalkerJabaAce
+#   # - Seraphim
+#   # - SeraphimHead
+#   # - SeraphimCherubim
+#   # - StalkerZavet
+#   # - StalkerPostulant
+#   # - StalkerBishop
+#   # - StalkerClown
+#   # - StalkerEcologist
+#   # - StalkerHeadEcologist
+#   # - StalkerUN
+#   # - StalkerISSG
+#   # - StalkerPoisk
+#   # - StalkerUNISG
 
 - type: department
   id: StalkerAdvanced
@@ -40,12 +57,9 @@
   - StalkerClearSky
   - StalkerHeadClearSky
   - StalkerNeutral
-  - StalkerPoisk
   - StalkerJournalist
   - StalkerMilitia
   - StalkerMilitiaCommander
-  - StalkerProjectOrchestrator
-  - StalkerProjectPawn
 
 - type: department
   id: StalkerBrigands
@@ -58,8 +72,6 @@
   - StalkerHeadBandit
   - StalkerMercenary
   - StalkerHeadMercenary
-  - StalkerJaba
-  - StalkerJabaAce
   - StalkerDeserter
   - StalkerRene
   - StalkerHeadRene
@@ -76,13 +88,9 @@
   - MilitaryHead
   - StalkerScientist
   - StalkerHeadScientist
-  - StalkerISSG
   - MilitaryStalker
   - HeadMilitaryStalker
-  - StalkerUN
-  - StalkerClown
-  - StalkerEcologist
-  - StalkerHeadEcologist
+
 - type: department
   id: StalkerReligius
   name: department-StalkerReligius
@@ -92,32 +100,26 @@
   roles:
   - StalkerMonolith
   - StalkerHeadMonolith
-  - StalkerPostulant
-  - StalkerBishop
   - StalkerGreh
-  - Seraphim
-  - SeraphimHead
-  - SeraphimCherubim
-  - StalkerZavet
 
-- type: department
-  id: Evolver
-  name: department-Evolver
-  description: department-Evolver-description
-  color: "#1070C0"
-  weight: -10
-  roles:
-  - EvolverPackFang
-  - EvolverPackAlpha
-  - EvolverSymbioteMedium
-  - EvolverSymbioteArchon
-  - Evolver
+# - type: department
+# id: Evolver
+# name: department-Evolver
+#  description: department-Evolver-description
+#  color: "#1070C0"
+#  weight: -10
+#  roles:
+#  - EvolverPackFang
+#  - EvolverPackAlpha
+#  - EvolverSymbioteMedium
+#  - EvolverSymbioteArchon
+#  - Evolver
 
-- type: department
-  id: StalkerAnomalists
-  name: department-StalkerAnomalists
-  description: department-StalkerAnomalists-description
-  color: "#9FED58"
-  roles:
-  - StalkerAnomalist
-  - StalkerAnomalistGuardian
+# - type: department
+#  id: StalkerAnomalists
+#  name: department-StalkerAnomalists
+#  description: department-StalkerAnomalists-description
+#  color: "#9FED58"
+#  roles:
+#  - StalkerAnomalist
+#  - StalkerAnomalistGuardian
