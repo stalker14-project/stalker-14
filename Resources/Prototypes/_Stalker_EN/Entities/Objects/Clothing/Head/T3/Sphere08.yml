@@ -1,0 +1,26 @@
+- type: entity
+  parent: STClothingHeadHelmetEnvironmentT3Base
+  id: ClothingHeadHelmetSphereClearSky
+  name: Blue Camo SH-68
+  description: Specialized helmet in blue camo, it's made with working deep in the zone in mind.
+  components:
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.90
+        Psy: 0.85
+        Radiation: 0.70
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+      - BlockMask
+      - HidesNose
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/CS_sphere.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/CS_sphere.rsi

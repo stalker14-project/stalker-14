@@ -1,0 +1,31 @@
+- type: entity
+  parent: ClothingOuterArmorHazmatRf
+  id: ClothingOuterArmorSevaClearSky
+  name: Armored Hazmat "Troposphere"
+  description: An armored hazmat suit made of lightweight material lined with bullet resistant ribbing beneath the bulkier armored pads.
+  components:
+  - type: STWeight
+    self: 10
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/CS_armoredhazmat.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/outerClothing/CS_armoredhazmat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHardsuitSevaHelmClearSky
+    slot: head
+  - type: UserInterface
+    interfaces:
+      enum.StorageUiKey.Key:
+        type: StorageBoundUserInterface
+
+- type: entity
+  parent: ClothingHeadHazmat
+  id: ClothingHeadHardsuitSevaHelmClearSky
+  name: Armored Hazmat "Troposphere" Helmet
+  description: A helmet with a wide shielded face plate made of reinforced and treated glass to reduce the glare from light sources.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/CS_armoredhazmat_helm.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/CS_armoredhazmat_helm.rsi
