@@ -65,3 +65,36 @@
   - type: HideLayerClothing
     slots:
     - Hair
+
+- type: entity
+  parent: ClothingOuterCoatLoyalist
+  id: ClothingOuterCoatKevlarClearSky
+  name: Blue Camo Kevlar Coat
+  description: What is this supposed to be camo for?
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/cloak/coat_cs.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/cloak/coat_cs.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetKevlarClearSky
+    requiredSlot:
+    - cloak
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+
+- type: entity
+  parent: ClothingHeadHelmetLoyalistCoat
+  id: ClothingHeadHelmetKevlarClearSky
+  name: Blue Camo Kevlar Hood
+  description: Sadly too small to fit over your helmet.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_cs.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Clothing/hats/coat_hat_cs.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
