@@ -77,16 +77,40 @@
     STFoodMeatSalo: 95
     FoodMeatBoar: 55
     FoodMeatDog: 25
-    FoodMeatSTBear: 65 # EN
+    FoodMeatSTBear: 65
     FoodMeatBoarCooked: 80
     FoodMeatDogCooked: 70
-    FoodMeatSTBearCooked: 140 # EN
-    FoodMeatSTFishFilletRaw: 20 # EN
-    FoodMeatSTFishSteakRaw: 50 # EN
-    FoodMeatSTEelRaw: 90 # EN
-    FoodMeatSTFishFilletCooked: 75 # EN
-    FoodMeatSTFishSteakCooked: 125 # EN
-    FoodMeatSTEelCooked: 250 # EN
+    FoodMeatSTBearCooked: 140
+    FoodMeatSTFishFilletRaw: 20
+    FoodMeatSTFishSteakRaw: 50
+    FoodMeatSTEelRaw: 90
+    FoodMeatSTFishFilletCooked: 75
+    FoodMeatSTFishSteakCooked: 125
+    FoodMeatSTEelCooked: 250
+    STFoodMeatCvarci: 10
+    FoodMeatSTRatCooked: 1
+
+    # Cooking
+    FoodSTFreshCheese: 85
+    FoodSTRiceCooked: 310
+    FoodSTPancakes: 250
+    FoodSTOnionRings: 100
+    FoodSTFriedEggs: 250
+    FoodSTBorscht: 650
+    FoodSTCabbageSoup: 600
+    FoodSTMeatStew: 950
+    FoodSTFriedFish: 375
+    FoodSTCakePlain: 450
+    FoodSTHrechanyky: 500
+    FoodSTSyrnyky: 775
+    FoodSTDeruny: 450
+    FoodSTKebabMeat: 450
+    FoodSTKebabVeggie: 265
+    FoodSTCakeBerry: 900
+    FoodSTSnorkSoup: 500
+    FoodSTIceCream: 250
+    FoodSTBraid: 500
+    FoodSTAmbrosia: 5500 # worth more than a soul by a little bit
 
     # Smuggling
     TradeBox: 4000
@@ -208,6 +232,20 @@
         FoodTinMRE: 100
         DrinkLemonadehBottleFull: 75
         STFoodMeatSalami: 125
+        FoodSTTomato: 70
+        FoodSTCarrot: 55
+        FoodSTCabbage: 55
+        FoodSTOnion: 55
+        FoodSTMilkCarton: 75
+        FoodSTFreshCheese: 300
+        FoodSTSpice: 150
+        FoodSTYeast: 50
+        FoodSTFlour: 150
+        FoodSTSugar: 150
+        FoodSTEgg: 100
+        FoodSTOil: 100
+        FoodBowlBig: 200
+        Spoon: 75
 
     - name: shop-category-drinks # If you are buying these, you don't need the money
       priority: 6
@@ -416,8 +454,16 @@
         CardBin: 100
         PokerCardBin: 150
 
-    - name: shop-category-tools
+    - name: shop-category-blueprints
       priority: 15
+      items:
+        STCookingFreshCheese: 2000
+        STCookingOnionRings: 2000
+        STCookingFriedEggs: 2000
+        STCookingCakePlain: 3500
+
+    - name: shop-category-tools
+      priority: 16
       items:
         CraftLeatherbox: 5000
         ToolkitTearOne: 5000

@@ -1,0 +1,28 @@
+- type: shopPreset
+  id: STFoodBotanicPreset
+  itemsForSale:
+    FoodSTTomato: 30
+    FoodSTPotato: 25
+    FoodSTCarrot: 25
+    FoodSTCabbage: 25
+    FoodSTOnion: 25
+    FoodSTBeet: 30
+
+  categories:
+  - name: shop-category-provisions
+    priority: 1
+    items:
+      FoodSTTomato: 65
+      FoodSTPotato: 50
+      FoodSTCarrot: 50
+      FoodSTCabbage: 50
+      FoodSTOnion: 50
+      FoodSTBeet: 45
+      FoodSTBeans: 100
+      FoodSTRice: 100
+  - name: shop-category-blueprints
+    priority: 2
+    items:
+      STCookingRice: 2000
+      STCookingCabbageSoup: 2000
+      STCookingKebabVeggie: 2000
