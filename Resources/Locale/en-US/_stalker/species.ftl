@@ -1,1 +1,1 @@
-species-name-fat-human = Fat guy
+species-name-fat-human = Enlarged Human (Sprites might not be correct)
