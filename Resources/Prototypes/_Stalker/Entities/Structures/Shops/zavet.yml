@@ -1,0 +1,17 @@
+- type: entity
+  parent: StalkerShop
+  id: StalkerShopZavet
+  name: Торгомат, Завет
+  description: Как торговец туда поместился?
+  suffix: ST, Mapping, Завет
+  components:
+    - type: Sprite
+      drawdepth: Objects
+      sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_black.rsi
+      layers:
+        - state: torgomat_black
+          map: [ "enum.ConstructionVisuals.Layer" ]
+        - state: normal-unshaded
+    - type: Shop
+      moneyId: Roubles
+      shopPresetId: ZavetShopPreset
