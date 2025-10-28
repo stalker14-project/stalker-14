@@ -1,5 +1,5 @@
-ent-ClothingOuterArmorPSZ9D = KSN-13 "Behemoth"
-    .desc = Behemoth Special Purpose Suit, used by state operatives in the Chernobyl Exclusion Zone.
+ent-ClothingOuterArmorPSZ9D = PSZ-9d "Duty Armor"
+    .desc = This early model of the Duty bodysuit is the Spetsnaz PSZ-9 body armor modified for the Zone. The suit is capable of stopping a rifle bullet, however, this level of protection comes at the cost of its weight, bulkiness and virtually non-existent anomaly protection.
     .suffix = ST, T4, PvE
 ent-STClothingOuterArmorHeavySera = OP-14 'Seraphim' Armored Coveralls
     .desc = Based on a common jumpsuit, armored because it has increased protection from most physical damage by the armor plates. It also adds weight, but provides excellent projectile protection for combines such as this one.
