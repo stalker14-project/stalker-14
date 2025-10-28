@@ -31,6 +31,25 @@ chat-emote-name-robotbeep = Robot
 chat-emote-name-yawn = Yawn
 chat-emote-name-snore = Snore
 
+#Tacticool
+chat-emote-name-tacticalgen-come = Come
+chat-emote-name-tacticalgen-stop = Stop
+chat-emote-name-tacticalgen-moveforward = Move Forward
+chat-emote-name-tacticalgen-fallback = Fall Back
+chat-emote-name-tacticalgen-listen = Listen
+chat-emote-name-tacticalgen-look = Look
+chat-emote-name-tacticalgen-thumbsup = Thumbs Up
+chat-emote-name-tacticalgen-thumbsdown = Thumbs Down
+chat-emote-name-tacticalwarn-anomaly = Anomaly
+chat-emote-name-tacticalwarn-enemy = Enemy
+chat-emote-name-tacticalwarn-friendly = Friendly
+chat-emote-name-tacticalwarn-pseudodog = Pseudodog
+chat-emote-name-tacticalwarn-psidog = Psidog
+chat-emote-name-tacticalwarn-boar = Boar
+chat-emote-name-tacticalwarn-bear = Bear
+chat-emote-name-tacticalwarn-snork = Snork
+chat-emote-name-tacticalwarn-bloodsucker = Bloodsucker
+
 # Message
 chat-emote-msg-scream = screams!
 chat-emote-msg-laugh = laughs.
@@ -62,3 +81,22 @@ chat-emote-msg-cathisses = hisses!
 chat-emote-msg-monkeyscreeches = screeches!
 chat-emote-msg-yawn = yawns.
 chat-emote-msg-snore = snores.
+
+#Tacticool
+chat-emote-msg-tacticalgen-come = signals to come.
+chat-emote-msg-tacticalgen-stop = signals to stop.
+chat-emote-msg-tacticalgen-moveforward = signals to move forward.
+chat-emote-msg-tacticalgen-fallback = signals to fall back.
+chat-emote-msg-tacticalgen-listen = signals to listen.
+chat-emote-msg-tacticalgen-look = signals to look ahead.
+chat-emote-msg-tacticalgen-thumbsup = gives a thumbs up.
+chat-emote-msg-tacticalgen-thumbsdown = gives a thumbs down.
+chat-emote-msg-tacticalwarn-anomaly = signals about an anomaly.
+chat-emote-msg-tacticalwarn-enemy = signals about enemies.
+chat-emote-msg-tacticalwarn-friendly = signals about friendlies.
+chat-emote-msg-tacticalwarn-pseudodog = signals about pseudodogs.
+chat-emote-msg-tacticalwarn-psidog = signals about psidogs.
+chat-emote-msg-tacticalwarn-boar = signals about boars.
+chat-emote-msg-tacticalwarn-bear = signals about bears.
+chat-emote-msg-tacticalwarn-snork = signals about snorks.
+chat-emote-msg-tacticalwarn-bloodsucker = signals about bloodsuckers.

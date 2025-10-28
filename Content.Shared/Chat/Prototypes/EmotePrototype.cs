@@ -81,5 +81,7 @@ public enum EmoteCategory : byte
     Invalid = 0,
     Vocal = 1 << 0,
     Hands = 1 << 1,
+    TacticalGen = 1 << 2,
+    TacticalWarn = 1 << 3,
     General = byte.MaxValue
 }
