@@ -35,6 +35,42 @@
         teethCount: 3
         initialTeeth: 3
 
+- type: job
+  id: StalkerDeserterHead
+  name: job-deserter-head
+  icon: "deserter"
+  description: job-deserter-desc
+  playTimeTracker: JobDeserterHead
+  whitelisted: true
+  requirements:
+   #  - !type:RoleTimeRequirement
+   #    role: JobDeserter
+   #    time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: StalkerDeserterGear
+  supervisors: job-deserter-supervisor
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Deserter
+          - Stalker
+      - type: Bands
+        band: Stalker
+        bandIcon: deserter
+        bandProto: STDesertersBand
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
 - type: startingGear
   id: StalkerDeserterGear
   equipment:
@@ -54,4 +90,4 @@
   managingRankId: 2
   hierarchy:
     1: StalkerDeserter
-
+    2: StalkerDeserterHead
