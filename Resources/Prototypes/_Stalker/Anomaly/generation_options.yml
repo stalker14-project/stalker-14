@@ -18,8 +18,7 @@
     - protoId: ZoneAnomalyElectra
     # Gravity
     - protoId: ZoneAnomalyBurden
-      weight: 0.7
-#    - protoId: STAnomalyBubbleExit
+      weight: 0.95
     - protoId: ZoneAnomalyGravi
       weight: 2
     - protoId: ZoneAnomalySpringboard
@@ -28,9 +27,7 @@
     - protoId: ZoneAnomalyJarka
     # Psy
     - protoId: ZoneAnomalyLamp
-      weight: 0.75
-    - protoId: ZoneAnomalyKissel
-      weight: 1.25
+      weight: 0.1
 
 # Свалка
 - type: stAnomalyGenerationOptions
@@ -155,7 +152,7 @@
 - type: stAnomalyGenerationOptions
   id: STTemnajDolinaGenerationOptions
   options:
-    totalCount: 250
+    totalCount: 200
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalySource
@@ -180,7 +177,6 @@
     # Psy
     - protoId: ZoneAnomalyBarabashka
     - protoId: ZoneAnomalyRift
-      weight: .05
 
 # Топи
 - type: stAnomalyGenerationOptions #StalkerEN

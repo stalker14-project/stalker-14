@@ -138,14 +138,17 @@
 
 - type: entity
   parent: MapTeleportBase
-  id: MilitaryBase-RedForest #Voenstals
+  id: MilitaryBase-RedForest
   name: MilitaryBase-RedForest
   components:
   - type: NewMapTeleport
+    allowAll: false
     portalName: MilitaryBase-RedForest
     cooldownEnabled: true
     cooldownTime: 30
     godmodeCooldown: 5
+  - type: AccessReader
+    access: [["MilitaryStalker"]]
 
 - type: entity
   parent: MapTeleportBase
@@ -162,6 +165,17 @@
   components:
   - type: NewMapTeleport
     portalName: Helicopter-LZ
+
+- type: entity
+  parent: MapTeleportBase
+  id: MBase-Agro
+  name: MBase-Agro
+  components:
+  - type: NewMapTeleport
+    allowAll: false
+    portalName: MBase-Agro
+  - type: AccessReader
+    access: [["Military"]]
 
 # Red Forest / Limansk
 

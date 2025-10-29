@@ -14,6 +14,7 @@
     - Seraphims
     - MilitaryStalker
     - Meat
+    - ClearSky
 
 - type: npcFaction
   id: Mutated
@@ -31,6 +32,7 @@
     - MilitaryStalker
     - Seraphims
     - Meat
+    - ClearSky
 
 - type: npcFaction
   id: Hostile
@@ -48,6 +50,7 @@
   - MilitaryStalker
   - Seraphims
   - Meat
+  - ClearSky
 
 - type: npcFaction
   id: Stalker
@@ -80,6 +83,7 @@
   - Duty
   - Seraphims
   - Meat
+  - ClearSky
 
 - type: npcFaction
   id: Bandit
@@ -94,6 +98,8 @@
   - MilitaryStalker
   - Meat
   - Seraphims
+  - ClearSky
+  - Freedom
 
 - type: npcFaction
   id: Seraphims
@@ -108,6 +114,7 @@
   - Freedom
   - Sci
   - Meat
+  - ClearSky
 
 - type: npcFaction
   id: Freedom
@@ -117,6 +124,7 @@
   - Bandit
   - Hostile
   - Meat
+  - Duty
 
 - type: npcFaction
   id: Duty
@@ -126,6 +134,7 @@
   - Bandit
   - Hostile
   - Meat
+  - Freedom
 
 - type: npcFaction
   id: Meat
@@ -143,6 +152,7 @@
   - Freedom
   - Seraphims
   - MilitaryStalker
+  - ClearSky
 
 - type: npcFaction
   id: MilitaryStalker
@@ -156,8 +166,24 @@
   - Hostile
   - Seraphims
   - Meat
+  - ClearSky
 
 - type: npcFaction
   id: Evolvers
   hostile:
     - Hostile
+
+- type: npcFaction
+  id: ClearSky
+  hostile:
+  - Mutated
+  - MutatedHunter
+  - Stalker
+  - NanoTrasen
+  - Passive
+  - Bandit
+  - Hostile
+  - Freedom
+  - Duty
+  - Seraphims
+  - Meat
