@@ -42,8 +42,9 @@
       priority: 1
       items:
         STWeaponRifleAKMC: 3
-        STWeaponSniperVepr: 14
-        STWeaponRifleOC14: 8
+        STWeaponSniperSKS: 3
+        STWeaponSniperVepr: 16
+        STWeaponRifleOC14: 9
         STWeaponRifleAK103: 18
     - name: shop-category-armor
       priority: 2
@@ -74,6 +75,20 @@
       items:
         STModuleScopeRiflesT1Ru: 1
         STModuleSniperSightT1: 1
+    - name: shop-category-grenades
+      priority: 7
+      items:
+        DG05SmokeGrenade: 1
+        RGD5Grenade: 1
+    - name: shop-category-other
+      priority: 8
+      items:
+        Defibrillator: 1
+    - name: shop-category-paperwork
+      priority: 9
+      items:
+        hunterLicense: 4
+        militaryLicense: 5
 
 - type: shopPreset
   id: MilitaryRoublesShopPreset
@@ -100,6 +115,8 @@
         STClothingTosroTurtlenecksLit: 10
         STClothingTosroTurtlenecksPol: 10
         STClothingTosroTurtlenecksRu: 10
+        ClothingJaketGeneral: 50
+        ClothingHeadHatGeneral: 50
         ClothingUniformJumpsuitMilitary2: 50
         ClothingHeadHatBeaniehat: 50
         ClothingMaskNeckFacemask: 50
@@ -161,6 +178,8 @@
         STWeaponRifleAKM: 3000
         STWeaponRifleASVAL: 15000
         STWeaponSniperVSS: 12000
+        ArmyCrateNewStandart: 6000
+        ArmyCrateNewOfficer: 9000
 
     - name: shop-category-magazines
       priority: 2
@@ -234,7 +253,6 @@
         ClothingOuterArmorMilitarySpark: 1750 # T2 - ENV
         ClothingOuterArmorZaryaMilitary: 1750 # T2 - universal
         STClothingOuterArmorLightPlateVestBaseANAgreen: 2250 # T3 - PVP
-        STClothingOuterArmorLightPlateVestBaseANAgray: 2250 # T3 - PVP
         STClothingOuterArmorLightPlateVestBasePSZ7v3: 3000
         STClothingOuterArmorLightPlateVestBasePSZ7v1: 3000
     - name: shop-category-storage-and-containers
@@ -296,7 +314,6 @@
         TrashDetectorTier1: 200
         Matchbox: 10
         HatchetStalker: 150
-        CraftBag: 10
     - name: shop-category-provisions
       priority: 9
       items:
@@ -322,10 +339,10 @@
         STBrutepack: 10
           # Expensive
         antiradpill: 50
-        radioprotectpill: 75
-        Bloodpack: 75
-        psyblock: 150
-        MedkitMilitary: 75
+        radioprotectpill: 70
+        Bloodpack: 90
+        psyblock: 200
+        MedkitMilitary: 210
         Defibrillator: 700
     - name: shop-category-modules
       priority: 11
@@ -401,7 +418,7 @@
         ClothingTorsoTurtlenecksMatrosska: 50
 
 - type: shopPreset
-  id: MilitaryRoublesShopPresetNerf #current shop
+  id: MilitaryRoublesShopPresetNerf
   itemsForSale:
     FoodTinMRETrash: 0
     FoodTinPeachesTrash: 0
@@ -411,69 +428,13 @@
     - name: shop-category-customization
       priority: 1
       items:
-        ClothingBandageStalkerRed: 5
-        ClothingHeadHatBeaniehat: 10
-        ClothingMaskNeckFacemask: 10
-        ClothingMaskNeckBalaklava1: 10
-        ClothingMaskNeckBalaklava2: 10
-        ClothingMaskNeckBalaklava3: 10
-        ClothingHeadBandMerc: 30
-        ClothingHeadBandSkull: 30
-        ClothingHeadHatUshanka: 30
-        ClothingHandsGlovesFingerless: 30
-        ClothingHandsGlovesMercFingerless: 60
-        ClothingShoesColorBlack: 30
-        ClothingShoesBootsWork: 30
-        ClothingShoesLeather: 30
-        ClothingShoesBootsMerc: 30
-        ClothingShoesSwat: 35
-        ClothingHeadHatBlacksoft: 10
-        ClothingHeadHatGreysoft: 10
-        ClothingHeadHatSovietUshankaStalker: 40
-        ClothingCloakStalker: 30
-        ClothingLegsJeansBlue: 10
-        ClothingLegsJeansStalker: 10
-        ClothingLegsJeansGreenCargo: 10
-        ClothingLegsJeansGreyCargo: 10
-        ClothingLegsJeansBlackCargo: 10
-        ClothingLegsJeansBrownCargo: 10
-        ClothingLegsJeansSandCargo: 10
-        ClothingLegsJeansRussianPixel: 20
-        ClothingLegsJeansBlackNew: 20
-        ClothingLegsJeansGorka: 20
-        ClothingShoesBootsCombat: 30
-        ClothingTorsoTShirtPivozavr: 30
-        ClothingTorsoTShirtSailorSuit: 30
-        ClothingTorsoTShirtColorBlack: 30
-        ClothingTorsoTurtlenecksBlack: 90
-        ClothingTorsoTurtlenecksGorka: 90
-        ClothingTorsoTurtlenecksGorka6: 90
-        ClothingTorsoTurtlenecksBereza: 90
-        ClothingTorsoTurtlenecksUa2: 90
-        ClothingLegsJeansBereza: 20
-        ClothingLegsJeansGorka6: 20
-        ClothingLegsJeansUa2: 50
-        ClothingTorsoTurtlenecksGorkaRus: 90
-        ClothingLegsBattlePantsBlack: 50
-        ClothingLegsVeryBlueJenas: 50
-        ClothingLegsCombatForest: 50
-        ClothingLegsGorka5: 50
-        ClothingLegsGorka6b: 50
-        ClothingLegsNavyPants: 50
-        ClothingLegsRussianNumber: 50
-        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
-        ClothingTorsoTurtlenecksBlackTurtleneck: 50
-        ClothingTorsoTurtlenecksCombatForest: 50
-        ClothingTorsoTurtlenecksGorka5: 50
-        ClothingTorsoTurtlenecksGorka6B: 50
-        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
-        ClothingTorsoTurtlenecksMatrosska: 50
+        ClothingHeadBandana1Military: 5
+        ClothingHeadBandana2Military: 5
+        ClothingMaskNeckBalaklava1: 5
 
     - name: shop-category-provisions
       priority: 2
       items:
-        CigPackMarlboro: 10
-        FlippoLighter: 5
         CheapLighter: 15
         Lighter: 30
         DrinkMREFlask: 30
@@ -493,104 +454,46 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        918PBMBox: 25
-        919PBMBox: 25
-        545FMJBox: 75
-        545HPBox: 50
-        545PCBox: 150
-        725PSTBox: 150
-        725LRNPCBox: 50
-        739FMJBox: 150
-        739HPBox: 50
-        7mmBuckshotBox: 10
-        6mmBuckshotBox: 25
-        8mmBuckshotBox: 50
-        ShotgunFlechette: 50
-        754FMJBox: 50
-        754PCBox: 150
+        # 5.45
+        545FMJBox: 170
+        545HPBox: 640
+        545PCBox: 425
+        RGD5Grenade: 250
 
     - name: shop-category-magazines
       priority: 4
       items:
-        BizonMag: 150
-        545Mag30: 150
-        739Mag30: 150
-        VityazMag: 150
-        Saiga1270Drum: 150
-        BaseAPSMag: 75
+        545Mag30: 220 #T3
 
     - name: shop-category-weapons
       priority: 5
       items:
-        STWeaponRifleAKS74U: 600
-        STWeaponRifleAKS74UBlack: 600
-        STWeaponSniperSKS: 800
-        STWeaponRifleAKS74: 900
-        STWeaponRifleAKS74Green: 900
-        STWeaponSMGPP19: 1000
-        STWeaponSMGPP1901: 1200
-        STWeaponRifleAKMC: 600
-        STWeaponRifleAKM: 1200
-        STWeaponShotgunSaiga12: 2500
-        STWeaponSniperMosin: 850
-
-    - name: shop-category-armor
-      priority: 6
-      items:
-        # Helmets #
-        ClothingHeadHelmetSH68: 200 # T1 - PVP
-        ClothingHeadHelmetInfantry: 300 # T2 - PVP
-        ClothingHeadAssaultHelmetMilitary: 1200 # T3 - PVP
-        ClothingHeadHelmetBerill5MMilitary: 1200 # T2 - PVP
-        ClothingHeadHelmetVityaz1C: 1600 # T3 - PVP
-
-        # OuterClothing #
-        STClothingOuterArmorLightPlateVestBaseMilitary: 300 # T2 - PvP
-        ClothingOuterArmor6B2: 400 # T2 - PvP
-        ClothingOuterArmorSevaMilitary: 600 # T2 - ENV
-        ClothingOuterArmorMilitarySpark: 800 # T2 - ENV
-        ClothingOuterArmorZaryaMilitary: 800 # T2 - universal
-        STClothingOuterArmorLightPlateVestBaseANAgreen: 800 # T3 - PVP
-        STClothingOuterArmorLightPlateVestBasePSZ7v3: 1250 # T3 - PVP
-        STClothingOuterArmorLightPlateVestBasePSZ7v1: 1250 # T3 - PVP
+          # 5,45x39
+        STWeaponRifleAKS74U: 1490
+        STWeaponRifleAKS74UBlack: 1690
+        STWeaponRifleAKS74: 3000
+        STWeaponRifleAKS74Green: 3250
 
     - name: shop-category-medicine
-      priority: 7
+      priority: 6
       items:
-        # Cheap
+         # Cheap
         PillDexalin: 10
         PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
-        # Expensive
-        radioprotectpill: 20
-        Bloodpack: 20
-        psyblock: 75
-        Defibrillator: 200
-
-    - name: shop-category-storage-and-containers
-      priority: 8
-      items:
-        # BackPacks
-        ClothingBackpackDuffelBlackStalker: 30 # T1
-        ClothingBackpackTacticBlackRadStalker: 450 # T2
-        ClothingBackpackMercStalker: 650 # T3
-        ClothingBackpackDuffelBlackMilitaryTacticStalker: 1000 # T4
-        ClothingBackpackDuffelBlackTacticStalker: 1000 # T4
-        # Belts
-        ClothingBeltGreenWebbingStalker: 250
-        ClothingBeltBandolierStalker: 20 # T1 - PVE
-        ClothingBeltTarzanBlack: 200 # T1 - PVP
-        ClothingBeltTarzanGreen: 200 # T1 - PVP
-        # Containers
-        MedkitCMSStalker: 450 # T1
-        MedkitGrizzlyStalker: 850 # T2
+          # Expensive
+        antiradpill: 50
+        radioprotectpill: 70
+        Bloodpack: 90
+        psyblock: 200
+        MedkitMilitary: 210
+        Defibrillator: 700
 
     - name: shop-category-utilities
-      priority: 9
+      priority: 7
       items:
-        CraftBag: 20
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300
@@ -605,50 +508,18 @@
         ClothingHeatBagStalker: 15
 
     - name: shop-category-raincoats-and-gasmasks
-      priority: 10
+      priority: 8
       items:
-        # Gasmasks
+          # Cloaks
+          # Gasmasks
         ClothingMaskGasXM40: 500 # T3
-        ClothingMaskGP7: 500 #T3
-        ClothingMaskGasM40Military: 400 #T2
-
 
     - name: shop-category-research-equipment
-      priority: 11
+      priority: 9
       items:
-        # Detectors
         STBoltBagFilled: 50
         ZoneAnomalyDetectorAD1: 450 # T1
         ZoneAnomalyDetectorAD2: 1000 # T2
+          # Detectors
+          # Пусто
 
-
-
-    - name: shop-category-modules
-      priority: 12
-      items:
-        STModuleScopeRiflesT1Ru: 600
-        STModuleScopeRiflesT1Nato: 600
-        STModuleSilencerRiflesT1Ru: 400
-        STModuleSilencerRiflesT1Nato: 400
-        STModuleShotgunChokeT1: 200
-        STModuleSMGGripT1: 600
-        STModuleSilencerSMGT1: 600
-        STModuleSniperSightT1: 600
-        STModuleSilencerSniperT1: 600
-        STModuleAutoSear: 600
-
-    - name: shop-category-grenades
-      priority: 13
-      items:
-        RGD5Grenade: 50
-        TearGasGrenadeStalker: 35
-        DG05SmokeGrenade: 25
-
-    - name: shop-category-paperwork
-      priority: 13
-      items:
-        militaryLicense: 5
-        Fishinglicense: 5
-        hunterLicense: 5
-        Paper: 5
-        Pen: 5
