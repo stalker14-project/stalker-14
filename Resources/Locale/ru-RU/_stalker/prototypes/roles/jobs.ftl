@@ -151,3 +151,5 @@ job-militia-supervisor = Вы подчиняетесь командирам оп
 job-militia-commander = Командир ополчения
 job-militia-commander-desc = Сталкерское ополчение. Командиров может быть много.
 job-militia-commander-supervisor = Вы советуетесь с другими командирами ополчения
+
+job-guide = Проводник
