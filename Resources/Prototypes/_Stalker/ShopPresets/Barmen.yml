@@ -1,93 +1,72 @@
 - type: shopPreset
-  id: STNPCBarmenPreset # 0.7x PENDING REWORK
+  id: STNPCBarmenPreset # 0.5x
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 540
-    ZoneArtifactEye: 810
-    ZoneArtifactFlame: 1620
+    ZoneArtifactFireball: 405
+    ZoneArtifactEye: 610
+    ZoneArtifactFlame: 1215
     # Thermal group - 2
-    ZoneArtifactCristall: 3240
-    ZoneArtifactLithosphere: 6480
+    ZoneArtifactCristall: 2430
+    ZoneArtifactLithosphere: 4860
     # Electrical group - 1
-    ZoneArtifactSparkler: 540
-    ZoneArtifactBattery: 810
-    ZoneArtifactFlash: 1620
-    ArtMoon: 3240
-    ZoneArtifactTesla: 4860
-    ZoneArtifactIce: 6480
+    ZoneArtifactSparkler: 405
+    ZoneArtifactBattery: 475
+    ZoneArtifactFlash: 1215
+    ArtMoon: 2430
+    ZoneArtifactTesla: 3645
+    ZoneArtifactIce: 4860
     # Gravity group - 1
-    ArtMedusa: 540
-    ZoneArtifactFlower: 810
-    ZoneArtifactNightStar: 3240
-    ZoneArtifactWhirlwind: 500
+    ArtMedusa: 405
+    ZoneArtifactFlower: 610
+    ZoneArtifactNightStar: 2430
     # Gravity group - 2
-    ZoneArtifactVyvert: 540
-    ZoneArtifactAmoeba: 810
-    ZoneArtifactFloodlight: 810
-    ZoneArtifactGravi: 1620
-    ZoneArtifactGoldfish: 6480
-    ZoneArtifactSpring: 3600
-    ZoneArtifactFocus: 4860
-    ZoneArtifactStuntman: 6480
-    ZoneArtifactDistorter: 6480
-    ZoneArtifactSoul: 4860
+    ZoneArtifactVyvert: 405
+    ZoneArtifactAmoeba: 610
+    ZoneArtifactFloodlight: 610
+    ZoneArtifactGravi: 1215
+    ZoneArtifactGoldfish: 4860
+    ZoneArtifactSpring: 2700
+    ZoneArtifactFocus: 3645
+    ZoneArtifactStuntman: 4860
+    ZoneArtifactDistorter: 4860
+    ZoneArtifactSoul: 3645
     # Acidic group - 1
-    ZoneArtifactBlood: 1600
-    ZoneArtifactMeat: 3200
-    ZoneArtifactKolobok: 4800
+    ZoneArtifactBlood: 1215
+    ZoneArtifactMeat: 2430
+    ZoneArtifactKolobok: 3645
     # Acidic group - 2
-    ZoneArtifactPellicle: 535
-    ZoneArtifactBaloon: 4800
+    ZoneArtifactPellicle: 405
+    ZoneArtifactBaloon: 3645
 
     # Mutant parts
 
-    #Boars -------- PENDING REWORK
-    MutantPartBoarHoof: 155 # T1
-    MutantPartSeasonedBoarHoof: 310 # T2
-    MutantPartOldBoarHoof: 465 # T3
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 130 # T1
+    MutantPartSeasonedBoarHoof: 255 # T2
+    MutantPartOldBoarHoof: 385 # T3
 
-    #Bears --------- PENDING REWORK
-    MutantPartBearClaw: 225
-    MutantPartBearPaw: 420
-    MutantPartBearEye: 645
-    ClothingHeadBear: 750
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 90
+    MutantPartFleshEye: 190
+    FoodMeatSpiderLeg: 45
 
-    #T1 -------- PENDING REWORK
-    MutantPartBlindDogTail: 105
-    MutantPartFleshEye: 230
-    FoodMeatSpiderLeg: 50
-    MutantPartCatGland: 320
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 520
+    MutantPartPseudodogTail: 285
+    MutantPartSnorkFoot: 475
 
-    #T2 -------- PENDING REWORK
-    MutantPartLeshiyRoot: 630
-    MutantPartPseudodogTail: 345
-    MutantPartSnorkFoot: 575
-    MutantPartPsiDogTail: 475
-
-    #T3 -------- PENDING REWORK
-    MutantPartBloodsuckerTentacles: 865
-    MutantPartOraculeEye: 950
-    MutantPartZombieHand: 690
-    MutantPartPseudogiantHeart: 4600
-    ClothingMaskChimera: 1
-    MutantPartChimeraTooth: 1
-    MutantPartIzlomArm: 865
-
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 710
+    MutantPartOraculeEye: 1510
+    MutantPartPseudogiantHeart: 3780
+    MutantPartZombieHand: 565
     # Smuggling
     TradeBox: 4000
     STFoodMeatSalo: 95
     FoodMeatBoar: 55
     FoodMeatDog: 25
-    FoodMeatSTBear: 65 # EN
     FoodMeatBoarCooked: 80
     FoodMeatDogCooked: 70
-    FoodMeatSTBearCooked: 140 # EN
-    FoodMeatSTFishFilletRaw: 20 # EN
-    FoodMeatSTFishSteakRaw: 50 # EN
-    FoodMeatSTEelRaw: 90 # EN
-    FoodMeatSTFishFilletCooked: 75 # EN
-    FoodMeatSTFishSteakCooked: 125 # EN
-    FoodMeatSTEelCooked: 250 # EN
 
   categories:
     - name: shop-category-weapons
@@ -110,7 +89,6 @@
         STWeaponRifleFAL: 3000
         STThrowingknifeYellow: 500
         WeaponPistolGSH18: 500
-        STWeaponSMGPPS43: 1750
     - name: shop-category-magazines
       priority: 1
       items:
@@ -128,8 +106,6 @@
         739Mag30: 350
         Base739Mag10: 200
         VityazMag: 240
-        BasePPSMag: 300
-        751Mag20: 650
     - name: shop-category-ammunition
       priority: 2
       items:
@@ -169,9 +145,6 @@
         # 7.39
         739FMJBox: 1350
         739HPBox: 500
-
-        # other
-        751UNBox: 1150
     - name: shop-category-armor
       priority: 3
       items:
@@ -229,7 +202,6 @@
         # Anomaly detectors
         ZoneAnomalyDetectorAD1: 450
         ZoneAnomalyDetectorAD2: 1050
-        ZoneAnomalyDetectorBMT12: 1500
         # Artifact detectors
         ZoneArtifactDetectorPulse: 200
         ZoneArtifactDetectorHunter: 700
@@ -356,8 +328,6 @@
         ClothingBackpackTownBlackStalker: 185
         ClothingBackpackTownWhiteStalker: 190
         STClothingBeltThrowingKnifes: 200
-        ClothingBeltPocketPouch: 450
-        ClothingBeltHerbalistPouch: 450
     - name: shop-category-modules
       priority: 11
       items:
@@ -386,7 +356,6 @@
         ToolkitTearOne: 5000
         ToolkitTearTwo: 10000
         ToolkitTearThree: 15000
-        CraftGunpowderBank: 100
   sponsorCategories:
           SponsorBacker:
             - name: sponsor

@@ -12,24 +12,17 @@
     MutantPartBlindDogTail: 180
     MutantPartFleshEye: 405
     FoodMeatSpiderLeg: 100
-    MutantPartBearClaw: 400
-    MutantPartCatGland: 580
 
     #T2 -------- Health * 1.8
     MutantPartLeshiyRoot: 1115
     MutantPartPseudodogTail: 610
     MutantPartSnorkFoot: 1015
-    MutantPartPsiDogTail: 850
-    MutantPartBearEye: 1180
-    MutantPartBearPaw: 780
 
     #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 1520
     MutantPartOraculeEye: 3240
     MutantPartPseudogiantHeart: 8100
     MutantPartZombieHand: 1215
-    ClothingHeadBear: 1400
-
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -44,7 +37,6 @@
         STWeaponRifleAKS74U: 1500
         STWeaponRifleAKS74: 4000
         STWeaponRifleAKM: 6000
-        STWeaponRifleA545Dolg: 7500
           # Smg
         STWeaponSMGPP91: 1200
         STWeaponSMGStalkerCP2Veresk: 2000
@@ -53,8 +45,6 @@
         WeaponPistolStalkerAPS: 500 #T2
         WeaponPistolStalkerTT: 250
         STWeaponSniperMosin: 1200
-        STWeaponRifleAK103: 8500
-        STWeaponSniperSVU: 8400
         STWeaponSniperSKS: 1500
     - name: shop-category-magazines
       priority: 2
@@ -66,7 +56,6 @@
           # 7,62x54 and 39
         Base739Mag10: 200
         739Mag30: 500
-        754Mag10: 450
           # Smg
         BizonMag: 1100
         VityazMag: 210
@@ -79,8 +68,7 @@
       items:
         6mmBuckshotBox: 100
         7mmBuckshotBox: 40
-        8mmBuckshotBox: 200
-        ShotgunFlechette: 175
+        8mmBuckshotBox: 170
         # 7.25
         725PBox: 90
         725LRNPCBox: 100
@@ -99,11 +87,10 @@
         545PCBox: 2000
         # 7.39
         739FMJBox: 1540
-        739HPBox: 300
+        739HPBox: 400
         # 7.54
         754FMJBox: 1675
-        754HPBox: 700
-        # Other
+        754HPBox: 1015
 
     - name: shop-category-armor
       priority: 4
@@ -118,8 +105,6 @@
         ClothingOuterArmorRCBZDolg: 1700 # T2 - ENV
         ClothingOuterArmorZaryaDolg: 2000 # T2 - universal
         ClothingOuterArmorSevaDolgRed: 10000 # T3 - ENV
-        ClothingOuterArmorPSZ9D: 23000 # T4 - ENV/PVE
-        STClothingOuterArmorIOTVBlack: 25000 # T4 - PVP
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -140,8 +125,6 @@
         ClothingMaskGasDolg1: 100 # T1
         ClothingMaskGasDolg2: 100 # T2
         ClothingMaskGP21: 1200 # T3
-          # Cloaks
-        STClothingCapeDolgArmor: 2500 # T4
     - name: shop-category-research-equipment
       priority: 7
       items:
@@ -206,7 +189,6 @@
         MedkitScience: 450
         MedkitElite: 750
         MedkitLAR: 700
-        MedkitGrizzlyStalker: 1200
     - name: shop-category-modules
       priority: 11
       items:
