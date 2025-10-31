@@ -13405,6 +13405,9 @@ entities:
         - 0
     - type: RadiationGridResistance
     - type: LoadedMap
+    - type: NavMap
+    - type: ZoneArtifactSpawnerMapTier
+      maxTier: 3
     - type: STAnomalyGeneratorTarget
       optionsId: STArmyWarehousesGenerationOptions
     - type: MapDay
@@ -13421,8 +13424,6 @@ entities:
       - '#D9C5B622'
       - '#E2D2B722'
       - '#E2D2B711'
-    - type: ZoneArtifactSpawnerMapTier
-      maxTier: 3
 - proto: ActionToggleLight
   entities:
   - uid: 15033
