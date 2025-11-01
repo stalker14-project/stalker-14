@@ -1,8 +1,12 @@
 ent-STCraftBattery = Battery
     .suffix = Stalker, Craft
+    .desc = Battery
 ent-STCraftCoil = Coil
     .suffix = { ent-STCraftBattery.suffix }
+    .desc = Coil
 ent-STCraftCapacitor = Capacitor
     .suffix = { ent-STCraftBattery.suffix }
+    .desc = Capacitor
 ent-STCraftTransformer = Transformer
     .suffix = { ent-STCraftBattery.suffix }
+    .desc = Transformer
