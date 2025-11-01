@@ -31,6 +31,6 @@ ent-ZoneArtifactStuntman = { ent-BaseArtifact }
 ent-ZoneArtifactDistorter = { ent-BaseArtifact }
     .desc = Artifact
     .suffix = Stalker, Distorter
-ent-ZoneArtifactWhirlwind = Wirlwind
+ent-ZoneArtifactWhirlwind = Whirlwind
     .desc = Artifact
     .suffix = Stalker, Whirlwind
