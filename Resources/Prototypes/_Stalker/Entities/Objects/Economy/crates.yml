@@ -1875,3 +1875,45 @@
         - id: Bloodpack
         - id: Bloodpack
         - id: Bloodpack
+
+
+
+# Отступы
+
+- type: entity
+  parent: UNstandartCrate
+  id: DesertirCrate
+  name: набор снаряжения Отступников
+  description: Набор экипировки
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: FoodTinMRE
+        - id: DrinkWaterBottleFull
+        - id: ClothingOuterArmorDeserter6B2
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: STWeaponRifleAKS74U
+        - id: FlashlightSeclite
+        - id: PowerCellHigh
+        - id: ClothingHeadHelmetLightDeserters
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: MedkitMilitary
+      sound:
+        path: /Audio/Effects/unwrap.ogg

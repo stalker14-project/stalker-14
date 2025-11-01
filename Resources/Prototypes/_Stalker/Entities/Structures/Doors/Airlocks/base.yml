@@ -1070,3 +1070,75 @@
   components:
   - type: AccessReader
     access: [["Merc"], ["Freedom"]]
+
+# ветерану
+
+- type: entity
+  id: HermoDverTypeOneVeteranClosed
+  name: гермодверь
+  parent: HermoDverTypeOne
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Ветераны
+  components:
+    - type: AccessReader
+      access: [["Veteran"]]
+
+- type: entity
+  id: WoodRedDoorVeteranClosed
+  name: красная деревянная дверь
+  parent: WoodRedDoorFallout
+  description: Деревянная дверь, окрашена в красный цвет. Открывается быстрее обычной двери, с надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: MetalRedDoorFalloutVeteranClosed
+  name: красная стальная дверь
+  parent: MetalRedDoorFallout
+  description: Стальная дверь с надёжным замком. Окрашена в красный цвет.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutVeteranClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: WoodDoorFalloutVeteran
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutVeteranClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: MetalAltDoorFalloutVeteranClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+    - type: AccessReader
+      access: [["Veteran"]]
