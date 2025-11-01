@@ -74,7 +74,6 @@
     - name: Контрабанда
       priority: 0
       items:
-        TradeBox: 2000
         CannabisSeedsStalker: 200
     - name: shop-category-weapons
       priority: 1
@@ -92,20 +91,24 @@
          # 7,62x25
         WeaponPistolStalkerTT: 50 #T1
           # 5,45x39
-        STWeaponRifleSaiga545: 1750 # T3
-        STWeaponRifleAKS74U: 2000
+        STWeaponRifleSaiga545: 1150 # T3
+        STWeaponRifleAKS74U: 1400
+        STWeaponRifleAKS74UBlack: 1400
         STWeaponRevolverSWModel325: 500
-        STWeaponRevolverSWPC325TR: 1000
-        STWeaponRifleAKS74: 4200
+        STWeaponRevolverSWPC325TR: 800
+        STWeaponRifleAKS74: 4000
+        STWeaponRifleAKS74Green: 4000
           # Other
         STWeaponSMGMP40: 1000
         WeaponPistolStalkerAPS: 900 #T2
         STWeaponSniperSKS: 1850 # T2
-        STWeaponSniperMosin: 1500
+        STWeaponRifleGalatz: 1600
+        STWeaponSniperMosin: 1300
         STWeaponRifleL85: 2500
         STWeaponSMGPPSh41: 2500
-        STWeaponSMGPP91: 3000
-          # Nato
+        STWeaponSMGPP19: 2000
+        STWeaponSMGPP91: 2500
+        STWeaponRifleM16: 2700
     - name: shop-category-magazines
       priority: 2
       items:
@@ -124,6 +127,7 @@
         STSpeedLoader45ACPEmpty: 100
         PP91Mag: 200
         556Mag20: 250
+        Base751Mag10: 350
         556Mag30: 500
     - name: shop-category-ammunition
       priority: 3
@@ -137,9 +141,11 @@
         545FMJBox: 500
         545HPBox: 250
         # 7.39
-        739HPBox: 400
+        739HPBox: 350
+        739FMJBox: 1650
         # 7.54
         754HPBox: 500
+        754FMJBox: 1700
         # 9.18
         918PGJBox: 80
         918SP7Box: 200
@@ -150,6 +156,8 @@
         725PBox: 100
         725LRNPCBox: 50
         725PTBox: 465
+        # 7.51
+        751M80Box: 1600
         #45
         45ACPRIPBox: 450
         45ACPLFMJBox: 250
@@ -162,12 +170,16 @@
         ClothingHeadHelmetSH68: 250 # T1 - PVP:
           # OuterClothing #
         SetJacketNoviceWhiteBuyableCrate: 100 # T1 - uni
+        STClothingOuterKirasa: 900
         STClothingOuterArmorLightPlateVestBaseStalker: 1250 # T2 - PvP
         SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
         SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
         ClothingOuterArmor6B2: 2000
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
+        STClothingOuterSlickBlack: 3000
+        STClothingOuterSlickGreen: 3000
+        STClothingOuterSlickHaki: 3000
         SetZaryaStalkerBuyableCrate: 3300
         ClothingOuterArmorSevaStalker: 6500
         STPsyHelm1: 5000

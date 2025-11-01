@@ -46,19 +46,19 @@
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 180 # T1
-    MutantPartSeasonedBoarHoof: 365 # T2
+    MutantPartBoarHoof: 350 # T1
+    MutantPartSeasonedBoarHoof: 565 # T2
     MutantPartOldBoarHoof: 545 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 120
-    MutantPartFleshEye: 270
+    MutantPartBlindDogTail: 200
+    MutantPartFleshEye: 290
     FoodMeatSpiderLeg: 70
 
     #T2 -------- Health * 1.8
     MutantPartLeshiyRoot: 745
-    MutantPartPseudodogTail: 405
-    MutantPartSnorkFoot: 675
+    MutantPartPseudodogTail: 455
+    MutantPartSnorkFoot: 875
 
     #T3 -------- Health * 3
     MutantPartBloodsuckerTentacles: 1015
@@ -74,10 +74,12 @@
         STWeaponShotgunTOZ34: 225 # T2
         STWeaponShotgunMossbergM88: 500 # T2
         STWeaponShotgunSPAS: 2000
+        STWeaponShotgunUSASCovenant: 7000
           # Nato
-        STWeaponRifleL85: 3000
+        STWeaponRifleL85: 2200
         STWeaponRifleSCARH: 6000
-        STWeaponRifleM16: 4000
+        STWeaponRifleM4: 3900
+        STWeaponRifleG36Covenant: 6500
                   # Smg
         STWeaponSMGMP5: 1800
           # Other
@@ -132,13 +134,18 @@
       items:
           # Helmets #
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
-        ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
+        ClothingHeadHelmetVityaz1Zavet: 2250 # T2 - PVE
+        ClothingHeadAssaultHelmetZavet: 3250
           # OuterClothing #
         ClothingOuterJacketStalker: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseZavet: 1000 # T2 - PvP
         STClothingOuterArmorRCBZ: 1700 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000
+        STClothingOuterArmorLightPlateVestBaseANAzavet: 2000
         ClothingOuterArmorSevaCovenant: 5000
+        STClothingOuterArmorLightPlateVestBasePSZ7Zavet: 5500
+        ClothingOuterArmorSSP99Zavet: 7000
+        ClothingOuterArmor6B13Zavet: 10000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
