@@ -1,7 +1,7 @@
-ent-ZoneArtifactFireball = { ent-BaseArtifact }
+ent-ZoneArtifactFireball = Fireball
     .desc = Artifact
     .suffix = Stalker, Fireball
-ent-ZoneArtifactEye = { ent-BaseArtifact }
+ent-ZoneArtifactEye = Eye
     .desc = Artifact
     .suffix = Stalker, Eye
 ent-ZoneArtifactFlame = { ent-BaseArtifact }

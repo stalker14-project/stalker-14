@@ -1,7 +1,7 @@
-ent-ZoneArtifactPellicle = { ent-BaseArtifact }
+ent-ZoneArtifactPellicle = Film
     .desc = Artifact
     .suffix = Stalker, Film
-ent-ZoneArtifactBlood = { ent-BaseArtifact }
+ent-ZoneArtifactBlood = Stone Blood
     .desc = Artifact
     .suffix = Stalker, Stone Blood
 ent-ZoneArtifactMeat = { ent-BaseArtifact }
