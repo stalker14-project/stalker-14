@@ -1,11 +1,11 @@
-﻿using Content.Shared._Stalker.Throwing;
+using Content.Shared._Stalker.Throwing;
 using Content.Shared._Stalker.Weight;
 
 namespace Content.Server._Stalker.Weight;
 
-public sealed partial class STWeightSystem
+public sealed partial class STWeightSystemThrowing : EntitySystem
 {
-    private void InitializeThrowing()
+    public override void Initialize()
     {
         SubscribeLocalEvent<STWeightComponent, STBeforeThrowedEvent>(OnBeforeThrow);
     }
