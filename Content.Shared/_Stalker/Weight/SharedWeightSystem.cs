@@ -1,4 +1,3 @@
-using Content.Shared._Stalker.Modifier;
 using Content.Shared.Movement.Systems;
 
 namespace Content.Shared._Stalker.Weight;
