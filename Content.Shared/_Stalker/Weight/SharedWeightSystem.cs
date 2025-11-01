@@ -1,7 +1,6 @@
-using Content.Shared._Stalker.Weight;
 using Content.Shared.Movement.Systems;
 
-namespace Content.Server._Stalker.Weight;
+namespace Content.Shared._Stalker.Weight;
 
 public sealed partial class STWeightSystem : EntitySystem
 {
@@ -10,9 +9,6 @@ public sealed partial class STWeightSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        InitializeModifier();
-        InitializeThrowing();
 
         SubscribeLocalEvent<STWeightComponent, EntParentChangedMessage>(OnParentChanged);
         SubscribeLocalEvent<STWeightComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
