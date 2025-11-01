@@ -3,6 +3,7 @@
   id: BaseArtifact
   name: артефакт
   suffix: Stalker
+  abstract: true
   components:
     - type: PsyonicsAbsorbable
     - type: STWeight
@@ -41,6 +42,7 @@
 - type: entity
   parent: BaseArtifact
   id: BaseArtifactStorage
+  abstract: true
   components:
     - type: Storage
       maxItemSize: Huge

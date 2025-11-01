@@ -1,4 +1,4 @@
-ent-ZoneArtifactSparkler = { ent-BaseArtifact }
+ent-ZoneArtifactSparkler = Sparkler
     .desc = Artifact
     .suffix = Stalker, Sparkler
 ent-ZoneArtifactBattery = Battery
@@ -12,7 +12,7 @@ ent-ArtMoon = { ent-BaseArtifact }
     .suffix = Stalker, Moonlight
 ent-ZoneArtifactTesla = { ent-BaseArtifact }
     .desc = Artifact
-    .suffix = Stalker, TESLA
+    .suffix = Stalker, Tesla
 ent-ZoneArtifactIce = { ent-BaseArtifact }
     .desc = Artifact
     .suffix = Stalker, Snowflake

@@ -1,10 +1,15 @@
 ent-ZoneArtifactFireball = Fireball
+    .desc = Artifact
     .suffix = Stalker, Fireball
 ent-ZoneArtifactEye = Eye
+    .desc = Artifact
     .suffix = Stalker, Eye
-ent-ZoneArtifactFlame = Flame
+ent-ZoneArtifactFlame = { ent-BaseArtifact }
+    .desc = Artifact
     .suffix = Stalker, Flame
 ent-ZoneArtifactCristall = { ent-BaseArtifact }
+    .desc = Artifact
     .suffix = Stalker, Crystal
 ent-ZoneArtifactLithosphere = { ent-BaseArtifact }
+    .desc = Artifact
     .suffix = Stalker, Lithosphere
