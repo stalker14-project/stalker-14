@@ -912,16 +912,13 @@
       access: [["Military"]]
 
 - type: entity
-  parent: MapTeleportBase
+  parent: MapTeleportBaseUncollide
   id: MilBase1-Predbannik
   name: MilBase1-Predbannik
   components:
     - type: NewMapTeleport
       portalName: Predbannik-MilBase1
       allowAll: false
-      cooldownEnabled: true
-      cooldownTime: 30
-      godmodeCooldown: 5
     - type: AccessReader
       access: [["Military"]]
 

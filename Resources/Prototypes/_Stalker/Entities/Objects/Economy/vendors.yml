@@ -575,3 +575,54 @@
     STGauze: 6
     545PCBox: 9
     545HPBox: 9
+
+
+#Отступы
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesDeserter
+  name: ящик с наборами снаряжения Отступников
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: DeserterComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Deserter"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: DeserterComplect
+  startingInventory:
+    DesertirCrate: 8
