@@ -35,13 +35,13 @@ public sealed partial class STAnomalyGeneratorSystem
             StartGenerationClearCallbackHelper);
     }
 
-    [AdminCommand(AdminFlags.Host)]
+    [AdminCommand(AdminFlags.MassBan)]
     private void StartGenerationGetDataUidCallback(IConsoleShell shell, string argstr, string[] args)
     {
         shell.WriteLine($"Data entity: {ToPrettyString(Data.Owner)}");
     }
 
-    [AdminCommand(AdminFlags.Host)]
+    [AdminCommand(AdminFlags.MassBan)]
     private void StartGenerationGetActiveCallback(IConsoleShell shell, string argstr, string[] args)
     {
         var result = string.Empty;
@@ -53,7 +53,7 @@ public sealed partial class STAnomalyGeneratorSystem
         shell.WriteLine(result);
     }
 
-    [AdminCommand(AdminFlags.Host)]
+    [AdminCommand(AdminFlags.MassBan)]
     private void StartGenerationCallback(IConsoleShell shell, string argstr, string[] args)
     {
         if (args.Length != 2)
@@ -95,7 +95,7 @@ public sealed partial class STAnomalyGeneratorSystem
         };
     }
 
-    [AdminCommand(AdminFlags.Host)]
+    [AdminCommand(AdminFlags.MassBan)]
     private void StartGenerationClearCallback(IConsoleShell shell, string argstr, string[] args)
     {
         if (args.Length != 1)
