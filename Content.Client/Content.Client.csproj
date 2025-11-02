@@ -29,12 +29,6 @@
     <Folder Include="_Goob\" />
     <Folder Include="_Stalker_EN\" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Update="_Stalker_EN\FactionTP\UI\FactionTPWindow.xaml.cs">
-      <DependentUpon>FactionTPWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Remove="_Stalker_EN\FactionTeleport\FactionTeleportWindow.cs" />
-  </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
   <Import Project="..\RobustToolbox\MSBuild\XamlIL.targets" />
 </Project>
