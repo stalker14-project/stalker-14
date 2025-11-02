@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseItem
+  id: SprayPaint
+  name: spray paint
+  description: Useful for drawing on the ground.
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/spray_paint.rsi
+    state: icon
+  - type: Item
+    sprite: _Stalker_EN/Objects/Misc/spray_paint.rsi
+    state: icon
+  - type: UserInterface
+    interfaces:
+      enum.CrayonUiKey.Key:
+        type: CrayonBoundUserInterface
+  - type: Crayon
+    capacity: 25
+    color: Red
+    selectableColor: true
+    deleteEmpty: false
+    useSound: /Audio/Effects/spray3.ogg
+  - type: Tag
+    tags:
+    - Write
+    - Crayon
