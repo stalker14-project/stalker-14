@@ -84,7 +84,7 @@
 
 - type: stWarZone
   id: SvalkaСemetery
-  rewardPointsPerPeriod: 1
+  rewardPointsPerPeriod: 0.7
   rewardPeriod: 30 # Период начисления очков в секундах
   captureCooldownHours: 8
   shouldAwardWhenDefenderPresent: true
@@ -157,6 +157,49 @@
         shape:
           !type:PhysShapeCircle
           radius: 5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
+- type: stWarZone
+  id: KordonFerma
+  rewardPointsPerPeriod: 0.5
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 350 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 11 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 13   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+- type: entity
+  id: WarZoneEntity_Kordon_Ferma
+  parent: MarkerBase
+  name: Ferma War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: KordonFerma
+    portalName: Ferma
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 8
         hard: false
         mask:
         - MobMask
