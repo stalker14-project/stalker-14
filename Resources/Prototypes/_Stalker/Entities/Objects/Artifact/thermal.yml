@@ -29,6 +29,7 @@
       coefficients:
         Shock: 1.2
         Cold: 0.8
+        Heat: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.80
 
@@ -62,6 +63,8 @@
     modifiers:
       coefficients:
         Shock: 1.4
+        Heat: 0.6
+        Cold: 0.6
   - type: ExplosionResistance
     damageCoefficient: 0.70
 
@@ -95,6 +98,8 @@
     modifiers:
       coefficients:
         Shock: 1.6
+        Heat: 0.4
+        Cold: 0.4
   - type: ExplosionResistance
     damageCoefficient: 0.60
 
@@ -124,9 +129,10 @@
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.8
+        Compression: 0.5
         Heat: 0.3
-        Psy: 0.1
+        Psy: 1.5
+        Shock: 1.2 
 
 - type: entity
   parent: BaseArtifact
