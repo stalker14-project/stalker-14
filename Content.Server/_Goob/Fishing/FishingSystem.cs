@@ -36,6 +36,7 @@ public sealed class FishingSystem : SharedFishingSystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
+    [Dependency] private readonly SharedFishingSystem _fishingSystem = default!;
 
     public override void Initialize()
     {
@@ -88,6 +89,17 @@ public sealed class FishingSystem : SharedFishingSystem
         {
             if (args.OtherBody.BodyType == BodyType.Static)
                 return;
+
+            if (TryComp<FishingRodComponent>(ent.Comp.FishingRod, out var rodComp))
+            {
+                _fishingSystem.TryStopFishing((ent.Comp.FishingRod, rodComp));
+
+                // Get the parent (the fisherman) of the fishing rod so we can toggle their actions correctly.
+                var fisher = Transform(ent.Comp.FishingRod).ParentUid;
+
+                // Construct an Entity<FishingRodComponent> from the rod UID and component and pass the fisher to ToggleFishingActions.
+                _fishingSystem.ToggleFishingActions((ent.Comp.FishingRod, rodComp), fisher, false);
+            }
 
             Anchor(ent, attachedEnt);
             return;

@@ -37,7 +37,7 @@ public sealed partial class FishingRodComponent : Component
     /// it will force it to reel instantly.
     /// </summary>
     [DataField]
-    public float BreakOnDistance = 8f;
+    public float BreakOnDistance = 3f;
 
     [DataField]
     public EntProtoId FloatPrototype = "FishingLure";

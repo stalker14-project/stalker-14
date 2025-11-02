@@ -185,7 +185,7 @@ public abstract class SharedFishingSystem : EntitySystem
     /// if AddPulling is true, we ADD Pulling action and REMOVE Throwing action.
     /// Basically true if we start, and false if we end.
     /// </summary>
-    private void ToggleFishingActions(Entity<FishingRodComponent> ent, EntityUid fisher, bool addPulling)
+    public void ToggleFishingActions(Entity<FishingRodComponent> ent, EntityUid fisher, bool addPulling)
     {
         if (TerminatingOrDeleted(ent) || !Exists(fisher) || TerminatingOrDeleted(fisher))
             return;
@@ -266,7 +266,7 @@ public abstract class SharedFishingSystem : EntitySystem
     /// <summary>
     /// Stops fishing by taking only the Fishing rod as an argument.
     /// </summary>
-    private void TryStopFishing(Entity<FishingRodComponent> rod)
+    public void TryStopFishing(Entity<FishingRodComponent> rod)
     {
         var player = Transform(rod).ParentUid;
         StopFishing(rod, player);

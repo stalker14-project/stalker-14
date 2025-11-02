@@ -12,6 +12,7 @@ public abstract partial class ZoneAnomalyTriggerCollideComponent : Component
         Components = new []
         {
             "Projectile",
+            "FishingLure",
         },
     };
 
