@@ -102,7 +102,7 @@ public sealed class StorageWindow : BaseWindow
     private readonly string _disassebleTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/disasseble";
     private Texture? _disassembleTexture;
     // Stalker-Changes-End
-    public StorageContainer()
+    public StorageContainer();
     public StorageWindow()
     {
         IoCManager.InjectDependencies(this);

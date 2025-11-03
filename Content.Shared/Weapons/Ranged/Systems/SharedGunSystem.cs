@@ -650,7 +650,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         Dirty(uid, gun);
     }
     // Stalker-Changes-End
-}
 
     /// <summary>
     /// Get the ammo count for a given EntityUid. Can be a firearm or magazine.
