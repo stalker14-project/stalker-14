@@ -2,6 +2,7 @@ using Content.Server.Damage.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Damage;
 using Content.Server.Stunnable;
+using Content.Shared.Trigger;
 
 namespace Content.Server.Damage.Systems;
 
@@ -19,7 +20,7 @@ public sealed class StaminaDamageUserOnTriggerSystem : EntitySystem
     {
         if (args.User is null || !args.Handled)
             return;
-        _stun.TryParalyze(args.User.Value, TimeSpan.FromSeconds(component.Stun), true);
+        _stun.TryAddStunDuration(args.User.Value, TimeSpan.FromSeconds(component.Stun));
 
     }
 

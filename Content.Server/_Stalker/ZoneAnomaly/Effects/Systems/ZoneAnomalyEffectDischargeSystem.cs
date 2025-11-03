@@ -1,4 +1,4 @@
-using Content.Server.Power.Components;
+using Content.Shared.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;

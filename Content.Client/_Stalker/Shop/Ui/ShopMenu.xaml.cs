@@ -15,6 +15,7 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Content.Shared.Actions;
 
 namespace Content.Client._Stalker.Shop.Ui;
 /// <summary>
@@ -28,7 +29,7 @@ public sealed partial class ShopMenu : DefaultWindow
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IEntitySystemManager _entitySystem = default!;
     private readonly ClientGameTicker _gameTicker;
-    private readonly ActionsSystem _actions;
+    private readonly SharedActionsSystem _actions;
     private ShopSlider? _shopSlider;
 
     /// <summary>
@@ -139,8 +140,8 @@ public sealed partial class ShopMenu : DefaultWindow
         else if (listing.ProductAction != null)
         {
             var actionId = _entityManager.Spawn(listing.ProductAction);
-            if (_actions.TryGetActionData(actionId, out var action) && action.Icon != null)
-                texture = spriteSys.Frame0(action.Icon);
+            //if (_actions.action(actionId, out var action) && action.Icon != null) // FIX LATER
+            //    texture = spriteSys.Frame0(action.Icon);
         }
 
         var listingInStock = ListingInStock(listing);

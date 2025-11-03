@@ -105,10 +105,10 @@ namespace Content.Shared.Movement.Components
         // stalker-changes-start
         public float _baseWalkSpeedVVpublic
         {
-            get => _baseWalkSpeedVV;
+            get => BaseWalkSpeed;
             set
             {
-                _baseWalkSpeedVV = value;
+                BaseWalkSpeed = value;
             }
         }
 

@@ -124,12 +124,6 @@ public sealed class StandingStateSystem : EntitySystem
             standingState.Standing = false;
             Dirty(uid, standingState);
 
-            // stalker-changes-start
-            DownedEvent downedEvent = new DownedEvent();
-            downedEvent.IgnoreLayingBulletPass = fixtureAttempt;
-
-            RaiseLocalEvent(uid, downedEvent, false);
-            //stalker-changes-end
 
         // Seemed like the best place to put it
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);

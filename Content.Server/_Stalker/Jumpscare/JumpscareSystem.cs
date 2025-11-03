@@ -1,7 +1,7 @@
 using Content.Server.Stunnable;
 using Content.Shared._Stalker.Jumpscare;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Systems;
+using Content.Server.Damage.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
@@ -51,7 +51,7 @@ public sealed class JumpscareSystem : EntitySystem
 
                 if (TryComp<MobStateComponent>(uid, out var entityMobState) && _mobState.IsAlive(uid, entityMobState))
                 {
-                    _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(0.4f), false, 0f, 0f);
+                    _stunSystem.TryAddStunDuration(uid, TimeSpan.FromSeconds(0.4f));
                     comp.PreparingStartTime = _timing.CurTime;
                     comp.PreparingEndTime = comp.PreparingStartTime + comp.PreparingReloadTime;
                     comp.OnCoolDown = false;
@@ -93,7 +93,7 @@ public sealed class JumpscareSystem : EntitySystem
             stepDistance = distanceRemaining;
         
         _throwing.TryThrow(uid, direction * stepDistance, comp.JumpPower, user: uid, pushbackRatio: 0);
-        _stunSystem.TrySlowdown(uid, comp.SlowdownTime, false, 0.5f, 0.5f);
+        _stunSystem.TryAddStunDuration(uid, comp.SlowdownTime);
 
         comp.CurrentStep++;
         comp.NextStepTime = _timing.CurTime + TimeSpan.FromSeconds(comp.StepInterval);

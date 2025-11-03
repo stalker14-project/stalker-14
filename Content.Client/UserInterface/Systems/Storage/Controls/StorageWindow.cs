@@ -102,7 +102,6 @@ public sealed class StorageWindow : BaseWindow
     private readonly string _disassebleTexturePath = "/Textures/_Stalker/Interface/STDefault/Storage/disasseble";
     private Texture? _disassembleTexture;
     // Stalker-Changes-End
-    public StorageContainer();
     public StorageWindow()
     {
         IoCManager.InjectDependencies(this);
@@ -384,39 +383,39 @@ public sealed class StorageWindow : BaseWindow
                 Texture = _sidebarMiddleTexture,
                 TextureScale = new Vector2(2, 2),
             });
-        var offset = 2;
+            var offset = 2;
 
-        if (_entity.System<StorageSystem>().NestedStorage && rows > 0)
-        {
-            _backButton = new TextureButton
+            if (_entity.System<StorageSystem>().NestedStorage && rows > 0)
             {
-                TextureNormal = _backTexture,
-                Scale = new Vector2(2, 2),
-            };
-            _backButton.OnPressed += _ =>
-            {
-                var containerSystem = _entity.System<SharedContainerSystem>();
-
-                if (containerSystem.TryGetContainingContainer(StorageEntity.Value, out var container) &&
-                    _entity.TryGetComponent(container.Owner, out StorageComponent? storage) &&
-                    storage.Container.Contains(StorageEntity.Value))
+                _backButton = new TextureButton
                 {
-                    Close();
+                    TextureNormal = _backTexture,
+                    Scale = new Vector2(2, 2),
+                };
+                _backButton.OnPressed += _ =>
+                {
+                    var containerSystem = _entity.System<SharedContainerSystem>();
 
-                    if (_entity.System<SharedUserInterfaceSystem>()
-                        .TryGetOpenUi<StorageBoundUserInterface>(container.Owner,
-                            StorageComponent.StorageUiKey.Key,
-                            out var parentBui))
+                    if (containerSystem.TryGetContainingContainer(StorageEntity.Value, out var container) &&
+                        _entity.TryGetComponent(container.Owner, out StorageComponent? storage) &&
+                        storage.Container.Contains(StorageEntity.Value))
                     {
-                        parentBui.Show(Position);
-                    }
-                }
-            };
+                        Close();
 
-            var backContainer = new BoxContainer
-            {
-                Name = "ExitContainer",
-                Children =
+                        if (_entity.System<SharedUserInterfaceSystem>()
+                            .TryGetOpenUi<StorageBoundUserInterface>(container.Owner,
+                                StorageComponent.StorageUiKey.Key,
+                                out var parentBui))
+                        {
+                            parentBui.Show(Position);
+                        }
+                    }
+                };
+
+                var backContainer = new BoxContainer
+                {
+                    Name = "ExitContainer",
+                    Children =
                 {
                     new TextureRect
                     {
@@ -428,26 +427,27 @@ public sealed class StorageWindow : BaseWindow
                         }
                     }
                 }
-            };
+                };
 
-            _sidebar.AddChild(backContainer);
-        }
-
-        if (boundingGrid.Height != 1) // Stalker-Changes-Start
-        {
-            if (boundingGrid.Height > 0)
-            {
-                _sidebar.AddChild(new TextureRect
-                {
-                    Texture = _sidebarBottomTexture,
-                    TextureScale = new Vector2(2, 2),
-                });
+                _sidebar.AddChild(backContainer);
             }
-        } // Stalker-Changes-End
 
-        #endregion
+            if (boundingGrid.Height != 1) // Stalker-Changes-Start
+            {
+                if (boundingGrid.Height > 0)
+                {
+                    _sidebar.AddChild(new TextureRect
+                    {
+                        Texture = _sidebarBottomTexture,
+                        TextureScale = new Vector2(2, 2),
+                    });
+                }
+            } // Stalker-Changes-End
 
-        FlagDirty();
+            #endregion
+
+            FlagDirty();
+        }
     }
 
     public void BuildBackground()

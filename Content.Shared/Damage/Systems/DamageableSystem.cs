@@ -219,8 +219,10 @@ namespace Content.Shared.Damage
                 }
             }
 
-            if (!ignoreGlobalModifiers)
-                damage = ApplyUniversalAllModifiers(damage);
+            // satlker-change
+            // this came from the upstream merge but i dont really understand whats going on with it
+            //if (!ignoreGlobalModifiers)
+            //    damage = ApplyUniversalAllModifiers(damage);
 
             var delta = new DamageSpecifier();
             delta.DamageDict.EnsureCapacity(damage.DamageDict.Count);

@@ -144,7 +144,7 @@ public sealed class SmartEquipSystem : EntitySystem
                 return;
             }
 
-            _hands.TryDrop(uid, hands.ActiveHand, handsComp: hands);
+            //_hands.TryDrop(uid, hands.ActiveHand, handsComp: hands); // staker-change did this while fixing upstream merge hopefully it didnt break stuff
             // _inventory.TryEquip(uid, handItem.Value, equipmentSlot, predicted: true, checkDoafter:true); // Stalker-Changes
             _inventory.TryEquip(uid, handItem.Value, equipmentSlot, predicted: true, checkDoafter: true); // Stalker-Changes
             return;

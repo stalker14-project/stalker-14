@@ -17,6 +17,8 @@ using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Stalker.Teleports.NewMapTeleports;
 // TODO: Rename this system
@@ -33,7 +35,6 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
     [Dependency] private readonly SharedGodmodeSystem _godmode = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly LinkedEntitySystem _linkedEntitySystem = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -110,7 +111,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
     private void LoadMap(string path)
     {
         var map = _mapSystem.CreateMap(out var mapId);
-        if (_mapLoader.TryLoad(mapId, path, out _) && !_mapSystem.IsInitialized(mapId))
+        if (_mapLoader.TryLoadMap(new ResPath(path), out _, out _) && !_mapSystem.IsInitialized(mapId))
         {
             _mapSystem.InitializeMap(mapId);
         }
@@ -154,7 +155,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
                 if (local.PortalName != component.PortalName || uid == ent)
                     continue;
 
-                _linkedEntitySystem.TryLink(uid, ent, true);
+                _link.TryLink(uid, ent, true);
             }
         }
 

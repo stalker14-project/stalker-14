@@ -49,9 +49,9 @@ public sealed partial class RadiationSystem : EntitySystem
         _accumulator = 0f;
     }
 
-    public void IrradiateEntity(EntityUid uid, Dictionary<string, float> damageTypes, float time) // stalker-changes
+    public void IrradiateEntity(EntityUid uid, float radsPerSecond, float time, EntityUid? origin = null)
     {
-        var msg = new OnIrradiatedEvent(time, damageTypes); // stalker-changes
+        var msg = new OnIrradiatedEvent(time, radsPerSecond, origin);
         RaiseLocalEvent(uid, msg);
     }
 

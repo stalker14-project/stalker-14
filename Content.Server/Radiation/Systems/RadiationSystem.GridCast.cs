@@ -58,13 +58,18 @@ public partial class RadiationSystem
             _sources.Add(new(intensity, (uid, source, xform), worldPos));
         }
 
-        // trace all rays from rad source to rad receivers
-        var rays = new List<RadiationRay>();
+        var debugRays = debug ? new List<DebugRadiationRay>() : null;
         var receiversTotalRads = new ValueList<(Entity<RadiationReceiverComponent>, float)>();
+
+        // TODO RADIATION Parallelize
+        // Would need to give receiversTotalRads a fixed size.
+        // Also the _grids list needs to be local to a job. (or better yet cached in SourceData)
+        // And I guess disable parallelization when debugging to make populating the debug List<RadiationRay> easier.
+        // Or just make it threadsafe?
         while (destinations.MoveNext(out var destUid, out var dest, out var destTrs))
         {
-            var destWorld = _transform.GetWorldPosition(destTrs, transformQuery);
-            var damageTypes = new Dictionary<string, float>(); // stalker-changes
+            var destWorld = _transform.GetWorldPosition(destTrs);
+
             var rads = 0f;
             foreach (var source in _sources)
             {
@@ -74,20 +79,26 @@ public partial class RadiationSystem
 
                 // add rads to total rad exposure
                 if (ray.ReachedDestination)
-                {
-                    // stalker-changes-start
-                    if (!damageTypes.TryAdd(source.DamageType, ray.Rads))
-                    {
-                        damageTypes[source.DamageType] += ray.Rads;
-                    }
-                    // stalker-changes-end
-                }
+                    rads += ray.Rads;
+
+                if (!debug)
+                    continue;
+
+                debugRays!.Add(new DebugRadiationRay(
+                    ray.MapId,
+                    GetNetEntity(ray.SourceUid),
+                    ray.Source,
+                    GetNetEntity(ray.DestinationUid),
+                    ray.Destination,
+                    ray.Rads,
+                    ray.Blockers ?? new())
+                );
             }
 
             // Apply modifier if the destination entity is hidden within a radiation blocking container
             rads = GetAdjustedRadiationIntensity(destUid, rads);
 
-            receiversTotalRads.Add(((destUid, dest), damageTypes, rads)); // stalker-changes
+            receiversTotalRads.Add(((destUid, dest), rads));
         }
 
         // update information for debug overlay
@@ -97,15 +108,15 @@ public partial class RadiationSystem
         UpdateGridcastDebugOverlay(elapsedTime, totalSources, totalReceivers, debugRays);
 
         // send rads to each entity
-        foreach (var (receiver, damageTypes, rads) in receiversTotalRads) // stalker-changes
+        foreach (var (receiver, rads) in receiversTotalRads)
         {
             // update radiation value of receiver
             // if no radiation rays reached target, that will set it to 0
-            receiver.Comp.CurrentDamage = damageTypes; // stalker-changes
+            receiver.Comp.CurrentRadiation = rads;
 
             // also send an event with combination of total rad
-            if (damageTypes.Count != 0) // stalker-changes
-                IrradiateEntity(receiver, damageTypes, GridcastUpdateRate); // stalker-changes
+            if (rads > 0)
+                IrradiateEntity(receiver, rads, GridcastUpdateRate);
         }
 
         // raise broadcast event that radiation system has updated

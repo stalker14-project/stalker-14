@@ -270,11 +270,13 @@ public abstract partial class SharedStaminaSystem : EntitySystem
         if (ev.Cancelled)
             return;
 
+        // stalker-change
+        // this has to be disabled or else the shouldLog param would have to be changed and thats a pain in the ass
         // Allow stamina resistance to be applied.
-        if (!ignoreResist)
-        {
-            value = ev.Value;
-        }
+        //if (!ignoreResist)
+        //{
+        //    value = ev.Value;
+        //}
 
         value = UniversalStaminaDamageModifier * value;
 

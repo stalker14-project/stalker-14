@@ -10,7 +10,6 @@ using Content.Client.UserInterface.Systems.Info;
 using Content.Client.UserInterface.Systems.Storage.Controls;
 using Content.Client.Verbs.UI;
 using Content.Shared.CCVar;
-using Content.Shared.Crafting.Events;
 using Content.Shared.Input;
 using Content.Shared.Interaction;
 using Content.Shared.Storage;
@@ -239,35 +238,7 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
             keyEvent.Handle();
     }
 
-    private void OnStorageUpdated(Entity<StorageComponent> uid)
-    {
-        if (_container?.StorageEntity != uid)
-            return;
-
-        _container.BuildItemPieces();
-    }
-
-    public void RegisterStorageContainer(StorageContainer container)
-    {
-        if (_container != null)
-        {
-            container.OnPiecePressed -= OnPiecePressed;
-            container.OnPieceUnpressed -= OnPieceUnpressed;
-            container.OnCraftButtonPressed -= OnCraftButtonPressed; // stalker-changes
-            container.OnDisassembleButtonPressed -= OnDisassembleButtonPressed; // stalker-changes
-        }
-
-        _container = container;
-        container.OnPiecePressed += OnPiecePressed;
-        container.OnPieceUnpressed += OnPieceUnpressed;
-        container.OnCraftButtonPressed += OnCraftButtonPressed; // stalker-changes
-        container.OnDisassembleButtonPressed += OnDisassembleButtonPressed;  // stalker-changes
-
-        if (!StaticStorageUIEnabled)
-            _container.Orphan();
-    }
-
-    private void OnPiecePressed(GUIBoundKeyEventArgs args, ItemGridPiece control)
+    private void OnPiecePressed(GUIBoundKeyEventArgs args, StorageWindow window, ItemGridPiece control)
     {
         if (IsDragging || !window.IsOpen)
             return;
@@ -282,7 +253,7 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         }
         else if (args.Function == ContentKeyFunctions.SaveItemLocation)
         {
-            if (window.StorageEntity is not {} storage)
+            if (window.StorageEntity is not { } storage)
                 return;
 
             EntityManager.RaisePredictiveEvent(new StorageSaveItemLocationEvent(
@@ -452,7 +423,7 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
             EntityManager);
 
         // I don't know why it divides the position by 2. Hope this helps! -emo
-        LayoutContainer.SetPosition(DraggingGhost, UIManager.MousePositionScaled.Position / 2 - offset );
+        LayoutContainer.SetPosition(DraggingGhost, UIManager.MousePositionScaled.Position / 2 - offset);
     }
 
     private void OnMenuEndDrag()
@@ -468,21 +439,4 @@ public sealed class StorageUIController : UIController, IOnSystemChanged<Storage
         base.FrameUpdate(args);
         _menuDragHelper.Update(args.DeltaSeconds);
     }
-    // stalker-changes-start
-    private void OnCraftButtonPressed()
-    {
-        if (_container?.StorageEntity is not { } storageEnt)
-            return;
-        _entity.RaisePredictiveEvent(new CraftStartedEvent(
-            _entity.GetNetEntity(storageEnt)));
-    }
-
-    private void OnDisassembleButtonPressed()
-    {
-        if (_container?.StorageEntity is not { } storageEnt)
-            return;
-        _entity.RaisePredictiveEvent(new DisassembleStartedEvent(_entity.GetNetEntity(storageEnt)));
-    }
-
-    // stalker-changes-end
 }

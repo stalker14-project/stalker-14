@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Project: raincidation
  * File: RDWeightAlertSystem.cs
  * License: All rights reserved
@@ -41,7 +41,7 @@ public sealed class RDWeightAlertSystem : EntitySystem
             return;
 
         if (previous is not null)
-            _alerts.ClearAlert(entity, previous.Value);
+            //_alerts.ClearAlert(entity, previous.Value); // FIX THIS LATER
 
         entity.Comp.Alert = current;
         Dirty(entity);
@@ -49,6 +49,6 @@ public sealed class RDWeightAlertSystem : EntitySystem
         if (current is null)
             return;
 
-        _alerts.ShowAlert(entity, current.Value);
+        //_alerts.ShowAlert(entity, current.Value); // FIX THIS LATER
     }
 }
