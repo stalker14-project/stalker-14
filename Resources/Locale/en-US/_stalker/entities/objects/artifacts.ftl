@@ -1,10 +1,10 @@
 ent-ArtBlood = Stone Blood
     .desc = Artifact of gravitational nature. Phony, but gives protection from physical damage.
 ent-BoxArtcont = artifact container
-    .desc = Completely blocks all properties of the artifact.
+    .desc = A lead container that completely blocks all properties of the artifact.
     .suffix = Stalker
 ent-BoxArtcont1 = Advanced Artifact Container
-    .desc = Holds up to 3 artifacts and completely blocks their properties. An improved artisanal version that is quite difficult to find.
+    .desc = A lead container that holds up to 3 artifacts and completely blocks their properties. An improved artisanal version that is quite difficult to find.
 ent-Art1 = Artifact
     .desc = Artifact
 ent-Art2 = { ent-Art1 }
