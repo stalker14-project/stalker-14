@@ -41999,17 +41999,6 @@ entities:
     missingComponents:
     - Item
     - Pullable
-- proto: BloodyKnife
-  entities:
-  - uid: 15737
-    components:
-    - type: Transform
-      pos: 40.571953,17.516087
-      parent: 1
-    missingComponents:
-    - Item
-    - Engraveable
-    - Pullable
 - proto: BlueCrate
   entities:
   - uid: 63
@@ -42174,6 +42163,14 @@ entities:
       canCollide: False
       bodyType: Static
     - type: Anchorable
+    missingComponents:
+    - Item
+    - Pullable
+  - uid: 45
+    components:
+    - type: Transform
+      pos: 40.3031,17.653631
+      parent: 1
     missingComponents:
     - Item
     - Pullable
@@ -42769,11 +42766,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 1.5,4.5
-      parent: 1
-  - uid: 15743
-    components:
-    - type: Transform
-      pos: 40.5,17.5
       parent: 1
 - proto: Cobweb2
   entities:
@@ -44829,6 +44821,11 @@ entities:
       parent: 1
 - proto: OldWoodTable3
   entities:
+  - uid: 47
+    components:
+    - type: Transform
+      pos: 40.5,17.5
+      parent: 1
   - uid: 2936
     components:
     - type: Transform
@@ -44998,18 +44995,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 31.5,4.5
-      parent: 1
-  - uid: 15676
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 40.5,17.5
-      parent: 1
-  - uid: 15744
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 41.5,17.5
       parent: 1
   - uid: 15810
     components:
@@ -45234,6 +45219,15 @@ entities:
     - Item
 - proto: Pen
   entities:
+  - uid: 48
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 40.747765,17.591131
+      parent: 1
+    missingComponents:
+    - Item
+    - Pullable
   - uid: 14386
     components:
     - type: Transform
@@ -45328,13 +45322,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 15.5,-0.5
-      parent: 1
-- proto: PosterBloodyPrint
-  entities:
-  - uid: 15443
-    components:
-    - type: Transform
-      pos: 40.5,18.5
       parent: 1
 - proto: PosterCNPP
   entities:
@@ -45800,16 +45787,6 @@ entities:
     - type: Transform
       pos: -34.5,131.5
       parent: 1
-- proto: PumpkinLantern
-  entities:
-  - uid: 2706
-    components:
-    - type: Transform
-      pos: 41.53583,17.718916
-      parent: 1
-    missingComponents:
-    - Item
-    - Pullable
 - proto: RadioStalkerJukebox
   entities:
   - uid: 273
@@ -46970,6 +46947,13 @@ entities:
     components:
     - type: Transform
       pos: 7.5,5.5
+      parent: 1
+- proto: StackBooks
+  entities:
+  - uid: 46
+    components:
+    - type: Transform
+      pos: 41.435604,17.577242
       parent: 1
 - proto: Stairs
   entities:

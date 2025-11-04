@@ -1,0 +1,189 @@
+﻿# Tier 1
+
+- type: entity
+  id: DynamicRadiationSpawner10
+  name: Dynamic Radiation T1 (10%)
+  suffix: Mapping, Radiation, T1
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    rarePrototypes:
+    - Rad7
+    rareChance: 0.025
+    prototypes:
+    - Rad1
+    - Rad2
+    chance: 0.1
+    offset: 0.0
+
+- type: entity
+  id: DynamicRadiationSpawner20
+  name: Dynamic Radiation T1 (20%)
+  suffix: Mapping, Radiation, T1
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    rarePrototypes:
+    - Rad7
+    rareChance: 0.025
+    prototypes:
+    - Rad1
+    - Rad2
+    chance: 0.20
+    offset: 0.0
+
+- type: entity
+  id: DynamicRadiationSpawner50
+  name: Dynamic Radiation T1 (50%)
+  suffix: Mapping, Radiation, T1
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    rarePrototypes:
+    - Rad3
+    - Rad5
+    rareChance: 0.025
+    prototypes:
+    - Rad8
+    - Rad7
+    chance: 0.50
+    offset: 0.0
+
+# Tier 2
+
+- type: entity
+  id: DynamicRadiationSpawner10T2
+  name: Dynamic Radiation T2 (10%)
+  suffix: Mapping, Radiation, T2
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    rarePrototypes:
+    - Rad3
+    - Rad5
+    rareChance: 0.025
+    prototypes:
+    - Rad8
+    - Rad7
+    chance: 0.1
+    offset: 0.0
+
+- type: entity
+  id: DynamicRadiationSpawner20T2
+  name: Dynamic Radiation T2 (20%)
+  suffix: Mapping, Radiation, T2
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    rarePrototypes:
+    - Rad3
+    - Rad5
+    rareChance: 0.025
+    prototypes:
+    - Rad8
+    - Rad7
+    chance: 0.20
+    offset: 0.0
+
+- type: entity
+  id: DynamicRadiationSpawner50T2
+  name: Dynamic Radiation T2 (50%)
+  suffix: Mapping, Radiation, T2
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    rarePrototypes:
+    - Rad3
+    - Rad5
+    rareChance: 0.025
+    prototypes:
+    - Rad8
+    - Rad7
+    chance: 0.50
+    offset: 0.0
+
+# Tier 3
+
+- type: entity
+  id: DynamicRadiationSpawner10T3
+  name: Dynamic Radiation T3 (10%)
+  suffix: Mapping, Radiation, T3
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    prototypes:
+    - Rad3
+    - Rad5
+    chance: 0.1
+    offset: 0.0
+
+- type: entity
+  id: DynamicRadiationSpawner20T3
+  name: Dynamic Radiation T3 (20%)
+  suffix: Mapping, Radiation, T3
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    prototypes:
+    - Rad3
+    - Rad5
+    chance: 0.20
+    offset: 0.0
+
+- type: entity
+  id: DynamicRadiationSpawner50T3
+  name: Dynamic Radiation T3 (50%)
+  suffix: Mapping, Radiation, T3
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Structures/Doors/Shutters/shutters_radiation.rsi
+      state: closed
+    - state: blue
+  - type: RandomSpawner
+    prototypes:
+    - Rad3
+    - Rad5
+    chance: 0.50
+    offset: 0.0

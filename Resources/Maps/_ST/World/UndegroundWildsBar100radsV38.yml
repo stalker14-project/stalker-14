@@ -5512,7 +5512,7 @@ entities:
       pos: -1.5,24.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -1627.4905
+      secondsUntilStateChange: -1687.0063
       state: Denying
     - type: Physics
       canCollide: False
@@ -6594,6 +6594,13 @@ entities:
       parent: 1
 - proto: OldWoodChairStalker3
   entities:
+  - uid: 141
+    components:
+    - type: Transform
+      pos: -5.5,8.5
+      parent: 1
+    missingComponents:
+    - Strap
   - uid: 467
     components:
     - type: Transform
@@ -7501,16 +7508,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 57.5,-101.5
       parent: 1
-- proto: PumpkinLantern
-  entities:
-  - uid: 5986
-    components:
-    - type: Transform
-      pos: 4.468747,5.7248898
-      parent: 1
-    missingComponents:
-    - Item
-    - Pullable
 - proto: Rack
   entities:
   - uid: 652
