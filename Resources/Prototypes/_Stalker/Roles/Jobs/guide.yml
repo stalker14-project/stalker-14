@@ -1,7 +1,7 @@
 - type: job
   id: StalkerGuide
   name: job-guide
-  icon: stalker
+  icon: guide
   description: job-stalker-desc
   playTimeTracker: JobGuide
   whitelisted: true
@@ -44,9 +44,10 @@
       - type: Access
         tags:
           - Stalker
+          - Guide
       - type: Bands
         band: Stalker
-        bandIcon: stalker
+        bandIcon: guide
         bandProto: STStalkerBand
         bandRankId: 2
       - type: BlockTackingHolyItems

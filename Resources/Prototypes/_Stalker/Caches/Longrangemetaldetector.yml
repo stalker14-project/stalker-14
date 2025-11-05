@@ -56,139 +56,37 @@
       state: kb2
     - type: SpawnItemsOnUse
       items:
-        - id: STCraftBasicThreadKitT1
-          prob: 0.1
-        - id: STCraftCottonFabricT1
-          prob: 0.1
-        - id: STCraftGlassT1
-          prob: 0.1
-        - id: STCraftPinePlankT1
-          prob: 0.1
-        - id: STCraftPlasticFittingT1
-          prob: 0.1
-        - id: STCraftSheetCopperT1
-          prob: 0.1
-        - id: WeaponPistolStalkerPM
-          prob: 0.005
-        - id: WeaponPistolStalkerTT
-          prob: 0.005
-        - id: STWeaponRevolverTaurusJudge
-          prob: 0.005
-        - id: STWeaponRevolverTaurusTracker455
-          prob: 0.005
-        - id: STWeaponShotgunMossbergM88
-          prob: 0.005
-        - id: STWeaponShotgunMP133
-          prob: 0.005
-        - id: STWeaponRifleSaiga545
-          prob: 0.005
-        - id: BoxArtcont
-          prob: 0.01
-        - id: GeigerCounter
-          prob: 0.01
-        - id: BaseRadio
-          prob: 0.01
-        - id: HandheldGPSBasic
-          prob: 0.01
-        - id: Defibrillator
-          prob: 0.005
         - id: MedkitAI2
-          prob: 0.07
+          prob: 0.2
         - id: MedkitMilitary
+          prob: 0.1
+        - id: WristwatchGold
+          prob: 0.005
+        - id: STWeaponShotgunAnomalyToz34
           prob: 0.02
-        - id: MedkitScience
-          prob: 0.005
-        - id: psyblock
+        - id: STWeaponSMGVZ61
+          prob: 0.02
+        - id: ClothingNeckBling
+          prob: 0.02
+        - id: STWeaponShotgunSawedOfAnomaly
+          prob: 0.02
+        - id: SilverRingGem
+          prob: 0.07
+        - id: Roubles1000
+          prob: 0.5
+        - id: ZoneArtifactBattery
+          prob: 0.1
+        - id: ZoneArtifactBaloon
+          prob: 0.02
+        - id: Roubles2000
+          prob: 0.2
+        - id: Roubles5000
           prob: 0.05
-        - id: antiradpill
-          prob: 0.05
-        - id: AntiRadMedipen
-          prob: 0.01
-        - id: radioprotectpill
-          prob: 0.05
-        - id: STBrutepack
-          prob: 0.1
-        - id: STGauze
-          prob: 0.1
-        - id: STOintment
-          prob: 0.1
-        - id: STCraftBasicPCBT1
-          prob: 0.1
-        - id: STCraftBasicThreadKitT1
-          prob: 0.1
-        - id: STCraftCottonFabricT1
-          prob: 0.1
-        - id: STCraftGlassT1
-          prob: 0.1
-        - id: STCraftPinePlankT1
-          prob: 0.1
-        - id: STCraftPlasticFittingT1
-          prob: 0.1
-        - id: STCraftSheetCopperT1
-          prob: 0.1
-        - id: ZoneArtifactPellicle
-          prob: 0.005
-        - id: ZoneArtifactSparkler
-          prob: 0.005
-        - id: ArtMedusa
-          prob: 0.005
-        - id: ZoneArtifactFireball
-          prob: 0.005
-        - id: 45ACPLFMJBox
-          prob: 0.01
-        - id: 725PBox
-          prob: 0.01
-        - id: 919PSOGJBox
-          prob: 0.01
-        - id: 918PGJBox
-          prob: 0.01
-        - id: 45ACPLFMJBox
-          prob: 0.01
-        - id: 725PBox
-          prob: 0.01
-        - id: 919PSOGJBox
-          prob: 0.01
-        - id: 918PGJBox
-          prob: 0.01
-        - id: ClothingOuterCoatPahanBlueprint
-          prob: 0.01
-        - id: ClothingOuterCoatPoiskBlueprint
-          prob: 0.1
-        - id: STClothingOuterJacketStalkerUpgradeBlueprint
-          prob: 0.1
-        - id: ClothingOuterAnomalyStalkerJacketBlueprint
-          prob: 0.1
-        - id: ST7mmBuckshotBoxCinkBluePrint
-          prob: 0.1
-        - id: ST918PGJBoxCinkBlueprint
-          prob: 0.1
-        - id: ST919PSOGJBoxCinkBlueprint
-          prob: 0.3
-        - id: ST725PBoxCinkBlueprint
-          prob: 0.1
-        - id: STZoneArtifactDetectorHunterBlueprint
-          prob: 0.1
-        - id: STZoneArtifactDetectorPulseBlueprint
-          prob: 0.1
-        - id: STDetectorAD1Blueprint
-          prob: 0.1
-        - id: ToolkitTearOne
-          prob: 0.1
-        - id: IngotGold1
-          prob: 0.1
-        - id: IngotSilver1
-          prob: 0.1
-        - id: MaterialDiamond1
-          prob: 0.1
-        - id: DrinkGoldenCup
-          prob: 0.1
-        - id: CraftMaterialGunpowder
-          prob: 0.1
-        - id: CraftCardboardTube
-          prob: 0.1
-        - id: CraftFitil
-          prob: 0.1
-        - id: CraftCardboardTube
+        - id: DG05SmokeGrenade
+          prob: 0.2
+        - id: IpritGrenadeStalker
+          prob: 0.2
+        - id: RGD5Grenade
           prob: 0.1
       sound:
         path: /Audio/Effects/unwrap.ogg
@@ -244,6 +142,21 @@
   - type: Tag
     tags:
       - HideContextMenu
+
+- type: entity
+  name: тайник спавнер невидимый (25 %)
+  id: longrangemetaldetectorCrateSpawner25
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+        - sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb1
+    - type: RandomSpawner
+      prototypes:
+        - longrangemetaldetectorCrate
+      chance: 0.25
 
 - type: entity
   name: тайник спавнер невидимый (10 %)
