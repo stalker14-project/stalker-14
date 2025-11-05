@@ -7,7 +7,7 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/artifacts.rsi
     state: Pebble
-    scale: 0.5, 0.5
+    scale: 0.4, 0.4
   - type: ZoneArtifact
     anomaly: ZoneAnomalySpringboard
   - type: ZoneArtifactDetectorTarget
@@ -29,6 +29,8 @@
     modifiers:
       coefficients:
         Compression: 0.80
+        Asphyxiation: 0.95
+        Psy: 1.2
 
 - type: entity
   parent: BaseArtifact
@@ -61,6 +63,8 @@
     modifiers:
       coefficients:
         Compression: 0.60
+        Asphyxiation: 0.85
+        Psy: 1.4
 
 - type: entity
   parent: BaseArtifact
@@ -71,7 +75,7 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/artifacts.rsi
     state: StoneCube
-    scale: 0.5, 0.5
+    scale: 0.6, 0.6
   - type: ZoneArtifact
     anomaly: AnomSEpicentre
   - type: ZoneArtifactDetectorTarget
@@ -93,4 +97,5 @@
     modifiers:
       coefficients:
         Compression: 0.40
-        
+        Asphyxiation: 0.75
+        Psy: 1.6
