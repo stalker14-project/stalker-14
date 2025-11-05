@@ -13,14 +13,14 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/scar.rsi
   - type: Gun
-    fireRate: 6
+    fireRate: 6.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/scar.ogg
       params:
         volume: -2
     minAngle: 50
-    maxAngle: 125
-    angleIncrease: 5.5
+    maxAngle: 110
+    angleIncrease: 1.2
     shotsPerBurst: 3
     ShotsPerBurstModified: 3
     selectedMode: FullAuto
@@ -28,7 +28,7 @@
     - Burst
     - SemiAuto
     - FullAuto
-    angleDecay: 27.5
+    angleDecay: 9.5
   - type: ItemSlots
     slots:
       gun_magazine:
