@@ -746,7 +746,6 @@
   name: КПК Военного
   description: Этот КПК пережевёт и ядерный взрыв. По крайней мере это закладывать в тендере.
   components:
-  - type: Unremoveable
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: svo_off
@@ -815,12 +814,6 @@
   - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
-  - type: Armor
-    armorClass: 0
-    modifiers:
-      flatReductions:
-        Radiation: 2
-        Psy: 2
 
 
 - type: entity
