@@ -1142,3 +1142,13 @@
   components:
     - type: AccessReader
       access: [["Veteran"]]
+
+- type: entity
+  id: MetalAltDoorFalloutGuideClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Проводник
+  components:
+    - type: AccessReader
+      access: [["Guide"]]
