@@ -239,6 +239,7 @@
         - id: 545FMJBox
         - id: STFlashlightSeclite
         - id: BaseRadio
+        - id: STPillboxProbud
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -299,6 +300,7 @@
         - id: STFlashlightSeclite
         - id: BaseRadio
         - id: Binocularus1
+        - id: STPillboxProbud
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -363,6 +365,7 @@
         - id: STFlashlightSeclite
         - id: BaseRadio
         - id: Binocularus1
+        - id: Bloodpack
       sound:
         path: /Audio/Effects/unwrap.ogg
 
@@ -1507,6 +1510,31 @@
     - id: 739Mag30
     - id: 739Mag30
     - id: 739Mag30
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: ArmyBloodPackMilitaryCrate
+  name: армейский комплект пакет с кровью
+  description: Базовый армейский комплект, содержащий пакеты с кровью, предназначенный для солдат С.О.П.
+  suffix: Stalker
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: Bloodpack
+    - id: Bloodpack
+    - id: Bloodpack
+    - id: Bloodpack
+    - id: Bloodpack
     sound:
       path: /Audio/Effects/unwrap.ogg
 
