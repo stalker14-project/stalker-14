@@ -1,5 +1,6 @@
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Timing;
+using Content.Shared.Trigger;
 
 namespace Content.Server._Stalker.DelayOnTriggerComponent;
 
@@ -16,6 +17,6 @@ public sealed class DelayOnTriggerSystem : EntitySystem
     private void OnTriggered(EntityUid uid, DelayOnTriggerComponent component, TriggerEvent args)
     {
         EnsureComp<UseDelayComponent>(uid, out var delay);
-        _delay.SetLength((args.Triggered, delay), TimeSpan.FromSeconds(component.Delay));
+        _delay.SetLength((uid, delay), TimeSpan.FromSeconds(component.Delay));
     }
 }

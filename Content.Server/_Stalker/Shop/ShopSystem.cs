@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server._Stalker.Sponsors;
 using Content.Server.Actions;
@@ -39,6 +40,7 @@ public sealed partial class ShopSystem : SharedShopSystem
     [Dependency] private readonly PricingSystem _pricing = default!;
     [Dependency] private readonly EntityManager _entity = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
     private ISawmill _sawmill = default!;
     private PriceCache _priceCache = new();
 
@@ -60,21 +62,21 @@ public sealed partial class ShopSystem : SharedShopSystem
         SubscribeLocalEvent<StorageAfterInsertItemIntoLocationEvent>(OnAfterInsert);
 
         _sawmill = Logger.GetSawmill("shops");
-        
+
         InitializeSponsors();
     }
 
     #region UI updates
     private void OnAfterInsert(StorageAfterInsertItemIntoLocationEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out _))
             return;
 
         UpdateUis(args.User);
     }
     private void OnAfterRemove(StorageAfterRemoveItemEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out _))
             return;
 
         UpdateUis(args.User);
@@ -106,10 +108,23 @@ public sealed partial class ShopSystem : SharedShopSystem
     }
     private void OnSelected(EntityUid uid, CurrencyComponent component, HandSelectedEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!_player.TryGetSessionByEntity(args.User, out _))
             return;
 
         UpdateUis(args.User);
+    }
+
+    private bool TryGetSession(EntityUid uid, [NotNullWhen(true)] out ICommonSession? session)
+    {
+        if (!_mind.TryGetMind(uid, out _, out var mindComp) || !_player.TryGetSessionById(mindComp.UserId, out var currentSession))
+        {
+            session = null;
+            return false;
+        }
+
+        session = currentSession;
+
+        return true;
     }
 
     private void UpdateUis(EntityUid user)
@@ -126,7 +141,7 @@ public sealed partial class ShopSystem : SharedShopSystem
 
     private void OnDeselected(EntityUid uid, CurrencyComponent comp, HandDeselectedEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out _))
             return;
 
         UpdateUis(args.User);
@@ -179,10 +194,10 @@ public sealed partial class ShopSystem : SharedShopSystem
         var categories = component.ShopCategories;
 
         #region Sponsors-Stuff
-        
+
         if (!TryComp<ActorComponent>(user, out var actor))
             return;
-        
+
         // TODO: GetSponsorCategories/GetContributorCategories/GetPersonalCategories results is not being cached like
         // component.ShopCategories, due this little shit, idk how fast it'd work. But im sure this should be rewrited. Im too lazy now...
         var sponsorCategory = GetSponsorCategories(actor.PlayerSession.UserId, component);
@@ -349,7 +364,7 @@ public sealed partial class ShopSystem : SharedShopSystem
 
         return result;
     }
-    
+
     private List<ListingData> GetListingData(List<EntityUid> items, ShopComponent component, Dictionary<string, int> sellItems)
     {
         var result = new List<ListingData>();

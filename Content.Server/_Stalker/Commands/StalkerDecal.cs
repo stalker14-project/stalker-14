@@ -13,6 +13,7 @@ using Content.Server._Stalker.Procedural;
 using Content.Shared.Administration;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Decals;
 using Content.Shared.FixedPoint;
 using Content.Shared.Ghost;

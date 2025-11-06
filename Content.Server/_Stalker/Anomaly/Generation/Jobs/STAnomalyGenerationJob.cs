@@ -24,6 +24,7 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly TurfSystem _turf = default!;
 
     public readonly STAnomalyGenerationOptions Options;
 
@@ -178,7 +179,7 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
 
     private bool TileSolidAndNotBlocked(TileRef tile, Func<EntityUid, bool>? predicate = null)
     {
-        return tile.GetContentTileDefinition().Sturdy &&
+        return _turf.GetContentTileDefinition(tile).Sturdy &&
                !IsTileBlocked(tile, CollisionGroup.LowImpassable, predicate: predicate);
     }
 

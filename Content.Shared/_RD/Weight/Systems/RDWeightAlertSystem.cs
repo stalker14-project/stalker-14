@@ -41,7 +41,7 @@ public sealed class RDWeightAlertSystem : EntitySystem
             return;
 
         if (previous is not null)
-            _alerts.ClearAlert(entity, previous.Value);
+            _alerts.ClearAlert(entity.Owner, previous.Value);
 
         entity.Comp.Alert = current;
         Dirty(entity);
@@ -49,6 +49,6 @@ public sealed class RDWeightAlertSystem : EntitySystem
         if (current is null)
             return;
 
-        _alerts.ShowAlert(entity, current.Value);
+        _alerts.ShowAlert(entity.Owner, current.Value);
     }
 }

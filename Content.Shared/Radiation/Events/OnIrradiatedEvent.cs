@@ -4,15 +4,11 @@ namespace Content.Shared.Radiation.Events;
 ///     Raised on entity when it was irradiated
 ///     by some radiation source.
 /// </summary>
-public sealed class OnIrradiatedEvent : EntityEventArgs
+public readonly record struct OnIrradiatedEvent(float FrameTime, Dictionary<string, float> DamageTypes, EntityUid? Origin) // stalker-changes
 {
-    public readonly float FrameTime;
+    public readonly float FrameTime = FrameTime;
 
-    public readonly Dictionary<string, float> DamageTypes; // stalker-changes
+    public readonly Dictionary<string, float> DamageTypes = DamageTypes; // stalker-changes
 
-    public OnIrradiatedEvent(float frameTime, Dictionary<string, float> damageTypes) // stalker-changes
-    {
-        FrameTime = frameTime;
-        DamageTypes = damageTypes; // stalker-changes
-    }
+    public readonly EntityUid? Origin = Origin;
 }

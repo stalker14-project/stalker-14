@@ -12,6 +12,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server.Mind;
+using Content.Shared.PDA.Ringer;
 
 namespace Content.Server._Stalker.PdaMessenger;
 

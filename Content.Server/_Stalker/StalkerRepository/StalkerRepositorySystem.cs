@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server._Stalker.StalkerDB;
@@ -36,6 +37,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
 using Content.Server._Stalker.Sponsors.SponsorManager;
+using Content.Shared.Actions.Components;
 using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.StalkerRepository;
@@ -55,6 +57,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!; // for searching by ckey
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!; // for checks for whitelist
+    [Dependency] private readonly ISharedPlayerManager _player = default!; // for getting session by mindComp
     private ISawmill _sawmill = default!;
 
     // caching new records in database to get them later inside sponsors stuff
@@ -150,21 +153,21 @@ public sealed class StalkerRepositorySystem : EntitySystem
     }
     private void OnAfterInsert(StorageAfterInsertItemIntoLocationEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
     }
     private void OnAfterRemove(StorageAfterRemoveItemEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
     }
     private void OnSelected(EntityUid uid, ItemComponent component, HandSelectedEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
@@ -172,10 +175,23 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     private void OnDeselected(EntityUid uid, ItemComponent component, HandDeselectedEvent args)
     {
-        if(!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
+    }
+
+    private bool TryGetSession(EntityUid uid, [NotNullWhen(true)] out ICommonSession? session)
+    {
+        if (!_mind.TryGetMind(uid, out _, out var mindComp) || !_player.TryGetSessionById(mindComp.UserId, out var currentSession))
+        {
+            session = null;
+            return false;
+        }
+
+        session = currentSession;
+
+        return true;
     }
 
     #endregion

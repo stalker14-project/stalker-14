@@ -36,8 +36,8 @@ public sealed class StalkerMoveSpeedSystem : StalkerMoveSpeedSystemShared
     private void InstallComponentSpeed(EntityUid uid, MovementSpeedModifierComponent component, ComponentInit args)
     {
         var stalkerSpeedComp = AddComp<StalkerMoveSpeedComponent>(uid);
-        stalkerSpeedComp.StartWalkSpeed = component._baseWalkSpeedVVpublic;
-        stalkerSpeedComp.StartSprintSpeed = component._baseSprintSpeedVVpublic;
+        stalkerSpeedComp.StartWalkSpeed = component.BaseWalkSpeed;
+        stalkerSpeedComp.StartSprintSpeed = component.BaseSprintSpeed;
     }
 
     public void SetBonusSpeedWalk(EntityUid uid, string nameBonus, float valueBonus,StalkerMoveSpeedComponent stalkerSpeedComp)
@@ -58,14 +58,14 @@ public sealed class StalkerMoveSpeedSystem : StalkerMoveSpeedSystemShared
     {
         if (!TryComp<MovementSpeedModifierComponent>(stalkerSpeedComp.Owner, out var movementSpeed))
             return;
-        movementSpeed._baseWalkSpeedVVpublic=stalkerSpeedComp.Comp.SumBonusSpeedWalk;
+        movementSpeed.BaseWalkSpeed = stalkerSpeedComp.Comp.SumBonusSpeedWalk;
     }
 
     public void SyncSprintSpeed(Entity<StalkerMoveSpeedComponent> stalkerSpeedComp)
     {
         if (!TryComp<MovementSpeedModifierComponent>(stalkerSpeedComp.Owner, out var movementSpeed))
             return;
-        movementSpeed._baseSprintSpeedVVpublic=stalkerSpeedComp.Comp.SumBonusSpeedSprint;
+        movementSpeed.BaseSprintSpeed = stalkerSpeedComp.Comp.SumBonusSpeedSprint;
     }
 
     public void CalculateSpeedByFormula(StalkerMoveSpeedComponent stalkerSpeedComp)

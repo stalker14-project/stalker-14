@@ -1,4 +1,5 @@
 using Content.Shared._Stalker.StalkerRepository;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Stalker.Teleports.DuplicateTeleport;
 
@@ -12,5 +13,5 @@ public sealed partial class DuplicateTeleportComponent : Component
     public float MaxWeight;
 
     [DataField("mapPath")]
-    public string ArenaMapPath = "/Maps/_ST/PersonalStalkerArena/StalkerMap.yml";
+    public ResPath ArenaMapPath = new("/Maps/_ST/PersonalStalkerArena/StalkerMap.yml");
 }

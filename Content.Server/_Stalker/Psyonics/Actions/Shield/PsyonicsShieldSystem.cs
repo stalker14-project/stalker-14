@@ -2,6 +2,7 @@ using Content.Shared._Stalker.Psyonics;
 using Content.Shared._Stalker.Psyonics.Actions;
 using Content.Shared._Stalker.Psyonics.Actions.Shield;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Timing;
 

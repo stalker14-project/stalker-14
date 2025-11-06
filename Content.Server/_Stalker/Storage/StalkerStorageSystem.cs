@@ -25,6 +25,7 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Content.Server.Botany.Components;
 using Content.Shared._Stalker;
 using Content.Shared._Stalker.Storage;
+using Content.Shared.Power.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Storage;

@@ -1,6 +1,7 @@
 using Content.Shared.Mind;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 
 namespace Content.Shared._Stalker.Psyonics;
 
@@ -9,6 +10,7 @@ public sealed partial class PsyonicsSystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly ISharedPlayerManager _player = default!;
 
     public override void Initialize()
     {
@@ -52,8 +54,11 @@ public sealed partial class PsyonicsSystem
         psionics.Comp.Psy = newValue;
         Dirty(psionics);
 
-        if (_mind.TryGetMind(psionics, out _, out var mind) && mind.Session is not null)
-            RaiseNetworkEvent(psyMessage, mind.Session);
+        if (_mind.TryGetMind(psionics, out _, out var mind) &&
+            _player.TryGetSessionById(mind.UserId, out var session))
+        {
+            RaiseNetworkEvent(psyMessage, session);
+        }
 
         return newValue;
     }

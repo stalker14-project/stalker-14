@@ -21,7 +21,7 @@ public sealed class PsyonicsActionSpringboardSystem : BasePsyonicsActionSystem<P
 
             if (entity.Comp.Stun)
             {
-                _stun.TryStun(target, entity.Comp.StunDuration, true);
+                _stun.TryKnockdown(target, entity.Comp.StunDuration);
             }
         }
 

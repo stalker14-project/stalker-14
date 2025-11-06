@@ -21,7 +21,7 @@ public sealed partial class STLaySystem
 
     private void OnLaidInit(Entity<STLaidComponent> laid, ref ComponentInit args)
     {
-        _standingState.Down(laid, dropHeldItems: false, fixtureAttempt: false);
+        _standingState.Down(laid, dropHeldItems: false);
         _movementSpeedModifier.RefreshMovementSpeedModifiers(laid);
     }
 

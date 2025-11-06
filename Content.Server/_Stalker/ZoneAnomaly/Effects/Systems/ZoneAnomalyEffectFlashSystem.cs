@@ -28,6 +28,6 @@ public sealed class ZoneAnomalyEffectFlashSystem : EntitySystem
     {
         if (!TryComp<ZoneAnomalyEffectFlashComponent>(effect, out var comp))
             return;
-        _flashSystem.FlashArea(effect.Owner, target, comp.Range, comp.Duration * 1000f);
+        _flashSystem.FlashArea(effect.Owner, target, comp.Range, comp.Duration);
     }
 }

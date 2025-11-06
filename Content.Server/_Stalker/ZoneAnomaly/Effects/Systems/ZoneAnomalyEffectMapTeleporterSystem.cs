@@ -2,14 +2,14 @@
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Systems;
-using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 
 namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
 
 public sealed class ZoneAnomalyEffectMapTeleporterSystem : SharedZoneAnomalyEffectMapTeleporterSystem
 {
-    [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
 
     public override void Initialize()
@@ -57,19 +57,16 @@ public sealed class ZoneAnomalyEffectMapTeleporterSystem : SharedZoneAnomalyEffe
             return map;
 
         // Creating a map, a common thing
-        var mapId = _map.CreateMap();
-        var mapUid = _map.GetMapEntityId(mapId);
+        var mapUid = _mapSystem.CreateMap(out var mapId, false);
 
-        _map.AddUninitializedMap(mapId);
-
-        if (!_mapLoader.TryLoad(mapId, effect.Comp.MapPath.CanonPath, out _))
+        if (!_mapLoader.TryLoadMapWithId(mapId, effect.Comp.MapPath, out _, out _))
             return null;
 
         // Save the created map so as not to shit on them
         effect.Comp.MapId = mapId;
         effect.Comp.MapEntity = mapUid;
 
-        _map.DoMapInitialize(mapId);
+        _mapSystem.InitializeMap(mapUid);
         return mapUid;
     }
 }

@@ -3,6 +3,7 @@ using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
+using Content.Shared.Power.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Map.Components;
 
