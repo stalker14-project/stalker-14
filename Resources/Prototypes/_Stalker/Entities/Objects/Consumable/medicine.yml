@@ -89,7 +89,7 @@
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.7, 0.7
     state: radprotector
-  - type: Food
+  - type: Edible
     forceFeedDelay: 1
     transferAmount: null
     eatMessage: food-swallow
@@ -144,7 +144,8 @@
             Radiation: -0.75
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: antirad
           min: 31
         damage:
           types:
@@ -152,7 +153,8 @@
             Poison: 1.5
       - !type:Jitter
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: antirad
           min: 31
 
 ####################################
@@ -177,7 +179,7 @@
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.6, 0.6
     state: antirad
-  - type: Food
+  - type: Edible
     forceFeedDelay: 1
     transferAmount: null
     eatMessage: food-swallow
@@ -272,14 +274,16 @@
             Bloodloss: -3
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: wakeupper
           min: 21
         damage:
           types:
             Poison: 2
       - !type:Jitter
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: wakeupper
           min: 1
 
 ####################################
@@ -304,7 +308,7 @@
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.6, 0.6
     state: probud
-  - type: Food
+  - type: Edible
     forceFeedDelay: 1
     transferAmount: null
     eatMessage: food-swallow
@@ -398,14 +402,16 @@
             Psy: -3
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: antishiz
           min: 11
         damage:
           types:
             Asphyxiation: 5
       - !type:Jitter
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: antishiz
           min: 1
 
 ####################################
@@ -430,7 +436,7 @@
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.6, 0.6
     state: shiza
-  - type: Food
+  - type: Edible
     forceFeedDelay: 1
     transferAmount: null
     eatMessage: food-swallow
@@ -501,7 +507,7 @@
     Narcotic:
       metabolismRate: 0.2 # lasts for 4 minutes instead of 5
       effects:
-      - !type:MovespeedModifier # nyoom
+      - !type:MovementSpeedModifier # nyoom
         conditions:
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
@@ -524,7 +530,7 @@
     Medicine:
       metabolismRate: 0.25
       effects:
-        - !type:ModifyBleedAmount
+        - !type:ModifyBleed
           amount: -1.5
         - !type:ModifyBloodLevel
           amount: 3
@@ -544,21 +550,21 @@
         # stops CMOs from hypoing you with lexorin and sec from filling you with tranq shells
         - !type:AdjustReagent
           conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
             reagent: Lexorin
             min: 1
           reagent: Lexorin
           amount: -1
         - !type:AdjustReagent
           conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
             reagent: ChloralHydrate
             min: 1
           reagent: ChloralHydrate
           amount: -1
         - !type:AdjustReagent
           conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
             reagent: Amatoxin
             min: 1
           reagent: Amatoxin
@@ -603,7 +609,7 @@
     Medicine:
       metabolismRate: 0.05
       effects:
-        - !type:ModifyBleedAmount
+        - !type:ModifyBleed
           amount: -1.5
         - !type:ModifyBloodLevel
           amount: 3
@@ -648,7 +654,7 @@
   metabolisms:
     Narcotic:
       effects:
-        - !type:MovespeedModifier
+        - !type:MovementSpeedModifier
           walkSpeedModifier: 1.1
           sprintSpeedModifier: 1.1
         - !type:GenericStatusEffect
@@ -665,17 +671,19 @@
           time: 3
           type: Add
         - !type:Emote
-          emote: Laugh
+          emote: STLaugh # Stalker-changes
           probability: 0.005
         - !type:GenericStatusEffect
           key: TemporaryBlindness
           component: TemporaryBlindness
           conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
+            reagent: StalkerMorphine
             min: 16
         - !type:HealthChange
           conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
+            reagent: StalkerMorphine
             min: 16
           damage:
             types:
@@ -688,7 +696,7 @@
           factor: 0.2
         - !type:HealthChange
           conditions:
-          - !type:TotalDamage
+          - !type:TotalDamageCondition
             min: 0
             max: 120
           damage:
@@ -716,7 +724,7 @@
           type: Add
           time: 5
           refresh: false
-        - !type:MovespeedModifier
+        - !type:MovementSpeedModifier
           walkSpeedModifier: 1.3
           sprintSpeedModifier: 1.3
         - !type:Jitter
@@ -739,17 +747,19 @@
           type: Local
           probability: 0.05
         - !type:Emote
-          emote: Laugh
+          emote: STLaugh # Stalker-changes
           probability: 0.005
         - !type:GenericStatusEffect
           key: TemporaryBlindness
           component: TemporaryBlindness
           conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
+            reagent: StalkerAdrenalina
             min: 16
         - !type:HealthChange
           conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
+            reagent: StalkerAdrenalina
             min: 16
           damage:
             types:
@@ -762,7 +772,7 @@
           factor: 0.2
         - !type:HealthChange
           conditions:
-          - !type:TotalDamage
+          - !type:TotalDamageCondition
             min: 0
             max: 120
           damage:
@@ -794,7 +804,8 @@
         factor: -3
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: StalkerAquaTabs
           min: 31
         damage:
           types:
@@ -994,11 +1005,13 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: SelfSteampackReagent
           min: 11
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: SelfSteampackReagent
           min: 11
         damage:
           types:
@@ -1054,11 +1067,13 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: MilitarySteampackReagent
           min: 6
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: MilitarySteampackReagent
           min: 6
         damage:
           types:
@@ -1114,11 +1129,13 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: SciSteampackReagent
           min: 6
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: SciSteampackReagent
           min: 6
         damage:
           types:

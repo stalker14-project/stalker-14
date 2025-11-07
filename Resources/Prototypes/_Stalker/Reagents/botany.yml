@@ -15,7 +15,7 @@
       effects:
       - !type:SatiateHunger
         conditions:
-        - !type:OrganType
+        - !type:MetabolizerTypeCondition
           type: Plant
     Poison:
       metabolismRate: 0.1
@@ -30,8 +30,9 @@
           factor: 1
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: STNavoz
           min: 2
         probability: 0.3

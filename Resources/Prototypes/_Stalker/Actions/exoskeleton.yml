@@ -3,7 +3,8 @@
   name: включить/выключить экзоскелет
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     useDelay: 60
     icon: _Stalker/Interface/Actions/patch.rsi/r_patch.png
+  - type: InstantAction
     event: !type:STTogglePoweredExoskeletonEvent

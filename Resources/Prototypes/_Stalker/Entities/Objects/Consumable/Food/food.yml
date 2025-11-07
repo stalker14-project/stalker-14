@@ -134,7 +134,7 @@
   - type: FlavorProfile
     flavors:
       - bread
-  - type: Food
+  - type: Edible
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/bread.rsi
   - type: RepositoryItem
@@ -176,7 +176,7 @@
   description: Неизвестно, кто умудряется печь батоны на территории Зоны, или каким образом их протаскивают через периметр. Однако этот хлеб не заражён, не радиоактивен, достаточно свеж и вполне съедобен. Во всяком случае, никто из сталкеров пока не жаловался.
   suffix: Stalker, еда
   components:
-  - type: Food
+  - type: Edible
   - type: Sprite
     layers:
     - state: plain
@@ -193,7 +193,7 @@
   id: STFoodBreadPlainSlice
   description: Кусок хлеба. На первый взгляд достаточно свеж и вполне съедобен.
   components:
-  - type: Food
+  - type: Edible
   - type: Sprite
     layers:
     - state: plain-slice
@@ -522,7 +522,7 @@
 ###################################
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  parent: DrinkBottleGlassBaseFull
   id: DrinkLemonadehBottleFull
   name: бутылка с лимонадом «Дюшес»
   description: "Один из сортов советского лимонада: безалкогольный сильногазированный тонизирующий напиток светло-жёлтого цвета. Помимо обычной лимонадной основы, оригинальный напиток содержит сироп-настой десертной южной груши сорта «Дюшес»"

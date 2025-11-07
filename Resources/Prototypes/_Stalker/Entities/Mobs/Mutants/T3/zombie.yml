@@ -46,10 +46,12 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 0.7
       baseSprintSpeed: 1.3
-    - type: Advertise
-      pack: SayStalkerZombie
-      minWait: 60
-      maxWait: 120
+    - type: Vocalizer
+      minVocalizeInterval: 1m
+      maxVocalizeInterval: 2m
+      hideChat: true
+    - type: DatasetVocalizer
+      dataset: SayStalkerZombie
     - type: Speech
       speechSounds: Alto
     - type: Vocal

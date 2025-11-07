@@ -6,28 +6,32 @@
 #   category: Vocal
 #   chatMessages: ["chat-emote-msg-sneeze"]
 #
-# - type: emote
-#   id: Cough
-#   name: chat-emote-name-cough
-#   icon: Interface/Emotes/cough.png
-#   category: Vocal
-#   whitelist:
-#     components:
-#     - Vocal
-#   blacklist:
-#     tags:
-#     - SiliconEmotes
-#   chatMessages: ["chat-emote-msg-cough"]
-#   chatTriggers:
-#     - cough
-#     - coughs
-#     - coughed
-#     - cough.
-#     - coughs.
-#     - coughed.
-#     - cough!
-#     - coughs!
-#     - coughed!
+- type: emote
+  id: Cough
+  name: chat-emote-name-cough
+  icon: Interface/Emotes/cough.png
+  category: Vocal
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    tags:
+    - SiliconEmotes
+  chatMessages: ["chat-emote-msg-cough"]
+  chatTriggers:
+    - cough
+    - coughs
+    - coughed
+    - cough.
+    - coughs.
+    - coughed.
+    - cough!
+    - coughs!
+    - coughed!
+    # Stalker-RU
+    - кашель
+    - кашляет
+    - кашлянул
 #
 # - type: emote
 #   id: CatMeow

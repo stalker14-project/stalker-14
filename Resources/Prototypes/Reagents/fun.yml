@@ -317,7 +317,7 @@
     Medicine:
       effects:
       - !type:Emote
-        emote: Laugh
+        emote: STLaugh # Stalker-changes
         showInGuidebook: true
         probability: 0.3
       - !type:PopupMessage
@@ -338,12 +338,12 @@
     Poison:
       metabolismRate: 0.25
       effects:
-      - !type:Emote
-        emote: Weh
-        showInChat: true
-        showInGuidebook: true
-        force: true
-        probability: 0.5
+      # - !type:Emote # Stalker-changes-start
+        # emote: Weh
+        # showInChat: true
+        # showInGuidebook: true
+        # force: true
+        # probability: 0.5 # Stalker-changes-end
       - !type:Polymorph
         prototype: ArtifactLizard # Does the same thing as the original YML I made for this reagent.
         conditions:
@@ -373,12 +373,12 @@
     Poison:
       metabolismRate: 0.25
       effects:
-      - !type:Emote
-        emote: Hew
-        showInChat: true
-        showInGuidebook: true
-        force: true
-        probability: 0.5
+      # - !type:Emote # Stalker-changes-start
+        # emote: Hew
+        # showInChat: true
+        # showInGuidebook: true
+        # force: true
+        # probability: 0.5 # Stalker-changes-end
       - !type:Polymorph
         prototype: ArtifactLizard
         conditions:

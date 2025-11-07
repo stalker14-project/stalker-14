@@ -20,5 +20,5 @@ public sealed partial class STVocalComponent : Component
     };
 
     [ViewVariables, AutoNetworkedField]
-    public EmoteSoundsPrototype? EmoteSounds;
+    public ProtoId<EmoteSoundsPrototype>? EmoteSounds = null;
 }

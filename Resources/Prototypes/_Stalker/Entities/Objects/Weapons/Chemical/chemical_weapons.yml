@@ -12,6 +12,8 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Chemical/chlorine_balloon_stalker.rsi
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 90
     spreadAmount: 8000
     solution:
@@ -22,11 +24,16 @@
     self: 15.5
   - type: Item
     size: Ginormous
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 1
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
@@ -43,7 +50,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/ipritgrenade.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 20
     spreadAmount: 10
     solution:
@@ -60,11 +71,16 @@
     self: 0.1
   - type: Item
     size: Small
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 3
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
@@ -81,7 +97,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/lewisitegrenade.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 30
     spreadAmount: 20
     solution:
@@ -98,9 +118,12 @@
     self: 0.25
   - type: Item
     size: Small
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 3
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
   - type: TimerTriggerVisuals
@@ -119,7 +142,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/hydrocyanicgrenade.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 180
     spreadAmount: 20
     solution:
@@ -132,9 +159,12 @@
     size: Normal
     shape:
     - 0,0,1,1
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 5
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
   - type: TimerTriggerVisuals
@@ -153,7 +183,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/phosphorusgreande.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 10
     spreadAmount: 999
     solution:
@@ -172,9 +206,12 @@
     size: Normal
     shape:
     - 0,0,1,1
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 3
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
 
@@ -319,7 +356,8 @@
         - Вы чувствуете, как ваше зрение ухудшается.
         - Ваши веки быстро дёргаются.
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: ChlorineStalker
           min: 5
       - !type:Emote
         emote: Crying
@@ -331,13 +369,15 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: ChlorineStalker
           min: 1
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: ChlorineStalker
           min: 10
         probability: 0.2
 
@@ -381,7 +421,8 @@
         - Ваша кожа слезла!
         - Вы чувствуете повышенную температуру.
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: IpritStalker
           min: 5
       - !type:Emote
         emote: Crying
@@ -390,13 +431,15 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: IpritStalker
           min: 4
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: IpritStalker
           min: 5
         probability: 0.2
 
@@ -441,7 +484,8 @@
         - Ваша кожа слезла!
         - Вы чувствуете повышенную температуру.
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: LewisiteStalker
           min: 5
       - !type:Emote
         emote: Crying
@@ -453,13 +497,15 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: LewisiteStalker
           min: 4
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: LewisiteStalker
           min: 5
         probability: 0.2
 
@@ -505,7 +551,8 @@
         - Вы сильнее задыхаетесь!
         - Малой уровень кислорода!
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: HydrocyanicStalker
           min: 2
       - !type:Emote
         emote: Cough
@@ -533,7 +580,7 @@
           types:
             Heat: 30
             Caustic: 30
-      - !type:FlammableReaction
+      - !type:Flammable
         multiplier: 0.1
       - !type:AdjustTemperature
         amount: 120
@@ -541,7 +588,7 @@
     Flammable:
       methods: [ Touch ]
       effects:
-      - !type:FlammableReaction
+      - !type:Flammable
         multiplier: 0.05
       - !type:Ignite
       - !type:Emote
@@ -570,14 +617,15 @@
             Bloodloss: -5
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: HydrocyanicStalker
           min: 0.1
         reagent: HydrocyanicStalker
         amount: -50
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: DexalinPlusStalker
           min: 25
         damage:
           types:

@@ -582,12 +582,12 @@
     Poison:
       metabolismRate: 0.05
       effects:
-      - !type:Emote
-        emote: Honk
-        showInChat: true
-        showInGuidebook: true
-        force: true
-        probability: 0.2
+      # - !type:Emote # Stalker-changes-start
+        # emote: Honk
+        # showInChat: true
+        # showInGuidebook: true
+        # force: true
+        # probability: 0.2 # Stalker-changes-end
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition

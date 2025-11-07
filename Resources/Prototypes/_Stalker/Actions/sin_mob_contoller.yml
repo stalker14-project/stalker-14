@@ -5,14 +5,15 @@
   suffix: ST
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
-      useDelay: 1
-      checkCanInteract: false
-      checkConsciousness: false
-      icon:
-        sprite: _Stalker/Interface/Actions/sin.rsi
-        state: off
-      event: !type:StalkerSinMobControllerOffActionEvent
+  - type: Action
+    useDelay: 1
+    checkCanInteract: false
+    checkConsciousness: false
+    icon:
+      sprite: _Stalker/Interface/Actions/sin.rsi
+      state: off
+  - type: InstantAction
+    event: !type:StalkerSinMobControllerOffActionEvent
 
 - type: entity
   id: StalkerSinMobControllerOnAction
@@ -21,11 +22,12 @@
   suffix: ST
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       useDelay: 1
       checkCanInteract: false
       checkConsciousness: false
       icon:
         sprite: _Stalker/Interface/Actions/sin.rsi
         state: on
+    - type: InstantAction
       event: !type:StalkerSinMobControllerOnActionEvent

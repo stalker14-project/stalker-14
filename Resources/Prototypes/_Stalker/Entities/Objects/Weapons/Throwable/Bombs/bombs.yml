@@ -291,7 +291,8 @@
     - state: icon_unlit
       map: ["base"]
       scale: 0.7, 0.7
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 1
     delayOptions: [1, 5, 10]
     initialBeepDelay: 0
@@ -308,6 +309,8 @@
     totalIntensity: 100
     canCreateVacuum: true
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
 
 - type: entity
   name: взрывчатка FL-2
@@ -327,7 +330,8 @@
     - state: icon
       map: ["base"]
       scale: 0.7, 0.7
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 60
     delayOptions: [5, 10, 20, 30, 40, 50, 60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 900, 1200, 1800, 3600]
     initialBeepDelay: 0
@@ -344,3 +348,5 @@
     totalIntensity: 500
     canCreateVacuum: false
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer

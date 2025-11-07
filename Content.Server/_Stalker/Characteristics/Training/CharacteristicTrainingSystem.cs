@@ -78,7 +78,7 @@ namespace Content.Server._Stalker.Characteristics.Training
                 return;
             if (component is null)
                 return;
-            var entity = (uid, trainee);
+            var entity = (user, trainee);
             if (!_characteristicSystem.TryGetCharacteristic(entity, component.Characteristic, out var characteristic) && characteristic == null)
                 return;
             int value = characteristic.Value.Level;
@@ -98,8 +98,7 @@ namespace Content.Server._Stalker.Characteristics.Training
                 return;
             }
 
-            _characteristicSystem.TrySetCharacteristic((uid, trainee), component.Characteristic, increase, DateTime.UtcNow);
-            Dirty(uid, component);
+            _characteristicSystem.TrySetCharacteristic(entity, component.Characteristic, increase, DateTime.UtcNow);
 
             args.Handled = true;
         }
