@@ -14,7 +14,6 @@
 #   description: "department-StalkerAdvanced-description"
 #   color: "#9FED58"
 #   roles:
-#   # - MilitaryStalker
 #   # - PoliceOfficer
 #   # - MayorCity
 #   # - Prokuror
@@ -24,7 +23,6 @@
 #   # - Doctor
 #   # - HeadDoctor
 #   # - Police
-#   # - StalkerUN
 #   # - StalkerSBU
 #   # - StalkerZavet
 #   # - StalkerProjectOrchestrator
@@ -40,10 +38,7 @@
 #   # - StalkerClown
 #   # - StalkerEcologist
 #   # - StalkerHeadEcologist
-#   # - StalkerUN
-#   # - StalkerISSG
 #   # - StalkerPoisk
-#   # - StalkerUNISG
 
 - type: department
   id: StalkerAdvanced
@@ -75,6 +70,7 @@
   - StalkerMercenary
   - StalkerHeadMercenary
   - StalkerDeserter
+  - StalkerDeserterHead
   - StalkerRene
   - StalkerHeadRene
 
@@ -94,34 +90,22 @@
   - HeadMilitaryStalker
 
 - type: department
+  id: StalkerUnitedNations
+  name: department-StalkerUnitedNations
+  description: department-StalkerUnitedNations-description
+  color: "#0000FF"
+  weight: 6
+  roles:
+  - StalkerUN
+# - StalkerUNISG
+
+- type: department
   id: StalkerReligius
   name: department-StalkerReligius
   description: department-StalkerReligius-description
   color: "#C0C0C0"
-  weight: 6
+  weight: 5
   roles:
   - StalkerMonolith
   - StalkerHeadMonolith
   - StalkerGreh
-
-# - type: department
-# id: Evolver
-# name: department-Evolver
-#  description: department-Evolver-description
-#  color: "#1070C0"
-#  weight: -10
-#  roles:
-#  - EvolverPackFang
-#  - EvolverPackAlpha
-#  - EvolverSymbioteMedium
-#  - EvolverSymbioteArchon
-#  - Evolver
-
-# - type: department
-#  id: StalkerAnomalists
-#  name: department-StalkerAnomalists
-#  description: department-StalkerAnomalists-description
-#  color: "#9FED58"
-#  roles:
-#  - StalkerAnomalist
-#  - StalkerAnomalistGuardian

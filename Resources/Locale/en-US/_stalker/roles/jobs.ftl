@@ -21,6 +21,7 @@ job-covenant-supervisor = Explore the Zone and keep its secrets safe from prying
 job-deserter = Deserter
 job-deserter-desc = Deserter from government structures. Disobey dictators' orders! Defend the honor and dignity of the zone!
 job-deserter-supervisor = yourself.
+job-deserter-head = Deserter Leader
 
 job-dolg = Duty Fighter
 job-dolg-desc = Defender of humanity.
@@ -120,6 +121,8 @@ job-sbu-supervisor = your superiors.
 job-stalker = Loner
 job-stalker-desc = This is a nomadic semi-united faction that simply lives off the Zone to earn some coins for their daily life.
 job-stalker-supervisor = yourself.
+job-stalker-veteran = Veteran
+job-guide = Guide
 
 job-jaba = Toad
 job-jaba-desc = Interest group.
