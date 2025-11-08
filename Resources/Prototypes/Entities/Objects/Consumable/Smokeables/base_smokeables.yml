@@ -32,10 +32,12 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
-        maxVol: 20
+        maxVol: 25 # stalkerEN
         reagents:
           - ReagentId: Nicotine
             Quantity: 10
+          - ReagentId: Cossack # stalkerEN
+            Quantity: 5
 
 - type: entity
   parent: BaseSmokable
