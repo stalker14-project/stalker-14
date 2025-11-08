@@ -21,7 +21,7 @@
     requiredZones: []
   - !type:TimeWindowRequirenment
     startHourUtc: 16 # Start hour in UTC (e.g., 10:00 UTC = 10)
-    endHourUtc: 18   # End hour in UTC (e.g., 18:00 UTC = 18)
+    endHourUtc: 17   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 # Entity prototype referencing the above meta-prototype
 - type: entity
@@ -84,9 +84,9 @@
 
 - type: stWarZone
   id: SvalkaСemetery
-  rewardPointsPerPeriod: 0.7
+  rewardPointsPerPeriod: 1.5
   rewardPeriod: 30 # Период начисления очков в секундах
-  captureCooldownHours: 8
+  captureCooldownHours: 48
   shouldAwardWhenDefenderPresent: true
   captureTime: 300 # Время захвата зоны в секундах.
   requirements:
@@ -94,7 +94,7 @@
     requiredZones: []
   - !type:TimeWindowRequirenment
     startHourUtc: 13 # Start hour in UTC (e.g., 10:00 UTC = 10)
-    endHourUtc: 15   # End hour in UTC (e.g., 18:00 UTC = 18)
+    endHourUtc: 14   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 - type: entity
   id: WarZoneEntity_Svalka_Сemetery
@@ -180,7 +180,7 @@
     requiredZones: []
   - !type:TimeWindowRequirenment
     startHourUtc: 11 # Start hour in UTC (e.g., 10:00 UTC = 10)
-    endHourUtc: 13   # End hour in UTC (e.g., 18:00 UTC = 18)
+    endHourUtc: 12   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 - type: entity
   id: WarZoneEntity_Kordon_Ferma
