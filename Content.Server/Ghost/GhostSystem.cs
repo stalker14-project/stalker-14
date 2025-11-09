@@ -440,10 +440,10 @@ namespace Content.Server.Ghost
         }
 
         public EntityUid? SpawnGhost(Entity<MindComponent?> mind, EntityCoordinates? spawnPosition = null,
-            bool canReturn = false)
+            bool canReturn = false, bool? adminObserve = false)
         {
             // stalker-changes-start Сталкер воскресе из мертвых, смертью смерть поправ.
-            if (mind.Comp?.Session != null && !HasComp<RespawnOnDeathComponent>(mind))
+            if (mind.Comp?.Session != null && !HasComp<RespawnOnDeathComponent>(mind) && adminObserve != true)
             {
                 _gameTicker.Respawn(mind.Comp.Session);
                 return null;
@@ -469,13 +469,19 @@ namespace Content.Server.Ghost
                 return null;
             }
 
-            var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
+            var proto = adminObserve == true ? GameTicker.AdminObserverPrototypeName : GameTicker.ObserverPrototypeName;
+            var ghost = SpawnAtPosition(proto, spawnPosition.Value);
             // stalker-changes-start
 
             if (!TryComp<GhostComponent>(ghost, out var ghostComponent))
             {
-                if (mind.Comp?.Session != null)  _gameTicker.Respawn(mind.Comp.Session);
-                return null;
+                if (adminObserve != true)
+                {
+                    if (mind.Comp?.Session != null)  _gameTicker.Respawn(mind.Comp.Session);
+                    return null;
+                }
+
+                ghostComponent = EnsureComp<GhostComponent>(ghost);
             }
 
             // stalker-changes-end

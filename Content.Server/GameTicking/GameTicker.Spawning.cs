@@ -336,21 +336,21 @@ namespace Content.Server.GameTicking
         /// <summary>
         /// Causes the given player to join the current game as observer ghost. See also <see cref="SpawnObserver"/>
         /// </summary>
-        public void JoinAsObserver(ICommonSession player)
+        public void JoinAsObserver(ICommonSession player, bool? admin = false)
         {
             // Can't spawn players with a dummy ticker!
             if (DummyTicker)
                 return;
 
             PlayerJoinGame(player);
-            SpawnObserver(player);
+            SpawnObserver(player, admin);
         }
 
         /// <summary>
         /// Spawns an observer ghost and attaches the given player to it. If the player does not yet have a mind, the
         /// player is given a new mind with the observer role. Otherwise, the current mind is transferred to the ghost.
         /// </summary>
-        public void SpawnObserver(ICommonSession player)
+        public void SpawnObserver(ICommonSession player, bool? admin = false)
         {
             if (DummyTicker)
                 return;
@@ -365,7 +365,7 @@ namespace Content.Server.GameTicking
                 _roles.MindAddRole(mind.Value, "MindRoleObserver");
             }
 
-            var ghost = _ghost.SpawnGhost(mind.Value);
+            var ghost = _ghost.SpawnGhost(mind.Value, adminObserve: admin);
             _adminLogger.Add(LogType.LateJoin,
                 LogImpact.Low,
                 $"{player.Name} late joined the round as an Observer with {ToPrettyString(ghost):entity}.");

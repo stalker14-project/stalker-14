@@ -41,7 +41,7 @@ namespace Content.Server.GameTicking.Commands
             if (ticker.PlayerGameStatuses.TryGetValue(player.UserId, out var status) &&
                 status != PlayerGameStatus.JoinedGame)
             {
-                ticker.JoinAsObserver(player);
+                ticker.JoinAsObserver(player, isAdminCommand);
             }
             else
             {
