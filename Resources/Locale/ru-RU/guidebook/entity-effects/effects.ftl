@@ -115,22 +115,26 @@ entity-effect-guidebook-even-health-change =
 
 entity-effect-guidebook-status-effect-old =
     { $type ->
-        [update]{ $chance ->
-                    [1] Causes
-                     *[other] cause
-                 } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} without accumulation
-        [add]   { $chance ->
-                    [1] Causes
-                    *[other] cause
-                } {LOC($key)} for at least {NATURALFIXED($time, 3)} {MANY("second", $time)} with accumulation
-        [set]  { $chance ->
-                    [1] Causes
-                    *[other] cause
-                } {LOC($key)} for {NATURALFIXED($time, 3)} {MANY("second", $time)} without accumulation
-        *[remove]{ $chance ->
-                    [1] Removes
-                    *[other] remove
-                } {NATURALFIXED($time, 3)} {MANY("second", $time)} of {LOC($key)}
+        [update]
+            { $chance ->
+                [1] Вызывает
+               *[other] вызывают
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) }, эффект не накапливается
+        [add]
+            { $chance ->
+                [1] Вызывает
+               *[other] вызывают
+            } { LOC($key) } минимум на { NATURALFIXED($time, 3) }, эффект накапливается
+        [set]
+            { $chance ->
+                [1] Вызывает
+               *[other] вызывают
+            } { LOC($key) } на { NATURALFIXED($time, 3) }, эффект не накапливается
+       *[remove]
+            { $chance ->
+                [1] Удаляет
+               *[other] удаляют
+            } { NATURALFIXED($time, 3) } от { LOC($key) }
     }
 
 entity-effect-guidebook-status-effect =
@@ -343,9 +347,9 @@ entity-effect-guidebook-drunk =
 
 entity-effect-guidebook-electrocute =
     { $chance ->
-        [1] Electrocutes
-        *[other] electrocute
-    } the metabolizer for {NATURALFIXED($time, 3)} {MANY("second", $time)}
+        [1] Бьёт током
+       *[other] бьют током
+    } употребившего в течении { NATURALFIXED($time, 3) }
 
 entity-effect-guidebook-emote =
     { $chance ->
@@ -415,9 +419,9 @@ entity-effect-guidebook-paralyze =
 
 entity-effect-guidebook-movespeed-modifier =
     { $chance ->
-        [1] Modifies
-        *[other] modify
-    } movement speed by {NATURALFIXED($sprintspeed, 3)}x for at least {NATURALFIXED($time, 3)} {MANY("second", $time)}
+        [1] Делает
+       *[other] делают
+    } скорость передвижения { NATURALFIXED($sprintspeed, 3) }x от стандартной минимум на { NATURALFIXED($time, 3) }
 
 entity-effect-guidebook-reset-narcolepsy =
     { $chance ->
@@ -451,9 +455,13 @@ entity-effect-guidebook-innoculate-zombie-infection =
 
 entity-effect-guidebook-reduce-rotting =
     { $chance ->
-        [1] Regenerates
-        *[other] regenerate
-    } {NATURALFIXED($time, 3)} {MANY("second", $time)} of rotting
+        [1] Регенерирует
+       *[other] регенерируют
+    } { NATURALFIXED($time, 3) } { $time ->
+        [one] секунду
+        [few] секунды
+       *[other] секунд
+    } гниения
 
 entity-effect-guidebook-area-reaction =
     { $chance ->

@@ -23,8 +23,6 @@
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Chairs/old_chairs.rsi
     state: s2
-  - type: Transform
-    anchored: true
 
 - type: entity
   id: OldWoodChairStalker3
@@ -34,8 +32,6 @@
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/Chairs/old_chairs.rsi
     state: s3
-  - type: Transform
-    anchored: true
 
 - type: entity
   name: деревянный стул
@@ -47,10 +43,6 @@
   components:
   - type: Sprite
     state: wooden
-  - type: Physics
-    bodyType: Static
-  - type: Transform
-    anchored: true
   - type: Damageable
     damageModifierSet: Wood
   - type: Tag
@@ -66,10 +58,12 @@
   placement:
     mode: PlaceFree
   components:
+  - type: Transform
+    anchored: true
   - type: Clickable
   - type: InteractionOutline
   - type: Physics
-    bodyType: Dynamic
+    bodyType: Static
   - type: Fixtures
     fixtures:
       fix1:
@@ -89,8 +83,6 @@
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic
-  - type: Transform
-    anchored: true
 
 - type: entity
   name: chair
@@ -101,8 +93,10 @@
   components:
   - type: Anchorable
   - type: Rotatable
+  - type: Physics
+    bodyType: Dynamic
   - type: Transform
-    anchored: true
+    anchored: false
 
 - type: entity
   name: chair
@@ -127,6 +121,8 @@
   components:
   - type: Rotatable
     rotateWhileAnchored: true
+  - type: Physics
+    bodyType: Static
   - type: Transform
     anchored: true
 
@@ -139,8 +135,6 @@
   components:
   - type: Sprite
     state: comfy
-  - type: Transform
-    anchored: true
 
 - type: entity
   name: wooden chair
@@ -155,8 +149,6 @@
   - type: Tag
     tags:
     - Wooden
-  - type: Transform
-    anchored: true
 
 
 
@@ -172,8 +164,6 @@
   - type: Construction
     graph: Seat
     node: chairWoodBench
-  - type: Transform
-    anchored: true
 
 - type: entity
   name: white office chair
@@ -183,8 +173,6 @@
   components:
   - type: Sprite
     state: office-white
-  - type: Transform
-    anchored: true
 
 - type: entity
   name: dark office chair
@@ -194,5 +182,3 @@
   components:
   - type: Sprite
     state: office-dark
-  - type: Transform
-    anchored: true
