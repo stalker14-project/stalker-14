@@ -1,0 +1,101 @@
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactPebble
+  name: Pebble
+  suffix: Stalker, Pebble
+  components:  
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/artifacts.rsi
+    state: Pebble
+    scale: 0.4, 0.4
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalySpringboard
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 1
+  - type: PointLight
+    radius: 1.5
+    energy: 4.5
+    color: "#826c09"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Compression: -0.75
+        Radiation: 0.75
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Compression: 0.80
+        Asphyxiation: 0.95
+        Psy: 1.2
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactRosin
+  name: Rosin
+  suffix: Stalker, Rosin
+  components:  
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/artifacts.rsi
+    state: Rosin
+    scale: 0.5, 0.5
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyPulse
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 2
+  - type: PointLight
+    radius: 1.5
+    energy: 4.5
+    color: "#826c09"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Compression: -1.25
+        Radiation: 1.25
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Compression: 0.60
+        Asphyxiation: 0.85
+        Psy: 1.4
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactStoneCube
+  name: Stone Cube
+  suffix: Stalker, StoneCube
+  components:  
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/artifacts.rsi
+    state: StoneCube
+    scale: 0.6, 0.6
+  - type: ZoneArtifact
+    anomaly: AnomSEpicentre
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 3
+  - type: PointLight
+    radius: 1.5
+    energy: 4.5
+    color: "#c2c486"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Compression: -2
+        Radiation: 2
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Compression: 0.40
+        Asphyxiation: 0.75
+        Psy: 1.6

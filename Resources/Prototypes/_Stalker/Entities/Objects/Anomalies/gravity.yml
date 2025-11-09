@@ -62,6 +62,10 @@
       - id: ZoneArtifactAmoeba
         tier: 2
         ratio: 15
+      - id: ZoneArtifactStoneCube
+        tier: 3
+        ratio: 5
+        
 
 - type: entity
   id: ZoneAnomalyGrabber
@@ -124,6 +128,9 @@
       artifacts:
       - id: null
         ratio: 400
+      - id: ZoneArtifactStoneCube
+        tier: 3
+        ratio: 20
       - id: ZoneArtifactGravi
         tier: 4
         ratio: 10
@@ -178,12 +185,15 @@
           ratio: 525
         - id: ArtMedusa
           tier: 1
-          ratio: 25
+          ratio: 15
+        - id: ZoneArtifactPebble
+          tier: 1
+          ratio: 10
         - id: ZoneArtifactWhirlwind
           tier: 1
           ratio: 15
         - id: ZoneArtifactFlower
-          tier: 2
+          tier: 3
           ratio: 15
         - id: ZoneArtifactNightStar
           tier: 4
@@ -223,7 +233,10 @@
           ratio: 525
         - id: ZoneArtifactWhirlwind
           tier: 1
-          ratio: 15
+          ratio: 20
+        - id: ZoneArtifactRosin
+          tier: 2
+          ratio: 20
         - id: ZoneArtifactFlower
           tier: 2
           ratio: 15
@@ -341,7 +354,17 @@
     - type: ZoneArtifactSpawner
       artifacts:
         - id: null
-          ratio: 290
+          ratio: 600
         - id: ArtMedusa
           tier: 1
+          ratio: 20
+        - id: ZoneArtifactPebble
+          tier: 1
+          ratio: 20
+        - id: ZoneArtifactRosin
+          tier: 2
+          ratio: 15
+        - id: ZoneArtifactStoneCube
+          tier: 3
           ratio: 10
+          
