@@ -56,9 +56,9 @@ public sealed class FishingSystem : SharedFishingSystem
         if (!TryComp<ZoneArtifactSpawnerMapTierComponent>(map, out var mapTier))
             return;
 
-        if (mapTier.MaxTier >= 3)
+        if (mapTier.MaxTier >= 5)
         {
-            var fishTableId = $"StalkerFishingTier3";
+            var fishTableId = $"StalkerFishingTier5";
             component.FishList = new NestedSelector
             {
                 TableId = fishTableId
