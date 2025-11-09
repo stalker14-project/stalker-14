@@ -1,0 +1,36 @@
+- type: reagent
+  id: Cossack
+  name: cossack
+  desc: It's the Cossack part of Cossack vodka!
+  slippery: true
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: alcohol
+  color: "#d1d1d155"
+  boilingPoint: 78.2
+  meltingPoint: -114.1
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Radiation: -0.75
+
+- type: reagent
+  id: Psiconium
+  name: psiconium # man i had to call it something
+  desc: It fixes your brain.
+  slippery: false
+  physicalDesc: mild smelling
+  flavor: magical
+  color: "#FFF28A"
+  boilingPoint: 99.2
+  meltingPoint: -114.1
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Psy: -2
+            Asphyxiation: 1
