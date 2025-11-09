@@ -2,6 +2,7 @@
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Systems;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 
@@ -52,21 +53,16 @@ public sealed class ZoneAnomalyEffectMapTeleporterSystem : SharedZoneAnomalyEffe
 
     private EntityUid? GetFtlTargetMap(Entity<ZoneAnomalyEffectMapTeleporterComponent> effect)
     {
-        // Can be used for gaming events
-        if (effect.Comp.MapEntity is var map && Exists(map))
-            return map;
-
         // Creating a map, a common thing
-        var mapUid = _mapSystem.CreateMap(out var mapId, false);
-
-        if (!_mapLoader.TryLoadMapWithId(mapId, effect.Comp.MapPath, out _, out _))
+        if (!_mapLoader.TryLoadMap(effect.Comp.MapPath, out var map, out _, DeserializationOptions.Default with {InitializeMaps = true}))
             return null;
 
         // Save the created map so as not to shit on them
+        var mapId = map.Value.Comp.MapId;
+        var mapUid = _mapSystem.GetMap(mapId);
         effect.Comp.MapId = mapId;
         effect.Comp.MapEntity = mapUid;
 
-        _mapSystem.InitializeMap(mapUid);
         return mapUid;
     }
 }

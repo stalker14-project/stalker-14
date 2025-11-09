@@ -13,6 +13,7 @@ using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
@@ -110,17 +111,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
 
     private void LoadMap(ResPath path)
     {
-        var map = _mapSystem.CreateMap(out var mapId);
-        if (_mapLoader.TryLoadMapWithId(mapId, path, out _, out _) && !_mapSystem.IsInitialized(mapId))
-        {
-            _mapSystem.InitializeMap(mapId);
-        }
-        if (_mapSystem.IsPaused(mapId))
-        {
-            _mapSystem.SetPaused(mapId, false);
-        }
-        if (!_mapSystem.IsInitialized(mapId))
-            _sawmill.Error($"Map with id {mapId} from {path} load failed.");
+        _mapLoader.TryLoadMap(path, out _, out _, DeserializationOptions.Default with { InitializeMaps = true });
     }
     private void OnStartCollide(EntityUid uid, NewMapTeleportComponent component, ref StartCollideEvent args)
     {
