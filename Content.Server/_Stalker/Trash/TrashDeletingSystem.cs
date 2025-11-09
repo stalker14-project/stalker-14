@@ -114,6 +114,12 @@ public sealed class TrashDeletingSystem : EntitySystem
         {
             if (map == MapId.Nullspace || map == new MapId(1)) // Never pause map 1
                 continue;
+
+            // Skip maps that explicitly disable pausing
+            var mapEntity = _mapMan.GetMapEntityIdOrThrow(map);
+            if (mapEntity != EntityUid.Invalid && EntityManager.HasComponent<NoPausingComponent>(mapEntity))
+                continue;
+
             bool hasPlayer = false;
             foreach (var session in _playerManager.Sessions)
             {
