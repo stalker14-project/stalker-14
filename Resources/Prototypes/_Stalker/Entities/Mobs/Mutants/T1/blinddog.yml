@@ -24,7 +24,7 @@
           prob: 0.7
         - id: STJunkTag # EN
           maxAmount: 1
-          prob: 0.03
+          prob: 0.02
         - id: STJunkTagWhite # EN
           maxAmount: 1
           prob: 0.01
@@ -102,7 +102,7 @@
           prob: 0.7
         - id: STJunkTag # EN
           maxAmount: 1
-          prob: 0.03
+          prob: 0.02
         - id: STJunkTagWhite # EN
           maxAmount: 1
           prob: 0.01
@@ -165,7 +165,7 @@
           prob: 0.7
         - id: STJunkTag # EN
           maxAmount: 1
-          prob: 0.03
+          prob: 0.02
         - id: STJunkTagWhite # EN
           maxAmount: 1
           prob: 0.01
@@ -228,7 +228,7 @@
           prob: 0.7
         - id: STJunkTag # EN
           maxAmount: 1
-          prob: 0.03
+          prob: 0.02
         - id: STJunkTagWhite # EN
           maxAmount: 1
           prob: 0.01
@@ -253,8 +253,8 @@
     - type: STWeight
       self: 25
     - type: MovementSpeedModifier
-      baseWalkSpeed: 2
-      baseSprintSpeed: 3
+      baseWalkSpeed: 2.5 # EN
+      baseSprintSpeed: 4.5 # EN
       soundHit:
         path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
         params:
@@ -282,7 +282,7 @@
           prob: 0.7
         - id: STJunkTag # EN
           maxAmount: 1
-          prob: 0.03
+          prob: 0.02
         - id: STJunkTagWhite # EN
           maxAmount: 1
           prob: 0.01
@@ -312,8 +312,8 @@
     - type: STWeight
       self: 85
     - type: MovementSpeedModifier
-      baseWalkSpeed: 2
-      baseSprintSpeed: 3
+      baseWalkSpeed: 2.5 # EN
+      baseSprintSpeed: 4.5 # EN
     - type: MeleeWeapon
       wideAnimation: WeaponArcClaw
       damage:
