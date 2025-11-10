@@ -136,12 +136,21 @@
     children:
     - id: MobMutantBoar
       weight: 20
-    - id: MobMutantOraclesBrown
-      weight: 5
-    - id: MobMutantFleshNeutral
-      weight: 50
     - id: MobMutantFleshAgressive
-      weight: 25
+      weight: 35
+    - id: MobMutantSpiderLapach
+      weight: 50
+
+- type: entityTable
+  id: StalkerRareMutant
+  table: !type:GroupSelector
+    children:
+    - id: MobMutantBloodsucker
+      weight: 5
+    - id: MobMutantOraclesBrown
+      weight: 10
+    - id: MobMutantSeasonedBoar
+      weight: 20
 
 - type: entityTable
   id: StalkerMedical
@@ -169,7 +178,7 @@
       weight: 45
     - !type:NestedSelector
       tableId: Tier1Artifact
-      weight: 3
+      weight: 2
     - !type:NestedSelector
       tableId: StalkerMedical
       weight: 20
@@ -186,7 +195,7 @@
       weight: 20
     - !type:NestedSelector
       tableId: Tier2Artifact
-      weight: 2
+      weight: 1.5
     - !type:NestedSelector
       tableId: StalkerFishingTier1
       weight: 62
@@ -203,7 +212,30 @@
     children:
     - !type:NestedSelector
       tableId: Tier3Scrap
-      weight: 10
+      weight: 5
+    - !type:NestedSelector
+      tableId: Tier2Artifact
+      weight: 1.75
+    - !type:NestedSelector
+      tableId: Tier3Artifact
+      weight: .25
+    - !type:NestedSelector
+      tableId: StalkerFishingTier2
+      weight: 80
+    - !type:NestedSelector
+      tableId: StalkerMutant
+      weight: 2.5
+
+- type: entityTable
+  id: StalkerFishingTier4
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: Tier3Scrap
+      weight: 7.5
+    - !type:NestedSelector
+      tableId: Tier2Artifact
+      weight: 2.5
     - !type:NestedSelector
       tableId: Tier3Artifact
       weight: 1
@@ -212,7 +244,39 @@
       weight: 80
     - !type:NestedSelector
       tableId: Tier3STFish
-      weight: 9
+      weight: 10
+    - !type:NestedSelector
+      tableId: StalkerMutant
+      weight: 3
+    - !type:NestedSelector
+      tableId: StalkerRareMutant
+      weight: .5
+
+- type: entityTable
+  id: StalkerFishingTier5
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: Tier3Scrap
+      weight: 10
+    - !type:NestedSelector
+      tableId: Tier2Artifact
+      weight: 3
+    - !type:NestedSelector
+      tableId: Tier3Artifact
+      weight: 2
+    - !type:NestedSelector
+      tableId: StalkerFishingTier2
+      weight: 50
+    - !type:NestedSelector
+      tableId: Tier3STFish
+      weight: 12.5
+    - !type:NestedSelector
+      tableId: Tier4STFish
+      weight: 1
+    - !type:NestedSelector
+      tableId: StalkerRareMutant
+      weight: 2.5
 
 - type: entityTable
   id: StalkerFishingTable
