@@ -122,24 +122,29 @@
     - name: shop-category-weapons
       priority: 1
       items:
+        # Melee
+        STThrowingknifeYellow: 500
+        # Pistols
         WeaponPistolStalkerAPS: 800
+        WeaponPistolGSH18: 500
         WeaponPistolStalkerTT: 125
         WeaponPistolStalkerGlock: 300
         STWeaponRevolverSWModel325: 1000
         STWeaponRevolverSWModel625: 1450
+        # Shotguns
         STWeaponShotgunMossbergM88: 600
         STWeaponShotgunSPAS: 2100
+        # SMGs
+        STWeaponSMGPPS43: 1750
+        STWeaponSMGMP5: 2600
+        STWeaponSMGPP19: 3300
+        STWeaponSMGPP1901: 2000
+        # Rifles
         STWeaponRifleAKS74U: 3000
         STWeaponRifleAKS74: 5500
         STWeaponRifleL85: 2250
         STWeaponRifleAKM: 6700
-        STWeaponSMGMP5: 2600
-        STWeaponSMGPP19: 3300
-        STWeaponSMGPP1901: 2000
         STWeaponRifleFAL: 3000
-        STThrowingknifeYellow: 500
-        WeaponPistolGSH18: 500
-        STWeaponSMGPPS43: 1750
 
     - name: shop-category-magazines
       priority: 2
@@ -164,45 +169,42 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        6mmBuckshotBox: 375
-        7mmBuckshotBox: 65
-        8mmBuckshotBox: 850
+        # 7mm
+        7mmBuckshotBox: 65 # T0
+        6mmBuckshotBox: 375 # T1
+        8mmBuckshotBox: 825 # T2
         # .45
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 350
-        45ACPRIPBox: 650
-        45ACPAPBox: 2250
+        45ACPLFMJBox: 100 # T1
+        45ACPMFMJBox: 350 # T2
+        45ACPRIPBox: 800 # Mutant
+        45ACPAPBox: 1950 # T3
         # 7.25
-        725PBox: 130
-        725PTBox: 300
-        725LRNPCBox: 500
-        725PSTBox: 2000
+        725PBox: 130 # T1
+        725PTBox: 300 # T2
+        725LRNPCBox: 625 # Mutant
+        725PSTBox: 1450 # T3
         # 9.19
-        919PSOGJBox: 80
-        919PSTBox: 560
-        919RIPBox: 525
-        919PBMBox: 2000
+        919PSOGJBox: 80 # T1
+        919PSTBox: 560 # T2
+        919RIPBox: 625 # Mutant
+        919PBMBox: 1450 # T3
         # 9.18
-        918PGJBox: 80
-        918PSTBox: 560
-        918PBMBox: 2000
-        918SP7Box: 500
+        918PGJBox: 80 # T1
+        918PSTBox: 560 # T2
+        918SP7Box: 625 # Mutant
+        918PBMBox: 1425 # T3
         # 5.45
-        545FMJBox: 650
-        545HPBox: 600
-        545PCBox: 2250
-
+        545FMJBox: 650 # T2
+        545HPBox: 725 # Mutant
+        545PCBox: 1650 # T3
         # 5.56
-        556FMJBox: 650
-        556M855Box: 2250
-        556WarmagBox: 600
-
-        # 7.39
-        739FMJBox: 2650
-        739HPBox: 800
-
-        # other
-        751UNBox: 800
+        556FMJBox: 650 # T2
+        556M855Box: 1650 # T3
+        556WarmagBox: 725 # Mutant
+        # 7.62
+        739FMJBox: 1950 # T3
+        739HPBox: 850 # Mutant
+        751UNBox: 850 # Mutant
 
     - name: shop-category-medicine
       priority: 4
@@ -277,21 +279,21 @@
     - name: shop-category-armor
       priority: 7
       items:
-        # body
+        # Body Armor
         SetArmourJacketNoviceBrezentBuyableCrate: 1500 # T2 - PvP
         SetArmourJacketNoviceWhiteBuyableCrate: 1500 # T2 - PvP
-        STClothingOuterArmorLightPlateVestBaseANAgreenOld: 2000
-        STClothingOuterArmorLightPlateVestBaseANAgrayOld: 2000
-        ClothingOuterArmorSevaStalker: 7000
-        SetZaryaStalkerBuyableCrate: 2250
-        ClothingOuterArmorStalker: 14000
-        ClothingOuterArmorAborigineStalker: 10000
-        ClothingOuterArmor6B2: 2250
-        # helmet
-        ClothingHeadHelmetVityaz1C: 3500
-        ClothingHeadHelmetInfantry: 500
-        STClothingHeadHelmetMakeshiftTacticalT3: 1000
-        # belt
+        STClothingOuterArmorLightPlateVestBaseANAgreenOld: 2000 # T3 - Weak
+        STClothingOuterArmorLightPlateVestBaseANAgrayOld: 2000 # T3 - Weak
+        ClothingOuterArmorSevaStalker: 7000 # T3 - ENV
+        SetZaryaStalkerBuyableCrate: 2250 # T2 - PVE
+        ClothingOuterArmorStalker: 14000 # T3 - PvP
+        ClothingOuterArmorAborigineStalker: 10000 # T3 - PvE
+        ClothingOuterArmor6B2: 2250 # T2
+        # Helmet
+        ClothingHeadHelmetVityaz1C: 3500 # T3 - PvP
+        ClothingHeadHelmetInfantry: 500 # T2
+        STClothingHeadHelmetMakeshiftTacticalT3: 1000 # T2
+        # Belt
         ClothingBeltBandolierStalker: 75
         ClothingBeltTarzanOrange: 200
 

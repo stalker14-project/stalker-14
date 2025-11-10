@@ -346,6 +346,32 @@
     sound:
       path: /Audio/Effects/unwrap.ogg
 
+- type: entity
+  parent: BaseItem
+  id: Army545FMJCrate
+  name: Army 5.45x39 FMJ Ammo Boxes
+  description: Basic Army Kit containing 5.45x39 caliber FMJ cartridges, intended for OKSOP soldiers.
+  suffix: Stalker, T2
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    - id: 545FMJBox
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
 # Monolith Kits - WILL BE ADDED SOON
 
 # Event Kits - WILL BE ADDED SOON

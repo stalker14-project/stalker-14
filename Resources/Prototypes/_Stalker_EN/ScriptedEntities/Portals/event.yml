@@ -1,0 +1,31 @@
+﻿- type: entity
+  parent: MapTeleportBase
+  id: Spawn-Gulag #Event
+  name: Spawn-Gulag
+  components:
+  - type: NewMapTeleport
+    portalName: Spawn-Gulag
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Spawn-GulagUncollide #Event
+  name: Spawn-Gulag
+  components:
+  - type: NewMapTeleport
+    portalName: Spawn-Gulag
+
+- type: entity
+  parent: MapTeleportBase
+  id: Spawn-Casino #Event
+  name: Spawn-Casino
+  components:
+  - type: NewMapTeleport
+    portalName: Spawn-Casino
+
+- type: entity
+  parent: MapTeleportBaseUncollide
+  id: Spawn-CasinoUncollide #Event
+  name: Spawn-Casino
+  components:
+  - type: NewMapTeleport
+    portalName: Spawn-Casino

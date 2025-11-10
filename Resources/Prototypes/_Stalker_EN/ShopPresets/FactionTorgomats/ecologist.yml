@@ -4,17 +4,20 @@
     - name: shop-category-weapons
       priority: 1
       items:
-            # Melee
+        # Melee
         STCombatKnife: 10
-            # Guns
+        # Pistols
         WeaponPistolStalkerGlock: 200
+        STWeaponRevolverRugerRedhawk: 750
+        STWeaponRevolverSWModel625: 1650
+        # Shotguns
         STWeaponShotgunTOZ34: 200
         STWeaponShotgunMossbergM88: 650
-        STWeaponRevolverRugerRedhawk: 750
         STWeaponShotgunSPAS: 1550
-        STWeaponRevolverSWModel625: 1650
-        STWeaponRifleAKS74U: 2050
+        # SMGs
         STWeaponSMGPP1901: 2450
+        # Rifles
+        STWeaponRifleAKS74U: 2050
         STWeaponRifleM16: 3200
         STWeaponRifleAKS74: 3800
 
@@ -35,21 +38,25 @@
     - name: shop-category-ammunition
       priority: 3
       items:
+        # 7mm
+        6mmBuckshotBox: 250
+        7mmBuckshotBox: 45
+        # 9.19
         919PSOGJBox: 75
         919PSTBox: 180
         919RIPBox: 400
+        # .45
         45ACPRIPBox: 600
         45ACPLFMJBox: 100
         45ACPMFMJBox: 250
-        # ShotgunFlechette: 250 Ammo needs rework
-        6mmBuckshotBox: 250
-        7mmBuckshotBox: 45
+        # 5.45
         545HPBox: 400
         545FMJBox: 270
         545PCBox: 2500
+        # 5.56
         556WarmagBox: 500
         556FMJBox: 300
-        556M855Box: 2500
+        556M855Box: 3000
 
     - name: shop-category-medicine # 70% discount from stalkers
       priority: 4
