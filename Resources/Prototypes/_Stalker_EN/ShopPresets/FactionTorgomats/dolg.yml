@@ -33,36 +33,37 @@
     - name: shop-category-weapons
       priority: 1
       items:
-          # Guns
-          # 7mm
+        # Pistols
+        WeaponPistolStalkerAPS: 500 #T2
+        WeaponPistolStalkerTT: 250
+        # Shotguns
         STWeaponShotgunTOZ34: 200
         STWeaponShotgunMP133: 340
         STWeaponShotgunMP153: 800
-          # 5,45x39
+        # Rifles
         STWeaponRifleSaiga545: 1000
         STWeaponRifleAKS74U: 1500
         STWeaponRifleAKS74: 4000
+        STWeaponRifleOC14: 5650
+        STWeaponRifleAK103: 8000
         STWeaponRifleAKM: 6000
-        # STWeaponRifleA545Dolg: 7500 Removed for early wipe
-          # Smg
+        # STWeaponRifleA545Dolg: 7500 Removed till PvP Update
+        # SMGs
         STWeaponSMGPP91: 1200
         STWeaponSMGStalkerCP2Veresk: 2000
         STWeaponSMGPP19: 3000
-          # Other
-        WeaponPistolStalkerAPS: 500 #T2
-        WeaponPistolStalkerTT: 250
+        # Snipers
         STWeaponSniperMosin: 1200
-        STWeaponRifleAK103: 8000
-        # STWeaponSniperSVU: 8400 Removed for early wipe
         STWeaponSniperSKS: 1500
+        # STWeaponSniperSVU: 8400 Removed for early wipe
 
     - name: shop-category-magazines
       priority: 2
       items:
           # 5,45x39
-        Base545Mag10: 50 #T1
-        545Mag20: 220 #T2
-        545Mag30: 400 #T3
+        Base545Mag10: 50 # T1
+        545Mag20: 220 # T2
+        545Mag30: 400 # T3
           # 7,62x54 and 39
         Base739Mag10: 200
         739Mag30: 500
@@ -78,33 +79,33 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        6mmBuckshotBox: 225
-        7mmBuckshotBox: 50
-        8mmBuckshotBox: 700
-        # ShotgunFlechette: 175 Ammo needs rework
+        6mmBuckshotBox: 225 # T1
+        7mmBuckshotBox: 50 # T0
+        8mmBuckshotBox: 750 # T2
         # 7.25
-        725PBox: 90
-        725LRNPCBox: 500
+        725PBox: 90 # T1
+        725LRNPCBox: 500 # Mutant
         # 9.19
-        919PSOGJBox: 100 #T1
-        919PSTBox: 500 #T2
-        919PBMBox: 2000 #T3
-        919RIPBox: 250 #Mutant
-        918PGJBox: 100 #T1
-        918PSTBox: 500 #T2
-        918PBMBox: 2250 #T3
-        918SP7Box: 250 #Mutant
+        919PSOGJBox: 100 # T1
+        919PSTBox: 450 # T2
+        919PBMBox: 1450 # T3
+        919RIPBox: 500 # Mutant
+        # 9.18
+        918PGJBox: 100 # T1
+        918PSTBox: 450 # T2
+        918PBMBox: 1450 # T3
+        918SP7Box: 500 # Mutant
         # 5.45
-        545FMJBox: 500 #T2
-        545HPBox: 500 #Mutant
-        545PCBox: 2250 #T3
+        545FMJBox: 500 # T2
+        545HPBox: 625 # Mutant
+        545PCBox: 1650 # T3
         # 7.39
-        739FMJBox: 2500 #T3
-        739HPBox: 600 #Mutant
+        739FMJBox: 1950 # T3
+        739HPBox: 750 # Mutant
 
         # 7.54
-        754FMJBox: 2700 #T3
-        754HPBox: 650 #Mutant
+        754FMJBox: 2500 # T3
+        754HPBox: 1250 # Mutant
         # Other
 
     - name: shop-category-medicine
@@ -228,8 +229,14 @@
         STModuleSilencerSniperT1: 600
         STModuleSMGGripT1: 600
 
-    - name: shop-category-customization
+    - name: shop-category-grenades
       priority: 12
+      items:
+        KhattabkaGrenade: 550
+        DG05SmokeGrenade: 425
+
+    - name: shop-category-customization
+      priority: 13
       items:
         ClothingBandageStalkerRed: 5
         ClothingBandageStalkerRus: 25

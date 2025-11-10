@@ -64,31 +64,25 @@
     - name: shop-category-weapons
       priority: 1
       items:
-          # Guns
-        # 12mm
+        # Pistols
+        STWeaponRevolverRugerRedhawk: 850
+        STWeaponRevolverSWPC325TR: 400
+        WeaponPistolStalkerGlock: 400
+        # Shotguns
         STWeaponShotgunTOZ34: 225 # T2
         STWeaponShotgunMossbergM88: 500 # T2
-        STWeaponShotgunSPAS: 2000
-        # Nato
-        STWeaponRifleL85: 2100
-        STWeaponRifleSCARH: 4750
-        STWeaponRifleM16: 4000
-        STWeaponRifleFAL: 1750
-        STWeaponRifleFALo: 8000
-        # 5.45
-        STWeaponRifleAKS74U: 1500
-        STWeaponRifleAKS74: 1750
-        STWeaponRifleAKS74Green: 2100
-        # 7.62
+        STWeaponShotgunSPAS: 2000 # T3
+        # SMGs
+        STWeaponSMGMP5: 1800 # T3
+        # Nato Rifles
+        STWeaponRifleL85: 2100 # T2
+        STWeaponRifleSCARH: 6000 # T3
+        STWeaponRifleM16: 4000 # T2
+        STWeaponRifleFAL: 1750 # T3
+        STWeaponRifleFALo: 8000 # T3
+        # Snipers
         STWeaponSniperMosin: 1200
-        STWeaponRifleAKM: 5650
         #STWeaponSniperSVDSGrass: 8400 Removed for early wipe
-        # Smg
-        STWeaponSMGMP5: 1800
-        # Other
-        STWeaponRevolverRugerRedhawk: 400
-        STWeaponRevolverSWPC325TR: 850
-        WeaponPistolStalkerGlock: 400
 
 
     - name: shop-category-magazines
@@ -111,39 +105,34 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        6mmBuckshotBox: 320
-        7mmBuckshotBox: 45
-        8mmBuckshotBox: 800
+        # 7mm
+        6mmBuckshotBox: 320 # T1
+        7mmBuckshotBox: 45 # T0
+        8mmBuckshotBox: 800 # T2
         # 9.19
-        919PSOGJBox: 100 #T1
-        919PSTBox: 500 #T2
-        919PBMBox: 2000 #T3
-        919RIPBox: 250 #Mutant
-        918PGJBox: 100 #T1
-        918PSTBox: 500 #T2
-        918PBMBox: 2000 #T3
-        918SP7Box: 250 #Mutant
-        # 5.45
-        545FMJBox: 500 #T2
-        545HPBox: 500 #Mutant
-        545PCBox: 2250 #T3
+        919PSOGJBox: 100 # T1
+        919PSTBox: 500 # T2
+        919PBMBox: 1425 # T3
+        919RIPBox: 450 # Mutant
+        # 9.18
+        918PGJBox: 100 # T1
+        918PSTBox: 500 # T2
+        918PBMBox: 1425 # T3
+        918SP7Box: 450 # Mutant
         # 5.56
-        556FMJBox: 500 #T2
-        556WarmagBox: 500 #Mutant
-        556M855Box: 2250 #T3
-        #7.39
-        739FMJBox: 2500 #T3
-        739HPBox: 700 # Mutant
+        556FMJBox: 500 # T2
+        556WarmagBox: 550 # Mutant
+        556M855Box: 1650 # T3
         # 7.51
-        751M80Box: 2500
-        751UNBox: 700
+        751M80Box: 1950 # T3
+        751UNBox: 850 # Mutant
         # 7.54
-        754FMJBox: 2700
+        754FMJBox: 2500 # T3
         # .45
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 550
-        45ACPAPBox: 2000
-        45ACPRIPBox: 650
+        45ACPLFMJBox: 100 # T1
+        45ACPMFMJBox: 400 # T2
+        45ACPAPBox: 1950 # T3
+        45ACPRIPBox: 800 # Mutant
 
     - name: shop-category-medicine
       priority: 4
@@ -158,10 +147,10 @@
         Defibrillator: 900
         AntiRadMedipen: 150
         STPillboxProbud: 500
-        MedkitMilitary: 400
-        MedkitScience: 350
-        MedkitElite: 500
-        MedkitLAR: 550
+        MedkitMilitary: 450
+        MedkitScience: 400
+        MedkitElite: 550
+        MedkitLAR: 600
         MedkitCMSStalker: 150 # T1
         MedkitGrizzlyStalker: 850 # T2
 
@@ -195,7 +184,7 @@
         SetFreedomVeterBuyableCrate: 3200 # T2 Bundle
         SetFreedomDefenderBuyableCrate: 12000 # T3
         ClothingOuterArmorAborigineFreedom: 8500 # T3
-        ClothingOuterArmorSevaFreedom: 3200
+        ClothingOuterArmorSevaFreedom: 3200 # T3 - ENV
 
     - name: shop-category-storage-and-containers
       priority: 7
@@ -276,8 +265,14 @@
         STModuleSniperSightT1: 600
         STModuleSilencerSniperT1: 600
 
-    - name: shop-category-customization
+    - name: shop-category-grenades
       priority: 12
+      items:
+        KhattabkaGrenade: 550
+        DG05SmokeGrenade: 425
+
+    - name: shop-category-customization
+      priority: 13
       items:
         ClothingBandageStalkerGreen: 5
         ClothingBandageStalkerPeace: 10
@@ -339,7 +334,7 @@
         ClothingTorsoTurtlenecksMatrosska: 50
 
     - name: shop-category-entertainment
-      priority: 13
+      priority: 14
       items:
         AcousticGuitarInstrument: 250
         AccordionInstrument: 250

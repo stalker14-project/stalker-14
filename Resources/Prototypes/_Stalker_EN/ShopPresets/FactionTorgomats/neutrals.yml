@@ -90,27 +90,26 @@
   - name: shop-category-weapons
     priority: 1
     items:
-      # Guns
-      # 7mm
+      # Pistols
+      WeaponPistolStalkerTT: 75 # T1
+      WeaponPistolStalkerPM: 75 # T1
+      STWeaponRevolverSWModel325: 500
+      STWeaponRevolverSWPC325TR: 1000
+      WeaponPistolStalkerAPS: 900 # T2
+      # Shotguns
       STWeaponShotgunTOZ34: 250 # T1
       STWeaponShotgunMP133: 500 # T2
       STWeaponShotgunMossbergM88: 650
-      # 9x18
-      WeaponPistolStalkerPM: 75 #T1
-      # 7,62x25
-      WeaponPistolStalkerTT: 75 #T1
-      # 5,45x39
-      STWeaponRifleSaiga545: 1750 # T3
-      STWeaponRifleAKS74U: 2000
-      STWeaponRevolverSWModel325: 500
-      STWeaponRevolverSWPC325TR: 1000
-      # Other
+      # SMGs
       STWeaponSMGMP40: 1000
-      WeaponPistolStalkerAPS: 900 #T2
-      STWeaponSniperSKS: 1850 # T2
-      STWeaponSniperMosin: 1500
       STWeaponSMGPPSh41: 2750
       STWeaponSMGPP91: 4000
+      # Rifles
+      STWeaponRifleSaiga545: 1750 # T3
+      STWeaponRifleAKS74U: 2000
+      # Snipers
+      STWeaponSniperSKS: 1850 # T2
+      STWeaponSniperMosin: 1500
 
   - name: shop-category-magazines
     priority: 2
@@ -132,38 +131,38 @@
   - name: shop-category-ammunition
     priority: 3
     items:
-      7mmBuckshotBox: 30
-      6mmBuckshotBox: 300
+      7mmBuckshotBox: 30 # T0
+      6mmBuckshotBox: 300 # T2
       # 5.45
-      545FMJBox: 700
-      545HPBox: 500
-      545PCBox: 3000
+      545FMJBox: 700 # T2
+      545HPBox: 500 # Mutant
+      545PCBox: 1650 # T3
       # 7.39
-      739HPBox: 700
-      739FMJBox: 2540
+      739HPBox: 700 # Mutant
+      739FMJBox: 1950 # T3
       # 7.54
-      754HPBox: 750
-      754FMJBox: 2500
+      754HPBox: 1250 # Mutant
+      754FMJBox: 2500 # T3
       # 9.18
-      918PGJBox: 80
-      918SP7Box: 200
-      918PSTBox: 450
-      918PBMBox: 2000
+      918PGJBox: 80 # T1
+      918SP7Box: 625 # Mutant
+      918PSTBox: 450 # T2
+      918PBMBox: 1450 # T3
       # 9.19
-      919PSOGJBox: 100
-      919RIPBox: 500
-      919PBMBox: 2250
-      919PSTBox: 450
+      919PSOGJBox: 100 # T1
+      919RIPBox: 625 # Mutant
+      919PBMBox: 1450 # T3
+      919PSTBox: 450 # T2
       # 7.25
-      725PBox: 100
-      725LRNPCBox: 500
-      725PTBox: 465
-      725PSTBox: 2650
+      725PBox: 100 # T1
+      725LRNPCBox: 625 # Mutant
+      725PTBox: 465 # T2
+      725PSTBox: 1450 # T3
       #45
-      45ACPRIPBox: 650
-      45ACPLFMJBox: 250
-      45ACPMFMJBox: 1550
-      45ACPAPBox: 2850
+      45ACPRIPBox: 850 # Mutant
+      45ACPLFMJBox: 250 # T1
+      45ACPMFMJBox: 1550 # T2
+      45ACPAPBox: 1950 # T3
 
   - name: shop-category-medicine
     priority: 4

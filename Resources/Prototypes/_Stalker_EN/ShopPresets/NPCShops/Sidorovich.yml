@@ -123,31 +123,30 @@
     - name: shop-category-weapons
       priority: 1
       items:
-            # Melee
+        # Melee
         StalkerBallBat: 50
         STThrowingknifeBlue: 250
-          # Guns
-        # 7mm
+        # Shotguns
         STWeaponShotgunTOZ34: 250 # T1
         STWeaponShotgunMP133: 500 # T2
         STWeaponShotgunMP153: 1700 # T2
-        # 9x18
+        # Pistols
         WeaponPistolStalkerPM: 50 #T1
-        # 7,62x25
         WeaponPistolStalkerTT: 50 #T1
-        # 5,45x39
-        STWeaponRifleSaiga545: 1750 # T3
-        STWeaponRifleAKS74U: 2000
         STWeaponRevolverSWModel325: 500
-        STWeaponRevolverSWPC325TR: 1000
-        STWeaponRifleAKS74: 4200
-        # Other
-        STWeaponSMGMP40: 1000
         WeaponPistolStalkerAPS: 900 #T2
-        STWeaponSniperSKS: 1850 # T2
-        STWeaponSniperMosin: 1500
+        STWeaponRevolverSWPC325TR: 1000
+        # SMGs
+        STWeaponSMGMP40: 1000
         STWeaponSMGPPSh41: 2500
         STWeaponSMGPP91: 3000
+        # Rifles
+        STWeaponRifleSaiga545: 1750 # T3
+        STWeaponRifleAKS74U: 2000
+        STWeaponRifleAKS74: 4200
+        # Snipers
+        STWeaponSniperSKS: 1850 # T2
+        STWeaponSniperMosin: 1500
 
     - name: shop-category-magazines
       priority: 2
@@ -170,30 +169,31 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        7mmBuckshotBox: 50
-        6mmBuckshotBox: 300
+        #7mm
+        7mmBuckshotBox: 50 # T0
+        6mmBuckshotBox: 275 # T1
         # 5.45
-        545FMJBox: 700
-        545HPBox: 500
+        545FMJBox: 700 # T2
+        545HPBox: 500 # Mutant
         # 7.39
-        739HPBox: 750
+        739HPBox: 750 # Mutant
         # 7.54
-        754HPBox: 850
+        754HPBox: 850 # Mutant
         # 9.18
-        918PGJBox: 80
-        918PSTBox: 245
-        918SP7Box: 500
+        918PGJBox: 80 # T1
+        918PSTBox: 245 # T2
+        918SP7Box: 625 # Mutant
         # 9.19
-        919PSOGJBox: 100
-        919PSTBox: 265
-        919RIPBox: 500
+        919PSOGJBox: 100 # T1
+        919PSTBox: 265 # T2
+        919RIPBox: 625 # Mutant
         # 7.25
-        725PBox: 100
-        725LRNPCBox: 500
-        725PTBox: 465
-        #45
-        45ACPRIPBox: 650
-        45ACPLFMJBox: 250
+        725PBox: 100 # T1
+        725LRNPCBox: 625 # Mutant
+        725PTBox: 465 # T2
+        # .45
+        45ACPRIPBox: 725 # Mutant
+        45ACPLFMJBox: 250 # T2
 
     - name: shop-category-medicine
       priority: 4
@@ -250,8 +250,8 @@
         ClothingOuterArmor6B2: 2000
         STClothingOuterArmorRCBZ: 1800 # T2 - ENV
         ClothingOuterArmorZaryaStalker: 2000 # T2 - PVE
-        SetZaryaStalkerBuyableCrate: 3300
-        ClothingOuterArmorSevaStalker: 5000
+        SetZaryaStalkerBuyableCrate: 3300 # T2 - ENV
+        ClothingOuterArmorSevaStalker: 5000 # T3 - ENV
 
     - name: shop-category-storage-and-containers
       priority: 7

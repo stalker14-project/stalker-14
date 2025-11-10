@@ -79,22 +79,22 @@
       priority: 1
       items:
         STCombatKnife: 10
-          # shotgun
+        # Shotguns
         STWeaponShotgunMossbergM88: 630
-        STWeaponShotgunBenelliM4Super90: 1200
-        STWeaponShotgunSPAS: 1600
-          # prostogun
-        WeaponPistolStalkerGlock: 180
-        STWeaponSMGMP5: 1700
-        STWeaponRifleFAL: 1250
-        STWeaponRifleM14: 1500
-        STWeaponRifleG36: 4250
-        STWeaponRevolverSWPC325TR: 800
-        STWeaponRifleM4: 5750
-        STWeaponRifleM16: 2500
-        STWeaponRifleSIG550: 3550
-        STWeaponRifleSCARH: 3150
-        STWeaponRifleL85: 1900
+        STWeaponShotgunBenelliM4Super90: 1200 # T3
+        STWeaponShotgunSPAS: 2200 # T3
+        # Pistols
+        WeaponPistolStalkerGlock: 200
+        STWeaponRevolverSWPC325TR: 350
+        STWeaponRevolverRugerRedhawk: 650
+        # SMGs
+        STWeaponSMGMP5: 2200
+        # Rifles
+        STWeaponRifleL85: 2200 # T2
+        STWeaponRifleM4: 3300 # T2
+        STWeaponRifleSCARH: 5200 # T3
+        STWeaponRifleG36: 6000 # T3
+        STWeaponRifleLR300v1: 7500 # T3
 
     - name: shop-category-magazines
       priority: 2
@@ -118,22 +118,25 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        8mmBuckshotBox: 800
-        6mmBuckshotBox: 320
-        7mmBuckshotBox: 45
-        919PSOGJBox: 100
-        919PSTBox: 200
-        919PBMBox: 1850
-        751M80Box: 2250
-        751UNBox: 650
-        45ACPLFMJBox: 100
-        45ACPMFMJBox: 250
-        45ACPAPBox: 1850
+        # 7mm
+        8mmBuckshotBox: 800 # T2
+        6mmBuckshotBox: 320 # T1
+        7mmBuckshotBox: 45 # T0
+        # 9.19
+        919PSOGJBox: 100 # T1
+        919PSTBox: 200 # T2
+        919PBMBox: 1450 # T3
+        # .45
+        45ACPLFMJBox: 100 # T1
+        45ACPMFMJBox: 250 # T2
+        45ACPAPBox: 1950 # T3
+        # 5.56
         556FMJBox: 300
         556M855Box: 1850
-        556WarmagBox: 650
-        739FMJBox: 2700
-        739HPBox: 850
+        556WarmagBox: 650 # Mutant
+        # 7.51
+        751M80Box: 2250 # T3
+        751UNBox: 650 # Mutant
 
     - name: shop-category-medicine
       priority: 4
@@ -171,35 +174,40 @@
     - name: shop-category-armor
       priority: 6
       items:
-        STSkinsKitMercenary: 500
-        ClothingOuterJacketMerc: 50
-        STClothingOuterArmorLightPlateVestBaseMerc: 1100 # T2
-        ClothingOuterArmorSevaMerc: 4600
-        SetMerc2BuyableCrate: 12000 #T3
-        SetMercBuyableCrate: 12000 #T3
+        ClothingOuterJacketMerc: 50 # T1
+        STClothingOuterArmorLightPlateVestBaseMerc: 1100 # T2 - PvP
+        ClothingOuterArmorSevaMerc: 4600 # T3 - ENV
+        SetMerc2BuyableCrate: 12000 # T3 - PvP
+        SetMercBuyableCrate: 12000 # T3 - PvP
         #Helmets
         ClothingHeadMercLight: 300
-        ClothingHeadAssaultHelmetMerc: 3500 #T3
+        ClothingHeadAssaultHelmetMerc: 3500 # T3 - PvP
         ClothingHeadHelmetInfantryMerc: 600
-        ClothingHeadHelmetVityaz1Merc: 3000 #T3
+        ClothingHeadHelmetVityaz1Merc: 3000 # T3 - PvP
 
     - name: shop-category-storage-and-containers
       priority: 7
       items:
+        # Backpack
         ClothingBackpackDuffelGreenStalker: 30
         ClothingBackpackTacticOliveStalker: 450
         ClothingBackpackMercStalker: 1200
+        ClothingBackpackDuffelMilitaryBlue: 2500
+        # Belt
         ClothingBeltBandolierStalker: 20
         ClothingBeltTarzanGreen: 200
         ClothingBeltTarzanOrange: 200
+        # Medical Storage
         MedkitCMSStalker: 450
         MedkitGrizzlyStalker: 850
 
     - name: shop-category-raincoats-and-gasmasks
       priority: 8
       items:
+        # Coats
         ClothingOuterCoatDoshdevik: 100
         ClothingOuterCoatKevlarMercenaries: 2750
+        # Gas Masks
         ClothingMaskGasZarya: 100
         ClothingMaskGasMercStalker: 150
         ClothingMaskGasM40: 250
@@ -236,6 +244,7 @@
         GeigerCounter: 50
         BaseRadio: 50
         ClothingHeatBagStalker: 100
+        STSkinsKitMercenary: 500
 
     - name: shop-category-modules
       priority: 11
@@ -248,16 +257,22 @@
         STModuleSilencerSniperT1: 600
 
     - name: shop-category-paperwork
-      priority: 11
+      priority: 12
       items:
         Paper: 2
         Pen: 5
         MercBusinessCard: 10
 
-    - name: shop-category-customization
+    - name: shop-category-grenades
       priority: 13
       items:
-        ClothingBandageStalkerGreen: 5
+        KhattabkaGrenade: 550
+        DG05SmokeGrenade: 425
+
+    - name: shop-category-customization
+      priority: 14
+      items:
+        ClothingBandageStalkerMerc: 5
         ClothingHeadHatBeaniehat: 10
         ClothingMaskNeckFacemask: 10
         ClothingMaskNeckBalaklava1: 10

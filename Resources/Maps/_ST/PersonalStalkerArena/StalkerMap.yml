@@ -282,8 +282,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -3.5,1.5
       parent: 104
-    missingComponents:
-    - Strap
 - proto: CableApcExtension
   entities:
   - uid: 10
@@ -526,8 +524,6 @@ entities:
     - type: Transform
       pos: -1.5,-0.5
       parent: 104
-    missingComponents:
-    - Strap
 - proto: GasMinerOxygen
   entities:
   - uid: 66
@@ -857,8 +853,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,-2.5
       parent: 104
-    missingComponents:
-    - Strap
 - proto: OldWoodTable2
   entities:
   - uid: 79
@@ -870,6 +864,13 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-3.5
+      parent: 104
+- proto: OldWoodTable3
+  entities:
+  - uid: 39
+    components:
+    - type: Transform
+      pos: -0.5,2.5
       parent: 104
 - proto: OldWoodTable5
   entities:
@@ -883,6 +884,68 @@ entities:
     - type: Transform
       pos: 1.5,0.5
       parent: 104
+- proto: Paper
+  entities:
+  - uid: 74
+    components:
+    - type: Transform
+      pos: -0.51907736,2.643155
+      parent: 104
+    - type: Paper
+      stampState: paper_stamp-cap
+      stampedBy:
+      - stampedColor: '#3681BBFF'
+        stampedName: stamp-component-stamped-name-strelok
+      content: >-
+        ATTENTION STALKER!!
+
+
+        The Repository system allows players to safely store and manage their items between rounds. Follow the steps below to ensure proper use and avoid losing items.
+
+
+        You get 2 starter kits and 3K roubles!
+
+
+        How to navigate the UI --------------------
+
+
+        The repository window is divided into tabs for organization.
+
+
+        All: Displays every item currently stored.
+
+
+        Categories: Allows you to browse items by type (Weapons, Armor, Medical, etc.)
+
+
+        Use these tabs to easily find and manage your stored equipment.
+
+
+        How to get your items --------------------
+
+
+        Select the item you wish to take out.
+
+
+        Press the “Withdraw” button located directly beneath the item.
+
+
+        The item will be placed onto the repository, just pick it up!
+
+
+        --------- Important!! ---------
+
+
+        Double-check when logging off you placed all your items into the repository so it saves between rounds!
+
+
+        Happy Hunting!
+    missingComponents:
+    - Item
+    - Destructible
+    - Food
+    - BadFood
+    - Pullable
 - proto: PosterContrabandKoroliShut
   entities:
   - uid: 197
@@ -1027,8 +1090,6 @@ entities:
       parent: 104
     - type: Physics
       bodyType: Static
-    missingComponents:
-    - Strap
   - uid: 128
     components:
     - type: Transform
@@ -1036,8 +1097,6 @@ entities:
       parent: 104
     - type: Physics
       bodyType: Static
-    missingComponents:
-    - Strap
 - proto: STOldBed
   entities:
   - uid: 75
@@ -1045,8 +1104,6 @@ entities:
     - type: Transform
       pos: 4.5,1.5
       parent: 104
-    missingComponents:
-    - Strap
 - proto: STPottedPlant5
   entities:
   - uid: 149
@@ -1082,8 +1139,6 @@ entities:
     - type: Transform
       pos: -4.5,1.5
       parent: 104
-    missingComponents:
-    - Strap
 - proto: WallWoodFallout
   entities:
   - uid: 3
@@ -1454,13 +1509,6 @@ entities:
     components:
     - type: Transform
       pos: 2.438938,-1.312113
-      parent: 104
-- proto: WoodenYaschik1
-  entities:
-  - uid: 39
-    components:
-    - type: Transform
-      pos: -0.43606204,2.562887
       parent: 104
 - proto: WoodenYaschik3
   entities:

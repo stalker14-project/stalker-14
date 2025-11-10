@@ -91,36 +91,36 @@
 
     # Special
     # gonna need adjusting
-    STJunkHardDrive: 1000
-    STJunkHardDriveBroken: 250
-    STJunkTag: 350
-    STJunkTagWhite: 900
-    STJunkTracker: 1500
+    STJunkHardDrive: 750
+    STJunkHardDriveBroken: 200
+    STJunkTag: 200
+    STJunkTagWhite: 400
+    STJunkTracker: 1000
 
   categories:
   - name: shop-category-weapons
     priority: 1
     items:
-      # Guns
-      # 7mm
+      # Pistols
+      WeaponPistolStalkerTT: 300
+      WeaponPistolStalkerGlock: 250
+      # Shotguns
       STWeaponShotgunMP155T: 45 #T0.5
       STWeaponShotgunTOZ34: 225 # T2
       STWeaponShotgunMP133: 385 # T1.5
       STWeaponShotgunMossbergM88: 630 # T2
       STWeaponShotgunSPAS: 1300 # T3
-      # Nato
+      # SMGs
+      STWeaponSMGPP19: 2000
+      STWeaponSMGMP5: 2000
+      # Rifles
       STWeaponRifleL85Forecaster: 2100
       STWeaponRifleFAL: 1500
       STWeaponRifleM16: 3100
       STWeaponRifleM14: 3750
-      # Smg
-      STWeaponSMGPP19: 2000
-      STWeaponSMGMP5: 2000
-      # Other
       STWeaponRifleAKS74: 3500
       STWeaponRifleAKM: 3500
-      WeaponPistolStalkerTT: 300
-      WeaponPistolStalkerGlock: 250
+      # Snipers
       STWeaponSniperVepr: 4000
 
   - name: shop-category-magazines
@@ -150,33 +150,33 @@
   - name: shop-category-ammunition
     priority: 3
     items:
-      8mmBuckshotBox: 800
-      6mmBuckshotBox: 320
-      7mmBuckshotBox: 75
+      8mmBuckshotBox: 800 # T2
+      6mmBuckshotBox: 320 # T1
+      7mmBuckshotBox: 75 # T0
       # 7.25
-      725PBox: 100
-      725PTBox: 250
-      725PSTBox: 2000
+      725PBox: 100 # T1
+      725PTBox: 250 # T2
+      725PSTBox: 1450 # T3
       # 9.19
-      919PSOGJBox: 100
-      919PSTBox: 500
-      919PBMBox: 2000
+      919PSOGJBox: 100 # T1
+      919PSTBox: 500 # T2
+      919PBMBox: 1450 # T3
       # 5.45
-      545PCBox: 2250
-      545FMJBox: 250
+      545PCBox: 1650 # T3
+      545FMJBox: 250 # T2
       # 5.56
-      556FMJBox: 250
-      556M855Box: 2250
+      556FMJBox: 250 # T2
+      556M855Box: 1650 # T3
       # 7.39
-      739FMJBox: 2500
+      739FMJBox: 1950 # T3
       # 7.51
-      751M80Box: 2500
+      751M80Box: 1950 # T3
       # 7.54
-      754FMJBox: 2700
+      754FMJBox: 2500 # T3
       # 9.18
-      918PGJBox: 100
-      918PSTBox: 200
-      918PBMBox: 2000
+      918PGJBox: 100 # T1
+      918PSTBox: 200 # T2
+      918PBMBox: 1450 # T3
 
   - name: shop-category-medicine
     priority: 4

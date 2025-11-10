@@ -1,0 +1,49 @@
+﻿- type: entity
+  name: Ecologist Guard
+  suffix: Ecologist, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobEcologistGuard
+  description: A low level Military grunt with good equipment, standing in defense for Ecologist.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Stalker
+  - type: Bands
+    bandIcon: army
+  - type: Sprite
+    layers:
+    - map:
+      state: alive
+      sprite: _Stalker_EN/Mobs/Guards/Ecologist.rsi
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1

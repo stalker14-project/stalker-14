@@ -1,5 +1,5 @@
 ﻿- type: shopPreset
-  id: DeserterMubarackTraderEN # Not Used Yet - Will be tweaked
+  id: DeserterMubarackTraderEN # Finalizing Changes
   itemsForSale:
     # Thermal group - 1
     ZoneArtifactFireball: 540
@@ -75,32 +75,28 @@
     items:
       # Melee
       StalkerBallBat: 50
-        # Guns
-      # 7mm
+      # Pistols
+      WeaponPistolStalkerPM: 50 #T1
+      WeaponPistolStalkerTT: 50 #T1
+      WeaponPistolStalkerAPS: 900 #T2
+      # Shotguns
       STWeaponShotgunTOZ34: 250 # T1
       STWeaponShotgunMP133: 500 # T2
       STWeaponShotgunMP153: 1700 # T2
-      WeaponPistolStalkerPM: 50 #T1
-      WeaponPistolStalkerTT: 50 #T1
-      STWeaponRifleAKS74UBlack: 1200
-      STWeaponRifleAKS74Green: 3900
-      WeaponPistolStalkerAPS: 900 #T2
-      STWeaponSniperSKS: 1850 # T2
-      STWeaponSniperMosin: 1500
+      # SMGs
       STWeaponSMGPPSh41: 2500
       STWeaponSMGPP91: 3000
-      STWeaponRifleAKM: 6700
       STWeaponSMGPP19: 3300
       STWeaponSMGPP1901: 2000
+      # Rifles
+      STWeaponRifleAKS74UBlack: 1200
+      STWeaponRifleAKS74Green: 3900
       STWeaponRifleOC14: 5000
       STWeaponRifleOC14Alt: 5000
-      #BOOM-BADA-BAM!
-      KhattabkaGrenade: 175
-      DG05SmokeGrenade: 225
-      TearGasGrenadeStalker: 750
-      RGD5Grenade: 1000
-      FragGrenade: 1200
-      DynamiteOne: 1500
+      STWeaponRifleAKM: 6700
+      # Snipers
+      STWeaponSniperSKS: 1850 # T2
+      STWeaponSniperMosin: 1500
 
   - name: shop-category-magazines
     priority: 2
@@ -124,34 +120,35 @@
   - name: shop-category-ammunition
     priority: 3
     items:
-      7mmBuckshotBox: 50
-      6mmBuckshotBox: 340
-      8mmBuckshotBox: 700
+      # 7mm
+      7mmBuckshotBox: 50 # T0
+      6mmBuckshotBox: 340 # T2
+      8mmBuckshotBox: 800 # T3
       # 5.45
-      545FMJBox: 500
-      545HPBox: 250
-      545PCBox: 1250
+      545FMJBox: 500 # T2
+      545HPBox: 725 # Mutant
+      545PCBox: 1650 # T3
       # 7.39
-      739HPBox: 400
-      739FMJBox: 1350
+      739HPBox: 850 # Mutant
+      739FMJBox: 1950 # T3
       # 7.54
-      754HPBox: 500
-      754FMJBox: 1675
+      754HPBox: 1350 # Mutant
+      754FMJBox: 2500 # T3
       # 9.18
-      918PGJBox: 80
-      918PSTBox: 560
-      918PBMBox: 1000
-      918SP7Box: 250
+      918PGJBox: 80 # T1
+      918PSTBox: 560 # T2
+      918PBMBox: 1450 # T3
+      918SP7Box: 625 # Mutant
       # 9.19
-      919PSOGJBox: 80
-      919PSTBox: 560
-      919RIPBox: 250
-      919PBMBox: 1000
+      919PSOGJBox: 80 # T1
+      919PSTBox: 560 # T2
+      919RIPBox: 625 # Mutant
+      919PBMBox: 1450 # T3
       # 7.25
-      725PBox: 100
-      725LRNPCBox: 50
-      725PTBox: 465
-      725PSTBox: 1000
+      725PBox: 100 # T1
+      725LRNPCBox: 625 # Mutant
+      725PTBox: 465 # T2
+      725PSTBox: 1450 # T3
 
   - name: shop-category-medicine
     priority: 4
@@ -197,9 +194,6 @@
       STClothingOuterArmorDesertersZarya: 2000 # T2 - PVE
       STClothingOuterArmorDesertersPSZ7: 12000 #T3
       #STClothingOuterIOTVGEN4: 10000 #T4
-      # belt
-      ClothingBeltWebbingDeserter: 325
-      ClothingBeltTarzanDeserter: 150
 
   - name: shop-category-storage-and-containers
     priority: 7
@@ -211,7 +205,9 @@
       ##-------------------------------------------
       ClothingBackpackMercStalker: 899 # T3 |pve backpack
       ##-------------------------------------------
-
+      # Belt
+      ClothingBeltWebbingDeserter: 325
+      ClothingBeltTarzanDeserter: 150
   - name: shop-category-utilities
     priority: 8
     items:
@@ -237,8 +233,17 @@
       Matchbox: 10
       HatchetStalker: 150
 
-  - name: shop-category-customization
+  - name: shop-category-grenades
     priority: 9
+    items:
+      KhattabkaGrenade: 350
+      DG05SmokeGrenade: 225
+      TearGasGrenadeStalker: 750
+      RGD5Grenade: 1000
+      DynamiteOne: 1500
+
+  - name: shop-category-customization
+    priority: 10
     items:
       ClothingBandageStalkerJid: 50
       ClothingBandageStalkerBelarus: 50
@@ -302,7 +307,7 @@
       ClothingTorsoTurtlenecksMatrosska: 50
 
   - name: shop-category-entertainment
-    priority: 10
+    priority: 11
     items:
       # Dices
       DiceBag: 20

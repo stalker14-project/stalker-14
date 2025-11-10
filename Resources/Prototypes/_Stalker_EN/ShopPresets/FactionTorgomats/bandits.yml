@@ -96,33 +96,46 @@
     ClothingNeckBling: 1000
     TreasureCoinAdamantine: 500
 
+    # Materials
+    STCraftBasicThreadKitT1: 100
+    STCraftCottonFabricT1: 100
+    STCraftPinePlankT1: 100
+    STCraftSheetCopperT1: 100
+    STCraftStandardPCBT2: 150
+    STCraftSheetIronT2: 150
+    STCraftBirchPlankT2: 150
+    STCraftPlasticFittingT2: 150
+    STCraftGlassT2: 150
+    STCraftHideT2: 150
+    STCraftTapeKitT2: 150
+
   categories:
     - name: shop-category-weapons
       priority: 1
       items:
         # Melee
         StalkerBallBat: 50
-        # Guns
-        # 7mm
+        # Pistols
+        WeaponPistolStalkerTT: 250
+        WeaponPistolStalkerAPS: 500
+        STWeaponRevolverSWPC325TR: 700
+        # Shotguns
         STWeaponShotgunTOZ34: 100 # T2
         STWeaponShotgunMossbergM88: 500 # T2
         STWeaponShotgunMP153: 1000 # T3
-          # 5,45x39
+        # Rifles
         STWeaponRifleSaiga545: 1200
         STWeaponRifleAKS74U: 2000
         STWeaponRifleL85: 3000
         STWeaponRifleAKS74: 3000
-        # Smg
+        # SMGs
         STWeaponSMGMP5: 2000
         STWeaponSMGPPSh41: 1250
         STWeaponSMGMP40: 500
         STWeaponSMGPP19: 3000
-        # Other
-        WeaponPistolStalkerTT: 250
-        WeaponPistolStalkerAPS: 500
+        # Snipers
         STWeaponSniperMosin: 1000
         STWeaponSniperSKS: 1500
-        STWeaponRevolverSWPC325TR: 700
 
     - name: shop-category-magazines
       priority: 2
@@ -149,43 +162,44 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        6mmBuckshotBox: 320
-        7mmBuckshotBox: 75
-        8mmBuckshotBox: 800
-         # 7.25
-        725PBox: 90
-        725LRNPCBox: 50
-        725PTBox: 200
-        725PSTBox: 1500
+        # 7mm
+        6mmBuckshotBox: 320 # T1
+        7mmBuckshotBox: 75 # T0
+        8mmBuckshotBox: 800 # T2
+        # 7.25
+        725PBox: 90 # T1
+        725LRNPCBox: 625 # Mutant
+        725PTBox: 200 # T2
+        725PSTBox: 1450 # T3
         # 9.19
-        919PSOGJBox: 100 #T1
-        919PSTBox: 500 #T2
-        919PBMBox: 2000 #T3
-        919RIPBox: 250 #Mutant
-        918PGJBox: 100 #T1
-        918PSTBox: 500 #T2
-        918PBMBox: 2000 #T3
-        918SP7Box: 250 #Mutant
-
+        919PSOGJBox: 100 # T1
+        919PSTBox: 500 # T2
+        919PBMBox: 1450 # T3
+        919RIPBox: 625 # Mutant
+        # 9.18
+        918PGJBox: 100 # T1
+        918PSTBox: 500 # T2
+        918PBMBox: 1450 # T3
+        918SP7Box: 625 # Mutant
         # 5.45
-        545FMJBox: 500
-        545HPBox: 250
-        545PCBox: 2500
-        #556
-        556FMJBox: 500
-        556WarmagBox: 250
-        556M855Box: 2500
+        545FMJBox: 500 # T2
+        545HPBox: 725 # Mutant
+        545PCBox: 1650 # T3
+        # 5.56
+        556FMJBox: 500 # T2
+        556WarmagBox: 725 # Mutant
+        556M855Box: 1650 # T3
         # 7.39
-        739HPBox: 700
-        739FMJBox: 2500
+        739HPBox: 850 # Mutant
+        739FMJBox: 1950 # T3
         # 7.54
-        754FMJBox: 2500
-        754HPBox: 750
-         # .45
-        45ACPLFMJBox: 100 #T1
-        45ACPMFMJBox: 550 #T2
-        45ACPAPBox: 2000 #T3
-        45ACPRIPBox: 650 #Mutant
+        754FMJBox: 2500 # T3
+        754HPBox: 1350 # Mutant
+        # .45
+        45ACPLFMJBox: 100 # T1
+        45ACPMFMJBox: 550 # T2
+        45ACPAPBox: 1950 # T3
+        45ACPRIPBox: 800 # Mutant
 
     - name: shop-category-medicine # 50% discount from stalkers
       priority: 4
@@ -317,8 +331,17 @@
         STModuleSMGGripT1: 600
         STModuleSniperSightT1: 600
 
-    - name: shop-category-customization
+    - name: shop-category-grenades
       priority: 12
+      items:
+        KhattabkaGrenade: 350
+        DG05SmokeGrenade: 225
+        TearGasGrenadeStalker: 750
+        RGD5Grenade: 1000
+        DynamiteOne: 1500
+
+    - name: shop-category-customization
+      priority: 13
       items:
         ClothingTorsoJacketAdidasBlue: 5
         ClothingTorsoJacketAdidasRed: 5
