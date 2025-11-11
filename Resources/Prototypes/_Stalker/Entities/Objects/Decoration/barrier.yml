@@ -37,9 +37,19 @@
     map: ["enum.DoorVisualLayers.base"]
   - type: InteractionOutline
   - type: Physics
+    bodyType: Dynamic
   - type: Fixtures
     fixtures:
-      fix1:
+      closed:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.2,-0.3,1.2,0.3"
+        density: 100
+        mask: [FullTileMask]
+        layer: [MidImpassable]
+      open:
+        hard: false
+        enabled: false
         shape:
           !type:PhysShapeAabb
           bounds: "-1.2,-0.3,1.2,0.3"
