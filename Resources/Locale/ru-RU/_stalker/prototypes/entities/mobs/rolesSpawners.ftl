@@ -18,7 +18,7 @@ ent-MobStalkerFreeadom = кукла PCZI (переименуй меня)
     .desc = кукла PCZI (переименуй меня)
     .suffix = Stalker, пешка с нашивкой
 
-ent-MobStalkerDolg = кукла авангардовец (переименуй меня)
+ent-MobStalkerDolg = кукла долговец (переименуй меня)
     .desc = кукла долговец (переименуй меня)
     .suffix = Stalker, пешка с нашивкой
 
