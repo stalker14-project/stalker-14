@@ -30,36 +30,41 @@
     ZoneArtifactStuntman: 6480
     ZoneArtifactDistorter: 6480
     ZoneArtifactSoul: 4860
+    # Food
+    FoodMeatDogCooked: 70
+    STFoodMeatSpiderCooked: 35
+    FoodMeatBoarCooked: 110
+
     # Acidic group - 1
-    ZoneArtifactBlood: 1620
-    ZoneArtifactMeat: 3240
-    ZoneArtifactKolobok: 4860
+    ZoneArtifactBlood: 1600
+    ZoneArtifactMeat: 3200
+    ZoneArtifactKolobok: 4800
     # Acidic group - 2
-    ZoneArtifactPellicle: 540
-    ZoneArtifactBaloon: 4860
+    ZoneArtifactPellicle: 535
+    ZoneArtifactBaloon: 4800
 
-     # Mutant parts
+    # Mutant parts
 
-  #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 0 # T1
-    MutantPartSeasonedBoarHoof: 0 # T2
-    MutantPartOldBoarHoof: 0 # T3
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 320 # T1
+    MutantPartSeasonedBoarHoof: 525 # T2
+    MutantPartOldBoarHoof: 645 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 0
-    MutantPartFleshEye: 0
-    FoodMeatSpiderLeg: 0
+    MutantPartBlindDogTail: 180
+    MutantPartFleshEye: 260
+    FoodMeatSpiderLeg: 70
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 405
-    MutantPartPseudodogTail: 270
-    MutantPartSnorkFoot: 475
+    MutantPartLeshiyRoot: 745
+    MutantPartPseudodogTail: 455
+    MutantPartSnorkFoot: 875
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 945
-    MutantPartOraculeEye: 1890
-    MutantPartPseudogiantHeart: 4590
-    MutantPartZombieHand: 675
+    MutantPartBloodsuckerTentacles: 1015
+    MutantPartOraculeEye: 2160
+    MutantPartPseudogiantHeart: 5400
+    MutantPartZombieHand: 810
 
      #Weapons and armour ---- min cost / 2
 
@@ -155,6 +160,18 @@
     WristwatchGold: 5500
     ClothingNeckBling: 1000
     TreasureCoinAdamantine: 500
+            #МАТЕРИАЛЫ###
+    STCraftBasicThreadKitT1: 100
+    STCraftCottonFabricT1: 100
+    STCraftPinePlankT1: 100
+    STCraftSheetCopperT1: 100
+    STCraftStandardPCBT2: 150
+    STCraftSheetIronT2: 150
+    STCraftBirchPlankT2: 150
+    STCraftPlasticFittingT2: 150
+    STCraftGlassT2: 150
+    STCraftHideT2: 150
+    STCraftTapeKitT2: 150
 
   categories:
     - name: shop-category-weapons
@@ -252,7 +269,6 @@
         45ACPMFMJBox: 550
         45ACPAPBox: 1000
         45ACPRIPBox: 400
-
     - name: shop-category-armor
       priority: 4
       items:
