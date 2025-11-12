@@ -19,17 +19,17 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      8000: Dead
+      2300: Dead
   - type: Damageable
     damageModifierSet: STMutantT4DamageModifierSet
   - type: SlowOnDamage
     speedModifierThresholds:
-      7000: 0.8
+      2000: 0.8
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 8000
+        damage: 2300
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -44,11 +44,6 @@
     pullingItemTag: PliersStalker
     teethCount: 2
     initialTeeth: 2
-    blackboard:
-      VisionRadius: !type:Single
-        100 # you are in danger
-      AggroVisionRadius: !type:Single
-        100 # chimera is on the hunt
   - type: STWeight
     self: 50
   - type: MovementSpeedModifier
@@ -66,10 +61,6 @@
     heavyDamageModifier: 1.5
     angle: 30
     range: 1.4
-    soundHit:
-#      path: /Audio/Animals/bear.ogg # TO DO
-#      params:
-#       variation: 0.125
     soundSwing:
       path: /Audio/Animals/bear.ogg # TO DO
       params:

@@ -45,6 +45,12 @@
       spawned:
       - id: MutantPartCatGland
         amount: 1
+      - id: STJunkTag
+        maxAmount: 1
+        prob: 0.01
+      - id: STJunkTagWhite
+        maxAmount: 1
+        prob: 0.01
     - type: MeleeWeapon
       attackRate: 0.8
       heavyWindupModifier: 1
@@ -75,7 +81,7 @@
       transferAmount: 3
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.2
-      baseSprintSpeed: 3.5
+      baseSprintSpeed: 4
     - type: StaminaDamageOnHit
       damage: 3
     - type: STWeight
