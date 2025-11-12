@@ -1,4 +1,4 @@
-ent-StalkerShopDolg = Торгомат, Авангард
+ent-StalkerShopDolg = Торгомат, Долг
     .desc = Как торговец туда поместился?
     .suffix = ST, Mapping, Долг
 ent-StalkerDollarShopDolg = { ent-StalkerShopDolg }
