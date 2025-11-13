@@ -2148,3 +2148,43 @@
         - id: MedkitMilitary
       sound:
         path: /Audio/Effects/unwrap.ogg
+
+#ДОЛГ
+
+- type: entity
+  parent: UNstandartCrate
+  id: DutyCrate
+  name: набор снаряжения Бандитов
+  description: Набор экипировки
+  components:
+    - type: Item
+      size: Large
+      shape:
+        - 0,0,6,6
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: Icon
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+      state: kb2
+    - type: SpawnItemsOnUse
+      items:
+        - id: STClothingOuterArmorLightPlateVestBaseDolg
+        - id: 545Mag30
+        - id: 545Mag30
+        - id: STGauze
+        - id: STWeaponRifleAKS74U
+        - id: FlashlightSeclite
+        - id: PowerCellHigh
+        - id: ClothingHeadHelmetLight
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: 545FMJBox
+        - id: STCombatKnife
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: STBrutepack
+        - id: MedkitMilitary
+      sound:
+        path: /Audio/Effects/unwrap.ogg
