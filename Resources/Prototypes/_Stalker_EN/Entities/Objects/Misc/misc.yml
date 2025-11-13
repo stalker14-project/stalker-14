@@ -86,3 +86,21 @@
     size: Tiny
     shape:
     - 0,0,0,0
+
+- type: entity
+  name: photograph
+  parent: Paper
+  suffix: Stalker, junk
+  id: STJunkPhoto
+  description: A photo of something...
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/misc.rsi
+    layers:
+    - state: photo
+  - type: Item
+    size: Tiny
+  - type: Appearance
+  - type: PaperVisuals

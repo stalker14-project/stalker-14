@@ -1,0 +1,40 @@
+- type: entity
+  parent: BaseMob
+  id: MobSidorovich
+  name: Sidorovich
+  description: You know him.
+  suffix: ADMEME
+  components:
+  - type: Bands
+    band: Stalker
+    bandProto: STStalkerBand
+    bandRankId: 1
+    bandIcon: stalker
+  - type: Access
+    tags:
+      - Stalker
+  - type: STWeight
+    self: 80
+  - type: Climbing
+  - type: CombatMode
+    canDisarm: true
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    angle: 30
+    animation: WeaponArcFist
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 10
+  - type: StaminaDamageOnHit
+    damage: 50 # it just feels right
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker/NPC/Sidor.rsi
+    state: sidor
+  - type: Puller
+    needsHands: false
+  - type: Pullable
+  - type: Hands
+  - type: ComplexInteraction
