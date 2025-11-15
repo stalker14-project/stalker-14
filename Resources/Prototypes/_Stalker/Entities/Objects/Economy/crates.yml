@@ -2029,12 +2029,12 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
-#НАЙМЫ
+#Свобода
 
 - type: entity
   parent: UNstandartCrate
-  id: MercCrate
-  name: набор снаряжения Наёмников
+  id: FreedomCrate
+  name: набор снаряжения Свободы
   description: Набор экипировки
   components:
     - type: Item
@@ -2049,7 +2049,7 @@
       state: kb2
     - type: SpawnItemsOnUse
       items:
-        - id: STClothingOuterArmorLightPlateVestBaseMerc
+        - id: STClothingOuterArmorLightPlateVestBaseFreedom
         - id: 556Mag30
         - id: 556Mag30
         - id: STGauze

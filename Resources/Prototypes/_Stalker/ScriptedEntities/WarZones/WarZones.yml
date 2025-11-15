@@ -86,15 +86,15 @@
   id: SvalkaСemetery
   rewardPointsPerPeriod: 1.5
   rewardPeriod: 30 # Период начисления очков в секундах
-  captureCooldownHours: 48
+  captureCooldownHours: 8
   shouldAwardWhenDefenderPresent: true
   captureTime: 300 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
   - !type:TimeWindowRequirenment
-    startHourUtc: 13 # Start hour in UTC (e.g., 10:00 UTC = 10)
-    endHourUtc: 14   # End hour in UTC (e.g., 18:00 UTC = 18)
+    startHourUtc: 16 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 17   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 - type: entity
   id: WarZoneEntity_Svalka_Сemetery

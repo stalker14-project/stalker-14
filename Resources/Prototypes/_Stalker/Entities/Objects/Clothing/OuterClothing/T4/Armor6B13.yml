@@ -78,6 +78,17 @@
       sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
+    - type: Armor
+      armorClass: 4
+      modifiers:
+        flatReductions:
+         Blunt: 2
+         Slash: 2
+         Piercing: 6
+        coefficients:
+         Blunt: 0.80
+         Slash: 0.80
+         Piercing: 0.55
 
 - type: entity
   parent: STClothingOuterArmor6B13Base
@@ -93,10 +104,10 @@
     armorClass: 4
     modifiers:
       flatReductions:
-        Blunt: 3
+        Blunt: 2
         Slash: 2
-        Piercing: 5
+        Piercing: 6
       coefficients:
         Blunt: 0.80
         Slash: 0.80
-        Piercing: 0.60
+        Piercing: 0.55
