@@ -125,3 +125,57 @@
   - type: Sprite
     sprite: _Stalker/Objects/Misc/casete.rsi
     state: c7
+
+- type: entity
+  parent: BaseItem
+  id: CasseteGold
+  suffix: Stalker, Cassette, ADMEME
+  name: Gold Cassette
+  description: An old cassette tape with a solid gold case. The tape is fragile from the passing of time and likely won't survive rough handling or the mechanisms of a repository.
+  components:
+  - type: STWeight
+    self: 5
+  - type: Cassete
+    sound: /Audio/_Stalker_EN/Effects/static.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/cassette.rsi
+    state: gold
+
+- type: entity
+  parent: BaseItem
+  id: CasseteRed
+  suffix: Stalker, Cassette, ADMEME
+  name: Red Cassette
+  description: An old cassette tape with a red case and torn label. The tape is fragile from the passing of time and likely won't survive rough handling or the mechanisms of a repository.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker_EN/Effects/static.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/cassette.rsi
+    state: red
+
+- type: entity
+  parent: BaseItem
+  id: CasseteWhite
+  suffix: Stalker, Cassette, ADMEME
+  name: White Cassette
+  description: An old cassette tape with a white case and blank label. The tape is fragile from the passing of time and likely won't survive rough handling or the mechanisms of a repository.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker_EN/Effects/static.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/cassette.rsi
+    state: white

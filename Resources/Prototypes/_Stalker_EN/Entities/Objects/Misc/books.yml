@@ -1,0 +1,16 @@
+- type: entity
+  parent: BookBase
+  id: BookOldJournal
+  name: leather journal
+  description: An old leather-bound journal.
+  suffix: Stalker, junk
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/books.rsi
+    layers:
+    - state: journal
+  - type: STWeight
+    self: 1
+  - type: Engraveable
+  - type: Appearance
+  - type: PaperVisuals

@@ -1,0 +1,67 @@
+- type: entity
+  parent: BaseItem
+  id: BaseFeltPlushie
+  abstract: true
+  suffix: ST, toy, junk
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Fun/toys.rsi
+  - type: STWeight
+    self: 0.05
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+      - ClothMade
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      collection: ToySqueak
+    delay: 2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STPlushieFeltFlesh
+  name: felted flesh
+  description: A small felted doll depicting a mutant.
+  components:
+  - type: Sprite
+    state: feltedflesh
+    scale: 0.5,0.5
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STPlushieFeltCat1
+  name: felted cat
+  description: A small felted doll depicting a cat.
+  components:
+  - type: Sprite
+    state: feltedcat1
+    scale: 0.7,0.7
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STPlushieFeltCat2
+  name: felted cat
+  description: A small felted doll depicting a cat.
+  components:
+  - type: Sprite
+    state: feltedcat2
+    scale: 0.7,0.7
+
+- type: entity
+  parent: BaseFeltPlushie
+  id: STPlushieFeltCat3
+  name: felted cat
+  description: A small felted doll depicting a cat.
+  components:
+  - type: Sprite
+    state: feltedcat3
+    scale: 0.7,0.7
