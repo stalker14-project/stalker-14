@@ -1,11 +1,11 @@
 ent-STClothingOuterArmorLightPlateVestBase = базовый лёгкий бронежилет
     .desc = Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
     .suffix = ST, T2, PvP
-ent-STClothingOuterArmorLightPlateVestBaseFreedom = бронежилет «Щиток-2» PCZI
+ent-STClothingOuterArmorLightPlateVestBaseFreedom = бронежилет «Щиток-2» Свободы
     .desc = Лёгкий бронежилет второго класса защиты, основа основ.
 ent-STClothingOuterArmorLightPlateVestBaseStalker = бронежилет "Щиток-2"
     .desc = Лёгкий бронежилет второго класса защиты, основа основ.
-ent-STClothingOuterArmorLightPlateVestBaseDolg = лёгкий бронежилет 'Авангарда'
+ent-STClothingOuterArmorLightPlateVestBaseDolg = лёгкий бронежилет 'Долга'
     .desc = Стандартный бронежилет II типа, обеспечивающий достойную защиту от большинства видов повреждений
 ent-STClothingOuterArmorLightPlateVestBaseMilitary = военный бронежилет «Щиток-2»
     .desc = Лёгкий бронежилет второго класса защиты, основа основ.

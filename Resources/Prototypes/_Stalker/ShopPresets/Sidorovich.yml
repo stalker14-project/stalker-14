@@ -46,13 +46,13 @@
     # Mutant parts
 
     #Boars -------- Health * T * 0.45
-    MutantPartBoarHoof: 180 # T1
-    MutantPartSeasonedBoarHoof: 365 # T2
+    MutantPartBoarHoof: 220 # T1
+    MutantPartSeasonedBoarHoof: 405 # T2
     MutantPartOldBoarHoof: 545 # T3
 
     #T1 -------- Health * 1
     MutantPartBlindDogTail: 120
-    MutantPartFleshEye: 270
+    MutantPartFleshEye: 300
     FoodMeatSpiderLeg: 70
 
     #T2 -------- Health * 1.8
@@ -124,6 +124,7 @@
         TTMag: 15
         BaseAPSMag: 300
         MP40Mag: 150
+        BizonMag: 375
         STSpeedLoader45ACPEmpty: 100
         PP91Mag: 200
         556Mag20: 250
@@ -149,9 +150,11 @@
         # 9.18
         918PGJBox: 80
         918SP7Box: 200
+        918PSTBox: 400
         # 9.19
         919PSOGJBox: 100
-        919RIPBox: 400
+        919RIPBox: 200
+        919PSTBox: 400
         # 7.25
         725PBox: 100
         725LRNPCBox: 50
@@ -226,6 +229,8 @@
     - name: shop-category-utilities
       priority: 8
       items:
+        longrangemetaldetector: 1500
+        AAAAStalkerLopata: 200
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300

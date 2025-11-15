@@ -85,7 +85,7 @@
 - type: job
   id: Military
   name: job-military
-  icon: army
+  icon: voen1
   description: job-military-desc
   playTimeTracker: JobMilitary
   whitelisted: true
@@ -108,7 +108,7 @@
           - Military
       - type: Bands
         band: Stalker
-        bandIcon: army
+        bandIcon: voen1
         bandProto: STMilitaryBand
         bandRankId: 1
       - type: BlockTackingHolyItems
@@ -125,7 +125,7 @@
 - type: job
   id: MilitaryHead
   name: job-military-head
-  icon: army
+  icon: voen2
   description: job-military-head-desc
   playTimeTracker: JobHeadMilitary
   whitelisted: true
@@ -148,7 +148,7 @@
             - MilitaryHead
         - type: Bands
           band: Stalker
-          bandIcon: army
+          bandIcon: voen2
           bandProto: STMilitaryBand
           bandRankId: 3
         - type: BlockTackingHolyItems
@@ -166,7 +166,7 @@
 - type: job
   id: MilitaryOfficer
   name: job-military-officer
-  icon: army
+  icon: voen3
   description: job-military-officer-desc
   playTimeTracker: JobOfficerMilitary
   whitelisted: true
@@ -189,7 +189,7 @@
             - MilitaryOfficer
         - type: Bands
           band: Stalker
-          bandIcon: army
+          bandIcon: voen3
           bandProto: STMilitaryBand
           bandRankId: 2
         - type: BlockTackingHolyItems
@@ -213,16 +213,16 @@
 - type: startingGear
   id: MilitaryGearOfficer
   equipment:
-    legs: ClothingLegsJeansGreenCargo
-    torso: ClothingTorsoTurtlenecksMilitary
+    legs: ClothingLegsJeansUa
+    torso: ClothingTorsoTurtlenecksUa
     shoes: STClothingShoesBootsCombatFilled
     id: MilitaryPDA
 
 - type: startingGear
   id: MilitaryGearHead
   equipment:
-    legs: ClothingLegsJeansGreenCargo
-    torso: ClothingTorsoTurtlenecksMilitary
+    legs: ClothingLegsJeansUa
+    torso: ClothingTorsoTurtlenecksUa
     shoes: STClothingShoesBootsCombatFilled
     id: MilitaryPDA
 
