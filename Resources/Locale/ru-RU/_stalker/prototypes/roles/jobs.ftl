@@ -31,10 +31,10 @@ job-head-dolg = Лидер Долга
 job-head-dolg-desc = Защитник человечества.
 job-head-dolg-supervisor = Вы командуете другими бойцами Долга.
 
-job-freedom = Боец PCZI
+job-freedom = Боец Свободы
 job-freedom-desc = Защитник зоны.
 job-freedom-supervisor = Кури, защищай Зону и игнорируй авторитеты.
-job-head-freedom = Лидер PCZI
+job-head-freedom = Лидер Свободы
 job-head-freedom-desc = Защитник зоны.
 job-head-freedom-supervisor = Командиры? У анархистов?.
 
