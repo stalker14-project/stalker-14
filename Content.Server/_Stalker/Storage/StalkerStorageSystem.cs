@@ -23,6 +23,7 @@ using Content.Shared.Paper;
 using Content.Shared.Stacks;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Server.Botany.Components;
+using Content.Server.Crayon;
 using Content.Shared._Stalker;
 using Content.Shared._Stalker.Storage;
 using Robust.Shared.Prototypes;
@@ -88,6 +89,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         _convertersItemStalker.Add("ML", ConverterBatteryItemStalker);
         _convertersItemStalker.Add("ME", ConverterSolutionItemStalker); // Solutions
         _convertersItemStalker.Add("MC", ConverterCartridgeItemStalker);
+        _convertersItemStalker.Add("MR", ConverterCrayonItemStalker);
         // Доделать еще конвентеры для предметов с жидкостями и т.д.
 
         foreach (var migration in _prototype.EnumeratePrototypes<STStashMigrationPrototype>())
@@ -156,6 +158,11 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
         if (TryComp(InputItem, out CartridgeAmmoComponent? _)) // Cartridges
         {
             Components += "C";
+        }
+
+        if (TryComp(InputItem, out CrayonComponent? _))
+        {
+            Components += "R";
         }
 
         if (_convertersItemStalker.ContainsKey(Components))
@@ -276,6 +283,15 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
             return returnList;
         }
         returnList.Add(new AmmoItemStalker(GetPrototypeName(item), false));
+        return returnList;
+    }
+
+    private List<object> ConverterCrayonItemStalker(EntityUid item)
+    {
+        var returnList = new List<object>(capacity: 0);
+        if (!TryComp<CrayonComponent>(item, out var crayon))
+            return returnList;
+        returnList.Add(new CrayonItemStalker(GetPrototypeName(item), crayon.Charges));
         return returnList;
     }
 
@@ -410,6 +426,13 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                     }
                     break;
                 }
+            case CrayonItemStalker options:
+                if (TryComp<CrayonComponent>(inputItemUid, out var crayonComponent))
+                {
+                    crayonComponent.Charges = options.Charges;
+                    Dirty(inputItemUid, crayonComponent);
+                }
+                break;
         }
 
         if (nextSpawnOptions is not PaperItemStalker paperItemStalker)
@@ -757,6 +780,11 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
                     break;
                 case "PaperItemStalker":
                     newObject = node.Deserialize<PaperItemStalker>();
+                    if (newObject != null)
+                        playerInventory.AllItems.Add(newObject);
+                    break;
+                case "CrayonItemStalker":
+                    newObject = node.Deserialize<CrayonItemStalker>();
                     if (newObject != null)
                         playerInventory.AllItems.Add(newObject);
                     break;

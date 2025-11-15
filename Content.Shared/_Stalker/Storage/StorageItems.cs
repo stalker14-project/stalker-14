@@ -267,3 +267,24 @@ public sealed class AmmoItemStalker : IItemStalkerStorage
         return $"{PrototypeName}_{Exhausted}";
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class CrayonItemStalker : IItemStalkerStorage
+{
+    public string ClassType { get; set; } = "CrayonItemStalker";
+    public string PrototypeName { get; set; } = "";
+    public uint CountVendingMachine { get; set; }
+    public int Charges { get; set; }
+
+    public CrayonItemStalker(string prototypeName, int charges, uint countVendingMachine = 1)
+    {
+        PrototypeName = prototypeName;
+        Charges = charges;
+        CountVendingMachine = countVendingMachine;
+    }
+
+    public string Identifier()
+    {
+        return $"{PrototypeName}_{Charges}";
+    }
+}

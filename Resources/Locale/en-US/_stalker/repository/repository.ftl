@@ -42,6 +42,7 @@ repository-stack-item-stack-amount-display = Stack Quantity: { $stackCount }
 
 repository-solution-item-volume-display = Volume: { $volume }
 
+repository-crayon-item-charges-display = Charges: { $charges }
 # Slider
 repository-slider-button = Confirm
 repository-slider-title = Quantity

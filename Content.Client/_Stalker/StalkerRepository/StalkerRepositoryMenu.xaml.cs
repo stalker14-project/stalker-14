@@ -294,6 +294,7 @@ public sealed partial class StalkerRepositoryMenu : DefaultWindow
             StackItemStalker stack => Loc.GetString("repository-stack-item-stack-amount-display", ("stackCount", stack.StackCount)),
             SolutionItemStalker solution => Loc.GetString("repository-solution-item-volume-display", ("volume", solution.Volume.Int())),
             AmmoItemStalker cartridge => Loc.GetString("repository-cartridge-item-exhausted-display", ("exhausted", cartridge.Exhausted ? "Spent" : "Charged")),
+            CrayonItemStalker crayon => Loc.GetString("repository-crayon-item-charges-display", ("charges", crayon.Charges)),
             _ => string.Empty
         };
     }
