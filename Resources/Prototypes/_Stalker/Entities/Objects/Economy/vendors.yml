@@ -725,18 +725,18 @@
   startingInventory:
     BandityCrate: 8
 
-#НАЙМЫ
+#СВОБОДА
 
 - type: entity
   parent: VendingMachine
-  id: VendingMachineBoxesMerc
+  id: VendingMachineBoxesFreedom
   name: ящик с наборами снаряжения Наёмников
   description: Ящик, содержащий снаряжение внутри.
   suffix: Stalker
   components:
     - type: VendingMachine
       ejectDelay: 0.1
-      pack: MercComplect
+      pack: FreedomComplect
       dispenseOnHitChance: 0.0
       dispenseOnHitThreshold: 2
       offState: off
@@ -751,7 +751,7 @@
         - state: panel
           map: ["enum.WiresVisualLayers.MaintenancePanel"]
     - type: AccessReader
-      access: [["Merc"]]
+      access: [["Freedom"]]
     - type: Fixtures
       fixtures:
         fix1:
@@ -771,9 +771,9 @@
       radius: 0
 
 - type: vendingMachineInventory
-  id: MercComplect
+  id: FreedomComplect
   startingInventory:
-    MercCrate: 8
+    FreedomCrate: 8
 
 #ЗАВЕТ
 
