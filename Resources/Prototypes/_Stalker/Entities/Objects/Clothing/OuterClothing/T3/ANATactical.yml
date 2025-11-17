@@ -41,7 +41,6 @@
     damageCoefficient: 0.80
   - type: Craftable
 
-
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBaseANAgreen
   id: STClothingOuterArmorLightPlateVestBaseANAgray
@@ -142,7 +141,7 @@
     clothingPrototype: ClothingHeadCassock
 
 - type: entity
-  parent: STClothingOuterArmorLightPlateVestBaseANAgreen
+  parent: STClothingOuterArmorBase
   id: STClothingOuterArmorLightPlateVestSera
   name: Бронеразгрузка «Заступник»
   description: Надёжный бронеразгруз 3 класса брони, полный аналог «Степи-4», единственное различие - наличие напашника.
@@ -163,3 +162,26 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Project.rsi
   - type: Craftable
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBaseANAgreen
+  id: STClothingOuterArmorLightPlateVestBaseANAzavet
+  name: Бронеразгрузка «Степь-4» Завета
+  description: Надёжный бронеразгруз 3 класса брони, вмещающий любого размера магазины.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Zavet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/ANA/Zavet.rsi
+  - type: Craftable
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.75

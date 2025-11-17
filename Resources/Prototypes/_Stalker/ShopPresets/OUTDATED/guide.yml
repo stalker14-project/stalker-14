@@ -1,0 +1,99 @@
+- type: shopPreset
+  id: Guide
+  itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 540
+    ZoneArtifactEye: 810
+    ZoneArtifactFlame: 1620
+    # Thermal group - 2
+    ZoneArtifactCristall: 3240
+    ZoneArtifactLithosphere: 6480
+    # Electrical group - 1
+    ZoneArtifactSparkler: 540
+    ZoneArtifactBattery: 810
+    ZoneArtifactFlash: 1620
+    ArtMoon: 3240
+    ZoneArtifactTesla: 4860
+    ZoneArtifactIce: 6480
+    # Gravity group - 1
+    ArtMedusa: 540
+    ZoneArtifactFlower: 810
+    ZoneArtifactNightStar: 3240
+    # Gravity group - 2
+    ZoneArtifactVyvert: 540
+    ZoneArtifactAmoeba: 810
+    ZoneArtifactFloodlight: 810
+    ZoneArtifactGravi: 1620
+    ZoneArtifactGoldfish: 6480
+    ZoneArtifactSpring: 3600
+    ZoneArtifactFocus: 4860
+    ZoneArtifactStuntman: 6480
+    ZoneArtifactDistorter: 6480
+    ZoneArtifactSoul: 4860
+    # Food
+    FoodMeatDogCooked: 70
+    STFoodMeatSpiderCooked: 35
+    FoodMeatBoarCooked: 110
+
+    # Acidic group - 1
+    ZoneArtifactBlood: 1600
+    ZoneArtifactMeat: 3200
+    ZoneArtifactKolobok: 4800
+    # Acidic group - 2
+    ZoneArtifactPellicle: 535
+    ZoneArtifactBaloon: 4800
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 180 # T1
+    MutantPartSeasonedBoarHoof: 365 # T2
+    MutantPartOldBoarHoof: 545 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 120
+    MutantPartFleshEye: 270
+    FoodMeatSpiderLeg: 70
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 745
+    MutantPartPseudodogTail: 405
+    MutantPartSnorkFoot: 675
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 1015
+    MutantPartOraculeEye: 2160
+    MutantPartPseudogiantHeart: 5400
+    MutantPartZombieHand: 810
+
+    # Values
+    Dollar: 50
+    Goldcoins: 4725
+  categories:
+    - name: shop-category-weapons
+      priority: 1
+      items:
+        STCombatKnife: 10
+        STWeaponShotgunSPAS: 3500
+        STWeaponRifleAUG: 4000
+    - name: shop-category-magazines
+      priority: 2
+      items:
+        556Mag20: 250
+        556Mag30: 500
+    - name: shop-category-ammunition
+      priority: 3
+      items:
+        7mmBuckshotBox: 40
+        6mmBuckshotBox: 120
+        556FMJBox: 500
+        556WarmagBox: 300
+    - name: shop-category-armor
+      priority: 4
+      items:
+        ClothingOuterArmorSevaStalker: 6500
+        STClothingOuterArmorRCBZ: 1800 # T2 - ENV
+    - name: shop-category-research-equipment
+      priority: 6
+      items:
+        ZoneArtifactDetectorResponse: 1200 # T2

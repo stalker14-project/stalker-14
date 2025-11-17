@@ -15,6 +15,12 @@ public sealed partial class CCCCVars
     /// <summary>
     /// URL where all ban messages will be relayed
     /// </summary>
+    public static readonly CVarDef<bool> DiscordBanWebhookEnabled =
+        CVarDef.Create("stalker.ban_webhook_enabled", false, CVar.SERVERONLY);
+
+    /// <summary>
+    /// URL where all ban messages will be relayed
+    /// </summary>
     public static readonly CVarDef<string> DiscordBanWebhook =
         CVarDef.Create("stalker.ban_webhook", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 

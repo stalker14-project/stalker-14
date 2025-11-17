@@ -1,0 +1,26 @@
+- type: entity
+  parent: Clothing
+  id: STClothingChip
+  name: chip
+  categories: [ HideSpawnMenu ]
+  description: An incomprehensible chip in the mucous membrane.
+  components:
+  - type: Sprite
+    state: icon
+    sprite: _Stalker/Objects/Clothing/Ears/chip.rsi
+  - type: Clothing
+    slots:
+    - ears
+  - type: Item
+    size: Small
+  - type: Unremoveable
+  - type: PersonalDamage
+    damage:
+      types:
+        Radiation: 100.01
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      coefficients:
+        Radiation: 0
+        Psy: 0

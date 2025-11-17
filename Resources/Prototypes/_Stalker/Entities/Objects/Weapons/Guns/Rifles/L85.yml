@@ -19,7 +19,7 @@
         volume: -2
     minAngle: 40
     maxAngle: 75
-    angleIncrease: 1
+    angleIncrease: 1.25
     shotsPerBurst: 3
     ShotsPerBurstModified: 3
     selectedMode: Burst
@@ -51,8 +51,13 @@
           tags:
           - STCartridge556
   - type: Scope
-    zoom: 1.2
-    offset: 6
+    zoom: 1.1
+    offset: 10
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.5
+
 
 - type: entity
   parent: STBaseWeaponRifleL85

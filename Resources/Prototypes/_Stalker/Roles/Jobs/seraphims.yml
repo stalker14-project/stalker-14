@@ -41,6 +41,7 @@
           factions:
           - BandsUnion
           - Seraphims
+
 - type: startingGear
   id: SeraphimGear
   equipment:
@@ -103,6 +104,7 @@
           factions:
           - BandsUnion
           - Seraphims
+        - type: STAnomalyTipsViewing
 - type: startingGear
   id: SeraphimHeadGear
   equipment:
@@ -119,10 +121,72 @@
 - type: stBand
   id: STSeraphimsBand
   name: Seraphims
-  factionId: Bandit
+  factionId: Seraphims
   maxMembers: 17
   managingRankId: 2
   hierarchy:
     1: Seraphim
     2: SeraphimHead
+    3: SeraphimCherubim
 
+- type: job
+  id: SeraphimCherubim
+  name: Херувим серафимов
+  icon: seraphim_cherubim
+  description: job-head-seraphim-desc
+  playTimeTracker: JobCherubimSeraphims
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobHeadSeraphims
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: SeraphimCherubimGear
+  supervisors: job-seraphim-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Psyonics
+          psy: 100
+        - type: PsyonicsActionLight
+        - type: PsyonicsActionGrab
+        - type: PsyonicsActionSmoke
+        - type: Access
+          tags:
+            - Seraphims
+            - SeraphimsHead
+        - type: Bands
+          band: Stalker
+          bandIcon: seraphim_cherubim
+          bandProto: STSeraphimsBand
+          bandRankId: 3
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
+        - type: AutoImplant
+          implants:
+          - STSeraBombImplant
+        - type: NpcFactionMember
+          factions:
+          - BandsUnion
+          - Seraphims
+        - type: STAnomalyTipsViewing
+
+- type: startingGear
+  id: SeraphimCherubimGear
+  equipment:
+    id: STSeraphimPDA
+    neck: ClothingStalkerNeckKulonSeraphim
+    shoes: STClothingShoesBootsSeraFilled
+    legs: STClothingLegsSerafimCherubimPants
+    torso: STClothingTorsoSerafimCherubimFullReady
+    gloves: STClothingHandsGlovesSera
+    pocket1: STBoltBagFilled
+    pocket2: GeigerCounter

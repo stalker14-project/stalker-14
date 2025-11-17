@@ -7,11 +7,11 @@
         preconditions:
           - !type:PulledPrecondition
             isPulled: true
-    
+
     - tasks:
       - !type:HTNCompoundTask
         task: STGoshaMeleeCombatCompound
-    
+
     - tasks:
       - !type:HTNCompoundTask
         task: STGoshaRoarRestoreCompound
@@ -30,16 +30,12 @@
 
       - !type:HTNCompoundTask
         task: STGoshaRoarCompound
-   
+
       - !type:HTNCompoundTask
         task: STGoshaMeleeAttackTargetCompound
 
 - type: htnCompound
   id: STGoshaRoarRestoreCompound
-  preconditions:
-    - !type:KeyBoolEqualsPrecondition
-      key: Roared
-      value: true
   branches:
     - tasks:
       - !type:HTNPrimitiveTask
@@ -49,12 +45,6 @@
 
 - type: htnCompound
   id: STGoshaRoarCompound
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
-    - !type:KeyBoolEqualsPrecondition
-      key: Roared
-      value: false
   branches:
     - tasks:
       - !type:HTNPrimitiveTask

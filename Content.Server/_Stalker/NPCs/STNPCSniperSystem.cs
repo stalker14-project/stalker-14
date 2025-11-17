@@ -18,6 +18,7 @@ using Robust.Shared.Console;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using Content.Shared.CombatMode.Pacification;
 
 namespace Content.Server._Stalker.NPCs;
 
@@ -35,6 +36,8 @@ public sealed partial class STNPCSniperSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly IEntityManager _entityManager = default!;
+
 
     private FrozenDictionary<MapCoordinates, Entity<STNPCSniperComponent>> _hashedCoords = new Dictionary<MapCoordinates, Entity<STNPCSniperComponent>>().ToFrozenDictionary();
 
@@ -82,9 +85,11 @@ public sealed partial class STNPCSniperSystem : EntitySystem
 
     private bool TryAttack(EntityUid attackerUid, EntityUid? targetUid)
     {
+        // fallback
         if (targetUid is null)
             return false;
 
+        // faction equal
         if (!_npcFaction.IsMember((targetUid.Value, null), PlayerFaction))
             return false;
 
@@ -96,9 +101,15 @@ public sealed partial class STNPCSniperSystem : EntitySystem
         var transform = Transform(attackerUid);
         var coords = new MapCoordinates(_transform.GetWorldPosition(transform).Rounded(), transform.MapID);
 
+        // regenerate sniper coordinate
         if (!_hashedCoords.TryGetValue(coords, out var entity))
             return false;
-        if(_whitelistSystem.IsWhitelistPass(entity.Comp.AttackerWhitelist, attackerUid))
+
+        if (_whitelistSystem.IsWhitelistPass(entity.Comp.AttackerWhitelist, attackerUid))
+            return false;
+
+        // pacified entities should not be attacked in any case, prevents right click sniper bug abuse (read: arena bug reports)
+        if (_entityManager.HasComponent<PacifiedComponent>(attackerUid))
             return false;
 
         if (entity.Comp.SoundGunshot is not null)

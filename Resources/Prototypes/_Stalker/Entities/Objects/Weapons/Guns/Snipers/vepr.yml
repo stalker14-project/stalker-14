@@ -58,6 +58,8 @@
       gun_module_muzzle: !type:ContainerSlot
       gun_module_scope: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 3
 
 - type: entity
   parent: STVBaseWeaponSniperVepr
@@ -82,6 +84,7 @@
   parent: STVBaseWeaponSniperVepr
   id: STWeaponSniperVeprGrass
   name: VPO-129 "Grass" Camo
+  suffix: ST, Кастомка
   description: A bushman's dream - this Vepr variant features custom camouflage netting and vegetation attachments for maximum concealment in the Zone's wilderness.
   components:
     - type: Clothing

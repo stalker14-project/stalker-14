@@ -131,9 +131,9 @@ public sealed class StalkerDbSystem : EntitySystem
 
     #endregion
 
-    private void BeforeSpawn(PlayerBeforeSpawnEvent ev)
+    private async void BeforeSpawn(PlayerBeforeSpawnEvent ev)
     {
-        Task.Run(() => LoadPlayer(ev.Player.Name));
+        await LoadPlayer(ev.Player.Name);
     }
 }
 

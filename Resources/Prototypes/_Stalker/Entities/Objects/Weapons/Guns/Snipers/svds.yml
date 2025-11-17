@@ -19,6 +19,8 @@
     angleDecay: 60
     angleIncrease: 2
     fireRate: 1
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 5
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
@@ -68,6 +70,7 @@
   parent: STBaseWeaponRifleSVDS
   id: STWeaponSniperSVDSGrass
   name: SVDS Ghillie Sniper Rifle
+  suffix: ST, Кастомка
   description: A carefully modified SVDS with camouflage netting and minor tuning for maximum concealment in the Zone's wilderness. The 7.62x54mmR rounds ensure no mutant walks away from a well-placed shot.
   components:
   - type: Clothing
@@ -94,6 +97,7 @@
   parent: STBaseWeaponRifleSVDS
   id: STWeaponSniperSVU
   name: SVU Compact Sniper Rifle
+  suffix: ST, Кастомка
   description: A bullpup conversion of the SVDS designed for urban operations in the Zone. The shortened barrel reduces range but improves handling in tight spaces, while still delivering 7.62x54mmR stopping power.
   components:
   - type: Clothing
@@ -120,6 +124,7 @@
   parent: STBaseWeaponRifleSVDS
   id: STWeaponRifleSVDSWood
   name: Selfmade chatter
+  suffix: ST, Кастомка
   description: A selfmade rifle for an SVD magazine. Oblique, but wildly lethal.
   components:
     - type: STWeight

@@ -912,16 +912,13 @@
       access: [["Military"]]
 
 - type: entity
-  parent: MapTeleportBase
+  parent: MapTeleportBaseUncollide
   id: MilBase1-Predbannik
   name: MilBase1-Predbannik
   components:
     - type: NewMapTeleport
       portalName: Predbannik-MilBase1
       allowAll: false
-      cooldownEnabled: true
-      cooldownTime: 30
-      godmodeCooldown: 5
     - type: AccessReader
       access: [["Military"]]
 
@@ -1235,6 +1232,54 @@
       cooldownTime: 30
       godmodeCooldown: 5
 
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-Limansk
+  name: Рыжий Лес - Лиманск
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk1
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Limansk-RedForest
+  name: Лиманск - Рыжий Лес
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk1
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: RedForest-Limansk2
+  name: Рыжий Лес - Лиманск
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk2
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Limansk-RedForest2
+  name: Лиманск - Рыжий Лес 2
+  components:
+  - type: NewMapTeleport
+    portalName: RedForest-Limansk2
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+
 ################################################### Вход в бункер учёных на кордоне
 
 - type: entity
@@ -1252,3 +1297,72 @@
   components:
     - type: NewMapTeleport
       portalName: Kordon-Bunker
+
+
+######## Лощина
+
+- type: entity
+  parent: MapTeleportBase
+  id: Kordon-Loshina
+  name: Kordon-Loshina
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Loshina
+
+- type: entity
+  parent: MapTeleportBase
+  id: Loshina-Kordon
+  name: Loshina-Kordon
+  components:
+    - type: NewMapTeleport
+      portalName: Kordon-Loshina
+
+- type: entity
+  parent: MapTeleportBase
+  id: Deserter-Lohina1
+  name: Deserter-Lohina1
+  components:
+    - type: NewMapTeleport
+      portalName: Deserter-Lohina1
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Deserter-Lohina2
+  name: Deserter-Lohina2
+  components:
+    - type: NewMapTeleport
+      portalName: Deserter-Lohina2
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Serephim-Lohina1
+  name: Serephim-Lohina1
+  components:
+    - type: NewMapTeleport
+      portalName: Serephim-Lohina1
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+######## СВОБОДА
+- type: entity
+  parent: MapTeleportBase
+  id: Freedom_basement1
+  name: Freedom_basement1
+  components:
+  - type: NewMapTeleport
+    portalName: Freedom_basement
+
+- type: entity
+  parent: MapTeleportBase
+  id: Freedom_basement2
+  name: Freedom_basement2
+  components:
+  - type: NewMapTeleport
+    portalName: Freedom_basement

@@ -1,5 +1,6 @@
 ent-STClothingOuterArmor6B13Base = 6Б13
     .suffix = ST, T4, PvP
+    .desc = 6Б13
 ent-ClothingOuterArmor6B13 = 6Б13 военный
     .desc = Стандартный бронежилет IV типа, обеспечивающий достойную защиту от большинства видов повреждений
 ent-ClothingOuterArmor6B13Sera = 6Б13 'Серафимов'

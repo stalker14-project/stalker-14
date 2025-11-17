@@ -1,51 +1,54 @@
 - type: shopPreset
   id: DolgShopPreset
   itemsForSale:
-    # Mutant parts 1.5x Sidorovich
+# Mutant parts 1.5x Sidorovich
 
     #Boars -------- Health * T *
-    MutantPartBoarHoof: 205 # T1
-    MutantPartSeasonedBoarHoof: 405 # T2
-    MutantPartOldBoarHoof: 610 # T3
+    MutantPartBoarHoof: 275 # T1
+    MutantPartSeasonedBoarHoof: 545 # T2
+    MutantPartOldBoarHoof: 825 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 135
-    MutantPartFleshEye: 300
-    FoodMeatSpiderLeg: 75
+    MutantPartBlindDogTail: 180
+    MutantPartFleshEye: 405
+    FoodMeatSpiderLeg: 100
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 825
-    MutantPartPseudodogTail: 450
-    MutantPartSnorkFoot: 750
+    MutantPartLeshiyRoot: 1115
+    MutantPartPseudodogTail: 610
+    MutantPartSnorkFoot: 1015
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 1125
-    MutantPartOraculeEye: 2400
-    MutantPartPseudogiantHeart: 6000
-    MutantPartZombieHand: 900
+    MutantPartBloodsuckerTentacles: 1520
+    MutantPartOraculeEye: 3240
+    MutantPartPseudogiantHeart: 8100
+    MutantPartZombieHand: 1215
   categories:
     - name: shop-category-weapons
       priority: 1
       items:
             # Guns
           # 7mm
-        STWeaponShotgunTOZ34: 200
+        STWeaponShotgunTOZ34: 100
         STWeaponShotgunMP133: 340
         STWeaponShotgunMP153: 800
+        STWeaponShotgunSaiga12: 6000
           # 5,45x39
         STWeaponRifleSaiga545: 1000
         STWeaponRifleAKS74U: 1500
-        STWeaponRifleAKS74: 4000
-        STWeaponRifleAKM: 6000
+        STWeaponRifleAKS74: 3500
+        STWeaponRifleAK74M: 6300
           # Smg
         STWeaponSMGPP91: 1200
         STWeaponSMGStalkerCP2Veresk: 2000
         STWeaponSMGPP19: 3000
+        STWeaponSMGPPSh41: 1500
           # Other
         WeaponPistolStalkerAPS: 500 #T2
         WeaponPistolStalkerTT: 250
-        STWeaponSniperMosin: 1200
+        STWeaponSniperMosin: 1000
         STWeaponSniperSKS: 1500
+        STWeaponRifleAKM: 5000
     - name: shop-category-magazines
       priority: 2
       items:
@@ -59,10 +62,14 @@
           # Smg
         BizonMag: 1100
         VityazMag: 210
+        PPSHDrum: 1000
+        BasePPSHMag: 250
           # Other
         TTMag: 100
         BaseAPSMag: 150
         PP91Mag: 200
+        Saiga1270Mag10: 350
+        Saiga1270Drum: 800
     - name: shop-category-ammunition
       priority: 3
       items:
@@ -71,7 +78,9 @@
         8mmBuckshotBox: 170
         # 7.25
         725PBox: 90
-        725LRNPCBox: 100
+        725LRNPCBox: 50
+        725PTBox: 200
+        725PSTBox: 1500
         # 9.19
         919PSOGJBox: 80
         919PSTBox: 250
@@ -84,7 +93,8 @@
         # 5.45
         545FMJBox: 500
         545HPBox: 100
-        545PCBox: 2000
+        545PCBox: 1500
+        545BPBox: 2200
         # 7.39
         739FMJBox: 1540
         739HPBox: 400
@@ -97,14 +107,18 @@
       items:
           # Helmets #
         ClothingHeadHelmetDolg: 200 # T1 - PVE
-        ClothingHeadHelmetInfantryDolg: 650 # T2 - PVP
-        ClothingHeadHelmetVityaz1M: 2000
+        ClothingHeadHelmetInfantryDolg: 600 # T2 - PVP
+        ClothingHeadHelmetVityaz1M: 2200
+        ClothingHeadAssaultHelmetDolg: 2500
+        ClothingHeadHelmetBerill5MDolg: 2500
           # OuterClothing #
         ClothingOuterJacketDolg: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseDolg: 1000 # T2 - PvP
         ClothingOuterArmorRCBZDolg: 1700 # T2 - ENV
         ClothingOuterArmorZaryaDolg: 2000 # T2 - universal
-        ClothingOuterArmorSevaDolgRed: 10000 # T3 - ENV
+        SetPS5MDolgBuyableCrate: 5500
+        ClothingOuterArmorSevaDolgRed: 8500 # T3 - ENV
+        ClothingOuterArmorPSZ9D: 10000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -262,4 +276,4 @@
         ClothingTorsoTurtlenecksGorka6B: 50
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
-        STClothingHeadBeretDolg: 80
+        STClothingHeadBeretDolg: 52

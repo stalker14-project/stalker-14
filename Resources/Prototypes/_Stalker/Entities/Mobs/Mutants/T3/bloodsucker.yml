@@ -25,15 +25,15 @@
           prob: 0.05
           maxAmount: 1
     - type: NPCBloodsucker
-      stunTime: 2
+      stunTime: 1
       damageOnSuck:
         types:
-          Bloodloss: 17
+          Bloodloss: 10
         ModifyBloodLevel: -30
       healOnSuck:
         groups:
-          Brute: -258
-          Burn: -258
+          Brute: -218
+          Burn: -218
         ModifyBloodLevel: 133
     - type: DamageStateVisuals
       states:
@@ -103,8 +103,8 @@
       wideAnimation: WeaponArcClaw
       damage:
         types:
-          Blunt: 35
-          Slash: 25
+          Blunt: 28
+          Slash: 20
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 5.6

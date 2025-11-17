@@ -1,0 +1,38 @@
+# im not committed to these numbers in any way
+- type: shopPreset
+  id: STFishShopPreset
+  itemsForSale:
+    # normal fish
+    STFishBitterling: 100
+    STFishBleak: 100
+    STFishBream: 180
+    STFishCarp: 180
+    STFishEel: 310
+    STFishPerch: 100
+    STFishPike: 350
+    STFishSturgeon: 400
+    STFishSunbleak: 100
+    STFishTench: 300
+    STFishTrout: 400
+    # anom fish
+    STFishGoldfish: 1000
+    STFishLuminantGudgeon: 400
+    STFishSwiftLurker: 350
+    STFishDenseTench: 350
+    STFishCatfish: 2200
+    # misc
+    Blunt: 35
+
+  categories:
+    - name: shop-category-utilities
+      priority: 0
+      items:
+        Bucket: 100
+        STCombatKnife: 50
+        CheapLighter: 10
+        FishingRod: 300
+    - name: shop-category-entertainment
+      priority: 1
+      items:
+        AcousticGuitarInstrument: 500
+        Blunt: 500

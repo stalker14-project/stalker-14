@@ -7,3 +7,4 @@ ent-ClothingOuterArmorCN1 = бронежилет с комбезинозом «�
     .suffix = ST, T2, Universal
 ent-ClothingHeadHelmetCN1 = капюшон «СН-1»
     .suffix = ST, T2, Universal
+    .desc = капюшон «СН-1»

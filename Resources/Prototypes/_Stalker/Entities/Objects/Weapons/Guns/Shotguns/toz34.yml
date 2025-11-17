@@ -29,6 +29,49 @@
   id: STWeaponShotgunTOZ34
   name: TOZ-34
   description: Soviet double-barreled shotgun with vertical barrel arrangement. Prized in the Zone for its reliability and powerful stopping effect against mutants.
+ 
+- type: entity
+  parent: STBaseWeaponShotgunTOZ34
+  id: STWeaponShotgunTOZ54
+  name: TOZ-54
+  description: Soviet double-barreled shotgun with vertical barrel arrangement. Prized in the Zone for its reliability and powerful stopping effect against mutants.
+  components:
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 5
+  - type: BallisticAmmoProvider
+    capacity: 2
+    whitelist:
+      tags:
+      - STCartridge754
+  - type: Gun
+    minAngle: 5
+    maxAngle: 70
+    angleIncrease: 30
+    angleDecay: 50
+    fireRate: 7
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+      gun_module_scope: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+  - type: PullDoAfter
+    pullTime: 3.5
+  - type: STWeaponModuleContainer
+  - type: ItemSlots
+    slots:
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSight
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 1
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSilencer
 
 - type: entity
   parent: STBaseWeaponShotgunTOZ34
@@ -54,7 +97,7 @@
   id: STWeaponShotgunShizoToz34
   name: Wierd TOZ
   description: Wierd TOZ, modified by someone really mad.
-  suffix: ST, Weapon, Shotgun, Sponsor
+  suffix: ST, Кастомка
   components:
   - type: STWeight
     self: 5

@@ -74,6 +74,8 @@
       components:
         - type: Psyonics
         - type: PsyonicsActionSmoke
+        - type: PsyonicsActionGrab
+        - type: PsyonicsActionRift
         - type: Access
           tags:
             - ProjectPawn
@@ -94,6 +96,9 @@
           pullingItemTag: PliersStalker
           teethCount: 3
           initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+            - Mutated
 
 - type: startingGear
   id: ProjectOrchestratorGear

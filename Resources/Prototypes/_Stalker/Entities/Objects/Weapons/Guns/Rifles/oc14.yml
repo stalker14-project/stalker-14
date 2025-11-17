@@ -45,8 +45,10 @@
         whitelist:
           tags:
           - STCartridge545
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.4
+    accuracyMultiplier: 1.45
 
 - type: entity
   parent: STBaseWeaponRifleOC14
@@ -69,3 +71,28 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/groza_shoot.ogg
+
+- type: entity
+  parent: STBaseWeaponRifleOC14
+  id: STWeaponRifleOC14939
+  name: OC-14 «Groza» 9x39
+  description: An assault rifle-grenade launcher system, 70% unified with AK-type assault rifles (the main differences are the 9 x 39 mm caliber, the bullpup layout, and greater opportunities for modernization). Designed to arm rapid response units. Highly valued by the military and stalkers for its ability to reliably hit an enemy protected by a bulletproof vest or located in cover.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base939Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine939
+      gun_chamber:
+        name: Chamber
+        startingItem:
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge939

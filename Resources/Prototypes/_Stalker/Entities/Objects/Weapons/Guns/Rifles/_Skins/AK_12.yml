@@ -1,7 +1,7 @@
 # Кастомка серафимов
 - type: entity
   name: АК-12
-  suffix: ST, t4
+  suffix: ST, t4, Кастомка
   parent: STBaseWeaponRifle
   id: STWeaponRifleStalkerAK12
   description: Данная модель является вершиной развития системы АК и отличается от предыдущих поколений продуманной эргономикой, адаптацией к всесуточному применению и повышенной точностью и кучностью стрельбы.
@@ -74,7 +74,7 @@
   parent: STWeaponRifleStalkerAK12
   id: STWeaponRifleStalkerRPK16
   description: Вариация АК-12 под взводный ручной пулемёт.
-  suffix: ST, Скин, Спонсор
+  suffix: ST, Кастомка
   components:
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16.rsi
@@ -86,12 +86,12 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/ak.ogg
-    minAngle: 40
-    maxAngle: 85
+    minAngle: 48
+    maxAngle: 95
     angleIncrease: 0.8
-    fireRate: 7.5
+    fireRate: 9
   - type: STWeight
-    self: 6
+    self: 5
   - type: STWeaponAccuracy
     accuracyMultiplier: 1.3
 
@@ -100,7 +100,7 @@
   parent: STWeaponRifleStalkerRPK16
   id: STWeaponRifleStalkerRPK16Camo
   description: Вариация АК-12 под взводный ручной пулемёт в осеннем комуфляже.
-  suffix: ST, Скин, Спонсор
+  suffix: ST, Кастомка
   components:
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/rpk16camo.rsi

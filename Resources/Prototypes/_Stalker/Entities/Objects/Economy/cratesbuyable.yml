@@ -261,6 +261,31 @@
       sound:
         path: /Audio/Effects/unwrap.ogg
 
+# Сталкер
+
+- type: entity
+  parent: STBaseItem
+  id: SetMercLonerBuyableCrate
+  name: комплект комбинезона наёмного сталкера
+  description: В комплекте комбинезон, балаклава и поясная сумка с кобурой.
+  suffix: ST, T3, Cache
+  components:
+    - type: STWeight
+      self: 10
+    - type: Item
+      size: Ginormous
+    - type: MultiHandedItem
+    - type: Sprite
+      sprite: _Stalker/Structures/Furniture/Sets/merc_loner.rsi
+      state: icon
+    - type: SpawnItemsOnUse
+      items:
+        - id: ClothingOuterArmorStalker
+        - id: ClothingMaskNeckBalaklava1
+        - id: ClothingBeltWebbingHolsterLoner
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
 ############## Сталкерские комбинезоны +
 
 # Долг
@@ -368,15 +393,12 @@
         - id: ClothingMaskGasMarlyaRuined
         - id: ClothingBeltWebbingHolsterMonolith
         - id: ClothingBackpackStalkerZaryaGreen
-        - id: STBoltBagFilled
-        - id: STBoltBagFilled
         - id: PowerCellHyper
         - id: PowerCellHyper
         - id: STCombatKnife
         - id: Binocularus1
         - id: BaseRadio
         - id: FlashlightSeclite
-        - id: ZoneAnomalyDetectorBMT12
       sound:
         path: /Audio/Effects/unwrap.ogg
     - type: PersonalDamage
@@ -405,15 +427,12 @@
         - id: ClothingMaskNeckBalaklava1
         - id: ClothingBeltWebbingHolsterMonolith
         - id: ClothingBackpackStalkerZaryaBlack
-        - id: STBoltBagFilled
-        - id: STBoltBagFilled
         - id: PowerCellHyper
         - id: PowerCellHyper
         - id: STCombatKnife
         - id: Binocularus1
         - id: BaseRadio
         - id: FlashlightSeclite
-        - id: ZoneAnomalyDetectorBMT12
       sound:
         path: /Audio/Effects/unwrap.ogg
     - type: PersonalDamage
@@ -442,15 +461,12 @@
         - id: ClothingMaskGasZarya
         - id: ClothingBeltWebbingHolsterMonolith
         - id: ClothingBackpackStalkerZaryaGreen
-        - id: STBoltBagFilled
-        - id: STBoltBagFilled
         - id: PowerCellHyper
         - id: PowerCellHyper
         - id: STCombatKnife
         - id: Binocularus1
         - id: BaseRadio
         - id: FlashlightSeclite
-        - id: ZoneAnomalyDetectorBMT12
       sound:
         path: /Audio/Effects/unwrap.ogg
     - type: PersonalDamage
@@ -479,15 +495,12 @@
         - id: ClothingMaskGasMono
         - id: ClothingBeltWebbingDoubleFreedomVeterSmall
         - id: STOxygenTanksFractionalMonolith
-        - id: STBoltBagFilled
-        - id: STBoltBagFilled
         - id: PowerCellHyper
         - id: PowerCellHyper
         - id: STCombatKnife
         - id: Binocularus1
         - id: BaseRadio
         - id: FlashlightSeclite
-        - id: ZoneAnomalyDetectorBMT12
       sound:
         path: /Audio/Effects/unwrap.ogg
     - type: PersonalDamage

@@ -40,6 +40,7 @@ ent-WoodenGreenBox1 = { ent-WoodenGreenBox1Center }
     .suffix = ST, (Свободный, ящик), Mapping
 ent-WoodenGreenBox2 = зелёный ящик
     .suffix = { ent-WoodenBoxWithLoot.suffix }
+    .desc = { ent-WoodenBoxWithLoot.desc }
 ent-WoodenGreenBox3 = поддон зелёных ящиков
     .desc = Закрытые старые ящики, которые не потеряли ещё свой зелёный цвет. Навряд ли вы сможете их открыть. Может оно и к лучшему. Очередная тайна Зоны не будет открыта.
     .suffix = { ent-WoodenBoxWithLoot.suffix }

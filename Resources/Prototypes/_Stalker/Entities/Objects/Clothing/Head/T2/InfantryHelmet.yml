@@ -11,17 +11,14 @@
   - type: Armor
     armorClass: 2
     modifiers:
-      flatReductions:
-        Blunt: 1
-        Slash: 1
-        Piercing: 2
       coefficients:
         Blunt: 0.85
         Slash: 0.85
+        Piercing: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.9
   - type: Reflect
-    reflectProb: 0.05
+    reflectProb: 0.08
     spread: 360
     reflects:
       - NonEnergy
@@ -102,7 +99,7 @@
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetKeeper
   name: шлем "Хранитель"
-  suffix: ST, T2, Скин
+  suffix: ST, T2, Кастомка
   description: Шлем «Хранитель» второго класса защиты, производитель неизвестен.
   components:
     - type: Sprite
@@ -147,7 +144,7 @@
 - type: entity
   parent: STClothingHeadHelmetCombatT2Base
   id: ClothingHeadHelmetInfantryDolg
-  name: шлем «Восток» долга
+  name: шлем «Восток» Долга
   description: Пехотный шлем марки «Восток» второго класса защиты, производитель неизвестен.
   components:
     - type: Sprite

@@ -31,9 +31,6 @@
 # Tries to melee attack our target.
 - type: htnCompound
   id: STSimpleMeleeAttackTargetCompound
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
   branches:
     # Move to melee range and hit them
     - tasks:

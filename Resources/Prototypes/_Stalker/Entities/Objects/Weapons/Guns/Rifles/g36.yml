@@ -13,14 +13,14 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/g36.rsi
     equipDelay: 2
   - type: Gun
-    fireRate: 7
+    fireRate: 7.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/n_g36_shot.ogg
       params:
         volume: -2
     minAngle: 50
-    maxAngle: 95
-    angleIncrease: 1.2
+    maxAngle: 90
+    angleIncrease: 0.9
     shotsPerBurst: 3
     ShotsPerBurstModified: 3
     selectedMode: FullAuto
@@ -53,10 +53,10 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.8
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.2
+    accuracyMultiplier: 1.5
   - type: Scope
     zoom: 1.1
-    offset: 7
+    offset: 21
 
 - type: entity
   parent: STBaseWeaponRifleG36
@@ -95,7 +95,7 @@
   id: STWeaponRifleAUG
   name: AUG
   description: Australian assault rifle with integrated scope.
-  tags: ST, Sponsor
+  suffix: ST, Кастомка
   components:
     - type: Item
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/aug.rsi

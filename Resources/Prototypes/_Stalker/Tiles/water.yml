@@ -21,7 +21,7 @@
   - type: SolutionContainerManager
     solutions:
       pool:
-        maxVol: 200 #.inf seems to break the whole yaml file, but would definitely be preferable. 
+        maxVol: 200 #.inf seems to break the whole yaml file, but would definitely be preferable.
         reagents:
         - ReagentId: STToxicWater
           Quantity: 200
@@ -44,6 +44,19 @@
           - ItemMask
         density: 1000
         hard: false
+        # Goobstation - fishing
+      fishing:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        - ItemMask
+        density: 1000
+        hard: false
+      # Goobstation - fishing
   - type: FootstepModifier
     footstepSoundCollection:
       collection: STFootstepWater
@@ -75,6 +88,13 @@
     drawdepth: BelowFloor
     layers:
       - state: water1
+    # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
   parent: FloorWaterEntityStalker1
   id: FloorWaterEntityStalker2
@@ -88,6 +108,13 @@
     drawdepth: BelowFloor
     layers:
       - state: water2
+    # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
   parent: FloorWaterEntityStalker1
   id: FloorWaterEntityStalker3
@@ -101,6 +128,13 @@
     drawdepth: BelowFloor
     layers:
       - state: water3
+    # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
   parent: FloorWaterEntityStalker1
   id: FloorWaterEntityStalker4
@@ -122,6 +156,13 @@
     energy: 1
     color: "#c7e153"
     castShadows: false
+    # Goobstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: StalkerFishingTier1
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # Goobstation - fishing
 - type: entity
   parent: FloorWaterEntityStalker1
   name: химические отходы

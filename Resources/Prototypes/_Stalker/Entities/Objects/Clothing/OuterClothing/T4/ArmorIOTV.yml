@@ -48,7 +48,7 @@
 - type: entity
   parent: STClothingOuterArmorIOTVBase
   id: STClothingOuterArmorIOTVGreen
-  name: бронежилет IOTV Зелёный 
+  name: бронежилет IOTV Зелёный
   description: Бронежилет четвёртого класса защиты в моднейшем болотно-зелёном цвете, выглядит внушительно
   components:
   - type: Sprite
@@ -68,7 +68,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/IOTV/Svoboda.rsi
 
 - type: entity
-  parent: STClothingOuterArmorIOTVBase
+  parent: ClothingOuterArmorPSZ9D
   id: STClothingOuterArmorIOTVMerc
   name: бронежилет "Варяг-М"
   description: Стандартный бронежилет США IV типа, адаптированный наёмниками
@@ -77,3 +77,14 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/IOTV/Merc.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/IOTV/Merc.rsi
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 2
+        Slash: 2
+        Piercing: 6
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.55

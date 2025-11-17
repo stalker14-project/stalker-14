@@ -13,8 +13,15 @@ using Robust.UnitTesting;
 
 namespace Content.YAMLLinter
 {
+
     internal static class Program
     {
+
+        private static readonly string[] IgnoreFiles = // stalker-changes-start
+        {
+        "/Prototypes/_Stalker/stashMigration.yml"
+        }; // stalker-changes-end
+
         private static async Task<int> Main(string[] _)
         {
             PoolManager.Startup();
@@ -27,7 +34,7 @@ namespace Content.YAMLLinter
 
             if (count == 0)
             {
-                Console.WriteLine($"No errors found in {(int) stopwatch.Elapsed.TotalMilliseconds} ms.");
+                Console.WriteLine($"No errors found in {(int)stopwatch.Elapsed.TotalMilliseconds} ms.");
                 PoolManager.Shutdown();
                 return 0;
             }
@@ -45,7 +52,7 @@ namespace Content.YAMLLinter
                 Console.WriteLine(error);
             }
 
-            Console.WriteLine($"{count} errors found in {(int) stopwatch.Elapsed.TotalMilliseconds} ms.");
+            Console.WriteLine($"{count} errors found in {(int)stopwatch.Elapsed.TotalMilliseconds} ms.");
             PoolManager.Shutdown();
             return -1;
         }
@@ -105,7 +112,7 @@ namespace Content.YAMLLinter
             return (yamlErrors, fieldErrors);
         }
 
-        public static async Task<(Dictionary<string, HashSet<ErrorNode>> YamlErrors, List<string> FieldErrors)>
+        public static async Task<(Dictionary<string, HashSet<ErrorNode>> YamlErrors, List<string> FieldErrors)> // stalker-changes-start
             RunValidation()
         {
             var (clientAssemblies, serverAssemblies) = await GetClientServerAssemblies();
@@ -119,6 +126,9 @@ namespace Content.YAMLLinter
 
             foreach (var (key, val) in serverErrors.YamlErrors)
             {
+                if (IgnoreFiles.Any(ignore => key.EndsWith(ignore, StringComparison.OrdinalIgnoreCase)))
+                    continue;
+
                 // Include all server errors marked as always relevant
                 var newErrors = val.Where(n => n.AlwaysRelevant).ToHashSet();
 
@@ -129,7 +139,8 @@ namespace Content.YAMLLinter
                 // Include any errors that relate to server-only types
                 foreach (var errorNode in val)
                 {
-                    if (errorNode is FieldNotFoundErrorNode fieldNotFoundNode && !clientTypes.Contains(fieldNotFoundNode.FieldType.Name))
+                    if (errorNode is FieldNotFoundErrorNode fieldNotFoundNode &&
+                        !clientTypes.Contains(fieldNotFoundNode.FieldType.Name))
                     {
                         newErrors.Add(errorNode);
                     }
@@ -142,6 +153,9 @@ namespace Content.YAMLLinter
             // Next add any always-relevant client errors.
             foreach (var (key, val) in clientErrors.YamlErrors)
             {
+                if (IgnoreFiles.Any(ignore => key.EndsWith(ignore, StringComparison.OrdinalIgnoreCase)))
+                    continue;
+
                 var newErrors = val.Where(n => n.AlwaysRelevant).ToHashSet();
                 if (newErrors.Count == 0)
                     continue;
@@ -154,7 +168,8 @@ namespace Content.YAMLLinter
                 // Include any errors that relate to client-only types
                 foreach (var errorNode in val)
                 {
-                    if (errorNode is FieldNotFoundErrorNode fieldNotFoundNode && !serverTypes.Contains(fieldNotFoundNode.FieldType.Name))
+                    if (errorNode is FieldNotFoundErrorNode fieldNotFoundNode &&
+                        !serverTypes.Contains(fieldNotFoundNode.FieldType.Name))
                     {
                         newErrors.Add(errorNode);
                     }
@@ -168,7 +183,7 @@ namespace Content.YAMLLinter
                 .ToList();
 
             return (yamlErrors, fieldErrors);
-        }
+        } // stalker-changes-end
 
         private static async Task<(Assembly[] clientAssemblies, Assembly[] serverAssemblies)>
             GetClientServerAssemblies()

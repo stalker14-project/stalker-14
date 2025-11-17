@@ -86,3 +86,14 @@ ent-Graffiti22 = Граффити
     .desc = Оставленное кем-то граффити.
     .suffix = ST, Mapping
 
+ent-Graffiti24 = Граффити
+    .desc = Оставленное кем-то граффити.
+    .suffix = ST, Mapping
+
+ent-Graffiti25 = Граффити
+    .desc = Оставленное кем-то граффити.
+    .suffix = ST, Mapping
+
+ent-Graffiti26 = Граффити
+    .desc = Оставленное кем-то граффити.
+    .suffix = ST, Mapping

@@ -1,79 +1,8 @@
 - type: shopPreset
   id: BandsDollarShopPreset
   itemsForSale:
-    # ---GRAVITY---
-    #Т2
-    ZoneArtifactBattery: 5
-    ZoneArtifactAmoeba: 5
-    ZoneArtifactBlood: 10
-    ZoneArtifactEye: 5
-    #T3
-    ZoneArtifactFlower: 20
-    #T4
-    ZoneArtifactGravi: 60
-    ZoneArtifactNightStar: 60
-    #T5
-    ZoneArtifactDistorter: 200
-    ZoneArtifactFocus: 200
-    ZoneArtifactGoldfish: 200
-    ZoneArtifactSpring: 200
-    ZoneArtifactStuntman: 200
-    # ---THERMAL---
-    #T3
-    ZoneArtifactFlame: 25
-    #T4
-    ZoneArtifactCristall: 60
-    #T5
-    ZoneArtifactLithosphere: 200
-    # ---ELECTRICAL---
-    #T3
-    ArtMoon: 40
-    ZoneArtifactFlash: 40
-    #T5
-    ZoneArtifactIce: 200
-    ZoneArtifactTesla: 200
-    # ---SPATIAL---
-    #T5
-    ZoneArtifactSoul: 200
-    # ---ACIDIC---
-    #T3
-    ZoneArtifactMeat: 40
-    #T4
-    ZoneArtifactBaloon: 65
-    ZoneArtifactKolobok: 55
-    # Mutant parts
-    #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 45
-    MutantPartOraculeEye: 60
-    MutantPartPseudogiantHeart: 320
-    MutantPartZombieHand: 2
-    MutantPartBloodsuckerHead: 150
-    MutantPartPsiDogTail: 20
 
-    #values
-    ClothingNeckBronzeheart: 0
-    ClothingNeckCargomedal: 0
-    ClothingNeckEngineermedal: 0
-    Wristwatch: 0
-    SilverRing: 0
-    GoldRing: 0
-    TreasureCoinIron: 0
-    TreasureCoinGold: 0
-    TreasureCoinSilver: 0
-    ClothingStalkerNeckToken: 0
-    SilverRingDiamond: 0
-    GoldRingDiamond: 0
-    MaterialDiamond1: 0
-    DrinkGoldenCup: 0
-    SilverRingGem: 0
-    GoldRingGem: 0
-    ClothingNeckGoldmedal: 0
-    IngotSilver1: 0
-    IngotGold1: 0
-    WristwatchGold: 0
-    ClothingNeckBling: 0
-    TreasureCoinAdamantine: 0
-
+    ChevronMonolit: 3
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -93,6 +22,7 @@
         StielhandgranateM24Bundle: 10
         PhosphorusGrenadeStalker: 20
         TrashDetectorTier4: 100
+        STWeaponRifleStalkerRPK16: 1000
     - name: shop-category-magazines
       priority: 2
       items:
@@ -101,6 +31,7 @@
         739Mag45: 30
         939Mag20: 30
         556Mag45: 30
+        545Mag60: 60
           # Other
         Saiga1270Drum: 30
         Saiga1270Mag10: 10
@@ -109,10 +40,10 @@
       priority: 3
       items:
         ShotgunFlechetteCink: 35
-        545BPBoxCink: 80
-        556M856BoxCink: 80
+        545BPBoxCink: 100
+        556M856BoxCink: 100
         739PCBoxCink: 120
-        939BPBoxCink: 150
+        939SP6BoxCink: 150
         751M61BoxCink: 120
 
     - name: shop-category-armor
@@ -124,6 +55,8 @@
         ClothingHeadAssaultHelmetBandit: 45
         ClothingHeadHelmetUlach: 80
         STPsyHelm2: 20
+        STClothingOuterArmorLightPlateVestBaseHeavyBandit: 300
+        ClothingHeadHelmet1SHBandit: 80
 
     - name: shop-category-storage-and-containers
       priority: 5

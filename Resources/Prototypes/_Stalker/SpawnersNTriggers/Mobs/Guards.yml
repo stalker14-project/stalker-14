@@ -100,3 +100,112 @@
     - MobMonolithGuardPatroolGas1L85
     - MobMonolithGuardPatroolBalaLR300
     - MobMonolithGuardPatroolSevaAbakan
+
+- type: entity
+  name: триггер спавна патрульного свободы (1) (100%)
+  id: STGuardSpawnerFreedom
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    cooldown: 1800
+    chance: 1
+    minAmount: 1
+    maxAmount: 1
+    maxOffset: 1
+    minOffset: 1
+    prototypes:
+    - MobFreedomGuardPatrool
+    - MobFreedomSecurityLow
+    - MobFreedomSecurityTop
+    restricted:
+    - MobFreedomGuardPatrool
+    - MobFreedomSecurityLow
+    - MobFreedomSecurityTop
+
+- type: entity
+  name: триггер спавна патрульного бандитов (1) (100%)
+  id: STGuardSpawnerBandits
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    cooldown: 1800
+    chance: 1
+    minAmount: 1
+    maxAmount: 1
+    maxOffset: 1
+    minOffset: 1
+    prototypes:
+    - MobBanditSecurityLow
+    - MobBanditSecurityTop
+    restricted:
+    - MobBanditSecurityLow
+    - MobBanditSecurityTop
+
+- type: entity
+  name: триггер спавна патрульного Долга (1) (100%)
+  id: STGuardSpawnerDuty
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    cooldown: 1800
+    chance: 1
+    minAmount: 1
+    maxAmount: 1
+    maxOffset: 1
+    minOffset: 1
+    prototypes:
+    - MobDutySecurityLow
+    - MobDutySecurityTop
+    restricted:
+    - MobDutySecurityLow
+    - MobDutySecurityTop
+
+- type: entity
+  name: триггер спавна патрульного серафимов (1) (100%)
+  id: STGuardSpawnerSeraphims
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobSeraphimsGuardLite
+    - MobSeraphimsGuardMedium
+    - MobSeraphimsGuardHeavy
+    restricted:
+    - MobSeraphimsGuardLite
+    - MobSeraphimsGuardMedium
+    - MobSeraphimsGuardHeavy
+
+- type: entity
+  name: триггер спавна патрульного чистого неба (1) (100%)
+  id: STGuardSpawnerClearSky
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobClearSkySecurityLow
+    - MobClearSkySecurityTop
+    restricted:
+    - MobClearSkySecurityLow
+    - MobClearSkySecurityTop
+
+- type: entity
+  name: триггер спавна патрульного нейтралов (1) (100%)
+  id: STGuardSpawnerNeutral
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobNeutralSecurity
+    restricted:
+    - MobNeutralSecurity
+
+- type: entity
+  name: триггер спавна патрульного военсталов (1) (100%)
+  id: STGuardSpawnerVoenstal
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobVoenstalSecurityTop
+    restricted:
+    - MobVoenstalSecurityTop

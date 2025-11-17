@@ -31,6 +31,11 @@
         Blunt: 0.60
         Slash: 0.60
         Piercing: 0.7
+        Compression: 0.85
+        Radiation: 0.60
+        Heat: 0.55
+        Caustic: 0.70
+        Shock: 0.65
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Craftable
@@ -42,16 +47,20 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorStalker
-  name: бронекостюм «Барсук»
-  description: Бронекостюм третьего класса защиты производста ООО «Подвал Бара».
+  name: комбинезон наёмного сталкера
+  description: Комбинезон наёмных сталкеров, используемый охранниками бара. За основу взяты образцы экипировки спецназа западных армий. За счёт специальной обработки ткани усилена устойчивость брони при физическом смещении пластин. По защитным характеристикам немного превосходит армейские бронежилеты серии ПСЗ-7.
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Clothing/outerClothing/stalker_barsuk.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_loner.rsi
   - type: Clothing
-    sprite: _Stalker/Objects/Clothing/outerClothing/stalker_barsuk.rsi
+    sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_loner.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodMerc2
+    slot: head
   - type: Tag
     tags:
     - BlockCloak
+    - BlockBack
   - type: Storage
     maxItemsize: Large
     grid:
@@ -89,7 +98,7 @@
 - type: entity
   parent: STClothingOuterArmorBase
   id: ClothingOuterArmorBandits
-  name: бронекомбез «Валет»
+  name: бандитский комбинезон
   description: Дешёвый и защищающий от мутантов с сталкерами комбез бандитов. Обеспечивает 3 класс защиты.
   components:
   - type: Sprite
@@ -111,7 +120,8 @@
       - 10,2,10,3
   - type: Tag
     tags:
-    - BlockGloves
+    - BlockCloak
+    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -161,7 +171,8 @@
       - 10,2,10,3
   - type: Tag
     tags:
-    - BlockGloves
+    - BlockCloak
+    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -199,7 +210,8 @@
     slot: head
   - type: Tag
     tags:
-    - BlockGloves
+    - BlockCloak
+    - BlockBack
 
 - type: entity
   parent: STClothingHeadHatHoodBase
@@ -409,7 +421,7 @@
   parent: STClothingOuterArmorStorageBasic
   id: ClothingOuterArmorKeeper
   name: бронекомбез "Хранитель"
-  suffix: ST, Скин
+  suffix: ST, Кастомка
   description: Бронекомбез II типа, обеспечивающий малую защиту от большинства видов повреждений
   components:
   - type: Sprite
@@ -433,3 +445,37 @@
         Heat: 0.9
         Caustic: 0.9
         Compression: 0.75
+
+- type: entity
+  parent: STClothingOuterArmorBase
+  id: ClothingOuterArmorFirstbornSeraphimes
+  name: Комбинезон Перворожденного
+  description: Старый поношеный комбинезон Монолита. Такие носили первые Серафимы, которые в последствии назвали себя Перворожденными.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/seraphime_firstborn.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/seraphime_firstborn.rsi
+  - type: Storage
+    maxItemsize: Large
+    grid:
+      - 4,-0,5,-0
+      - 1,-0,2,-0
+      - 0,3,0,4
+      - 2,2,2,4
+      - 4,2,4,4
+      - 6,3,6,4
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHatFirstbornSeraphimes
+    slot: head
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: ClothingHeadHelmetHatFirstbornSeraphimes
+  name: Капюшон Перворождённого
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/hats/hood_firstbornseraphimes.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/hats/hood_firstbornseraphimes.rsi

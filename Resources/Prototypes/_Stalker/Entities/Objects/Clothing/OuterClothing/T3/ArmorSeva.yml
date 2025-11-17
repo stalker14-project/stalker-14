@@ -27,17 +27,17 @@
     armorClass: 1
     modifiers:
       flatReductions:
-        Blunt: 2
-        Slash: 2
-        Piercing: 2
+        Blunt: 4
+        Slash: 4
+        Piercing: 3
         Heat: 4
         Radiation: 4
         Caustic: 4
         Shock: 4
       coefficients:
-        Blunt: 0.9
-        Slash: 0.9
-        Piercing: 0.9
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
         Heat: 0.50
         Radiation: 0.6
         Caustic: 0.50
@@ -407,6 +407,26 @@
     - type: ToggleableClothing
       clothingPrototype: ClothingHeadHardsuitSevaHelmDolgRed
       slot: head
+    - type: Armor
+      armorClass: 2
+      modifiers:
+       flatReductions:
+         Blunt: 4
+         Slash: 4
+         Piercing: 5
+         Heat: 4
+         Radiation: 4
+         Caustic: 4
+         Shock: 4
+       coefficients:
+         Blunt: 0.8
+         Slash: 0.8
+         Piercing: 0.7
+         Heat: 0.50
+         Radiation: 0.6
+         Caustic: 0.50
+         Shock: 0.60
+         Compression: 0.7
 
 - type: entity
   parent: STClothingHeadHardsuitSevaHelmBase

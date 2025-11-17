@@ -4,11 +4,14 @@
   itemsForSale:
     # ---GRAVITY---
     #Т2
+    ZoneArtifactFireball: 0
     ZoneArtifactBattery: 5
     ZoneArtifactAmoeba: 5
     ZoneArtifactBlood: 10
     ZoneArtifactEye: 5
     #T3
+    ArtMedusa: 0
+    ZoneArtifactVyvert: 0
     ZoneArtifactFlower: 20
     #T4
     ZoneArtifactGravi: 60
@@ -43,25 +46,39 @@
     ZoneArtifactBaloon: 65
     ZoneArtifactKolobok: 55
     # Mutant parts
+    MutantPartBoarHoof: 0 # T1
+    MutantPartSeasonedBoarHoof: 0 # T2
+    MutantPartOldBoarHoof: 0 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 0
+    MutantPartFleshEye: 0
+    FoodMeatSpiderLeg: 0
+    MutantPartLeshiyRoot: 0
+    MutantPartPseudodogTail: 0
+    MutantPartSnorkFoot: 0
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 45
+    MutantPartBloodsuckerTentacles: 40
     MutantPartOraculeEye: 60
     MutantPartPseudogiantHeart: 320
     MutantPartZombieHand: 2
-    MutantPartBloodsuckerHead: 150
+    MutantPartBloodsuckerHead: 130
     MutantPartPsiDogTail: 20
-
+    #Other
+    ChevronMonolit: 3
   categories:
   - name: shop-category-weapons
     priority: 1
     items:
       STWeaponShotgunProtecta: 25
-      STWeaponSMGThompson: 35
+      STWeaponSMGThompson: 400
       STWeaponRifleM14: 125
+      STWeaponRifleStalkerAK12: 200
       STWeaponSniperSVDS: 250
       STWeaponSniperVepr: 150
       STWeaponShotgunSaiga12: 25
       STWeaponSniperVSS: 600
+      STWeaponMachineGunRPD: 2000
   - name: shop-category-magazines
     priority: 2
     items:
@@ -73,15 +90,18 @@
       Base751Mag10: 3
       754Mag20: 10
       Base939Mag10: 10
+      Magazine762x39RPD: 100
   - name: shop-category-ammunition
     priority: 3
     items:
       918PBMBoxCink: 20
       939SP5BoxCink: 30
-      939SP6BoxCink: 55
+      939BPBoxCink: 55
       556M855BoxCink: 30
       751M80BoxCink: 35
       545PCBoxCink: 25
+      545BPBoxCink: 120
+      556M856BoxCink: 120
       725PSTBoxCink: 20
       8mmBuckshotBoxCink: 40
       754PCBox: 5
