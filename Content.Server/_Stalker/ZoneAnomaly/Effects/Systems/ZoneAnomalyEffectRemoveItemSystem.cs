@@ -38,6 +38,9 @@ public sealed class ZoneAnomalyEffectRemoveItemSystem : EntitySystem
         {
             foreach (var trigger in args.Triggers)
             {
+                if (!HasComp<ContainerManagerComponent>(trigger))
+                    continue;
+
                 var items = GetRecursiveContainerElements(trigger);
                 items.Remove(trigger);
 
