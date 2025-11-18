@@ -65,9 +65,11 @@ public sealed partial class ShopMenu : DefaultWindow
         _moneyId = moneyId ?? _moneyId;
         _locMoneyName = locMoneyName ?? _locMoneyName;
 
+        var displayname = Loc.GetString(_locMoneyName);
+
         // Captialize first letter
-        var displayname =
-            string.Concat(_locMoneyName[0].ToString().ToUpper(), _locMoneyName.AsSpan(1));
+        displayname =
+            string.Concat(displayname[0].ToString().ToUpper(), displayname.AsSpan(1));
 
         var balanceStr = Loc.GetString("store-ui-balance-display", ("amount", balance),
             ("currency", displayname));
