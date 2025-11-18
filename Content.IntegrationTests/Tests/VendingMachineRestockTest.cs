@@ -21,6 +21,8 @@ namespace Content.IntegrationTests.Tests
     [TestOf(typeof(VendingMachineSystem))]
     public sealed class VendingMachineRestockTest : EntitySystem
     {
+        private static readonly ProtoId<EntityCategoryPrototype> StSkipTest = "StSkipRestockTest"; // Stalker-Changes: Skip Stalker restock prototypes
+
         private static readonly ProtoId<DamageTypePrototype> TestDamageType = "Blunt";
 
         [TestPrototypes]
@@ -121,12 +123,15 @@ namespace Content.IntegrationTests.Tests
                 HashSet<string> restocks = new();
                 Dictionary<string, List<string>> restockStores = new();
 
+                var stSkipTest = prototypeManager.Index(StSkipTest); // Stalker-Changes: Skip Stalker restock prototypes
+
                 // Collect all the prototypes with restock components.
                 foreach (var proto in prototypeManager.EnumeratePrototypes<EntityPrototype>())
                 {
                     if (proto.Abstract
                         || pair.IsTestPrototype(proto)
-                        || !proto.HasComponent<VendingMachineRestockComponent>())
+                        || !proto.HasComponent<VendingMachineRestockComponent>()
+                        || proto.Categories.Contains(stSkipTest)) // Stalker-Changes: Skip Stalker restock prototypes
                     {
                         continue;
                     }

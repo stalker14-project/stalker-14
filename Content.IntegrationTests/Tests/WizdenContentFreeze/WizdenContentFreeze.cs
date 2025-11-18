@@ -1,3 +1,4 @@
+/* // Stalker-Changes : Don't need that freeze on Stalker
 using Content.Shared.Kitchen;
 
 namespace Content.IntegrationTests.Tests.WizdenContentFreeze;
@@ -39,3 +40,4 @@ public sealed class WizdenContentFreeze
         await pair.CleanReturnAsync();
     }
 }
+*/

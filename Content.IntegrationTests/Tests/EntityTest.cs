@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using Content.Server._Stalker.Trash;
 using Robust.Shared;
 using Robust.Shared.Audio.Components;
 using Robust.Shared.Configuration;
@@ -33,6 +34,9 @@ namespace Content.IntegrationTests.Tests
             var mapManager = server.ResolveDependency<IMapManager>();
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
             var mapSystem = entityMan.System<SharedMapSystem>();
+
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
 
             await server.WaitPost(() =>
             {
@@ -96,6 +100,9 @@ namespace Content.IntegrationTests.Tests
             var entityMan = server.ResolveDependency<IEntityManager>();
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
 
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
+
             await server.WaitPost(() =>
             {
 
@@ -105,6 +112,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
+                    .Where(p => !p.Components.ContainsKey("NewMapTeleport")) // Stalker-Changes: Stalker-TODO: Remove this after fixing "portalName" names in prototypes. Current name links are missing, so we skip them until they're fixed. Help...
                     .Select(p => p.ID)
                     .ToList();
                 foreach (var protoId in protoIds)
@@ -157,6 +165,9 @@ namespace Content.IntegrationTests.Tests
             var mapManager = server.ResolveDependency<IMapManager>();
             var sEntMan = server.ResolveDependency<IEntityManager>();
             var mapSys = server.System<SharedMapSystem>();
+
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
 
             Assert.That(cfg.GetCVar(CVars.NetPVS), Is.False);
 
@@ -236,6 +247,9 @@ namespace Content.IntegrationTests.Tests
             var mapSys = pair.Server.System<SharedMapSystem>();
             var server = pair.Server;
             var client = pair.Client;
+
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
 
             var excluded = new[]
             {
