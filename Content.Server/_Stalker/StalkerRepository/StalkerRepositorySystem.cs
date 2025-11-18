@@ -317,6 +317,9 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     private void OnInteractUsing(EntityUid uid, StalkerRepositoryComponent component, InteractUsingEvent args)
     {
+        if (args.Handled)
+            return;
+
         // generate new item info for clicked entity
         var itemInfo = GenerateItemInfo(args.Used, true);
         // check for valid weight
@@ -342,6 +345,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
         // removing items
         RemoveItems(args.User, toDelete.Value.Item1, toDelete.Value.Item2);
+        args.Handled = true;
     }
 
     #endregion

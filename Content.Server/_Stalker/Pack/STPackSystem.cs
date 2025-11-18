@@ -25,7 +25,7 @@ public sealed class STPackSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<STPackSpawnerComponent, ComponentInit>(OnSpawnerInit);
+        SubscribeLocalEvent<STPackSpawnerComponent, MapInitEvent>(OnSpawnerMapInit);
 
         SubscribeLocalEvent<STPackHeadComponent, MobStateChangedEvent>(OnHeadStateChanged);
         SubscribeLocalEvent<STPackHeadComponent, DeleteComponent>(OnHeadDeleted);
@@ -44,7 +44,7 @@ public sealed class STPackSystem : EntitySystem
         SetRandomHead(entity);
     }
 
-    private void OnSpawnerInit(Entity<STPackSpawnerComponent> entity, ref ComponentInit args)
+    private void OnSpawnerMapInit(Entity<STPackSpawnerComponent> entity, ref MapInitEvent args)
     {
         CreatePack(entity.Comp.ProtoId, _transform.GetMapCoordinates(entity));
     }
