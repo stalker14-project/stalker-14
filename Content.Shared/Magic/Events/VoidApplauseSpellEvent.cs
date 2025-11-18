@@ -11,7 +11,7 @@ public sealed partial class VoidApplauseSpellEvent : EntityTargetActionEvent
     ///     Emote to use.
     /// </summary>
     [DataField]
-    public ProtoId<EmotePrototype> Emote = "ClapSingle";
+    public ProtoId<EmotePrototype> Emote = "STClapSingle"; // Stalker-changes
 
     /// <summary>
     ///     Visual effect entity that is spawned at both the user's and the target's location.
