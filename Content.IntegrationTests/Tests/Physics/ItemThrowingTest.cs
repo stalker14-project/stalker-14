@@ -11,7 +11,7 @@ public sealed class ItemThrowingTest : InteractionTest
     /// <summary>
     /// Check that an egg breaks when thrown at a wall.
     /// </summary>
-    /*[Test] // Stalker-Changes: Stalker-TODO: Figure out what exactly causes this test to fail. Currently I have no idea, was even trying to comment "STNPCSniperSystem" and "RDWeightThrowModifierSystem" but it didn't help...
+    [Test, Ignore("Stalker-Changes: Stalker-TODO: Figure out what exactly causes this test to fail. Currently I have no idea, was even trying to comment \"STNPCSniperSystem\" and \"RDWeightThrowModifierSystem\" but it didn't help...")]
     [TestOf(typeof(ThrownItemComponent))]
     [TestOf(typeof(DamageOnHighSpeedImpactComponent))]
     public async Task TestThrownEggBreaks()
@@ -36,7 +36,7 @@ public sealed class ItemThrowingTest : InteractionTest
         // Splat
         await RunTicks(30);
         AssertDeleted(egg);
-    }*/
+    }
 
     /// <summary>
     /// Check that an egg thrown into space continues to be an egg.

@@ -1,4 +1,3 @@
-/* // Stalker-Changes : Don't need that freeze on Stalker
 using Content.Shared.Kitchen;
 
 namespace Content.IntegrationTests.Tests.WizdenContentFreeze;
@@ -16,7 +15,7 @@ public sealed class WizdenContentFreeze
     ///
     /// https://github.com/space-wizards/space-station-14/issues/8524
     /// </summary>
-    [Test]
+    [Test, Ignore("Stalker-Changes : Don't need that freeze on Stalker")]
     public async Task MicrowaveRecipesFreezeTest()
     {
         await using var pair = await PoolManager.GetServerClient();
@@ -40,4 +39,4 @@ public sealed class WizdenContentFreeze
         await pair.CleanReturnAsync();
     }
 }
-*/
+
