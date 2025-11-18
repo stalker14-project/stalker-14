@@ -1,3 +1,4 @@
+using Content.Server._Stalker.MoveSpeed;
 using Content.Shared.CCVar;
 using Content.Shared.Inventory;
 using Content.Shared.Movement.Components;
@@ -30,6 +31,12 @@ namespace Content.Shared.Movement.Systems
 
         private void OnModMapInit(Entity<MovementSpeedModifierComponent> ent, ref MapInitEvent args)
         {
+            // Stalker-Changes-Start
+            var stalkerSpeedComp = EnsureComp<StalkerMoveSpeedComponent>(ent.Owner);
+            stalkerSpeedComp.StartWalkSpeed = ent.Comp.BaseWalkSpeed;
+            stalkerSpeedComp.StartSprintSpeed = ent.Comp.BaseSprintSpeed;
+            // Stalker-Changes-End
+
             // TODO: Dirty these smarter.
             ent.Comp.WeightlessAcceleration = ent.Comp.BaseWeightlessAcceleration;
             ent.Comp.WeightlessModifier = ent.Comp.BaseWeightlessModifier;

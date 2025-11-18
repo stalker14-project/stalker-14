@@ -9,7 +9,6 @@ public sealed class StalkerMoveSpeedSystem : StalkerMoveSpeedSystemShared
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MovementSpeedModifierComponent, ComponentInit>(InstallComponentSpeed);
         SubscribeAllEvent<StalkerMSSetBonusWalkEvent>(OnStalkerMSSetBonusWalkEvent);
         SubscribeAllEvent<StalkerMSSetBonusSprintEvent>(OnStalkerMSSetBonusSprintEvent);
     }
@@ -30,14 +29,6 @@ public sealed class StalkerMoveSpeedSystem : StalkerMoveSpeedSystemShared
             return;
 
         SetBonusSpeedWalk(args.SenderSession.AttachedEntity.Value, msg.NameBonus,msg.ValueBonus,moveSpeedComponent);
-    }
-
-
-    private void InstallComponentSpeed(EntityUid uid, MovementSpeedModifierComponent component, ComponentInit args)
-    {
-        var stalkerSpeedComp = AddComp<StalkerMoveSpeedComponent>(uid);
-        stalkerSpeedComp.StartWalkSpeed = component.BaseWalkSpeed;
-        stalkerSpeedComp.StartSprintSpeed = component.BaseSprintSpeed;
     }
 
     public void SetBonusSpeedWalk(EntityUid uid, string nameBonus, float valueBonus,StalkerMoveSpeedComponent stalkerSpeedComp)
