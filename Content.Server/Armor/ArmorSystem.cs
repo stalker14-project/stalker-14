@@ -19,6 +19,9 @@ public sealed class ArmorSystem : SharedArmorSystem
 
     private void GetArmorPrice(EntityUid uid, ArmorComponent component, ref PriceCalculationEvent args)
     {
+        if (component.Modifiers == null) // Stalker-changes
+            return;
+
         foreach (var modifier in component.Modifiers.Coefficients)
         {
             var damageType = _protoManager.Index<DamageTypePrototype>(modifier.Key);

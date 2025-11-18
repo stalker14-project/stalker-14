@@ -21,7 +21,7 @@ public sealed partial class ArmorComponent : Component
     /// The current damage reduction, after applying armor levels
     /// </summary>
     [ViewVariables]
-    public DamageModifierSet Modifiers = default!;
+    public DamageModifierSet?Modifiers = default!;
 
     /// <summary>
     /// The armor levels that modify the base modifiers

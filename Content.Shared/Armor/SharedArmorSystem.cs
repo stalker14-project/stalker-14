@@ -22,7 +22,7 @@ public abstract partial class SharedArmorSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<ArmorComponent, ComponentInit>(OnArmorInit); // stalker-changes
+        SubscribeLocalEvent<ArmorComponent, MapInitEvent>(OnArmorMapInit); // stalker-changes
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<CoefficientQueryEvent>>(OnCoefficientQuery);
         SubscribeLocalEvent<ArmorComponent, InventoryRelayedEvent<DamageModifyEvent>>(OnDamageModify);
         SubscribeLocalEvent<ArmorComponent, BorgModuleRelayedEvent<DamageModifyEvent>>(OnBorgDamageModify);
@@ -39,6 +39,9 @@ public abstract partial class SharedArmorSystem : EntitySystem
         if (TryComp<MaskComponent>(ent, out var mask) && mask.IsToggled)
             return;
 
+        if (ent.Comp.Modifiers == null) // Stalker-changes
+            return;
+
         foreach (var armorCoefficient in ent.Comp.Modifiers.Coefficients)
         {
             args.Args.DamageModifiers.Coefficients[armorCoefficient.Key] = args.Args.DamageModifiers.Coefficients.TryGetValue(armorCoefficient.Key, out var coefficient) ? coefficient * armorCoefficient.Value : armorCoefficient.Value;
@@ -53,10 +56,13 @@ public abstract partial class SharedArmorSystem : EntitySystem
         // stalker-changes-start
         if (args.Args.IgnoreResistors.Contains(uid))
         {
+            if (component.Modifiers == null)
+                return;
+
             var modifiedModifiers = new DamageModifierSet
             {
                 Coefficients = new Dictionary<string, float>(component.Modifiers.Coefficients),
-                FlatReduction = component.Modifiers.FlatReduction
+                FlatReduction = new Dictionary<string, float>(component.Modifiers.FlatReduction)
             };
 
             foreach (var key in modifiedModifiers.Coefficients.Keys.ToList())
@@ -65,8 +71,12 @@ public abstract partial class SharedArmorSystem : EntitySystem
             }
 
             args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modifiedModifiers);
+
             return;
         }
+
+        if (component.Modifiers == null)
+            return;
 
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
         // stalker-changes-end
@@ -81,6 +91,9 @@ public abstract partial class SharedArmorSystem : EntitySystem
         // stalker-changes-start
         if (args.Args.IgnoreResistors.Contains(uid))
         {
+            if (component.Modifiers == null)
+                return;
+
             var modifiedModifiers = new DamageModifierSet
             {
                 Coefficients = new Dictionary<string, float>(component.Modifiers.Coefficients),
@@ -93,8 +106,12 @@ public abstract partial class SharedArmorSystem : EntitySystem
             }
 
             args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, modifiedModifiers);
+
             return;
         }
+
+        if (component.Modifiers == null)
+            return;
 
         args.Args.Damage = DamageSpecifier.ApplyModifierSet(args.Args.Damage, component.Modifiers);
         // stalker-changes-end
