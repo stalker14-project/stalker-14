@@ -45,7 +45,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     private readonly Dictionary<string, DelegateItemStalkerConverter> _convertersItemStalker = new(0);
     private readonly HashSet<Type> _blackListDelChildrenOnSpawnComponent = new(0);
     private readonly HashSet<string> _blackListContainerNames = new(0);
-    private readonly Dictionary<EntProtoId, EntProtoId> _mapping = [];
+    private readonly Dictionary<string, EntProtoId> _mapping = [];
 
     private void InstallLists()
     {
