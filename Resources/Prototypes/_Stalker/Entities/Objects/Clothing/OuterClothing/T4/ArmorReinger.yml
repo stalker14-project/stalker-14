@@ -13,6 +13,11 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/armor_reinger.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/armor_reinger.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
   - type: Storage
     maxItemsize: Large
     grid:

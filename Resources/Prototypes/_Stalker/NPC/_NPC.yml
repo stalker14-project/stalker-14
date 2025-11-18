@@ -13,7 +13,7 @@
     sprite: _Stalker/NPC/
     drawdepth: 4
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures: # Stalker-TODO: This needs a second fixture just for mob collisions.
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -28,12 +28,18 @@
     prototype: Human
     requiredLegs: 2
   - type: Internals
-  - type: Inventory
-  - type: InventorySlots
+  # - type: Inventory
+  # - type: InventorySlots
   - type: Grammar
     attributes:
       proper: true
   - type: Tag
+  - type: ContainerContainer
+    containers: # Stalker-TODO: Figure out why tests don't like it being empty
+      body_root_part: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
 #NPC Base please don`t touch it - End
 
 #NPC Train Station - Start
@@ -984,6 +990,20 @@
     channels:
     - Binary
     - Common
+  - type: ContainerContainer
+    containers: # Stalker-TODO: Figure out why tests don't like it being empty
+      body_root_part: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      mask: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      suitstorage: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
 
 #NPC For trading - End
 

@@ -1,8 +1,8 @@
 - type: job
   id: StalkerClown
-  name: Циркач
+  name: job-clown
   icon: clowns
-  description: Защитник хорошего настроения.
+  description: job-clown-desc
   playTimeTracker: JobStalkerClown
   whitelisted: true
   requirements:
@@ -14,7 +14,7 @@
     - Human
     - Dwarf
   startingGear: StalkerClownGear
-  supervisors: " Смех продлевает жизнь. Буквально."
+  supervisors: job-clown-supervisor
   special:
   - !type:AddComponentSpecial
     components:

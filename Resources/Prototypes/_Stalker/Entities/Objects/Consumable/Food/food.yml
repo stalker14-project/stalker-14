@@ -2,9 +2,9 @@
 
 - type: reagent
   id: MToxin
-  name: MToxin
+  name: reagent-name-mtoxin
   parent: Toxin
-  desc: MToxin
+  desc: reagent-desc-mtoxin
   physicalDesc: reagent-physical-desc-sweet
   flavor: salty
   color: "#660099"
@@ -46,9 +46,9 @@
 
 - type: reagent
   id: MRadin
-  name: MRadin
+  name: reagent-name-mradin
   group: Medicine
-  desc: MRadin
+  desc: reagent-desc-mradin
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
   color: "#bd5902"
@@ -84,9 +84,9 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSaloCook
     node: start
-    defaultTarget: steak boar
+    defaultTarget: salo
   - type: Tag
     tags:
     - Meat
@@ -121,8 +121,25 @@
         - ReagentId: MRadin
           Quantity: 10
   - type: Construction
-    graph: MeatSteakBoar
-    node: steak boar
+    graph: MeatSaloCook
+    node: salo
+
+- type: constructionGraph
+  id: MeatSaloCook
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: salo
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: salo
+    entity: STFoodMeatSaloCooked
 
 ###############Хлеб
 
@@ -315,7 +332,7 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSteakBoar
     node: start
     defaultTarget: steak boar
   - type: Tag
@@ -401,9 +418,9 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSteakDog
     node: start
-    defaultTarget: steak boar
+    defaultTarget: steak dog
   - type: Tag
     tags:
     - Meat

@@ -25,8 +25,6 @@
           Airloss: -10
           Toxin: -10
       range: 2
-    - type: TimerTrigger
-      delay: 5
 
 - type: entity
   name: "Медуза"
@@ -97,7 +95,7 @@
       bodyType: Dynamic
     - type: Fixtures
       fixtures:
-        fix1:
+        ignition:
           shape:
             !type:PhysShapeCircle
             radius: 1
@@ -141,5 +139,3 @@
         types:
           Heat: 5
       range: 1
-    - type: TimerTrigger
-      delay: 5

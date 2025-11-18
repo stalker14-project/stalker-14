@@ -33,10 +33,6 @@
     grid:
     - 0,0,9,1
     - 0,3,9,4
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -50,6 +46,11 @@
     - BlockBelt
     - BlockCloak
     - BlockGloves
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 # Brown
 

@@ -1,6 +1,5 @@
 - type: entity
-  categories: [ HideSpawnMenu ]
-  # abstract: true
+  abstract: true
   parent: BaseItem
   id: BaseStalkerPDA
   name: PDA
@@ -8,12 +7,12 @@
   components:
   - type: Trash
     time: 600
-  - type: Appearance
   - type: Craftable
   - type: Sprite
     sprite: _Stalker/Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "stalker_on"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -26,7 +25,11 @@
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: stalker_off
   - type: Pda
-    state: stalker_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        stalker_on
     paiSlot:
       priority: -2
       whitelist:
@@ -48,11 +51,15 @@
     size: Small
   - type: ContainerContainer
     containers:
+      cell_slot: !type:ContainerSlot {}
       PDA-id: !type:ContainerSlot {}
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
+      dogtag_slot: !type:ContainerSlot {}
+      cassette_slot: !type:ContainerSlot {}
       program-container: !type:Container
+        ents: []
   - type: ItemSlots
   - type: Clothing
     quickEquip: false
@@ -92,6 +99,7 @@
   - type: Input
     context: "human"
   - type: StationRecordKeyStorage
+  - type: PdaVisuals
 
 - type: entity
   parent: BaseStalkerPDA
@@ -99,8 +107,11 @@
   name: КПК Сталкера
   description: Объединены общей сетью и позволяют обмениваться информацией.
   components:
-  - type: Pda
-    state: stalker_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        stalker_on
   - type: PdaBorderColor
     borderColor: "#717059"
   - type: Tag
@@ -137,14 +148,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -162,7 +165,6 @@
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -177,8 +179,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: seraphim_off
-  - type: Pda
-    state: seraphim_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        seraphim_on
   - type: PdaBorderColor
     borderColor: "#3CB371"
   - type: Geiger
@@ -218,14 +223,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -243,7 +240,6 @@
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
   - type: Armor
@@ -262,8 +258,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: anom_off
-  - type: Pda
-    state: anom_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        anom_on
   - type: HealthAnalyzer
     scanDelay: 3
     scanningEndSound:
@@ -305,14 +304,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -330,7 +321,6 @@
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -343,8 +333,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: scientific_off
-  - type: Pda
-    state: scientific_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        scientific_on
   - type: HealthAnalyzer
     scanDelay: 0.5
     scanningEndSound:
@@ -385,14 +378,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -410,7 +395,6 @@
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -425,8 +409,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: band_off
-  - type: Pda
-    state: band_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        band_on
   - type: Boombox
   - type: ItemSlots
     slots:
@@ -475,21 +462,12 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -504,8 +482,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: dolg_off
-  - type: Pda
-    state: dolg_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        dolg_on
   - type: Tag
     tags:
     - Flashlight
@@ -540,14 +521,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -564,7 +537,6 @@
     radius: 5
     energy: 2.5
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -580,8 +552,11 @@
     sprite: _Stalker/Objects/Devices/pda.rsi
     storedRotation: -90
     state: svo_off
-  - type: Pda
-    state: svo_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        svo_on
   - type: Tag
     tags:
     - Flashlight
@@ -616,14 +591,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -641,7 +608,6 @@
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -656,8 +622,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: cn_off
-  - type: Pda
-    state: cn_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        cn_on
   - type: HealthAnalyzer
     scanDelay: 0.5
     scanningEndSound:
@@ -698,14 +667,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -723,7 +684,6 @@
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
   - type: UserInterface
@@ -750,8 +710,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: svo_off
-  - type: Pda
-    state: svo_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        svo_on
   - type: PdaBorderColor
     borderColor: "#285714"
   - type: Tag
@@ -788,14 +751,6 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -812,7 +767,6 @@
     radius: 5
     energy: 2.5
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
   - type: Armor
@@ -834,8 +788,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: pilgrim_off
-  - type: Pda
-    state: pilgrim_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pilgrim_on
   - type: ItemSlots
     slots:
       cell_slot:
@@ -878,21 +835,12 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -907,8 +855,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: mono_off
-  - type: Pda
-    state: mono_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        mono_on
   - type: Boombox
   - type: ItemSlots
     slots:
@@ -957,21 +908,12 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
 
@@ -986,8 +928,11 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: band_off
-  - type: Pda
-    state: band_on
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        band_on
   - type: ItemSlots
     slots:
       cassette_slot:
@@ -1035,21 +980,12 @@
         shader: unshaded
   - type: PowerCellSlot
     cellSlotId: cell_slot
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-      Cartridge-Slot: !type:ContainerSlot {}
-      program-container: !type:Container
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     radius: 3
     netsync: false
-  - type: Appearance
   - type: StealTarget
     stealGroup: LAMP
   - type: Scope

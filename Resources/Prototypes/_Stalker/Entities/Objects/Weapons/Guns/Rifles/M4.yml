@@ -28,6 +28,13 @@
     - Burst
     - SemiAuto
     - FullAuto
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot {}
+      gun_auto_sear: !type:ContainerSlot {}
+      gun_module_muzzle: !type:ContainerSlot {}
+      gun_module_scope: !type:ContainerSlot {}
+      gun_chamber: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       gun_magazine:

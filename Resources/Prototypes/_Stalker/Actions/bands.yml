@@ -6,6 +6,8 @@
   components:
     - type: Action
       checkCanInteract: false
-      icon: _Stalker/Interface/Actions/patch.rsi/switch_patch.png
+      icon:
+        sprite: _Stalker/Interface/Actions/patch.rsi
+        state: switch_patch
     - type: InstantAction
       event: !type:ChangeBandEvent
