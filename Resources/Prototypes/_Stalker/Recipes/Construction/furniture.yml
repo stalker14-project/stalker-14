@@ -5,13 +5,14 @@
   description: Некогда этот стул был гордостью, но сейчас предмет, который занимает много места.
   components:
   - type: Craftable
+  - type: Construction
+    graph: STchairCraft
+    node: STchairCraft
 
 # furniture
 
 - type: construction
   id: STchairCraft
-  name: стул
-  description: Некогда этот стул был гордостью, но сейчас предмет, который занимает много места.
   graph: STchairCraft
   startNode: start
   targetNode: STchairCraft

@@ -136,8 +136,10 @@
     sprite: _Stalker/Objects/Clothing/mask/tegilla_rene.rsi
   - type: Tag
     tags:
-      - HidesNose
       - BlockMask
+  - type: HideLayerClothing
+    slots:
+    - Snout
   - type: Armor
     armorClass: 3
     modifiers:

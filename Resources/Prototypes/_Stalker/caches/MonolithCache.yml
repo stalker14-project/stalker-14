@@ -1,6 +1,6 @@
 # monolith
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: STMonolithCrate
   suffix: Stalker, монолит
   name: чёрный ящик монолита
@@ -21,7 +21,6 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
-    - type: Clickable
     - type: StorageFill
       contents:
         # outer

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: STBaseHiddenCache
   abstract: true
   components:
@@ -16,5 +16,4 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
-    - type: Clickable
     - type: Rangedetector
