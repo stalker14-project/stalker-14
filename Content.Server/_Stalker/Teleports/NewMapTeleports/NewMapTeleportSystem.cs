@@ -109,9 +109,9 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
         }
     }
 
-    private void LoadMap(ResPath path)
+    private void LoadMap(string path)
     {
-        _mapLoader.TryLoadMap(path, out _, out _, DeserializationOptions.Default with { InitializeMaps = true });
+        _mapLoader.TryLoadMap(new ResPath(path), out _, out _, DeserializationOptions.Default with { InitializeMaps = true });
     }
     private void OnStartCollide(EntityUid uid, NewMapTeleportComponent component, ref StartCollideEvent args)
     {
