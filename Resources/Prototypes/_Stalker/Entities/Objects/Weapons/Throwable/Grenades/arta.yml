@@ -85,7 +85,7 @@
 - type: entity
   name: HowitzerSpawner
   id: HowitzerTargetBase
-  categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu, Spawner ]
   parent: MarkerBase
   components:
     - type: Marker
@@ -106,6 +106,7 @@
   id: HowitzerTimedSpawnerIntensive
   suffix: Минута
   parent: MarkerBase
+  categories: [ Spawner ]
   components:
   - type: Sprite
     layers:
@@ -126,6 +127,7 @@
   id: HowitzerTimedSpawnerfast
   suffix: Минута
   parent: MarkerBase
+  categories: [ Spawner ]
   components:
   - type: Sprite
     layers:
@@ -146,6 +148,7 @@
   id: HowitzerTimedSpawnerLong
   suffix: 3 минуты
   parent: MarkerBase
+  categories: [ Spawner ]
   components:
   - type: Sprite
     layers:
@@ -164,7 +167,7 @@
 - type: entity
   name: ArtillerySpawner
   id: ArtilleryTargetBase
-  categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu, Spawner ]
   parent: MarkerBase
   components:
     - type: Marker
@@ -185,6 +188,7 @@
   id: ArtilleryTimedSpawnerIntensive
   suffix: Минута
   parent: MarkerBase
+  categories: [ Spawner ]
   components:
   - type: Sprite
     layers:
@@ -205,6 +209,7 @@
   id: ArtilleryTimedSpawnerLong
   suffix: 3 минуты
   parent: MarkerBase
+  categories: [ Spawner ]
   components:
   - type: Sprite
     layers:
