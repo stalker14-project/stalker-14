@@ -469,6 +469,37 @@
           Quantity: 15
   - type: Craftable
 
+- type: entity
+  name: frog legs
+  parent: FoodBase
+  id: FoodSTFrogLegs
+  suffix: Stalker, Food
+  description: Frog legs tossed in spices and fried at a low temperature. They're surprisingly tender.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - spicy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: froglegs
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Craftable
+
 # deserts
 - type: entity
   name: plain cake
@@ -754,4 +785,44 @@
           Quantity: 20
         - ReagentId: Lexorin
           Quantity: 10
+  - type: Craftable
+
+- type: entity
+  name: oracle gumbo
+  parent: FoodBowlBase
+  id: FoodSTOracleGumbo
+  suffix: Stalker, Food
+  description: If you can get past how it looks and feels and tastes, it's not even that bad. Maybe even... good?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - spicy
+      - tomato
+      - slimy
+    ignoreReagents:
+      - THC
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: oraclegumbo
+  - type: Food
+    trash:
+    - FoodBowlBig
+    utensil:
+    - Spoon
+    - Fork
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: THC
+          Quantity: 15
   - type: Craftable

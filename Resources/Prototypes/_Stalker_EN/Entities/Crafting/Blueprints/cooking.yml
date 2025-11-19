@@ -39,6 +39,14 @@
   - type: STBlueprint
     blueprint: recipeFoodSTFriedEggs
 
+- type: entity
+  parent: STCookingRecipe
+  id: STCookingFrogLegs
+  name: frog legs recipe
+  components:
+  - type: STBlueprint
+    blueprint: recipeFoodSTFrogLegs
+
 # NORMAL
 - type: entity
   parent: STCookingRecipe
@@ -161,3 +169,11 @@
   components:
   - type: STBlueprint
     blueprint: recipeFoodSTAmbrosia
+
+- type: entity
+  parent: STCookingRecipe
+  id: STCookingOracleGumbo
+  name: oracle gumbo recipe
+  components:
+  - type: STBlueprint
+    blueprint: recipeFoodSTOracleGumbo

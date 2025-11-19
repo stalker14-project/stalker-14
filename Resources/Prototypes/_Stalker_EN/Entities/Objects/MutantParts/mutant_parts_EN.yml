@@ -81,3 +81,17 @@
     size: Normal
     shape:
     - 0,0,1,2
+
+- type: entity
+  parent: BaseMutantPart
+  id: MutantPartFrogLeg
+  name: frog leg
+  components:
+  - type: STWeight
+    self: 2.0
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/MutantParts/frog_leg.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
