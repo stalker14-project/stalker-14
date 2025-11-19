@@ -1319,3 +1319,53 @@
   components:
     - type: NewMapTeleport
       portalName: Kordon-Loshina
+
+- type: entity
+  parent: MapTeleportBase
+  id: Deserter-Lohina1
+  name: Deserter-Lohina1
+  components:
+    - type: NewMapTeleport
+      portalName: Deserter-Lohina1
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Deserter-Lohina2
+  name: Deserter-Lohina2
+  components:
+    - type: NewMapTeleport
+      portalName: Deserter-Lohina2
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+- type: entity
+  parent: MapTeleportBase
+  id: Serephim-Lohina1
+  name: Serephim-Lohina1
+  components:
+    - type: NewMapTeleport
+      portalName: Serephim-Lohina1
+      cooldownEnabled: true
+      cooldownTime: 30
+      godmodeCooldown: 5
+
+######## СВОБОДА
+- type: entity
+  parent: MapTeleportBase
+  id: Freedom_basement1
+  name: Freedom_basement1
+  components:
+  - type: NewMapTeleport
+    portalName: Freedom_basement
+
+- type: entity
+  parent: MapTeleportBase
+  id: Freedom_basement2
+  name: Freedom_basement2
+  components:
+  - type: NewMapTeleport
+    portalName: Freedom_basement

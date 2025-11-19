@@ -1,0 +1,27 @@
+- type: entity
+  id: STchairCraft
+  parent: OldWoodChairStalker
+  name: стул
+  description: Некогда этот стул был гордостью, но сейчас предмет, который занимает много места.
+  components:
+  - type: Craftable
+
+# furniture
+
+- type: construction
+  id: STchairCraft
+  name: стул
+  description: Некогда этот стул был гордостью, но сейчас предмет, который занимает много места.
+  graph: STchairCraft
+  startNode: start
+  targetNode: STchairCraft
+  category: construction-category-structures
+  icon:
+    sprite: _Stalker/Structures/Furniture/Chairs/old_chairs.rsi
+    state: s1
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  hide: false
+  conditions:
+    - !type:TileNotBlocked

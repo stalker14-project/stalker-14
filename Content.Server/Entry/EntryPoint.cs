@@ -1,6 +1,7 @@
-using Content.Server._Stalker.AI;
+using Content.Server._Stalker.AI; // Stalker-Using-Start
+using Content.Server._Stalker.Discord;
 using Content.Server._Stalker.Discord.DiscordAuth;
-using Content.Server._Stalker.JoinQueue;
+using Content.Server._Stalker.JoinQueue; // Stalker-Using-End
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -35,7 +36,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Content.Server._Stalker.Sponsors.SponsorManager;
+using Content.Server._Stalker.Sponsors.SponsorManager; // Stalker-Using
 
 namespace Content.Server.Entry
 {
@@ -86,6 +87,7 @@ namespace Content.Server.Entry
         [Dependency] private readonly DiscordAuthManager _discordAuthManager = default!;
         [Dependency] private readonly JoinQueueManager _joinQueueManager = default!;
         [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
+        [Dependency] private readonly BanWebhook _banWebhook = default!;
         // Stalker-Dependency-End
 
         public override void PreInit()
@@ -185,6 +187,7 @@ namespace Content.Server.Entry
             _discordAuthManager.Initialize(); // Stalker-Changes-Auth
             _joinQueueManager.Initialize(); // Stalker-Changes - Corvax Queue Adaptation
             _sponsorsManager.Initialize(); // Stalker-Changes-Sponsors
+            _banWebhook.Initialize(); // Stalker-Changes-Bans
             // Stalker-Changes-End
         }
 

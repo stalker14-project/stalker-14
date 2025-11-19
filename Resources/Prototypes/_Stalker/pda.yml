@@ -474,7 +474,7 @@
 - type: entity
   parent: BaseStalkerPDA
   id: DolgPDA
-  name: КПК Авангарда
+  name: КПК Долга
   description: Объединены общей сетью и позволяют обмениваться информацией.
   components:
   - type: PdaBorderColor
@@ -543,7 +543,7 @@
 - type: entity
   parent: BaseStalkerPDA
   id: FreedomPDA
-  name: КПК «PCZI»
+  name: КПК «Свободы»
   description: Объединены общей сетью и позволяют обмениваться информацией. КПК пропитан запахом дешевого протвейна и канабиса.
   components:
   - type: PdaBorderColor
@@ -706,7 +706,6 @@
   name: КПК Военного
   description: Этот КПК пережевёт и ядерный взрыв. По крайней мере это закладывать в тендере.
   components:
-  - type: Unremoveable
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: svo_off
@@ -769,12 +768,6 @@
     netsync: false
   - type: StealTarget
     stealGroup: LAMP
-  - type: Armor
-    armorClass: 0
-    modifiers:
-      flatReductions:
-        Radiation: 2
-        Psy: 2
 
 
 - type: entity
