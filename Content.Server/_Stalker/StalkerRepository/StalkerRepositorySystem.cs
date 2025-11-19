@@ -38,6 +38,7 @@ using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
 using Content.Server._Stalker.Sponsors.SponsorManager;
 using Content.Shared.Actions.Components;
+using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.StalkerRepository;
@@ -653,7 +654,8 @@ public sealed class StalkerRepositorySystem : EntitySystem
                     HasComp<BodyPartComponent>(element) ||
                     HasComp<CartridgeComponent>(element) ||
                     HasComp<VirtualItemComponent>(element) ||
-                    HasComp<MindContainerComponent>(element)) // Do not insert alive objects(mice, etc.)
+                    HasComp<MindContainerComponent>(element) || // Do not insert alive objects(mice, etc.)
+                    HasComp<StatusEffectComponent>(element)) // Don't look at status effect entities
                     continue;
                 // recursively call the same method and add its result to our
                 if (TryComp<ContainerManagerComponent>(element, out var manager))

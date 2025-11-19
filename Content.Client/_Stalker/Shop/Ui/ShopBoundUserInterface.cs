@@ -19,6 +19,8 @@ public sealed class ShopBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
+        base.Open();
+
         _menu = new ShopMenu();
         _menu.OpenCentered();
 
