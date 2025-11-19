@@ -24,7 +24,6 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
 
     public readonly STAnomalyGenerationOptions Options;
 
@@ -32,6 +31,7 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
     private readonly TagSystem _tag;
     private readonly TransformSystem _transform;
     private readonly MapSystem _map;
+    private readonly TurfSystem _turf;
 
     private readonly FrozenDictionary<EntProtoId, int> _anomalySizes;
 
@@ -50,6 +50,7 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
         _tag = _entityManager.System<TagSystem>();
         _transform = _entityManager.System<TransformSystem>();
         _map = _entityManager.System<MapSystem>();
+        _turf = _entityManager.System<TurfSystem>();
 
         // Hashing
         _anomalySizes = GetHashAnomalySize();

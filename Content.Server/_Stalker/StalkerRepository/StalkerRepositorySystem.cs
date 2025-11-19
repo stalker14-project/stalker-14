@@ -198,8 +198,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
     // base updating methods, like main UpdateUIState and others
     #region UpdateUiState
 
-    private void OnBeforeActivate(EntityUid uid, StalkerRepositoryComponent component,
-        BeforeActivatableUIOpenEvent args)
+    private void OnBeforeActivate(EntityUid uid, StalkerRepositoryComponent component, BeforeActivatableUIOpenEvent args)
     {
         UpdateUiState(args.User, uid, component);
     }

@@ -11,6 +11,7 @@ using Content.Shared.Access.Systems;
 using Content.Shared.Teleportation.Components;
 using Microsoft.Extensions.Logging;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -88,17 +89,20 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
             return (stalkerTeleportData.MapId, stalkerTeleportData.GridId);
         }
 
-        _mapSystem.CreateMap(out var mapId, true);
-        ArenaMap[concatenated] = _mapManager.GetMapEntityId(mapId);
-        _metaDataSystem.SetEntityName(ArenaMap[concatenated], $"STALKER_MAP-{concatenated}");
-        var map = Comp<MapComponent>(ArenaMap[concatenated]);
-        var isLoaded = _map.TryLoadMapWithId(map.MapId, component.ArenaMapPath, out _, out var grids);
-        _mapSystem.SetPaused(map.MapId, false);
-        if (grids is null || !isLoaded)
+        var isLoaded = _map.TryLoadMap(
+            component.ArenaMapPath,
+            out var map,
+            out var grids,
+            DeserializationOptions.Default with {InitializeMaps = true});
+
+        if (grids is null || !isLoaded || map is null)
         {
             _sawmill.Error($"Couldn't load a map {component.ArenaMapPath} for {concatenated}");
             return (ArenaMap[concatenated], null);
         }
+
+        ArenaMap[concatenated] = map.Value.Owner;
+        _metaDataSystem.SetEntityName(ArenaMap[concatenated], $"STALKER_MAP-{concatenated}");
 
         EntityUid? firstGrid = grids.Count != 0 ? grids.First() : null;
 
