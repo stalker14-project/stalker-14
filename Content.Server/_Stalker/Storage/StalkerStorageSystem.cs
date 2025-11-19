@@ -363,7 +363,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
             case BatteryItemStalker options:
                 if (TryComp<BatteryComponent>(inputItemUid, out var batteryComponent))
                 {
-                    _batterySys.SetCharge(inputItemUid, options.CurrentCharge, batteryComponent);
+                    _batterySys.SetCharge((inputItemUid, batteryComponent), options.CurrentCharge);
                 }
                 break;
             case AmmoContainerStalker options:

@@ -61,7 +61,7 @@ public sealed class ZoneAnomalyEffectDischargeSystem : EntitySystem
         {
             if (battery != null)
             {
-                _batterySystem.UseCharge(item, battery.CurrentCharge, battery);
+                _batterySystem.UseCharge((item, battery), battery.CurrentCharge);
             }
         }
     }

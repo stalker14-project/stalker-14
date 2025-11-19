@@ -52,7 +52,7 @@ public sealed class ZoneAnomalyEffectLightArcSystem : EntitySystem
         if (!TryComp<BatteryComponent>(target, out var battery))
             return;
 
-        _battery.SetCharge(target, battery.CurrentCharge + battery.MaxCharge * effect.Comp.ChargePercent, battery);
+        _battery.SetCharge((target, battery), battery.CurrentCharge + battery.MaxCharge * effect.Comp.ChargePercent);
     }
 
     private bool IsValidRecursively(Entity<ZoneAnomalyEffectLightArcComponent> effect, EntityUid uid)
