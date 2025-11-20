@@ -5,6 +5,11 @@
   name: PDA
   description: Personal Data Assistant.
   components:
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        stalker_on
   - type: Trash
     time: 600
   - type: Craftable
@@ -25,11 +30,6 @@
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: stalker_off
   - type: Pda
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        stalker_on
     paiSlot:
       priority: -2
       whitelist:
