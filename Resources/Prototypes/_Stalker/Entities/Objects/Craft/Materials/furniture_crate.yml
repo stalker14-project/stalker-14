@@ -1,0 +1,19 @@
+- type: entity
+  parent: STBaseIngridient
+  id: STCraftFurniture
+  name: furniture assembly kit
+  desciption: Furniture can be assembled anywhere.
+  suffix: Stalker, крафт
+  components:
+    - type: Sprite
+      state: kb2
+      sprite: _Stalker/Structures/Furniture/carton_box.rsi
+    - type: Stack
+      stackType: STCraftFurniture
+      count: 1
+    - type: Craftable
+    - type: RepositoryItem
+      categoryName: Крафты
+    - type: Tag
+      tags:
+      - FurnitureStalker

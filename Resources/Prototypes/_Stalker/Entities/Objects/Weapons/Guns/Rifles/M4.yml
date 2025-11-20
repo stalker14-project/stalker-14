@@ -142,3 +142,32 @@
   - type: Gun
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/n_lr300_shot.ogg
+
+- type: entity
+  parent: STBaseWeaponRifleM4
+  id: STWeaponRifleSCARL
+  name: SCAR-L
+  suffix: ST, Кастомка
+  description: Belgian battle rifle chambered in 5.56 NATO. Rare in the Zone, mostly used by western mercenaries. Powerful but maintenance-heavy weapon.
+  components:
+  - type: STWeight
+    self: 3.8
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_l.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_l.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/scar_l.rsi
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/scar.ogg
+      params:
+        volume: -2
+    minAngle: 40
+    maxAngle: 80
+    angleIncrease: 1.2
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.8
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.5
