@@ -1,10 +1,10 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 11/07/2025 14:02:04
+  time: 11/20/2025 14:51:19
   entityCount: 1357
 maps:
 - 962
@@ -3007,16 +3007,6 @@ entities:
     - type: Transform
       pos: -1.7893778,1.5219426
       parent: 179
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: ClothingOuterArmor6B13
   entities:
   - uid: 1313
@@ -3031,16 +3021,6 @@ entities:
     - type: Transform
       pos: 0.25475407,1.15465
       parent: 179
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: ClothingOuterArmorSpark
   entities:
   - uid: 1296
@@ -3048,16 +3028,6 @@ entities:
     - type: Transform
       pos: -0.26967502,1.3311796
       parent: 179
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: ClothingOuterArmorSSP99White
   entities:
   - uid: 1316
@@ -3087,16 +3057,6 @@ entities:
           Psy: 0.26
           Radiation: 0.8
           Compression: 0.8
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingOuterArmorStalker
   entities:
   - uid: 1307
@@ -3104,16 +3064,6 @@ entities:
     - type: Transform
       pos: 0.7066908,1.3253324
       parent: 179
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: ClothingOuterArmorStalkerCombat
   entities:
   - uid: 1317
@@ -3128,9 +3078,6 @@ entities:
     - type: Transform
       pos: 1.7429354,1.4592757
       parent: 179
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot {}
 - proto: ClothingOuterArmorZaryaStalker
   entities:
   - uid: 1294
@@ -3138,16 +3085,6 @@ entities:
     - type: Transform
       pos: -0.6111381,1.552063
       parent: 179
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: ClothingOuterCoatBolotniy
   entities:
   - uid: 1298
@@ -3166,16 +3103,6 @@ entities:
           Slash: 0.95
           Piercing: 0.95
           Heat: 0.6
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingOuterCoatDoshdevik
   entities:
   - uid: 1292
@@ -3183,16 +3110,6 @@ entities:
     - type: Transform
       pos: -1.5583874,0.5580869
       parent: 179
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingOuterCoatLoyalist
   entities:
   - uid: 1304
@@ -3200,16 +3117,6 @@ entities:
     - type: Transform
       pos: 0.26587033,0.59564275
       parent: 179
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingOuterCoatLoyalistLight
   entities:
   - uid: 1305
@@ -3217,16 +3124,6 @@ entities:
     - type: Transform
       pos: 0.6776345,0.42496032
       parent: 179
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingOuterCoatStalker
   entities:
   - uid: 1295
@@ -3234,16 +3131,6 @@ entities:
     - type: Transform
       pos: -0.64126754,0.5078864
       parent: 179
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
 - proto: ClothingOuterHardsuitAtmos
   entities:
   - uid: 270
@@ -3410,14 +3297,14 @@ entities:
   - uid: 1329
     components:
     - type: Transform
-      pos: 5.233686,10.657373
+      pos: 5.5,10.5
       parent: 179
 - proto: CraftComponentSourceT1PlasticFitting
   entities:
   - uid: 1328
     components:
     - type: Transform
-      pos: 6.4790235,10.777856
+      pos: 6.5,10.5
       parent: 179
 - proto: CrateEngineeringToolbox
   entities:
@@ -4368,53 +4255,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCAlinaMorozova
   entities:
   - uid: 446
@@ -4424,53 +4360,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCBarmen
   entities:
   - uid: 431
@@ -4480,53 +4465,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCBlueprintComputer
   entities:
   - uid: 728
@@ -4536,53 +4570,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCBotanikMaks
   entities:
   - uid: 183
@@ -4592,53 +4675,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCBuyer
   entities:
   - uid: 274
@@ -4648,53 +4780,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCCeremoniemeester
   entities:
   - uid: 416
@@ -4704,53 +4885,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCClerkAlexeySmirnov
   entities:
   - uid: 443
@@ -4760,53 +4990,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCClothingSalesMan
   entities:
   - uid: 705
@@ -4816,53 +5095,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCCustomRadioPlayer
   entities:
   - uid: 279
@@ -4872,53 +5200,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCErjanAlimov
   entities:
   - uid: 769
@@ -4928,53 +5305,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCFarmerSerega
   entities:
   - uid: 770
@@ -4984,53 +5410,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCGunmith
   entities:
   - uid: 760
@@ -5040,53 +5515,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCGunmithAdvanced
   entities:
   - uid: 184
@@ -5096,53 +5620,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCIgorIvanovich
   entities:
   - uid: 950
@@ -5152,53 +5725,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCJuryIzvorotin
   entities:
   - uid: 716
@@ -5208,53 +5830,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCMaksimka
   entities:
   - uid: 768
@@ -5264,53 +5935,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCNikitaAlkash
   entities:
   - uid: 917
@@ -5320,53 +6040,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCPetrAlkash
   entities:
   - uid: 920
@@ -5376,53 +6145,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCPharmacist
   entities:
   - uid: 171
@@ -5432,53 +6250,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCPovarGena
   entities:
   - uid: 278
@@ -5488,53 +6355,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCRadioPlayer
   entities:
   - uid: 764
@@ -5544,53 +6460,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCResearchInstitutes
   entities:
   - uid: 276
@@ -5600,53 +6565,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCResearchInstitutesRechnov
   entities:
   - uid: 457
@@ -5656,53 +6670,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCSalesmanViktor
   entities:
   - uid: 275
@@ -5712,53 +6775,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCSidorovich
   entities:
   - uid: 180
@@ -5768,53 +6880,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCTechnickVitya
   entities:
   - uid: 841
@@ -5824,53 +6985,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: NPCTourist
   entities:
   - uid: 767
@@ -5880,53 +7090,102 @@ entities:
       parent: 179
     - type: ContainerContainer
       containers:
-        body_root_part: !type:ContainerSlot {}
+        body_root_part: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
         pocket1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         pocket2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         suitstorage: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         id: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         belt: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         back: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact1: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact2: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact3: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         artifact4: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         legs: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         torso: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         neck: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         eyes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         gloves: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         shoes: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         outerClothing: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         mask: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         head: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         ears: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         dopweapon: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         cloak: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
         jumpsuit: !type:ContainerSlot
+          showEnts: False
           occludes: False
+          ent: null
 - proto: Ointment
   entities:
   - uid: 148
@@ -7161,8 +8420,6 @@ entities:
       rot: 3.1415926535897967 rad
       pos: 0.5,-6.5
       parent: 179
-    - type: Physics
-      bodyType: Static
 - proto: STChairOfficeLight
   entities:
   - uid: 576
@@ -7171,31 +8428,23 @@ entities:
       rot: 4.71238898038469 rad
       pos: 19.5,4.5
       parent: 179
-    - type: Physics
-      bodyType: Static
   - uid: 577
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,5.5
       parent: 179
-    - type: Physics
-      bodyType: Static
   - uid: 578
     components:
     - type: Transform
       rot: 4.71238898038469 rad
       pos: 23.5,8.5
       parent: 179
-    - type: Physics
-      bodyType: Static
   - uid: 579
     components:
     - type: Transform
       pos: 24.5,5.5
       parent: 179
-    - type: Physics
-      bodyType: Static
 - proto: STClothingOuterArmorIOTVBlack
   entities:
   - uid: 1318
@@ -7224,9 +8473,6 @@ entities:
     - type: Transform
       pos: -0.33644104,1.646586
       parent: 179
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot {}
 - proto: STCraftBasicPCBT1
   entities:
   - uid: 567
@@ -7649,27 +8895,11 @@ entities:
     - type: Transform
       pos: -0.27874312,-3.5907383
       parent: 179
-    - type: RevolverAmmoProvider
-      chambers:
-      - null
-      - null
-      - null
-      - null
-      - null
-      - null
   - uid: 1358
     components:
     - type: Transform
       pos: -3.4117372,-2.6789854
       parent: 179
-    - type: RevolverAmmoProvider
-      chambers:
-      - null
-      - null
-      - null
-      - null
-      - null
-      - null
 - proto: STWeaponRevolverDanWesson715
   entities:
   - uid: 1270
@@ -7677,14 +8907,6 @@ entities:
     - type: Transform
       pos: -0.55652046,-3.3962936
       parent: 179
-    - type: RevolverAmmoProvider
-      chambers:
-      - null
-      - null
-      - null
-      - null
-      - null
-      - null
 - proto: STWeaponRevolverSWPC325TR
   entities:
   - uid: 1271
@@ -7692,14 +8914,6 @@ entities:
     - type: Transform
       pos: -1.0842979,-3.604627
       parent: 179
-    - type: RevolverAmmoProvider
-      chambers:
-      - null
-      - null
-      - null
-      - null
-      - null
-      - null
 - proto: STWeaponRifleAK103
   entities:
   - uid: 1356
@@ -7707,19 +8921,6 @@ entities:
     - type: Transform
       pos: -3.4922369,-0.2779546
       parent: 179
-    - type: STWeaponDamageFalloff
-      modifiedFalloffMultiplier: 0.85
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: STWeaponRifleM4
   entities:
   - uid: 1206
@@ -7727,8 +8928,6 @@ entities:
     - type: Transform
       pos: -3.4992301,-1.6558492
       parent: 179
-    - type: STWeaponDamageFalloff
-      modifiedFalloffMultiplier: 0.8
     - type: STWeight
       insideWeight: 0.01
     - type: Gun
@@ -7743,18 +8942,6 @@ entities:
           pitch: 1
           volume: 0
         path: /Audio/_Stalker/Effects/Guns/m4.ogg
-    - type: STWeaponModuleContainer
-      integratedScopeEffect: True
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
     - type: ContainerContainer
       containers:
         gun_magazine: !type:ContainerSlot
@@ -7787,17 +8974,6 @@ entities:
     - type: Transform
       pos: -1.1338301,-3.391345
       parent: 179
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: STWeaponShotgunMP153
   entities:
   - uid: 1259
@@ -7805,17 +8981,6 @@ entities:
     - type: Transform
       pos: -0.5366087,-3.1552343
       parent: 179
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: STWeaponShotgunTOZ34
   entities:
   - uid: 1258
@@ -7823,17 +8988,6 @@ entities:
     - type: Transform
       pos: -0.46716332,-3.4191232
       parent: 179
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: STWeaponSMGPP19
   entities:
   - uid: 1266
@@ -7841,19 +8995,6 @@ entities:
     - type: Transform
       pos: 1.5189472,-3.4067276
       parent: 179
-    - type: STWeaponDamageFalloff
-      modifiedFalloffMultiplier: 0.8
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: STWeaponSMGPP91
   entities:
   - uid: 1260
@@ -7861,19 +9002,6 @@ entities:
     - type: Transform
       pos: 0.79672456,-3.2524562
       parent: 179
-    - type: STWeaponDamageFalloff
-      modifiedFalloffMultiplier: 0.8
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: STWeaponSniperSVDS
   entities:
   - uid: 1276
@@ -7881,17 +9009,6 @@ entities:
     - type: Transform
       pos: 2.5679474,-3.4337902
       parent: 179
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: STWindow
   entities:
   - uid: 111
@@ -9936,31 +11053,6 @@ entities:
     - type: Transform
       pos: -0.12717059,-2.8087902
       parent: 179
-    - type: ContainerContainer
-      containers:
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_auto_sear: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: WeaponPistolStalkerTT
   entities:
   - uid: 1272
@@ -9968,31 +11060,6 @@ entities:
     - type: Transform
       pos: -0.43152046,-2.7018497
       parent: 179
-    - type: ContainerContainer
-      containers:
-        gun_magazine: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_chamber: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        gun_auto_sear: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-    - type: STWeaponModuleContainer
-      cachedEffect:
-        additionalAvailableModes: Invalid
-        farshotSoundDecrease: 1
-        soundGunshotVolumeAddition: 0
-        projectileSpeedModifier: 1
-        minAngleModifier: 1
-        maxAngleModifier: 1
-        angleIncreaseModifier: 1
-        angleDecayModifier: 1
-        fireRateModifier: 1
 - proto: WeaponRifleAk
   entities:
   - uid: 437
