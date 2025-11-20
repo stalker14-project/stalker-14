@@ -112,7 +112,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
-                    .Where(p => !p.Components.ContainsKey("NewMapTeleport")) // Stalker-Changes: Stalker-TODO: Remove this after fixing "portalName" names in prototypes. Current name links are missing, so we skip them until they're fixed. Help...
+                    .Where(p => !p.Components.ContainsKey("NewMapTeleport")) // Stalker-Changes: Teleports only used on game maps
                     .Select(p => p.ID)
                     .ToList();
                 foreach (var protoId in protoIds)
