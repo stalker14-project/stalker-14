@@ -96,7 +96,7 @@ public sealed class NPCBloodsuckerSystem : EntitySystem
 
 
             _audio.PlayPvs(user.Comp.BloodsuckSound, user); // play sound on suck
-            _popup.PopupEntity(Loc.GetString("action-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
+            _popup.PopupEntity(Loc.GetString("st-action-popup-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
             _stunSystem.TryKnockdown(target, TimeSpan.FromSeconds(0.3), false); // knockdown each time on suck (i guess its better be here, since i dont like how easy it is to kill him while he is staying still)
 
             // camera recoil on suck
@@ -130,7 +130,7 @@ public sealed class NPCBloodsuckerSystem : EntitySystem
 
 
             _audio.PlayPvs(user.Comp.BloodsuckSound, user); // play sound on suck
-            _popup.PopupEntity(Loc.GetString("action-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
+            _popup.PopupEntity(Loc.GetString("st-action-popup-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
             _stunSystem.TryKnockdown(target, TimeSpan.FromSeconds(0.3), false); // knockdown each time on suck (i guess its better be here, since i dont like how easy it is to kill him while he is staying still)
 
             // camera recoil on suck
