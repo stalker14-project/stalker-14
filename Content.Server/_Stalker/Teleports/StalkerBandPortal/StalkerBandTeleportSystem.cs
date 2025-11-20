@@ -7,6 +7,7 @@ using Content.Shared._Stalker.Teleport;
 using Content.Shared.Access.Systems;
 using Content.Shared.Teleportation.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -84,10 +85,18 @@ public sealed class StalkerBandTeleportSystem : SharedTeleportSystem
             return (stalkerTeleportData.MapId,stalkerTeleportData.GridId);
         }
 
-        ArenaMap[component.PortalName] = _mapManager.GetMapEntityId(_mapManager.CreateMap());
-        _metaDataSystem.SetEntityName(ArenaMap[component.PortalName], $"STALKER_MAP-{component.PortalName}");
-        // TODO: Remove obsolete methods
-        _map.TryLoadMapWithId(Comp<MapComponent>(ArenaMap[component.PortalName]).MapId, ArenaMapPath, out _, out var grids);
+        _map.TryLoadMap(
+            ArenaMapPath,
+            out var map,
+            out var grids,
+            DeserializationOptions.Default with { InitializeMaps = true });
+
+        if (map != null)
+        {
+            ArenaMap[component.PortalName] = map.Value.Owner;
+            _metaDataSystem.SetEntityName(ArenaMap[component.PortalName], $"STALKER_MAP-{component.PortalName}");
+        }
+
         EntityUid? firstGrid = null;
 
         if (grids != null && grids.Count != 0)

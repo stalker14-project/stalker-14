@@ -98,11 +98,15 @@ public sealed class MapPortalSystem : SharedTeleportSystem
         if (_mapSystem.MapExists(component.MapId))
             return;
 
-        var map = _mapSystem.CreateMap(out var mapId, true);
-        component.MapId = mapId;
         //// Loads map from a specified path and initializes it.
-        if (!_mapLoader.TryLoadMapWithId(mapId, component.MapPath, out _, out var grids))
-            _sawmill.Error($"Map with id {mapId} from {component.MapPath} load failed.");
+        if (!_mapLoader.TryLoadMap(
+                component.MapPath,
+                out _,
+                out var grids))
+        {
+            _sawmill.Error($"Map load from {component.MapPath} has failed.");
+            return;
+        }
 
         //if (!_mapSystem.IsMapInitialized(mapId))
         //    _mapManager.DoMapInitialize(mapId);
