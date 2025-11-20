@@ -132,6 +132,8 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
     private async Task RemoveByBlockers()
     {
         var entities = _entityManager.EntityQueryEnumerator<STAnomalyGeneratorSpawnBlockerComponent, TransformComponent>();
+        var coordinatesToRemove = new List<Vector2i>();
+
         while (entities.MoveNext(out _, out var blocker, out var transform))
         {
             if (transform.MapID != Options.MapId)
@@ -147,23 +149,34 @@ public sealed partial class STAnomalyGenerationJob : Job<STAnomalyGenerationJobD
                 for (var y = box2.Bottom; y < box2.Top; y++)
                 {
                     await MakeOperation();
-                    if (!_tileCoordinates.TryGetValue(new Vector2i(x, y), out _))
-                        continue;
+                    var coord = new Vector2i(x, y);
 
-                    _tileCoordinates.Remove(new Vector2i(x, y));
+                    if (_tileCoordinates.ContainsKey(coord))
+                    {
+                        coordinatesToRemove.Add(coord);
+                    }
                 }
             }
+        }
+
+        foreach (var coord in coordinatesToRemove)
+        {
+            _tileCoordinates.Remove(coord);
         }
     }
 
     private async Task LoadTiles()
     {
-        var grids = _mapManager.GetAllGrids(Options.MapId);
-        foreach (var grid in grids)
+        var gridList = _mapManager.GetAllGrids(Options.MapId).ToList();
+
+        foreach (var grid in gridList)
         {
-            foreach (var tileRef in _map.GetAllTiles(grid, grid))
+            var allTiles = _map.GetAllTiles(grid, grid).ToList();
+
+            foreach (var tileRef in allTiles)
             {
                 await MakeOperation();
+
                 if (TileSolidAndNotBlocked(tileRef))
                 {
                     _tileCoordinates.TryAdd(tileRef.GridIndices, tileRef);
