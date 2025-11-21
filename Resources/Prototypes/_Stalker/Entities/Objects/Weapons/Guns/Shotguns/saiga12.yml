@@ -71,6 +71,18 @@
 
 - type: entity
   parent: STBaseWeaponShotgunSaiga12
+  id: STWeaponShotgunSaiga12Auto
+  name: Saiga-12
+  description: Semi-automatic AK-based shotgun, favored by stalkers for its reliability and firepower. Chambered in 12 gauge, perfect for close-quarters mutant encounters.
+  components:
+  - type: Gun
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    - SemiAuto
+
+- type: entity
+  parent: STBaseWeaponShotgunSaiga12
   id: STWeaponShotgunSaiga12
   name: Saiga-12
   description: Semi-automatic AK-based shotgun, favored by stalkers for its reliability and firepower. Chambered in 12 gauge, perfect for close-quarters mutant encounters.
