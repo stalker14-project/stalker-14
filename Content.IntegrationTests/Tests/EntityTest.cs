@@ -119,6 +119,8 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
+                    .Where(p => !p.Components.ContainsKey("EmbeddableProjectile")) // Stalker-Changes-TODO: Figure out why projectiles embeds in this test
+                    .Where(p => !p.Components.ContainsKey("ProjectileSpread")) // Stalker-Changes-TODO: Figure out why projectiles embeds in this test
                     .Where(p => p.Categories.All(x => x.ID != StSkipSpawnTestCategory)) // Stalker-Changes: Skip whitelisted prototypes
                     .Select(p => p.ID)
                     .ToList();

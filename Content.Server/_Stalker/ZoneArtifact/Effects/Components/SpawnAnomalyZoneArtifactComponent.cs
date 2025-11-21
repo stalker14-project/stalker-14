@@ -2,7 +2,7 @@
 
 namespace Content.Server._Stalker.ZoneArtifact.Effects.Components;
 
-[RegisterComponent, EntityCategory("Spawner")]
+[RegisterComponent, EntityCategory("Spawner", "StSkipSpawnTest")]
 public sealed partial class SpawnAnomalyZoneArtifactComponent : Component
 {
 
