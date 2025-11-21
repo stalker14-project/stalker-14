@@ -144,6 +144,25 @@
           - STCartridge739
 
 - type: entity
+  parent: STWeaponRifleSaiga739
+  id: STWeaponRifleSaiga739Auto
+  name: saiga 7.39
+  description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
+    minAngle: 50
+    maxAngle: 90
+    angleIncrease: 2
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    angleDecay: 10
+    fireRate: 5
+
+- type: entity
   name: АК-15
   parent: STWeaponRifleStalkerAK12
   suffix: ST, Кастомка
