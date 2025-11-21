@@ -1,16 +1,33 @@
 - type: constructionGraph
-  id: STchairCraft
+  id: ChairCraft
   start: start
   graph:
   - node: start
     edges:
-    - to: STchairCraft
+    - to: STchairCraftEnd
       steps:
-      - tag: LogStalker
+      - tag: FurnitureStalker
         icon:
-          sprite: Objects/Specific/Hydroponics/towercap.rsi
-          state: produce
+          sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb2
         doAfter: 15
-        name: бревно
-  - node: STchairCraft
-    entity: STchairCraft
+        name: набор для сборки мебели
+  - node: STchairCraftEnd
+    entity: STchairCraftable
+
+- type: constructionGraph
+  id: TableCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: STTableCraftEnd
+      steps:
+      - tag: FurnitureStalker
+        icon:
+          sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb2
+        doAfter: 15
+        name: набор для сборки мебели
+  - node: STTableCraftEnd
+    entity: STTableCraftable

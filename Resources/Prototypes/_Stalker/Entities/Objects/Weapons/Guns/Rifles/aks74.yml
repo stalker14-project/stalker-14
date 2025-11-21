@@ -167,41 +167,43 @@
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/aks74-green.rsi
 
 - type: entity
-  parent: STBaseWeaponRifleAKM
-  id: STWeaponRifleSquall
-  name: Squall
-  suffix: ST, Кастомка
-  description: An experimental high-rate machine gun in a bullpup configuration.
+  parent: STBaseWeaponRifleAKS74
+  id: STWeaponRifleZastavaM92
+  name: Zastava M92
+  description: Yugoslav and Serbian assault rifle. Variant of the Zastava M85 assault rifle chambered for the 7.62 × 39 mm cartridge. It has a recoil capacitor, a PS-2 sight, and a handle.
   components:
   - type: STWeight
-    self: 3.4
+    self: 3
   - type: Clothing
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/zastava_m92.rsi
   - type: Item
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/zastava_m92.rsi
   - type: Sprite
-    sprite: _Stalker/Objects/Weapons/Guns/Rifles/squall.rsi
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/zastava_m92.rsi
   - type: Gun
     soundGunshot:
-      path: /Audio/_Stalker/Effects/Guns/ak.ogg
+      path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
+    minAngle: 45
+    maxAngle: 85
     fireRate: 8
+    angleIncrease: 1
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: Base545Mag10
+        startingItem: Base739Mag10
         insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
         ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
         priority: 4
         whitelist:
           tags:
-          - Magazine545
+          - Magazine739
       gun_chamber:
         name: Chamber
         priority: 1
         whitelist:
           tags:
-          - STCartridge545
+          - STCartridge739
       gun_module_muzzle:
         name: Muzzle
         priority: 3
@@ -214,10 +216,6 @@
         whitelist:
           tags:
           - STWeaponModuleRifleScopeRu
-  - type: STWeaponDamageFalloff
-    falloffMultiplier: 0.8
-  - type: STWeaponAccuracy
-    accuracyMultiplier: 1.45
 
 # AKS 74u
 - type: entity
