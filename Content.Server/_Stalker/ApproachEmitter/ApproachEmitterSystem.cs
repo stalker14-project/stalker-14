@@ -1,6 +1,7 @@
-﻿using Content.Server._Stalker.ApproachTrigger;
+using Content.Server._Stalker.ApproachTrigger;
 using Content.Server.Explosion.EntitySystems;
 using Robust.Shared.Timing;
+using Content.Shared.Trigger.Systems;
 
 namespace Content.Server._Stalker.ApproachEmitter;
 

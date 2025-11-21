@@ -1,7 +1,8 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 using Content.Server.Corvax.Speech.Components;
 using Content.Server.Speech;
 using Robust.Shared.Random;
+using Content.Shared.Speech;
 
 namespace Content.Server.Corvax.Speech.EntitySystems;
 

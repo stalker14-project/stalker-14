@@ -8,6 +8,8 @@ using Content.Shared.Physics;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Shared.Trigger;
+using Content.Shared.Maps;
 
 namespace Content.Server._Stalker.SpawnOnApproach;
 
@@ -104,7 +106,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
 
     private bool CheckEntities(EntityCoordinates coords, SpawnOnApproachComponent comp)
     {
-        var tile = coords.GetTileRef();
+        var tile = _turf.GetTileRef(coords);
         if (tile == null)
             return false;
 
@@ -121,7 +123,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private bool CheckBlocked(EntityCoordinates coords)
     {
-        var tile = coords.GetTileRef();
+        var tile = _turf.GetTileRef(coords);
 
         return tile != null && _turf.IsTileBlocked(tile.Value, CollisionGroup.Impassable);
     }

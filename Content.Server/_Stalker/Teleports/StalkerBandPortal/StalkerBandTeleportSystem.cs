@@ -10,6 +10,10 @@ using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Utility;
+using System.Linq;
+using Robust.Shared.Log;
 
 namespace Content.Server._Stalker.Teleports.StalkerBandPortal;
 
@@ -84,16 +88,22 @@ public sealed class StalkerBandTeleportSystem : SharedTeleportSystem
         ArenaMap[component.PortalName] = _mapManager.GetMapEntityId(_mapManager.CreateMap());
         _metaDataSystem.SetEntityName(ArenaMap[component.PortalName], $"STALKER_MAP-{component.PortalName}");
         // TODO: Remove obsolete methods
-        var grids = _map.LoadMap(Comp<MapComponent>(ArenaMap[component.PortalName]).MapId, ArenaMapPath);
+        _map.TryLoadMap(new ResPath(ArenaMapPath), out _, out var grids);
+
+        if (grids is null)
+        {
+            return (ArenaMap[component.PortalName], ArenaGrid[component.PortalName]);
+        }
+
         if (grids.Count != 0)
         {
-            _metaDataSystem.SetEntityName(grids[0], $"STALKER_GRID-{component.PortalName}");
-            ArenaGrid[component.PortalName] = grids[0];
+            _metaDataSystem.SetEntityName(grids.ElementAt(0), $"STALKER_GRID-{component.PortalName}");
+            ArenaGrid[component.PortalName] = grids.ElementAt(0);
         }
         else
             ArenaGrid[component.PortalName] = null;
 
-        if (TryComp(grids[0], out TransformComponent? xform))
+        if (TryComp(grids.ElementAt(0), out TransformComponent? xform))
         {
             // TODO: Obsolete
             var enumerator = xform.ChildEnumerator;

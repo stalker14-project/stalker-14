@@ -1,9 +1,11 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
 
@@ -11,6 +13,7 @@ public sealed class ZoneAnomalyEffectMapTeleporterSystem : SharedZoneAnomalyEffe
 {
     [Dependency] private readonly IMapManager _map = default!;
     [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
+    [Dependency] private readonly SharedMapSystem _sharedMap = default!;
 
     public override void Initialize()
     {
@@ -60,9 +63,9 @@ public sealed class ZoneAnomalyEffectMapTeleporterSystem : SharedZoneAnomalyEffe
         var mapId = _map.CreateMap();
         var mapUid = _map.GetMapEntityId(mapId);
 
-        _map.AddUninitializedMap(mapId);
+        _sharedMap.CreateMap(mapId, false);
 
-        if (!_mapLoader.TryLoad(mapId, effect.Comp.MapPath.CanonPath, out _))
+        if (!_mapLoader.TryLoadMap(new ResPath(effect.Comp.MapPath.CanonPath), out _, out _))
             return null;
 
         // Save the created map so as not to shit on them

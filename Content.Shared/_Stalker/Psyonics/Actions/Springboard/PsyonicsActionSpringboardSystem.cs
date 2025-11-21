@@ -1,4 +1,4 @@
-﻿using Content.Shared.Stunnable;
+using Content.Shared.Stunnable;
 using Content.Shared.Throwing;
 
 namespace Content.Shared._Stalker.Psyonics.Actions.Springboard;
@@ -21,7 +21,7 @@ public sealed class PsyonicsActionSpringboardSystem : BasePsyonicsActionSystem<P
 
             if (entity.Comp.Stun)
             {
-                _stun.TryStun(target, entity.Comp.StunDuration, true);
+                //_stun.TryStun(target, entity.Comp.StunDuration, true); // FIX LATER
             }
         }
 
