@@ -111,6 +111,22 @@
     accuracyMultiplier: 1.45
 
 - type: entity
+  parent: STWeaponRifleSaiga545
+  id: STWeaponRifleSaiga545Auto
+  name: saiga 5.45 "Hunter"
+  description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
+  components:
+  - type: Gun
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 1
+    fireRate: 5.5
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+
+- type: entity
   parent: STBaseWeaponRifleAKS74
   id: STWeaponRifleA545
   name: A-545 "Balalaika"
