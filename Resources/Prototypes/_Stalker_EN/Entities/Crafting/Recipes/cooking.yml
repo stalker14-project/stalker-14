@@ -74,6 +74,23 @@
     FoodSTOil:
       amount: 1
 
+- type: craftRecipe
+  id: recipeFoodSTFrogLegs
+  resultProtos:
+  - FoodSTFrogLegs
+  craftTime: 12
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingFrogLegs:
+      amount: 1
+      catalyzer: true
+    MutantPartFrogLeg:
+      amount: 2
+    FoodSTSpice:
+      amount: 1
+    FoodSTOil:
+      amount: 1
+
 # NORMAL
 - type: craftRecipe
   id: recipeFoodSTBorscht
@@ -391,3 +408,28 @@
       amount: 1
     MutantPartLeshiyRoot:
       amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTOracleGumbo
+  resultProtos:
+  - FoodSTOracleGumbo
+  craftTime: 25
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingOracleGumbo:
+      amount: 1
+      catalyzer: true
+    FoodBowlBig:
+      amount: 1
+    MutantPartOraculeEye:
+      amount: 1
+    FoodSTBeans:
+      amount: 1
+    STFoodMeatSalamiSlice:
+      amount: 3
+    FoodSTOnion:
+      amount: 1
+    FoodSTTomato:
+      amount: 1
+    FoodSTSpice:
+      amount: 2
