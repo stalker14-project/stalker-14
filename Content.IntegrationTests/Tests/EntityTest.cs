@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using System.Text;
+using Content.Server._Stalker.Restart;
 using Content.Server._Stalker.Trash;
 using Robust.Shared;
 using Robust.Shared.Audio.Components;
@@ -21,6 +22,8 @@ namespace Content.IntegrationTests.Tests
     {
         private static readonly ProtoId<EntityCategoryPrototype> SpawnerCategory = "Spawner";
 
+        private static readonly ProtoId<EntityCategoryPrototype> StSkipSpawnTestCategory = "StSkipSpawnTest"; // Stalker-Changes: Skip whitelisted prototypes
+
         [Test]
         public async Task SpawnAndDeleteAllEntitiesOnDifferentMaps()
         {
@@ -35,8 +38,10 @@ namespace Content.IntegrationTests.Tests
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
             var mapSystem = entityMan.System<SharedMapSystem>();
 
-            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
-            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes
+            var restartSystem = server.System<RestartSystem>(); // Stalker-Changes
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem because it may remove entities during the test
+            restartSystem.Enabled = false; // Stalker-Changes: Disable RestartSystem during tests because it spawns null entity during the test
 
             await server.WaitPost(() =>
             {
@@ -100,8 +105,10 @@ namespace Content.IntegrationTests.Tests
             var entityMan = server.ResolveDependency<IEntityManager>();
             var prototypeMan = server.ResolveDependency<IPrototypeManager>();
 
-            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
-            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes
+            var restartSystem = server.System<RestartSystem>(); // Stalker-Changes
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem because it may remove entities during the test
+            restartSystem.Enabled = false; // Stalker-Changes: Disable RestartSystem during tests because it spawns null entity during the test
 
             await server.WaitPost(() =>
             {
@@ -112,7 +119,7 @@ namespace Content.IntegrationTests.Tests
                     .Where(p => !pair.IsTestPrototype(p))
                     .Where(p => !p.Components.ContainsKey("MapGrid")) // This will smash stuff otherwise.
                     .Where(p => !p.Components.ContainsKey("RoomFill")) // This comp can delete all entities, and spawn others
-                    .Where(p => !p.Components.ContainsKey("NewMapTeleport")) // Stalker-Changes: Teleports only used on game maps
+                    .Where(p => p.Categories.All(x => x.ID != StSkipSpawnTestCategory)) // Stalker-Changes: Skip whitelisted prototypes
                     .Select(p => p.ID)
                     .ToList();
                 foreach (var protoId in protoIds)
@@ -166,8 +173,10 @@ namespace Content.IntegrationTests.Tests
             var sEntMan = server.ResolveDependency<IEntityManager>();
             var mapSys = server.System<SharedMapSystem>();
 
-            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
-            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes
+            var restartSystem = server.System<RestartSystem>(); // Stalker-Changes
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem because it may remove entities during the test
+            restartSystem.Enabled = false; // Stalker-Changes: Disable RestartSystem during tests because it spawns null entity during the test
 
             Assert.That(cfg.GetCVar(CVars.NetPVS), Is.False);
 
@@ -248,8 +257,10 @@ namespace Content.IntegrationTests.Tests
             var server = pair.Server;
             var client = pair.Client;
 
-            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes: Disable TrashDeletingSystem during tests
-            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem during tests
+            var trashSystem = server.System<TrashDeletingSystem>(); // Stalker-Changes
+            var restartSystem = server.System<RestartSystem>(); // Stalker-Changes
+            trashSystem.Enabled = false; // Stalker-Changes: Disable TrashDeletingSystem because it may remove entities during the test
+            restartSystem.Enabled = false; // Stalker-Changes: Disable RestartSystem during tests because it spawns null entity during the test
 
             var excluded = new[]
             {
@@ -269,6 +280,7 @@ namespace Content.IntegrationTests.Tests
                 .Where(p => !pair.IsTestPrototype(p))
                 .Where(p => !excluded.Any(p.Components.ContainsKey))
                 .Where(p => p.Categories.All(x => x.ID != SpawnerCategory))
+                .Where(p => p.Categories.All(x => x.ID != StSkipSpawnTestCategory)) // Stalker-Changes
                 .Select(p => p.ID)
                 .ToList();
 

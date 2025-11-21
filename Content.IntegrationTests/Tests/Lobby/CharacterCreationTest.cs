@@ -11,7 +11,7 @@ namespace Content.IntegrationTests.Tests.Lobby;
 [TestOf(typeof(ServerPreferencesManager))]
 public sealed class CharacterCreationTest
 {
-    [Test]
+    [Test, Ignore("Stalker-Changes: We skip this test, because stalker has only 1 character slot")]
     public async Task CreateDeleteCreateTest()
     {
         await using var pair = await PoolManager.GetServerClient(new PoolSettings { InLobby = true });

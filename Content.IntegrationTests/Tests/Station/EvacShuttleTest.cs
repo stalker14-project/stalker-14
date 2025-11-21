@@ -10,7 +10,7 @@ using Robust.Shared.Map.Components;
 
 namespace Content.IntegrationTests.Tests.Station;
 
-[TestFixture]
+[TestFixture, Ignore("Stalker-Changes: There are no emergency evac shuttles on stalker")]
 [TestOf(typeof(EmergencyShuttleSystem))]
 public sealed class EvacShuttleTest
 {

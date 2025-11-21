@@ -25,6 +25,7 @@ public sealed class TrashDeletingSystem : EntitySystem
     /// </summary>
     private bool _warningIssued;
 
+    // Stalker-TODO: This should not exist. Ideally we need a proper way to skip "Update" in this system in test
     /// <summary>
     /// Is this system Enabled?
     /// </summary>

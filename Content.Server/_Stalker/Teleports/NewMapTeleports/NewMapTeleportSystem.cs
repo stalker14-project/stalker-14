@@ -62,9 +62,9 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
         }
 #endif
 
+        UpdateLinks();
         var ev = new MapsLoadedEvent();
         RaiseLocalEvent(ref ev);
-        UpdateLinks();
     }
 
     private void UpdateLinks()

@@ -1,6 +1,8 @@
-﻿namespace Content.Server._Stalker.ZoneArtifact.Effects.Components;
+﻿using Robust.Shared.Prototypes;
 
-[RegisterComponent]
+namespace Content.Server._Stalker.ZoneArtifact.Effects.Components;
+
+[RegisterComponent, EntityCategory("Spawner")]
 public sealed partial class SpawnAnomalyZoneArtifactComponent : Component
 {
 

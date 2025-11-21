@@ -28,7 +28,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.GameRules;
 
-[TestFixture]
+[TestFixture, Ignore("Stalker-Changes: Stalker does not have nukies")]
 public sealed class NukeOpsTest
 {
     private static readonly ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";

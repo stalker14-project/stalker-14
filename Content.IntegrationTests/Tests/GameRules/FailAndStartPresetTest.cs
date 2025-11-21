@@ -72,9 +72,11 @@ public sealed class FailAndStartPresetTest
         var ticker = server.System<GameTicker>();
         server.System<TestRuleSystem>().Run = true;
 
+        var defaultPresetId = server.CfgMan.GetCVar(CCVars.GameLobbyDefaultPreset); // Stalker-Changes
+
         Assert.That(server.CfgMan.GetCVar(CCVars.GridFill), Is.False);
         Assert.That(server.CfgMan.GetCVar(CCVars.GameLobbyFallbackEnabled), Is.True);
-        Assert.That(server.CfgMan.GetCVar(CCVars.GameLobbyDefaultPreset), Is.EqualTo("secret"));
+        Assert.That(defaultPresetId, Is.Not.EqualTo(string.Empty)); // Stalker-Changes: Uses default preset instead of hardcoded "secret"
         server.CfgMan.SetCVar(CCVars.GridFill, true);
         server.CfgMan.SetCVar(CCVars.GameLobbyFallbackEnabled, false);
         server.CfgMan.SetCVar(CCVars.GameLobbyDefaultPreset, "TestPreset");
@@ -113,7 +115,7 @@ public sealed class FailAndStartPresetTest
         ticker.SetGamePreset((GamePresetPrototype?) null);
         server.CfgMan.SetCVar(CCVars.GridFill, false);
         server.CfgMan.SetCVar(CCVars.GameLobbyFallbackEnabled, true);
-        server.CfgMan.SetCVar(CCVars.GameLobbyDefaultPreset, "secret");
+        server.CfgMan.SetCVar(CCVars.GameLobbyDefaultPreset, defaultPresetId); // Stalker-Changes
         server.System<TestRuleSystem>().Run = false;
         await pair.CleanReturnAsync();
     }
