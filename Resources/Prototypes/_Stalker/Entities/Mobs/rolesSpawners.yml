@@ -149,6 +149,42 @@
       - Sci
 
 - type: entity
+  name: кукла декан (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci
+  components:
+    - type: Access
+      tags:
+        - Sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_decan
+    - type: Loadout
+      prototypes: [ SciGear2 ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
+  name: кукла ректор (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci
+  components:
+    - type: Access
+      tags:
+        - sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_rector
+    - type: Loadout
+      prototypes: [ SciGear3 ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
   name: кукла бандит (переименуй меня)
   suffix: Stalker, пешка с нашивкой
   parent: MobHuman
