@@ -1,0 +1,61 @@
+- type: entity
+  parent: BaseAmmoBoxStalker
+  id: 13x108FMJBox
+  name: коробка патронов (12,7x108) FMJ
+  description: Для винтовки OSV-96, в коробке 10 штук. Обеспечивает пробитие 4 класса брони.
+  suffix: Stalker
+  components:
+  - type: MagazineVisuals
+    magState: 76254ammo
+  - type: BallisticAmmoProvider
+    capacity: 10
+    proto: STCartridge13x108FMJ
+    whitelist:
+      tags:
+        - STCartridge13x108
+  - type: Sprite
+    layers:
+    - state: 13108
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 76239ammo-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: BaseAmmoBoxStalker
+  id: 13x108PCBox
+  name: коробка патронов (12,7x108) ПС
+  description: Для винтовки OSV-96, в коробке 10 штук. Обеспечивает пробитие 5 класса брони.
+  suffix: Stalker
+  components:
+    - type: MagazineVisuals
+      magState: 76254ammo
+    - type: BallisticAmmoProvider
+      capacity: 10
+      proto: STCartridge13x108PC
+      whitelist:
+        tags:
+          - STCartridge13x108
+    - type: Sprite
+      layers:
+        - state: 13108
+          map: ["enum.GunVisualLayers.Base"]
+        - state: 76239ammo-1
+          map: ["enum.GunVisualLayers.Mag"]
+        - state: t3
+
+- type: entity
+  parent: 13x108PCBox
+  id: 13x108HPBox
+  name: коробка патронов (12,7x108) HP BT
+  description: Для винтовки OSV-96, в коробке 10 штук. Бесполезно против брони.
+  suffix: Stalker
+  components:
+    - type: BallisticAmmoProvider
+      proto: STCartridge13x108HPBT
+    - type: Sprite
+      layers:
+        - state: 13108
+          map: ["enum.GunVisualLayers.Base"]
+        - state: 76239ammo-1
+          map: ["enum.GunVisualLayers.Mag"]
+        - state: exp

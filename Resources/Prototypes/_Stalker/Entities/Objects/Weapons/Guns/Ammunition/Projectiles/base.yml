@@ -167,6 +167,23 @@
 - type: entity
   abstract: true
   parent: STBaseBullet
+  id: STBaseSHRBullet #Super High range, super heavy rifle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: STProjectileAccuracy
+    thresholds:
+    - range: 1
+      falloff: 0.001
+  - type: STProjectileDamageFalloff
+    thresholds:
+    - range: 8
+      falloff: 0.01
+    - range: 45
+      falloff: 0.2
+
+- type: entity
+  abstract: true
+  parent: STBaseBullet
   id: STBaseSPBullet #Spacial ammo like 9x39 or .300 blackout
   categories: [ HideSpawnMenu ]
   components:

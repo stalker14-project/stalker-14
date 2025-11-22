@@ -1,0 +1,69 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponSniper
+  id: STBaseWeaponRifleOSV96
+  components:
+  - type: FarGunshot
+    sound: /Audio/_DZ/Effects/FarGunshots/osv96_shot_from_long_distance.ogg
+  - type: STWeight
+    self: 5
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/osv-96.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/osv-96.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Snipers/osv-96.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/osv96.ogg
+    minAngle: 50
+    maxAngle: 120
+    angleDecay: 60
+    angleIncrease: 2
+    fireRate: 0.3
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 8
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/_Stalker/Weapons/Guns/RifleGen/Cock/rifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: 13x108Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/osv96_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/osv96_magout.ogg
+        priority: 3
+        whitelist:
+          tags:
+          - Magazine13x108
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSilencer
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge13x108
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_module_muzzle: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: PullDoAfter
+    pullTime: 1.5
+  - type: Scope
+    zoom: 1.65
+    offset: 14
+
+- type: entity
+  parent: STBaseWeaponRifleOSV96
+  suffix: ST, Кастомка
+  id: STWeaponSniperOSV96
+  name: OSV-96 Взломщик
+  description: российская самозарядная крупнокалиберная снайперская винтовка под калибр 12,7x108мм. Разработана в Туле специалистами КБ приборостроения.
+

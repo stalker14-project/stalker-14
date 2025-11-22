@@ -1,0 +1,46 @@
+- type: entity
+  id: BaseSTCartridge13x108
+  name: cartridge (12,7x108 rifle)
+  parent: BaseCartridge
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - STCartridge13x108
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+    state: "base"
+  - type: STWeight
+    self: 0.02
+
+- type: entity
+  id: STCartridge13x108FMJ
+  name: Патрон (12,7x108)FMJ
+  parent: BaseSTCartridge13x108
+  components:
+    - type: CartridgeAmmo
+      proto: Bullet13x108FMJ
+
+- type: entity
+  id: STCartridge13x108PC
+  name: Патрон (12,7x108)ПС
+  parent: BaseSTCartridge13x108
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet13x108PC
+
+- type: entity
+  id: STCartridge13x108HPBT
+  name: Патрон (12,7x108)HP BT
+  parent: BaseSTCartridge13x108
+  components:
+  - type: CartridgeAmmo
+    proto: Bullet13x108HPBT
