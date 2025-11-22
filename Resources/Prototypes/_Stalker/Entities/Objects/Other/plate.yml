@@ -1,12 +1,10 @@
 - type: entity
   id: plateStalker1
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   name: concrete slabs
   description: These are massive, roughly formed structures that can be found in abandoned industrial areas and on the territory of old buildings. Their surfaces are covered with cracks and stains, indicating long-term use and exposure to aggressive environments.
   suffix: Stalker
   components:
-    - type: Transform
-      anchored: true
     - type: Sprite
       sprite: _Stalker/Objects/Other/Plate.rsi
       state: plate1

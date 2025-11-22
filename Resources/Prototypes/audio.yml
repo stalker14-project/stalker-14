@@ -76,3 +76,20 @@
   id: OnMapGrid
   rules:
     - !type:OnMapGridRule
+
+# Debug
+- type: ambientMusic
+  id: StalkerFallbackMusicAmbient
+  sound:
+    params:
+      volume: 3
+    collection: StalkerMusicSound
+  rules: AlwaysTrue
+  fadeIn: true
+  interruptable: true
+  priority: -1000
+
+- type: rules
+  id: AlwaysTrue
+  rules:
+    - !type:AlwaysTrueRule

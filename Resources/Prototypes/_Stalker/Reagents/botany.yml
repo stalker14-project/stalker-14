@@ -6,6 +6,7 @@
   flavor: bitter
   color: "#2e1200"
   physicalDesc: reagent-physical-desc-brux
+  evaporationSpeed: 0.3
   plantMetabolism:
     - !type:PlantAdjustNutrition
       amount: 0.5
@@ -14,7 +15,7 @@
       effects:
       - !type:SatiateHunger
         conditions:
-        - !type:OrganType
+        - !type:MetabolizerTypeCondition
           type: Plant
     Poison:
       metabolismRate: 0.1
@@ -29,8 +30,9 @@
           factor: 1
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: STNavoz
           min: 2
         probability: 0.3

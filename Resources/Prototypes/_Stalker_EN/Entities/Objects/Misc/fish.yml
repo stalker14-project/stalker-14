@@ -9,7 +9,7 @@
     sprite: _Stalker_EN/Objects/Misc/fish.rsi
   - type: RandomMetadata
     descriptionSegments: [ STFishSize ]
-  - type: Food
+  - type: Edible
   - type: FlavorProfile
     flavors:
     - fishy
@@ -145,7 +145,7 @@
           Quantity: 2
   - type: Butcherable
     spawned:
-    - id: FoodMeatSTEelRaw
+    - id: FoodMeatSTFishEelRaw
       maxAmount: 3
       prob: 0.8
 
@@ -439,7 +439,7 @@
     shape:
     - 0,0,4,3
   - type: MultiHandedItem
-  - type: Food
+  - type: Edible
   - type: SolutionContainerManager
     solutions:
       food:

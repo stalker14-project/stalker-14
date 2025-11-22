@@ -2,6 +2,7 @@ using System.Collections.Frozen;
 using Content.Server.Chat.Systems;
 using Content.Server.Interaction;
 using Content.Server.Popups;
+using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.GameTicking;
 using Content.Shared.Interaction.Events;
@@ -19,6 +20,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Stalker.NPCs;
 

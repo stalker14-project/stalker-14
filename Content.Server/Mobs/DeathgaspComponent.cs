@@ -14,5 +14,5 @@ public sealed partial class DeathgaspComponent : Component
     ///     The emote prototype to use.
     /// </summary>
     [DataField("prototype", customTypeSerializer:typeof(PrototypeIdSerializer<EmotePrototype>))]
-    public string Prototype = "DefaultDeathgasp";
+    public string Prototype = "STDefaultDeathgasp"; // Stalker-Changes
 }

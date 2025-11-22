@@ -9,5 +9,5 @@ public sealed class STStashMigrationPrototype : IPrototype
     public string ID { get; } = string.Empty;
 
     [DataField]
-    public Dictionary<EntProtoId, EntProtoId> Mapping = [];
+    public Dictionary<string, EntProtoId> Mapping = [];
 }

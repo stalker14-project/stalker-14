@@ -27,7 +27,7 @@ public sealed partial class BandsComponent : Component
     [DataField] public EntityUid? ActionChangeEntity;
 
     [DataField("bandProto"), ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<STBandPrototype> BandProto;
+    public ProtoId<STBandPrototype>? BandProto;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public int BandRankId = 1;

@@ -2,7 +2,7 @@
 
 namespace Content.Shared._Stalker.Dimension;
 
-[RegisterComponent]
+[RegisterComponent, EntityCategory("StSkipSpawnTest")]
 public sealed partial class STDimensionComponent : Component
 {
     [DataField, ViewVariables]

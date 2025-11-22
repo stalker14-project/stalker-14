@@ -1,5 +1,5 @@
-using Content.Server.Cargo.Systems;
 using Content.Shared.Armor;
+using Content.Shared.Cargo;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Prototypes;
 
@@ -19,6 +19,9 @@ public sealed class ArmorSystem : SharedArmorSystem
 
     private void GetArmorPrice(EntityUid uid, ArmorComponent component, ref PriceCalculationEvent args)
     {
+        if (component.Modifiers == null) // Stalker-changes
+            return;
+
         foreach (var modifier in component.Modifiers.Coefficients)
         {
             var damageType = _protoManager.Index<DamageTypePrototype>(modifier.Key);

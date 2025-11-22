@@ -37,7 +37,8 @@
       scale: 0.5, 0.5
     - type: TimedDespawn
       lifetime: 30
-    - type: OnUseTimerTrigger
+    - type: TriggerOnUse
+    - type: TimerTrigger
       delay: 3.5
     - type: Damageable
       damageContainer: Inorganic
@@ -51,6 +52,8 @@
             - !type:DoActsBehavior
               acts: ["Destruction"]
     - type: ExplodeOnTrigger
+      keysIn:
+      - timer
     - type: Explosive
       explosionType: Radioactive
       maxIntensity: 10
@@ -92,7 +95,7 @@
       bodyType: Dynamic
     - type: Fixtures
       fixtures:
-        fix1:
+        ignition:
           shape:
             !type:PhysShapeCircle
             radius: 1

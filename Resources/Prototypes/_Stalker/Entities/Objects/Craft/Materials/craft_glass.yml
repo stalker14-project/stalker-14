@@ -47,7 +47,7 @@
   components:
     - type: PhysicalComposition
       materialComposition:
-        Quartz: 200
+        RawQuartz: 200
     - type: Sprite
       state: quartz_crystal_t3
       sprite: _Stalker/Objects/Craft/Materials/craft_glass.rsi
@@ -65,9 +65,9 @@
   desciption: сапфировый кристалл премиум-класса с высокой прозрачностью и прочностью, используется в архитектурных и научных проектах. T4
   suffix: Stalker, крафт, T4
   components:
-    - type: PhysicalComposition
-      materialComposition:
-        Sapphire: 250
+    # - type: PhysicalComposition
+      # materialComposition:
+        # Sapphire: 250 # Stalker-TODO: This material does not exist
     - type: Sprite
       state: sapphire_crystal_t4
       sprite: _Stalker/Objects/Craft/Materials/craft_glass.rsi
@@ -85,9 +85,9 @@
   desciption: высокопрочный и устойчивый к повреждениям оксид алюминия, используется в военной технике и передовых технологиях. T5
   suffix: Stalker, крафт, T5
   components:
-    - type: PhysicalComposition
-      materialComposition:
-        AluminumOxide: 300
+    # - type: PhysicalComposition
+      # materialComposition:
+        # AluminumOxide: 300 # Stalker-TODO: This material does not exist
     - type: Sprite
       state: aluminum_oxide_t5
       sprite: _Stalker/Objects/Craft/Materials/craft_glass.rsi

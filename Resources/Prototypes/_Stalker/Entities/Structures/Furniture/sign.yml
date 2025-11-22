@@ -1,10 +1,10 @@
 # ПРОЧЕЕ
 
 - type: entity
-  name: entities-sign-name
+  name: entities sign name
   id: signnew
-  parent: BaseStructureStalkerDynamic
-  description: entities-sign-desc
+  parent: STBaseStructure
+  description: entities sign desc
   suffix: ST, Mapping
   components:
   - type: Fixtures
@@ -24,7 +24,7 @@
 - type: entity
   name: TEST big wooden sign
   id: signnewwords
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   description: TEST a big wooden sign
   suffix: ST, DONT Mapping
   components:
@@ -71,14 +71,12 @@
 # ПРЕДУПРЕЖДАЮЩИЕ ЗНАКИ
 
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: StalkerCheSign1
   name: Знак "Химическая опасность"
   description: На знаке изображён символ химической опасности, который информирует о химической опасности за знаком. Может, не стоит туда идти?
   suffix: ST, Mapping
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/RadSigns.rsi
     layers:
@@ -115,14 +113,12 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: StalkerCheSign2
   name: Знак "Химическая опасность"
   description: На знаке изображён символ химической опасности, который информирует о химической опасности за знаком. Может, не стоит туда идти?
   suffix: ST, Mapping
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/RadSigns.rsi
     layers:
@@ -159,14 +155,12 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: StalkerCheSign3
   name: Знак "Химическая опасность"
   description: На знаке изображён символ химической опасности, который информирует о химической опасности за знаком. Может, не стоит туда идти?
   suffix: ST, Mapping
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/RadSigns.rsi
     layers:
@@ -203,14 +197,12 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: StalkerRadSign1
   name: Знак "Радиация"
   description: На знаке изображён символ радиоактивной опасности, который информирует о радиоактивной опасности за знаком. Может, не стоит туда идти?
   suffix: ST, Mapping
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/RadSigns.rsi
     layers:
@@ -247,14 +239,12 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: StalkerRadSign2
   name: Знак "Радиация"
   description: На знаке изображён символ радиоактивной опасности, который информирует о радиоактивной опасности за знаком. Может, не стоит туда идти?
   suffix: ST, Mapping
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/RadSigns.rsi
     layers:
@@ -291,14 +281,12 @@
         acts: [ "Destruction" ]
 
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: StalkerRadSign3
   name: Знак "Радиация"
   description: На знаке изображён символ радиоактивной опасности, который информирует о радиоактивной опасности за знаком. Может, не стоит туда идти?
   suffix: ST, Mapping
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Structures/Furniture/RadSigns.rsi
     layers:

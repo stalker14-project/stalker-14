@@ -20,6 +20,8 @@ public sealed class StalkerRepositoryBoundUserInterface : BoundUserInterface
 
     protected override void Open()
     {
+        base.Open();
+
         _menu = new StalkerRepositoryMenu();
         _menu.OpenCentered();
 

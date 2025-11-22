@@ -16,6 +16,11 @@
         type: ReagentGrinderBoundUserInterface
   - type: ActivatableUI
     key: enum.ReagentGrinderUiKey.Key
+  - type: ContainerContainer
+    containers:
+      beakerSlot: !type:ContainerSlot {}
+      inputContainer: !type:Container
+        ents: []
   - type: ItemSlots
     slots:
       beakerSlot:

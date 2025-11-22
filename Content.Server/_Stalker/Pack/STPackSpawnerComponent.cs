@@ -3,7 +3,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Pack;
 
-[RegisterComponent]
+[RegisterComponent, EntityCategory("Spawner")]
 public sealed partial class STPackSpawnerComponent : Component
 {
     [DataField]

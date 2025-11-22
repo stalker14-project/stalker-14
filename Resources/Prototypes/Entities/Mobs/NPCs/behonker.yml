@@ -11,6 +11,8 @@
       name: ghost-role-information-behonker-name
       description: ghost-role-information-behonker-description
       rules: ghost-role-information-antagonist-rules
+      mindRoles:
+      - MindRoleGhostRoleSoloAntagonist
       raffle:
         settings: default
     - type: GhostTakeoverAvailable
@@ -24,7 +26,6 @@
       maxCharge: 1000
       startingCharge: 1000
     - type: BatterySelfRecharger
-      autoRecharge: true
       autoRechargeRate: 40
     - type: Gun
       fireRate: 0.75
@@ -47,7 +48,7 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 3
       baseSprintSpeed: 5
-      weightlessModifier: 1.5
+      baseWeightlessModifier: 1.5
     - type: Sprite
       sprite: Mobs/Demons/behonker.rsi
       layers:

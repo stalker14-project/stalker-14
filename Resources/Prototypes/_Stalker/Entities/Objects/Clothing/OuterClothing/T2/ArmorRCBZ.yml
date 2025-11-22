@@ -29,9 +29,12 @@
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHelmRCBZ
   suffix: ST, T2, Env
   name: маска РХБЗ
@@ -41,7 +44,6 @@
   - type: Tag
     tags:
     - BlockMask
-    - HidesNose
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
@@ -61,6 +63,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - Snout
   - type: PointLight
     color: orange
   - type: PressureProtection

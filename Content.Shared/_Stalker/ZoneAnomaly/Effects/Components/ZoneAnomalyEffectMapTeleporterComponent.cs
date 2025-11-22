@@ -1,9 +1,10 @@
 ﻿using Robust.Shared.Map;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 
-[RegisterComponent]
+[RegisterComponent, EntityCategory("StSkipSpawnTest")]
 public sealed partial class ZoneAnomalyEffectMapTeleporterComponent : Component
 {
     [DataField]

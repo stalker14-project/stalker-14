@@ -1,8 +1,8 @@
 - type: job
   id: EvolverSymbioteMedium
-  name: Медиум Симбиот
+  name: job-evolver-symbiote-medium
   icon: symbiote
-  description: управляющий телепатией и пси-энергиями
+  description: job-evolver-symbiote-medium-desc
   playTimeTracker: JobEvolverSymbioteMedium
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverSymbioteMediumGear
-  supervisors: Изучасть и развивать Пси способности, сохранить Зону
+  supervisors: job-evolver-symbiote-medium-supervisor
   special:
     - !type:AddComponentSpecial
       components:
@@ -36,9 +36,9 @@
 
 - type: job
   id: EvolverSymbioteArchon
-  name: Архон Симбиот
+  name: job-evolver-symbiote-archon
   icon: symbiote
-  description: высший симбиот, обладающий абсолютной властью над пси-энергией и пространством
+  description: job-evolver-symbiote-archon-desc
   playTimeTracker: JobEvolverSymbioteArchon
   whitelisted: true
   requirements:
@@ -51,7 +51,7 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverSymbioteArchonGear
-  supervisors: Защищать Зону, контролируя пси-пространство и управляя симбиотами.
+  supervisors: job-evolver-symbiote-archon-supervisor
   special:
     - !type:AddComponentSpecial
       components:

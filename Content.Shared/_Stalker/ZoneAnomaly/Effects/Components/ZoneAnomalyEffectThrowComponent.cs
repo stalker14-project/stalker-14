@@ -1,8 +1,9 @@
 ﻿using Content.Shared.Whitelist;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 
-[RegisterComponent]
+[RegisterComponent, EntityCategory("StSkipSpawnTest")]
 public sealed partial class ZoneAnomalyEffectThrowComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadWrite)]

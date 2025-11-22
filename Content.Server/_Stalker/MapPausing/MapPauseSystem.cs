@@ -4,6 +4,8 @@ using Content.Server.Spawners.EntitySystems;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._Stalker.Teleport;
+using Content.Shared.Forensics.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;

@@ -42,6 +42,11 @@
   - type: Tag
     tags:
     - BlockGloves
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 # stalker
 - type: entity
@@ -300,6 +305,11 @@
       - 6,3,6,4
   - type: Armor
     armorClass: 2
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
   parent: STClothingHeadHatBase

@@ -1,6 +1,6 @@
 - type: entity
   id: STbrokenvendorRed
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   suffix: ST, Mapping
   name: Сломанный торгомат
   description: It used to be used for supply deliveries, but now it's just junk.
@@ -9,8 +9,6 @@
     sprite: _Stalker/Objects/Decoration/brokenvendor.rsi
     state: broken_red
   - type: InteractionOutline
-  - type: Physics
-    bodyType: Static
   - type: Fixtures
     fixtures:
       fix1:

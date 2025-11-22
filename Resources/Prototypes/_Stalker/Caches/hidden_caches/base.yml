@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   id: STBaseHiddenCache
   abstract: true
   components:
@@ -8,7 +8,7 @@
     - type: Storage
       maxItemSize: Ginormous
       grid:
-        - 0,0,12,12
+        - 0,0,25,20
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -16,5 +16,4 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
-    - type: Clickable
     - type: Rangedetector

@@ -1,10 +1,11 @@
+using Content.Shared.Damage.Components;
 using Content.Shared.Projectiles;
-using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Standing;
-using Robust.Shared.Physics.Events;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Containers;
+using Robust.Shared.Physics.Events;
 
-namespace Content.Shared.Damage.Components;
+namespace Content.Shared.Damage.Systems;
 
 public sealed class RequireProjectileTargetSystem : EntitySystem
 {
@@ -34,6 +35,11 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
             if (!shooter.HasValue)
                 return;
 
+            // ProjectileGrenades delete the entity that's shooting the projectile,
+            // so it's impossible to check if the entity is in a container
+            if (TerminatingOrDeleted(shooter.Value))
+                return;
+
             if (!_container.IsEntityOrParentInContainer(shooter.Value))
                args.Cancelled = true;
         }
@@ -55,6 +61,6 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
 
     private void LayingBulletPass(Entity<RequireProjectileTargetComponent> ent, ref DownedEvent args)
     {
-        SetActive(ent, args.IgnoreLayingBulletPass); // stalker-changes
+        SetActive(ent, true); // stalker-changes
     }
 }

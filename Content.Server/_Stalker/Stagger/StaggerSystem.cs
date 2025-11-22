@@ -42,7 +42,7 @@ public sealed class StaggerSystem : EntitySystem
                 if (!_mind.TryGetMind(uid, out _, out var mind))
                     continue;
 
-                stagger.NetUserId = _mind.GetSession(mind)?.UserId;
+                stagger.NetUserId = mind.UserId;
                 continue;
             }
 

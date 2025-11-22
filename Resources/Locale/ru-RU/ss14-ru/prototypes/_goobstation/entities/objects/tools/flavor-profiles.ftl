@@ -1,0 +1,10 @@
+ent-FishingRod = fishing rod
+    .desc = It's time to go fishing!
+ent-FishingRodGoon = { ent-FishingRod }
+    .desc = { ent-FishingRod.desc }
+ent-FishingRodGolden = golden fishing rod
+    .desc = Finally, you caught 250 fishes. Here's your trophey.
+ent-FishingLure = fishing lure
+    .desc = Fish come here.
+ent-FishingLureMakeshift = { ent-FishingLure }
+    .desc = { ent-FishingLure.desc }

@@ -1,6 +1,6 @@
 - type: entity
   id: WoodenBoxWithLoot
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   name: старая деревянная коробка
   suffix: ST, Mapping
   placement:
@@ -56,15 +56,13 @@
 
 - type: entity
   id: WoodenBox2
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   name: деревянная коробка
   placement:
     mode: PlaceFree
   suffix: ST, Mapping
   description: Универсальный предмет быта с широким спектром использования. Конструкции и габариты коробок могут быть различными в зависимости от предназначения – от подарочных декоративных вариантов до изделий для размещения овощей, фруктов и различной домашней утвари. Соответственно, каждый вид имеет свои особенности, позитивные и негативные стороны.
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/boxes.rsi
     state: 2
@@ -73,13 +71,11 @@
 
 - type: entity
   id: WoodenBox1
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   name: ящик
   suffix: ST, Mapping
   description: Универсальный предмет быта с широким спектром использования. Конструкции и габариты коробок могут быть различными в зависимости от предназначения – от подарочных декоративных вариантов до изделий для размещения овощей, фруктов и различной домашней утвари. Соответственно, каждый вид имеет свои особенности, позитивные и негативные стороны.
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/boxes.rsi
     state: 1
@@ -268,7 +264,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/green_yashik.rsi
     state: box1
-  - type: Physics
   - type: InteractionOutline
   - type: Fixtures
     fixtures:
@@ -292,7 +287,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/green_yashik.rsi
     state: box1
-  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
@@ -338,7 +332,6 @@
     sprite: _Stalker/Objects/Decoration/green_yashik.rsi
     state: box3
   - type: InteractionOutline
-  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
@@ -361,7 +354,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/green_yashik.rsi
     state: box4
-  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
@@ -384,7 +376,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/green_yashik.rsi
     state: box5
-  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
@@ -407,7 +398,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/new_box.rsi
     state: box2
-  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:
@@ -429,7 +419,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/new_box.rsi
     state: box1
-  - type: Physics
   - type: Fixtures
     fixtures:
       fix1:

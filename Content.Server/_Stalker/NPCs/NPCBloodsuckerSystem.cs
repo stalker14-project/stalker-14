@@ -12,6 +12,8 @@ using Robust.Server.Audio;
 using System.Numerics;
 using Content.Shared.Camera;
 using Content.Server._Stalker.Dizzy;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Movement.Systems;
 
 namespace Content.Server._Stalker.NPCs;
 
@@ -26,6 +28,7 @@ public sealed class NPCBloodsuckerSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
+    [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
     [Dependency] private DizzySystem _dizzy = default!;
 
     public override void Initialize()
@@ -84,16 +87,16 @@ public sealed class NPCBloodsuckerSystem : EntitySystem
 
         if (TryComp<MobStateComponent>(target, out var mobState) && _mobState.IsAlive(target, mobState))
         {
-            _stunSystem.TrySlowdown(target, TimeSpan.FromSeconds(1), false, 0f, 0f); // we want target to stay still all the time // +0.5 since there is a possibility that mob will attack not enouch times on these delay due to tickrate and serverlag
-            _stunSystem.TrySlowdown(user.Owner, TimeSpan.FromSeconds(1), false, 0f, 0f); // we want user to stay still all the time
-            _stunSystem.TryStun(user.Owner, TimeSpan.FromSeconds(1), false); // we dont want bloodsucker to attack while suckin
+            _movementMod.TryUpdateMovementSpeedModDuration(target, "BloodSuckerSlowdownStatusEffect", TimeSpan.FromSeconds(1), 0f, 0f); // we want target to stay still all the time // +0.5 since there is a possibility that mob will attack not enouch times on these delay due to tickrate and serverlag
+            _movementMod.TryUpdateMovementSpeedModDuration(user.Owner, "BloodSuckerSlowdownStatusEffect", TimeSpan.FromSeconds(1), 0f, 0f); // we want user to stay still all the time
+            _stunSystem.TryKnockdown(user.Owner, TimeSpan.FromSeconds(1), false); // we dont want bloodsucker to attack while suckin
 
             _damage.TryChangeDamage(target, user.Comp.DamageOnSuck, true, origin: user.Owner); // damage target
             _damage.TryChangeDamage(user.Owner, user.Comp.HealOnSuck, true, origin: target); // heal user
 
 
             _audio.PlayPvs(user.Comp.BloodsuckSound, user); // play sound on suck
-            _popup.PopupEntity(Loc.GetString("action-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
+            _popup.PopupEntity(Loc.GetString("st-action-popup-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
             _stunSystem.TryKnockdown(target, TimeSpan.FromSeconds(0.3), false); // knockdown each time on suck (i guess its better be here, since i dont like how easy it is to kill him while he is staying still)
 
             // camera recoil on suck
@@ -118,16 +121,16 @@ public sealed class NPCBloodsuckerSystem : EntitySystem
         if (TryComp<MobStateComponent>(target, out var mobState) && _mobState.IsAlive(target, mobState))
         {
 
-            _stunSystem.TrySlowdown(target, TimeSpan.FromSeconds(1), false, 0f, 0f); // we want target to stay still all the time // +0.5 since there is a possibility that mob will attack not enouch times on these delay due to tickrate and serverlag
-            _stunSystem.TrySlowdown(user.Owner, TimeSpan.FromSeconds(1), false, 0f, 0f); // we want user to stay still all the time
-            _stunSystem.TryStun(user.Owner, TimeSpan.FromSeconds(1), false); // we dont want bloodsucker to attack while suckin
+            _movementMod.TryUpdateMovementSpeedModDuration(target, "BloodSuckerSlowdownStatusEffect", TimeSpan.FromSeconds(1), 0f, 0f); // we want target to stay still all the time // +0.5 since there is a possibility that mob will attack not enouch times on these delay due to tickrate and serverlag
+            _movementMod.TryUpdateMovementSpeedModDuration(user.Owner, "BloodSuckerSlowdownStatusEffect", TimeSpan.FromSeconds(1), 0f, 0f); // we want user to stay still all the time
+            _stunSystem.TryKnockdown(user.Owner, TimeSpan.FromSeconds(1), false); // we dont want bloodsucker to attack while suckin
 
             _damage.TryChangeDamage(target, user.Comp.DamageOnSuck, true, origin: user.Owner); // damage target
             _damage.TryChangeDamage(user.Owner, user.Comp.HealOnSuck, true, origin: target); // heal user
 
 
             _audio.PlayPvs(user.Comp.BloodsuckSound, user); // play sound on suck
-            _popup.PopupEntity(Loc.GetString("action-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
+            _popup.PopupEntity(Loc.GetString("st-action-popup-bloodsucker-sucks-blood"), user, Shared.Popups.PopupType.LargeCaution); // popup a message on suck
             _stunSystem.TryKnockdown(target, TimeSpan.FromSeconds(0.3), false); // knockdown each time on suck (i guess its better be here, since i dont like how easy it is to kill him while he is staying still)
 
             // camera recoil on suck

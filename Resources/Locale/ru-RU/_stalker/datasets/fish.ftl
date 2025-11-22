@@ -1,0 +1,17 @@
+stalker-fish-size-1 = Она крошечная.
+stalker-fish-size-2 = Она небольшая, но цвет странный.
+stalker-fish-size-3 = Она маленькая.
+stalker-fish-size-4 = Она немного маловата.
+stalker-fish-size-5 = Она обычного размера.
+stalker-fish-size-6 = Она обычного размера, но цвет странный.
+stalker-fish-size-7 = Она обычного размера; на её теле зацепился мусор.
+stalker-fish-size-8 = Она средняя.
+stalker-fish-size-9 = Она средняя; не хватает плавника.
+stalker-fish-size-10 = Она средняя; тело в шрамах.
+stalker-fish-size-11 = Она средняя, но немного легковата.
+stalker-fish-size-12 = Она выше среднего.
+stalker-fish-size-13 = Она большая!
+stalker-fish-size-14 = Она большая, но цвет странный.
+stalker-fish-size-15 = Она огромная!
+stalker-fish-size-16 = Она вселяет чувство тревоги.
+stalker-fish-size-17 = Это просто рыба...

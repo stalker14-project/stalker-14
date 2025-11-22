@@ -1,8 +1,8 @@
 - type: job
   id: Evolver
-  name: Эволвер
+  name: job-evolver
   icon: evolver
-  description: разумные мутанты, стремящиеся к постоянной эволюции и адаптации в Зоне.
+  description: job-evolver-desc
   playTimeTracker: JobEvolver
   whitelisted: true
   requirements:
@@ -15,7 +15,7 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverGear
-  supervisors: Защитить Зону для усиления своих способностей и продолжения мутации.
+  supervisors: job-evolver-supervisor
   special:
     - !type:AddComponentSpecial
       components:

@@ -6,6 +6,8 @@ namespace Content.Server._DZ.FarGunshot;
 [RegisterComponent]
 public sealed partial class FarGunshotComponent : Component
 {
+    public const float DefaultSilencerDecrease = 1f;
+
     /// <summary>
     /// The start max range of farsound, non modified
     /// </summary>
@@ -21,8 +23,11 @@ public sealed partial class FarGunshotComponent : Component
     /// <summary>
     /// How much should silencer decrease range (by miltiply)
     /// </summary>
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float SilencerDecrease = 1f;
+    [DataField("silencerDecrease")]
+    public float BaseSilencerDecrease = DefaultSilencerDecrease;
+
+    [ViewVariables]
+    public float? SilencerDecrease;
 
     // TODO: silencer impl
 }

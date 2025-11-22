@@ -1,6 +1,8 @@
-﻿namespace Content.Server._Stalker.Anomaly;
+﻿using Robust.Shared.Prototypes;
 
-[RegisterComponent]
+namespace Content.Server._Stalker.Anomaly;
+
+[RegisterComponent, EntityCategory("StSkipSpawnTest")]
 public sealed partial class STAnomalyComponent : Component
 {
     [DataField, ViewVariables]

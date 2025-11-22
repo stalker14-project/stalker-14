@@ -88,6 +88,7 @@
   id: VendingMachineRestockMilitary
   name: Снабжение военных
   description: Ящик со всем, что вам нужно для уничтожения нелегалов.
+  categories: [ StSkipRestockTest ]
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -247,6 +248,7 @@
   id: VendingMachineRestockUN
   name: Снабжение ООН
   description: Ящик со всем, что вам нужно для выражения беспокойства.
+  categories: [ StSkipRestockTest ]
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -317,6 +319,7 @@
   id: VendingMachineRestockLaborer
   name: Снабжение ящиков грузчиков
   description: Ящик с ящиками для грузчиков
+  categories: [ StSkipRestockTest ]
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -387,6 +390,7 @@
   id: MilitaryPSZInventoryRestock
   name: комплект ПСЗ пополнительный
   description: Класть на склад.
+  categories: [ StSkipRestockTest ]
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -460,6 +464,7 @@
   id: MilitaryPSZInventoryRestockOfficer
   name: комплект ПСЗ офицерский пополнительный
   description: Класть в офицерский ящик.
+  categories: [ StSkipRestockTest ]
   components:
     - type: VendingMachineRestock
       canRestock:
@@ -517,6 +522,7 @@
   id: MonolithInventoryRestock
   name: пополнительный ящик «Монолита»
   description: Класть на склад.
+  categories: [ StSkipRestockTest ]
   components:
     - type: VendingMachineRestock
       canRestock:

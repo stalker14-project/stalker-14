@@ -48,6 +48,11 @@
     - BlockCloak
     - BlockBack
     - BlockBelt
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
   parent: ClothingHeadHardsuitBase
@@ -66,7 +71,6 @@
   - type: Tag
     tags:
       - BlockMask
-      - HidesNose
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -86,6 +90,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - Snout
 # Stalker
 
 - type: entity

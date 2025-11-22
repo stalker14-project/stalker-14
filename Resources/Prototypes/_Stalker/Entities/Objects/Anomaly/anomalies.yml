@@ -97,12 +97,12 @@
         state: ActiveSmall
       - group: WeightNormal
         state: ActiveNormal
-    ActiveNormal:
-    - group: TimeDelayActive
-      state: Idle
-    ActiveSmall:
-    - group: TimeDelayActive
-      state: Idle
+      ActiveNormal:
+      - group: TimeDelayActive
+        state: Idle
+      ActiveSmall:
+      - group: TimeDelayActive
+        state: Idle
   - type: STAnomalyEffectThrow
     options:
       StateActiveSmall:

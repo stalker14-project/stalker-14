@@ -13,9 +13,6 @@
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
   - type: InteractionOutline
-  - type: Clickable
-  - type: Physics
-    bodyType: Dynamic
   - type: Fixtures
     fixtures:
       fix1:
@@ -28,9 +25,6 @@
         layer:
         - MidImpassable
         - LowImpassable
-  - type: Tag
-    tags:
-      - Structure
   - type: Storage
     maxItemSize: Large
     grid:

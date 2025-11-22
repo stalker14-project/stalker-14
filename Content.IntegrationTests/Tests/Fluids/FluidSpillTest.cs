@@ -74,7 +74,7 @@ public sealed class FluidSpill
         await server.WaitAssertion(() =>
         {
             var grid = entityManager.GetComponent<MapGridComponent>(gridId);
-            var solution = new Solution("Cola", FixedPoint2.New(100));
+            var solution = new Solution("Vitamin", FixedPoint2.New(100)); // Stalker-Changed
             var tileRef = mapSystem.GetTileRef(gridId, grid, puddleOrigin);
 #pragma warning disable NUnit2045 // Interdependent tests
             Assert.That(puddleSystem.TrySpillAt(tileRef, solution, out _), Is.True);

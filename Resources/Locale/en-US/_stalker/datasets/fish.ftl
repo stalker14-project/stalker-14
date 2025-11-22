@@ -1,0 +1,17 @@
+stalker-fish-size-1 = It's tiny.
+stalker-fish-size-2 = It's small but the color is strange.
+stalker-fish-size-3 = It's small.
+stalker-fish-size-4 = It's a little small.
+stalker-fish-size-5 = It's normal.
+stalker-fish-size-6 = It's normal but the color is strange.
+stalker-fish-size-7 = It's normal; some trash is caught on its body.
+stalker-fish-size-8 = It's average.
+stalker-fish-size-9 = It's average; a fin is missing.
+stalker-fish-size-10 = It's average; the body is scarred.
+stalker-fish-size-11 = It's average but a little light.
+stalker-fish-size-12 = It's above average.
+stalker-fish-size-13 = It's large!
+stalker-fish-size-14 = It's large but the color is strange.
+stalker-fish-size-15 = It's huge!
+stalker-fish-size-16 = It instills a sense of unease.
+stalker-fish-size-17 = It's just a fish...

@@ -16,8 +16,11 @@
     sprite: _Stalker/Objects/Decoration/Other/radiola.rsi
     state: base
     snapCardinals: true
-  - type: Advertise
-    pack: RadiolaStalkerAds
+  - type: Vocalizer
+    hideChat: true
+  - type: VocalizerRequiresPower
+  - type: DatasetVocalizer
+    dataset: RadiolaStalkerAds
   - type: Physics
     bodyType: Static
   - type: Transform
