@@ -1,0 +1,474 @@
+- type: entity
+  name: кукла ООНовец (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerUN
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: un
+    - type: Access
+      groups:
+        - Military
+    - type: Loadout
+      prototypes: [ UNGear ]
+
+- type: entity
+  name: кукла ОКСОП (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitary
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: army
+      bandProto: STMilitaryBand
+      bandRankId: 1
+    - type: Access
+      groups:
+        - Military
+    - type: Loadout
+      prototypes: [ MilitaryGear ]
+
+- type: entity
+  name: кукла ОКСОП глава (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitaryHead
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: army
+      bandProto: STMilitaryBand
+      bandRankId: 3
+    - type: Access
+      groups:
+        - Military
+        - MilitaryHead
+        - MilitaryOfficer
+    - type: Loadout
+      prototypes: [ MilitaryGearHead ]
+
+- type: entity
+  name: кукла Ополчение (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitia
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: militia
+      bandProto: STMilitiaBand
+      bandRankId: 1
+    - type: Access
+      tags:
+        - MilitiaAccess
+        - Stalker
+    - type: Loadout
+      prototypes: [ MilitiaGear ]
+
+- type: entity
+  name: кукла Командир Ополчение (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMilitiaCommander
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: militia
+      bandProto: STMilitiaBand
+      bandRankId: 2
+    - type: Access
+      tags:
+        - MilitiaAccess
+        - Stalker
+    - type: Loadout
+      prototypes: [ MilitiaCommanderGear ]
+
+- type: entity
+  name: кукла ренегат (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerRene
+  components:
+    - type: Access
+      tags:
+        - Renegat
+    - type: Bands
+      band: Stalker
+      bandIcon: rene
+    - type: Loadout
+      prototypes: [ ReneGear ]
+
+- type: entity
+  name: кукла свободовец (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerFreeadom
+  components:
+    - type: Access
+      tags:
+        - Freedom
+    - type: Bands
+      band: Stalker
+      bandIcon: freedom
+    - type: Loadout
+      prototypes: [ FreedomGear ]
+
+- type: entity
+  name: кукла Долговец (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerDolg
+  components:
+    - type: Access
+      tags:
+        - Dolg
+    - type: Bands
+      band: Stalker
+      bandIcon: Dolg
+    - type: Loadout
+      prototypes: [ DolgGear ]
+
+- type: entity
+  name: кукла учёный (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci
+  components:
+    - type: Access
+      tags:
+        - Sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci
+    - type: Loadout
+      prototypes: [ SciGear ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
+  name: кукла декан (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci
+  components:
+    - type: Access
+      tags:
+        - Sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_decan
+    - type: Loadout
+      prototypes: [ SciGear2 ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
+  name: кукла ректор (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci
+  components:
+    - type: Access
+      tags:
+        - sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_rector
+    - type: Loadout
+      prototypes: [ SciGear3 ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
+  name: кукла бандит (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerbandit
+  components:
+    - type: Access
+      tags:
+        - Bandit
+    - type: Bands
+      band: Stalker
+      bandIcon: band
+      bandProto: STBanditsBand
+      bandRankId: 1
+    - type: NpcFactionMember
+      factions:
+      - Bandit
+    - type: Loadout
+      prototypes: [ BandGear ]
+
+- type: entity
+  name: кукла жаба (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerToad
+  components:
+    - type: Access
+      tags:
+        - Jaba
+    - type: Bands
+      band: Stalker
+      bandIcon: jaba
+      bandProto: STToadsBand
+      bandRankId: 1
+    - type: NpcFactionMember
+      factions:
+      - Bandit
+    - type: Loadout
+      prototypes: [ BandGear ]
+
+- type: entity
+  name: кукла заветовец (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerZavet
+  components:
+    - type: Access
+      tags:
+        - Covenant
+    - type: Bands
+      band: Stalker
+      bandIcon: zavet
+    - type: Loadout
+      prototypes: [ StalkerZavetGear ]
+
+- type: entity
+  name: кукла греховец (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerGreh
+  components:
+    - type: Access
+      tags:
+        - Greh
+    - type: Bands
+      band: Stalker
+      bandIcon: greh
+    - type: Loadout
+      prototypes: [ StalkerGrehGear ]
+
+- type: entity
+  name: кукла член Чистого Неба (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerCS
+  components:
+    - type: Access
+      tags:
+        - CN
+    - type: Bands
+      band: Stalker
+      bandIcon: cn
+      altBand: stalker
+    - type: Loadout
+      prototypes: [ StalkerClearSkyGear ]
+
+- type: entity
+  name: кукла член проекта (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerProject
+  components:
+  - type: Access
+    tags:
+    - Project
+    - ProjectPawn
+    - Stalker
+  - type: Bands
+    band: Stalker
+    bandIcon: project-1
+    altBand: stalker
+    canChange: true
+  - type: Loadout
+    prototypes: [ ProjectPawnGear ]
+
+- type: entity
+  name: кукла циркач (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerClown
+  components:
+    - type: Access
+      tags:
+        - Circus
+    - type: Bands
+      band: Stalker
+      bandIcon: clowns
+
+- type: entity
+  name: кукла наёмник (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMerc
+  components:
+    - type: Access
+      tags:
+        - Merc
+    - type: Bands
+      band: Stalker
+      bandIcon: merc
+      altBand: stalker
+    - type: Loadout
+      prototypes: [ StalkerMercenaryGear ]
+
+- type: entity
+  name: кукла аномалист (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerAnomalist
+  components:
+    - type: Access
+      tags:
+        - Anomalist
+    - type: Bands
+      band: Stalker
+      bandIcon: ecologists
+    - type: Loadout
+      prototypes: [ AnomalistGear ]
+
+- type: entity
+  name: кукла серафим (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSeraphim
+  components:
+    - type: Access
+      tags:
+        - Seraphims
+    - type: Bands
+      band: Stalker
+      bandIcon: seraphim
+    - type: Loadout
+      prototypes: [ StalkerGear ]
+
+# Stalker
+- type: entity
+  name: Меченый
+  parent: MobHuman
+  id: STMobStalker
+  components:
+    - type: STWeight
+      self: 70
+    - type: Psyonics
+      psy: 300
+    - type: PsyonicsActionShield
+    - type: PsyonicsActionDizzy
+    - type: Access
+      tags:
+        - Stalker
+    - type: Bands
+      band: Stalker
+      bandProto: STStalkerBand
+      bandRankId: 1
+      bandIcon: stalker
+    - type: Loadout
+      prototypes: [ StalkerGear ]
+
+- type: entity
+  name: Меченый T4
+  parent: MobHuman
+  id: STMobStalkerT4
+  components:
+    - type: STWeight
+      self: 70
+    - type: Psyonics
+      psy: 300
+    - type: PsyonicsActionShield
+    - type: PsyonicsActionDizzy
+    - type: Access
+      tags:
+        - Stalker
+    - type: Bands
+      band: Stalker
+      bandProto: STStalkerBand
+      bandRankId: 1
+      bandIcon: stalker
+    - type: Loadout
+      prototypes: [ StalkerGearT4 ]
+
+- type: entity
+  name: кукла Сталкера (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerStalker
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: stalker
+    - type: Access
+      tags:
+        - Stalker
+    - type: Loadout
+      prototypes: [ StalkerGear ]
+
+- type: entity
+  name: кукла Монолита (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerMonolith
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: monolith
+    - type: Access
+      tags:
+        - Monolith
+    - type: Loadout
+      prototypes: [ MonolithGear ]
+    - type: NpcFactionMember
+      factions:
+        - Mutated
+    - type: Hunger
+      baseDecayRate: 0
+    - type: Thirst
+      baseDecayRate: 0
+    - type: PersonalDamageBlock
+
+- type: entity
+  name: кукла СБУ (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSBU
+  components:
+    - type: Bands
+      band: Stalker
+      bandIcon: sbu
+    - type: Access
+      groups:
+        - Military
+        - MilitaryHead
+        - MilitaryOfficer
+    - type: Loadout
+      prototypes: [ SBUGear ]
+
+- type: startingGear
+  id: StalkerGearT4
+  equipment:
+    id: StalkerPDA
+    belt: ClothingBeltGreenWebbingStalker
+    torso: ClothingTorsoSweaterStalkerGreen
+    legs: ClothingLegsJeansBlue
+    shoes: STClothingShoesBootsCombatFilled
+    cloak: ClothingOuterCoatLoyalist
+    outerClothing: ClothingOuterArmorStalkerCombat
+    back: ClothingBackpackMercStalker
+    pocket1: STWeaponShotgunSawedOfAnomaly
+    pocket2: 8mmBuckshotBox
+    head: ClothingHeadRatnik
+    mask: ClothingMaskM51
+
+- type: startingGear
+  id: SBUGear
+  equipment:
+    id: MilitaryPDA
+    legs: ClothingLegsJeansGreenCargo
+    torso: ClothingTorsoTurtlenecksMilitary
+    shoes: STClothingShoesBootsCombatFilled
+    pocket1: PassportSBU
