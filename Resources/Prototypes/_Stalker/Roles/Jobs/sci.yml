@@ -38,15 +38,15 @@
         - Sci
 
 - type: job
-  id: StalkerISSG
-  name: job-issg
+  id: sci
+  name: job-sci
   icon: ecologists
-  description: job-issg-desc
-  playTimeTracker: JobStalkerISSG
+  description: job-sci-desc
+  playTimeTracker: JobSci
   whitelisted: true
   requirements:
     # - !type:RoleTimeRequirement
-    #   role: JobStalkerSci
+    #   role: JobSci
     #   time: 1
     - !type:SpeciesRequirement
       species:
@@ -77,21 +77,60 @@
         - Sci
 
 - type: job
-  id: StalkerHeadScientist
-  name: job-head-scientist
-  icon: sci
-  description: job-head-scientist-desc
-  playTimeTracker: JobHeadStalkerSci
+  id: sci_decan
+  name: job-sci_decan
+  icon: ecologists
+  description: job-sci_decan-desc
+  playTimeTracker: Jobsci_decan
   whitelisted: true
   requirements:
     # - !type:RoleTimeRequirement
-    #   role: JobHeadStalkerSci
+    #   role: Jobsci_decan
     #   time: 1
     - !type:SpeciesRequirement
       species:
       - Human
       - Dwarf
-  startingGear: SciGear
+  startingGear: SciGear2
+  supervisors: job-scientist-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - Sci
+      - type: Bands
+        band: Stalker
+        bandIcon: sci_decan
+        bandProto: STSciDecanBand
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - Sci
+
+- type: job
+  id: sci_rector
+  name: job-sci_rector
+  icon: sci
+  description: job-sci_rector-desc
+  playTimeTracker: JobSci_rector
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobSci_rector
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: SciGear3
   supervisors: job-scientist-supervisor
   canBeAntag: false
   special:
@@ -102,8 +141,8 @@
             - SciHead
         - type: Bands
           band: Stalker
-          bandIcon: sci
-          bandProto: STSciBand
+          bandIcon: sci_rector
+          bandProto: STSciRectorBand
           bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
@@ -122,6 +161,8 @@
     legs: ClothingLegsJeansSandCargo
     shoes: STClothingShoesBootsCombatFilled
     torso: ClothingTorsoShirtWhiteScientific
+    outerClothing: ClothingOuterJacketSCI
+    gloves: ClothingHandsGlovesNitrile
 - type: stBand
   id: STSciBand
   name: Scientists
@@ -130,6 +171,44 @@
   managingRankId: 3
   hierarchy:
     1: StalkerScientist
-    2: StalkerISSG
-    3: StalkerHeadScientist
 
+
+- type: startingGear
+  id: SciGear2
+  equipment:
+    id: ScientistPDA
+    legs: ClothingLegsJeansSandCargo
+    shoes: STClothingShoesBootsCombatFilled
+    torso: ClothingTorsoShirtWhiteScientific
+    outerClothing: ClothingOuterCoatLabSeniorResearcher
+    head: ClothingHeadHatBeretRND
+    gloves: ClothingHandsGlovesNitrile
+- type: stBand
+  id: STSciDecanBand
+  name: ScientistsDecan
+  factionId: ScientistsDecan
+  maxMembers: 20
+  managingRankId: 3
+  hierarchy:
+     1: sci_decan
+
+
+- type: startingGear
+  id: SciGear3
+  equipment:
+    id: ScientistPDA
+    legs: ClothingLegsJeansSandCargo
+    shoes: STClothingShoesBootsCombatFilled
+    torso: ClothingTorsoShirtWhiteScientific
+    outerClothing: ClothingOuterCoatRD
+    head: ClothingHeadBeretUN
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesNitrile
+- type: stBand
+  id: STSciRectorBand
+  name: ScientistsRector
+  factionId: ScientistsRector
+  maxMembers: 20
+  managingRankId: 3
+  hierarchy:
+    1: sci_rector
