@@ -18,7 +18,33 @@
   suffix: Stalker
   components:
     - type: SpawnPoint
-      job_id: StalkerScientist
+      job_id: Sci
+    - type: Sprite
+      layers:
+        - state: green
+        - state: security_officer
+
+- type: entity
+  id: SpawnPointSci_decan
+  parent: SpawnPointJobBase
+  name: Учёный Job Spawn
+  suffix: Stalker
+  components:
+    - type: SpawnPoint
+      job_id: Sci_decan
+    - type: Sprite
+      layers:
+        - state: green
+        - state: security_officer
+
+- type: entity
+  id: SpawnPointSci_rector
+  parent: SpawnPointJobBase
+  name: Учёный Job Spawn
+  suffix: Stalker
+  components:
+    - type: SpawnPoint
+      job_id: Sci_rector
     - type: Sprite
       layers:
         - state: green
