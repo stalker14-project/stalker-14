@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Shared._RMC14.Weapons.Ranged.Prediction;
+using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Armor;
 using Content.Shared.Camera;
@@ -72,6 +73,9 @@ public abstract partial class SharedProjectileSystem : EntitySystem
 
     public void ProjectileCollide(Entity<ProjectileComponent, PhysicsComponent> projectile, EntityUid target, bool predicted = false)
     {
+        if (TryComp(target, out ZoneAnomalyComponent? anomaly) || TryComp(target, out IgnorePredictionHideComponent? ignore))
+            return;
+
         var (uid, component, ourBody) = projectile;
         if (projectile.Comp1.DamagedEntity)
         {

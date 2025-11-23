@@ -1,0 +1,28 @@
+- type: entity
+  id: StalkerBandChanger
+  name: Band Changer
+  description: Changes the band of the stalker. (Which you need to set)
+  parent: MarkerBase
+  suffix: Stalker
+  components:
+  - type: BandChanger
+  - type: Transform
+    anchored: True
+  - type: InteractionOutline
+  - type: Clickable
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    layers:
+    - state: green
+  - type: Fixtures
+    fixtures:
+      portalFixture:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.48,0.25,0.48"
+        mask:
+        - FullTileMask
+        layer:
+        - WallLayer
+        hard: false
