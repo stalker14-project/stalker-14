@@ -1,0 +1,40 @@
+
+- type: entity
+  id: 13x108Mag10
+  name: магазин 12,7x108 (10)
+  description: Магазин 12,7x108 для винтовок. Вместимость пуль 10. Продают пустым.
+  parent: Base545Mag10
+  tag: Stalker
+  components:
+    - type: STWeight
+      self: 0.35
+    - type: Tag
+      tags:
+        - Magazine13x108
+    - type: BallisticAmmoProvider
+      proto:
+      mayTransfer: true
+      whitelist:
+        tags:
+          - STCartridge13x108
+      capacity: 10
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: ContainerContainer
+      containers:
+        ballistic-ammo: !type:Container
+    - type: Sprite
+      scale: 0.8, 0.8
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/13108.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-1
+          map: ["enum.GunVisualLayers.Mag"]
+    - type: MagazineVisuals
+      magState: mag
+      steps: 2
+      zeroVisible: false
+    - type: Appearance
