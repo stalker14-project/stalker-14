@@ -1,0 +1,44 @@
+- type: Tag
+  id: Bullet545
+
+- type: entity
+  parent: STCartridge545PC
+  id: Bullet545
+  name: пуля 5.45x39
+  description: Местная валюта.
+  suffix: Stalker, Metro
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Credit: 1
+  - type: Stack
+    stackType: Bullet545
+    count: 1
+    baseLayer: base
+  - type: Appearance
+  - type: Tag
+    tags:
+    - Bullet545
+    - Cartridge
+    - STCartridge545
+
+- type: currency
+  id: Bullet545
+  displayName: пуля 5.45x39
+  cash:
+    1: Bullet545
+  canWithdraw: true
+
+- type: stack
+  id: Bullet545
+  name: пуля 5.45x39
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi, state: base }
+  spawn: Bullet545
+
+- type: entity
+  parent: Bullet545
+  id: Bullet54515
+  suffix: Stalker, 15
+  components:
+  - type: Stack
+    count: 15
