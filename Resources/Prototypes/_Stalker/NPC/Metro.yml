@@ -1,0 +1,39 @@
+- type: entity
+  parent: NPCDoll
+  id: NPCMetro
+  name: Неизвестный торговец
+  description: Продаёт всё подряд.
+  suffix: Metro
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Metro.rsi
+    state: Torgovec
+  - type: Physics
+    bodyType: Static
+  - type: DatasetVocalizer
+    dataset: STNPCStalkerBarmenAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Bullet545
+    shopPresetId: NpcMetro
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
