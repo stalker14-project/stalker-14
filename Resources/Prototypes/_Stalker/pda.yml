@@ -49,7 +49,6 @@
           - IdCard
   - type: Item
     sprite: _Stalker/Objects/Devices/pda.rsi
-    state: stalker_off
     storedRotation: -90
     size: Small
   - type: ContainerContainer
@@ -88,7 +87,7 @@
   - type: ActivatableUI
     key: enum.PdaUiKey.Key
     singleUser: true
-    closeOnHandDeselect: false
+    requireActiveHand: false
   - type: UserInterface
     interfaces:
       enum.PdaUiKey.Key:
@@ -188,7 +187,7 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - ClothingNeckDogtagStalker
+            - Dogtag
   - type: Armor
     armorClass: 0
     modifiers:
@@ -225,7 +224,7 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - ClothingNeckDogtagStalker
+            - Dogtag
 
 - type: entity
   parent: BaseStalkerPDA
@@ -256,7 +255,7 @@
         startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
-            - ClothingNeckDogtagOfficial
+            - Dogtag
 
 - type: entity
   parent: BaseStalkerPDA
@@ -316,7 +315,7 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - ClothingNeckDogtagStalker
+            - Dogtag
   - type: PointLight
     enabled: false
     radius: 5
@@ -348,7 +347,7 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - ClothingNeckDogtagStalker
+            - Dogtag
 
 - type: entity
   parent: BaseStalkerPDA
@@ -384,7 +383,7 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - ClothingNeckDogtagStalker
+            - Dogtag
 
 
 - type: entity
@@ -413,7 +412,7 @@
         startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
-            - ClothingNeckDogtagOfficial
+            - Dogtag
   - type: PointLight
     enabled: false
     radius: 5
@@ -446,7 +445,7 @@
         startingItem: ClothingNeckDogtagPilgrim
         whitelist:
           tags:
-            - ClothingNeckDogtagPilgrim
+            - Dogtag
 
 - type: entity
   parent: BaseStalkerPDA

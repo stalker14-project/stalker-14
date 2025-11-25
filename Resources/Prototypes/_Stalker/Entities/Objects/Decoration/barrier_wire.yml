@@ -53,8 +53,9 @@
   - type: Slippery
     slipSound:
       path: /Audio/Effects/fence_rattle1.ogg
-    launchForwardsMultiplier: 0
-    paralyzeTime: 0
+    slipData:
+      knockdownTime: 0
+      launchForwardsMultiplier: 0
 
 - type: entity
   parent: WarBarrierWireEnd

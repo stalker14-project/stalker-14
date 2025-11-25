@@ -10,13 +10,13 @@
 
     Для работы данного портала
     найдите компонент: NewMapTeleportComponent.
-  prefix: Map, Mapping, Teleport
+  suffix: Map, Mapping, Teleport
   components:
     - type: NewMapTeleport
       allowAll: true         #Boolean
       cooldownEnabled: false #Boolean
       cooldownTime: 0        #Float
-      godmodeCooldown: 0     #Float
+      #godmodeCooldown: 0     #Float # Stalker-TODO: This field does not exist!
       portalName: "Name"
 
 - type: entity
@@ -30,13 +30,13 @@
 
     Для работы данного портала
     найдите компонент: NewMapTeleportComponent.
-  prefix: Map, Mapping, Teleport, Uncollibe
+  suffix: Map, Mapping, Teleport, Uncollibe
   components:
     - type: NewMapTeleport
       allowAll: true         #Boolean
       cooldownEnabled: false #Boolean
       cooldownTime: 0        #Float
-      godmodeCooldown: 0     #Float
+      #godmodeCooldown: 0     #Float # Stalker-TODO: This field does not exist!
       portalName: "Name"
 
 - type: entity
@@ -50,7 +50,7 @@
 
     Для работы данного портала
     найдите компонент: LocalTeleportComponent.
-  prefix: Local, Mapping, Teleport
+  suffix: Local, Mapping, Teleport
   components:
     - type: LocalTeleport
       allowAll: true #Boolean

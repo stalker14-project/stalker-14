@@ -14,8 +14,6 @@
     - ShellShotgun
   - type: CartridgeAmmo
     deleteOnSpawn: true
-    count: 8
-    spread: 25
     soundEject:
       collection: ShellEject
   - type: Sprite
@@ -28,7 +26,6 @@
   parent: BaseShotgunBullet
   components:
   - type: CartridgeAmmo
-    count: 12
     proto: Bullet7mmBuckshot
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
@@ -45,7 +42,6 @@
   components:
   - type: CartridgeAmmo
     proto: Bullet6mmBuckshot
-    count: 9
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:
@@ -61,7 +57,6 @@
   components:
   - type: CartridgeAmmo
     proto: BulletShotgunBullet
-    count: 1
   - type: Tag
     tags:
     - Cartridge
@@ -82,7 +77,6 @@
   components:
   - type: CartridgeAmmo
     proto: BulletShotgunRIP
-    count: 1
   - type: Tag
     tags:
     - Cartridge
@@ -103,7 +97,6 @@
   components:
   - type: CartridgeAmmo
     proto: BulletShotgunDart
-    count: 1
   - type: Tag
     tags:
     - Cartridge
@@ -130,7 +123,6 @@
     - type: CartridgeAmmo
       deleteOnSpawn: true
       proto: PelletShotgunBeanbagStalker
-      count: 1
     - type: SpentAmmoVisuals
       state: "beanbag"
 

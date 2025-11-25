@@ -627,7 +627,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Specific/Hydroponics/potato.rsi
     state: potato_cut
-    size: Small
   - type: Tag
     tags:
     - Potato
@@ -643,15 +642,14 @@
   - type: STWeight
     self: 0.34
   - type: Craftable
-  - type: SolutionContainerManager
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/meat_buterbread.rsi
     state: icon
-    size: Small
   - type: FlavorProfile
     flavors:
       - meaty
       - bread
+  - type: SolutionContainerManager
     solutions:
       food:
         reagents:

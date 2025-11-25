@@ -233,7 +233,7 @@
     clothingPrototype: ClothingHeadHatHoodJacketCN
     slot: head
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     whitelist:
       components:
       - SuppressArtifactContainer
@@ -365,8 +365,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketMonolith
-  noSpawn: true
   name: капюшон
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi

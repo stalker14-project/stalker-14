@@ -17,21 +17,16 @@
         conditions:
         walkSpeedModifier: 1.04
         sprintSpeedModifier: 1.04
-      - !type:GenericStatusEffect
-        conditions:
-        key: Stun
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
-        conditions:
-        key: KnockedDown
+      - !type:ModifyKnockdown
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
-        conditions:
-        key: ForcedSleep
-        component: ForcedSleeping
-        refresh: false
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 3
         type: Remove
     Medicine:
       metabolismRate: 0.1
@@ -55,15 +50,14 @@
     Narcotic:
       metabolismRate: 0.1
       effects:
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: NocturneSerum
           min: 0.1
-        key: ForcedSleep
-        component: ForcedSleeping
-        refresh: false
-        type: Add
+        effectProto: StatusEffectForcedSleeping
+        time: 6
+        delay: 5
 
 - type: reagent
   id: AirlossSerum
@@ -97,29 +91,27 @@
       - !type:MovementSpeedModifier
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
-      - !type:GenericStatusEffect
-        key: Stun
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
-        key: KnockedDown
+      - !type:ModifyKnockdown
         time: 3
         type: Remove
       - !type:GenericStatusEffect
         key: StaminaModifier
         component: StaminaModifier
         time: 3
-        type: Add
-      - !type:GenericStatusEffect
-        key: ForcedSleep
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: Haloperidol
           max: 0.01
-        key: Drowsiness
+        effectProto: StatusEffectDrowsiness
         time: 10
         type: Remove
     Medicine:

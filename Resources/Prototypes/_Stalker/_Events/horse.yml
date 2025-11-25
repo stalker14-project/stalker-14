@@ -48,9 +48,8 @@
         maxVol: 250
   - type: Udder
     reagentId: MilkGoat
-    targetSolution: udder
-    quantity: 25
-    updateRate: 20
+    quantityPerUpdate: 25
+    growthDelay: 20
   - type: Wooly
   - type: Edible
     solution: wool
@@ -84,6 +83,4 @@
       task: RuminantHostileCompound
   - type: Strap
     position: Stand
-    buckleOffset: "-0.00, 0.00"
-    maxBuckleDistance: 1
 

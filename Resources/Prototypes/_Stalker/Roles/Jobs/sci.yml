@@ -103,7 +103,7 @@
       - type: Bands
         band: Stalker
         bandIcon: sci_decan
-        bandProto: STSciDecanBand
+        bandProto: STSciBand # Stalker-TODO: Before it was "STSciDecanBand" but it was commented. Read the reason in below comment.
         bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
@@ -142,7 +142,7 @@
         - type: Bands
           band: Stalker
           bandIcon: sci_rector
-          bandProto: STSciRectorBand
+          bandProto: STSciBand # Stalker-TODO: Before it was "STSciRectorBand" but it was commented. Read the reason in below comment.
           bandRankId: 2
         - type: BlockTackingHolyItems
         - type: TeethPull
@@ -163,6 +163,7 @@
     torso: ClothingTorsoShirtWhiteScientific
     outerClothing: ClothingOuterJacketSCI
     gloves: ClothingHandsGlovesNitrile
+
 - type: stBand
   id: STSciBand
   name: Scientists
@@ -183,14 +184,15 @@
     outerClothing: ClothingOuterCoatLabSeniorResearcher
     head: ClothingHeadHatBeretRND
     gloves: ClothingHandsGlovesNitrile
-- type: stBand
-  id: STSciDecanBand
-  name: ScientistsDecan
-  factionId: ScientistsDecan
-  maxMembers: 20
-  managingRankId: 3
-  hierarchy:
-     1: sci_decan
+
+# - type: stBand # Stalker-TODO: Why not combine them all under "STSciBand" band prototype? Also, factionId "ScientistsDecan" does not exist!
+  # id: STSciDecanBand
+  # name: ScientistsDecan
+  # factionId: ScientistsDecan
+  # maxMembers: 20
+  # managingRankId: 3
+  # hierarchy:
+     # 1: sci_decan
 
 
 - type: startingGear
@@ -204,11 +206,12 @@
     head: ClothingHeadBeretUN
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesNitrile
-- type: stBand
-  id: STSciRectorBand
-  name: ScientistsRector
-  factionId: ScientistsRector
-  maxMembers: 20
-  managingRankId: 3
-  hierarchy:
-    1: sci_rector
+
+# - type: stBand # Stalker-TODO: Why not combine them all under "STSciBand" band prototype? Also, factionId "ScientistsRector" does not exist!
+  # id: STSciRectorBand
+  # name: ScientistsRector
+  # factionId: ScientistsRector
+  # maxMembers: 20
+  # managingRankId: 3
+  # hierarchy:
+    # 1: sci_rector

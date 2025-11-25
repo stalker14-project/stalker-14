@@ -19,8 +19,8 @@
         Dead:
           Base: dead
     - type: Jumpscare
-      damageRadius: 1
-      reloadTime: 3
+      #damageRadius: 1 # Stalker-TODO: This field does not exist!
+      #reloadTime: 3 # Stalker-TODO: This field exists in component but is not a datafield!
       attackRadius: 12
       chargeDamage:
         types:
@@ -58,8 +58,6 @@
       baseSprintSpeed: 2
     - type: MeleeWeapon
       attackRate: 0.2
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.25
       angle: 60
       range: 1.25
       soundHit:
@@ -77,6 +75,8 @@
           Radiation: 5
           Poison: 10
           Slash: 15
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.25
     - type: StaminaDamageOnHit
       damage: 10
     - type: PersonalDamage

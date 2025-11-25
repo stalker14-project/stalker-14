@@ -12,6 +12,7 @@
       size: Small
       shape:
         - 0,0,2,0
+    - type: Clothing
       quickEquip: false
       slots:
         - Belt
@@ -30,11 +31,10 @@
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite.rsi
       scale: 0.7, 0.7
       layers:
-        - state: icon_unlit
+        - state: icon
     - type: FireVisuals
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite.rsi
-      scale: 0.7, 0.7
-      normalState: icon_lit
+      normalState: primed
     - type: ContainerContainer
       containers:
         cluster-payload: !type:Container
@@ -93,19 +93,15 @@
       size: Normal
       shape:
         - 0,0,1,2
-      quickEquip: false
-      slots:
-        - Belt
     - type: SpaceGarbage
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite2.rsi
       scale: 0.7, 0.7
       layers:
-        - state: icon_unlit
+        - state: icon
     - type: FireVisuals
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite2.rsi
-      scale: 0.7, 0.7
-      normalState: icon_lit
+      normalState: primed
     - type: ContainerContainer
       containers:
         cluster-payload: !type:Container
@@ -157,19 +153,15 @@
       size: Normal
       shape:
         - 0,0,2,2
-      quickEquip: false
-      slots:
-        - Belt
     - type: SpaceGarbage
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite3.rsi
       scale: 0.7, 0.7
       layers:
-        - state: icon_unlit
+        - state: icon
     - type: FireVisuals
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite3.rsi
-      scale: 0.7, 0.7
-      normalState: icon_lit
+      normalState: primed
     - type: ContainerContainer
       containers:
         cluster-payload: !type:Container
@@ -221,19 +213,15 @@
       size: Large
       shape:
         - 0,0,3,2
-      quickEquip: false
-      slots:
-        - Belt
     - type: SpaceGarbage
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite4.rsi
       scale: 0.7, 0.7
       layers:
-        - state: icon_unlit
+        - state: icon
     - type: FireVisuals
       sprite: _Stalker/Objects/Weapons/Bombs/dynamite4.rsi
-      scale: 0.7, 0.7
-      normalState: icon_lit
+      normalState: primed
     - type: ContainerContainer
       containers:
         cluster-payload: !type:Container
@@ -286,20 +274,29 @@
       - 0,0,2,2
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Bombs/dynamite.rsi
-    state: icon_unlit
+    state: icon
     layers:
-    - state: icon_unlit
+    - state: icon
       map: ["base"]
       scale: 0.7, 0.7
-  - type: TriggerOnUse
+  - type: TriggerOnActivate
+  - type: TriggerOnSignal
+  - type: TriggerOnStuck
+    keyOut: stuck
+  - type: ToggleTriggerCondition # for toggling the start on stuck ability
+    keys:
+    - stuck
+    toggleVerb: toggle-trigger-condition-stick-verb
+    toggleOn: toggle-trigger-condition-stick-on
+    toggleOff: toggle-trigger-condition-stick-off
   - type: TimerTrigger
+    keysIn:
+    - trigger
+    - stuck
     delay: 1
     delayOptions: [1, 5, 10]
     initialBeepDelay: 0
     beepSound: /Audio/_Stalker/Items/Detectors/Anomaly/da_beep2.ogg
-    startOnStick: true
-    canToggleStartOnStick: true
-  - type: TriggerOnSignal
   - type: DeviceLinkSink
     ports:
       - Trigger
@@ -330,15 +327,24 @@
     - state: icon
       map: ["base"]
       scale: 0.7, 0.7
-  - type: TriggerOnUse
+  - type: TriggerOnActivate
+  - type: TriggerOnSignal
+  - type: TriggerOnStuck
+    keyOut: stuck
+  - type: ToggleTriggerCondition # for toggling the start on stuck ability
+    keys:
+    - stuck
+    toggleVerb: toggle-trigger-condition-stick-verb
+    toggleOn: toggle-trigger-condition-stick-on
+    toggleOff: toggle-trigger-condition-stick-off
   - type: TimerTrigger
+    keysIn:
+    - trigger
+    - stuck
     delay: 60
     delayOptions: [5, 10, 20, 30, 40, 50, 60, 120, 180, 240, 300, 360, 420, 480, 540, 600, 900, 1200, 1800, 3600]
     initialBeepDelay: 0
     beepSound: /Audio/Machines/Nuke/general_beep.ogg
-    startOnStick: true
-    canToggleStartOnStick: true
-  - type: TriggerOnSignal
   - type: DeviceLinkSink
     ports:
       - Trigger

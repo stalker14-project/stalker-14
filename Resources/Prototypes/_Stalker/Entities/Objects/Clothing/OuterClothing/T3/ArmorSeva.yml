@@ -16,7 +16,7 @@
     clothingPrototype: STClothingHeadHardsuitSevaHelmBase
     slot: head
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,0,5,3
       - 7,0,12,3
@@ -136,7 +136,7 @@
   id: ClothingHeadHardsuitSevaHelmSci
   name: шлем севы
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
@@ -214,7 +214,7 @@
   id: ClothingHeadHardsuitSevaHelmMonolith
   name: шлем севы монолита
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_helm_monolith.rsi

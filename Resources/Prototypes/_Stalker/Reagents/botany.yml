@@ -16,7 +16,7 @@
       - !type:SatiateHunger
         conditions:
         - !type:MetabolizerTypeCondition
-          type: Plant
+          type: [Plant]
     Poison:
       metabolismRate: 0.1
       effects:
@@ -27,7 +27,7 @@
     Drink:
       effects:
         - !type:SatiateThirst
-          factor: 1
+          factor: 1.0
     Medicine:
       effects:
       - !type:Vomit
