@@ -89,3 +89,5 @@ stack-medkit-military = Армейская Аптечка
 stack-medkit-science = Научная Аптечка
 stack-medkit-elite = Продвинутая Аптечка
 stack-medkit-lar = Аптечка «LAR»
+
+stack-bullet-545 = пуля 5.45x39

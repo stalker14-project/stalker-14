@@ -5,3 +5,4 @@ store-currency-display-premium-supply-talons = премиальные талон
 store-currency-display-gold-coins = золотая монета
 store-currency-display-fangs = клыки
 store-currency-display-chevron-monolit = шевроны монолита
+store-currency-display-bullet-545 = пуля 5.45x39
