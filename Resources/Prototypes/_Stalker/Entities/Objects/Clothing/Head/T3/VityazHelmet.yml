@@ -17,13 +17,10 @@
   - type: Armor
     armorClass: 3
     modifiers:
-      flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 3
       coefficients:
         Blunt: 0.75
         Slash: 0.75
+        Piercing: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: Reflect
@@ -101,3 +98,14 @@
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1M.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/Vityaz1M.rsi
+
+- type: entity
+  parent: STClothingHeadHelmetTacticalT3Base
+  id: ClothingHeadHelmetVityaz1Zavet
+  name: шлем "Витязь 1М" Завета
+  description: Противоударный шлем "Витязь-М" изготавливался в НИИ Стали. Разработки над шлемом начались в конце 1980-ых годов. Шлем получил забралу, хоть и получился массивным.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/Vityaz1Z.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/Vityaz1Z.rsi

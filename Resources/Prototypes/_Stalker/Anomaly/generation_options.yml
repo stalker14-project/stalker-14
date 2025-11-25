@@ -12,7 +12,7 @@
 - type: stAnomalyGenerationOptions
   id: STKordonGenerationOptions
   options:
-    totalCount: 350
+    totalCount: 250
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyElectra
@@ -34,27 +34,23 @@
 - type: stAnomalyGenerationOptions
   id: STSvalkaGenerationOptions
   options:
-    totalCount: 500
+    totalCount: 300
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGarland
-      weight: 3
+      weight: 0.5
     # Gravity
     - protoId: ZoneAnomalyBurden
-      weight: 0.4
+      weight: 0.2
     - protoId: ZoneAnomalyGravi
     - protoId: ZoneAnomalySpringboard
       weight: 0.1
     # Thermal
-    - protoId: ZoneAnomalyJarkaStrong
-      weight: 7
     - protoId: ZoneAnomalyJarka
       weight: 5
     # Psy
     - protoId: ZoneAnomalyLamp
-    - protoId: ZoneAnomalyBarabashka
-      weight: 0.5
 
 # Болота
 - type: stAnomalyGenerationOptions
@@ -162,13 +158,12 @@
     - protoId: ZoneAnomalyBurden
       weight: 0.35
     - protoId: ZoneAnomalyGravi
-      weight: 1.7
+      weight: 0.7
     - protoId: ZoneAnomalySpringboard
     - protoId: ZoneAnomalyGrabber
       weight: 0.35
     # Thermal
     - protoId: ZoneAnomalyJarkaStrong
-      weight: 1.5
     - protoId: ZoneAnomalyJarka
     # Psy
     - protoId: ZoneAnomalyBarabashka

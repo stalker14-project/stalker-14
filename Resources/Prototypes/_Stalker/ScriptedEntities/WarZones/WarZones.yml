@@ -11,17 +11,17 @@
 
 - type: stWarZone
   id: SvalkaDepo
-  rewardPointsPerPeriod: 1
+  rewardPointsPerPeriod: 0.1
   rewardPeriod: 30 # Период начисления очков в секундах
   captureCooldownHours: 8
   shouldAwardWhenDefenderPresent: true
-  captureTime: 350 # Время захвата зоны в секундах.
+  captureTime: 450 # Время захвата зоны в секундах.
   requirements:
   - !type:ZoneOwnershipRequirenment
     requiredZones: []
   - !type:TimeWindowRequirenment
     startHourUtc: 16 # Start hour in UTC (e.g., 10:00 UTC = 10)
-    endHourUtc: 18   # End hour in UTC (e.g., 18:00 UTC = 18)
+    endHourUtc: 17   # End hour in UTC (e.g., 18:00 UTC = 18)
 
 # Entity prototype referencing the above meta-prototype
 - type: entity
@@ -82,14 +82,190 @@
     color: Cyan
     energy: 1
 
+- type: stWarZone
+  id: SvalkaСemetery
+  rewardPointsPerPeriod: 0.1
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 300 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 16 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 17   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+- type: entity
+  id: WarZoneEntity_Svalka_Сemetery
+  parent: MarkerBase
+  name: Сemetery War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: SvalkaСemetery
+    portalName: Сemetery
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
+- type: stWarZone
+  id: LimanskLenin
+  rewardPointsPerPeriod: 0.1
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 350 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 17 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 19   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+- type: entity
+  id: WarZoneEntity_Limansk_Lenin
+  parent: MarkerBase
+  name: Lenin War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: LimanskLenin
+    portalName: Lenin
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 5
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
+- type: stWarZone
+  id: KordonFerma
+  rewardPointsPerPeriod: 0.1
+  rewardPeriod: 30 # Период начисления очков в секундах
+  captureCooldownHours: 8
+  shouldAwardWhenDefenderPresent: true
+  captureTime: 175 # Время захвата зоны в секундах.
+  requirements:
+  - !type:ZoneOwnershipRequirenment
+    requiredZones: []
+  - !type:TimeWindowRequirenment
+    startHourUtc: 11 # Start hour in UTC (e.g., 10:00 UTC = 10)
+    endHourUtc: 12   # End hour in UTC (e.g., 18:00 UTC = 18)
+
+- type: entity
+  id: WarZoneEntity_Kordon_Ferma
+  parent: MarkerBase
+  name: Ferma War Zone
+  description: A physical marker for the Depo War Zone.
+  components:
+  - type: WarZone
+    proto: KordonFerma
+    portalName: Ferma
+  - type: Physics
+    bodyType: Static
+    canCollide: true
+  - type: Fixtures
+    fixtures:
+      trigger:
+        shape:
+          !type:PhysShapeCircle
+          radius: 8
+        hard: false
+        mask:
+        - MobMask
+        layer:
+        - MidImpassable
+  - type: PointLight
+    enabled: true
+    radius: 15
+    color: Cyan
+    energy: 1
+
 - type: stBandShopListings
   id: STBandShopListings
-  name: Band Shop Listings
-  description: A list of items available for purchase in the Band Shop.
   items:
+  #прочее
     - productEntity: FitnessCenterCard
       price: 500
+    - productEntity: STWeaponSniperVSS
+      price: 420
+    - productEntity: STClothingOuterArmorVeryHeavy
+      price: 400
+    - productEntity: STWeaponRifleOC14939
+      price: 370
+    - productEntity: STWeaponSniperSVDS
+      price: 310
+    - productEntity: ClothingHeadHelmetUlach
+      price: 300
+    - productEntity: STWeaponRifleStalkerAK12
+      price: 270
     - productEntity: ClothingBeltCrafterStalker
       price: 200
-    - productEntity: STBlueprintT3Random
-      price: 190
+    - productEntity: StalkerMedBandShopCrate
+      price: 75
+    - productEntity: 939Mag30
+      price: 45
+    - productEntity: 754Mag20
+      price: 45
+    - productEntity: 754Mag10
+      price: 35
+
+  #патроны
+    - productEntity: 918PBMBoxCink
+      price: 70
+    - productEntity: 919PBMBoxCink
+      price: 70
+    - productEntity: 545PCBoxCink
+      price: 90
+    - productEntity: 556M855BoxCink
+      price: 90
+    - productEntity: 739FMJBoxCink
+      price: 110
+    - productEntity: 751M80BoxCink
+      price: 110
+    - productEntity: 939BPBoxCink
+      price: 125
+    - productEntity: 754FMJBoxCink
+      price: 125
+    - productEntity: 545BPBoxCink
+      price: 155
+    - productEntity: 556M856BoxCink
+      price: 155
+    - productEntity: 739PCBoxCink
+      price: 185
+    - productEntity: 751M61BoxCink
+      price: 185
+    - productEntity: 754PCBoxCink
+      price: 185
+    - productEntity: 939SP6BoxCink
+      price: 195

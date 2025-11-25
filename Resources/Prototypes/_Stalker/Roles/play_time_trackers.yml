@@ -1,6 +1,8 @@
 - type: playTimeTracker
   id: JobStalker
 - type: playTimeTracker
+  id: JobStalkerVeteran
+- type: playTimeTracker
   id: JobMilitary
 - type: playTimeTracker
   id: JobMilitaryStalker
@@ -10,8 +12,6 @@
   id: JobPostulant
 - type: playTimeTracker
   id: JobBishop
-- type: playTimeTracker
-  id: JobStalkerSci
 - type: playTimeTracker
   id: JobSeraphims
 - type: playTimeTracker
@@ -28,6 +28,10 @@
   id: JobProjectOrchestrator
 - type: playTimeTracker
   id: JobPoisk
+- type: playTimeTracker
+  id: JobEcologist
+- type: playTimeTracker
+  id: JobHeadEcologist
 
 - type: playTimeTracker
   id: JobHeadMilitary
@@ -36,9 +40,11 @@
 - type: playTimeTracker
   id: JobHeadBandit
 - type: playTimeTracker
-  id: JobHeadStalkerSci
+  id: JobSci_rector
 - type: playTimeTracker
-  id: JobStalkerISSG
+  id: Jobsci_decan
+- type: playTimeTracker
+  id: JobSci
 - type: playTimeTracker
   id: JobHeadSeraphims
 - type: playTimeTracker
@@ -58,15 +64,21 @@
 - type: playTimeTracker
   id: JobRenegat
 - type: playTimeTracker
+  id: JobZavetHead
+- type: playTimeTracker
   id: JobZavet
 - type: playTimeTracker
   id: JobStalkerMercenary
 - type: playTimeTracker
   id: JobStalkerHeadMercenary
 - type: playTimeTracker
+  id: JobStalkerClown
+- type: playTimeTracker
   id: JobGreh
 - type: playTimeTracker
   id: JobDeserter
+- type: playTimeTracker
+  id: JobDeserterHead
 - type: playTimeTracker
   id: JobClearSky
 - type: playTimeTracker
@@ -93,7 +105,14 @@
   id: JobPriest
 
 - type: playTimeTracker
+  id: JobGuide
+
+- type: playTimeTracker
   id: JobStalkerBartender
+
+# Херувим серафимов
+- type: playTimeTracker
+  id: JobCherubimSeraphims
 
 # Эволверы и их группировки
 - type: playTimeTracker

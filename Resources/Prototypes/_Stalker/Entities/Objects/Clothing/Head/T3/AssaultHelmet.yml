@@ -11,13 +11,10 @@
   - type: Armor
     armorClass: 3
     modifiers:
-      flatReductions:
-        Blunt: 3
-        Slash: 4
-        Piercing: 4
       coefficients:
         Blunt: 0.80
         Slash: 0.85
+        Piercing: 0.80
   - type: ExplosionResistance
     damageCoefficient: 0.95
   - type: Reflect
@@ -128,3 +125,58 @@
     sprite: _Stalker/Objects/Clothing/Head/Sera_/assault_helm_serasera.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/Head/Sera_/assault_helm_serasera.rsi
+
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: ClothingHeadArmorSkyWalkerHelm
+  name: Экзошлем "СФЕРА S-10"
+  description: Шлем предоставляющий неплохие боевые показатели, так же благодаря встроенному противогазу шлем может похвастаться довольно хорошей радиозащитой. По остальным характеристикам, в частности аномальным всё довольно плохо.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/hats/skywalker_helmet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/hats/skywalker_helmet.rsi
+  - type: PointLight
+    color: red
+    enabled: false
+    radius: 6
+    energy: 2
+  - type: Craftable
+  - type: STWeight
+    self: 2.1
+  - type: Armor
+    armorClass: 3
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.85
+        Piercing: 0.70
+  - type: ExplosionResistance
+    damageCoefficient: 0.95
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 360
+    reflects:
+      - NonEnergy
+    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: BreathMask
+  - type: IngestionBlocker
+  - type: IdentityBlocker
+  - type: Tag
+    tags:
+        - BlockMask
+        - HidesNose
+
+- type: entity
+  parent: STClothingHeadHelmetCombatT3Base
+  id: ClothingHeadAssaultHelmetZavet
+  name: шлем «Зенит» Завета
+  description: боевой шлем марки «Зенит» третьего класса защиты.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Head/Zavet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Head/Zavet.rsi

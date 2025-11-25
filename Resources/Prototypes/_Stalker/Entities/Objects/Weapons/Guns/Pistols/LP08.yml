@@ -3,20 +3,21 @@
   id: WeaponPistolStalkerLP08
   name: Люгер
   suffix: ST
-  description: Люгер 9x19 — как мини-арсенал в кармане .Компактный, быстрый и готов к приключениям!
+  description: Люгер 9x19 — как мини-арсенал в кармане. Компактный, быстрый и готов к приключениям!
   components:
     - type: STWeight
       self: 1.1
+    - type: Wieldable
     - type: Sprite
       scale: 0.6, 0.6
-      sprite: _Stalker/Objects/Weapons/Guns/Pistols/lp08.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Pistols/luger.rsi
       layers:
         - state: base
           map: ["enum.GunVisualLayers.Base"]
         - state: mag-0
           map: ["enum.GunVisualLayers.Mag"]
     - type: Clothing
-      sprite: _Stalker/Objects/Weapons/Guns/Pistols/lp08.rsi
+      sprite: _Stalker/Objects/Weapons/Guns/Pistols/luger.rsi
     - type: Gun
       soundGunshot:
         path: /Audio/_Stalker/Effects/Guns/pm-shoot.ogg
@@ -29,6 +30,9 @@
       selectedMode: FullAuto
       availableModes:
         - FullAuto
+    - type: GunWieldBonus
+      minAngle: -5
+      maxAngle: -10
     - type: ItemSlots
       slots:
         gun_magazine:

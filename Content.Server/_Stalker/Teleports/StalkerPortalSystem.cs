@@ -17,6 +17,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Content.Server._Stalker.Trash;
+using Content.Shared.Buckle.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using SponsorSystem = Content.Server._Stalker.Sponsors.System.SponsorSystem;
@@ -104,7 +105,7 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
 
     private void OnClearArenaGrids(RequestClearArenaGridsEvent args)
     {
-        for (int i = 0; i < StalkerArenaDataList.Count; i++) // InvalidOperationException
+        for (var i = StalkerArenaDataList.Count - 1; i >= 0; i--)
         {
             var data = StalkerArenaDataList[i];
             var gridIdNet = NetEntity.Parse(data.GridId.ToString());
@@ -115,25 +116,38 @@ public sealed class StalkerPortalSystem : SharedTeleportSystem
             if (!TryComp<TransformComponent>(gridId, out var transform))
                 continue;
 
-            var enumerator = transform.ChildEnumerator;
-            var hasMind = false;
-
-            while (enumerator.MoveNext(out var ent))
-            {
-                if (TryComp<MindContainerComponent>(ent, out var mind) && mind.HasMind)
-                {
-                    hasMind = true;
-                    break;
-                }
-            }
-
-            if (hasMind)
+            if (GridHasActiveMind(transform))
                 continue;
 
             _ent.QueueDeleteEntity(gridId);
             StalkerArenaDataList.RemoveAt(i);
         }
     }
+
+    private bool GridHasActiveMind(TransformComponent transform)
+    {
+        var enumerator = transform.ChildEnumerator;
+
+        while (enumerator.MoveNext(out var child))
+        {
+            // checking if the entity has a mind
+            if (TryComp<MindContainerComponent>(child, out var mind) && mind.HasMind)
+                return true;
+
+            // checking objects buckled to the entity on the grid
+            if (TryComp<StrapComponent>(child, out var strap))
+            {
+                foreach (var buckledEntity in strap.BuckledEntities)
+                {
+                    if (TryComp<MindContainerComponent>(buckledEntity, out var mindBuckle) && mindBuckle.HasMind)
+                        return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
 
     // При столкновении с телепортом в сталкер арене происходит телепортация в тот телепорт из которого был выполнен вход в сталкер арену

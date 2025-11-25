@@ -1,28 +1,65 @@
 - type: shopPreset
   id: SerafimShopPresetCustom
   itemsForSale:
+    # Thermal group - 1
+    ZoneArtifactFireball: 405
+    ZoneArtifactEye: 610
+    ZoneArtifactFlame: 1215
+    # Thermal group - 2
+    ZoneArtifactCristall: 2430
+    ZoneArtifactLithosphere: 4860
+    # Electrical group - 1
+    ZoneArtifactSparkler: 405
+    ZoneArtifactBattery: 475
+    ZoneArtifactFlash: 1215
+    ArtMoon: 2430
+    ZoneArtifactTesla: 3645
+    ZoneArtifactIce: 4860
+    # Gravity group - 1
+    ArtMedusa: 405
+    ZoneArtifactFlower: 610
+    ZoneArtifactNightStar: 2430
+    # Gravity group - 2
+    ZoneArtifactVyvert: 405
+    ZoneArtifactAmoeba: 610
+    ZoneArtifactFloodlight: 610
+    ZoneArtifactGravi: 1215
+    ZoneArtifactGoldfish: 4860
+    ZoneArtifactSpring: 2700
+    ZoneArtifactFocus: 3645
+    ZoneArtifactStuntman: 4860
+    ZoneArtifactDistorter: 4860
+    ZoneArtifactSoul: 3645
+    # Acidic group - 1
+    ZoneArtifactBlood: 1215
+    ZoneArtifactMeat: 2430
+    ZoneArtifactKolobok: 3645
+    # Acidic group - 2
+    ZoneArtifactPellicle: 405
+    ZoneArtifactBaloon: 3645
+
     # Mutant parts 1.5x Sidorovich
 
     #Boars -------- Health * T *
-    MutantPartBoarHoof: 205 # T1
-    MutantPartSeasonedBoarHoof: 405 # T2
-    MutantPartOldBoarHoof: 610 # T3
+    MutantPartBoarHoof: 275 # T1
+    MutantPartSeasonedBoarHoof: 545 # T2
+    MutantPartOldBoarHoof: 825 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 135
-    MutantPartFleshEye: 300
-    FoodMeatSpiderLeg: 75
+    MutantPartBlindDogTail: 180
+    MutantPartFleshEye: 405
+    FoodMeatSpiderLeg: 100
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 825
-    MutantPartPseudodogTail: 450
-    MutantPartSnorkFoot: 750
+    MutantPartLeshiyRoot: 1115
+    MutantPartPseudodogTail: 610
+    MutantPartSnorkFoot: 1015
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 1125
-    MutantPartOraculeEye: 2400
-    MutantPartPseudogiantHeart: 6000
-    MutantPartZombieHand: 900
+    MutantPartBloodsuckerTentacles: 1520
+    MutantPartOraculeEye: 3240
+    MutantPartPseudogiantHeart: 8100
+    MutantPartZombieHand: 1215
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -34,7 +71,8 @@
         arbaletserih: 1500
         STWeaponRifleAKS74USERAPH: 500
         STWeaponRifleAKS74: 4000
-        STWeaponRifleAKM: 6000
+        STWeaponRifleAKM: 5500
+        STWeaponRifleStalkerAK12Sera: 8700
           # Smg
         STWeaponSMGStalkerCP2VereskSera: 2000
           # Other
@@ -80,7 +118,8 @@
         # 5.45
         545FMJBox: 500
         545HPBox: 100
-        545PCBox: 2000
+        545PCBox: 1500
+        545BPBox: 2300
         # 7.39
         739FMJBox: 1540
         739HPBox: 400
@@ -94,12 +133,15 @@
         ClothingHeadHelmetInfantrySera: 650 # T2 - PVP
         ClothingHeadHelmetInfantrySerasera: 650
         ClothingHeadHelmetVityaz1C: 2000
+        ClothingHeadAssaultHelmetLimaSeraZastup: 2500
           # OuterClothing #
         ClothingOuterJacketSera: 60 # T1 - PVE
         STClothingOuterArmorLightPlateVestBaseSera: 1000 # T2 - PvP
         ClothingOuterArmorRCBZSera: 1700 # T2 - ENV
         STClothingOuterArmorRassvetSera: 2000 # T2 - universal
+        STClothingOuterArmorLightPlateVestSera: 7000
         ClothingOuterArmorSevasera: 7000 # T3 - ENV
+        STClothingOuterArmorSeraphimStrash: 10000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -158,8 +200,8 @@
     - name: shop-category-provisions
       priority: 9
       items:
-        FoodMeatDogCooked: 35
-        FoodMeatBoarCooked: 50
+        FoodMeatDogCooked: 95
+        FoodMeatBoarCooked: 115
         DrinkWaterBottleFull: 10
     - name: shop-category-medicine
       priority: 10
@@ -169,6 +211,10 @@
         STBrutepackSera: 15
         STGauzeSera: 5
         MedkitAI2Sera: 100
+        Bloodpack: 600
+        STPillboxProbud: 500
+        MedkitMilitary: 350
+        MedkitScience: 450
     - name: shop-category-modules
       priority: 11
       items:
@@ -184,3 +230,60 @@
         STClothingMaskLimaKufei: 10
         STClothingMaskKufei: 10
         STClothingHandsGlovesSera: 10
+        ClothingBandageStalkerGreen: 5
+        ClothingHeadHatBeaniehat: 10
+        ClothingMaskNeckFacemask: 10
+        ClothingMaskNeckBalaklava1: 10
+        ClothingMaskNeckBalaklava2: 10
+        ClothingMaskNeckBalaklava3: 10
+        ClothingHeadBandMerc: 30
+        ClothingHeadBandSkull: 30
+        ClothingHeadHatUshanka: 30
+        ClothingHandsGlovesFingerless: 30
+        ClothingHandsGlovesMercFingerless: 60
+        ClothingShoesColorBlack: 30
+        ClothingShoesBootsWork: 30
+        ClothingShoesLeather: 30
+        ClothingShoesBootsMerc: 30
+        ClothingShoesSwat: 35
+        ClothingHeadHatBlacksoft: 10
+        ClothingHeadHatGreysoft: 10
+        ClothingHeadHatSovietUshankaStalker: 40
+        ClothingCloakStalker: 30
+        ClothingLegsJeansBlue: 10
+        ClothingLegsJeansStalker: 10
+        ClothingLegsJeansGreenCargo: 10
+        ClothingLegsJeansGreyCargo: 10
+        ClothingLegsJeansBlackCargo: 10
+        ClothingLegsJeansBrownCargo: 10
+        ClothingLegsJeansSandCargo: 10
+        ClothingLegsJeansRussianPixel: 20
+        ClothingLegsJeansBlackNew: 20
+        ClothingLegsJeansGorka: 20
+        ClothingShoesBootsCombat: 30
+        ClothingTorsoTShirtPivozavr: 30
+        ClothingTorsoTShirtSailorSuit: 30
+        ClothingTorsoTShirtColorBlack: 30
+        ClothingTorsoTurtlenecksBlack: 90
+        ClothingTorsoTurtlenecksGorka: 90
+        ClothingTorsoTurtlenecksGorka6: 90
+        ClothingTorsoTurtlenecksBereza: 90
+        ClothingLegsJeansBereza: 20
+        ClothingLegsJeansGorka6: 20
+        ClothingTorsoTurtlenecksGorkaRus: 90
+        ClothingOuterCoatKKK: 67
+        # new shit
+        ClothingLegsBattlePantsBlack: 50
+        ClothingLegsVeryBlueJenas: 50
+        ClothingLegsCombatForest: 50
+        ClothingLegsGorka5: 50
+        ClothingLegsGorka6b: 50
+        ClothingLegsNavyPants: 50
+        ClothingLegsRussianNumber: 50
+        ClothingTorsoTurtlenecksBattleTurtleneckbBlack: 50
+        ClothingTorsoTurtlenecksBlackTurtleneck: 50
+        ClothingTorsoTurtlenecksCombatForest: 50
+        ClothingTorsoTurtlenecksGorka5: 50
+        ClothingTorsoTurtlenecksGorka6B: 50
+        ClothingTorsoTurtlenecksKhakiTurtleneck: 50
+        ClothingTorsoTurtlenecksMatrosska: 50

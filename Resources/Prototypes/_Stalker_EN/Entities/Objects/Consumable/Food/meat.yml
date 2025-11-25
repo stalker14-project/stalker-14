@@ -1,0 +1,186 @@
+# FISH
+# this could have been done cleaner but refer to top of file comment
+
+# rotten
+- type: entity
+  name: rotten fish
+  id: FoodMeatSTRottenFish
+  parent: FoodMeatRotten
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
+    state: rottenfish
+  - type: Trash
+    time: 300
+
+# fillet
+- type: entity
+  name: raw fish fillet
+  parent: FoodMeatRawBase
+  id: FoodMeatSTFishFilletRaw
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.25
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
+    state: fillet_raw
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: fillet stfish
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+  - type: RotInto
+    entity: FoodMeatSTRottenFish
+    stage: 1
+
+- type: entity
+  name: cooked fish fillet
+  parent: FoodMeatBase
+  id: FoodMeatSTFishFilletCooked
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.25
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
+    state: fillet_cooked
+  - type: Construction
+    graph: MeatFilletSTFish
+    node: fillet stfish
+
+- type: constructionGraph
+  id: MeatFilletSTFish
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: fillet stfish
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+  - node: fillet stfish
+    entity: FoodMeatSTFishFilletCooked
+
+- type: lightCraftingRecipe
+  id: MeatFilletSTFishCraft
+  results:
+  - FoodMeatSTFishFilletCooked
+  steps:
+    firstIngredient: FoodMeatSTFishFilletRaw
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 12
+
+- type: lightCraftingRecipe
+  id: MeatFilletSTFishCraftGas
+  results:
+  - FoodMeatSTFishFilletCooked
+  steps:
+    firstIngredient: FoodMeatSTFishFilletRaw
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 12
+
+# steak
+- type: entity
+  name: raw fish steak
+  parent: FoodMeatRawBase
+  id: FoodMeatSTFishSteakRaw
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.45
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
+    state: steak_raw
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: steak stfish
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+  - type: RotInto
+    entity: FoodMeatSTRottenFish
+    stage: 1
+
+- type: entity
+  name: cooked fish steak
+  parent: FoodMeatBase
+  id: FoodMeatSTFishSteakCooked
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.40
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
+    state: steak_cooked
+  - type: Construction
+    graph: MeatSteakSTFish
+    node: steak stfish
+
+- type: constructionGraph
+  id: MeatSteakSTFish
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: steak stfish
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+  - node: steak stfish
+    entity: FoodMeatSTFishSteakCooked
+
+- type: lightCraftingRecipe
+  id: MeatSteakSTFishCraft
+  results:
+  - FoodMeatSTFishSteakCooked
+  steps:
+    firstIngredient: FoodMeatSTFishSteakRaw
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 15
+
+- type: lightCraftingRecipe
+  id: MeatSteakSTFishCraftGas
+  results:
+  - FoodMeatSTFishSteakCooked
+  steps:
+    firstIngredient: FoodMeatSTFishSteakRaw
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 15

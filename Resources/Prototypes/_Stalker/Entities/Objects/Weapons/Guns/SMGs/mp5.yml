@@ -13,10 +13,10 @@
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/mp5/mp5.rsi
   - type: Gun
     minAngle: 40
-    maxAngle: 90
+    maxAngle: 85
     angleIncrease: 1
     angleDecay: 8
-    fireRate: 10
+    fireRate: 9.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/n_mp5_shot.ogg
   - type: ItemSlots
@@ -73,6 +73,7 @@
   abstract: true
   parent: STBaseWeaponSMGMP5 # Kekw
   id: STBaseWeaponSMGVector9
+  suffix: ST, Кастомка
   components:
   - type: STWeight
     self: 2
@@ -86,11 +87,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/vector.rsi
   - type: Gun
-    minAngle: 45
-    maxAngle: 85
+    minAngle: 38
+    maxAngle: 95
     angleIncrease: 1
     angleDecay: 8
-    fireRate: 14
+    fireRate: 11
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/919.ogg
   - type: STScopeVisuals

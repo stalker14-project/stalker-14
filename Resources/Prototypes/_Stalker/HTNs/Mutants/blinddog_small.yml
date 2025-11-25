@@ -4,7 +4,7 @@
     - tasks:
       - !type:HTNCompoundTask
         task: STBlindDogSmallMeleeCombatCompound
-    
+
     - tasks:
       - !type:HTNCompoundTask
         task: STBlindDogSmallRoarRestoreCompound
@@ -23,16 +23,12 @@
 
       - !type:HTNCompoundTask
         task: STBlindDogSmallRoarCompound
-   
+
       - !type:HTNCompoundTask
         task: STBlindDogSmallMeleeAttackTargetCompound
 
 - type: htnCompound
   id: STBlindDogSmallRoarRestoreCompound
-  preconditions:
-    - !type:KeyBoolEqualsPrecondition
-      key: Roared
-      value: true
   branches:
     - tasks:
       - !type:HTNPrimitiveTask

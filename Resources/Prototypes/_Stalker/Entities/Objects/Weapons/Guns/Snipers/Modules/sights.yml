@@ -11,15 +11,15 @@
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/Modules/sniper_sights.rsi
     scale: 0.6, 0.6
   - type: Scope
-    zoom: 1.5
-    delay: 1
+    zoom: 1.65
+    delay: 0.4
     offset: 14
     useInHand: true
   - type: STWeaponModule
     layer: scope
     statePostfix: scope
     scopeEffect:
-      delay: 1
+      delay: 0.4
       requireWielding: true
       useInHand: false
 
@@ -36,7 +36,7 @@
     effect:
       minAngleModifier: 0.9
     scopeEffect:
-      zoom: 1.4
+      zoom: 1.65
       offset: 13
   - type: Sprite
     state: sniper_sight_T1
@@ -56,7 +56,7 @@
     effect:
       minAngleModifier: 0.7
     scopeEffect:
-      zoom: 1.4
+      zoom: 1.65
       offset: 14
   - type: Sprite
     state: sniper_sight_T2

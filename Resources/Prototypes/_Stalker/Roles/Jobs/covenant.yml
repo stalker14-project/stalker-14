@@ -36,6 +36,44 @@
         teethCount: 3
         initialTeeth: 3
 
+- type: job
+  id: StalkerZavetHead
+  name: job-covenant-head
+  icon: zavet
+  description: job-covenant-desc
+  playTimeTracker: JobZavetHead
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobZavet
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: StalkerZavetLeaderGear
+  supervisors: Вы работаете на Высшие Силы.
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - Covenant
+        tags:
+          - Covenant
+      - type: Bands
+        band: Stalker
+        bandIcon: zavet
+        bandProto: STCovenantBand
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
 - type: startingGear
   id: StalkerZavetGear
   equipment:
@@ -56,8 +94,8 @@
   id: STCovenantBand
   name: Covenant
   factionId: Covenant
-  maxMembers: 1
+  maxMembers: 8
   managingRankId: 2
   hierarchy:
     1: StalkerZavet
-
+    2: StalkerZavetHead

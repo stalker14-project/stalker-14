@@ -78,4 +78,36 @@
       sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/outerClothing/freedom_defender.rsi
+    - type: Armor
+      armorClass: 4
+      modifiers:
+        flatReductions:
+         Blunt: 2
+         Slash: 2
+         Piercing: 6
+        coefficients:
+         Blunt: 0.80
+         Slash: 0.80
+         Piercing: 0.55
 
+- type: entity
+  parent: STClothingOuterArmor6B13Base
+  id: ClothingOuterArmor6B13Zavet
+  name: 6Б13 завета
+  description: Стандартный бронежилет IV типа, обеспечивающий достойную защиту от большинства видов повреждений
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/6b13_zavet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/6b13_zavet.rsi
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 2
+        Slash: 2
+        Piercing: 6
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.55

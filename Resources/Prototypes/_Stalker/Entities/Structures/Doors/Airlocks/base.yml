@@ -63,7 +63,7 @@
   name: стальная дверь бандитов
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
-  suffix: ST, mapping, Военные
+  suffix: ST, mapping, Бандиты
   components:
   - type: AccessReader
     access: [["Bandit"]]
@@ -258,6 +258,9 @@
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
   suffix: ST, mapping, Отступники
+  components:
+    - type: AccessReader
+      access: [["Deserter"]]
 
 - type: entity
   id: HermoDverTypeOneMercClosed
@@ -798,6 +801,9 @@
   parent: WoodDoorFallout
   description: Обычная деревянная дверь.
   suffix: ST, mapping, Pilgrim
+  components:
+  - type: AccessReader
+    access: [["Pilgrim"]]
 
 #Ополчению
 - type: entity
@@ -889,6 +895,9 @@
   parent: MetalWindowDoorFallout
   description: Крепкая стальная дверь, с окном и надёжным замком.
   suffix: ST, mapping, Проект
+  components:
+  - type: AccessReader
+    access: [["Project"]]
 
 - type: entity
   id: STMetalBarDoorFalloutProjectClosed
@@ -896,6 +905,9 @@
   parent: MetalBarDoorFallout
   description: Решётчатая дверь с надёжным замком.
   suffix: ST, mapping, Проект
+  components:
+  - type: AccessReader
+    access: [["Project"]]
 
 - type: entity
   id: STHermoDverTypeTwoProjectClosed
@@ -903,6 +915,9 @@
   parent: HermoDverTypeTwo
   description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
   suffix: ST, mapping, Проект
+  components:
+  - type: AccessReader
+    access: [["Project"]]
 
 - type: entity
   id: STMetalAltDoorFalloutProjectClosed
@@ -910,6 +925,9 @@
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
   suffix: ST, mapping, Проект
+  components:
+  - type: AccessReader
+    access: [["Project"]]
 
 - type: entity
   id: STMetalDoorFalloutProjectOrchestratorClosed
@@ -917,3 +935,220 @@
   parent: MetalAltDoorFallout
   description: Крепкая стальная дверь с надёжным замком.
   suffix: ST, mapping, Оркестратор Проекта
+  components:
+  - type: AccessReader
+    access: [["ProjectOrchestrator"]]
+
+- type: entity
+  id: HermoDverTypeOneCircusClosed
+  name: гермодверь
+  parent: HermoDverTypeOne
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: HermoDverTypeTwoCircusClosed
+  name: гермодверь
+  parent: HermoDverTypeTwo
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalDoorFalloutCircusClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutCircusClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutCircusClosed
+  name: укрепленная решетчатая дверь
+  parent: MetalGrateDoorFallout
+  description: Крепкая решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+- type: entity
+  id: MetalBarDoorFalloutCircusClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Циркачи
+  components:
+  - type: AccessReader
+    access: [["Circus"]]
+
+# Свобода и наемники
+
+- type: entity
+  id: HermoDverTypeOneMercAndFreedomClosed
+  name: гермодверь
+  parent: HermoDverTypeOne
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Свобода
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+- type: entity
+  id: HermoDverTypeTwoMercAndFreedomClosed
+  name: гермодверь
+  parent: HermoDverTypeTwo
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Свобода
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+- type: entity
+  id: MetalDoorFalloutMercAndFreedomClosed
+  name: стальная дверь
+  parent: MetalDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Свобода
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+- type: entity
+  id: MetalAltDoorFalloutMercAndFreedomClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Свобода
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutMercAndFreedomClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Свобода
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+- type: entity
+  id: MetalGrateDoorFalloutMercAndFreedomClosed
+  name: укрепленная решетчатая дверь
+  parent: MetalGrateDoorFallout
+  description: Крепкая решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Свобода
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+- type: entity
+  id: MetalBarDoorFalloutMercAndFreedomClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Свобода
+  components:
+  - type: AccessReader
+    access: [["Freedom"]]
+
+# ветерану
+
+- type: entity
+  id: HermoDverTypeOneVeteranClosed
+  name: гермодверь
+  parent: HermoDverTypeOne
+  description: Защитно-герметические и герметические устройства, которые используются для охраны защитных сооружений гражданской обороны от вредных воздействий различного характера.
+  suffix: ST, mapping, Ветераны
+  components:
+    - type: AccessReader
+      access: [["Veteran"]]
+
+- type: entity
+  id: WoodRedDoorVeteranClosed
+  name: красная деревянная дверь
+  parent: WoodRedDoorFallout
+  description: Деревянная дверь, окрашена в красный цвет. Открывается быстрее обычной двери, с надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: MetalRedDoorFalloutVeteranClosed
+  name: красная стальная дверь
+  parent: MetalRedDoorFallout
+  description: Стальная дверь с надёжным замком. Окрашена в красный цвет.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: MetalWindowDoorFalloutVeteranClosed
+  name: стальная дверь
+  parent: MetalWindowDoorFallout
+  description: Крепкая стальная дверь, с окном и надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: WoodDoorFalloutVeteran
+  name: Деревянная дверь
+  parent: WoodDoorFallout
+  description: Обычная деревянная дверь.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: STMetalBarDoorFalloutVeteranClosed
+  name: решетчатая дверь
+  parent: MetalBarDoorFallout
+  description: Решётчатая дверь с надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+  - type: AccessReader
+    access: [["Veteran"]]
+
+- type: entity
+  id: MetalAltDoorFalloutVeteranClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Ветераны
+  components:
+    - type: AccessReader
+      access: [["Veteran"]]
+
+- type: entity
+  id: MetalAltDoorFalloutGuideClosed
+  name: стальная дверь
+  parent: MetalAltDoorFallout
+  description: Крепкая стальная дверь с надёжным замком.
+  suffix: ST, mapping, Проводник
+  components:
+    - type: AccessReader
+      access: [["Guide"]]

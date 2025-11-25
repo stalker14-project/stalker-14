@@ -23,6 +23,7 @@
         Blunt: 0.7
         Slash: 0.7
         Radiation: 0.8
+        Compression: 0.90
         Piercing: 0.85
         Heat: 0.8
         Caustic: 0.85
@@ -91,6 +92,23 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_hunter.rsi
+  - type: Armor
+    armorClass: 2
+    modifiers:
+      flatReductions:
+        Blunt: 4
+        Slash: 7
+        Piercing: 2
+        Radiation: 1
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.65
+        Compression: 0.70
+        Piercing: 0.95
+        Heat: 0.8
+        Caustic: 0.9
+        Shock: 0.85
+
 
 
 # Jabs - 2
@@ -163,6 +181,9 @@
       sprite: _Stalker/Objects/Clothing/Head/Sera_/rassvet_helm.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/Head/Sera_/rassvet_helm.rsi
+    - type: HideLayerClothing
+      slots:
+      - Hair
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase
@@ -207,7 +228,9 @@
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_dolg.rsi
     - type: Clothing
       sprite: _Stalker/Objects/Clothing/hats/zarya_helm_dolg.rsi
-
+    - type: HideLayerClothing
+      slots:
+      - Hair
 
 - type: entity
   parent: STClothingOuterArmorZaryaBase

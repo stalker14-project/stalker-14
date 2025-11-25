@@ -1,0 +1,157 @@
+- type: entity
+  id: STSidorTrigger
+  parent: MarkerBase
+  name: Сидорович Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-6,-1.5,0.25,1.5"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideSidor
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideSidor
+
+- type: entity
+  id: STBarmenTrigger
+  parent: STSidorTrigger
+  name: Бармен Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "1.25,-3,-1.5,0.5"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideBarmen
+      cooldownTime: 5
+      chance: 0.2
+
+- type: entity
+  id: STDolgTrigger
+  parent: STSidorTrigger
+  name: Долг Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-2.5,1.5,2.5,-4"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideDolg
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideDolg
+
+- type: entity
+  id: STSvobodaTrigger
+  parent: STSidorTrigger
+  name: Свобода Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-1.5,-0.5,1.5,3"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideSvoboda
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideSvoboda
+
+- type: entity
+  id: STBanditTrigger
+  parent: STSidorTrigger
+  name: Бандиты Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "0.5,-1.5,-4.5,1.5,"
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideBandit
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideBandit
+
+- type: entity
+  id: STSciTrigger
+  parent: STSidorTrigger
+  name: Учёные Реплика
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 3
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideSci
+      cooldownTime: 5
+      chance: 0.2
+      soundExit:
+        collection: EndCollideSci
+

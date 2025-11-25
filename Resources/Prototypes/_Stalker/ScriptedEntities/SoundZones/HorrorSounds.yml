@@ -1,0 +1,32 @@
+- type: entity
+  id: STHorrorTrigger
+  parent: MarkerBase
+  name: Падение камушков в пещере
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Sprite
+      layers:
+        - state: green
+    - type: Transform
+      anchored: True
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Physics
+      bodyType: Static
+    - type: Fixtures
+      fixtures:
+        portalFixture:
+          shape:
+            !type:PhysShapeCircle
+            radius: 2
+          mask:
+            - FullTileMask
+          layer:
+            - WallLayer
+          hard: false
+    - type: STNoticeOnCollide
+      soundEnter:
+        path: /Audio/_Stalker/SoundTriggers/horrorSounds/StoneFall.ogg
+      cooldownTime: 10
+      chance: 0.5

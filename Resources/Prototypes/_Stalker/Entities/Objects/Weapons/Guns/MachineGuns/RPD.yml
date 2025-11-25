@@ -11,10 +11,10 @@
     sprite: _Stalker/Objects/Weapons/Guns/MachineGuns/rpd.rsi
     equipDelay: 4
   - type: Gun
-    fireRate: 12
-    minAngle: 100
-    maxAngle: 170
-    angleIncrease: 1
+    fireRate: 9
+    minAngle: 48
+    maxAngle: 95
+    angleIncrease: 0.8
     angleDecay: 5
   - type: ItemSlots
     slots:
@@ -35,10 +35,12 @@
           tags:
           - STCartridge739
   - type: GunWieldBonus
-    minAngle: -70
-    maxAngle: -60
+    minAngle: -28
+    maxAngle: -77
   - type: PullDoAfter
     pullTime: 5
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.55
 
 - type: entity
   parent: STBaseWeaponMachineGunRPD

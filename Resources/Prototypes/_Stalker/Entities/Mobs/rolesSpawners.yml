@@ -116,7 +116,7 @@
       prototypes: [ FreedomGear ]
 
 - type: entity
-  name: кукла долговец (переименуй меня)
+  name: кукла Долговец (переименуй меня)
   suffix: Stalker, пешка с нашивкой
   parent: MobHuman
   id: MobStalkerDolg
@@ -144,6 +144,42 @@
       bandIcon: sci
     - type: Loadout
       prototypes: [ SciGear ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
+  name: кукла декан (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci_decan
+  components:
+    - type: Access
+      tags:
+        - Sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_decan
+    - type: Loadout
+      prototypes: [ SciGear2 ]
+    - type: NpcFactionMember
+      factions:
+      - Sci
+
+- type: entity
+  name: кукла ректор (переименуй меня)
+  suffix: Stalker, пешка с нашивкой
+  parent: MobHuman
+  id: MobStalkerSci_rector
+  components:
+    - type: Access
+      tags:
+        - sci
+    - type: Bands
+      band: Stalker
+      bandIcon: sci_rector
+    - type: Loadout
+      prototypes: [ SciGear3 ]
     - type: NpcFactionMember
       factions:
       - Sci
@@ -394,8 +430,6 @@
     - type: Thirst
       baseDecayRate: 0
     - type: PersonalDamageBlock
-    - type: Damageable
-      damageModifierSet: STPlayerMonolithModifierSet
 
 - type: entity
   name: кукла СБУ (переименуй меня)

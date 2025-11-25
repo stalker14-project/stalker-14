@@ -119,7 +119,7 @@
     STWeaponSMGPP1901: 750
 
     #7.62x25
-    WeaponPistolStalkerTT: 125
+    WeaponPistolStalkerTT: 50
     STWeaponSMGPPSh41: 600
 
     #9x39
@@ -130,7 +130,7 @@
     STWeaponRevolverRugerRedhawk: 150
     STWeaponRevolverSWPC325TR: 425
     STWeaponRevolverChiappaRhino60DS: 450
-    STWeaponRevolverSWModel325: 550
+    STWeaponRevolverSWModel325: 500
     STWeaponRevolverSWModel625: 725
 
     #values
@@ -164,22 +164,14 @@
             # Melee
         StalkerBallBat: 70
             # Guns
-          # 7mm
-        STWeaponShotgunTOZ34: 100 # T2
-        STWeaponShotgunMP133: 500 # T1.5
-        STWeaponShotgunMossbergM88: 700 # T2
-        STWeaponShotgunMP153: 1000
+        # 7mm
         STWeaponShotgunSPAS: 4000 # T3
-          # 5,45x39
-        STWeaponRifleSaiga545: 1400
-        STWeaponRifleAKS74U: 3000
-        STWeaponRifleAKS74: 6000
-        STWeaponRifleL85: 4000
         # Smg
-        STWeaponSMGMP5: 2250
-        STWeaponSMGPP91: 3000
-        STWeaponSMGStalkerCP2Veresk: 5000
+        STWeaponSMGMP5: 2500
+        STWeaponSMGPP91: 2000
+        STWeaponSMGStalkerCP2Veresk: 4000
         # Other
+        STWeaponRifleSaiga739: 1400
         WeaponPistolStalkerTT: 250
         WeaponPistolStalkerAPS: 500
         STWeaponRevolverSWPC325TR: 1000
@@ -188,12 +180,6 @@
     - name: shop-category-magazines
       priority: 2
       items:
-          # 5,45x39
-        Base545Mag10: 50 #T1
-        545Mag20: 400 #T2
-        545Mag30: 700
-        556Mag20: 400
-        556Mag30: 700
           # Smg
         BaseMP5Mag: 200
         PP91Mag: 300
@@ -219,16 +205,20 @@
         919PSOGJBox: 65
         919PSTBox: 400
         919RIPBox: 200
-        919PBMBox: 1500
+        919PBMBox: 1000
+        # 5.56
+        556FMJBox: 700
+        556M855Box: 1500
+        556WarmagBox: 300
         # 5.45
-        545FMJBox: 1000
+        545FMJBox: 700
         545HPBox: 200
-        545PCBox: 2400
+        545PCBox: 1500
          # .45
         45ACPLFMJBox: 100
         45ACPMFMJBox: 450
         45ACPRIPBox: 300
-        45ACPAPBox: 1500
+        45ACPAPBox: 1000
 
     - name: shop-category-armor
       priority: 4
@@ -243,6 +233,9 @@
         ClothingOuterArmorZaryaStalkerModifedType2: 2000
         ClothingOuterArmorZaryaStalkerModifedType1: 3500
         ClothingOuterArmorZaryaHunter: 2000
+        ClothingHeadHelmetVityaz1C: 3500
+        ClothingOuterArmorAborigineStalker: 6000
+        ClothingOuterArmorStalker: 7500
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -274,6 +267,7 @@
     - name: shop-category-utilities
       priority: 8
       items:
+        ToolkitTearOne: 35000
         CraftSaw: 20000
         STCombatKnife: 25
         BoxZiptie: 50

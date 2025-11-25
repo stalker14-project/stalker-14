@@ -1,0 +1,59 @@
+- type: job
+  id: StalkerGuide
+  name: job-guide
+  icon: guide
+  description: job-stalker-desc
+  playTimeTracker: JobGuide
+  whitelisted: true
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+      - Gingerbread
+      - HumanFat
+    # Обнулил требования, так как люди не могут зайти за сталкера когда их турнули
+    # c ГП. И по сути не могут играть вообще. Я хз как это сделать лучше, но то что есть сейчас
+    # не даёт людям вообще играть.
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAdvanced
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerBrigands
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerOfficials
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerReligius
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAnomalists
+    #   time: 1
+    #   inverted: true
+  startingGear: StalkerGear
+  supervisors: job-stalker-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Stalker
+          - Guide
+      - type: Bands
+        band: Stalker
+        bandIcon: guide
+        bandProto: STStalkerBand
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+      - type: STAnomalyTipsViewing

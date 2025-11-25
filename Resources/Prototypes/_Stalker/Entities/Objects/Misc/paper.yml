@@ -6,9 +6,12 @@
   suffix: Stalker
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Misc/paper.rsi
+    sprite: _Stalker/Objects/Misc/bloody_paper.rsi
     layers:
     - state: bloody_paper
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
   - type: PaperVisuals
     backgroundImagePath: "/Textures/_Stalker/Interface/Paper/paper_background_default.svg.96dpi.png"
 
@@ -20,8 +23,11 @@
   suffix: Stalker
   components:
   - type: Sprite
-    sprite: _Stalker/Objects/Misc/paper.rsi
+    sprite: _Stalker/Objects/Misc/old_paper.rsi
     layers:
     - state: paper
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
   - type: PaperVisuals
     backgroundImagePath: "/Textures/_Stalker/Interface/Paper/paper_background.svg.96dpi.png"

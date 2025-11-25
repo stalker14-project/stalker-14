@@ -1,0 +1,33 @@
+- type: constructionGraph
+  id: ChairCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: STchairCraftEnd
+      steps:
+      - tag: FurnitureStalker
+        icon:
+          sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb2
+        doAfter: 15
+        name: набор для сборки мебели
+  - node: STchairCraftEnd
+    entity: STchairCraftable
+
+- type: constructionGraph
+  id: TableCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: STTableCraftEnd
+      steps:
+      - tag: FurnitureStalker
+        icon:
+          sprite: _Stalker/Structures/Furniture/carton_box.rsi
+          state: kb2
+        doAfter: 15
+        name: набор для сборки мебели
+  - node: STTableCraftEnd
+    entity: STTableCraftable

@@ -57,7 +57,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_heavy_monolit.rsi
 
 - type: entity
-  parent: STClothingOuterArmorHeavyPlateVestBase
+  parent: STClothingOuterArmorVeryHeavy
   id: STClothingOuterArmorLightPlateVestBaseHeavyBandit
   name: Бандитский Бронежилет «Цитадель»
   description: Стыренный и перекрашенный мусорской тяжёлый бронежилет V типа, обеспечивающий достойную защиту от большинства видов повреждений.
@@ -78,7 +78,17 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_armor_jaba.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/heavy_armor_jaba.rsi
-
+  - type: Armor
+    armorClass: 4
+    modifiers:
+      flatReductions:
+        Blunt: 2
+        Slash: 2
+        Piercing: 6
+      coefficients:
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.75
 # UNTAR
 
 - type: entity

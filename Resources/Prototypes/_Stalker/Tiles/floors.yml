@@ -4,7 +4,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -17,7 +16,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker1.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -30,7 +28,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker2.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -43,7 +40,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker3.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -56,7 +52,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker4.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -69,7 +64,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker5.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -82,7 +76,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker6.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -95,7 +88,6 @@
   sprite: /Textures/_Stalker/Tiles/plates.rsi/floor_stalker7.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 10000
@@ -108,7 +100,6 @@
   sprite: /Textures/_Stalker/Tiles/wood.rsi/birch.png
   baseTurf: Plating
   isSubfloor: false
-  canCrowbar: false
   footstepSounds:
     collection: STFootstepWood
   heatCapacity: 1000
@@ -119,7 +110,6 @@
 - type: tile
   id: STFloorCaveDrought
   name: tiles-cave-drought
-  suffix: ST
   parent: FloorCaveDrought
   sprite: /Textures/_Stalker/Tiles/cavedrought.png
   footstepSounds:
@@ -133,7 +123,6 @@
   id: STFloorDirt
   parent: FloorDirt
   name: tiles-dirt-floor
-  suffix: STs
   sprite: /Textures/_Stalker/Tiles/dirt.png
   footstepSounds:
     collection: STFootstepDirt
@@ -146,7 +135,6 @@
   id: STFloorBrokenWood
   parent: FloorBrokenWood
   name: tiles-wood3
-  suffix: ST
   sprite: /Textures/_Stalker/Tiles/wood_broken.png
   baseTurf: STFloorPlanetDirt
   isSubfloor: false
@@ -158,8 +146,7 @@
 
 - type: tile
   id: STFloorWood
-  panrent: FloorWood
-  suffix: ST
+  parent: FloorWood
   name: tiles-wood
   sprite: /Textures/_Stalker/Tiles/wood.png
   variants: 4

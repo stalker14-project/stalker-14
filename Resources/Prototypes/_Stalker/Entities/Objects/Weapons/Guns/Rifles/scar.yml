@@ -2,6 +2,7 @@
   abstract: true
   parent: STBaseWeaponRifle
   id: STBaseWeaponRifleSCARH
+  suffix: ST
   components:
   - type: STWeight
     self: 3.5
@@ -12,14 +13,14 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Guns/Rifles/scar.rsi
   - type: Gun
-    fireRate: 6
+    fireRate: 6.5
     soundGunshot:
       path: /Audio/_Stalker/Effects/Guns/scar.ogg
       params:
         volume: -2
     minAngle: 50
-    maxAngle: 125
-    angleIncrease: 5.5
+    maxAngle: 110
+    angleIncrease: 1.2
     shotsPerBurst: 3
     ShotsPerBurstModified: 3
     selectedMode: FullAuto
@@ -27,7 +28,7 @@
     - Burst
     - SemiAuto
     - FullAuto
-    angleDecay: 27.5
+    angleDecay: 9.5
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -58,6 +59,10 @@
         whitelist:
           tags:
           - STCartridge751
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.9
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.2
 
 - type: entity
   parent: STBaseWeaponRifleSCARH
@@ -82,12 +87,13 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 5
   - type: STWeaponAccuracy
-    accuracyMultiplier: 0.8
+    accuracyMultiplier: 1.5
 
 - type: entity
   parent: STBaseWeaponRifleSCARH
   id: STWeaponRifleARX160
   name: beretta ARX-160
+  suffix: ST, Кастомка
   description: Italian assault rifle from 'Soldier of the Future' program. Appeared in the Zone via private military companies. Lighter but less powerful than SCAR.
   components:
   - type: Clothing

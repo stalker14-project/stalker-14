@@ -45,13 +45,6 @@
       actionId: ActionPsyonicsDizzyMutant
     - type: Psyonics
       psy: 1000000
-    - type: PsyonicsActionDizzy
-      cost: 0
-      duration: 3
-      actionId: ActionPsyonicsDizzyMutant
-      damage:
-        types:
-          Psy: 26
     - type: PsyonicsShieldVisuals
       sprite: _Stalker/Effects/psyonic_shield.rsi
       state: Standing
@@ -97,7 +90,7 @@
       prototypes:
         - MutantPsidogCopy
       chance: 1
-      intervalSeconds: 2
+      intervalSeconds: 4
       minimumEntitiesSpawned: 1
       maximumEntitiesSpawned: 2
 

@@ -1,0 +1,105 @@
+- type: entity
+  id: STDolgDetectionStalkerTrigger
+  parent: MarkerBase
+  name: Долг Детекшн Сталкеров
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Sprite
+      layers:
+        - state: blue
+    - type: Physics
+      bodyType: Static
+      canCollide: true
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 4
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: STNoticeOnCollide
+      soundEnter:
+        path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Duty_warning1.ogg
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Stalker"], ["Neutral"]]
+
+- type: entity
+  id: STDolgDetectionEnemyTrigger
+  parent: STDolgDetectionStalkerTrigger
+  name: Долг Детекшн Врагов
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 7
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: STNoticeOnCollide
+      soundEnter:
+        path: /Audio/_Stalker/SoundTriggers/bands/Detect/Dolg/Megaphone_duty_alarm.ogg
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Monolith"], ["Freedom"], ["Renegat"], ["Military"], ["MilitaryStalker"], ["Bandit"]]
+
+- type: entity
+  id: STSciDetectStalkerTrigger
+  parent: STDolgDetectionStalkerTrigger
+  name: Учёные Детекшн Сталкеров
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 3
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideSciDetectStalker
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Stalker"], ["Neutral"]]
+
+- type: entity
+  id: STOKSOPDetectionEnemyTrigger
+  parent: STDolgDetectionStalkerTrigger
+  name: ОКСОП Детекшн Врагов
+  description: Make a Sound and Text.
+  suffix: Stalker SoundsTriggers
+  components:
+    - type: Fixtures
+      fixtures:
+        trigger:
+          shape:
+            !type:PhysShapeCircle
+            radius: 7
+          hard: false
+          mask:
+            - MobMask
+          layer:
+            - MidImpassable
+    - type: STNoticeOnCollide
+      soundEnter:
+        collection: StartCollideOksopDetection
+      cooldownTime: 180
+    - type: AccessReader
+      access: [["Freedom"], ["Renegat"], ["Stalker"], ["Neutral"], ["Bandit"], ["Dolg"]]

@@ -1,0 +1,78 @@
+- type: job
+  id: StalkerEcologist
+  name: job-ecologist
+  icon: ecologistred
+  description: job-scientist-desc
+  playTimeTracker: JobEcologist
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobEcologist
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: SciGear
+  supervisors: job-scientist-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        groups:
+          - Sci
+      - type: Bands
+        band: Stalker
+        bandIcon: ecologistred
+        bandProto: STSciBand
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+      - type: NpcFactionMember
+        factions:
+        - Sci
+
+- type: job
+  id: StalkerHeadEcologist
+  name: job-head-ecologist
+  icon: ecologistred
+  description: job-head-scientist-desc
+  playTimeTracker: JobHeadEcologist
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobHeadEcologist
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: SciGear
+  supervisors: job-scientist-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+        - type: Access
+          groups:
+            - SciHead
+        - type: Bands
+          band: Stalker
+          bandIcon: ecologistred
+          bandProto: STSciBand
+          bandRankId: 2
+        - type: BlockTackingHolyItems
+        - type: TeethPull
+          teethProto: ToothStalker
+          pullingItemTag: PliersStalker
+          teethCount: 3
+          initialTeeth: 3
+        - type: NpcFactionMember
+          factions:
+          - Sci
+

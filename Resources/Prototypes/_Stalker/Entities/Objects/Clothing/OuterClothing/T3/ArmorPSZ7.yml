@@ -63,6 +63,20 @@
 
 - type: entity
   parent: STClothingOuterArmorLightPlateVestBasePSZ7
+  id: STClothingOuterArmorLightPlateVestBasePSZ7Zavet
+  name: ПСЗ-7 завета
+  suffix: ST, T3, PvP
+  description: Армейский бронежилет серии ПСЗ-7 Завета, ничем не отличается от базового, кроме расцветки
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz7_zavet.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/outerClothing/psz7_zavet.rsi
+  - type: STWeight
+    self: 6
+
+- type: entity
+  parent: STClothingOuterArmorLightPlateVestBasePSZ7
   id: STClothingOuterArmorLightPlateVestBasePSZ7rene
   name: ПСЗ-7 'Клык'
   suffix: ST, T3, PvP

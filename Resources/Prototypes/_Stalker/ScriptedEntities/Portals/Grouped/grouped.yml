@@ -357,3 +357,31 @@
       cooldownTime: 5
       godmodeCooldown: 5
       time: 5
+
+- type: entity
+  parent: GroupedTeleportBase
+  id: EnterLohinaOneside
+  name: Вход на Лощину
+  components:
+  - type: GroupTeleport
+    group: "EnterLohina"
+    targetGroup: "EnterLohinaOneside"
+    allowAll: true
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+    time: 5
+
+- type: entity
+  parent: GroupedTeleportUncollideBase
+  id: EnterLohinaOnesideUncollide
+  name: Выход из Лощины Uncollide
+  components:
+  - type: GroupTeleport
+    group: "EnterLohinaOneside"
+    targetGroup: "EnterLohina"
+    allowAll: false
+    cooldownEnabled: true
+    cooldownTime: 5
+    godmodeCooldown: 5
+    time: 5

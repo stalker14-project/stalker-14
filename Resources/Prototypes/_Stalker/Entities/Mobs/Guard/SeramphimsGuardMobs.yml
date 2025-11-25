@@ -1,0 +1,251 @@
+- type: entity
+  name: Патрульный Серафимов
+  parent: MobHostileGuardPatrool
+  id: MobSeraphimsGuardLite
+  description: Патрульный Серафимов, приносит божью волю свинцом.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Seraphims
+  - type: Bands
+    bandIcon: seraphim
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/919.ogg
+    fireRate: 5
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 15
+    maxAngle: 70
+    angleIncrease: 1
+    angleDecay: 15
+    availableModes:
+    - FullAuto
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet919PST
+    fireCost: 5
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Lite.rsi
+
+- type: entity
+  name: Патрульный Серафимов
+  parent: MobHostileGuardPatrool
+  id: MobSeraphimsGuardMedium
+  description: Патрульный Серафимов, приносит божью волю свинцом.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Seraphims
+  - type: Bands
+    bandIcon: seraphim
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 5
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 15
+    maxAngle: 70
+    angleIncrease: 1
+    angleDecay: 15
+    availableModes:
+    - FullAuto
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet919PST
+    fireCost: 5
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Medium.rsi
+
+- type: entity
+  name: Патрульный Серафимов
+  parent: MobHostileGuardPatrool
+  id: MobSeraphimsGuardHeavy
+  description: Патрульный Серафимов, приносит божью волю свинцом.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Seraphims
+  - type: Bands
+    bandIcon: seraphim
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 5
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 15
+    maxAngle: 70
+    angleIncrease: 1
+    angleDecay: 15
+    availableModes:
+    - FullAuto
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet919PST
+    fireCost: 5
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Heavy.rsi
+
+- type: entity
+  name: Охранник серафимов
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobSeraphimSecurityLite
+  description: Охранник Серафимов, приносит божью волю свинцом.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Seraphims
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Lite.rsi
+  - type: Bands
+    bandIcon: seraphim
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/919.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1
+
+- type: entity
+  name: Охранник серафимов
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobSeraphimSecurityMedium
+  description: Охранник Серафимов, приносит божью волю свинцом.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Seraphims
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Medium.rsi
+  - type: Bands
+    bandIcon: seraphim
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1
+
+- type: entity
+  name: Охранник серафимов
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobSeraphimSecurityHeavy
+  description: Охранник Серафимов, приносит божью волю свинцом.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Seraphims
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Heavy.rsi
+  - type: Bands
+    bandIcon: seraphim
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_ak74u_shot.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1

@@ -5,6 +5,8 @@
   abstract: true
   suffix: ST, Cache, T1
   components:
+    - type: Transform
+      anchored: true
     - type: InteractionOutline
     - type: StorageFill
       contents:
@@ -58,24 +60,6 @@
           prob: 0.01
         - id: HandheldGPSBasic
           prob: 0.01
-        - id: BoxArtcont
-          prob: 0.005
-        - id: STFlashlightSeclite
-          prob: 0.01
-        - id: STHeadLight
-          prob: 0.01
-        - id: PowerCellHyper
-          prob: 0.02
-        - id: CheapLighter
-          prob: 0.01
-        - id: Matchbox
-          prob: 0.01
-        - id: CigPackMarlboro
-          prob: 0.005
-        - id: CigPackSuka
-          prob: 0.005
-        - id: CigPackKosmos
-          prob: 0.005
         - id: IngotGold1
           prob: 0.01
         - id: IngotSilver1

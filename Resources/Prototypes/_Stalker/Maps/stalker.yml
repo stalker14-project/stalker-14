@@ -1,8 +1,7 @@
-
 - type: gameMap
   id: STWorld
   mapName: 'StalkerMap'
-  mapPath: "/Maps/_ST/World/KordonV147.yml"
+  mapPath: "/Maps/_ST/World/KordonV166.yml"
   minPlayers: 0
   stations:
     Stalker:
@@ -11,54 +10,31 @@
         - type: StationNameSetup
           mapNameTemplate: "Кордон"
         - type: StationJobs
-          overflowJobs:
-            - Stalker
           availableJobs:
             Stalker: [ 0, -1 ]
-            StalkerRene: [ 0, -1 ]
-            StalkerGreh: [ 0, -1 ]
-            StalkerMonolith: [ 0, -1 ]
-            StalkerClearSky: [ 0, -1 ]
-            StalkerNeutral: [ 0, -1 ]
+            StalkerVeteran: [ 0, -1 ]
+            StalkerGuide: [ 0, -1 ]
             # Seraphim
             Seraphim: [ 0, -1 ]
             SeraphimHead: [ 0, -1]
+            SeraphimCherubim: [ 0, -1]
             # Science
-            StalkerScientist: [ 0, -1 ]
-            StalkerHeadScientist: [ 0, -1 ]
+            Sci: [ 0, -1 ]
+            Sci_decan: [ 0, -1 ]
+            Sci_rector: [ 0, -1 ]
             # Military
             Military: [ 0, -1 ]
             MilitaryOfficer: [ 0, -1 ]
             MilitaryHead: [ 0, -1 ]
-            MilitaryStalker: [ 0, -1 ]
-            # Freedom
-            StalkerFreedom: [ 0, -1 ]
-            StalkerHeadFreedom: [ 0, -1 ]
+            # Duty
+            StalkerDolg: [ 0, -1 ]
+            StalkerHeadDolg: [ 0, -1 ]
             # Brigades
             StalkerBandit: [ 0, -1 ]
             StalkerHeadBandit: [0, -1]
-            StalkerJaba: [ 0, -1 ]
-            StalkerJabaAce: [ 0, -1 ]
-            # Avangard
-            StalkerDolg: [ 0, -1 ]
-            StalkerHeadDolg: [ 0, -1 ]
-            # journalists
-            StalkerJournalist: [ 0, -1 ]
-            # Mercenary
-            StalkerMercenary: [ 0, -1 ]
-            StalkerHeadMercenary: [ 0, -1 ]
-            # Militia
-            StalkerMilitia: [ 0, -1 ]
-            StalkerMilitiaCommander: [ 0, -1 ]
-            # Evolver
-            Evolver: [0, -1]
-            EvolverPackFang: [0, -1]
-            EvolverPackAlpha: [0, -1]
-            EvolverSymbioteMedium: [0, -1]
-            EvolverSymbioteArchon: [0, -1]
-            # Anomalists
-            StalkerAnomalist: [0, -1]
-            StalkerAnomalistGuardian: [0, -1]
-            # Project
-            StalkerProjectOrchestrator: [ 0, -1 ]
-            StalkerProjectPawn: [ 0, -1 ]
+            # Zavet
+            StalkerZavet: [ 0, -1 ]
+            StalkerZavetHead: [ 0, -1 ]
+            #Freedom
+            StalkerFreedom: [ 0, -1 ]
+            StalkerHeadFreedom: [ 0, -1 ]

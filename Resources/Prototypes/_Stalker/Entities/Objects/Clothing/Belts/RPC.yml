@@ -284,6 +284,27 @@
 
 - type: entity
   parent: ClothingBeltStorageStalkerBase
+  id: ClothingBeltWebbingHolsterLoner
+  name: поясная сумка с кобурой наёмного сталкера
+  description: Поясной сумка из комплекта наёмного сталкера с пистолетной кобурой.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 3
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 3,0,8,3
+        - 0,1,0,1
+        - 0,0,1,0
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_loner_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_merc_loner_holster.rsi
+
+- type: entity
+  parent: ClothingBeltStorageStalkerBase
   id: ClothingBeltWebbingHolsterDolgPS5M
   name: поясная сумка с кобурой ПС5-М «Универсальная защита»
   description: Поясной сумка из комплекта ПС5-М «Универсальная защита» с пистолетной кобурой.
@@ -368,3 +389,39 @@
       damage:
         types:
           Radiation: 4.5
+
+- type: entity
+  parent: ClothingBeltTarzanBlack
+  id: ClothingBeltTarzanDeserter
+  name: РПС "Тарзан" Отступников
+  description: Очень полезная РПС для переноски любых вещей, от рации до магазинов.
+  suffix: ST
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/belt/tarzan_deserter.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/belt/tarzan_deserter.rsi
+
+- type: entity
+  parent: ClothingBeltTarzanBlack
+  id: ClothingBeltWebbingDeserter
+  name: поясная сумка с кобурой отступников
+  description: Набор подсумков и поясная сумка с пистолетной кобурой, окрашены в чёрно-серые цвета.
+  suffix: ST
+  components:
+    - type: STWeight
+      self: 4
+    - type: Storage
+      maxItemsize: Large
+      grid:
+        - 4,0,9,3
+        - 0,1,0,1
+        - 0,0,1,0
+        - 0,4,0,2
+        - 1,0,0,2
+        - 2,2,2,2
+    - type: Sprite
+      sprite: _Stalker/Objects/Clothing/belt/belt_deserter_holster.rsi
+      state: icon
+    - type: Clothing
+      sprite: _Stalker/Objects/Clothing/belt/belt_deserter_holster.rsi

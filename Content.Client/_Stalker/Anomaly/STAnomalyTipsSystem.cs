@@ -7,8 +7,10 @@ namespace Content.Client._Stalker.Anomaly;
 
 public sealed class STAnomalyTipsSystem : EntitySystem
 {
-    [Dependency] private readonly IOverlayManager _overlay = default!;
+    [Dependency] private readonly IOverlayManager _overlayMan = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
+
+    private STAnomalyTipsOverlay? _overlay;
 
     public override void Initialize()
     {
@@ -16,8 +18,8 @@ public sealed class STAnomalyTipsSystem : EntitySystem
 
         SubscribeLocalEvent<STAnomalyTipsViewingComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<STAnomalyTipsViewingComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<STAnomalyTipsViewingComponent, PlayerAttachedEvent>(OnAttached);
-        SubscribeLocalEvent<STAnomalyTipsViewingComponent, PlayerDetachedEvent>(OnDetached);
+        SubscribeLocalEvent<STAnomalyTipsViewingComponent, LocalPlayerAttachedEvent>(OnAttached);
+        SubscribeLocalEvent<STAnomalyTipsViewingComponent, LocalPlayerDetachedEvent>(OnDetached);
     }
 
     private void OnInit(Entity<STAnomalyTipsViewingComponent> entity, ref ComponentInit args)
@@ -28,7 +30,7 @@ public sealed class STAnomalyTipsSystem : EntitySystem
         if (_player.LocalEntity != entity)
             return;
 
-        _overlay.AddOverlay(new STAnomalyTipsOverlay());
+        AddOverlay();
     }
 
     private void OnShutdown(Entity<STAnomalyTipsViewingComponent> entity, ref ComponentShutdown args)
@@ -39,28 +41,40 @@ public sealed class STAnomalyTipsSystem : EntitySystem
         if (_player.LocalEntity != entity)
             return;
 
-        _overlay.RemoveOverlay(new STAnomalyTipsOverlay());
+        RemoveOverlay();
     }
 
-    private void OnAttached(Entity<STAnomalyTipsViewingComponent> entity, ref PlayerAttachedEvent args)
+    private void OnAttached(Entity<STAnomalyTipsViewingComponent> entity, ref LocalPlayerAttachedEvent args)
     {
-        if (_player.LocalEntity is null)
-            return;
-
-        if (_player.LocalEntity != entity)
-            return;
-
-        _overlay.AddOverlay(new STAnomalyTipsOverlay());
+        AddOverlay();
     }
 
-    private void OnDetached(Entity<STAnomalyTipsViewingComponent> entity, ref PlayerDetachedEvent args)
+    private void OnDetached(Entity<STAnomalyTipsViewingComponent> entity, ref LocalPlayerDetachedEvent args)
     {
-        if (_player.LocalEntity is null)
+        RemoveOverlay();
+    }
+
+    private void AddOverlay()
+    {
+        if (_overlay != null)
             return;
 
-        if (_player.LocalEntity != entity)
+        _overlay = new STAnomalyTipsOverlay();
+        _overlayMan.AddOverlay(_overlay);
+    }
+
+    private void RemoveOverlay()
+    {
+        if (_overlay == null)
             return;
 
-        _overlay.RemoveOverlay(new STAnomalyTipsOverlay());
+        _overlayMan.RemoveOverlay(_overlay);
+        _overlay = null;
+    }
+
+    public override void Shutdown()
+    {
+        base.Shutdown();
+        _overlayMan.RemoveOverlay<STAnomalyTipsOverlay>();
     }
 }

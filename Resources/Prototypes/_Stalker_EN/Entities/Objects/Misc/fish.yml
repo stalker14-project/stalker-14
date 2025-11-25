@@ -1,0 +1,459 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: STBaseFish
+  name: Fish
+  suffix: Stalker, Fish
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/fish.rsi
+  - type: RandomMetadata
+    descriptionSegments: [ STFishSize ]
+  - type: Food
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: RepositoryItem
+    categoryName: repository-misc-category
+
+# 32x32 normal
+- type: entity
+  parent: STBaseFish
+  id: STFishBitterling
+  components:
+  - type: Sprite
+    state: bitterling
+    scale: 0.5,0.5
+  - type: STWeight
+    self: 0.05
+  - type: Item
+    size: Tiny
+    shape: # shape is probably redundant
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 1
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 1
+      prob: 0.1
+
+- type: entity
+  parent: STBaseFish
+  id: STFishBleak
+  components:
+  - type: Sprite
+    state: bleak
+    scale: 0.5,0.5
+  - type: STWeight
+    self: 0.05
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 1
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 1
+      prob: 0.2
+
+- type: entity
+  parent: STBaseFish
+  id: STFishBream
+  components:
+  - type: Sprite
+    state: bream
+    scale: 0.9,0.9
+  - type: STWeight
+    self: 1.0
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 4
+        - ReagentId: Nutriment
+          Quantity: 3
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      Amount: 1
+
+- type: entity
+  parent: STBaseFish
+  id: STFishCarp
+  components:
+  - type: Sprite
+    state: carp
+  - type: STWeight
+    self: 5.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 1
+
+- type: entity
+  parent: STBaseFish
+  id: STFishEel
+  components:
+  - type: Sprite
+    state: eel
+  - type: STWeight
+    self: 2.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,0
+    - 0,1,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTEelRaw
+      maxAmount: 3
+      prob: 0.8
+
+- type: entity
+  parent: STBaseFish
+  id: STFishPerch
+  components:
+  - type: Sprite
+    state: perch
+    scale: 0.7,0.7
+  - type: STWeight
+    self: 0.05
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 1
+      prob: 0.25
+
+- type: entity
+  parent: STBaseFish
+  id: STFishPike
+  components:
+  - type: Sprite
+    state: pike
+  - type: STWeight
+    self: 4.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 3
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      Amount: 1
+
+- type: entity
+  parent: STBaseFish
+  id: STFishSturgeon
+  components:
+  - type: Sprite
+    state: sturgeon
+  - type: STWeight
+    self: 7.5
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 3
+
+- type: entity
+  parent: STBaseFish
+  id: STFishSunbleak
+  components:
+  - type: Sprite
+    state: sunbleak
+  - type: STWeight
+    self: 0.05
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 1
+        - ReagentId: Nutriment
+          Quantity: 1
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 1
+      prob: 0.1
+
+- type: entity
+  parent: STBaseFish
+  id: STFishTench
+  components:
+  - type: Sprite
+    state: tench
+  - type: STWeight
+    self: 5.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 8
+        - ReagentId: Nutriment
+          Quantity: 2
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      Amount: 1
+
+- type: entity
+  parent: STBaseFish
+  id: STFishTrout
+  components:
+  - type: Sprite
+    state: trout
+  - type: STWeight
+    self: 5.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishSteakRaw
+      maxAmount: 2
+
+# 32x32 anomalous
+# some of this is gonna need to be adjusted probably
+- type: entity
+  parent: STBaseFish
+  id: STFishGoldfish
+  components:
+  - type: Sprite
+    state: special_goldfish
+    scale: 0.6,0.6
+  - type: STWeight
+    self: 10.0 # gold is heavy...
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: FlavorProfile
+    flavors:
+    - metallic
+  - type: Butcherable
+    spawned:
+    - id: IngotGold1
+      Amount: 1
+      prob: 0.35
+    - id: GoldRing
+      Amount: 1
+      prob: 0.2
+    - id: ZoneArtifactGoldfish
+      Amount: 1
+      prob: 0.01
+
+- type: entity
+  parent: STBaseFish
+  id: STFishLuminantGudgeon
+  components:
+  - type: Sprite
+    state: special_luminantgudgeon
+  - type: STWeight
+    self: 1.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: MRadin
+          Quantity: 10
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      Amount: 1
+  - type: PointLight
+    radius: 1.5
+    energy: 1.5
+    color: "#B8FFE5"
+    castShadows: false
+
+- type: entity
+  parent: STBaseFish
+  id: STFishSwiftLurker
+  components:
+  - type: Sprite
+    state: special_swiftlurker
+  - type: STWeight
+    self: -1.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishSteakRaw
+      Amount: 1
+    - id: ZoneArtifactVyvert
+      maxAmount: 1
+      prob: 0.25
+
+- type: entity
+  parent: STBaseFish
+  id: STFishDenseTench
+  components:
+  - type: Sprite
+    state: tench
+  - type: STWeight
+    self: 30.0
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 25
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishFilletRaw
+      maxAmount: 10
+
+# 64x64 normal
+- type: entity
+  parent: BaseItem
+  id: STFishCatfish
+  suffix: Stalker, Fish
+  name: Fish
+  description: That thing is huge!
+  components:
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/fish_big.rsi
+    state: catfish
+  - type: STWeight
+    self: 100.0
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,4,3
+  - type: MultiHandedItem
+  - type: Food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 30
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: MToxin
+          Quantity: 10
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSTFishSteakRaw
+      maxAmount: 5
+    - id: Corpse4Stalker
+      Amount: 1
+      prob: 0.25

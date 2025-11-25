@@ -41,80 +41,50 @@
     - name: shop-category-weapons
       priority: 1
       items:
-        ArmySaigaCrate: 5
-        LgbtKnife: 1
-        # STWeaponRevolverDanWesson715: 1
-        # STWeaponSniperSKS: 3
-        # STWeaponRifleAKS74U: 1
-        STWeaponRifleOC14: 14
-        # STWeaponRifleAK74M: 4
-        #STWeaponRifleStalkerAK74: 3
+        STWeaponRifleAKM: 3
+        STWeaponSniperSKS: 3
+        STWeaponSniperVepr: 16
+        STWeaponRifleOC14: 9
+        STWeaponRifleAK103: 18
     - name: shop-category-armor
       priority: 2
       items:
-        STClothingOuterArmorLightPlateVestBaseMilitary: 1
-        STClothingOuterArmorLightPlateVestBaseANAgreen: 2
         ClothingHeadHelmetSH68: 1
-        ClothingHeadHelmetBerill5MMilitary: 1
-        ClothingMaskGP7: 2
-        # STClothingOuterArmorRatnik: 20 T5 жирно для старта
-        # ClothingOuterArmorBulatMilitary: 20 T5 жирно для старта
+        STClothingOuterArmorLightPlateVestBaseMilitary: 2
+        STClothingOuterArmorLightPlateVestBasePSZ7v3: 4
+        ClothingHeadHelmetBerill5MMilitary: 4
+        ClothingHeadAssaultHelmetMilitary: 4
+        STClothingOuterArmorBerill5M: 18
     - name: shop-category-ammunition
       priority: 3
       items:
-        45ACPLFMJBox: 1
-        # 45ACPHydroshockBox: 3
-        754PCBox: 3
-        751M80Box: 1
-        751UNBox: 1
-        754HPBox: 1
-        739PCBox: 4
-        # 545BPBox: 3
-        # 545BPBox: 1 T4 Ammo
-        # 751M993Box: 2 T5 Ammo
-        # 754BTBox: 2 T5 Ammo
+        754FMJBoxCink: 4
     - name: shop-category-storage-and-containers
       priority: 4
       items:
-        ClothingBeltMedicalStalker: 1
-        ClothingBackpackTacticBlackStalker: 1
-        ClothingBackpackTacticGreenStalker: 1
-        ClothingBackpackDuffelHikingCommon: 2
-        ClothingBackpackDuffelOliveTacticStalker: 2
-        ClothingBackpackDuffelMilitaryOlive: 2
-        ClothingBeltBandolierStalker: 1
-        MedkitCMSStalker: 1
+        ClothingBackpackDuffelOliveTacticStalker: 4
+        ClothingBackpackDuffelMilitaryOlive: 4
     - name: shop-category-magazines
       priority: 5
       items:
-        751Mag20: 1
-        751Mag30: 2
-        754Mag10: 1
-        754Mag20: 2
-        # Magazine762x39RPD: 2
-        # 739Mag45: 2
+        545Mag45: 2
+        739Mag45: 2
+        754Mag10: 2
+        754Mag20: 4
     - name: shop-category-modules
       priority: 6
       items:
-        STModuleScopeRiflesT1Ru: 2
-        STModuleSniperSightT1: 2
-        STModuleScopeRiflesT2Ru: 3
-        STModuleSniperSightT2: 3
-        STModuleSilencerRiflesT2Ru: 3
+        STModuleScopeRiflesT1Ru: 1
+        STModuleSniperSightT1: 1
     - name: shop-category-grenades
       priority: 7
       items:
-        DG05SmokeGrenade: 2
-        RGD5Grenade: 2
-        GL1Grenade: 1
+        DG05SmokeGrenade: 1
+        RGD5Grenade: 1
     - name: shop-category-other
       priority: 8
       items:
-        CraftBag: 1
-        STspade: 1
-        Binocularus1: 1
         Defibrillator: 1
-        DoubleEmergencyOxygenTankStalkerFilled: 1
     - name: shop-category-paperwork
       priority: 9
       items:
@@ -131,7 +101,6 @@
     - name: shop-category-what
       priority: 1
       items:
-        SupplyTalons: 1111
         STSkinsKitMilitary: 500
         ClothingEyesGlassesCheapSunglasses: 30
         STClothingLegsJeansCz: 10
@@ -180,42 +149,89 @@
 - type: shopPreset
   id: MilitaryRoublesShopPresetHeavy
   itemsForSale:
-    TradeBox: 1
+    # Thermal group - 1
+    ZoneArtifactFireball: 540
+    ZoneArtifactEye: 810
+    ZoneArtifactFlame: 1620
+    # Thermal group - 2
+    ZoneArtifactCristall: 3240
+    ZoneArtifactLithosphere: 6480
+    # Electrical group - 1
+    ZoneArtifactSparkler: 540
+    ZoneArtifactBattery: 810
+    ZoneArtifactFlash: 1620
+    ArtMoon: 3240
+    ZoneArtifactTesla: 4860
+    ZoneArtifactIce: 6480
+    # Gravity group - 1
+    ArtMedusa: 540
+    ZoneArtifactFlower: 810
+    ZoneArtifactNightStar: 3240
+    # Gravity group - 2
+    ZoneArtifactVyvert: 540
+    ZoneArtifactAmoeba: 810
+    ZoneArtifactFloodlight: 810
+    ZoneArtifactGravi: 1620
+    ZoneArtifactGoldfish: 6480
+    ZoneArtifactSpring: 3600
+    ZoneArtifactFocus: 4860
+    ZoneArtifactStuntman: 6480
+    ZoneArtifactDistorter: 6480
+    ZoneArtifactSoul: 4860
+    # Food
+    FoodMeatDogCooked: 70
+    STFoodMeatSpiderCooked: 35
+    FoodMeatBoarCooked: 110
+
+    # Acidic group - 1
+    ZoneArtifactBlood: 1600
+    ZoneArtifactMeat: 3200
+    ZoneArtifactKolobok: 4800
+    # Acidic group - 2
+    ZoneArtifactPellicle: 535
+    ZoneArtifactBaloon: 4800
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 180 # T1
+    MutantPartSeasonedBoarHoof: 365 # T2
+    MutantPartOldBoarHoof: 545 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 120
+    MutantPartFleshEye: 270
+    FoodMeatSpiderLeg: 70
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 745
+    MutantPartPseudodogTail: 405
+    MutantPartSnorkFoot: 675
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 1015
+    MutantPartOraculeEye: 2160
+    MutantPartPseudogiantHeart: 5400
+    MutantPartZombieHand: 810
+
+    # Values
+    PremiumSupplyTalons: 1500
+    Dollar: 50
+    Goldcoins: 4725
   categories:
     - name: shop-category-weapons
       priority: 1
       items:
             # Guns
-          # 7mm
-        STWeaponShotgunMP133: 385 # T1.5
-        STWeaponShotgunMP153: 900 # T2
-        STWeaponShotgunSaiga12: 3150 # T4
-          # 5,45x39
-        STWeaponRifleAKS74U: 1490
+        STWeaponShotgunMP133: 340
+        STWeaponRifleAKS74U: 1100
         STWeaponRifleAKS74: 3000
-        STWeaponRifleAK74M: 4350
-        STWeaponMachineGunRPD: 9000
-        STWeaponSniperSVDS: 11000
-          # Smg
-        STWeaponSMGPP91: 750
-        STWeaponSMGPP19: 1700
-        STWeaponSMGPP1901: 1500
-          # Other
-        STWeaponRifleAK103: 5000
-        WeaponPistolStalkerPM: 100 #T1
-        WeaponPistolStalkerAPS: 500 #T2
-        WeaponPistolStalkerTT: 550
+        STWeaponRifleAKM: 4000
         STWeaponSniperMosin: 1000
-        STWeaponRifleAKM: 3000
-        STWeaponRifleASVAL: 15000
-        STWeaponSniperVSS: 12000
-        ArmyCrateNewStandart: 6000
-        ArmyCrateNewOfficer: 9000
-
+        STWeaponSniperSKS: 1300
     - name: shop-category-magazines
       priority: 2
       items:
-        Magazine762x39RPD: 1200
           # 7mm
         Base1270Mag: 100 #T1
         Saiga1270Mag10: 300
@@ -223,7 +239,7 @@
         Base545Mag10: 50 #T1
         545Mag20: 100 #T2
         545Mag30: 220 #T3
-        545Mag45: 300
+        545Mag45: 600
           # 7,62x54 and 39
         Base739Mag10: 100
         Base754Mag5: 250 #T1
@@ -240,34 +256,31 @@
     - name: shop-category-ammunition
       priority: 3
       items:
-        6mmBuckshotBox: 115
-        7mmBuckshotBox: 45
+        6mmBuckshotBox: 100
+        7mmBuckshotBox: 40
+        8mmBuckshotBox: 170
         # 7.25
-        725PBox: 85
-        725PTBox: 210
-        725PSTBox: 640
-        # 9.18
-        918PGJBox: 75
-        918PSTBox: 180
-        918PBMBox: 450
-        # 9x39 boxes
-        STBox9x39PSO: 250
-        STBox9x39SP6Uch: 50
-        STBox9x39SP5: 250
-        STBox9x39PAB9: 625
+        725PBox: 90
+        725LRNPCBox: 100
         # 9.19
-        919PSOGJBox: 75
-        919PSTBox: 180
-        919PBMBox: 450
+        919PSOGJBox: 80
+        919PSTBox: 250
+        919PBMBox: 500
+        919RIPBox: 200
+        918PGJBox: 80
+        918PSTBox: 250
+        918PBMBox: 500
+        918SP7Box: 200
         # 5.45
-        545FMJBox: 170
-        545HPBox: 640
-        545PCBox: 425
+        545FMJBox: 500
+        545HPBox: 100
+        545PCBox: 1300
+        545BPBox: 2400
         # 7.39
-        739FMJBox: 640
-        739HPBox: 835
+        739FMJBox: 1540
+        739HPBox: 400
         # 7.54
-        754FMJBox: 675
+        754FMJBox: 1675
         754HPBox: 1015
     - name: shop-category-armor
       priority: 4
@@ -275,17 +288,13 @@
           # Helmets #
         ClothingHeadHelmetSH68: 200 # T1 - PVP
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
-        ClothingHeadAssaultHelmetMilitary: 1200 # T3 - PVP
+        ClothingHeadAssaultHelmetMilitary: 3500 # T3 - PVP
         ClothingHeadHelmetBerill5MMilitary: 950 # T2 - PVP
-        ClothingHeadHelmetVityaz1C: 2000 # T3 - PVP
            # OuterClothing #
         STClothingOuterArmorLightPlateVestBaseMilitary: 750 # T2 - PvP
-        ClothingOuterArmor6B2: 1200 # T2 - PvP
-        ClothingOuterArmorMilitarySpark: 1750 # T2 - ENV
-        ClothingOuterArmorZaryaMilitary: 1750 # T2 - universal
-        STClothingOuterArmorLightPlateVestBaseANAgreen: 2250 # T3 - PVP
-        STClothingOuterArmorLightPlateVestBasePSZ7v3: 3000
-        STClothingOuterArmorLightPlateVestBasePSZ7v1: 3000
+        ClothingOuterArmor6B2: 1000 # T2 - PvP
+        ClothingOuterArmorMilitarySpark: 1350 # T2 - ENV
+        ClothingOuterArmorZaryaMilitary: 1350 # T2 - universal
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -324,6 +333,7 @@
     - name: shop-category-utilities
       priority: 8
       items:
+        PremiumSupplyTalons: 1500
         STCombatKnife: 25
         BoxZiptie: 50
         BoxSafebox: 300
@@ -363,8 +373,6 @@
       priority: 10
       items:
          # Cheap
-        PillDexalin: 10
-        PillDexalinPlusStalker: 25
         STOintment: 10
         STGauze: 15
         STBrutepack: 10
@@ -375,21 +383,8 @@
         psyblock: 200
         MedkitMilitary: 210
         Defibrillator: 700
-    - name: shop-category-modules
-      priority: 11
-      items:
-        STModuleScopeRiflesT1Ru: 600
-        STModuleScopeRiflesT1Nato: 600
-        STModuleSilencerRiflesT1Ru: 400
-        STModuleSilencerRiflesT1Nato: 400
-        STModuleShotgunChokeT1: 200
-        STModuleSMGGripT1: 600
-        STModuleSilencerSMGT1: 600
-        STModuleSniperSightT1: 600
-        STModuleSilencerSniperT1: 600
-        STModuleAutoSear: 600
     - name: shop-category-customization
-      priority: 12
+      priority: 11
       items:
         ClothingBandageStalkerRed: 5
         ClothingHeadHatBeaniehat: 10

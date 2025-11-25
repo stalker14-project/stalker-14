@@ -121,6 +121,9 @@
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/coat_hat_pahan.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 # Poisk
 - type: entity
@@ -213,6 +216,9 @@
     sprite: _Stalker/Objects/Clothing/hats/sh68_camouflage.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/hats/sh68_camouflage.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingCapeBase
@@ -251,6 +257,9 @@
     sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_serafim.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_serafim.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
 
 - type: entity
   parent: STClothingCapeBase
@@ -262,3 +271,30 @@
     sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/renegatcape.rsi
+
+- type: entity
+  parent: ClothingOuterCoatDoshdevik
+  id: STClothingOldRoadCape
+  name: Старый дорожный плащ
+  suffix: ST, T1, Скин
+  description: Поношеный плащ, защищающий от пыли и ветра.
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/cloak/oldroad.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/cloak/oldroad.rsi
+  - type: ToggleableClothing
+    clothingPrototype: STClothingHeadOldRoadHelmet
+  - type: Craftable
+
+- type: entity
+  parent: STClothingHeadHatBase
+  id: STClothingHeadOldRoadHelmet
+  name: капюшон старого дорожного плаща
+  noSpawn: true
+  description: Покрывает вашу голову
+  components:
+  - type: Sprite
+    sprite: _Stalker/Objects/Clothing/Head/Hats/oldroad.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Clothing/Head/Hats/oldroad.rsi

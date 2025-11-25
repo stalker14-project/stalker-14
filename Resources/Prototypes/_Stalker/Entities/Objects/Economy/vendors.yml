@@ -450,10 +450,10 @@
   id: MilitaryPSZInventoryOfficer
   startingInventory:
     ArmyAKMOfficerCrate: 2
-    Army739Crate: 3
-    Army739Mag30Crate: 3
     MilitaryPSZInventoryRestock: 6
     Screwdriver: 1
+    ClothingBandageStalkerSopOne: 20
+    ClothingBandageStalkerSopTwo: 20
 
 - type: entity
   parent: BaseItem
@@ -502,14 +502,13 @@
     ClothingOuterArmorSevaMonolith: 10
     MonolithCrateBasicTools: 10
     MonolithCrateMedkit: 10
-    STWeaponRifleStalkerAbakan: 10
     STWeaponRifleAKS74Green: 10
+    STWeaponRifleL85: 10
+    STWeaponRifleLR300v1: 10
     MonolithCrate545Mag30: 10
     MonolithCrate545PC: 10
-    STModuleSniperSightT2: 2
-    STWeaponSniperSVDS: 2
-    MonolithCrate754Mag10: 10
-    MonolithCrate754FMJ: 10
+    MonolithCrate556Mag30: 10
+    MonolithCrate556M855: 10
     MonolithInventoryRestock: 1
     Screwdriver: 1
 
@@ -530,3 +529,441 @@
     - type: Sprite
       sprite: _Stalker/Structures/Furniture/Sets/military-box.rsi
       state: icon
+
+########## СЕРАФИМЫ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineSeraphim
+  name: раздатчик серафимов
+  description: Содержит базовое снаряжение для выживания в условиях севера Зоны.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: SeraphimInventory
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+      normalState: normal-unshaded
+    - type: Sprite
+      sprite: Structures/Machines/VendingMachines/secdrobe.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+          shader: unshaded
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Seraphims"]]
+
+- type: vendingMachineInventory
+  id: SeraphimInventory
+  startingInventory:
+    STWeaponRifleAKS74USERAPH: 3
+    545Mag30: 18
+    MedkitAI2: 6
+    MedkitMilitary: 3
+    ClothingBackpackTacticSera: 3
+    ClothingHeadHelmetInfantrySera: 3
+    STClothingOuterArmorRassvetSera: 3
+    STGauze: 6
+    545PCBox: 9
+    545HPBox: 9
+
+
+#Отступы
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesDeserter
+  name: ящик с наборами снаряжения Отступников
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: DeserterComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Deserter"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: DeserterComplect
+  startingInventory:
+    DesertirCrate: 8
+
+###ОДИНОЧКИ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesVeteran
+  name: ящик с наборами снаряжения Сталкеров Ополченцев
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: VeteranComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Veteran"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: VeteranComplect
+  startingInventory:
+    VeteranCrate: 8
+
+#БАНДИТЫ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesBandit
+  name: ящик с наборами снаряжения Бандитов
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: BanditComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Bandit"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: BanditComplect
+  startingInventory:
+    BandityCrate: 8
+
+#СВОБОДА
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesFreedom
+  name: ящик с наборами снаряжения Наёмников
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: FreedomComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Freedom"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: FreedomComplect
+  startingInventory:
+    FreedomCrate: 8
+
+#ЗАВЕТ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesZavet
+  name: ящик с наборами снаряжения Завета
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: ZavetComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Covenant"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: ZavetComplect
+  startingInventory:
+    ZavetCrate: 8
+
+#СЕРАФИМЫ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesSerafim
+  name: ящик с наборами снаряжения Серафимов
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: SerafimComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Seraphims"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: SerafimComplect
+  startingInventory:
+    SefirotCrate: 8
+
+#ДОЛГ
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesDuty
+  name: ящик с наборами снаряжения Долга
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: DolgComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Dolg"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0
+
+- type: vendingMachineInventory
+  id: DolgComplect
+  startingInventory:
+    DutyCrate: 8
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBoxesMerc
+  name: ящик с наборами снаряжения Долга
+  description: Ящик, содержащий снаряжение внутри.
+  suffix: Stalker
+  components:
+    - type: VendingMachine
+      ejectDelay: 0.1
+      pack: DolgComplect
+      dispenseOnHitChance: 0.0
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+    - type: ApcPowerReceiver
+      needsPower: False
+    - type: Sprite
+      sprite: _Stalker/Objects/Decoration/military_green_box.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Dolg"]]
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape:
+            !type:PhysShapeAabb
+            bounds: "-0.25,0.25,0.25,0.35"
+          density: 50
+          mask:
+          - CrateMask
+          layer:
+          - MachineLayer
+    - type: AmbientSound
+      range: 0
+    - type: PointLight
+      enabled: false
+      castShadows: false
+      radius: 0

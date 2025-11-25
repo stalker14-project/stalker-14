@@ -1,0 +1,140 @@
+- type: entity
+  name: Свободовец
+  suffix: Stalker, Т6, NPC
+  parent: MobHostileGuardPatrool
+  id: MobFreedomGuardPatrool
+  description: Свободовец-патрульный.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - BandsUnion
+    - Freedom
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet556FMJ
+    fireCost: 5
+  - type: Gun
+    minAngle: 2
+    angleIncrease: 1
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      101: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 150
+      behaviors:
+      - !type:TriggerBehavior
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+
+- type: entity
+  name: Охранник свободы
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobFreedomSecurityLow
+  description: Охранник свободы.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Freedom
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
+  - type: Bands
+    bandIcon: freedom
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/919.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1
+
+- type: entity
+  name: Охранник свободы
+  suffix: Stalker, Т6, NPC
+  parent: MobStalkerBaseGuard
+  id: MobFreedomSecurityTop
+  description: Охранник свободы.
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Freedom
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Top.rsi
+  - type: Bands
+    bandIcon: freedom
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 2
+  - type: ProjectileBatteryAmmoProvider
+    proto: Bullet545PC
+    fireCost: 5
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/n_l85_shot.ogg
+    fireRate: 4
+    useKey: false
+    selectedMode: FullAuto
+    minAngle: 5
+    maxAngle: 55
+    angleIncrease: 1
+    angleDecay: 5
+    availableModes:
+    - FullAuto
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Critical
+      151: Dead
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 135
+    damage:
+      groups:
+        Burn: -100
+        Toxin: -100
+        Airloss: -100
+        Brute: -1

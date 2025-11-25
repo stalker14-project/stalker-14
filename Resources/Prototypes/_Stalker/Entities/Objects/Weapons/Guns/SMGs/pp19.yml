@@ -13,7 +13,7 @@
     sprite: _Stalker/Objects/Weapons/Guns/SMGs/bizon.rsi
   - type: Gun
     minAngle: 40
-    maxAngle: 100
+    maxAngle: 90
     angleIncrease: 1
     angleDecay: 5
     fireRate: 10
@@ -55,3 +55,40 @@
   id: STWeaponSMGPP19
   name: PP-19 "Bizon" SMG
   description: The modern Russian PP-19 Bizon submachine gun chambered in 9x18mm Makarov. Features a unique helical magazine with 64-round capacity, making it ideal for sustained firefights in Zone conditions.
+
+- type: entity
+  parent: STBaseWeaponSMGPP19
+  id: STWeaponSMGPP19919
+  name: PP-19 "Bizon" SMG
+  description: The modern Russian PP-19 Bizon submachine gun chambered in 9x18mm Makarov. Features a unique helical magazine with 64-round capacity, making it ideal for sustained firefights in Zone conditions.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: BizonMag919
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineBizon919
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+            - STWeaponModuleSMGSilencer
+      gun_module_underbarrel:
+        name: Underbarrel
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleSMGGrip
+      gun_chamber:
+        name: Chamber
+        startingItem: STCartridge919PSOGJ
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge919

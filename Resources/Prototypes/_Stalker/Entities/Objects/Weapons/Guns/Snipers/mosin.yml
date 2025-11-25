@@ -21,13 +21,15 @@
     maxAngle: 80
     angleIncrease: 5
     angleDecay: 25
-    fireRate: 0.3
+    fireRate: 0.6
   - type: BallisticAmmoProvider
     capacity: 5
     proto:
     whitelist:
       tags:
       - STCartridge754
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 5
 
 - type: entity
   parent: STBaseWeaponSniperMosin

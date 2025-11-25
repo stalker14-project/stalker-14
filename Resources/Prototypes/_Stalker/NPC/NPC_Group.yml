@@ -417,46 +417,45 @@
 
 # Serafims - 9
 
-# There are no SeraphimeShopPresetHeavy1, do smth with that
-#- type: entity
-#  parent: NPCDoll
-#  id: NPCSabbatSerafim
-#  name: Саббат [→   ←]
-#  suffix: ST, Serafim
-#  description: Саббат, паладин, ветеран битв с Ложным Идолом сразивший множество рабов Идола, сейчас он помогает в поставках снаряжения и отправляет поставки провизии и медикаментов в северные ковены.
-#  components:
-#  - type: Sprite
-#    sprite: _Stalker/NPC/Sabbat.rsi
-#    state: sabbat
-#  - type: Physics
-#    bodyType: Static
-#  - type: Advertise
-#    pack: NPCStalkerTraderAds
-#  - type: ActivatableUI
-#    key: enum.ShopUiKey.Key
-#    singleUser: true
-#  - type: UserInterface
-#    interfaces:
-#      enum.ShopUiKey.Key:
-#        type: ShopBoundUserInterface
-#  - type: Shop
-#    moneyId: Dollar
-#    shopPresetId: SerDollarShopPreset
-#  - type: TypingIndicator
-#    proto: robot
-#  - type: TTS # Corvax-TTS
-#    voice: TrainingRobot
-#  - type: Speech
-#    speechVerb: Robotic
-#    speechSounds: Alto
-#  - type: IntrinsicRadioReceiver
-#  - type: IntrinsicRadioTransmitter
-#    channels:
-#    - Binary
-#  - type: ActiveRadio
-#    channels:
-#    - Binary
-#    - Common
+- type: entity
+  parent: NPCDoll
+  id: NPCSabbatSerafim
+  name: Саббат [→   ←]
+  suffix: ST, Serafim
+  description: Саббат, паладин, ветеран битв с Ложным Идолом сразивший множество рабов Идола, сейчас он помогает в поставках снаряжения и отправляет поставки провизии и медикаментов в северные ковены.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Sabbat.rsi
+    state: sabbat
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: SerDollarShopPreset
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
 
 - type: entity
   parent: NPCDoll
@@ -498,3 +497,122 @@
     - Binary
     - Common
 
+#Mercs
+
+- type: entity
+  parent: NPCDoll
+  id: NPCMercHummingbird
+  name: Хамингбёрд [→   ←]
+  description: Массово закупает оружие в Европе и Америке и продаёт в зоне.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Merc.rsi
+    state: merc
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: STMercenaryDollarTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDeserterMubarack
+  name: Мубарак [→   ←]
+  description: Мубарак, брат Абдула, дезертир из ОКСОП и почётный член банд-формирования "отступники", помогает брату перевозить оружие и броню с большой земли, совсем дурак.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Deserter_mubarack.rsi
+    state: deserter_mubarack
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: DeserterMubarackTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common
+
+
+- type: entity
+  parent: NPCDoll
+  id: NPCDeserterAbdul
+  name: Абдул [→   ←]
+  description: Абдул, брат Мубарака, дезертир из ОКСОП и почётный член банд-формирования "отступники", перевозит контрабанду через границу ЧЗО, умом не блещет.
+  components:
+  - type: Sprite
+    sprite: _Stalker/NPC/Deserter_abdul.rsi
+    state: deserter_abdul
+  - type: Physics
+    bodyType: Static
+  - type: Advertise
+    pack: NPCStalkerTraderAds
+  - type: ActivatableUI
+    key: enum.ShopUiKey.Key
+    singleUser: true
+  - type: UserInterface
+    interfaces:
+      enum.ShopUiKey.Key:
+        type: ShopBoundUserInterface
+  - type: Shop
+    moneyId: Dollar
+    shopPresetId: DeserterAbdulTrader
+  - type: TypingIndicator
+    proto: robot
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Alto
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Binary
+    - Common

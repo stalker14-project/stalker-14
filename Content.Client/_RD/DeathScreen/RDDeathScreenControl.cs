@@ -42,7 +42,7 @@ public sealed class RDDeathScreenControl : RDControl
 
         _label = new Label
         {
-            Text = "свинтус придет",
+            Text = "потерян в зоне",
             FontOverride = _resourceCache.GetFont("/Fonts/_RD/KosmoletFuturism.otf", 86),
             HorizontalAlignment = HAlignment.Center,
             VerticalAlignment = VAlignment.Center,

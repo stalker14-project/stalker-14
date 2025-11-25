@@ -55,7 +55,7 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.85
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.2
+    accuracyMultiplier: 1.55
 
 - type: entity
   parent: STBaseWeaponRifleAK103
@@ -67,6 +67,7 @@
   parent: STBaseWeaponRifleAK103
   id: STWeaponRifleAK103Kamo
   name: AK-103 "Veteran"
+  suffix: ST, Кастомка
   description: Carefully modified AK-103 with improved characteristics. Shows signs of numerous customizations - clearly a weapon of an experienced stalker.
   components:
   - type: Clothing
@@ -83,6 +84,7 @@
 - type: entity
   parent: STBaseWeaponRifleAK103
   id: STWeaponRifleAK203
+  suffix: ST, Кастомка
   name: AK-203
   description: Latest evolution of Kalashnikov rifle. Rare in the Zone, usually comes with military expeditions. Retains all advantages of 103 model with improved ergonomics.
   components:
@@ -103,4 +105,110 @@
   - type: STWeaponDamageFalloff
     falloffMultiplier: 0.85
   - type: STWeaponAccuracy
-    accuracyMultiplier: 1.6
+    accuracyMultiplier: 1.65
+
+- type: entity
+  parent: STWeaponRifleSaiga545
+  id: STWeaponRifleSaiga739
+  name: saiga 7.39
+  description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
+  components:
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base739Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine739
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge739
+
+- type: entity
+  parent: STWeaponRifleSaiga739
+  id: STWeaponRifleSaiga739Auto
+  name: saiga 7.39
+  description: Civilian version of AK-74M with fixed stock. Popular among stalkers for reliability and ammo availability.
+  components:
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/103_shoot.ogg
+    minAngle: 50
+    maxAngle: 90
+    angleIncrease: 2
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    angleDecay: 10
+    fireRate: 5
+
+- type: entity
+  name: АК-15
+  parent: STWeaponRifleStalkerAK12
+  suffix: ST, Кастомка
+  id: STWeaponRifleStalkerAK15
+  description: This model is the pinnacle of the AK system's development and differs from previous generations in its well-thought-out ergonomics, adaptability to all-day use, and increased accuracy and consistency of fire.
+  components:
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak15.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak15.rsi
+    scale: 1, 1
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/_Skins/ak15.rsi
+    scale: 1, 1
+  - type: Gun
+    fireRate: 8
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/203_Sound.ogg
+    minAngle: 48
+    maxAngle: 93
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base739Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine739
+      gun_module_muzzle:
+        name: Muzzle
+        priority: 3
+        whitelist:
+          tags:
+          - STWeaponModuleRifleSilencerRu
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge739

@@ -2,47 +2,70 @@
   id: FreedomShopPreset
   itemsForSale:
     # Thermal group - 1 x1.5 Sidorovich
-    ZoneArtifactFireball: 600
-    ZoneArtifactEye: 900
-    ZoneArtifactFlame: 1800
+    ZoneArtifactFireball: 810
+    ZoneArtifactEye: 1215
+    ZoneArtifactFlame: 2430
     # Thermal group - 2
-    ZoneArtifactCristall: 3600
-    ZoneArtifactLithosphere: 7200
+    ZoneArtifactCristall: 4860
+    ZoneArtifactLithosphere: 9720
     # Electrical group - 1
-    ZoneArtifactSparkler: 600
-    ZoneArtifactBattery: 900
-    ZoneArtifactFlash: 1800
-    ArtMoon: 3600
-    ZoneArtifactTesla: 5400
-    ZoneArtifactIce: 7200
+    ZoneArtifactSparkler: 810
+    ZoneArtifactBattery: 1215
+    ZoneArtifactFlash: 2430
+    ArtMoon: 4860
+    ZoneArtifactTesla: 7290
+    ZoneArtifactIce: 9720
     # Gravity group - 1
-    ArtMedusa: 600
-    ZoneArtifactFlower: 900
-    ZoneArtifactNightStar: 3600
+    ArtMedusa: 810
+    ZoneArtifactFlower: 1215
+    ZoneArtifactNightStar: 4860
     # Gravity group - 2
-    ZoneArtifactVyvert: 600
-    ZoneArtifactAmoeba: 900
-    ZoneArtifactFloodlight: 900
-    ZoneArtifactGravi: 1800
-    ZoneArtifactGoldfish: 7200
+    ZoneArtifactVyvert: 810
+    ZoneArtifactAmoeba: 1215
+    ZoneArtifactFloodlight: 1215
+    ZoneArtifactGravi: 2430
+    ZoneArtifactGoldfish: 9720
     ZoneArtifactSpring: 5400
-    ZoneArtifactFocus: 5400
-    ZoneArtifactStuntman: 7200
-    ZoneArtifactDistorter: 7200
-    ZoneArtifactSoul: 5400
+    ZoneArtifactFocus: 7290
+    ZoneArtifactStuntman: 9720
+    ZoneArtifactDistorter: 9720
+    ZoneArtifactSoul: 7290
     # Acidic group - 1
-    ZoneArtifactBlood: 1800
-    ZoneArtifactMeat: 3600
-    ZoneArtifactKolobok: 5400
+    ZoneArtifactBlood: 2430
+    ZoneArtifactMeat: 4860
+    ZoneArtifactKolobok: 7290
     # Acidic group - 2
-    ZoneArtifactPellicle: 600
-    ZoneArtifactBaloon: 5400
+    ZoneArtifactPellicle: 810
+    ZoneArtifactBaloon: 7290
     #meat
-    STFoodMeatSalo: 100
-    FoodMeatBoar: 50
-    FoodMeatDog: 25
-    FoodMeatBoarCooked: 50
-    FoodMeatDogCooked: 35
+    STFoodMeatSalo: 135
+    FoodMeatBoar: 70
+    FoodMeatDog: 35
+    FoodMeatBoarCooked: 135
+    FoodMeatDogCooked: 95
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 220 # T1
+    MutantPartSeasonedBoarHoof: 405 # T2
+    MutantPartOldBoarHoof: 545 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 120
+    MutantPartFleshEye: 300
+    FoodMeatSpiderLeg: 70
+
+    #T2 -------- Health * 1.8
+    MutantPartLeshiyRoot: 745
+    MutantPartPseudodogTail: 405
+    MutantPartSnorkFoot: 675
+
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 1015
+    MutantPartOraculeEye: 2160
+    MutantPartPseudogiantHeart: 5400
+    MutantPartZombieHand: 810
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -54,8 +77,10 @@
         STWeaponShotgunSPAS: 2000
           # Nato
         STWeaponRifleL85: 2000
-        STWeaponRifleSCARH: 6000
-        STWeaponRifleM16: 4000
+        STWeaponRifleSCARH: 5000
+        STWeaponRifleSCARL: 3500
+        STWeaponRifleM4: 3000
+        STWeaponRifleG36: 6000
                   # Smg
         STWeaponSMGMP5: 1800
           # Other
@@ -81,20 +106,20 @@
       items:
         6mmBuckshotBox: 115
         7mmBuckshotBox: 45
-        8mmBuckshotBox: 300
         # 9.19
         919PSOGJBox: 75
         919PSTBox: 250
-        919PBMBox: 500
+        919PBMBox: 800
         919RIPBox: 300
         918PGJBox: 80
         918PSTBox: 250
-        918PBMBox: 500
+        918PBMBox: 800
         918SP7Box: 200
         # 5.56
         556FMJBox: 500
         556WarmagBox: 250
-        556M855Box: 2000
+        556M855Box: 1500
+        556M856Box: 2100
         # 7.51
         751M80Box: 1500
         751UNBox: 500
@@ -111,12 +136,15 @@
           # Helmets #
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
+        ClothingHeadAssaultHelmet: 3250
           # OuterClothing #
         ClothingOuterJacketFreedom: 60 # T1 - PVE
-        STClothingOuterArmorLightPlateVestBaseFreedom: 1000 # T2 - PvP
+        STClothingOuterArmorLightPlateVestBaseFreedom: 500 # T2 - PvP
         ClothingOuterArmorRCBZFreedom: 1700 # T2 - ENV
-        ClothingOuterArmorFreedomWind: 2000
+        ClothingOuterArmorFreedomWind: 1300
+        ClothingOuterArmorAborigineFreedom: 5200
         ClothingOuterArmorSevaFreedom: 5000
+        STClothingOuterArmorVolchankaFreedom: 10000
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -152,6 +180,7 @@
         ZoneArtifactDetectorResponseCvoboda: 100 # T2
         STPsyHelm1: 2500
         ZoneArtifactDetectorResponse: 1000 # T2
+        ZoneArtifactDetectorSpruce: 3500
         Blunt: 100
     - name: shop-category-utilities
       priority: 8
@@ -177,6 +206,10 @@
         STOxygenTanksFractionalFreedom2: 500
         Matchbox: 10
         HatchetStalker: 150
+        RobustHarvestChemistryBottleStalker: 50
+        CannabisSeedsStalker: 70
+        HydroponicsToolMiniHoe: 70
+        Bucket: 60
     - name: shop-category-provisions
       priority: 9
       items:

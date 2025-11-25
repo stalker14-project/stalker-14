@@ -48,7 +48,66 @@
         band: Stalker
         bandIcon: stalker
         bandProto: STStalkerBand
-        bandRankId: 1
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
+- type: job
+  id: StalkerVeteran
+  name: job-stalker-veteran
+  icon: ne
+  description: job-stalker-desc
+  playTimeTracker: JobStalkerVeteran
+  whitelisted: true
+  requirements:
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+      - Gingerbread
+      - HumanFat
+    # Обнулил требования, так как люди не могут зайти за сталкера когда их турнули
+    # c ГП. И по сути не могут играть вообще. Я хз как это сделать лучше, но то что есть сейчас
+    # не даёт людям вообще играть.
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAdvanced
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerBrigands
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerOfficials
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerReligius
+    #   time: 1
+    #   inverted: true
+    # - !type:DepartmentTimeRequirement
+    #   department: StalkerAnomalists
+    #   time: 1
+    #   inverted: true
+  startingGear: StalkerGear
+  supervisors: job-stalker-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - Stalker
+          - Veteran
+      - type: Bands
+        band: Stalker
+        bandIcon: ne
+        bandProto: STStalkerBand
+        bandRankId: 2
       - type: BlockTackingHolyItems
       - type: TeethPull
         teethProto: ToothStalker
@@ -76,6 +135,8 @@
   name: Stalker
   factionId: Stalker
   maxMembers: 10000
-  managingRankId: 999
+  managingRankId: 2
   hierarchy:
     1: Stalker
+    2: StalkerVeteran
+    3: StalkerGuide

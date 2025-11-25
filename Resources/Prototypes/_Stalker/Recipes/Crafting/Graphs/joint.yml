@@ -6,14 +6,16 @@
     edges:
     - to: jointend
       steps:
-      - material: PaperRolling
+      - tag: RollingPaper
         icon:
           sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
           state: cigpaper
-      - material: GroundCannabis
+        name: бумага для самокруток
+      - tag: Cannabis
         icon:
-          sprite: Objects/Misc/reagent_fillings.rsi
-          state: powderpile
+          sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
+          state: powderpile_rainbow
+        name: измельченные бошки
         doAfter: 2
   - node: jointend
-    entity: Joint
+    entity: STJoint

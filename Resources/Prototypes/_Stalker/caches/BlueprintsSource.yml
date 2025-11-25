@@ -28,14 +28,6 @@
     - type: StorageFill
       contents:
         # Junk
-        - id: Paper
-          prob: 0.5
-        - id: Paper
-          prob: 0.5
-        - id: Paper
-          prob: 0.5
-        - id: Paper
-          prob: 0.5
         - id: PassportBelarus
           prob: 0.3
         - id: PassportRussia
@@ -46,137 +38,15 @@
           prob: 0.3
         - id: PassportSBU
           prob: 0.3
-        # Licenses
-        - id: hunterLicense
-          prob: 0.2
-        - id: militaryLicense
-          prob: 0.1
         # Blueprints
-        - id: ClothingOuterCoatPahanBlueprint
-          prob: 0.05
-        - id: ClothingOuterCoatBolotniyBlueprint
-          prob: 0.05
-        - id: ClothingOuterCoatKolchygaBlueprint
-          prob: 0.05
-        - id: STClothingCapeCoatReinforcedBlueprint
-          prob: 0.05
-        - id: STGasMaskM50Blueprint
-          prob: 0.05
-        - id: STClothingHeadTinfoilBlueprint
-          prob: 0.05
-        - id: ClothingHeadAssaultHelmetBlueprint
-          prob: 0.05
-        - id: STClothingHeadHelmetMakeshiftTacticalT3Blueprint
-          prob: 0.05
-        - id: STClothingOuterJacketStalkerUpgradeBlueprint
-          prob: 0.05
-        - id: ClothingOuterAnomalyStalkerJacketBlueprint
-          prob: 0.05
-        - id: ClothingOuterArmorZaryaHunterBlueprint
-          prob: 0.05
-        - id: ClothingOuterArmorZaryaStalkerModifedType1Blueprint
-          prob: 0.05
-        - id: ClothingOuterArmorZaryaStalkerModifedType2Blueprint
-          prob: 0.05
-        - id: STClothingOuterArmor6B2Blueprint
-          prob: 0.05
-        - id: ClothingOuterArmorCN1Blueprint
-          prob: 0.05
-        - id: ClothingOuterArmorSparkBlueprint
-          prob: 0.05
-        - id: ClothingOuterArmorPSZ9DBlueprint
-          prob: 0.05
-        - id: ClothingOuterArmorAborigineStalkerBlueprint
-          prob: 0.05
-        - id: STClothingOuterArmorLightPlateVestBasePSZ7Blueprint
-          prob: 0.05
-        - id: STDetectorAD1Blueprint
-          prob: 0.05
-        - id: STDetectorAD2Blueprint
-          prob: 0.05
-        - id: STZoneArtifactDetectorResponseBlueprint
-          prob: 0.05
-        - id: STZoneArtifactDetectorSpruceBlueprint
-          prob: 0.05
-        - id: STZoneArtifactDetectorBarracudaBlueprint
-          prob: 0.05
-        - id: TrashDetectorTier2Blueprint
-          prob: 0.05
-        - id: TrashDetectorTier3Blueprint
-          prob: 0.05
-        - id: ST7mmBuckshotBoxCinkBluePrint
-          prob: 0.05
-        - id: ST6mmBuckshotBoxCinkBluePrint
-          prob: 0.05
-        - id: ST8mmBuckshotBoxCinkBlueprint
-          prob: 0.05
-        - id: STShotgunFlechetteCinkBlueprint
-          prob: 0.05
-        - id: STShotgunBulletUnlethalBoxCinkBlueprint
-          prob: 0.05
-        - id: ST545FMJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST545PCBoxCinkBlueprint
-          prob: 0.05
-        - id: ST545HPBoxCinkBlueprint
-          prob: 0.05
-        - id: ST918PGJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST918PSTBoxCinkBlueprint
-          prob: 0.05
-        - id: ST918SP7BoxCinkBlueprint
-          prob: 0.05
-        - id: ST918PBMBoxCinkBlueprint
-          prob: 0.05
-        - id: ST919PSOGJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST919PSTBoxCinkBlueprint
-          prob: 0.05
-        - id: ST919RIPBoxCinkBlueprint
-          prob: 0.05
-        - id: ST919PBMBoxCinkBlueprint
-          prob: 0.05
-        - id: ST754FMJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST754HPBoxCinkBlueprint
-          prob: 0.05
-        - id: ST556FMJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST556M855BoxCinkBlueprint
-          prob: 0.05
-        - id: ST556WarmagBoxCinkBlueprint
-          prob: 0.05
-        - id: ST725PBoxCinkBlueprint
-          prob: 0.05
-        - id: ST725PTBoxCinkBlueprint
-          prob: 0.05
-        - id: ST725LRNPCBoxCinkBlueprint
-          prob: 0.05
-        - id: ST725PSTBoxCinkBlueprint
-          prob: 0.05
-        - id: ST739FMJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST739HPBoxCinkBlueprint
-          prob: 0.05
-        - id: ST751M80BoxCinkBlueprint
-          prob: 0.05
-        - id: ST751UNBoxCinkBlueprint
-          prob: 0.05
-        - id: ST45ACPLFMJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST45ACPMFMJBoxCinkBlueprint
-          prob: 0.05
-        - id: ST45ACPHydroshockBoxCinkBlueprint
-          prob: 0.05
-        - id: ST45ACPRIPBoxCinkBlueprint
-          prob: 0.05
-        - id: ST45ACPAPBoxCinkBlueprint
-          prob: 0.05
-        - id: ST939SP5BoxCinkBlueprint
-          prob: 0.05
-        - id: ST939SP6BoxCinkBlueprint
-          prob: 0.05
-
+        - id: ClothingOuterArmorSTClothingOuterHeavyRedutBlueprint
+          prob: 0.3
+        - id: STZoneArtifactDetectorWolfhoundBlueprint
+          prob: 0.3
+        - id: ClothingHeadHelmetPSZ9DBlueprint
+          prob: 0.3
+        - id: STClothingHeadHelmetFASTNeutralBlackBlueprint
+          prob: 0.3
 
 - type: entity
   name: Триггер кейса с чертежами (10%)
