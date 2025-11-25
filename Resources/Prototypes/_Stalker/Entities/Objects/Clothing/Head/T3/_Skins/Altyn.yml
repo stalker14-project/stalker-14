@@ -1,5 +1,5 @@
 - type: entity
-  parent: STClothingHeadBase
+  parent: STClothingHeadHelmetTacticalT3Base
   id: STClothingHeadHelmetSeraphimAltin
   name: бронешлем «Страж»
   description: Это усовершенствованная модификация классического шлема «Сфера-12» Монолита, разработанная и доработанная мастерами Серафимов для защиты в условиях Зоны. Его конструкция сочетает в себе прочность оригинала и новые элементы, отражающие идеологию Серафимов. Шлем покрыт специальным камуфляжем, характерным для группы, а его поверхность украшена молитвенными символами и защитными знаками, которые, по верованиям Серафимов, усиливают его способности. Внутренние системы модернизированы фильтрами и двойным покрытием, для повышеной защиты от Радиации и предотвращению Пси-Воздействия на организм носителя.
@@ -9,37 +9,37 @@
     sprite: _Stalker/Objects/Clothing/Head/Sera_/strash_seraphim_helm.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/Head/Sera_/strash_seraphim_helm.rsi
-  - type: Craftable
-  - type: Tag
-    tags:
-      - BlockMask
-  - type: STWeight
-    self: 2.5
-  - type: Armor
-    armorClass: 3
-    modifiers:
-      flatReductions:
-        Psy: 1
-      coefficients:
-        Slash: 0.8
-        Blunt: 0.8
-        Psy: 0.95
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-  - type: Reflect
-    reflectProb: 0.12
-    spread: 360
-    reflects:
-      - NonEnergy
-    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
-  - type: PersonalDamage
-    interval: 1
-    damage:
-      types:
-        Psy: -0.25
-  - type: HideLayerClothing
-    slots:
-    - Hair
+#  - type: Craftable
+#  - type: Tag
+#    tags:
+#      - BlockMask
+#  - type: STWeight
+#    self: 2.5
+#  - type: Armor
+#    armorClass: 3
+#    modifiers:
+#      flatReductions:
+#        Psy: 1
+#      coefficients:
+#        Slash: 0.8
+#        Blunt: 0.8
+#        Psy: 0.95
+#  - type: ExplosionResistance
+#    damageCoefficient: 0.85
+#  - type: Reflect
+#    reflectProb: 0.12
+#    spread: 360
+#    reflects:
+#      - NonEnergy
+#    soundOnReflect: /Audio/_Stalker/Effects/sear.ogg
+#  - type: PersonalDamage
+#    interval: 1
+#    damage:
+#      types:
+#        Psy: -0.25
+#  - type: HideLayerClothing
+#    slots:
+#    - Hair
 
 - type: entity
   parent: STClothingHeadHelmetSeraphimAltin
