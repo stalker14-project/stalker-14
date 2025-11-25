@@ -650,6 +650,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         return ammoEv.Capacity;
     }
 
+    public override void Update(float frameTime)
+    {
+        UpdateBattery(frameTime);
+    }
+
     // Stalker-Changes-Start
     public void SetAvailableModes(EntityUid uid, SelectiveFire newModes, GunComponent? gun = null)
     {
@@ -661,8 +666,8 @@ public abstract partial class SharedGunSystem : EntitySystem
         {
             var newCurrentSelective =
                 newModes == 0 ?
-                SelectiveFire.Invalid :
-                newModes ^ ((newModes - 1) & newModes); // last bit that is one
+                    SelectiveFire.Invalid :
+                    newModes ^ ((newModes - 1) & newModes); // last bit that is one
 
             SelectFire(uid, gun, newCurrentSelective);
         }
