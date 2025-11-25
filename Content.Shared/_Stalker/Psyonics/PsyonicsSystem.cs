@@ -52,8 +52,8 @@ public sealed partial class PsyonicsSystem
         psionics.Comp.Psy = newValue;
         Dirty(psionics);
 
-        if (_mind.TryGetMind(psionics, out _, out var mind) && mind.Session is not null)
-            RaiseNetworkEvent(psyMessage, mind.Session);
+        //if (_mind.TryGetMind(psionics, out _, out var mind) && mind.Session is not null) // FIX LATER
+        //    RaiseNetworkEvent(psyMessage, mind.Session);
 
         return newValue;
     }

@@ -1,9 +1,12 @@
-﻿using System.Numerics;
+using System.Numerics;
 using Content.Shared._Stalker.Dimension;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Utility;
+using Robust.Shared.EntitySerialization;
 
 namespace Content.Server._Stalker.Dimension;
 
@@ -41,7 +44,9 @@ public sealed class STDimensionSystem : STSharedDimensionSystem
 
         var mapId = _map.CreateMap();
 
-        if (!_mapLoader.TryLoad(mapId, prototype.MapPath.ToString(), out _))
+        var mapRes = new ResPath(prototype.MapPath.ToString());
+
+        if (!_mapLoader.TryLoadMap(mapRes, out _, out _))
             Log.Error("Failed loading dimension map");
 
         if (!_map.IsMapInitialized(mapId))

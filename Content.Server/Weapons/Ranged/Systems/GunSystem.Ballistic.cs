@@ -17,6 +17,7 @@ public sealed partial class GunSystem
             var existing = component.Entities[^1];
             component.Entities.RemoveAt(component.Entities.Count - 1);
             component.EntProtos.RemoveAt(component.EntProtos.Count - 1); // stalker-changes
+            DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.Entities));
 
             Containers.Remove(existing, component.Container);
             EnsureShootable(existing);
@@ -39,6 +40,10 @@ public sealed partial class GunSystem
                 ent = Spawn(component.Proto, coordinates);
                 EnsureShootable(ent.Value);
             } // stalker-changes-end
+            component.UnspawnedCount--;
+            DirtyField(uid, component, nameof(BallisticAmmoProviderComponent.UnspawnedCount));
+            ent = Spawn(component.Proto, coordinates);
+            EnsureShootable(ent.Value);
         }
 
         if (ent != null)

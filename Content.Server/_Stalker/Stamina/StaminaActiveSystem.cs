@@ -9,7 +9,7 @@ namespace Content.Server._Stalker.Stamina;
 
 public sealed class StaminaActiveSystem : EntitySystem
 {
-    [Dependency] private readonly StaminaSystem _stamina = default!;
+    [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
     private ISawmill _sawmill = default!;
 

@@ -1,24 +1,18 @@
-using Content.Shared.Clothing.Components;
 using Content.Shared.Database;
 using Content.Shared.Hands.Components;
 using Content.Shared.Item;
 using Robust.Shared.Containers;
-using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Content.Shared.DoAfter; // Stalker-Changes
-using Content.Shared.Inventory;
-using Robust.Shared.Serialization; // Stalker-Changes
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Hands.EntitySystems;
 
-public abstract partial class SharedHandsSystem : EntitySystem
+public abstract partial class SharedHandsSystem
 {
-    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!; // Stalker-Changes
     private void InitializePickup()
     {
         SubscribeLocalEvent<HandsComponent, EntInsertedIntoContainerMessage>(HandleEntityInserted);
-        SubscribeLocalEvent<HandsComponent, PickupDoAfterEvent>(HandleDoAfter); // Stalker-Changes
     }
 
     protected virtual void HandleEntityInserted(EntityUid uid, HandsComponent hands, EntInsertedIntoContainerMessage args)
@@ -28,43 +22,17 @@ public abstract partial class SharedHandsSystem : EntitySystem
             return;
         }
 
-        var didEquip = new DidEquipHandEvent(uid, args.Entity, hand);
-        RaiseLocalEvent(uid, didEquip, false);
+        var didEquip = new DidEquipHandEvent(uid, args.Entity, hand.Value);
+        RaiseLocalEvent(uid, didEquip);
 
-        var gotEquipped = new GotEquippedHandEvent(uid, args.Entity, hand);
-        RaiseLocalEvent(args.Entity, gotEquipped, false);
+        var gotEquipped = new GotEquippedHandEvent(uid, args.Entity, hand.Value);
+        RaiseLocalEvent(args.Entity, gotEquipped);
     }
 
     /// <summary>
     ///     Maximum pickup distance for which the pickup animation plays.
     /// </summary>
     public const float MaxAnimationRange = 10;
-
-    /// <summary>
-    ///     Tries to pick up an entity to a specific hand. If no explicit hand is specified, defaults to using the currently active hand.
-    /// </summary>
-    public bool TryPickup(
-        EntityUid uid,
-        EntityUid entity,
-        string? handName = null,
-        bool checkActionBlocker = true,
-        bool animateUser = false,
-        bool animate = true,
-        HandsComponent? handsComp = null,
-        ItemComponent? item = null)
-    {
-        if (!Resolve(uid, ref handsComp, false))
-            return false;
-
-        var hand = handsComp.ActiveHand;
-        if (handName != null && !handsComp.Hands.TryGetValue(handName, out hand))
-            return false;
-
-        if (hand == null)
-            return false;
-
-        return TryPickup(uid, entity, hand, checkActionBlocker, animate, handsComp, item);
-    }
 
     /// <summary>
     ///     Attempts to pick up an item into any empty hand. Prioritizes the currently active hand.
@@ -85,17 +53,21 @@ public abstract partial class SharedHandsSystem : EntitySystem
         if (!Resolve(uid, ref handsComp, false))
             return false;
 
-        if (!TryGetEmptyHand(uid, out var hand, handsComp))
+        if (!TryGetEmptyHand((uid, handsComp), out var hand))
             return false;
 
-        return TryPickup(uid, entity, hand, checkActionBlocker, animate, handsComp, item);
+        return TryPickup(uid, entity, hand, checkActionBlocker, animateUser, animate, handsComp, item);
     }
 
+    /// <summary>
+    ///     Tries to pick up an entity to a specific hand. If no explicit hand is specified, defaults to using the currently active hand.
+    /// </summary>
     public bool TryPickup(
         EntityUid uid,
         EntityUid entity,
-        Hand hand,
+        string? handId = null,
         bool checkActionBlocker = true,
+        bool animateUser = false,
         bool animate = true,
         HandsComponent? handsComp = null,
         ItemComponent? item = null)
@@ -103,10 +75,18 @@ public abstract partial class SharedHandsSystem : EntitySystem
         if (!Resolve(uid, ref handsComp, false))
             return false;
 
+        handId ??= handsComp.ActiveHandId;
+
+        if (handId == null)
+            return false;
+
         if (!Resolve(entity, ref item, false))
             return false;
 
-        if (!CanPickupToHand(uid, entity, hand, checkActionBlocker, handsComp, item))
+        if (!CanPickupToHand(uid, entity, handId, checkActionBlocker: checkActionBlocker, showPopup: true, handsComp: handsComp, item: item))
+            return false;
+
+        if (!BeforeDoPickup((uid, handsComp), entity))
             return false;
 
         if (animate)
@@ -120,13 +100,34 @@ public abstract partial class SharedHandsSystem : EntitySystem
                 && (itemPos.Position - TransformSystem.GetMapCoordinates(uid, xform: xform).Position).Length() <= MaxAnimationRange
                 && MetaData(entity).VisibilityMask == MetaData(uid).VisibilityMask) // Don't animate aghost pickups.
             {
-                var initialPosition = EntityCoordinates.FromMap(coordinateEntity, itemPos, TransformSystem, EntityManager);
+                var initialPosition = TransformSystem.ToCoordinates(coordinateEntity, itemPos);
                 _storage.PlayPickupAnimation(entity, initialPosition, xform.Coordinates, itemXform.LocalRotation, uid);
             }
         }
-        DoPickup(uid, hand, entity, handsComp);
+        DoPickup(uid, handId, entity, handsComp);
 
         return true;
+    }
+
+    /// <summary>
+    /// Tries to pick up an entity into a hand, forcing to drop an item if its not free.
+    /// By default it does check if it's possible to drop items.
+    /// </summary>
+    public bool TryForcePickup(
+        Entity<HandsComponent?> ent,
+        EntityUid entity,
+        string hand,
+        bool checkActionBlocker = true,
+        bool animate = true,
+        HandsComponent? handsComp = null,
+        ItemComponent? item = null)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return false;
+
+        TryDrop(ent, hand, checkActionBlocker: checkActionBlocker);
+
+        return TryPickup(ent, entity, hand, checkActionBlocker, animate: animate, handsComp: handsComp, item: item);
     }
 
     /// <summary>
@@ -141,9 +142,9 @@ public abstract partial class SharedHandsSystem : EntitySystem
         if (TryPickupAnyHand(uid, entity, checkActionBlocker: checkActionBlocker, handsComp: handsComp))
             return true;
 
-        foreach (var hand in handsComp.Hands.Values)
+        foreach (var hand in handsComp.Hands.Keys)
         {
-            if (TryDrop(uid, hand, checkActionBlocker: checkActionBlocker, handsComp: handsComp) &&
+            if (TryDrop((uid, handsComp), hand, checkActionBlocker: checkActionBlocker) &&
                 TryPickup(uid, entity, hand, checkActionBlocker: checkActionBlocker, handsComp: handsComp))
             {
                 return true;
@@ -152,36 +153,50 @@ public abstract partial class SharedHandsSystem : EntitySystem
         return false;
     }
 
-    public bool CanPickupAnyHand(EntityUid uid, EntityUid entity, bool checkActionBlocker = true, HandsComponent? handsComp = null, ItemComponent? item = null)
+    /// <summary>
+    /// Checks whether a given item will fit into the user's first free hand.
+    /// Unless otherwise specified, this will also check the general CanPickup action blocker.
+    /// </summary>
+    public bool CanPickupAnyHand(EntityUid uid, EntityUid entity, bool checkActionBlocker = true, bool showPopup = false, HandsComponent? handsComp = null, ItemComponent? item = null)
     {
         if (!Resolve(uid, ref handsComp, false))
             return false;
 
-        if (!TryGetEmptyHand(uid, out var hand, handsComp))
+        if (!TryGetEmptyHand((uid, handsComp), out var hand))
             return false;
 
-        return CanPickupToHand(uid, entity, hand, checkActionBlocker, handsComp, item);
+        return CanPickupToHand(uid, entity, hand, checkActionBlocker, showPopup, handsComp, item);
     }
 
     /// <summary>
-    ///     Checks whether a given item will fit into a specific user's hand. Unless otherwise specified, this will also check the general CanPickup action blocker.
+    /// Checks whether a given item will fit into a specific user's hand.
+    /// Unless otherwise specified, this will also check the general CanPickup action blocker.
     /// </summary>
-    public bool CanPickupToHand(EntityUid uid, EntityUid entity, Hand hand, bool checkActionBlocker = true, HandsComponent? handsComp = null, ItemComponent? item = null)
+    public bool CanPickupToHand(EntityUid uid, EntityUid entity, string handId, bool checkActionBlocker = true, bool showPopup = false, HandsComponent? handsComp = null, ItemComponent? item = null)
     {
         if (!Resolve(uid, ref handsComp, false))
             return false;
 
-        var handContainer = hand.Container;
-        if (handContainer == null || handContainer.ContainedEntity != null)
+        if (!ContainerSystem.TryGetContainer(uid, handId, out var handContainer))
             return false;
 
+        if (handContainer.ContainedEntities.FirstOrNull() != null)
+            return false;
+
+        // Huh, seems kinda weird that this system passes item comp around
+        // everywhere but it's never actually used besides being resolved.
+        // I wouldn't be surprised if there's some API simplifications that
+        // could be made with respect to that.
         if (!Resolve(entity, ref item, false))
             return false;
 
         if (TryComp(entity, out PhysicsComponent? physics) && physics.BodyType == BodyType.Static)
             return false;
 
-        if (checkActionBlocker && !_actionBlocker.CanPickup(uid, entity))
+        if (checkActionBlocker && !_actionBlocker.CanPickup(uid, entity, showPopup))
+            return false;
+
+        if (!CheckWhitelists((uid, handsComp), handId, entity))
             return false;
 
         if (ContainerSystem.TryGetContainingContainer((entity, null, null), out var container))
@@ -202,142 +217,82 @@ public abstract partial class SharedHandsSystem : EntitySystem
     /// <summary>
     ///     Puts an item into any hand, preferring the active hand, or puts it on the floor.
     /// </summary>
+    /// <param name="dropNear">If true, the item will be dropped near the owner of the hand if possible.</param>
     public void PickupOrDrop(
         EntityUid? uid,
         EntityUid entity,
         bool checkActionBlocker = true,
         bool animateUser = false,
         bool animate = true,
+        bool dropNear = false,
         HandsComponent? handsComp = null,
         ItemComponent? item = null)
     {
         if (uid == null
             || !Resolve(uid.Value, ref handsComp, false)
-            || !TryGetEmptyHand(uid.Value, out var hand, handsComp)
-            || !TryPickup(uid.Value, entity, hand, checkActionBlocker, animate, handsComp, item))
+            || !TryPickupAnyHand(uid.Value, entity, checkActionBlocker, animateUser, animate, handsComp, item))
         {
             // TODO make this check upwards for any container, and parent to that.
             // Currently this just checks the direct parent, so items can still teleport through containers.
             ContainerSystem.AttachParentToContainerOrGrid((entity, Transform(entity)));
+
+            if (dropNear && uid.HasValue)
+            {
+                TransformSystem.PlaceNextTo(entity, uid.Value);
+            }
         }
+    }
+
+    /// <summary>
+    /// Small helper function meant as a last step before <see cref="DoPickup"/>
+    /// is called. Used to run a cancelable before pickup event that can have
+    /// side effects, unlike the side effect free <see cref="GettingPickedUpAttemptEvent"/>.
+    /// </summary>
+    private bool BeforeDoPickup(Entity<HandsComponent?> user, EntityUid item)
+    {
+        if (!Resolve(user, ref user.Comp))
+            return false;
+
+        var userEv = new BeforeEquippingHandEvent(item);
+        RaiseLocalEvent(user, ref userEv);
+
+        if (userEv.Cancelled)
+            return false;
+
+        var itemEv = new BeforeGettingEquippedHandEvent(user);
+        RaiseLocalEvent(item, ref itemEv);
+
+        return !itemEv.Cancelled;
     }
 
     /// <summary>
     ///     Puts an entity into the player's hand, assumes that the insertion is allowed. In general, you should not be calling this function directly.
     /// </summary>
-    public virtual void DoPickup(EntityUid uid, Hand hand, EntityUid entity, HandsComponent? hands = null, bool log = true)
+    public virtual void DoPickup(EntityUid uid, string hand, EntityUid entity, HandsComponent? hands = null, bool log = true)
     {
         if (!Resolve(uid, ref hands))
             return;
 
-        var handContainer = hand.Container;
-        if (handContainer == null || handContainer.ContainedEntity != null)
+        if (!ContainerSystem.TryGetContainer(uid, hand, out var handContainer))
             return;
-        if (_inventory.TryGetSlots(uid, out var slots)) // Stalker-Changes-Start
-        {
-            var inserted = false;
-            foreach (var slot in slots)
-            {
-                if (_inventory.TryGetSlotEntity(uid, slot.Name, out var entityUid) && entityUid == entity)
-                {
-                    StartDoAfter(uid, entity, slot.Name, hand, null);
-                    inserted = true;
-                }
-            }
 
-            if (!inserted)
-            {
-                ContainerSystem.Insert(entity, handContainer);
-            }
-        }
+        if (handContainer.ContainedEntities.FirstOrNull() != null)
+            return;
 
-        else if // Stalker-Changes-End
-            (!ContainerSystem.Insert(entity, handContainer))
+        if (!ContainerSystem.Insert(entity, handContainer))
         {
-            Log.Error($"Failed to insert {ToPrettyString(entity)} into users hand container when picking up. User: {ToPrettyString(uid)}. Hand: {hand.Name}.");
+            Log.Error($"Failed to insert {ToPrettyString(entity)} into users hand container when picking up. User: {ToPrettyString(uid)}. Hand: {hand}.");
             return;
         }
+
+        _interactionSystem.DoContactInteraction(uid, entity); //Possibly fires twice if manually picked up via interacting with the object
 
         if (log)
             _adminLogger.Add(LogType.Pickup, LogImpact.Low, $"{ToPrettyString(uid):user} picked up {ToPrettyString(entity):entity}");
 
         Dirty(uid, hands);
 
-        if (hand == hands.ActiveHand)
-            RaiseLocalEvent(entity, new HandSelectedEvent(uid), false);
+        if (hand == hands.ActiveHandId)
+            RaiseLocalEvent(entity, new HandSelectedEvent(uid));
     }
-    private void HandleDoAfter(EntityUid uid, HandsComponent component, PickupDoAfterEvent args) // Stalker-Changes-Start
-    {
-        if (args.Cancelled)
-            return;
-        var handContainer = args.Hand.Container;
-        if (!args.Used.HasValue)
-            return;
-        if (handContainer == null || ContainerSystem.Insert(args.Used.Value, handContainer))
-        {
-            Log.Error($"Failed to insert {ToPrettyString(args.Used.Value)} into users hand container when picking up. User: {ToPrettyString(uid)}. Hand: {args.Hand.Name}.");
-            return;
-        }
-        _adminLogger.Add(LogType.Pickup, LogImpact.Low, $"{ToPrettyString(uid):user} picked up {ToPrettyString(args.Used.Value):entity}");
-
-        Dirty(uid, component);
-
-        if (args.Hand == component.ActiveHand)
-            RaiseLocalEvent(args.Used.Value, new HandSelectedEvent(uid), false);
-    }
-    public bool StartDoAfter(EntityUid user, EntityUid? itemUid, string slot, Hand hand, ClothingComponent? clothing, bool check = true, bool animateUser = false, bool animate = true)
-    {
-        var time = TimeSpan.Zero;
-        if (itemUid != null)
-        {
-            if (!Resolve(itemUid.Value, ref clothing, false))
-                return false;
-            time = clothing.EquipDelay;
-        }
-        else
-        {
-            if (!_inventory.TryGetSlotEntity(user, slot, out var slotent))
-                time = TimeSpan.FromSeconds(1);
-            if (slotent.HasValue && Resolve(slotent.Value, ref clothing, false))
-                time = clothing.EquipDelay;
-        }
-        var args = new DoAfterArgs(EntityManager, user, time,
-            new PickupDoAfterEvent(check, animateUser, animate, hand),
-            user, user, itemUid)
-        {
-            BlockDuplicate = true,
-            DamageThreshold = 5,
-            BreakOnDamage = true
-        };
-        return _doAfter.TryStartDoAfter(args);
-    }
-
-    [Serializable, NetSerializable]
-    private sealed partial class PickupDoAfterEvent : DoAfterEvent
-    {
-        [DataField("checkActionBlocker", required: true)]
-        public bool CheckActionBlocker;
-
-        [DataField("animateUser", required: true)]
-        public bool AnimateUser;
-
-        [DataField("animate", required: true)]
-        public bool Animate;
-
-        [DataField("hand", required: true)]
-        public Hand Hand = default!;
-
-        private PickupDoAfterEvent()
-        {
-        }
-
-        public PickupDoAfterEvent(bool check, bool animateUser, bool animate, Hand hand)
-        {
-            CheckActionBlocker = check;
-            AnimateUser = animateUser;
-            Animate = animate;
-            Hand = hand;
-        }
-        public override DoAfterEvent Clone() => this;
-    } // Stalker-Changes-End
 }

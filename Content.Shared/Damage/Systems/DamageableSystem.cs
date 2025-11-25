@@ -1,12 +1,15 @@
 using System.Linq;
+using Content.Shared.CCVar;
+using Content.Shared.Chemistry;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Explosion.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
-using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Radiation.Events;
 using Content.Shared.Rejuvenate;
+using Robust.Shared.Configuration;
 using Robust.Shared.GameStates;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
@@ -20,10 +23,24 @@ namespace Content.Shared.Damage
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly INetManager _netMan = default!;
         [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+        [Dependency] private readonly IConfigurationManager _config = default!;
+        [Dependency] private readonly SharedChemistryGuideDataSystem _chemistryGuideData = default!;
+        [Dependency] private readonly SharedExplosionSystem _explosion = default!;
 
         private EntityQuery<AppearanceComponent> _appearanceQuery;
         private EntityQuery<DamageableComponent> _damageableQuery;
-        private EntityQuery<MindContainerComponent> _mindContainerQuery;
+
+        public float UniversalAllDamageModifier { get; private set; } = 1f;
+        public float UniversalAllHealModifier { get; private set; } = 1f;
+        public float UniversalMeleeDamageModifier { get; private set; } = 1f;
+        public float UniversalProjectileDamageModifier { get; private set; } = 1f;
+        public float UniversalHitscanDamageModifier { get; private set; } = 1f;
+        public float UniversalReagentDamageModifier { get; private set; } = 1f;
+        public float UniversalReagentHealModifier { get; private set; } = 1f;
+        public float UniversalExplosionDamageModifier { get; private set; } = 1f;
+        public float UniversalThrownDamageModifier { get; private set; } = 1f;
+        public float UniversalTopicalsHealModifier { get; private set; } = 1f;
+        public float UniversalMobDamageModifier { get; private set; } = 1f;
 
         public override void Initialize()
         {
@@ -35,7 +52,42 @@ namespace Content.Shared.Damage
 
             _appearanceQuery = GetEntityQuery<AppearanceComponent>();
             _damageableQuery = GetEntityQuery<DamageableComponent>();
-            _mindContainerQuery = GetEntityQuery<MindContainerComponent>();
+
+            // Damage modifier CVars are updated and stored here to be queried in other systems.
+            // Note that certain modifiers requires reloading the guidebook.
+            Subs.CVar(_config, CCVars.PlaytestAllDamageModifier, value =>
+            {
+                UniversalAllDamageModifier = value;
+                _chemistryGuideData.ReloadAllReagentPrototypes();
+                _explosion.ReloadMap();
+            }, true);
+            Subs.CVar(_config, CCVars.PlaytestAllHealModifier, value =>
+            {
+                UniversalAllHealModifier = value;
+                _chemistryGuideData.ReloadAllReagentPrototypes();
+            }, true);
+            Subs.CVar(_config, CCVars.PlaytestProjectileDamageModifier, value => UniversalProjectileDamageModifier = value, true);
+            Subs.CVar(_config, CCVars.PlaytestMeleeDamageModifier, value => UniversalMeleeDamageModifier = value, true);
+            Subs.CVar(_config, CCVars.PlaytestProjectileDamageModifier, value => UniversalProjectileDamageModifier = value, true);
+            Subs.CVar(_config, CCVars.PlaytestHitscanDamageModifier, value => UniversalHitscanDamageModifier = value, true);
+            Subs.CVar(_config, CCVars.PlaytestReagentDamageModifier, value =>
+            {
+                UniversalReagentDamageModifier = value;
+                _chemistryGuideData.ReloadAllReagentPrototypes();
+            }, true);
+            Subs.CVar(_config, CCVars.PlaytestReagentHealModifier, value =>
+            {
+                 UniversalReagentHealModifier = value;
+                 _chemistryGuideData.ReloadAllReagentPrototypes();
+            }, true);
+            Subs.CVar(_config, CCVars.PlaytestExplosionDamageModifier, value =>
+            {
+                UniversalExplosionDamageModifier = value;
+                _explosion.ReloadMap();
+            }, true);
+            Subs.CVar(_config, CCVars.PlaytestThrownDamageModifier, value => UniversalThrownDamageModifier = value, true);
+            Subs.CVar(_config, CCVars.PlaytestTopicalsHealModifier, value => UniversalTopicalsHealModifier = value, true);
+            Subs.CVar(_config, CCVars.PlaytestMobDamageModifier, value => UniversalMobDamageModifier = value, true);
         }
 
         /// <summary>
@@ -44,7 +96,7 @@ namespace Content.Shared.Damage
         private void DamageableInit(EntityUid uid, DamageableComponent component, ComponentInit _)
         {
             if (component.DamageContainerID != null &&
-                _prototypeManager.TryIndex<DamageContainerPrototype>(component.DamageContainerID,
+                _prototypeManager.Resolve<DamageContainerPrototype>(component.DamageContainerID,
                 out var damageContainerPrototype))
             {
                 // Initialize damage dictionary, using the types and groups from the damage
@@ -108,6 +160,9 @@ namespace Content.Shared.Damage
                 var data = new DamageVisualizerGroupData(component.DamagePerGroup.Keys.ToList());
                 _appearance.SetData(uid, DamageVisualizerKeys.DamageUpdateGroups, data, appearance);
             }
+
+            // TODO DAMAGE
+            // byref struct event.
             RaiseLocalEvent(uid, new DamageChangedEvent(component, damageDelta, interruptsDoAfters, origin));
         }
 
@@ -130,6 +185,7 @@ namespace Content.Shared.Damage
             if (!uid.HasValue || !_damageableQuery.Resolve(uid.Value, ref damageable, false))
             {
                 // TODO BODY SYSTEM pass damage onto body system
+                // BOBBY WHEN?
                 return null;
             }
 
@@ -148,10 +204,8 @@ namespace Content.Shared.Damage
             if (!ignoreResistances)
             {
                 if (damageable.DamageModifierSetId != null &&
-                    _prototypeManager.TryIndex<DamageModifierSetPrototype>(damageable.DamageModifierSetId, out var modifierSet))
+                    _prototypeManager.Resolve(damageable.DamageModifierSetId, out var modifierSet))
                 {
-                    // TODO DAMAGE PERFORMANCE
-                    // use a local private field instead of creating a new dictionary here..
                     damage = DamageSpecifier.ApplyModifierSet(damage, modifierSet);
                 }
 
@@ -165,9 +219,11 @@ namespace Content.Shared.Damage
                 }
             }
 
-            // TODO DAMAGE PERFORMANCE
-            // Consider using a local private field instead of creating a new dictionary here.
-            // Would need to check that nothing ever tries to cache the delta.
+            // satlker-change
+            // this came from the upstream merge but i dont really understand whats going on with it
+            //if (!ignoreGlobalModifiers)
+            //    damage = ApplyUniversalAllModifiers(damage);
+
             var delta = new DamageSpecifier();
             delta.DamageDict.EnsureCapacity(damage.DamageDict.Count);
 
@@ -190,6 +246,37 @@ namespace Content.Shared.Damage
                 DamageChanged(uid.Value, damageable, delta, interruptsDoAfters, origin);
 
             return delta;
+        }
+
+        /// <summary>
+        /// Applies the two univeral "All" modifiers, if set.
+        /// Individual damage source modifiers are set in their respective code.
+        /// </summary>
+        /// <param name="damage">The damage to be changed.</param>
+        public DamageSpecifier ApplyUniversalAllModifiers(DamageSpecifier damage)
+        {
+            // Checks for changes first since they're unlikely in normal play.
+            if (UniversalAllDamageModifier == 1f && UniversalAllHealModifier == 1f)
+                return damage;
+
+            foreach (var (key, value) in damage.DamageDict)
+            {
+                if (value == 0)
+                    continue;
+
+                if (value > 0)
+                {
+                    damage.DamageDict[key] *= UniversalAllDamageModifier;
+                    continue;
+                }
+
+                if (value < 0)
+                {
+                    damage.DamageDict[key] *= UniversalAllHealModifier;
+                }
+            }
+
+            return damage;
         }
 
         /// <summary>
@@ -216,7 +303,7 @@ namespace Content.Shared.Damage
             DamageChanged(uid, component, new DamageSpecifier());
         }
 
-        public void SetDamageModifierSetId(EntityUid uid, string damageModifierSetId, DamageableComponent? comp = null)
+        public void SetDamageModifierSetId(EntityUid uid, string? damageModifierSetId, DamageableComponent? comp = null)
         {
             if (!_damageableQuery.Resolve(uid, ref comp))
                 return;
@@ -229,12 +316,12 @@ namespace Content.Shared.Damage
         {
             if (_netMan.IsServer)
             {
-                args.State = new DamageableComponentState(component.Damage.DamageDict, component.DamageModifierSetId, component.HealthBarThreshold);
+                args.State = new DamageableComponentState(component.Damage.DamageDict, component.DamageContainerID, component.DamageModifierSetId, component.HealthBarThreshold);
             }
             else
             {
                 // avoid mispredicting damage on newly spawned entities.
-                args.State = new DamageableComponentState(component.Damage.DamageDict.ShallowClone(), component.DamageModifierSetId, component.HealthBarThreshold);
+                args.State = new DamageableComponentState(component.Damage.DamageDict.ShallowClone(), component.DamageContainerID, component.DamageModifierSetId, component.HealthBarThreshold);
             }
         }
 
@@ -267,12 +354,13 @@ namespace Content.Shared.Damage
                 return;
             }
 
+            component.DamageContainerID = state.DamageContainerId;
             component.DamageModifierSetId = state.ModifierSetId;
             component.HealthBarThreshold = state.HealthBarThreshold;
 
             // Has the damage actually changed?
             DamageSpecifier newDamage = new() { DamageDict = new(state.DamageDict) };
-            var delta = component.Damage - newDamage;
+            var delta = newDamage - component.Damage;
             delta.TrimZeros();
 
             if (!delta.Empty)

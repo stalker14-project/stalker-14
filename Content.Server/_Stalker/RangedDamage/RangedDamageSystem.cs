@@ -3,8 +3,12 @@ using Content.Shared.Damage;
 using Content.Shared.Interaction.Events;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Timing;
+using Content.Shared.Trigger;
+using Content.Shared.Trigger.Systems;
 using Robust.Shared.Timing;
 using System.Linq;
+using Content.Shared.Explosion.Components;
+using Content.Shared.Trigger.Components;
 
 namespace Content.Server._Stalker.RangedDamage;
 /// <summary>
@@ -29,8 +33,10 @@ public sealed class RangedDamageSystem : EntitySystem
 
     private void OnInit(EntityUid uid, RangedDamageComponent component, ComponentInit args)
     {
-        if (component.ActivateOnSpawn)
-            _trigger.HandleTimerTrigger(uid, null, component.TimeToDamage, 1f, null, null);
+        if (component.ActivateOnSpawn && TryComp<TimerTriggerComponent>(uid, out var timerTrigger))
+        {
+            _trigger.ActivateTimerTrigger((uid, timerTrigger));
+        }
     }
 
     private void OnAttempt(EntityUid uid, RangedDamageComponent component, ref StepTriggerAttemptEvent args)
@@ -51,12 +57,18 @@ public sealed class RangedDamageSystem : EntitySystem
             if (useDelayComponent.Delays.FirstOrDefault().Value.EndTime > _timing.CurTime)
                 return;
         }
-        _trigger.HandleTimerTrigger(uid, args.Tripper, component.TimeToDamage, 1f, null, null);
+        if (TryComp<TimerTriggerComponent>(uid, out var timerTrigger))
+        {
+            _trigger.ActivateTimerTrigger((uid, timerTrigger));
+        }
     }
 
     private void OnUse(EntityUid uid, RangedDamageComponent component, UseInHandEvent args)
     {
-        _trigger.HandleTimerTrigger(uid, args.User, component.TimeToDamage, 1f, null, null);
+        if (TryComp<TimerTriggerComponent>(uid, out var timerTrigger))
+        {
+            _trigger.ActivateTimerTrigger((uid, timerTrigger));
+        }
     }
 
     private void OnTriggered(EntityUid uid, RangedDamageComponent component, TriggerEvent args)

@@ -15,7 +15,10 @@ using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.EntitySerialization.Systems;
+using Robust.Shared.Utility;
 using SponsorSystem = Content.Server._Stalker.Sponsors.System.SponsorSystem;
+using System.Linq;
 
 namespace Content.Server._Stalker.Teleports.DuplicateTeleport;
 
@@ -90,7 +93,8 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
         ArenaMap[concatenated] = _mapManager.GetMapEntityId(mapId);
         _metaDataSystem.SetEntityName(ArenaMap[concatenated], $"STALKER_MAP-{concatenated}");
         var map = Comp<MapComponent>(ArenaMap[concatenated]);
-        var isLoaded = _map.TryLoad(map.MapId, component.ArenaMapPath, out var grids);
+        var mapPath = new ResPath(component.ArenaMapPath);
+        var isLoaded = _map.TryLoadMap(mapPath, out _, out var grids);
         _mapSystem.SetPaused(map.MapId, false);
         if (grids is null || !isLoaded)
         {
@@ -100,13 +104,13 @@ public sealed class DuplicateTeleportSystem : SharedTeleportSystem
 
         if (grids.Count != 0)
         {
-            _metaDataSystem.SetEntityName(grids[0], $"STALKER_GRID-{concatenated}");
-            ArenaGrid[concatenated] = grids[0];
+            _metaDataSystem.SetEntityName(grids.ElementAt(0), $"STALKER_GRID-{concatenated}");
+            ArenaGrid[concatenated] = grids.ElementAt(0);
         }
         else
             ArenaGrid[concatenated] = null;
 
-        if (TryComp(grids[0], out TransformComponent? xform))
+        if (TryComp(grids.ElementAt(0), out TransformComponent? xform))
         {
             // TODO: Obsolete
             var enumerator = xform.ChildEnumerator;

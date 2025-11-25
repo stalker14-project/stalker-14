@@ -1,4 +1,4 @@
-﻿using Content.Shared._Stalker.Invisibility;
+using Content.Shared._Stalker.Invisibility;
 using Content.Shared.Actions;
 
 namespace Content.Shared._Stalker.Psyonics.Abilities.Stealth;
@@ -27,7 +27,7 @@ public sealed class STPsyonicsStealthSystem : EntitySystem
         if (entity.Comp.Action is null)
             return;
 
-        _actions.RemoveAction(entity, entity.Comp.Action.Value);
+        //_actions.RemoveAction(entity, entity.Comp.Action.Value); // FIX LATER
 
         entity.Comp.Action = null;
         Dirty(entity);

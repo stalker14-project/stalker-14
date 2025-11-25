@@ -17,13 +17,9 @@ namespace Content.Server.Stack
     {
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
-        public static readonly int[] DefaultSplitAmounts = { 1, 5, 10, 20, 30, 50 };
-
         public override void Initialize()
         {
             base.Initialize();
-
-            SubscribeLocalEvent<StackComponent, GetVerbsEvent<AlternativeVerb>>(OnStackAlternativeInteract);
         }
 
         public override void SetCount(EntityUid uid, int amount, StackComponent? component = null)
@@ -34,7 +30,7 @@ namespace Content.Server.Stack
             base.SetCount(uid, amount, component);
 
             // Queue delete stack if count reaches zero.
-            if (component.Count <= 0 && !component.Lingering)
+            if (component.Count <= 0)
                 QueueDel(uid);
         }
 
@@ -87,7 +83,7 @@ namespace Content.Server.Stack
         public EntityUid Spawn(int amount, StackPrototype prototype, EntityCoordinates spawnPosition)
         {
             // Set the output result parameter to the new stack entity...
-            var entity = Spawn(prototype.Spawn, spawnPosition);
+            var entity = SpawnAtPosition(prototype.Spawn, spawnPosition);
             var stack = Comp<StackComponent>(entity);
 
             // And finally, set the correct amount!
