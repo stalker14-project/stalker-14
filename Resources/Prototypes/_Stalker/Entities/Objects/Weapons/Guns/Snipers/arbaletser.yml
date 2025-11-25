@@ -10,3 +10,21 @@
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/arbalet.rsi
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Guns/Snipers/arbalet.rsi
+  - type: STWeaponModuleContainer
+  - type: ItemSlots
+    slots:
+      gun_module_scope:
+        name: Scope
+        priority: 1
+        whitelist:
+          tags:
+          - STWeaponModuleSniperSight
+      projectiles:
+        name: Projectiles
+        priority: 2
+        startingItem: null
+        insertSound: /Audio/Weapons/Guns/Misc/arrow_nock.ogg
+        whitelist:
+          tags:
+          - Arrow
+          - Plunger
