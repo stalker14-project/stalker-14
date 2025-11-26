@@ -4,7 +4,10 @@
   description: Позволяет менять нашивку (значок или шеврон) на своем персонаже. Вы можете выбрать разные нашивки, чтобы подчеркнуть стиль или добиться желаемого внешнего вида своего героя.
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       checkCanInteract: false
-      icon: _Stalker/Interface/Actions/patch.rsi/switch_patch.png
+      icon:
+        sprite: _Stalker/Interface/Actions/patch.rsi
+        state: switch_patch
+    - type: InstantAction
       event: !type:ChangeBandEvent

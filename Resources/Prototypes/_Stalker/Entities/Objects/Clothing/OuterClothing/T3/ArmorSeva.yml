@@ -16,7 +16,7 @@
     clothingPrototype: STClothingHeadHardsuitSevaHelmBase
     slot: head
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,0,5,3
       - 7,0,12,3
@@ -48,6 +48,11 @@
     - BlockCloak
     - BlockBack
     - BlockBelt
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
   parent: ClothingHeadHardsuitBase
@@ -66,7 +71,6 @@
   - type: Tag
     tags:
       - BlockMask
-      - HidesNose
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -86,6 +90,7 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - Snout
 # Stalker
 
 - type: entity
@@ -131,7 +136,7 @@
   id: ClothingHeadHardsuitSevaHelmSci
   name: шлем севы
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_sci_helm.rsi
@@ -209,7 +214,7 @@
   id: ClothingHeadHardsuitSevaHelmMonolith
   name: шлем севы монолита
   description: Несмотря, на преимущественно стеклянную состовляющую, довольно прочный.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/seva_helm_monolith.rsi

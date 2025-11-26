@@ -12,17 +12,13 @@
   description: Вова Вист обладает превосходными навыками ведения стрельбы из пулемёта, в совокупности с аномальной мощью его пулемёта, этого достаточно, чтобы сделать военного одним из самых опасных людей в Зоне. Даже такой легендарный сталкер, как Шрам, продемонстрировал нечеловеческие возможности и все свои навыки, выложившись на полную и получив огромную порцию пятиточечной боли, чтобы прорваться в Деревню Новичков, избегая зоркого глаза, доведённого до предела мастерства и смертельных пуль Вовы Виста.
   components:
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: alive
-      sprite: /Textures/_Stalker/Mobs/Military/Vist.rsi
-  - type: BatterySelfRecharger
-    autoRecharge: true
+    sprite: /Textures/_Stalker/Mobs/Military/Vist.rsi
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 50
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 100
     startingCharge: 100
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet918PGJ
     fireCost: 1
   - type: Gun
@@ -46,10 +42,7 @@
   description:
   components:
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: alive
-      sprite: /Textures/_Stalker/Mobs/Military/Sniper.rsi
+    sprite: /Textures/_Stalker/Mobs/Military/Sniper.rsi
   - type: DamageStateVisuals
     states:
       Alive:
@@ -66,13 +59,12 @@
         30
       AggroVisionRadius: !type:Single
         25
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 25
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 100
     startingCharge: 100
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet754FMJ
     fireCost: 80
   - type: Gun

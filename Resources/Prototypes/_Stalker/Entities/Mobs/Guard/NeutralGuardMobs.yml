@@ -9,16 +9,12 @@
     factions:
     - Stalker
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Neutral.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Neutral.rsi
   - type: Bands
     bandIcon: ne
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun

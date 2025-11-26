@@ -59,7 +59,7 @@
         path: /Audio/_Stalker/Mutants/bloodsucker_scream.ogg
         params:
           volume: 1
-          maxdistance: 20
+          maxDistance: 20
     - type: EmitSoundOnTrigger
       sound:
         path: /Audio/_Stalker/Mutants/bloodsucker_die_1.ogg
@@ -87,8 +87,6 @@
         700: Dead
     - type: MeleeWeapon
       attackRate: 0.4
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.5
       angle: 30
       range: 1.5
       soundHit:
@@ -105,6 +103,8 @@
         types:
           Blunt: 28
           Slash: 20
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 5.6

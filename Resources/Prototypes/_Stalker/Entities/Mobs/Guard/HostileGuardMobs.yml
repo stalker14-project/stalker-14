@@ -20,14 +20,10 @@
     factions:
     - Hostile
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: alive
-      sprite: /Textures/_Stalker/Mobs/Guards/AgressiveWeak.rsi
-  - type: BatterySelfRecharger
-    autoRecharge: true
+    sprite: /Textures/_Stalker/Mobs/Guards/AgressiveWeak.rsi
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545FMJ
     fireCost: 5
   - type: Gun

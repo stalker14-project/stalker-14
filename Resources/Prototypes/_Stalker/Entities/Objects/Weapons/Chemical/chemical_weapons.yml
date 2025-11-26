@@ -12,6 +12,8 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Chemical/chlorine_balloon_stalker.rsi
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 90
     spreadAmount: 8000
     solution:
@@ -22,11 +24,16 @@
     self: 15.5
   - type: Item
     size: Ginormous
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 1
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
@@ -43,7 +50,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/ipritgrenade.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 20
     spreadAmount: 10
     solution:
@@ -60,11 +71,16 @@
     self: 0.1
   - type: Item
     size: Small
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 3
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
@@ -81,7 +97,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/lewisitegrenade.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 30
     spreadAmount: 20
     solution:
@@ -98,9 +118,12 @@
     self: 0.25
   - type: Item
     size: Small
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 3
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
   - type: TimerTriggerVisuals
@@ -119,7 +142,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/hydrocyanicgrenade.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 180
     spreadAmount: 20
     solution:
@@ -132,9 +159,12 @@
     size: Normal
     shape:
     - 0,0,1,1
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 5
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
   - type: TimerTriggerVisuals
@@ -153,7 +183,11 @@
   - type: Clothing
     sprite: _Stalker/Objects/Weapons/Chemical/phosphorusgreande.rsi
   - type: ExplodeOnTrigger
+    keysIn:
+    - timer
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 10
     spreadAmount: 999
     solution:
@@ -172,9 +206,12 @@
     size: Normal
     shape:
     - 0,0,1,1
-  - type: OnUseTimerTrigger
+  - type: TriggerOnUse
+  - type: TimerTrigger
     delay: 3
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
 
@@ -272,10 +309,10 @@
 
 - type: reagent
   id: ChlorineStalker
-  name: газовый хлор
+  name: reagent-name-chlorine-stalker
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: reagent-desc-chemical-weapon
+  physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
   color: "#d2ff85"
   meltingPoint: -101.5
@@ -301,7 +338,7 @@
       - !type:PopupMessage
         type: Local
         probability: 0.08
-        messages:
+        messages: # Stalker-TODO: Localize these
         - Ваши глаза сильно жгут.
         - Ваш глаз истекает кровью.
         - Ваши глаза начинают слезиться.
@@ -319,34 +356,37 @@
         - Вы чувствуете, как ваше зрение ухудшается.
         - Ваши веки быстро дёргаются.
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: ChlorineStalker
           min: 5
       - !type:Emote
-        emote: Crying
+        emote: STCrying
         probability: 0.1
       - !type:Emote
-        emote: Scream
+        emote: STScream
         probability: 0.2
       - !type:GenericStatusEffect
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: ChlorineStalker
           min: 1
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: ChlorineStalker
           min: 10
         probability: 0.2
 
 - type: reagent
   id: IpritStalker
-  name: иприт
+  name: reagent-name-iprit-stalker
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: reagent-desc-chemical-weapon
+  physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
   color: "#ffeb78"
   meltingPoint: -101.5
@@ -365,7 +405,7 @@
       - !type:PopupMessage
         type: Local
         probability: 0.08
-        messages:
+        messages: # Stalker-TODO: Localize these
         - Ваша кожа шипит.
         - Вы чувствуете сильные ожоги
         - Ваша кожа сдирается.
@@ -381,31 +421,34 @@
         - Ваша кожа слезла!
         - Вы чувствуете повышенную температуру.
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: IpritStalker
           min: 5
       - !type:Emote
-        emote: Crying
+        emote: STCrying
         probability: 0.3
       - !type:GenericStatusEffect
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: IpritStalker
           min: 4
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: IpritStalker
           min: 5
         probability: 0.2
 
 - type: reagent
   id: LewisiteStalker
-  name: люизит
+  name: reagent-name-lewisite-stalker
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: reagent-desc-chemical-weapon
+  physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
   color: "#b87502"
   meltingPoint: -101.5
@@ -424,7 +467,7 @@
       - !type:PopupMessage
         type: Local
         probability: 0.08
-        messages:
+        messages: # Stalker-TODO: Localize these
         - Ваша кожа шипит.
         - Вы чувствуете сильные ожоги
         - Ваша кожа сдирается.
@@ -441,34 +484,37 @@
         - Ваша кожа слезла!
         - Вы чувствуете повышенную температуру.
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: LewisiteStalker
           min: 5
       - !type:Emote
-        emote: Crying
+        emote: STCrying
         probability: 0.3
       - !type:Emote
-        emote: Scream
+        emote: STScream
         probability: 0.3
       - !type:GenericStatusEffect
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: LewisiteStalker
           min: 4
     Medicine:
       effects:
-      - !type:ChemVomit
+      - !type:Vomit
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: LewisiteStalker
           min: 5
         probability: 0.2
 
 - type: reagent
   id: HydrocyanicStalker
-  name: синильная кислота
+  name: reagent-name-hydrocyanic-stalker
   group: Elements
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  desc: reagent-desc-chemical-weapon
+  physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
   color: "#fffcf2"
   meltingPoint: -101.5
@@ -489,7 +535,7 @@
       - !type:PopupMessage
         type: Local
         probability: 0.08
-        messages:
+        messages: # Stalker-TODO: Localize these
         - Вы не чувствуете легкие
         - Вы не дишите
         - Вы перестали дышать
@@ -505,12 +551,12 @@
         - Вы сильнее задыхаетесь!
         - Малой уровень кислорода!
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: HydrocyanicStalker
           min: 2
       - !type:Emote
         emote: Cough
         probability: 0.4
-      - !type:GenericStatusEffect
     Medicine:
       effects:
       - !type:HealthChange
@@ -520,9 +566,9 @@
 
 - type: reagent
   id: PhosphorusStalker
-  name: фосфор
-  desc: Химическое оружие
-  physicalDesc: газообразное
+  name: reagent-name-phosphorus-stalker
+  desc: reagent-desc-chemical-weapon
+  physicalDesc: reagent-physical-desc-gaseous
   flavor: bitter
   color: "#ffe7bf"
   metabolisms:
@@ -533,7 +579,7 @@
           types:
             Heat: 30
             Caustic: 30
-      - !type:FlammableReaction
+      - !type:Flammable
         multiplier: 0.1
       - !type:AdjustTemperature
         amount: 120
@@ -541,11 +587,11 @@
     Flammable:
       methods: [ Touch ]
       effects:
-      - !type:FlammableReaction
+      - !type:Flammable
         multiplier: 0.05
       - !type:Ignite
       - !type:Emote
-        emote: Scream
+        emote: STScream
         probability: 0.2
 
 ##############################
@@ -554,10 +600,10 @@
 
 - type: reagent
   id: DexalinPlusStalker
-  name: дексалин плюс
+  name: reagent-name-dexalin-plus-stalker
   group: Medicine
-  desc: Используется для лечения кислородного голодания и потери крови. Выводит синильную кислоту из кровеносной системы.
-  physicalDesc: облачное
+  desc: reagent-desc-dexalin-plus-stalker
+  physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
   color: "#4da0bd"
   metabolisms:
@@ -570,14 +616,15 @@
             Bloodloss: -5
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: HydrocyanicStalker
           min: 0.1
         reagent: HydrocyanicStalker
         amount: -50
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: DexalinPlusStalker
           min: 25
         damage:
           types:

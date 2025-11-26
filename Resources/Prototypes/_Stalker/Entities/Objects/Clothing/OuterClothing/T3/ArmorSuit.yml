@@ -16,7 +16,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/renegade_armor.rsi
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,0,0,0
       - 2,0,2,0
@@ -42,6 +42,11 @@
   - type: Tag
     tags:
     - BlockGloves
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 # stalker
 - type: entity
@@ -62,7 +67,7 @@
     - BlockCloak
     - BlockBack
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,2,0,3
       - 2,2,2,3
@@ -109,7 +114,7 @@
     clothingPrototype: ClothingHeadHatHoodMercBandit
     slot: head
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,2,0,3
       - 2,2,2,3
@@ -160,7 +165,7 @@
     clothingPrototype: ClothingHeadHatHoodMerc
     slot: head
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,2,0,3
       - 2,2,2,3
@@ -196,7 +201,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/merc_armor_2.rsi
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,2,0,3
       - 2,2,2,3
@@ -290,7 +295,7 @@
     clothingPrototype: ClothingHeadHelmetFreedomWind
     slot: head
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 4,-0,5,-0
       - 1,-0,2,-0
@@ -300,6 +305,11 @@
       - 6,3,6,4
   - type: Armor
     armorClass: 2
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -325,7 +335,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/cn3a.rsi
 # bonus
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - -3,2,-2,3
       - 0,2,0,3
@@ -351,7 +361,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/monolith_armor.rsi
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 4,-0,5,-0
       - 1,-0,2,-0
@@ -389,7 +399,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/monolith_armor_old.rsi
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 4,-0,5,-0
       - 1,-0,2,-0
@@ -457,7 +467,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/seraphime_firstborn.rsi
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 4,-0,5,-0
       - 1,-0,2,-0

@@ -72,7 +72,7 @@
       sprite: Clothing/Back/Backpacks/engineering.rsi
     - type: Storage
       craft: true
-      maxItemsize: Large
+      maxItemSize: Large
       grid:
         - 0,0,4,8
     - type: STWeight
@@ -92,8 +92,13 @@
       state: icon
     - type: Transform
       noRot: true
+    - type: Storage
       grid:
         - 0,0,12,12
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+          ents: []
     - type: Craftable
     - type: ActivatableUI
       key: enum.ShopUiKey.Key

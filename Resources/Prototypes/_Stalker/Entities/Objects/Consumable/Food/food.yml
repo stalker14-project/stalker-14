@@ -2,9 +2,9 @@
 
 - type: reagent
   id: MToxin
-  name: MToxin
+  name: reagent-name-mtoxin
   parent: Toxin
-  desc: MToxin
+  desc: reagent-desc-mtoxin
   physicalDesc: reagent-physical-desc-sweet
   flavor: salty
   color: "#660099"
@@ -46,9 +46,9 @@
 
 - type: reagent
   id: MRadin
-  name: MRadin
+  name: reagent-name-mradin
   group: Medicine
-  desc: MRadin
+  desc: reagent-desc-mradin
   physicalDesc: reagent-physical-desc-cloudy
   flavor: medicine
   color: "#bd5902"
@@ -84,9 +84,9 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSaloCook
     node: start
-    defaultTarget: steak boar
+    defaultTarget: salo
   - type: Tag
     tags:
     - Meat
@@ -121,8 +121,25 @@
         - ReagentId: MRadin
           Quantity: 10
   - type: Construction
-    graph: MeatSteakBoar
-    node: steak boar
+    graph: MeatSaloCook
+    node: salo
+
+- type: constructionGraph
+  id: MeatSaloCook
+  start: start
+  graph:
+
+  - node: start
+    edges:
+    - to: salo
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: salo
+    entity: STFoodMeatSaloCooked
 
 ###############Хлеб
 
@@ -134,7 +151,7 @@
   - type: FlavorProfile
     flavors:
       - bread
-  - type: Food
+  - type: Edible
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/bread.rsi
   - type: RepositoryItem
@@ -176,7 +193,7 @@
   description: Неизвестно, кто умудряется печь батоны на территории Зоны, или каким образом их протаскивают через периметр. Однако этот хлеб не заражён, не радиоактивен, достаточно свеж и вполне съедобен. Во всяком случае, никто из сталкеров пока не жаловался.
   suffix: Stalker, еда
   components:
-  - type: Food
+  - type: Edible
   - type: Sprite
     layers:
     - state: plain
@@ -193,7 +210,7 @@
   id: STFoodBreadPlainSlice
   description: Кусок хлеба. На первый взгляд достаточно свеж и вполне съедобен.
   components:
-  - type: Food
+  - type: Edible
   - type: Sprite
     layers:
     - state: plain-slice
@@ -315,7 +332,7 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSteakBoar
     node: start
     defaultTarget: steak boar
   - type: Tag
@@ -401,9 +418,9 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSteakDog
     node: start
-    defaultTarget: steak boar
+    defaultTarget: steak dog
   - type: Tag
     tags:
     - Meat
@@ -522,7 +539,7 @@
 ###################################
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  parent: DrinkBottleGlassBaseFull
   id: DrinkLemonadehBottleFull
   name: бутылка с лимонадом «Дюшес»
   description: "Один из сортов советского лимонада: безалкогольный сильногазированный тонизирующий напиток светло-жёлтого цвета. Помимо обычной лимонадной основы, оригинальный напиток содержит сироп-настой десертной южной груши сорта «Дюшес»"
@@ -610,7 +627,6 @@
   - type: Sprite
     sprite: _Stalker/Objects/Specific/Hydroponics/potato.rsi
     state: potato_cut
-    size: Small
   - type: Tag
     tags:
     - Potato
@@ -626,15 +642,14 @@
   - type: STWeight
     self: 0.34
   - type: Craftable
-  - type: SolutionContainerManager
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Food/meat_buterbread.rsi
     state: icon
-    size: Small
   - type: FlavorProfile
     flavors:
       - meaty
       - bread
+  - type: SolutionContainerManager
     solutions:
       food:
         reagents:

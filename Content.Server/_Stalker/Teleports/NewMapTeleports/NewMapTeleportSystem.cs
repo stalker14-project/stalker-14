@@ -13,10 +13,13 @@ using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Stalker.Teleports.NewMapTeleports;
 // TODO: Rename this system
@@ -33,7 +36,6 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
     [Dependency] private readonly SharedGodmodeSystem _godmode = default!;
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly ILogManager _logManager = default!;
-    [Dependency] private readonly LinkedEntitySystem _linkedEntitySystem = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -60,9 +62,9 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
         }
 #endif
 
+        UpdateLinks();
         var ev = new MapsLoadedEvent();
         RaiseLocalEvent(ref ev);
-        UpdateLinks();
     }
 
     private void UpdateLinks()
@@ -109,17 +111,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
 
     private void LoadMap(string path)
     {
-        var map = _mapSystem.CreateMap(out var mapId);
-        if (_mapLoader.TryLoad(mapId, path, out _) && !_mapSystem.IsInitialized(mapId))
-        {
-            _mapSystem.InitializeMap(mapId);
-        }
-        if (_mapSystem.IsPaused(mapId))
-        {
-            _mapSystem.SetPaused(mapId, false);
-        }
-        if (!_mapSystem.IsInitialized(mapId))
-            _sawmill.Error($"Map with id {mapId} from {path} load failed.");
+        _mapLoader.TryLoadMap(new ResPath(path), out _, out _, DeserializationOptions.Default with { InitializeMaps = true });
     }
     private void OnStartCollide(EntityUid uid, NewMapTeleportComponent component, ref StartCollideEvent args)
     {
@@ -154,7 +146,7 @@ public sealed class NewMapTeleportSystem : SharedTeleportSystem
                 if (local.PortalName != component.PortalName || uid == ent)
                     continue;
 
-                _linkedEntitySystem.TryLink(uid, ent, true);
+                _link.TryLink(uid, ent, true);
             }
         }
 

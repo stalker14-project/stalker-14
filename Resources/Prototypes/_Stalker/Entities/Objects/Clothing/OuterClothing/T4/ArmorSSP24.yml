@@ -18,7 +18,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetSSP24
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,0,5,3
       - 7,0,12,3
@@ -54,6 +54,11 @@
     - BlockCloak
     - BlockBack
     - BlockBelt
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
 
 - type: entity
   parent: ClothingHeadHardsuitBase

@@ -9,16 +9,12 @@
     factions:
     - MilitaryStalker
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/VoenStalker/Top.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/VoenStalker/Top.rsi
   - type: Bands
     bandIcon: voen
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun

@@ -50,8 +50,6 @@
           variation: 0.3
     - type: MeleeWeapon
       attackRate: 1
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.5
       angle: 30
       range: 0.7
       soundHit:
@@ -68,6 +66,8 @@
         types:
           Slash: 15
           Poison: 2
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
       baseWalkSpeed: 3
       baseSprintSpeed: 7

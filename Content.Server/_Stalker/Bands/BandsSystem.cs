@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server.Database;
@@ -15,6 +16,7 @@ using Content.Server.Players.JobWhitelist;
 using Content.Shared._Stalker.Bands.Components;
 using Content.Server._Stalker.WarZone;
 using Content.Shared.Hands.EntitySystems;
+using Robust.Shared.Player;
 
 namespace Content.Server._Stalker.Bands
 {
@@ -31,6 +33,7 @@ namespace Content.Server._Stalker.Bands
         [Dependency] private readonly WarZoneSystem _warZoneSystem = default!;
         [Dependency] private readonly SharedHandsSystem _hands = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
+        [Dependency] private readonly ISharedPlayerManager _player = default!;
 
         private sealed record ServerBandInfo(STBandPrototype Prototype, StalkerBand? DbBand = null);
 
@@ -66,6 +69,18 @@ namespace Content.Server._Stalker.Bands
             UpdateUiState(ent, args.Actor);
         }
 
+        private bool TryGetSession(EntityUid uid, [NotNullWhen(true)] out ICommonSession? session)
+        {
+            if (!_mindSystem.TryGetMind(uid, out _, out var mindComp) || !_player.TryGetSessionById(mindComp.UserId, out var currentSession))
+            {
+                session = null;
+                return false;
+            }
+
+            session = currentSession;
+
+            return true;
+        }
 
         private async Task LoadShopItems(Entity<BandsManagingComponent> ent)
         {
@@ -97,22 +112,12 @@ namespace Content.Server._Stalker.Bands
             if (actor == null)
                 return;
 
-            if (!_mindSystem.TryGetMind(actor.Value, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
+            if (!TryGetSession(actor.Value, out var session))
             {
                 // Send empty state if session cannot be found
                 _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false, new(), new(), new())); // Added shop items list
                 return;
             }
-
-            // If userId is still null after checks, we cannot proceed.
-            if (session.UserId == null)
-            {
-                Logger.ErrorS("bands", $"Failed to obtain NetUserId for BandsManaging UI update on {ToPrettyString(uid)}.");
-                // Send empty state if UserId is null
-                _uiSystem.SetUiState(uid, BandsUiKey.Key, new BandsManagingBoundUserInterfaceState(null, 0, new(), false, new(), new(), new())); // Added shop items list
-                return;
-            }
-
 
             var bandInfo = await GetPlayerBandInfoAsync(session.UserId);
             // Don't return early if bandInfo is null, send state indicating no band or not manageable.
@@ -187,7 +192,7 @@ namespace Content.Server._Stalker.Bands
         // OnAddMember and OnRemoveMember remain largely the same, but call the new UpdateUiState
         private async void OnAddMember(EntityUid uid, BandsManagingComponent component, BandsManagingAddMemberMessage msg)
         {
-            if (!_mindSystem.TryGetMind(msg.Actor, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
+            if (!TryGetSession(msg.Actor, out var session))
                 return;
 
             var leaderUserId = session.UserId;
@@ -256,7 +261,7 @@ namespace Content.Server._Stalker.Bands
         private async void OnRemoveMember(EntityUid uid, BandsManagingComponent component, BandsManagingRemoveMemberMessage msg)
         {
             // Use the requested pattern for getting session from the message actor
-            if (!_mindSystem.TryGetMind(msg.Actor, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
+            if (!TryGetSession(msg.Actor, out var session))
                 return;
 
             var leaderUserId = session.UserId;
@@ -473,7 +478,7 @@ namespace Content.Server._Stalker.Bands
         private async void OnBuyItem(EntityUid uid, BandsManagingComponent component, BandsManagingBuyItemMessage msg)
         {
             // Use the requested pattern for getting session from the message actor
-            if (!_mindSystem.TryGetMind(msg.Actor, out _, out var mindComp) || !_mindSystem.TryGetSession(mindComp, out var session))
+            if (!TryGetSession(msg.Actor, out var session))
                 return;
 
             var buyer = msg.Actor;
