@@ -53,6 +53,8 @@
         20000: Dead
     - type: MeleeWeapon
       attackRate: 0.5
+      heavyWindupModifier: 1.5
+      heavyDamageModifier: 2
       angle: 60
       range: 4
       soundHit:
@@ -69,10 +71,6 @@
         types:
           Blunt: 80
           Piercing: 40
-    - type: BonusMeleeAttackRate
-      heavyWindupMultiplier: 1.5
-    - type: BonusMeleeDamage
-      heavyDamageMultiplier: 2
     - type: MovementSpeedModifier
       baseWalkSpeed: 1.5
       baseSprintSpeed: 2.5
@@ -95,7 +93,7 @@
           layer:
             - MobLayer
     - type: Damageable
-      damageModifierSet: STMutantT1DamageModifierSet # Stalker-TODO: Before it was "PseudogiantMutant" but it doesn't exist
+      damageModifierSet: PseudogiantMutant
     - type: SlowOnDamage
       speedModifierThresholds:
         5000: 0.8

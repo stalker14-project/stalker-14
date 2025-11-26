@@ -5,6 +5,9 @@
   description: ded
   suffix: DEBUG
   components:
+  - type: Tag
+    tags:
+      - Debug
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/debug.rsi
     state: icon
@@ -29,14 +32,14 @@
         priority: 2
         whitelist:
           tags:
-            - MagazineDebug
+            - Debug
       gun_chamber:
         name: Chamber
         startingItem: CartridgeDebug
         priority: 1
         whitelist:
           tags:
-            - CartridgeDebug
+            - CartridgePistol
 
 - type: entity
   id: MagazinePistolDebug
@@ -46,7 +49,7 @@
   components:
   - type: Tag
     tags:
-      - MagazineDebug
+      - Debug
   - type: BallisticAmmoProvider
     proto: CartridgeDebug
     capacity: 1000
@@ -60,6 +63,9 @@
   categories: [ Debug, HideSpawnMenu ]
   suffix: DEBUG
   components:
+  - type: Tag
+    tags:
+      - Debug
   - type: Projectile
     damage:
       types:
@@ -73,7 +79,7 @@
   components:
   - type: Tag
     tags:
-    - CartridgeDebug
+      - Debug
   - type: CartridgeAmmo
     proto: BulletDebug
 
@@ -84,6 +90,9 @@
   description: hit hard ye
   suffix: DEBUG
   components:
+  - type: Tag
+    tags:
+      - Debug
   - type: Sprite
     sprite: Objects/Weapons/Melee/debug.rsi
     state: icon
@@ -100,6 +109,9 @@
   parent: MeleeDebugGib
   id: MeleeDebug100
   components:
+  - type: Tag
+    tags:
+      - Debug
   - type: MeleeWeapon
     damage:
       types:
@@ -110,6 +122,9 @@
   parent: MeleeDebugGib
   id: MeleeDebug200
   components:
+  - type: Tag
+    tags:
+      - Debug
   - type: MeleeWeapon
     damage:
       types:

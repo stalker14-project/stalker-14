@@ -9,15 +9,11 @@ using Content.Server.NodeContainer.Nodes;
 using Content.Server.Power.Components;
 using Content.Shared.Atmos;
 using Content.Shared.DeviceNetwork;
-using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Examine;
-using Content.Shared.NodeContainer;
 using Content.Shared.Power;
-using Content.Shared.Power.EntitySystems;
 using Content.Shared.Power.Generation.Teg;
 using Content.Shared.Rounding;
 using Robust.Server.GameObjects;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Power.Generation.Teg;
 
@@ -70,12 +66,11 @@ public sealed class TegSystem : EntitySystem
     /// </summary>
     public const string DeviceNetworkCommandSyncData = "teg_sync_data";
 
-    [Dependency] private readonly AmbientSoundSystem _ambientSound = default!;
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
     [Dependency] private readonly DeviceNetworkSystem _deviceNetwork = default!;
+    [Dependency] private readonly AppearanceSystem _appearance = default!;
     [Dependency] private readonly PointLightSystem _pointLight = default!;
-    [Dependency] private readonly SharedPowerReceiverSystem _receiver = default!;
+    [Dependency] private readonly AmbientSoundSystem _ambientSound = default!;
 
     private EntityQuery<NodeContainerComponent> _nodeContainerQuery;
 
@@ -101,12 +96,7 @@ public sealed class TegSystem : EntitySystem
         else
         {
             var supplier = Comp<PowerSupplierComponent>(uid);
-
-            using (args.PushGroup(nameof(TegGeneratorComponent)))
-            {
-                args.PushMarkup(Loc.GetString("teg-generator-examine-power", ("power", supplier.CurrentSupply)));
-                args.PushMarkup(Loc.GetString("teg-generator-examine-power-max-output", ("power", supplier.MaxSupply)));
-            }
+            args.PushMarkup(Loc.GetString("teg-generator-examine-power", ("power", supplier.CurrentSupply)));
         }
     }
 
@@ -191,12 +181,8 @@ public sealed class TegSystem : EntitySystem
 
         // Turn energy (at atmos tick rate) into wattage.
         var power = electricalEnergy / args.dt;
-
         // Add ramp factor. This magics slight power into existence, but allows us to ramp up.
-        // Also apply an exponential moving average to smooth out fluttering, as it was causing
-        // seizures.
-        supplier.MaxSupply = component.PowerSmoothingFactor * (power * component.RampFactor) +
-                             (1 - component.PowerSmoothingFactor) * supplier.MaxSupply;
+        supplier.MaxSupply = power * component.RampFactor;
 
         var circAComp = Comp<TegCirculatorComponent>(circA);
         var circBComp = Comp<TegCirculatorComponent>(circB);
@@ -255,7 +241,8 @@ public sealed class TegSystem : EntitySystem
 
         var powerReceiver = Comp<ApcPowerReceiverComponent>(uid);
 
-        _receiver.SetPowerDisabled(uid, !group.IsFullyBuilt, powerReceiver);
+        powerReceiver.PowerDisabled = !group.IsFullyBuilt;
+
         UpdateAppearance(uid, component, powerReceiver, group);
     }
 
@@ -272,16 +259,13 @@ public sealed class TegSystem : EntitySystem
         // Otherwise, make sure circulator is set to nothing.
         if (!group.IsFullyBuilt)
         {
-            UpdateCirculatorAppearance((uid, component), false);
+            UpdateCirculatorAppearance(uid, false);
         }
     }
 
-    private void UpdateCirculatorAppearance(Entity<TegCirculatorComponent?> ent, bool powered)
+    private void UpdateCirculatorAppearance(EntityUid uid, bool powered)
     {
-        if (!Resolve(ent, ref ent.Comp))
-            return;
-
-        var circ = ent.Comp;
+        var circ = Comp<TegCirculatorComponent>(uid);
 
         TegCirculatorSpeed speed;
         if (powered && circ.LastPressureDelta > 0 && circ.LastMolesTransferred > 0)
@@ -296,13 +280,13 @@ public sealed class TegSystem : EntitySystem
             speed = TegCirculatorSpeed.SpeedStill;
         }
 
-        _appearance.SetData(ent, TegVisuals.CirculatorSpeed, speed);
-        _appearance.SetData(ent, TegVisuals.CirculatorPower, powered);
+        _appearance.SetData(uid, TegVisuals.CirculatorSpeed, speed);
+        _appearance.SetData(uid, TegVisuals.CirculatorPower, powered);
 
-        if (_pointLight.TryGetLight(ent, out var pointLight))
+        if (_pointLight.TryGetLight(uid, out var pointLight))
         {
-            _pointLight.SetEnabled(ent, powered, pointLight);
-            _pointLight.SetColor(ent, speed == TegCirculatorSpeed.SpeedFast ? circ.LightColorFast : circ.LightColorSlow, pointLight);
+            _pointLight.SetEnabled(uid, powered, pointLight);
+            _pointLight.SetColor(uid, speed == TegCirculatorSpeed.SpeedFast ? circ.LightColorFast : circ.LightColorSlow, pointLight);
         }
     }
 

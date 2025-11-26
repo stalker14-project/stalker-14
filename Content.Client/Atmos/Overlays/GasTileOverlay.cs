@@ -3,7 +3,6 @@ using Content.Client.Atmos.Components;
 using Content.Client.Atmos.EntitySystems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
-using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Atmos.Prototypes;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
@@ -20,13 +19,8 @@ namespace Content.Client.Atmos.Overlays
 {
     public sealed class GasTileOverlay : Overlay
     {
-        private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
-
         private readonly IEntityManager _entManager;
         private readonly IMapManager _mapManager;
-        private readonly SharedAtmosphereSystem _atmosphereSystem;
-        private readonly SharedMapSystem _mapSystem;
-        private readonly SharedTransformSystem _xformSys;
 
         public override OverlaySpace Space => OverlaySpace.WorldSpaceEntities | OverlaySpace.WorldSpaceBelowWorld;
         private readonly ShaderInstance _shader;
@@ -52,14 +46,11 @@ namespace Content.Client.Atmos.Overlays
 
         public const int GasOverlayZIndex = (int) Shared.DrawDepth.DrawDepth.Effects; // Under ghosts, above mostly everything else
 
-        public GasTileOverlay(GasTileOverlaySystem system, IEntityManager entManager, IResourceCache resourceCache, IPrototypeManager protoMan, SpriteSystem spriteSys, SharedTransformSystem xformSys)
+        public GasTileOverlay(GasTileOverlaySystem system, IEntityManager entManager, IResourceCache resourceCache, IPrototypeManager protoMan, SpriteSystem spriteSys)
         {
             _entManager = entManager;
             _mapManager = IoCManager.Resolve<IMapManager>();
-            _atmosphereSystem = entManager.System<SharedAtmosphereSystem>();
-            _mapSystem = entManager.System<SharedMapSystem>();
-            _xformSys = xformSys;
-            _shader = protoMan.Index(UnshadedShader).Instance();
+            _shader = protoMan.Index<ShaderPrototype>("unshaded").Instance();
             ZIndex = GasOverlayZIndex;
 
             _gasCount = system.VisibleGasId.Length;
@@ -70,7 +61,7 @@ namespace Content.Client.Atmos.Overlays
 
             for (var i = 0; i < _gasCount; i++)
             {
-                var gasPrototype = _atmosphereSystem.GetGas(system.VisibleGasId[i]);
+                var gasPrototype = protoMan.Index<GasPrototype>(system.VisibleGasId[i].ToString());
 
                 SpriteSpecifier overlay;
 
@@ -167,10 +158,9 @@ namespace Content.Client.Atmos.Overlays
                 _fireFrameCounter,
                 _shader,
                 overlayQuery,
-                xformQuery,
-                _xformSys);
+                xformQuery);
 
-            var mapUid = _mapSystem.GetMapOrInvalid(args.MapId);
+            var mapUid = _mapManager.GetMapEntityId(args.MapId);
 
             if (_entManager.TryGetComponent<MapAtmosphereComponent>(mapUid, out var atmos))
                 DrawMapOverlay(drawHandle, args, mapUid, atmos);
@@ -190,8 +180,7 @@ namespace Content.Client.Atmos.Overlays
                         int[] fireFrameCounter,
                         ShaderInstance shader,
                         EntityQuery<GasTileOverlayComponent> overlayQuery,
-                        EntityQuery<TransformComponent> xformQuery,
-                        SharedTransformSystem xformSys) state) =>
+                        EntityQuery<TransformComponent> xformQuery) state) =>
                 {
                     if (!state.overlayQuery.TryGetComponent(uid, out var comp) ||
                         !state.xformQuery.TryGetComponent(uid, out var gridXform))
@@ -199,7 +188,7 @@ namespace Content.Client.Atmos.Overlays
                             return true;
                         }
 
-                    var (_, _, worldMatrix, invMatrix) = state.xformSys.GetWorldPositionRotationMatrixWithInv(gridXform);
+                    var (_, _, worldMatrix, invMatrix) = gridXform.GetWorldPositionRotationMatrixWithInv();
                     state.drawHandle.SetTransform(worldMatrix);
                     var floatBounds = invMatrix.TransformBox(state.WorldBounds).Enlarged(grid.TileSize);
                     var localBounds = new Box2i(

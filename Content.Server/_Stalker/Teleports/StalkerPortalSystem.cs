@@ -20,7 +20,6 @@ using Content.Server._Stalker.Trash;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
-using Robust.Shared.EntitySerialization.Systems;
 using SponsorSystem = Content.Server._Stalker.Sponsors.System.SponsorSystem;
 
 

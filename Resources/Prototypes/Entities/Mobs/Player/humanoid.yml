@@ -6,26 +6,13 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: GhostTakeoverAvailable
-    - type: IdBind
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShielded
   parent: EventHumanoid
   components:
-    - type: AutoImplant
-      implants:
-      - MindShieldImplant
+    - type: MindShield
     - type: AntagImmune
-
-- type: randomHumanoidSettings
-  id: EventHumanoidCentcomm
-  parent: EventHumanoidMindShielded
-  randomizeName: false
-  components:
-  - type: AutoImplant
-    implants:
-    - MindShieldImplant
-    - DeathRattleImplantCentcomm
 
 ## Death Squad
 
@@ -39,15 +26,15 @@
       state: icon
     - type: RandomMetadata
       nameSegments:
-        - NamesMilitaryFirstLeader
-        - NamesMilitaryLast
-      nameFormat: name-format-ert
+        - NamesFirstMilitaryLeader
+        - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: DeathSquad
 
 - type: randomHumanoidSettings
   id: DeathSquad
-  parent: EventHumanoidCentcomm
+  parent: EventHumanoidMindShielded
+  randomizeName: false
   components:
     - type: GhostRole
       name: ghost-role-information-Death-Squad-name
@@ -55,17 +42,13 @@
       rules: ghost-role-information-Death-Squad-rules
       raffle:
         settings: short
-      mindRoles:
-      - MindRoleGhostRoleFamiliar
-      job: DeathSquad
     - type: Loadout
       prototypes: [ DeathSquadGear ]
       roleLoadout: [ RoleSurvivalEVA ]
     - type: RandomMetadata
       nameSegments:
-        - NamesMilitaryFirstLeader
-        - NamesMilitaryLast
-      nameFormat: name-format-ert
+        - NamesFirstMilitaryLeader
+        - NamesLastMilitary
 
 
 ## ERT Leader
@@ -80,15 +63,15 @@
       state: ertleader
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirstLeader
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitaryLeader
+      - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: ERTLeader
 
 - type: randomHumanoidSettings
   id: ERTLeader
-  parent: EventHumanoidCentcomm
+  parent: EventHumanoidMindShielded
+  randomizeName: false
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -102,9 +85,8 @@
       roleLoadout: [ RoleSurvivalExtended ]
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirstLeader
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitaryLeader
+      - NamesLastMilitary
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -169,9 +151,8 @@
       state: chaplain #needs an ERT variant once a good suit it made.
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: ERTChaplain
 
@@ -189,9 +170,8 @@
       job: ERTChaplain
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTChaplainGear ]
       roleLoadout: [ RoleSurvivalExtended ]
@@ -237,9 +217,8 @@
       state: ertjanitor
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: ERTJanitor
 
@@ -256,9 +235,8 @@
       job: ERTJanitor
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
       roleLoadout: [ RoleSurvivalExtended ]
@@ -303,9 +281,8 @@
       state: ertengineer
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: ERTEngineer
 
@@ -322,9 +299,8 @@
       job: ERTEngineer
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
       roleLoadout: [ RoleSurvivalExtended ]
@@ -369,9 +345,8 @@
       state: ertsecurity
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: ERTSecurity
 
@@ -388,9 +363,8 @@
       job: ERTSecurity
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
       roleLoadout: [ RoleSurvivalExtended ]
@@ -458,9 +432,8 @@
       state: ertmedical
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: RandomHumanoidSpawner
       settings: ERTMedical
 
@@ -477,9 +450,8 @@
       job: ERTMedical
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
       roleLoadout: [ RoleSurvivalExtended ]
@@ -526,7 +498,7 @@
 
 - type: randomHumanoidSettings
   id: CBURNAgent
-  parent: EventHumanoidCentcomm
+  parent: EventHumanoidMindShielded
   components:
     - type: Loadout
       prototypes: [CBURNGear]
@@ -537,12 +509,10 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
-      job: CBURN
     - type: RandomMetadata
       nameSegments:
-      - NamesMilitaryFirst
-      - NamesMilitaryLast
-      nameFormat: name-format-ert
+      - NamesFirstMilitary
+      - NamesLastMilitary
 
 ## Central Command
 
@@ -558,7 +528,7 @@
 
 - type: randomHumanoidSettings
   id: CentcomOfficial
-  parent: EventHumanoidCentcomm
+  parent: EventHumanoidMindShielded
   components:
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
@@ -566,7 +536,6 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: default
-      job: CentralCommandOfficial
     - type: Loadout
       prototypes: [ CentcomGear ]
       roleLoadout: [ RoleSurvivalStandard ]
@@ -581,7 +550,7 @@
       sprite: Mobs/Species/Human/parts.rsi
       state: full
     - type: RandomMetadata
-      nameSegments: [ NamesDeathCommando ]
+      nameSegments: [ names_death_commando ]
     - type: RandomHumanoidSpawner
       settings: SyndicateAgent
 
@@ -623,9 +592,8 @@
       settings: Cluwne
     - type: RandomMetadata
       nameSegments:
-      - NamesFirst
-      - NamesLast
-      nameFormat: name-format-standard
+      - names_first
+      - names_last
 
 - type: randomHumanoidSettings
   id: Cluwne

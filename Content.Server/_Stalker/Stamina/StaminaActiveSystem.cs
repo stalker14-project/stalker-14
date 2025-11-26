@@ -1,4 +1,3 @@
-using Content.Server.Damage.Systems;
 using Content.Shared._Stalker.Stamina;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;

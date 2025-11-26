@@ -8,12 +8,13 @@
   components:
   - type: NPCRetaliation
     attackMemoryLength: 10
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 2
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 100
     startingCharge: 100
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 2
   - type: Gun
@@ -44,10 +45,10 @@
         layer:
         - MobLayer
   - type: Sprite
-    sprite: /Textures/_Stalker/Mobs/Military/PSZ.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
+      sprite: /Textures/_Stalker/Mobs/Military/PSZ.rsi
   - type: DamageStateVisuals
     states:
       Alive:
@@ -66,7 +67,11 @@
     baseSprintSpeed: 0.0000000000000001
   - type: Speech
     speechSounds: Alto
-  - type: STVocal
+  - type: Vocal
+    sounds:
+      Male: MaleHuman
+      Female: FemaleHuman
+      Unsexed: MaleHuman
   - type: HTN
     rootTask:
       task: STGuard
@@ -81,7 +86,7 @@
     tags:
     - DoorBumpOpener
   - type: Tool
-    speedModifier: 1.5
+    speed: 1.5
     qualities:
     - Prying
   - type: Prying

@@ -14,7 +14,6 @@
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
-  - ClothingShoesBootsJump
 
 - type: technology
   id: SpaceScanning
@@ -28,6 +27,7 @@
   recipeUnlocks:
   - RadarConsoleCircuitboard
   - HandHeldMassScanner
+  - BorgModuleGPS
 
 - type: technology
   id: AdvancedPowercells
@@ -41,7 +41,6 @@
   recipeUnlocks:
   - PowerCellHigh
   - TurboItemRechargerCircuitboard
-  - SMESAdvancedMachineCircuitboard
 
 - type: technology
   id: MechanicalCompression
@@ -83,6 +82,7 @@
   - PortableGeneratorPacmanMachineCircuitboard
   - PortableGeneratorSuperPacmanMachineCircuitboard
   - PortableGeneratorJrPacmanMachineCircuitboard
+  - PowerComputerCircuitboard #the actual solar panel itself should be in here
   - SolarControlComputerCircuitboard
   - SolarTrackerElectronics
   - EmitterCircuitboard
@@ -166,8 +166,6 @@
     - PowerDrill
     - JawsOfLife
     - BorgModuleAdvancedTool
-    - Fulton
-    - FultonBeacon
 
 - type: technology
   id: MassExcavation
@@ -182,7 +180,6 @@
     - OreBagOfHolding
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
-    - BorgModuleAdvancedMining
 
 # Tier 3
 
@@ -201,8 +198,8 @@
   - ClothingBackpackDuffelHolding
 
 - type: technology
-  id: OptimizedMicrogalvanism
-  name: research-technology-optimized-microgalvanism
+  id: PortableFission
+  name: research-technology-portable-fission
   icon:
     sprite: Objects/Power/power_cells.rsi
     state: microreactor
@@ -211,6 +208,5 @@
   cost: 10000
   recipeUnlocks:
   - PowerCellMicroreactor
-  - PowerCellHyper
   technologyPrerequisites:
   - AdvancedPowercells

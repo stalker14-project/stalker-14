@@ -10,9 +10,8 @@
     - state: icon
       map: [ "enum.GunVisualLayers.Base" ]
   - type: Item
+    # If you update this also update the bulldog's size.
     size: Large
-    shape:
-    - 0,0,4,0
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
     quickEquip: false
@@ -49,7 +48,7 @@
   # Don't parent to BaseWeaponShotgun because it differs significantly
   parent: [BaseItem, BaseGunWieldable, BaseSyndicateContraband]
   id: WeaponShotgunBulldog
-  description: An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses .50 shotgun shells.
+  description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
@@ -100,23 +99,24 @@
     zeroVisible: true
   - type: Appearance
   - type: StaticPrice
-    price: 5000
+    price: 500
 
 - type: entity
   name: double-barreled shotgun
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityBartenderZookeeperContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseMinorContraband]
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. Uses .50 shotgun shells.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun.rsi
   - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
     sprite: Objects/Weapons/Guns/Shotguns/db_shotgun_inhands_64x.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 3
-  - type: GunSpreadModifier
-    spread: 0.6
+    fireRate: 2
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
@@ -136,10 +136,10 @@
 
 - type: entity
   name: Enforcer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseRestrictedContraband]
   id: WeaponShotgunEnforcer
-  description: A premium semi-automatic shotgun, and the pride of all security forces. Uses .50 shotgun shells.
-  components: # intend for Enforcer to have wider choke for semi-auto function
+  description: A premium combat shotgun based on the Kammerer design, featuring an upgraded clip capacity. .50 shotgun shells.
+  components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
   - type: Clothing
@@ -159,44 +159,41 @@
 
 - type: entity
   name: Kammerer
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseRestrictedContraband]
   id: WeaponShotgunKammerer
-  description: An old yet faithful design, and a favorite among irregular forces of many worlds. Uses .50 shotgun shells.
-  components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
+  description: When an old Remington design meets modern materials, this is the result. A favourite weapon of militia forces throughout many worlds. Uses .50 shotgun shells.
+  components:
   - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
     sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
-  - type: Gun
-    fireRate: 1
-  - type: GunSpreadModifier
-    spread: 0.6
+  - type: BallisticAmmoProvider
+    capacity: 4
   - type: Tag
     tags:
     - WeaponShotgunKammerer
 
 - type: entity
   name: sawn-off shotgun
-  parent: [ BaseWeaponShotgun, BaseSecurityBartenderContraband ]
+  parent: BaseWeaponShotgun
   id: WeaponShotgunSawn
   description: Groovy! Uses .50 shotgun shells.
-  components: # needs to be super inaccurate because you don't need to wield it
+  components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/sawn.rsi
   - type: Item
     size: Small
-    shape:
-    - 0,0,2,0
     sprite: Objects/Weapons/Guns/Shotguns/sawn_inhands_64x.rsi
   - type: Gun
-    fireRate: 3
-  - type: GunSpreadModifier
-    spread: 1.4
+    fireRate: 4
   - type: BallisticAmmoProvider
     capacity: 2
   - type: Construction
@@ -226,10 +223,7 @@
   components:
   - type: Item
     size: Small
-    shape:
-    - 0,0,1,0
-    - 0,1,0,1
-    storedOffset: 0,-5
+    storedRotation: 90
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/hm_pistol.rsi
   - type: Clothing
@@ -252,6 +246,10 @@
   suffix: Pirate
   description: Deadly at close range.
   components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/blunderbuss.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
@@ -273,6 +271,9 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Shotguns/improvised_shotgun.rsi
   - type: Item
+    size: Normal
+    shape:
+    - 0,0,4,0
     sprite: Objects/Weapons/Guns/Shotguns/improvised_shotgun_inhands_64x.rsi
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun

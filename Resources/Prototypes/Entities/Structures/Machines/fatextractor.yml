@@ -35,7 +35,7 @@
       visible: false
       map: ["enum.FatExtractorVisualLayers.Smoke"]
   - type: Lock
-    breakOnAccessBreaker: false
+    breakOnEmag: false
   - type: GenericVisualizer
     visuals:
       enum.StorageVisuals.Open:
@@ -101,11 +101,8 @@
   - type: Appearance
   - type: Speech
     speechVerb: Robotic
-  - type: Vocalizer
-    hideChat: true
-  - type: VocalizerRequiresPower
-  - type: DatasetVocalizer
-    dataset: FatExtractorFacts
+  - type: Advertise
+    pack: FatExtractorFacts
   - type: StaticPrice
     price: 1000
   - type: ResistLocker

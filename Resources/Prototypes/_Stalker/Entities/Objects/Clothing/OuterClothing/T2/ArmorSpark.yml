@@ -43,11 +43,6 @@
       damage:
         types:
           Radiation: -0.1
-    - type: ContainerContainer
-      containers:
-        toggleable-clothing: !type:ContainerSlot {}
-        storagebase: !type:Container
-          ents: []
 
 - type: entity
   parent: STClothingHeadHatBase
@@ -89,7 +84,7 @@
         types:
           Radiation: -0.25
     - type: Storage
-      maxItemSize: Large
+      maxItemsize: Large
       grid:
         - 0,2,0,3
         - 0,-2,0,0

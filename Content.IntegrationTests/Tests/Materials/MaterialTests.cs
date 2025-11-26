@@ -3,6 +3,7 @@ using Content.Server.Stack;
 using Content.Shared.Stacks;
 using Content.Shared.Materials;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests.Materials
@@ -23,7 +24,7 @@ namespace Content.IntegrationTests.Tests.Materials
             var server = pair.Server;
             await server.WaitIdleAsync();
 
-            var mapSystem = server.System<SharedMapSystem>();
+            var mapManager = server.ResolveDependency<IMapManager>();
             var prototypeManager = server.ResolveDependency<IPrototypeManager>();
             var entityManager = server.ResolveDependency<IEntityManager>();
 
@@ -54,11 +55,11 @@ namespace Content.IntegrationTests.Tests.Materials
                             $"{proto.ID} material has no stack prototype");
 
                         if (stackProto != null)
-                            Assert.That(proto.StackEntity, Is.EqualTo(stackProto.Spawn.Id));
+                            Assert.That(proto.StackEntity, Is.EqualTo(stackProto.Spawn));
                     }
                 });
 
-                mapSystem.DeleteMap(testMap.MapId);
+                mapManager.DeleteMap(testMap.MapId);
             });
 
             await pair.CleanReturnAsync();

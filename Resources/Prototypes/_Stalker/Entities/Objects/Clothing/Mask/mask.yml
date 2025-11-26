@@ -26,10 +26,13 @@
     sprite: _Stalker/Objects/Clothing/mask/blackface.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
   - type: HideLayerClothing
     slots:
     - Hair
-    # - FacialHair
+    # - HidesBeard
 
 - type: entity
   parent: ClothingMaskBase
@@ -43,10 +46,13 @@
     sprite: _Stalker/Objects/Clothing/mask/bloodsucker.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
   - type: HideLayerClothing
     slots:
     - Hair
-    # - FacialHair
+    # - HidesBeard
 
 - type: entity
   parent: ClothingMaskBase
@@ -94,10 +100,10 @@
     sprite: _Stalker/Objects/Clothing/mask/joker_mask.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    # - FacialHair
+  - type: Tag
+    tags:
+    - HidesHair
+    # - HidesBeard
 
 - type: entity
   parent: ClothingMaskBase
@@ -111,10 +117,10 @@
     sprite: _Stalker/Objects/Clothing/mask/mask_skull.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    # - FacialHair
+  - type: Tag
+    tags:
+    - HidesHair
+    # - HidesBeard
 
 - type: entity
   parent: ClothingMaskBase
@@ -130,10 +136,8 @@
     sprite: _Stalker/Objects/Clothing/mask/tegilla_rene.rsi
   - type: Tag
     tags:
+      - HidesNose
       - BlockMask
-  - type: HideLayerClothing
-    slots:
-    - Snout
   - type: Armor
     armorClass: 3
     modifiers:
@@ -172,6 +176,9 @@
     sprite: _Stalker/Objects/Clothing/mask/kufei_sera.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
   - type: HideLayerClothing
     slots:
     - Hair
@@ -189,6 +196,10 @@
     sprite: _Stalker/Objects/Clothing/mask/kufei_limasera.rsi
   - type: IngestionBlocker
   - type: IdentityBlocker
+  - type: Tag
+    tags:
+    - HidesHair
   - type: HideLayerClothing
     slots:
     - Hair
+

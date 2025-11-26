@@ -43,19 +43,16 @@
     thresholds:
       0: Alive
       50: Dead
-  - type: Butcherable
-    spawned:
-    - id: DiamondOre1
-      amount: 1
   - type: MovementSpeedModifier
     baseWalkSpeed: 5
     baseSprintSpeed: 7
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: WatcherBolt
     fireCost: 50
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 50
-  - type: PredictedBattery
+  - type: Battery
     maxCharge: 1000
     startingCharge: 1000
   - type: Gun
@@ -86,8 +83,8 @@
       shader: unshaded
       color: red
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5
+    energy: 0.5
     color: red
 
 - type: entity
@@ -104,8 +101,8 @@
       shader: unshaded
       color: deepskyblue
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5
+    energy: 1
     color: deepskyblue
 
 - type: entity
@@ -122,10 +119,10 @@
       shader: unshaded
       color: orangered
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5
+    energy: 1
     color: orangered
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: WatcherBoltMagmawing
     fireCost: 50
 
@@ -144,7 +141,7 @@
       state: unshaded
       shader: unshaded
   - type: PointLight
-    radius: 1
-    energy: 3
+    radius: 1.5
+    energy: 1
   - type: RgbLightController
     layers: [ 1 ]

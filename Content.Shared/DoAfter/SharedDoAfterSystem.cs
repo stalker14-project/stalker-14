@@ -2,12 +2,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Systems;
 using Content.Shared.Hands.Components;
-using Content.Shared.Interaction;
+using Content.Shared.Mobs;
 using Content.Shared.Tag;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -26,17 +24,14 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
     /// </summary>
     private static readonly TimeSpan ExcessTime = TimeSpan.FromSeconds(0.5f);
 
-    private static readonly ProtoId<TagPrototype> InstantDoAftersTag = "InstantDoAfters";
-
     public override void Initialize()
     {
         base.Initialize();
-
         SubscribeLocalEvent<DoAfterComponent, DamageChangedEvent>(OnDamage);
         SubscribeLocalEvent<DoAfterComponent, EntityUnpausedEvent>(OnUnpaused);
+        SubscribeLocalEvent<DoAfterComponent, MobStateChangedEvent>(OnStateChanged);
         SubscribeLocalEvent<DoAfterComponent, ComponentGetState>(OnDoAfterGetState);
         SubscribeLocalEvent<DoAfterComponent, ComponentHandleState>(OnDoAfterHandleState);
-        SubscribeLocalEvent<GetInteractingEntitiesEvent>(OnGetInteractingEntities);
     }
 
     private void OnUnpaused(EntityUid uid, DoAfterComponent component, ref EntityUnpausedEvent args)
@@ -48,6 +43,18 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
                 doAfter.CancelledTime = doAfter.CancelledTime.Value + args.PausedTime;
         }
 
+        Dirty(uid, component);
+    }
+
+    private void OnStateChanged(EntityUid uid, DoAfterComponent component, MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead || args.NewMobState != MobState.Critical)
+            return;
+
+        foreach (var doAfter in component.DoAfters.Values)
+        {
+            InternalCancel(doAfter, component);
+        }
         Dirty(uid, component);
     }
 
@@ -131,25 +138,6 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             RemCompDeferred<ActiveDoAfterComponent>(uid);
         else
             EnsureComp<ActiveDoAfterComponent>(uid);
-    }
-
-    /// <summary>
-    /// Adds entities which have an active DoAfter matching the target.
-    /// </summary>
-    private void OnGetInteractingEntities(ref GetInteractingEntitiesEvent args)
-    {
-        var enumerator = EntityQueryEnumerator<ActiveDoAfterComponent, DoAfterComponent>();
-        while (enumerator.MoveNext(out _, out var comp))
-        {
-            foreach (var doAfter in comp.DoAfters.Values)
-            {
-                if (doAfter.Cancelled || doAfter.Completed)
-                    continue;
-
-                if (doAfter.Args.Target == args.Target)
-                    args.InteractingEntities.Add(doAfter.Args.User);
-            }
-        }
     }
 
     #region Creation
@@ -244,8 +232,8 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             if (!TryComp(args.User, out HandsComponent? handsComponent))
                 return false;
 
-            doAfter.InitialHand = handsComponent.ActiveHandId;
-            doAfter.InitialItem = _hands.GetActiveItem((args.User, handsComponent));
+            doAfter.InitialHand = handsComponent.ActiveHand?.Name;
+            doAfter.InitialItem = handsComponent.ActiveHandEntity;
         }
 
         doAfter.NetInitialItem = GetNetEntity(doAfter.InitialItem);
@@ -259,7 +247,7 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
 
         // TODO DO AFTER
         // Why does this tag exist? Just make this a bool on the component?
-        if (args.Delay <= TimeSpan.Zero || _tag.HasTag(args.User, InstantDoAftersTag))
+        if (args.Delay <= TimeSpan.Zero || _tag.HasTag(args.User, "InstantDoAfters"))
         {
             RaiseDoAfterEvents(doAfter, comp);
             // We don't store instant do-afters. This is just a lazy way of hiding them from client-side visuals.
@@ -336,16 +324,16 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
     /// <summary>
     ///     Cancels an active DoAfter.
     /// </summary>
-    public void Cancel(DoAfterId? id, DoAfterComponent? comp = null, bool force = false)
+    public void Cancel(DoAfterId? id, DoAfterComponent? comp = null)
     {
         if (id != null)
-            Cancel(id.Value.Uid, id.Value.Index, comp, force);
+            Cancel(id.Value.Uid, id.Value.Index, comp);
     }
 
     /// <summary>
     ///     Cancels an active DoAfter.
     /// </summary>
-    public void Cancel(EntityUid entity, ushort id, DoAfterComponent? comp = null, bool force = false)
+    public void Cancel(EntityUid entity, ushort id, DoAfterComponent? comp = null)
     {
         if (!Resolve(entity, ref comp, false))
             return;
@@ -356,13 +344,13 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
             return;
         }
 
-        InternalCancel(doAfter, comp, force: force);
+        InternalCancel(doAfter, comp);
         Dirty(entity, comp);
     }
 
-    private void InternalCancel(DoAfter doAfter, DoAfterComponent component, bool force = false)
+    private void InternalCancel(DoAfter doAfter, DoAfterComponent component)
     {
-        if (doAfter.Cancelled || (doAfter.Completed && !force))
+        if (doAfter.Cancelled || doAfter.Completed)
             return;
 
         // Caller is responsible for dirtying the component.

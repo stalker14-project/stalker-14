@@ -1,34 +1,23 @@
 using System.Globalization;
 using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;
-using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
-using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Timing;
 
 namespace Content.Shared.Access.Systems;
 
 public abstract class SharedIdCardSystem : EntitySystem
 {
-    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAccessSystem _access = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-
-    // CCVar.
-    private int _maxNameLength;
-    private int _maxIdJobLength;
 
     public override void Initialize()
     {
@@ -37,9 +26,6 @@ public abstract class SharedIdCardSystem : EntitySystem
         SubscribeLocalEvent<IdCardComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<TryGetIdentityShortInfoEvent>(OnTryGetIdentityShortInfo);
         SubscribeLocalEvent<EntityRenamedEvent>(OnRename);
-
-        Subs.CVar(_cfgManager, CCVars.MaxNameLength, value => _maxNameLength = value, true);
-        Subs.CVar(_cfgManager, CCVars.MaxIdJobLength, value => _maxIdJobLength = value, true);
     }
 
     private void OnRename(ref EntityRenamedEvent ev)
@@ -47,8 +33,7 @@ public abstract class SharedIdCardSystem : EntitySystem
         // When a player gets renamed their id card is renamed as well to match.
         // Unfortunately since TryFindIdCard will succeed if the entity is also a card this means that the card will
         // keep renaming itself unless we return early.
-        // We also do not include the PDA itself being renamed, as that triggers the same event (e.g. for chameleon PDAs).
-        if (HasComp<IdCardComponent>(ev.Uid) || HasComp<PdaComponent>(ev.Uid))
+        if (HasComp<IdCardComponent>(ev.Uid))
             return;
 
         if (TryFindIdCard(ev.Uid, out var idCard))
@@ -84,7 +69,8 @@ public abstract class SharedIdCardSystem : EntitySystem
     public bool TryFindIdCard(EntityUid uid, out Entity<IdCardComponent> idCard)
     {
         // check held item?
-        if (_hands.GetActiveItem(uid) is { } heldItem &&
+        if (TryComp(uid, out HandsComponent? hands) &&
+            hands.ActiveHandEntity is EntityUid heldItem &&
             TryGetIdCard(heldItem, out idCard))
         {
             return true;
@@ -141,8 +127,8 @@ public abstract class SharedIdCardSystem : EntitySystem
         {
             jobTitle = jobTitle.Trim();
 
-            if (jobTitle.Length > _maxIdJobLength)
-                jobTitle = jobTitle[.._maxIdJobLength];
+            if (jobTitle.Length > IdCardConsoleComponent.MaxJobTitleLength)
+                jobTitle = jobTitle[..IdCardConsoleComponent.MaxJobTitleLength];
         }
         else
         {
@@ -204,22 +190,6 @@ public abstract class SharedIdCardSystem : EntitySystem
         return true;
     }
 
-    public bool TryChangeJobDepartment(EntityUid uid, List<ProtoId<DepartmentPrototype>> departments, IdCardComponent? id = null)
-    {
-        if (!Resolve(uid, ref id))
-            return false;
-
-        id.JobDepartments.Clear();
-        foreach (var department in departments)
-        {
-            id.JobDepartments.Add(department);
-        }
-
-        Dirty(uid, id);
-
-        return true;
-    }
-
     /// <summary>
     /// Attempts to change the full name of a card.
     /// Returns true/false.
@@ -235,8 +205,8 @@ public abstract class SharedIdCardSystem : EntitySystem
         if (!string.IsNullOrWhiteSpace(fullName))
         {
             fullName = fullName.Trim();
-            if (fullName.Length > _maxNameLength)
-                fullName = fullName[.._maxNameLength];
+            if (fullName.Length > IdCardConsoleComponent.MaxFullNameLength)
+                fullName = fullName[..IdCardConsoleComponent.MaxFullNameLength];
         }
         else
         {
@@ -284,50 +254,5 @@ public abstract class SharedIdCardSystem : EntitySystem
     {
         return $"{idCardComponent.FullName} ({CultureInfo.CurrentCulture.TextInfo.ToTitleCase(idCardComponent.LocalizedJobTitle ?? string.Empty)})"
             .Trim();
-    }
-
-    public void SetExpireTime(Entity<ExpireIdCardComponent?> ent, TimeSpan time)
-    {
-        if (!Resolve(ent, ref ent.Comp))
-            return;
-        ent.Comp.ExpireTime = time;
-        Dirty(ent);
-    }
-
-    public void SetPermanent(Entity<ExpireIdCardComponent?> ent, bool val)
-    {
-        if (!Resolve(ent, ref ent.Comp))
-            return;
-        ent.Comp.Permanent = val;
-        Dirty(ent);
-    }
-
-    /// <summary>
-    /// Marks an <see cref="ExpireIdCardComponent"/> as expired, setting the accesses.
-    /// </summary>
-    public virtual void ExpireId(Entity<ExpireIdCardComponent> ent)
-    {
-        if (ent.Comp.Expired)
-            return;
-
-        _access.TrySetTags(ent, ent.Comp.ExpiredAccess);
-        ent.Comp.Expired = true;
-        Dirty(ent);
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-        var query = EntityQueryEnumerator<ExpireIdCardComponent>();
-        while (query.MoveNext(out var uid, out var comp))
-        {
-            if (comp.Expired || comp.Permanent)
-                continue;
-
-            if (_timing.CurTime < comp.ExpireTime)
-                continue;
-
-            ExpireId((uid, comp));
-        }
     }
 }

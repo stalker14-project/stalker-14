@@ -1,9 +1,11 @@
 - type: entity
   id: ClosetStalkerBase
-  parent: BaseStructure
+  parent: BaseStructureDynamic
   abstract: true
   components:
   - type: ResistLocker
+  - type: Transform
+    noRot: true
   - type: Sprite
     noRot: true
     sprite: _Stalker/Structures/Storage/closet.rsi
@@ -29,7 +31,7 @@
       types:
         Blunt: 5
     soundHit:
-      path: /Audio/Weapons/Guns/Gunshots/bang.ogg
+      path: /Audio/Effects/bang.ogg
   - type: InteractionOutline
   - type: Physics
   - type: Fixtures
@@ -90,6 +92,9 @@
   parent: ClosetStalkerBase
   suffix: ST, Mapping
   components:
+  - type: Transform
+    anchored: true 
+  - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: lockerbig
     stateDoorOpen: lockerbig_open
@@ -102,6 +107,9 @@
   parent: ClosetStalkerBase
   suffix: ST, Mapping
   components:
+  - type: Transform
+    anchored: true 
+  - type: Appearance
   - type: EntityStorageVisuals
     stateBaseClosed: lockerbigone
     stateDoorOpen: lockerbigone_open

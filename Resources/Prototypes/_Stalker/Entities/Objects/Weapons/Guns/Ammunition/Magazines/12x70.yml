@@ -3,7 +3,7 @@
   name: магазин Сайги 12х70 (5)
   description: Магазин Сайги 12х70 для дробовиков АК. Вместимость дробей 5. Продают пустым.
   parent: Base545Mag10
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -11,6 +11,7 @@
     tags:
       - MagazineSaiga
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -41,7 +42,7 @@
   name: магазин Сайги 12х70 (10)
   description: Магазин Сайги 12х70 для дробовиков АК. Вместимость дробей 10. Продают пустым.
   parent: Base1270Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.4
@@ -64,7 +65,7 @@
   name: барабан Сайги 12х70 (20)
   description: Барабан Сайги 12х70 для дробовиков АК. Вместимость дробей 20. Продают пустым.
   parent: Base1270Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.5
@@ -97,6 +98,7 @@
     tags:
     - MagazineUSAS
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:

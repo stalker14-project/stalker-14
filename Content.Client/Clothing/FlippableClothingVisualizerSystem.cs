@@ -7,7 +7,7 @@ using Robust.Client.GameObjects;
 
 namespace Content.Client.Clothing;
 
-public sealed class FlippableClothingVisualizerSystem : VisualizerSystem<FlippableClothingVisualsComponent>
+public sealed class FlippableClothingVisualizerSystem  : VisualizerSystem<FlippableClothingVisualsComponent>
 {
     [Dependency] private readonly SharedItemSystem _itemSys = default!;
 
@@ -32,7 +32,7 @@ public sealed class FlippableClothingVisualizerSystem : VisualizerSystem<Flippab
 
         if (clothing.MappedLayer == null ||
             !AppearanceSystem.TryGetData<bool>(ent, FoldableSystem.FoldedVisuals.State, out var folding) ||
-            !SpriteSystem.LayerMapTryGet((ent.Owner, sprite), folding ? ent.Comp.FoldingLayer : ent.Comp.UnfoldingLayer, out var idx, false))
+            !sprite.LayerMapTryGet(folding ? ent.Comp.FoldingLayer : ent.Comp.UnfoldingLayer, out var idx))
             return;
 
         // add each layer to the visuals

@@ -40,18 +40,6 @@
     prototype: MobIronCrab
 
 - type: entity
-  id: MobSpawnCrabCoal
-  parent: MobSpawnCrabQuartz
-  name: mobspawner coalcrab
-  categories: [ HideSpawnMenu, Spawner ]
-  components:
-  - type: Sprite
-    sprite: /Textures/Effects/mobspawn.rsi
-    state: crab_coal
-  - type: SpawnOnDespawn
-    prototype: MobCoalCrab
-
-- type: entity
   id: MobSpawnCrabSilver
   parent: MobSpawnCrabQuartz
   name: mobspawner silvercrab
@@ -64,18 +52,6 @@
     prototype: MobSilverCrab
 
 - type: entity
-  id: MobSpawnCrabGold
-  parent: MobSpawnCrabQuartz
-  name: mobspawner goldcrab
-  categories: [ HideSpawnMenu, Spawner ]
-  components:
-  - type: Sprite
-    sprite: /Textures/Effects/mobspawn.rsi
-    state: crab_gold
-  - type: SpawnOnDespawn
-    prototype: MobGoldCrab
-
-- type: entity
   id: MobSpawnCrabUranium
   parent: MobSpawnCrabQuartz
   name: mobspawner uraniumcrab
@@ -86,18 +62,6 @@
     state: crab_uranium
   - type: SpawnOnDespawn
     prototype: MobUraniumCrab
-
-- type: entity
-  id: MobSpawnCrabBananium
-  parent: MobSpawnCrabQuartz
-  name: mobspawner bananiumcrab
-  categories: [ HideSpawnMenu, Spawner ]
-  components:
-  - type: Sprite
-    sprite: /Textures/Effects/mobspawn.rsi
-    state: crab_bananium
-  - type: SpawnOnDespawn
-    prototype: MobBananiumCrab
 
 - type: entity
   id: EffectAnomalyFloraBulb

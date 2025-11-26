@@ -11,8 +11,6 @@
     - Snout
     - HeadTop
     - HeadSide
-    - Tail
-    undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Hunger
   - type: Puller
     needsHands: false
@@ -66,9 +64,9 @@
         Heat : 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      301: 0.9
-      295: 0.8
-      285: 0.7
+      301: 0.8
+      295: 0.6
+      285: 0.4
   - type: Wagging
   - type: Inventory
     speciesId: reptilian
@@ -78,27 +76,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: head
-      mask:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: mask
-    displacements:
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: head
-      mask:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: mask
+
 
 - type: entity
   parent: BaseSpeciesDummy
@@ -112,35 +90,13 @@
     - Snout
     - HeadTop
     - HeadSide
-    undergarmentBottom: UndergarmentBottomBoxersReptilian
   - type: Inventory
     speciesId: reptilian
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
           32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
+            sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: head
-      mask:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: mask
-    displacements:
-      head:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: head
-      mask:
-        sizeMaps:
-          32:
-            sprite: Mobs/Species/Reptilian/displacement.rsi
-            state: mask
 
 #Weh

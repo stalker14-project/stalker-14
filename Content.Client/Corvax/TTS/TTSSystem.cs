@@ -22,10 +22,8 @@ public sealed class TTSSystem : EntitySystem
     [Dependency] private readonly AudioSystem _audio = default!;
 
     private ISawmill _sawmill = default!;
-    private static MemoryContentRoot _contentRoot = new();
+    private readonly MemoryContentRoot _contentRoot = new();
     private static readonly ResPath Prefix = ResPath.Root / "TTS";
-
-    private static bool _contentRootAdded;
 
     /// <summary>
     /// Reducing the volume of the TTS when whispering. Will be converted to logarithm.
@@ -42,13 +40,8 @@ public sealed class TTSSystem : EntitySystem
 
     public override void Initialize()
     {
-        if (!_contentRootAdded)
-        {
-            _contentRootAdded = true;
-            _res.AddRoot(Prefix, _contentRoot);
-        }
-
         _sawmill = Logger.GetSawmill("tts");
+        _res.AddRoot(Prefix, _contentRoot);
         _cfg.OnValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged, true);
         SubscribeNetworkEvent<PlayTTSEvent>(OnPlayTTS);
     }
@@ -57,6 +50,12 @@ public sealed class TTSSystem : EntitySystem
     {
         base.Shutdown();
         _cfg.UnsubValueChanged(CCCVars.TTSVolume, OnTtsVolumeChanged);
+        _contentRoot.Dispose();
+    }
+
+    public void RequestGlobalTTS(string text, string voiceId)
+    {
+        RaiseNetworkEvent(new RequestGlobalTTSEvent(text, voiceId));
     }
 
     private void OnTtsVolumeChanged(float volume)
@@ -78,18 +77,14 @@ public sealed class TTSSystem : EntitySystem
             .WithVolume(AdjustVolume(ev.IsWhisper))
             .WithMaxDistance(AdjustDistance(ev.IsWhisper));
 
-        var soundSpecifier = new ResolvedPathSpecifier(Prefix / filePath);
-
         if (ev.SourceUid != null)
         {
-            if (!TryGetEntity(ev.SourceUid.Value, out _))
-                return;
             var sourceUid = GetEntity(ev.SourceUid.Value);
-            _audio.PlayEntity(audioResource.AudioStream, sourceUid, soundSpecifier, audioParams);
+            _audio.PlayEntity(audioResource.AudioStream, sourceUid, audioParams);
         }
         else
         {
-            _audio.PlayGlobal(audioResource.AudioStream, soundSpecifier, audioParams);
+            _audio.PlayGlobal(audioResource.AudioStream, audioParams);
         }
 
         _contentRoot.RemoveFile(filePath);
@@ -109,6 +104,6 @@ public sealed class TTSSystem : EntitySystem
 
     private float AdjustDistance(bool isWhisper)
     {
-        return isWhisper ? SharedChatSystem.WhisperMuffledRange : SharedChatSystem.VoiceRange;
+        return isWhisper ? SharedChatSystem.WhisperPrefix : 7;
     }
 }

@@ -1,26 +1,20 @@
-namespace Content.Shared.Destructible;
+﻿namespace Content.Shared.Destructible;
 
 public abstract class SharedDestructibleSystem : EntitySystem
 {
     /// <summary>
-    /// Force entity to be destroyed and deleted.
+    ///     Force entity to be destroyed and deleted.
     /// </summary>
-    public bool DestroyEntity(Entity<MetaDataComponent?> owner)
+    public void DestroyEntity(EntityUid owner)
     {
-        var ev = new DestructionAttemptEvent();
-        RaiseLocalEvent(owner, ev);
-        if (ev.Cancelled)
-            return false;
-
         var eventArgs = new DestructionEventArgs();
-        RaiseLocalEvent(owner, eventArgs);
 
-        PredictedQueueDel(owner);
-        return true;
+        RaiseLocalEvent(owner, eventArgs);
+        QueueDel(owner);
     }
 
     /// <summary>
-    /// Force entity to break.
+    ///     Force entity to break.
     /// </summary>
     public void BreakEntity(EntityUid owner)
     {
@@ -30,15 +24,7 @@ public abstract class SharedDestructibleSystem : EntitySystem
 }
 
 /// <summary>
-/// Raised before an entity is about to be destroyed and deleted
-/// </summary>
-public sealed class DestructionAttemptEvent : CancellableEntityEventArgs
-{
-
-}
-
-/// <summary>
-/// Raised when entity is destroyed and about to be deleted.
+///     Raised when entity is destroyed and about to be deleted.
 /// </summary>
 public sealed class DestructionEventArgs : EntityEventArgs
 {
@@ -46,7 +32,7 @@ public sealed class DestructionEventArgs : EntityEventArgs
 }
 
 /// <summary>
-/// Raised when entity was heavy damage and about to break.
+///     Raised when entity was heavy damage and about to break.
 /// </summary>
 public sealed class BreakageEventArgs : EntityEventArgs
 {

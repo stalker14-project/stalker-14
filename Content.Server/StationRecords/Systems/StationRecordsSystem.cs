@@ -2,7 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
 using Content.Server.Forensics;
 using Content.Shared.Access.Components;
-using Content.Shared.Forensics.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.PDA;
@@ -11,7 +10,6 @@ using Content.Shared.Roles;
 using Content.Shared.StationRecords;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
 
 namespace Content.Server.StationRecords.Systems;
 
@@ -40,7 +38,6 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     [Dependency] private readonly StationRecordKeyStorageSystem _keyStorage = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IdCardSystem _idCard = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -64,8 +61,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         // Unfortunately this means that an event is called for it as well, and since TryFindIdCard will succeed if the
         // given entity is a card and the card itself is the key the record will be mistakenly renamed to the card's name
         // if we don't return early.
-        // We also do not include the PDA itself being renamed, as that triggers the same event (e.g. for chameleon PDAs).
-        if (HasComp<IdCardComponent>(ev.Uid) ||  HasComp<PdaComponent>(ev.Uid))
+        if (HasComp<IdCardComponent>(ev.Uid))
             return;
 
         if (_idCard.TryFindIdCard(ev.Uid, out var idCard))
@@ -216,25 +212,43 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     }
 
     /// <summary>
-    /// Gets a random record from the station's record entries.
+    ///     Try to get a record from this station's record entries,
+    ///     from the provided station record key. Will always return
+    ///     null if the key does not match the station.
     /// </summary>
-    /// <param name="ent">The EntityId of the station from which you want to get the record.</param>
+    /// <param name="key">Station and key to try and index from the record set.</param>
     /// <param name="entry">The resulting entry.</param>
+    /// <param name="records">Station record component.</param>
     /// <typeparam name="T">Type to get from the record set.</typeparam>
-    /// <returns>True if a record was obtained. False otherwise.</returns>
-    public bool TryGetRandomRecord<T>(Entity<StationRecordsComponent?> ent, [NotNullWhen(true)] out T? entry)
+    /// <returns>True if the record was obtained, false otherwise.</returns>
+    public bool TryGetRecord<T>(StationRecordKey key, [NotNullWhen(true)] out T? entry, StationRecordsComponent? records = null)
     {
         entry = default;
 
-        if (!Resolve(ent.Owner, ref ent.Comp))
+        if (!Resolve(key.OriginStation, ref records))
             return false;
 
-        if (ent.Comp.Records.Keys.Count == 0)
-            return false;
+        return records.Records.TryGetRecordEntry(key.Id, out entry);
+    }
 
-        var key = _random.Pick(ent.Comp.Records.Keys);
+    /// <summary>
+    /// Returns an id if a record with the same name exists.
+    /// </summary>
+    /// <remarks>
+    /// Linear search so O(n) time complexity.
+    /// </remarks>
+    public uint? GetRecordByName(EntityUid station, string name, StationRecordsComponent? records = null)
+    {
+        if (!Resolve(station, ref records, false))
+            return null;
 
-        return ent.Comp.Records.TryGetRecordEntry(key, out entry);
+        foreach (var (id, record) in GetRecordsOfType<GeneralStationRecord>(station, records))
+        {
+            if (record.Name == name)
+                return id;
+        }
+
+        return null;
     }
 
     /// <summary>
@@ -246,6 +260,21 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
            return string.Empty;
 
         return record.Name;
+    }
+
+    /// <summary>
+    ///     Gets all records of a specific type from a station.
+    /// </summary>
+    /// <param name="station">The station to get the records from.</param>
+    /// <param name="records">Station records component.</param>
+    /// <typeparam name="T">Type of record to fetch</typeparam>
+    /// <returns>Enumerable of pairs with a station record key, and the entry in question of type T.</returns>
+    public IEnumerable<(uint, T)> GetRecordsOfType<T>(EntityUid station, StationRecordsComponent? records = null)
+    {
+        if (!Resolve(station, ref records))
+            return Array.Empty<(uint, T)>();
+
+        return records.Records.GetRecordsOfType<T>();
     }
 
     /// <summary>
@@ -338,10 +367,6 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         {
             StationRecordFilterType.Name =>
                 !someRecord.Name.ToLower().Contains(filterLowerCaseValue),
-            StationRecordFilterType.Job =>
-                !someRecord.JobTitle.ToLower().Contains(filterLowerCaseValue),
-            StationRecordFilterType.Species =>
-                !someRecord.Species.ToLower().Contains(filterLowerCaseValue),
             StationRecordFilterType.Prints => someRecord.Fingerprint != null
                 && IsFilterWithSomeCodeValue(someRecord.Fingerprint, filterLowerCaseValue),
             StationRecordFilterType.DNA => someRecord.DNA != null

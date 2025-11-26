@@ -41,13 +41,13 @@
     - tasks:
 
       - !type:HTNPrimitiveTask
-        operator: !type:MoveToOperator
-          shutdownState: PlanFinished
-          pathfindInPlanning: true
-          removeKeyOnFinish: false
-          targetKey: TargetCoordinates
-          pathfindKey: TargetPathfind
-          rangeKey: RangedRange
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -66,13 +66,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-        operator: !type:MoveToOperator
-          shutdownState: PlanFinished
-          pathfindInPlanning: true
-          removeKeyOnFinish: false
-          targetKey: TargetCoordinates
-          pathfindKey: TargetPathfind
-          rangeKey: RangedRange
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -91,13 +91,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-        operator: !type:MoveToOperator
-          shutdownState: PlanFinished
-          pathfindInPlanning: true
-          removeKeyOnFinish: false
-          targetKey: TargetCoordinates
-          pathfindKey: TargetPathfind
-          rangeKey: RangedRange
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -116,13 +116,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-        operator: !type:MoveToOperator
-          shutdownState: PlanFinished
-          pathfindInPlanning: true
-          removeKeyOnFinish: false
-          targetKey: TargetCoordinates
-          pathfindKey: TargetPathfind
-          rangeKey: RangedRange
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -141,13 +141,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-        operator: !type:MoveToOperator
-          shutdownState: PlanFinished
-          pathfindInPlanning: true
-          removeKeyOnFinish: false
-          targetKey: TargetCoordinates
-          pathfindKey: TargetPathfind
-          rangeKey: RangedRange
+         operator: !type:MoveToOperator
+           shutdownState: PlanFinished
+           pathfindInPlanning: true
+           removeKeyOnFinish: false
+           targetKey: TargetCoordinates
+           pathfindKey: TargetPathfind
+           rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -197,12 +197,12 @@
 
 - type: htnCompound
   id: STBloodsuckerMeleeAttackTargetCompound
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: Target
   branches:
     - tasks:
       - !type:HTNPrimitiveTask
-        preconditions:
-          - !type:KeyExistsPrecondition
-            key: Target
         operator: !type:MoveToOperator
           shutdownState: PlanFinished
           pathfindInPlanning: true

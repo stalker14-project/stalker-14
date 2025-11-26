@@ -1,11 +1,10 @@
 using Content.Shared.Damage;
 using Robust.Shared.Map;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Server._Stalker.Teleports.NewMapTeleports;
 // TODO: Rename
-[RegisterComponent, EntityCategory("StSkipSpawnTest")]
+[RegisterComponent]
 public sealed partial class NewMapTeleportComponent : Component
 {
     [DataField("portalName")]

@@ -10,6 +10,9 @@ public sealed partial class RangedDamageComponent : Component
     [DataField("damage")]
     public DamageSpecifier? Damage;
 
+    [DataField("timeToDamage")]
+    public float TimeToDamage = 5f;
+
     [DataField("range")]
     public float Range = 1f;
 

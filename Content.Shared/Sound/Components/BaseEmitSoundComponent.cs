@@ -8,16 +8,10 @@ namespace Content.Shared.Sound.Components;
 /// </summary>
 public abstract partial class BaseEmitSoundComponent : Component
 {
-    /// <summary>
-    /// The <see cref="SoundSpecifier"/> to play.
-    /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public SoundSpecifier? Sound;
+    public static readonly AudioParams DefaultParams = AudioParams.Default.WithVolume(-2f);
 
-    /// <summary>
-    /// Play the sound at the position instead of parented to the source entity.
-    /// Useful if the entity is deleted after.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool Positional;
+    [AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField(required: true)]
+    public SoundSpecifier? Sound;
 }

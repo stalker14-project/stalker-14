@@ -1,8 +1,9 @@
 using Content.Shared.Clothing.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Examine;
-using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory.Events;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Ninja.Components;
@@ -16,8 +17,8 @@ namespace Content.Shared.Ninja.Systems;
 /// </summary>
 public abstract class SharedNinjaGlovesSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedCombatModeSystem _combatMode = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly ItemToggleSystem _toggle = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -125,8 +126,10 @@ public abstract class SharedNinjaGlovesSystem : EntitySystem
     public bool AbilityCheck(EntityUid uid, BeforeInteractHandEvent args, out EntityUid target)
     {
         target = args.Target;
-        return !_combatMode.IsInCombatMode(uid)
-            && _hands.GetActiveItem(uid) == null
+        return _timing.IsFirstTimePredicted
+            && !_combatMode.IsInCombatMode(uid)
+            && TryComp<HandsComponent>(uid, out var hands)
+            && hands.ActiveHandEntity == null
             && _interaction.InRangeUnobstructed(uid, target);
     }
 }

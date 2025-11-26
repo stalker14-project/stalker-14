@@ -6,19 +6,16 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 4h
+      time: 54000 # 15 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 4h
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 4h
+      time: 54000 # 15 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 4h
+      time: 54000 # 15 hours
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 4h
+      time: 54000 # 15 hours
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"
@@ -38,7 +35,7 @@
   id: CaptainGear
   equipment:
     shoes: ClothingShoesBootsLaceup
-    eyes: ClothingEyesGlassesCommand
+    eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
@@ -46,13 +43,3 @@
     back:
     - Flash
     # - StationCharter
-
-- type: chameleonOutfit
-  id: CaptainChameleonOutfit
-  job: Captain
-  hasMindShield: true
-  equipment:
-    head: ClothingHeadHatCapcap
-    eyes: ClothingEyesGlassesCommand
-    mask: ClothingMaskGasCaptain
-    neck: ClothingNeckCloakCap

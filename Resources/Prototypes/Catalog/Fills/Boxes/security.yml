@@ -4,31 +4,14 @@
   id: BoxHandcuff
   description: A box full of handcuffs.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: Handcuffs
+  - type: StorageFill
+    contents:
+      - id: Handcuffs
         amount: 4
   - type: Sprite
     layers:
-    - state: box_security
-    - state: handcuff
-
-- type: entity
-  name: ziptie box
-  parent: BoxCardboard
-  id: BoxZiptie
-  description: A box full of zipties.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: Zipties
-        amount: 9
-  - type: Sprite
-    layers:
-    - state: box_security
-    - state: ziptie
+      - state: box_security
+      - state: handcuff
 
 - type: entity
   name: flashbang box
@@ -36,95 +19,50 @@
   id: BoxFlashbang
   description: 'WARNING: These devices are extremely dangerous and can cause blindness or deafness in repeated use.'
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: GrenadeFlashBang
+  - type: StorageFill
+    contents:
+      - id: GrenadeFlashBang
         amount: 4
   - type: Sprite
     layers:
-    - state: box_security
-    - state: flashbang
-
-- type: entity
-  name: stinger grenade box
-  parent: BoxCardboard
-  id: BoxStinger
-  description: A box full of stinger grenades. Disperse!
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: GrenadeStinger
-        amount: 4
-  - type: Sprite
-    layers:
-    - state: box_security
-    - state: flashbang
-
-- type: entity
-  name: tear gas grenade box
-  parent: BoxCardboard
-  id: BoxTearGas
-  description: A box full of tear gas grenades. Hold your breath.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: TearGasGrenade
-        amount: 4
-  - type: Sprite
-    layers:
-    - state: box_security
-    - state: flashbang
+      - state: box_security
+      - state: flashbang
 
 - type: entity
   name: sechud box
   parent: BoxCardboard
   id: BoxSechud
-  description: A box of sechuds.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: ClothingEyesHudSecurity
-        amount: 4
-  - type: Sprite
-    layers:
-    - state: box_security
-    - state: sechud
-
-- type: entity
-  name: secglasses box
-  parent: BoxCardboard
-  id: BoxSecglasses
   description: A box of security glasses.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: ClothingEyesGlassesSecurity
+  - type: StorageFill
+    contents:
+      - id: ClothingEyesHudSecurity
         amount: 4
   - type: Sprite
     layers:
-    - state: box_security
-    - state: secglasses
+      - state: box_security
+      - state: sechud
 
 - type: entity
-  name: sunglasses box
+  name: ziptie box
   parent: BoxCardboard
-  id: BoxSunglasses
-  description: A box of cool flash-proof sunglasses.
+  id: BoxZiptie
+  description: A box full of zipties.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: ClothingEyesGlassesSunglasses
-        amount: 4
+  - type: Storage
+    grid:
+    - 0,0,4,3
+    whitelist:
+      components:
+      - Handcuff
+  - type: StorageFill
+    contents:
+      - id: Zipties
+        amount: 10
   - type: Sprite
     layers:
-    - state: box_security
-    - state: sunglasses
+      - state: box_security
+      - state: ziptie
 
 - type: entity
   name: forensic pad box
@@ -135,35 +73,11 @@
   - type: Item
     shape:
     - 0,0,1,1
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: ForensicPad
-        amount: 9
+  - type: StorageFill
+    contents:
+    - id: ForensicPad
+      amount: 9
   - type: Sprite
     layers:
-    - state: box_security
-    - state: forensic
-
-- type: entity
-  parent: BoxCardboard
-  id: BoxDetonator
-  name: detonator box
-  description: A box of explosive detonators and triggers.
-  components:
-  - type: Item
-    shape:
-    - 0,0,1,1
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: EmptyDetonator
-          amount: 3
-        - id: TimerTrigger
-          amount: 2
-        - id: VoiceTrigger
-  - type: Sprite
-    layers:
-    - state: box_security
-    - state: trigger
+      - state: box_security
+      - state: forensic

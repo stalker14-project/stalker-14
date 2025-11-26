@@ -11,7 +11,7 @@ public sealed class STPoweredExoskeletonSystem : STSharedPoweredExoskeletonSyste
 {
     [Dependency] private readonly STWeightSystem _weight = default!;
     [Dependency] private readonly ContainerSystem _container = default!;
-    [Dependency] private readonly PowerCellSystem _powerCellSystem = default!;
+    [Dependency] private readonly SharedPowerCellSystem _powerCellSystem = default!;
 
     public override void Initialize()
     {
@@ -35,7 +35,7 @@ public sealed class STPoweredExoskeletonSystem : STSharedPoweredExoskeletonSyste
             !TryComp<PowerCellDrawComponent>(uid, out var powerCellDraw))
             return false;
 
-        if (enabled && !_powerCellSystem.HasDrawCharge((uid, powerCellDraw, powerCellSlot)))
+        if (enabled && !_powerCellSystem.HasDrawCharge(uid, powerCellDraw, powerCellSlot))
             return false;
 
         if (!ownerUid.HasValue)

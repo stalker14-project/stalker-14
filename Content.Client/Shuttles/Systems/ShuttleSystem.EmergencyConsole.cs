@@ -16,20 +16,20 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
         get => _enableShuttlePosition;
         set
         {
-            if (_enableShuttlePosition == value)
-                return;
+            if (_enableShuttlePosition == value) return;
 
             _enableShuttlePosition = value;
+            var overlayManager = IoCManager.Resolve<IOverlayManager>();
 
             if (_enableShuttlePosition)
             {
-                _overlay = new EmergencyShuttleOverlay(EntityManager.TransformQuery, XformSystem);
-                _overlays.AddOverlay(_overlay);
+                _overlay = new EmergencyShuttleOverlay(EntityManager);
+                overlayManager.AddOverlay(_overlay);
                 RaiseNetworkEvent(new EmergencyShuttleRequestPositionMessage());
             }
             else
             {
-                _overlays.RemoveOverlay(_overlay!);
+                overlayManager.RemoveOverlay(_overlay!);
                 _overlay = null;
             }
         }
@@ -57,26 +57,23 @@ public sealed partial class ShuttleSystem : SharedShuttleSystem
 /// </summary>
 public sealed class EmergencyShuttleOverlay : Overlay
 {
-    private readonly EntityQuery<TransformComponent> _transformQuery;
-    private readonly SharedTransformSystem _transformSystem;
+    private IEntityManager _entManager;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
     public EntityUid? StationUid;
     public Box2? Position;
 
-    public EmergencyShuttleOverlay(EntityQuery<TransformComponent> transformQuery, SharedTransformSystem transformSystem)
+    public EmergencyShuttleOverlay(IEntityManager entManager)
     {
-        _transformQuery = transformQuery;
-        _transformSystem = transformSystem;
+        _entManager = entManager;
     }
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        if (Position == null || !_transformQuery.TryGetComponent(StationUid, out var xform))
-            return;
+        if (Position == null || !_entManager.TryGetComponent<TransformComponent>(StationUid, out var xform)) return;
 
-        args.WorldHandle.SetTransform(_transformSystem.GetWorldMatrix(xform));
+        args.WorldHandle.SetTransform(xform.WorldMatrix);
         args.WorldHandle.DrawRect(Position.Value, Color.Red.WithAlpha(100));
         args.WorldHandle.SetTransform(Matrix3x2.Identity);
     }

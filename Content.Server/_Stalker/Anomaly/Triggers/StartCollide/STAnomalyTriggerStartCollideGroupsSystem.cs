@@ -20,7 +20,7 @@ public sealed class STAnomalyTriggerStartCollideGroupsSystem : EntitySystem
     {
         foreach (var (whitelist, group) in trigger.Comp.Groups)
         {
-            if (!_whitelist.IsWhitelistPass(whitelist, args.Target))
+            if (!_whitelist.IsBlacklistPass(whitelist, args.Target))
                 continue;
 
             args.Add(group);

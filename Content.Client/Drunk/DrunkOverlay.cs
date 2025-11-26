@@ -1,6 +1,5 @@
 using Content.Shared.Drunk;
 using Content.Shared.StatusEffect;
-using Content.Shared.StatusEffectNew;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
@@ -11,8 +10,6 @@ namespace Content.Client.Drunk;
 
 public sealed class DrunkOverlay : Overlay
 {
-    private static readonly ProtoId<ShaderPrototype> Shader = "Drunk";
-
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
@@ -27,22 +24,13 @@ public sealed class DrunkOverlay : Overlay
 
     private const float VisualThreshold = 10.0f;
     private const float PowerDivisor = 250.0f;
-    /// <remarks>
-    /// This is a magic number based on my person preference of how quickly the bloodloss effect should kick in.
-    /// It is entirely arbitrary, and you should change it if it sucks.
-    /// Honestly should be refactored to be based on amount of blood lost but that's out of scope for what I'm doing atm.
-    /// Also caps all booze visual effects to a max intensity of 100 seconds or 100 booze power.
-    /// </remarks>
-    private const float MaxBoozePower = 100f;
-
-    private const float BoozePowerScale = 8f;
 
     private float _visualScale = 0;
 
     public DrunkOverlay()
     {
         IoCManager.InjectDependencies(this);
-        _drunkShader = _prototypeManager.Index(Shader).InstanceUnique();
+        _drunkShader = _prototypeManager.Index<ShaderPrototype>("Drunk").InstanceUnique();
     }
 
     protected override void FrameUpdate(FrameEventArgs args)
@@ -53,15 +41,19 @@ public sealed class DrunkOverlay : Overlay
         if (playerEntity == null)
             return;
 
-        var statusSys = _sysMan.GetEntitySystem<Shared.StatusEffectNew.StatusEffectsSystem>();
-        if (!statusSys.TryGetMaxTime<DrunkStatusEffectComponent>(playerEntity.Value, out var status))
+        if (!_entityManager.HasComponent<DrunkComponent>(playerEntity)
+            || !_entityManager.TryGetComponent<StatusEffectsComponent>(playerEntity, out var status))
             return;
 
-        var time = status.Item2;
+        var statusSys = _sysMan.GetEntitySystem<StatusEffectsSystem>();
+        if (!statusSys.TryGetTime(playerEntity.Value, SharedDrunkSystem.DrunkKey, out var time, status))
+            return;
 
-        var power = time == null ? MaxBoozePower : (float) Math.Min((time - _timing.CurTime).Value.TotalSeconds, MaxBoozePower);
+        var curTime = _timing.CurTime;
+        var timeLeft = (float) (time.Value.Item2 - curTime).TotalSeconds;
 
-        CurrentBoozePower += BoozePowerScale * (power - CurrentBoozePower) * args.DeltaSeconds / (power+1);
+
+        CurrentBoozePower += 8f * (0.5f*timeLeft - CurrentBoozePower) * args.DeltaSeconds / (timeLeft+1);
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)

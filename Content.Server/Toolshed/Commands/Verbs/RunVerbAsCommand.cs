@@ -14,25 +14,29 @@ public sealed class RunVerbAsCommand : ToolshedCommand
     private SharedVerbSystem? _verb;
 
     [CommandImplementation]
-    public IEnumerable<EntityUid> RunVerbAs(
-            IInvocationContext ctx,
-            [PipedArgument] IEnumerable<EntityUid> input,
-            EntityUid runner,
-            string verb
+    public IEnumerable<NetEntity> RunVerbAs(
+            [CommandInvocationContext] IInvocationContext ctx,
+            [PipedArgument] IEnumerable<NetEntity> input,
+            [CommandArgument] ValueRef<NetEntity> runner,
+            [CommandArgument] string verb
         )
     {
         _verb ??= GetSys<SharedVerbSystem>();
         verb = verb.ToLowerInvariant();
 
-        foreach (var eId in input)
+        foreach (var i in input)
         {
-            if (EntityManager.Deleted(runner) && runner.IsValid())
-                ctx.ReportError(new DeadEntity(runner));
+            var runnerNet = runner.Evaluate(ctx);
+            var runnerEid = EntityManager.GetEntity(runnerNet);
+
+            if (EntityManager.Deleted(runnerEid) && runnerEid.IsValid())
+                ctx.ReportError(new DeadEntity(runnerEid));
 
             if (ctx.GetErrors().Any())
                 yield break;
 
-            var verbs = _verb.GetLocalVerbs(eId, runner, Verb.VerbTypes, true);
+            var eId = EntityManager.GetEntity(i);
+            var verbs = _verb.GetLocalVerbs(eId, runnerEid, Verb.VerbTypes, true);
 
             // if the "verb name" is actually a verb-type, try run any verb of that type.
             var verbType = Verb.VerbTypes.FirstOrDefault(x => x.Name == verb);
@@ -41,8 +45,8 @@ public sealed class RunVerbAsCommand : ToolshedCommand
                 var verbTy = verbs.FirstOrDefault(v => v.GetType() == verbType);
                 if (verbTy != null)
                 {
-                    _verb.ExecuteVerb(verbTy, runner, eId, forced: true);
-                    yield return eId;
+                    _verb.ExecuteVerb(verbTy, runnerEid, eId, forced: true);
+                    yield return i;
                 }
             }
 
@@ -50,8 +54,8 @@ public sealed class RunVerbAsCommand : ToolshedCommand
             {
                 if (verbTy.Text.ToLowerInvariant() == verb)
                 {
-                    _verb.ExecuteVerb(verbTy, runner, eId, forced: true);
-                    yield return eId;
+                    _verb.ExecuteVerb(verbTy, runnerEid, eId, forced: true);
+                    yield return i;
                 }
             }
         }

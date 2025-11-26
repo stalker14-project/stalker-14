@@ -50,6 +50,8 @@
       state: Standing
     - type: MeleeWeapon
       attackRate: 0.7
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
       angle: 30
       range: 1.4
       soundHit:
@@ -65,8 +67,6 @@
       damage:
         types:
           Slash: 26
-    - type: BonusMeleeDamage
-      heavyDamageMultiplier: 1.5
     - type: StaminaDamageOnHit
       damage: 5
     - type: Destructible
@@ -134,6 +134,8 @@
       baseSprintSpeed : 5
     - type: MeleeWeapon
       attackRate: 0.7
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
       angle: 30
       range: 1.4
       soundHit:
@@ -149,8 +151,6 @@
       damage:
         types:
           Slash: 8
-    - type: BonusMeleeDamage
-      heavyDamageMultiplier: 1.5
     - type: Damageable
       damageModifierSet: CloneMutant
     - type: Destructible

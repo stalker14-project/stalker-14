@@ -53,6 +53,12 @@
 #    damageContainer: Biological
 #    damageModifierSet: Vulpkanin
   - type: Respirator
+    critActiveDamage:
+      types:
+        Asphyxiation: 5.0
+    critPassiveDamage:
+      types:
+        Asphyxiation: 1.0
     damage:
       types:
         Asphyxiation: 2.0

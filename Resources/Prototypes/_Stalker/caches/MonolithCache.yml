@@ -1,6 +1,6 @@
 # monolith
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: STMonolithCrate
   suffix: Stalker, монолит
   name: чёрный ящик монолита
@@ -8,7 +8,7 @@
     - type: Storage
       maxItemSize: Ginormous
       grid:
-        - 0,0,28,25
+        - 0,0,24,24
     - type: Sprite
       sprite: _Stalker/Objects/Other/Boxes/black_crate.rsi
       state: icon
@@ -21,6 +21,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # outer

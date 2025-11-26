@@ -8,13 +8,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Weapons.Ranged.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(fieldDeltas: true), Access([typeof(SharedGunSystem), typeof(SharedStalkerStorageSystem)])] // stalker-changes
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState, Access([typeof(SharedGunSystem), typeof(SharedStalkerStorageSystem)])] // stalker-changes
 public sealed partial class BallisticAmmoProviderComponent : Component
 {
-    [DataField]
+    [ViewVariables(VVAccess.ReadWrite), DataField]
     public SoundSpecifier? SoundRack = new SoundPathSpecifier("/Audio/Weapons/Guns/Cock/smg_cock.ogg");
 
-    [DataField]
+    [ViewVariables(VVAccess.ReadWrite), DataField]
     public SoundSpecifier? SoundInsert = new SoundPathSpecifier("/Audio/Weapons/Guns/MagIn/bullet_insert.ogg");
 
     [ViewVariables(VVAccess.ReadWrite), DataField]

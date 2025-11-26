@@ -1,5 +1,4 @@
 # No idea why it's in sci but we ball.
-# Why is this one file?
 - type: job
   id: StationAi
   name: job-name-station-ai
@@ -8,12 +7,11 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 5h
+    time: 54000  # 15 hrs
   canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain
-  jobPreviewEntity: PlayerStationAiPreview
   applyTraits: false
 
 - type: job
@@ -23,7 +21,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 10h
+      time: 144000 # 40 hrs
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd

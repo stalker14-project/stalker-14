@@ -3,12 +3,13 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Lathe.Prototypes;
 using Content.Shared.Materials;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Research.Prototypes
 {
-    [Prototype]
+    [NetSerializable, Serializable, Prototype]
     public sealed partial class LatheRecipePrototype : IPrototype, IInheritingPrototype
     {
         [ViewVariables]
@@ -17,12 +18,12 @@ namespace Content.Shared.Research.Prototypes
 
         /// <inheritdoc/>
         [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<LatheRecipePrototype>))]
-        public string[]? Parents { get; private set; }
+        public string[]? Parents { get; }
 
         /// <inheritdoc />
         [NeverPushInheritance]
         [AbstractDataField]
-        public bool Abstract { get; private set; }
+        public bool Abstract { get; }
 
         /// <summary>
         ///     Name displayed in the lathe GUI.
@@ -65,9 +66,9 @@ namespace Content.Shared.Research.Prototypes
         public bool ApplyMaterialDiscount = true;
 
         /// <summary>
-        /// List of categories used for visually sorting lathe recipes in the UI.
+        /// A category used for visually sorting lathe recipes in the UI.
         /// </summary>
         [DataField]
-        public List<ProtoId<LatheCategoryPrototype>> Categories = new();
+        public ProtoId<LatheCategoryPrototype>? Category;
     }
 }

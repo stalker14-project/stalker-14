@@ -32,11 +32,6 @@
   - type: Tag
     tags:
     - BlockGloves
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
 
 # Stalker №1 - 1
 
@@ -214,7 +209,7 @@
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/zarya_dolg.rsi
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - 1,0,1,0
       - 3,0,3,0
@@ -352,7 +347,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/Bandit_zarya.rsi
 # bonus
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - 0,0,0,0
       - 2,0,2,0

@@ -40,12 +40,12 @@
       scale: 0.8, 0.8
       layers:
       - state: docs4
-    - type: Item
       size: Small
     - type: Paper
     - type: ActivatableUI
       key: enum.PaperUiKey.Key
-      requiresComplex: false
+      closeOnHandDeselect: false
+      requireHands: false
     - type: Tag
       tags:
       - Document
@@ -76,7 +76,8 @@
     - type: Paper
     - type: ActivatableUI
       key: enum.PaperUiKey.Key
-      requiresComplex: false
+      closeOnHandDeselect: false
+      requireHands: false
     - type: Tag
       tags:
       - Document
@@ -105,7 +106,8 @@
     - type: Paper
     - type: ActivatableUI
       key: enum.PaperUiKey.Key
-      requiresComplex: false
+      closeOnHandDeselect: false
+      requireHands: false
     - type: Tag
       tags:
       - Document
@@ -133,7 +135,8 @@
     - type: Paper
     - type: ActivatableUI
       key: enum.PaperUiKey.Key
-      requiresComplex: false
+      closeOnHandDeselect: false
+      requireHands: false
     - type: Tag
       tags:
       - Document
@@ -160,8 +163,8 @@
       stampedColor: "#3681bb"
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
-    requireActiveHand: true
-    requiresComplex: true
+    closeOnHandDeselect: true
+    requireHands: true
   - type: UserInterface
     interfaces:
       enum.PaperUiKey.Key:
@@ -182,8 +185,8 @@
     - state: book_seraphim
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
-    requireActiveHand: true
-    requiresComplex: true
+    closeOnHandDeselect: true
+    requireHands: true
   - type: UserInterface
     interfaces:
       enum.PaperUiKey.Key:
@@ -201,8 +204,8 @@
     - state: pilgrim_bible
   - type: ActivatableUI
     key: enum.PaperUiKey.Key
-    requireActiveHand: true
-    requiresComplex: true
+    closeOnHandDeselect: true
+    requireHands: true
   - type: UserInterface
     interfaces:
       enum.PaperUiKey.Key:

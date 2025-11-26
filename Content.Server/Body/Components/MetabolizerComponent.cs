@@ -1,4 +1,3 @@
-using Content.Shared.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Shared.Body.Prototypes;
 using Content.Shared.FixedPoint;
@@ -10,13 +9,13 @@ namespace Content.Server.Body.Components
     /// <summary>
     ///     Handles metabolizing various reagents with given effects.
     /// </summary>
-    [RegisterComponent, AutoGenerateComponentPause, Access(typeof(MetabolizerSystem))]
+    [RegisterComponent, Access(typeof(MetabolizerSystem))]
     public sealed partial class MetabolizerComponent : Component
     {
         /// <summary>
         ///     The next time that reagents will be metabolized.
         /// </summary>
-        [DataField, AutoPausedField]
+        [DataField(customTypeSerializer: typeof(TimeOffsetSerializer))]
         public TimeSpan NextUpdate;
 
         /// <summary>
@@ -25,18 +24,6 @@ namespace Content.Server.Body.Components
         /// <returns></returns>
         [DataField]
         public TimeSpan UpdateInterval = TimeSpan.FromSeconds(1);
-
-        /// <summary>
-        /// Multiplier applied to <see cref="UpdateInterval"/> for adjusting based on metabolic rate multiplier.
-        /// </summary>
-        [DataField]
-        public float UpdateIntervalMultiplier = 1f;
-
-        /// <summary>
-        /// Adjusted update interval based off of the multiplier value.
-        /// </summary>
-        [ViewVariables]
-        public TimeSpan AdjustedUpdateInterval => UpdateInterval * UpdateIntervalMultiplier;
 
         /// <summary>
         ///     From which solution will this metabolizer attempt to metabolize chemicals
@@ -58,14 +45,14 @@ namespace Content.Server.Body.Components
         /// </summary>
         [DataField]
         [Access(typeof(MetabolizerSystem), Other = AccessPermissions.ReadExecute)] // FIXME Friends
-        public HashSet<ProtoId<MetabolizerTypePrototype>>? MetabolizerTypes;
+        public HashSet<ProtoId<MetabolizerTypePrototype>>? MetabolizerTypes = null;
 
         /// <summary>
         ///     Should this metabolizer remove chemicals that have no metabolisms defined?
         ///     As a stop-gap, basically.
         /// </summary>
         [DataField]
-        public bool RemoveEmpty;
+        public bool RemoveEmpty = false;
 
         /// <summary>
         ///     How many reagents can this metabolizer process at once?
@@ -79,7 +66,7 @@ namespace Content.Server.Body.Components
         ///     A list of metabolism groups that this metabolizer will act on, in order of precedence.
         /// </summary>
         [DataField("groups")]
-        public List<MetabolismGroupEntry>? MetabolismGroups;
+        public List<MetabolismGroupEntry>? MetabolismGroups = default!;
     }
 
     /// <summary>
@@ -90,7 +77,7 @@ namespace Content.Server.Body.Components
     public sealed partial class MetabolismGroupEntry
     {
         [DataField(required: true)]
-        public ProtoId<MetabolismGroupPrototype> Id;
+        public ProtoId<MetabolismGroupPrototype> Id = default!;
 
         [DataField("rateModifier")]
         public FixedPoint2 MetabolismRateModifier = 1.0;
