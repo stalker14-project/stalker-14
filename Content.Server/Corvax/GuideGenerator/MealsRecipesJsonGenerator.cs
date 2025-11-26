@@ -7,7 +7,7 @@ using Content.Shared.Kitchen;
 using Robust.Shared.Prototypes;
 using Content.Shared.Construction.Prototypes;
 using Content.Server.Construction.Components;
-using Content.Server.EntityEffects.Effects;
+using Content.Shared.EntityEffects.Effects.EntitySpawning;
 
 namespace Content.Server.GuideGenerator;
 
@@ -98,10 +98,10 @@ public sealed class MealsRecipesJsonGenerator
         foreach (var react in reactionPrototypes)
         {
             foreach (var effect in react.Effects)
-                if (effect.GetType().Equals(typeof(CreateEntityReactionEffect)))
+                if (effect.GetType().Equals(typeof(SpawnEntity)))
                 {
-                    var trueEffect = (CreateEntityReactionEffect)effect;
-                    if (Regex.Match(trueEffect.Entity.ToLower().Trim(), @".*[Ff]ood*").Success) if (!mixableRecipes.ContainsKey(react.Id))
+                    var trueEffect = (SpawnEntity)effect;
+                    if (Regex.Match(trueEffect.Entity.ToString().ToLower().Trim(), @".*[Ff]ood*").Success) if (!mixableRecipes.ContainsKey(react.Id))
                         {
                             mixableRecipes[react.Id] = new Dictionary<string, string>();
                             mixableRecipes[react.Id]["id"] = react.Id;

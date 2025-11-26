@@ -9,17 +9,18 @@
     state: icon
   - type: Item
     sprite: _Stalker_EN/Objects/Misc/spray_paint.rsi
-    state: icon
   - type: UserInterface
     interfaces:
       enum.CrayonUiKey.Key:
         type: CrayonBoundUserInterface
   - type: Crayon
-    capacity: 10
+    selectedState: like
     color: Red
     selectableColor: true
     deleteEmpty: false
     useSound: /Audio/Effects/spray3.ogg
+  - type: LimitedCharges
+    maxCharges: 10
   - type: Tag
     tags:
     - Write

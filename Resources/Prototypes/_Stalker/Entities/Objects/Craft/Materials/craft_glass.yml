@@ -2,7 +2,7 @@
   parent: STBaseIngridient
   id: STCraftGlassT1
   name: низкокачественное стекло T1
-  desciption: простое стекло низкого качества, используется для временных конструкций и окон в незначительных постройках. T1
+  description: простое стекло низкого качества, используется для временных конструкций и окон в незначительных постройках. T1
   suffix: Stalker, крафт, T1
   components:
     - type: PhysicalComposition
@@ -22,7 +22,7 @@
   parent: STBaseIngridient
   id: STCraftGlassT2
   name: стекло Т2
-  desciption: улучшенное стекло среднего качества, используется для стандартных окон и декоративных элементов. T2
+  description: улучшенное стекло среднего качества, используется для стандартных окон и декоративных элементов. T2
   suffix: Stalker, крафт, T2
   components:
     - type: PhysicalComposition
@@ -42,12 +42,12 @@
   parent: STBaseIngridient
   id: STCraftQuartzCrystalT3
   name: кварцевый кристалл T3
-  desciption: высококачественный кварцевый кристалл, используется для оптических приборов и высококлассных конструкций. T3
+  description: высококачественный кварцевый кристалл, используется для оптических приборов и высококлассных конструкций. T3
   suffix: Stalker, крафт, T3
   components:
     - type: PhysicalComposition
       materialComposition:
-        Quartz: 200
+        RawQuartz: 200
     - type: Sprite
       state: quartz_crystal_t3
       sprite: _Stalker/Objects/Craft/Materials/craft_glass.rsi
@@ -62,12 +62,12 @@
   parent: STBaseIngridient
   id: STCraftSapphireCrystalT4
   name: сапфировый кристалл T4
-  desciption: сапфировый кристалл премиум-класса с высокой прозрачностью и прочностью, используется в архитектурных и научных проектах. T4
+  description: сапфировый кристалл премиум-класса с высокой прозрачностью и прочностью, используется в архитектурных и научных проектах. T4
   suffix: Stalker, крафт, T4
   components:
-    - type: PhysicalComposition
-      materialComposition:
-        Sapphire: 250
+    # - type: PhysicalComposition
+      # materialComposition:
+        # Sapphire: 250 # Stalker-TODO: This material does not exist
     - type: Sprite
       state: sapphire_crystal_t4
       sprite: _Stalker/Objects/Craft/Materials/craft_glass.rsi
@@ -82,12 +82,12 @@
   parent: STBaseIngridient
   id: STCraftAluminumOxideT5
   name: оксид алюминия T5
-  desciption: высокопрочный и устойчивый к повреждениям оксид алюминия, используется в военной технике и передовых технологиях. T5
+  description: высокопрочный и устойчивый к повреждениям оксид алюминия, используется в военной технике и передовых технологиях. T5
   suffix: Stalker, крафт, T5
   components:
-    - type: PhysicalComposition
-      materialComposition:
-        AluminumOxide: 300
+    # - type: PhysicalComposition
+      # materialComposition:
+        # AluminumOxide: 300 # Stalker-TODO: This material does not exist
     - type: Sprite
       state: aluminum_oxide_t5
       sprite: _Stalker/Objects/Craft/Materials/craft_glass.rsi

@@ -1,36 +1,32 @@
 - type: reagent
   id: STTaurine
-  name: taurine
+  name: reagent-name-st-taurine
   group: Narcotics
-  desc: Often used by stalkers on multi-day hikes when there is no opportunity to stop and rest. The drink contains easily digestible carbohydrates, as well as drugs that cause the release of adrenaline into the blood.
+  desc: reagent-desc-st-taurine
   physicalDesc: reagent-physical-desc-fizzy
   flavor: soda
   color: "#ffffbf"
   boilingPoint: 212.0
   meltingPoint: 170.0
+  evaporationSpeed: 0.3 # Stalker-Changed
   metabolisms:
     Narcotic:
       metabolismRate: 0.025
       effects:
-      - !type:MovespeedModifier
+      - !type:MovementSpeedModifier
         conditions:
         walkSpeedModifier: 1.04
         sprintSpeedModifier: 1.04
-      - !type:GenericStatusEffect
-        conditions:
-        key: Stun
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
-        conditions:
-        key: KnockedDown
+      - !type:ModifyKnockdown
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
-        conditions:
-        key: ForcedSleep
-        component: ForcedSleeping
-        refresh: false
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
+        time: 3
         type: Remove
     Medicine:
       metabolismRate: 0.1
@@ -43,9 +39,9 @@
 
 - type: reagent
   id: NocturneSerum
-  name: Nocturne Serum
+  name: reagent-name-nocturne-serum
   group: Narcotics
-  desc: Made-in-Zone serum that force anyone to sleep instantly.
+  desc: reagent-desc-nocturne-serum
   physicalDesc: reagent-physical-desc-powdery
   color: "#128e80"
   boilingPoint: 444.0
@@ -54,21 +50,20 @@
     Narcotic:
       metabolismRate: 0.1
       effects:
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: NocturneSerum
           min: 0.1
-        key: ForcedSleep
-        component: ForcedSleeping
-        refresh: false
-        type: Add
+        effectProto: StatusEffectForcedSleeping
+        time: 6
+        delay: 5
 
 - type: reagent
   id: AirlossSerum
-  name: Airloss Serum
+  name: reagent-name-airloss-serum
   group: Toxins
-  desc: Made-in-Zone serum that force anyone to suffer terrible airloss.
+  desc: reagent-desc-airloss-serum
   physicalDesc: reagent-physical-desc-pungent
   color: "#6b0007"
   metabolisms:
@@ -93,32 +88,30 @@
     Narcotic:
       metabolismRate: 0.5
       effects:
-      - !type:MovespeedModifier
+      - !type:MovementSpeedModifier
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
-      - !type:GenericStatusEffect
-        key: Stun
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectStunned
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
-        key: KnockedDown
+      - !type:ModifyKnockdown
         time: 3
         type: Remove
       - !type:GenericStatusEffect
         key: StaminaModifier
         component: StaminaModifier
         time: 3
-        type: Add
-      - !type:GenericStatusEffect
-        key: ForcedSleep
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectForcedSleeping
         time: 3
         type: Remove
-      - !type:GenericStatusEffect
+      - !type:ModifyStatusEffect
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
           reagent: Haloperidol
           max: 0.01
-        key: Drowsiness
+        effectProto: StatusEffectDrowsiness
         time: 10
         type: Remove
     Medicine:
@@ -133,7 +126,7 @@
         factor: 20
       - !type:HealthChange
         conditions:
-        - !type:TotalDamage
+        - !type:TotalDamageCondition
         damage:
           groups:
             Burn: -20

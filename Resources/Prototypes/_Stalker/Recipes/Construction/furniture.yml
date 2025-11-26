@@ -23,15 +23,10 @@
 
 - type: construction
   id: STchairCraft
-  name: стул
-  description: Некогда этот стул был гордостью, но сейчас предмет, который занимает много места.
   graph: ChairCraft
   startNode: start
   targetNode: STchairCraftEnd
   category: construction-category-structures
-  icon:
-    sprite: _Stalker/Structures/Furniture/Chairs/old_chairs.rsi
-    state: s1
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
@@ -41,14 +36,10 @@
 
 - type: construction
   id: STTableCraft
-  name: стол
   graph: TableCraft
   startNode: start
   targetNode: STTableCraftEnd
   category: construction-category-structures
-  icon:
-    sprite: _Stalker/Structures/Furniture/Tables/old_table7.rsi
-    state: full
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false

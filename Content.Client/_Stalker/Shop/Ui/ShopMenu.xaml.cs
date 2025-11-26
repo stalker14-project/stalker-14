@@ -65,9 +65,11 @@ public sealed partial class ShopMenu : DefaultWindow
         _moneyId = moneyId ?? _moneyId;
         _locMoneyName = locMoneyName ?? _locMoneyName;
 
+        var displayname = Loc.GetString(_locMoneyName);
+
         // Captialize first letter
-        var displayname =
-            string.Concat(_locMoneyName[0].ToString().ToUpper(), _locMoneyName.AsSpan(1));
+        displayname =
+            string.Concat(displayname[0].ToString().ToUpper(), displayname.AsSpan(1));
 
         var balanceStr = Loc.GetString("store-ui-balance-display", ("amount", balance),
             ("currency", displayname));
@@ -139,8 +141,8 @@ public sealed partial class ShopMenu : DefaultWindow
         else if (listing.ProductAction != null)
         {
             var actionId = _entityManager.Spawn(listing.ProductAction);
-            if (_actions.TryGetActionData(actionId, out var action) && action.Icon != null)
-                texture = spriteSys.Frame0(action.Icon);
+            if (_actions.GetAction(actionId) is { Comp.Icon: not null } action)
+                texture = spriteSys.Frame0(action.Comp.Icon);
         }
 
         var listingInStock = ListingInStock(listing);

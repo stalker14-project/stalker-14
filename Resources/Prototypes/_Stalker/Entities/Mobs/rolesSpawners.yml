@@ -138,7 +138,7 @@
   components:
     - type: Access
       tags:
-        - Sci
+        - SciBase
     - type: Bands
       band: Stalker
       bandIcon: sci
@@ -146,7 +146,7 @@
       prototypes: [ SciGear ]
     - type: NpcFactionMember
       factions:
-      - Sci
+      - Scientists
 
 - type: entity
   name: кукла декан (переименуй меня)
@@ -156,7 +156,7 @@
   components:
     - type: Access
       tags:
-        - Sci
+        - SciBase # Stalker-TODO: It was "Sci" before, but it does not exist!
     - type: Bands
       band: Stalker
       bandIcon: sci_decan
@@ -173,8 +173,8 @@
   id: MobStalkerSci_rector
   components:
     - type: Access
-      tags:
-        - sci
+      groups:
+        - Sci
     - type: Bands
       band: Stalker
       bandIcon: sci_rector
@@ -279,7 +279,7 @@
   - type: Access
     tags:
     - Project
-    - ProjectPawn
+    #- ProjectPawn # Stalker-TODO: This access does not exist
     - Stalker
   - type: Bands
     band: Stalker

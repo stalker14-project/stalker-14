@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Numerics;
 using Content.Server._Stalker.StalkerDB;
 using Content.Server._Stalker.Storage;
@@ -6,10 +7,13 @@ using Content.Shared._Stalker.Teleport;
 using Content.Shared.Access.Systems;
 using Content.Shared.Teleportation.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.EntitySerialization;
+using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Stalker.Teleports.StalkerBandPortal;
 
@@ -22,7 +26,7 @@ public sealed class StalkerBandTeleportSystem : SharedTeleportSystem
     [Dependency] private readonly StalkerStorageSystem _stalkerStorageSystem = default!;
     [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
     [Dependency] private readonly StalkerPortalSystem _stalkerPortals = default!;
-    private const string ArenaMapPath = "/Maps/_ST/PersonalStalkerArena/StalkerMap.yml";
+    private static readonly ResPath ArenaMapPath = new("/Maps/_ST/PersonalStalkerArena/StalkerMap.yml");
     private Dictionary<string, EntityUid> ArenaMap { get; } = new();
     private Dictionary<string, EntityUid?> ArenaGrid { get; } = new();
 
@@ -81,19 +85,30 @@ public sealed class StalkerBandTeleportSystem : SharedTeleportSystem
             return (stalkerTeleportData.MapId,stalkerTeleportData.GridId);
         }
 
-        ArenaMap[component.PortalName] = _mapManager.GetMapEntityId(_mapManager.CreateMap());
-        _metaDataSystem.SetEntityName(ArenaMap[component.PortalName], $"STALKER_MAP-{component.PortalName}");
-        // TODO: Remove obsolete methods
-        var grids = _map.LoadMap(Comp<MapComponent>(ArenaMap[component.PortalName]).MapId, ArenaMapPath);
-        if (grids.Count != 0)
+        _map.TryLoadMap(
+            ArenaMapPath,
+            out var map,
+            out var grids,
+            DeserializationOptions.Default with { InitializeMaps = true });
+
+        if (map != null)
         {
-            _metaDataSystem.SetEntityName(grids[0], $"STALKER_GRID-{component.PortalName}");
-            ArenaGrid[component.PortalName] = grids[0];
+            ArenaMap[component.PortalName] = map.Value.Owner;
+            _metaDataSystem.SetEntityName(ArenaMap[component.PortalName], $"STALKER_MAP-{component.PortalName}");
+        }
+
+        EntityUid? firstGrid = null;
+
+        if (grids != null && grids.Count != 0)
+        {
+            firstGrid = grids.First();
+            _metaDataSystem.SetEntityName(firstGrid.Value, $"STALKER_GRID-{component.PortalName}");
+            ArenaGrid[component.PortalName] = firstGrid;
         }
         else
             ArenaGrid[component.PortalName] = null;
 
-        if (TryComp(grids[0], out TransformComponent? xform))
+        if (firstGrid != null && TryComp(firstGrid.Value, out TransformComponent? xform))
         {
             // TODO: Obsolete
             var enumerator = xform.ChildEnumerator;

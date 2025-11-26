@@ -59,7 +59,7 @@ public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
 
     private void OnStartCollide(Entity<ZoneAnomalyComponent> anomaly, ref StartCollideEvent args)
     {
-        if(_whitelistSystem.IsBlacklistPass(anomaly.Comp.CollisionBlacklist, args.OtherEntity))
+        if(_whitelistSystem.IsWhitelistPass(anomaly.Comp.CollisionBlacklist, args.OtherEntity))
             return;
 
         TryAddEntity(anomaly, args.OtherEntity);

@@ -46,10 +46,12 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 0.7
       baseSprintSpeed: 1.3
-    - type: Advertise
-      pack: SayStalkerZombie
-      minWait: 60
-      maxWait: 120
+    - type: Vocalizer
+      minVocalizeInterval: 1m
+      maxVocalizeInterval: 2m
+      hideChat: true
+    - type: DatasetVocalizer
+      dataset: SayStalkerZombie
     - type: Speech
       speechSounds: Alto
     - type: Vocal
@@ -66,15 +68,14 @@
         AggroVisionRadius: !type:Single
           20
     - type: ApproachEmitter
-      range: 0
-      useMinRange: false
+      range: 0.01
     - type: STWeight
       self: 90
     - type: Tag
       tags:
         - DoorBumpOpener
     - type: Tool
-      speed: 1.5
+      speedModifier: 1.5
       qualities:
         - Prying
     - type: Prying

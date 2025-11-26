@@ -46,13 +46,13 @@
             collection: STBlindDogBark
 
       - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
+        operator: !type:MoveToOperator
+          shutdownState: PlanFinished
+          pathfindInPlanning: true
+          removeKeyOnFinish: false
+          targetKey: TargetCoordinates
+          pathfindKey: TargetPathfind
+          rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -71,13 +71,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
+        operator: !type:MoveToOperator
+          shutdownState: PlanFinished
+          pathfindInPlanning: true
+          removeKeyOnFinish: false
+          targetKey: TargetCoordinates
+          pathfindKey: TargetPathfind
+          rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -96,13 +96,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
+        operator: !type:MoveToOperator
+          shutdownState: PlanFinished
+          pathfindInPlanning: true
+          removeKeyOnFinish: false
+          targetKey: TargetCoordinates
+          pathfindKey: TargetPathfind
+          rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -121,13 +121,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
+        operator: !type:MoveToOperator
+          shutdownState: PlanFinished
+          pathfindInPlanning: true
+          removeKeyOnFinish: false
+          targetKey: TargetCoordinates
+          pathfindKey: TargetPathfind
+          rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -146,13 +146,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
+        operator: !type:MoveToOperator
+          shutdownState: PlanFinished
+          pathfindInPlanning: true
+          removeKeyOnFinish: false
+          targetKey: TargetCoordinates
+          pathfindKey: TargetPathfind
+          rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -171,13 +171,13 @@
             key: AttackDelay
 
       - !type:HTNPrimitiveTask
-         operator: !type:MoveToOperator
-           shutdownState: PlanFinished
-           pathfindInPlanning: true
-           removeKeyOnFinish: false
-           targetKey: TargetCoordinates
-           pathfindKey: TargetPathfind
-           rangeKey: RangedRange
+        operator: !type:MoveToOperator
+          shutdownState: PlanFinished
+          pathfindInPlanning: true
+          removeKeyOnFinish: false
+          targetKey: TargetCoordinates
+          pathfindKey: TargetPathfind
+          rangeKey: RangedRange
 
       - !type:HTNPrimitiveTask
         operator: !type:JukeOperator
@@ -202,13 +202,13 @@
 
 - type: htnCompound
   id: STBlindDogRedMeleeAttackTargetCompound
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
   branches:
     # Move to melee range and hit them
     - tasks:
       - !type:HTNPrimitiveTask
+        preconditions:
+          - !type:KeyExistsPrecondition
+            key: Target
         operator: !type:MoveToOperator
           shutdownState: PlanFinished
           pathfindInPlanning: true

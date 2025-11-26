@@ -13,8 +13,13 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/armor_reinger.rsi
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/outerClothing/armor_reinger.rsi
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,2,0,3
       - 0,-2,0,0
@@ -91,7 +96,6 @@
   - type: Tag
     tags:
       - BlockMask
-      - HidesNose
   - type: PressureProtection
     highPressureMultiplier: 0.1
     lowPressureMultiplier: 1000
@@ -102,3 +106,4 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - Snout

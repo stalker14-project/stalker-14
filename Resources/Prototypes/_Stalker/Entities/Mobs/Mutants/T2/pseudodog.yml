@@ -42,8 +42,6 @@
         200: Dead
     - type: MeleeWeapon
       attackRate: 1
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.5
       angle: 30
       range: 1.4
       soundHit:
@@ -59,6 +57,8 @@
       damage:
         types:
           Slash: 26
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 5
