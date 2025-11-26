@@ -5,12 +5,12 @@
   suffix: ST | КД 30 минут
   components:
     - type: ApproachTrigger
-      range: 20
-      minRange: 15
-      useMinRange: true
-      whitelist:
-        components:
-          - Dna
+      # range: 20 # Stalker-TODO: These fields does not exist in this component!
+      # minRange: 15
+      # useMinRange: true
+      # whitelist:
+        # components:
+          # - Dna
     - type: Sprite
       layers:
         - state: blue

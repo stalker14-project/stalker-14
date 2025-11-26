@@ -5,12 +5,13 @@
   description: You no longer fight for life, and let it go.
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: NoItem
     checkCanInteract: false
     icon:
       sprite: Interface/Actions/actions_crit.rsi
       state: lastwords
+  - type: InstantAction
     event: !type:CritGiveUp
 
 - type: entity
@@ -19,10 +20,11 @@
   description: You start to fight for your life, your lungs are working at their limit.
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
     itemIconStyle: NoItem
     checkCanInteract: false
     icon:
       sprite: Interface/Actions/actions_crit.rsi
       state: lastwords
+  - type: InstantAction
     event: !type:CritFightForLife

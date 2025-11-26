@@ -20,7 +20,7 @@ public sealed class STAnomalyTriggerStartCollideSystem : EntitySystem
     private void OnStartCollide(Entity<STAnomalyTriggerStartCollideComponent> trigger, ref StartCollideEvent args)
     {
         var targetUid = args.OtherEntity;
-        if (trigger.Comp.Blacklist is not null && _whitelistSystem.IsBlacklistPass(trigger.Comp.Blacklist, targetUid))
+        if (trigger.Comp.Blacklist is not null && _whitelistSystem.IsWhitelistPass(trigger.Comp.Blacklist, targetUid))
             return;
 
         var groups = new HashSet<string> { trigger.Comp.MainTriggerGroup };

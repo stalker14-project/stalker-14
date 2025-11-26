@@ -23,6 +23,9 @@
   - type: Tag
     tags:
     - CraftMaterialGunpowder
+  - type: ContainerContainer
+    containers:
+      item: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       item:
@@ -58,9 +61,9 @@
     sprite: Objects/Misc/reagent_fillings.rsi
     state: powderpile
     color: darkgray
-  - type: PhysicalComposition
-    materialComposition:
-      GunpowderStalker: 100
+  # - type: PhysicalComposition
+    # materialComposition:
+      # GunpowderStalker: 100 # Stalker-TODO: This material does not exist
   - type: Item
     size: Tiny
   - type: Tag
@@ -99,11 +102,10 @@
 
 - type: stack
   id: GunpowderStalker
-  name: чёрный порох
+  name: stack-gunpowder-stalker
   icon: { sprite: /Textures/Objects/Misc/reagent_fillings.rsi, state: powderpile }
   spawn: CraftMaterialGunpowder
   maxCount: 5
-  itemSize: 1
 
 - type: entity
   parent: BaseItem
@@ -132,6 +134,8 @@
   name: металические трубы
   suffix: Stalker, крафт
   components:
+    - type: STWeight
+      self: 1.2
     - type: Sprite
       state: rods
       layers:
@@ -141,7 +145,6 @@
       time: 1200
     - type: Item
       size: Normal
-      self: 1.2
     - type: Craftable
     - type: RepositoryItem
       categoryName: Крафты

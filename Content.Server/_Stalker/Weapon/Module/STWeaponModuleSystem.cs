@@ -72,7 +72,9 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
         if (TryComp(entity.Owner, out FarGunshotComponent? farGunshotComponent)
             && farGunshotComponent.Sound is not null)
         {
-            farGunshotComponent.SilencerDecrease = effect.FarshotSoundDecrease;
+            farGunshotComponent.SilencerDecrease = MathHelper.CloseToPercent(effect.FarshotSoundDecrease, FarGunshotComponent.DefaultSilencerDecrease)
+                ? effect.FarshotSoundDecrease
+                : null;
 
             var farAudioParams = farGunshotComponent.Sound.Params;
 

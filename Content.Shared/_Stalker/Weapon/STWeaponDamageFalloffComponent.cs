@@ -13,6 +13,5 @@ public sealed partial class STWeaponDamageFalloffComponent : Component
     [DataField, AutoNetworkedField]
     public float FalloffMultiplier = 1;
 
-    [DataField, AutoNetworkedField]
     public float ModifiedFalloffMultiplier = 1;
 }

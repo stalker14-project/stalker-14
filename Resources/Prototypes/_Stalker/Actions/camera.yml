@@ -4,9 +4,10 @@
   description: Scope in or out with your optics.
   categories: [ HideSpawnMenu ]
   components:
-  - type: InstantAction
+  - type: Action
+    useDelay: 0.25
     icon:
       sprite: _Stalker/Objects/Weapons/Guns/Rifles/Modules/scope.rsi
       state: scope_T1_ru
+  - type: InstantAction
     event: !type:ToggleActionEvent
-    useDelay: 0.25

@@ -1,8 +1,9 @@
 ﻿using Content.Shared.Storage;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 
-[RegisterComponent]
+[RegisterComponent, EntityCategory("Spawner", "StSkipSpawnTest")]
 public sealed partial class ZoneAnomalyEffectSpawnComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadWrite)]

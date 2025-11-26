@@ -9,16 +9,12 @@
     factions:
     - Duty
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Duty/Low.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Duty/Low.rsi
   - type: Bands
     bandIcon: Dolg
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun
@@ -61,16 +57,12 @@
     factions:
     - Duty
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Duty/Top.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Duty/Top.rsi
   - type: Bands
     bandIcon: Dolg
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun

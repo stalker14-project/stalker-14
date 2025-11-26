@@ -2,15 +2,15 @@ using System.Linq;
 using Content.Server.GameTicking;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Shuttles.Components;
+using Content.Shared.Station.Components;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map.Components;
 
 namespace Content.IntegrationTests.Tests.Station;
 
-[TestFixture]
+[TestFixture, Ignore("Stalker-Changes: There are no emergency evac shuttles on stalker")]
 [TestOf(typeof(EmergencyShuttleSystem))]
 public sealed class EvacShuttleTest
 {

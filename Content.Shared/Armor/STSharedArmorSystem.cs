@@ -9,11 +9,22 @@ namespace Content.Shared.Armor;
 
 public abstract partial class SharedArmorSystem : EntitySystem
 {
-    public void OnArmorInit(EntityUid uid, ArmorComponent component, ComponentInit? args = null)
+    public void OnArmorMapInit(EntityUid uid, ArmorComponent component, MapInitEvent args)
     {
-        component.Modifiers = component.BaseModifiers;
-        if (component.STArmorLevels == null || component.Modifiers == null)
-            return;
-        component.Modifiers = component.STArmorLevels.ApplyLevels(component.BaseModifiers);
+        ApplyLevels(component);
+    }
+
+    public void ApplyLevels(ArmorComponent component)
+    {
+        component.Modifiers = new DamageModifierSet
+        {
+            Coefficients = new Dictionary<string, float>(component.BaseModifiers.Coefficients),
+            FlatReduction = new Dictionary<string, float>(component.BaseModifiers.FlatReduction)
+        };
+
+        if (component.STArmorLevels != null)
+        {
+            component.Modifiers = component.STArmorLevels.ApplyLevels(component.BaseModifiers);
+        }
     }
 }

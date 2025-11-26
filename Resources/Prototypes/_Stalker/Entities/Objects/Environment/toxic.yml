@@ -123,7 +123,7 @@
 
 - type: entity
   parent:
-    - BaseStructureStalkerDynamic
+    - STBaseStructure
   id: STToxicBarrelBase
   abstract: true
   name: toxic barrel
@@ -193,12 +193,6 @@
   suffix: ST | КД 1 часа
   components:
     - type: ApproachTrigger
-      range: 10
-      minRange: 15
-      useMinRange: true
-      whitelist:
-        components:
-          - Dna
     - type: Sprite
       layers:
         - state: blue

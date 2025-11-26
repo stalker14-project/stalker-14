@@ -45,8 +45,6 @@
         90: Dead
     - type: MeleeWeapon
       attackRate: 1
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.5
       angle: 30
       range: 1.1
       soundHit:
@@ -63,6 +61,8 @@
       damage:
         types:
           Slash: 12
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
       baseWalkSpeed: 2
       baseSprintSpeed: 4
@@ -231,13 +231,6 @@
     - type: MovementSpeedModifier
       baseWalkSpeed: 2
       baseSprintSpeed: 4
-      soundHit:
-        path: /Audio/_Stalker/Mutants/bdog_hit_0.ogg
-        params:
-            variation: 0.125
-            pitch: 0
-      soundSwing:
-        collection: STBlindDogAttack
 
 - type: entity
   parent: BaseMobMutantBlindDog

@@ -127,7 +127,7 @@
     sprite: _Stalker/Objects/Clothing/Head/Sera_/assault_helm_serasera.rsi
 
 - type: entity
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadArmorSkyWalkerHelm
   name: Экзошлем "СФЕРА S-10"
   description: Шлем предоставляющий неплохие боевые показатели, так же благодаря встроенному противогазу шлем может похвастаться довольно хорошей радиозащитой. По остальным характеристикам, в частности аномальным всё довольно плохо.
@@ -162,13 +162,13 @@
   - type: HideLayerClothing
     slots:
     - Hair
+    - Snout
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
   - type: Tag
     tags:
         - BlockMask
-        - HidesNose
 
 - type: entity
   parent: STClothingHeadHelmetCombatT3Base

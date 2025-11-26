@@ -24,7 +24,6 @@ public sealed class SharedCraftingSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
 
     private List<LightCraftingPrototype> _lightPrototypes = default!;
     private List<string> _tags = new();
