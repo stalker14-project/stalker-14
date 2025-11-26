@@ -3,7 +3,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Shared.Sound.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause]
 public sealed partial class EmitSoundOnCollideComponent : BaseEmitSoundComponent
 {
     public static readonly TimeSpan CollideCooldown = TimeSpan.FromSeconds(0.2);
@@ -11,12 +11,13 @@ public sealed partial class EmitSoundOnCollideComponent : BaseEmitSoundComponent
     /// <summary>
     /// Minimum velocity required for the sound to play.
     /// </summary>
-    [DataField("minVelocity")]
+    [ViewVariables(VVAccess.ReadWrite), DataField("minVelocity")]
     public float MinimumVelocity = 3f;
 
     /// <summary>
     /// To avoid sound spam add a cooldown to it.
     /// </summary>
-    [DataField(customTypeSerializer: typeof(TimeOffsetSerializer)), AutoPausedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField("nextSound", customTypeSerializer: typeof(TimeOffsetSerializer))]
+    [AutoPausedField]
     public TimeSpan NextSound;
 }

@@ -16,6 +16,7 @@ public sealed class TechAnomalySystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly BeamSystem _beam = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly EmagSystem _emag = default!;
 
     public override void Initialize()
     {
@@ -115,11 +116,8 @@ public sealed class TechAnomalySystem : EntitySystem
 
             if (_random.Prob(tech.Comp.EmagSupercritProbability))
             {
-                var sourceEv = new GotEmaggedEvent(tech, EmagType.Access | EmagType.Interaction);
-                RaiseLocalEvent(source, ref sourceEv);
-
-                var sinkEv = new GotEmaggedEvent(tech, EmagType.Access | EmagType.Interaction);
-                RaiseLocalEvent(sink, ref sinkEv);
+                _emag.DoEmagEffect(tech, source);
+                _emag.DoEmagEffect(tech, sink);
             }
 
             CreateNewLink(tech, source, sink);

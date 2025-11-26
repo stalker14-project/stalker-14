@@ -42,11 +42,6 @@
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: Craftable
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
 
 # Freedom - 1
 
@@ -62,7 +57,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_svoboda.rsi
  # bonus
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - -1,0,-1,0
       - 1,0,1,0
@@ -154,7 +149,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_band.rsi
   # bonus
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - 1,0,1,0
       - 4,0,4,0
@@ -202,7 +197,7 @@
     sprite: _Stalker/Objects/Clothing/outerClothing/plate_merc.rsi
 # bonus
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - 1,0,1,0
       - 3,0,3,0

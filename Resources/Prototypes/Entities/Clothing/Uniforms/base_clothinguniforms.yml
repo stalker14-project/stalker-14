@@ -14,10 +14,7 @@
     spawned:
     - id: MaterialCloth1
       amount: 3
-  - type: PhysicalComposition # 50% of the amount of cloth you'd obtain upon butchering
-    materialComposition:
-      Cloth: 150
-  - type: Edible
+  - type: Food
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
     solutions:
@@ -29,7 +26,6 @@
   - type: Tag
     tags:
     - ClothMade
-    - Recyclable
     - WhitelistChameleon
 
 - type: entity
@@ -64,14 +60,3 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
-
-- type: entity
-  abstract: true
-  id: ClothingUniformFoldableBase
-  components:
-  - type: Foldable
-    canFoldInsideContainer: true
-    unfoldVerbText: unfold-verb-clothing-jacket
-    foldVerbText: fold-verb-clothing-jacket
-  - type: FoldableClothing
-    foldedEquippedPrefix: folded

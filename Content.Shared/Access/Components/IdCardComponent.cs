@@ -22,8 +22,6 @@ public sealed partial class IdCardComponent : Component
     [Access(typeof(SharedIdCardSystem), typeof(SharedPdaSystem), typeof(SharedAgentIdCardSystem), Other = AccessPermissions.ReadWrite)]
     public LocId? JobTitle;
 
-    [DataField]
-    [AutoNetworkedField]
     private string? _jobTitle;
 
     [Access(typeof(SharedIdCardSystem), typeof(SharedPdaSystem), typeof(SharedAgentIdCardSystem), Other = AccessPermissions.ReadWriteExecute)]
@@ -35,13 +33,6 @@ public sealed partial class IdCardComponent : Component
     [DataField]
     [AutoNetworkedField]
     public ProtoId<JobIconPrototype> JobIcon = "JobIconUnknown";
-
-    /// <summary>
-    /// Holds the job prototype when the ID card has no associated station record
-    /// </summary>
-    [DataField]
-    [AutoNetworkedField]
-    public ProtoId<JobPrototype>? JobPrototype;
 
     /// <summary>
     /// The proto IDs of the departments associated with the job

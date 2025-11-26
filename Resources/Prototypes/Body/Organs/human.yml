@@ -6,7 +6,7 @@
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
   - type: Organ
-  - type: Edible
+  - type: Food
   - type: Extractable
     grindableSolutionName: organ
   - type: SolutionContainerManager
@@ -74,7 +74,7 @@
   - type: Item
     size: Small
     heldPrefix: brain
-
+  
 - type: entity
   id: OrganHumanEyes
   parent: BaseHumanOrgan
@@ -225,6 +225,7 @@
     metabolizerTypes: [Human]
     groups:
     - id: Alcohol
+      rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
 
 - type: entity
   id: OrganHumanKidneys

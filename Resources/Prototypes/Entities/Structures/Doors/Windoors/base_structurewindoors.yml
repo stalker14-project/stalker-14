@@ -1,15 +1,11 @@
 #Normal windoors
 - type: entity
   id: BaseWindoor
-  parent: [BaseDeltaPressureGlassQuarter, BaseStructure]
+  parent: BaseStructure
   abstract: true
   placement:
     mode: SnapgridCenter
   components:
-  - type: Anchorable
-    flags:
-    - Anchorable
-  - type: Rotatable
   - type: MeleeSound
     soundGroups:
       Brute:
@@ -47,20 +43,6 @@
       map: ["enum.DoorVisualLayers.BaseEmergencyAccess"]
     - state: panel_open
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
-    - state: electrified_ai
-      sprite: Interface/Misc/ai_hud.rsi
-      shader: unshaded
-      visible: false
-      map: ["enum.ElectrifiedLayers.HUD"]
-    - state: electrified
-      sprite: Effects/electricity.rsi
-      shader: unshaded
-      visible: false
-      map: ["enum.ElectrifiedLayers.Sparks"]
-    - state: sparks
-      map: ["enum.DoorVisualLayers.BaseEmagging"]
-      shader: unshaded
-      visible: false
   - type: AnimationPlayer
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
@@ -155,14 +137,7 @@
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
   - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.ElectrifiedVisuals.ShowSparks:
-        enum.ElectrifiedLayers.Sparks:
-          True: { visible: True }
-          False: { visible: False }
   - type: WiresVisuals
-  - type: ElectrocutionHUDVisuals
   - type: Airtight
     noAirWhenFullyAirBlocked: false
     airBlockedDirection:
@@ -178,7 +153,7 @@
 
 - type: entity
   id: BaseSecureWindoor
-  parent: [BaseDeltaPressureReinforcedGlassQuarter, BaseWindoor]
+  parent: BaseWindoor
   abstract: true
   components:
   - type: Sprite
@@ -201,20 +176,6 @@
       map: [ "enum.DoorVisualLayers.BaseEmergencyAccess" ]
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      visible: false
-    - state: electrified_ai
-      sprite: Interface/Misc/ai_hud.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.HUD" ]
-    - state: electrified
-      sprite: Effects/electricity.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.Sparks" ]
-    - state: sparks
-      map: ["enum.DoorVisualLayers.BaseEmagging"]
-      shader: unshaded
       visible: false
   - type: Damageable
     damageModifierSet: RGlass
@@ -254,7 +215,7 @@
 #Plasma Windoors
 - type: entity
   id: BasePlasmaWindoor
-  parent: [BaseDeltaPressurePlasmaQuarter, BaseWindoor]
+  parent: BaseWindoor
   abstract: true
   components:
   - type: Sprite
@@ -276,20 +237,6 @@
       map: [ "enum.DoorVisualLayers.BaseEmergencyAccess" ]
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      visible: false
-    - state: electrified_ai
-      sprite: Interface/Misc/ai_hud.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.HUD" ]
-    - state: electrified
-      sprite: Effects/electricity.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.Sparks" ]
-    - state: sparks
-      map: ["enum.DoorVisualLayers.BaseEmagging"]
-      shader: unshaded
       visible: false
   - type: Destructible
     thresholds:
@@ -323,7 +270,7 @@
 
 - type: entity
   id: BaseSecurePlasmaWindoor
-  parent: [BaseDeltaPressureReinforcedPlasmaQuarter, BaseSecureWindoor]
+  parent: BaseSecureWindoor
   abstract: true
   components:
   - type: Sprite
@@ -346,20 +293,6 @@
       map: [ "enum.DoorVisualLayers.BaseEmergencyAccess" ]
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      visible: false
-    - state: electrified_ai
-      sprite: Interface/Misc/ai_hud.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.HUD" ]
-    - state: electrified
-      sprite: Effects/electricity.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.Sparks" ]
-    - state: sparks
-      map: ["enum.DoorVisualLayers.BaseEmagging"]
-      shader: unshaded
       visible: false
   - type: Destructible
     thresholds:
@@ -399,7 +332,7 @@
 #Uranium Windoors
 - type: entity
   id: BaseUraniumWindoor
-  parent: [BaseDeltaPressurePlasmaQuarter, BaseWindoor]
+  parent: BaseWindoor
   abstract: true
   components:
   - type: Sprite
@@ -421,20 +354,6 @@
       map: [ "enum.DoorVisualLayers.BaseEmergencyAccess" ]
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      visible: false
-    - state: electrified_ai
-      sprite: Interface/Misc/ai_hud.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.HUD" ]
-    - state: electrified
-      sprite: Effects/electricity.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.Sparks" ]
-    - state: sparks
-      map: ["enum.DoorVisualLayers.BaseEmagging"]
-      shader: unshaded
       visible: false
   - type: Destructible
     thresholds:
@@ -468,7 +387,7 @@
 
 - type: entity
   id: BaseSecureUraniumWindoor
-  parent: [BaseDeltaPressureReinforcedPlasmaQuarter, BaseSecureWindoor]
+  parent: BaseSecureWindoor
   abstract: true
   components:
   - type: Sprite
@@ -491,20 +410,6 @@
       map: [ "enum.DoorVisualLayers.BaseEmergencyAccess" ]
     - state: panel_open
       map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-      visible: false
-    - state: electrified_ai
-      sprite: Interface/Misc/ai_hud.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.HUD" ]
-    - state: electrified
-      sprite: Effects/electricity.rsi
-      shader: unshaded
-      visible: false
-      map: [ "enum.ElectrifiedLayers.Sparks" ]
-    - state: sparks
-      map: ["enum.DoorVisualLayers.BaseEmagging"]
-      shader: unshaded
       visible: false
   - type: Destructible
     thresholds:

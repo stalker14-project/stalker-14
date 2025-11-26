@@ -1,8 +1,6 @@
 using Content.IntegrationTests.Tests.Interaction;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 
@@ -10,8 +8,6 @@ namespace Content.IntegrationTests.Tests.Construction.Interaction;
 
 public sealed class WindowRepair : InteractionTest
 {
-    private static readonly ProtoId<DamageTypePrototype> BluntDamageType = "Blunt";
-
     [Test]
     public async Task RepairReinforcedWindow()
     {
@@ -20,10 +16,10 @@ public sealed class WindowRepair : InteractionTest
         // Damage the entity.
         var sys = SEntMan.System<DamageableSystem>();
         var comp = Comp<DamageableComponent>();
-        var damageType = Server.ProtoMan.Index(BluntDamageType);
+        var damageType = Server.ResolveDependency<IPrototypeManager>().Index<DamageTypePrototype>("Blunt");
         var damage = new DamageSpecifier(damageType, FixedPoint2.New(10));
         Assert.That(comp.Damage.GetTotal(), Is.EqualTo(FixedPoint2.Zero));
-        await Server.WaitPost(() => sys.TryChangeDamage(SEntMan.GetEntity(Target).Value, damage, ignoreResistances: true));
+        await Server.WaitPost(() => sys.TryChangeDamage(SEntMan.GetEntity(Target), damage, ignoreResistances: true));
         await RunTicks(5);
         Assert.That(comp.Damage.GetTotal(), Is.GreaterThan(FixedPoint2.Zero));
 

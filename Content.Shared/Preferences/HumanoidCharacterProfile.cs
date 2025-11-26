@@ -25,8 +25,11 @@ namespace Content.Shared.Preferences
     [Serializable, NetSerializable]
     public sealed partial class HumanoidCharacterProfile : ICharacterProfile
     {
-        private static readonly Regex RestrictedNameRegex = new(@"[^А-Яа-яёЁ0-9 '\-]"); // Stalker-Changes | Corvax-Localization
+        private static readonly Regex RestrictedNameRegex = new("[^А-Яа-яёЁ0-9' -]"); // Stalker-Changes | Corvax-Localization
         private static readonly Regex ICNameCaseRegex = new(@"^(?<word>\w)|\b(?<word>\w)(?=\w*$)");
+
+        public const int MaxNameLength = 32;
+        public const int MaxDescLength = 512;
 
         /// <summary>
         /// Job preferences for initial spawn.
@@ -204,14 +207,11 @@ namespace Content.Shared.Preferences
         /// </summary>
         /// <param name="species">The species to use in this default profile. The default species is <see cref="SharedHumanoidAppearanceSystem.DefaultSpecies"/>.</param>
         /// <returns>Humanoid character profile with default settings.</returns>
-        public static HumanoidCharacterProfile DefaultWithSpecies(string? species = null)
+        public static HumanoidCharacterProfile DefaultWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
         {
-            species ??= SharedHumanoidAppearanceSystem.DefaultSpecies;
-
             return new()
             {
                 Species = species,
-                Appearance = HumanoidCharacterAppearance.DefaultWithSpecies(species),
             };
         }
 
@@ -230,10 +230,8 @@ namespace Content.Shared.Preferences
             return RandomWithSpecies(species);
         }
 
-        public static HumanoidCharacterProfile RandomWithSpecies(string? species = null)
+        public static HumanoidCharacterProfile RandomWithSpecies(string species = SharedHumanoidAppearanceSystem.DefaultSpecies)
         {
-            species ??= SharedHumanoidAppearanceSystem.DefaultSpecies;
-
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
             var random = IoCManager.Resolve<IRobustRandom>();
 
@@ -412,7 +410,7 @@ namespace Content.Shared.Preferences
             // Category not found so dump it.
             TraitCategoryPrototype? traitCategory = null;
 
-            if (category != null && !protoManager.Resolve(category, out traitCategory))
+            if (category != null && !protoManager.TryIndex(category, out traitCategory))
                 return new(this);
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
@@ -521,14 +519,13 @@ namespace Content.Shared.Preferences
             };
 
             string name;
-            var maxNameLength = configManager.GetCVar(CCVars.MaxNameLength);
             if (string.IsNullOrEmpty(Name))
             {
                 name = GetName(Species, gender);
             }
-            else if (Name.Length > maxNameLength)
+            else if (Name.Length > MaxNameLength)
             {
-                name = Name[..maxNameLength];
+                name = Name[..MaxNameLength];
             }
             else
             {
@@ -554,10 +551,9 @@ namespace Content.Shared.Preferences
             }
 
             string flavortext;
-            var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
-            if (FlavorText.Length > maxFlavorTextLength)
+            if (FlavorText.Length > MaxDescLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..maxFlavorTextLength];
+                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
             }
             else
             {
@@ -644,9 +640,6 @@ namespace Content.Shared.Preferences
                     continue;
                 }
 
-                // This happens after we verify the prototype exists
-                // These values are set equal in the database and we need to make sure they're equal here too!
-                loadouts.Role = roleName;
                 loadouts.EnsureValid(this, session, collection);
             }
 
@@ -678,7 +671,7 @@ namespace Content.Shared.Preferences
                 }
 
                 // No category so dump it.
-                if (!protoManager.Resolve(traitProto.Category, out var category))
+                if (!protoManager.TryIndex(traitProto.Category, out var category))
                     continue;
 
                 var existing = groups.GetOrNew(category.ID);
@@ -709,17 +702,10 @@ namespace Content.Shared.Preferences
             var namingSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<NamingSystem>();
             return namingSystem.GetName(species, gender);
         }
-        public bool Equals(HumanoidCharacterProfile? other)
-        {
-            if (other is null)
-                return false;
-
-            return ReferenceEquals(this, other) || MemberwiseEquals(other);
-        }
 
         public override bool Equals(object? obj)
         {
-            return obj is HumanoidCharacterProfile other && Equals(other);
+            return ReferenceEquals(this, obj) || obj is HumanoidCharacterProfile other && Equals(other);
         }
 
         public override int GetHashCode()

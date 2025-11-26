@@ -3,16 +3,19 @@ using Content.Server.Chat.Systems;
 using Content.Server.GameTicking;
 using Content.Server.Station.Components;
 using Content.Server.Station.Events;
+using Content.Shared.CCVar;
 using Content.Shared.Station;
 using Content.Shared.Station.Components;
 using JetBrains.Annotations;
-using Robust.Server.GameStates;
+using Robust.Server.GameObjects;
 using Robust.Server.Player;
 using Robust.Shared.Collections;
+using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Station.Systems;
@@ -23,32 +26,21 @@ namespace Content.Server.Station.Systems;
 /// For jobs, look at StationJobSystem. For spawning, look at StationSpawningSystem.
 /// </summary>
 [PublicAPI]
-public sealed partial class StationSystem : SharedStationSystem
+public sealed class StationSystem : EntitySystem
 {
     [Dependency] private readonly ILogManager _logManager = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
+    [Dependency] private readonly MapSystem _map = default!;
 
     private ISawmill _sawmill = default!;
-
-    private EntityQuery<MapGridComponent> _gridQuery;
-    private EntityQuery<TransformComponent> _xformQuery;
-
-    private ValueList<MapId> _mapIds;
-    private ValueList<(Box2Rotated Bounds, MapId MapId)> _gridBounds;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
-        base.Initialize();
-
         _sawmill = _logManager.GetSawmill("station");
-
-        _gridQuery = GetEntityQuery<MapGridComponent>();
-        _xformQuery = GetEntityQuery<TransformComponent>();
 
         SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRoundEnd);
         SubscribeLocalEvent<PostGameMapLoad>(OnPostGameMapLoad);
@@ -56,9 +48,6 @@ public sealed partial class StationSystem : SharedStationSystem
         SubscribeLocalEvent<StationDataComponent, ComponentShutdown>(OnStationDeleted);
         SubscribeLocalEvent<StationMemberComponent, ComponentShutdown>(OnStationGridDeleted);
         SubscribeLocalEvent<StationMemberComponent, PostGridSplitEvent>(OnStationSplitEvent);
-
-        SubscribeLocalEvent<StationGridAddedEvent>(OnStationGridAdded);
-        SubscribeLocalEvent<StationGridRemovedEvent>(OnStationGridRemoved);
 
         _player.PlayerStatusChanged += OnPlayerStatusChanged;
     }
@@ -74,7 +63,6 @@ public sealed partial class StationSystem : SharedStationSystem
             return;
 
         stationData.Grids.Remove(uid);
-        Dirty(uid, component);
     }
 
     public override void Shutdown()
@@ -91,18 +79,6 @@ public sealed partial class StationSystem : SharedStationSystem
         }
     }
 
-    private void UpdateTrackersOnGrid(EntityUid gridId, EntityUid? station)
-    {
-        var query = EntityQueryEnumerator<StationTrackerComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var tracker, out var xform))
-        {
-            if (xform.GridUid == gridId)
-            {
-                SetStation((uid, tracker), station);
-            }
-        }
-    }
-
     #region Event handlers
 
     private void OnStationAdd(EntityUid uid, StationDataComponent component, ComponentStartup args)
@@ -112,7 +88,7 @@ public sealed partial class StationSystem : SharedStationSystem
         var metaData = MetaData(uid);
         RaiseLocalEvent(new StationInitializedEvent(uid));
         _sawmill.Info($"Set up station {metaData.EntityName} ({uid}).");
-        _pvsOverride.AddGlobalOverride(uid);
+
     }
 
     private void OnStationDeleted(EntityUid uid, StationDataComponent component, ComponentShutdown args)
@@ -120,9 +96,6 @@ public sealed partial class StationSystem : SharedStationSystem
         foreach (var grid in component.Grids)
         {
             RemComp<StationMemberComponent>(grid);
-
-            // If the station gets deleted, we raise the event for every grid that was a part of it
-            RaiseLocalEvent(new StationGridRemovedEvent(grid, uid));
         }
 
         RaiseNetworkEvent(new StationsUpdatedEvent(GetStationNames()), Filter.Broadcast());
@@ -175,19 +148,45 @@ public sealed partial class StationSystem : SharedStationSystem
         }
     }
 
-    private void OnStationGridAdded(StationGridAddedEvent ev)
-    {
-        // When a grid is added to a station, update all trackers on that grid
-        UpdateTrackersOnGrid(ev.GridId, ev.Station);
-    }
-
-    private void OnStationGridRemoved(StationGridRemovedEvent ev)
-    {
-        // When a grid is removed from a station, update all trackers on that grid to null
-        UpdateTrackersOnGrid(ev.GridId, null);
-    }
-
     #endregion Event handlers
+
+    /// <summary>
+    /// Gets the largest member grid from a station.
+    /// </summary>
+    public EntityUid? GetLargestGrid(StationDataComponent component)
+    {
+        EntityUid? largestGrid = null;
+        Box2 largestBounds = new Box2();
+
+        foreach (var gridUid in component.Grids)
+        {
+            if (!TryComp<MapGridComponent>(gridUid, out var grid) ||
+                grid.LocalAABB.Size.LengthSquared() < largestBounds.Size.LengthSquared())
+                continue;
+
+            largestBounds = grid.LocalAABB;
+            largestGrid = gridUid;
+        }
+
+        return largestGrid;
+    }
+
+    /// <summary>
+    /// Returns the total number of tiles contained in the station's grids.
+    /// </summary>
+    public int GetTileCount(StationDataComponent component)
+    {
+        var count = 0;
+        foreach (var gridUid in component.Grids)
+        {
+            if (!TryComp<MapGridComponent>(gridUid, out var grid))
+                continue;
+
+            count += _map.GetAllTiles(gridUid, grid).Count();
+        }
+
+        return count;
+    }
 
     /// <summary>
     /// Tries to retrieve a filter for everything in the station the source is on.
@@ -212,72 +211,45 @@ public sealed partial class StationSystem : SharedStationSystem
     /// </summary>
     public Filter GetInStation(StationDataComponent dataComponent, float range = 32f)
     {
+        // Could also use circles if you wanted.
+        var bounds = new ValueList<Box2>(dataComponent.Grids.Count);
         var filter = Filter.Empty();
-        _mapIds.Clear();
+        var mapIds = new ValueList<MapId>();
+        var xformQuery = GetEntityQuery<TransformComponent>();
 
-        // First collect all valid map IDs where station grids exist
         foreach (var gridUid in dataComponent.Grids)
         {
-            if (!_xformQuery.TryGetComponent(gridUid, out var xform))
+            if (!TryComp(gridUid, out MapGridComponent? grid) ||
+                !xformQuery.TryGetComponent(gridUid, out var xform))
                 continue;
 
             var mapId = xform.MapID;
-            if (!_mapIds.Contains(mapId))
-                _mapIds.Add(mapId);
-        }
+            var position = _transform.GetWorldPosition(xform, xformQuery);
+            var bound = grid.LocalAABB.Enlarged(range).Translated(position);
 
-        // Cache the rotated bounds for each grid
-        _gridBounds.Clear();
-
-        foreach (var gridUid in dataComponent.Grids)
-        {
-            if (!_gridQuery.TryComp(gridUid, out var grid) ||
-                !_xformQuery.TryGetComponent(gridUid, out var gridXform))
+            bounds.Add(bound);
+            if (!mapIds.Contains(mapId))
             {
-                continue;
+                mapIds.Add(xform.MapID);
             }
-
-            var (worldPos, worldRot) = _transform.GetWorldPositionRotation(gridXform);
-            var localBounds = grid.LocalAABB.Enlarged(range);
-
-            // Create a rotated box using the grid's transform
-            var rotatedBounds = new Box2Rotated(
-                localBounds,
-                worldRot,
-                worldPos);
-
-            _gridBounds.Add((rotatedBounds, gridXform.MapID));
         }
 
         foreach (var session in Filter.GetAllPlayers(_player))
         {
             var entity = session.AttachedEntity;
-            if (entity == null || !_xformQuery.TryGetComponent(entity, out var xform))
+            if (entity == null || !xformQuery.TryGetComponent(entity, out var xform))
                 continue;
 
             var mapId = xform.MapID;
 
-            if (!_mapIds.Contains(mapId))
+            if (!mapIds.Contains(mapId))
                 continue;
 
-            // Check if the player is directly on any station grid
-            var gridUid = xform.GridUid;
-            if (gridUid != null && dataComponent.Grids.Contains(gridUid.Value))
+            var position = _transform.GetWorldPosition(xform, xformQuery);
+
+            foreach (var bound in bounds)
             {
-                filter.AddPlayer(session);
-                continue;
-            }
-
-            // If not directly on a grid, check against cached rotated bounds
-            var position = _transform.GetWorldPosition(xform);
-
-            foreach (var (bounds, boundsMapId) in _gridBounds)
-            {
-                // Skip bounds on different maps
-                if (boundsMapId != mapId)
-                    continue;
-
-                if (!bounds.Contains(position))
+                if (!bound.Contains(position))
                     continue;
 
                 filter.AddPlayer(session);
@@ -342,10 +314,8 @@ public sealed partial class StationSystem : SharedStationSystem
         var stationMember = EnsureComp<StationMemberComponent>(mapGrid);
         stationMember.Station = station;
         stationData.Grids.Add(mapGrid);
-        Dirty(station, stationData);
-        Dirty(mapGrid, stationMember);
 
-        RaiseLocalEvent(station, new StationGridAddedEvent(mapGrid, station, false), true);
+        RaiseLocalEvent(station, new StationGridAddedEvent(mapGrid, false), true);
 
         _sawmill.Info($"Adding grid {mapGrid} to station {Name(station)} ({station})");
     }
@@ -367,9 +337,8 @@ public sealed partial class StationSystem : SharedStationSystem
 
         RemComp<StationMemberComponent>(mapGrid);
         stationData.Grids.Remove(mapGrid);
-        Dirty(station, stationData);
 
-        RaiseLocalEvent(station, new StationGridRemovedEvent(mapGrid, station), true);
+        RaiseLocalEvent(station, new StationGridRemovedEvent(mapGrid), true);
         _sawmill.Info($"Removing grid {mapGrid} from station {Name(station)} ({station})");
     }
 
@@ -411,6 +380,110 @@ public sealed partial class StationSystem : SharedStationSystem
 
         QueueDel(station);
     }
+
+    public EntityUid? GetOwningStation(EntityUid? entity, TransformComponent? xform = null)
+    {
+        if (entity == null)
+            return null;
+
+        return GetOwningStation(entity.Value, xform);
+    }
+
+    /// <summary>
+    /// Gets the station that "owns" the given entity (essentially, the station the grid it's on is attached to)
+    /// </summary>
+    /// <param name="entity">Entity to find the owner of.</param>
+    /// <param name="xform">Resolve pattern, transform of the entity.</param>
+    /// <returns>The owning station, if any.</returns>
+    /// <remarks>
+    /// This does not remember what station an entity started on, it simply checks where it is currently located.
+    /// </remarks>
+    public EntityUid? GetOwningStation(EntityUid entity, TransformComponent? xform = null)
+    {
+        if (!Resolve(entity, ref xform))
+            throw new ArgumentException("Tried to use an abstract entity!", nameof(entity));
+
+        if (TryComp<StationDataComponent>(entity, out _))
+        {
+            // We are the station, just return ourselves.
+            return entity;
+        }
+
+        if (TryComp<MapGridComponent>(entity, out _))
+        {
+            // We are the station, just check ourselves.
+            return CompOrNull<StationMemberComponent>(entity)?.Station;
+        }
+
+        if (xform.GridUid == EntityUid.Invalid)
+        {
+            Log.Debug("Unable to get owning station - GridUid invalid.");
+            return null;
+        }
+
+        return CompOrNull<StationMemberComponent>(xform.GridUid)?.Station;
+    }
+
+    public List<EntityUid> GetStations()
+    {
+        var stations = new List<EntityUid>();
+        var query = EntityQueryEnumerator<StationDataComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            stations.Add(uid);
+        }
+
+        return stations;
+    }
+
+    public HashSet<EntityUid> GetStationsSet()
+    {
+        var stations = new HashSet<EntityUid>();
+        var query = EntityQueryEnumerator<StationDataComponent>();
+        while (query.MoveNext(out var uid, out _))
+        {
+            stations.Add(uid);
+        }
+
+        return stations;
+    }
+
+    public List<(string Name, NetEntity Entity)> GetStationNames()
+    {
+        var stations = GetStationsSet();
+        var stats = new List<(string Name, NetEntity Station)>();
+
+        foreach (var weh in stations)
+        {
+            stats.Add((MetaData(weh).EntityName, GetNetEntity(weh)));
+        }
+
+        return stats;
+    }
+
+    /// <summary>
+    /// Returns the first station that has a grid in a certain map.
+    /// If the map has no stations, null is returned instead.
+    /// </summary>
+    /// <remarks>
+    /// If there are multiple stations on a map it is probably arbitrary which one is returned.
+    /// </remarks>
+    public EntityUid? GetStationInMap(MapId map)
+    {
+        var query = EntityQueryEnumerator<StationDataComponent>();
+        while (query.MoveNext(out var uid, out var data))
+        {
+            foreach (var gridUid in data.Grids)
+            {
+                if (Transform(gridUid).MapID == map)
+                {
+                    return uid;
+                }
+            }
+        }
+
+        return null;
+    }
 }
 
 /// <summary>
@@ -443,20 +516,14 @@ public sealed class StationGridAddedEvent : EntityEventArgs
     public EntityUid GridId;
 
     /// <summary>
-    /// EntityUid of the station this grid was added to.
-    /// </summary>
-    public EntityUid Station;
-
-    /// <summary>
     /// Indicates that the event was fired during station setup,
     /// so that it can be ignored if StationInitializedEvent was already handled.
     /// </summary>
     public bool IsSetup;
 
-    public StationGridAddedEvent(EntityUid gridId, EntityUid station, bool isSetup)
+    public StationGridAddedEvent(EntityUid gridId, bool isSetup)
     {
         GridId = gridId;
-        Station = station;
         IsSetup = isSetup;
     }
 }
@@ -472,15 +539,9 @@ public sealed class StationGridRemovedEvent : EntityEventArgs
     /// </summary>
     public EntityUid GridId;
 
-    /// <summary>
-    /// EntityUid of the station this grid was added to.
-    /// </summary>
-    public EntityUid Station;
-
-    public StationGridRemovedEvent(EntityUid gridId, EntityUid station)
+    public StationGridRemovedEvent(EntityUid gridId)
     {
         GridId = gridId;
-        Station = station;
     }
 }
 

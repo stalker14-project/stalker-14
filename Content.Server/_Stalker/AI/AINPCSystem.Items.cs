@@ -27,7 +27,7 @@ namespace Content.Server._Stalker.AI
 {
     public sealed partial class AINPCSystem : SharedAiNpcSystem
     {
-
+        
         private string GetGiveItemToolDescription(AiNpcComponent component)
         {
             var allowedItemsList = component.GivableItems
@@ -231,16 +231,16 @@ namespace Content.Server._Stalker.AI
                 return false;
             }
         }
-
+        
         // TODO: Replace with robust inventory search
         private EntityUid? FindItemInHands(EntityUid holder, string itemName)
         {
             if (!TryComp<HandsComponent>(holder, out var handsComp))
                 return null;
 
-            foreach (var hand in _hands.EnumerateHands((holder, handsComp)))
+            foreach (var hand in _hands.EnumerateHands(holder, handsComp))
             {
-                if (_hands.GetHeldItem((holder, handsComp), hand) is { } heldEntityValue)
+                if (hand.HeldEntity is { } heldEntityValue)
                 {
                     var proto = Prototype(heldEntityValue);
 

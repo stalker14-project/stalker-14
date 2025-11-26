@@ -3,16 +3,16 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared._Stalker.Weapon.Module;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 [Access(typeof(STSharedWeaponModuleSystem))]
 public sealed partial class STWeaponModuleContainerComponent : Component
 {
-    [ViewVariables]
+    [DataField, ViewVariables, AutoNetworkedField]
     public STWeaponModuleEffect CachedEffect;
 
-    [ViewVariables]
+    [DataField, ViewVariables, AutoNetworkedField]
     public STWeaponModuleScopeEffect? CachedScopeEffect;
 
-    [ViewVariables]
+    [DataField, ViewVariables, AutoNetworkedField]
     public bool IntegratedScopeEffect;
 }

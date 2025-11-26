@@ -70,13 +70,13 @@
 
 - type: htnCompound
   id: STGoshaMeleeAttackTargetCompound
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: Target
   branches:
     # Move to melee range and hit them
     - tasks:
       - !type:HTNPrimitiveTask
-        preconditions:
-          - !type:KeyExistsPrecondition
-            key: Target
         operator: !type:MoveToOperator
           shutdownState: PlanFinished
           pathfindInPlanning: true

@@ -8,8 +8,7 @@
     - type: SubdermalImplant
       permanent: true
       implantAction: STActivateSeraSuicideEvent
-    - type: TriggerOnActivateImplant
-    - type: TimerTrigger
+    - type: OnUseTimerTrigger
       delay: 3
       initialBeepDelay: 0
       beepSound:
@@ -17,8 +16,7 @@
         params:
           volume: -2
     - type: ExplodeOnTrigger
-      keysIn:
-      - timer
+    - type: TriggerImplantAction
     - type: Explosive
       explosionType: Default
       totalIntensity: 100

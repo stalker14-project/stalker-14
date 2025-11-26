@@ -16,9 +16,12 @@ public partial class InventorySystem
     {
         if (Resolve(user.Owner, ref user.Comp1, false))
         {
-            foreach (var held in _handsSystem.EnumerateHeld(user))
+            foreach (var hand in user.Comp1.Hands.Values)
             {
-                yield return held;
+                if (hand.HeldEntity == null)
+                    continue;
+
+                yield return hand.HeldEntity.Value;
             }
         }
 
@@ -37,7 +40,7 @@ public partial class InventorySystem
     /// </summary>
     public bool TryGetContainingSlot(Entity<TransformComponent?, MetaDataComponent?> entity, [NotNullWhen(true)] out SlotDefinition? slot)
     {
-        if (!_containerSystem.TryGetContainingContainer(entity, out var container))
+        if (!_containerSystem.TryGetContainingContainer(entity.Owner, out var container, entity.Comp2, entity.Comp1))
         {
             slot = null;
             return false;
@@ -73,12 +76,12 @@ public partial class InventorySystem
             return false;
 
         // Let's spawn this first...
-        var item = Spawn(prototype, Transform(uid).Coordinates);
+        var item = EntityManager.SpawnEntity(prototype, Transform(uid).Coordinates);
 
         // Helper method that deletes the item and returns false.
         bool DeleteItem()
         {
-            Del(item);
+            EntityManager.DeleteEntity(item);
             return false;
         }
 

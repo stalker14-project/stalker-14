@@ -4,9 +4,7 @@ using Content.Server.Temperature.Systems;
 using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
-using Content.Shared.Atmos.Components;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;

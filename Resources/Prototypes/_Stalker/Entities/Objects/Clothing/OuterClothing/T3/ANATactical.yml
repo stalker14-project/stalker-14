@@ -10,7 +10,7 @@
   - type: STWeight
     self: 8.5
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - 0,2,0,4
       - 2,2,2,3
@@ -139,11 +139,6 @@
     slot: head
     requiredSlot: NECK
     clothingPrototype: ClothingHeadCassock
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
 
 - type: entity
   parent: STClothingOuterArmorBase

@@ -13,33 +13,36 @@ namespace Content.Shared.Radiation.Events;
 ///     Will be sent only to clients that activated radiation view using console command.
 /// </remarks>
 [Serializable, NetSerializable]
-public sealed class OnRadiationOverlayUpdateEvent(
-    double elapsedTimeMs,
-    int sourcesCount,
-    int receiversCount,
-    List<DebugRadiationRay> rays)
-    : EntityEventArgs
+public sealed class OnRadiationOverlayUpdateEvent : EntityEventArgs
 {
     /// <summary>
     ///     Total time in milliseconds that server took to do radiation processing.
     ///     Exclude time of entities reacting to <see cref="OnIrradiatedEvent"/>.
     /// </summary>
-    public readonly double ElapsedTimeMs = elapsedTimeMs;
+    public readonly double ElapsedTimeMs;
 
     /// <summary>
     ///     Total count of entities with <see cref="RadiationSourceComponent"/> on all maps.
     /// </summary>
-    public readonly int SourcesCount = sourcesCount;
+    public readonly int SourcesCount;
 
     /// <summary>
     ///     Total count of entities with radiation receiver on all maps.
     /// </summary>
-    public readonly int ReceiversCount = receiversCount;
+    public readonly int ReceiversCount;
 
     /// <summary>
     ///     All radiation rays that was processed by radiation system.
     /// </summary>
-    public readonly List<DebugRadiationRay> Rays = rays;
+    public readonly List<RadiationRay> Rays;
+
+    public OnRadiationOverlayUpdateEvent(double elapsedTimeMs, int sourcesCount, int receiversCount, List<RadiationRay> rays)
+    {
+        ElapsedTimeMs = elapsedTimeMs;
+        SourcesCount = sourcesCount;
+        ReceiversCount = receiversCount;
+        Rays = rays;
+    }
 }
 
 /// <summary>

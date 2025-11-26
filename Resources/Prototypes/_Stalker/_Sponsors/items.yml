@@ -26,14 +26,13 @@
   description: Нож и резак для проволки в одном
   suffix: Stalker, Инструменты
   components:
-    - type: STWeight
-      self: 0.5
     - type: Sprite
       sprite: Objects/Tools/debug.rsi
       state: icon
     - type: Item
       sprite: Objects/Tools/debug.rsi
       size: Small
+      SelfWeight: 0.5
       shape:
         - 0,0,0,0
     - type: Tool

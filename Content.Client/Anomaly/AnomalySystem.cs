@@ -7,11 +7,10 @@ using Robust.Shared.Timing;
 
 namespace Content.Client.Anomaly;
 
-public sealed partial class AnomalySystem : SharedAnomalySystem
+public sealed class AnomalySystem : SharedAnomalySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly FloatingVisualizerSystem _floating = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -24,7 +23,6 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
 
         SubscribeLocalEvent<AnomalySupercriticalComponent, ComponentShutdown>(OnShutdown);
     }
-
     private void OnStartup(EntityUid uid, AnomalyComponent component, ComponentStartup args)
     {
         _floating.FloatAnimation(uid, component.FloatingOffset, component.AnimationKey, component.AnimationTime);
@@ -51,30 +49,30 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
         if (HasComp<AnomalySupercriticalComponent>(uid))
             pulsing = true;
 
-        if (!_sprite.LayerMapTryGet((uid, sprite), AnomalyVisualLayers.Base, out var layer, false) ||
-            !_sprite.LayerMapTryGet((uid, sprite), AnomalyVisualLayers.Animated, out var animatedLayer, false))
+        if (!sprite.LayerMapTryGet(AnomalyVisualLayers.Base, out var layer) ||
+            !sprite.LayerMapTryGet(AnomalyVisualLayers.Animated, out var animatedLayer))
             return;
 
-        _sprite.LayerSetVisible((uid, sprite), layer, !pulsing);
-        _sprite.LayerSetVisible((uid, sprite), animatedLayer, pulsing);
+        sprite.LayerSetVisible(layer, !pulsing);
+        sprite.LayerSetVisible(animatedLayer, pulsing);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<AnomalyComponent, AnomalySupercriticalComponent, SpriteComponent>();
+        var query = EntityQueryEnumerator<AnomalySupercriticalComponent, SpriteComponent>();
 
-        while (query.MoveNext(out var uid, out var anomaly, out var super, out var sprite))
+        while (query.MoveNext(out var super, out var sprite))
         {
-            var completion = 1f - (float) ((super.EndTime - _timing.CurTime) / anomaly.SupercriticalDuration);
+            var completion = 1f - (float) ((super.EndTime - _timing.CurTime) / super.SupercriticalDuration);
             var scale = completion * (super.MaxScaleAmount - 1f) + 1f;
-            _sprite.SetScale((uid, sprite), new Vector2(scale, scale));
+            sprite.Scale = new Vector2(scale, scale);
 
-            var transparency = (byte)(65 * (1f - completion) + 190);
+            var transparency = (byte) (65 * (1f - completion) + 190);
             if (transparency < sprite.Color.AByte)
             {
-                _sprite.SetColor((uid, sprite), sprite.Color.WithAlpha(transparency));
+                sprite.Color = sprite.Color.WithAlpha(transparency);
             }
         }
     }
@@ -84,7 +82,7 @@ public sealed partial class AnomalySystem : SharedAnomalySystem
         if (!TryComp<SpriteComponent>(ent, out var sprite))
             return;
 
-        _sprite.SetScale((ent.Owner, sprite), Vector2.One);
-        _sprite.SetColor((ent.Owner, sprite), sprite.Color.WithAlpha(1f));
+        sprite.Scale = Vector2.One;
+        sprite.Color = sprite.Color.WithAlpha(1f);
     }
 }

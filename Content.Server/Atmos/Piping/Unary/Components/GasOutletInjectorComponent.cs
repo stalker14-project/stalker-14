@@ -1,7 +1,6 @@
+using Content.Server.Atmos.Piping.Binary.Components;
 using Content.Server.Atmos.Piping.Unary.EntitySystems;
 using Content.Shared.Atmos;
-using Content.Shared.Atmos.Piping.Binary.Components;
-using Content.Shared.Guidebook;
 
 namespace Content.Server.Atmos.Piping.Unary.Components
 {
@@ -11,7 +10,7 @@ namespace Content.Server.Atmos.Piping.Unary.Components
     {
 
         [ViewVariables(VVAccess.ReadWrite)]
-        public bool Enabled = true;
+        public bool Enabled { get; set; } = true;
 
         /// <summary>
         ///     Target volume to transfer. If <see cref="WideNet"/> is enabled, actual transfer rate will be much higher.
@@ -25,14 +24,14 @@ namespace Content.Server.Atmos.Piping.Unary.Components
 
         private float _transferRate = 50;
 
-        [DataField]
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("maxTransferRate")]
         public float MaxTransferRate = Atmospherics.MaxTransferRate;
 
-        [DataField]
-        [GuidebookData]
-        public float MaxPressure = GasVolumePumpComponent.DefaultHigherThreshold;
+        [DataField("maxPressure")]
+        public float MaxPressure { get; set; } = GasVolumePumpComponent.DefaultHigherThreshold;
 
         [DataField("inlet")]
-        public string InletName = "pipe";
+        public string InletName { get; set; } = "pipe";
     }
 }

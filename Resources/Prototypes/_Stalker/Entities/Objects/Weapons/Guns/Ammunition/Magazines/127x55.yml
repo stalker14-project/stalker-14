@@ -3,14 +3,15 @@
   name: магазин АШ-12 (20)
   description: Магазин 12,7x55 для АШ-12.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
-    self: 0.1
+    SelfWeight: 0.1
   - type: Tag
     tags:
     - MagazineAS12
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:

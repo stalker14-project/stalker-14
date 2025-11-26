@@ -5,7 +5,6 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Implants;
 using Content.Shared.Inventory;
-using Content.Shared.Mind;
 using Content.Shared.PDA;
 using Content.Shared.Store;
 using Content.Shared.Store.Components;
@@ -20,11 +19,11 @@ public sealed class UplinkSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly StoreSystem _store = default!;
     [Dependency] private readonly SharedSubdermalImplantSystem _subdermalImplant = default!;
-    [Dependency] private readonly SharedMindSystem _mind = default!;
 
-    public static readonly ProtoId<CurrencyPrototype> TelecrystalCurrencyPrototype = "Telecrystal";
-    private static readonly EntProtoId FallbackUplinkImplant = "UplinkImplant";
-    private static readonly ProtoId<ListingPrototype> FallbackUplinkCatalog = "UplinkUplinkImplanter";
+    [ValidatePrototypeId<CurrencyPrototype>]
+    public const string TelecrystalCurrencyPrototype = "Telecrystal";
+    private const string FallbackUplinkImplant = "UplinkImplant";
+    private const string FallbackUplinkCatalog = "UplinkUplinkImplanter";
 
     /// <summary>
     /// Adds an uplink to the target
@@ -62,12 +61,8 @@ public sealed class UplinkSystem : EntitySystem
     /// </summary>
     private void SetUplink(EntityUid user, EntityUid uplink, FixedPoint2 balance, bool giveDiscounts)
     {
-        if (!_mind.TryGetMind(user, out var mind, out _))
-            return;
-
         var store = EnsureComp<StoreComponent>(uplink);
-
-        store.AccountOwner = mind;
+        store.AccountOwner = user;
 
         store.Balance.Clear();
         _store.TryAddCurrency(new Dictionary<string, FixedPoint2> { { TelecrystalCurrencyPrototype, balance } },
@@ -75,10 +70,10 @@ public sealed class UplinkSystem : EntitySystem
             store);
 
         var uplinkInitializedEvent = new StoreInitializedEvent(
-            TargetUser: mind,
+            TargetUser: user,
             Store: uplink,
             UseDiscounts: giveDiscounts,
-            Listings: _store.GetAvailableListings(mind, uplink, store)
+            Listings: _store.GetAvailableListings(user, uplink, store)
                 .ToArray());
         RaiseLocalEvent(ref uplinkInitializedEvent);
     }
@@ -88,7 +83,9 @@ public sealed class UplinkSystem : EntitySystem
     /// </summary>
     private bool ImplantUplink(EntityUid user, FixedPoint2 balance, bool giveDiscounts)
     {
-        if (!_proto.Resolve<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
+        var implantProto = new string(FallbackUplinkImplant);
+
+        if (!_proto.TryIndex<ListingPrototype>(FallbackUplinkCatalog, out var catalog))
             return false;
 
         if (!catalog.Cost.TryGetValue(TelecrystalCurrencyPrototype, out var cost))
@@ -99,13 +96,10 @@ public sealed class UplinkSystem : EntitySystem
         else
             balance = balance - cost;
 
-        var implant = _subdermalImplant.AddImplant(user, FallbackUplinkImplant);
+        var implant = _subdermalImplant.AddImplant(user, implantProto);
 
         if (!HasComp<StoreComponent>(implant))
-        {
-            Log.Error($"Implant does not have the store component {implant}");
             return false;
-        }
 
         SetUplink(user, implant.Value, balance, giveDiscounts);
         return true;
@@ -120,19 +114,20 @@ public sealed class UplinkSystem : EntitySystem
         // Try to find PDA in inventory
         if (_inventorySystem.TryGetContainerSlotEnumerator(user, out var containerSlotEnumerator))
         {
-            while (containerSlotEnumerator.MoveNext(out var containerSlot))
+            while (containerSlotEnumerator.MoveNext(out var pdaUid))
             {
-                var pdaUid = containerSlot.ContainedEntity;
+                if (!pdaUid.ContainedEntity.HasValue)
+                    continue;
 
-                if (HasComp<PdaComponent>(pdaUid) && HasComp<StoreComponent>(pdaUid))
-                    return pdaUid;
+                if (HasComp<PdaComponent>(pdaUid.ContainedEntity.Value) || HasComp<StoreComponent>(pdaUid.ContainedEntity.Value))
+                    return pdaUid.ContainedEntity.Value;
             }
         }
 
         // Also check hands
         foreach (var item in _handsSystem.EnumerateHeld(user))
         {
-            if (HasComp<PdaComponent>(item) && HasComp<StoreComponent>(item))
+            if (HasComp<PdaComponent>(item) || HasComp<StoreComponent>(item))
                 return item;
         }
 

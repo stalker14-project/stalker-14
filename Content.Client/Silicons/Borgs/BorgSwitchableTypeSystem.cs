@@ -14,7 +14,6 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
 {
     [Dependency] private readonly BorgSystem _borgSystem = default!;
     [Dependency] private readonly AppearanceSystem _appearance = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     public override void Initialize()
     {
@@ -40,8 +39,8 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
     {
         if (TryComp(entity, out SpriteComponent? sprite))
         {
-            _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.Body, prototype.SpriteBodyState);
-            _sprite.LayerSetRsiState((entity, sprite), BorgVisualLayers.LightStatus, prototype.SpriteToggleLightState);
+            sprite.LayerSetState(BorgVisualLayers.Body, prototype.SpriteBodyState);
+            sprite.LayerSetState(BorgVisualLayers.LightStatus, prototype.SpriteToggleLightState);
         }
 
         if (TryComp(entity, out BorgChassisComponent? chassis))
@@ -56,6 +55,25 @@ public sealed class BorgSwitchableTypeSystem : SharedBorgSwitchableTypeSystem
                 // Queue update so state changes apply.
                 _appearance.QueueUpdate(entity, appearance);
             }
+        }
+
+        if (prototype.SpriteBodyMovementState is { } movementState)
+        {
+            var spriteMovement = EnsureComp<SpriteMovementComponent>(entity);
+            spriteMovement.NoMovementLayers.Clear();
+            spriteMovement.NoMovementLayers["movement"] = new PrototypeLayerData
+            {
+                State = prototype.SpriteBodyState,
+            };
+            spriteMovement.MovementLayers.Clear();
+            spriteMovement.MovementLayers["movement"] = new PrototypeLayerData
+            {
+                State = movementState,
+            };
+        }
+        else
+        {
+            RemComp<SpriteMovementComponent>(entity);
         }
 
         base.UpdateEntityAppearance(entity, prototype);

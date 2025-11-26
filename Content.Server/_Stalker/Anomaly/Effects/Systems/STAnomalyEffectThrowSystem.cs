@@ -75,10 +75,6 @@ public sealed class STAnomalyEffectThrowSystem : EntitySystem
 
     private void ThrowDirection(STAnomalyEffectThrowOptions options, EntityUid target, Vector2 direction)
     {
-        if (direction.IsLengthZero()
-            || !direction.IsValid())
-            return;
-
         _throwing.TryThrow(target, direction * options.Distance, options.Force, null, 0);
     }
 }

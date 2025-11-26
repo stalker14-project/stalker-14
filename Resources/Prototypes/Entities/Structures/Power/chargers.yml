@@ -13,8 +13,6 @@
   - type: Appearance
   - type: Charger
     slotId: charger_slot
-  - type: ApcPowerReceiver
-    powerLoad: 1 # same as draw given in ChargerComponent.PassiveDraw; increased when it is actually charging something
   - type: Anchorable
     delay: 1
   - type: Destructible
@@ -74,7 +72,6 @@
   parent: BaseItemRecharger
   id: PowerCellRecharger
   name: cell recharger
-  description: An older model recharger that can recharge power cells.
   components:
   - type: Sprite
     sprite: Structures/Power/cell_recharger.rsi
@@ -108,15 +105,11 @@
           tags:
           - PowerCell
           - PowerCellSmall
-        blacklist:
-          tags:
-          - PotatoBattery
 
 - type: entity
   parent: [ BaseItemRecharger, ConstructibleMachine ]
   id: PowerCageRecharger
   name: cage recharger
-  description: A specialized machine made for recharging the heavy cage batteries used by ship-mounted weapons.
   components:
   - type: Fixtures
     fixtures:
@@ -157,30 +150,27 @@
   parent: BaseItemRecharger
   id: WeaponCapacitorRecharger
   name: recharger
-  description: A modern recharging station that can fit both power cells and small electronic devices.
   components:
   - type: Sprite
     sprite: Structures/Power/recharger.rsi
   - type: Machine
     board: WeaponCapacitorRechargerCircuitboard
+  # no powercellslot since stun baton etc arent powercells
   - type: ItemSlots
     slots:
       charger_slot:
         ejectOnInteract: true
         whitelist:
           components:
-          - BatteryAmmoProvider
+          - HitscanBatteryAmmoProvider
+          - ProjectileBatteryAmmoProvider
           - Stunbaton
-          - PowerCell
-        blacklist:
-          tags:
-          - PotatoBattery
 
 - type: entity
   parent: BaseItemRecharger
   id: TurboItemRecharger
   name: turbo recharger
-  description: An overclocked recharger. Not recommended for use around asthmatics.
+  description: An overclocked recharger that's been adapted with a global port.
   components:
   - type: Sprite
     sprite: Structures/Power/turbo_recharger.rsi
@@ -194,7 +184,8 @@
         ejectOnInteract: true
         whitelist:
           components:
-          - BatteryAmmoProvider
+          - HitscanBatteryAmmoProvider
+          - ProjectileBatteryAmmoProvider
           - Stunbaton
           - PowerCell
         blacklist:
@@ -202,10 +193,9 @@
           - PotatoBattery
 
 - type: entity
-  parent: [ BaseItemRecharger, BaseWallmount ]
+  parent: BaseItemRecharger
   id: WallWeaponCapacitorRecharger
   name: wall recharger
-  description: A compact wall-mounted recharger. It can only recharge electronic devices and has no space for power cells.
   components:
   - type: Sprite
     sprite: Structures/Power/wall_recharger.rsi
@@ -215,6 +205,7 @@
     - map: ["enum.PowerChargerVisualLayers.Light"]
       state: "light-off"
       shader: "unshaded"
+  - type: WallMount
   - type: Charger
     chargeRate: 25
   - type: ItemSlots
@@ -223,11 +214,9 @@
         ejectOnInteract: true
         whitelist:
           components:
-          - BatteryAmmoProvider
+          - HitscanBatteryAmmoProvider
+          - ProjectileBatteryAmmoProvider
           - Stunbaton
-        blacklist:
-          tags:
-          - PotatoBattery
 
 - type: entity
   parent: BaseRecharger

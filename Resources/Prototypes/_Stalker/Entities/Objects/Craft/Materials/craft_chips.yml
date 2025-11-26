@@ -2,7 +2,7 @@
   parent: STBaseIngridient
   id: STCraftBasicPCBT1
   name: простейшая печатная плата T1
-  description: односторонняя плата с минимальным количеством компонентов, используется для простых электрических схем. T1
+  desciption: односторонняя плата с минимальным количеством компонентов, используется для простых электрических схем. T1
   suffix: Stalker, крафт, T1
   components:
     - type: PhysicalComposition
@@ -24,7 +24,7 @@
   parent: STBaseIngridient
   id: STCraftStandardPCBT2
   name: стандартная печатная плата T2
-  description: двухсторонняя плата с базовым набором компонентов, используется в бытовой электронике. T2
+  desciption: двухсторонняя плата с базовым набором компонентов, используется в бытовой электронике. T2
   suffix: Stalker, крафт, T2
   components:
     - type: PhysicalComposition
@@ -46,7 +46,7 @@
   parent: STBaseIngridient
   id: STCraftMultilayerPCBT3
   name: многоуровневая печатная плата T3
-  description: плата с несколькими слоями, обеспечивает большую сложность схем и плотность компонентов, используется в компьютерах. T3
+  desciption: плата с несколькими слоями, обеспечивает большую сложность схем и плотность компонентов, используется в компьютерах. T3
   suffix: Stalker, крафт, T3
   components:
     - type: PhysicalComposition
@@ -68,12 +68,12 @@
   parent: STBaseIngridient
   id: STCraftHighPerformanceChipT4
   name: высокопроизводительный микропроцессор T4
-  description: сложный чип с множеством транзисторов, обеспечивает высокую производительность, используется в мощных компьютерах. T4
+  desciption: сложный чип с множеством транзисторов, обеспечивает высокую производительность, используется в мощных компьютерах. T4
   suffix: Stalker, крафт, T4
   components:
     - type: PhysicalComposition
-      # materialComposition:
-        # Ceramic: 200 # Stalker-TODO: This material does not exist
+      materialComposition:
+        Ceramic: 200
       chemicalComposition:
         Silicon: 100
         Gold: 10
@@ -91,7 +91,7 @@
   parent: STBaseIngridient
   id: STCraftNanoChipT5
   name: наноэлектронный чип T5
-  description: самый современный чип, использует нанотехнологии для максимальной плотности и производительности, применяется в новейших технологиях. T5
+  desciption: самый современный чип, использует нанотехнологии для максимальной плотности и производительности, применяется в новейших технологиях. T5
   suffix: Stalker, крафт, T5
   components:
     - type: PhysicalComposition

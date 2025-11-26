@@ -31,6 +31,8 @@
       - Meat
     - type: MeleeWeapon
       attackRate: 0.4
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
       angle: 30
       range: 1.5
       soundHit:
@@ -43,8 +45,6 @@
         types:
           Blunt: 12
           Slash: 13
-    - type: BonusMeleeDamage
-      heavyDamageMultiplier: 1.5
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.4
       baseSprintSpeed: 3.0

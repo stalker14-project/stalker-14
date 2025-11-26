@@ -9,7 +9,6 @@ namespace Content.Client.Construction;
 public sealed class FlatpackSystem : SharedFlatpackSystem
 {
     [Dependency] private readonly AppearanceSystem _appearance = default!;
-    [Dependency] private readonly SpriteSystem _sprite = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -28,7 +27,7 @@ public sealed class FlatpackSystem : SharedFlatpackSystem
         if (!PrototypeManager.TryIndex<EntityPrototype>(machineBoardId, out var machineBoardPrototype))
             return;
 
-        if (!machineBoardPrototype.TryGetComponent<SpriteComponent>(out var sprite, EntityManager.ComponentFactory))
+        if (!machineBoardPrototype.TryGetComponent<SpriteComponent>(out var sprite))
             return;
 
         Color? color = null;
@@ -44,6 +43,6 @@ public sealed class FlatpackSystem : SharedFlatpackSystem
         }
 
         if (color != null)
-            _sprite.LayerSetColor((ent.Owner, args.Sprite), FlatpackVisualLayers.Overlay, color.Value);
+            args.Sprite.LayerSetColor(FlatpackVisualLayers.Overlay, color.Value);
     }
 }

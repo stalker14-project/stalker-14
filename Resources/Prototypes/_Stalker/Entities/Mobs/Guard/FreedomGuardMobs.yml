@@ -10,8 +10,11 @@
     - BandsUnion
     - Freedom
   - type: Sprite
-    sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
-  - type: BatteryAmmoProvider
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
+  - type: ProjectileBatteryAmmoProvider
     proto: Bullet556FMJ
     fireCost: 5
   - type: Gun
@@ -43,12 +46,16 @@
     factions:
     - Freedom
   - type: Sprite
-    sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Low.rsi
   - type: Bands
     bandIcon: freedom
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 2
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun
@@ -91,12 +98,16 @@
     factions:
     - Freedom
   - type: Sprite
-    sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Top.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/Freedom/Top.rsi
   - type: Bands
     bandIcon: freedom
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 2
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun

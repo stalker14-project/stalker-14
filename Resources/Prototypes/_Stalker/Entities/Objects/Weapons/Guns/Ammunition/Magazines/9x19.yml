@@ -3,7 +3,7 @@
   name: магазин МП-5 9x19 (35)
   description: Магазин 9x19 мм для МП-5 Гадюка. Вместимость пуль 35. Продают пустым.
   parent: BaseItem
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -11,6 +11,7 @@
     tags:
       - MagazineMP5
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -44,11 +45,12 @@
   name: магазин магазин МП-5 (50)
   description: Магазин на MP-5 9x19. Вместимость пуль 50. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.5
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -67,7 +69,7 @@
   name: магазин Glock 9x19 (10)
   description: Магазин на Glock 9x19. Вместимость пуль 10. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.1
@@ -75,6 +77,7 @@
       tags:
         - MagazineGlock
     - type: BallisticAmmoProvider
+      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -106,11 +109,12 @@
   name: магазин Glock 9x19 (17)
   description: Магазин на Glock 9x19. Вместимость пуль 17. Продают пустым.
   parent: BaseGlockMag10
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.2
     - type: BallisticAmmoProvider
+      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -134,11 +138,12 @@
   name: магазин Glock 9x19 (24)
   description: Магазин на Glock 9x19. Вместимость пуль 24. Продают пустым.
   parent: BaseGlockMag10
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.2
     - type: BallisticAmmoProvider
+      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -161,11 +166,12 @@
   name: магазин Glock 9x19 (33)
   description: Магазин на Glock 9x19. Вместимость пуль 33. Продают пустым.
   parent: BaseGlockMag10
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.3
     - type: BallisticAmmoProvider
+      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -185,7 +191,7 @@
   name: магазин ГШ-18 9x19 (10)
   description: Магазин на ГШ-18 9x19. Вместимость пуль 10. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.1
@@ -193,6 +199,7 @@
       tags:
         - MagazineGSH-18
     - type: BallisticAmmoProvider
+      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -224,11 +231,12 @@
   name: магазин ГШ-18 9x19 (18)
   description: Магазин на ГШ-18 9x19. Вместимость пуль 18. Продают пустым.
   parent: BaseGSH-18Mag10
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.1
     - type: BallisticAmmoProvider
+      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -257,7 +265,7 @@
   name: магазин ПП-19-01 9x19 (30)
   description: Магазин 9x19 мм для Витязь. Вместимость пуль 30. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -265,6 +273,7 @@
     tags:
       - MagazineVityaz
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -296,7 +305,7 @@
   name: шнековый магазин 9x19 "Бизон" (64)
   description: Шнековый магазин на Бизон под 9х19. Вместимость пуль 64. Изменён с помощью инструментов.
   parent: VityazMag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.35
@@ -304,6 +313,7 @@
     tags:
       - MagazineBizon919
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -336,7 +346,7 @@
   name: магазин TEC-9 9x19 (20)
   description: Магазин 9x19 для TEC-9. Вместимость пуль 20. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -362,14 +372,15 @@
   name: магазин MP-40 9x19 (30)
   description: Магазин 9x19 мм для MP-40. Вместимость пуль 30. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
-    self: 0.2
+    SelfWeight: 0.2
   - type: Tag
     tags:
       - MagazineMP40
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -401,14 +412,15 @@
   name: магазин ПП-91 9x19 (30)
   description: Магазин 9x19 мм для ПП-91 "Кедр". Вместимость пуль 30. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
-    self: 0.1
+    SelfWeight: 0.1
   - type: Tag
     tags:
       - MagazinePP91
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -440,7 +452,7 @@
   name: магазин P90 9x19 (50)
   description: Магазин 9x19 мм для P90. Вместимость пуль 50. Продают пустым.
   parent: BaseMP5Mag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -448,6 +460,7 @@
     tags:
       - P90Magazin
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -479,7 +492,7 @@
   name: барабан Люгера (32)
   description: Барабан для Люгера. Вместимость пуль 32. Продают пустым.
   parent: BasePPSHMag
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.85
@@ -496,6 +509,7 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:

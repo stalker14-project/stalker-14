@@ -55,14 +55,14 @@
     count: 10
   - type: Item
     sprite: _Stalker/Objects/medicine.rsi
-    heldPrefix: brutepack
+    state: brutepack
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
 
 - type: stack
   id: STBrutepack
-  name: stack-brutepack
+  name: набор от ушибов
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: brutepack
@@ -105,14 +105,15 @@
     stackType: STBrutepackSera
     count: 10
   - type: Item
-    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
+    state: icon
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
 
 - type: stack
   id: STBrutepackSera
-  name: stack-st-brutepack-sera
+  name: баночка с мазью
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/brutepacksera.rsi
     state: icon
@@ -141,14 +142,14 @@
     count: 10
   - type: Item
     sprite: _Stalker/Objects/medicine.rsi
-    heldPrefix: ointment
+    state: ointment
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: ointment
 
 - type: stack
   id: STOintment
-  name: stack-ointment
+  name: мазь
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: ointment
@@ -182,7 +183,7 @@
 
 - type: stack
   id: STOintmentGoodstack
-  name: stack-st-ointment-good
+  name: мазь с антибиотиком
   icon:
     sprite: _Stalker/Objects/Medicine/GoodOinment.rsi
     state: ointment
@@ -201,13 +202,14 @@
     count: 10
   - type: Item
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
+    state: icon
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
 
 - type: stack
   id: STOintmentSera
-  name: stack-st-ointment-sera
+  name: горькая мазь
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
@@ -238,14 +240,15 @@
     stackType: STGauze
     count: 10
   - type: Item
-    sprite: _Stalker/Objects/medicine.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: gauze
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
 
 - type: stack
   id: STGauze
-  name: stack-gauze
+  name: бинт
   icon:
     sprite: _Stalker/Objects/medicine.rsi
     state: gauze
@@ -263,14 +266,15 @@
     stackType: STGauzeSera
     count: 10
   - type: Item
-    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
+    state: icon
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/gausesera.rsi
     state: icon
 
 - type: stack
   id: STGauzeSera
-  name: stack-st-gauze-sera
+  name: кусок тряпки
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/ointmentsera.rsi
     state: icon
@@ -310,7 +314,7 @@
 
 - type: stack
   id: MedkitAI2
-  name: stack-medkit-ai-2
+  name: Аптечка АИ-2
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai1.rsi"
     state: medkit-1
@@ -328,14 +332,15 @@
     stackType: MedkitAI2Sera
     count: 4
   - type: Item
-    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
+    state: icon
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
 
 - type: stack
   id: MedkitAI2Sera
-  name: stack-medkit-ai-2-sera
+  name: набор лечебных трав
   icon:
     sprite: _Stalker/Objects/Counsumable/Medicine/ai2sera.rsi
     state: icon
@@ -375,7 +380,7 @@
 
 - type: stack
   id: MedkitMilitary
-  name: stack-medkit-military
+  name: Армейская Аптечка
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai2.rsi"
     state: medkit-2
@@ -416,7 +421,7 @@
 
 - type: stack
   id: MedkitScience
-  name: stack-medkit-science
+  name: Научная Аптечка
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai3.rsi"
     state: medkit-3
@@ -464,7 +469,7 @@
 
 - type: stack
   id: MedkitElite
-  name: stack-medkit-elite
+  name: Продвинутая Аптечка
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai4.rsi"
     state: medkit-4
@@ -517,7 +522,7 @@
 
 - type: stack
   id: MedkitLAR
-  name: stack-medkit-lar
+  name: Аптечка «LAR»
   icon:
     sprite: "_Stalker/Objects/Medicine/medkit/ai5.rsi"
     state: medkit-5
@@ -604,6 +609,7 @@
     - id: shizopill
       amount: 10
   - type: Sprite
-    sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi
+    state: icon
   - type: Item
     sprite: _Stalker/Objects/Medicine/pillboxes/shizabox.rsi

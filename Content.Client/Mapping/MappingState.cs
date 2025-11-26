@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using System.Numerics;
 using Content.Client.Administration.Managers;
 using Content.Client.ContextMenu.UI;
@@ -149,7 +149,7 @@ public sealed class MappingState : GameplayStateBase
     {
         Deselect();
 
-        var coords = _transform.ToMapCoordinates(args.Coordinates);
+        var coords = args.Coordinates.ToMap(_entityManager, _transform);
         if (_verbs.TryGetEntityMenuEntities(coords, out var entities))
             _entityMenuController.OpenRootMenu(entities);
 
@@ -454,7 +454,7 @@ public sealed class MappingState : GameplayStateBase
         switch (prototype)
         {
             case EntityPrototype entity:
-                textures.AddRange(_sprite.GetPrototypeTextures(entity).Select(t => t.Default));
+                textures.AddRange(SpriteComponent.GetPrototypeTextures(entity, _resources).Select(t => t.Default));
                 break;
             case DecalPrototype decal:
                 textures.Add(_sprite.Frame0(decal.Sprite));
@@ -793,7 +793,7 @@ public sealed class MappingState : GameplayStateBase
 
             if (_mapMan.TryFindGridAt(mapPos, out var gridUid, out var grid) &&
                 _entityManager.System<SharedMapSystem>().TryGetTileRef(gridUid, grid, coords, out var tileRef) &&
-                _allPrototypesDict.TryGetValue(_entityManager.System<TurfSystem>().GetContentTileDefinition(tileRef), out button))
+                _allPrototypesDict.TryGetValue(tileRef.GetContentTileDefinition(), out button))
             {
                 OnSelected(button);
                 return true;
@@ -861,7 +861,7 @@ public sealed class MappingState : GameplayStateBase
         }
         else
         {
-            button.ChildrenPrototypes.RemoveAllChildren();
+            button.ChildrenPrototypes.DisposeAllChildren();
             button.CollapseButton.Label.Text = "▶";
         }
     }

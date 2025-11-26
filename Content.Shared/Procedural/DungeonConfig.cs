@@ -6,6 +6,12 @@ namespace Content.Shared.Procedural;
 public partial class DungeonConfig
 {
     /// <summary>
+    /// <see cref="Data"/>
+    /// </summary>
+    [DataField]
+    public DungeonData Data = DungeonData.Empty;
+
+    /// <summary>
     /// The secret sauce, procedural generation layers that get run.
     /// </summary>
     [DataField]
@@ -43,7 +49,7 @@ public partial class DungeonConfig
 }
 
 [Prototype]
-public sealed partial class DungeonConfigPrototype : DungeonConfig, IPrototype
+public sealed class DungeonConfigPrototype : DungeonConfig, IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;

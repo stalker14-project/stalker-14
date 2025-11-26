@@ -1,5 +1,7 @@
 ﻿using System.Linq;
-using Content.Shared.Roles.Components;
+using Content.Server.Roles;
+using Content.Shared.Roles;
+using Content.Shared.Roles.Jobs;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Reflection;
 
@@ -16,7 +18,7 @@ public sealed class RoleTests
     {
         await using var pair = await PoolManager.GetServerClient();
 
-        var jobComp = pair.Server.ResolveDependency<IComponentFactory>().GetComponentName<JobRoleComponent>();
+        var jobComp = pair.Server.ResolveDependency<IComponentFactory>().GetComponentName(typeof(JobRoleComponent));
 
         Assert.Multiple(() =>
         {
@@ -47,7 +49,7 @@ public sealed class RoleTests
     {
         await using var pair = await PoolManager.GetServerClient();
 
-        var mindCompId = pair.Server.ResolveDependency<IComponentFactory>().GetComponentName<MindRoleComponent>();
+        var mindCompId = pair.Server.ResolveDependency<IComponentFactory>().GetComponentName(typeof(MindRoleComponent));
 
         Assert.Multiple(() =>
         {
@@ -71,7 +73,7 @@ public sealed class RoleTests
         await using var pair = await PoolManager.GetServerClient();
 
         var refMan = pair.Server.ResolveDependency<IReflectionManager>();
-        var mindCompId = pair.Server.ResolveDependency<IComponentFactory>().GetComponentName<MindRoleComponent>();
+        var mindCompId = pair.Server.ResolveDependency<IComponentFactory>().GetComponentName(typeof(MindRoleComponent));
 
         var compTypes = refMan.GetAllChildren(typeof(BaseMindRoleComponent))
             .Append(typeof(RoleBriefingComponent))

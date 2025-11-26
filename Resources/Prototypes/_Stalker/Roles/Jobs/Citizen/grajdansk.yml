@@ -1,15 +1,15 @@
 - type: job
   id: MayorCity
-  name: job-mayor-city
+  name: Мэр
   icon: grajdansksprite
-  description: job-mayor-city-desc
+  description: Управляет городом "Чернобыль-4". Именно он является центральным мозгом города.
   playTimeTracker: JobMayorCity
   requirements:
     - !type:RoleTimeRequirement
       role: JobMayorCity
       time: 1
   startingGear: MayorCityGear
-  supervisors: job-mayor-city-supervisor
+  supervisors: Нет никого главнее вас. Все гражданские структуры подчиняются вам.
   special:
     - !type:AddComponentSpecial
       components:
@@ -33,16 +33,16 @@
 
 - type: job
   id: Prokuror
-  name: job-prokuror
+  name: Прокурор
   icon: grajdansksprite
-  description: job-prokuror-desc
+  description: Добывайте правду для её же предоставления в суде.
   playTimeTracker: JobProkuror
   requirements:
     - !type:RoleTimeRequirement
       role: JobProkuror
       time: 1
   startingGear: ProkurorGear
-  supervisors: job-supervisor-mayor
+  supervisors: Вы подчиняетесь мэру города "Чернобыль - 4".
   special:
     - !type:AddComponentSpecial
       components:
@@ -62,16 +62,16 @@
 
 - type: job
   id: Magistrate
-  name: job-magistrate
+  name: Судья
   icon: grajdansksprite
-  description: job-magistrate-desc
+  description: Вершите правосудие, ореинтируясь на законы города "Чернобыль - 4".
   playTimeTracker: JobMagistrate
   requirements:
     - !type:RoleTimeRequirement
       role: JobMagistrate
       time: 1
   startingGear: MagistrateGear
-  supervisors: job-supervisor-mayor
+  supervisors: Вы подчиняетесь мэру города "Чернобыль - 4".
   special:
     - !type:AddComponentSpecial
       components:
@@ -91,16 +91,16 @@
 
 - type: job
   id: Priest
-  name: job-priest
+  name: Священник
   icon: grajdansksprite
-  description: job-priest-desc
+  description: Помогайте людям в сложных ситуациях, обращая их к религии.
   playTimeTracker: JobPriest
   requirements:
     - !type:RoleTimeRequirement
       role: JobPriest
       time: 1
   startingGear: PriestGear
-  supervisors: job-supervisor-mayor
+  supervisors: Вы подчиняетесь мэру города "Чернобыль - 4".
   special:
     - !type:AddComponentSpecial
       components:
@@ -120,16 +120,16 @@
 
 - type: job
   id: StalkerBartender
-  name: job-stalker-bartender
+  name: Бармен
   icon: grajdansksprite
-  description: job-stalker-bartender-desc
+  description: Работайте в баре, удовлетворяя алкогольные нужды посетителей.
   playTimeTracker: JobStalkerBartender
   requirements:
     - !type:RoleTimeRequirement
       role: JobStalkerBartender
       time: 1
   startingGear: StalkerBartenderGear
-  supervisors: job-supervisor-mayor
+  supervisors: Вы подчиняетесь мэру города "Чернобыль - 4".
   special:
     - !type:AddComponentSpecial
       components:

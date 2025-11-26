@@ -1,7 +1,6 @@
 ﻿using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Tag;
-using Content.Shared.Trigger.Systems;
 
 namespace Content.Server._Stalker.TriggerOnInteract;
 

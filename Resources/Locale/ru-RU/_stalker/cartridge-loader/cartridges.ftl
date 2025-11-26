@@ -1,1 +1,0 @@
-messenger-program-name = Мессенджер

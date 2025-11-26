@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 2.5h
+      time: 36000 #10 hrs
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
@@ -15,10 +15,9 @@
   - Security
   - Brig
   - Maintenance
+  - Service
   - External
   - Cryogenics
-  - GenpopEnter
-  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -33,13 +32,3 @@
     back:
     - Flash
     - MagazinePistol
-
-- type: chameleonOutfit
-  id: SecurityOfficerChameleonOutfit
-  job: SecurityOfficer
-  hasMindShield: true
-  equipment:
-    head: ClothingHeadHatBeretSecurity
-    mask: ClothingMaskGasSecurity
-    neck: Dinkystar
-    gloves: ClothingHandsGlovesColorBlack

@@ -55,6 +55,7 @@
     state: icon-HELM
   - type: Clothing
     sprite: _Stalker/Objects/Clothing/cloak/doshdevik.rsi
+    state: equipped-HELMET
 
 # KKK
 - type: entity
@@ -249,8 +250,8 @@
   parent: STClothingHeadHatBase
   id: STClothingHeadHelmetSerafim
   name: капюшон плаща серафимов
+  noSpawn: true
   description: Покрывает вашу голову
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/Head/Sera_/coat_hat_serafim.rsi
@@ -290,8 +291,8 @@
   parent: STClothingHeadHatBase
   id: STClothingHeadOldRoadHelmet
   name: капюшон старого дорожного плаща
+  noSpawn: true
   description: Покрывает вашу голову
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/Head/Hats/oldroad.rsi

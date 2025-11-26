@@ -1,7 +1,5 @@
 using Content.Shared.Blocking;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
 using Robust.Shared.Timing;
 
 namespace Content.Server._Stalker.ShieldRegen;

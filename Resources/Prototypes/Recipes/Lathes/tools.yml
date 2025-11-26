@@ -3,8 +3,7 @@
 - type: latheRecipe
   abstract: true
   id: BaseToolRecipe
-  categories:
-  - Tools
+  category: Tools
   completetime: 2
   materials:
     Steel: 200
@@ -53,8 +52,7 @@
 - type: latheRecipe
   id: CableStack
   result: CableApcStack1
-  categories:
-  - Parts
+  category: Parts
   completetime: 0.1
   materials:
     Steel: 30
@@ -154,18 +152,10 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: SprayPainter
-  result: SprayPainterEmpty
+  result: SprayPainter
   materials:
     Steel: 300
     Plastic: 100
-
-- type: latheRecipe
-  parent: BaseToolRecipe
-  id: SprayPainterAmmo
-  result: SprayPainterAmmo
-  materials:
-    Steel: 150
-    Plastic: 50
 
 - type: latheRecipe
   parent: BaseToolRecipe

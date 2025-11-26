@@ -55,10 +55,7 @@ public sealed class EventManagerSystem : EntitySystem
     /// </summary>
     public void RunRandomEvent(EntityTableSelector limitedEventsTable)
     {
-        var availableEvents = AvailableEvents(); // handles the player counts and individual event restrictions.
-                                                 // Putting this here only makes any sense in the context of the toolshed commands in BasicStationEventScheduler. Kill me.
-
-        if (!TryBuildLimitedEvents(limitedEventsTable, availableEvents, out var limitedEvents))
+        if (!TryBuildLimitedEvents(limitedEventsTable, out var limitedEvents))
         {
             Log.Warning("Provided event table could not build dict!");
             return;
@@ -71,7 +68,7 @@ public sealed class EventManagerSystem : EntitySystem
             return;
         }
 
-        if (!_prototype.Resolve(randomLimitedEvent, out _))
+        if (!_prototype.TryIndex(randomLimitedEvent, out _))
         {
             Log.Warning("A requested event is not available!");
             return;
@@ -83,13 +80,11 @@ public sealed class EventManagerSystem : EntitySystem
     /// <summary>
     /// Returns true if the provided EntityTableSelector gives at least one prototype with a StationEvent comp.
     /// </summary>
-    public bool TryBuildLimitedEvents(
-        EntityTableSelector limitedEventsTable,
-        Dictionary<EntityPrototype, StationEventComponent> availableEvents,
-        out Dictionary<EntityPrototype, StationEventComponent> limitedEvents
-        )
+    public bool TryBuildLimitedEvents(EntityTableSelector limitedEventsTable, out Dictionary<EntityPrototype, StationEventComponent> limitedEvents)
     {
         limitedEvents = new Dictionary<EntityPrototype, StationEventComponent>();
+
+        var availableEvents = AvailableEvents(); // handles the player counts and individual event restrictions
 
         if (availableEvents.Count == 0)
         {
@@ -104,7 +99,7 @@ public sealed class EventManagerSystem : EntitySystem
 
         foreach (var eventid in selectedEvents)
         {
-            if (!_prototype.Resolve(eventid, out var eventproto))
+            if (!_prototype.TryIndex(eventid, out var eventproto))
             {
                 Log.Warning("An event ID has no prototype index!");
                 continue;
@@ -153,20 +148,20 @@ public sealed class EventManagerSystem : EntitySystem
             return null;
         }
 
-        var sumOfWeights = 0.0f;
+        var sumOfWeights = 0;
 
         foreach (var stationEvent in availableEvents.Values)
         {
-            sumOfWeights += stationEvent.Weight;
+            sumOfWeights += (int) stationEvent.Weight;
         }
 
-        sumOfWeights = _random.NextFloat(sumOfWeights);
+        sumOfWeights = _random.Next(sumOfWeights);
 
         foreach (var (proto, stationEvent) in availableEvents)
         {
-            sumOfWeights -= stationEvent.Weight;
+            sumOfWeights -= (int) stationEvent.Weight;
 
-            if (sumOfWeights <= 0.0f)
+            if (sumOfWeights <= 0)
             {
                 return proto.ID;
             }
@@ -215,7 +210,7 @@ public sealed class EventManagerSystem : EntitySystem
             if (prototype.Abstract)
                 continue;
 
-            if (!prototype.TryGetComponent<StationEventComponent>(out var stationEvent, EntityManager.ComponentFactory))
+            if (!prototype.TryGetComponent<StationEventComponent>(out var stationEvent))
                 continue;
 
             allEvents.Add(prototype, stationEvent);

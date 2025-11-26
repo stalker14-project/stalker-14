@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: CargoTelepad
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   name: cargo telepad
@@ -22,7 +22,7 @@
           - MachineMask
   - type: Sprite
     sprite: Structures/cargo_telepad.rsi
-    drawdepth: HighFloorObjects
+    drawdepth: FloorObjects
     layers:
     - state: offline
       map: [ "enum.CargoTelepadLayers.Base" ]
@@ -49,4 +49,3 @@
   - type: CollideOnAnchor
   - type: NameIdentifier
     group: CargoTelepads
-  - type: AnimationPlayer

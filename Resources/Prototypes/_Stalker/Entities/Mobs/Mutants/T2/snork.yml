@@ -46,14 +46,16 @@
       jumpPower: 6
       jumpDistance: 10
       updateCooldown: 0.5
-      #totalSteps: 3 # Stalker-TODO: This field exists in component but is not a datafield!
-      #stepInterval: 0.025 # Stalker-TODO: This field exists in component but is not a datafield!
+      totalSteps: 3
+      stepInterval: 0.025
     - type: MobThresholds
       thresholds:
         0: Alive
         250: Dead
     - type: MeleeWeapon
       attackRate: 0.5
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.25
       angle: 30
       range: 1.5
       soundHit:
@@ -69,8 +71,6 @@
       damage:
         types:
           Slash: 30
-    - type: BonusMeleeDamage
-      heavyDamageMultiplier: 1.25
     - type: MovementSpeedModifier
       baseWalkSpeed: 3.8
       baseSprintSpeed: 4.4
