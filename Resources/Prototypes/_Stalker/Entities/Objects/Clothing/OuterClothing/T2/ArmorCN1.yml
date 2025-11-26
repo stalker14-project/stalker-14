@@ -34,7 +34,7 @@
     damageCoefficient: 0.90
   # bonus
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - 0,0,0,0
       - 2,0,2,0
@@ -43,11 +43,6 @@
       - 2,2,2,3
       - 4,2,4,3
       - 6,2,7,3
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
 
 - type: entity
   parent: STClothingHeadHatBase

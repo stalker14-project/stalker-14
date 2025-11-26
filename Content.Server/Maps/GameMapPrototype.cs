@@ -1,8 +1,9 @@
+using Content.Server.Station;
 using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Diagnostics;
-using Content.Shared.Station;
+using System.Numerics;
 
 namespace Content.Server.Maps;
 
@@ -13,7 +14,7 @@ namespace Content.Server.Maps;
 /// Forks should not directly edit existing parts of this class.
 /// Make a new partial for your fancy new feature, it'll save you time later.
 /// </remarks>
-[Prototype, PublicAPI]
+[Prototype("gameMap"), PublicAPI]
 [DebuggerDisplay("GameMapPrototype [{ID} - {MapName}]")]
 public sealed partial class GameMapPrototype : IPrototype
 {
@@ -23,11 +24,6 @@ public sealed partial class GameMapPrototype : IPrototype
 
     [DataField]
     public float MaxRandomOffset = 1000f;
-
-    /// <summary>
-    /// Turns out some of the map files are actually secretly grids. Excellent. I love map loading code.
-    /// </summary>
-    [DataField] public bool IsGrid;
 
     [DataField]
     public bool RandomRotation = true;

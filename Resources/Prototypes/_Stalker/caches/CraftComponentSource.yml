@@ -1,6 +1,6 @@
 #Источники микросхем
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT1PCB
   suffix: Stalker, ИСТОЧНИК, Т1
   name: кучка микросхем
@@ -26,6 +26,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -43,7 +44,7 @@
           prob: 0.1
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT2PCB
   suffix: Stalker, ИСТОЧНИК, Т2
   name: коробка с платами
@@ -57,6 +58,7 @@
       state: 2
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -68,6 +70,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -87,7 +90,7 @@
           prob: 0.2
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT3PCB
   suffix: Stalker, ИСТОЧНИК, Т3
   name: гражданское хранилище с электроникой
@@ -102,6 +105,7 @@
       state: 3
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -113,6 +117,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -132,7 +137,7 @@
           prob: 0.3
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT4PCB
   suffix: Stalker, ИСТОЧНИК, Т4
   name: военное хранилище с электроникой
@@ -147,6 +152,7 @@
       state: 4
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -158,6 +164,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -177,7 +184,7 @@
           prob: 0.2
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT5PCB
   suffix: Stalker, ИСТОЧНИК, Т5
   name: научное хранилище с электроникой
@@ -192,6 +199,7 @@
       state: 5
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -203,6 +211,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -228,7 +237,7 @@
 
 #Пластик
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT1PlasticFitting
   suffix: Stalker, ИСТОЧНИК, Т1
   name: куча пластика
@@ -254,6 +263,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -271,7 +281,7 @@
           prob: 0.4
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT2PlasticFitting
   suffix: Stalker, ИСТОЧНИК, Т2
   name: коробка с пластиком
@@ -286,6 +296,7 @@
       state: 2
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -297,6 +308,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -314,7 +326,7 @@
           prob: 0.5
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT3PlasticFitting
   suffix: Stalker, ИСТОЧНИК, Т3
   name: гражданское хранилище с пластиком
@@ -329,6 +341,7 @@
       state: 3
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -340,6 +353,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -359,7 +373,7 @@
           prob: 0.3
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT4PlasticFitting
   suffix: Stalker, ИСТОЧНИК, Т4
   name: военное хранилище с пластиком
@@ -374,6 +388,7 @@
       state: 4
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -385,6 +400,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random
@@ -403,7 +419,7 @@
 
 
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftComponentSourceT5PlasticFitting
   suffix: Stalker, ИСТОЧНИК, Т5
   name: научное хранилище с пластиком
@@ -418,6 +434,7 @@
       state: 5
     - type: Transform
       noRot: true
+      anchored: true
     - type: Storage
       maxItemSize: Huge
       grid:
@@ -429,6 +446,7 @@
       interfaces:
         enum.StorageUiKey.Key:
           type: StorageBoundUserInterface
+    - type: Clickable
     - type: StorageFill
       contents:
         # Craft random

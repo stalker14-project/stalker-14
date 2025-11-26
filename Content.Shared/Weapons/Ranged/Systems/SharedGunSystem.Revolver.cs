@@ -100,7 +100,7 @@ public partial class SharedGunSystem
             return false;
 
         // If it's a speedloader try to get ammo from it.
-        if (HasComp<SpeedLoaderComponent>(uid))
+        if (EntityManager.HasComponent<SpeedLoaderComponent>(uid))
         {
             var freeSlots = 0;
 
@@ -130,7 +130,7 @@ public partial class SharedGunSystem
                 return false;
             }
 
-            for (var i = 0; i < component.Capacity; i++)
+            for (var i = Math.Min(ev.Ammo.Count - 1, component.Capacity - 1); i >= 0; i--)
             {
                 var index = (component.CurrentIndex + i) % component.Capacity;
 

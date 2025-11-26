@@ -21,8 +21,7 @@
     - type: Transform
       anchored: true
     - type: Tag
-      tags:
-      - Ice
+      tags: [ Ice ]
     - type: Physics
     - type: Fixtures
       fixtures:
@@ -51,5 +50,3 @@
       coldDamage: {}
       coldDamageThreshold: 0
     - type: FrictionContacts
-    - type: TileFrictionModifier
-      modifier: 0.05

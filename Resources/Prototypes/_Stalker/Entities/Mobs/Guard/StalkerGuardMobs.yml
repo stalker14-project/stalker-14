@@ -11,10 +11,14 @@
   - type: Bands
     bandIcon: stalker
   - type: Sprite
-    sprite: _Stalker/NPC/Random/Stalker/Jacket/AKS-74U/armed.rsi
-  - type: PredictedBatterySelfRecharger
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: _Stalker/NPC/Random/Stalker/Jacket/AKS-74U/armed.rsi
+  - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 2
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun

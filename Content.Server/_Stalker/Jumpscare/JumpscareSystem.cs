@@ -1,4 +1,3 @@
-using Content.Server.Damage.Systems;
 using Content.Server.Stunnable;
 using Content.Shared._Stalker.Jumpscare;
 using Content.Shared.Damage;
@@ -6,7 +5,6 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
-using Content.Shared.Movement.Systems;
 using Content.Shared.Throwing;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
@@ -26,7 +24,6 @@ public sealed class JumpscareSystem : EntitySystem
     [Dependency] private readonly TransformSystem _xform = default!;
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
-    [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
@@ -54,7 +51,7 @@ public sealed class JumpscareSystem : EntitySystem
 
                 if (TryComp<MobStateComponent>(uid, out var entityMobState) && _mobState.IsAlive(uid, entityMobState))
                 {
-                    _movementMod.TryUpdateMovementSpeedModDuration(uid, "JumpscareSlowdownStatusEffect", TimeSpan.FromSeconds(0.4f), 0f, 0f);
+                    _stunSystem.TrySlowdown(uid, TimeSpan.FromSeconds(0.4f), false, 0f, 0f);
                     comp.PreparingStartTime = _timing.CurTime;
                     comp.PreparingEndTime = comp.PreparingStartTime + comp.PreparingReloadTime;
                     comp.OnCoolDown = false;
@@ -67,7 +64,7 @@ public sealed class JumpscareSystem : EntitySystem
                 var targetPos = _xform.GetWorldPosition(humanTarget);
                 var direction = (targetPos - startPos).Normalized();
                 comp.JumpTarget = targetPos;
-                comp.CurrentStep = 0;
+                comp.CurrentStep = 0;   
                 comp.NextStepTime = _timing.CurTime;
                 comp.MovingToJumpTarget = true;
                 comp.OnCoolDown = true;
@@ -84,7 +81,7 @@ public sealed class JumpscareSystem : EntitySystem
         var targetPos = comp.JumpTarget;
         var direction = (targetPos - currentPos).Normalized();
         var distanceRemaining = (targetPos - currentPos).Length();
-
+        
         if (distanceRemaining < 0.1f || comp.CurrentStep >= comp.TotalSteps)
         {
             comp.MovingToJumpTarget = false;
@@ -94,9 +91,9 @@ public sealed class JumpscareSystem : EntitySystem
         var stepDistance = comp.JumpDistance / comp.TotalSteps;
         if (stepDistance > distanceRemaining)
             stepDistance = distanceRemaining;
-
+        
         _throwing.TryThrow(uid, direction * stepDistance, comp.JumpPower, user: uid, pushbackRatio: 0);
-        _movementMod.TryUpdateMovementSpeedModDuration(uid, "JumpscareSlowdownStatusEffect", comp.SlowdownTime, 0.5f, 0.5f);
+        _stunSystem.TrySlowdown(uid, comp.SlowdownTime, false, 0.5f, 0.5f);
 
         comp.CurrentStep++;
         comp.NextStepTime = _timing.CurTime + TimeSpan.FromSeconds(comp.StepInterval);

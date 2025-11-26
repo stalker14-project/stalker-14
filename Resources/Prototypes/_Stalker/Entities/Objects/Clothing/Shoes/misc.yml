@@ -22,11 +22,11 @@
     sprite: _Stalker/Objects/Clothing/shoes/boots_novice.rsi
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: [ClothingShoesMilitaryBase, BaseRestrictedContraband]
   id: STClothingShoesBootsCombat
-  name: армейские ботинки
+  name: ent-STClothingShoesBootsCombat
   suffix: ST
-  description: Надёжные армейские ботинки, для боевых операций или боевых действий. Борьба - всё, борьба - всегда.
+  description: .desc
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi
@@ -36,7 +36,9 @@
 - type: entity
   parent: STClothingShoesBootsCombat
   id: STClothingShoesBootsCombatFilled
+  name: ent-STClothingShoesBootsCombatFilled
   suffix: ST, Filled
+  description: .desc
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/shoes/boots_army.rsi

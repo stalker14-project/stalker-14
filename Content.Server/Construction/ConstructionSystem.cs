@@ -4,6 +4,7 @@ using Content.Shared.Construction;
 using Content.Shared.DoAfter;
 using JetBrains.Annotations;
 using Robust.Server.Containers;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using SharedToolSystem = Content.Shared.Tools.Systems.SharedToolSystem;
 
@@ -41,13 +42,13 @@ namespace Content.Server.Construction
             var construction = ent.Comp;
             if (GetCurrentGraph(ent, construction) is not {} graph)
             {
-                Log.Warning($"Prototype {Comp<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid graph specified.");
+                Log.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid graph specified.");
                 return;
             }
 
             if (GetNodeFromGraph(graph, construction.Node) is not {} node)
             {
-                Log.Warning($"Prototype {Comp<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid node specified.");
+                Log.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid node specified.");
                 return;
             }
 
@@ -56,7 +57,7 @@ namespace Content.Server.Construction
             {
                 if (GetEdgeFromNode(node, edgeIndex) is not {} currentEdge)
                 {
-                    Log.Warning($"Prototype {Comp<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid edge index specified.");
+                    Log.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid edge index specified.");
                     return;
                 }
 
@@ -67,7 +68,7 @@ namespace Content.Server.Construction
             {
                 if (GetNodeFromGraph(graph, targetNodeId) is not { } targetNode)
                 {
-                    Log.Warning($"Prototype {Comp<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid target node specified.");
+                    Log.Warning($"Prototype {EntityManager.GetComponent<MetaDataComponent>(ent).EntityPrototype?.ID}'s construction component has an invalid target node specified.");
                     return;
                 }
 

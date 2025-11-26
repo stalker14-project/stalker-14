@@ -12,11 +12,11 @@ public sealed partial class ZoneAnomalyEffectStealthSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<ZoneAnomalyEffectStealthComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<ZoneAnomalyEffectStealthComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<ZoneAnomalyEffectStealthComponent, ZoneAnomalyChangedState>(OnChangeState);
     }
 
-    private void OnMapInit(Entity<ZoneAnomalyEffectStealthComponent> effect, ref MapInitEvent args)
+    private void OnStartup(Entity<ZoneAnomalyEffectStealthComponent> effect, ref ComponentStartup args)
     {
         if (!HasComp<StealthComponent>(effect.Owner))
             return;

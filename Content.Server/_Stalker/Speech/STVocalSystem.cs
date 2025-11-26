@@ -1,6 +1,5 @@
 ﻿using Content.Server.Chat.Systems;
 using Content.Shared._Stalker.Speech;
-using Content.Shared.Chat;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
@@ -36,22 +35,15 @@ public sealed class STVocalSystem : EntitySystem
         if (args.Handled || !args.Emote.Category.HasFlag(EmoteCategory.Vocal))
             return;
 
-        if (entity.Comp.EmoteSounds is not { } sounds)
-            return;
-
-        args.Handled = _chat.TryPlayEmoteSound(entity, _proto.Index(sounds), args.Emote);
+        args.Handled = _chat.TryPlayEmoteSound(entity, entity.Comp.EmoteSounds, args.Emote);
     }
 
     private void LoadSounds(Entity<STVocalComponent> entity, Sex? sex = null)
     {
-        sex ??= CompOrNull<HumanoidAppearanceComponent>(entity.Owner)?.Sex ?? Sex.Unsexed;
-
+        sex ??= CompOrNull<HumanoidAppearanceComponent>(entity)?.Sex ?? Sex.Unsexed;
         if (!entity.Comp.Sounds.TryGetValue(sex.Value, out var protoId))
             return;
 
-        if (!_proto.HasIndex(protoId))
-            return;
-
-        entity.Comp.EmoteSounds = protoId;
+        _proto.TryIndex(protoId, out entity.Comp.EmoteSounds);
     }
 }

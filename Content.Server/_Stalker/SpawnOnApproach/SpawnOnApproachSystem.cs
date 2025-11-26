@@ -5,7 +5,6 @@ using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Maps;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Physics;
-using Content.Shared.Trigger;
 using Robust.Shared.Map;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -105,7 +104,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
 
     private bool CheckEntities(EntityCoordinates coords, SpawnOnApproachComponent comp)
     {
-        var tile = _turf.GetTileRef(coords);
+        var tile = coords.GetTileRef();
         if (tile == null)
             return false;
 
@@ -122,7 +121,7 @@ public sealed class SpawnOnApproachSystem : EntitySystem
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private bool CheckBlocked(EntityCoordinates coords)
     {
-        var tile = _turf.GetTileRef(coords);
+        var tile = coords.GetTileRef();
 
         return tile != null && _turf.IsTileBlocked(tile.Value, CollisionGroup.Impassable);
     }

@@ -5,26 +5,17 @@ namespace Content.Client.Dice;
 
 public sealed class DiceSystem : SharedDiceSystem
 {
-    [Dependency] private readonly SpriteSystem _sprite = default!;
-
-    public override void Initialize()
+    protected override void UpdateVisuals(EntityUid uid, DiceComponent? die = null)
     {
-        base.Initialize();
-
-        SubscribeLocalEvent<DiceComponent, AfterAutoHandleStateEvent>(OnDiceAfterHandleState);
-    }
-
-    private void OnDiceAfterHandleState(Entity<DiceComponent> entity, ref AfterAutoHandleStateEvent args)
-    {
-        if (!TryComp<SpriteComponent>(entity, out var sprite))
+        if (!Resolve(uid, ref die) || !TryComp(uid, out SpriteComponent? sprite))
             return;
 
-        // TODO maybe just move each die to its own RSI?
-        var state = _sprite.LayerGetRsiState((entity.Owner, sprite), 0).Name;
+        // TODO maybe just move each diue to its own RSI?
+        var state = sprite.LayerGetState(0).Name;
         if (state == null)
             return;
 
         var prefix = state.Substring(0, state.IndexOf('_'));
-        _sprite.LayerSetRsiState((entity.Owner, sprite), 0, $"{prefix}_{entity.Comp.CurrentValue}");
+        sprite.LayerSetState(0, $"{prefix}_{die.CurrentValue}");
     }
 }

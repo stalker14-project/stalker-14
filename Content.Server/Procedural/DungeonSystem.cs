@@ -15,13 +15,10 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Collections;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
-using Robust.Shared.EntitySerialization;
-using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Utility;
 
 namespace Content.Server.Procedural;
 
@@ -29,6 +26,7 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
 {
     [Dependency] private readonly IConfigurationManager _configManager = default!;
     [Dependency] private readonly IConsoleHost _console = default!;
+    [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
@@ -36,7 +34,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     [Dependency] private readonly DecalSystem _decals = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly TileSystem _tile = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -54,7 +51,8 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     private readonly JobQueue _dungeonJobQueue = new(DungeonJobTime);
     private readonly Dictionary<DungeonJob.DungeonJob, CancellationTokenSource> _dungeonJobs = new();
 
-    public static readonly ProtoId<ContentTileDefinition> FallbackTileId = "FloorSteel";
+    [ValidatePrototypeId<ContentTileDefinition>]
+    public const string FallbackTileId = "FloorSteel";
 
     public override void Initialize()
     {
@@ -175,18 +173,14 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
                 return Transform(uid).MapID;
         }
 
-        var opts = new MapLoadOptions
-        {
-            DeserializationOptions = DeserializationOptions.Default with {PauseMaps = true},
-            ExpectedCategory = FileCategory.Map
-        };
-
-        if (!_loader.TryLoadGeneric(proto.AtlasPath, out var res, opts) || !res.Maps.TryFirstOrNull(out var map))
-            throw new Exception($"Failed to load dungeon template.");
-
-        comp = AddComp<DungeonAtlasTemplateComponent>(map.Value.Owner);
+        var mapId = _mapManager.CreateMap();
+        _mapManager.AddUninitializedMap(mapId);
+        _loader.Load(mapId, proto.AtlasPath.ToString());
+        var mapUid = _mapManager.GetMapEntityId(mapId);
+        _mapManager.SetMapPaused(mapId, true);
+        comp = AddComp<DungeonAtlasTemplateComponent>(mapUid);
         comp.Path = proto.AtlasPath;
-        return map.Value.Comp.MapId;
+        return mapId;
     }
 
     /// <summary>
@@ -212,7 +206,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             this,
             _lookup,
             _tile,
-            _turf,
             _transform,
             gen,
             grid,
@@ -245,7 +238,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             this,
             _lookup,
             _tile,
-            _turf,
             _transform,
             gen,
             grid,

@@ -25,11 +25,11 @@ namespace Content.Client.Access.UI
         public void SetAccessLevels(IPrototypeManager protoManager, List<ProtoId<AccessLevelPrototype>> accessLevels)
         {
             _accessButtons.Clear();
-            AccessLevelGrid.RemoveAllChildren();
+            AccessLevelGrid.DisposeAllChildren();
 
             foreach (var access in accessLevels)
             {
-                if (!protoManager.Resolve(access, out var accessLevel))
+                if (!protoManager.TryIndex(access, out var accessLevel))
                 {
                     continue;
                 }
@@ -88,9 +88,8 @@ namespace Content.Client.Access.UI
                 button.Disabled = !interfaceEnabled;
                 if (interfaceEnabled)
                 {
-                    // Explicit cast because Rider gives a false error otherwise.
-                    button.Pressed = state.TargetAccessReaderIdAccessList?.Contains((ProtoId<AccessLevelPrototype>) accessName) ?? false;
-                    button.Disabled = (!state.AllowedModifyAccessList?.Contains((ProtoId<AccessLevelPrototype>) accessName)) ?? true;
+                    button.Pressed = state.TargetAccessReaderIdAccessList?.Contains(accessName) ?? false;
+                    button.Disabled = (!state.AllowedModifyAccessList?.Contains(accessName)) ?? true;
                 }
             }
         }

@@ -31,7 +31,7 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatFilletSTFish
+    graph: MeatSteak
     node: start
     defaultTarget: fillet stfish
   - type: Tag
@@ -100,93 +100,6 @@
     exactSecond: false
     time: 12
 
-# Eel
-- type: entity
-  name: raw fish eel
-  parent: FoodMeatRawBase
-  id: FoodMeatSTFishEelRaw
-  suffix: Stalker, Food
-  components:
-  - type: STWeight
-    self: 0.25
-  - type: FlavorProfile
-    flavors:
-    - fishy
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
-    state: eel_raw
-  - type: InternalTemperature
-    conductivity: 0.43
-  - type: Construction
-    graph: MeatEelSTFish
-    node: start
-    defaultTarget: eel stfish
-  - type: Tag
-    tags:
-    - Meat
-  - type: Craftable
-  - type: RotInto
-    entity: FoodMeatSTRottenFish
-    stage: 1
-
-- type: entity
-  name: cooked fish eel
-  parent: FoodMeatBase
-  id: FoodMeatSTFishEelCooked
-  suffix: Stalker, Food
-  components:
-  - type: STWeight
-    self: 0.25
-  - type: Craftable
-  - type: Tag
-    tags:
-    - Cooked
-    - Meat
-  - type: FlavorProfile
-    flavors:
-    - fishy
-  - type: Sprite
-    sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
-    state: eel_cooked
-  - type: Construction
-    graph: MeatEelSTFish
-    node: eel stfish
-
-- type: constructionGraph
-  id: MeatEelSTFish
-  start: start
-  graph:
-  - node: start
-    edges:
-    - to: eel stfish
-      completed:
-      - !type:PlaySound
-        sound: /Audio/Effects/sizzle.ogg
-  - node: eel stfish
-    entity: FoodMeatSTFishEelCooked
-
-- type: lightCraftingRecipe
-  id: MeatEelSTFishCraft
-  results:
-  - FoodMeatSTFishEelCooked
-  steps:
-    firstIngredient: FoodMeatSTFishEelRaw
-    secondIngredient: STBonfire
-    keepSecond: true
-    exactSecond: false
-    time: 12
-
-- type: lightCraftingRecipe
-  id: MeatEelSTFishCraftGas
-  results:
-  - FoodMeatSTFishEelCooked
-  steps:
-    firstIngredient: FoodMeatSTFishEelRaw
-    secondIngredient: GasStoveS1
-    keepSecond: true
-    exactSecond: false
-    time: 12
-
 # steak
 - type: entity
   name: raw fish steak
@@ -203,7 +116,7 @@
     sprite: _Stalker_EN/Objects/Consumable/Food/fish.rsi
     state: steak_raw
   - type: Construction
-    graph: MeatSteakSTFish
+    graph: MeatSteak
     node: start
     defaultTarget: steak stfish
   - type: Tag

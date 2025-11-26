@@ -2,7 +2,6 @@ using System.Numerics;
 using Content.Client.Chat.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
-using Content.Shared.Speech;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -14,7 +13,6 @@ namespace Content.Client.Chat.UI
 {
     public abstract class SpeechBubble : Control
     {
-        [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IEyeManager _eyeManager = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] protected readonly IConfigurationManager ConfigManager = default!;
@@ -31,12 +29,12 @@ namespace Content.Client.Chat.UI
         /// <summary>
         ///     The total time a speech bubble stays on screen.
         /// </summary>
-        private static readonly TimeSpan TotalTime = TimeSpan.FromSeconds(4);
+        private const float TotalTime = 4;
 
         /// <summary>
         ///     The amount of time at the end of the bubble's life at which it starts fading.
         /// </summary>
-        private static readonly TimeSpan FadeTime = TimeSpan.FromSeconds(0.25f);
+        private const float FadeTime = 0.25f;
 
         /// <summary>
         ///     The distance in world space to offset the speech bubble from the center of the entity.
@@ -51,10 +49,7 @@ namespace Content.Client.Chat.UI
 
         private readonly EntityUid _senderEntity;
 
-        /// <summary>
-        /// The time at which this bubble will die.
-        /// </summary>
-        private TimeSpan _deathTime;
+        private float _timeLeft = TotalTime;
 
         public float VerticalOffset { get; set; }
         private float _verticalOffsetAchieved;
@@ -103,7 +98,6 @@ namespace Content.Client.Chat.UI
             bubble.Measure(Vector2Helpers.Infinity);
             ContentSize = bubble.DesiredSize;
             _verticalOffsetAchieved = -ContentSize.Y;
-            _deathTime = _timing.RealTime + TotalTime;
         }
 
         protected abstract Control BuildBubble(ChatMessage message, string speechStyleClass, Color? fontColor = null);
@@ -112,8 +106,8 @@ namespace Content.Client.Chat.UI
         {
             base.FrameUpdate(args);
 
-            var timeLeft = (float)(_deathTime - _timing.RealTime).TotalSeconds;
-            if (_entityManager.Deleted(_senderEntity) || timeLeft <= 0)
+            _timeLeft -= args.DeltaSeconds;
+            if (_entityManager.Deleted(_senderEntity) || _timeLeft <= 0)
             {
                 // Timer spawn to prevent concurrent modification exception.
                 Timer.Spawn(0, Die);
@@ -130,16 +124,16 @@ namespace Content.Client.Chat.UI
                 _verticalOffsetAchieved = MathHelper.Lerp(_verticalOffsetAchieved, VerticalOffset, 10 * args.DeltaSeconds);
             }
 
-            if (!_entityManager.TryGetComponent<TransformComponent>(_senderEntity, out var xform) || xform.MapID != _eyeManager.CurrentEye.Position.MapId)
+            if (!_entityManager.TryGetComponent<TransformComponent>(_senderEntity, out var xform) || xform.MapID != _eyeManager.CurrentMap)
             {
                 Modulate = Color.White.WithAlpha(0);
                 return;
             }
 
-            if (timeLeft <= FadeTime.TotalSeconds)
+            if (_timeLeft <= FadeTime)
             {
                 // Update alpha if we're fading.
-                Modulate = Color.White.WithAlpha(timeLeft / (float)FadeTime.TotalSeconds);
+                Modulate = Color.White.WithAlpha(_timeLeft / FadeTime);
             }
             else
             {
@@ -147,12 +141,7 @@ namespace Content.Client.Chat.UI
                 Modulate = Color.White;
             }
 
-            var baseOffset = 0f;
-
-            if (_entityManager.TryGetComponent<SpeechComponent>(_senderEntity, out var speech))
-                baseOffset = speech.SpeechBubbleOffset;
-
-            var offset = (-_eyeManager.CurrentEye.Rotation).ToWorldVec() * -(EntityVerticalOffset + baseOffset);
+            var offset = (-_eyeManager.CurrentEye.Rotation).ToWorldVec() * -EntityVerticalOffset;
             var worldPos = _transformSystem.GetWorldPosition(xform) + offset;
 
             var lowerCenter = _eyeManager.WorldToScreen(worldPos) / UIScale;
@@ -180,9 +169,9 @@ namespace Content.Client.Chat.UI
         /// </summary>
         public void FadeNow()
         {
-            if (_deathTime > _timing.RealTime)
+            if (_timeLeft > FadeTime)
             {
-                _deathTime = _timing.RealTime + FadeTime;
+                _timeLeft = FadeTime;
             }
         }
 
@@ -222,7 +211,7 @@ namespace Content.Client.Chat.UI
             {
                 StyleClasses = { "speechBox", speechStyleClass },
                 Children = { label },
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity))
+                ModulateSelfOverride = Color.White.WithAlpha(0.75f)
             };
 
             return panel;
@@ -252,23 +241,21 @@ namespace Content.Client.Chat.UI
                 {
                     StyleClasses = { "speechBox", speechStyleClass },
                     Children = { label },
-                    ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity)),
+                    ModulateSelfOverride = Color.White.WithAlpha(0.75f)
                 };
                 return unfanciedPanel;
             }
 
             var bubbleHeader = new RichTextLabel
             {
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleSpeakerOpacity)),
-                Margin = new Thickness(1, 1, 1, 1),
+                Margin = new Thickness(1, 1, 1, 1)
             };
 
             var bubbleContent = new RichTextLabel
             {
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleTextOpacity)),
                 MaxWidth = SpeechMaxWidth,
                 Margin = new Thickness(2, 6, 2, 2),
-                StyleClasses = { "bubbleContent" },
+                StyleClasses = { "bubbleContent" }
             };
 
             //We'll be honest. *Yes* this is hacky. Doing this in a cleaner way would require a bottom-up refactor of how saycode handles sending chat messages. -Myr
@@ -280,7 +267,7 @@ namespace Content.Client.Chat.UI
             {
                 StyleClasses = { "speechBox", speechStyleClass },
                 Children = { bubbleContent },
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity)),
+                ModulateSelfOverride = Color.White.WithAlpha(0.75f),
                 HorizontalAlignment = HAlignment.Center,
                 VerticalAlignment = VAlignment.Bottom,
                 Margin = new Thickness(4, 14, 4, 2)
@@ -290,7 +277,7 @@ namespace Content.Client.Chat.UI
             {
                 StyleClasses = { "speechBox", speechStyleClass },
                 Children = { bubbleHeader },
-                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.ChatFancyNameBackground) ? ConfigManager.GetCVar(CCVars.SpeechBubbleBackgroundOpacity) : 0f),
+                ModulateSelfOverride = Color.White.WithAlpha(ConfigManager.GetCVar(CCVars.ChatFancyNameBackground) ? 0.75f : 0f),
                 HorizontalAlignment = HAlignment.Center,
                 VerticalAlignment = VAlignment.Top
             };

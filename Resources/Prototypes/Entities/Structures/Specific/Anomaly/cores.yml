@@ -43,7 +43,7 @@
     sprite: Structures/Specific/Anomalies/Cores/pyro_core.rsi
   - type: PointLight
     radius: 1.5
-    energy: 2.7
+    energy: 1.5
     color: "#E25822"
     castShadows: false
   - type: IgnitionSource
@@ -72,7 +72,7 @@
     sprite: Structures/Specific/Anomalies/Cores/ice_core.rsi
   - type: PointLight
     radius: 1.5
-    energy: 2.7
+    energy: 1.5
     color: "#befaff"
     castShadows: false
 
@@ -184,19 +184,6 @@
     color: "#56c1e8"
     castShadows: false
 
-- type: entity
-  parent: BaseAnomalyCore
-  id: AnomalyCoreSanta
-  suffix: Santa
-  components:
-  - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/santa_core.rsi
-  - type: PointLight
-    radius: 1.5
-    energy: 2.0
-    color: "#fc0303"
-    castShadows: false
-
 # Inert cores
 
 - type: entity
@@ -223,7 +210,7 @@
     sprite: Structures/Specific/Anomalies/Cores/pyro_core.rsi
   - type: PointLight
     radius: 1.5
-    energy: 2.7
+    energy: 1.5
     color: "#fca3c0"
     castShadows: false
 
@@ -249,7 +236,7 @@
     sprite: Structures/Specific/Anomalies/Cores/ice_core.rsi
   - type: PointLight
     radius: 1.5
-    energy: 2.7
+    energy: 1.5
     color: "#befaff"
     castShadows: false
 
@@ -358,17 +345,4 @@
     radius: 1.5
     energy: 2.0
     color: "#56c1e8"
-    castShadows: false
-
-- type: entity
-  parent: BaseAnomalyInertCore
-  id: AnomalyCoreSantaInert
-  suffix: Santa, Inert
-  components:
-  - type: Sprite
-    sprite: Structures/Specific/Anomalies/Cores/santa_core.rsi
-  - type: PointLight
-    radius: 1.5
-    energy: 2.0
-    color: "#fc0303"
     castShadows: false

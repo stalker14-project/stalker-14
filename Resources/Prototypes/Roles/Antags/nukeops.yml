@@ -6,7 +6,7 @@
   objective: roles-antag-nuclear-operative-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 5h
+    time: 18000 # 5h
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -17,10 +17,10 @@
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 5h
+    time: 18000 # 5h
   - !type:RoleTimeRequirement
     role: JobChemist
-    time: 3h
+    time: 10800 # 3h
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -31,10 +31,10 @@
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 5h
+    time: 18000 # 5h
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 5h
+    time: 18000 # 5h
   # should be changed to nukie playtime when thats tracked (wyci)
   guides: [ NuclearOperatives ]
 
@@ -49,7 +49,7 @@
     gloves: ClothingHandsGlovesCombat
     outerClothing: ClothingOuterHardsuitSyndie
     shoes: ClothingShoesBootsCombatFilled
-    id: SyndiOperativePDA
+    id: SyndiPDA
     pocket2: PlushieCarp
     belt: ClothingBeltMilitaryWebbing
   storage:
@@ -65,34 +65,15 @@
   equipment:
     pocket2: BaseUplinkRadio40TC
 
-- type: chameleonOutfit
-  id: NukeopsOutfit
-  name: roles-antag-nuclear-operative-name
-  startingGear: SyndicateOperativeGearFullNoUplink
-  icon: "JobIconSyndicate"
-  equipment:
-    head: ClothingHeadHelmetHardsuitSyndie
-    neck: ClothingNeckScarfStripedSyndieRed
-
 #Nuclear Operative Commander Gear
 - type: startingGear
   id: SyndicateCommanderGearFull
   parent: SyndicateOperativeGearFull
   equipment:
-    id: SyndiCommanderPDA
     neck: SyndicateWhistle
     outerClothing: ClothingOuterHardsuitSyndieCommander
   inhand:
   - NukeOpsDeclarationOfWar
-
-- type: chameleonOutfit
-  id: NukeopsCommanderOutfit
-  name: roles-antag-nuclear-operative-commander-name
-  startingGear: SyndicateCommanderGearFull
-  icon: "JobIconSyndicate"
-  equipment:
-    head: ClothingHeadHelmetHardsuitSyndieCommander
-    neck: ClothingNeckScarfStripedSyndieGreen
 
 #Nuclear Operative Medic Gear
 - type: startingGear
@@ -102,7 +83,7 @@
     eyes: ClothingEyesHudSyndicateAgent
     outerClothing: ClothingOuterHardsuitSyndieMedic
     shoes: ClothingShoesBootsMagSyndie
-    id: SyndiCorpsmanPDA
+    id: SyndiAgentPDA
     belt: ClothingBeltMilitaryWebbingMedFilled
   storage:
     back:
@@ -115,15 +96,6 @@
     - HandheldHealthAnalyzer
     - CombatMedipen
     - DeathAcidifierImplanter
-
-- type: chameleonOutfit
-  id: NukeopsMedicOutfit
-  name: roles-antag-nuclear-operative-agent-name
-  startingGear: SyndicateOperativeMedicFull
-  icon: "JobIconSyndicate"
-  equipment:
-    head: ClothingHeadHelmetHardsuitSyndieMedic
-    neck: ClothingNeckScarfStripedLightBlue
 
 #Lone Operative Gear
 - type: startingGear

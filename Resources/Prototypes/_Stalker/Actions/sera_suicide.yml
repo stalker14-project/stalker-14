@@ -4,7 +4,7 @@
   name: самоликвидация
   description: Подрыв вашего кпк с гарантированным раздвоением вашего Я во имя Сына Звезды на целых две части!
   components:
-  - type: Action
+  - type: InstantAction
     checkCanInteract: true
     checkConsciousness: false
     itemIconStyle: BigAction
@@ -12,5 +12,4 @@
     icon:
       sprite: _Stalker/Interface/Actions/psyonics.rsi
       state: fire
-  - type: InstantAction
     event: !type:ActivateImplantEvent

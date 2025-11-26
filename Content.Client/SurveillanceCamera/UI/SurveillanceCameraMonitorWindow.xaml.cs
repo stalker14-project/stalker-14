@@ -17,8 +17,6 @@ namespace Content.Client.SurveillanceCamera.UI;
 [GenerateTypedNameReferences]
 public sealed partial class SurveillanceCameraMonitorWindow : DefaultWindow
 {
-    private static readonly ProtoId<ShaderPrototype> CameraStaticShader = "CameraStatic";
-
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
 
@@ -55,7 +53,7 @@ public sealed partial class SurveillanceCameraMonitorWindow : DefaultWindow
 
         // This could be done better. I don't want to deal with stylesheets at the moment.
         var texture = _resourceCache.GetTexture("/Textures/Interface/Nano/square_black.png");
-        var shader = _prototypeManager.Index(CameraStaticShader).Instance().Duplicate();
+        var shader = _prototypeManager.Index<ShaderPrototype>("CameraStatic").Instance().Duplicate();
 
         CameraView.ViewportSize = new Vector2i(500, 500);
         CameraView.Eye = _defaultEye; // sure
@@ -127,12 +125,14 @@ public sealed partial class SurveillanceCameraMonitorWindow : DefaultWindow
 
     private void PopulateCameraList(Dictionary<string, string> cameras)
     {
-        var entries = cameras.Select(i => new ItemList.Item(SubnetList) {
-            Text = $"{i.Value}: {i.Key}",
-            Metadata = i.Key
-        }).ToList();
-        entries.Sort((a, b) => string.Compare(a.Text, b.Text, StringComparison.Ordinal));
-        SubnetList.SetItems(entries, (a,b) => string.Compare(a.Text, b.Text));
+        SubnetList.Clear();
+
+        foreach (var (address, name) in cameras)
+        {
+            AddCameraToList(name, address);
+        }
+
+        SubnetList.SortItemsByText();
     }
 
     private void SetCameraView(IEye? eye)
@@ -185,6 +185,12 @@ public sealed partial class SurveillanceCameraMonitorWindow : DefaultWindow
         SubnetSelector.SetItemMetadata(SubnetSelector.ItemCount - 1, subnet);
 
         return SubnetSelector.ItemCount - 1;
+    }
+
+    private void AddCameraToList(string name, string address)
+    {
+        var item = SubnetList.AddItem($"{name}: {address}");
+        item.Metadata = address;
     }
 
     private void OnSubnetListSelect(ItemList.ItemListSelectedEventArgs args)

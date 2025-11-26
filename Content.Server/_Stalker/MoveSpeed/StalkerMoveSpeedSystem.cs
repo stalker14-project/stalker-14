@@ -9,6 +9,7 @@ public sealed class StalkerMoveSpeedSystem : StalkerMoveSpeedSystemShared
     public override void Initialize()
     {
         base.Initialize();
+        SubscribeLocalEvent<MovementSpeedModifierComponent, ComponentInit>(InstallComponentSpeed);
         SubscribeAllEvent<StalkerMSSetBonusWalkEvent>(OnStalkerMSSetBonusWalkEvent);
         SubscribeAllEvent<StalkerMSSetBonusSprintEvent>(OnStalkerMSSetBonusSprintEvent);
     }
@@ -31,6 +32,14 @@ public sealed class StalkerMoveSpeedSystem : StalkerMoveSpeedSystemShared
         SetBonusSpeedWalk(args.SenderSession.AttachedEntity.Value, msg.NameBonus,msg.ValueBonus,moveSpeedComponent);
     }
 
+
+    private void InstallComponentSpeed(EntityUid uid, MovementSpeedModifierComponent component, ComponentInit args)
+    {
+        var stalkerSpeedComp = AddComp<StalkerMoveSpeedComponent>(uid);
+        stalkerSpeedComp.StartWalkSpeed = component._baseWalkSpeedVVpublic;
+        stalkerSpeedComp.StartSprintSpeed = component._baseSprintSpeedVVpublic;
+    }
+
     public void SetBonusSpeedWalk(EntityUid uid, string nameBonus, float valueBonus,StalkerMoveSpeedComponent stalkerSpeedComp)
     {
         stalkerSpeedComp.BonusSpeedWalkProcent[nameBonus] = valueBonus;
@@ -49,14 +58,14 @@ public sealed class StalkerMoveSpeedSystem : StalkerMoveSpeedSystemShared
     {
         if (!TryComp<MovementSpeedModifierComponent>(stalkerSpeedComp.Owner, out var movementSpeed))
             return;
-        movementSpeed.BaseWalkSpeed = stalkerSpeedComp.Comp.SumBonusSpeedWalk;
+        movementSpeed._baseWalkSpeedVVpublic=stalkerSpeedComp.Comp.SumBonusSpeedWalk;
     }
 
     public void SyncSprintSpeed(Entity<StalkerMoveSpeedComponent> stalkerSpeedComp)
     {
         if (!TryComp<MovementSpeedModifierComponent>(stalkerSpeedComp.Owner, out var movementSpeed))
             return;
-        movementSpeed.BaseSprintSpeed = stalkerSpeedComp.Comp.SumBonusSpeedSprint;
+        movementSpeed._baseSprintSpeedVVpublic=stalkerSpeedComp.Comp.SumBonusSpeedSprint;
     }
 
     public void CalculateSpeedByFormula(StalkerMoveSpeedComponent stalkerSpeedComp)

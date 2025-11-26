@@ -1,6 +1,6 @@
 #Источники чертежей
 - type: entity
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   id: CraftBlueprintsSourceT4T5
   suffix: Stalker, ИСТОЧНИК, Т4
   name: кейс с бумагами
@@ -55,12 +55,12 @@
   suffix: ST | КД 4 часа
   components:
     - type: ApproachTrigger
-      # range: 10 # Stalker-TODO: These fields do not exist in this component!
-      # minRange: 10
-      # useMinRange: true
-      # whitelist:
-        # components:
-          # - Dna
+      range: 10
+      minRange: 10
+      useMinRange: true
+      whitelist:
+        components:
+          - Dna
     - type: Sprite
       layers:
         - state: blue

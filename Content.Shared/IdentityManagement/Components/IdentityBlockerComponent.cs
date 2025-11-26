@@ -1,13 +1,12 @@
 using Content.Shared.Inventory;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
 
 namespace Content.Shared.IdentityManagement.Components;
 
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class IdentityBlockerComponent : Component
 {
-    [DataField, AutoNetworkedField]
+    [DataField]
     public bool Enabled = true;
 
     /// <summary>
@@ -17,8 +16,6 @@ public sealed partial class IdentityBlockerComponent : Component
     public IdentityBlockerCoverage Coverage = IdentityBlockerCoverage.FULL;
 }
 
-[Flags]
-[Serializable, NetSerializable]
 public enum IdentityBlockerCoverage
 {
     NONE  = 0,
@@ -33,7 +30,7 @@ public enum IdentityBlockerCoverage
 public sealed class SeeIdentityAttemptEvent : CancellableEntityEventArgs, IInventoryRelayEvent
 {
     // i.e. masks, helmets, or glasses.
-    public SlotFlags TargetSlots => SlotFlags.MASK | SlotFlags.HEAD | SlotFlags.EYES | SlotFlags.OUTERCLOTHING;
+    public SlotFlags TargetSlots => SlotFlags.MASK | SlotFlags.HEAD | SlotFlags.EYES;
 
     // cumulative coverage from each relayed slot
     public IdentityBlockerCoverage TotalCoverage = IdentityBlockerCoverage.NONE;

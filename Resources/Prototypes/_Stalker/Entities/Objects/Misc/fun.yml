@@ -43,12 +43,10 @@
   - type: Storage
     grid:
     - 0,0,3,1
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: d20GoldDice
-        - id: GoldPercentileDie
+  - type: StorageFill
+    contents:
+      - id: d20GoldDice
+      - id: GoldPercentileDie
 
 - type: entity
   parent: BaseDice

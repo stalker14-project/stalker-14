@@ -1,14 +1,16 @@
 using System.Numerics;
 using Content.Server.Audio;
+using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Shuttles.Components;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Damage;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Temperature;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Physics.Components;
@@ -24,13 +26,13 @@ namespace Content.Server.Shuttles.Systems;
 public sealed class ThrusterSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
     [Dependency] private readonly AmbientSoundSystem _ambient = default!;
     [Dependency] private readonly FixtureSystem _fixtureSystem = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPointLightSystem _light = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly TurfSystem _turf = default!;
 
     // Essentially whenever thruster enables we update the shuttle's available impulses which are used for movement.
     // This is done for each direction available.
@@ -42,7 +44,6 @@ public sealed class ThrusterSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<ThrusterComponent, ActivateInWorldEvent>(OnActivateThruster);
         SubscribeLocalEvent<ThrusterComponent, ComponentInit>(OnThrusterInit);
-        SubscribeLocalEvent<ThrusterComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ThrusterComponent, ComponentShutdown>(OnThrusterShutdown);
         SubscribeLocalEvent<ThrusterComponent, PowerChangedEvent>(OnPowerChange);
         SubscribeLocalEvent<ThrusterComponent, AnchorStateChangedEvent>(OnAnchorChange);
@@ -66,7 +67,7 @@ public sealed class ThrusterSystem : EntitySystem
             args.PushMarkup(enabled);
 
             if (component.Type == ThrusterType.Linear &&
-                TryComp(uid, out TransformComponent? xform) &&
+                EntityManager.TryGetComponent(uid, out TransformComponent? xform) &&
                 xform.Anchored)
             {
                 var nozzleLocalization = ContentLocalizationManager.FormatDirection(xform.LocalRotation.Opposite().ToWorldVec().GetDir()).ToLower();
@@ -92,45 +93,41 @@ public sealed class ThrusterSystem : EntitySystem
 
     private void OnShuttleTileChange(EntityUid uid, ShuttleComponent component, ref TileChangedEvent args)
     {
-        foreach (var change in args.Changes)
+        // If the old tile was space but the new one isn't then disable all adjacent thrusters
+        if (args.NewTile.IsSpace(_tileDefManager) || !args.OldTile.IsSpace(_tileDefManager))
+            return;
+
+        var tilePos = args.NewTile.GridIndices;
+        var grid = Comp<MapGridComponent>(uid);
+        var xformQuery = GetEntityQuery<TransformComponent>();
+        var thrusterQuery = GetEntityQuery<ThrusterComponent>();
+
+        for (var x = -1; x <= 1; x++)
         {
-            // If the old tile was space but the new one isn't then disable all adjacent thrusters
-            if (_turf.IsSpace(change.NewTile) || !_turf.IsSpace(change.OldTile))
-                continue;
-
-            var tilePos = change.GridIndices;
-            var grid = Comp<MapGridComponent>(uid);
-            var xformQuery = GetEntityQuery<TransformComponent>();
-            var thrusterQuery = GetEntityQuery<ThrusterComponent>();
-
-            for (var x = -1; x <= 1; x++)
+            for (var y = -1; y <= 1; y++)
             {
-                for (var y = -1; y <= 1; y++)
+                if (x != 0 && y != 0)
+                    continue;
+
+                var checkPos = tilePos + new Vector2i(x, y);
+                var enumerator = _mapSystem.GetAnchoredEntitiesEnumerator(uid, grid, checkPos);
+
+                while (enumerator.MoveNext(out var ent))
                 {
-                    if (x != 0 && y != 0)
+                    if (!thrusterQuery.TryGetComponent(ent.Value, out var thruster) || !thruster.RequireSpace)
                         continue;
 
-                    var checkPos = tilePos + new Vector2i(x, y);
-                    var enumerator = _mapSystem.GetAnchoredEntitiesEnumerator(uid, grid, checkPos);
+                    // Work out if the thruster is facing this direction
+                    var xform = xformQuery.GetComponent(ent.Value);
+                    var direction = xform.LocalRotation.ToWorldVec();
 
-                    while (enumerator.MoveNext(out var ent))
-                    {
-                        if (!thrusterQuery.TryGetComponent(ent.Value, out var thruster) || !thruster.RequireSpace)
-                            continue;
+                    if (new Vector2i((int)direction.X, (int)direction.Y) != new Vector2i(x, y))
+                        continue;
 
-                        // Work out if the thruster is facing this direction
-                        var xform = xformQuery.GetComponent(ent.Value);
-                        var direction = xform.LocalRotation.ToWorldVec();
-
-                        if (new Vector2i((int)direction.X, (int)direction.Y) != new Vector2i(x, y))
-                            continue;
-
-                        DisableThruster(ent.Value, thruster, xform.GridUid);
-                    }
+                    DisableThruster(ent.Value, thruster, xform.GridUid);
                 }
             }
         }
-
     }
 
     private void OnActivateThruster(EntityUid uid, ThrusterComponent component, ActivateInWorldEvent args)
@@ -161,8 +158,8 @@ public sealed class ThrusterSystem : EntitySystem
         // TODO: Don't make them rotatable and make it require anchoring.
 
         if (!component.Enabled ||
-            !TryComp(uid, out TransformComponent? xform) ||
-            !TryComp(xform.GridUid, out ShuttleComponent? shuttleComponent))
+            !EntityManager.TryGetComponent(uid, out TransformComponent? xform) ||
+            !EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComponent))
         {
             return;
         }
@@ -248,11 +245,6 @@ public sealed class ThrusterSystem : EntitySystem
         }
     }
 
-    private void OnMapInit(Entity<ThrusterComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.NextFire = _timing.CurTime + ent.Comp.FireCooldown;
-    }
-
     private void OnThrusterShutdown(EntityUid uid, ThrusterComponent component, ComponentShutdown args)
     {
         DisableThruster(uid, component);
@@ -283,7 +275,7 @@ public sealed class ThrusterSystem : EntitySystem
 
         component.IsOn = true;
 
-        if (!TryComp(xform.GridUid, out ShuttleComponent? shuttleComponent))
+        if (!EntityManager.TryGetComponent(xform.GridUid, out ShuttleComponent? shuttleComponent))
             return;
 
         // Logger.DebugS("thruster", $"Enabled thruster {uid}");
@@ -298,7 +290,7 @@ public sealed class ThrusterSystem : EntitySystem
                 shuttleComponent.LinearThrusters[direction].Add(uid);
 
                 // Don't just add / remove the fixture whenever the thruster fires because perf
-                if (TryComp(uid, out PhysicsComponent? physicsComponent) &&
+                if (EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent) &&
                     component.BurnPoly.Count > 0)
                 {
                     var shape = new PolygonShape();
@@ -316,7 +308,7 @@ public sealed class ThrusterSystem : EntitySystem
                 throw new ArgumentOutOfRangeException();
         }
 
-        if (TryComp(uid, out AppearanceComponent? appearance))
+        if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
         {
             _appearance.SetData(uid, ThrusterVisualState.State, true, appearance);
         }
@@ -380,7 +372,7 @@ public sealed class ThrusterSystem : EntitySystem
 
         component.IsOn = false;
 
-        if (!TryComp(gridId, out ShuttleComponent? shuttleComponent))
+        if (!EntityManager.TryGetComponent(gridId, out ShuttleComponent? shuttleComponent))
             return;
 
         // Logger.DebugS("thruster", $"Disabled thruster {uid}");
@@ -404,7 +396,7 @@ public sealed class ThrusterSystem : EntitySystem
                 throw new ArgumentOutOfRangeException();
         }
 
-        if (TryComp(uid, out AppearanceComponent? appearance))
+        if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
         {
             _appearance.SetData(uid, ThrusterVisualState.State, false, appearance);
         }
@@ -416,7 +408,7 @@ public sealed class ThrusterSystem : EntitySystem
 
         _ambient.SetAmbience(uid, false);
 
-        if (TryComp(uid, out PhysicsComponent? physicsComponent))
+        if (EntityManager.TryGetComponent(uid, out PhysicsComponent? physicsComponent))
         {
             _fixtureSystem.DestroyFixture(uid, BurnFixture, body: physicsComponent);
         }
@@ -455,7 +447,7 @@ public sealed class ThrusterSystem : EntitySystem
         var mapGrid = Comp<MapGridComponent>(xform.GridUid.Value);
         var tile = _mapSystem.GetTileRef(xform.GridUid.Value, mapGrid, new Vector2i((int)Math.Floor(x), (int)Math.Floor(y)));
 
-        return _turf.IsSpace(tile);
+        return tile.Tile.IsSpace();
     }
 
     #region Burning
@@ -469,13 +461,10 @@ public sealed class ThrusterSystem : EntitySystem
 
         while (query.MoveNext(out var comp))
         {
-            if (comp.NextFire > curTime)
+            if (!comp.Firing || comp.Colliding.Count == 0 || comp.Damage == null || comp.NextFire < curTime)
                 continue;
 
-            comp.NextFire += comp.FireCooldown;
-
-            if (!comp.Firing || comp.Colliding.Count == 0 || comp.Damage == null)
-                continue;
+            comp.NextFire += TimeSpan.FromSeconds(1);
 
             foreach (var uid in comp.Colliding.ToArray())
             {

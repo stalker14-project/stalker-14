@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Client.Graphics;
 using Content.Client.Parallax;
 using Content.Client.Weather;
 using Content.Shared.Salvage;
@@ -18,10 +17,6 @@ namespace Content.Client.Overlays;
 /// </summary>
 public sealed partial class StencilOverlay : Overlay
 {
-    private static readonly ProtoId<ShaderPrototype> CircleShader = "WorldGradientCircle";
-    private static readonly ProtoId<ShaderPrototype> StencilMask = "StencilMask";
-    private static readonly ProtoId<ShaderPrototype> StencilDraw = "StencilDraw";
-
     [Dependency] private readonly IClyde _clyde = default!;
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -29,76 +24,55 @@ public sealed partial class StencilOverlay : Overlay
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     private readonly ParallaxSystem _parallax;
     private readonly SharedTransformSystem _transform;
-    private readonly SharedMapSystem _map;
     private readonly SpriteSystem _sprite;
     private readonly WeatherSystem _weather;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
-    private readonly OverlayResourceCache<CachedResources> _resources = new();
+    private IRenderTexture? _blep;
 
     private readonly ShaderInstance _shader;
 
-    public StencilOverlay(ParallaxSystem parallax, SharedTransformSystem transform, SharedMapSystem map, SpriteSystem sprite, WeatherSystem weather)
+    public StencilOverlay(ParallaxSystem parallax, SharedTransformSystem transform, SpriteSystem sprite, WeatherSystem weather)
     {
         ZIndex = ParallaxSystem.ParallaxZIndex + 1;
         _parallax = parallax;
         _transform = transform;
-        _map = map;
         _sprite = sprite;
         _weather = weather;
         IoCManager.InjectDependencies(this);
-        _shader = _protoManager.Index(CircleShader).InstanceUnique();
+        _shader = _protoManager.Index<ShaderPrototype>("WorldGradientCircle").InstanceUnique();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
     {
-        var mapUid = _map.GetMapOrInvalid(args.MapId);
+        var mapUid = _mapManager.GetMapEntityId(args.MapId);
         var invMatrix = args.Viewport.GetWorldToLocalMatrix();
 
-        var res = _resources.GetForViewport(args.Viewport, static _ => new CachedResources());
-
-        if (res.Blep?.Texture.Size != args.Viewport.Size)
+        if (_blep?.Texture.Size != args.Viewport.Size)
         {
-            res.Blep?.Dispose();
-            res.Blep = _clyde.CreateRenderTarget(args.Viewport.Size, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "weather-stencil");
+            _blep?.Dispose();
+            _blep = _clyde.CreateRenderTarget(args.Viewport.Size, new RenderTargetFormatParameters(RenderTargetColorFormat.Rgba8Srgb), name: "weather-stencil");
         }
 
         if (_entManager.TryGetComponent<WeatherComponent>(mapUid, out var comp))
         {
             foreach (var (proto, weather) in comp.Weather)
             {
-                if (!_protoManager.Resolve<WeatherPrototype>(proto, out var weatherProto))
+                if (!_protoManager.TryIndex<WeatherPrototype>(proto, out var weatherProto))
                     continue;
 
                 var alpha = _weather.GetPercent(weather, mapUid);
-                DrawWeather(args, res, weatherProto, alpha, invMatrix);
+                DrawWeather(args, weatherProto, alpha, invMatrix);
             }
         }
 
         if (_entManager.TryGetComponent<RestrictedRangeComponent>(mapUid, out var restrictedRangeComponent))
         {
-            DrawRestrictedRange(args, res, restrictedRangeComponent, invMatrix);
+            DrawRestrictedRange(args, restrictedRangeComponent, invMatrix);
         }
 
         args.WorldHandle.UseShader(null);
         args.WorldHandle.SetTransform(Matrix3x2.Identity);
-    }
-
-    protected override void DisposeBehavior()
-    {
-        _resources.Dispose();
-
-        base.DisposeBehavior();
-    }
-
-    private sealed class CachedResources : IDisposable
-    {
-        public IRenderTexture? Blep;
-
-        public void Dispose()
-        {
-            Blep?.Dispose();
-        }
     }
 }

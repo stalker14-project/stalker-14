@@ -1,13 +1,16 @@
 using System.Linq;
 using System.Threading;
 using Content.Server.Salvage.Expeditions;
+using Content.Server.Salvage.Expeditions.Structure;
 using Content.Shared.CCVar;
 using Content.Shared.Examine;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Salvage.Expeditions;
-using Content.Shared.Shuttles.Components;
+using Robust.Shared.Audio;
 using Robust.Shared.CPUJob.JobQueues;
 using Robust.Shared.CPUJob.JobQueues.Queues;
 using Robust.Shared.GameStates;
+using Robust.Shared.Map;
 
 namespace Content.Server.Salvage;
 
@@ -34,6 +37,8 @@ public sealed partial class SalvageSystem
         SubscribeLocalEvent<SalvageExpeditionComponent, MapInitEvent>(OnExpeditionMapInit);
         SubscribeLocalEvent<SalvageExpeditionComponent, ComponentShutdown>(OnExpeditionShutdown);
         SubscribeLocalEvent<SalvageExpeditionComponent, ComponentGetState>(OnExpeditionGetState);
+
+        SubscribeLocalEvent<SalvageStructureComponent, ExaminedEvent>(OnStructureExamine);
 
         _cooldown = _configurationManager.GetCVar(CCVars.SalvageExpeditionCooldown);
         Subs.CVar(_configurationManager, CCVars.SalvageExpeditionCooldown, SetCooldownChange);
@@ -64,21 +69,13 @@ public sealed partial class SalvageSystem
 
     private void OnExpeditionMapInit(EntityUid uid, SalvageExpeditionComponent component, MapInitEvent args)
     {
-        component.SelectedSong = _audio.ResolveSound(component.Sound);
+        var selectedFile = _audio.GetSound(component.Sound);
+        component.SelectedSong = new SoundPathSpecifier(selectedFile, component.Sound.Params);
     }
 
     private void OnExpeditionShutdown(EntityUid uid, SalvageExpeditionComponent component, ComponentShutdown args)
     {
         component.Stream = _audio.Stop(component.Stream);
-
-        // First wipe any disks referencing us
-        var disks = AllEntityQuery<ShuttleDestinationCoordinatesComponent>();
-        while (disks.MoveNext(out var disk, out var diskComp)
-               && diskComp.Destination == uid)
-        {
-            diskComp.Destination = null;
-            Dirty(disk, diskComp);
-        }
 
         foreach (var (job, cancelToken) in _salvageJobs.ToArray())
         {
@@ -132,7 +129,7 @@ public sealed partial class SalvageSystem
     {
         var component = expedition.Comp;
         component.NextOffer = _timing.CurTime + TimeSpan.FromSeconds(_cooldown);
-        Announce(uid, Loc.GetString("salvage-expedition-completed"));
+        Announce(uid, Loc.GetString("salvage-expedition-mission-completed"));
         component.ActiveMission = 0;
         component.Cooldown = true;
         UpdateConsoles(expedition);
@@ -169,11 +166,13 @@ public sealed partial class SalvageSystem
             EntityManager,
             _timing,
             _logManager,
+            _mapManager,
             _prototypeManager,
             _anchorable,
             _biome,
             _dungeon,
             _metaData,
+            _transform,
             _mapSystem,
             station,
             coordinatesDisk,
@@ -182,5 +181,10 @@ public sealed partial class SalvageSystem
 
         _salvageJobs.Add((job, cancelToken));
         _salvageQueue.EnqueueJob(job);
+    }
+
+    private void OnStructureExamine(EntityUid uid, SalvageStructureComponent component, ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString("salvage-expedition-structure-examine"));
     }
 }

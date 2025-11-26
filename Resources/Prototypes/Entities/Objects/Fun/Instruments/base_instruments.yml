@@ -5,7 +5,6 @@
   description: That's an instrument.
   components:
   - type: Sprite
-    state: icon
   - type: Instrument
   - type: ActivatableUI
     inHandsOnly: true
@@ -63,9 +62,11 @@
         density: 80
         mask:
         - Impassable
+        - HighImpassable
         - MidImpassable
         layer:
         - Opaque
+        - HighImpassable
         - MidImpassable
         - BulletImpassable
   - type: StaticPrice

@@ -19,13 +19,13 @@ public sealed partial class VocalComponent : Component
     ///     Emote sounds prototype id for each sex (not gender).
     ///     Entities without <see cref="HumanoidComponent"/> considered to be <see cref="Sex.Unsexed"/>.
     /// </summary>
-    [DataField]
+    [DataField("sounds", customTypeSerializer: typeof(PrototypeIdValueDictionarySerializer<Sex, EmoteSoundsPrototype>))]
     [AutoNetworkedField]
-    public Dictionary<Sex, ProtoId<EmoteSoundsPrototype>>? Sounds;
+    public Dictionary<Sex, string>? Sounds;
 
     [DataField("screamId", customTypeSerializer: typeof(PrototypeIdSerializer<EmotePrototype>))]
     [AutoNetworkedField]
-    public string ScreamId = "STScream"; // Stalker-changes
+    public string ScreamId = "Scream";
 
     [DataField("wilhelm")]
     [AutoNetworkedField]
@@ -37,7 +37,7 @@ public sealed partial class VocalComponent : Component
 
     [DataField("screamAction", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     [AutoNetworkedField]
-    public string? ScreamAction = "ActionScream";
+    public string ScreamAction = "ActionScream";
 
     [DataField("screamActionEntity")]
     [AutoNetworkedField]
@@ -49,5 +49,5 @@ public sealed partial class VocalComponent : Component
     /// </summary>
     [ViewVariables]
     [AutoNetworkedField]
-    public ProtoId<EmoteSoundsPrototype>? EmoteSounds = null;
+    public EmoteSoundsPrototype? EmoteSounds = null;
 }

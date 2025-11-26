@@ -10,14 +10,21 @@
       layers:
         - state: icon
         - state: screen
-          map: [ "enum.ToggleableVisuals.Layer" ]
+          map: [ "enum.ToggleVisuals.Layer" ]
           visible: false
+          shader: unshaded
+        - state: ready
+          map: ["enum.PowerDeviceVisualLayers.Powered"]
           shader: unshaded
     - type: Appearance
     - type: GenericVisualizer
       visuals:
-        enum.ToggleableVisuals.Enabled:
-          enum.ToggleableVisuals.Layer:
+        enum.ToggleVisuals.Toggled:
+          enum.ToggleVisuals.Layer:
+            True: { visible: true }
+            False: { visible: false }
+        enum.DefibrillatorVisuals.Ready:
+          enum.PowerDeviceVisualLayers.Powered:
             True: { visible: true }
             False: { visible: false }
     - type: Item
@@ -39,7 +46,7 @@
       price: 30
     - type: GuideHelp
       guides:
-      - MedicalDoctor
+      - Medical Doctor
     - type: STWeight
       self: 1.5
 
@@ -50,7 +57,7 @@
   - type: MultiHandedItem
   - type: ToggleCellDraw
   - type: PowerCellDraw
-    useCharge: 100
+    useRate: 100
 
 - type: entity
   id: DefibrillatorEmpty
@@ -65,7 +72,7 @@
 - type: entity
   id: DefibrillatorOneHandedUnpowered
   parent: BaseDefibrillator
-  suffix: One-Handed, Always Powered
+  suffix: One-Handed, Unpowered
 
 - type: entity
   id: DefibrillatorCompact # This should be a research item at some point
@@ -78,7 +85,7 @@
     layers:
       - state: icon
       - state: screen
-        map: [ "enum.ToggleableVisuals.Layer" ]
+        map: [ "enum.ToggleVisuals.Layer" ]
         visible: false
         shader: unshaded
       - state: ready
@@ -88,7 +95,7 @@
     size: Normal
   - type: ToggleCellDraw
   - type: PowerCellDraw
-    useCharge: 100
+    useRate: 100
   - type: Defibrillator
     zapHeal:
       types:
@@ -99,7 +106,7 @@
 
 - type: entity
   id: DefibrillatorSyndicate
-  parent: [ DefibrillatorCompact, BaseSyndicateContraband ]
+  parent: DefibrillatorCompact
   name: interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:
@@ -108,7 +115,7 @@
     layers:
       - state: icon
       - state: screen
-        map: [ "enum.ToggleableVisuals.Layer" ]
+        map: [ "enum.ToggleVisuals.Layer" ]
         visible: false
         shader: unshaded
       - state: ready

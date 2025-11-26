@@ -1,6 +1,5 @@
 ﻿using Content.Server.Forensics;
 using Content.Shared.Examine;
-using Content.Shared.Forensics.Components;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Tag;
 using Content.Shared.Verbs;

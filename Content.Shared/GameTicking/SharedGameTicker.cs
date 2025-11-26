@@ -6,8 +6,6 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Markdown.Mapping;
 using Robust.Shared.Serialization.Markdown.Value;
 using Robust.Shared.Timing;
-using Robust.Shared.Audio;
-using Content.Shared.GameTicking.Prototypes;
 
 namespace Content.Shared.GameTicking
 {
@@ -16,16 +14,11 @@ namespace Content.Shared.GameTicking
         [Dependency] private readonly IReplayRecordingManager _replay = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
 
-        /// <summary>
-        ///     A list storing the start times of all game rules that have been started this round.
-        ///     Game rules can be started and stopped at any time, including midround.
-        /// </summary>
-        public abstract IReadOnlyList<(TimeSpan, string)> AllPreviousGameRules { get; }
-
         // See ideally these would be pulled from the job definition or something.
         // But this is easier, and at least it isn't hardcoded.
         //TODO: Move these, they really belong in StationJobsSystem or a cvar.
-        public static readonly ProtoId<JobPrototype> FallbackOverflowJob = "Passenger";
+        [ValidatePrototypeId<JobPrototype>]
+        public const string FallbackOverflowJob = "Passenger";
 
         public const string FallbackOverflowJobName = "job-name-passenger";
 
@@ -48,10 +41,7 @@ namespace Content.Shared.GameTicking
 
         private void OnRecordingStart(MappingDataNode metadata, List<object> events)
         {
-            if (RoundId != 0)
-            {
-                metadata["roundId"] = new ValueDataNode(RoundId.ToString());
-            }
+            metadata["roundId"] = new ValueDataNode(RoundId.ToString());
         }
 
         public TimeSpan RoundDuration()
@@ -96,14 +86,14 @@ namespace Content.Shared.GameTicking
     public sealed class TickerLobbyStatusEvent : EntityEventArgs
     {
         public bool IsRoundStarted { get; }
-        public ProtoId<LobbyBackgroundPrototype>? LobbyBackground { get; }
+        public string? LobbyBackground { get; }
         public bool YouAreReady { get; }
         // UTC.
         public TimeSpan StartTime { get; }
         public TimeSpan RoundStartTimeSpan { get; }
         public bool Paused { get; }
 
-        public TickerLobbyStatusEvent(bool isRoundStarted, ProtoId<LobbyBackgroundPrototype>? lobbyBackground, bool youAreReady, TimeSpan startTime, TimeSpan preloadTime, TimeSpan roundStartTimeSpan, bool paused)
+        public TickerLobbyStatusEvent(bool isRoundStarted, string? lobbyBackground, bool youAreReady, TimeSpan startTime, TimeSpan preloadTime, TimeSpan roundStartTimeSpan, bool paused)
         {
             IsRoundStarted = isRoundStarted;
             LobbyBackground = lobbyBackground;
@@ -203,7 +193,7 @@ namespace Content.Shared.GameTicking
         /// <summary>
         /// Sound gets networked due to how entity lifecycle works between client / server and to avoid clipping.
         /// </summary>
-        public ResolvedSoundSpecifier? RestartSound;
+        public string? RestartSound;
 
         public RoundEndMessageEvent(
             string gamemodeTitle,
@@ -212,7 +202,7 @@ namespace Content.Shared.GameTicking
             int roundId,
             int playerCount,
             RoundEndPlayerInfo[] allPlayersEndInfo,
-            ResolvedSoundSpecifier? restartSound)
+            string? restartSound)
         {
             GamemodeTitle = gamemodeTitle;
             RoundEndText = roundEndText;

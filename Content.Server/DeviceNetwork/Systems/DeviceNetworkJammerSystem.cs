@@ -1,5 +1,4 @@
 using Content.Shared.DeviceNetwork.Components;
-using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.DeviceNetwork.Systems;
 using Robust.Server.GameObjects;
 
@@ -28,10 +27,6 @@ public sealed class DeviceNetworkJammerSystem : SharedDeviceNetworkJammerSystem
         while (query.MoveNext(out var uid, out var jammerComp, out var jammerXform))
         {
             if (!_jammer.GetJammableNetworks((uid, jammerComp)).Contains(ev.NetworkId))
-                continue;
-
-            if (jammerComp.FrequenciesExcluded != null &&
-                jammerComp.FrequenciesExcluded.Contains(ev.Frequency))
                 continue;
 
             if (_transform.InRange(jammerXform.Coordinates, ev.SenderTransform.Coordinates, jammerComp.Range)

@@ -7,10 +7,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: Anchorable
-    flags:
-    - Anchorable
-  - type: Rotatable
   - type: StationAiWhitelist
   - type: Sprite
     sprite: Structures/Doors/Shutters/shutters.rsi
@@ -18,8 +14,6 @@
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
   - type: AnimationPlayer
   - type: Physics
   - type: Fixtures
@@ -40,9 +34,6 @@
     containers:
       board: !type:Container
   - type: NavMapDoor
-  - type: Tag
-    tags:
-    - ForceNoFixRotations # Don't want the fixrotations command to target these
   - type: Door
     openDrawDepth: BlastDoors
     closedDrawDepth: BlastDoors
@@ -58,9 +49,9 @@
       types:
         Blunt: 5 # getting shutters closed on you probably doesn't hurt that much
     openSound:
-      path: /Audio/Machines/shutter.ogg
+      path: /Audio/Machines/blastdoor.ogg
     closeSound:
-      path: /Audio/Machines/shutter.ogg
+      path: /Audio/Machines/blastdoor.ogg
   - type: Weldable
     time: 3
   - type: Appearance
@@ -82,6 +73,9 @@
       behaviors:
       - !type:DoActsBehavior
         acts: ["Destruction"]
+  - type: IconSmooth
+    key: walls
+    mode: NoSprite
   - type: DoorSignalControl
   - type: DeviceNetwork
     deviceNetId: Wireless
@@ -99,15 +93,15 @@
     lastSignals:
       DoorStatus: false
   - type: InteractionPopup
-    interactSuccessString: shutter-rattle
-    messagePerceivedByOthers: shutter-rattle
+    interactSuccessString: comp-window-knock
+    messagePerceivedByOthers: comp-window-knock
     interactSuccessSound:
-      collection: FenceRattle
+      path: /Audio/Effects/glass_knock.ogg
   - type: BlockWeather
 
 - type: entity
   id: ShuttersNormal
-  parent: [BaseDeltaPressureGlass, BaseShutter]
+  parent: BaseShutter
   components:
   - type: Occluder
   - type: Construction
@@ -134,7 +128,7 @@
 
 - type: entity
   id: ShuttersRadiation
-  parent: [BaseDeltaPressureGlass, BaseShutter]
+  parent: BaseShutter
   name: radiation shutters
   description: Why did they make these shutters radioactive?
   components:
@@ -143,8 +137,6 @@
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
   - type: Occluder
   - type: Construction
     graph: Shutters
@@ -172,7 +164,7 @@
 
 - type: entity
   id: ShuttersWindow
-  parent: [BaseDeltaPressureGlass, BaseShutter]
+  parent: BaseShutter
   name: window shutters
   description: The Best (TM) place to see your friends explode!
   components:
@@ -181,8 +173,6 @@
     layers:
     - state: closed
       map: ["enum.DoorVisualLayers.Base"]
-    - state: welded
-      map: ["enum.WeldableLayers.BaseWelded"]
   - type: Construction
     graph: Shutters
     node: ShuttersWindow
@@ -247,4 +237,4 @@
         layer:
         - HighImpassable
   - type: Transform
-    noRot: false
+    noRot: true
