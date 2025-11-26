@@ -30,8 +30,8 @@ public sealed partial class WarZoneComponent : Component
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan? CooldownEndTime = null;
 
-    [ViewVariables]
-    public bool InitialLoadComplete;
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public bool InitialLoadComplete = false;
 
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public HashSet<string> PresentBandProtoIds = new();
@@ -62,7 +62,7 @@ public sealed partial class WarZoneComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     public float CaptureProgressTime = 0f;
-
+    
     /// <summary>
     /// Normalized capture progress (0.0 to 1.0)
     /// </summary>

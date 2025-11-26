@@ -31,11 +31,6 @@ internal sealed class ChatManager : IChatManager
         // See server-side manager. This just exists for shared code.
     }
 
-    public void SendAdminAlertNoFormatOrEscape(string message)
-    {
-        // See server-side manager. This just exists for shared code.
-    }
-
     public void SendMessage(string text, ChatSelectChannel channel)
     {
         var str = text.ToString();

@@ -24,8 +24,6 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["jumpsuit"]
     - map: [ "legs" ] # stalker-changes
     - map: [ "torso" ] # stalker-changes
@@ -36,14 +34,13 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "outerClothing" ]
     - map: [ "cloak" ] # stalker-changes
-    - map: [ "back" ]
     - map: [ "neck" ]
-    - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
+    - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
@@ -90,7 +87,6 @@
     horizontalRotation: 90
   - type: HumanoidAppearance
     species: Human
-  - type: TypingIndicator
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7 # stalker-changes
@@ -126,18 +122,27 @@
     - reagents: [Water, SpaceCleaner]
       methods: [Touch]
       effects:
-      - !type:WashCreamPie
+      - !type:WashCreamPieReaction
   - type: StatusEffects
     allowed:
+    - Stun
+    - KnockedDown
+    - SlowedDown
+    - Stutter
+    - SeeingRainbows
     - Electrocution
+    - Drunk
+    - SlurredSpeech
     - RatvarianLanguage
     - PressureImmunity
     - Muted
+    - ForcedSleep
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
     - Flashed
     - RadiationProtection
+    - Drowsiness
     - Adrenaline
     - Dizzy # stalker-changes
   - type: Body
@@ -170,7 +175,6 @@
   - type: SleepEmitSound
 #  - type: SSDIndicator # stalker-changes
   - type: StandingState
-  - type: Crawler
   - type: Dna
   - type: MindContainer
     showExamineInfo: true
@@ -185,9 +189,6 @@
     factions:
     - NanoTrasen
   - type: CreamPied
-  - type: ParcelWrapOverride
-    parcelPrototype: WrappedParcelHumanoid
-    wrapDelay: 5
   - type: Stripping
   - type: UserInterface
     interfaces:
@@ -260,9 +261,9 @@
         Heat: 1.5 #per second, scales with temperature & other constants
   - type: TemperatureSpeed
     thresholds:
-      293: 0.9
-      280: 0.8
-      260: 0.7
+      293: 0.8
+      280: 0.6
+      260: 0.4
   - type: ThermalRegulator
     metabolismHeat: 800
     radiatedHeat: 100
@@ -270,7 +271,7 @@
     sweatHeatRegulation: 2000
     shiveringHeatRegulation: 2000
     normalBodyTemperature: 310.15
-    thermalRegulationTemperatureThreshold: 2
+    thermalRegulationTemperatureThreshold: 25
   - type: Perishable
   - type: Butcherable
     butcheringType: Spike # TODO human.
@@ -286,7 +287,6 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
-  - type: StunVisuals
     # stalker-changes-start
   - type: Inventory
     templateId: STMain
@@ -303,8 +303,7 @@
     decay: 14
     cooldown: 5
     critThreshold: 200
-    stunModifierThresholds:
-      0: 1.0
+    slowdownThreshold: 190
   - type: STWeight
     self: 70
   - type: StaminaActive
@@ -346,8 +345,6 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
-    - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["jumpsuit"]
     - map: [ "legs" ] # stalker-changes
     - map: [ "torso" ] # stalker-changes
@@ -358,14 +355,13 @@
     - map: [ "gloves" ]
     - map: [ "shoes" ]
     - map: [ "ears" ]
+    - map: [ "outerClothing" ]
     - map: [ "eyes" ]
     - map: [ "belt" ]
     - map: [ "id" ]
-    - map: [ "outerClothing" ]
     - map: [ "cloak" ] # stalker-changes
-    - map: [ "back" ]
     - map: [ "neck" ]
-    - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
+    - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]

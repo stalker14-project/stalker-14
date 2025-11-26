@@ -19,8 +19,8 @@ public sealed partial class ChameleonMenu : DefaultWindow
     private readonly SpriteSystem _sprite;
     public event Action<string>? OnIdSelected;
 
-    private IEnumerable<EntProtoId> _possibleIds = [];
-    private EntProtoId? _selectedId;
+    private IEnumerable<string> _possibleIds = Enumerable.Empty<string>();
+    private string? _selectedId;
     private string _searchFilter = "";
 
     public ChameleonMenu()
@@ -32,7 +32,7 @@ public sealed partial class ChameleonMenu : DefaultWindow
         Search.OnTextChanged += OnSearchEntered;
     }
 
-    public void UpdateState(IEnumerable<EntProtoId> possibleIds, string? selectedId)
+    public void UpdateState(IEnumerable<string> possibleIds, string? selectedId)
     {
         _possibleIds = possibleIds;
         _selectedId = selectedId;
@@ -54,10 +54,10 @@ public sealed partial class ChameleonMenu : DefaultWindow
 
         foreach (var id in _possibleIds)
         {
-            if (!_prototypeManager.Resolve(id, out EntityPrototype? proto))
+            if (!_prototypeManager.TryIndex(id, out EntityPrototype? proto))
                 continue;
 
-            var lowId = id.Id.ToLowerInvariant();
+            var lowId = id.ToLowerInvariant();
             var lowName = proto.Name.ToLowerInvariant();
             if (!lowId.Contains(searchFilterLow) && !lowName.Contains(_searchFilter))
                 continue;
@@ -67,7 +67,7 @@ public sealed partial class ChameleonMenu : DefaultWindow
                 MinSize = new Vector2(48, 48),
                 HorizontalExpand = true,
                 Group = group,
-                StyleClasses = {StyleClass.ButtonSquare},
+                StyleClasses = {StyleBase.ButtonSquare},
                 ToggleMode = true,
                 Pressed = _selectedId == id,
                 ToolTip = proto.Name

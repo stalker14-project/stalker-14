@@ -1,5 +1,4 @@
 using Robust.Shared.Map;
-using Robust.Shared.Utility;
 
 namespace Content.Server._Stalker.Teleports.MapPortal;
 
@@ -11,7 +10,7 @@ public sealed partial class MapPortalComponent : Component
 {
     // Stores path to map yml file.
     [DataField("mapPath")]
-    public ResPath MapPath = new("/Maps/_StalkerMaps/PersonalStalkerArena/StalkerMap.yml");
+    public string? MapPath = "/Maps/_StalkerMaps/PersonalStalkerArena/StalkerMap.yml";
 
     // Portal name to link two portals with the same name together
     [DataField("portalName")]

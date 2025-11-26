@@ -36,7 +36,6 @@
     containers:
       storagebase: !type:Container
         ents: []
-      toggleable-clothing: !type:ContainerSlot {}
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -233,7 +232,7 @@
     clothingPrototype: ClothingHeadHatHoodJacketCN
     slot: head
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     whitelist:
       components:
       - SuppressArtifactContainer
@@ -365,8 +364,8 @@
 - type: entity
   parent: STClothingHeadHatHoodBase
   id: ClothingHeadHatHoodJacketMonolith
+  noSpawn: true
   name: капюшон
-  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/hats/jacket_hat_monolith.rsi

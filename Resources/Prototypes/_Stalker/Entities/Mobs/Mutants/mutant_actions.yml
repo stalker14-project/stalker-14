@@ -5,8 +5,7 @@
   categories: [ HideSpawnMenu ]
   description: Use your tentacles to grab and stun a target player!
   components:
-  - type: Action
-    useDelay: 8
+  - type: EntityWorldTargetAction
     raiseOnUser: true
     icon:
       sprite: Mobs/Aliens/Asteroid/goliath.rsi
@@ -15,27 +14,24 @@
       sprite: Mobs/Aliens/Asteroid/goliath.rsi
       state: goliath_tentacle_wiggle
     sound:
-      path: /Audio/Weapons/slash.ogg
-  - type: TargetAction
-    range: 10
-  - type: WorldTargetAction
+      path: "/Audio/Weapons/slash.ogg"
     event: !type:GoliathSummonTentacleAction
+    useDelay: 8
+    range: 10
 
 - type: entity
   id: ActionPsyonicsSmokeMutant
   name: smoke
   categories: [ HideSpawnMenu ]
   components:
-    - type: Action
+    - type: WorldTargetAction
       useDelay: 10
+      range: 0
+      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: smoke
-    - type: TargetAction
-      checkCanAccess: false
-      range: 0
-    - type: WorldTargetAction
       event: !type:PsyonicsActionSmokeEvent
 
 - type: entity
@@ -43,15 +39,13 @@
   name: shield
   categories: [ HideSpawnMenu ]
   components:
-    - type: Action
+    - type: InstantAction
       useDelay: 2
+      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: shield
-    - type: TargetAction
-      checkCanAccess: false
-    - type: InstantAction
       event: !type:PsyonicsActionShieldEvent
 
 
@@ -60,17 +54,14 @@
   name: dizzy
   categories: [ HideSpawnMenu ]
   components:
-    - type: Action
+    - type: EntityTargetAction
       raiseOnUser: true
       useDelay: 10
+      range: 25
+      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: dizzy
-      sound:
-        path: /Audio/_Stalker/Mutants/controller_dizzy_sound.ogg
-    - type: TargetAction
-      checkCanAccess: false
-      range: 25
-    - type: EntityTargetAction
       event: !type:PsyonicsActionDizzyEvent
+      sound: /Audio/_Stalker/Mutants/controller_dizzy_sound.ogg

@@ -1,6 +1,4 @@
-using Content.Shared.Body.Events;
-using Content.Shared.Implants.Components;
-using Content.Shared.Storage;
+﻿using Content.Shared.Implants.Components;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Implants;
@@ -11,29 +9,17 @@ public sealed partial class ImplanterSystem
     {
         SubscribeLocalEvent<ImplantedComponent, ComponentInit>(OnImplantedInit);
         SubscribeLocalEvent<ImplantedComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<ImplantedComponent, BeingGibbedEvent>(OnGibbed);
     }
 
-    private void OnImplantedInit(Entity<ImplantedComponent> ent, ref ComponentInit args)
+    private void OnImplantedInit(EntityUid uid, ImplantedComponent component, ComponentInit args)
     {
-        ent.Comp.ImplantContainer = _container.EnsureContainer<Container>(ent.Owner, ImplanterComponent.ImplantSlotId);
-        ent.Comp.ImplantContainer.OccludesLight = false;
+        component.ImplantContainer = _container.EnsureContainer<Container>(uid, ImplanterComponent.ImplantSlotId);
+        component.ImplantContainer.OccludesLight = false;
     }
 
-    private void OnShutdown(Entity<ImplantedComponent> ent, ref ComponentShutdown args)
+    private void OnShutdown(EntityUid uid, ImplantedComponent component, ComponentShutdown args)
     {
         //If the entity is deleted, get rid of the implants
-        _container.CleanContainer(ent.Comp.ImplantContainer);
-    }
-
-    private void OnGibbed(Entity<ImplantedComponent> ent, ref BeingGibbedEvent args)
-    {
-        // Drop the storage implant contents before the implants are deleted by the body being gibbed
-        foreach (var implant in ent.Comp.ImplantContainer.ContainedEntities)
-        {
-            if (TryComp<StorageComponent>(implant, out var storage))
-                _container.EmptyContainer(storage.Container, destination: Transform(ent).Coordinates);
-        }
-
+        _container.CleanContainer(component.ImplantContainer);
     }
 }

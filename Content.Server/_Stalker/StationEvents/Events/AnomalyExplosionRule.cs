@@ -4,8 +4,6 @@ using Content.Server._Stalker.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared.Camera;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
 using Content.Shared.GameTicking.Components;
 using Robust.Server.Player;
 using Robust.Shared.Audio;

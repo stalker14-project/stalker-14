@@ -10,7 +10,7 @@ public sealed partial class ContrabandSeverityPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; private set; } = default!;
+    public string ID { get; } = default!;
 
     /// <summary>
     /// Text shown for this severity level when the contraband is examined.
@@ -19,8 +19,8 @@ public sealed partial class ContrabandSeverityPrototype : IPrototype
     public LocId ExamineText;
 
     /// <summary>
-    /// When examining the contraband, should this take into account the viewer's departments and job?
+    /// When examining the contraband, should this take into account the viewer's departments?
     /// </summary>
     [DataField]
-    public bool ShowDepartmentsAndJobs;
+    public bool ShowDepartments;
 }

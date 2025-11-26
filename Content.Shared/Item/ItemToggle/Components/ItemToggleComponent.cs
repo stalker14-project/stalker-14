@@ -22,7 +22,7 @@ public sealed partial class ItemToggleComponent : Component
     /// <summary>
     /// Can the entity be activated in the world.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public bool OnActivate = true;
 
     /// <summary>
@@ -50,37 +50,25 @@ public sealed partial class ItemToggleComponent : Component
     /// /// <remarks>
     /// If server-side systems affect the item's toggle, like charge/fuel systems, then the item is not predictable.
     /// </remarks>
-    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public bool Predictable = true;
 
     /// <summary>
     ///     The noise this item makes when it is toggled on.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public SoundSpecifier? SoundActivate;
 
     /// <summary>
     ///     The noise this item makes when it is toggled off.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public SoundSpecifier? SoundDeactivate;
-
-    /// <summary>
-    ///     The popup to show to someone activating this item.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public LocId? PopupActivate;
-
-    /// <summary>
-    ///     The popup to show to someone deactivating this item.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public LocId? PopupDeactivate;
 
     /// <summary>
     ///     The noise this item makes when it is toggled on.
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public SoundSpecifier? SoundFailToActivate;
 }
 
@@ -90,18 +78,13 @@ public sealed partial class ItemToggleComponent : Component
 [ByRefEvent]
 public record struct ItemToggleActivateAttemptEvent(EntityUid? User)
 {
-    /// <summary>
-    /// Should we silently fail.
-    /// </summary>
-    public bool Silent = false;
-
     public bool Cancelled = false;
     public readonly EntityUid? User = User;
 
     /// <summary>
     /// Pop-up that gets shown to users explaining why the attempt was cancelled.
     /// </summary>
-    public string? Popup;
+    public string? Popup { get; set; }
 }
 
 /// <summary>
@@ -110,18 +93,8 @@ public record struct ItemToggleActivateAttemptEvent(EntityUid? User)
 [ByRefEvent]
 public record struct ItemToggleDeactivateAttemptEvent(EntityUid? User)
 {
-    /// <summary>
-    /// Should we silently fail.
-    /// </summary>
-    public bool Silent = false;
-
     public bool Cancelled = false;
     public readonly EntityUid? User = User;
-
-    /// <summary>
-    /// Pop-up that gets shown to users explaining why the attempt was cancelled.
-    /// </summary>
-    public string? Popup;
 }
 
 /// <summary>

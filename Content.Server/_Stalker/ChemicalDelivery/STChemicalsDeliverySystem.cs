@@ -1,6 +1,5 @@
 using Content.Server.Body.Components;
 using Content.Server.Body.Systems;
-using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.StepTrigger.Systems;
 using Robust.Shared.Audio.Systems;
@@ -35,7 +34,7 @@ public sealed class STChemicalsDeliverySystem : EntitySystem
         if (!TryComp<BloodstreamComponent>(args.Tripper, out var bloodstream))
             return;
 
-        _blood.TryAddToChemicals((args.Tripper, bloodstream), solution1);
+        _blood.TryAddToChemicals(args.Tripper, solution1, bloodstream);
 
         if (component.DeliverSound != null)
         {

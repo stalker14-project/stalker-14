@@ -1,13 +1,18 @@
 - type: entity
   id: TrashCanS1
-  parent: STBaseStructure
+  parent: BaseStructureStalkerDynamic
   name: мусорный контейнер
   suffix: ST, Mapping
   description: Специализированная ёмкость, служащая для сбора бытовых или строительных отходов.
   components:
+  - type: Transform
+    anchored: true
   - type: Sprite
     sprite: _Stalker/Objects/Decoration/Other/trashcan.rsi
     state: tc1
+  - type: Clickable
+  - type: Physics
+    bodyType: Dynamic
   - type: Fixtures
     fixtures:
       fix1:
@@ -20,6 +25,9 @@
         layer:
         - MidImpassable
         - LowImpassable
+  - type: Tag
+    tags:
+      - Structure
   - type: Damageable
     damageContainer: Inorganic
     damageModifierSet: Metallic

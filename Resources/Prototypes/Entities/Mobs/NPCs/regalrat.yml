@@ -29,8 +29,6 @@
     - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
       state: eyes
       shader: unshaded
-  - type: TypingIndicator
-    proto: regal
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
@@ -61,7 +59,7 @@
         Piercing: 8
   - type: Body
     prototype: Rat
-    requiredLegs: 0 # TODO: Make more than 1 leg, set to 0 to avoid sprint speed being reset by the body system
+    requiredLegs: 1 # TODO: More than 1 leg
   - type: Hunger # probably should be prototyped
     thresholds:
       Overfed: 200
@@ -79,6 +77,7 @@
       Dead: 0
     baseDecayRate: 0.1
   - type: DamageStateVisuals
+    rotate: true
     states:
       Alive:
         Base: regalrat
@@ -91,9 +90,7 @@
     makeSentient: true
     name: ghost-role-information-rat-king-name
     description: ghost-role-information-rat-king-description
-    rules: ghost-role-information-antagonist-rules
-    mindRoles:
-    - MindRoleGhostRoleSoloAntagonist
+    rules: ghost-role-information-freeagent-rules
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
@@ -102,7 +99,6 @@
       - CannotSuicide
       - FootstepSound
   - type: NoSlip
-  - type: Rummager
   - type: RatKing
     hungerPerArmyUse: 25
     hungerPerDomainUse: 50
@@ -117,9 +113,8 @@
     price: 2500 # rat wealth
   - type: RandomMetadata
     nameSegments:
-    - NamesRegalratKingdom
-    - NamesRegalratTitle
-    nameFormat: name-format-regal-rat
+    - RegalRatNameKingdom
+    - RegalRatNameTitle
   - type: GuideHelp
     guides:
     - MinorAntagonists
@@ -231,15 +226,6 @@
       0: Alive
       15: Critical
       30: Dead
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Blunt
-        damage: 60
-      behaviors:
-      - !type:GibBehavior
-        recursive: false
   - type: Stamina
     critThreshold: 60
   - type: MeleeWeapon
@@ -253,7 +239,7 @@
         Piercing: 3
   - type: Body
     prototype: Rat
-    requiredLegs: 0 # TODO: Make more than 1 leg, set to 0 to avoid sprint speed being reset by the body system
+    requiredLegs: 1 # TODO: More than 1 leg
   - type: Hunger # probably should be prototyped
     thresholds:
       Overfed: 200
@@ -307,52 +293,43 @@
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
 
-- type: entityTable
+- type: weightedRandomEntity
   id: RatKingLoot
-  table: !type:GroupSelector
-    children:
-    - id: RandomSpawner100
-      weight: 66
-    - id: FoodCheese
-      weight: 28
-    - id: IngotGold1
-      weight: 5
+  weights:
+    RandomSpawner100: 66 #garbage
+    FoodCheese: 28 #food
+    IngotGold1: 5 #loot
 
 - type: entity
-  parent: BaseAction
   id: ActionRatKingRaiseArmy
   name: Raise Army
   description: Spend some hunger to summon an allied rat to help defend you.
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 4
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: ratKingArmy
-  - type: InstantAction
     event: !type:RatKingRaiseArmyActionEvent
 
 - type: entity
-  parent: BaseAction
   id: ActionRatKingDomain
   name: Rat King's Domain
   description: Spend some hunger to release a cloud of ammonia into the air.
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 6
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: ratKingDomain
-  - type: InstantAction
     event: !type:RatKingDomainActionEvent
 
 - type: entity
-  parent: BaseAction
   id: ActionRatKingOrderStay
   name: Stay
   description: Command your army to stand in place.
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
@@ -360,18 +337,17 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: stay
+    event:
+      !type:RatKingOrderActionEvent
+        type: Stay
     priority: 5
-  - type: InstantAction
-    event: !type:RatKingOrderActionEvent
-      type: Stay
 
 - type: entity
-  parent: BaseAction
   id: ActionRatKingOrderFollow
   name: Follow
   description: Command your army to follow you around.
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
@@ -379,18 +355,17 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: follow
-    priority: 6
-  - type: InstantAction
-    event: !type:RatKingOrderActionEvent
+    event:
+      !type:RatKingOrderActionEvent
       type: Follow
+    priority: 6
 
 - type: entity
-  parent: BaseAction
   id: ActionRatKingOrderCheeseEm
   name: Cheese 'Em
   description: Command your army to attack whoever you point at.
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
@@ -398,18 +373,17 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: attack
-    priority: 7
-  - type: InstantAction
-    event: !type:RatKingOrderActionEvent
+    event:
+      !type:RatKingOrderActionEvent
       type: CheeseEm
+    priority: 7
 
 - type: entity
-  parent: BaseAction
   id: ActionRatKingOrderLoose
   name: Loose
   description: Command your army to act at their own will.
   components:
-  - type: Action
+  - type: InstantAction
     useDelay: 1
     icon:
       sprite: Interface/Actions/actions_rat_king.rsi
@@ -417,8 +391,7 @@
     iconOn:
       sprite: Interface/Actions/actions_rat_king.rsi
       state: loose
-    priority: 8
-  - type: InstantAction
     event:
       !type:RatKingOrderActionEvent
       type: Loose
+    priority: 8

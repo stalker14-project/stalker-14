@@ -56,16 +56,6 @@
     pullTime: 6
 
 - type: entity
-  parent: STClothingOuterBaseLarge
-  id: STClothingOuterBaseLargeToggleable
-  suffix: ST
-  abstract: true
-  components:
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-
-- type: entity
   parent: ClothingOuterArmorBasic
   id: STClothingOuterArmorBodyBase
   abstract: true
@@ -159,9 +149,9 @@
     quickEquip: false
     slots: [ HEAD ]
   - type: GroupExamine
-  - type: HideLayerClothing
-    slots:
-    - Hair
+  - type: Tag
+    tags:
+    - HidesHair
 
 - type: entity
   abstract: true
@@ -229,8 +219,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        startValue: 0.1
-        endValue: 2.0
+        minValue: 0.1
+        maxValue: 2.0
         isLooped: true
   - type: PowerCellSlot
     cellSlotId: cell_slot
@@ -252,7 +242,7 @@
   name: база РПС
   components:
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
     - 0,0,7,1
     blacklist:
@@ -297,8 +287,6 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
   - type: Clothing
     equipDelay: 2
     slots:

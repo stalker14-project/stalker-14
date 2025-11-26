@@ -4,8 +4,6 @@ using Content.Shared._Stalker.Psyonics.Actions;
 using Content.Shared._Stalker.Psyonics.Actions.Dizzy;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Systems;
 using Content.Shared.Drunk;
 using Content.Shared.StatusEffect;
 

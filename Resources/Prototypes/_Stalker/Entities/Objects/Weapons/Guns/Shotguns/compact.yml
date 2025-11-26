@@ -18,6 +18,10 @@
     angleIncrease: 20
     angleDecay: 100
     fireRate: 2
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
   - type: BallisticAmmoProvider
     capacity: 1
     whitelist:

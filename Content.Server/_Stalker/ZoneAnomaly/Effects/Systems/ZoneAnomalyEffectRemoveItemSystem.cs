@@ -2,8 +2,6 @@
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared.Actions;
-using Content.Shared.Actions.Components;
-using Content.Shared.Body.Components;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
 using Content.Shared.CartridgeLoader;
@@ -38,9 +36,6 @@ public sealed class ZoneAnomalyEffectRemoveItemSystem : EntitySystem
         {
             foreach (var trigger in args.Triggers)
             {
-                if (!HasComp<ContainerManagerComponent>(trigger))
-                    continue;
-
                 var items = GetRecursiveContainerElements(trigger);
                 items.Remove(trigger);
 

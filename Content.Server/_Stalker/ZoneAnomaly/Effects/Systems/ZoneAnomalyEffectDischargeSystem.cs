@@ -3,7 +3,6 @@ using Content.Server.Power.EntitySystems;
 using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
-using Content.Shared.Power.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 
@@ -61,7 +60,7 @@ public sealed class ZoneAnomalyEffectDischargeSystem : EntitySystem
         {
             if (battery != null)
             {
-                _batterySystem.UseCharge((item, battery), battery.CurrentCharge);
+                _batterySystem.UseCharge(item, battery.CurrentCharge, battery);
             }
         }
     }

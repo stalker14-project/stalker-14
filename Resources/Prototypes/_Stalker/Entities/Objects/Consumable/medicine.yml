@@ -29,11 +29,11 @@
 
 - type: stack
   id: psyblock
-  name: stack-psyblock
-  icon: { sprite: "_Stalker/Objects/Medicine/medkit/ai1.rsi", state: medkit-1 }
+  name: пси-блокада
+  icon: { sprite: "_Stalker/Objects/medicine.rsi", state: medkit-1 }
   spawn: psyblock
   maxCount: 2
-  #itemSize: 5 # Stalker-TODO: This field does not exist!
+  itemSize: 5
 
 - type: entity
   id: psyblock1
@@ -50,9 +50,9 @@
 
 - type: reagent
   id: radioprotect
-  name: reagent-name-radioprotect
+  name: радпротектор
   group: Medicine
-  desc: reagent-desc-radioprotect
+  desc: Таблетка содеращая смесь препаратов для защиты организма от радиации.
   physicalDesc: reagent-physical-desc-exhilarating
   flavor: stalkermed
   color: "#AE0101"
@@ -81,17 +81,19 @@
       - Brutepack
   - type: Item
     size: Tiny
-    sprite: _Stalker/Objects/medicine.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: radprotector
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.7, 0.7
     state: radprotector
-  - type: Edible
+  - type: Food
     forceFeedDelay: 1
     transferAmount: null
-    edible: Pill
+    eatMessage: food-swallow
+    useSound: /Audio/Items/pill.ogg
   - type: BadFood
   - type: FlavorProfile
     ignoreReagents: []
@@ -110,7 +112,7 @@
       behaviors:
       - !type:SpillBehavior
         solution: food
-        #transferForensics: true # Stalker-TODO: This field does not exist!
+        transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: SolutionContainerManager
@@ -125,11 +127,11 @@
 
 - type: reagent
   id: antirad
-  name: reagent-name-antirad
+  name: йодорадин
   group: Medicine
-  desc: reagent-desc-antirad
-  physicalDesc: reagent-physical-desc-salvation
-  flavor: salvation
+  desc: Смесь препаратов для нейтрализации и вывода радионуклидов.
+  physicalDesc: "как спасение"
+  flavor: bottledlightning
   color: "#AE0101"
   boilingPoint: 212.0
   meltingPoint: 170.0
@@ -142,8 +144,7 @@
             Radiation: -0.75
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: antirad
+        - !type:ReagentThreshold
           min: 31
         damage:
           types:
@@ -151,8 +152,7 @@
             Poison: 1.5
       - !type:Jitter
         conditions:
-        - !type:ReagentCondition
-          reagent: antirad
+        - !type:ReagentThreshold
           min: 31
 
 ####################################
@@ -169,17 +169,19 @@
       - Pill
   - type: Item
     size: Tiny
-    sprite: _Stalker/Objects/medicine.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: antirad
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.6, 0.6
     state: antirad
-  - type: Edible
+  - type: Food
     forceFeedDelay: 1
     transferAmount: null
-    edible: Pill
+    eatMessage: food-swallow
+    useSound: /Audio/Items/pill.ogg
   - type: BadFood
   - type: FlavorProfile
     ignoreReagents: []
@@ -198,7 +200,7 @@
       behaviors:
       - !type:SpillBehavior
         solution: food
-        #transferForensics: true  # Stalker-TODO: This field does not exist!
+        transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: SolutionContainerManager
@@ -226,8 +228,10 @@
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Item
     sprite: _Stalker/Objects/Medicine/steampack/antirad.rsi
+    scale: 0.7, 0.7
     size: Normal
   - type: SolutionContainerVisuals
+    scale: 0.7, 0.7
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: antiradpen_empty
@@ -250,11 +254,11 @@
 
 - type: reagent
   id: wakeupper
-  name: reagent-name-wakeupper
+  name: пробудофилин
   group: Medicine
-  desc: reagent-desc-wakeupper
-  physicalDesc: reagent-physical-desc-pain
-  flavor: pain
+  desc: Смесь препаратов для восстановления кровообращения и дыхания.
+  physicalDesc: "как боль"
+  flavor: bottledlightning
   color: "#ff718d"
   boilingPoint: 212.0
   meltingPoint: 170.0
@@ -268,16 +272,14 @@
             Bloodloss: -3
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: wakeupper
+        - !type:ReagentThreshold
           min: 21
         damage:
           types:
             Poison: 2
       - !type:Jitter
         conditions:
-        - !type:ReagentCondition
-          reagent: wakeupper
+        - !type:ReagentThreshold
           min: 1
 
 ####################################
@@ -294,17 +296,19 @@
       - Pill
   - type: Item
     size: Tiny
-    sprite: _Stalker/Objects/medicine.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: probud
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.6, 0.6
     state: probud
-  - type: Edible
+  - type: Food
     forceFeedDelay: 1
     transferAmount: null
-    edible: Pill
+    eatMessage: food-swallow
+    useSound: /Audio/Items/pill.ogg
   - type: BadFood
   - type: FlavorProfile
     ignoreReagents: []
@@ -323,7 +327,7 @@
       behaviors:
       - !type:SpillBehavior
         solution: food
-        #transferForensics: true # Stalker-TODO: This field does not exist!
+        transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: SolutionContainerManager
@@ -351,8 +355,10 @@
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Item
     sprite: _Stalker/Objects/Medicine/steampack/probud.rsi
+    scale: 0.7, 0.7
     size: Normal
   - type: SolutionContainerVisuals
+    scale: 0.7, 0.7
     maxFillLevels: 1
     changeColor: false
     emptySpriteName: probudpen_empty
@@ -375,11 +381,11 @@
 
 - type: reagent
   id: antishiz
-  name: reagent-name-antishiz
+  name: фуфломицин
   group: Medicine
-  desc: reagent-desc-antishiz
-  physicalDesc: reagent-physical-desc-safe
-  flavor: safe
+  desc: Смесь препаратов для того, чтобы уверять мозг, что ему всё равно на пси-излучение.
+  physicalDesc: "как безопасность"
+  flavor: bottledlightning
   color: "#AE0101"
   boilingPoint: 212.0
   meltingPoint: 170.0
@@ -392,16 +398,14 @@
             Psy: -3
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: antishiz
+        - !type:ReagentThreshold
           min: 11
         damage:
           types:
             Asphyxiation: 5
       - !type:Jitter
         conditions:
-        - !type:ReagentCondition
-          reagent: antishiz
+        - !type:ReagentThreshold
           min: 1
 
 ####################################
@@ -418,17 +422,19 @@
       - Pill
   - type: Item
     size: Tiny
-    sprite: _Stalker/Objects/medicine.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/medicine.rsi
+    state: shiza
   - type: RepositoryItem
     categoryName: Медицина
   - type: Sprite
     sprite: _Stalker/Objects/medicine.rsi
     scale: 0.6, 0.6
     state: shiza
-  - type: Edible
+  - type: Food
     forceFeedDelay: 1
     transferAmount: null
-    edible: Pill
+    eatMessage: food-swallow
+    useSound: /Audio/Items/pill.ogg
   - type: BadFood
   - type: FlavorProfile
     ignoreReagents: []
@@ -447,7 +453,7 @@
       behaviors:
       - !type:SpillBehavior
         solution: food
-        #transferForensics: true  # Stalker-TODO: This field does not exist!
+        transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: SolutionContainerManager
@@ -483,9 +489,9 @@
 
 - type: reagent
   id: ExperimentalStimulantsStalker
-  name: reagent-name-experimental-stimulants-stalker
+  name: эксперементальный стимулятор монолита
   group: Narcotics
-  desc: reagent-desc-experimental-stimulants-stalker
+  desc: Мощнейший стимулятор, который абсолютно не имеет побочных эффектов.
   physicalDesc: reagent-physical-desc-exhilarating
   flavor: bottledlightning
   color: "#AE0101"
@@ -495,25 +501,30 @@
     Narcotic:
       metabolismRate: 0.2 # lasts for 4 minutes instead of 5
       effects:
-      - !type:MovementSpeedModifier # nyoom
+      - !type:MovespeedModifier # nyoom
         conditions:
         walkSpeedModifier: 1.1
         sprintSpeedModifier: 1.1
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectStunned
+      - !type:GenericStatusEffect
+        conditions:
+        key: Stun
         time: 1
         type: Remove
-      - !type:ModifyKnockdown
+      - !type:GenericStatusEffect
+        conditions:
+        key: KnockedDown
         time: 1
         type: Remove
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectForcedSleeping
-        time: 1
+      - !type:GenericStatusEffect
+        conditions:
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
         type: Remove
     Medicine:
       metabolismRate: 0.25
       effects:
-        - !type:ModifyBleed
+        - !type:ModifyBleedAmount
           amount: -1.5
         - !type:ModifyBloodLevel
           amount: 3
@@ -533,21 +544,21 @@
         # stops CMOs from hypoing you with lexorin and sec from filling you with tranq shells
         - !type:AdjustReagent
           conditions:
-          - !type:ReagentCondition
+          - !type:ReagentThreshold
             reagent: Lexorin
             min: 1
           reagent: Lexorin
           amount: -1
         - !type:AdjustReagent
           conditions:
-          - !type:ReagentCondition
+          - !type:ReagentThreshold
             reagent: ChloralHydrate
             min: 1
           reagent: ChloralHydrate
           amount: -1
         - !type:AdjustReagent
           conditions:
-          - !type:ReagentCondition
+          - !type:ReagentThreshold
             reagent: Amatoxin
             min: 1
           reagent: Amatoxin
@@ -571,9 +582,9 @@
               Quantity: 30
 - type: reagent
   id: FermentedGlands
-  name: reagent-name-fermented-glands
+  name: ферментизированные железы
   group: Narcotics
-  desc: reagent-desc-fermented-glands
+  desc: Ферментизированные железы кабана, эффект неизвестен.
   physicalDesc: reagent-physical-desc-exhilarating
   flavor: bottledlightning
   color: "#AE0101"
@@ -583,14 +594,16 @@
     Narcotic:
       metabolismRate: 0.05 # lasts for 4 minutes instead of 5
       effects:
-        - !type:ModifyStatusEffect
-          effectProto: StatusEffectForcedSleeping
-          time: 3
+        - !type:GenericStatusEffect
+          conditions:
+          key: ForcedSleep
+          component: ForcedSleeping
+          refresh: false
           type: Remove
     Medicine:
       metabolismRate: 0.05
       effects:
-        - !type:ModifyBleed
+        - !type:ModifyBleedAmount
           amount: -1.5
         - !type:ModifyBloodLevel
           amount: 3
@@ -626,23 +639,24 @@
 
 - type: reagent
   id: StalkerMorphine
-  name: reagent-name-stalker-morphine
+  name: "Морфин"
   group: Narcotics
-  desc: reagent-desc-stalker-morphine
+  desc: "Морфин относиться к группе алкалоидов. Крайне популярен среди сталкеров ведь помогает от тупых ударов, однако передозировка влечёт за собой быструю смерть."
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#FAFAFA"
   metabolisms:
     Narcotic:
       effects:
-        - !type:MovementSpeedModifier
+        - !type:MovespeedModifier
           walkSpeedModifier: 1.1
           sprintSpeedModifier: 1.1
-        - !type:ModifyStatusEffect
-          effectProto: StatusEffectStunned
+        - !type:GenericStatusEffect
+          key: Stun
           time: 3
           type: Remove
-        - !type:ModifyKnockdown
+        - !type:GenericStatusEffect
+          key: KnockedDown
           time: 3
           type: Remove
         - !type:GenericStatusEffect
@@ -651,19 +665,17 @@
           time: 3
           type: Add
         - !type:Emote
-          emote: STLaugh # Stalker-changes
+          emote: Laugh
           probability: 0.005
         - !type:GenericStatusEffect
           key: TemporaryBlindness
           component: TemporaryBlindness
           conditions:
-          - !type:ReagentCondition
-            reagent: StalkerMorphine
+          - !type:ReagentThreshold
             min: 16
         - !type:HealthChange
           conditions:
-          - !type:ReagentCondition
-            reagent: StalkerMorphine
+          - !type:ReagentThreshold
             min: 16
           damage:
             types:
@@ -676,7 +688,7 @@
           factor: 0.2
         - !type:HealthChange
           conditions:
-          - !type:TotalDamageCondition
+          - !type:TotalDamage
             min: 0
             max: 120
           damage:
@@ -689,28 +701,31 @@
 
 - type: reagent
   id: StalkerAdrenalina
-  name: reagent-name-stalker-adrenalina
+  name: "Адреналин"
   group: Narcotics
-  desc: reagent-desc-stalker-adrenalina
+  desc: "Это биологически активное вещество, преимущественно гормоном и нейромедиатором, вырабатываемым надпочечниками человека и животных в стрессовых ситуациях или во время физической активности. Химическое название адреналина - эпинефрин."
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#FAFAFA"
   metabolisms:
     Narcotic:
       effects:
-        - !type:ModifyStatusEffect
-          effectProto: StatusEffectSeeingRainbow
-          time: 5
+        - !type:GenericStatusEffect
+          key: SeeingRainbows
+          component: SeeingRainbows
           type: Add
-        - !type:MovementSpeedModifier
+          time: 5
+          refresh: false
+        - !type:MovespeedModifier
           walkSpeedModifier: 1.3
           sprintSpeedModifier: 1.3
         - !type:Jitter
-        - !type:ModifyStatusEffect
-          effectProto: StatusEffectStunned
+        - !type:GenericStatusEffect
+          key: Stun
           time: 3
           type: Remove
-        - !type:ModifyKnockdown
+        - !type:GenericStatusEffect
+          key: KnockedDown
           time: 3
           type: Remove
         - !type:GenericStatusEffect
@@ -724,19 +739,17 @@
           type: Local
           probability: 0.05
         - !type:Emote
-          emote: STLaugh # Stalker-changes
+          emote: Laugh
           probability: 0.005
         - !type:GenericStatusEffect
           key: TemporaryBlindness
           component: TemporaryBlindness
           conditions:
-          - !type:ReagentCondition
-            reagent: StalkerAdrenalina
+          - !type:ReagentThreshold
             min: 16
         - !type:HealthChange
           conditions:
-          - !type:ReagentCondition
-            reagent: StalkerAdrenalina
+          - !type:ReagentThreshold
             min: 16
           damage:
             types:
@@ -749,7 +762,7 @@
           factor: 0.2
         - !type:HealthChange
           conditions:
-          - !type:TotalDamageCondition
+          - !type:TotalDamage
             min: 0
             max: 120
           damage:
@@ -762,9 +775,9 @@
 
 - type: reagent
   id: StalkerAquaTabs
-  name: reagent-name-stalker-aqua-tabs
+  name: "Активированый уголь"
   group: Narcotics
-  desc: reagent-desc-stalker-aqua-tabs
+  desc: "Таблетки, предназначенные для обеззараживания воды от вредных бактерий и вирусов. Приём по 2 таблетки."
   physicalDesc: reagent-physical-desc-translucent
   flavor: bitter
   color: "#00FFFF"
@@ -781,8 +794,7 @@
         factor: -3
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: StalkerAquaTabs
+        - !type:ReagentThreshold
           min: 31
         damage:
           types:
@@ -964,10 +976,10 @@
 
 - type: reagent
   id: SelfSteampackReagent
-  name: reagent-name-self-steampack
+  name: "стимулятор тип I"
   group: Medicine
-  desc: reagent-desc-self-steampack
-  physicalDesc: reagent-physical-desc-liquid
+  desc: "стимуляторный стимпак первого поколения"
+  physicalDesc: жидкий
   flavor: medicine
   color: "#76deaf"
   metabolisms:
@@ -982,13 +994,11 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentCondition
-          reagent: SelfSteampackReagent
+        - !type:ReagentThreshold
           min: 11
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: SelfSteampackReagent
+        - !type:ReagentThreshold
           min: 11
         damage:
           types:
@@ -1026,10 +1036,10 @@
 
 - type: reagent
   id: MilitarySteampackReagent
-  name: reagent-name-military-steampack
+  name: "стимулятор тип II"
   group: Medicine
-  desc: reagent-desc-military-steampack
-  physicalDesc: reagent-physical-desc-liquid
+  desc: "стимуляторный стимпак второго поколения"
+  physicalDesc: жидкий
   flavor: medicine
   color: "#76deaf"
   metabolisms:
@@ -1044,13 +1054,11 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentCondition
-          reagent: MilitarySteampackReagent
+        - !type:ReagentThreshold
           min: 6
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: MilitarySteampackReagent
+        - !type:ReagentThreshold
           min: 6
         damage:
           types:
@@ -1088,10 +1096,10 @@
 
 - type: reagent
   id: SciSteampackReagent
-  name: reagent-name-sci-steampack
+  name: "стимулятор тип III"
   group: Medicine
-  desc: reagent-desc-sci-steampack
-  physicalDesc: reagent-physical-desc-liquid
+  desc: "стимуляторный стимпак третьего поколения"
+  physicalDesc: жидкий
   flavor: medicine
   color: "#76deaf"
   metabolisms:
@@ -1106,13 +1114,11 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentCondition
-          reagent: SciSteampackReagent
+        - !type:ReagentThreshold
           min: 6
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: SciSteampackReagent
+        - !type:ReagentThreshold
           min: 6
         damage:
           types:
@@ -1177,23 +1183,25 @@
   suffix: Один
   components:
   - type: Stack
+    stackType: ThermoOintment
     count: 1
 
 - type: entity
-  id: ThermoOintment10
+  id: ThermoOintment10Lingering
   parent: ThermoOintment
-  suffix: 10
+  suffix: 10, Lingering
   components:
   - type: Stack
+    lingering: true
     count: 10
 
 - type: stack
   id: ThermoOintment
-  name: stack-ointment-thermo
+  name: термогель
   icon: { sprite: "/Textures/_Stalker/Objects/Counsumable/Medicine/newmed.rsi", state: ointment }
   spawn: ThermoOintment
   maxCount: 10
-  #itemSize: 2 # Stalker-TODO: This field does not exist!
+  itemSize: 2
 
 - type: Tag
   id: OintmentDressing
@@ -1236,11 +1244,11 @@
 
 - type: stack
   id: OintmentDressing
-  name: stack-ointment-dressing
+  name: мазевая повязка
   icon: {sprite: "/Textures/_Stalker/Objects/Counsumable/Medicine/newmed.rsi", state: regenerative-mesh}
   spawn: OintmentDressing
   maxCount: 5
-  #itemSize: 1 # Stalker-TODO: This field does not exist!
+  itemSize: 1
 
 - type: Tag
   id: SurgicalThread
@@ -1288,8 +1296,8 @@
 
 - type: stack
   id: SurgicalThread
-  name: stack-medicated-suture
+  name: medicated-suture
   icon: {sprite: "/Textures/_Stalker/Objects/Counsumable/Medicine/newmed.rsi", state: medicated-suture }
   spawn: SurgicalThread
   maxCount: 10
-  #itemSize: 1 # Stalker-TODO: This field does not exist!
+  itemSize: 1

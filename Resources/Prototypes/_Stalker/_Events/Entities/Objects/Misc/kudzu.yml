@@ -79,6 +79,7 @@
       ignoreWhitelist:
         tags:
         - Meat
+      delay: 0.5
     - type: SolutionContainerManager
       solutions:
         food:
@@ -86,7 +87,6 @@
           - ReagentId: Protein
             Quantity: 2
     - type: Respirator
-      gaspEmote: STGasp
       damage:
         types:
           Asphyxiation: 0.25

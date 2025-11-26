@@ -4,7 +4,7 @@ using Robust.Shared.Audio;
 
 namespace Content.Shared.Magic.Events;
 
-public sealed partial class RandomGlobalSpawnSpellEvent : InstantActionEvent
+public sealed partial class RandomGlobalSpawnSpellEvent : InstantActionEvent, ISpeakSpell
 {
     /// <summary>
     /// The list of prototypes this spell can spawn, will select one randomly
@@ -18,10 +18,6 @@ public sealed partial class RandomGlobalSpawnSpellEvent : InstantActionEvent
     [DataField]
     public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Magic/staff_animation.ogg");
 
-    /// <summary>
-    /// Should this Global spawn spell turn its targets into a Survivor Antagonist?
-    /// Ignores the caster for this.
-    /// </summary>
     [DataField]
-    public bool MakeSurvivorAntagonist = false;
+    public string? Speech { get; private set; }
 }

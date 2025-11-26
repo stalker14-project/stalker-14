@@ -5,7 +5,7 @@
   components:
     - type: ZoneAnomaly
       detectedLevel: 2
-      #canSpawnArtifact: false # Stalker-TODO: This field does not exist!
+      canSpawnArtifact: false
     - type: InteractionOutline
     - type: Physics
       bodyType: Static
@@ -47,9 +47,7 @@
         - type: SingularityDistortion
           intensity: -80
           falloffPower: 1.5
-        - type: EmitSoundOnTrigger
-          keysIn:
-          - stageTwo
+        - type: SoundOnTrigger
           sound:
             path: /Audio/Effects/Grenades/Supermatter/supermatter_loop.ogg
             params:

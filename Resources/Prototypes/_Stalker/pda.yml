@@ -1,23 +1,19 @@
 - type: entity
-  abstract: true
+  categories: [ HideSpawnMenu ]
+  # abstract: true
   parent: BaseItem
   id: BaseStalkerPDA
   name: PDA
   description: Personal Data Assistant.
   components:
-  - type: Appearance
-    appearanceDataInit:
-     enum.PdaVisuals.PdaType:
-       !type:String
-       stalker_on
   - type: Trash
     time: 600
+  - type: Appearance
   - type: Craftable
   - type: Sprite
     sprite: _Stalker/Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
-      state: "stalker_on"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -30,6 +26,7 @@
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: stalker_off
   - type: Pda
+    state: stalker_on
     paiSlot:
       priority: -2
       whitelist:
@@ -48,23 +45,15 @@
         components:
           - IdCard
   - type: Item
-    sprite: _Stalker/Objects/Devices/pda.rsi
-    storedRotation: -90
     size: Small
   - type: ContainerContainer
     containers:
-      cell_slot: !type:ContainerSlot {}
       PDA-id: !type:ContainerSlot {}
       PDA-pen: !type:ContainerSlot {}
       PDA-pai: !type:ContainerSlot {}
       Cartridge-Slot: !type:ContainerSlot {}
-      dogtag_slot: !type:ContainerSlot {}
-      cassette_slot: !type:ContainerSlot {}
       program-container: !type:Container
-        ents: []
   - type: ItemSlots
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
   - type: Clothing
     quickEquip: false
     slots:
@@ -87,7 +76,7 @@
   - type: ActivatableUI
     key: enum.PdaUiKey.Key
     singleUser: true
-    requireActiveHand: false
+    closeOnHandDeselect: false
   - type: UserInterface
     interfaces:
       enum.PdaUiKey.Key:
@@ -103,7 +92,17 @@
   - type: Input
     context: "human"
   - type: StationRecordKeyStorage
-  - type: PdaVisuals
+
+- type: entity
+  parent: BaseStalkerPDA
+  id: StalkerPDA
+  name: КПК Сталкера
+  description: Объединены общей сетью и позволяют обмениваться информацией.
+  components:
+  - type: Pda
+    state: stalker_on
+  - type: PdaBorderColor
+    borderColor: "#717059"
   - type: Tag
     tags:
     - Flashlight
@@ -124,27 +123,28 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        startValue: 0.1
-        endValue: 2.0
+        minValue: 0.1
+        maxValue: 2.0
         isLooped: true
-  - type: ToggleableVisuals
-    spriteLayer: "enum.PdaVisualLayers.Flashlight"
-  - type: ItemTogglePointLight
-  - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 3
-    netsync: false
-
-- type: entity
-  parent: BaseStalkerPDA
-  id: StalkerPDA
-  name: КПК Сталкера
-  description: Объединены общей сетью и позволяют обмениваться информацией.
-  components:
-  - type: PdaBorderColor
-    borderColor: "#717059"
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -155,7 +155,16 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagStalker
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: [ BaseStalkerPDA, GeigerCounter]
@@ -166,17 +175,57 @@
   components:
   - type: Unremoveable
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: seraphim_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        seraphim_on
+  - type: Pda
+    state: seraphim_on
   - type: PdaBorderColor
     borderColor: "#3CB371"
   - type: Geiger
     showControl: true
     showExamine: true
+  - type: Tag
+    tags:
+    - Flashlight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -187,7 +236,16 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagStalker
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
   - type: Armor
     armorClass: 0
     modifiers:
@@ -202,18 +260,59 @@
   description: Объединены общей сетью и позволяют обмениваться информацией.
   components:
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: anom_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        anom_on
+  - type: Pda
+    state: anom_on
   - type: HealthAnalyzer
     scanDelay: 3
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
   - type: PdaBorderColor
     borderColor: "#3c1a69"
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Flashlight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -224,7 +323,16 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagStalker
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: BaseStalkerPDA
@@ -233,18 +341,58 @@
   description: Объединены общей сетью и позволяют обмениваться информацией.
   components:
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: scientific_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        scientific_on
+  - type: Pda
+    state: scientific_on
   - type: HealthAnalyzer
     scanDelay: 0.5
     scanningEndSound:
       path: "/Audio/Items/Medical/healthscanner.ogg"
   - type: PdaBorderColor
     borderColor: "#094a83"
+  - type: Tag
+    tags:
+    - Flashlight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -255,7 +403,16 @@
         startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagOfficial
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: BaseStalkerPDA
@@ -266,12 +423,10 @@
   - type: PdaBorderColor
     borderColor: "#010101"
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: band_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        band_on
+  - type: Pda
+    state: band_on
   - type: Boombox
   - type: ItemSlots
     slots:
@@ -288,7 +443,55 @@
         startingItem: ClothingNeckDogtagBrigand
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagBrigand
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: BaseStalkerPDA
@@ -299,12 +502,52 @@
   - type: PdaBorderColor
     borderColor: "#7a0200"
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: dolg_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        dolg_on
+  - type: Pda
+    state: dolg_on
+  - type: Tag
+    tags:
+    - Flashlight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -315,12 +558,15 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagStalker
   - type: PointLight
     enabled: false
     radius: 5
     energy: 2.5
     netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: BaseStalkerPDA
@@ -331,12 +577,53 @@
   - type: PdaBorderColor
     borderColor: "#2d7019"
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
+    storedRotation: -90
     state: svo_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        svo_on
+  - type: Pda
+    state: svo_on
+  - type: Tag
+    tags:
+    - Flashlight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -347,7 +634,16 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagStalker
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: BaseStalkerPDA
@@ -358,12 +654,10 @@
   - type: PdaBorderColor
     borderColor: "#58d1ff"
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: cn_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        cn_on
+  - type: Pda
+    state: cn_on
   - type: HealthAnalyzer
     scanDelay: 0.5
     scanningEndSound:
@@ -373,6 +667,45 @@
     tags:
     - GPS
     - Flashlight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -383,7 +716,28 @@
         startingItem: ClothingNeckDogtagStalker
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagStalker
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
+  - type: UserInterface
+    interfaces:
+      enum.PdaUiKey.Key:
+        type: PdaBoundUserInterface
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+      enum.RingerUiKey.Key:
+        type: RingerBoundUserInterface
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+      enum.HealthAnalyzerUiKey.Key:
+        type: HealthAnalyzerBoundUserInterface
 
 
 - type: entity
@@ -395,13 +749,52 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: svo_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        svo_on
+  - type: Pda
+    state: svo_on
   - type: PdaBorderColor
     borderColor: "#285714"
+  - type: Tag
+    tags:
+    - Flashlight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
   - type: ItemSlots
     slots:
       cell_slot:
@@ -412,12 +805,15 @@
         startingItem: ClothingNeckDogtagOfficial
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagOfficial
   - type: PointLight
     enabled: false
     radius: 5
     energy: 2.5
     netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 
 - type: entity
@@ -429,12 +825,10 @@
   - type: PdaBorderColor
     borderColor: "#C0C0C0"
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: pilgrim_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pilgrim_on
+  - type: Pda
+    state: pilgrim_on
   - type: ItemSlots
     slots:
       cell_slot:
@@ -445,7 +839,55 @@
         startingItem: ClothingNeckDogtagPilgrim
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagPilgrim
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: BaseStalkerPDA
@@ -456,12 +898,10 @@
   - type: PdaBorderColor
     borderColor: "#797B80"
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: mono_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        mono_on
+  - type: Pda
+    state: mono_on
   - type: Boombox
   - type: ItemSlots
     slots:
@@ -478,7 +918,55 @@
         startingItem: ClothingNeckDogtagBrigand
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagBrigand
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
 
 - type: entity
   parent: BaseStalkerPDA
@@ -489,12 +977,10 @@
   - type: PdaBorderColor
     borderColor: "#010101"
   - type: Icon
+    sprite: _Stalker/Objects/Devices/pda.rsi
     state: band_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        band_on
+  - type: Pda
+    state: band_on
   - type: ItemSlots
     slots:
       cassette_slot:
@@ -510,7 +996,55 @@
         startingItem: ClothingNeckDogtagBrigand
         whitelist:
           tags:
-            - Dogtag
+            - ClothingNeckDogtagBrigand
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+      - !type:FadeBehaviour
+        id: radiating
+        maxDuration: 2.0
+        startValue: 3.0
+        endValue: 2.0
+        isLooped: true
+        reverseWhenFinished: true
+      - !type:PulseBehaviour
+        id: blinking
+        interpolate: Nearest
+        maxDuration: 1.0
+        minValue: 0.1
+        maxValue: 2.0
+        isLooped: true
+  - type: ToggleableLightVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+      PDA-id: !type:ContainerSlot {}
+      PDA-pen: !type:ContainerSlot {}
+      PDA-pai: !type:ContainerSlot {}
+      Cartridge-Slot: !type:ContainerSlot {}
+      program-container: !type:Container
+  - type: PointLight
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 3
+    netsync: false
+  - type: Appearance
+  - type: StealTarget
+    stealGroup: LAMP
   - type: Scope
     zoom: 1.25
     delay: 1

@@ -6,11 +6,7 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
-      time: 5h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 10h
-  weight: 5
+      time: 36000 #10 hrs
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
@@ -20,11 +16,10 @@
   - Brig
   - Armory
   - Maintenance
+  - Service
   - External
   - Detective
   - Cryogenics
-  - GenpopEnter
-  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -40,17 +35,3 @@
     back:
     - Flash
     - MagazinePistol
-
-- type: chameleonOutfit
-  id: WardenChameleonOutfit
-  job: Warden
-  hasMindShield: true
-  equipment:
-    head: ClothingHeadHatWarden
-    mask: ClothingMaskGasSecurity
-    outerClothing: ClothingOuterCoatWarden
-    jumpsuit: ClothingUniformJumpsuitWarden
-    neck: Dinkystar
-    belt: ClothingBeltSecurity
-    gloves: ClothingHandsGlovesCombat
-    shoes: ClothingShoesBootsJack

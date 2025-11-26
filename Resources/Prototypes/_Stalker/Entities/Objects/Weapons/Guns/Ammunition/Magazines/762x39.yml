@@ -3,7 +3,7 @@
   name: магазин 7,62x39 (10)
   description: Магазин 7.62х39 для АК. Вместимость пуль 10. Продают пустым.
   parent: Base545Mag10
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -11,6 +11,7 @@
     tags:
       - Magazine739
   - type: BallisticAmmoProvider
+    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -42,7 +43,7 @@
   name: магазин 7,62x39 (30)
   description: Магазин 7.62х39 для АК. Вместимость пуль 30. Продают пустым.
   parent: Base739Mag10
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.35
@@ -65,7 +66,7 @@
   name: магазин 7,62x39 (45)
   description: Магазин 7.62х39 для АК. Вместимость пуль 45. Продают пустым.
   parent: Base739Mag10
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.4
@@ -88,7 +89,7 @@
   name: барабан 7,62x39 (75)
   description: Барабан 7.62х39 для АК. Вместимость пуль 75. Продают пустым.
   parent: Base739Mag10
-  suffix: Stalker
+  tag: Stalker
   components:
   - type: STWeight
     self: 0.7

@@ -1,8 +1,7 @@
+using Content.Server.DeviceNetwork.Components;
 using Content.Server.DeviceNetwork.Components.Devices;
 using Content.Shared.DeviceNetwork;
-using Content.Shared.DeviceNetwork.Events;
 using Content.Shared.Interaction;
-using Content.Shared.DeviceNetwork.Components;
 
 namespace Content.Server.DeviceNetwork.Systems.Devices
 {
@@ -24,7 +23,7 @@ namespace Content.Server.DeviceNetwork.Systems.Devices
         /// </summary>
         private void OnInteracted(EntityUid uid, ApcNetSwitchComponent component, InteractHandEvent args)
         {
-            if (!TryComp(uid, out DeviceNetworkComponent? networkComponent)) return;
+            if (!EntityManager.TryGetComponent(uid, out DeviceNetworkComponent? networkComponent)) return;
 
             component.State = !component.State;
 
@@ -47,7 +46,7 @@ namespace Content.Server.DeviceNetwork.Systems.Devices
         /// </summary>
         private void OnPackedReceived(EntityUid uid, ApcNetSwitchComponent component, DeviceNetworkPacketEvent args)
         {
-            if (!TryComp(uid, out DeviceNetworkComponent? networkComponent) || args.SenderAddress == networkComponent.Address) return;
+            if (!EntityManager.TryGetComponent(uid, out DeviceNetworkComponent? networkComponent) || args.SenderAddress == networkComponent.Address) return;
             if (!args.Data.TryGetValue(DeviceNetworkConstants.Command, out string? command) || command != DeviceNetworkConstants.CmdSetState) return;
             if (!args.Data.TryGetValue(DeviceNetworkConstants.StateEnabled, out bool enabled)) return;
 

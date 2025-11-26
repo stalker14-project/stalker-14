@@ -7,16 +7,16 @@
   - type: Appearance
   - type: AccessReader
     access: [ [ "CentralCommand" ] ]
-    breakOnAccessBreaker: false
+    breakOnEmag: false
   - type: Lock
     lockOnClick: false
-    breakOnAccessBreaker: false
+    breakOnEmag: false
   - type: EntityStorage
     capacity: 1 # Its smol.
-  # - type: EntityTableContainerFill
-    # containers:
-      # entity_storage:
-        # id: PuddleSparkle # Ha! Cute. Unfortunately it despawns before the container is likely to open.
+    itemCanStoreMobs: false #  just leaving this here explicitly since I know at some point someone will want to use this to hold a mob. This also prevents it from becoming His Grace.
+  # - type: StorageFill
+    # contents:
+      # - id: PuddleSparkle # Ha! Cute. Unfortunately it despawns before the container is likely to open.
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container
@@ -71,18 +71,18 @@
     - state: flame
       visible: false
       shader: unshaded
-      map: ["enum.ToggleableVisuals.Layer"]
+      map: ["enum.ToggleVisuals.Layer"]
   - type: GenericVisualizer
     visuals:
-      enum.ToggleableVisuals.Enabled:
-        enum.ToggleableVisuals.Layer:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
           True: { visible: true }
           False: { visible: false }
   - type: EntityStorageVisuals
     stateBaseClosed: lamp
     stateDoorOpen: lamp
     stateDoorClosed: lamptop
-  - type: ToggleableVisuals
+  - type: ToggleableLightVisuals
     spriteLayer: flame
     inhandVisuals:
       left:
@@ -111,8 +111,6 @@
     solution: Welder
   - type: ExaminableSolution
     solution: Welder
-    heldOnly: true
-    exactVolume: true
   - type: SolutionRegeneration
     solution: Welder
     generated:

@@ -2,7 +2,7 @@
 
 - type: entity
   name: cannabis leaves
-  parent: ProduceBaseRuminant
+  parent: ProduceBase
   id: LeavesCannabis
   description: "Recently legalized in most galaxies."
   components:
@@ -10,7 +10,7 @@
     sprite: Objects/Specific/Hydroponics/cannabis.rsi
   - type: Produce
     seedId: cannabis
-  - type: Edible # Precursor to the one true edible
+  - type: Food
   - type: SolutionContainerManager
     solutions:
       food:
@@ -65,7 +65,7 @@
       - Smokable
   - type: Item
     size: Tiny
-
+    
 - type: entity
   name: rainbow cannabis leaves
   parent: LeavesCannabis
@@ -73,18 +73,14 @@
   description: "Is it supposed to be glowing like that...?"
   components:
   - type: Sprite
-    layers:
-    - sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
-      state: produce
-      shader: unshaded
+    sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
   - type: Produce
     seedId: rainbowCannabis
-  # disabled because 50 morbillion point lights still break the lighting engine
-  #- type: PointLight
-  #  radius: 1.5
-  #  energy: 2
-  #- type: RgbLightController
-  #  cycleRate: 0.6
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+  - type: RgbLightController
+    cycleRate: 0.6
   - type: SolutionContainerManager
     solutions:
       food:
@@ -167,7 +163,7 @@
 
 - type: entity
   name: tea leaves
-  parent: ProduceBaseRuminant
+  parent: ProduceBase
   id: LeavesTea
   description: "Can be dried out to make tea."
   components:
@@ -184,7 +180,7 @@
 
 - type: entity
   name: dried tea leaves
-  parent: ProduceBaseRuminant
+  parent: ProduceBase
   id: LeavesTeaDried
   description: "Dried tea leaves, ready to be ground."
   components:
@@ -200,7 +196,7 @@
 
 - type: entity
   name: tobacco leaves
-  parent: ProduceBaseRuminant
+  parent: ProduceBase
   id: LeavesTobacco
   description: "Dry them out to make some smokes."
   components:
@@ -208,12 +204,6 @@
     sprite: Objects/Specific/Hydroponics/tobacco.rsi
   - type: Produce
     seedId: tobacco
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: Nicotine
-          Quantity: 2
 
 - type: entity
   name: dried tobacco leaves

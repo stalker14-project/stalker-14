@@ -6,35 +6,32 @@
 
 - type: entity
   id: ActionStartFishing
-  name: Throw fishing lure
-  description: Throw lure from the fishing rod to catch something!
+  name: action-fishing-start
+  description: action-fishing-start-desc
   components:
-  - type: Action
-    useDelay: 2.5
-    itemIconStyle: BigAction
+  - type: WorldTargetAction
     icon:
       sprite: _Goobstation/Objects/Specific/Fishing/fishing_lure.rsi
       state: icon
     sound:
       path: /Audio/_Goobstation/Items/Fishing/fishing_rod_cast.ogg
-  - type: TargetAction
-    checkCanAccess: false
-    range: 15
-  - type: WorldTargetAction
+    itemIconStyle: BigAction
     event: !type:ThrowFishingLureActionEvent
+    useDelay: 2.5
+    range: 15
+    checkCanAccess: false
 
 - type: entity
   id: ActionStopFishing
-  name: Reel fishing rod
-  description: Reel your fishing rod to pull an object that it attached to, or stop fishing.
+  name: action-fishing-stop
+  description: action-fishing-stop-desc
   components:
-  - type: Action
+  - type: InstantAction
     icon:
       sprite: _Goobstation/Objects/Specific/Fishing/goon_rod.rsi
       state: icon
     sound:
       path: /Audio/_Goobstation/Items/Fishing/fishing_rod_reel.ogg
     itemIconStyle: NoItem
-  - type: InstantAction
     event: !type:PullFishingLureActionEvent
 

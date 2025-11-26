@@ -36,6 +36,9 @@ public sealed class SingularityAttractorSystem : EntitySystem
     /// <param name="frameTime">The time elapsed since the last set of updates.</param>
     public override void Update(float frameTime)
     {
+        if (!_timing.IsFirstTimePredicted)
+            return;
+
         var query = EntityQueryEnumerator<SingularityAttractorComponent, TransformComponent>();
         var now = _timing.CurTime;
         while (query.MoveNext(out var uid, out var attractor, out var xform))
@@ -61,7 +64,7 @@ public sealed class SingularityAttractorSystem : EntitySystem
 
         attractor.LastPulseTime = _timing.CurTime;
 
-        var mapPos = _transform.ToMapCoordinates(xform.Coordinates);
+        var mapPos = xform.Coordinates.ToMap(EntityManager, _transform);
 
         if (mapPos == MapCoordinates.Nullspace)
             return;
@@ -69,7 +72,7 @@ public sealed class SingularityAttractorSystem : EntitySystem
         var query = EntityQuery<SingularityComponent, RandomWalkComponent, TransformComponent>();
         foreach (var (singulo, walk, singuloXform) in query)
         {
-            var singuloMapPos = _transform.ToMapCoordinates(singuloXform.Coordinates);
+            var singuloMapPos = singuloXform.Coordinates.ToMap(EntityManager, _transform);
 
             if (singuloMapPos.MapId != mapPos.MapId)
                 continue;

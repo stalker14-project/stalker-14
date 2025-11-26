@@ -21,7 +21,8 @@ namespace Content.Client.Changelog
         public ChangelogWindow()
         {
             RobustXamlLoader.Load(this);
-            WindowTitle.AddStyleClass(StyleClass.LabelHeading);
+            WindowTitle.AddStyleClass(StyleBase.StyleClassLabelHeading);
+            Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSpace;
         }
 
         protected override void Opened()
@@ -54,7 +55,7 @@ namespace Content.Client.Changelog
             // Changelog is not kept in memory so load it again.
             var changelogs = await _changelog.LoadChangelog();
 
-            Tabs.RemoveAllChildren();
+            Tabs.DisposeAllChildren();
 
             var i = 0;
             foreach (var changelog in changelogs)
@@ -66,7 +67,8 @@ namespace Content.Client.Changelog
                 Tabs.SetTabTitle(i++, Loc.GetString($"changelog-tab-title-{changelog.Name}"));
             }
 
-            VersionLabel.Text = _changelog.GetClientVersion();
+            var version = typeof(ChangelogWindow).Assembly.GetName().Version ?? new Version(1, 0);
+            VersionLabel.Text = Loc.GetString("changelog-version-tag", ("version", version.ToString()));
 
             TabsUpdated();
         }
@@ -111,15 +113,15 @@ namespace Content.Client.Changelog
     }
 
     [UsedImplicitly, AnyCommand]
-    public sealed class ChangelogCommand : LocalizedCommands
+    public sealed class ChangelogCommand : IConsoleCommand
     {
-        [Dependency] private readonly IUserInterfaceManager _uiManager = default!;
+        public string Command => "changelog";
+        public string Description => "Opens the changelog";
+        public string Help => "Usage: changelog";
 
-        public override string Command => "changelog";
-
-        public override void Execute(IConsoleShell shell, string argStr, string[] args)
+        public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            _uiManager.GetUIController<ChangelogUIController>().OpenWindow();
+            IoCManager.Resolve<IUserInterfaceManager>().GetUIController<ChangelogUIController>().OpenWindow();
         }
     }
 }

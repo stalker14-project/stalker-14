@@ -13,7 +13,6 @@
   name: рандомная аномалия (1% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -35,7 +34,6 @@
   name: рандомная аномалия (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -59,7 +57,6 @@
   name: рандомная аномалия (25% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -85,7 +82,6 @@
   name: рандомная редкая аномалия (1% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -107,7 +103,6 @@
   name: рандомная редкая аномалия (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -129,7 +124,6 @@
   name: рандомная редкая аномалия (25% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -152,7 +146,6 @@
   name: спавнер воронка (1 + 1% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -167,13 +160,11 @@
       - ZoneAnomalyGravi
     chance: 0.01
     offset: 0.0
-
 - type: entity
   id: SpawnerVoronka10
   name: спавнер воронка (10 + 5% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -188,13 +179,11 @@
       - ZoneAnomalyGravi
     chance: 0.1
     offset: 0.0
-
 - type: entity
   id: SpawnerVoronka25
   name: спавнер воронка (25 + 10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -209,13 +198,11 @@
       - ZoneAnomalyGravi
     chance: 0.25
     offset: 0.0
-
 - type: entity
   id: SpawnerVoronka50
   name: спавнер воронка (50 + 10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -230,14 +217,12 @@
       - ZoneAnomalyGravi
     chance: 0.5
     offset: 0.0
-
 # Электра
 - type: entity
   id: SpawnerElectra1
   name: спавнер электра (1% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -249,13 +234,11 @@
       - ZoneAnomalyElectra
     chance: 0.01
     offset: 0.0
-
 - type: entity
   id: SpawnerElectra10
   name: спавнер электра (10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -267,13 +250,11 @@
       - ZoneAnomalyElectra
     chance: 0.1
     offset: 0.0
-
 - type: entity
   id: SpawnerElectra25
   name: спавнер электра (25% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -285,13 +266,11 @@
       - ZoneAnomalyElectra
     chance: 0.25
     offset: 0.0
-
 - type: entity
   id: SpawnerElectra50
   name: спавнер электра (50% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -303,14 +282,12 @@
       - ZoneAnomalyElectra
     chance: 0.5
     offset: 0.0
-
 # Жарка
 - type: entity
   id: SpawnerJarka1
   name: спавнер жарка (1 + 1% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -322,13 +299,11 @@
       - ZoneAnomalyJarka
     chance: 0.01
     offset: 0.0
-
 - type: entity
   id: SpawnerJarka10
   name: спавнер жарка (10 + 5% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -340,13 +315,11 @@
       - ZoneAnomalyJarka
     chance: 0.1
     offset: 0.0
-
 - type: entity
   id: SpawnerJarka25
   name: спавнер жарка (25% + 10% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -358,13 +331,11 @@
       - ZoneAnomalyJarka
     chance: 0.25
     offset: 0.0
-
 - type: entity
   id: SpawnerJarka50
   name: спавнер жарка (50% + 15% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -376,14 +347,12 @@
       - ZoneAnomalyJarka
     chance: 0.5
     offset: 0.0
-
 # Трамплин и Эпицентр
 - type: entity
   id: SpawnerEpicentre25
   name: спавнер Эпицентр (25% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -395,13 +364,11 @@
       - AnomSEpicentre
     chance: 0.25
     offset: 0.0
-
 - type: entity
   id: SpawnerTramplin25
   name: спавнер трамплин (25% шанс появления)
   suffix: Stalker
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -413,14 +380,12 @@
       - ZoneAnomalySpringboard
     chance: 0.25
     offset: 0.0
-
 # Жарка без артефактов
 - type: entity
   id: SpawnerJarka1NoArts
   name: спавнер аномалии жарка (1% шанс появления)
   suffix: Stalker, без артефактов
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -432,13 +397,11 @@
       - ZoneAnomalyJarkaNoArts
     chance: 0.01
     offset: 0.0
-
 - type: entity
   id: SpawnerJarka10NoArts
   name: спавнер аномалии жарка (10% шанс появления)
   suffix: Stalker, без артефактов
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -450,13 +413,11 @@
       - ZoneAnomalyJarkaNoArts
     chance: 0.05
     offset: 0.0
-
 - type: entity
   id: SpawnerJarka25NoArts
   name: спавнер аномалии жарка (25% шанс появления)
   suffix: Stalker, без артефактов
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -468,13 +429,11 @@
       - ZoneAnomalyJarkaNoArts
     chance: 0.12
     offset: 0.0
-
 - type: entity
   id: SpawnerJarka50NoArts
   name: спавнер аномалии жарка (50% шанс появления)
   suffix: Stalker, без артефактов
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -486,13 +445,11 @@
       - ZoneAnomalyJarkaNoArts
     chance: 0.3
     offset: 0.0
-
 - type: entity
   id: SpawnerJarka100NoArts
   name: спавнер аномалии жарка (100% шанс появления)
   suffix: Stalker, без артефактов
   parent: FlexibleMarker
-  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:

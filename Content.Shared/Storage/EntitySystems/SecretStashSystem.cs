@@ -1,21 +1,20 @@
-using Content.Shared.Construction.EntitySystems;
-using Content.Shared.Damage.Systems;
+using Content.Shared.Popups;
+using Content.Shared.Storage.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Interaction;
 using Content.Shared.Item;
-using Content.Shared.Materials;
-using Content.Shared.Nutrition;
-using Content.Shared.Popups;
-using Content.Shared.Storage.Components;
-using Content.Shared.Tools.EntitySystems;
-using Content.Shared.Verbs;
-using Content.Shared.Whitelist;
+using Robust.Shared.Containers;
+using Content.Shared.Interaction;
+using Content.Shared.Tools.Systems;
+using Content.Shared.Examine;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
+using Content.Shared.Verbs;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Tools.EntitySystems;
+using Content.Shared.Whitelist;
+using Content.Shared.Materials;
 using Robust.Shared.Map;
 
 namespace Content.Shared.Storage.EntitySystems;
@@ -32,7 +31,6 @@ public sealed class SecretStashSystem : EntitySystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ToolOpenableSystem _toolOpenableSystem = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
 
     public override void Initialize()
     {
@@ -40,8 +38,7 @@ public sealed class SecretStashSystem : EntitySystem
         SubscribeLocalEvent<SecretStashComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<SecretStashComponent, DestructionEventArgs>(OnDestroyed);
         SubscribeLocalEvent<SecretStashComponent, GotReclaimedEvent>(OnReclaimed);
-        SubscribeLocalEvent<SecretStashComponent, InteractUsingEvent>(OnInteractUsing, after: new[] { typeof(ToolOpenableSystem), typeof(AnchorableSystem) });
-        SubscribeLocalEvent<SecretStashComponent, FullyEatenEvent>(OnFullyEaten);
+        SubscribeLocalEvent<SecretStashComponent, InteractUsingEvent>(OnInteractUsing, after: new[] { typeof(ToolOpenableSystem) });
         SubscribeLocalEvent<SecretStashComponent, InteractHandEvent>(OnInteractHand);
         SubscribeLocalEvent<SecretStashComponent, GetVerbsEvent<InteractionVerb>>(OnGetVerb);
     }
@@ -59,14 +56,6 @@ public sealed class SecretStashSystem : EntitySystem
     private void OnReclaimed(Entity<SecretStashComponent> entity, ref GotReclaimedEvent args)
     {
         DropContentsAndAlert(entity, args.ReclaimerCoordinates);
-    }
-
-    private void OnFullyEaten(Entity<SecretStashComponent> entity, ref FullyEatenEvent args)
-    {
-        // TODO: When newmed is finished should do damage to teeth (Or something like that!)
-        var damage = entity.Comp.DamageEatenItemInside;
-        if (HasItemInside(entity) && damage != null)
-            _damageableSystem.TryChangeDamage(args.User, damage, true);
     }
 
     private void OnInteractUsing(Entity<SecretStashComponent> entity, ref InteractUsingEvent args)
@@ -107,7 +96,7 @@ public sealed class SecretStashSystem : EntitySystem
 
         // check if item is too big to fit into secret stash or is in the blacklist
         if (_item.GetSizePrototype(itemComp.Size) > _item.GetSizePrototype(entity.Comp.MaxItemSize) ||
-            _whitelistSystem.IsWhitelistPass(entity.Comp.Blacklist, itemToHideUid))
+            _whitelistSystem.IsBlacklistPass(entity.Comp.Blacklist, itemToHideUid))
         {
             var msg = Loc.GetString("comp-secret-stash-action-hide-item-too-big",
                 ("item", itemToHideUid), ("stashname", GetStashName(entity)));

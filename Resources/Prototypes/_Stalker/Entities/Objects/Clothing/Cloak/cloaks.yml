@@ -144,8 +144,8 @@
   parent: STClothingCapeBase
   id: STClothingNeckExoskeletonSci
   suffix: Stalker
-  name: Экзоскелет грузового типа
-  description: Разработанный учеными НИИ, данный экзоскелет был для эффективного перемещения больших объемов грузов без использования транспорта. Никакой защиты против аномалий, мутантов или пуль нет.
+  name: ent-STClothingNeckExoskeletonSci
+  description: .desc
   components:
   - type: STWeight
     self: 10
@@ -163,9 +163,7 @@
     drawRate: 0.4
   - type: ContainerContainer
     containers:
-      cell_slot: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
+      cell_slot: !type:ContainerSlot
   - type: ItemSlots
     slots:
       cell_slot:

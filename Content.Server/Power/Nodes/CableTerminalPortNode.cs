@@ -1,6 +1,5 @@
 using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.Nodes;
-using Content.Shared.NodeContainer;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 
@@ -21,11 +20,9 @@ namespace Content.Server.Power.Nodes
             var gridIndex = grid.TileIndicesFor(xform.Coordinates);
 
             var nodes = NodeHelpers.GetCardinalNeighborNodes(nodeQuery, grid, gridIndex, includeSameTile: false);
-            foreach (var (dir, node) in nodes)
+            foreach (var (_, node) in nodes)
             {
-                if (node is CableTerminalNode
-                    && dir != Direction.Invalid
-                    && xformQuery.GetComponent(node.Owner).LocalRotation.GetCardinalDir().GetOpposite() == dir)
+                if (node is CableTerminalNode)
                     yield return node;
             }
         }

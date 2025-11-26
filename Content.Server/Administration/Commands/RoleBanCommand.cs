@@ -7,8 +7,6 @@ using Content.Shared.Database;
 using Content.Shared.Roles;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
-using Robust.Shared.Prototypes;
-
 namespace Content.Server.Administration.Commands;
 
 [AdminCommand(AdminFlags.Ban)]
@@ -17,10 +15,6 @@ public sealed class RoleBanCommand : IConsoleCommand
     [Dependency] private readonly IPlayerLocator _locator = default!;
     [Dependency] private readonly IBanManager _bans = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
-
-    private ISawmill? _sawmill;
 
     public string Command => "roleban";
     public string Description => Loc.GetString("cmd-roleban-desc");
@@ -29,14 +23,12 @@ public sealed class RoleBanCommand : IConsoleCommand
     public async void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         string target;
-        string role;
+        string job;
         string reason;
         uint minutes;
-
         if (!Enum.TryParse(_cfg.GetCVar(CCVars.RoleBanDefaultSeverity), out NoteSeverity severity))
         {
-            _sawmill ??= _log.GetSawmill("admin.role_ban");
-            _sawmill.Warning("Role ban severity could not be parsed from config! Defaulting to medium.");
+            Logger.WarningS("admin.role_ban", "Role ban severity could not be parsed from config! Defaulting to medium.");
             severity = NoteSeverity.Medium;
         }
 
@@ -44,33 +36,30 @@ public sealed class RoleBanCommand : IConsoleCommand
         {
             case 3:
                 target = args[0];
-                role = args[1];
+                job = args[1];
                 reason = args[2];
                 minutes = 0;
-
                 break;
             case 4:
                 target = args[0];
-                role = args[1];
+                job = args[1];
                 reason = args[2];
 
                 if (!uint.TryParse(args[3], out minutes))
                 {
                     shell.WriteError(Loc.GetString("cmd-roleban-minutes-parse", ("time", args[3]), ("help", Help)));
-
                     return;
                 }
 
                 break;
             case 5:
                 target = args[0];
-                role = args[1];
+                job = args[1];
                 reason = args[2];
 
                 if (!uint.TryParse(args[3], out minutes))
                 {
                     shell.WriteError(Loc.GetString("cmd-roleban-minutes-parse", ("time", args[3]), ("help", Help)));
-
                     return;
                 }
 
@@ -84,7 +73,6 @@ public sealed class RoleBanCommand : IConsoleCommand
             default:
                 shell.WriteError(Loc.GetString("cmd-roleban-arg-count"));
                 shell.WriteLine(Help);
-
                 return;
         }
 
@@ -92,19 +80,13 @@ public sealed class RoleBanCommand : IConsoleCommand
         if (located == null)
         {
             shell.WriteError(Loc.GetString("cmd-roleban-name-parse"));
-
             return;
         }
 
         var targetUid = located.UserId;
         var targetHWid = located.LastHWId;
 
-        if (_proto.HasIndex<JobPrototype>(role))
-            _bans.CreateRoleBan<JobPrototype>(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, role, minutes, severity, reason, DateTimeOffset.UtcNow);
-        else if (_proto.HasIndex<AntagPrototype>(role))
-            _bans.CreateRoleBan<AntagPrototype>(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, role, minutes, severity, reason, DateTimeOffset.UtcNow);
-        else
-            shell.WriteError(Loc.GetString("cmd-roleban-job-parse", ("job", role)));
+        _bans.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, DateTimeOffset.UtcNow);
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

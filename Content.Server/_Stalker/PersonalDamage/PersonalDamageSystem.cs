@@ -1,4 +1,3 @@
-using Content.Server.Damage.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
 using Robust.Shared.Map.Components;

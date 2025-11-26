@@ -46,8 +46,8 @@
     anchored: True
   - type: InteractionOutline
   - type: Clickable
-  # - type: Physics
-    # bodyType: Static
+  - type: Physics
+    bodyType: Static
   - type: Sprite # I think you'll need to add an invisibility here
     layers:
     - state: portal-red
@@ -65,7 +65,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 5
 
 - type: entity
@@ -79,7 +79,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 5
 
 - type: entity
@@ -93,7 +93,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -107,7 +107,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -121,7 +121,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -135,7 +135,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 # - type: entity
@@ -149,7 +149,7 @@
       # allowAll: true
       # cooldownEnabled: true
       # cooldownTime: 5
-      # #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      # godmodeCooldown: 5
       # time: 60
 
 - type: entity
@@ -163,7 +163,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -177,7 +177,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -191,7 +191,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -205,7 +205,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -219,7 +219,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -233,7 +233,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -247,7 +247,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -261,7 +261,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -275,7 +275,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -289,7 +289,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -303,7 +303,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -317,7 +317,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 60
 
 - type: entity
@@ -341,7 +341,7 @@
       allowAll: true
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 5
 
 - type: entity
@@ -355,7 +355,7 @@
       allowAll: false
       cooldownEnabled: true
       cooldownTime: 5
-      #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+      godmodeCooldown: 5
       time: 5
 
 - type: entity
@@ -369,7 +369,7 @@
     allowAll: true
     cooldownEnabled: true
     cooldownTime: 5
-    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+    godmodeCooldown: 5
     time: 5
 
 - type: entity
@@ -383,5 +383,5 @@
     allowAll: false
     cooldownEnabled: true
     cooldownTime: 5
-    #godmodeCooldown: 5 # Stalker-TODO: This field does not exist!
+    godmodeCooldown: 5
     time: 5

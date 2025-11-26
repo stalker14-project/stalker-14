@@ -7,10 +7,10 @@
 public sealed partial class StalkerPortalPersonalComponent : Component
 {
     //Портал из которого игрок пришел в сталкер арену
-    [ViewVariables]
+    [DataField("ReturnPortal")]
     public string ReturnPortal = string.Empty;
 
     //Ентити айди портала из которого игрок пришел в сталкер арену, необоходимо для возвращения обратно
-    [ViewVariables]
+    [DataField("ReturnPortalEntity")]
     public EntityUid ReturnPortalEntity;
 }

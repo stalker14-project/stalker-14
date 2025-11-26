@@ -1,8 +1,6 @@
-﻿using Robust.Shared.Prototypes;
+﻿namespace Content.Server._Stalker.Teleports.StalkerBandPortal;
 
-namespace Content.Server._Stalker.Teleports.StalkerBandPortal;
-
-[RegisterComponent, EntityCategory("StSkipSpawnTest")]
+[RegisterComponent]
 public sealed partial class StalkerBandTeleportComponent : Component
 {
     [DataField(required: true)]

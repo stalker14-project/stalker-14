@@ -7,19 +7,19 @@ using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.Characteristics.Training
 {
-    public sealed class CharacteristicTrainingSystem : EntitySystem
+    public class CharacteristicTrainingSystem : EntitySystem
     {
         [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
         [Dependency] private readonly PopupSystem _popup = default!;
         [Dependency] private readonly ActionBlockerSystem _actionBlockerSystem = default!;
         [Dependency] private readonly CharacteristicContainerSystem _characteristicSystem = default!;
-
+        [Dependency] private readonly CharacteristicSystem _characteristic = default!;
         public override void Initialize()
         {
             base.Initialize();
 
             SubscribeLocalEvent<CharacteristicTrainingComponent, GetVerbsEvent<InteractionVerb>>(AddTrainingVerb);
-            SubscribeLocalEvent<CharacteristicTrainingComponent, InteractHandEvent>(OnInteract);
+            SubscribeLocalEvent<CharacteristicTrainingComponent, AfterInteractEvent>(OnInteract);
             SubscribeLocalEvent<CharacteristicTrainingComponent, TrainingCompleteDoAfterEvent>(OnDoAfter);
         }
 
@@ -28,7 +28,7 @@ namespace Content.Server._Stalker.Characteristics.Training
             if (!args.CanAccess || !args.CanInteract || !_actionBlockerSystem.CanMove(args.User))
                 return;
 
-            if (!HasComp<CharacteristicContainerComponent>(args.User))
+            if (!TryComp(args.User, out CharacteristicContainerComponent? containerComponent))
                 return;
 
             var argsDoAfter = new DoAfterArgs(EntityManager, args.User, component.Delay, new TrainingCompleteDoAfterEvent(), uid, uid)
@@ -43,23 +43,16 @@ namespace Content.Server._Stalker.Characteristics.Training
             // TODO VERBS ICON add a climbing icon?
             args.Verbs.Add(new InteractionVerb
             {
-                Act = () =>
-                {
-                    if (CanTrain(uid, args.User, component))
-                        _doAfter.TryStartDoAfter(argsDoAfter);
-                },
+                Act = () => _doAfter.TryStartDoAfter(argsDoAfter),
                 Text = Loc.GetString("st-comp-training-start")
             });
         }
-        private void OnInteract(EntityUid uid, CharacteristicTrainingComponent component, InteractHandEvent args)
+        private void OnInteract(EntityUid uid, CharacteristicTrainingComponent component, AfterInteractEvent args)
         {
             if (args.Handled)
                 return;
 
-            if (args.Target is not { Valid: true } target || !HasComp<CharacteristicTrainingComponent>(target))
-                return;
-
-            if (!CanTrain(uid, args.User, component))
+            if (!args.CanReach || args.Target is not { Valid: true } target || !HasComp<CharacteristicTrainingComponent>(target))
                 return;
 
             var argsDoAfter = new DoAfterArgs(EntityManager, args.User, component.Delay, new TrainingCompleteDoAfterEvent(), uid, uid)
@@ -83,49 +76,33 @@ namespace Content.Server._Stalker.Characteristics.Training
 
             if (!TryComp(user, out CharacteristicContainerComponent? trainee))
                 return;
-            var entity = (user, trainee);
+            if (component is null)
+                return;
+            var entity = (uid, trainee);
             if (!_characteristicSystem.TryGetCharacteristic(entity, component.Characteristic, out var characteristic) && characteristic == null)
                 return;
+            int value = characteristic.Value.Level;
 
-            var increase = characteristic.Value.Level + component.Increase;
+            // Component may have constrains on what values it can handle
+            if (value >= component.MaxValue || value < component.MinValue)
+            {
+                _popup.PopupEntity(Loc.GetString("st-find-better-equipment"), uid);
+                return;
+            }
+            int increase = value + component.Increase;
 
-            _characteristicSystem.TrySetCharacteristic(entity, component.Characteristic, increase, DateTime.UtcNow);
+            bool canTrain = _characteristicSystem.IsTrainTimeConditionMet(entity, component.Characteristic).GetAwaiter().GetResult();
+            if (!canTrain)
+            {
+                _popup.PopupEntity(Loc.GetString("st-already-trained-today"), uid);
+                return;
+            }
+
+            _characteristicSystem.TrySetCharacteristic((uid, trainee), component.Characteristic, increase, DateTime.UtcNow);
+            Dirty(uid, component);
 
             args.Handled = true;
         }
 
-        private bool CanTrain(EntityUid uid, EntityUid user, CharacteristicTrainingComponent component)
-        {
-            if (!TryComp(user, out CharacteristicContainerComponent? trainee))
-                return false;
-
-            var entity = (user, trainee);
-            if (!_characteristicSystem.TryGetCharacteristic(entity, component.Characteristic, out var characteristic) && characteristic == null)
-                return false;
-
-            var canTrain = _characteristicSystem.IsTrainTimeConditionMet(entity, component.Characteristic).GetAwaiter().GetResult();
-            if (!canTrain)
-            {
-                _popup.PopupEntity(Loc.GetString("st-already-trained-today"), uid);
-                return false;
-            }
-
-            var currentValue = characteristic.Value.Level;
-
-            // Component may have constrains on what values it can handle
-            if (currentValue < component.MinValue)
-            {
-                _popup.PopupEntity(Loc.GetString("st-equipment-too-hard"), uid);
-                return false;
-            }
-
-            if (currentValue >= component.MaxValue)
-            {
-                _popup.PopupEntity(Loc.GetString("st-equipment-too-easy"), uid);
-                return false;
-            }
-
-            return true;
-        }
     }
 }
