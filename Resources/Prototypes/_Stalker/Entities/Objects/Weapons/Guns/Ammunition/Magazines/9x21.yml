@@ -1,0 +1,112 @@
+# Магазины СР-1
+
+- type: entity
+  id: SR1Mag
+  name: магазин СР-1 (18)
+  description: Магазин на СР-1 "Гюрза". Вместимость пуль 18. Продают пустым.
+  parent: BaseGlockMag10
+  suffix: Stalker
+  components:
+    - type: Tag
+      tags:
+        - MagazineSR1
+    - type: STWeight
+      self: 0.2
+    - type: BallisticAmmoProvider
+      mayTransfer: true
+      whitelist:
+        tags:
+          - STCartridge921
+      capacity: 18
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,0
+    - type: Sprite
+      scale: 0.8, 0.8
+      sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/glock/17.rsi
+      layers:
+        - state: base
+          map: ["enum.GunVisualLayers.Base"]
+        - state: mag-1
+          map: ["enum.GunVisualLayers.Mag"]
+
+# Магазины 9х21 Вереска
+
+- type: entity
+  id: SR2MMag20
+  name: магазин СР-2М "Вереск" 9х21 (20)
+  description: Магазин 9x21 мм для СР-2М. Вместимость пуль 20. Продают пустым.
+  parent: BaseMP5Mag
+  suffix: Stalker
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Tag
+    tags:
+      - MagazineSR2M
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - STCartridge921
+    capacity: 20
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,0,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/pp-91.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: SR2MMag30
+  name: магазин СР-2М "Вереск" 9х21 (30)
+  description: Магазин 9x21 мм для СР-2М. Вместимость пуль 30. Продают пустым.
+  parent: BaseMP5Mag
+  suffix: Stalker
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Tag
+    tags:
+      - MagazineSR2M
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - STCartridge921
+    capacity: 30
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,0,1
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    scale: 0.8, 0.8
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Magazines/919/pp-91.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
