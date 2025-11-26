@@ -8,13 +8,12 @@
   components:
   - type: NPCRetaliation
     attackMemoryLength: 10
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: Battery
+  - type: PredictedBattery
     maxCharge: 100
     startingCharge: 100
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 2
   - type: Gun
@@ -45,10 +44,10 @@
         layer:
         - MobLayer
   - type: Sprite
+    sprite: /Textures/_Stalker/Mobs/Military/PSZ.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: alive
-      sprite: /Textures/_Stalker/Mobs/Military/PSZ.rsi
   - type: DamageStateVisuals
     states:
       Alive:
