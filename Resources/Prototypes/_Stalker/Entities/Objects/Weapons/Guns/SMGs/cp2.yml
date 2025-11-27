@@ -76,3 +76,83 @@
           whitelist:
             tags:
               - STCartridge919
+
+# 9x21
+
+- type: entity
+  name: СР-2М «Вереск» 9х21
+  suffix: ST, Скин
+  parent: STBaseWeaponSMG
+  id: STWeaponSMGStalkerCP2Veresk921
+  description: Компактный пистолет-пулемет, разработанный под мощный бронебойный патрон 9x21мм по заказу ФСБ и ФСО РФ. Теперь с оригинальным калибром!
+  components:
+    - type: STWeight
+      self: 2.2
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2.rsi
+      size: Large
+      shape:
+        - 0,0,5,1
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2.rsi
+    - type: Gun
+      minAngle: 40
+      maxAngle: 70
+      angleIncrease: 1.2
+      angleDecay: 5
+      fireRate: 9.5
+      soundGunshot:
+        path: /Audio/_Stalker/Effects/Guns/919.ogg
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: SR2MMag30
+          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - MagazineSR2M
+        gun_chamber:
+          name: Chamber
+          startingItem: STCartridge921PGJ
+          priority: 1
+          whitelist:
+            tags:
+              - STCartridge921PGJ
+
+- type: entity
+  name: СР-2М «Вереск» серафимов 9x21
+  parent: STWeaponSMGStalkerCP2Veresk921
+  id: STWeaponSMGStalkerCP2VereskSera921
+  components:
+    - type: Item
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2sera.rsi
+      size: Large
+      shape:
+        - 0,0,5,1
+    - type: Sprite
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2sera.rsi
+    - type: Clothing
+      sprite: _Stalker/Objects/Weapons/Guns/SMGs/cp2sera.rsi
+    - type: ItemSlots
+      slots:
+        gun_magazine:
+          name: Magazine
+          startingItem: SR2MMag30
+          insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+          ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+          priority: 4
+          whitelist:
+            tags:
+              - MagazineSR2M
+        gun_chamber:
+          name: Chamber
+          startingItem: STCartridge921PGJ
+          priority: 1
+          whitelist:
+            tags:
+              - STCartridge921PGJ

@@ -1,0 +1,55 @@
+- type: entity
+  abstract: true
+  parent: STBaseWeaponShotgun
+  id: STBaseWeaponShotgunKS23
+  name: КС-23
+  description: Советский и Российский карабин Калибра 23 мм. Изначально многофункциональное полицейское спецсредство, предназначенное для пресечения массовых беспорядков, избирательного силового, психического и химического воздействия на правонарушителей. В зоне с чёрного рынка, но тут у него цель лишь убивать с умопомрачительной мощью.
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 4
+    whitelist:
+      tags:
+      - ShellShotgun
+      - CartridgeShotgunBullet
+      - ShellKS23
+  - type: STWeight
+    self: 3.85
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/ks23/ks-23.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/ks23/ks-23.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/ks23/ks-23.rsi
+  - type: Gun
+    minAngle: 40
+    maxAngle: 50
+    angleIncrease: 15
+    angleDecay: 7
+    fireRate: 0.6
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1
+
+- type: entity
+  parent: STBaseWeaponShotgunKS23
+  id: STShotgunKS23
+  name: КС-23
+  description: Советский и Российский карабин Калибра 23 мм. Изначально многофункциональное полицейское спецсредство, предназначенное для пресечения массовых беспорядков, избирательного силового, психического и химического воздействия на правонарушителей. В зоне с чёрного рынка, но тут у него цель лишь убивать с умопомрачительной мощью.
+
+- type: entity
+  parent: STBaseWeaponShotgunKS23
+  id: STWeaponShotgunKS23M
+  name: КС-23М
+  description: Советский и Российский карабин Калибра 23 мм. Изначально многофункциональное полицейское спецсредство, предназначенное для пресечения массовых беспорядков, избирательного силового, психического и химического воздействия на правонарушителей. В зоне с чёрного рынка, но тут у него цель лишь убивать с умопомрачительной мощью. Теперь в модернезированом варианте.
+  components:
+  - type: STWeight
+    self: 2.9 # Less weight
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/ks23/ks-23m.rsi
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/ks23/ks-23m.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Shotguns/ks23/ks-23m.rsi
+  - type: Gun
+    fireRate: 0.7
+    angleIncrease: 18 #Slightly bigger kick
+    angleDecay: 8 # and Slightly faster recovery
