@@ -1,51 +1,50 @@
-﻿using Content.Shared.Storage;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Stalker.ZoneAnomaly.Components;
 
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class ZoneAnomalyComponent : Component
 {
     public bool Charged => State == ZoneAnomalyState.Idle;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool Detected = true;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public int DetectedLevel = 0;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public ZoneAnomalyState State = ZoneAnomalyState.Idle;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan PreparingDelay = TimeSpan.FromSeconds(2);
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan PreparingTime;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan ActivationDelay = TimeSpan.FromSeconds(2);
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan ActivationTime;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan ChargingDelay = TimeSpan.FromSeconds(2);
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public TimeSpan ChargingTime;
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public HashSet<EntityUid> Triggers = new();
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public HashSet<EntityUid> InAnomaly = new();
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public EntityWhitelist CollisionWhitelist = new();
 
-    [DataField]
+    [DataField, AutoNetworkedField]
     public EntityWhitelist CollisionBlacklist = new();
 }
 

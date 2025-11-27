@@ -1,4 +1,5 @@
-﻿using System.Linq;
+using System.Linq;
+using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Systems;

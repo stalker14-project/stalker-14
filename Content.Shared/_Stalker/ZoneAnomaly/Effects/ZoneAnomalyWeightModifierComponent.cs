@@ -1,4 +1,6 @@
-﻿namespace Content.Shared._Stalker.ZoneAnomaly.Effects;
+using Robust.Shared.GameStates;
+
+namespace Content.Shared._Stalker.ZoneAnomaly.Effects;
 
 [RegisterComponent]
 public sealed partial class ZoneAnomalyWeightModifierComponent : Component

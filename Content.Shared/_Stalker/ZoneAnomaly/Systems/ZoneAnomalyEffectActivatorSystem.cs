@@ -2,7 +2,7 @@ using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Content.Shared.Whitelist;
 
-namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
+namespace Content.Shared._Stalker.ZoneAnomaly.Effects.Systems;
 
 public sealed class ZoneAnomalyEffectActivatorSystem : EntitySystem
 {

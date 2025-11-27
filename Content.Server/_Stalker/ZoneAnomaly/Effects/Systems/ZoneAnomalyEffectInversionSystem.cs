@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Server.Explosion.EntitySystems;
+using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Server.Projectiles;
 using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared._Stalker.ZoneAnomaly.Components;

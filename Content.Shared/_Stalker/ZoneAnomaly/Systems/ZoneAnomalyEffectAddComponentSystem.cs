@@ -1,14 +1,16 @@
-﻿using Content.Shared._Stalker.ZoneAnomaly.Components;
+using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
+using Robust.Shared.Timing;
 
-namespace Content.Server._Stalker.ZoneAnomaly.Effects.Systems;
+namespace Content.Shared._Stalker.ZoneAnomaly.Effects.Systems;
 
 public sealed class ZoneAnomalyEffectAddComponentSystem : EntitySystem
 {
     [Dependency] private readonly IComponentFactory _componentFactory = default!;
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
+    [Dependency] protected readonly IGameTiming Timing = default!;
 
     public override void Initialize()
     {
@@ -32,6 +34,9 @@ public sealed class ZoneAnomalyEffectAddComponentSystem : EntitySystem
     {
         foreach (var (name, data) in components)
         {
+            //if (!Timing.IsFirstTimePredicted)
+            //    return;
+
             var component = (Component)_componentFactory.GetComponent(name);
             component.Owner = uid;
 
