@@ -1,0 +1,73 @@
+- type: entity
+  id: STPelletShrapnel25
+  name: pellet shrapnel25
+  parent: STBasePellet
+  components:
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Piercing: 27
+        Mutant: 30
+
+- type: entity
+  id: BulletShrapnel25Buckshot
+  name: bullet (shrapnel-25)
+  parent: STPellet7mm
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: STPelletShrapnel25
+    count: 8
+    spread: 12
+
+
+- type: entity
+  id: BulletShotgunBarricada
+  name: bullet Barricada (Bullet)
+  parent: STBaseSPBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 65
+        Blunt: 15
+  - type: StaminaDamageOnCollide
+    damage: 35
+
+- type: entity
+  id: BulletShotgunVolnaR
+  name: bullet VolnaR (Bullet)
+  parent: STBaseSPBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 1
+    damage:
+      types:
+        Blunt: 35
+  - type: StaminaDamageOnCollide
+    damage: 90
+
+#- type: entity
+#  id: BulletShotgunZvezda
+#  name: bullet Zvezda
+#  parent: STBaseSPBullet
+#  categories: [ HideSpawnMenu ]
+#  components:
+#  - type: Destructible
+#    thresholds:
+#    - trigger:
+#        !type:DamageTrigger
+#        damage: 1
+#      behaviors:
+#      - !type:TriggerBehavior
+#      - !type:DoActsBehavior
+#        acts: ["Destruction"]
+#  - type: FlashOnTrigger
+#    range: 8
+#  - type: SoundOnTrigger
+#    sound:
+#      path: "/Audio/Effects/flash_bang.ogg"

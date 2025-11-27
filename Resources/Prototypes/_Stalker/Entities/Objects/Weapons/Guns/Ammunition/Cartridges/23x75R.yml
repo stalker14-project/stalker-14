@@ -1,0 +1,79 @@
+- type: entity
+  id: CartridgeShrapnel25Buckshot
+  name: 23х75мм R "Шрапнель-25"
+  parent: BaseShotgunBullet
+  components:
+  - type: Tag
+    tags:
+    - Cartridge
+    - ShellKS23
+  - type: CartridgeAmmo
+    count: 1
+    proto: BulletShrapnel25Buckshot
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: shrapnel
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "shrapnel"
+
+- type: entity
+  id: CartridgeShotgunBarricadaBullet
+  name: 23х75мм R "Баррикада"
+  parent: BaseShotgunBullet
+  components:
+  - type: CartridgeAmmo
+    proto: BulletShotgunBarricada
+    count: 1
+  - type: Tag
+    tags:
+    - Cartridge
+    - ShellKS23
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: barricada
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "barricada"
+
+- type: entity
+  id: CartridgeShotgunVolnaRBullet
+  name: 23х75мм R "Волна Р"
+  parent: BaseShotgunBullet
+  components:
+  - type: CartridgeAmmo
+    proto: BulletShotgunVolnaR
+    count: 1
+  - type: Tag
+    tags:
+    - Cartridge
+    - ShellKS23
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+    layers:
+      - state: volnaR
+        map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+    state: "volnaR"
+
+#- type: entity
+#  id: CartridgeShotgunZvezdaBullet
+#  name: 23х75мм R "Звезда"
+#  parent: BaseShotgunBullet
+#  components:
+#  - type: CartridgeAmmo
+#    proto: BulletShotgunZvezda
+#    count: 1
+#  - type: Tag
+#    tags:
+#    - Cartridge
+#    - ShellKS23
+#  - type: Sprite
+#    sprite: _Stalker/Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
+#    layers:
+#      - state: zvezda
+#        map: [ "enum.AmmoVisualLayers.Base" ]
+#  - type: SpentAmmoVisuals
+#    state: "zvezda"
