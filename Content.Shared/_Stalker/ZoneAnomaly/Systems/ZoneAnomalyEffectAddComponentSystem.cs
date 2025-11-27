@@ -22,29 +22,12 @@ public sealed class ZoneAnomalyEffectAddComponentSystem : EntitySystem
 
     private void OnAdd(Entity<ZoneAnomalyEffectAddComponentComponent> effect, ref ZoneAnomalyEntityAddEvent args)
     {
-        AddComponents(args.Entity, effect.Comp.Components);
+        EntityManager.AddComponents(args.Entity, effect.Comp.Components, true);
     }
 
     private void OnRemove(Entity<ZoneAnomalyEffectAddComponentComponent> effect, ref ZoneAnomalyEntityRemoveEvent args)
     {
         RemoveComponents(args.Entity, effect.Comp.Components);
-    }
-
-    private void AddComponents(EntityUid uid, ComponentRegistry components)
-    {
-        foreach (var (name, data) in components)
-        {
-            //if (!Timing.IsFirstTimePredicted)
-            //    return;
-
-            var component = (Component)_componentFactory.GetComponent(name);
-            component.Owner = uid;
-
-            var temp = (object)component;
-            _serializationManager.CopyTo(data.Component, ref temp);
-            RemComp(uid, temp!.GetType());
-            AddComp(uid, (Component)temp);
-        }
     }
 
     private void RemoveComponents(EntityUid uid, ComponentRegistry components)
