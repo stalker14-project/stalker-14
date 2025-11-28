@@ -1,0 +1,178 @@
+- type: entity
+  name: poltergeist
+  description: A mutant taken over by anomalous energy.
+  parent: BaseMobMutant
+  id: MobMutantPoltergeistFire
+  suffix: ST, T2, fire
+  components:
+  - type: Damageable
+    damageModifierSet: STMutantAnomImmuneT2DamageModifierSet
+  - type: Butcherable
+    spawned:
+    - id: ZoneArtifactFireball
+      amount: 1
+      prob: 0.05
+    - id: ZoneArtifactFlame
+      amount: 1
+      prob: 0.01
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker_EN/Mobs/Mutants/poltergeist.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: dead
+      visible: false
+    - map: ["enum.DamageStateVisualLayers.BaseUnshaded"]
+      state: alive
+      shader: unshaded
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 70
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Magic/ethereal_exit.ogg
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+      blackboard:
+        VisionRadius: !type:Single
+          20
+        AggroVisionRadius: !type:Single
+          15
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4
+    baseSprintSpeed: 5.5
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/_Stalker/Mutants/hooves.ogg
+      params:
+        volume: -30 # there has to be a better way
+  - type: Stealth
+  - type: StealthOnMove
+    passiveVisibilityRate: 0.8
+    movementVisibilityRate: -2.5
+  - type: STWeight
+    self: 0
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 3
+  - type: BasicEntityAmmoProvider
+    proto: STBulletFireball
+    capacity: 3
+    count: 3
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Effects/lightburn.ogg
+  - type: Jumpscare
+    damageRadius: 1
+    reloadTime: 3
+    attackRadius: 12
+    chargeDamage:
+      types:
+        Shock: 10
+    jumpPower: 90
+    updateCooldown: 1
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.45
+        density: 235
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+
+- type: entity
+  name: poltergeist
+  parent: MobMutantPoltergeistFire
+  id: MobMutantPoltergeistElec
+  suffix: ST, T2, elec
+  components:
+  - type: Butcherable
+    spawned:
+    - id: ZoneArtifactSparkler
+      amount: 1
+      prob: 0.05
+    - id: ZoneArtifactFlash
+      amount: 1
+      prob: 0.01
+  - type: BasicEntityAmmoProvider
+    proto: STBulletLightning
+    capacity: 3
+    count: 3
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Effects/Lightning/lightningbolt.ogg
+
+- type: entity
+  name: poltergeist
+  parent: MobMutantPoltergeistFire
+  id: MobMutantPoltergeistIce
+  suffix: ST, T2, ice
+  components:
+  - type: Butcherable
+    spawned:
+    - id: ArtMoon
+      amount: 1
+      prob: 0.01
+  - type: BasicEntityAmmoProvider
+    proto: STBulletIce
+    capacity: 3
+    count: 3
+  - type: Gun
+    fireRate: 1
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot: /Audio/Weapons/plasma_cutter.ogg
+
+- type: entity
+  name: poltergeist
+  parent: MobMutantPoltergeistFire
+  id: MobMutantPoltergeistRave
+  suffix: ST, T2, rave
+  components:
+  - type: Butcherable
+    spawned:
+    - id: ZoneArtifactFloodlight
+      amount: 1
+      prob: 0.03
+    - id: ZoneArtifactPellicle
+      amount: 1
+      prob: 0.03
+    - id: ZoneArtifactArtMedusa
+      amount: 1
+      prob: 0.03
+  - type: BasicEntityAmmoProvider
+    proto: STBulletRave
+    capacity: 2
+    count: 2
+  - type: Gun
+    fireRate: 0.8
+    useKey: false
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      collection: PoltergeistJingle
+  - type: PointLight
+    radius: 5
+    energy: 3
+  - type: RgbLightController

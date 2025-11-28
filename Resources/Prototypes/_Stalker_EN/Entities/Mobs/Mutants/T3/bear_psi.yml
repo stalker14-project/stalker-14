@@ -1,0 +1,105 @@
+- type: entity
+  parent: BaseMobMutant
+  id: STMobMutantBearPsi
+  name: psibear
+  suffix: ST, T3
+  description: A mangy sort of bear, its eyes are milky white and number in three.
+  components:
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+    blackboard:
+      VisionRadius: !type:Single
+        15
+      AggroVisionRadius: !type:Single
+        12
+  - type: Damageable
+    damageModifierSet: STMutantT3DamageModifierSet
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Stalker_EN/Mobs/Mutants/bear_psi.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 550
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path : /Audio/Animals/bear.ogg
+          pitch: 0.6
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      550: Dead
+  - type: Butcherable
+    spawned:
+    - id: MutantPartBearPaw
+      maxAmount: 1
+      prob: 0.3
+    - id: FoodMeatSTBear
+      maxAmount: 1
+    - id: MutantPartBearEye
+      Amount: 1
+    - id: STJunkTag
+      maxAmount: 1
+      prob: 0.01
+    - id: STJunkTagWhite
+      maxAmount: 1
+      prob: 0.01
+    - id: STJunkTracker
+      maxAmount: 1
+      prob: 0.01
+  - type: MeleeWeapon
+    attackRate: 0.75
+    angle: 180
+    range: 5
+    soundHit:
+      path: /Audio/_Stalker_EN/Mutants/pbear_hit.ogg # audio is sucks but idk if ill come back to fix it
+      params:
+        variation: 0.125
+    soundSwing:
+      path: /Audio/_Stalker_EN/Mutants/pbear_miss.ogg
+      params:
+        variation: 0.125
+    #animation: WeaponArcClaw
+    damage:
+      types:
+        Psy: 26
+        Blunt: 8
+  - type: MeleeThrowOnHit # psionic ability
+    speed: 6
+    lifetime: 0.3
+  - type: StaminaDamageOnHit
+    damage: 15
+  - type: NPCUseAction
+    actionId: ActionPsyonicsShieldMutant
+  - type: Psyonics
+    psy: 1000000
+  - type: PsyonicsActionShield
+    cost: 0
+    periodSeconds: 3
+    health: 200
+    actionId: ActionPsyonicsShieldMutant
+  - type: PsyonicsShieldVisuals
+    sprite: _Stalker/Effects/psyonic_shield.rsi
+    state: Standing
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 3.5
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      500: 1.5 # its funny sorry
+  - type: STWeight
+    self: 100

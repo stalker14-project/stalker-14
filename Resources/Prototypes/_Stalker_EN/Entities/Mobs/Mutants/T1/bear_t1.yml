@@ -1,0 +1,79 @@
+- type: entity
+  parent: BaseMobMutant
+  id: STMobMutantBearT1
+  name: young bear
+  suffix: ST, T1
+  description: Bears are a normal sight in the wilds, but it's hard to say what effect radiation has had on the ones living in the Zone.
+  components:
+    - type: HTN
+      rootTask:
+        task: STBearCompound
+    - type: Damageable
+      damageModifierSet: STMutantT2DamageModifierSet
+    - type: DamageStateVisuals
+      states:
+        Alive:
+          Base: alive
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Stalker_EN/Mobs/Mutants/bear_t1.rsi
+      layers:
+      - map: ["enum.DamageStateVisualLayers.Base"]
+        state: alive
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 350
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            path : /Audio/Animals/bear.ogg
+            pitch: 0.8
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        350: Dead
+    - type: Butcherable
+      spawned:
+      - id: MutantPartBearClaw
+        amount: 1
+      - id: FoodMeatSTBear
+        amount: 1
+    - type: MeleeWeapon
+      attackRate: 0.6
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.8
+      angle: 30
+      range: 1.2
+      soundHit:
+        path: /Audio/_Stalker_EN/Mutants/bear_hit.ogg # it sucks but i give up
+        params:
+          variation: 0.125
+          pitch: 0.3
+      soundSwing:
+        path: /Audio/Animals/bear.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcClaw
+      damage:
+        types: # its a lot but like its a bear. split on damage so resistance helps.
+          Slash: 22
+          Blunt: 11
+    - type: MeleeThrowOnHit # im not sold on this, willing to kill it if its annoying
+      speed: 3
+      lifetime: 0.4
+    - type: StaminaDamageOnHit
+      damage: 10
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2
+      baseSprintSpeed: 3
+    - type: SlowOnDamage
+      speedModifierThresholds:
+        300: 0.6
+    - type: STWeight
+      self: 85
