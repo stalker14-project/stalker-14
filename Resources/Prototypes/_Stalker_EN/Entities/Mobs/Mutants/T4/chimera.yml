@@ -1,0 +1,87 @@
+- type: entity
+  parent: BaseMobMutant
+  id: STMobMutantChimera
+  name: Chimera
+  suffix: ST, T4
+  description: A deadly mutant with lightning fast reflexes. It's said to stalk its prey for hours before taking them down.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Mobs/Mutants/chimera.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2300: Dead
+  - type: Damageable
+    damageModifierSet: STMutantT4DamageModifierSet
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      2000: 0.8
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2300
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Animals/space_dragon_roar.ogg # TO DO
+  - type: Butcherable
+    spawned:
+    - id: ClothingMaskChimera
+      maxAmount: 1
+      prob: 0.3
+  - type: TeethPull
+    teethProto: MutantPartChimeraTooth
+    pullingItemTag: PliersStalker
+    teethCount: 2
+    initialTeeth: 2
+  - type: STWeight
+    self: 50
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5.5
+    baseSprintSpeed: 9.0
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: BarestepWood # TO DO
+      params:
+        volume: 4
+        variation: 0.2
+  - type: MeleeWeapon
+    attackRate: 2
+    heavyWindupModifier: 1
+    heavyDamageModifier: 1.5
+    angle: 30
+    range: 1.4
+    soundSwing:
+      path: /Audio/Animals/bear.ogg # TO DO
+      params:
+        variation: 0.125
+    animation: WeaponArcClaw
+    wideAnimation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 25
+  - type: StaminaDamageOnHit
+    damage: 15
+  - type: Jumpscare
+    damageRadius: 1.5
+    attackRadius: 20
+    chargeDamage:
+      types:
+        Bloodloss: 20
+        Slash: 30
+    jumpPower: 10
+    jumpDistance: 10
+    updateCooldown: 3
+    reloadTime: 9
+    totalSteps: 3
+    stepInterval: 0.5

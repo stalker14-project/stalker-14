@@ -1,0 +1,38 @@
+﻿# Legendary Vova Vist
+
+- type: entity
+  name: Vova Vist Spawner (1) (100%)
+  id: STGuardVovaVist
+  parent: STGuardSpawnerStalker
+  components:
+  - type: SpawnOnApproach
+    prototypes:
+    - MobStalkerMilitaryVovaVist
+    restricted:
+    - MobStalkerMilitaryVovaVist
+
+# Ecologist Guard
+
+- type: entity
+  name: Ecologist Guard Spawner (1) (100%)
+  id: STGuardEcologist
+  parent: MarkerBase
+  components:
+  - type: ApproachTrigger
+  - type: Sprite
+    layers:
+    - state: blue
+    - sprite: Mobs/Aliens/Xenos/burrower.rsi
+      state: crit
+    - state: ai
+  - type: SpawnOnApproach
+    minAmount: 1
+    maxAmount: 1
+    maxOffset: 1
+    minOffset: 1
+    cooldown: 6000
+    chance: 1
+    prototypes:
+    - MobEcologistGuard
+    restricted:
+    - MobEcologistGuard

@@ -1,3 +1,108 @@
+# BEAR
+- type: entity
+  name: raw bear meat
+  parent: FoodMeatRawBase
+  id: FoodMeatSTBear
+  description: Greasy greasy raw bear meat.
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 1.0
+  - type: Sprite
+    sprite: Objects/Consumable/Food/meat.rsi
+    state: bear
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 10
+        - ReagentId: Fat
+          Quantity: 10
+        - ReagentId: MToxin
+          Quantity: 10
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak
+    node: start
+    defaultTarget: steak stbear
+  - type: Tag
+    tags:
+    - Meat
+  - type: Craftable
+
+- type: entity
+  name: cooked bear meat
+  parent: FoodMeatBase
+  id: FoodMeatSTBearCooked
+  description: It's a little tough but what can you do.
+  suffix: Stalker, Food
+  components:
+  - type: STWeight
+    self: 0.8
+  - type: Craftable
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+    - Steak
+  - type: Sprite
+    sprite: Objects/Consumable/Food/meat.rsi
+    state: product-cooked
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 7
+        - ReagentId: Protein
+          Quantity: 13
+        - ReagentId: Fat
+          Quantity: 5
+        - ReagentId: MToxin
+          Quantity: 5
+  - type: Construction
+    graph: MeatSteakSTBear
+    node: steak stbear
+
+- type: constructionGraph
+  id: MeatSteakSTBear
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: steak stbear
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: steak stbear
+    entity: FoodMeatSTBearCooked
+
+- type: lightCraftingRecipe
+  id: MeatSTBearCraft
+  results:
+  - FoodMeatSTBearCooked
+  steps:
+    firstIngredient: FoodMeatSTBear
+    secondIngredient: STBonfire
+    keepSecond: true
+    exactSecond: false
+    time: 20
+
+- type: lightCraftingRecipe
+  id: MeatSTBearCraftGas
+  results:
+  - FoodMeatSTBearCooked
+  steps:
+    firstIngredient: FoodMeatSTBear
+    secondIngredient: GasStoveS1
+    keepSecond: true
+    exactSecond: false
+    time: 20
+
 # FISH
 # this could have been done cleaner but refer to top of file comment
 

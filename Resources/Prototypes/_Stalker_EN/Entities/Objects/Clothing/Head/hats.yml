@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadBear
+  name: bear trophy
+  suffix: ST
+  components:
+  - type: STWeight
+    self: 8
+  - type: Armor
+    armorClass: 0
+    modifiers:
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+      coefficients:
+        Cold: 0.9
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/MutantParts/bear_trophy.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/MutantParts/bear_trophy.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadTop

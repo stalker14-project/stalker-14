@@ -1,0 +1,88 @@
+- type: entity
+  parent: BaseMobMutant
+  id: MobMutantCat
+  name: bayun
+  suffix: ST, T1
+  description: A cat with some psionic abilities. They're often found napping in piles of trash.
+  components:
+    - type: HTN
+      rootTask:
+        task: STCatCompound
+    - type: Damageable
+      damageModifierSet: STMutantT1DamageModifierSet
+    - type: DamageStateVisuals #dsv might be redundant with sprite and threshholds tbh
+      states:
+        Alive:
+          Base: alive
+          BaseUnshaded: alive-overlay
+        Critical:
+          Base: dead
+        Dead:
+          Base: dead
+    - type: Sprite
+      drawdepth: Mobs
+      sprite: _Stalker_EN/Mobs/Mutants/bayun.rsi
+      layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+      - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+        state: alive-overlay
+        shader: unshaded
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 100
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: AllScreams
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Dead
+    - type: Butcherable
+      spawned:
+      - id: MutantPartCatGland
+        amount: 1
+      - id: STJunkTag
+        maxAmount: 1
+        prob: 0.01
+      - id: STJunkTagWhite
+        maxAmount: 1
+        prob: 0.01
+    - type: MeleeWeapon
+      attackRate: 0.8
+      heavyWindupModifier: 1
+      heavyDamageModifier: 1.5
+      angle: 30
+      range: 1.2
+      soundHit:
+        collection: CatAttack
+        params:
+          variation: 0.125
+      soundSwing:
+        path: /Audio/_Stalker_EN/Mutants/hiss.ogg
+        params:
+          variation: 0.125
+      animation: WeaponArcBite
+      damage:
+        types:
+          Slash: 12
+          Piercing: 4
+    - type: SolutionContainerManager # its a psy power dont worry about it
+      solutions:
+        melee:
+          reagents:
+          - ReagentId: ChloralHydrate
+            Quantity: 12
+    - type: MeleeChemicalInjector
+      solution: melee
+      transferAmount: 3
+    - type: MovementSpeedModifier
+      baseWalkSpeed: 2.2
+      baseSprintSpeed: 4
+    - type: StaminaDamageOnHit
+      damage: 3
+    - type: STWeight
+      self: 25
