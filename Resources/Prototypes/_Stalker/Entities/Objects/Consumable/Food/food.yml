@@ -70,7 +70,8 @@
   - type: STWeight
     self: 1.0
   - type: Sprite
-    state: goliath
+    sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi # EN
+    state: salo # EN
   - type: SolutionContainerManager
     solutions:
       food:
@@ -83,10 +84,9 @@
           Quantity: 10
   - type: InternalTemperature
     conductivity: 0.43
-  - type: Construction
-    graph: MeatSteak
-    node: start
-    defaultTarget: steak boar
+  - type: SliceableFood # EN
+    slice: FoodSaloSlice
+    count: 3
   - type: Tag
     tags:
     - Meat
@@ -138,7 +138,7 @@
   - type: Sprite
     sprite: Objects/Consumable/Food/Baked/bread.rsi
   - type: RepositoryItem
-    categoryName: Припасы
+    categoryName: repository-misc-category
   - type: SolutionContainerManager
     solutions:
       food:
@@ -542,6 +542,8 @@
   - type: Sprite
     sprite: _Stalker/Objects/Counsumable/Drinks/lemonade.rsi
   - type: Sealable
+  - type: Trash
+    time: 300
 
 
 

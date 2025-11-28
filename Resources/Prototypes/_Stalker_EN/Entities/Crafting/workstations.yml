@@ -1,0 +1,29 @@
+- type: entity
+  parent: BaseStructure
+  id: StalkerCookingStation
+  name: cooking station
+  description: The counters are clean enough to work on. Mostly.
+  suffix: ST, Craft
+  components:
+    - type: Tag
+      tags:
+        - STWorkbench
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+        enum.StorageUiKey.Key:
+          type: StorageBoundUserInterface
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Craft/workstations.rsi
+      state: workstation_kitchen2
+    - type: Transform
+      noRot: true
+    - type: Storage
+      craft: true
+      maxItemSize: Ginormous
+      grid:
+        - 0,0,12,7
