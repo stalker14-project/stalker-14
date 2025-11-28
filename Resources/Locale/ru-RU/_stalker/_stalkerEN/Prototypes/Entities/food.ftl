@@ -147,9 +147,6 @@ ent-FoodMeatSTRatRaw = сырое мясо крысы
 ent-FoodMeatSTRatCooked = жаренное мясо крысы
     .desc = Жаренная крысятина.
 
-ent-FoodMeatSTRatCooked = жаренное мясо крысы
-    .desc = Жаренная крысятина.
-
 ent-FoodSTTomato = помидор
     .desc = По закону это и фрукт, и овощ.
 
