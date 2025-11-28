@@ -1,0 +1,253 @@
+# wholesale just taking any vegetable code we need so i dont have to comment a bunch of upstream files
+# nothing is sliceable because we don't need to overcomplicate this
+# you arent a chef, youre a stalker. put the whole onion in that pot, soldier.
+- type: entity
+  name: tomato
+  description: Legally, it's both a fruit and a vegetable.
+  parent: [FoodProduceBase, ItemHeftyBase]
+  id: FoodSTTomato
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.25
+    - type: Item
+      size: Tiny
+      shape:
+      - 0,0,0,0
+    - type: FlavorProfile
+      flavors:
+        - tomato
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 5 # tomatoes are smaller in the zone...
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 3
+          - ReagentId: Vitamin
+            Quantity: 2
+          - ReagentId: Water
+            Quantity: 1
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/tomato.rsi
+  #  - type: Produce
+  #    seedId: tomato
+    - type: Extractable
+      grindableSolutionName: food
+      juiceSolution:
+        reagents:
+        - ReagentId: JuiceTomato
+          Quantity: 5
+    - type: Damageable
+      damageContainer: Biological
+    - type: DamageOnHighSpeedImpact
+      minimumSpeed: 0.1
+      damage:
+        types:
+          Blunt: 1
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 1
+        behaviors:
+        - !type:PlaySoundBehavior
+          sound:
+            collection: desecration
+        - !type:SpillBehavior
+          solution: food
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+    - type: Tag
+      tags:
+      - Fruit
+      - Vegetable
+    - type: Craftable
+
+# disregard all other potatoes, this is the one we use for now
+- type: entity
+  name: potato
+  parent: FoodProduceBase
+  id: FoodSTPotato
+  description: A humble delivery vessel for starch.
+  suffix: Stalker, Food, Ingredient
+  components:
+  - type: FlavorProfile
+    flavors:
+    - potatoes
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 3
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: STWeight
+    self: 0.25
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: Sprite
+    sprite: Objects/Specific/Hydroponics/potato.rsi
+#  - type: Produce
+#    seedId: potato
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: JuicePotato
+        Quantity: 5
+  - type: Tag
+    tags:
+    - Potato
+    - Vegetable
+
+- type: entity
+  name: carrot
+  description: A healthy snack or a key ingredient in many soups.
+  parent: FoodProduceBase
+  id: FoodSTCarrot
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.25
+    - type: Item
+      size: Tiny
+      shape:
+      - 0,0,0,1
+    - type: FlavorProfile
+      flavors:
+        - carrot
+    - type: Tag
+      tags:
+      - Carrot
+      - Vegetable
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 5
+          reagents:
+          - ReagentId: JuiceCarrot
+            Quantity: 3
+          - ReagentId: Vitamin
+            Quantity: 2
+    - type: Sprite # temp
+      sprite: Objects/Specific/Hydroponics/carrot.rsi
+  #  - type: Produce
+  #    seedId: carrots
+    - type: Extractable
+      juiceSolution:
+        reagents:
+        - ReagentId: JuiceCarrot
+          Quantity: 5
+    - type: Craftable
+
+- type: entity
+  name: cabbage
+  description: The leaves are starting to wilt, better use it soon.
+  parent: FoodProduceBase
+  id: FoodSTCabbage
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.25
+    - type: Item
+      size: Small
+      shape:
+      - 0,0,1,1
+    - type: FlavorProfile
+      flavors:
+        - cabbage
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 5
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 3
+          - ReagentId: Vitamin
+            Quantity: 2
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/cabbage.rsi
+  #  - type: Produce
+  #    seedId: cabbage
+    - type: Tag
+      tags:
+      - Vegetable
+    - type: Craftable
+
+- type: entity
+  name: onion
+  description: No use in crying over spilt- wait, this is the other thing that makes you cry.
+  parent: FoodProduceBase
+  id: FoodSTOnion
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.1
+    - type: Item
+      size: Tiny
+      shape:
+      - 0,0,0,0
+    - type: FlavorProfile
+      flavors:
+        - onion
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 5
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 2
+          - ReagentId: Vitamin
+            Quantity: 1
+          - ReagentId: Allicin
+            Quantity: 2
+    - type: Sprite
+      sprite: Objects/Specific/Hydroponics/onion.rsi
+  #  - type: Produce
+  #    seedId: onion
+    - type: Tag
+      tags:
+      - Vegetable
+    - type: Craftable
+
+- type: entity
+  name: beet
+  description: Don't underestimate the many culinary uses of a good beet.
+  parent: FoodProduceBase
+  id: FoodSTBeet
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.1
+    - type: Item
+      size: Tiny
+      shape:
+      - 0,0,0,0
+    - type: FlavorProfile
+      flavors:
+        - sweet
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 5
+          reagents:
+          - ReagentId: Sugar
+            Quantity: 5
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/produce.rsi
+      state: beet
+    #  - type: Produce
+    #    seedId: beet
+  #  - type: Extractable
+  #    juiceSolution:
+  #      reagents:
+  #      - ReagentId: JuiceBeet
+  #        Quantity: 5
+    - type: Tag
+      tags:
+      - Vegetable
+    - type: Craftable

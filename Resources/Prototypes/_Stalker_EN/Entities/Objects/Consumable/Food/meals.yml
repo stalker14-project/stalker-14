@@ -1,0 +1,828 @@
+# if adding new craftable recipes, refer to _cooking.txt
+
+# breads
+# oops i didnt do any
+
+# soups
+- type: entity
+  name: borscht
+  parent: FoodBowlBase
+  id: FoodSTBorscht
+  suffix: Stalker, Food
+  description: A beet and meat soup. Comforting.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cabbage
+      - meaty
+      - sweet
+      - sour
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: borscht
+  - type: Food
+    trash:
+    - FoodBowlBig
+    utensil: Spoon
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+  - type: Craftable
+
+- type: entity
+  name: snork foot soup
+  parent: FoodBowlBase
+  id: FoodSTSnorkSoup
+  suffix: Stalker, Food
+  description: Discomfort food for the unwell.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - salty
+      - meaty
+      - spicy
+      - bitter
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: snorksoup
+  - type: Food
+    trash:
+      - FoodBowlBig
+    utensil:
+      - Spoon
+      - Fork
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: MToxin
+          Quantity: 10
+  - type: Craftable
+
+- type: entity
+  name: cabbage soup
+  parent: FoodBowlBase
+  id: FoodSTCabbageSoup
+  suffix: Stalker, Food
+  description: The bulk of this soup is cabbage with some shreds of whatever meat was around. Filling when you need it.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cabbage
+      - meaty
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: coleslaw
+  - type: Food
+    trash:
+      - FoodBowlBig
+    utensil: Spoon
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+  - type: Craftable
+
+- type: entity
+  name: meat stew
+  parent: FoodBowlBase
+  id: FoodSTMeatStew
+  suffix: Stalker, Food
+  description: A hearty stew of freshly hunted meat and costly spices, a rare comfort in the zone.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - spicy
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: monkeydelight
+  - type: Food
+    trash:
+    - FoodBowlBig
+    utensil: Spoon
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+  - type: Craftable
+
+- type: entity
+  name: rice
+  parent: FoodBowlBase
+  id: FoodSTRiceCooked
+  suffix: Stalker, Food
+  description: A simple bowl of rice.
+  components:
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: rice
+  - type: Food
+    trash:
+      - FoodBowlBig
+    utensil: Spoon
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+  - type: Craftable
+
+# fried foods
+- type: entity
+  name: deruny
+  parent: FoodBase
+  id: FoodSTDeruny
+  suffix: Stalker, Food
+  description: What's better than fried potatoes?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - potatoes
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: deruny
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+      - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: SliceableFood
+    slice: FoodSTDerunySingle
+    count: 3
+  - type: Craftable
+
+- type: entity
+  name: deruny
+  parent: FoodSTDeruny
+  id: FoodSTDerunySingle
+  suffix: Stalker, Food
+  description: What's better than fried potatoes?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - potatoes
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: deruny2
+  - type: STWeight
+    self: 0.25
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: SliceableFood
+    slice: FoodSTDerunySingle
+    count: 1
+  - type: Craftable # i think craftable isnt necessary on slices
+
+- type: entity
+  name: hrechanyky
+  parent: FoodBase
+  id: FoodSTHrechanyky
+  suffix: Stalker, Food
+  description: What's better than fried buckwheat and meat?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: hrechanyky
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: SliceableFood
+    slice: FoodSTHrechanykySingle
+    count: 3
+  - type: Craftable
+
+- type: entity
+  name: hrechanyky
+  parent: FoodSTHrechanyky
+  id: FoodSTHrechanykySingle
+  suffix: Stalker, Food
+  description: What's better than fried buckwheat and meat?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: hrechanyky2
+  - type: STWeight
+    self: 0.25
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Protein
+          Quantity: 5
+  - type: SliceableFood
+    slice: FoodSTHrechanykySingle
+    count: 1
+  - type: Craftable # i think craftable isnt necessary on slices
+
+- type: entity
+  name: syrnyky
+  parent: FoodBase
+  id: FoodSTSyrnyky
+  suffix: Stalker, Food
+  description: What's better than fried cheese?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - sweet
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: syrnyk
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: SliceableFood
+    slice: FoodSTSyrnykySingle
+    count: 3
+  - type: Craftable
+
+- type: entity
+  name: syrnyky
+  parent: FoodSTSyrnyky
+  id: FoodSTSyrnykySingle
+  suffix: Stalker, Food
+  description: What's better than fried cheese?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - cheesy
+      - sweet
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: syrnyk2
+  - type: STWeight
+    self: 0.25
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: SliceableFood
+    slice: FoodSTSyrnykySingle
+    count: 1
+  - type: Craftable # i think craftable isnt necessary on slices
+
+- type: entity
+  name: pancakes
+  parent: FoodBase
+  id: FoodSTPancakes
+  suffix: Stalker, Food
+  description: What's better than pancakes?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/Baked/misc.rsi
+    state: pancakes1
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Craftable
+
+- type: entity
+  name: onion rings
+  parent: FoodBase
+  id: FoodSTOnionRings
+  suffix: Stalker, Food
+  description: What's better than fried onions?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - onion
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/Baked/misc.rsi
+    state: onionrings
+  - type: STWeight
+    self: 0.5
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+  - type: Craftable
+
+- type: entity
+  name: eggs
+  parent: FoodBase
+  id: FoodSTFriedEggs
+  suffix: Stalker, Food
+  description: A simple meal.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - egg
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/meals.rsi
+    state: friedegg
+  - type: STWeight
+    self: 0.5
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+  - type: Craftable
+
+- type: entity
+  name: fried fish
+  parent: FoodBase
+  id: FoodSTFriedFish
+  suffix: Stalker, Food
+  description: Battered and fried fish. A little more flavorful than just gutting and cooking your catch, if nothing else.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - fishy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: fishfry
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: Craftable
+
+- type: entity
+  name: frog legs
+  parent: FoodBase
+  id: FoodSTFrogLegs
+  suffix: Stalker, Food
+  description: Frog legs tossed in spices and fried at a low temperature. They're surprisingly tender.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - spicy
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: froglegs
+  - type: STWeight
+    self: 1
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Protein
+          Quantity: 5
+  - type: Craftable
+
+# deserts
+- type: entity
+  name: plain cake
+  parent: FoodBase
+  id: FoodSTCakePlain
+  suffix: Stalker, Food
+  description: It's simple but sometimes that's all you need.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/Baked/cake.rsi
+    state: plain
+  - type: STWeight
+    self: 3
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+  - type: SliceableFood
+    slice: FoodSTCakePlainSlice
+    count: 4
+  - type: Craftable
+
+- type: entity
+  name: plain cake slice
+  parent: FoodSTCakePlain
+  id: FoodSTCakePlainSlice
+  suffix: Stalker, Food
+  description: A slice of plain white cake.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/Baked/cake.rsi
+    state: plain-slice
+  - type: STWeight
+    self: 0.5
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Craftable # i think craftable isnt necessary on slices
+
+- type: entity
+  name: berry cake
+  parent: FoodBase
+  id: FoodSTCakeBerry
+  suffix: Stalker, Food
+  description: Made of simple ingredients and berries from the zone, you won't find a sweeter treat.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - fruity
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/Baked/cake.rsi
+    state: apple
+  - type: STWeight
+    self: 3
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 40
+  - type: SliceableFood
+    slice: FoodSTCakeBerrySlice
+    count: 4
+  - type: Craftable
+
+- type: entity
+  name: berry cake slice
+  parent: FoodSTCakeBerry
+  id: FoodSTCakeBerrySlice
+  suffix: Stalker, Food
+  description: A slice of cake with a berry filling.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - fruity
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/Baked/cake.rsi
+    state: apple-slice
+  - type: STWeight
+    self: 0.5
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+  - type: Craftable # i think craftable isnt necessary on slices
+
+- type: entity
+  name: ice cream
+  parent: FoodBase
+  id: FoodSTIceCream
+  suffix: Stalker, Food
+  description: At first this seems like normal ice cream but no matter how long it sits out it never seems to melt. How odd.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+      - cold
+  - type: Sprite # TO DO
+    sprite: Objects/Consumable/Food/frozen.rsi
+    state: sundae
+  - type: STWeight
+    self: 0.5
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Frostoil
+          Quantity: 10
+  - type: PersonalDamage
+    damage:
+      types:
+        Cold: 0.05
+  - type: Craftable
+
+# misc
+- type: entity
+  name: braid
+  parent: FoodBase
+  id: FoodSTBraid
+  suffix: Stalker, Food
+  description: From far away it just looks like jerky but upon closer inspection... Wait, what is this?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - sweet
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: braid
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Saline
+          Quantity: 15
+  - type: Craftable
+
+- type: entity
+  name: meat kebab
+  parent: FoodBase
+  id: FoodSTKebabMeat
+  suffix: Stalker, Food
+  description: Skewered and roasted meat and veggies.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - tomatoes
+  - type: Food
+    trash:
+      - FoodKebabSkewer
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: kebabmeat
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: Craftable
+
+- type: entity
+  name: veggie kebab
+  parent: FoodBase
+  id: FoodSTKebabVeggie
+  suffix: Stalker, Food
+  description: Skewered and roasted veggies.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - tomatoes
+  - type: Food
+    trash:
+      - FoodKebabSkewer
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: kebabveggie
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,0,2
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+  - type: Craftable
+
+- type: entity
+  name: ambrosia
+  parent: FoodBase
+  id: FoodSTAmbrosia
+  suffix: Stalker, Food
+  description: It's unclear what this is, but it seems like... food?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - sweet
+    ignoreReagents:
+      - Nutriment
+      - Omnizine
+      - Razorium
+      - Lexorin
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: ambrosia
+  - type: STWeight
+    self: 10
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 5
+  - type: PointLight
+    radius: 1.5
+    energy: 4
+    color: "#a1f7ee"
+    castShadows: false
+  - type: SolutionContainerManager # this does about 190 damage if you eat it all at once
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Omnizine
+          Quantity: 10
+        - ReagentId: Razorium
+          Quantity: 20
+        - ReagentId: Lexorin
+          Quantity: 10
+  - type: Craftable
+
+- type: entity
+  name: oracle gumbo
+  parent: FoodBowlBase
+  id: FoodSTOracleGumbo
+  suffix: Stalker, Food
+  description: If you can get past how it looks and feels and tastes, it's not even that bad. Maybe even... good?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - spicy
+      - tomato
+      - slimy
+    ignoreReagents:
+      - THC
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
+    state: oraclegumbo
+  - type: Food
+    trash:
+    - FoodBowlBig
+    utensil:
+    - Spoon
+    - Fork
+  - type: STWeight
+    self: 2
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: THC
+          Quantity: 15
+  - type: Craftable

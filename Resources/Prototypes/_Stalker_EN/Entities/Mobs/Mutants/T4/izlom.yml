@@ -11,14 +11,7 @@
     sprite: /Textures/_Stalker_EN/Mobs/Mutants/izlom.rsi
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
-      state: alive-1
-  - type: SpriteMovement
-    movementLayers:
-      movement:
-        state: alive-3
-    noMovementLayers:
-      movement:
-        state: alive-1
+      state: alive
   - type: Advertise
     pack: NPCStalkerIzlomAds
     minWait: 60
@@ -26,7 +19,7 @@
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: alive-1
+        Base: alive
       Dead:
         Base: dead
   - type: MobThresholds

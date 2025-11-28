@@ -1,0 +1,435 @@
+# EASY
+- type: craftRecipe
+  id: recipeFoodSTFreshCheese
+  resultProtos:
+    - FoodSTFreshCheese
+  craftTime: 3
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingFreshCheese:
+      amount: 1
+      catalyzer: true
+    FoodSTMilkCarton:
+      amount: 1
+    FoodCondimentPacketSalt:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTRiceCooked
+  resultProtos:
+    - FoodSTRiceCooked
+  craftTime: 5
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingRice:
+      amount: 1
+      catalyzer: true
+    FoodBowlBig:
+      amount: 1
+    FoodSTRice:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTPancakes
+  resultProtos:
+    - FoodSTPancakes
+  craftTime: 5
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingPancakes:
+      amount: 1
+      catalyzer: true
+    FoodSTFlour:
+      amount: 1
+    FoodSTEgg:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTOnionRings
+  resultProtos:
+    - FoodSTOnionRings
+  craftTime: 3
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingOnionRings:
+      amount: 1
+      catalyzer: true
+    FoodSTOnion:
+      amount: 1
+    FoodSTOil:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTFriedEggs
+  resultProtos:
+    - FoodSTFriedEggs
+  craftTime: 5
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingFriedEggs:
+      amount: 1
+      catalyzer: true
+    FoodSTEgg:
+      amount: 2
+    FoodSTOil:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTFrogLegs
+  resultProtos:
+  - FoodSTFrogLegs
+  craftTime: 12
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingFrogLegs:
+      amount: 1
+      catalyzer: true
+    MutantPartFrogLeg:
+      amount: 2
+    FoodSTSpice:
+      amount: 1
+    FoodSTOil:
+      amount: 1
+
+# NORMAL
+- type: craftRecipe
+  id: recipeFoodSTBorscht
+  resultProtos:
+    - FoodSTBorscht
+  craftTime: 15
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingBorscht:
+      amount: 1
+      catalyzer: true
+    FoodBowlBig:
+      amount: 1
+    FoodSTBeet:
+      amount: 2
+    FoodSTOnion:
+      amount: 1
+    FoodSTCabbage:
+      amount: 1
+    FoodSTCarrot:
+      amount: 1
+    STFoodMeatSalo:
+      amount: 1
+    FoodMeatBoar:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTCabbageSoup
+  resultProtos:
+    - FoodSTCabbageSoup
+  craftTime: 12
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingCabbageSoup:
+      amount: 1
+      catalyzer: true
+    FoodBowlBig:
+      amount: 1
+    FoodSTOnion:
+      amount: 1
+    FoodSTCabbage:
+      amount: 2
+    FoodSTSpice:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTMeatStew
+  resultProtos:
+    - FoodSTMeatStew
+  craftTime: 20
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingMeatStew:
+      amount: 1
+      catalyzer: true
+    FoodBowlBig:
+      amount: 1
+    FoodSTOnion:
+      amount: 1
+    FoodSTSpice:
+      amount: 1
+    FoodMeatBoar:
+      amount: 2
+    FoodMeatDog:
+      amount: 1
+    FoodSTPotato:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTDeruny
+  resultProtos:
+    - FoodSTDeruny
+  craftTime: 10
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingDeruny:
+      amount: 1
+      catalyzer: true
+    FoodSTOnion:
+      amount: 1
+    FoodCondimentPacketSalt:
+      amount: 1
+    FoodSTFlour:
+      amount: 1
+    FoodSTOil:
+      amount: 1
+    FoodSTPotato:
+      amount: 3
+
+- type: craftRecipe
+  id: recipeFoodSTHrechanyky
+  resultProtos:
+    - FoodSTHrechanyky
+  craftTime: 10
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingHrechanyky:
+      amount: 1
+      catalyzer: true
+    FoodSTOnion:
+      amount: 1
+    FoodSTEgg:
+      amount: 1
+    FoodSTFlour:
+      amount: 1
+    FoodSTOil:
+      amount: 1
+    FoodMeatBoar:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTSyrnyky
+  resultProtos:
+    - FoodSTSyrnyky
+  craftTime: 10
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingSyrnyky:
+      amount: 1
+      catalyzer: true
+    FoodSTFreshCheese:
+      amount: 1
+    FoodSTEgg:
+      amount: 1
+    FoodSTFlour:
+      amount: 1
+    FoodSTSugar:
+      amount: 1
+    FoodSTOil:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTFriedFish
+  resultProtos:
+    - FoodSTFriedFish
+  craftTime: 12
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingFriedFish:
+      amount: 1
+      catalyzer: true
+    FoodMeatSTFishFilletRaw:
+      amount: 2
+    FoodSTEgg:
+      amount: 1
+    FoodSTFlour:
+      amount: 1
+    FoodCondimentPacketSoy:
+      amount: 1
+    FoodSTOil:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTCakePlain
+  resultProtos:
+    - FoodSTCakePlain
+  craftTime: 25
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingCakePlain:
+      amount: 1
+      catalyzer: true
+    FoodSTFlour:
+      amount: 1
+    FoodSTEgg:
+      amount: 2
+    FoodSTSugar:
+      amount: 1
+    FoodSTMilkCarton:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTKebabMeat
+  resultProtos:
+    - FoodSTKebabMeat
+  craftTime: 15
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingKebabMeat:
+      amount: 1
+      catalyzer: true
+    FoodKebabSkewer:
+      amount: 1
+    FoodSTTomato:
+      amount: 1
+    FoodMeatDog:
+      amount: 1
+    FoodSTOnion:
+      amount: 1
+    FoodMeatBoar:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTKebabVeggie
+  resultProtos:
+    - FoodSTKebabVeggie
+  craftTime: 15
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingKebabVeggie:
+      amount: 1
+      catalyzer: true
+    FoodKebabSkewer:
+      amount: 1
+    FoodSTTomato:
+      amount: 1
+    FoodSTOnion:
+      amount: 1
+    FoodSTCarrot:
+      amount: 1
+    FoodSTPotato:
+      amount: 1
+
+# HARD
+# collect the chaos emeralds
+- type: craftRecipe
+  id: recipeFoodSTCakeBerry
+  resultProtos:
+    - FoodSTCakeBerry
+  craftTime: 30
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingCakeBerry:
+      amount: 1
+      catalyzer: true
+    FoodSTFlour:
+      amount: 1
+    FoodSTEgg:
+      amount: 1
+    FoodSTSugar:
+      amount: 1
+    FoodSTMilkCarton:
+      amount: 1
+    StalkerFoodMalina:
+      amount: 1
+    StalkerFoodBrusnika:
+      amount: 1
+    StalkerFoodGolubika:
+      amount: 1
+    StalkerFoodEjevika:
+      amount: 1
+    StalkerFoodKlubnika:
+      amount: 1
+
+# STRANGE
+- type: craftRecipe
+  id: recipeFoodSTSnorkSoup
+  resultProtos:
+    - FoodSTSnorkSoup
+  craftTime: 25
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingSnorkSoup:
+      amount: 1
+      catalyzer: true
+    FoodBowlBig:
+      amount: 1
+    FoodSTSpice:
+      amount: 3
+    MutantPartSnorkFoot:
+      amount: 1
+    FoodSTMilkCarton:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTIceCream
+  resultProtos:
+    - FoodSTIceCream
+  craftTime: 10
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingIceCream:
+      amount: 1
+      catalyzer: true
+    ZoneArtifactIce:
+      amount: 1
+      catalyzer: true
+    FoodSTMilkCarton:
+      amount: 2
+    FoodSTSugar:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTBraid
+  resultProtos:
+    - FoodSTBraid
+  craftTime: 20
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingBraid:
+      amount: 1
+      catalyzer: true
+    MutantPartBloodsuckerTentacles:
+      amount: 1
+    FoodSnackChocolate:
+      amount: 1
+    FoodSTSugar:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTAmbrosia
+  resultProtos:
+    - FoodSTAmbrosia
+  craftTime: 45 # think about your choices
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingAmbrosia:
+      amount: 1
+      catalyzer: true
+    ZoneArtifactSoul:
+      amount: 1
+    FoodTofuSlice:
+      amount: 1
+    FoodSTSugar:
+      amount: 1
+    MutantPartLeshiyRoot:
+      amount: 1
+
+- type: craftRecipe
+  id: recipeFoodSTOracleGumbo
+  resultProtos:
+  - FoodSTOracleGumbo
+  craftTime: 25
+  requiredWorkbench: StalkerCookingStation
+  items:
+    STCookingOracleGumbo:
+      amount: 1
+      catalyzer: true
+    FoodBowlBig:
+      amount: 1
+    MutantPartOraculeEye:
+      amount: 1
+    FoodSTBeans:
+      amount: 1
+    STFoodMeatSalamiSlice:
+      amount: 3
+    FoodSTOnion:
+      amount: 1
+    FoodSTTomato:
+      amount: 1
+    FoodSTSpice:
+      amount: 2
