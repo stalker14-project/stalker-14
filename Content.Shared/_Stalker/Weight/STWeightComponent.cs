@@ -15,7 +15,7 @@ public sealed partial class STWeightComponent : Component
     [ViewVariables]
     public float TotalMaximum => Maximum * MaximumModifier;
 
-    [DataField, ViewVariables, AutoNetworkedField]
+    [DataField, ViewVariables]
     public float InsideWeight;
 
     [DataField, ViewVariables, AutoNetworkedField]

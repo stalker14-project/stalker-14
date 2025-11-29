@@ -1,15 +1,13 @@
-using Content.Shared._Stalker.ZoneAnomaly;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
 using Content.Shared.Whitelist;
-using Robust.Server.GameObjects;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Timing;
 
-namespace Content.Server._Stalker.ZoneAnomaly;
+namespace Content.Shared._Stalker.ZoneAnomaly;
 
 public sealed class ZoneAnomalySystem : SharedZoneAnomalySystem
 {
-    [Dependency] private readonly AppearanceSystem _appearance = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 

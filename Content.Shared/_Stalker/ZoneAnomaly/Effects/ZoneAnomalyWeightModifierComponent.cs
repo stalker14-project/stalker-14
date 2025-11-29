@@ -1,4 +1,5 @@
-﻿namespace Content.Shared._Stalker.ZoneAnomaly.Effects;
+
+namespace Content.Shared._Stalker.ZoneAnomaly.Effects;
 
 [RegisterComponent]
 public sealed partial class ZoneAnomalyWeightModifierComponent : Component

@@ -1,10 +1,8 @@
-using System.Linq;
 using Content.Shared._Stalker.ZoneAnomaly.Components;
-using Content.Shared._Stalker.ZoneAnomaly.Triggers;
 using Content.Shared.Whitelist;
 using Robust.Shared.Physics.Events;
 
-namespace Content.Server._Stalker.ZoneAnomaly.Triggers;
+namespace Content.Shared._Stalker.ZoneAnomaly.Triggers;
 
 public sealed class ZoneAnomalyTriggerCollideSystem : EntitySystem
 {
