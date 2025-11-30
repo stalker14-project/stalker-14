@@ -794,17 +794,23 @@
   id: PosterRedline
   name: "Флаг Красной линии"
   description: "Смерть Рейху!"
-  suffix: ST, Mapping, Метро
+  suffix: ST, Mapping, Metro
   components:
   - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Stalker/Structures/Wallmounts/metro.rsi
     state: redline
+    snapCardinals: true
 
 - type: entity
   parent: PosterBaseStalker
   id: PosterReich
   name: "Флаг Рейха"
   description: "Смерть Красной Линии!"
-  suffix: ST, Mapping, Метро
+  suffix: ST, Mapping, Metro
   components:
   - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Stalker/Structures/Wallmounts/metro.rsi
     state: reich
+    snapCardinals: true

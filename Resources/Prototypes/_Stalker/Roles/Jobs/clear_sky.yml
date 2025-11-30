@@ -34,6 +34,43 @@
         teethCount: 3
         initialTeeth: 3
 
+- type: job
+  id: StalkerClearSkyHead
+  name: job-clearsky-head
+  icon: cn
+  description: job-clearsky-desc
+  playTimeTracker: StalkerClearSkyHead
+  whitelisted: true
+  requirements:
+    # - !type:RoleTimeRequirement
+    #   role: JobClearSky
+    #   time: 1
+    - !type:SpeciesRequirement
+      species:
+      - Human
+      - Dwarf
+  startingGear: StalkerClearSkyGear
+  supervisors: job-clearsky-supervisor
+  canBeAntag: false
+  special:
+    - !type:AddComponentSpecial
+      components:
+      - type: Access
+        tags:
+          - CN
+      - type: Bands
+        band: Stalker
+        bandIcon: cn
+        bandProto: STClearSkyBand
+        bandRankId: 2
+      - type: BlockTackingHolyItems
+      - type: TeethPull
+        teethProto: ToothStalker
+        pullingItemTag: PliersStalker
+        teethCount: 3
+        initialTeeth: 3
+
+
 - type: startingGear
   id: StalkerClearSkyGear
   equipment:
@@ -52,4 +89,4 @@
   managingRankId: 2
   hierarchy:
     1: StalkerClearSky
-
+    2: StalkerClearSkyHead
