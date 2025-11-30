@@ -64,9 +64,11 @@
   id: ClothingBackpackTacticBase
   categories: [ HideSpawnMenu ]
   # abstract: true
-  parent: ClothingBackpackDuffelGreenStalker
+  parent: STClothingBackBase
   suffix: ST
   components:
+  - type: STWeight
+    self: 1.7
   - type: Craftable
   - type: Storage
     grid:
@@ -76,6 +78,8 @@
     - 0,6,3,7
     - 0,2,0,2
     - 3,2,3,2
+    quickInsert: true
+    areaInsert: true
 
 - type: entity
   parent: ClothingBackpackTacticBase

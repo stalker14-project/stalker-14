@@ -23,6 +23,7 @@ public partial class RestartSystem : EntitySystem
     private readonly TimeSpan _updateDelay = TimeSpan.FromSeconds(60f);
     private readonly TimeSpan _teleportDelay = TimeSpan.FromMinutes(5f);
     private TimeSpan _updateTime;
+    private TimeSpan _scheduledRestartDuration;
 
     public override void Initialize()
     {
@@ -57,7 +58,16 @@ public partial class RestartSystem : EntitySystem
         _chat.DispatchServerAnnouncement($"Restarting the server in: {Math.Round(delta.TotalMinutes, 1)} minutes");
         if (delta < _teleportDelay)
         {
-            _chat.DispatchServerAnnouncement($"You can use the home command to quickly return to spawn");
+            // Only allow /home if restart was scheduled with < 45 minutes
+            if (_scheduledRestartDuration < TimeSpan.FromMinutes(45))
+            {
+                _chat.DispatchServerAnnouncement($"You can use the home command to quickly return to spawn");
+            }
+            else
+            {
+                _chat.DispatchServerAnnouncement($"Home command disabled for this restart");
+                _usedHomeCommand.Clear(); // ensure used-home list is reset for next restart
+            }
         }
 
         data.Comp.IntervalLast = _timing.CurTime + data.Comp.IntervalDelay;
@@ -67,6 +77,16 @@ public partial class RestartSystem : EntitySystem
     {
         var data = GetData();
         _chat.DispatchServerAnnouncement($"Launched auto-restart of the server in: {Math.Round(delay.TotalMinutes, 1)} minutes");
+
+        _scheduledRestartDuration = delay;    // <-- store original restart duration
+        _sawmill.Info($"Restart scheduled in {delay.TotalMinutes} minutes.");
+
+        // New: announce up-front that /home will be disabled at 5 minutes for long restarts
+        if (_scheduledRestartDuration >= TimeSpan.FromMinutes(45))
+        {
+            _chat.DispatchServerAnnouncement("Note: /home will NOT be available at the 5 minute warning because this restart was scheduled for 45+ minutes.");
+            _sawmill.Info("Home will be disabled at 5 minutes (scheduled restart >= 45 minutes).");
+        }
 
         data.Comp.Time = _timing.CurTime + delay;
         data.Comp.IntervalLast = _timing.CurTime + data.Comp.IntervalDelay;
@@ -94,6 +114,11 @@ public partial class RestartSystem : EntitySystem
         if (data.Comp.Time == default)
         {
             shell.WriteError("Рестарт не запланирован");
+            return;
+        }
+        if (_scheduledRestartDuration >= TimeSpan.FromMinutes(45))
+        {
+            shell.WriteError("Teleportation is disabled for this restart (launch was >45 minutes)");
             return;
         }
 

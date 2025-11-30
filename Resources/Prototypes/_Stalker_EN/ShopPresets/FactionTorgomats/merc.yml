@@ -100,21 +100,23 @@
     - name: shop-category-magazines
       priority: 2
       items:
-        Base939Mag10: 70
-        939Mag20: 120
+        # 5.56
         Base556Mag10: 80
         556Mag20: 220
         556Mag45: 400
         556Mag30: 330
+        # 9.19
         BaseMP5Mag: 260
         BaseTEC9Mag: 120
         BaseGlockMag10: 100
         GlockMag24: 200
         GlockMag33: 300
+        # 7.51
         Base751Mag10: 200
         751Mag20: 400
+        751Mag30: 500
+        # .45
         STSpeedLoader45ACPEmpty: 90
-        739Mag30: 300
 
     - name: shop-category-ammunition
       priority: 3
@@ -126,18 +128,18 @@
         # 9.19
         919PSOGJBox: 100 # T1
         919PSTBox: 200 # T2
-        919PBMBox: 1450 # T3
+        919PBMBox: 1425 # T3
         # .45
         45ACPLFMJBox: 100 # T1
         45ACPMFMJBox: 250 # T2
         45ACPAPBox: 1950 # T3
         # 5.56
         556FMJBox: 300
-        556M855Box: 1850
-        556WarmagBox: 650 # Mutant
+        556M855Box: 1650 # T3
+        556WarmagBox: 550 # Mutant
         # 7.51
-        751M80Box: 2250 # T3
-        751UNBox: 650 # Mutant
+        751M80Box: 1950 # T3
+        751UNBox: 850 # Mutant
 
     - name: shop-category-medicine
       priority: 4
@@ -331,4 +333,5 @@
         ClothingTorsoTurtlenecksKhakiTurtleneck: 50
         ClothingTorsoTurtlenecksMatrosska: 50
         ClothingHeadCapMerc: 20
-        ClothingNeckMantleMerc: 100
+        ClothingNeckMantleMerc: 150 # Dripflation
+        ClothingNeckScarfMerc: 100

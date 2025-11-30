@@ -1,6 +1,9 @@
 ent-STClothingOuterSlickBlack = Black "Slick" Body Armor
     .suffix = ST, T3, PVP
+    .desc = Bulletproof vest fitted with tier 3 armored plates.
 ent-STClothingOuterSlickGreen = Green "Slick" Body Armor
     .suffix = { ent-STClothingOuterSlickBlack.suffix }
+    .desc = Bulletproof vest fitted with tier 3 armored plates.
 ent-STClothingOuterSlickHaki = "Slick" Body Armor
     .suffix = { ent-STClothingOuterSlickBlack.suffix }
+    .desc = Bulletproof vest fitted with tier 3 armored plates.

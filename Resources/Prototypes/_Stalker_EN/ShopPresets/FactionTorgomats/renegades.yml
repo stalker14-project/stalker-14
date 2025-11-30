@@ -130,33 +130,34 @@
   - name: shop-category-ammunition
     priority: 3
     items:
-      6mmBuckshotBox: 300
-      7mmBuckshotBox: 45
+      # 7mm
+      6mmBuckshotBox: 320 # T1
+      7mmBuckshotBox: 75 # T0
       # 7.25
-      725PBox: 75
-      725PTBox: 200
-      725PSTBox: 600
+      725PBox: 90 # T1
+      725PTBox: 200 # T2
+      725PSTBox: 1450 # T3
       # 9.19
-      919PSOGJBox: 75
-      919PSTBox: 200
-      919PBMBox: 2000
+      919PSOGJBox: 100 # T1
+      919PSTBox: 300 # T2
+      919PBMBox: 1450 # T3
       # 9.18
-      918PGJBox: 100
-      918PSTBox: 200
-      918PBMBox: 2000
+      918PGJBox: 100 # T1
+      918PSTBox: 300 # T2
+      918PBMBox: 1450 # T3
       # 5.45
-      545FMJBox: 200
-      545HPBox: 600
-      545PCBox: 2500
+      545FMJBox: 500 # T2
+      545HPBox: 725 # Mutant
+      545PCBox: 1650 # T3
       # 7.39
-      739FMJBox: 2750
+      739FMJBox: 1950 # T3
       # 7.54
-      754FMJBox: 3000
-      754HPBox: 650
+      754FMJBox: 2500 # T3
+      754HPBox: 1350 # Mutant
       # .45
-      45ACPLFMJBox: 200
-      45ACPMFMJBox: 540
-      45ACPAPBox: 2250
+      45ACPLFMJBox: 100 # T1
+      45ACPMFMJBox: 550 # T2
+      45ACPAPBox: 1950 # T3
 
   - name: shop-category-medicine
     priority: 4
@@ -292,7 +293,7 @@
   - name: shop-category-customization
     priority: 13
     items:
-      ClothingCapeRenegat: 100
+      ClothingCapeRenegat: 150 # Dripflation
       ClothingBandageStalkerYellow: 5
       ClothingHeadHatBeaniehat: 10
       ClothingMaskNeckFacemask: 10
@@ -349,4 +350,5 @@
       ClothingTorsoTurtlenecksGorka6B: 50
       ClothingTorsoTurtlenecksKhakiTurtleneck: 50
       ClothingTorsoTurtlenecksMatrosska: 50
+      ClothingNeckScarfRenegade: 100
 
