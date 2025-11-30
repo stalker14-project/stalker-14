@@ -2,7 +2,6 @@ job-anomalist = Техник по аномалиям
 job-anomalist-desc = Если вы это видите, вы все знаете...
 job-anomalist-guardian = Проводник по аномалиям
 job-anomalist-guardian-desc = Если вы это видите, вы все знаете...
-job-anomalist-guardian-supervisor = Вы работаете сами на себя.
 job-anomalist-supervisor = Зона...
 
 job-bandit = Бандит
@@ -11,13 +10,14 @@ job-head-bandit = Пахан
 job-head-bandit-desc = Рейдеры и мародеры Зоны, начиная от мелких головорезов и гангстеров и заканчивая организованными преступными синдикатами.
 job-bandit-supervisor = Вы никому не подчиняетесь...
 
+job-clearsky-head= Лидер Чистого Неба
 job-clearsky = Боец Чистого Неба
 job-clearsky-desc = Ищет способ сосуществования с Зоной.
 job-clearsky-supervisor = Исследуй Зону и оберегай её секреты от посторонних глаз.
 
 job-covenant = Завет
 job-covenant-desc = Это небольшая армия крайне опасных фанатиков.
-job-covenant-supervisor = Вы работаете на Высшие Силы.
+job-covenant-supervisor = Исследуй Зону и оберегай её секреты от посторонних глаз.
 job-covenant-head = Лидер Завета
 
 job-deserter = Отступник
@@ -155,58 +155,4 @@ job-militia-commander = Командир ополчения
 job-militia-commander-desc = Сталкерское ополчение. Командиров может быть много.
 job-militia-commander-supervisor = Вы советуетесь с другими командирами ополчения
 
-job-clown = Циркач
-job-clown-desc = Защитник хорошего настроения.
-job-clown-supervisor = Смех продлевает жизнь. Буквально.
-
-job-doctor = Врач
-job-doctor-desc = Спасают людей, жертвуя своими силами.
-job-doctor-supervisor = Вы подчиняетесь Главному Врачу.
-
-job-head-doctor = Главный Врач
-job-head-doctor-desc = Руководит медицинским составом, одновременно оказывая помощь нуждающимся.
-job-head-doctor-supervisor = Вы подчиняетесь мэру города "Чернобыль - 4".
-
 job-guide = Проводник
-
-# Citizens
-
-job-mayor-city = Мэр
-job-mayor-city-desc = Управляет городом "Чернобыль-4". Именно он является центральным мозгом города.
-job-mayor-city-supervisor = Нет никого главнее вас. Все гражданские структуры подчиняются вам.
-
-job-supervisor-mayor = Вы подчиняетесь мэру города "Чернобыль - 4".
-
-job-prokuror = Прокурор
-job-prokuror-desc = Добывайте правду для её же предоставления в суде.
-
-job-magistrate = Судья
-job-magistrate-desc = Вершите правосудие, ореинтируясь на законы города "Чернобыль - 4".
-
-job-priest = Священник
-job-priest-desc = Помогайте людям в сложных ситуациях, обращая их к религии.
-
-job-stalker-bartender = Бармен
-job-stalker-bartender-desc = Работайте в баре, удовлетворяя алкогольные нужды посетителей.
-
-# Evolvers
-
-job-evolver = Эволвер
-job-evolver-desc = Разумные мутанты, стремящиеся к постоянной эволюции и адаптации в Зоне.
-job-evolver-supervisor = Защитить Зону для усиления своих способностей и продолжения мутации.
-
-job-evolver-pack-fang = Клык Стаи
-job-evolver-pack-fang-desc = Свирепый воин стаи, представляющий её дикую мощь и первичные инстинкты.
-job-evolver-pack-fang-supervisor = Защищать стаю и расширять её территорию, действуя в первых рядах атак.
-
-job-evolver-pack-alpha = Альфа Стаи
-job-evolver-pack-alpha-desc = Лидер стаи, управляющий её действиями и защищающий её законы и порядок.
-job-evolver-pack-alpha-supervisor = Поддерживать и укреплять власть в стае, координируя её нападения и защиту.
-
-job-evolver-symbiote-medium = Медиум Симбиот
-job-evolver-symbiote-medium-desc = Управляющий телепатией и пси-энергиями.
-job-evolver-symbiote-medium-supervisor = Изучасть и развивать Пси способности, сохранить Зону.
-
-job-evolver-symbiote-archon = Архон Симбиот
-job-evolver-symbiote-archon-desc = Высший симбиот, обладающий абсолютной властью над пси-энергией и пространством.
-job-evolver-symbiote-archon-supervisor = Защищать Зону, контролируя пси-пространство и управляя симбиотами.

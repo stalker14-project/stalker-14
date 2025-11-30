@@ -47,7 +47,6 @@
     equippedPrefix: off
   - type: Item
     heldPrefix: off
-  - type: ItemTogglePointLight
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
@@ -73,11 +72,16 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        startValue: 0.1
-        endValue: 2.0
+        minValue: 0.1
+        maxValue: 2.0
         isLooped: true
-  - type: ToggleableVisuals
+  - type: ToggleableLightVisuals
     spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: on-inhand-left
+      right:
+      - state: on-inhand-right
     clothingVisuals:
       head:
       - state: on-equipped-HELMET

@@ -29,11 +29,8 @@
     fillBaseName: vial-1-
     inHandsMaxFillLevels: 4
     inHandsFillBaseName: -fill-
-  - type: Edible
-    edible: Drink
+  - type: Drink
     solution: beaker
-    destroyOnEmpty: false
-    utensil: None
   - type: SolutionContainerManager
     solutions:
       beaker:
@@ -46,7 +43,6 @@
     solution: beaker
   - type: ExaminableSolution
     solution: beaker
-    exactVolume: true
   - type: DrawableSolution
     solution: beaker
   - type: SolutionTransfer
@@ -153,18 +149,3 @@
         reagents:
           - ReagentId: Chlorine
             Quantity: 5
-
-- type: entity
-  id: PlasmaChemistryVial
-  parent: BaseChemistryEmptyVial
-  suffix: plasma
-  components:
-  - type: Label
-    currentLabel: reagent-name-plasma
-  - type: SolutionContainerManager
-    solutions:
-      beaker:
-        maxVol: 10
-        reagents:
-          - ReagentId: Plasma
-            Quantity: 10

@@ -51,7 +51,7 @@
 
 - type: radioChannel
   id: Project3
-  name: channel-name-stalker-project-3
+  name: "Идентификация Угроз"
   keycode: '4'
   frequency: 56573
   color: "#ff0000"
@@ -59,7 +59,7 @@
 
 - type: radioChannel
   id: Project2
-  name: channel-name-stalker-project-2
+  name: "Идентификация Нежелаемых"
   keycode: '5'
   frequency: 75923
   color: "#ffff00"
@@ -67,7 +67,7 @@
 
 - type: radioChannel
   id: Project1
-  name: channel-name-stalker-project-1
+  name: "Идентификация Зелёных"
   keycode: '6'
   frequency: 25858
   color: "#04ff00"
@@ -75,7 +75,7 @@
 
 - type: radioChannel
   id: Project
-  name: channel-name-stalker-project
+  name: "Общий Проект"
   keycode: '7'
   frequency: 94384
   color: "#00e1d7"
@@ -104,11 +104,11 @@
   - type: Trash
     time: 600
   - type: Unremoveable
+  - type: Appearance
   - type: Sprite
     sprite: _Stalker/Objects/Devices/pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
-      state: "project_death"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -120,13 +120,9 @@
   - type: Icon
     sprite: _Stalker/Objects/Devices/pda.rsi
     state: stalker_off
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        project_death
   - type: Pda
     id: PROJECTIDCard
+    state: project_death
     paiSlot:
       priority: -2
       whitelist:
@@ -144,12 +140,6 @@
       whitelist:
         components:
           - IdCard
-  - type: ContainerContainer
-    containers:
-      PDA-id: !type:ContainerSlot {}
-      PDA-pen: !type:ContainerSlot {}
-      PDA-pai: !type:ContainerSlot {}
-  - type: ItemSlots
   - type: Item
     size: Small
   - type: Clothing

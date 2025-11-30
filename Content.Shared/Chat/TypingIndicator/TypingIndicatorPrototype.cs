@@ -7,7 +7,7 @@ namespace Content.Shared.Chat.TypingIndicator;
 /// <summary>
 ///     Prototype to store chat typing indicator visuals.
 /// </summary>
-[Prototype]
+[Prototype("typingIndicator")]
 public sealed partial class TypingIndicatorPrototype : IPrototype
 {
     [IdDataField]
@@ -18,9 +18,6 @@ public sealed partial class TypingIndicatorPrototype : IPrototype
 
     [DataField("typingState", required: true)]
     public string TypingState = default!;
-
-    [DataField("idleState", required: true)]
-    public string IdleState = default!;
 
     [DataField("offset")]
     public Vector2 Offset = new(0, 0);

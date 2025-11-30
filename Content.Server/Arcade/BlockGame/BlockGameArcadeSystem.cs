@@ -1,9 +1,11 @@
+using Content.Server.Power.Components;
 using Content.Shared.UserInterface;
-using Content.Server.Advertise.EntitySystems;
-using Content.Shared.Advertise.Components;
+using Content.Server.Advertise;
+using Content.Server.Advertise.Components;
 using Content.Shared.Arcade;
 using Content.Shared.Power;
 using Robust.Server.GameObjects;
+using Robust.Shared.Player;
 
 namespace Content.Server.Arcade.BlockGame;
 
@@ -29,7 +31,7 @@ public sealed class BlockGameArcadeSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<BlockGameArcadeComponent>();
+        var query = EntityManager.EntityQueryEnumerator<BlockGameArcadeComponent>();
         while (query.MoveNext(out var _, out var blockGame))
         {
             blockGame.Game?.GameTick(frameTime);

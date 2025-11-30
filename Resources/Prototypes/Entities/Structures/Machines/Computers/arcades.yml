@@ -10,7 +10,7 @@
   - type: ExtensionCableReceiver
   - type: PointLight
     radius: 1.8
-    energy: 3.0
+    energy: 1.6
     color: "#3db83b"
   - type: LitOnPowered
   - type: Sprite
@@ -36,9 +36,6 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Vending
-  - type: SpookySpeaker
-    messageSet: SpookySpeakerMessagesGeneric
-    speakChance: 0.2
   - type: Anchorable
   - type: Pullable
   - type: StaticPrice
@@ -114,7 +111,6 @@
     - PlushieSnake
     - PlushieArachind
     - PlushieMoth
-    - PlushieVulp
     - PlushieHampter
     - PlushiePenguin
     - PlushieHuman
@@ -129,18 +125,17 @@
     - PlasticBanana
     - RevolverCapGun
     - SnapPopBox
-    - TennisBall
     - ToyMouse
     - ToyAi
     - ToyNuke
-    - ToyFigurineGriffin
+    - ToyGriffin
     - ToyHonk
     - ToyIan
     - ToyMarauder
     - ToyMauler
     - ToyGygax
     - ToyOdysseus
-    - ToyFigurineOwlman
+    - ToyOwlman
     - ToyDeathRipley
     - ToyPhazon
     - ToyFireRipley
@@ -148,7 +143,7 @@
     - ToyRipley
     - ToySeraph
     - ToyDurand
-    - ToyFigurineSkeleton
+    - ToySkeleton
     - ToySword
     - ToyAmongPequeno
     - ToyRubberDuck
@@ -172,12 +167,10 @@
         type: WiresBoundUserInterface
   - type: Computer
     board: SpaceVillainArcadeComputerCircuitboard
-  - type: Vocalizer
-    minVocalizeInterval: 1m # Arcades are noisy
-    maxVocalizeInterval: 4m
-    hideChat: true
-  - type: DatasetVocalizer
-    dataset: SpaceVillainAds
+  - type: Advertise
+    pack: SpaceVillainAds
+    minimumWait: 60 # Arcades are noisy
+    maximumWait: 240
   - type: SpeakOnUIClosed
     pack: SpaceVillainGoodbyes
 
@@ -219,11 +212,9 @@
         type: WiresBoundUserInterface
   - type: Computer
     board: BlockGameArcadeComputerCircuitboard
-  - type: Vocalizer
-    minVocalizeInterval: 1m # Arcades are noisy
-    maxVocalizeInterval: 4m
-    hideChat: true
-  - type: DatasetVocalizer
-    dataset: BlockGameAds
+  - type: Advertise
+    pack: BlockGameAds
+    minimumWait: 60 # Arcades are noisy
+    maximumWait: 240
   - type: SpeakOnUIClosed
     pack: BlockGameGoodbyes

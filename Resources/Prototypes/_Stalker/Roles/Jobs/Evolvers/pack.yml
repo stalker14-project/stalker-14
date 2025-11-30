@@ -1,8 +1,8 @@
 - type: job
   id: EvolverPackFang
-  name: job-evolver-pack-fang
+  name: Клык Стаи
   icon: pack
-  description: job-evolver-pack-fang-desc
+  description: Свирепый воин стаи, представляющий её дикую мощь и первичные инстинкты.
   playTimeTracker: JobEvolverPackFang
   whitelisted: true
   requirements:
@@ -15,13 +15,13 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverPackFangGear
-  supervisors: job-evolver-pack-fang-supervisor
+  supervisors: Защищать стаю и расширять её территорию, действуя в первых рядах атак.
   special:
     - !type:AddComponentSpecial
       components:
         - type: Access
           tags:
-            - EvolverPack
+            - Pack
             - Evolver
         - type: Bands
           band: Evolver
@@ -46,9 +46,9 @@
 
 - type: job
   id: EvolverPackAlpha
-  name: job-evolver-pack-alpha
+  name: Альфа Стаи
   icon: pack
-  description: job-evolver-pack-alpha-desc
+  description: лидер стаи, управляющий её действиями и защищающий её законы и порядок.
   playTimeTracker: JobEvolverPackAlpha
   whitelisted: true
   requirements:
@@ -61,14 +61,14 @@
       - SlimePerson
       - Vox
   startingGear: STEvolverPackAlphaGear
-  supervisors: job-evolver-pack-alpha-supervisor
+  supervisors: Поддерживать и укреплять власть в стае, координируя её нападения и защиту.
   special:
     - !type:AddComponentSpecial
       components:
         - type: Access
           tags:
             - Evolver
-            - EvolverPack
+            - Pack
         - type: Bands
           band: Evolver
           bandIcon: pack

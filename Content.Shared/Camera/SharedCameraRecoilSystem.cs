@@ -1,6 +1,5 @@
 using System.Numerics;
-using Content.Shared.Movement.Components;
-using Content.Shared.Movement.Systems;
+using Content.Shared.Actions;
 using JetBrains.Annotations;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
@@ -30,7 +29,7 @@ public abstract class SharedCameraRecoilSystem : EntitySystem
     /// </summary>
     protected const float KickMagnitudeMax = 1f;
 
-    [Dependency] private readonly SharedContentEyeSystem _eye = default!;
+    [Dependency] private readonly SharedEyeSystem _eye = default!;
     [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
@@ -83,7 +82,9 @@ public abstract class SharedCameraRecoilSystem : EntitySystem
                 continue;
 
             recoil.LastKick = recoil.CurrentKick;
-            _eye.UpdateEyeOffset((uid, eye));
+            var ev = new GetEyeOffsetEvent();
+            RaiseLocalEvent(uid, ref ev);
+            _eye.SetOffset(uid, ev.Offset, eye);
         }
     }
 

@@ -10,12 +10,12 @@ namespace Content.Shared.Cargo.Prototypes
     {
         /// <inheritdoc />
         [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<CargoProductPrototype>))]
-        public string[]? Parents { get; private set; }
+        public string[]? Parents { get; }
 
         /// <inheritdoc />
         [NeverPushInheritance]
         [AbstractDataField]
-        public bool Abstract { get; private set; }
+        public bool Abstract { get; }
 
         [DataField("name")] private string _name = string.Empty;
 
@@ -36,7 +36,7 @@ namespace Content.Shared.Cargo.Prototypes
                 if (_name.Trim().Length != 0)
                     return _name;
 
-                if (IoCManager.Resolve<IPrototypeManager>().Resolve(Product, out EntityPrototype? prototype))
+                if (IoCManager.Resolve<IPrototypeManager>().TryIndex(Product, out EntityPrototype? prototype))
                 {
                     _name = prototype.Name;
                 }
@@ -56,7 +56,7 @@ namespace Content.Shared.Cargo.Prototypes
                 if (_description.Trim().Length != 0)
                     return _description;
 
-                if (IoCManager.Resolve<IPrototypeManager>().Resolve(Product, out EntityPrototype? prototype))
+                if (IoCManager.Resolve<IPrototypeManager>().TryIndex(Product, out EntityPrototype? prototype))
                 {
                     _description = prototype.Description;
                 }
@@ -93,6 +93,6 @@ namespace Content.Shared.Cargo.Prototypes
         ///     The prototype group of the product. (e.g. Contraband)
         /// </summary>
         [DataField]
-        public ProtoId<CargoMarketPrototype> Group { get; private set; } = "market";
+        public string Group { get; private set; } = "market";
     }
 }

@@ -10,36 +10,30 @@
       drawdepth: SmallMobs # if mice can hide under tables, so can mousetraps
       layers:
         - state: mousetrap
-          map: ["enum.ToggleableVisuals.Layer"]
+          map: ["base"]
     - type: StepTrigger
       intersectRatio: 0.2
       requiredTriggeredSpeed: 0
     - type: Mousetrap
-    - type: ItemToggle
-      soundActivate: "/Audio/Items/Handcuffs/cuff_end.ogg"
-      soundDeactivate: "/Audio/Items/snap.ogg"
-      popupActivate: beartrap-on-activate
-      popupDeactivate: beartrap-on-deactivate
-    - type: UseDelay
-    - type: ItemToggleOnTrigger
-      canActivate: false
-      showPopup: false # only show the popup when arming/disarming the trap in your hand
     - type: TriggerOnStepTrigger
-    - type: DamageOnTrigger
-      targetUser: true
+    - type: DamageUserOnTrigger
       damage:
         groups:
           Brute: 75
     - type: StaminaDamageUserOnTrigger
+    - type: EmitSoundOnUse
+      sound: "/Audio/Items/Handcuffs/cuff_end.ogg"
+    - type: EmitSoundOnTrigger
+      sound: "/Audio/Items/snap.ogg"
     - type: Item
       sprite: _Stalker/Objects/Tools/beartrap.rsi
     - type: Appearance
     - type: GenericVisualizer
       visuals:
-        enum.ToggleableVisuals.Enabled:
-          enum.ToggleableVisuals.Layer:
-            True: {state: mousetraparmed}
-            False: {state: mousetrap}
+        enum.MousetrapVisuals.Visual:
+          base:
+            Armed: { state: mousetraparmed }
+            Unarmed: { state: mousetrap }
     - type: Physics
       bodyType: Dynamic
     - type: CollisionWake
@@ -71,5 +65,5 @@
   id: BeartrapArmed
   description: Полезная штука, чтоб ловить наглых животных. Очень полезная.
   components:
-    - type: ItemToggle
-      activated: true
+    - type: Mousetrap
+      isActive: false

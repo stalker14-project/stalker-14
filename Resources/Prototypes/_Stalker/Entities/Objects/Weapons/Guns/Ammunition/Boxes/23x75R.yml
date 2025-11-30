@@ -1,0 +1,71 @@
+- type: entity
+  parent: BaseAmmoBoxStalker
+  id: 2375ShrapnelBuckshotBox
+  name: Коробка картечи "Шрпанель 25" 23х75мм R
+  description: Для КС-23, в коробке 10 штук. Обеспечивает пробитие 1-го класса брони.
+  components:
+  - type: MagazineVisuals
+    magState: 1270red
+  - type: BallisticAmmoProvider
+    capacity: 10
+    proto: CartridgeShrapnel25Buckshot
+    whitelist:
+      tags:
+        - ShellKS23
+  - type: Sprite
+    layers:
+    - state: 1270
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 1270red-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 7mmBuckshotBox
+  id: 2375BarricadaBulletBox
+  name: Коробка пуль "Баррикада" 23х75мм R
+  description: Для КС-23, в коробке 10 штук. Обеспечивает пробитие 3 класса брони.
+  components:
+  - type: MagazineVisuals
+    magState: 1270gray
+  - type: BallisticAmmoProvider
+    proto: CartridgeShotgunBarricadaBullet
+  - type: Sprite
+    layers:
+    - state: 1270solid
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 1270gray-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: 7mmBuckshotBox
+  id: 2375VolnaRBulletBox
+  name: Коробка пуль "ВолнаР" 23х75мм R
+  description: Для КС-23, в коробке 10 штук. Бесполезно против брони, но может сложить врага пополам, не нанося ему большого урона.
+  components:
+  - type: MagazineVisuals
+    magState: 1270gray
+  - type: BallisticAmmoProvider
+    proto: CartridgeShotgunVolnaRBullet
+  - type: Sprite
+    layers:
+    - state: 1270solid
+      map: ["enum.GunVisualLayers.Base"]
+    - state: 1270gray-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+#- type: entity
+#  parent: 7mmBuckshotBox
+#  id: 2375ZvezdaBulletBox
+#  name: Коробка пуль "Звезда" 23х75мм R
+#  description: Для КС-23, в коробке 10 штук. Это просто ослепительный снаряд, не более. НЕ наносит урона.
+#  components:
+#  - type: MagazineVisuals
+#    magState: 1270yellow
+#  - type: BallisticAmmoProvider
+#    proto: CartridgeShotgunZvezdaBullet
+#  - type: Sprite
+#    layers:
+#    - state: 1270solid
+#      map: ["enum.GunVisualLayers.Base"]
+#    - state: 1270yellow-1
+#      map: ["enum.GunVisualLayers.Mag"]

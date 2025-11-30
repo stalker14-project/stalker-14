@@ -1,0 +1,17 @@
+- type: entity
+  id: STCookingRecipe
+  suffix: Stalker, Craft, Cooking
+  parent: BaseItem
+  name: recipe
+  abstract: true
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Craft/cards.rsi
+    state: recipe
+  - type: Craftable
+  - type: RepositoryItem
+    categoryName: repository-crafting-category

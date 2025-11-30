@@ -92,7 +92,9 @@
   - type: Item
     shape:
       - 0,0,5,1
-    sprite: _Stalker/Objects/Tools/Craft/32.rsi # Stalker-TODO: Need an inhand sprite for this item
+    scale: 0.7,0.7
+    sprite: _Stalker/Objects/Tools/Craft/32.rsi
+    state: tools_1
     size: Normal
   - type: Sprite
     sprite: _Stalker/Objects/Tools/Craft/32.rsi
@@ -130,9 +132,11 @@
   - type: STWeight
     self: 8
   - type: Item
-    sprite: _Stalker/Objects/Tools/Craft/32.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/Tools/Craft/32.rsi
+    state: tools_4
     shape:
       - 0,0,5,1
+    scale: 0.7,0.7
     size: Large
   - type: Sprite
     sprite: _Stalker/Objects/Tools/Craft/32.rsi
@@ -172,7 +176,9 @@
   - type: Item
     shape:
       - 0,0,4,1
-    sprite: _Stalker/Objects/Tools/Craft/32.rsi # Stalker-TODO: Need an inhand sprite for this item
+    sprite: _Stalker/Objects/Tools/Craft/32.rsi
+    state: tools_3
+    scale: 0.7,0.7
     size: Normal
   - type: Sprite
     sprite: _Stalker/Objects/Tools/Craft/32.rsi
@@ -231,7 +237,7 @@
   suffix: Stalker, Инструменты
   components:
     - type: STWeight
-      self: 1.5
+      self: 0.1
     - type: Sprite
       sprite: Objects/Specific/Medical/Surgery/saw.rsi
       state: saw
@@ -239,6 +245,7 @@
       sprite: Objects/Specific/Medical/Surgery/saw.rsi
       storedRotation: 90
       size: Normal
+      self: 1.5
       shape:
         - 0,0,1,0
     - type: Craftable
@@ -332,7 +339,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speedModifier: 1.5
+    speed: 1.5
   - type: IncreaseDamageOnWield
     damage:
       types:

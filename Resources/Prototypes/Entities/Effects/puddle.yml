@@ -23,8 +23,10 @@
       puddle:
         maxVol: 1000
         reagents:
-        - ReagentId: Vomit
-          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Water
+          Quantity: 5
 
 - type: entity
   id: PuddleEgg
@@ -49,60 +51,10 @@
       puddle:
         maxVol: 1000
         reagents:
-        - ReagentId: JuiceTomato
-          Quantity: 10
-
-- type: entity
-  parent: PuddleTemporary
-  id: PuddleBloodSmall
-  suffix: Blood (5u)
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      puddle:
-        maxVol: 1000
-        reagents:
-        - ReagentId: Blood
+        - ReagentId: Nutriment
           Quantity: 5
-
-- type: entity
-  parent: PuddleTemporary
-  id: PuddleBlood
-  suffix: Blood (30u)
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      puddle:
-        maxVol: 1000
-        reagents:
-        - ReagentId: Blood
-          Quantity: 30
-
-- type: entity
-  parent: PuddleTemporary
-  id: PuddleFluorosulfuricAcidSmall
-  suffix: FluorosulfuricAcid (5u)
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      puddle:
-        maxVol: 1000
-        reagents:
-        - ReagentId: FluorosulfuricAcid
+        - ReagentId: Water
           Quantity: 5
-
-- type: entity
-  parent: PuddleTemporary
-  id: PuddleFluorosulfuricAcid
-  suffix: FluorosulfuricAcid (15u)
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      puddle:
-        maxVol: 1000
-        reagents:
-        - ReagentId: FluorosulfuricAcid
-          Quantity: 15
 
 - type: entity
   id: PuddleWatermelon
@@ -114,8 +66,10 @@
       puddle:
         maxVol: 1000
         reagents:
-        - ReagentId: JuiceWatermelon
-          Quantity: 30
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Water
+          Quantity: 15
 
 - type: entity
   id: PuddleFlour
@@ -147,7 +101,7 @@
       layers:
         - sprite: Fluids/wet_floor_sparkles.rsi
           state: sparkles
-      drawdepth: Puddles
+      drawdepth: FloorObjects
       color: "#FFFFFF80"
 
 - type: entity
@@ -159,8 +113,6 @@
   components:
   - type: Clickable
   - type: Slippery
-    staminaDamage: 0
-    frictionStatusTime: 0 # Don't apply friction twice
   - type: Transform
     noRot: true
     anchored: true
@@ -168,7 +120,7 @@
     layers:
     - sprite: Fluids/puddle.rsi
       state: splat0
-    drawdepth: Puddles
+    drawdepth: FloorObjects
     color: "#FFFFFF80"
   - type: Physics
     bodyType: Static
@@ -185,8 +137,6 @@
         hard: false
   - type: IconSmooth
     key: puddles
-    additionalKeys:
-    - walls
     base: splat
     mode: CardinalFlags
   - type: SolutionContainerManager
@@ -201,15 +151,13 @@
   - type: EdgeSpreader
     id: Puddle
   - type: StepTrigger
-  - type: Edible
-    edible: Drink
+  - type: Drink
     delay: 3
     transferAmount: 1
     solution: puddle
-    utensil: Spoon
+    examinable: false
   - type: ExaminableSolution
     solution: puddle
-    locVolume: "examinable-solution-on-examine-volume-puddle"
   - type: DrawableSolution
     solution: puddle
   - type: BadDrink

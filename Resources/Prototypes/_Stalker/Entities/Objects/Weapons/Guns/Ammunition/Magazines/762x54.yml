@@ -3,7 +3,7 @@
   name: магазин 7,62x54 (5)
   description: Магазин 7,62x54 для винтовок. Вместимость пуль 5. Продают пустым.
   parent: Base545Mag10
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.2
@@ -11,6 +11,7 @@
       tags:
         - Magazine754
     - type: BallisticAmmoProvider
+      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -41,7 +42,7 @@
   name: магазин 7,62x54 (10)
   description: Магазин 7,62x54 для винтовок. Вместимость пуль 10. Продают пустым.
   parent: Base754Mag5
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.35
@@ -64,7 +65,7 @@
   name: магазин 7,62x54 (20)
   description: Магазин 7,62x54 для винтовок. Вместимость пуль 20. Продают пустым.
   parent: Base754Mag5
-  suffix: Stalker
+  tag: Stalker
   components:
     - type: STWeight
       self: 0.4

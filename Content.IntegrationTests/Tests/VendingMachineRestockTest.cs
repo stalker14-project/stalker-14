@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using Content.Server.VendingMachines;
 using Content.Server.Wires;
 using Content.Shared.Cargo.Prototypes;
-using Content.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
-using Content.Shared.Damage.Systems;
-using Content.Shared.EntityTable;
 using Content.Shared.Prototypes;
-using Content.Shared.Storage.EntitySystems;
+using Content.Shared.Storage.Components;
 using Content.Shared.VendingMachines;
 using Content.Shared.Wires;
 using Robust.Shared.GameObjects;
@@ -23,10 +20,6 @@ namespace Content.IntegrationTests.Tests
     [TestOf(typeof(VendingMachineSystem))]
     public sealed class VendingMachineRestockTest : EntitySystem
     {
-        private static readonly ProtoId<EntityCategoryPrototype> StSkipTest = "StSkipRestockTest"; // Stalker-Changes: Skip Stalker restock prototypes
-
-        private static readonly ProtoId<DamageTypePrototype> TestDamageType = "Blunt";
-
         [TestPrototypes]
         private const string Prototypes = @"
 - type: entity
@@ -119,22 +112,18 @@ namespace Content.IntegrationTests.Tests
 
             var prototypeManager = server.ResolveDependency<IPrototypeManager>();
             var compFact = server.ResolveDependency<IComponentFactory>();
-            var entityTable = server.EntMan.System<EntityTableSystem>();
 
             await server.WaitAssertion(() =>
             {
                 HashSet<string> restocks = new();
                 Dictionary<string, List<string>> restockStores = new();
 
-                var stSkipTest = prototypeManager.Index(StSkipTest); // Stalker-Changes: Skip Stalker restock prototypes
-
                 // Collect all the prototypes with restock components.
                 foreach (var proto in prototypeManager.EnumeratePrototypes<EntityPrototype>())
                 {
                     if (proto.Abstract
                         || pair.IsTestPrototype(proto)
-                        || !proto.HasComponent<VendingMachineRestockComponent>()
-                        || proto.Categories.Contains(stSkipTest)) // Stalker-Changes: Skip Stalker restock prototypes
+                        || !proto.HasComponent<VendingMachineRestockComponent>())
                     {
                         continue;
                     }
@@ -142,23 +131,17 @@ namespace Content.IntegrationTests.Tests
                     restocks.Add(proto.ID);
                 }
 
-                // Collect all the prototypes with EntityTableContainerFills referencing those entities.
+                // Collect all the prototypes with StorageFills referencing those entities.
                 foreach (var proto in prototypeManager.EnumeratePrototypes<EntityPrototype>())
                 {
-                    if (!proto.TryGetComponent<EntityTableContainerFillComponent>(out var storage, compFact))
-                        continue;
-
-                    var containers = storage.Containers;
-
-                    if (!containers.TryGetValue(SharedEntityStorageSystem.ContainerName, out var container)) // We only care about this container type.
+                    if (!proto.TryGetComponent<StorageFillComponent>(out var storage, compFact))
                         continue;
 
                     List<string> restockStore = new();
-
-                    foreach (var spawnEntry in entityTable.GetSpawns(container))
+                    foreach (var spawnEntry in storage.Contents)
                     {
-                        if (restocks.Contains(spawnEntry))
-                            restockStore.Add(spawnEntry);
+                        if (spawnEntry.PrototypeId != null && restocks.Contains(spawnEntry.PrototypeId))
+                            restockStore.Add(spawnEntry.PrototypeId);
                     }
 
                     if (restockStore.Count > 0)
@@ -167,7 +150,7 @@ namespace Content.IntegrationTests.Tests
 
                 // Iterate through every CargoProduct and make sure each
                 // prototype with a restock component is referenced in a
-                // purchaseable entity with an EntityTableContianerFill.
+                // purchaseable entity with a StorageFill.
                 foreach (var proto in prototypeManager.EnumeratePrototypes<CargoProductPrototype>())
                 {
                     if (restockStores.ContainsKey(proto.Product))
@@ -199,9 +182,9 @@ namespace Content.IntegrationTests.Tests
             var server = pair.Server;
             await server.WaitIdleAsync();
 
+            var mapManager = server.ResolveDependency<IMapManager>();
             var entityManager = server.ResolveDependency<IEntityManager>();
             var entitySystemManager = server.ResolveDependency<IEntitySystemManager>();
-            var mapSystem = server.System<SharedMapSystem>();
 
             EntityUid packageRight;
             EntityUid packageWrong;
@@ -272,7 +255,7 @@ namespace Content.IntegrationTests.Tests
                 Assert.That(systemMachine.GetAvailableInventory(machine, machineComponent), Has.Count.GreaterThan(0),
                     "Machine available inventory count is not greater than zero after restock.");
 
-                mapSystem.DeleteMap(testMap.MapId);
+                mapManager.DeleteMap(testMap.MapId);
             });
 
             await pair.CleanReturnAsync();
@@ -286,9 +269,9 @@ namespace Content.IntegrationTests.Tests
             await server.WaitIdleAsync();
 
             var prototypeManager = server.ResolveDependency<IPrototypeManager>();
+            var mapManager = server.ResolveDependency<IMapManager>();
             var entityManager = server.ResolveDependency<IEntityManager>();
             var entitySystemManager = server.ResolveDependency<IEntitySystemManager>();
-            var mapSystem = server.System<SharedMapSystem>();
 
             var damageableSystem = entitySystemManager.GetEntitySystem<DamageableSystem>();
 
@@ -310,13 +293,15 @@ namespace Content.IntegrationTests.Tests
                     "Did not start with zero ramen.");
 
                 restock = entityManager.SpawnEntity("TestRestockExplode", coordinates);
-                var damageSpec = new DamageSpecifier(prototypeManager.Index(TestDamageType), 100);
-                var damageResult = damageableSystem.ChangeDamage(restock, damageSpec);
+                var damageSpec = new DamageSpecifier(prototypeManager.Index<DamageTypePrototype>("Blunt"), 100);
+                var damageResult = damageableSystem.TryChangeDamage(restock, damageSpec);
 
 #pragma warning disable NUnit2045
-                Assert.That(!damageResult.Empty, "Received empty damageResult when attempting to damage restock box.");
+                Assert.That(damageResult, Is.Not.Null,
+                    "Received null damageResult when attempting to damage restock box.");
 
-                Assert.That((int) damageResult.GetTotal(), Is.GreaterThan(0), "Box damage result was not greater than 0.");
+                Assert.That((int) damageResult!.GetTotal(), Is.GreaterThan(0),
+                    "Box damage result was not greater than 0.");
 #pragma warning restore NUnit2045
             });
             await server.WaitRunTicks(15);
@@ -334,7 +319,7 @@ namespace Content.IntegrationTests.Tests
                 Assert.That(totalRamen, Is.EqualTo(2),
                     "Did not find enough ramen after destroying restock box.");
 
-                mapSystem.DeleteMap(testMap.MapId);
+                mapManager.DeleteMap(testMap.MapId);
             });
 
             await pair.CleanReturnAsync();

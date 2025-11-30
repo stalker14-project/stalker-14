@@ -220,9 +220,9 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
 
                 var gridCentre = Vector2.Transform(gridBody.LocalCenter, curGridToView);
 
-                var gridDistance = (gridBody.LocalCenter - xform.LocalPosition).Length();
+                var distance = gridCentre.Length();
                 var labelText = Loc.GetString("shuttle-console-iff-label", ("name", labelName),
-                    ("distance", $"{gridDistance:0.0}"));
+                    ("distance", $"{distance:0.0}"));
 
                 var mapCoords = _transform.GetWorldPosition(gUid);
                 var coordsText = $"({mapCoords.X:0.0}, {mapCoords.Y:0.0})";
@@ -303,12 +303,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
         const float sqrt2 = 1.41421356f;
         const float dockRadius = DockScale * sqrt2;
         // Worst-case bounds used to cull a dock:
-        Box2 viewBounds = new Box2(
-            -dockRadius * UIScale,
-            -dockRadius * UIScale,
-            (Size.X + dockRadius) * UIScale,
-            (Size.Y + dockRadius) * UIScale);
-
+        Box2 viewBounds = new Box2(-dockRadius, -dockRadius, Size.X + dockRadius, Size.Y + dockRadius);
         if (_docks.TryGetValue(nent, out var docks))
         {
             foreach (var state in docks)
@@ -321,7 +316,7 @@ public sealed partial class ShuttleNavControl : BaseShuttleControl
                     continue;
                 }
 
-                var color = Color.ToSrgb(state.HighlightedColor);
+                var color = Color.ToSrgb(Color.Magenta);
 
                 var verts = new[]
                 {

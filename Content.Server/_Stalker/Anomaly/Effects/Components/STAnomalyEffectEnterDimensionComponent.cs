@@ -4,7 +4,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Anomaly.Effects.Components;
 
-[RegisterComponent, EntityCategory("StSkipSpawnTest")]
+[RegisterComponent]
 public sealed partial class STAnomalyEffectEnterDimensionComponent : Component
 {
     [DataField]

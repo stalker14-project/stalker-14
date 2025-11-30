@@ -2,60 +2,70 @@
   id: CSShopPreset
   itemsForSale:
     # Thermal group - 1
-    ZoneArtifactFireball: 810
-    ZoneArtifactEye: 1215
-    ZoneArtifactFlame: 2430
+    # Thermal group - 1
+    ZoneArtifactFireball: 540
+    ZoneArtifactEye: 810
+    ZoneArtifactFlame: 1620
     # Thermal group - 2
-    ZoneArtifactCristall: 4860
-    ZoneArtifactLithosphere: 9720
+    ZoneArtifactCristall: 3240
+    ZoneArtifactLithosphere: 6480
     # Electrical group - 1
-    ZoneArtifactSparkler: 810
-    ZoneArtifactBattery: 1215
-    ZoneArtifactFlash: 2430
-    ArtMoon: 4860
-    ZoneArtifactTesla: 7290
-    ZoneArtifactIce: 9720
+    ZoneArtifactSparkler: 540
+    ZoneArtifactBattery: 810
+    ZoneArtifactFlash: 1620
+    ArtMoon: 3240
+    ZoneArtifactTesla: 4860
+    ZoneArtifactIce: 6480
     # Gravity group - 1
-    ArtMedusa: 810
-    ZoneArtifactFlower: 1215
-    ZoneArtifactNightStar: 4860
+    ArtMedusa: 540
+    ZoneArtifactFlower: 810
+    ZoneArtifactNightStar: 3240
     # Gravity group - 2
-    ZoneArtifactVyvert: 810
-    ZoneArtifactAmoeba: 1215
-    ZoneArtifactFloodlight: 1215
-    ZoneArtifactGravi: 2430
-    ZoneArtifactGoldfish: 9720
-    ZoneArtifactSpring: 5400
-    ZoneArtifactFocus: 7290
-    ZoneArtifactStuntman: 9720
-    ZoneArtifactDistorter: 9720
-    ZoneArtifactSoul: 7290
+    ZoneArtifactVyvert: 540
+    ZoneArtifactAmoeba: 810
+    ZoneArtifactFloodlight: 810
+    ZoneArtifactGravi: 1620
+    ZoneArtifactGoldfish: 6480
+    ZoneArtifactSpring: 3600
+    ZoneArtifactFocus: 4860
+    ZoneArtifactStuntman: 6480
+    ZoneArtifactDistorter: 6480
+    ZoneArtifactSoul: 4860
+    # Food
+    FoodMeatDogCooked: 70
+    STFoodMeatSpiderCooked: 35
+    FoodMeatBoarCooked: 110
+
     # Acidic group - 1
-    ZoneArtifactBlood: 2430
-    ZoneArtifactMeat: 4860
-    ZoneArtifactKolobok: 7290
+    ZoneArtifactBlood: 1600
+    ZoneArtifactMeat: 3200
+    ZoneArtifactKolobok: 4800
     # Acidic group - 2
-    ZoneArtifactPellicle: 810
-    ZoneArtifactBaloon: 7290
-    MutantPartBoarHoof: 130 # T1
-    MutantPartSeasonedBoarHoof: 255 # T2
-    MutantPartOldBoarHoof: 385 # T3
+    ZoneArtifactPellicle: 535
+    ZoneArtifactBaloon: 4800
+
+    # Mutant parts
+
+    #Boars -------- Health * T * 0.45
+    MutantPartBoarHoof: 180 # T1
+    MutantPartSeasonedBoarHoof: 365 # T2
+    MutantPartOldBoarHoof: 545 # T3
 
     #T1 -------- Health * 1
-    MutantPartBlindDogTail: 90
-    MutantPartFleshEye: 190
-    FoodMeatSpiderLeg: 45
+    MutantPartBlindDogTail: 120
+    MutantPartFleshEye: 270
+    FoodMeatSpiderLeg: 70
 
     #T2 -------- Health * 1.8
-    MutantPartLeshiyRoot: 520
-    MutantPartPseudodogTail: 285
-    MutantPartSnorkFoot: 475
+    MutantPartLeshiyRoot: 745
+    MutantPartPseudodogTail: 405
+    MutantPartSnorkFoot: 675
 
     #T3 -------- Health * 3
-    MutantPartBloodsuckerTentacles: 710
-    MutantPartOraculeEye: 1510
-    MutantPartPseudogiantHeart: 3780
-    MutantPartZombieHand: 565
+    MutantPartBloodsuckerTentacles: 1015
+    MutantPartOraculeEye: 2160
+    MutantPartPseudogiantHeart: 5400
+    MutantPartZombieHand: 810
   categories:
     - name: shop-category-weapons
       priority: 1
@@ -125,6 +135,7 @@
       priority: 4
       items:
           # Helmets #
+        STClothingHeadTinfoil: 220
         ClothingHeadHelmetInfantry: 600 # T2 - PVP
         ClothingHeadHelmetVityaz1C: 2250 # T2 - PVE
           # OuterClothing #
@@ -132,7 +143,9 @@
         STClothingOuterArmorLightPlateVestBaseClearSky: 1000 # T2 - PvP
         ClothingOuterArmorRCBZCN: 1700 # T2 - ENV
         ClothingOuterArmorCN1: 2000
-        ClothingOuterArmorSevaCN: 7000
+        ClothingOuterArmorCN3a: 5000
+        STClothingOuterArmorLightPlateVestBaseANABlue: 3270
+        ClothingOuterArmorSevaCN: 6500
     - name: shop-category-storage-and-containers
       priority: 5
       items:
@@ -145,10 +158,11 @@
         ClothingBackpackStalkerZaryaGreen: 300 # T3 |pvp backpack
           # Belts
         ClothingBeltBandolierStalker: 20 # T1 - PVE
-        ClothingBeltWebbingHolsterFreedomDefender: 600
+        ClothingBeltWebbingHolsterStalkerZarya: 600
     - name: shop-category-raincoats-and-gasmasks
       priority: 6
       items:
+        ClothingOuterCoatDoshdevik: 600
         ClothingMaskGasZaryaMono: 100
         ClothingMaskGasM40: 200 # T2
         ClothingMaskGP21: 1000 # T3
@@ -157,13 +171,14 @@
       items:
         STBoltBagFilled: 50
         BoxArtcont: 250 # T1
+        STPsyHelm1: 2500
         ZoneAnomalyDetectorAD1: 250 # T1
         ZoneAnomalyDetectorAD2: 650 # T2
         ZoneAnomalyDetectorAD3: 2000
           # Detectors
         ZoneArtifactDetectorPulse: 50 # T1
-        STPsyHelm1: 2500
         ZoneArtifactDetectorResponse: 1000 # T2
+        ZoneArtifactDetectorSpruce: 2200
     - name: shop-category-utilities
       priority: 8
       items:

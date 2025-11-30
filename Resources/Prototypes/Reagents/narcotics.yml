@@ -4,7 +4,6 @@
   group: Narcotics
   desc: reagent-desc-desoxyephedrine
   physicalDesc: reagent-physical-desc-translucent
-  contrabandSeverity: Major
   flavor: bitter
   color: "#FAFAFA"
   boilingPoint: 212.0  # Dexosyephedrine vape when?
@@ -18,8 +17,7 @@
             Poison: 0.75
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: Desoxyephedrine
+        - !type:ReagentThreshold
           min: 30
         damage:
           types:
@@ -27,34 +25,34 @@
             Asphyxiation: 2
     Narcotic:
       effects:
-      - !type:MovementSpeedModifier
+      - !type:MovespeedModifier
         walkSpeedModifier: 1.35
         sprintSpeedModifier: 1.35
       - !type:GenericStatusEffect
         key: Stutter
         component: StutteringAccent
       - !type:Jitter
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectStunned
+      - !type:GenericStatusEffect
+        key: Stun
         time: 3
         type: Remove
-      - !type:ModifyKnockdown
+      - !type:GenericStatusEffect
+        key: KnockedDown
         time: 3
         type: Remove
-      - !type:ModifyStatusEffect
+      - !type:GenericStatusEffect
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Haloperidol
           max: 0.01
-        effectProto: StatusEffectDrowsiness
+        key: Drowsiness
         time: 10
         type: Remove
     Medicine:
       effects:
       - !type:ResetNarcolepsy
         conditions:
-        - !type:ReagentCondition
-          reagent: Desoxyephedrine
+        - !type:ReagentThreshold
           min: 20
 
 - type: reagent
@@ -63,7 +61,6 @@
   group: Narcotics
   desc: reagent-desc-ephedrine
   physicalDesc: reagent-physical-desc-powdery
-  contrabandSeverity: Minor
   flavor: bitter
   color: "#D2FFFA"
   boilingPoint: 255.0
@@ -71,32 +68,32 @@
   metabolisms:
     Narcotic:
       effects:
-      - !type:MovementSpeedModifier
+      - !type:MovespeedModifier
         walkSpeedModifier: 1.25
         sprintSpeedModifier: 1.25
       - !type:HealthChange
         conditions:
-        - !type:ReagentCondition
-          reagent: Ephedrine
+        - !type:ReagentThreshold
           min: 20
         damage:
           types:
             Poison: 2 # this is added to the base damage of the meth.
             Asphyxiation: 2
       - !type:Jitter
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectStunned
+      - !type:GenericStatusEffect
+        key: Stun
         time: 1
         type: Remove
-      - !type:ModifyKnockdown
+      - !type:GenericStatusEffect
+        key: KnockedDown
         time: 1
         type: Remove
-      - !type:ModifyStatusEffect
+      - !type:GenericStatusEffect
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Haloperidol
           max: 0.01
-        effectProto: StatusEffectDrowsiness
+        key: Drowsiness
         time: 10
         type: Remove
       - !type:PopupMessage
@@ -108,8 +105,7 @@
       effects:
       - !type:ResetNarcolepsy
         conditions:
-        - !type:ReagentCondition
-          reagent: Ephedrine
+        - !type:ReagentThreshold
           min: 30
 
 - type: reagent
@@ -118,7 +114,6 @@
   group: Narcotics
   desc: reagent-desc-stimulants
   physicalDesc: reagent-physical-desc-energizing
-  contrabandSeverity: Syndicate
   flavor: sharp
   color: "#9A040E"
   boilingPoint: 212.0
@@ -127,45 +122,46 @@
     Narcotic:
       metabolismRate: 1.0
       effects:
-      - !type:MovementSpeedModifier
+      - !type:MovespeedModifier
         walkSpeedModifier: 1.3
         sprintSpeedModifier: 1.3
       - !type:HealthChange
         conditions:
-          - !type:ReagentCondition
-            reagent: Stimulants
+          - !type:ReagentThreshold
             min: 80 #please wait 3 minutes before using another stimpack
         damage:
           types:
             Poison: 1
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: ChloralHydrate
           min: 1
         reagent: ChloralHydrate
         amount: -10
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectStunned
+      - !type:GenericStatusEffect
+        key: Stun
         time: 3
         type: Remove
-      - !type:ModifyKnockdown
+      - !type:GenericStatusEffect
+        key: KnockedDown
         time: 3
         type: Remove
       - !type:GenericStatusEffect
         key: StaminaModifier
         component: StaminaModifier
         time: 3
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectForcedSleeping
+        type: Add
+      - !type:GenericStatusEffect
+        key: ForcedSleep
         time: 3
         type: Remove
-      - !type:ModifyStatusEffect
+      - !type:GenericStatusEffect
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Haloperidol
           max: 0.01
-        effectProto: StatusEffectDrowsiness
+        key: Drowsiness
         time: 10
         type: Remove
     Medicine:
@@ -178,7 +174,7 @@
           factor: 1
         - !type:HealthChange
           conditions:
-          - !type:TotalDamageCondition
+          - !type:TotalDamage
             min: 70 # only heals when you're more dead than alive
           damage: # heals at the same rate as tricordrazine, doesn't heal poison because if you OD'd I'm not giving you a safety net
             groups:
@@ -202,10 +198,12 @@
   metabolisms:
     Narcotic:
       effects:
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
-        time: 16
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
         type: Add
+        time: 16
+        refresh: false
 
 - type: reagent
   id: Nicotine
@@ -226,24 +224,25 @@
   group: Narcotics
   desc: reagent-desc-impedrezene
   physicalDesc: reagent-physical-desc-acrid
-  contrabandSeverity: Minor
   flavor: bitter
   color: "#215263"
   metabolisms:
     Narcotic:
       effects:
-      - !type:MovementSpeedModifier
+      - !type:MovespeedModifier
         walkSpeedModifier: 0.65
         sprintSpeedModifier: 0.65
       - !type:HealthChange
         damage:
           types:
             Poison: 2
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
-        time: 10
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
         type: Add
-      - !type:Vomit # Vomiting is a symptom of brain damage
+        time: 10
+        refresh: false
+      - !type:ChemVomit # Vomiting is a symptom of brain damage
         probability: 0.05
       - !type:Drunk # Headaches and slurring are major symptoms of brain damage, this is close enough
         boozePower: 5
@@ -259,10 +258,12 @@
   metabolisms:
     Narcotic:
       effects:
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
         type: Add
         time: 5
+        refresh: false
 
 - type: reagent
   id: Bananadine
@@ -275,10 +276,12 @@
   metabolisms:
     Narcotic:
       effects:
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
         type: Add
         time: 5
+        refresh: false
 
 # Probably replace this one with sleeping chem when putting someone in a comatose state is easier
 - type: reagent
@@ -287,24 +290,21 @@
   group: Narcotics
   desc: reagent-desc-nocturine
   physicalDesc: reagent-physical-desc-powdery
-  contrabandSeverity: Syndicate
   color: "#128e80"
   boilingPoint: 444.0
   meltingPoint: 128.0
   metabolisms:
     Narcotic:
-      effects: # It would be nice to have speech slurred or mumbly, but accents are a bit iffy atm. Same for distortion effects.
-      - !type:MovementSpeedModifier
-        walkSpeedModifier: 0.65
-        sprintSpeedModifier: 0.65
-      - !type:ModifyStatusEffect
+      effects:
+      - !type:GenericStatusEffect
         conditions:
-        - !type:ReagentCondition
+        - !type:ReagentThreshold
           reagent: Nocturine
           min: 8
-        effectProto: StatusEffectForcedSleeping
-        time: 6
-        delay: 5
+        key: ForcedSleep
+        component: ForcedSleeping
+        refresh: false
+        type: Add
 
 - type: reagent
   id: MuteToxin
@@ -312,7 +312,6 @@
   group: Narcotics
   desc: reagent-desc-mute-toxin
   physicalDesc: reagent-physical-desc-syrupy
-  contrabandSeverity: Syndicate
   color: "#000000"
   boilingPoint: 255.0
   meltingPoint: 36.0
@@ -324,6 +323,7 @@
         component: Muted
         type: Add
         time: 10
+        refresh: false
 
 - type: reagent
   id: NorepinephricAcid
@@ -331,7 +331,6 @@
   group: Narcotics
   desc: reagent-desc-norepinephric-acid
   physicalDesc: reagent-physical-desc-milky
-  contrabandSeverity: Minor
   flavor: salty
   color: "#96a8b5"
   boilingPoint: 255.0
@@ -359,8 +358,7 @@
         - norepinephricacid-effect-darkness
         - norepinephricacid-effect-blindness
         conditions:
-        - !type:ReagentCondition
-          reagent: NorepinephricAcid
+        - !type:ReagentThreshold
           min: 20
         probability: 0.03
         #If anyone wants to add a light dimming or grayscale effect when under 20u, be my guest
@@ -368,8 +366,7 @@
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentCondition
-          reagent: NorepinephricAcid
+        - !type:ReagentThreshold
           min: 20
 
 - type: reagent
@@ -378,10 +375,8 @@
   group: Narcotics
   desc: reagent-desc-tear-gas
   physicalDesc: reagent-physical-desc-milky
-  allowedDepartments:
-  - Security
   flavor: salty
-  color: "#ffffff4d"
+  color: "#96a8b5"
   boilingPoint: 255.0
   meltingPoint: 36.0
   metabolisms:
@@ -407,31 +402,18 @@
         - norepinephricacid-effect-eye-pain
         - norepinephricacid-effect-darkness
         - norepinephricacid-effect-blindness
-      - !type:Emote
-        emote: STScream # Stalker-changes
-        probability: 0.08
         conditions:
-        - !type:ReagentCondition
-          reagent: TearGas
-          min: 4
+        - !type:ReagentThreshold
+          min: 15
       - !type:Emote
-        emote: Cough
+        emote: Scream
         probability: 0.08
       - !type:GenericStatusEffect
         key: TemporaryBlindness
         component: TemporaryBlindness
         conditions:
-        - !type:ReagentCondition
-          reagent: TearGas
-          min: 4
-      - !type:MovementSpeedModifier
-        walkSpeedModifier: 0.65
-        sprintSpeedModifier: 0.65
-        time: 1.5
-        conditions: # because of the remainding after effect, threshold is given so the effects ends simultaniously
-        - !type:ReagentCondition
-          reagent: TearGas
-          min: 4
+        - !type:ReagentThreshold
+          min: 20
 
 - type: reagent
   id: Happiness
@@ -445,28 +427,25 @@
     Narcotic:
       effects:
       - !type:Emote
-        emote: STLaugh # Stalker-changes
+        emote: Laugh
         showInChat: true
         probability: 0.1
         conditions:
-        - !type:ReagentCondition
-          reagent: Happiness
+        - !type:ReagentThreshold
           max: 20
       - !type:Emote
-        emote: STWhistle # Stalker-changes
+        emote: Whistle
         showInChat: true
         probability: 0.1
         conditions:
-        - !type:ReagentCondition
-          reagent: Happiness
+        - !type:ReagentThreshold
           max: 20
       - !type:Emote
-        emote: STCrying # Stalker-changes
+        emote: Crying
         showInChat: true
         probability: 0.1
         conditions:
-        - !type:ReagentCondition
-          reagent: Happiness
+        - !type:ReagentThreshold
           min: 20
       - !type:PopupMessage # we dont have sanity/mood so this will have to do
         type: Local
@@ -477,10 +456,11 @@
         - "psicodine-effect-at-peace"
         probability: 0.2
         conditions:
-        - !type:ReagentCondition
-          reagent: Happiness
+        - !type:ReagentThreshold
           max: 20
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
+      - !type:GenericStatusEffect
+        key: SeeingRainbows
+        component: SeeingRainbows
         type: Add
         time: 5
+        refresh: false

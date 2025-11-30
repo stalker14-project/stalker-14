@@ -1,5 +1,5 @@
-ent-signnew = entities sign name
-    .desc = entities sign desc
+ent-signnew = entities-sign-name
+    .desc = entities-sign-desc
     .suffix = ST, Mapping
 ent-StalkerCheSign1 = Знак "Химическая опасность"
     .desc = На знаке изображён символ химической опасности, который информирует о химической опасности за знаком. Может, не стоит туда идти?

@@ -1,8 +1,10 @@
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Atmos.Piping.Binary.Components;
 using Content.Server.Atmos.Piping.Unary.Components;
+using Content.Server.NodeContainer;
 using Content.Server.NodeContainer.EntitySystems;
 using Content.Server.NodeContainer.Nodes;
+using Content.Shared.Atmos.Piping.Unary.Components;
 using Content.Shared.Construction.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Map;
@@ -14,6 +16,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
     public sealed class GasPortableSystem : EntitySystem
     {
         [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly NodeContainerSystem _nodeContainer = default!;
 
         public override void Initialize()
@@ -27,7 +30,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 
         private void OnPortableAnchorAttempt(EntityUid uid, GasPortableComponent component, AnchorAttemptEvent args)
         {
-            if (!TryComp(uid, out TransformComponent? transform))
+            if (!EntityManager.TryGetComponent(uid, out TransformComponent? transform))
                 return;
 
             // If we can't find any ports, cancel the anchoring.
@@ -41,6 +44,11 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
                 return;
 
             portableNode.ConnectionsEnabled = args.Anchored;
+
+            if (EntityManager.TryGetComponent(uid, out AppearanceComponent? appearance))
+            {
+                _appearance.SetData(uid, GasPortableVisuals.ConnectedState, args.Anchored, appearance);
+            }
         }
 
         public bool FindGasPortIn(EntityUid? gridId, EntityCoordinates coordinates, [NotNullWhen(true)] out GasPortComponent? port)
@@ -52,7 +60,7 @@ namespace Content.Server.Atmos.Piping.Unary.EntitySystems
 
             foreach (var entityUid in _mapSystem.GetLocal(gridId.Value, grid, coordinates))
             {
-                if (TryComp(entityUid, out port))
+                if (EntityManager.TryGetComponent(entityUid, out port))
                 {
                     return true;
                 }

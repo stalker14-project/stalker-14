@@ -17,7 +17,6 @@ public sealed partial class ItemStatusPanel : Control
     [Dependency] private readonly IEntityManager _entityManager = default!;
 
     [ViewVariables] private EntityUid? _entity;
-    [ViewVariables] private Hand? _hand;
 
     // Tracked so we can re-run SetSide() if the theme changes.
     private HandUILocation _side;
@@ -39,7 +38,6 @@ public sealed partial class ItemStatusPanel : Control
         StyleBox.Margin cutOut;
         StyleBox.Margin flat;
         Thickness contentMargin;
-        Thickness patchMargin;
 
         switch (location)
         {
@@ -63,23 +61,15 @@ public sealed partial class ItemStatusPanel : Control
 
         Contents.Margin = contentMargin;
 
-        //Important to note for patchMargin!
-        //Because of hand ui flipping, left and right instead correspond to outside and inside respectively.
-        patchMargin = MarginFromThemeColor("_itemstatus_patch_margin");
-
         var panel = (StyleBoxTexture) Panel.PanelOverride!;
         panel.Texture = texture;
-        panel.SetPatchMargin(cutOut, patchMargin.Left);
-        panel.SetPatchMargin(flat, patchMargin.Right);
-        panel.SetPatchMargin(StyleBox.Margin.Top, patchMargin.Top);
-        panel.SetPatchMargin(StyleBox.Margin.Bottom, patchMargin.Bottom);
+        panel.SetPatchMargin(flat, 4);
+        panel.SetPatchMargin(cutOut, 7);
 
         var panelHighlight = (StyleBoxTexture) HighlightPanel.PanelOverride!;
         panelHighlight.Texture = textureHighlight;
-        panelHighlight.SetPatchMargin(cutOut, patchMargin.Left);
-        panelHighlight.SetPatchMargin(flat, patchMargin.Right);
-        panelHighlight.SetPatchMargin(StyleBox.Margin.Top, patchMargin.Top);
-        panelHighlight.SetPatchMargin(StyleBox.Margin.Bottom, patchMargin.Bottom);
+        panelHighlight.SetPatchMargin(flat, 4);
+        panelHighlight.SetPatchMargin(cutOut, 7);
 
         _side = location;
     }
@@ -102,45 +92,29 @@ public sealed partial class ItemStatusPanel : Control
     protected override void FrameUpdate(FrameEventArgs args)
     {
         base.FrameUpdate(args);
-        UpdateItemName(_hand);
+        UpdateItemName();
     }
 
-    public void Update(EntityUid? entity, Hand? hand)
+    public void Update(EntityUid? entity)
     {
-        if (entity == _entity && hand == _hand)
-            return;
+        ItemNameLabel.Visible = entity != null;
+        NoItemLabel.Visible = entity == null;
 
-        _hand = hand;
         if (entity == null)
         {
+            ItemNameLabel.Text = "";
             ClearOldStatus();
             _entity = null;
-
-            if (hand?.EmptyLabel is { } label)
-            {
-                ItemNameLabel.Visible = true;
-                NoItemLabel.Visible = false;
-
-                ItemNameLabel.Text = Loc.GetString(label);
-            }
-            else
-            {
-                ItemNameLabel.Visible = false;
-                NoItemLabel.Visible = true;
-
-                ItemNameLabel.Text = "";
-            }
-
             return;
         }
 
-        ItemNameLabel.Visible = true;
-        NoItemLabel.Visible = false;
+        if (entity != _entity)
+        {
+            _entity = entity.Value;
+            BuildNewEntityStatus();
 
-        _entity = entity.Value;
-        BuildNewEntityStatus();
-
-        UpdateItemName(hand);
+            UpdateItemName();
+        }
     }
 
     public void UpdateHighlight(bool highlight)
@@ -148,14 +122,14 @@ public sealed partial class ItemStatusPanel : Control
         HighlightPanel.Visible = highlight;
     }
 
-    private void UpdateItemName(Hand? hand)
+    private void UpdateItemName()
     {
         if (_entity == null)
             return;
 
         if (!_entityManager.TryGetComponent<MetaDataComponent>(_entity, out var meta) || meta.Deleted)
         {
-            Update(null, hand);
+            Update(null);
             return;
         }
 

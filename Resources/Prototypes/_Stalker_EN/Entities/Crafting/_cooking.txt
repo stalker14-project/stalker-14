@@ -1,0 +1,14 @@
+To keep cooking in line with Stalker crafting, it uses the crafting station system.
+There isn't really any reason to make it as complicated as Space Station cooking so the amount of viable ingredients
+has been greatly reduced, and most things are crafted in one step at a cooking station.
+(Though technically you can use anything as an ingredient, just make sure players can get it!)
+
+If adding new recipes, make sure to add the recipe card item in Blueprints/cooking.yml,
+the recipe code in Recipes/cooking.yml,
+and the end result in Object/Consumable/Food/meals.yml or other relevant yml.
+
+New ingredients go in Object/Consumable/Food/ingredients.yml or other relevant yml.
+
+Most foods that would reasonably be in a bowl should have a bowl in the recipe, and return it as trash once eaten.
+
+If you just want something to be cookable on a fire, refer to the meat.yml for examples of how it works.

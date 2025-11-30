@@ -1,12 +1,13 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Content.Server.Ghost.Roles.Raffles;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Ghost.Roles.Raffles;
 
 /// <summary>
 /// Allows specifying the settings for a ghost role raffle as a prototype.
 /// </summary>
-[Prototype]
-public sealed partial class GhostRoleRaffleSettingsPrototype : IPrototype
+[Prototype("ghostRoleRaffleSettings")]
+public sealed class GhostRoleRaffleSettingsPrototype : IPrototype
 {
     /// <inheritdoc />
     [IdDataField]

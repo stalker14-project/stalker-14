@@ -1,22 +1,17 @@
 using System.Linq;
 using Content.Shared.UserInterface;
-using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.NameIdentifier;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Preferences;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
-using Robust.Shared.Configuration;
 
 namespace Content.Server.Silicons.Borgs;
 
 /// <inheritdoc/>
 public sealed partial class BorgSystem
 {
-    // CCvar.
-    private int _maxNameLength;
-
     public void InitializeUI()
     {
         SubscribeLocalEvent<BorgChassisComponent, BeforeActivatableUIOpenEvent>(OnBeforeBorgUiOpen);
@@ -24,8 +19,6 @@ public sealed partial class BorgSystem
         SubscribeLocalEvent<BorgChassisComponent, BorgEjectBatteryBuiMessage>(OnEjectBatteryBuiMessage);
         SubscribeLocalEvent<BorgChassisComponent, BorgSetNameBuiMessage>(OnSetNameBuiMessage);
         SubscribeLocalEvent<BorgChassisComponent, BorgRemoveModuleBuiMessage>(OnRemoveModuleBuiMessage);
-
-        Subs.CVar(_cfgManager, CCVars.MaxNameLength, value => _maxNameLength = value, true);
     }
 
     private void OnBeforeBorgUiOpen(EntityUid uid, BorgChassisComponent component, BeforeActivatableUIOpenEvent args)
@@ -47,13 +40,20 @@ public sealed partial class BorgSystem
 
     private void OnEjectBatteryBuiMessage(EntityUid uid, BorgChassisComponent component, BorgEjectBatteryBuiMessage args)
     {
-        if (TryEjectPowerCell(uid, component, out var ents))
-            _hands.TryPickupAnyHand(args.Actor, ents.First());
+        if (!TryComp<PowerCellSlotComponent>(uid, out var slotComp) ||
+            !Container.TryGetContainer(uid, slotComp.CellSlotId, out var container) ||
+            !container.ContainedEntities.Any())
+        {
+            return;
+        }
+
+        var ents = Container.EmptyContainer(container);
+        _hands.TryPickupAnyHand(args.Actor, ents.First());
     }
 
     private void OnSetNameBuiMessage(EntityUid uid, BorgChassisComponent component, BorgSetNameBuiMessage args)
     {
-        if (args.Name.Length > _maxNameLength ||
+        if (args.Name.Length > HumanoidCharacterProfile.MaxNameLength ||
             args.Name.Length == 0 ||
             string.IsNullOrWhiteSpace(args.Name) ||
             string.IsNullOrEmpty(args.Name))
@@ -62,6 +62,8 @@ public sealed partial class BorgSystem
         }
 
         var name = args.Name.Trim();
+        if (TryComp<NameIdentifierComponent>(uid, out var identifier))
+            name = $"{name} {identifier.FullIdentifier}";
 
         var metaData = MetaData(uid);
 
@@ -91,43 +93,6 @@ public sealed partial class BorgSystem
         UpdateUI(uid, component);
     }
 
-    public void UpdateBattery(Entity<BorgChassisComponent> ent)
-    {
-        UpdateBatteryAlert(ent);
-
-        // if we aren't drawing and suddenly get enough power to draw again, reeanble.
-        if (_powerCell.HasDrawCharge(ent.Owner))
-        {
-            Toggle.TryActivate(ent.Owner);
-        }
-
-        UpdateUI(ent, ent);
-    }
-
-    // TODO: Move to client so we don't have to network this periodically.
-    private void UpdateBatteryAlert(Entity<BorgChassisComponent> ent, PowerCellSlotComponent? slotComponent = null)
-    {
-        if (!_powerCell.TryGetBatteryFromSlot((ent.Owner, slotComponent), out var battery))
-        {
-            _alerts.ClearAlert(ent.Owner, ent.Comp.BatteryAlert);
-            _alerts.ShowAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-            return;
-        }
-
-        var chargePercent = (short)MathF.Round(_battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge * 10f);
-
-        // we make sure 0 only shows if they have absolutely no battery.
-        // also account for floating point imprecision
-        if (chargePercent == 0 && _powerCell.HasDrawCharge((ent.Owner, null, slotComponent)))
-        {
-            chargePercent = 1;
-        }
-
-        _alerts.ClearAlert(ent.Owner, ent.Comp.NoBatteryAlert);
-        _alerts.ShowAlert(ent.Owner, ent.Comp.BatteryAlert, chargePercent);
-    }
-
-    // TODO: Component states and update this on the client
     public void UpdateUI(EntityUid uid, BorgChassisComponent? component = null)
     {
         if (!Resolve(uid, ref component))
@@ -138,26 +103,10 @@ public sealed partial class BorgSystem
         if (_powerCell.TryGetBatteryFromSlot(uid, out var battery))
         {
             hasBattery = true;
-            chargePercent = _battery.GetCharge(battery.Value.AsNullable()) / battery.Value.Comp.MaxCharge;
+            chargePercent = battery.CurrentCharge / battery.MaxCharge;
         }
 
         var state = new BorgBuiState(chargePercent, hasBattery);
         _ui.SetUiState(uid, BorgUiKey.Key, state);
-    }
-
-    // periodically update the charge indicator
-    // TODO: Move this to the client.
-    public void UpdateBattery(float frameTime)
-    {
-        var curTime = _timing.CurTime;
-        var query = EntityQueryEnumerator<BorgChassisComponent>();
-        while (query.MoveNext(out var uid, out var borgChassis))
-        {
-            if (curTime < borgChassis.NextBatteryUpdate)
-                continue;
-
-            UpdateBattery((uid, borgChassis));
-            borgChassis.NextBatteryUpdate = curTime + TimeSpan.FromSeconds(1);
-        }
     }
 }

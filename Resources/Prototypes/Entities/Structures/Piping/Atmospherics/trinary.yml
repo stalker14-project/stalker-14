@@ -35,9 +35,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/gasfilter.rsi
       layers:
@@ -73,11 +70,6 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasFlowRegulator
-    - type: GuideHelp
-      guides:
-      - MixingAndFiltering
 
 - type: entity
   parent: GasFilter
@@ -87,9 +79,6 @@
   placement:
     mode: SnapgridCenter
   components:
-  - type: SubFloorHide
-    visibleLayers:
-    - enum.SubfloorLayers.FirstLayer
   - type: Sprite
     sprite: Structures/Piping/Atmospherics/gasfilter.rsi
     layers:
@@ -134,9 +123,6 @@
   placement:
     mode: SnapgridCenter
   components:
-    - type: SubFloorHide
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: Sprite
       sprite: Structures/Piping/Atmospherics/gasmixer.rsi
       layers:
@@ -172,11 +158,6 @@
       range: 5
       sound:
         path: /Audio/Ambience/Objects/gas_hiss.ogg
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasFlowRegulator
-    - type: GuideHelp
-      guides:
-      - MixingAndFiltering
 
 - type: entity
   parent: GasMixer
@@ -225,7 +206,7 @@
   parent: GasPipeBase
   id: PressureControlledValve
   name: pneumatic valve
-  description: A bidirectional valve controlled by pressure. Opens if the output pipe is lower than the pressure of the control pipe by 101.325 kPa.
+  description: Valve controlled by pressure.
   placement:
     mode: SnapgridCenter
   components:
@@ -236,8 +217,6 @@
     - type: SubFloorHide
       blockInteractions: false
       blockAmbience: false
-      visibleLayers:
-      - enum.SubfloorLayers.FirstLayer
     - type: NodeContainer
       nodes:
         inlet:
@@ -278,10 +257,3 @@
     - type: Construction
       graph: GasTrinary
       node: pneumaticvalve
-    - type: AtmosMonitoringConsoleDevice
-      navMapBlip: GasFlowRegulator
-    - type: GuideHelp
-      guides:
-      - PneumaticValve
-      - Pumps
-      - Valves

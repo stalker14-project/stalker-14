@@ -8,8 +8,7 @@
   color: "#9aff38"
   boilingPoint: 55.5
   meltingPoint: -50.0
-  slipData:
-    requiredSlipSpeed: 3.5
+  slippery: false
   metabolisms:
     Poison:
       effects:
@@ -28,7 +27,7 @@
       methods: [ Touch ]
       effects:
         - !type:HealthChange
-          scaling: true
+          scaleByQuantity: true
           ignoreResistances: false
           damage:
             types:

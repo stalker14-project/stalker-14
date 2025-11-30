@@ -1,12 +1,12 @@
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using Content.Server.Actions;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.DeviceNetwork.Systems;
+using Content.Server.Explosion.EntitySystems;
 using Content.Server.Hands.Systems;
+using Content.Server.PowerCell;
+using Content.Shared.Access.Systems;
 using Content.Shared.Alert;
-using Content.Shared.Body.Events;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -17,22 +17,17 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Pointing;
-using Content.Shared.Power;
-using Content.Shared.Power.EntitySystems;
 using Content.Shared.PowerCell;
 using Content.Shared.PowerCell.Components;
 using Content.Shared.Roles;
 using Content.Shared.Silicons.Borgs;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Throwing;
-using Content.Shared.Trigger.Systems;
 using Content.Shared.Whitelist;
 using Content.Shared.Wires;
 using Robust.Server.GameObjects;
-using Robust.Shared.Configuration;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -43,7 +38,6 @@ public sealed partial class BorgSystem : SharedBorgSystem
 {
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly IBanManager _banManager = default!;
-    [Dependency] private readonly IConfigurationManager _cfgManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ActionsSystem _actions = default!;
@@ -61,10 +55,10 @@ public sealed partial class BorgSystem : SharedBorgSystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly PredictedBatterySystem _battery = default!;
 
-    public static readonly ProtoId<JobPrototype> BorgJobId = "Borg";
+
+    [ValidatePrototypeId<JobPrototype>]
+    public const string BorgJobId = "Borg";
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -76,12 +70,9 @@ public sealed partial class BorgSystem : SharedBorgSystem
         SubscribeLocalEvent<BorgChassisComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<BorgChassisComponent, MindRemovedMessage>(OnMindRemoved);
         SubscribeLocalEvent<BorgChassisComponent, MobStateChangedEvent>(OnMobStateChanged);
-        SubscribeLocalEvent<BorgChassisComponent, BeingGibbedEvent>(OnBeingGibbed);
         SubscribeLocalEvent<BorgChassisComponent, PowerCellChangedEvent>(OnPowerCellChanged);
-        SubscribeLocalEvent<BorgChassisComponent, PredictedBatteryChargeChangedEvent>(OnBatteryChargeChanged);
         SubscribeLocalEvent<BorgChassisComponent, PowerCellSlotEmptyEvent>(OnPowerCellSlotEmpty);
         SubscribeLocalEvent<BorgChassisComponent, GetCharactedDeadIcEvent>(OnGetDeadIC);
-        SubscribeLocalEvent<BorgChassisComponent, GetCharacterUnrevivableIcEvent>(OnGetUnrevivableIC);
         SubscribeLocalEvent<BorgChassisComponent, ItemToggledEvent>(OnToggled);
 
         SubscribeLocalEvent<BorgBrainComponent, MindAddedMessage>(OnBrainMindAdded);
@@ -120,10 +111,9 @@ public sealed partial class BorgSystem : SharedBorgSystem
         if (component.BrainEntity == null && brain != null &&
             _whitelistSystem.IsWhitelistPassOrNull(component.BrainWhitelist, used))
         {
-            if (_mind.TryGetMind(used, out _, out var mind) &&
-                _player.TryGetSessionById(mind.UserId, out var session))
+            if (_mind.TryGetMind(used, out _, out var mind) && mind.Session != null)
             {
-                if (!CanPlayerBeBorged(session))
+                if (!CanPlayerBeBorged(mind.Session))
                 {
                     Popup.PopupEntity(Loc.GetString("borg-player-not-allowed"), used, args.User);
                     return;
@@ -165,7 +155,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
     {
         base.OnInserted(uid, component, args);
 
-        if (HasComp<BorgBrainComponent>(args.Entity) && _mind.TryGetMind(args.Entity, out var mindId, out var mind) && args.Container == component.BrainContainer)
+        if (HasComp<BorgBrainComponent>(args.Entity) && _mind.TryGetMind(args.Entity, out var mindId, out var mind))
         {
             _mind.TransferTo(mindId, uid, mind: mind);
         }
@@ -175,7 +165,8 @@ public sealed partial class BorgSystem : SharedBorgSystem
     {
         base.OnRemoved(uid, component, args);
 
-        if (HasComp<BorgBrainComponent>(args.Entity) && _mind.TryGetMind(uid, out var mindId, out var mind) && args.Container == component.BrainContainer)
+        if (HasComp<BorgBrainComponent>(args.Entity) &
+            _mind.TryGetMind(uid, out var mindId, out var mind))
         {
             _mind.TransferTo(mindId, args.Entity, mind: mind);
         }
@@ -204,22 +195,17 @@ public sealed partial class BorgSystem : SharedBorgSystem
         }
     }
 
-    private void OnBeingGibbed(EntityUid uid, BorgChassisComponent component, ref BeingGibbedEvent args)
+    private void OnPowerCellChanged(EntityUid uid, BorgChassisComponent component, PowerCellChangedEvent args)
     {
-        TryEjectPowerCell(uid, component, out var _);
+        UpdateBatteryAlert((uid, component));
 
-        _container.EmptyContainer(component.BrainContainer);
-        _container.EmptyContainer(component.ModuleContainer);
-    }
+        // if we aren't drawing and suddenly get enough power to draw again, reeanble.
+        if (_powerCell.HasDrawCharge(uid))
+        {
+            Toggle.TryActivate(uid);
+        }
 
-    private void OnPowerCellChanged(Entity<BorgChassisComponent> ent, ref PowerCellChangedEvent args)
-    {
-        UpdateBattery(ent);
-    }
-
-    private void OnBatteryChargeChanged(Entity<BorgChassisComponent> ent, ref PredictedBatteryChargeChangedEvent args)
-    {
-        UpdateBattery(ent);
+        UpdateUI(uid, component);
     }
 
     private void OnPowerCellSlotEmpty(EntityUid uid, BorgChassisComponent component, ref PowerCellSlotEmptyEvent args)
@@ -231,11 +217,6 @@ public sealed partial class BorgSystem : SharedBorgSystem
     private void OnGetDeadIC(EntityUid uid, BorgChassisComponent component, ref GetCharactedDeadIcEvent args)
     {
         args.Dead = true;
-    }
-
-    private void OnGetUnrevivableIC(EntityUid uid, BorgChassisComponent component, ref GetCharacterUnrevivableIcEvent args)
-    {
-        args.Unrevivable = true;
     }
 
     private void OnToggled(Entity<BorgChassisComponent> ent, ref ItemToggledEvent args)
@@ -266,11 +247,10 @@ public sealed partial class BorgSystem : SharedBorgSystem
             container.ID != chassisComponent.BrainContainerId)
             return;
 
-        if (!_mind.TryGetMind(uid, out var mindId, out var mind) ||
-            !_player.TryGetSessionById(mind.UserId, out var session))
+        if (!_mind.TryGetMind(uid, out var mindId, out var mind) || mind.Session == null)
             return;
 
-        if (!CanPlayerBeBorged(session))
+        if (!CanPlayerBeBorged(mind.Session))
         {
             Popup.PopupEntity(Loc.GetString("borg-player-not-allowed-eject"), uid);
             Container.RemoveEntity(containerEnt, uid);
@@ -286,18 +266,26 @@ public sealed partial class BorgSystem : SharedBorgSystem
         args.Cancel();
     }
 
-    public bool TryEjectPowerCell(EntityUid uid, BorgChassisComponent component, [NotNullWhen(true)] out List<EntityUid>? ents)
+    private void UpdateBatteryAlert(Entity<BorgChassisComponent> ent, PowerCellSlotComponent? slotComponent = null)
     {
-        ents = null;
+        if (!_powerCell.TryGetBatteryFromSlot(ent, out var battery, slotComponent))
+        {
+            _alerts.ClearAlert(ent, ent.Comp.BatteryAlert);
+            _alerts.ShowAlert(ent, ent.Comp.NoBatteryAlert);
+            return;
+        }
 
-        if (!TryComp<PowerCellSlotComponent>(uid, out var slotComp) ||
-            !Container.TryGetContainer(uid, slotComp.CellSlotId, out var container) ||
-            !container.ContainedEntities.Any())
-            return false;
+        var chargePercent = (short) MathF.Round(battery.CurrentCharge / battery.MaxCharge * 10f);
 
-        ents = Container.EmptyContainer(container);
+        // we make sure 0 only shows if they have absolutely no battery.
+        // also account for floating point imprecision
+        if (chargePercent == 0 && _powerCell.HasDrawCharge(ent, cell: slotComponent))
+        {
+            chargePercent = 1;
+        }
 
-        return true;
+        _alerts.ClearAlert(ent, ent.Comp.NoBatteryAlert);
+        _alerts.ShowAlert(ent, ent.Comp.BatteryAlert, chargePercent);
     }
 
     /// <summary>
@@ -306,11 +294,8 @@ public sealed partial class BorgSystem : SharedBorgSystem
     public void BorgActivate(EntityUid uid, BorgChassisComponent component)
     {
         Popup.PopupEntity(Loc.GetString("borg-mind-added", ("name", Identity.Name(uid, EntityManager))), uid);
-        if (_powerCell.HasDrawCharge(uid))
-        {
-            Toggle.TryActivate(uid);
-            _powerCell.SetDrawEnabled(uid, _mobState.IsAlive(uid));
-        }
+        Toggle.TryActivate(uid);
+        _powerCell.SetDrawEnabled(uid, _mobState.IsAlive(uid));
         _appearance.SetData(uid, BorgVisuals.HasPlayer, true);
     }
 
@@ -327,6 +312,7 @@ public sealed partial class BorgSystem : SharedBorgSystem
 
     /// <summary>
     /// Checks that a player has fulfilled the requirements for the borg job.
+    /// If they don't have enough hours, they cannot be placed into a chassis.
     /// </summary>
     public bool CanPlayerBeBorged(ICommonSession session)
     {
@@ -334,13 +320,5 @@ public sealed partial class BorgSystem : SharedBorgSystem
             return false;
 
         return true;
-    }
-
-    public override void Update(float frameTime)
-    {
-        base.Update(frameTime);
-
-        UpdateTransponder(frameTime);
-        UpdateBattery(frameTime);
     }
 }

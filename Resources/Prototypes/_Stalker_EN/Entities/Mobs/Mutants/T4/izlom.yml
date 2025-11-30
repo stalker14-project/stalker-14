@@ -1,0 +1,87 @@
+# not sure if this should be t3 or t4
+# the ai isnt hostile until you attack it
+- type: entity
+  parent: BaseMobMutant
+  id: STMobMutantIzlom
+  name: Izlom
+  suffix: ST, T4
+  description: A once-human mutant, they still seem aware of their surroundings. They often lurk near settlements and try to draw out stalkers in hopes of an easy meal.
+  components:
+  - type: Sprite
+    sprite: /Textures/_Stalker_EN/Mobs/Mutants/izlom.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: alive
+  - type: Advertise
+    pack: NPCStalkerIzlomAds
+    minWait: 60
+    maxWait: 120
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      700: Dead
+  - type: Damageable
+    damageModifierSet: STMutantT4DamageModifierSet
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      600: 0.8
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 700
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/_Stalker_EN/Mutants/izlom_death.ogg
+  - type: Butcherable
+    spawned:
+    - id: MutantPartIzlomArm
+      Amount: 1
+  - type: STWeight
+    self: 65
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.8
+    baseSprintSpeed: 4.2
+  - type: MeleeWeapon
+    attackRate: 0.7
+    heavyWindupModifier: 1
+    heavyDamageModifier: 1.5
+    angle: 30
+    range: 1.8 # long arm of the law
+    soundHit:
+          path: /Audio/_Stalker_EN/Mutants/izlom_hit.ogg
+          params:
+           variation: 0.125
+    soundSwing:
+      path: /Audio/_Stalker_EN/Mutants/izlom_miss.ogg
+      params:
+        variation: 0.125
+        pitch: 0.8
+    animation: WeaponArcSmash
+    wideAnimation: WeaponArcSmash
+    damage:
+      types:
+        Blunt: 80 # killing you killing you killing you
+  - type: StaminaDamageOnHit
+    damage: 45
+  - type: Puller
+    needsHands: false
+  - type: NPCRetaliation
+    attackMemoryLength: 30 # 30 what?
+  - type: PassiveDamage
+    allowedStates:
+    - Alive
+    damageCap: 700
+    damage:
+      types:
+        Bloodloss: -0.75
+  - type: NpcFactionMember
+    factions:
+    - Izlom

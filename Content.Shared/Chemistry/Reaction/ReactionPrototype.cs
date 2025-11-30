@@ -11,7 +11,7 @@ namespace Content.Shared.Chemistry.Reaction
     /// <summary>
     /// Prototype for chemical reaction definitions
     /// </summary>
-    [Prototype]
+    [Prototype("reaction")]
     public sealed partial class ReactionPrototype : IPrototype, IComparable<ReactionPrototype>
     {
         [ViewVariables]
@@ -60,7 +60,7 @@ namespace Content.Shared.Chemistry.Reaction
         /// <summary>
         /// Effects to be triggered when the reaction occurs.
         /// </summary>
-        [DataField("effects")] public EntityEffect[] Effects = [];
+        [DataField("effects", serverOnly: true)] public List<EntityEffect> Effects = new();
 
         /// <summary>
         /// How dangerous is this effect? Stuff like bicaridine should be low, while things like methamphetamine

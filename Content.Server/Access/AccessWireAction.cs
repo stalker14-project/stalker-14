@@ -1,7 +1,7 @@
 using Content.Server.Wires;
 using Content.Shared.Access;
 using Content.Shared.Access.Components;
-using Content.Shared.Access.Systems;
+using Content.Shared.Emag.Components;
 using Content.Shared.Wires;
 
 namespace Content.Server.Access;
@@ -24,21 +24,25 @@ public sealed partial class AccessWireAction : ComponentWireAction<AccessReaderC
     public override bool Cut(EntityUid user, Wire wire, AccessReaderComponent comp)
     {
         WiresSystem.TryCancelWireAction(wire.Owner, PulseTimeoutKey.Key);
-        EntityManager.System<AccessReaderSystem>().SetActive((wire.Owner, comp), false);
-
+        comp.Enabled = false;
+        EntityManager.Dirty(wire.Owner, comp);
         return true;
     }
 
     public override bool Mend(EntityUid user, Wire wire, AccessReaderComponent comp)
     {
-        EntityManager.System<AccessReaderSystem>().SetActive((wire.Owner, comp), true);
-
+        if (!EntityManager.HasComponent<EmaggedComponent>(wire.Owner))
+        {
+            comp.Enabled = true;
+            EntityManager.Dirty(wire.Owner, comp);
+        }
         return true;
     }
 
     public override void Pulse(EntityUid user, Wire wire, AccessReaderComponent comp)
     {
-        EntityManager.System<AccessReaderSystem>().SetActive((wire.Owner, comp), false);
+        comp.Enabled = false;
+        EntityManager.Dirty(wire.Owner, comp);
         WiresSystem.StartWireAction(wire.Owner, _pulseTimeout, PulseTimeoutKey.Key, new TimedWireEvent(AwaitPulseCancel, wire));
     }
 
@@ -54,9 +58,10 @@ public sealed partial class AccessWireAction : ComponentWireAction<AccessReaderC
     {
         if (!wire.IsCut)
         {
-            if (EntityManager.TryGetComponent<AccessReaderComponent>(wire.Owner, out var access))
+            if (EntityManager.TryGetComponent<AccessReaderComponent>(wire.Owner, out var access) && !EntityManager.HasComponent<EmaggedComponent>(wire.Owner))
             {
-                EntityManager.System<AccessReaderSystem>().SetActive((wire.Owner, access), true);
+                access.Enabled = true;
+                EntityManager.Dirty(wire.Owner, access);
             }
         }
     }

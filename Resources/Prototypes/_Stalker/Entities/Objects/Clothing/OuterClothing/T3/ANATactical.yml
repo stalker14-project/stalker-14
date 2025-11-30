@@ -10,7 +10,7 @@
   - type: STWeight
     self: 8.5
   - type: Storage
-    maxItemSize: Large
+    maxItemsize: Large
     grid:
       - 0,2,0,4
       - 2,2,2,3
@@ -139,14 +139,9 @@
     slot: head
     requiredSlot: NECK
     clothingPrototype: ClothingHeadCassock
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
-      storagebase: !type:Container
-        ents: []
 
 - type: entity
-  parent: STClothingOuterArmorBase
+  parent: STClothingOuterArmorLightPlateVestBaseANAgreen # God dont change this anymore, i dont want to spend my time to replace it again.
   id: STClothingOuterArmorLightPlateVestSera
   name: Бронеразгрузка «Заступник»
   description: Надёжный бронеразгруз 3 класса брони, полный аналог «Степи-4», единственное различие - наличие напашника.

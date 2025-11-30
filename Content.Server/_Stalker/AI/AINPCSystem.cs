@@ -25,7 +25,6 @@ using Robust.Server.Audio;
 using Content.Shared.NPC.Prototypes;
 using Content.Server._Stalker.Sponsors;
 using Content.Server._Stalker.Sponsors.SponsorManager;
-using Content.Shared.Damage.Systems;
 
 namespace Content.Server._Stalker.AI
 {

@@ -7,7 +7,7 @@
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/artifact_analyzer.rsi
-    drawdepth: HighFloorObjects
+    drawdepth: FloorObjects
     layers:
     - state: icon
     - state: unshaded
@@ -48,12 +48,14 @@
   - type: Transform
     anchored: true
   - type: ApcPowerReceiver
-    powerLoad: 5000
+    powerLoad: 12000
+    needsPower: false #only turns on when scanning
   - type: ArtifactAnalyzer
+  - type: TraversalDistorter
   - type: ItemPlacer
     whitelist:
       components:
-      - XenoArtifact
+      - Artifact
   - type: DeviceNetwork
     deviceNetId: Wired
     receiveFrequencyId: BasicDevice
@@ -65,7 +67,7 @@
     board: ArtifactAnalyzerMachineCircuitboard
   - type: PointLight
     radius: 1.5
-    energy: 3.0
+    energy: 1.6
     color: "#b53ca1"
   - type: GuideHelp
     guides:
@@ -88,7 +90,7 @@
   - type: ArtifactCrusher
     crushingWhitelist:
       components:
-      - XenoArtifact
+      - Artifact
     crushingDamage:
       types:
         Blunt: 10
@@ -125,10 +127,7 @@
     capacity: 1
     whitelist:
       components:
-      - XenoArtifact
-      tags:
-      - CanPilot # People
-      - VimPilot # Pets
+      - Artifact
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -156,13 +155,3 @@
       machine_parts: !type:Container
       entity_storage: !type:Container
       output_container: !type:Container
-
-# just a resprite
-- type: entity
-  parent: MachineArtifactCrusher
-  id: MachineArtifactCrusherXenoborg
-  name: body crusher
-  description: Best not to let your head get stuck...
-  components:
-  - type: Sprite
-    sprite: Structures/Machines/body_crusher.rsi

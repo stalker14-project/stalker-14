@@ -19,7 +19,7 @@ public sealed class LoadoutTests
 - type: loadout
   id: TestJumpsuit
   equipment:
-    torso: ClothingTorsoSweaterStalkerGreen # Stalker-Changes: <jumpsuit> slot is not used on Stalker
+    jumpsuit: ClothingUniformJumpsuitColorGrey
 
 - type: loadoutGroup
   id: LoadoutTesterJumpsuit
@@ -39,7 +39,7 @@ public sealed class LoadoutTests
 
     private readonly Dictionary<string, EntProtoId> _expectedEquipment = new()
     {
-        ["torso"] = "ClothingTorsoSweaterStalkerGreen" // Stalker-Changes: "jumpsuit" slot is not used on Stalker
+        ["jumpsuit"] = "ClothingUniformJumpsuitColorGrey"
     };
 
     /// <summary>

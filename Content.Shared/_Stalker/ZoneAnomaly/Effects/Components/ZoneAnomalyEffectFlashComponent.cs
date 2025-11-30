@@ -5,12 +5,12 @@ namespace Content.Shared._Stalker.ZoneAnomaly.Effects.Components;
 [RegisterComponent]
 public sealed partial class ZoneAnomalyEffectFlashComponent : Component
 {
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntityWhitelist Whitelist = new();
 
-    [DataField]
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
     public float Range = 3f;
 
-    [DataField]
-    public TimeSpan Duration = TimeSpan.FromSeconds(8);
+    [DataField, ViewVariables(VVAccess.ReadWrite)]
+    public float Duration = 8f;
 }

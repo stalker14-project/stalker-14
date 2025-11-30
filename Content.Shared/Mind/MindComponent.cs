@@ -1,8 +1,8 @@
+using Content.Shared.GameTicking;
 using Content.Shared.Mind.Components;
-using Robust.Shared.Containers;
 using Robust.Shared.GameStates;
 using Robust.Shared.Network;
-using Robust.Shared.Prototypes;
+using Robust.Shared.Player;
 
 namespace Content.Shared.Mind;
 
@@ -45,18 +45,15 @@ public sealed partial class MindComponent : Component
     ///     The first entity that this mind controlled. Used for round end information.
     ///     Might be relevant if the player has ghosted since.
     /// </summary>
-    [AutoNetworkedField]
-    public NetEntity? OriginalOwnedEntity; // TODO WeakEntityReference make this a Datafield again
-    // This is a net entity, because this field currently does not get set to null when this entity is deleted.
+    [DataField, AutoNetworkedField]
+    public NetEntity? OriginalOwnedEntity;
+    // This is a net entity, because this field currently ddoes not get set to null when this entity is deleted.
     // This is a lazy way to ensure that people check that the entity still exists.
     // TODO MIND Fix this properly by adding an OriginalMindContainerComponent or something like that.
 
     [ViewVariables]
     public bool IsVisitingEntity => VisitingEntity != null;
 
-    /// <summary>
-    /// The entity that this mind may be currently visiting. Used, for example, to allow admin ghosting to not make the owner's body catatonic, as opposed to when normally ghosting.
-    /// </summary>
     [DataField, AutoNetworkedField, Access(typeof(SharedMindSystem))]
     public EntityUid? VisitingEntity { get; set; }
 
@@ -99,26 +96,16 @@ public sealed partial class MindComponent : Component
     public bool PreventSuicide { get; set; }
 
     /// <summary>
-    /// Mind Role Entities belonging to this Mind are stored in this container.
-    /// </summary>
-    [ViewVariables]
-    public Container MindRoleContainer = default!;
-
-    /// <summary>
-    /// The id for the MindRoleContainer.
-    /// </summary>
-    [ViewVariables]
-    public const string MindRoleContainerId = "mind_roles";
-
-    /// <summary>
-    ///     The mind's current antagonist/special role, or lack thereof;
+    ///     Mind Role Entities belonging to this Mind
     /// </summary>
     [DataField, AutoNetworkedField]
-    public ProtoId<RoleTypePrototype> RoleType = "Neutral";
+    public List<EntityUid> MindRoles = new List<EntityUid>();
 
     /// <summary>
-    ///     The role's subtype, shown only to admins to help with antag categorization
+    ///     The session of the player owning this mind.
+    ///     Can be null, in which case the player is currently not logged in.
     /// </summary>
-    [DataField]
-    public LocId? Subtype;
+    [ViewVariables, Access(typeof(SharedMindSystem), typeof(SharedGameTicker))]
+    // TODO remove this after moving IPlayerManager functions to shared
+    public ICommonSession? Session { get; set; }
 }

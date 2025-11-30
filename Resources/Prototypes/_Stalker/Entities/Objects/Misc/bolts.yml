@@ -44,13 +44,15 @@
       stackType: STBolt
       throwIndividually: true
       count: 1
+      maxCount: 3
 
 - type: stack
   id: STBolt
-  name: stack-st-bolt
+  name: bolt
   icon: { sprite: _Stalker/Objects/Misc/bolts.rsi, state: icon }
   spawn: STBolt
   maxCount: 3
+  itemSize: 1
 
 - type: entity
   parent: STBaseBolt
@@ -64,10 +66,12 @@
       stackType: STBoltGolden
       throwIndividually: true
       count: 1
+      maxCount: 3
 
 - type: stack
   id: STBoltGolden
-  name: stack-st-bolt-golden
+  name: bolt golden
   icon: { sprite: _Stalker/Objects/Misc/bolts.rsi, state: icon_golden }
   spawn: STBoltGolden
   maxCount: 3
+  itemSize: 1

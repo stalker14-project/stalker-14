@@ -9,12 +9,16 @@
     factions:
     - Stalker
   - type: Sprite
-    sprite: /Textures/_Stalker/Mobs/Guards/ClearSky/Low.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/ClearSky/Low.rsi
   - type: Bands
     bandIcon: cn
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 2
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun
@@ -57,12 +61,16 @@
     factions:
     - Stalker
   - type: Sprite
-    sprite: /Textures/_Stalker/Mobs/Guards/ClearSky/Top.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: live
+      sprite: /Textures/_Stalker/Mobs/Guards/ClearSky/Top.rsi
   - type: Bands
     bandIcon: cn
-  - type: PredictedBatterySelfRecharger
+  - type: BatterySelfRecharger
+    autoRecharge: true
     autoRechargeRate: 2
-  - type: BatteryAmmoProvider
+  - type: ProjectileBatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun

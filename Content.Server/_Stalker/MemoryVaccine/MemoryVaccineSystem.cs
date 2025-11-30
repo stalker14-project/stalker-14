@@ -8,7 +8,6 @@ using Content.Shared.Bed.Sleep;
 using Content.Server._Stalker.MemoryLost;
 using Content.Shared.MemoryVaccine;
 using Content.Server.Forensics;
-using Content.Shared.Forensics.Components;
 using Content.Shared.Interaction;
 
 namespace Content.Server.MemoryVaccine

@@ -9,7 +9,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Utility;
 using Robust.Client.UserInterface.RichText;
-using Content.Client.UserInterface.RichText;
 using Robust.Shared.Input;
 
 namespace Content.Client.Paper.UI
@@ -44,8 +43,7 @@ namespace Content.Client.Paper.UI
             typeof(BulletTag),
             typeof(ColorTag),
             typeof(HeadingTag),
-            typeof(ItalicTag),
-            typeof(MonoTag)
+            typeof(ItalicTag)
         };
 
         public event Action<string>? OnSaved;
@@ -149,16 +147,6 @@ namespace Content.Client.Paper.UI
             HeaderImage.Margin = new Thickness(visuals.HeaderMargin.Left, visuals.HeaderMargin.Top,
                     visuals.HeaderMargin.Right, visuals.HeaderMargin.Bottom);
 
-            // Then the footer
-            if (visuals.FooterImagePath is {} path)
-            {
-                FooterImage.TexturePath = path.ToString();
-                FooterImage.MinSize = FooterImage.TextureNormal?.Size ?? Vector2.Zero;
-            }
-
-            FooterImage.ModulateSelfOverride = visuals.FooterImageModulate;
-            FooterImage.Margin = new Thickness(visuals.FooterMargin.Left, visuals.FooterMargin.Top,
-                    visuals.FooterMargin.Right, visuals.FooterMargin.Bottom);
 
             PaperContent.ModulateSelfOverride = visuals.ContentImageModulate;
             WrittenTextLabel.ModulateSelfOverride = visuals.FontAccentColor;

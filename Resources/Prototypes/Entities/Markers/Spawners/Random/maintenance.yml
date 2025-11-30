@@ -56,7 +56,7 @@
       - id: ClothingHeadHatPaper
       - id: ClothingHeadHatPirate
       - id: ClothingMaskSterile
-      - id: ClothingMultipleHeadphones
+      - id: ClothingNeckHeadphones
       - id: ClothingNeckTieRed
       - id: ClothingOuterCoatGentle
       - !type:AllSelector
@@ -104,17 +104,15 @@
         - id: ClothingNeckCloakGoliathCloak
         - id: ClothingNeckCloakAce
         - id: ClothingNeckCloakAro
-        - id: ClothingNeckCloakAroace
         - id: ClothingNeckCloakBi
         - id: ClothingNeckCloakIntersex
         - id: ClothingNeckCloakLesbian
         - id: ClothingNeckCloakGay
         - id: ClothingNeckCloakEnby
         - id: ClothingNeckCloakPan
-      - id: ToyFigurineSkeleton
+      - id: ToySkeleton
       - id: Basketball
       - id: Football
-      - id: TennisBall
       - id: BalloonNT
       - id: BalloonCorgi
       - id: MysteryFigureBox
@@ -143,20 +141,14 @@
       - !type:GroupSelector
         children:
         - id: ClothingNeckLGBTPin
-        - id: ClothingNeckAllyPin
         - id: ClothingNeckAromanticPin
         - id: ClothingNeckAsexualPin
-        - id: ClothingNeckAroacePin
         - id: ClothingNeckBisexualPin
         - id: ClothingNeckGayPin
         - id: ClothingNeckIntersexPin
         - id: ClothingNeckLesbianPin
         - id: ClothingNeckNonBinaryPin
         - id: ClothingNeckPansexualPin
-        - id: ClothingNeckPluralPin
-        - id: ClothingNeckOmnisexualPin
-        - id: ClothingNeckGenderqueerPin
-        - id: ClothingNeckGenderfluidPin
         - id: ClothingNeckTransPin
         - id: ClothingNeckAutismPin
         - id: ClothingNeckGoldAutismPin
@@ -173,8 +165,6 @@
       - id: ClothingUniformJumpsuitFamilyGuy
       - id: WristwatchGold
       - id: RubberStampGreytide
-      - id: MysteryLighterBox
-      - id: GoldenPersonalAI
 
 - type: entity
   name: Maint Loot Spawner
@@ -289,7 +279,6 @@
     - !type:GroupSelector
       weight: 2
       children:
-      - id: Binoculars
       - id: LanternFlash
       - id: PowerCellHigh
       - id: NetProbeCartridge
@@ -329,7 +318,6 @@
       weight: 95
       children:
       - id: Machete
-      - id: Claymore
       - id: BaseBallBat
       - id: CombatKnife
       - id: Spear
@@ -361,7 +349,6 @@
       - id: Shiv
       - id: SawImprov
       - id: HydroponicsToolMiniHoe
-      - id: ClothingHandsKnuckleDusters
 
 - type: entity
   name: Maint Loot Spawner
@@ -395,32 +382,3 @@
         - Spaceshroom
       chance: 0.6
       offset: 0.0
-
-
-- type: entityTable
-  id: InsulsTable
-  table: !type:GroupSelector
-    children:
-    - id: ClothingHandsGlovesColorYellowBudget # budget insuls
-      weight: 85
-    - id: ClothingHandsGlovesColorYellow # true insuls
-      weight: 10
-    - id: ClothingHandsGlovesFingerlessInsulated # fingerless
-      weight: 4
-    - id: ClothingHandsGlovesConducting # conducting
-      weight: 1
-
-- type: entity
-  name: Maint Loot Spawner
-  id: MaintenanceInsulsSpawner
-  suffix: Insuls, safe
-  parent: MarkerBase
-  components:
-  - type: Sprite
-    layers:
-    - state: red
-    - sprite: Clothing/Hands/Gloves/Color/yellow.rsi
-      state: icon
-  - type: EntityTableSpawner
-    table: !type:NestedSelector
-      tableId: InsulsTable

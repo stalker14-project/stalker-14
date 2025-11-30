@@ -14,12 +14,9 @@ namespace Content.Server.Power.Components
         /// <summary>
         ///     Amount of charge this needs from an APC per second to function.
         /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("powerLoad")]
-        public override float Load
-        {
-            get => NetworkLoad.DesiredPower;
-            set => NetworkLoad.DesiredPower = value;
-        }
+        public float Load { get => NetworkLoad.DesiredPower; set => NetworkLoad.DesiredPower = value; }
 
         public ApcPowerProviderComponent? Provider = null;
 
@@ -27,12 +24,14 @@ namespace Content.Server.Power.Components
         ///     When false, causes this to appear powered even if not receiving power from an Apc.
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        public override bool NeedsPower
+        public bool NeedsPower
         {
             get => _needsPower;
             set
             {
                 _needsPower = value;
+                // Reset this so next tick will do a power update.
+                Recalculate = true;
             }
         }
 
@@ -42,12 +41,15 @@ namespace Content.Server.Power.Components
         /// <summary>
         ///     When true, causes this to never appear powered.
         /// </summary>
+        [ViewVariables(VVAccess.ReadWrite)]
         [DataField("powerDisabled")]
-        public override bool PowerDisabled
-        {
+        public bool PowerDisabled {
             get => !NetworkLoad.Enabled;
             set => NetworkLoad.Enabled = !value;
         }
+
+        // TODO Is this needed? It forces a PowerChangedEvent when NeedsPower is toggled even if it changes to the same state.
+        public bool Recalculate;
 
         [ViewVariables]
         public PowerState.Load NetworkLoad { get; } = new PowerState.Load

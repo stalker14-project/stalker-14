@@ -1,0 +1,248 @@
+- type: entity
+  name: bag of beans
+  description: A shelf stable world-wide staple.
+  parent: FoodBase
+  id: FoodSTBeans
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.4
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
+      state: beans
+    - type: Craftable
+
+- type: entity
+  name: fresh cheese
+  description: Soft, wet cheese freshly made.
+  parent: FoodBase
+  id: FoodSTFreshCheese
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.25
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,1,1
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
+      state: cheese_fresh
+    - type: FlavorProfile
+      flavors:
+        - cheesy
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 10
+    - type: SliceableFood
+      slice: FoodSTFreshCheeseSlice
+    - type: Craftable
+
+- type: entity
+  name: fresh cheese slice
+  description: A chunk of fresh cheese. Perfect for snacking or cooking.
+  parent: FoodBase
+  id: FoodSTFreshCheeseSlice
+  suffix: Stalker, Food
+  components:
+    - type: STWeight
+      self: 0.05
+    - type: Item
+      size: Tiny # yeah whatever put wet cheese in your pocket
+      shape:
+        - 0,0,0,0
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
+      state: cheese_fresh_slice
+    - type: FlavorProfile
+      flavors:
+        - cheesy
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 3
+    - type: Craftable
+
+- type: entity
+  name: spice mix
+  description: A small bag of spices mixed by hand and marked with a paper label designating the price. It's a small luxury in the zone.
+  parent: FoodBase
+  id: FoodSTSpice
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.1
+    - type: Item
+      size: Tiny
+      shape:
+        - 0,0,0,0
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
+      state: spices
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: TableSalt
+            Quantity: 2
+          - ReagentId: CapsaicinOil
+            Quantity: 2
+          - ReagentId: Blackpepper
+            Quantity: 2
+    - type: Craftable
+
+- type: entity
+  name: yeast packet
+  description: Your bread won't rise without it.
+  parent: FoodBase
+  id: FoodSTYeast
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.05
+    - type: Item
+      size: Tiny
+      shape:
+        - 0,0,0,0
+    - type: Sprite
+      sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
+      state: yeast
+    - type: Craftable
+
+# if people cause problems with egg puddles this is losing its reagent so fast
+- type: entity
+  name: egg
+  description: You've never seen a chicken in the zone, these must have been brought in from somewhere.
+  parent: FoodEggBase
+  id: FoodSTEgg
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.05
+    - type: Sprite # temp
+      sprite: Objects/Consumable/Food/egg.rsi
+      state: white
+    - type: Item
+      size: Tiny
+      shape:
+        - 0,0,0,0
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 5
+          reagents:
+          - ReagentId: Egg
+            Quantity: 5
+    - type: Craftable
+
+- type: entity
+  name: bag of flour
+  description: No bread without flour, no civilization without bread.
+  parent: FoodBase
+  id: FoodSTFlour
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 2
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: Sprite # temp
+      sprite: Objects/Consumable/Food/ingredients.rsi
+      state: flour-big
+    - type: Craftable
+
+- type: entity
+  name: bag of sugar
+  description: Pure sugar.
+  parent: FoodBase
+  id: FoodSTSugar
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 2
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: Sprite # temp
+      sprite: Objects/Consumable/Food/ingredients.rsi
+      state: sugar-big
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: Sugar
+            Quantity: 10
+    - type: Craftable
+
+- type: entity
+  name: bag of rice
+  description: A staple in many places, it's easy to make a meal even with few ingredients.
+  parent: FoodBase
+  id: FoodSTRice
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 2
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: Sprite # temp
+      sprite: Objects/Consumable/Food/ingredients.rsi
+      state: rice-big
+    - type: Craftable
+
+# legally distinct so you cant cook with an empty milk jug
+- type: entity
+  name: carton of milk
+  description: A small carton of milk.
+  parent: FoodBase
+  id: FoodSTMilkCarton
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.25
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: Sprite # temp
+      sprite: Objects/Consumable/Drinks/cream.rsi
+      state: icon
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: Milk
+            Quantity: 5
+    - type: Craftable
+
+- type: entity
+  name: oil
+  description: A sturdy bottle of cooking oil.
+  parent: FoodBase
+  id: FoodSTOil
+  suffix: Stalker, Food, Ingredient
+  components:
+    - type: STWeight
+      self: 0.5
+    - type: Item
+      size: Small
+      shape:
+        - 0,0,0,1
+    - type: Sprite # temp
+      sprite: Objects/Consumable/Food/ingredients.rsi
+      state: oliveoil
+    - type: Craftable

@@ -17,20 +17,9 @@ public sealed partial class DungeonSystem
     private readonly List<DungeonRoomPrototype> _availableRooms = new();
 
     /// <summary>
-    /// Gets a random dungeon room matching the specified area, whitelist and size.
+    /// Gets a random dungeon room matching the specified area and whitelist.
     /// </summary>
     public DungeonRoomPrototype? GetRoomPrototype(Vector2i size, Random random, EntityWhitelist? whitelist = null)
-    {
-        return GetRoomPrototype(random, whitelist, minSize: size, maxSize: size);
-    }
-
-    /// <summary>
-    /// Gets a random dungeon room matching the specified area and whitelist and size range
-    /// </summary>
-    public DungeonRoomPrototype? GetRoomPrototype(Random random,
-        EntityWhitelist? whitelist = null,
-        Vector2i? minSize = null,
-        Vector2i? maxSize = null)
     {
         // Can never be true.
         if (whitelist is { Tags: null })
@@ -42,10 +31,7 @@ public sealed partial class DungeonSystem
 
         foreach (var proto in _prototype.EnumeratePrototypes<DungeonRoomPrototype>())
         {
-            if (minSize is not null && (proto.Size.X < minSize.Value.X || proto.Size.Y < minSize.Value.Y))
-                continue;
-
-            if (maxSize is not null && (proto.Size.X > maxSize.Value.X || proto.Size.Y > maxSize.Value.Y))
+            if (proto.Size != size)
                 continue;
 
             if (whitelist == null)
@@ -90,7 +76,7 @@ public sealed partial class DungeonSystem
             roomRotation = GetRoomRotation(room, random);
         }
 
-        var roomTransform = Matrix3Helpers.CreateTransform((Vector2)room.Size / 2f, roomRotation);
+        var roomTransform = Matrix3Helpers.CreateTransform((Vector2) room.Size / 2f, roomRotation);
         var finalTransform = Matrix3x2.Multiply(roomTransform, originTransform);
 
         SpawnRoom(gridUid, grid, finalTransform, room, reservedTiles, clearExisting);
@@ -123,11 +109,34 @@ public sealed partial class DungeonSystem
     {
         // Ensure the underlying template exists.
         var roomMap = GetOrCreateTemplate(room);
-        var templateMapUid = _maps.GetMapOrInvalid(roomMap);
+        var templateMapUid = _mapManager.GetMapEntityId(roomMap);
         var templateGrid = Comp<MapGridComponent>(templateMapUid);
         var roomDimensions = room.Size;
 
         var finalRoomRotation = roomTransform.Rotation();
+
+        // go BRRNNTTT on existing stuff
+        if (clearExisting)
+        {
+            var gridBounds = new Box2(Vector2.Transform(-room.Size/2, roomTransform), Vector2.Transform(room.Size/2, roomTransform));
+            _entitySet.Clear();
+            // Polygon skin moment
+            gridBounds = gridBounds.Enlarged(-0.05f);
+            _lookup.GetLocalEntitiesIntersecting(gridUid, gridBounds, _entitySet, LookupFlags.Uncontained);
+
+            foreach (var templateEnt in _entitySet)
+            {
+                Del(templateEnt);
+            }
+
+            if (TryComp(gridUid, out DecalGridComponent? decalGrid))
+            {
+                foreach (var decal in _decals.GetDecalsIntersecting(gridUid, gridBounds, decalGrid))
+                {
+                    _decals.RemoveDecal(gridUid, decal.Index, decalGrid);
+                }
+            }
+        }
 
         var roomCenter = (room.Offset + room.Size / 2f) * grid.TileSize;
         var tileOffset = -roomCenter + grid.TileSizeHalfVector;
@@ -147,22 +156,7 @@ public sealed partial class DungeonSystem
                 if (!clearExisting && reservedTiles?.Contains(rounded) == true)
                     continue;
 
-                if (room.IgnoreTile is not null)
-                {
-                    if (_maps.TryGetTileDef(templateGrid, indices, out var tileDef) && room.IgnoreTile == tileDef.ID)
-                        continue;
-                }
-
                 _tiles.Add((rounded, tileRef.Tile));
-
-                if (clearExisting)
-                {
-                    var anchored = _maps.GetAnchoredEntities((gridUid, grid), rounded);
-                    foreach (var ent in anchored)
-                    {
-                        QueueDel(ent);
-                    }
-                }
             }
         }
 
@@ -250,7 +244,7 @@ public sealed partial class DungeonSystem
                 // but place 1 nanometre off grid and fail the add.
                 if (!_maps.TryGetTileRef(gridUid, grid, tilePos, out var tileRef) || tileRef.Tile.IsEmpty)
                 {
-                    _maps.SetTile(gridUid, grid, tilePos, _tile.GetVariantTile((ContentTileDefinition)_tileDefManager[FallbackTileId], _random.GetRandom()));
+                    _maps.SetTile(gridUid, grid, tilePos, _tile.GetVariantTile((ContentTileDefinition) _tileDefManager[FallbackTileId], _random.GetRandom()));
                 }
 
                 var result = _decals.TryAddDecal(

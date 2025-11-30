@@ -21,8 +21,8 @@
         id: blinking
         interpolate: Nearest
         maxDuration: 1.0
-        startValue: 0.1
-        endValue: 2.0
+        minValue: 0.1
+        maxValue: 2.0
         isLooped: true
   - type: PowerCellSlot
     cellSlotId: cell_slot
@@ -45,9 +45,7 @@
     radius: 3
     energy: 2
     netsync: false
-  - type: ToggleableVisuals
-    spriteLayer: light
-  - type: ItemTogglePointLight
+  - type: ToggleableLightVisuals
   - type: Appearance
   - type: Physics
     canCollide: false
@@ -133,20 +131,20 @@
 - type: entity
   name: interrogator lamp
   id: LampInterrogator
-  parent: [ BaseLamp, BaseSecurityContraband ]
+  parent: BaseLamp
   description: Ultra-bright lamp for the bad cop.
   components:
   - type: Sprite
     sprite: Objects/Misc/Lights/lampint.rsi
     layers:
       - state: lamp-int
-        map: [ "enum.FlashVisualLayers.BaseLayer" ]
+        map: [ "enum.FlashVisuals.BaseLayer" ]
       - state: lamp-int-on
         shader: unshaded
         visible: false
         map: [ "light" ]
       - state: flashing
-        map: [ "enum.FlashVisualLayers.LightLayer" ]
+        map: [ "enum.FlashVisuals.LightLayer" ]
         visible: false
   - type: Item
     sprite: Objects/Misc/Lights/lampint.rsi
@@ -159,12 +157,9 @@
     energy: 0.5
     color: "#FFFFEE"
   - type: Flash
-    flashOnMelee: false
-    flashOnUse: false
-  - type: UseDelay
-    delay: 1
   - type: LimitedCharges
     maxCharges: 3
+    charges: 3
   - type: AutoRecharge
     rechargeDuration: 30
   - type: MeleeWeapon
@@ -180,10 +175,10 @@
   - type: GenericVisualizer
     visuals:
       enum.FlashVisuals.Burnt:
-        enum.FlashVisualLayers.BaseLayer:
+        enum.FlashVisuals.BaseLayer:
           True: {state: burnt}
       enum.FlashVisuals.Flashing:
-        enum.FlashVisualLayers.LightLayer:
+        enum.FlashVisuals.LightLayer:
           True: {visible: true}
           False: {visible: false}
 
@@ -196,11 +191,9 @@
   - type: Item
     size: Normal
   - type: Sprite
-    sprite: Objects/Misc/Lights/lights.rsi
     layers:
       - state: floodlight
-        map: [ "base" ]
-      - state: floodlight-on
+      - state: floodlight_on
         shader: unshaded
         visible: false
         map: [ "light" ]
@@ -244,23 +237,16 @@
             max: 1
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: PhysicalComposition
-    materialComposition:
-      Glass: 500
-      Steel: 200
+
 - type: entity
   name: broken floodlight
   id: FloodlightBroken
   parent: BaseItem
   description: A pole with powerful mounted lights on it. It's broken.
   components:
-  - type: Item
-    size: Normal
-    sprite: Objects/Misc/Lights/lights.rsi
-    heldPrefix: floodlight-broken
   - type: Sprite
     sprite: Objects/Misc/Lights/lights.rsi
-    state: floodlight-broken
+    state: floodlight_broken
   - type: Anchorable
   - type: Damageable
     damageContainer: StructuralInorganic
@@ -297,7 +283,3 @@
         density: 50
         mask:
         - HighImpassable
-  - type: PhysicalComposition
-    materialComposition:
-      Glass: 500
-      Steel: 200

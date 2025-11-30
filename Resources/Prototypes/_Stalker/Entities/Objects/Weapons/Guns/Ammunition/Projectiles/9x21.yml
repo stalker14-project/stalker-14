@@ -1,0 +1,56 @@
+#9x21
+
+- type: entity
+  id: Bullet921PGJ
+  name: bullet (9x21 auto)
+  parent: STBasePistolBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Projectile
+    projectileClass: 2
+    damage:
+      types:
+        Piercing: 34
+  - type: StaminaDamageOnCollide
+    damage: 4
+
+- type: entity
+  id: Bullet921PEGJ
+  name: bullet (9х21 auto)
+  parent: Bullet921PGJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 0
+    damage:
+      types:
+        Mutant: 85
+        Piercing: 10
+        Blunt: 10
+        Slash: 10
+
+- type: entity
+  id: Bullet921BTGJ
+  name: bullet (9х21 auto)
+  parent: Bullet921PGJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 3
+    damage:
+      types:
+        Piercing: 33
+
+- type: entity
+  id: Bullet9217N42
+  name: bullet (9х21 auto)
+  parent: Bullet921PGJ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    projectileClass: 4
+    damage:
+      types:
+        Piercing: 32

@@ -24,7 +24,7 @@ public sealed class RotationVisualizerSystem : SharedRotationVisualsSystem
             return;
 
         if (!_appearance.TryGetData<RotationState>(uid, RotationVisuals.RotationState, out var state, args.Component))
-            state = RotationState.Vertical;
+            return;
 
         switch (state)
         {
@@ -52,7 +52,7 @@ public sealed class RotationVisualizerSystem : SharedRotationVisualsSystem
         // Stop the current rotate animation and then start a new one
         if (_animation.HasRunningAnimation(animationComp, animationKey))
         {
-            _animation.Stop((uid, animationComp), animationKey);
+            _animation.Stop(animationComp, animationKey);
         }
 
         var animation = new Animation

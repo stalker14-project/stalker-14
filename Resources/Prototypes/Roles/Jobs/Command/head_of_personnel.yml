@@ -6,19 +6,16 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 2.5h
+      time: 36000 # 10 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Science
-      time: 2.5h
+      time: 36000 # 10 hours
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 2.5h
+      time: 36000 # 10 hrs
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 2.5h
+      time: 36000 # 10 hours
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -65,20 +62,7 @@
     id: HoPPDA
     gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
-    belt: BoxFolderClipboardThreePapers
-    eyes: ClothingEyesHudCommand
+    belt: BoxFolderClipboard
   storage:
     back:
     - Flash
-
-- type: chameleonOutfit
-  id: HeadOfPersonnelChameleonOutfit
-  job: HeadOfPersonnel
-  hasMindShield: true
-  equipment:
-    head: ClothingHeadHatHopcap
-    eyes: ClothingEyesHudCommand
-    mask: ClothingMaskNeckGaiterRed
-    neck: ClothingNeckCloakHop
-    outerClothing: ClothingOuterWinterHoP
-

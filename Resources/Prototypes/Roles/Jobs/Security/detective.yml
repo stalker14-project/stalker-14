@@ -4,9 +4,9 @@
   description: job-description-detective
   playTimeTracker: JobDetective
   requirements:
-  - !type:RoleTimeRequirement
-    role: JobSecurityOfficer
-    time: 5h
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 54000 # 15 hours
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
@@ -15,11 +15,10 @@
   - Security
   - Brig
   - Maintenance
+  - Service
   - Detective
   - Cryogenics
   - External
-  - GenpopEnter
-  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -36,13 +35,3 @@
     - Flash
     - ForensicPad
     - ForensicScanner
-
-- type: chameleonOutfit
-  id: DetectiveChameleonOutfit
-  job: Detective
-  hasMindShield: true
-  equipment:
-    head: ClothingHeadHatFedoraBrown
-    mask: ClothingMaskGasSecurity
-    neck: ClothingNeckTieDet
-    gloves: ClothingHandsGlovesForensic

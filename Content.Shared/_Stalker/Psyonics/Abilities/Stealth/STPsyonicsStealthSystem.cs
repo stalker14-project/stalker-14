@@ -27,7 +27,7 @@ public sealed class STPsyonicsStealthSystem : EntitySystem
         if (entity.Comp.Action is null)
             return;
 
-        _actions.RemoveAction(entity.Owner, entity.Comp.Action.Value);
+        _actions.RemoveAction(entity, entity.Comp.Action.Value);
 
         entity.Comp.Action = null;
         Dirty(entity);

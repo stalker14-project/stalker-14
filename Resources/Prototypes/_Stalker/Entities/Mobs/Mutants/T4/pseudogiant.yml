@@ -28,9 +28,9 @@
                 path: /Audio/_Stalker/Mutants/pseudogiant_die.ogg
     - type: Jumpscare
       attackRadius: 7
-      #damageRadius: 3 # Stalker-TODO: This field does not exist!
-      #staminaDamage: 200 # Stalker-TODO: This field does not exist!
-      #reloadTime: 999999 # Stalker-TODO: This field exists in component but is not a datafield!
+      damageRadius: 3
+      staminaDamage: 200
+      reloadTime: 999999
       chargeDamage:
         types:
           Blunt: 50
@@ -42,6 +42,8 @@
         10000: Dead
     - type: MeleeWeapon
       attackRate: 0.5
+      heavyWindupModifier: 1.5
+      heavyDamageModifier: 2
       angle: 45
       range: 2.5
       soundHit:
@@ -58,10 +60,6 @@
         types:
           Blunt: 100
           Slash: 50
-    - type: BonusMeleeAttackRate
-      heavyWindupMultiplier: 1.5
-    - type: BonusMeleeDamage
-      heavyDamageMultiplier: 2
     - type: MovementSpeedModifier
       baseWalkSpeed: 3
       baseSprintSpeed: 6

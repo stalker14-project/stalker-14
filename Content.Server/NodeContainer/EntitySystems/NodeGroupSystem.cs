@@ -5,7 +5,6 @@ using Content.Server.NodeContainer.NodeGroups;
 using Content.Server.NodeContainer.Nodes;
 using Content.Shared.Administration;
 using Content.Shared.NodeContainer;
-using Content.Shared.NodeContainer.NodeGroups;
 using JetBrains.Annotations;
 using Robust.Server.Player;
 using Robust.Shared.Enums;
@@ -148,13 +147,6 @@ namespace Content.Server.NodeContainer.EntitySystems
                 DoGroupUpdates();
                 VisDoUpdate(frameTime);
             }
-        }
-
-        // used to manually force an update for the groups
-        // the VisDoUpdate will be done with the next scheduled update
-        public void ForceUpdate()
-        {
-            DoGroupUpdates();
         }
 
         private void DoGroupUpdates()
@@ -447,7 +439,6 @@ namespace Content.Server.NodeContainer.EntitySystems
                 NodeGroupID.Pipe => Color.Blue,
                 NodeGroupID.WireNet => Color.DarkMagenta,
                 NodeGroupID.Teg => Color.Red,
-                NodeGroupID.ExCable => Color.Pink,
                 _ => Color.White
             };
         }
