@@ -37,13 +37,11 @@
   parent: Paper
   id: HanzaPassport
   description: Небольшой кожаный паспорт станций Ганзы, хранит в себе информацию о личности человека, в том числе и его друга, если он имеет раздвоение личности.
-  suffix: Метро
+  suffix: Metro
   components:
   - type: Sprite
     sprite: _Stalker/Objects/Misc/hanza_passport.rsi
     layers:
     - state: paper
-      map: ["enum.PaperVisualLayers.Writing"]
-      visible: false
   - type: PaperVisuals
     backgroundImagePath: "/Textures/_Stalker/Interface/Paper/paper_background.svg.96dpi.png"
