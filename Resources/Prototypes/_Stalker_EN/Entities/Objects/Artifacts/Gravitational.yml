@@ -1,9 +1,41 @@
+# Compression - Still needs rework, nerfed for now. (The Colonel)
+
+- type: entity
+  parent: BaseArtifact
+  id: ZoneArtifactWhirlwind
+  name: Whirlwind
+  suffix: Stalker, Whirlwind
+  components:
+  - type: Sprite
+    state: whirlwind
+  - type: ZoneArtifact
+    anomaly: ZoneAnomalyPulse
+  - type: ZoneArtifactDetectorTarget
+    detectedLevel: 2
+  - type: PointLight
+    radius: 1.5
+    energy: 4.5
+    color: "#f89b08"
+    castShadows: false
+  - type: PersonalDamage
+    damage:
+      types:
+        Compression: -0.5
+        Radiation: 1
+    interval: 1
+  - type: Armor
+    hiddenExamine: true
+    armorClass: 2
+    modifiers:
+      coefficients:
+        Compression: 0.75
+
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactPebble
   name: Pebble
   suffix: Stalker, Pebble
-  components:  
+  components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/artifacts.rsi
     state: Pebble
@@ -20,24 +52,23 @@
   - type: PersonalDamage
     damage:
       types:
-        Compression: -0.75
-        Radiation: 0.75
+        Compression: -0.25
+        Radiation: 0.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.80
-        Asphyxiation: 0.95
-        Psy: 1.2
+        Compression: 0.85
+        Psy: 1
 
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactRosin
   name: Rosin
   suffix: Stalker, Rosin
-  components:  
+  components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/artifacts.rsi
     state: Rosin
@@ -54,24 +85,23 @@
   - type: PersonalDamage
     damage:
       types:
-        Compression: -1.25
-        Radiation: 1.25
+        Compression: -.5
+        Radiation: .5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.60
-        Asphyxiation: 0.85
-        Psy: 1.4
+        Compression: 0.75
+        Psy: 1.25
 
 - type: entity
   parent: BaseArtifact
   id: ZoneArtifactStoneCube
   name: Stone Cube
   suffix: Stalker, StoneCube
-  components:  
+  components:
   - type: Sprite
     sprite: _Stalker_EN/Objects/artifacts.rsi
     state: StoneCube
@@ -88,14 +118,13 @@
   - type: PersonalDamage
     damage:
       types:
-        Compression: -2
-        Radiation: 2
+        Compression: -.75
+        Radiation: 1.5
     interval: 1
   - type: Armor
     hiddenExamine: true
     armorClass: 2
     modifiers:
       coefficients:
-        Compression: 0.40
-        Asphyxiation: 0.75
-        Psy: 1.6
+        Compression: 0.65
+        Psy: 1.45

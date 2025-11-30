@@ -1,0 +1,176 @@
+#-----------------------ДОЛЛАРЫ-----------------------
+- type: shopPreset
+  id: HidenZoneTraderNOTUSED
+  itemsForSale:
+    # ---GRAVITY---
+    #Т2
+    ZoneArtifactFireball: 0
+    ZoneArtifactBattery: 5
+    ZoneArtifactAmoeba: 5
+    ZoneArtifactBlood: 10
+    ZoneArtifactEye: 5
+    #T3
+    ArtMedusa: 0
+    ZoneArtifactVyvert: 0
+    ZoneArtifactFlower: 20
+    #T4
+    ZoneArtifactGravi: 60
+    ZoneArtifactNightStar: 60
+    #T5
+    ZoneArtifactDistorter: 200
+    ZoneArtifactFocus: 200
+    ZoneArtifactGoldfish: 200
+    ZoneArtifactSpring: 200
+    ZoneArtifactStuntman: 200
+    # ---THERMAL---
+    #T3
+    ZoneArtifactFlame: 25
+    #T4
+    ZoneArtifactCristall: 60
+    #T5
+    ZoneArtifactLithosphere: 200
+    # ---ELECTRICAL---
+    #T3
+    ArtMoon: 40
+    ZoneArtifactFlash: 40
+    #T5
+    ZoneArtifactIce: 200
+    ZoneArtifactTesla: 200
+    # ---SPATIAL---
+    #T5
+    ZoneArtifactSoul: 200
+    # ---ACIDIC---
+    #T3
+    ZoneArtifactMeat: 40
+    #T4
+    ZoneArtifactBaloon: 65
+    ZoneArtifactKolobok: 55
+    # Mutant parts
+    MutantPartBoarHoof: 0 # T1
+    MutantPartSeasonedBoarHoof: 0 # T2
+    MutantPartOldBoarHoof: 0 # T3
+
+    #T1 -------- Health * 1
+    MutantPartBlindDogTail: 0
+    MutantPartFleshEye: 0
+    FoodMeatSpiderLeg: 0
+    MutantPartLeshiyRoot: 0
+    MutantPartPseudodogTail: 0
+    MutantPartSnorkFoot: 0
+    #T3 -------- Health * 3
+    MutantPartBloodsuckerTentacles: 45
+    MutantPartOraculeEye: 60
+    MutantPartPseudogiantHeart: 320
+    MutantPartZombieHand: 2
+    MutantPartBloodsuckerHead: 150
+    MutantPartPsiDogTail: 20
+    MutantPartChimeraTooth: 50
+    ClothingHeadBear: 125 # EN
+    MutantPartIzlomArm: 45 # EN
+
+  categories:
+  - name: shop-category-weapons
+    priority: 1
+    items:
+      STWeaponShotgunProtecta: 25
+      STWeaponSMGThompson: 200
+      STWeaponRifleM14: 125
+      STWeaponSniperSVDS: 250
+      STWeaponSniperVepr: 150
+      STWeaponShotgunSaiga12: 25
+      STWeaponSniperVSS: 600
+      STWeaponMachineGunRPD: 2000
+      STWeaponPistolDesertEagle: 175 #EN
+  - name: shop-category-magazines
+    priority: 2
+    items:
+      BaseTommyGunMag: 5
+      TommyGunDrum2: 10
+      Saiga1270Mag10: 5
+      Base1270Mag: 2
+      Saiga1270Drum: 35
+      Base751Mag10: 3
+      754Mag20: 10
+      Base939Mag10: 10
+      Magazine762x39RPD: 100
+      DEMag8: 10 #EN
+      DEMag15: 25 #EN
+  - name: shop-category-ammunition
+    priority: 3
+    items:
+      918PBMBoxCink: 20
+      939SP5BoxCink: 30
+      939BPBoxCink: 55
+      556M855BoxCink: 30
+      751M80BoxCink: 35
+      545PCBoxCink: 25
+      545BPBoxCink: 120
+      556M856BoxCink: 120
+      725PSTBoxCink: 20
+      8mmBuckshotBoxCink: 40
+      754PCBox: 5
+      STBox9x39PSO: 15
+      ShotgunBulletBoxRIP: 5
+  - name: shop-category-armor
+    priority: 4
+    items:
+      ClothingHeadHelmetBerill5MMilitary: 20
+      ClothingHeadHelmetUlach: 75
+      ClothingOuterArmorAborigineStalker: 75
+      ClothingOuterArmorStalkerCombat: 200
+      STClothingOuterArmorVeryHeavy: 350
+      ClothingOuterArmorHazmatRf: 500
+  - name: shop-category-storage-and-containers
+    priority: 5
+    items:
+      ClothingBackpackDuffelBlackTacticStalker: 20
+      ClothingBackpackDuffelOliveTacticStalker: 20
+      ClothingBackpackDuffelSuperStalker: 50
+      ClothingBackpackDuffelSuperStalkerGray: 50
+      ClothingBeltWebbingDoubleStalkerZaryaSmall: 5
+  - name: shop-category-research-equipment
+    priority: 7
+    items:
+      ZoneAnomalyDetectorAD3: 20
+      ZoneArtifactDetectorSpruce: 25
+      ZoneArtifactDetectorBear: 350
+      ZoneArtifactDetectorWolfhound: 1000
+      STPsyHelm2: 20
+      BoxArtcont1: 20
+      BoxArtcont: 5
+      STBoltBagOliveGrayFilledGolden: 300
+      TrashDetectorTier4: 100
+      TrashDetectorTier5: 200
+  - name: shop-category-medicine
+    priority: 10
+    items:
+      BoxMRE: 5
+      Defibrillator: 10
+      STOintmentGood: 2 #лечит 40 терм. урона (Heat: -20 Caustic: -10 Shock: -10 delay: 8)
+      MedkitMilitary: 2 #лечит 50 физ. урона (Piercing: -20 Blunt: -10 Slash: -20 delay: 8)
+      MedkitScience: 5 #лечит 45 терм. урона и 20 рад. (Heat: -15 Caustic: -15 Shock: -15 Radiation: -20 delay: 9)
+      WakeUpMedipen: 5 #содержит аналог 2 таблеток wakeuppill (20 унций Bloodloss: -3 Asphyxiation: -2 за унцию)
+      MedkitAI2: 1
+      AntiRadMedipen: 5
+      psyblock: 5
+      STPillboxShiza: 100
+      ThermoOintment: 4
+      OintmentDressing: 2
+      MedkitElite: 10
+      MedkitLAR: 25
+  - name: shop-category-modules
+    priority: 11
+    items:
+      STModuleAutoSear: 50
+      STModuleSMGGripT2: 60
+      STModuleSniperSightT2: 30
+      STModuleScopeRiflesT2Nato: 50
+      STModuleScopeRiflesT2Ru: 50
+
+
+
+
+
+
+
+

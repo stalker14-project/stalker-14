@@ -20,7 +20,9 @@
 
  HELPFUL INFORMATION
 
- Recommended Loadout: Decent shotgun, 7mm shotgun rounds, knife, bolt bag, and some meds. (If you lose all your starter gear and are soft locked AHELP for assistance)
+ Recommended Loadout: Decent shotgun, 7mm or preferably 6.5mm "Express" shotgun rounds, knife, bolt bag, and some meds. (If you lose all your starter gear and are soft locked AHELP for assistance)
+
+ You can communicate with other stalkers on your PDA! Go onto your PDA and go to the Programs tab, then click messager! You can choose to read or write a message. If you are sending a message set the recipient to "General" this will send a message to all PDAs. If you want to send a private message from your PDA enter the stalker's name in the recipient section.
 
  Laying on a bed heals you, no need to even sleep!
 

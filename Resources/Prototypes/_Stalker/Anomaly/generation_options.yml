@@ -8,7 +8,7 @@
     - protoId: ZoneAnomalyJarka
     - protoId: ZoneAnomalyElectra
 
-# Кордон
+# Cordon - Stalker EN
 - type: stAnomalyGenerationOptions
   id: STKordonGenerationOptions
   options:
@@ -29,11 +29,11 @@
     - protoId: ZoneAnomalyLamp
       weight: 0.1
 
-# Свалка
+# Garbage - Stalker EN
 - type: stAnomalyGenerationOptions
   id: STSvalkaGenerationOptions
   options:
-    totalCount: 450
+    totalCount: 300
     anomalyEntries:
     # Electrical
     - protoId: ZoneAnomalyElectra
@@ -52,7 +52,7 @@
     - protoId: ZoneAnomalyLamp
 
 # Болота
-- type: stAnomalyGenerationOptions #StalkerEN
+- type: stAnomalyGenerationOptions
   id: STBolotaGenerationOptions
   options:
     totalCount: 250
@@ -129,7 +129,7 @@
 - type: stAnomalyGenerationOptions
   id: STTemnajLohinaGenerationOptions
   options:
-    totalCount: 100
+    totalCount: 275
     anomalyEntries:
     # Gravity
     - protoId: ZoneAnomalyGrabber
@@ -179,7 +179,7 @@
     - protoId: ZoneAnomalyRift
 
 # Топи
-- type: stAnomalyGenerationOptions #StalkerEN
+- type: stAnomalyGenerationOptions
   id: STTopiGenerationOptions
   options:
     totalCount: 900
@@ -189,7 +189,6 @@
       weight: 2
     - protoId: ZoneAnomalyGazirovka
       weight: 5
-    #    - protoId: STAnomalyBubbleExit
     - protoId: ZoneAnomalyKissel
       weight: 3
     # Gravity
@@ -205,16 +204,14 @@
     - protoId: ZoneAnomalyBarabashka
       weight: 0.5
 
-# Рыжий лес XXX
+# Red Forest - Testing Stalker EN
 - type: stAnomalyGenerationOptions
   id: STRedForestGenerationOptions
   options:
-    totalCount: 375
+    totalCount: 300
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
       weight: 1.5
-#    - protoId: STAnomalyBubble
-#      weight: 0.9
     - protoId: ZoneAnomalyNoGravity
     - protoId: ZoneAnomalyElectra
     - protoId: ZoneAnomalyGravi
@@ -281,11 +278,11 @@
     - protoId: ZoneAnomalySource
     - protoId: ZoneAnomalyGrabber
 
-# Лима
+# Limansk - Stalker EN
 - type: stAnomalyGenerationOptions
   id: STLimaGenerationOptions
   options:
-    totalCount: 250
+    totalCount: 275
     anomalyEntries:
     - protoId: ZoneAnomalyKissel
     - protoId: ZoneAnomalyNoGravity

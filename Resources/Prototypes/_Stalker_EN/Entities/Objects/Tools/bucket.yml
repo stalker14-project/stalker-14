@@ -1,0 +1,17 @@
+﻿- type: entity
+  parent: STBucket
+  name: Corpse Remover 42-FDE
+  id: STCorpseRemover
+  categories: [ HideSpawnMenu ]
+  description: A regular galvanized bucket. Filled with a patented formula used by Spetsnaz, made with 90% Vodka, or so they claim....
+  components:
+  - type: STWeight
+    self: 2.0
+  - type: SolutionContainerManager
+    solutions:
+      bucket:
+        reagents:
+        - ReagentId: Vodka
+          Quantity: 50
+        - ReagentId: Napalm
+          Quantity: 200

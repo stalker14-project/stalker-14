@@ -374,4 +374,129 @@
 
 # Monolith Kits - WILL BE ADDED SOON
 
-# Event Kits - WILL BE ADDED SOON
+# Event Kits ------------------------------------------------------------------------
+
+# Gulag Kits
+
+- type: entity
+  parent: BaseItem
+  id: STGulagT3Kit
+  name: Gulag Tier 3 Kit
+  description: A bag full of supplies for the Gulag. FIGHT!
+  suffix: Event, Gulag, T3, DO NOT SPAWN
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterIOTV
+    - id: ClothingHeadAssaultHelmet
+    - id: STWeaponRifleG36Alt
+    - id: ClothingBeltWebbingHolsterLoner
+    - id: STCombatKnife
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: STGauze
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556FMJBox
+    - id: 556FMJBox
+    - id: 556FMJBox
+    - id: 556FMJBox
+    - id: 556FMJBox
+    - id: 556FMJBox
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: STGulagT4Kit
+  name: Gulag Tier 4 Kit
+  description: A bag full of supplies for the Gulag. FIGHT!
+  suffix: Event, Gulag, T4, DO NOT SPAWN
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterIOTVGEN4
+    - id: ClothingHeadHelmetUlach
+    - id: STWeaponRifleAK74M
+    - id: ClothingBeltWebbingHolsterLoner
+    - id: STCombatKnife
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: STGauze
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545Mag30
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    - id: 545PCBox
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: BaseItem
+  id: STGulagT5Kit
+  name: Gulag Tier 5 Kit
+  description: A bag full of supplies for the Gulag. FIGHT!
+  suffix: Event, Gulag, T5, DO NOT SPAWN
+  components:
+  - type: STWeight
+    self: 87.2
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: Sprite
+    sprite: _Stalker/Structures/Furniture/olive_bag.rsi
+    state: icon
+  - type: SpawnItemsOnUse
+    items:
+    - id: STClothingOuterHeavyRedut
+    - id: STClothingHeadHelmetFASTNeutralBlack
+    - id: STWeaponRifleHK416
+    - id: ClothingBeltWebbingHolsterLoner
+    - id: STCombatKnife
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: MedkitMilitary
+    - id: STGauze
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556Mag30
+    - id: 556M856Box
+    - id: 556M856Box
+    - id: 556M856Box
+    - id: 556M856Box
+    - id: 556M856Box
+    - id: 556M856Box
+    sound:
+      path: /Audio/Effects/unwrap.ogg
