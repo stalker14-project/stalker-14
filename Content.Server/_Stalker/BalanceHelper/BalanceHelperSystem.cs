@@ -41,7 +41,7 @@ public sealed partial class BalanceHelperSystem : EntitySystem
         {
             if (!entProto.TryGetComponent<ArmorComponent>(out var armor))
                 continue;
-            _armorSystem.OnArmorInit(default, armor);
+            _armorSystem.ApplyLevels(armor);
             if (!entProto.TryGetComponent<ClothingComponent>(out var clothing))
                 continue;
             // Skipping artifacts which also has armor

@@ -13,10 +13,10 @@
         - state: torgomat_blue
           map: [ "enum.ConstructionVisuals.Layer" ]
         - state: normal-unshaded
-    - type: Store
-      preset: StorePresetSci
-      balance:
-        Roubles: 0
+    # - type: Store # Stalker-TODO: I don't think this should stay here. It already has ShopComponent.
+      # preset: StorePresetSci
+      # balance:
+        # Roubles: 0
     - type: Shop
       moneyId: Dollar
       shopPresetId: SciDollarTorgomat

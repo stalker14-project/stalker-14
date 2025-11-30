@@ -1,5 +1,5 @@
 - type: entity
-  parent: STClothingOuterBaseLarge
+  parent: STClothingOuterBaseLargeToggleable
   id: ClothingOuterArmorUzk5
   name: костюм УЗК-5
   suffix: ST, T5, Env
@@ -39,7 +39,7 @@
     sprintModifier: 1
 
 - type: entity  # T3
-  parent: ClothingHeadHardsuitWithLightBase
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHardsuitUzk5Helm
   name: шлем "УЗК-5"
   description: Встроенный шлем УЗК-5 с фонарём.
@@ -55,7 +55,6 @@
     - type: Tag
       tags:
         - BlockMask
-        - HidesNose
     - type: Sprite
       sprite: _Stalker/Objects/Clothing/hats/uzk5_helmet.rsi
     - type: Clothing
@@ -64,8 +63,9 @@
       unequipSound: null
     - type: Armor
       armorClass: 2
-      coefficients:
-          Piercing: 0.75
+      modifiers:
+        coefficients:
+            Piercing: 0.75
     - type: Reflect
       reflectProb: 0.07
       spread: 360
@@ -74,6 +74,7 @@
     - type: HideLayerClothing
       slots:
       - Hair
+      - Snout
 
 - type: entity
   parent: ClothingOuterArmorUzk5

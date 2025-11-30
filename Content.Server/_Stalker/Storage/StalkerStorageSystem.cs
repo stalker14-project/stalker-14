@@ -25,6 +25,7 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Content.Server.Botany.Components;
 using Content.Shared._Stalker;
 using Content.Shared._Stalker.Storage;
+using Content.Shared.Power.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Stalker.Storage;
@@ -44,7 +45,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
     private readonly Dictionary<string, DelegateItemStalkerConverter> _convertersItemStalker = new(0);
     private readonly HashSet<Type> _blackListDelChildrenOnSpawnComponent = new(0);
     private readonly HashSet<string> _blackListContainerNames = new(0);
-    private readonly Dictionary<EntProtoId, EntProtoId> _mapping = [];
+    private readonly Dictionary<string, EntProtoId> _mapping = [];
 
     private void InstallLists()
     {
@@ -362,7 +363,7 @@ public sealed class StalkerStorageSystem : SharedStalkerStorageSystem
             case BatteryItemStalker options:
                 if (TryComp<BatteryComponent>(inputItemUid, out var batteryComponent))
                 {
-                    _batterySys.SetCharge(inputItemUid, options.CurrentCharge, batteryComponent);
+                    _batterySys.SetCharge((inputItemUid, batteryComponent), options.CurrentCharge);
                 }
                 break;
             case AmmoContainerStalker options:

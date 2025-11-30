@@ -3,7 +3,7 @@
   name: магазин ТТ 7,62x25 (8)
   description: Магазин 7,62x25 для ТТ. Вместимость пуль 8. Продают пустым.
   parent: BasePPSHMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.1
@@ -25,7 +25,6 @@
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -37,7 +36,7 @@
   name: магазин ППШ (35)
   description: Магазин для ППШ-41. Вместимость пуль 35. Продают пустым.
   parent: BaseItem
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.3
@@ -53,7 +52,6 @@
     tags:
       - MagazinePPSh
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -76,7 +74,7 @@
   name: барабан ППШ (71)
   description: Барабан для ППШ-41. Вместимость пуль 71. Продают пустым.
   parent: BasePPSHMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.85
@@ -93,7 +91,6 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:

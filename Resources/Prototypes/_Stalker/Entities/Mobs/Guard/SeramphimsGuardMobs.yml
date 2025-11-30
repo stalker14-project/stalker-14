@@ -21,14 +21,11 @@
     angleDecay: 15
     availableModes:
     - FullAuto
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet919PST
     fireCost: 5
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Lite.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Lite.rsi
 
 - type: entity
   name: Патрульный Серафимов
@@ -53,14 +50,11 @@
     angleDecay: 15
     availableModes:
     - FullAuto
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet919PST
     fireCost: 5
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Medium.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Medium.rsi
 
 - type: entity
   name: Патрульный Серафимов
@@ -85,14 +79,11 @@
     angleDecay: 15
     availableModes:
     - FullAuto
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet919PST
     fireCost: 5
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Heavy.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Heavy.rsi
 
 - type: entity
   name: Охранник серафимов
@@ -105,16 +96,12 @@
     factions:
     - Seraphims
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Lite.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Lite.rsi
   - type: Bands
     bandIcon: seraphim
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun
@@ -157,16 +144,12 @@
     factions:
     - Seraphims
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Medium.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Medium.rsi
   - type: Bands
     bandIcon: seraphim
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun
@@ -209,16 +192,12 @@
     factions:
     - Seraphims
   - type: Sprite
-    layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: live
-      sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Heavy.rsi
+    sprite: /Textures/_Stalker/Mobs/Guards/Seraphims/Heavy.rsi
   - type: Bands
     bandIcon: seraphim
-  - type: BatterySelfRecharger
-    autoRecharge: true
+  - type: PredictedBatterySelfRecharger
     autoRechargeRate: 2
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: Bullet545PC
     fireCost: 5
   - type: Gun

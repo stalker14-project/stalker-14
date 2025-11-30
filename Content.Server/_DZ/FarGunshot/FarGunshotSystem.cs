@@ -27,7 +27,7 @@ public sealed class FarGunshotSystem : EntitySystem
 
         var shootPos = _transform.GetMapCoordinates(uid);
 
-        var range = component.Range * component.SilencerDecrease;
+        var range = component.Range * component.SilencerDecrease ?? component.BaseSilencerDecrease;
 
         if (component.Range <= 14f) // we need this since i want to decrease number of uselles iterations
             return;

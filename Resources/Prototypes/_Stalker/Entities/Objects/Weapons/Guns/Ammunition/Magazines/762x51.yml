@@ -3,7 +3,7 @@
   name: магазин 7,62x51 (10)
   description: Магазин 7,62x51 для винтовок НАТО. Вместимость пуль 10. Продают пустым.
   parent: Base545Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
     - type: STWeight
       self: 0.2
@@ -11,7 +11,6 @@
       tags:
         - Magazine751
     - type: BallisticAmmoProvider
-      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -43,7 +42,7 @@
   name: магазин 7,62x51 (20)
   description: Магазин 7,62x51 для винтовок НАТО. Вместимость пуль 20. Продают пустым.
   parent: Base751Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
     - type: STWeight
       self: 0.35
@@ -66,7 +65,7 @@
   name: магазин 7,62x51 (30)
   description: Магазин 7,62x51 для винтовок НАТО. Вместимость пуль 30. Продают пустым.
   parent: Base751Mag10
-  tag: Stalker
+  suffix: Stalker
   components:
     - type: STWeight
       self: 0.4

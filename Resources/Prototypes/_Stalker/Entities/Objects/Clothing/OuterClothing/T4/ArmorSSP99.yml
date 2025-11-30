@@ -18,7 +18,7 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetSSP99
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
       - 0,0,5,3
       - 7,0,12,3
@@ -42,6 +42,11 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.95
     sprintModifier: 0.95
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
   - type: Tag
     tags:
     - BlockCloak
@@ -94,9 +99,8 @@
   components:
   - type: Armor
     armorLevels:
-      Blunt: 10
-      Slash: 10
-      Piercing: 10
+      nonPvPPhysical: 10
+      piercing: 10
   - type: Sprite
     sprite: _Stalker/Objects/Clothing/outerClothing/ssp99.rsi
   - type: Clothing

@@ -15,6 +15,9 @@
       - HidesNose
   - type: STWeight
     self: 4
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
   - type: ToggleableClothing
     slot: head
     requiredSlot: mask

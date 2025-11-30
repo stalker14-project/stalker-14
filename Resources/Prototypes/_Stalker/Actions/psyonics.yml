@@ -3,14 +3,16 @@
   name: springboard
   categories: [ HideSpawnMenu ]
   components:
-    - type: WorldTargetAction
+    - type: Action
       useDelay: 15
-      range: 0
-      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: springboard
+    - type: TargetAction
+      checkCanAccess: false
+      range: 0
+    - type: WorldTargetAction
       event: !type:PsyonicsActionSpringboardEvent
 
 - type: entity
@@ -18,14 +20,16 @@
   name: rift
   categories: [ HideSpawnMenu ]
   components:
-    - type: WorldTargetAction
+    - type: Action
       useDelay: 10
-      range: 0
-      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: rift
+    - type: TargetAction
+      checkCanAccess: false
+      range: 0
+    - type: WorldTargetAction
       event: !type:PsyonicsActionRiftEvent
 
 - type: entity
@@ -33,14 +37,16 @@
   name: smoke
   categories: [ HideSpawnMenu ]
   components:
-    - type: WorldTargetAction
+    - type: Action
       useDelay: 10
-      range: 0
-      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: smoke
+    - type: TargetAction
+      checkCanAccess: false
+      range: 0
+    - type: WorldTargetAction
       event: !type:PsyonicsActionSmokeEvent
 
 - type: entity
@@ -48,14 +54,16 @@
   name: grab
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       useDelay: 10
-      range: 25
-      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: grab
+    - type: TargetAction
+      checkCanAccess: false
+      range: 25
+    - type: EntityTargetAction
       event: !type:PsyonicsActionGrabEvent
 
 - type: entity
@@ -63,14 +71,16 @@
   name: fireball
   categories: [ HideSpawnMenu ]
   components:
-    - type: WorldTargetAction
+    - type: Action
       useDelay: 2
-      range: 0
-      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: fireball
+    - type: TargetAction
+      checkCanAccess: false
+      range: 0
+    - type: WorldTargetAction
       event: !type:PsyonicsActionFireballEvent
 
 - type: entity
@@ -78,12 +88,13 @@
   name: shield
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       useDelay: 2
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: shield
+    - type: InstantAction
       event: !type:PsyonicsActionShieldEvent
 
 - type: entity
@@ -91,12 +102,13 @@
   name: meditation
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       useDelay: 2
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: meditation
+    - type: InstantAction
       event: !type:PsyonicsActionMeditationEvent
 
 - type: entity
@@ -104,12 +116,13 @@
   name: light
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       useDelay: 2
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: light
+    - type: InstantAction
       event: !type:PsyonicsActionLightEvent
 
 - type: entity
@@ -117,14 +130,16 @@
   name: dizzy
   categories: [ HideSpawnMenu ]
   components:
-    - type: EntityTargetAction
+    - type: Action
       useDelay: 10
-      range: 25
-      checkCanAccess: false
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: dizzy
+    - type: TargetAction
+      checkCanAccess: false
+      range: 25
+    - type: EntityTargetAction
       event: !type:PsyonicsActionDizzyEvent
 
 - type: entity
@@ -132,10 +147,11 @@
   name: dizzy
   categories: [ HideSpawnMenu ]
   components:
-    - type: InstantAction
+    - type: Action
       itemIconStyle: NoItem
       icon:
         sprite: _Stalker/Interface/Actions/psyonics.rsi
         state: dizzy
       useDelay: 1
+    - type: InstantAction
       event: !type:STPsyonicsStealthActionEvent
