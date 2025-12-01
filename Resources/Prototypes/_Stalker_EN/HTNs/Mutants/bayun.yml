@@ -25,25 +25,19 @@
 
 - type: htnCompound
   id: STCatRoarRestoreCompound
-  preconditions:
-  - !type:KeyBoolEqualsPrecondition
-    key: Roared
-    value: true
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: true
       operator: !type:SetBoolOperator
         targetKey: Roared
         value: false
 
 - type: htnCompound
   id: STCatRoarCompound
-  preconditions:
-  - !type:KeyExistsPrecondition
-    key: Target
-  - !type:KeyBoolEqualsPrecondition
-    key: Roared
-    value: false
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
@@ -52,7 +46,11 @@
           collection: CatAttack
           params:
             variation: 0.125
+
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true
@@ -60,20 +58,27 @@
         targetKey: TargetCoordinates
         pathfindKey: TargetPathfind
         rangeKey: RangedRange
+
     - !type:HTNPrimitiveTask
       operator: !type:JukeOperator
         jukeType: AdjacentTile
+
     - !type:HTNPrimitiveTask
       operator: !type:SetFloatOperator
         targetKey: AttackDelay
         amount: 0.8
+
     - !type:HTNPrimitiveTask
       operator: !type:WaitOperator
         key: AttackDelay
       preconditions:
       - !type:KeyExistsPrecondition
         key: AttackDelay
+
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true
@@ -81,20 +86,27 @@
         targetKey: TargetCoordinates
         pathfindKey: TargetPathfind
         rangeKey: RangedRange
+
     - !type:HTNPrimitiveTask
       operator: !type:JukeOperator
         jukeType: AdjacentTile
+
     - !type:HTNPrimitiveTask
       operator: !type:SetFloatOperator
         targetKey: AttackDelay
         amount: 0.8
+
     - !type:HTNPrimitiveTask
       operator: !type:WaitOperator
         key: AttackDelay
       preconditions:
       - !type:KeyExistsPrecondition
         key: AttackDelay
+
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true
@@ -102,26 +114,35 @@
         targetKey: TargetCoordinates
         pathfindKey: TargetPathfind
         rangeKey: RangedRange
+
     - !type:HTNPrimitiveTask
       operator: !type:JukeOperator
         jukeType: AdjacentTile
+
     - !type:HTNPrimitiveTask
       operator: !type:SetFloatOperator
         targetKey: AttackDelay
         amount: 0.8
+
     - !type:HTNPrimitiveTask
       operator: !type:WaitOperator
         key: AttackDelay
       preconditions:
       - !type:KeyExistsPrecondition
         key: AttackDelay
-    - !type:HTNPrimitiveTask
-      operator: !type:PlaySoundOperator
-        sound:
-          collection: HumanSounds
-          params:
-            variation: 0.125
-            maxDistance: 100
+
+    # - !type:HTNPrimitiveTask
+      # preconditions:
+      # - !type:KeyBoolEqualsPrecondition
+        # key: Roared
+        # value: false
+      # operator: !type:PlaySoundOperator
+        # sound:
+          # collection: HumanSounds # Stalker-TODO: Uncomment these once "HumanSounds" sound collection exists!
+          # params:
+            # variation: 0.125
+            # maxDistance: 100
+
     - !type:HTNPrimitiveTask
       operator: !type:SetBoolOperator
         targetKey: Roared
@@ -129,13 +150,13 @@
 
 - type: htnCompound
   id: STCatMeleeAttackTargetCompound
-  preconditions:
-  - !type:KeyExistsPrecondition
-    key: Target
   branches:
   # Move to melee range and hit them
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true

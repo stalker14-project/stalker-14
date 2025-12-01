@@ -8,15 +8,15 @@
   - type: Butcherable
     spawned:
     - id: MutantPartFrogLeg
-      Amount: 2
+      amount: 2
       prob: 0.7
-    - id: STJunkTag
+    - id: STJunkTag # EN
       maxAmount: 1
       prob: 0.07
-    - id: STJunkTagWhite
+    - id: STJunkTagWhite # EN
       maxAmount: 1
       prob: 0.02
-    - id: STJunkTracker
+    - id: STJunkTracker # EN
       maxAmount: 1
       prob: 0.01
   - type: Damageable
@@ -30,8 +30,8 @@
       Dead:
         Base: dead
   - type: Jumpscare
-    damageRadius: 1
-    reloadTime: 2
+    # damageRadius: 1 # Stalker-TODO: This field does not exist!
+    # reloadTime: 2 # Stalker-TODO: This field exists in component but is not a datafield!
     attackRadius: 12
     chargeDamage:
       types:
@@ -68,8 +68,6 @@
     baseSprintSpeed: 3
   - type: MeleeWeapon
     attackRate: 0.4
-    heavyWindupModifier: 1
-    heavyDamageModifier: 1.25
     angle: 60
     range: 1.25
     soundHit:
@@ -87,6 +85,8 @@
         Radiation: 5
         Poison: 15
         Slash: 5
+  - type: BonusMeleeDamage
+    heavyDamageMultiplier: 1.25
   - type: StaminaDamageOnHit
     damage: 10
   - type: PersonalDamage

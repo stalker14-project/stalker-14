@@ -25,3 +25,11 @@ reagent-desc-sci-steampack = Стимуляторный стимпак трет�
 
 reagent-name-dexalin-plus-stalker = дексалин плюс
 reagent-desc-dexalin-plus-stalker = Используется для лечения кислородного голодания и потери крови. Выводит синильную кислоту из кровеносной системы.
+
+# EN-Секция
+reagent-name-cossack = cossack
+reagent-desc-cossack = It's the Cossack part of Cossack vodka!
+
+# man i had to call it something
+reagent-name-psiconium = psiconium
+reagent-desc-psiconium = It fixes your brain.

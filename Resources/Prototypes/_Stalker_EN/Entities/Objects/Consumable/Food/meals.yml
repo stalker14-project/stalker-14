@@ -20,7 +20,7 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
     state: borscht
-  - type: Food
+  - type: Edible
     trash:
     - FoodBowlBig
     utensil: Spoon
@@ -54,7 +54,7 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
     state: snorksoup
-  - type: Food
+  - type: Edible
     trash:
       - FoodBowlBig
     utensil:
@@ -92,7 +92,7 @@
     layers:
     - state: bowl
     - state: coleslaw
-  - type: Food
+  - type: Edible
     trash:
       - FoodBowlBig
     utensil: Spoon
@@ -126,7 +126,7 @@
     layers:
     - state: bowl
     - state: monkeydelight
-  - type: Food
+  - type: Edible
     trash:
     - FoodBowlBig
     utensil: Spoon
@@ -156,7 +156,7 @@
     layers:
     - state: bowl
     - state: rice
-  - type: Food
+  - type: Edible
     trash:
       - FoodBowlBig
     utensil: Spoon
@@ -573,7 +573,7 @@
       - fruity
   - type: Sprite # TO DO
     sprite: Objects/Consumable/Food/Baked/cake.rsi
-    state: apple
+    state: berry_delight
   - type: STWeight
     self: 3
   - type: Item
@@ -604,7 +604,7 @@
       - fruity
   - type: Sprite # TO DO
     sprite: Objects/Consumable/Food/Baked/cake.rsi
-    state: apple-slice
+    state: berry_delight_slice
   - type: STWeight
     self: 0.5
   - type: Item
@@ -643,7 +643,7 @@
     solutions:
       food:
         reagents:
-        - ReagentId: Frostoil
+        - ReagentId: FrostOil
           Quantity: 10
   - type: PersonalDamage
     damage:
@@ -692,7 +692,7 @@
     flavors:
       - meaty
       - tomatoes
-  - type: Food
+  - type: Edible
     trash:
       - FoodKebabSkewer
   - type: Sprite
@@ -722,7 +722,7 @@
   - type: FlavorProfile
     flavors:
       - tomatoes
-  - type: Food
+  - type: Edible
     trash:
       - FoodKebabSkewer
   - type: Sprite
@@ -805,7 +805,7 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/Consumable/Food/meals.rsi
     state: oraclegumbo
-  - type: Food
+  - type: Edible
     trash:
     - FoodBowlBig
     utensil:

@@ -17,6 +17,7 @@
   name: Ecologist Guard Spawner (1) (100%)
   id: STGuardEcologist
   parent: MarkerBase
+  suffix: WIP, Not working # Stalker-TODO: Remove once the reason below is fixed.
   components:
   - type: ApproachTrigger
   - type: Sprite
@@ -25,14 +26,14 @@
     - sprite: Mobs/Aliens/Xenos/burrower.rsi
       state: crit
     - state: ai
-  - type: SpawnOnApproach
-    minAmount: 1
-    maxAmount: 1
-    maxOffset: 1
-    minOffset: 1
-    cooldown: 6000
-    chance: 1
-    prototypes:
-    - MobEcologistGuard
-    restricted:
-    - MobEcologistGuard
+  # - type: SpawnOnApproach # Stalker-TODO: Prototype "MobEcologistGuard" does not exist!
+    # minAmount: 1
+    # maxAmount: 1
+    # maxOffset: 1
+    # minOffset: 1
+    # cooldown: 6000
+    # chance: 1
+    # prototypes:
+    # - MobEcologistGuard
+    # restricted:
+    # - MobEcologistGuard

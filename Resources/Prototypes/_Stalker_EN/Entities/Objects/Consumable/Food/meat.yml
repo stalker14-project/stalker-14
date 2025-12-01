@@ -27,7 +27,7 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSteakSTBear
     node: start
     defaultTarget: steak stbear
   - type: Tag
@@ -442,7 +442,7 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSTEel
     node: start
     defaultTarget: meat steel
   - type: Tag
@@ -567,6 +567,9 @@
   - type: Sprite
     sprite: _Stalker_EN/Objects/Consumable/Food/meat.rsi
     state: cvarci
+  - type: Tag
+    tags:
+    - Meat
   - type: SolutionContainerManager
     solutions:
       food:
@@ -575,8 +578,6 @@
           Quantity: 2
         - ReagentId: Nutriment
           Quantity: 1
-    tags:
-    - Meat
   - type: Craftable
 
 - type: constructionGraph
@@ -592,7 +593,7 @@
       steps:
       - minTemperature: 335
   - node: meat salo
-    entity: FoodMeatCvarci
+    entity: STFoodMeatCvarci
 
 - type: lightCraftingRecipe
   id: MeatSaloCraft
@@ -640,7 +641,7 @@
   - type: InternalTemperature
     conductivity: 0.43
   - type: Construction
-    graph: MeatSteak
+    graph: MeatSTRat
     node: start
     defaultTarget: meat strat
   - type: Tag
@@ -691,7 +692,7 @@
         sound: /Audio/Effects/sizzle.ogg
       steps:
       - minTemperature: 335
-  - node: meat steel
+  - node: meat strat
     entity: FoodMeatSTRatCooked
 
 - type: lightCraftingRecipe

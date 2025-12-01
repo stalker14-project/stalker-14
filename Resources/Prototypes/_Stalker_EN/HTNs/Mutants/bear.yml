@@ -25,28 +25,28 @@
 
 - type: htnCompound
   id: STBearRoarRestoreCompound
-  preconditions:
-  - !type:KeyBoolEqualsPrecondition
-    key: Roared
-    value: true
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: true
       operator: !type:SetBoolOperator
         targetKey: Roared
         value: false
 
 - type: htnCompound
   id: STBearRoarCompound
-  preconditions:
-  - !type:KeyExistsPrecondition
-    key: Target
-  - !type:KeyBoolEqualsPrecondition
-    key: Roared
-    value: false
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: false
       operator: !type:PlaySoundOperator
         sound:
           path: /Audio/Animals/bear.ogg
@@ -66,12 +66,12 @@
 
 - type: htnCompound
   id: STBearMeleeAttackTargetCompound
-  preconditions:
-  - !type:KeyExistsPrecondition
-    key: Target
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true
@@ -80,6 +80,9 @@
         pathfindKey: TargetPathfind
         rangeKey: MeleeRange
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true
