@@ -11,18 +11,22 @@
       intensitySlope: 3
       totalIntensity: 80 # about a ~4 tile radius
       canCreateVacuum: false
-    - type: OnUseTimerTrigger
-    - type: ClusterGrenade
+    - type: TriggerOnUse
+    - type: TimerTrigger
+    - type: ScatteringGrenade
       fillPrototype: PelletClusterLethal
-      maxGrenadesCount: 80
-      grenadeType: enum.GrenadeType.Shoot
+      capacity: 80
     - type: ContainerContainer
       containers:
         cluster-payload: !type:Container
     - type: TwoStageTrigger
+      keysIn:
+      - timer
       triggerDelay: 0
       components:
         - type: ExplodeOnTrigger
+          keysIn:
+          - stageTwo
 
 - type: entity
   name: граната РГД-5
@@ -37,18 +41,22 @@
       intensitySlope: 2
       totalIntensity: 40 # about a ~4 tile radius
       canCreateVacuum: false
-    - type: OnUseTimerTrigger
-    - type: ClusterGrenade
+    - type: TriggerOnUse
+    - type: TimerTrigger
+    - type: ScatteringGrenade
       fillPrototype: PelletClusterLethal
-      maxGrenadesCount: 80
-      grenadeType: enum.GrenadeType.Shoot
+      capacity: 80
     - type: ContainerContainer
       containers:
         cluster-payload: !type:Container
     - type: TwoStageTrigger
+      keysIn:
+      - timer
       triggerDelay: 0
       components:
         - type: ExplodeOnTrigger
+          keysIn:
+          - stageTwo
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Grenades/rgdgrenade.rsi
       layers:
@@ -83,12 +91,17 @@
       intensitySlope: 3.99
       totalIntensity: 10
       canCreateVacuum: false
-    - type: OnUseTimerTrigger
+    - type: TriggerOnUse
+    - type: TimerTrigger
       delay: 2
     - type: TwoStageTrigger
+      keysIn:
+      - timer
       triggerDelay: 0
       components:
         - type: ExplodeOnTrigger
+          keysIn:
+          - stageTwo
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Grenades/khatabka.rsi
       layers:
@@ -107,9 +120,12 @@
     - type: TimerTriggerVisuals
       primingSound:
         path: /Audio/Effects/Smoke-grenade.ogg
-    - type: OnUseTimerTrigger
+    - type: TriggerOnUse
+    - type: TimerTrigger
       delay: 4
     - type: DeleteOnTrigger
+      keysIn:
+      - timer
     - type: SpawnOnTrigger
       proto: HowitzerTimedSpawnerfast
 
@@ -132,9 +148,13 @@
         Quantity: 100
   - type: STWeight
     self: 0.20
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Effects/smoke.ogg
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/Smoke-grenade.ogg
@@ -152,12 +172,17 @@
       intensitySlope: 5
       totalIntensity: 240
       canCreateVacuum: false
-    - type: OnUseTimerTrigger
+    - type: TriggerOnUse
+    - type: TimerTrigger
       delay: 1.5
     - type: TwoStageTrigger
+      keysIn:
+      - timer
       triggerDelay: 0
       components:
         - type: ExplodeOnTrigger
+          keysIn:
+          - stageTwo
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Grenades/fugasgrenade.rsi
       layers:
@@ -182,10 +207,14 @@
   - type: FlashOnTrigger
     range: 7
     duration: 25
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound:
       path: "/Audio/Effects/flash_bang.ogg"
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: SpawnOnTrigger
     proto: GrenadeFlashEffect
   - type: Appearance
@@ -199,11 +228,17 @@
   - type: Sprite
     sprite: _Stalker/Objects/Weapons/Grenades/dggrenade.rsi
   - type: SmokeOnTrigger
+    keysIn:
+    - timer
     duration: 20
     spreadAmount: 15
-  - type: SoundOnTrigger
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
     sound: /Audio/Items/smoke_grenade_smoke.ogg
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Items/smoke_grenade_prime.ogg
@@ -225,12 +260,17 @@
       intensitySlope: 4
       totalIntensity: 150
       canCreateVacuum: false
-    - type: OnUseTimerTrigger
+    - type: TriggerOnUse
+    - type: TimerTrigger
       delay: 1.5
     - type: TwoStageTrigger
+      keysIn:
+      - timer
       triggerDelay: 0
       components:
         - type: ExplodeOnTrigger
+          keysIn:
+          - stageTwo
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Grenades/stielhandgranate_m24_bundle.rsi
       layers:
@@ -262,12 +302,17 @@
       intensitySlope: 2
       totalIntensity: 50
       canCreateVacuum: false
-    - type: OnUseTimerTrigger
+    - type: TriggerOnUse
+    - type: TimerTrigger
       delay: 1.5
     - type: TwoStageTrigger
+      keysIn:
+      - timer
       triggerDelay: 0
       components:
         - type: ExplodeOnTrigger
+          keysIn:
+          - stageTwo
     - type: Sprite
       sprite: _Stalker/Objects/Weapons/Grenades/stielhandgranate.rsi
       layers:
@@ -298,6 +343,7 @@
     canCreateVacuum: false
   - type: Sprite
     sprite: Corvax/Back/Backpacks/military.rsi
+    state: icon
   - type: Item
     size: Huge
   - type: Clothing
@@ -332,7 +378,7 @@
     tags:
     - Folder
   - type: Storage
-    maxItemsize: Large
+    maxItemSize: Large
     grid:
     - 2,0,7,3
   - type: Sprite
@@ -363,7 +409,7 @@
   - type: SubdermalImplant
     permanent: true
     implantAction: ActionActivateMicroBomb
-  - type: TriggerImplantAction
+  - type: TriggerOnActivateImplant
   - type: ExplodeOnTrigger
   - type: GibOnTrigger
     deleteItems: true

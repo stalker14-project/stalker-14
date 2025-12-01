@@ -1,7 +1,15 @@
 ﻿- type: entity
-  id: OrganVulpkaninStomach
+  id: OrganCorvaxVulpkaninStomach
   parent: OrganAnimalStomach
   categories: [ HideSpawnMenu ]
   components:
   - type: Stomach
-    maxVolume: 50
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 50.0
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5

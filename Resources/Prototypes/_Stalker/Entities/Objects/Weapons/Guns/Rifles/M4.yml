@@ -21,13 +21,18 @@
     minAngle: 52
     maxAngle: 95
     angleIncrease: 1.33
-    shotsPerBurst: 3
-    ShotsPerBurstModified: 3
     selectedMode: FullAuto
     availableModes:
     - Burst
     - SemiAuto
     - FullAuto
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot {}
+      gun_auto_sear: !type:ContainerSlot {}
+      gun_module_muzzle: !type:ContainerSlot {}
+      gun_module_scope: !type:ContainerSlot {}
+      gun_chamber: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       gun_magazine:

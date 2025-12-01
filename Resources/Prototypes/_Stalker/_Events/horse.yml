@@ -48,11 +48,10 @@
         maxVol: 250
   - type: Udder
     reagentId: MilkGoat
-    targetSolution: udder
-    quantity: 25
-    updateRate: 20
+    quantityPerUpdate: 25
+    growthDelay: 20
   - type: Wooly
-  - type: Food
+  - type: Edible
     solution: wool
     requiresSpecialDigestion: true
     # Wooly prevents eating wool deleting the goat so its fine
@@ -84,6 +83,4 @@
       task: RuminantHostileCompound
   - type: Strap
     position: Stand
-    buckleOffset: "-0.00, 0.00"
-    maxBuckleDistance: 1
 

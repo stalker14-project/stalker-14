@@ -41,11 +41,11 @@
   - type: HTN
     rootTask:
       task: SimpleRangedHostileCompound
-      blackboard:
-        VisionRadius: !type:Single
-          20
-        AggroVisionRadius: !type:Single
-          15
+    blackboard:
+      VisionRadius: !type:Single
+        20
+      AggroVisionRadius: !type:Single
+        15
   - type: MovementSpeedModifier
     baseWalkSpeed: 4
     baseSprintSpeed: 5.5
@@ -74,8 +74,8 @@
     - FullAuto
     soundGunshot: /Audio/Effects/lightburn.ogg
   - type: Jumpscare
-    damageRadius: 1
-    reloadTime: 3
+    # damageRadius: 1 # Stalker-TODO: This field does not exist!
+    # reloadTime: 3 # Stalker-TODO: This field exists in component but is not a datafield!
     attackRadius: 12
     chargeDamage:
       types:
@@ -157,7 +157,7 @@
     - id: ZoneArtifactPellicle
       amount: 1
       prob: 0.03
-    - id: ZoneArtifactArtMedusa
+    - id: ArtMedusa
       amount: 1
       prob: 0.03
   - type: BasicEntityAmmoProvider

@@ -5,6 +5,9 @@
   suffix: Slinky
   components:
   - type: Boombox
+  - type: ContainerContainer
+    containers:
+      cassette_slot: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       cassette_slot:

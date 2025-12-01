@@ -45,16 +45,14 @@
       spawned:
       - id: MutantPartCatGland
         amount: 1
-      - id: STJunkTag
+      - id: STJunkTag # EN
         maxAmount: 1
         prob: 0.01
-      - id: STJunkTagWhite
+      - id: STJunkTagWhite # EN
         maxAmount: 1
         prob: 0.01
     - type: MeleeWeapon
       attackRate: 0.8
-      heavyWindupModifier: 1
-      heavyDamageModifier: 1.5
       angle: 30
       range: 1.2
       soundHit:
@@ -70,6 +68,8 @@
         types:
           Slash: 12
           Piercing: 4
+    - type: BonusMeleeDamage
+      heavyDamageMultiplier: 1.5
     - type: SolutionContainerManager # its a psy power dont worry about it
       solutions:
         melee:

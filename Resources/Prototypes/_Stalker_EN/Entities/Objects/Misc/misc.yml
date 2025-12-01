@@ -1,0 +1,54 @@
+- type: entity
+  name: tag
+  parent: BaseItem
+  suffix: Stalker
+  id: STJunkTag
+  description: A yellow tag with a serial number printed on it. A rudimentary chip is embedded in the plastic.
+  components:
+  - type: STWeight
+    self: 0.01
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/lab_tag.rsi
+    state: tag
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+
+- type: entity
+  name: tag
+  parent: BaseItem
+  suffix: Stalker
+  id: STJunkTagWhite
+  description: A white tag with a series of letters printed on it and a number stamped with blue ink. Some kind of chip is embedded in the plastic.
+  components:
+  - type: STWeight
+    self: 0.01
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/lab_tag.rsi
+    state: tag_white
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0
+
+- type: entity
+  name: tracker
+  parent: BaseItem
+  suffix: Stalker
+  id: STJunkTracker
+  description: A thin metal rod pulled from under the skin of a mutant. It hums faintly.
+  components:
+  - type: STWeight
+    self: 0.1
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Misc/tracker.rsi
+    layers:
+    - state: tracker
+    - state: tracker_overlay
+      shader: unshaded
+      visible: true
+  - type: Item
+    size: Tiny
+    shape:
+    - 0,0,0,0

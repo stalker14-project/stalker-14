@@ -3,15 +3,13 @@
 - type: entity
   id: BaseBarrel
   abstract: true
-  parent: BaseStructureStalkerDynamic
+  parent: STBaseStructure
   name: бочка
   suffix: Stalker
   description: Большой цилиндрический сосуд для жидкостей с двумя плоскими днищами и несколько выпуклыми стенками, которые стянуты обручами.
   placement:
     mode: PlaceFree
   components:
-  - type: Transform
-    anchored: true
   - type: Sprite
     sprite: _Stalker/Objects/Misc/barrels.rsi
     state: base

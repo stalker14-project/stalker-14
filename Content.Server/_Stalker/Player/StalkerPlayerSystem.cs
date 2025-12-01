@@ -1,4 +1,6 @@
 ﻿using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.Console;
 using Robust.Server.Player;
@@ -27,7 +29,7 @@ public sealed class StalkerPlayerSystem : EntitySystem
             _mobState.IsCritical(args.Session.AttachedEntity.Value) &&
             TryComp<DamageableComponent>(args.Session.AttachedEntity.Value, out var damageableComponent))
         {
-            _damageable.SetAllDamage(args.Session.AttachedEntity.Value, damageableComponent, 10);
+            _damageable.SetAllDamage((args.Session.AttachedEntity.Value, damageableComponent), 10);
             _consoleHost.ExecuteCommand(args.Session, "respawnnow");
         }
         else if (args.Session.Status == SessionStatus.Disconnected &&

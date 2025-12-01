@@ -34,11 +34,11 @@
       - !type:PlaySoundBehavior
         sound:
           path: /Audio/Animals/space_dragon_roar.ogg # TO DO
-  - type: Butcherable
-    spawned:
-    - id: ClothingMaskChimera
-      maxAmount: 1
-      prob: 0.3
+  # - type: Butcherable
+    # spawned:
+    # - id: ClothingMaskChimera # Stalker-TODO: Prototype "ClothingMaskChimera" does not exist!
+      # maxAmount: 1
+      # prob: 0.3
   - type: TeethPull
     teethProto: MutantPartChimeraTooth
     pullingItemTag: PliersStalker
@@ -57,8 +57,6 @@
         variation: 0.2
   - type: MeleeWeapon
     attackRate: 2
-    heavyWindupModifier: 1
-    heavyDamageModifier: 1.5
     angle: 30
     range: 1.4
     soundSwing:
@@ -70,11 +68,13 @@
     damage:
       types:
         Slash: 25
+  - type: BonusMeleeDamage
+    heavyDamageMultiplier: 1.5
   - type: StaminaDamageOnHit
     damage: 15
   - type: Jumpscare
-    damageRadius: 1.5
-    attackRadius: 20
+    #damageRadius: 1.5 # Stalker-TODO: This field does not exist!
+    #attackRadius: 20 # Stalker-TODO: This field does not exist!
     chargeDamage:
       types:
         Bloodloss: 20
@@ -82,6 +82,6 @@
     jumpPower: 10
     jumpDistance: 10
     updateCooldown: 3
-    reloadTime: 9
-    totalSteps: 3
-    stepInterval: 0.5
+    # reloadTime: 9 # Stalker-TODO: This field exists in component but is not a datafield!
+    # totalSteps: 3 # Stalker-TODO: This field exists in component but is not a datafield!
+    # stepInterval: 0.5 # Stalker-TODO: This field exists in component but is not a datafield!

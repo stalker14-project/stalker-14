@@ -24,46 +24,52 @@
 
 - type: htnCompound
   id: STBearT3RoarRestoreCompound
-  preconditions:
-  - !type:KeyBoolEqualsPrecondition
-    key: Roared
-    value: true
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: true
       operator: !type:SetBoolOperator
         targetKey: Roared
         value: false
 
 - type: htnCompound
   id: STBearT3RoarCompound
-  preconditions:
-  - !type:KeyExistsPrecondition
-    key: Target
-  - !type:KeyBoolEqualsPrecondition
-    key: Roared
-    value: false
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: false
       operator: !type:PlaySoundOperator
         sound:
           path: /Audio/Animals/bear.ogg
           params:
             variation: 0.125
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
+      - !type:KeyBoolEqualsPrecondition
+        key: Roared
+        value: false
       operator: !type:SetBoolOperator
         targetKey: Roared
         value: true
 
 - type: htnCompound
   id: STBearT3MeleeAttackTargetCompound
-  preconditions:
-  - !type:KeyExistsPrecondition
-    key: Target
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true
@@ -75,6 +81,9 @@
       operator: !type:JukeOperator
         jukeType: AdjacentTile
     - !type:HTNPrimitiveTask
+      preconditions:
+      - !type:KeyExistsPrecondition
+        key: Target
       operator: !type:MoveToOperator
         shutdownState: PlanFinished
         pathfindInPlanning: true

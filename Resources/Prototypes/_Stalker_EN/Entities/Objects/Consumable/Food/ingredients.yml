@@ -14,6 +14,12 @@
     - type: Sprite
       sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
       state: beans
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: Nutriment
+            Quantity: 15
     - type: Craftable
 
 - type: entity
@@ -116,6 +122,14 @@
     - type: Sprite
       sprite: _Stalker_EN/Objects/Consumable/Food/ingredients.rsi
       state: yeast
+    - type: SolutionContainerManager
+      solutions:
+        food: # Stalker-TODO: This needs to have something in it! Currently it has fillers
+          reagents:
+          - ReagentId: Sugar
+            Quantity: 4
+          - ReagentId: Ethanol
+            Quantity: 1
     - type: Craftable
 
 # if people cause problems with egg puddles this is losing its reagent so fast
@@ -160,6 +174,12 @@
     - type: Sprite # temp
       sprite: Objects/Consumable/Food/ingredients.rsi
       state: flour-big
+    - type: SolutionContainerManager
+      solutions:
+        food: # Stalker-TODO: This needs to have something in it! Currently it has fillers
+          reagents:
+          - ReagentId: Flour
+            Quantity: 15
     - type: Craftable
 
 - type: entity
@@ -202,6 +222,12 @@
     - type: Sprite # temp
       sprite: Objects/Consumable/Food/ingredients.rsi
       state: rice-big
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: Rice
+            Quantity: 15
     - type: Craftable
 
 # legally distinct so you cant cook with an empty milk jug
@@ -245,4 +271,10 @@
     - type: Sprite # temp
       sprite: Objects/Consumable/Food/ingredients.rsi
       state: oliveoil
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+          - ReagentId: OilOlive
+            Quantity: 15
     - type: Craftable

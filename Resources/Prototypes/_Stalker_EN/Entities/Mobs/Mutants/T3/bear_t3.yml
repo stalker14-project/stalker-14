@@ -53,8 +53,6 @@
       prob: 0.05
   - type: MeleeWeapon
     attackRate: 0.8
-    heavyWindupModifier: 1
-    heavyDamageModifier: 2.0
     angle: 30
     range: 1.2
     soundHit:
@@ -71,9 +69,10 @@
       types:
         Slash: 35
         Blunt: 25
+  - type: BonusMeleeDamage
+    heavyDamageMultiplier: 2.0
   - type: MeleeThrowOnHit # im not sold on this, willing to kill it if its annoying
     speed: 5
-    lifetime: 0.3
   - type: StaminaDamageOnHit
     damage: 15
   - type: MovementSpeedModifier

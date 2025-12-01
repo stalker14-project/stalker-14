@@ -106,10 +106,10 @@
     level: 2
     detectionDistance: 12
     activationDistance: 2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    sound: /Audio/_Stalker/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorAngleIndicator
 
 - type: entity
@@ -146,10 +146,10 @@
     detectionDistance: 18
     activationDistance: 2
     updateInterval: 0.2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    sound: /Audio/_Stalker/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorDistanceIndicator
 
 - type: entity
@@ -168,10 +168,10 @@
     detectionDistance: 18
     activationDistance: 2
     updateInterval: 0.2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    sound: /Audio/_Stalker/Items/Detectors/Artefacts/art_beep2.ogg
   - type: ZoneArtifactDetectorDistanceIndicator
 
 - type: entity
@@ -208,10 +208,10 @@
     level: 4
     detectionDistance: 14
     activationDistance: 2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    sound: /Audio/_Stalker/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorAngleIndicator
 
 - type: entity
@@ -229,10 +229,10 @@
     level: 5
     detectionDistance: 10
     activationDistance: 2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    sound: /Audio/_Stalker/Items/Detectors/Artefacts/art_beep3.ogg
   - type: ZoneArtifactDetectorAngleIndicator
 
 - type: entity
@@ -259,10 +259,10 @@
     level: 1
     detectionDistance: 10
     activationDistance: 2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    sound: /Audio/_Stalker/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorAngleIndicator
 
 # Пиздец
@@ -279,7 +279,7 @@
       - state: base
   - type: ZoneArtifactDetector
     level: 999
-    distance: 20
+    detectionDistance: 20
   - type: ZoneArtifactDetectorSoundIndicator
     sound: /Audio/_Stalker/da_da.ogg
     maxInterval: 1.5
@@ -309,8 +309,8 @@
     level: 1
     detectionDistance: 8
     activationDistance: 2
-    beepSound: /Audio/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorSoundIndicator
     maxInterval: 2
     minInterval: 0.01
+    sound: /Audio/_Stalker/Items/Detectors/Artefacts/art_beep1.ogg
   - type: ZoneArtifactDetectorAngleIndicator

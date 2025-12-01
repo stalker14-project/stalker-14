@@ -13,7 +13,7 @@
     sprite: _Stalker/NPC/
     drawdepth: 4
   - type: Fixtures
-    fixtures: # TODO: This needs a second fixture just for mob collisions.
+    fixtures: # Stalker-TODO: This needs a second fixture just for mob collisions.
       fix1:
         shape:
           !type:PhysShapeCircle
@@ -28,12 +28,20 @@
     prototype: Human
     requiredLegs: 2
   - type: Internals
-  - type: Inventory
-  - type: InventorySlots
+  # - type: Inventory
+  # - type: InventorySlots
   - type: Grammar
     attributes:
       proper: true
   - type: Tag
+  - type: ContainerContainer
+    containers: # Stalker-TODO: Figure out why tests don't like it being empty
+      body_root_part: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+  - type: Vocalizer
+    hideChat: true
 #NPC Base please don`t touch it - End
 
 #NPC Train Station - Start
@@ -83,8 +91,8 @@
     state: barmen
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: STNPCStalkerBarmenAds
+  - type: DatasetVocalizer
+    dataset: STNPCStalkerBarmenAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -122,8 +130,8 @@
     state: buyer
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -161,8 +169,8 @@
     state: tourist
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -200,8 +208,8 @@
     state: merc
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -240,8 +248,8 @@
     state: barahlosimple
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -280,8 +288,8 @@
     state: merc
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: BandsManaging
     shopListingsProto: STBandShopListings
   - type: ActivatableUI
@@ -321,8 +329,8 @@
     state: matvey
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -360,8 +368,8 @@
     state: clothingsalesman
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -400,8 +408,8 @@
     drawdepth: Mobs
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerPharmacistAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerPharmacistAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -439,8 +447,8 @@
     state: radioplayer
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -478,8 +486,8 @@
     state: security
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerSecurityAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerSecurityAds
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -507,8 +515,8 @@
     state: security
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerSecurityAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerSecurityAds
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -536,8 +544,8 @@
     state: zhorik
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerSecurityAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerSecurityAds
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -565,8 +573,8 @@
     state: garrik
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerSecurityAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerSecurityAds
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -594,8 +602,8 @@
     state: petralkash
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerAlkashAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerAlkashAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -643,8 +651,8 @@
     state: ceremoniemeester
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NpcCeremoniemeesterAds
+  - type: DatasetVocalizer
+    dataset: NpcCeremoniemeesterAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -682,8 +690,8 @@
     state: vadiknarik
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerAlkashAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerAlkashAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -721,8 +729,8 @@
     state: gena
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -760,8 +768,8 @@
     state: technick
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -799,8 +807,8 @@
     state: viktor
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -838,8 +846,8 @@
     state: maks
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -877,8 +885,8 @@
     state: serega
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -944,8 +952,8 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-  - type: Advertise
-    pack: NPCStalkerCatPet
+  - type: DatasetVocalizer
+    dataset: NPCStalkerCatPet
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -961,6 +969,20 @@
     channels:
     - Binary
     - Common
+  - type: ContainerContainer
+    containers: # Stalker-TODO: Figure out why tests don't like it being empty
+      body_root_part: !type:ContainerSlot
+        showEnts: False
+        occludes: True
+        ent: null
+      mask: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
+      suitstorage: !type:ContainerSlot
+        showEnts: False
+        occludes: False
+        ent: null
 
 #NPC For trading - End
 
@@ -978,8 +1000,8 @@
     state: daniil
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1017,8 +1039,8 @@
     state: scientist
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: TypingIndicator
     proto: robot
   - type: TTS # Corvax-TTS
@@ -1184,8 +1206,8 @@
     state: gabriel
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1226,8 +1248,8 @@
     state: merc
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1266,8 +1288,8 @@
     state: merc
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1306,8 +1328,8 @@
     state: barahlosimple
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: NPCStalkerTraderAds
+  - type: DatasetVocalizer
+    dataset: NPCStalkerTraderAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true
@@ -1383,8 +1405,8 @@
     state: pleyad
   - type: Physics
     bodyType: Static
-  - type: Advertise
-    pack: STNPCStalkerBarmenAds
+  - type: DatasetVocalizer
+    dataset: STNPCStalkerBarmenAds
   - type: ActivatableUI
     key: enum.ShopUiKey.Key
     singleUser: true

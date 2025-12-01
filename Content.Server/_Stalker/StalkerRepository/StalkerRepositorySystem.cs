@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Content.Server._Stalker.StalkerDB;
@@ -36,6 +37,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using RepositoryEjectMessage = Content.Shared._Stalker.StalkerRepository.RepositoryEjectMessage;
 using Content.Server._Stalker.Sponsors.SponsorManager;
+using Content.Shared.Actions.Components;
+using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Verbs;
 
 namespace Content.Server._Stalker.StalkerRepository;
@@ -55,6 +58,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
     [Dependency] private readonly ISerializationManager _serializationManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!; // for searching by ckey
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!; // for checks for whitelist
+    [Dependency] private readonly ISharedPlayerManager _player = default!; // for getting session by mindComp
     private ISawmill _sawmill = default!;
 
     // caching new records in database to get them later inside sponsors stuff
@@ -150,21 +154,21 @@ public sealed class StalkerRepositorySystem : EntitySystem
     }
     private void OnAfterInsert(StorageAfterInsertItemIntoLocationEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
     }
     private void OnAfterRemove(StorageAfterRemoveItemEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
     }
     private void OnSelected(EntityUid uid, ItemComponent component, HandSelectedEvent args)
     {
-        if (!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
@@ -172,18 +176,30 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     private void OnDeselected(EntityUid uid, ItemComponent component, HandDeselectedEvent args)
     {
-        if(!_mind.TryGetMind(args.User, out _, out var mindComp) || !_mind.TryGetSession(mindComp, out var session))
+        if (!TryGetSession(args.User, out var session))
             return;
 
         UpdateUiOnChanges(session, args.User);
+    }
+
+    private bool TryGetSession(EntityUid uid, [NotNullWhen(true)] out ICommonSession? session)
+    {
+        if (!_mind.TryGetMind(uid, out _, out var mindComp) || !_player.TryGetSessionById(mindComp.UserId, out var currentSession))
+        {
+            session = null;
+            return false;
+        }
+
+        session = currentSession;
+
+        return true;
     }
 
     #endregion
     // base updating methods, like main UpdateUIState and others
     #region UpdateUiState
 
-    private void OnBeforeActivate(EntityUid uid, StalkerRepositoryComponent component,
-        BeforeActivatableUIOpenEvent args)
+    private void OnBeforeActivate(EntityUid uid, StalkerRepositoryComponent component, BeforeActivatableUIOpenEvent args)
     {
         UpdateUiState(args.User, uid, component);
     }
@@ -301,6 +317,9 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
     private void OnInteractUsing(EntityUid uid, StalkerRepositoryComponent component, InteractUsingEvent args)
     {
+        if (args.Handled)
+            return;
+
         // generate new item info for clicked entity
         var itemInfo = GenerateItemInfo(args.Used, true);
         // check for valid weight
@@ -326,6 +345,7 @@ public sealed class StalkerRepositorySystem : EntitySystem
 
         // removing items
         RemoveItems(args.User, toDelete.Value.Item1, toDelete.Value.Item2);
+        args.Handled = true;
     }
 
     #endregion
@@ -634,7 +654,8 @@ public sealed class StalkerRepositorySystem : EntitySystem
                     HasComp<BodyPartComponent>(element) ||
                     HasComp<CartridgeComponent>(element) ||
                     HasComp<VirtualItemComponent>(element) ||
-                    HasComp<MindContainerComponent>(element)) // Do not insert alive objects(mice, etc.)
+                    HasComp<MindContainerComponent>(element) || // Do not insert alive objects(mice, etc.)
+                    HasComp<StatusEffectComponent>(element)) // Don't look at status effect entities
                     continue;
                 // recursively call the same method and add its result to our
                 if (TryComp<ContainerManagerComponent>(element, out var manager))

@@ -3,7 +3,7 @@
   name: магазин ПМм 9x18 (10)
   description: Магазин 9x18 мм для ПМм. Вместимость пуль 10. Продают пустым.
   parent: BaseItem
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: Trash
     time: 900
@@ -13,7 +13,6 @@
     tags:
       - MagazinePM
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -46,7 +45,7 @@
   name: магазин АПС 9x18 (20)
   description: Магазин 9x18 Для пистолетов АПС. Вместимость пуль 20. Продают пустым.
   parent: BaseItem
-  tag: Stalker
+  suffix: Stalker
   components:
     - type: STWeight
       self: 0.15
@@ -54,7 +53,6 @@
       tags:
         - MagazineAPS
     - type: BallisticAmmoProvider
-      proto:
       mayTransfer: true
       whitelist:
         tags:
@@ -88,7 +86,7 @@
   name: шнековый магазин "Бизон" (64)
   description: Шнековый магазин на Бизон под 9х18. Вместимость пуль 64. Продают пустым.
   parent: VityazMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.35
@@ -96,7 +94,6 @@
     tags:
       - MagazineBizon
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:
@@ -132,7 +129,7 @@
   name: магазин vz. 61 "Скорпион" (20)
   description: Магазин на компактного ПП "Скорпион". Вместимость пуль 20. Продают пустым.
   parent: BizonMag
-  tag: Stalker
+  suffix: Stalker
   components:
   - type: STWeight
     self: 0.2
@@ -140,7 +137,6 @@
     tags:
       - MagazineVz61
   - type: BallisticAmmoProvider
-    proto:
     mayTransfer: true
     whitelist:
       tags:

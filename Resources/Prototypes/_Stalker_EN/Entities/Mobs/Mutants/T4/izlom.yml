@@ -12,10 +12,12 @@
     layers:
     - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
       state: alive
-  - type: Advertise
-    pack: NPCStalkerIzlomAds
-    minWait: 60
-    maxWait: 120
+  # - type: Vocalizer # Stalker-TODO: Uncomment once "NPCStalkerIzlomAds" dataset exists!
+    # minVocalizeInterval: 1m
+    # maxVocalizeInterval: 2m
+    # hideChat: true
+  # - type: DatasetVocalizer
+    # dataset: NPCStalkerIzlomAds
   - type: DamageStateVisuals
     states:
       Alive:
@@ -43,7 +45,7 @@
   - type: Butcherable
     spawned:
     - id: MutantPartIzlomArm
-      Amount: 1
+      amount: 1
   - type: STWeight
     self: 65
   - type: MovementSpeedModifier
@@ -51,8 +53,6 @@
     baseSprintSpeed: 4.2
   - type: MeleeWeapon
     attackRate: 0.7
-    heavyWindupModifier: 1
-    heavyDamageModifier: 1.5
     angle: 30
     range: 1.8 # long arm of the law
     soundHit:
@@ -69,6 +69,8 @@
     damage:
       types:
         Blunt: 80 # killing you killing you killing you
+  - type: BonusMeleeDamage
+    heavyDamageMultiplier: 1.5
   - type: StaminaDamageOnHit
     damage: 45
   - type: Puller

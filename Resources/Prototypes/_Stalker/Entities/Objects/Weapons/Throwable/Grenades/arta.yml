@@ -15,7 +15,7 @@
 - type: entity
   id: ArtilleryLanding
   name: прилёт взрыва
-  #categories: [ HideSpawnMenu ]
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: TimedDespawn
     lifetime: 3
@@ -31,8 +31,10 @@
 - type: entity
   name: взрыв
   id: ArtilleryExplosive
-  #categories: [ HideSpawnMenu ]
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
+  - type: TriggerOnSpawn
+    keyOut: spawn
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Artillery
@@ -41,14 +43,19 @@
     totalIntensity: 120
     canCreateVacuum: false
   - type: DeleteOnTrigger
-  - type: ActiveTimerTrigger
+    keysIn:
+    - spawn
   
 - type: entity
   name: взрыв (миномёт)
   id: HowitzerExplosive
-  #categories: [ HideSpawnMenu ]
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
+  - type: TriggerOnSpawn
+    keyOut: spawn
   - type: ExplodeOnTrigger
+    keysIn:
+    - spawn
   - type: Explosive
     explosionType: Artillery
     maxIntensity: 5
@@ -56,12 +63,13 @@
     totalIntensity: 40
     canCreateVacuum: false
   - type: DeleteOnTrigger
-  - type: ActiveTimerTrigger
+    keysIn:
+    - spawn
 
 - type: entity
   id: HowitzerLanding
   name: прилёт взрыва
-  #categories: [ HideSpawnMenu ]
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: TimedDespawn
     lifetime: 3
@@ -77,7 +85,7 @@
 - type: entity
   name: HowitzerSpawner
   id: HowitzerTargetBase
-  categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu, Spawner, StSkipSpawnTest ]
   parent: MarkerBase
   components:
     - type: Marker
@@ -98,6 +106,7 @@
   id: HowitzerTimedSpawnerIntensive
   suffix: Минута
   parent: MarkerBase
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -118,6 +127,7 @@
   id: HowitzerTimedSpawnerfast
   suffix: Минута
   parent: MarkerBase
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -138,6 +148,7 @@
   id: HowitzerTimedSpawnerLong
   suffix: 3 минуты
   parent: MarkerBase
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -156,7 +167,7 @@
 - type: entity
   name: ArtillerySpawner
   id: ArtilleryTargetBase
-  categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu, Spawner, StSkipSpawnTest ]
   parent: MarkerBase
   components:
     - type: Marker
@@ -177,6 +188,7 @@
   id: ArtilleryTimedSpawnerIntensive
   suffix: Минута
   parent: MarkerBase
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
@@ -197,6 +209,7 @@
   id: ArtilleryTimedSpawnerLong
   suffix: 3 минуты
   parent: MarkerBase
+  categories: [ Spawner, StSkipSpawnTest ]
   components:
   - type: Sprite
     layers:
