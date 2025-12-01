@@ -32,3 +32,39 @@
   - type: Item
     size: Normal
     sprite: Objects/Weapons/Melee/armblade.rsi
+
+- type: entity
+  name: hunting knife
+  parent: [BaseKnife, BaseRestrictedContraband]
+  id: HuntingKnife
+  description: A tool for chopping up dead animals. Butchers 60% faster then any other knives but does less damage.
+  components:
+  - type: Tag
+    tags:
+    - STCombatKnife
+    - Knife
+  - type: Sprite
+    sprite: _Stalker_EN/Objects/Weapons/Melee/knife_hunting.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    damage:
+      types:
+        Slash: 13
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 24
+  - type: Item
+    sprite: _Stalker_EN/Objects/Weapons/Melee/knife_hunting.rsi
+    storedSprite:
+      state: storage
+      sprite: _Stalker_EN/Objects/Weapons/Melee/knife_hunting.rsi
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Engraveable
+  - type: Sharp
+    butcherDelayModifier: 0.4
