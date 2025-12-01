@@ -7,7 +7,10 @@
   - type: Damageable
     damageModifierSet: STMutantT2DamageModifierSet
   - type: Bloodstream
-    bloodReagent: Water
+    bloodReagents:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
     bloodMaxVolume: 650
   - type: Butcherable
     spawned:

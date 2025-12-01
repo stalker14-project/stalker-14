@@ -10,7 +10,10 @@
     - type: Spider
     - type: IgnoreSpiderWeb
     - type: Bloodstream
-      bloodReagent: FluorosulfuricAcid
+      bloodReagents:
+        reagents:
+        - ReagentId: FluorosulfuricAcid
+          Quantity: 1
       bloodMaxVolume: 50
     - type: Butcherable
       butcherDelay: 1
