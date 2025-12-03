@@ -183,11 +183,6 @@ public sealed partial class ShopSystem : SharedShopSystem
         if (!_ui.TryOpenUi(shop, ShopUiKey.Key, user.Value))
             return;
 
-        if (user == null)
-            return;
-        if (component == null)
-            return;
-
         // God help me
         // No -God
         var curProto = _proto.Index<CurrencyPrototype>(component.MoneyId);
@@ -209,8 +204,10 @@ public sealed partial class ShopSystem : SharedShopSystem
         var userItems = GetContainerItemsWithoutMoney(user.Value, component);
         var userListings = GetListingData(userItems, component, proto.SellingItems);
 
-        var money = sellBuyBalance ?? GetMoneyFromList(GetContainersElements(user.Value), component);
+        var money = GetMoneyFromList(GetContainersElements(user.Value), component);
+
         component.CurrentBalance = money;
+
         _sawmill.Debug($"Sent balance to client: {component.CurrentBalance}");
         var state = new ShopUpdateState(
             money,
@@ -540,7 +537,6 @@ public sealed partial class ShopSystem : SharedShopSystem
     private void OnSellListing(EntityUid uid, ShopComponent component, ShopRequestSellMessage msg)
     {
         var listing = msg.ListingToSell;
-        var balance = component.CurrentBalance;
         if (msg.Actor is not { Valid: true } seller)
             return;
 
@@ -579,9 +575,7 @@ public sealed partial class ShopSystem : SharedShopSystem
             return;
 
         IncreaseBalance(seller, component, cost);
-        balance += cost;
-        component.CurrentBalance = balance;
-        UpdateShopUI(seller, uid, component.CurrentBalance, component);
+        UpdateShopUI(seller, uid, null, component);
     }
     #endregion
 
