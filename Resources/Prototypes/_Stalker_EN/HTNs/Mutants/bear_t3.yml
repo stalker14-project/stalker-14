@@ -40,9 +40,6 @@
   branches:
   - tasks:
     - !type:HTNPrimitiveTask
-      - !type:KeyBoolEqualsPrecondition
-        key: Roared
-        value: false
       operator: !type:PlaySoundOperator
         sound:
           path: /Audio/Animals/bear.ogg
@@ -52,9 +49,6 @@
       preconditions:
       - !type:KeyExistsPrecondition
         key: Target
-      - !type:KeyBoolEqualsPrecondition
-        key: Roared
-        value: false
       operator: !type:SetBoolOperator
         targetKey: Roared
         value: true
