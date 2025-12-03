@@ -1,0 +1,55 @@
+- type: entity
+  parent: STBaseWeaponRifle
+  id: STMetroWeaponRifleVSV
+  name: ВСВ "Глухарь"
+  description: Точный и мощный автомат для боя на средней дистанции. Из-за невысокой дульной скорости стреляет тише других и не обладает высокой настильностью.
+  components:
+  - type: STWeight
+    self: 2.5
+  - type: Clothing
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/vsv.rsi
+  - type: Item
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/vsv.rsi
+  - type: Sprite
+    sprite: _Stalker/Objects/Weapons/Guns/Rifles/vsv.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Stalker/Effects/Guns/val_shoot.ogg
+    minAngle: 50
+    maxAngle: 95
+    angleIncrease: 1
+    angleDecay: 15
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    fireRate: 6.5
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: Base545Mag10
+        insertSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagIn/rifle_magin.ogg
+        ejectSound: /Audio/_Stalker/Weapons/Guns/RifleGen/MagOut/rifle_magout.ogg
+        priority: 4
+        whitelist:
+          tags:
+          - Magazine545
+      gun_module_scope:
+        name: Scope
+        priority: 2
+        whitelist:
+          tags:
+          - STWeaponModuleRifleScopeRu
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - STCartridge545
+  - type: STWeaponDamageFalloff
+    falloffMultiplier: 0.5
+  - type: STWeaponAccuracy
+    accuracyMultiplier: 1.55
+  - type: FarGunshot
+    sound: /Audio/_DZ/Effects/FarGunshots/supressed1.ogg
