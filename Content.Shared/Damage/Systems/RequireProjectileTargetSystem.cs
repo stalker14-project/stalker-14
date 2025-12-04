@@ -69,8 +69,15 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
     // Stalker-Changes-Start
     private void ChangedMobStateBulletPass(Entity<RequireProjectileTargetComponent> ent, ref MobStateChangedEvent args)
     {
-        if (args.NewMobState is MobState.Critical or MobState.Dead)
-            SetActive(ent, true);
+        switch (args.NewMobState)
+        {
+            case MobState.Critical or MobState.Dead:
+                SetActive(ent, true);
+                break;
+            case MobState.Alive:
+                SetActive(ent, false);
+                break;
+        }
     }
     // Stalker-Changes-End
 }
