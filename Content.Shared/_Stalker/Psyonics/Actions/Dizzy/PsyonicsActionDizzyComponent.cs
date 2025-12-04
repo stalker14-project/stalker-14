@@ -10,6 +10,10 @@ public sealed partial class PsyonicsActionDizzyComponent : BasePsyonicsActionCom
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public override EntProtoId ActionId { get; set; } = "ActionPsyonicsDizzy";
 
+    // Stalker-TODO: Remove this field after proper systems fix
+    [DataField]
+    public EntProtoId MutantActionId { get; set; } = "ActionPsyonicsDizzyMutant";
+
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public override int Cost { get; set; } = 5;
 
