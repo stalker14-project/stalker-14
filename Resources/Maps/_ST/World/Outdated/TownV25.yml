@@ -44657,20 +44657,23 @@ entities:
           Nitrogen: 82.10312
     - type: NavMap
     - type: StalkerSafeZone
-    - type: MapDay
-      colors:
-      - '#E2D2B711'
-      - '#E2D2B722'
-      - '#D9C5B622'
-      - '#744A3EFF'
-      - '#0D1926FF'
-      - '#010105FF'
-      - '#0D1926FF'
-      - '#5D492AFF'
-      - '#B2904EFF'
-      - '#D9C5B622'
-      - '#E2D2B722'
-      - '#E2D2B711'
+    - type: LightCycle
+      duration: 90m
+      initialOffset: false
+      offset: 30m
+    - type: SunShadow
+    - type: SunShadowCycle
+      directions:
+      - direction: 0,3
+      - alpha: 0.5
+        direction: -3,-0.1
+        ratio: 0.25
+      - alpha: 0.8
+        direction: 0,-3
+        ratio: 0.5
+      - alpha: 0.5
+        direction: 3,-0.1
+        ratio: 0.75
     - type: RadiationGridResistance
 - proto: ActionToggleLight
   entities:
