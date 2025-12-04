@@ -1,4 +1,5 @@
 using Content.Shared.Damage.Components;
+using Content.Shared.Mobs;
 using Content.Shared.Projectiles;
 using Content.Shared.Standing;
 using Content.Shared.Weapons.Ranged.Components;
@@ -15,7 +16,8 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
     {
         SubscribeLocalEvent<RequireProjectileTargetComponent, PreventCollideEvent>(PreventCollide);
         SubscribeLocalEvent<RequireProjectileTargetComponent, StoodEvent>(StandingBulletHit);
-        SubscribeLocalEvent<RequireProjectileTargetComponent, DownedEvent>(LayingBulletPass);
+        //SubscribeLocalEvent<RequireProjectileTargetComponent, DownedEvent>(LayingBulletPass); // Stalker-Changes
+        SubscribeLocalEvent<RequireProjectileTargetComponent, MobStateChangedEvent>(ChangedMobStateBulletPass);
     }
 
     private void PreventCollide(Entity<RequireProjectileTargetComponent> ent, ref PreventCollideEvent args)
@@ -63,4 +65,12 @@ public sealed class RequireProjectileTargetSystem : EntitySystem
     {
         SetActive(ent, true); // stalker-changes
     }
+
+    // Stalker-Changes-Start
+    private void ChangedMobStateBulletPass(Entity<RequireProjectileTargetComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState is MobState.Critical or MobState.Dead)
+            SetActive(ent, true);
+    }
+    // Stalker-Changes-End
 }
