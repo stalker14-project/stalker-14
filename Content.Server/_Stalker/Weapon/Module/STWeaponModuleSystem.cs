@@ -131,7 +131,7 @@ public sealed class STWeaponModuleSystem : STSharedWeaponModuleSystem
         entity.Comp.CachedEffect = effect;
         Dirty(entity);
 
-        if (!entity.Comp.IntegratedScopeEffect)
+        if (!entity.Comp.IntegratedScopeEffect && container.ID == "gun_module_scope")
             _sharedScope.TrySet(entity.Owner, scopeEffect);
 
         if (!TryComp<GunComponent>(entity, out var gun))
