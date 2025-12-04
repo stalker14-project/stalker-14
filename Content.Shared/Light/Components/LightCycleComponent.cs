@@ -12,6 +12,11 @@ public sealed partial class LightCycleComponent : Component
     [DataField, AutoNetworkedField]
     public Color OriginalColor = Color.Transparent;
 
+    // Stalker-Changes-Start
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Color UnchangedOriginalColor { get; internal set; } = Color.Transparent;
+    // Stalker-Changes-End
+
     /// <summary>
     /// How long an entire cycle lasts
     /// </summary>

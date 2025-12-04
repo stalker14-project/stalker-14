@@ -17,6 +17,7 @@ public abstract class SharedLightCycleSystem : EntitySystem
         if (TryComp(ent.Owner, out MapLightComponent? mapLight))
         {
             ent.Comp.OriginalColor = mapLight.AmbientLightColor;
+            ent.Comp.UnchangedOriginalColor = mapLight.AmbientLightColor; // Stalker-Changes
             Dirty(ent);
         }
     }
@@ -25,7 +26,7 @@ public abstract class SharedLightCycleSystem : EntitySystem
     {
         if (TryComp(ent.Owner, out MapLightComponent? mapLight))
         {
-            mapLight.AmbientLightColor = ent.Comp.OriginalColor;
+            mapLight.AmbientLightColor = ent.Comp.UnchangedOriginalColor; // Stalker-Changes: Replaced "ent.Comp.OriginalColor"
             Dirty(ent.Owner, mapLight);
         }
     }
