@@ -75,7 +75,16 @@ public sealed class AnomalyExplosionRule : StationEventSystem<AnomalyExplosionRu
         var query = EntityQueryEnumerator<LightCycleComponent>();
         while (query.MoveNext(out var uid, out var light))
         {
-            light.OriginalColor = colorToSet ?? light.UnchangedOriginalColor;
+            if (colorToSet != null)
+            {
+                light.OriginalColor = colorToSet.Value;
+                light.MinLevel = new Color(0.6f, 0.3f, 0.3f);
+            }
+            else
+            {
+                light.OriginalColor = light.UnchangedOriginalColor;
+                light.MinLevel = light.OriginalMinLevel;
+            }
 
             Dirty(uid, light);
         }

@@ -15,6 +15,9 @@ public sealed partial class LightCycleComponent : Component
     // Stalker-Changes-Start
     [ViewVariables(VVAccess.ReadOnly)]
     public Color UnchangedOriginalColor { get; internal set; } = Color.Transparent;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public Color OriginalMinLevel { get; internal set; } = new Color(0.1f, 0.15f, 0.50f);
     // Stalker-Changes-End
 
     /// <summary>

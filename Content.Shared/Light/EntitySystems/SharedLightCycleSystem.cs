@@ -18,6 +18,7 @@ public abstract class SharedLightCycleSystem : EntitySystem
         {
             ent.Comp.OriginalColor = mapLight.AmbientLightColor;
             ent.Comp.UnchangedOriginalColor = mapLight.AmbientLightColor; // Stalker-Changes
+            ent.Comp.OriginalMinLevel = ent.Comp.MinLevel; // Stalker-Changes
             Dirty(ent);
         }
     }
