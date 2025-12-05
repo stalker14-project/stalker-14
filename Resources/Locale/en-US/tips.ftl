@@ -23,3 +23,4 @@ tips-dataset-22 = Power in numbers! Going farther into the zone, it's wise to br
 tips-dataset-23 = Radiation is a silent killer! Make sure to have anti-rad medications or certain artifacts. Having a geiger counter always helps.
 tips-dataset-24 = You can insert your whole bag with the items inside to your repository instead of manually adding all the contents.
 tips-dataset-25 = Remember to carry a knife to butcher your kills, to gain money!
+tips-dataset-26 = You can use your PDA to message other Stalkers! Open Programs → Messenger → Write. Set the Recipient to “General" to broadcast your message to all Stalkers on the network!

@@ -1,0 +1,114 @@
+﻿# Freezers! Chilling isn't it.
+- type: entity
+  id: SpawnerZoneAnomalyFreezer1
+  name: Freezer Anomaly Spawner (1%)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Objects/Other/Anomalys/garland.rsi
+      state: idle
+    - sprite: _Stalker/Markers/numbers.rsi
+      state: 1
+  - type: RandomSpawner
+    prototypes:
+    - ZoneAnomalyFreezer
+    chance: 0.01
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyFreezer5
+  name: Freezer Anomaly Spawner (5%)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Objects/Other/Anomalys/garland.rsi
+      state: idle
+    - sprite: _Stalker/Markers/numbers.rsi
+      state: 5
+  - type: RandomSpawner
+    prototypes:
+    - ZoneAnomalyFreezer
+    chance: 0.05
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyFreezer10
+  name: Freezer Anomaly Spawner (10%)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Objects/Other/Anomalys/garland.rsi
+      state: idle
+    - sprite: _Stalker/Markers/numbers.rsi
+      state: 10
+  - type: RandomSpawner
+    prototypes:
+    - ZoneAnomalyFreezer
+    chance: 0.1
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyFreezer25
+  name: Freezer Anomaly Spawner (25%)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Objects/Other/Anomalys/garland.rsi
+      state: idle
+    - sprite: _Stalker/Markers/numbers.rsi
+      state: 25
+  - type: RandomSpawner
+    prototypes:
+    - ZoneAnomalyFreezer
+    chance: 0.25
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyFreezer50
+  name: Freezer Anomaly Spawner (50%)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Objects/Other/Anomalys/garland.rsi
+      state: idle
+    - sprite: _Stalker/Markers/numbers.rsi
+      state: 50
+  - type: RandomSpawner
+    prototypes:
+    - ZoneAnomalyFreezer
+    chance: 0.5
+    offset: 0.0
+
+- type: entity
+  id: SpawnerZoneAnomalyFreezer100
+  name: Freezer Anomaly Spawner (100%)
+  suffix: Stalker
+  parent: FlexibleMarker
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Stalker/Objects/Other/Anomalys/garland.rsi
+      state: idle
+    - sprite: _Stalker/Markers/numbers.rsi
+      state: 100
+  - type: RandomSpawner
+    prototypes:
+    - ZoneAnomalyFreezer
+    chance: 1
+    offset: 0.0

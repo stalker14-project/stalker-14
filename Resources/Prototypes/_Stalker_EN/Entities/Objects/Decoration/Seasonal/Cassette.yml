@@ -1,0 +1,17 @@
+﻿- type: entity
+  parent: BaseItem
+  id: CasseteChristmas
+  suffix: Stalker, Cassette, (Christmas)
+  name: Cassette "We Wish You A Merry Christmas"
+  description: A brand new cassette tape. Produced by Grand Project Music.
+  components:
+  - type: STWeight
+    self: 0.15
+  - type: Cassete
+    sound: /Audio/_Stalker_EN/Music/Seasonal/Christmas.ogg
+  - type: Tag
+    tags:
+    - Cassete
+  - type: Sprite
+    sprite: _Stalker/Objects/Misc/casete.rsi
+    state: c7
