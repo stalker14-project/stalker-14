@@ -15,10 +15,8 @@
     size: Normal
     sprite: _Stalker/Objects/Devices/optic/t1.rsi
   - type: Craftable
-  - type: Wieldable # Stalker-TODO: Add wielded sprites for this
-  - type: UseDelay
-    delay: 1.0
-  - type: CursorOffsetRequiresWield
-  - type: EyeCursorOffset
-    maxOffset: 14
-    pvsIncrease: 1.4
+  - type: Scope
+    zoom: 1.65
+    delay: 1
+    offset: 14
+    useInHand: true
