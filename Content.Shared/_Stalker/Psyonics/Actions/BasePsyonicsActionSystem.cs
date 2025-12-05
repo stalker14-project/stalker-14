@@ -13,15 +13,16 @@ public abstract class BasePsyonicsActionSystem<TActionComponent, TActionEvent> :
     {
         base.Initialize();
 
-        SubscribeLocalEvent<TActionComponent, ComponentStartup>(ActionStartup);
+        SubscribeLocalEvent<TActionComponent, MapInitEvent>(ActionMapInit);
         SubscribeLocalEvent<TActionComponent, TActionEvent>(ActionStarter);
     }
 
-    private void ActionStartup(Entity<TActionComponent> ent, ref ComponentStartup args)
+    // Stalker-TODO: I don't like it duplicating dizzy action for Controller. Need a proper fix
+    private void ActionMapInit(Entity<TActionComponent> ent, ref MapInitEvent args)
     {
         _actions.AddAction(ent, ent.Comp.ActionId);
 
-        OnStartup(ent, ref args);
+        OnMapInit(ent, ref args);
     }
 
     private void ActionStarter(Entity<TActionComponent> ent, ref TActionEvent args)
@@ -52,7 +53,7 @@ public abstract class BasePsyonicsActionSystem<TActionComponent, TActionEvent> :
         }
     }
 
-    protected virtual void OnStartup(Entity<TActionComponent> entity, ref ComponentStartup args)
+    protected virtual void OnMapInit(Entity<TActionComponent> entity, ref MapInitEvent args)
     {
 
     }

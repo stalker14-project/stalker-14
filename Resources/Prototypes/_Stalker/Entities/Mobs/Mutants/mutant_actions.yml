@@ -60,17 +60,17 @@
   name: dizzy
   categories: [ HideSpawnMenu ]
   components:
-    - type: Action
-      raiseOnUser: true
-      useDelay: 10
-      itemIconStyle: NoItem
-      icon:
-        sprite: _Stalker/Interface/Actions/psyonics.rsi
-        state: dizzy
-      sound:
-        path: /Audio/_Stalker/Mutants/controller_dizzy_sound.ogg
-    - type: TargetAction
-      checkCanAccess: false
-      range: 25
-    - type: EntityTargetAction
-      event: !type:PsyonicsActionDizzyEvent
+  - type: Action
+    raiseOnUser: true
+    useDelay: 10
+    itemIconStyle: NoItem
+    icon:
+      sprite: _Stalker/Interface/Actions/psyonics.rsi
+      state: dizzy
+    sound:
+      path: /Audio/_Stalker/Mutants/controller_dizzy_sound.ogg
+  - type: TargetAction
+    checkCanAccess: false
+    range: 25
+  - type: EntityTargetAction
+    event: !type:PsyonicsActionDizzyEvent
