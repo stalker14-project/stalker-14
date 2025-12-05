@@ -11,7 +11,7 @@ public abstract partial class SharedHandsSystem
     private void InitializeEventListeners()
     {
         SubscribeLocalEvent<HandsComponent, GetStandUpTimeEvent>(OnStandupArgs);
-        SubscribeLocalEvent<HandsComponent, KnockedDownRefreshEvent>(OnKnockedDownRefresh);
+        //SubscribeLocalEvent<HandsComponent, KnockedDownRefreshEvent>(OnKnockedDownRefresh); // Stalker-Changes: Don't want to slow down on getting items in hands
     }
 
     /// <summary>

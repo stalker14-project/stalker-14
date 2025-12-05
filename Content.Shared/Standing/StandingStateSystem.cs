@@ -127,7 +127,7 @@ public sealed class StandingStateSystem : EntitySystem
         _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Horizontal, appearance);
 
         // Change collision masks to allow going under certain entities like flaps and tables
-        ChangeLayers((uid, standingState)); // Stalker-Changes : fixtureAttempt
+        //ChangeLayers((uid, standingState)); // Stalker-Changes: We don't want laying to change layers
 
         // check if component was just added or streamed to client
         // if true, no need to play sound - mob was down before player could seen that

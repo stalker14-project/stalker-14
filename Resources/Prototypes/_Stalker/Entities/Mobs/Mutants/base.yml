@@ -3,7 +3,6 @@
   - MobAnomalyTarget
   - MobWeight
   - MobStaminaDamageable
-  - MobLay
   id: BaseMobMutant
   save: false
   abstract: true
@@ -174,6 +173,8 @@
     time: 900
   - type: STEvasion
     evasion: 0
+  - type: RequireProjectileTarget
+    active: False
 
 # временно так, до перевода всех мобов на новые HTN
 
@@ -182,7 +183,6 @@
     - MobAnomalyTarget
     - MobWeight
     - MobStaminaDamageable
-    - MobLay
   id: STBaseMobMutant
   save: false
   abstract: true
@@ -346,3 +346,5 @@
       time: 900
     - type: STEvasion
       evasion: 0.01
+    - type: RequireProjectileTarget
+      active: False
