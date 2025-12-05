@@ -1,0 +1,50 @@
+﻿- type: entity
+  parent: StalkerShop
+  id: StalkerShopChristmas
+  name: Santa's Shop
+  description: Ho ho ho! Sells the best Christmas goods!
+  suffix: ST, Mapping, Christmas
+  components:
+  - type: Sprite
+    drawdepth: Objects
+    sprite: _Stalker/Structures/Machines/VendingMachines/torgomat_red.rsi
+    layers:
+    - state: torgomat_red
+      map: [ "enum.ConstructionVisuals.Layer" ]
+    - state: normal-unshaded
+  - type: Shop
+    moneyId: Roubles
+    shopPresetId: SantaPreset
+
+- type: shopPreset
+  id: SantaPreset
+  itemsForSale:
+    PresentTrash: 10
+  categories:
+  - name: "Seasonal"
+    priority: 1
+    items:
+      DrinkVodkaBottleFull: 75
+      ClothingOuterCoatBomber: 250
+      ClothingOuterWinterColorRed: 250
+      ClothingOuterWinterColorWhite: 250
+      ClothingOuterWinterColorLightBrown: 250
+      ClothingOuterWinterCoat: 250
+      ClothingOuterWinterColorGray: 250
+      ClothingOuterWinterColorBlack: 250
+      ClothingOuterWinterColorBlue: 250
+      ClothingOuterWinterColorGreen: 250
+      ClothingOuterWinterColorOrange: 250
+      DrinkGlassWhite: 300
+      FoodBakedCookie: 300
+      FoodFrozenSnowconeBase: 500
+      FoodFrozenSnowconeBerry: 500
+      FoodFrozenSnowconeRainbow: 500
+      CigPackSuka: 650
+      DrinkMugRed: 700
+      DrinkMugDog: 750
+      FoodCakeChristmas: 2500
+      CasseteChristmas: 5000
+      STPresentRandom: 7500
+      #STPresentLootbox: 10000
+      WeaponPistolStalkerLP08: 85000

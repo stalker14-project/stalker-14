@@ -1,0 +1,303 @@
+﻿- type: entity
+  id: STPresentRandomRoubles
+  parent: [PresentBase, BaseItem]
+  suffix: Stalker, Rouble, DO NOT SPAWN
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: PresentTrash
+    - id: Roubles
+      prob: .01
+      orGroup: GiftPool
+    - id: Roubles10
+      prob: .1
+      orGroup: GiftPool
+    - id: Roubles100
+      orGroup: GiftPool
+    - id: Roubles1000
+      prob: .01
+      orGroup: GiftPool
+    - id: Roubles2000
+      prob: .004
+      orGroup: GiftPool
+    - id: Roubles5000
+      prob: .001
+      orGroup: GiftPool
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  id: STPresentRandomCoal
+  parent: [PresentBase, BaseItem]
+  suffix: Stalker, Coal, DO NOT SPAWN
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    - id: PresentTrash
+    - id: LandMineRickRoll
+      orGroup: GiftPool
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  id: STPresentRandom
+  parent: [PresentBase, BaseItem]
+  suffix: Stalker, Present, DO NOT SPAWN
+  components:
+  - type: SpawnItemsOnUse
+    items:
+    # Common Items
+    - id: PresentTrash
+    - id: STBucket
+      orGroup: GiftPool
+    - id: FoodBakedCookie
+      orGroup: GiftPool
+    - id: PlushieOldStalker
+      orGroup: GiftPool
+    - id: STPlushieFeltCat1
+      orGroup: GiftPool
+    - id: STPlushieFeltCat2
+      orGroup: GiftPool
+    - id: STPlushieFeltCat3
+      orGroup: GiftPool
+    - id: STPlushieFeltFlesh
+      orGroup: GiftPool
+    - id: STFoodMeatSalami
+      orGroup: GiftPool
+    - id: STJoint
+      orGroup: GiftPool
+    - id: CigPackMarlboro
+      orGroup: GiftPool
+    - id: CigarGold
+      orGroup: GiftPool
+    - id: IngotGold1
+      orGroup: GiftPool
+    - id: IngotSilver1
+      orGroup: GiftPool
+    - id: FoodTinBeans
+      orGroup: GiftPool
+    - id: FoodTinPeaches
+      orGroup: GiftPool
+    - id: FoodTinMRE
+      orGroup: GiftPool
+    - id: DrinkWhiskeyBottleFull
+      orGroup: GiftPool
+    - id: DrinkCossackVodkaBottleFull
+      orGroup: GiftPool
+    - id: DrinkVodkaBottleFull
+      orGroup: GiftPool
+    - id: STClothingHeadUshanka
+      orGroup: GiftPool
+    - id: ClothingHeadHatSovietUshankaStalker
+      orGroup: GiftPool
+    - id: CigPackSuka
+      orGroup: GiftPool
+    - id: FoodCakeChristmas
+      orGroup: GiftPool
+    - id: ClothingHeadFishCap
+      orGroup: GiftPool
+    - id: FoodMeatChickenFried
+      orGroup: GiftPool
+    - id: TrashDetectorTier2
+      orGroup: GiftPool
+    - id: GeigerCounter
+      orGroup: GiftPool
+    - id: GL3Grenade
+      orGroup: GiftPool
+    - id: GL2Grenade
+      orGroup: GiftPool
+    - id: GL1Grenade
+      orGroup: GiftPool
+    - id: MedkitAI2
+      orGroup: GiftPool
+    - id: MedkitScience
+      orGroup: GiftPool
+    - id: MedkitMilitary
+      orGroup: GiftPool
+    - id: ClothingShoesPortyanki
+      orGroup: GiftPool
+    - id: FoodDonutJellyHomer
+      orGroup: GiftPool
+    - id: FoodBakedCannabisBrownieBatch
+      orGroup: GiftPool
+    - id: ClothingHeadHatOutlawHat
+      orGroup: GiftPool
+    - id: ClothingHeadHatUshanka
+      orGroup: GiftPool
+    - id: ClothingHeadHatFlowerWreath
+      orGroup: GiftPool
+    - id: LgbtKnife
+      orGroup: GiftPool
+    - id: CraftGunpowderBank
+      orGroup: GiftPool
+    - id: 739HPBox
+      orGroup: GiftPool
+    - id: 751UNBox
+      orGroup: GiftPool
+    - id: 918SP7Box
+      orGroup: GiftPool
+    - id: 919RIPBox
+      orGroup: GiftPool
+    - id: 556WarmagBox
+      orGroup: GiftPool
+    - id: 545HPBox
+      orGroup: GiftPool
+    - id: 6mmBuckshotBox
+      orGroup: GiftPool
+    - id: FoodSTDeruny
+      orGroup: GiftPool
+    - id: FoodSTSyrnyky
+      orGroup: GiftPool
+    - id: FoodSTHrechanyky
+      orGroup: GiftPool
+    - id: FoodSTIceCream
+      orGroup: GiftPool
+    - id: STJunkHardDriveBroken
+      orGroup: GiftPool
+    - id: DrinkTequilaBottleFull
+      orGroup: GiftPool
+    - id: DrinkRumBottleFull
+      orGroup: GiftPool
+      # Uncommon
+    - id: ClothingHeadHatHetmanHat
+      prob: .1
+      orGroup: GiftPool
+    - id: STweaponShotgunPRETecta
+      prob: .1
+      orGroup: GiftPool
+    - id: DrinkLongIslandIcedTeaGlass
+      prob: .1
+      orGroup: GiftPool
+    - id: WristwatchGold
+      prob: .1
+      orGroup: GiftPool
+    - id: ClothingHeadHatSantahat
+      prob: .1
+      orGroup: GiftPool
+    - id: TrashDetectorTier3
+      prob: .1
+      orGroup: GiftPool
+    - id: STClothingHeadHatFoma
+      prob: .1
+      orGroup: GiftPool
+    - id: ClothingOuterWinterCoat
+      prob: .1
+      orGroup: GiftPool
+    - id: ClothingOuterCoatBomber
+      prob: .1
+      orGroup: GiftPool
+    - id: ClothingHeadHatCowboyWhite
+      prob: .1
+      orGroup: GiftPool
+    - id: STWeaponRifleAKS74USERAPH
+      prob: .095
+      orGroup: GiftPool
+    - id: STCraftYewPlankT4
+      prob: .1
+      orGroup: GiftPool
+    - id: ClothingHeadWildHat
+      prob: .085
+      orGroup: GiftPool
+    - id: ZoneArtifactFloodlight
+      prob: .1
+      orGroup: GiftPool
+    - id: ZoneArtifactBlood
+      prob: .1
+      orGroup: GiftPool
+    - id: ZoneArtifactVyvert
+      prob: .1
+      orGroup: GiftPool
+    - id: STWeaponShotgunMP153Raven
+      prob: .05
+      orGroup: GiftPool
+    - id: STWeaponRifleL85WhiteStrawberry
+      prob: .05
+      orGroup: GiftPool
+      # Rare Items
+    - id: ClothingHeadHatBunny
+      prob: .01
+      orGroup: GiftPool
+    - id: ClothingCloakGreen
+      prob: .01
+      orGroup: GiftPool
+    - id: ClothingCloakNavy
+      prob: .01
+      orGroup: GiftPool
+    - id: ClothingCloakBlack
+      prob: .01
+      orGroup: GiftPool
+    - id: ClothingCloakBeige
+      prob: .01
+      orGroup: GiftPool
+    - id: STWeaponRifleSIG739
+      prob: .01
+      orGroup: GiftPool
+    - id: STWeaponShotgunSPASCandy
+      prob: .01
+      orGroup: GiftPool
+    - id: ClothingHeadHatTacticalMaidHeadband
+      prob: .01
+      orGroup: GiftPool
+    - id: STWeaponSMGMP5Celebra
+      prob: .01
+      orGroup: GiftPool
+    - id: DrinkCanPack
+      orGroup: GiftPool
+    - id: STClothingOuterIOTV
+      prob: .01
+      orGroup: GiftPool
+    - id: STClothingOuterKorynd
+      prob: .01
+      orGroup: GiftPool
+    - id: STCraftIndustrialThreadStaplesKitT4
+      prob: .01
+      orGroup: GiftPool
+    - id: STCraftHighPerformanceChipT4
+      prob: .01
+      orGroup: GiftPool
+    - id: STCraftSheetAluminumT4
+      prob: .01
+      orGroup: GiftPool
+    - id: STCraftPlasticFittingT4
+      prob: .01
+      orGroup: GiftPool
+    - id: STCraftPolymerFabricT4
+      prob: .01
+      orGroup: GiftPool
+    - id: STCraftSapphireCrystalT4
+      prob: .01
+      orGroup: GiftPool
+    - id: STZoneArtifactDetectorBarracudaBlueprint
+      prob: .008
+      orGroup: GiftPool
+      # Extremely Rare Items
+    - id: WeaponPistolStalkerLP08
+      prob: .0075
+      orGroup: GiftPool
+    - id: STWeaponRifleSVDSWood
+      prob: .005
+      orGroup: GiftPool
+      # Buy a fucking lottery ticket
+    - id: STHatchetSponsor
+      prob: .001
+      orGroup: GiftPool
+    - id: MobRatKingBuff
+      prob: .001
+      orGroup: GiftPool
+    - id: ClothingOuterCoatRet
+      prob: .001
+      orGroup: GiftPool
+    - id: STWeaponLauncherRocket
+      prob: .001
+      orGroup: GiftPool
+    - id: STWeaponShotgunShizoToz34
+      prob: .001
+      orGroup: GiftPool
+      # How?
+    - id: ZoneArtifactFloodlightRave
+      prob: .0001
+      orGroup: GiftPool
+    sound:
+      path: /Audio/Effects/unwrap.ogg
+
+# Loot Box Present - Coming soon!

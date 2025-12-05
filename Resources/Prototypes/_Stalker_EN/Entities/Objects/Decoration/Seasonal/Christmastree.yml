@@ -1,0 +1,37 @@
+﻿- type: entity
+  parent: BaseTreeConifer
+  id: StalkerChristmasTree
+  suffix: Stalker, Christmas
+  name: Christmas Tree
+  description: Get into the holiday spirit! Looks like someone left a preset there for you!
+  components:
+  - type: Sprite
+    state: treechristmas02
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,0,0.5,0.75"
+        density: 4500
+        layer:
+        - WallLayer
+  - type: LimitedItemGiver
+    spawnEntries:
+    - id: STPresentRandom # Stalker themed gifts
+      orGroup: present
+    - id: STPresentRandomRoubles # Money is the best gift, is it not?
+      prob: 0.1
+      orGroup: present
+    - id: STPresentRandomCoal # Trolled
+      prob: 0.05
+      orGroup: present
+    receivedPopup: christmas-tree-got-gift
+    deniedPopup: christmas-tree-no-gift
+    requiredHoliday: FestiveSeason
+  - type: AmbientSound
+    volume: -6
+    range: 25
+    enabled: true
+    sound:
+      path: /Audio/_Stalker_EN/Music/Seasonal/Christmas.ogg
