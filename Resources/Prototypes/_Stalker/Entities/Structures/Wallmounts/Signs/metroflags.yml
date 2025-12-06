@@ -1,0 +1,138 @@
+- type: entity
+  parent: BaseSign
+  id: MetroFlagBase
+  abstract: true
+  components:
+  - type: WallMount
+    arc: 360
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Stalker/Structures/Wallmounts/metroflags.rsi
+    snapCardinals: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 9999
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/poster_broken.ogg
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          PosterBroken:
+            min: 1
+            max: 1
+        offset: 0
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagAnarchy
+  name: "Флаг Гуляй-польской республики"
+  description: "Анархисты заявили о себе как о самостоятельной силе в конце войны Красной линии с Содружеством Станций Кольцевой линии.."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: AnarhyFlag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagAnarchy2
+  name: "Флаг Гуляй-польской республики"
+  description: "Анархисты заявили о себе как о самостоятельной силе в конце войны Красной линии с Содружеством Станций Кольцевой линии.."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: Anarhy2Flag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagBandits
+  name: "Флаг Бандитов"
+  description: "Не плохие и не хорошие парни одновременно."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: BanditFlag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagBaumanskyAlliance
+  name: "Флаг Бауманского Альянса"
+  description: "Например, у нас в Москве говорили, что есть такая реальная сила – бауманцы. То есть на станциях метро и в подземных бункерах рядом с Училищем имени Баумана, которое давно стало университетом, собрались не учёные, а инженеры и образовали свою технократическую коммуну. И в отличие от «чистеньких» университетских, бауманские занимались реальной инженерией, прикладными работами, многажды выходили на поверхность и незримо боролись с «университетскими» за власть. Впрочем, это были только слухи. Мы уже целую вечность жили в мире, в котором всё было построено на слухах, да только целую вечность мы научились этим слухам не доверять."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: BaumanskyAliensFlag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagEmeraldTown
+  name: "Флаг Изумрудного Города"
+  description: "Интеллигент? – фантазируй об Изумрудном городе, а штаны протирай в Полисе. Удобная ведь система."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: EmeraldTownFlag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagHanza1
+  name: "Флаг Ганзы"
+  description: "Ганзой называлось содружество станций Кольцевой линии."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: Hanza1Flag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagHanza2
+  name: "Флаг Ганзы"
+  description: "Ганзой называлось содружество станций Кольцевой линии."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: Hanza2Flag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagRedLine
+  name: "Флаг Красной Линии"
+  description: "Сокольническая линия всегда была особая. Взглянешь на карту — сразу на неё внимание обращаешь. Во-первых, прямая, как стрела. Во-вторых, ярко-красного цвета на всех картах. Да и названия станций там тоже — Красносельская, Красные Ворота, Комсомольская, Библиотека им. Ленина, и Ленинские, опять же, Горы. И то ли из-за таких названий, то ли по какой-то другой причине тянуло на эту линию всех ностальгирующих по славному прошлому."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: RedLineFlag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagSparta
+  name: "Флаг Спарты"
+  description: "Представь, что весь метрополитен — это человеческий организм... Я — макрофаг. Это моя профессия. Любая опасность, достаточно серьезная, чтобы угрожать всему организму, должна быть ликвидирована. Это моя работа. Я — охотник. Макрофаг."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: SpartaFlag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagVDNH1
+  name: "Флаг ВДНХ"
+  description: "Ботанический Сад и ВДНХ срослись вместе в одну темную, непроходимую чащобу, среди которой высились облупленные белые купола и крыши павильнов Выставки."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: VDNH1Flag
+
+- type: entity
+  parent: MetroFlagBase
+  id: MetroFlagVDNH2
+  name: "Флаг ВДНХ"
+  description: "Ботанический Сад и ВДНХ срослись вместе в одну темную, непроходимую чащобу, среди которой высились облупленные белые купола и крыши павильнов Выставки."
+  suffix: ST, Mapping
+  components:
+  - type: Sprite
+    state: VDNH2Flag
