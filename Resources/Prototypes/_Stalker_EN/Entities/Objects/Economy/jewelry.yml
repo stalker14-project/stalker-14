@@ -1,0 +1,29 @@
+# Jewelry
+
+- type: entity
+  parent: STBaseItem
+  id: STJewelrySilver
+  name: jewelry silver
+  desciption: Silver jewelry, which you can make not bad money on!
+  suffix: Jewelry
+  components:
+    - type: Sprite
+      state: icon
+      sprite: _Stalker_EN/Objects/Economy/jewelry_silver.rsi
+    - type: STWeight
+      self: 0.2
+
+
+- type: entity
+  parent: STBaseItem
+  id: STJewelryGold
+  name: jewelry gold
+  desciption: Gold jewelry, which you can make good money on!
+  suffix: Jewelry
+  components:
+    - type: Sprite
+      state: icon
+      sprite: _Stalker_EN/Objects/Economy/jewelry_gold.rsi
+    - type: STWeight
+      self: 0.2
+
