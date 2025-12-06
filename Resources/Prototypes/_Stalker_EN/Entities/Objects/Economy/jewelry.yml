@@ -11,7 +11,7 @@
       state: icon
       sprite: _Stalker_EN/Objects/Economy/jewelry_silver.rsi
     - type: STWeight
-      self: 0.2
+      self: 0.1
 
 
 - type: entity
@@ -25,5 +25,37 @@
       state: icon
       sprite: _Stalker_EN/Objects/Economy/jewelry_gold.rsi
     - type: STWeight
-      self: 0.2
+      self: 0.1
+
+- type: entity
+  id: STWristwatchGold
+  parent: [ Wristwatch , STBaseItem ]
+  name: gold watch
+  description: A fancy watch worth more than your kidney.
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/goldwatch.rsi
+    layers:
+    - state: goldwatch
+    - map: [ "enum.ClockVisualLayers.MinuteHand"]
+    - map: [ "enum.ClockVisualLayers.HourHand"]
+  - type: Item
+    sprite: _Stalker_EN/Objects/Devices/goldwatch.rsi
+  - type: Clothing
+    sprite: _Stalker_EN/Objects/Devices/goldwatch.rsi
+  - type: STWeight
+    self: 0.2
+
+- type: entity
+  parent: [ RingBase, STBaseItem ]
+  id: STGoldRingBigDiamond
+  name: gold big diamond ring
+  description: A ring with a SOOOOOOOOO big diamond.
+  components:
+    - type: Sprite
+      state: icon
+      sprite: _Stalker_EN/Objects/Economy/gold_big_diamond_ring.rsi
+    - type: STWeight
+      self: 0.05
+
 
